@@ -19,8 +19,44 @@ const router = createRouter({
       name: 'capitulos',
       component: () => import('../views/CapitulosView.vue'),
       children: [{
-        path: 'introduccion',
-        component: () => import('../components/Capitulos/IntroduccionView.vue'),
+        path: 'clases',
+        component: () => import('../components/Capitulos/ClasesView.vue'),
+      },
+      {
+        path: 'combate',
+        component: () => import('../components/Capitulos/CombateView.vue'),
+      },
+      {
+        path: 'comojugar',
+        component: () => import('../components/Capitulos/ComoJugarView.vue'),
+      },
+      {
+        path: 'concursos',
+        component: () => import('../components/Capitulos/ConcursosView.vue'),
+      },
+      {
+        path: 'creacionpj',
+        component: () => import('../components/Capitulos/CreacionPJ.vue'),
+      },
+      {
+        path: 'dirigir',
+        component: () => import('../components/Capitulos/DirigirView.vue'),
+      },
+      {
+        path: 'objetos',
+        component: () => import('../components/Capitulos/EquipoYObjetosView.vue'),
+      },
+      {
+        path: 'movhabdot',
+        component: () => import('../components/Capitulos/MovHabDotView.vue'),
+      },
+      {
+        path: 'otrasreglas',
+        component: () => import('../components/Capitulos/OtrasReglasView.vue'),
+      },
+      {
+        path: 'pokemon',
+        component: () => import('../components/Capitulos/PokemonView.vue'),
       },
 
       ]
