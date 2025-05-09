@@ -5,7 +5,7 @@ import { ref, watch, onMounted } from 'vue'
 import DarkIcon from '@/assets/icons/DarkIcon.webp' //Modonoche
 import LightIcon from '@/assets/icons/LightIcon.webp' //ModoNoche
 
-import menu from '../assets/json/datosMenuHeader.json' //Info submenus
+import menu from '../data/json/datosMenuHeader.json' //Info submenus
 
 const oscuro = ref(false)
 const icono = ref(LightIcon)
