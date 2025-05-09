@@ -1,0 +1,111 @@
+[
+    {
+        "title": "Capitulos",
+        "submenu": [
+            {
+                "name": "Introducción",
+                "route": "/capitulos/introduccion"
+            },
+            {
+                "name": "Como Jugar",
+                "route": "/capitulos/comojugar"
+            },
+            {
+                "name": "Creación de personaje",
+                "route": "/capitulos/creacionpj"
+            },
+            {
+                "name": "Clases",
+                "route": "/capitulos/clases"
+            },
+            {
+                "name": "Movimientos, Habilidades y Dotes",
+                "route": "/capitulos/movhabdot"
+            },
+            {
+                "name": "Pokémon",
+                "route": "/capitulos/pokemon"
+            },
+            {
+                "name": "Combate",
+                "route": "/capitulos/combate"
+            },
+            {
+                "name": "Concursos Pokémon",
+                "route": "/capitulos/concursos"
+            },
+            {
+                "name": "Equipo y Objetos",
+                "route": "/capitulos/objetos"
+            },
+            {
+                "name": "otras Reglas Menores",
+                "route": "/capitulos/otrasreglas"
+            },
+            {
+                "name": "Dirigiendo el juego",
+                "route": "/capitulos/dirigir"
+            }
+        ]
+    },
+    {
+        "title": "Jugador",
+        "submenu": [
+            {
+                "name": "Clases",
+                "route": "/clases"
+            },
+            {
+                "name": "Dotes",
+                "route": "/dotes"
+            },
+            {
+                "name": "Objetos",
+                "route": "/objetos"
+            }
+        ]
+    },
+    {
+        "title": "Pokémon",
+        "submenu": [
+            {
+                "name": "Pokédex",
+                "route": "/pokedex"
+            },
+            {
+                "name": "Movimientos",
+                "route": "/movimientos"
+            },
+            {
+                "name": "Habilidades",
+                "route": "/habilidades"
+            },
+            {
+                "name": "Tabla de Tipos",
+                "route": "/recursos/tablatipos"
+            }
+        ]
+    },
+    {
+        "title": "Reglas",
+        "submenu": [
+            {
+                "name": "Índice",
+                "route": "/"
+            }
+        ]
+    },
+    {
+        "title": "Utilidades",
+        "submenu": [
+            {
+                "name": "Generar Pokémon",
+                "route": "/utilidades/generarpoke"
+            },
+            {
+                "name": "Movimientos",
+                "route": "/utilidades/dados"
+            }
+        ]
+    }
+]

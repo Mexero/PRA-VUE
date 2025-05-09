@@ -23,6 +23,10 @@ const router = createRouter({
         component: () => import('../components/Capitulos/ClasesView.vue'),
       },
       {
+        path: 'introduccion',
+        component: () => import('../components/Capitulos/IntroduccionView.vue'),
+      },
+      {
         path: 'combate',
         component: () => import('../components/Capitulos/CombateView.vue'),
       },
@@ -61,6 +65,34 @@ const router = createRouter({
 
       ]
     },
+    {
+      path: '/dotes',
+      name: 'dotes',
+      component: () => import('../components/Tabulados/DotesView.vue'),
+    },
+    {
+      path: '/movimientos',
+      name: 'movimientos',
+      component: () => import('../components/Tabulados/MovimientosView.vue'),
+    },
+    {
+      path: '/habilidades',
+      name: 'habilidades',
+      component: () => import('../components/Tabulados/HabilidadesView.vue'),
+    },
+    {
+      path: '/objetos',
+      name: 'objetos',
+      component: () => import('../components/Tabulados/ObjetosView.vue'),
+    },
+    {
+      path: '/pokedex',
+      name: 'pokedex',
+      component: () => import('../views/PokedexView.vue'),
+    },
+
+
+
     { //Este redirige si no hay una regla definida
       path: '/:pathMatch(.*)*',
       redirect: '/'

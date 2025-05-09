@@ -1,30 +1,63 @@
 <script setup>
-import {RouterLink, RouterView} from 'vue-router'
+import { RouterLink, RouterView } from 'vue-router'
+import { onMounted, onBeforeUnmount } from 'vue'
 import HeaderView from './components/HeaderView.vue'
 import FooterView from './components/FooterView.vue'
+
+
+
+//MODO OSCURO. TAMBIEN HAY UNA PARTE EN HEADER VIEW Y LOS COLORES ESTÁN ALLÍ DUPLICADOS
+function aplicarModo() {
+  const oscuro = localStorage.getItem('modoOscuro') === 'true'
+  const root = document.documentElement
+
+  root.style.setProperty('--color-texto', oscuro ? 'white' : 'black')
+  root.style.setProperty('--color-icon', oscuro ? 'invert(100%)' : 'invert(0%)')
+  root.style.setProperty('--color-fondo', oscuro ? '#17171e' : '#FCFCFC')
+  root.style.setProperty('--color-header', oscuro ? '#202030' : '#B4D4FF')
+  root.style.setProperty('--color-oscuro1', oscuro ? '#1B1B26' : '#F8F8F8')
+  root.style.setProperty('--color-hoverBloque', oscuro ? '#293141' : '#EEF5FF')
+  root.style.setProperty('--color-sombraTexto', oscuro ? '#ff0051' : '#F8F8F8')
+  root.style.setProperty('--color-principal1', oscuro ? '#ff0051' : '#94c4ff')
+  root.style.setProperty('--color-principal2', oscuro ? '#dd576d' : '#b2d7ff')
+  root.style.setProperty('--color-segundario', oscuro ? '#ff8f8f' : '#529CE6')
+  root.style.setProperty('--color-segundario2', oscuro ? '#ffffff' : '#73BDFF')
+  root.style.setProperty('--color-tabla1', oscuro ? '#a92e4d' : '#76aef1')
+  root.style.setProperty('--color-tabla2', oscuro ? '#de4a54' : '#b7dbf4')
+  root.style.setProperty('--color-fondoTexto', oscuro ? '#293141' : '#EEF5FF')
+  root.style.setProperty('--color-BloqueDescargas', oscuro ? '#ff0051' : '#A1E3F9')
+  root.style.setProperty('--color-hoverBloqueDescargas', oscuro ? '#293141' : '#EEF5FF')
+}
+
+function manejarCambioStorage(e) {
+  if (e.key === 'modoOscuro') {
+    aplicarModo()
+  }
+}
+
+onMounted(() => {
+  aplicarModo()
+  window.addEventListener('storage', manejarCambioStorage)
+})
+
+onBeforeUnmount(() => {
+  window.removeEventListener('storage', manejarCambioStorage)
+})
+
+
 </script>
 
+
+
 <template>
-<HeaderView/>
+  <HeaderView />
 
-<RouterView/>
+  <RouterView />
 
 
-
-<!--    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
-<nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
-    </div>-->
-
-<FooterView/>
+  <FooterView />
 
 </template>
 
 
-<style scoped>
-
-</style>
+<style scoped></style>
