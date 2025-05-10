@@ -1,29 +1,63 @@
 <script setup>
 import { onMounted, ref } from 'vue';
-
 import { useRouter } from 'vue-router';
 
 const router = useRouter()
 
+const claseCargada = ref('');
 const tabla = ref({ titulos: [], filas: [] });
 const descripcion = ref('');
 const tiradas = ref({ nombre: '', descripcion: '' });
 const rasgos = ref([]);
+const subclasesIndex = ref([]);
+const subclasesCargadas = ref([]);
 
 function cargarClase(clase) {
-    fetch(`../public/data/json/${clase}/${clase}.json`)
+    fetch(`data/json/${clase}/${clase}.json`)
         .then(res => res.json())
         .then(data => {
+            //Borro subclases anteriores //ESTO A MEDIAS
+            subclasesCargadas.value = [];
+
+            //cargo clase
+            claseCargada.value = clase;
             tabla.value = data.tablaClase;
             descripcion.value = data.descripcion;
             tiradas.value = data.tiradasSalvacion;
             rasgos.value = data.rasgos;
+            subclasesIndex.value = data.subclases;
         })
         .catch(err => console.error("Error al cargar", err));
 }
 
+async function toggleSubclase(ruta) {
+    const existente = subclasesCargadas.value.find(s => s.ruta === ruta);
+
+    if (existente) {
+        existente.activo = !existente.activo;
+    } else {
+        const datosSubclase = await fetch(`/data/json/${claseCargada.value}/subclases/${ruta}.json`)
+            .then(res => res.json())
+            .catch(err => {
+                console.error("Error al cargar subclase:", err);
+                return null;
+            });
+
+        if (datosSubclase) {
+            subclasesCargadas.value.push({
+                ruta,
+                activo: true,
+                subclase: datosSubclase
+            });
+        }
+    }
+}
+
+
+
+
 onMounted(() => {
-    cargarClase('Entrenador');
+    cargarClase('entrenador');
 });
 
 </script>
@@ -34,14 +68,14 @@ onMounted(() => {
         <div class="top-section">
             <div class="buttons">
                 <div class="class-buttons">
-                    <button @click="cargarClase('Entrenador')">Entrenador</button><br>
+                    <button @click="cargarClase('entrenador')">Entrenador</button><br>
                     <button @click="console.log(' pinga')">Inventor NO VA</button>
                     <button @click="console.log(' pinga')">Mentalista NO VA</button>
-                    <button @click="cargarClase('Luchador')">Luchador</button>
+                    <button @click="cargarClase('luchador')">Luchador</button>
                 </div>
                 <div class="subclass-buttons">
-                    <button>pinga</button>
-                    <button>a</button><button>a</button><button>a</button><button>a</button><button>a</button><button>a</button><button>a</button><button>a</button><button>a</button><button>a</button><button>a</button><button>a</button><button>a</button><button>a</button><button>a</button><button>a</button><button>a</button><button>a</button>
+                    <button v-for="(subclase, i) in subclasesIndex" @click="toggleSubclase(subclase.ruta)">{{
+                        subclase.acortado }}</button>
                 </div>
             </div>
             <div class="table-div">
@@ -101,7 +135,14 @@ onMounted(() => {
                                 :key="j" v-html="parrafo">
                             </p>
                         </div>
-                        <div v-if="rasgo.esSubclase" :id="'subclase' + rasgo.nivel"></div>
+                        <div v-if="rasgo.esSubclase" :id="'subclase' + rasgo.nivel">
+                            <div v-for="(subclase, index) in subclasesCargadas">
+                                <p>{{ subclase.subclase.nombre }}</p>
+                                <div v-for="(rasgoSub, index) in subclase.subclase.rasgos">
+                                    <p v-if="rasgoSub.nivel === rasgo.nivel">{{ rasgoSub.nombre }}</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </details>
             </div>
@@ -151,6 +192,11 @@ onMounted(() => {
 .subclass-buttons {
     background-color: orange;
     gap: 5px;
+}
+
+
+.subclass-buttons button.active {
+    background-color: tomato;
 }
 
 /*=========Subsección arriba (tabla)==========*/

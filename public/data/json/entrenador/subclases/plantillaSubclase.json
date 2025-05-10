@@ -1,0 +1,67 @@
+{
+    "nombre": "",
+    "prerrequisito": "",
+    "nombreClase": "Entrenador",
+    "descripcion": "",
+    "rasgos": [
+        {
+            "nombre": "",
+            "nivel": 2,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "",
+            "tieneSubrasgos": true,
+            "contenido": [
+                {
+                    "nombre": "",
+                    "descripcion": ""
+                }
+            ]
+        },
+        {
+            "nombre": "",
+            "nivel": 5,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "",
+            "contenido": ""
+        },
+        {
+            "nombre": "",
+            "nivel": 8,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "",
+            "tieneSubrasgos": true,
+            "contenido": [
+                {
+                    "nombre": "",
+                    "descripcion": ""
+                }
+            ]
+        },
+        {
+            "nombre": "",
+            "nivel": 13,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "",
+            "tieneSubrasgos": true,
+            "contenido": [
+                {
+                    "nombre": "",
+                    "descripcion": ""
+                }
+            ]
+        },
+        {
+            "nombre": "",
+            "nivel": 17,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "",
+            "tieneSubrasgos": true,
+            "contenido": [
+                {
+                    "nombre": "",
+                    "descripcion": ""
+                }
+            ]
+        }
+    ]
+}
