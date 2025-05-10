@@ -254,11 +254,13 @@
     "subclases": [
         {
             "acortado": "Resiliencia",
-            "completo": "Camino de la Resiliencia"
+            "completo": "Camino de la Resiliencia",
+            "ruta": "resiliencia"
         },
         {
             "acortado": "Bailarín",
-            "completo": "Camino del Bailarín"
+            "completo": "Camino del Bailarín",
+            "ruta": "bailarin"
         }
     ],
     "descripcion": "Los Entrenadores han pasado gran parte de sus vidas estudiando cómo entrenar y dirigir a sus Pokémon. Son expertos en dar órdenes a sus Pokémon y poseen un talento natural para ganarse el respeto de estos.\nLos Pokémon de un Entrenador cuantifican su poder, por lo que los entrenadores brillan especialmente en los combates en los que sólo participan Pokémon y deben tener más cuidado que los miembros de otras Clases en situaciones en las que ellos forman parte activa del combate, pues sus capacidades individuales no suelen estar muy desarrolladas.\nLa siguiente tabla resume los rasgos que gana todo Entrenador a medida en que sube de Nivel.",
