@@ -1197,3 +1197,40 @@
         </div>
     </details>
 </template>
+
+
+<style scoped>
+/* === TABLA DE NATURALEZAS */
+.tablaNaturaleza {
+    overflow: scroll;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.tablaNaturaleza table {
+    border-collapse: collapse;
+    margin: 0 auto;
+}
+
+.tablaNaturaleza td {
+    padding: 5px;
+}
+
+.tablaNaturaleza tr:last-child,
+.progresionPokemon tr:nth-child(2) {
+    border-top: 1px solid rgb(31, 31, 31);
+}
+
+.tablaNaturaleza th {
+    padding: 5px;
+    background-color: var(--color-tabla1);
+}
+
+.tablaNaturaleza td:nth-child(odd) {
+    background-color: var(--color-tabla1);
+}
+
+.tablaNaturaleza td:nth-child(even) {
+    background-color: var(--color-tabla2);
+}
+</style>

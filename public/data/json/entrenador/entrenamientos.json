@@ -1,0 +1,50 @@
+[
+    {
+        "entrenamiento": "A tope!",
+        "descripcion": "Mientras uno de tus Pokémon tenga una de sus velocidades aumentadas gracias a uno de sus Movimientos o Habilidades, deja de provocar Ataques de Oportunidad y, cuando aumenta una de sus velocidades con un Movimiento o se mueve como parte de un Movimiento que usa, el daño base de sus Movimientos aumenta en una cantidad de dados igual a un tercio de tu Bono de Habilidad hasta el final de su próximo turno o hasta que inflijan daño con uno de estos."
+    },
+    {
+        "entrenamiento": "¡Aguante sin par!",
+        "descripcion": "Preparas a tus Pokémon mentalmente para resistir más. Cuando uno de tus Pokémon pasa una Tirada de Salvación provocada por un rival, este gana Puntos de Escudo iguales a tu Bono de Habilidad más tu Bono de Entrenador."
+    },
+    {
+        "entrenamiento": "¡Potencia devastadora!",
+        "descripcion": "Preparas a tus Pokémon para aprovechar sus ventajas para acabar con sus rivales. Cuando tus Pokémon hacen daño Súper efectivo con uno de sus Movimientos, añaden una cantidad de dados a este daño iguales a un tercio de tu Bono de Habilidad."
+    },
+    {
+        "entrenamiento": "¡Aprovecha tu talento!",
+        "descripcion": "Preparas a tus Pokémon para que puedan usar su talento. Cuando uno de tus Pokémon pasa una Tirada de Habilidad, gana Ventaja en la próxima Tirada de Habilidad que usa la misma Estadística que la Tirada de Habilidad que pasó hasta el final de la Escena."
+    },
+    {
+        "entrenamiento": "¡Sigue el ritmo!",
+        "descripcion": "Haces que tus Pokémon practiquen como no dar descanso a sus rivales. Por cada dos Movimientos usados por tus Pokémon cuyas Tiradas de Ataque hayan golpeado a Criaturas rivales desde el principio de la Escena o desde que salieron de la Poké Ball, estos añaden un dado al daño base de sus Movimientos, hasta un máximo de dados igual a la mitad de tu Bono de Habilidad."
+    },
+    {
+        "entrenamiento": "¡Se intocable!",
+        "descripcion": "Preparar a tus Pokémon para evadir y bloquear todos los golpes que les lanzan. Cuando una Tirada de Ataque realizada por una criatura rival a tus Pokémon falla contra estos, la CA de tu Pokémon aumenta en 1 hasta el final de su próximo turno."
+    },
+    {
+        "entrenamiento": "¡Movimientos peligrosos!",
+        "descripcion": "Haces que tus Pokémon practiquen como causar daño explosivo. Tus Pokémon añaden una cantidad de dados al daño base de sus golpes críticos iguales a un tercio de tu Bono de Entrenador."
+    },
+    {
+        "entrenamiento": "¡Movimientos ineludibles!",
+        "descripcion": "Indicas a tus Pokémon cómo hacer que no se puedan evadir sus Movimientos. Cuando una criatura pasa una Tirada de Salvación contra uno de los Movimientos que hace daño de tus Pokémon, esta recibe un cuarto del daño si no fuera a recibir daño por pasarla."
+    },
+    {
+        "entrenamiento": "¡Calibra tu precisión!",
+        "descripcion": "Ayudas a tus Pokémon a prepararse para calibrar sus Movimientos durante el combate. Cuando una Criatura pasa una Tirada de Salvación contra el Movimiento de uno de tus Pokémon que sólo hace objetivo a una criatura, esta criatura tiene un penalizador igual a la mitad de tu Bono de Entrenador hasta el final del próximo turno de tu Pokémon en Tiradas de Salvación provocadas por dicho Movimiento si lo usa tu Pokémon."
+    },
+    {
+        "entrenamiento": "¡Sed imparables!",
+        "descripcion": "Enseñas a tus Pokémon cómo moverse y atacar para generar más inercia en el combate. El Pokémon puede hacerte ganar 2 Puntos de Inercia en cada turno y, si está consciente al final de la ronda, ganas 1 Punto de Inercia.",
+        "esSubclase": true,
+        "subclase": "Mente maestra"
+    },
+    {
+        "entrenamiento": "¡Sed ingeniosos!",
+        "descripcion": "Enseñas a tus Pokémon cómo improvisar estrategias en el momento para que ciertos movimientos les generen una mayor ventaja. Cuando un Pokémon afectado por este entrenamiento usa un Movimiento que no tiene la Etiqueta de Potenciación o Escudo ni hace daño este deja de provocar ataques de oportunidad por el resto del turno y gana Puntos de Escudo iguales a tu Bono de Entrenador.",
+        "esSubclase": true,
+        "subclase": "Manipulador de la inercia"
+    }
+]

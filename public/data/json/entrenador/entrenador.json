@@ -1,0 +1,462 @@
+{
+    "clase": "Entrenador",
+    "estadísticasMasRelevantes": "Mente, Espíritu o Presencia",
+    "vitalidad": 7,
+    "tablaClase": {
+        "titulos": [
+            "Nivel",
+            "Rasgos",
+            "BH",
+            "ME",
+            "Dado de Orden",
+            [
+                "Entrenamientos",
+                "RUTAENTRENAMIENTOS"
+            ],
+            [
+                "Órdenes",
+                "RUTAORDENES"
+            ]
+        ],
+        "filas": [
+            [
+                1,
+                [
+                    "Talento de Entrenador",
+                    "Órdenes de Entrenador"
+                ],
+                1,
+                0,
+                "d6",
+                "-",
+                3
+            ],
+            [
+                2,
+                [
+                    "Mejora de Estadísticas",
+                    "Entrenamientos",
+                    "Filosofía de Entrenamiento"
+                ],
+                1,
+                1,
+                "d6",
+                2,
+                3
+            ],
+            [
+                3,
+                [
+                    "Dote"
+                ],
+                2,
+                1,
+                "d6",
+                2,
+                3
+            ],
+            [
+                4,
+                [
+                    "“Y ahora…”"
+                ],
+                2,
+                1,
+                "d6",
+                2,
+                3
+            ],
+            [
+                5,
+                [
+                    "Rasgo de Filosofía de Entrenamiento"
+                ],
+                3,
+                2,
+                "d6",
+                2,
+                3
+            ],
+            [
+                6,
+                [
+                    "Dote",
+                    "Mejora de Habilidades"
+                ],
+                3,
+                2,
+                "d6",
+                2,
+                3
+            ],
+            [
+                7,
+                [
+                    "Nuevos Entrenamientos y Órdenes",
+                    "Entrenamiento diversificado",
+                    "Orden Insignia"
+                ],
+                4,
+                2,
+                "d8",
+                3,
+                4
+            ],
+            [
+                8,
+                [
+                    "rasgo de Filosofía de Entrenamiento"
+                ],
+                4,
+                3,
+                "d8",
+                3,
+                4
+            ],
+            [
+                9,
+                [
+                    "Dote"
+                ],
+                5,
+                3,
+                "d8",
+                3,
+                4
+            ],
+            [
+                10,
+                [
+                    "Rastreador Pokémon"
+                ],
+                5,
+                3,
+                "d8",
+                3,
+                4
+            ],
+            [
+                11,
+                [
+                    "Doble orden"
+                ],
+                6,
+                4,
+                "d8",
+                3,
+                4
+            ],
+            [
+                12,
+                [
+                    "Dote",
+                    "Mejora de Habilidades"
+                ],
+                6,
+                4,
+                "d8",
+                3,
+                4
+            ],
+            [
+                13,
+                [
+                    "Rasgo de Filosofía de Entrenamiento"
+                ],
+                7,
+                4,
+                "d10",
+                3,
+                4
+            ],
+            [
+                14,
+                [
+                    "Cambio de Plan",
+                    "Más “Y ahora…”"
+                ],
+                7,
+                5,
+                "d10",
+                3,
+                4
+            ],
+            [
+                15,
+                [
+                    "Dote"
+                ],
+                8,
+                5,
+                "d10",
+                3,
+                4
+            ],
+            [
+                16,
+                [
+                    "Entrenamientos personalizados",
+                    "Nuevos Entrenamientos y Órdenes"
+                ],
+                8,
+                5,
+                "d10",
+                4,
+                5
+            ],
+            [
+                17,
+                [
+                    "Rasgo de Filosofía de Entrenamiento"
+                ],
+                9,
+                6,
+                "d10",
+                4,
+                5
+            ],
+            [
+                18,
+                [
+                    "Dote",
+                    "Mejora de Habilidades"
+                ],
+                9,
+                6,
+                "d10",
+                4,
+                5
+            ],
+            [
+                19,
+                [
+                    "Contra Viento y Marea"
+                ],
+                10,
+                6,
+                "d12",
+                4,
+                5
+            ],
+            [
+                20,
+                [
+                    "Movimiento único"
+                ],
+                10,
+                7,
+                "d12",
+                4,
+                5
+            ]
+        ]
+    },
+    "subclases": [
+        {
+            "acortado": "Resiliencia",
+            "completo": "Camino de la Resiliencia"
+        },
+        {
+            "acortado": "Bailarín",
+            "completo": "Camino del Bailarín"
+        }
+    ],
+    "descripcion": "Los Entrenadores han pasado gran parte de sus vidas estudiando cómo entrenar y dirigir a sus Pokémon. Son expertos en dar órdenes a sus Pokémon y poseen un talento natural para ganarse el respeto de estos.\nLos Pokémon de un Entrenador cuantifican su poder, por lo que los entrenadores brillan especialmente en los combates en los que sólo participan Pokémon y deben tener más cuidado que los miembros de otras Clases en situaciones en las que ellos forman parte activa del combate, pues sus capacidades individuales no suelen estar muy desarrolladas.\nLa siguiente tabla resume los rasgos que gana todo Entrenador a medida en que sube de Nivel.",
+    "tiradasSalvacion": {
+        "nombre": "Mejores tiradas de Salvación",
+        "descripcion": "Al elegir esta Clase, te vuelves Maestro en Tiradas de Salvación de Espíritu y Experto en todas las demás."
+    },
+    "rasgos": [
+        {
+            "nombre": "Talento de Entrenador",
+            "claseNombre": "Entrenador",
+            "nivel": 1,
+            "descripcion": "En múltiples instancias a lo largo de la clase se hará referencia a tu Bono de Entrenador. Este bono es igual a tu bono de Mente, Espíritu o Presencia, lo eliges cuando tomas esta clase.\nAdemás, tu poder viene dado por tu capacidad para guiar a tus Pokémon. Puedes calcular tus PP Máximos como tu Nivel más tu Bono de Entrenador en lugar del cálculo normal.\nPor último, tu talento para relacionarte y capturar Pokémon se vuelve superior al de la mayoría. Aumentas tu Grado de Habilidad en Trato Pokémon en 1 hasta un máximo de Experto y puedes añadir tu Bono de Entrenador a las Tiradas de Habilidad de Trato Pokémon en lugar de tu Presencia."
+        },
+        {
+            "nombre": "Órdenes de Entrenador",
+            "claseNombre": "Entrenador",
+            "nivel": 1,
+            "descripcion": "A partir de nivel 1, tienes un entendimiento superior al de la media del combate. Cada vez que das una Orden a un Pokémon a menos de 10 metros de ti, puedes gastar 1 PP y tu Acción para dar una Orden de Entrenador, que hacen que la orden que le has dado tenga efectos especiales. Conoces 3 Órdenes de Entrenador de la Lista de Órdenes de Entrenador que puedes encontrar más adelante y a niveles superiores aprendes más Órdenes de Entrenador.\nLa primera vez en el turno en el que un Pokémon al que has dado una Orden de Entrenador hace daño a otra criatura con Movimiento, lanzas un dado que se añade al daño del Movimiento. Este dado es tu Dado de Orden, que es un d6 y aumenta tal y como puedes ver en la tabla resumen de la Clase. \nAdemás, algunas órdenes dicen que tiras un Dado de Orden en ciertas situaciones y otras hablan de que las Tiradas de Ataque Naturales deben alcanzar tu Rango de Orden. Esto significa que la Tirada Natural debe ser mayor o igual a 21 menos tu Bono de Entrenador."
+        },
+        {
+            "nombre": "Mejoras de Estadísticas",
+            "claseNombre": "Entrenador",
+            "nivel": 2,
+            "descripcion": "A partir del Nivel 2 y luego cada 3 niveles, obtienes una Mejora de Estadísticas (ME), según la tabla de la Clase. Cada vez que recibes una ME, puedes aumentar una Estadística en 1, hasta un máximo de 3 mejoras en la misma Estadística. Luego puedes aplicar una cuarta y quintas ME para volver a aumentar la Estadística en 1 más entre las dos.\nAl subir de Nivel, puedes cambiar que Estadística aumenta una de tus ME."
+        },
+        {
+            "nombre": "Entrenamientos",
+            "claseNombre": "Entrenador",
+            "nivel": 2,
+            "descripcion": "A Nivel 2, sabes cómo preparar a tus Pokémon para los desafíos que os deparan para el día. Una vez al día y como Acción Extendida, puedes entrenar a una a los Pokémon que llevas contigo igual para potenciarlos hasta que los Pokémon Descansen. Aprendes 2 Entrenamientos (puedes encontrarlos al final de la clase en la Lista de Entrenamientos). Puedes cambiar uno de tus Entrenamientos cada vez que subes de Nivel."
+        },
+        {
+            "nombre": "Filosofía de Entrenamiento",
+            "claseNombre": "Entrenador",
+            "nivel": 2,
+            "descripcion": "A nivel 2, eliges una filosofía de entrenamiento. Esta filosofía afecta a los tipos de estrategias que sigues y tu forma de entrenar e interactuar con tus Pokémon. Esta elección te otorga más rasgos en los niveles 5, 8, 13 y 17. ",
+            "esSubclase": true
+        },
+        {
+            "nombre": "Dote",
+            "claseNombre": "Entrenador",
+            "nivel": 3,
+            "descripcion": "A nivel 3, tomas una Dote.",
+            "esDote": true
+        },
+        {
+            "nombre": "“Y ahora…”",
+            "claseNombre": "Entrenador",
+            "nivel": 4,
+            "descripcion": "A nivel 4, aprendes a reconocer los instantes en los que puedes forzar a tus Pokémon a sobrepasar sus límites normales. Como una Acción que tomas después de haber dado una Orden a un Pokémon o como parte de la Acción que tomas cuando das una Orden de Entrenador, puedes dar una segunda Orden a tu Pokémon después de que realice la primera. Si lo haces, tu Pokémon recupera su Acción y ejecuta tu orden. Puedes usar este Rasgo una vez por Escena."
+        },
+        {
+            "nombre": "Rasgo de Filosofía de Entrenamiento",
+            "claseNombre": "Entrenador",
+            "nivel": 5,
+            "descripcion": "A nivel 5, tu maestría en tu Filosofía de Entrenamiento aumenta, lo que te otorga un nuevo rasgo dependiendo de la que eligieras a nivel 2.",
+            "esSubclase": true
+        },
+        {
+            "nombre": "Dote",
+            "claseNombre": "Entrenador",
+            "nivel": 6,
+            "descripcion": "A nivel 6, tomas una Dote.",
+            "esDote": true
+        },
+        {
+            "nombre": "Mejora de Habilidades",
+            "claseNombre": "Entrenador",
+            "nivel": 6,
+            "descripcion": "A nivel 6, te vuelves más hábil. Puedes aumentar tu Grado de Habilidad en 2 tipos de Tiradas de Habilidad hasta un máximo de Experto o de Maestro si eliges una Tirada de Habilidad cuyo Grado de Habilidad has aumentado con uno de tus Rasgos de Clase."
+        },
+        {
+            "nombre": "Nuevos Entrenamientos y Órdenes",
+            "claseNombre": "Entrenador",
+            "nivel": 7,
+            "descripcion": "A nivel 7, aprendes un entrenamiento y una orden más. Además, ganas el Perfeccionamiento de 2 de tus Órdenes de Entrenador, los cuales puedes usar gastando 1 PP cuando das la Orden de Entrenador."
+        },
+        {
+            "nombre": "Entrenamiento Diversificado",
+            "claseNombre": "Entrenador",
+            "nivel": 7,
+            "descripcion": "A partir de nivel 7, eres capaz de entrenar a dos grupos de Pokémon de formas diferentes simultáneamente. Cuando tomas tu Acción Extendida para aplicar un entrenamiento sobre tus Pokémon, puedes elegir dos entrenamientos en lugar de uno y aplicar uno de estos a cada Pokémon que entrenas en lugar de aplicar el mismo a todos."
+        },
+        {
+            "nombre": "Orden insignia ",
+            "claseNombre": "Entrenador",
+            "nivel": 7,
+            "descripcion": "A partir de nivel 7, te vuelves un experto en dar órdenes. Eliges una de las Órdenes de Entrenador que conoces. Esta se vuelve tu Orden Insignia. Usar esta Orden te cuesta 1 PP menos de lo usual."
+        },
+        {
+            "nombre": "Rasgo de Filosofía de Entrenamiento",
+            "claseNombre": "Entrenador",
+            "nivel": 8,
+            "descripcion": "A nivel 8, tu maestría en tu Filosofía de Entrenamiento aumenta, lo que te otorga un nuevo rasgo dependiendo de la que eligieras a nivel 2.",
+            "esSubclase": true
+        },
+        {
+            "nombre": "Dote",
+            "claseNombre": "Entrenador",
+            "nivel": 9,
+            "descripcion": "A nivel 9, tomas una Dote.",
+            "esDote": true
+        },
+        {
+            "nombre": "Rastreador Pokémon",
+            "claseNombre": "Entrenador",
+            "nivel": 10,
+            "descripcion": "A nivel 10, te has vuelto un experto en buscar Pokémon en cualquier entorno. Una vez por día y como Acción Extendida, puedes aprender qué especies Pokémon aparecen comúnmente en un radio en kilómetros a tu alrededor igual a tu Bono de Entrenador.\nAdemás, una vez al día puedes buscar a un espécimen de una especie de Pokémon que sabes que habitan en el área. Haz una tirada de Trato Pokémon (Bono de Entrenador) CD 20. Si la pasas, encuentras pistas que te guían hasta su localización."
+        },
+        {
+            "nombre": "Doble orden",
+            "claseNombre": "Entrenador",
+            "nivel": 11,
+            "descripcion": "A partir del nivel 11, cuando usas una de tus Órdenes de Entrenador, puedes gastar 1 PP adicional para que también reciba el efecto de otra de tus Orden de Entrenador."
+        },
+        {
+            "nombre": "Dote",
+            "claseNombre": "Entrenador",
+            "nivel": 12,
+            "descripcion": "A nivel 12, tomas una Dote.",
+            "esDote": true
+        },
+        {
+            "nombre": "Mejora de Habilidades",
+            "claseNombre": "Entrenador",
+            "nivel": 12,
+            "descripcion": "A nivel 12, te vuelves más hábil. Puedes aumentar tu Grado de Habilidad en 2 tipos de Tiradas de Habilidad hasta un máximo de Experto o de Maestro si eliges una Tirada de Habilidad cuyo Grado de Habilidad has aumentado con uno de tus Rasgos de Clase."
+        },
+        {
+            "nombre": "Rasgo de Filosofía de Entrenamiento",
+            "claseNombre": "Entrenador",
+            "nivel": 13,
+            "descripcion": "A nivel 13, tu maestría en tu Filosofía de Entrenamiento aumenta, lo que te otorga un nuevo rasgo dependiendo de la que eligieras a Nivel 2.",
+            "esSubclase": true
+        },
+        {
+            "nombre": "Cambio de Plan",
+            "claseNombre": "Entrenador",
+            "nivel": 14,
+            "descripcion": "A nivel 14, eres capaz de prever el comportamiento de tus rivales instantes antes de que ocurra. Ganas una de las siguientes Reacciones, que puedes usar por 2 PP:\n¡No dejes que se marche!: Cuando uno de tus Pokémon realice un Ataque de Oportunidad contra una criatura que se aleja de ellos, le indicas que le impida hacerlo. Si la Tirada de Ataque del Ataque de oportunidad golpea, la criatura reduce todas sus velocidades a la mitad hasta el final del turno.\n¡Esquívalo!: Cuando un Movimiento o efecto que hace daño fuerza a uno de tus Pokémon a hacer una Tirada de Salvación de Fuerza, Agilidad o Resistencia o hace una Tirada de Ataque contra este, le indicas cómo evadirlo. Tu Pokémon tiene Ventaja en la Tirada de Salvación o la Criatura que usó el Movimiento tiene Desventaja en la Tirada de Ataque, respectivamente. Además, reduces el daño infligido a tu Pokémon por el Movimiento en una cantidad igual al doble de tu Bono de Entrenador si recibe daño a causa de esta.\n¡Intercepta el golpe!: Cuando un Movimiento que hace una Tirada de Ataque fuese a golpear a una criatura a 2 metros de tu Pokémon, le dices que intercepte el Movimiento y lo bloquee. Si al menos una de sus velocidades no es 0, tu Pokémon se mueve hasta la trayectoria del movimiento y se vuelve el objetivo del Movimiento."
+        },
+        {
+            "nombre": "Más “Y ahora…”",
+            "claseNombre": "Entrenador",
+            "nivel": 14,
+            "descripcion": "A partir de Nivel 14, puedes usar “Y ahora…” 2 veces por Escena, en lugar de una sola vez."
+        },
+        {
+            "nombre": "Dote",
+            "claseNombre": "Entrenador",
+            "nivel": 15,
+            "descripcion": "A nivel 15, tomas una Dote.",
+            "esDote": true
+        },
+        {
+            "nombre": "Entrenamientos PersonalizadosEntrenamientos Personalizados",
+            "claseNombre": "Entrenador",
+            "nivel": 16,
+            "descripcion": "A partir de nivel 16, cuando tomas una Acción Extendida para entrenar a tus Pokémon, puedes elegir un entrenamiento para cada uno de ellos, en lugar de tener que elegir entre dos de los que conoces."
+        },
+        {
+            "nombre": "Nuevos Entrenamientos y Órdenes",
+            "claseNombre": "Entrenador",
+            "nivel": 16,
+            "descripcion": "A partir de nivel 16, aprendes un entrenamiento y una orden nuevos. Además, ganas el Perfeccionamiento de otra de tus Órdenes de Entrenador."
+        },
+        {
+            "nombre": "Rasgo de Filosofía de Entrenamiento",
+            "claseNombre": "Entrenador",
+            "nivel": 17,
+            "descripcion": "A nivel 17, tu maestría en tu Filosofía de Entrenamiento aumenta, lo que te otorga un nuevo rasgo dependiendo de la que eligieras a nivel 2.",
+            "esSubclase": true
+        },
+        {
+            "nombre": "Dote",
+            "claseNombre": "Entrenador",
+            "nivel": 18,
+            "descripcion": "A nivel 18, tomas una Dote.",
+            "esDote": true
+        },
+        {
+            "nombre": "Mejora de Habilidades",
+            "claseNombre": "Entrenador",
+            "nivel": 18,
+            "descripcion": "A nivel 18, te vuelves más hábil. Puedes aumentar tu Grado de Habilidad en 2 tipos de Tiradas de Habilidad hasta un máximo de Maestro o de Legendario si eliges una Tirada de Habilidad cuyo Grado de Habilidad has aumentado con uno de tus Rasgos de Clase."
+        },
+        {
+            "nombre": "Contra Viento y Marea",
+            "claseNombre": "Entrenador",
+            "nivel": 19,
+            "descripcion": "A nivel 19, has luchado incontables batallas junto a tus Pokémon y habéis aprendido a sobreponeros a la adversidad. Cuando tu o uno de tus Pokémon falláis una Tirada de Salvación, puedes gastar 3 PP para que se repita la Tirada."
+        },
+        {
+            "nombre": "Movimientos Insignia",
+            "claseNombre": "Entrenador",
+            "nivel": 20,
+            "descripcion": "A nivel 20, te has vuelto uno de los entrenadores más hábiles del Mundo Pokémon y has aprendido a mejorar los Movimientos que más han practicado tus Pokémon. Como Acción Extendida, puedes enseñar un único Movimiento insignia a cada uno de tus Pokémon. Para crear un Movimiento Insignia, eliges uno de sus Movimientos y aplicas una de las siguientes modificaciones:\nGran Extensión: Si el Movimiento no es cuerpo a cuerpo, el rango aumenta en una cantidad de metros igual a tu Bono de Entrenador. Además, si el movimiento afecta un área, este área crece en una cantidad de metros igual a la mitad de tu Bono de Entrenador.\nPoder Inusitado: Si el Movimiento hace daño, el daño base del movimiento aumenta en 1 dado.\nInstantáneo: Si el Movimiento hace una Tirada de Ataque cuerpo a cuerpo, el coste en PP del movimiento aumenta en 1 y puede usarse como Ataque de Oportunidad y cada vez que se usa otro Movimiento como parte de una Acción. Este movimiento puede usarse una cantidad de veces por Escena igual a la mitad de tu Bono de Entrenador si su versión normal no tiene una limitación mayor."
+        }
+    ]
+}

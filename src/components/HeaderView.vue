@@ -5,7 +5,7 @@ import { ref, watch, onMounted } from 'vue'
 import DarkIcon from '@/assets/icons/DarkIcon.webp' //Modonoche
 import LightIcon from '@/assets/icons/LightIcon.webp' //ModoNoche
 
-import menu from '../data/json/datosMenuHeader.json' //Info submenus
+import menu from '../localData/json/datosMenuHeader.json' //Info submenus
 
 const oscuro = ref(false)
 const icono = ref(LightIcon)
@@ -14,6 +14,8 @@ onMounted(() => {
     oscuro.value = localStorage.getItem('modoOscuro') === 'true'
     icono.value = oscuro.value ? DarkIcon : LightIcon
 })
+
+
 
 
 //TOGGLE MODO OSCURO. TAMBIEN HAY UNA PARTE EN App.vue Y LOS COLORES ESTÁN ALLÍ DUPLICADOS

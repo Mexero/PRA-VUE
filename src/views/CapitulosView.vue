@@ -1,18 +1,16 @@
 <script setup>
-import {RouterLink, RouterView} from 'vue-router'
+import { RouterLink, RouterView } from 'vue-router'
 </script>
 
 
 <template>
-  <div id="capitulos">
-  <RouterView/>  
-  </div>
+
+    <div id="capitulos">
+        <RouterView />
+    </div>
 </template>
 
 <style>
-
-
-
 /* ======================= ASIDE CAPITULOS ======================= */
 
 #menuCapitulos {
@@ -177,6 +175,7 @@ import {RouterLink, RouterView} from 'vue-router'
     display: block;
     margin: 0 auto;
 }
+
 /* Añadir otro media intermedio para el tamaño de letra*/
 @media screen and (max-width:1000px) {
     body {
@@ -294,198 +293,4 @@ import {RouterLink, RouterView} from 'vue-router'
 .consejoCapitulo tr td {
     padding: 5px 10px;
 }
-
-/* === TABLA DE NATURALEZAS */
-.tablaNaturaleza {
-    overflow: scroll;
-    overflow-x: auto;
-    overflow-y: hidden;
-}
-
-.tablaNaturaleza table {
-    border-collapse: collapse;
-    margin: 0 auto;
-}
-
-.tablaNaturaleza td {
-    padding: 5px;
-}
-
-.tablaNaturaleza tr:last-child,
-.progresionPokemon tr:nth-child(2) {
-    border-top: 1px solid rgb(31, 31, 31);
-}
-
-.tablaNaturaleza th {
-    padding: 5px;
-    background-color: var(--color-tabla1);
-}
-
-.tablaNaturaleza td:nth-child(odd) {
-    background-color: var(--color-tabla1);
-}
-
-.tablaNaturaleza td:nth-child(even) {
-    background-color: var(--color-tabla2);
-}
-
-/* Estilos de los bloques de estados */
-.estados {
-    width: 30%;
-    border-radius: 10px;
-    padding-bottom: 15px;
-}
-
-.estadosBloque {
-    margin-top: 30px;
-    gap: 20px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-/* === REDUCIR TAMAÑO BLOQUES ESTADOS */
-@media screen and (max-width:1600px) {
-    .estados {
-        width: 45%;
-    }
-}
-
-@media screen and (max-width:1000px) {
-    .estados {
-        width: 90%;
-    }
-}
-
-#capitulos .estados p,
-#capitulos .estados h2 {
-    color: black;
-}
-
-#capitulos .estados p {
-    padding: 0px 20px;
-}
-
-#capitulos .estados h2 {
-    padding: 5px;
-}
-
-.headerEstados {
-    display: flex;
-    align-items: center;
-    border-bottom: 1px solid black;
-    padding-left: 10px;
-    border-radius: 10px 10px 0 0;
-}
-
-/*  === Colores estados === */
-.helado .headerEstados {
-    background-color: rgb(170, 255, 238);
-}
-
-.helado {
-    background-color: lightcyan;
-}
-
-.quemado .headerEstados {
-    background-color: rgb(255, 130, 81);
-}
-
-.quemado {
-    background-color: lightsalmon;
-}
-
-.paralizado .headerEstados {
-    background-color: rgb(255, 255, 55);
-}
-
-.paralizado {
-    background-color: rgb(255, 255, 103);
-}
-
-.envenenado .headerEstados {
-    background-color: rgb(187, 41, 255);
-}
-
-.envenenado {
-    background-color: rgb(207, 104, 255);
-}
-
-.dormido .headerEstados {
-    background-color: rgb(148, 140, 255);
-}
-
-.dormido {
-    background-color: rgb(173, 197, 230);
-}
-
-.confuso .headerEstados {
-    background-color: palevioletred;
-}
-
-.confuso {
-    background-color: rgb(255, 166, 196);
-}
-
-.infatuado .headerEstados {
-    background-color: rgb(255, 0, 204);
-}
-
-.infatuado {
-    background-color: rgb(255, 163, 237);
-}
-
-.asustado .headerEstados {
-    background-color: gray;
-}
-
-.asustado {
-    background-color: lightgray;
-}
-
-.enfurecido .headerEstados {
-    background-color: red;
-}
-
-.enfurecido {
-    background-color: rgb(255, 72, 72);
-}
-
-.acalorado .headerEstados {
-    background-color: rgb(255, 38, 0);
-}
-
-.acalorado {
-    background-color: rgb(251, 101, 75);
-}
-
-.empapado .headerEstados {
-    background-color: rgb(50, 163, 255);
-}
-
-.empapado .headerEstados {
-    background-color: rgb(72, 135, 218);
-}
-
-.empapado {
-    background-color: rgb(146, 193, 255);
-}
-
-.cegado .headerEstados {
-    background-color: rgb(60, 56, 96);
-}
-
-.cegado {
-    background-color: rgb(121, 118, 146);
-}
-
-.generico .headerEstados {
-    background-color: rgb(125, 125, 125);
-}
-
-.generico {
-    background-color: rgb(202, 202, 202);
-}
-
-
 </style>

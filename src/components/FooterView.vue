@@ -22,7 +22,7 @@ import { RouterLink } from 'vue-router'
 </template>
 
 
-<style>
+<style scoped>
 /* ======================= FOOTER ======================= */
 footer {
   z-index: 100;

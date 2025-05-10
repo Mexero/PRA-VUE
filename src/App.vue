@@ -58,6 +58,3 @@ onBeforeUnmount(() => {
   <FooterView />
 
 </template>
-
-
-<style scoped></style>
