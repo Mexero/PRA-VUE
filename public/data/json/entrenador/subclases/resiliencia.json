@@ -2,14 +2,18 @@
     "nombre": "Camino de la Resiliencia",
     "prerrequisito": "Tu Bono de Entrenador es tu Espíritu.",
     "nombreClase": "Entrenador",
-    "descripcion": "Los entrenadores que siguen esta filosofía creen que el camino a la victoria es el esfuerzo y la perseverancia. Estos entrenadores son capaces aceptar la derrota y de canalizarla para aprender y mejorar gracias a ella, sin embargo, no por ser capaces de aceptarla es que no vayan a luchar por evitarla. Estos entrenadores y sus Pokémon se hacen conocer gracias a su increíble resistencia y su inusual capacidad para convertir las situaciones más desfavorables en momentos de crecimiento y superación de sus propios límites.",
+    "descripcion": [
+        "Los entrenadores que siguen esta filosofía creen que el camino a la victoria es el esfuerzo y la perseverancia. Estos entrenadores son capaces aceptar la derrota y de canalizarla para aprender y mejorar gracias a ella, sin embargo, no por ser capaces de aceptarla es que no vayan a luchar por evitarla. Estos entrenadores y sus Pokémon se hacen conocer gracias a su increíble resistencia y su inusual capacidad para convertir las situaciones más desfavorables en momentos de crecimiento y superación de sus propios límites."
+    ],
     "rasgos": [
         {
             "nombre": "Esfuerzo y perseverancia",
             "nivel": 2,
             "nombreClase": "Entrenador",
             "nombreSubclase": "Camino de la Resiliencia",
-            "contenido": "A partir de nivel 2, tu y tus Pokémon entrenáis con tanto esfuerzo que habéis aprendido a sobrepasar vuestros límites con puro esfuerzo y fuerza de voluntad. Cuando tu o tus Pokémon tenéis Puntos de Escudo, añadís la mitad de tu Bono de Entrenador a las Tiradas de Salvación que hacéis."
+            "contenido": [
+                "A partir de nivel 2, tu y tus Pokémon entrenáis con tanto esfuerzo que habéis aprendido a sobrepasar vuestros límites con puro esfuerzo y fuerza de voluntad. Cuando tu o tus Pokémon tenéis Puntos de Escudo, añadís la mitad de tu Bono de Entrenador a las Tiradas de Salvación que hacéis."
+            ]
         },
         {
             "nombre": "Tutor de la Resiliencia",
@@ -43,7 +47,9 @@
             "nivel": 17,
             "nombreClase": "Entrenador",
             "nombreSubclase": "Camino de la Resiliencia",
-            "contenido": "A nivel 17, cuando tú y tus Pokémon os encontráis en un aprieto es cuando más poderosos sois. Cuando tu o uno de tus Pokémon caéis a 1 PV ganáis 20 Puntos de Escudo y mientras tenéis sólo 1 PV, tenéis Ventaja en todas las Tiradas de d20 que hacéis."
+            "contenido": [
+                "A nivel 17, cuando tú y tus Pokémon os encontráis en un aprieto es cuando más poderosos sois. Cuando tu o uno de tus Pokémon caéis a 1 PV ganáis 20 Puntos de Escudo y mientras tenéis sólo 1 PV, tenéis Ventaja en todas las Tiradas de d20 que hacéis."
+            ]
         }
     ]
 }

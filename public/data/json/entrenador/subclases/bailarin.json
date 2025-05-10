@@ -1,8 +1,10 @@
 {
     "nombre": "Camino del Bailarín",
-    "prerrequisito": ": Tu bono de Entrenador es Presencia.",
+    "prerrequisito": "Tu bono de Entrenador es Presencia.",
     "nombreClase": "Entrenador",
-    "descripcion": "Los entrenadores que siguen el Camino del Bailarín no sólo destacan por saber entrenar y guiar a sus compañeros Pokémon, sino que sus talentos en la danza también los hacen resaltar. Usualmente, los entrenadores que siguen este camino deambulan por el mundo para exponer sus dotes de danza al mundo, no solo en el escenario, sino también en el combate, en el que participan de forma activa, luchando codo con codo con sus compañeros con movimientos coreografiados y ágiles. ",
+    "descripcion": [
+        "Los entrenadores que siguen el Camino del Bailarín no sólo destacan por saber entrenar y guiar a sus compañeros Pokémon, sino que sus talentos en la danza también los hacen resaltar. Usualmente, los entrenadores que siguen este camino deambulan por el mundo para exponer sus dotes de danza al mundo, no solo en el escenario, sino también en el combate, en el que participan de forma activa, luchando codo con codo con sus compañeros con movimientos coreografiados y ágiles. "
+    ],
     "rasgos": [
         {
             "nombre": "Camino del Bailarín 2",
@@ -32,7 +34,9 @@
             "nivel": 5,
             "nombreClase": "Entrenador",
             "nombreSubclase": "Camino del Bailarín",
-            "contenido": "A nivel 5, aprendes otra variación de Baile. Cuando usas tu Acción para dar una Orden de Entrenador y estás Bailando, puedes usar 1 PP más del coste normal de un Movimiento de Bailarín que conoces y que usa tu Acción para usarlo como parte de esta misma Acción. "
+            "contenido": [
+                "A nivel 5, aprendes otra variación de Baile. Cuando usas tu Acción para dar una Orden de Entrenador y estás Bailando, puedes usar 1 PP más del coste normal de un Movimiento de Bailarín que conoces y que usa tu Acción para usarlo como parte de esta misma Acción. "
+            ]
         },
         {
             "nombre": "Camino del Bailarín 8",
@@ -43,11 +47,15 @@
             "contenido": [
                 {
                     "nombre": "Danza de Poder",
-                    "descripcion": "A partir de nivel 8, tu habilidad en la danza aumenta. Aprendes los Movimientos Danza aleteo, Danza espada y Danza dragón. Estos cuentan como Movimientos de Bailarín para ti."
+                    "descripcion": [
+                        "A partir de nivel 8, tu habilidad en la danza aumenta. Aprendes los Movimientos Danza aleteo, Danza espada y Danza dragón. Estos cuentan como Movimientos de Bailarín para ti."
+                    ]
                 },
                 {
                     "nombre": "Tutor de Baile",
-                    "descripcion": "A partir de nivel 8, enseñas a los Pokémon a acompañarte en tu baile. Como una Acción Extendida que dura al menos una hora, puedes enseñar a un Pokémon la Danza que conoces por el Rasgo Danza de Poder si pertenece a su lista de Movimientos Enseñables. Además, puedes enseñar a uno de tus Pokémon el Movimiento Baile (pero no sus variaciones) a tus Pokémon incluso si no este no está en su lista de Movimientos Enseñables."
+                    "descripcion": [
+                        "A partir de nivel 8, enseñas a los Pokémon a acompañarte en tu baile. Como una Acción Extendida que dura al menos una hora, puedes enseñar a un Pokémon la Danza que conoces por el Rasgo Danza de Poder si pertenece a su lista de Movimientos Enseñables. Además, puedes enseñar a uno de tus Pokémon el Movimiento Baile (pero no sus variaciones) a tus Pokémon incluso si no este no está en su lista de Movimientos Enseñables."
+                    ]
                 }
             ]
         },
@@ -56,14 +64,18 @@
             "nivel": 13,
             "nombreClase": "Entrenador",
             "nombreSubclase": "Camino del Bailarín",
-            "contenido": "Desde nivel 13, aprendes a bailar de forma más sincronizada con tus Pokémon. Aprendes otra variación de Baile y ganas la Habilidad Pareja de Baile. Además, tus Pokémon ganan la Habilidad Pareja de Baile como una de sus Habilidades Ocultas."
+            "contenido": [
+                "Desde nivel 13, aprendes a bailar de forma más sincronizada con tus Pokémon. Aprendes otra variación de Baile y ganas la Habilidad Pareja de Baile. Además, tus Pokémon ganan la Habilidad Pareja de Baile como una de sus Habilidades Ocultas."
+            ]
         },
         {
             "nombre": "Coreografía Imparable",
             "nivel": 17,
             "nombreClase": "Entrenador",
             "nombreSubclase": "Camino del Bailarín",
-            "contenido": "Desde nivel 17, cuando estas Bailando, te vuelves inmune a ser agarrado y apresado y dejas de provocar ataques de oportunidad. Cuando tus Pokémon usan un Movimiento con la Etiqueta de Danza, ellos también ganan este beneficio, pero sólo hasta el principio de su próximo turno."
+            "contenido": [
+                "Desde nivel 17, cuando estas Bailando, te vuelves inmune a ser agarrado y apresado y dejas de provocar ataques de oportunidad. Cuando tus Pokémon usan un Movimiento con la Etiqueta de Danza, ellos también ganan este beneficio, pero sólo hasta el principio de su próximo turno."
+            ]
         }
     ]
 }
