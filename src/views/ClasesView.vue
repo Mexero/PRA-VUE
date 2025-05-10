@@ -12,7 +12,6 @@ const rasgos = ref([]);
 const subclasesIndex = ref([]);
 const subclasesCargadas = ref([]);
 
-let ResetBotonesSubclasesAlCambiarClase = false; //Poner esta key a todo lo que quieras que se resetee del todo al cargar otra clase. SOLO IMPRESCINDIBLE
 
 
 //=============FETCH Y MANIPULACIÓN DE DATOS===========
@@ -41,7 +40,6 @@ async function cargarClase(clase) {
     } catch (err) {
         console.error("Error al cargar clase:", err);
     }
-    ResetBotonesSubclasesAlCambiarClase = !ResetBotonesSubclasesAlCambiarClase; //Al cargar
 
     console.timeEnd('fetchData');
 }
@@ -51,9 +49,9 @@ async function toggleSubclase(ruta, e) {
 
     if (existente) {
         existente.activo = !existente.activo;
-        if (existente.activo) { e.target.className = "btn-active" }
+        if (existente.activo) { e.target.className = "class-active" }
         else {
-            e.target.className = "btn-inactive"
+            e.target.className = "class-inactive"
         }
     } else {
         const datosSubclase = await fetch(`/data/json/${claseCargada.value}/subclases/${ruta}.json`)
@@ -70,25 +68,11 @@ async function toggleSubclase(ruta, e) {
                 subclase: datosSubclase
             });
             console.log(`Cargado ${ruta}`)
-            e.target.className = "btn-active"
+            e.target.className = "class-active"
         }
     }
 
 }
-
-
-//esto no funciona aun
-function isSubclassLoaded(ruta) {
-    const subclase = subclasesCargadas.value.find(s => s.ruta === ruta);
-    if (subclase && subclase.activo)
-        return true
-    else {
-        return false
-    }
-
-}
-
-
 
 //==============EN CARGA===========
 onMounted(() => {
@@ -102,22 +86,59 @@ onMounted(() => {
 <template>
     <div class="container">
         <div class="top-section">
+            <div class="classes">
+                <div @click="cargarClase('entrenador')"
+                    :class="claseCargada === 'entrenador' ? 'class-active' : 'class-inactive'">Entrenador
+                    <div class="subclasses" v-if="claseCargada === 'entrenador'">
+                        <div v-for="(subclase) in subclasesIndex" @click="e => (toggleSubclase(subclase.ruta, e))">{{
+                            subclase.acortado }}</div>
+                    </div>
+                </div>
+                <div @click="console.log(' pinga')"
+                    :class="claseCargada === 'inventor' ? 'class-active' : 'class-inactive'">Inventor
+                    <div class="subclasses" v-if="claseCargada === 'inventor'">
+                        <div v-for="(subclase) in subclasesIndex" @click="e => (toggleSubclase(subclase.ruta, e))">{{
+                            subclase.acortado }}</div>
+                    </div>
+                </div>
+                <div @click="console.log(' pinga')"
+                    :class="claseCargada === 'mentalista' ? 'class-active' : 'class-inactive'">Mentalista
+                    <div class="subclasses" v-if="claseCargada === 'mentalista'">
+                        <div v-for="(subclase) in subclasesIndex" @click="e => (toggleSubclase(subclase.ruta, e))">{{
+                            subclase.acortado }}</div>
+                    </div>
+                </div>
+                <div @click="cargarClase('luchador')"
+                    :class="claseCargada === 'luchador' ? 'class-active' : 'class-inactive'">Luchador
+                    <div class="subclasses" v-if="claseCargada === 'luchador'">
+                        <div v-for="(subclase) in subclasesIndex" @click="e => (toggleSubclase(subclase.ruta, e))">{{
+                            subclase.acortado }}</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu">
+
+
+            </div>
+
+            <!--
             <div class="buttons">
                 <div class="class-buttons">
                     <button @click="cargarClase('entrenador')"
-                        :class="claseCargada === 'entrenador' ? 'btn-active' : 'btn-inactive'">Entrenador</button><br>
+                        :class="claseCargada === 'entrenador' ? 'class-active' : 'class-inactive'">Entrenador</button>
                     <button @click="console.log(' pinga')"
-                        :class="claseCargada === 'inventor' ? 'btn-active' : 'btn-inactive'">Inventor NO VA</button>
+                        :class="claseCargada === 'inventor' ? 'class-active' : 'class-inactive'">Inventor</button>
                     <button @click="console.log(' pinga')"
-                        :class="claseCargada === 'mentalista' ? 'btn-active' : 'btn-inactive'">Mentalista NO VA</button>
+                        :class="claseCargada === 'mentalista' ? 'class-active' : 'class-inactive'">Mentalista</button>
                     <button @click="cargarClase('luchador')"
-                        :class="claseCargada === 'luchador' ? 'btn-active' : 'btn-inactive'">Luchador</button>
+                        :class="claseCargada === 'luchador' ? 'class-active' : 'class-inactive'">Luchador</button>
                 </div>
                 <div class="subclass-buttons" :key="ResetBotonesSubclasesAlCambiarClase">
                     <button v-for="(subclase) in subclasesIndex" @click="e => (toggleSubclase(subclase.ruta, e))">{{
                         subclase.acortado }}</button>
                 </div>
-            </div>
+            </div>-->
             <div class="table-div">
                 <!-- Tabla de clase -->
                 <table v-if="tabla.titulos.length">
@@ -158,22 +179,23 @@ onMounted(() => {
         <div class="bottom-section">
             <!-- Rasgos -->
             <div>
-                <p v-for="(parrafo) in Array.isArray(descripcion) ? descripcion : [descripcion]" v-html="parrafo"></p>
+                <p v-for="(parrafo) in Array.isArray(descripcion) ? descripcion : [descripcion]" class="description"
+                    v-html="parrafo"></p>
 
-                <details open>
-                    <summary class="featureHead">{{ tiradas.nombre }}</summary>
-                    <div class="detailsBlock">
+                <details class="feature" open>
+                    <summary>{{ tiradas.nombre }}</summary>
+                    <div>
                         <p v-for="(parrafo) in Array.isArray(tiradas.descripcion) ? tiradas.descripcion : [tiradas.descripcion]"
-                            v-html="parrafo" class="classData"></p>
+                            v-html="parrafo"></p>
                     </div>
                 </details>
 
-                <details v-for="(rasgo, i) in rasgos" :key="i" open>
-                    <summary :id="rasgo.nombre + rasgo.nivel" class="featureHead">
+                <details v-for="(rasgo, i) in rasgos" :key="i" class="feature" open>
+                    <summary :id="rasgo.nombre + rasgo.nivel">
                         {{ rasgo.nombre }}
                     </summary>
                     <div class="detailsBlock">
-                        <p class="classData">{{ rasgo.claseNombre }} {{ rasgo.nivel }}</p>
+                        <p class="feature-origin">{{ rasgo.claseNombre }} {{ rasgo.nivel }}</p>
                         <div>
                             <p v-for="(parrafo, j) in Array.isArray(rasgo.descripcion) ? rasgo.descripcion : [rasgo.descripcion]"
                                 :key="j" v-html="parrafo">
@@ -185,14 +207,16 @@ onMounted(() => {
                                 <template v-if="subclase.activo">
                                     <template v-for="(rasgoSub) in subclase.subclase.rasgos">
                                         <div v-if="rasgoSub.nivel === rasgo.nivel">
-                                            <details open>
+                                            <details class="featureSub" open>
                                                 <summary>{{ rasgoSub.nombre }}</summary>
-                                                <p>{{ rasgoSub.nombreSubclase }} {{ rasgo.nivel }}</p>
+                                                <p class="feature-origin">{{ rasgoSub.nombreSubclase }} {{ rasgo.nivel
+                                                }}</p>
                                                 <!-- tiene más de 1 rasgo al nivel -->
                                                 <template v-if="rasgoSub.tieneSubrasgos">
                                                     <div v-for="(subrasgo) in rasgoSub.contenido">
-                                                        <details open>
-                                                            <summary>{{ subrasgo.nombre }}</summary>
+                                                        <details class="featureSubSub" open>
+                                                            <summary>{{ subrasgo.nombre }}
+                                                            </summary>
                                                             <p v-for="(parrafo) in Array.isArray(subrasgo.descripcion) ? subrasgo.descripcion : [subrasgo.descripcion]"
                                                                 v-html="parrafo">
                                                             </p>
@@ -219,26 +243,33 @@ onMounted(() => {
 
 
 <style scoped>
+* {
+    font-size: 14px;
+    color: var(--color-texto)
+}
+
 .container {
     display: flex;
     flex-direction: column;
-    padding: 0 max(20px, 10%);
+    padding: 0 15%;
     font-family: sans-serif;
+    min-height: 100vh;
+    background-color: var(--color-fondo);
 }
 
 /*=========PARTE DE ARRIBA==========*/
 
 .top-section {
-    background-color: lightblue;
     display: flex;
     justify-content: space-around;
-    margin-bottom: 20px;
+    margin: 30px 0;
 }
 
 
 /*=========Subsección arriba (botones)==========*/
-.buttons {
+.classes {
     width: 150px;
+    padding: 10px 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -247,52 +278,56 @@ onMounted(() => {
 }
 
 
-.buttons button {
-    width: 100px;
-}
+.classes div {
+    margin: none;
+    border-radius: 5px;
+    margin: 5px;
+    background-color: var(--color-segundario);
 
-.class-buttons {
-    background-color: red;
-    gap: 5px;
-}
-
-.subclass-buttons {
-    background-color: orange;
-    gap: 5px;
 }
 
 
-.btn-active {
-    background-color: tomato;
+.classes .class-active {
+    background-color: var(--color-principal1);
 }
 
 /*=========Subsección arriba (tabla)==========*/
 .table-div {
     width: 700px;
+    overflow-x: auto;
 }
 
 table {
+    border-radius: 2px;
     width: 100%;
-    font-size: 14px;
     border-collapse: collapse;
 }
 
 th,
 td {
     padding: 2px 5px;
+    text-align: center;
+}
+
+td:nth-child(2) {
     text-align: left;
 }
 
+th a,
+td a {
+    text-decoration: underline dotted lightgray;
+}
+
 tr {
-    background-color: aqua;
+    background-color: var(--color-hoverBloque);
 }
 
 thead tr {
-    background-color: yellow;
+    background-color: var(--color-tabla1);
 }
 
 tr:nth-of-type(2n) {
-    background-color: blue;
+    background-color: var(--color-tabla2);
 }
 
 
@@ -302,36 +337,63 @@ tr:nth-of-type(2n) {
 
 /*=========PARTE DE ABAJO==========*/
 .bottom-section {
-    background-color: lightblue;
+    background-color: var(--color-fondoTexto);
+    border-radius: 10px;
     display: flex;
     flex-direction: column;
     gap: 10px;
-    padding-bottom: 15px;
+    padding: 15px 10px 0;
+    text-align: justify;
+    margin-bottom: 20px;
 }
 
 
-details {
-    padding-top: 15px;
+.description {
+    margin-left: 10px;
 }
 
-.detailsBlock>p {
+.feature-origin {
     font-style: italic;
     padding: 5px 0;
 }
 
-summary {
-    border-radius: 5px;
-    color: var(--color-texto);
-    font-size: 25px;
-    font-weight: bold;
-    padding: 10px 0 10px 10px;
-    cursor: pointer;
+.feature summary,
+.featureSub summary,
+.featureSubSub summary {
     background-color: var(--color-principal1);
+    padding: 5px 0 5px 5px;
+    margin-top: 15px;
+    border-radius: 5px;
+    text-align: left;
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--color-texto);
+    cursor: pointer;
+}
+
+.feature p {
+    margin-left: 10px;
 }
 
 
+.featureSub summary {
+    font-size: 16px;
+    background-color: var(--color-principal2);
+}
 
+.featureSubSub {
+    margin-left: 20px;
+}
 
+.featureSubSub summary {
+
+    font-size: 16px;
+    background-color: var(--color-segundario);
+}
+
+::v-deep li {
+    margin-left: 20px;
+}
 
 
 @media (max-width:1100px) {
@@ -341,9 +403,34 @@ summary {
         align-items: center;
     }
 
-    .buttons {
-        width: 400px;
+    .classes {
+        width: 700px;
         align-items: center;
     }
+
+}
+
+@media (max-width:850px) {
+    * {
+        font-size: 12px;
+    }
+
+    table {
+        font-size: 10px;
+    }
+
+    .feature summary {
+        font-size: 16px;
+    }
+
+    .feaureSub summary,
+    .featureSubSub summary {
+        font-size: 14px;
+    }
+
+    .container {
+        padding: 0 20px;
+    }
+
 }
 </style>
