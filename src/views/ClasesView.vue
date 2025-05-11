@@ -1,9 +1,13 @@
 <script setup>
 import { onMounted, ref } from 'vue';
-import { useRouter } from 'vue-router';
+import { useRouter, useRoute } from 'vue-router';
 
-const router = useRouter()
+//Navegación
+const router = useRouter();
+const route = useRoute();
 
+
+//Almacén de datos
 const claseCargada = ref('');
 const tabla = ref({ titulos: [], filas: [] });
 const descripcion = ref([]);
@@ -18,7 +22,7 @@ const subclasesCargadas = ref([]);
 async function cargarClase(clase) {
     if (clase === claseCargada.value) {
         console.log("No se ha cargado la clase porque ya estaba cargada...");
-        return 1;
+        return 0;
     }
     console.time('fetchData');
     try {
@@ -37,6 +41,9 @@ async function cargarClase(clase) {
         tiradas.value = data.tiradasSalvacion;
         rasgos.value = data.rasgos;
         subclasesIndex.value = data.subclases;
+
+        //Cambio ruta
+        handleClassChange(claseCargada.value);
     } catch (err) {
         console.error("Error al cargar clase:", err);
     }
@@ -79,6 +86,13 @@ onMounted(() => {
     cargarClase('entrenador');
 
 });
+
+
+//==============CAMBIO DE RUTA AL CAMBIAR CLASE===========
+function handleClassChange(claseNueva) {
+    router.push({ query: { clase: claseNueva } })
+}
+
 
 </script>
 
@@ -210,7 +224,7 @@ onMounted(() => {
                                             <details class="featureSub" open>
                                                 <summary>{{ rasgoSub.nombre }}</summary>
                                                 <p class="feature-origin">{{ rasgoSub.nombreSubclase }} {{ rasgo.nivel
-                                                }}</p>
+                                                    }}</p>
                                                 <!-- tiene más de 1 rasgo al nivel -->
                                                 <template v-if="rasgoSub.tieneSubrasgos">
                                                     <div v-for="(subrasgo) in rasgoSub.contenido">
