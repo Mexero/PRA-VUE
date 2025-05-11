@@ -7,25 +7,23 @@ const router = useRouter()
 
 
 
-// ======================== AQUÍ ESTÁ LA INFO DE LOS DATOS ========================
+// ======================== DATOS ========================
+
+//Datos principales
 const objetos = ref([])
 const objetoSeleccionado = ref(null)
 const mostrarFiltros = ref(false)
 
-// ================ SELECCIÓN FILTROS DESDE LA RUTA =====================
+//Filtros
 const filtroTipos = ref(route.query.tipos ? route.query.tipos.split(',') : [])
 const filtroRarezas = ref(route.query.rareza ? route.query.rareza.split(',') : [])
-const filtroCoste = ref(route.query.coste !== undefined ? route.query.coste === 'true' : null)
 const filtroPrecioMin = ref(route.query.precioMin ? Number(route.query.precioMin) : null)
 filtroPrecioMin.value = isNaN(filtroPrecioMin.value) ? null : filtroPrecioMin.value
 const filtroPrecioMax = ref(route.query.precioMax ? Number(route.query.precioMax) : null)
 filtroPrecioMax.value = isNaN(filtroPrecioMax.value) ? null : filtroPrecioMax.value
 const filtroNombre = ref(route.query.nombre || '')
-const filtroNombreInput = ref(filtroNombre.value)
 
-
-
-// ============= GUARDA INFO DE CÓMO ESTÁ ORDENADA LA TABLA DESDE LA RUTA =================
+//Orden de tabla
 const ordenColumna = ref(route.query.ordenColumna || '')
 const ordenAscendente = ref(route.query.ordenAscendente !== 'false')
 
@@ -45,16 +43,13 @@ function seleccionarObjeto(objeto) {
 }
 
 
-
 // ======================== LIMPIAR FILTROS ============================
 function limpiarFiltros() {
     filtroTipos.value = []
     filtroRarezas.value = []
-    filtroCoste.value = null
     filtroPrecioMin.value = null
     filtroPrecioMax.value = null
     filtroNombre.value = ''
-    filtroNombreInput.value = ''
     ordenColumna.value = ''
     ordenAscendente.value = true
     objetoSeleccionado.value = null
@@ -72,7 +67,6 @@ const rarezasUnicas = computed(() => [...new Set(objetos.value.map(o => o.Rareza
 watch([
     filtroTipos,
     filtroRarezas,
-    filtroCoste,
     filtroPrecioMin,
     filtroPrecioMax,
     filtroNombre,
@@ -82,7 +76,6 @@ watch([
     const query = {
         tipos: filtroTipos.value.length ? filtroTipos.value.join(',') : undefined,
         rareza: filtroRarezas.value.length ? filtroRarezas.value.join(',') : undefined,
-        coste: filtroCoste.value !== null ? filtroCoste.value : undefined,
         precioMin: filtroPrecioMin.value !== null ? filtroPrecioMin.value : undefined,
         precioMax: filtroPrecioMax.value !== null ? filtroPrecioMax.value : undefined,
         nombre: filtroNombre.value || undefined,
@@ -98,10 +91,10 @@ watch([
 // =============== LÓGICA DE CAMBIAR ORDENAMIENTO ==================
 function ordenarPor(columna) {
     if (ordenColumna.value === columna) {
-        ordenAscendente.value = !ordenAscendente.value
+        ordenAscendente.value = !ordenAscendente.value;
     } else {
-        ordenColumna.value = columna
-        ordenAscendente.value = true
+        ordenColumna.value = columna;
+        ordenAscendente.value = true;
     }
 }
 
@@ -110,15 +103,14 @@ function ordenarPor(columna) {
 // ========================= APLICAR FILTROS A TABLA Y ORDENAR ===========================
 const objetosFiltrados = computed(() => {
     let resultado = objetos.value.filter(obj => {
-        const coste = obj.Coste ?? null
-        const nombre = obj.Nombre.toLowerCase()
+        const coste = obj.Coste ?? null;
+        const nombre = obj.Nombre.toLowerCase();
 
 
         //Expresión lógica infernal        
         return (
             (!filtroTipos.value.length || filtroTipos.value.includes(obj.Tipo)) &&
             (!filtroRarezas.value.length || filtroRarezas.value.includes(obj.Rareza)) &&
-            (filtroCoste.value === null || (filtroCoste.value ? coste !== null : coste === null)) &&
             (filtroPrecioMin.value === null || coste >= filtroPrecioMin.value) &&
             (filtroPrecioMax.value === null || coste <= filtroPrecioMax.value) &&
             (!filtroNombre.value || nombre.includes(filtroNombre.value.toLowerCase()))
@@ -126,11 +118,11 @@ const objetosFiltrados = computed(() => {
     })
 
 
-    //ORDENAR
+    //ordenar
     if (ordenColumna.value) {
         resultado.sort((a, b) => {
-            const aVal = a[ordenColumna.value]
-            const bVal = b[ordenColumna.value]
+            const aVal = a[ordenColumna.value];
+            const bVal = b[ordenColumna.value];
 
             if (aVal === undefined || aVal === null) return 1
             if (bVal === undefined || bVal === null) return -1
@@ -141,7 +133,7 @@ const objetosFiltrados = computed(() => {
 
             return ordenAscendente.value
                 ? String(aVal).localeCompare(String(bVal))
-                : String(bVal).localeCompare(String(aVal))
+                : String(bVal).localeCompare(String(aVal));
         })
     }
 
@@ -153,6 +145,8 @@ const objetosFiltrados = computed(() => {
 
 
 <template>
+
+    <!--FILTROS-->
     <div class="filtros">
         <div>
             <button @click="mostrarFiltros = !mostrarFiltros">
@@ -181,8 +175,6 @@ const objetosFiltrados = computed(() => {
                 </div>
             </div>
 
-
-
             <input type="number" v-model.number="filtroPrecioMin" placeholder="Precio mínimo" />
             <input type="number" v-model.number="filtroPrecioMax" placeholder="Precio máximo" />
         </div>
@@ -193,10 +185,13 @@ const objetosFiltrados = computed(() => {
             </button>
         </div>
 
-
     </div>
 
+
+
     <div class="cuerpo">
+
+        <!--TABLA-->
         <div class="div-tabla">
             <table class="tabla">
                 <thead>
@@ -217,7 +212,7 @@ const objetosFiltrados = computed(() => {
                 </tbody>
             </table>
         </div>
-
+        <!--SELECCIONADO-->
         <div v-if="objetoSeleccionado" class="seleccionado">
             <h2>{{ objetoSeleccionado.Nombre }}</h2>
             <p><strong>Descripción:</strong> {{ objetoSeleccionado.Descripcion }}</p>
