@@ -136,23 +136,6 @@ function handleClassChange(claseNueva) {
 
             </div>
 
-            <!--
-            <div class="buttons">
-                <div class="class-buttons">
-                    <button @click="cargarClase('entrenador')"
-                        :class="claseCargada === 'entrenador' ? 'class-active' : 'class-inactive'">Entrenador</button>
-                    <button @click="console.log(' pinga')"
-                        :class="claseCargada === 'inventor' ? 'class-active' : 'class-inactive'">Inventor</button>
-                    <button @click="console.log(' pinga')"
-                        :class="claseCargada === 'mentalista' ? 'class-active' : 'class-inactive'">Mentalista</button>
-                    <button @click="cargarClase('luchador')"
-                        :class="claseCargada === 'luchador' ? 'class-active' : 'class-inactive'">Luchador</button>
-                </div>
-                <div class="subclass-buttons" :key="ResetBotonesSubclasesAlCambiarClase">
-                    <button v-for="(subclase) in subclasesIndex" @click="e => (toggleSubclase(subclase.ruta, e))">{{
-                        subclase.acortado }}</button>
-                </div>
-            </div>-->
             <div class="table-div">
                 <!-- Tabla de clase -->
                 <table v-if="tabla.titulos.length">
@@ -224,7 +207,7 @@ function handleClassChange(claseNueva) {
                                             <details class="featureSub" open>
                                                 <summary>{{ rasgoSub.nombre }}</summary>
                                                 <p class="feature-origin">{{ rasgoSub.nombreSubclase }} {{ rasgo.nivel
-                                                    }}</p>
+                                                }}</p>
                                                 <!-- tiene más de 1 rasgo al nivel -->
                                                 <template v-if="rasgoSub.tieneSubrasgos">
                                                     <div v-for="(subrasgo) in rasgoSub.contenido">
