@@ -3,6 +3,7 @@ import { RouterLink, RouterView } from 'vue-router'
 import { onMounted, onBeforeUnmount } from 'vue'
 import HeaderView from './components/HeaderView.vue'
 import FooterView from './components/FooterView.vue'
+import NavView from './components/NavView.vue'
 
 
 
@@ -51,10 +52,8 @@ onBeforeUnmount(() => {
 
 <template>
   <HeaderView />
-
+  <NavView />
   <RouterView />
 
-
   <FooterView />
-
 </template>
