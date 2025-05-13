@@ -1,5 +1,5 @@
 :root {
-  --color-texto: white;
+ /* --color-texto: white;
   --color-icon: invert(100%);
   --color-fondo: #17171e;
   --color-header: #2B2D42;
@@ -29,22 +29,15 @@
   font-family: "Outfit", sans-serif;
 }
 
-html,
-body {
-  height: 100%;
-  overflow-x: hidden;
-  /* Evita el scroll horizontal y mantienen el nav stiky bien*/
-}
-
 body {
   background-color: var(--color-fondo);
   background-image: url(../img/fondo.svg);
   background-size: 100%;
+  overflow-x: hidden;
 }
 
 /* ======================= ESTILO DE LOS LINKS ==================== */
-a,
-.textoMenu {
+a{
   text-decoration: none;
   color: var(--color-texto);
 }
@@ -54,174 +47,5 @@ main {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  /* Esto sirve para que el main ocupe todo lo posible y se quede el footer abajo. No es necesario si siempre */
 }
 
-main h1 {
-  color: var(--color-texto);
-}
-
-.negrita {
-  font-weight: bold;
-}
-
-
-
-
-/* ======================= MENU PRINCIPAL DEL HEADER MODO MOVIL ======================= */
-#menu1,
-#menu2 {
-  display: block;
-  position: sticky;
-  height: 40px;
-  /* LA ALTURA FIJA HACE QUE NO SE MUEVA EL CONTENIDO DE LA PAGINA AL DESPLEGARSE LOS MENUS */
-  top: 0;
-  z-index: 10;
-  background-color: var(--color-principal1);
-  font-weight: bold;
-  letter-spacing: 1.3px;
-}
-
-#menu2 {
-  display: none;
-}
-
-#menu1 ul,
-#menu1 li,
-#buscador {
-  list-style: none;
-  /* Quitar estilos a las listas del menu*/
-}
-
-/* ===== BOTON DEL MENU ===== */
-#botonMenu {
-  width: 40px;
-  cursor: pointer;
-}
-
-#botonMenu img {
-  display: flex;
-  /* Por alguna razon hacer que sea flex elimina que haya un espacio entre el nav y los menus al abrirse */
-  width: 40px;
-}
-
-/* ===== MENU PRINCIPAL QUE SE DESPLIEGA Y SE MUESTRA ENTERO EN LA PANTALLAS GRANDES ===== */
-#menuPrincipal {
-  display: none;
-}
-
-#menuPrincipal2,
-#menuPrincipal {
-  background-color: var(--color-principal1);
-}
-
-.abrirMenu {
-  height: 40px;
-  border-top: 1px solid;
-  box-sizing: border-box;
-  display: flex;
-}
-
-.abrirMenu a {
-  width: 100%;
-}
-
-/* ======================= SUBMENUS DEL NAV ======================= */
-.subMenu {
-  display: none;
-  width: 100%;
-  z-index: 20;
-  position: absolute;
-  left: 120px;
-}
-
-.subMenu li {
-  height: 40px;
-  display: flex;
-  border-bottom: 1px solid var(--color-segundario2);
-  background-color: var(--color-principal2);
-}
-
-.ajustarTamañoLetra {
-  font-family: "Staatliches", sans-serif;
-  font-size: 18px;
-  letter-spacing: 0.8px;
-}
-
-.subMenu li a,
-.textoMenu {
-  padding-left: 10px;
-  display: flex;
-  align-items: center;
-  letter-spacing: 1.5px;
-  font-weight: lighter;
-  font-family: "Staatliches", sans-serif;
-  font-size: 20px;
-}
-
-.subMenu li:last-child {
-  border-radius: 0 0 10px 10px;
-  border: none;
-}
-
-
-
-/* ======================= TODOS LOS HOVER DEL NAV PRINCIPAL ======================= */
-.abrirMenu:hover,
-#botonMenu:hover,
-.subMenu li:hover,
-.search-button:hover {
-  background-color: var(--color-segundario);
-  cursor: pointer;
-}
-
-/* ======================= HEADER Y MENU PRINCIPAL TAMAÑO ESCRITORIO  ======================= */
-@media screen and (min-width: 750px) {
-
-  header h1 {
-    font-size: 35px;
-  }
-
-  #menu1 {
-    display: none;
-  }
-
-  #menu2 {
-    display: block;
-  }
-
-  #menuPrincipal2 {
-    display: flex;
-  }
-
-  .abrirMenu {
-    height: 45px;
-    flex: 1;
-    border: none;
-    border-left: 1px solid black;
-  }
-
-  .abrirMenu:first-child,
-  .search-button {
-    border: none;
-  }
-
-  .textoMenu {
-    justify-content: center;
-    width: 100%;
-    padding: 0;
-  }
-
-  .subMenu {
-    display: none;
-    width: 260px;
-    left: auto;
-    top: 45px;
-  }
-
-  #buscador {
-    flex: 2;
-  }
-
-
-}

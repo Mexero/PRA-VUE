@@ -1,13 +1,13 @@
 [
     {
-        "title": "Capitulos",
+        "title": "Capítulos",
         "submenu": [
             {
                 "name": "Introducción",
                 "route": "/capitulos/introduccion"
             },
             {
-                "name": "Como Jugar",
+                "name": "Cómo Jugar",
                 "route": "/capitulos/comojugar"
             },
             {
