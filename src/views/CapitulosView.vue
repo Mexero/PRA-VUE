@@ -1,6 +1,8 @@
 <script setup>
 import { RouterView } from 'vue-router'
+import data from '../localData/json/datosMenuHeader.json' //Info secciones
 </script>
+
 
 
 

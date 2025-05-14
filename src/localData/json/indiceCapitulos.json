@@ -1,0 +1,13 @@
+[
+    {
+        "capitulo": "Introduccion",
+        "ruta": "/introduccion",
+        "secciones": [
+            {
+                "nombre": "¿Qué necesito para jugar?",
+                "ruta": "#idquetuledesaestaseccion"
+            },
+            {}
+        ]
+    }
+]
