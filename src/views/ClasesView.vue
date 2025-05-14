@@ -207,7 +207,7 @@ function handleClassChange(claseNueva) {
                                             <details class="featureSub" open>
                                                 <summary>{{ rasgoSub.nombre }}</summary>
                                                 <p class="feature-origin">{{ rasgoSub.nombreSubclase }} {{ rasgo.nivel
-                                                }}</p>
+                                                    }}</p>
                                                 <!-- tiene más de 1 rasgo al nivel -->
                                                 <template v-if="rasgoSub.tieneSubrasgos">
                                                     <div v-for="(subrasgo) in rasgoSub.contenido">
@@ -388,7 +388,7 @@ tr:nth-of-type(2n) {
     background-color: var(--color-segundario);
 }
 
-::v-deep li {
+:deep(li) {
     margin-left: 20px;
 }
 
