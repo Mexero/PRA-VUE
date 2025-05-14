@@ -6,7 +6,7 @@ import menu from '../localData/json/datosMenuHeader.json' //Info submenus
 const menuVisible = ref(true)
 
 function toggleMenu() {
-    menuVisible.value = !menuVisible.value
+    openMobileNav.value = !openMobileNav.value
 }
 
 function toggleSubmenu(index) {
@@ -15,6 +15,7 @@ function toggleSubmenu(index) {
 
 //METODOS PARA SUBMENUS
 const openIndex = ref(null)
+const openMobileNav = ref(false)
 const route = useRoute()
 
 // Cierra submenus al cambiar de ruta
@@ -76,55 +77,58 @@ watch(() => route.fullPath, () => {
 
     <nav id="modoMovil">
 
-        <div id="botonMenu" aria-label="Abrir menú" @click="toggleMenu">
-            <img src="../assets/icons/menu.svg" alt="">
-        </div>
+        <div class="navLogic" v-click-outside="() => openMobileNav = false">
+            <div id="botonMenu" aria-label="Abrir menú" @click="toggleMenu">
+                <img src="../assets/icons/menu.svg" alt="">
+            </div>
 
-        <Transition :name="'slideMenu'">
+            <Transition :name="'slideMenu'">
 
-            <ul v-if="!menuVisible" class="menu" :class="{ visible: menuVisible }">
+                <ul v-if="openMobileNav" class="menu" :class="{ visible: menuVisible }">
 
-                <li class="abrirMenu">
-                    <RouterLink to="/">
-                        <div class="divMenu">Inicio</div>
-                    </RouterLink>
-                </li>
+                    <li class="abrirMenu">
+                        <RouterLink to="/">
+                            <div class="divMenu">Inicio</div>
+                        </RouterLink>
+                    </li>
 
-                <li class="abrirMenu" v-for="(section, index) in menu" :key="index"
-                    v-click-outside="() => openIndex = null">
+                    <li class="abrirMenu" v-for="(section, index) in menu" :key="index"
+                        v-click-outside="() => openIndex = null">
 
-                    <div class="divMenu" @click.stop="toggleSubmenu(index)">
-                        {{ section.title }}
-                    </div>
+                        <div class="divMenu" @click.stop="toggleSubmenu(index)">
+                            {{ section.title }}
+                        </div>
 
-                <!--Crea un name de Transicion diferente a cada submenu 
+                        <!--Crea un name de Transicion diferente a cada submenu 
                     para ajustar el estilo de cada transicion por separado -->
-                    <Transition :name="'slideSubMenu' + (index + 1)">
+                        <Transition :name="'slideSubMenu' + (index + 1)">
 
-                        <ul class="subMenu" v-if="openIndex === index" v-click-outside="() => openIndex = null">
+                            <ul class="subMenu" v-if="openIndex === index" v-click-outside="() => openIndex = null">
 
-                            <li v-for="(subsection, subindex) in section.submenu" :key="subindex">
-                                <RouterLink :to="subsection.route">{{ subsection.name }}</RouterLink>
-                            </li>
+                                <li v-for="(subsection, subindex) in section.submenu" :key="subindex">
+                                    <RouterLink :to="subsection.route">{{ subsection.name }}</RouterLink>
+                                </li>
 
-                        </ul>
+                            </ul>
 
-                    </Transition>
-                </li>
+                        </Transition>
+                    </li>
 
-                <!-- Formulario de busqueda interno de la pagina -->
-                <li class="buscador">
-                    <form method="get" class="buscar">
-                        <fieldset class="barraBuscar">
-                            <input type="text" class="search-input" placeholder="Buscar" aria-label="Buscar" />
-                            <button type="submit" class="search-button" aria-label="Buscar">
-                                <img src="../assets/icons/lupa.svg" alt="Icono de búsqueda" />
-                            </button>
-                        </fieldset>
-                    </form>
-                </li>
-            </ul>
-        </Transition>
+                    <!-- Formulario de busqueda interno de la pagina -->
+                    <li class="buscador">
+                        <form method="get" class="buscar">
+                            <fieldset class="barraBuscar">
+                                <input type="text" class="search-input" placeholder="Buscar" aria-label="Buscar" />
+                                <button type="submit" class="search-button" aria-label="Buscar">
+                                    <img src="../assets/icons/lupa.svg" alt="Icono de búsqueda" />
+                                </button>
+                            </fieldset>
+                        </form>
+                    </li>
+                </ul>
+
+            </Transition>
+        </div>
     </nav>
 </template>
 
@@ -259,6 +263,10 @@ nav div {
 #botonMenu img {
     width: 40px;
     height: 40px;
+}
+
+#modoMovil .navLogic {
+    width: 40px;
 }
 
 @media screen and (max-width: 750px) {

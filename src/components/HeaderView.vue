@@ -1,15 +1,15 @@
 <script setup>
-import { useRoute } from 'vue-router'
+import { useRoute, RouterLink } from 'vue-router'
 import { ref, onMounted } from 'vue'
 import DarkIcon from '@/assets/icons/DarkIcon.webp' //ModoNoche
 import LightIcon from '@/assets/icons/LightIcon.webp' //ModoDia
 
 const oscuro = ref(false)
-const icono = ref(LightIcon)
+const icono = ref(DarkIcon)
 
 onMounted(() => {
-    oscuro.value = localStorage.getItem('modoOscuro') === 'true'
-    icono.value = oscuro.value ? DarkIcon : LightIcon
+    oscuro.value = localStorage.getItem('modoOscuro') === 'true';
+    icono.value = oscuro.value ? DarkIcon : LightIcon;
 })
 
 //TOGGLE MODO OSCURO. TAMBIEN HAY UNA PARTE EN App.vue Y LOS COLORES ESTÁN ALLÍ DUPLICADOS
@@ -41,13 +41,15 @@ function toggleModo() {
 
 <template>
     <header>
-
-        <img src="../assets/img/logo.webp" alt="">
-
+        <RouterLink to="/">
+            <img src="../assets/img/logo.webp" alt="">
+        </RouterLink>
         <h1>Pokémon Roleplaying Adventures</h1>
 
         <div id="modoNoche" @click="toggleModo">
-            <img src="../assets/icons/DarkIcon.webp" alt="Imagen modo oscuro">
+
+            <img :src="icono" alt="Imagen modo oscuro">
+
         </div>
 
     </header>
@@ -60,10 +62,11 @@ header {
     height: 100px;
     display: flex;
     align-items: center;
-    padding-left: 20px ;
+    padding-left: 20px;
     background-color: var(--color-header);
 
 }
+
 header img {
     width: 80px;
 }

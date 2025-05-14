@@ -18,6 +18,7 @@ const router = createRouter({
       path: '/capitulos',
       name: 'capitulos',
       component: () => import('../views/CapitulosView.vue'),
+      redirect: '/capitulos/introduccion',
       children: [{
         path: 'clases',
         component: () => import('../components/Capitulos/ClasesView.vue'),
