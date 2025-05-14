@@ -52,7 +52,9 @@ onBeforeUnmount(() => {
 
 <template>
   <HeaderView />
+  
   <NavView />
+
   <RouterView />
 
   <FooterView />

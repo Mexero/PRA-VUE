@@ -1,6 +1,6 @@
 <script setup>
 import { useRoute } from 'vue-router'
-import { ref, watch, onMounted } from 'vue'
+import { ref, onMounted } from 'vue'
 import DarkIcon from '@/assets/icons/DarkIcon.webp' //Modonoche
 import LightIcon from '@/assets/icons/LightIcon.webp' //ModoNoche
 
@@ -44,10 +44,7 @@ const route = useRoute()
 //Cambia los menus al clicar otro o clicar para cerrar
 
 
-// Cierra submenus al cambiar de ruta
-watch(() => route.fullPath, () => {
-    openIndex.value = null
-})
+
 
 </script>
 
