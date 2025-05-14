@@ -1,21 +1,4 @@
 :root {
- /* --color-texto: white;
-  --color-icon: invert(100%);
-  --color-fondo: #17171e;
-  --color-header: #2B2D42;
-  --color-oscuro1: #1B1B26;
-  --color-sombraTexto: lightgrey;
-  --color-principal1: #94c4ff;
-  --color-principal2: #b2d7ff;
-  --color-segundario: #8fd8ff;
-  --color-segundario2: #ffffff;
-  --color-tabla1: #68a4ec;
-  --color-tabla2: #b7dbf4;
-
-  /* === Colores al hacer hover === 
-  --color-hoverBloque: #321212;
-  --color-hoverBloqueDescargas: #321212;*/
-
   /* === Color del footer, estos no cambian al cambiar de modo === */
   --color-fondoTexto: #EEF5FF;
   --color-footer: rgb(32, 32, 32);

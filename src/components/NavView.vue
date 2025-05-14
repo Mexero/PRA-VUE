@@ -28,9 +28,6 @@ watch(() => route.fullPath, () => {
 
     <nav id="modoEscritorio">
 
-
-
-
         <ul class="menu">
 
             <li class="abrirMenu">
@@ -41,19 +38,28 @@ watch(() => route.fullPath, () => {
 
             <li class="abrirMenu" v-for="(section, index) in menu" :key="index"
                 v-click-outside="() => openIndex = null">
+
                 <div class="divMenu" @click.stop="toggleSubmenu(index)">
                     {{ section.title }}
                 </div>
 
+                <!--Crea un name de Transicion diferente a cada submenu 
+                    para ajustar el estilo de cada transicion por separado-->
                 <Transition :name="'slideSubMenu' + (index + 1)">
+
                     <ul class="subMenu" v-if="openIndex === index" v-click-outside="() => openIndex = null">
+
                         <li v-for="(subsection, subindex) in section.submenu" :key="subindex">
                             <RouterLink :to="subsection.route">{{ subsection.name }}</RouterLink>
                         </li>
+
                     </ul>
+
                 </Transition>
+
             </li>
 
+            <!-- Formulario de busqueda interno de la pagina -->
             <li class="buscador">
                 <form method="get" class="buscar">
                     <fieldset class="barraBuscar">
@@ -73,9 +79,11 @@ watch(() => route.fullPath, () => {
         <div id="botonMenu" aria-label="Abrir menú" @click="toggleMenu">
             <img src="../assets/icons/menu.svg" alt="">
         </div>
-        <Transition :name="menuMovil"> <!-- No funciona-->
+
+        <Transition :name="'slideMenu'">
 
             <ul v-if="!menuVisible" class="menu" :class="{ visible: menuVisible }">
+
                 <li class="abrirMenu">
                     <RouterLink to="/">
                         <div class="divMenu">Inicio</div>
@@ -84,19 +92,27 @@ watch(() => route.fullPath, () => {
 
                 <li class="abrirMenu" v-for="(section, index) in menu" :key="index"
                     v-click-outside="() => openIndex = null">
+
                     <div class="divMenu" @click.stop="toggleSubmenu(index)">
                         {{ section.title }}
                     </div>
 
+                <!--Crea un name de Transicion diferente a cada submenu 
+                    para ajustar el estilo de cada transicion por separado -->
                     <Transition :name="'slideSubMenu' + (index + 1)">
+
                         <ul class="subMenu" v-if="openIndex === index" v-click-outside="() => openIndex = null">
+
                             <li v-for="(subsection, subindex) in section.submenu" :key="subindex">
                                 <RouterLink :to="subsection.route">{{ subsection.name }}</RouterLink>
                             </li>
+
                         </ul>
+
                     </Transition>
                 </li>
 
+                <!-- Formulario de busqueda interno de la pagina -->
                 <li class="buscador">
                     <form method="get" class="buscar">
                         <fieldset class="barraBuscar">
@@ -115,27 +131,18 @@ watch(() => route.fullPath, () => {
 <style scoped>
 /* ====== Principal ====== */
 nav {
-    background-color: var(--color-principal1);
     position: sticky;
-    height: 40px;
-    /* LA ALTURA FIJA HACE QUE NO SE MUEVA EL CONTENIDO DE LA PAGINA AL DESPLEGARSE LOS MENUS */
     top: 0;
     z-index: 100;
     letter-spacing: 1.3px;
+    background-color: var(--color-principal1);
     color: var(--color-texto);
-    display: flex;
 }
 
 /* ====== Menus primarios ====== */
-
-#modoMovil {
-    display: none;
-}
-
 .menu {
     display: flex;
     height: 40px;
-    width: 100%;
 }
 
 ul {
@@ -149,9 +156,10 @@ nav div {
     font-family: "Staatliches", sans-serif;
 }
 
+/* ====== Menu principal ====== */
 .abrirMenu {
     flex: 1;
-    border-left: 1px solid black;
+    border-left: 1px solid var(--color-segundario2);
 }
 
 .abrirMenu:first-child {
@@ -166,6 +174,7 @@ nav div {
     width: 100%;
 }
 
+/* ====== Sub menus ====== */
 .subMenu {
     display: flex;
     flex-direction: column;
@@ -193,16 +202,19 @@ nav div {
     border: none;
 }
 
+/* ====== Todos los hover ====== */
 .divMenu:hover,
 .subMenu li a:hover,
-.search-button:hover {
+.search-button:hover,
+#botonMenu:hover {
     background-color: var(--color-segundario);
     cursor: pointer;
 }
 
-/* ======================= BARRA DE BUSCAR DEL NAV PRINCIPAL ======================= */
+/* ====== Barra de buscar del menu principal ====== */
 .buscador {
     flex: 2;
+    border: none;
 }
 
 .barraBuscar {
@@ -234,8 +246,24 @@ nav div {
     padding: 5px;
 }
 
+/* ====== Modo movil ====== */
+#modoMovil {
+    display: none;
+}
+
+#botonMenu {
+    width: 40px;
+    height: 40px;
+}
+
+#botonMenu img {
+    width: 40px;
+    height: 40px;
+}
 
 @media screen and (max-width: 750px) {
+
+    /* ====== Cambiar de modo ====== */
     #modoMovil {
         display: block;
     }
@@ -244,11 +272,7 @@ nav div {
         display: none;
     }
 
-    #botonMenu img {
-        width: 40px;
-    }
-
-
+    /* ====== Menu Principal ====== */
     .menu {
         background-color: var(--color-principal1);
         top: 40px;
@@ -263,45 +287,51 @@ nav div {
     }
 
     .divMenu {
-        background-color: var(--color-principal1);
         justify-content: flex-start;
         padding-left: 10px;
-        border-top: 1px solid black;
+        border-top: 1px solid var(--color-segundario2);
     }
 
+    /* ====== Sub menus ====== */
     .subMenu {
         width: 100%;
         position: absolute;
         top: auto;
-        left: 120px;
+        left: 110px;
         transform: translateY(-39px);
     }
 
     .subMenu li a {
-        height: 40px;
+        padding-left: 10px;
         width: 100%;
+    }
 
+    /* ====== Barra de buscar del menu principal ====== */
+    .buscador {
+        border-top: 1px solid var(--color-segundario2);
     }
 }
 
-.menuMovil-enter-active,
-.menuMovil-leave-active {
+/* ===== Transicion del Menu principal en modo movil ===== */
+/* Es la misma transicion que los submenus, esta a parte por claridad */
+.slideMenu-enter-active,
+.slideMenu-leave-active {
     transition: all 0.3s ease;
     overflow: hidden;
 }
 
-.menuMovil-enter-from,
-.menuMovil-leave-to {
+.slideMenu-enter-from,
+.slideMenu-leave-to {
     max-height: 0;
 }
 
-.menuMovil-enter-to,
-.menuMovil-leave-from {
+.slideMenu-enter-to,
+.slideMenu-leave-from {
     max-height: 280px;
 }
 
-
 /* ===== Transicion para cada submenu ===== */
+/* Mismo efecto de transicion para todos */
 .slideSubMenu1-enter-active,
 .slideSubMenu1-leave-active,
 .slideSubMenu2-enter-active,
@@ -316,6 +346,7 @@ nav div {
     overflow: hidden;
 }
 
+/* Mismo inicio de altura para todos */
 .slideSubMenu1-enter-from,
 .slideSubMenu1-leave-to,
 .slideSubMenu2-enter-from,
@@ -331,6 +362,7 @@ nav div {
     max-height: 0;
 }
 
+/* Diferente altura para cada menu, a su altura maxima para una transicion consistente */
 /*  Capitulos */
 .slideSubMenu1-enter-to,
 .slideSubMenu1-leave-from {

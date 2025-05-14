@@ -6,7 +6,6 @@ import FooterView from './components/FooterView.vue'
 import NavView from './components/NavView.vue'
 
 
-
 //MODO OSCURO. TAMBIEN HAY UNA PARTE EN HEADER VIEW Y LOS COLORES ESTÁN ALLÍ DUPLICADOS
 function aplicarModo() {
   const oscuro = localStorage.getItem('modoOscuro') === 'true'
@@ -22,7 +21,7 @@ function aplicarModo() {
   root.style.setProperty('--color-principal1', oscuro ? '#ff0051' : '#94c4ff')
   root.style.setProperty('--color-principal2', oscuro ? '#dd576d' : '#b2d7ff')
   root.style.setProperty('--color-segundario', oscuro ? '#ff8f8f' : '#529CE6')
-  root.style.setProperty('--color-segundario2', oscuro ? '#ffffff' : '#73BDFF')
+  root.style.setProperty('--color-segundario2', oscuro ? '#ffffff' : '#e3f1fc')
   root.style.setProperty('--color-tabla1', oscuro ? '#a92e4d' : '#76aef1')
   root.style.setProperty('--color-tabla2', oscuro ? '#de4a54' : '#b7dbf4')
   root.style.setProperty('--color-fondoTexto', oscuro ? '#293141' : '#EEF5FF')
@@ -45,10 +44,7 @@ onBeforeUnmount(() => {
   window.removeEventListener('storage', manejarCambioStorage)
 })
 
-
 </script>
-
-
 
 <template>
   <HeaderView />

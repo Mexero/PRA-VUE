@@ -765,7 +765,7 @@
                 Terreno Difícil cuesta el <strong> doble de Velocidad de
                     movimiento</strong>.
             </p>
-            < </div>
+        </div>
     </details>
 
 
