@@ -3,45 +3,93 @@ import { RouterLink, RouterView, useRoute } from 'vue-router'
 import { ref } from 'vue'
 import indiceCapitulos from '../localData/json/indiceCapitulos.json' //Info menu indice de capitulos
 
-const menuVisible = ref(true)
 
 function toggleSubmenu(indice) {
     openIndex.value = openIndex.value === indice ? null : indice
 }
+function toggleMenu() {
+    openMobileNav.value = !openMobileNav.value
+}
 
 //METODOS PARA SUBMENUS
 const openIndex = ref(null)
-const route = useRoute()
+const openMobileNav = ref(false)
 
 </script>
 
 <template>
-    <main id="mainCaps">
-        <aside>
-            <nav id="menuCapitulos">
-                <ul>
+
+
+    <nav id="CapMovil">
+        <Transition :name="'slideMovilMenu'">
+            <div id="desplegarMenu" v-if="openMobileNav">
+
+                <ul >
+
                     <li class="abrirMenuCap" v-for="(capitulo, indice) in indiceCapitulos" :key="indice">
+
                         <div @click.stop="toggleSubmenu(indice)">
                             <RouterLink :to="capitulo.ruta">
                                 {{ capitulo.capitulo }}
                             </RouterLink>
                         </div>
 
-                        <ul v-if="openIndex === indice">
-
-                            <li class="subMenuCap" v-for="(seccion, subindice) in capitulo.secciones" :key="subindice">
-                                <a :href="seccion.ruta">{{ seccion.nombre }}</a>
-                            </li>
-                        </ul>
+                        <Transition :name="'slideSeccion'">
+                            <ul v-if="openIndex === indice">
+                                <li class="subMenuCap" v-for="(seccion, subindice) in capitulo.secciones"
+                                    :key="subindice">
+                                    <a :href="seccion.ruta">{{ seccion.nombre }}</a>
+                                </li>
+                            </ul>
+                        </Transition>
                     </li>
                 </ul>
-            </nav>
-        </aside>
 
+            </div>
+        </Transition>
+        <div id="iconoAbrirMenuCapitulos" @click="toggleMenu">
+            <img src="../assets/icons/flechaDobleIcon.png" alt="icono flechas">
+        </div>
+    </nav>
+
+    <main id="mainCaps">
+        <aside>
+            <nav id="menuCapitulos">
+                <ul>
+                    <li class="abrirMenuCap" v-for="(capitulo, indice) in indiceCapitulos" :key="indice">
+
+                        <div @click.stop="toggleSubmenu(indice)">
+                            <RouterLink :to="capitulo.ruta">
+                                {{ capitulo.capitulo }}
+                            </RouterLink>
+                        </div>
+
+                        <Transition :name="'slideSeccion'">
+
+                            <ul v-if="openIndex === indice">
+
+                                <li class="subMenuCap" v-for="(seccion, subindice) in capitulo.secciones"
+                                    :key="subindice">
+                                    <a :href="seccion.ruta">{{ seccion.nombre }}</a>
+                                </li>
+
+                            </ul>
+
+                        </Transition>
+
+                    </li>
+
+                </ul>
+
+            </nav>
+
+        </aside>
         <section>
+
             <div id="capitulos">
                 <RouterView />
             </div>
+
         </section>
     </main>
 </template>
@@ -53,8 +101,8 @@ const route = useRoute()
     width: 100%;
 }
 
+/* === Menu principal escritorio ===*/
 section {
-    width: 100%;
     overflow: hidden;
 }
 
@@ -63,52 +111,144 @@ aside {
 }
 
 #menuCapitulos {
-    width: 300px;
+    width: 230px;
     height: fit-content;
     max-height: 85vh;
+    margin-left: 20px;
     position: sticky;
     top: 60px;
     overflow-y: auto;
     overflow-x: hidden;
     scrollbar-width: thin;
     border-radius: 5px;
-    margin: 0 20px;
     background-color: var(--color-principal1);
 }
 
-
+/* === SubMenus escritorio ===*/
 .abrirMenuCap div a {
-    display: flex;
     width: 100%;
-
+    max-height: fit-content;
+    padding: 10px 5px;
+    display: flex;
+    cursor: pointer;
+    border-bottom: 1px solid var(--color-secundario);
 }
 
-.abrirMenuCap div {
-    display: flex;
-    align-items: center;
-    padding: 0 10px;
-    width: 100%;
-    height: 40px;
-    cursor: pointer;
-
+.abrirMenuCap:last-child a {
+    border: none;
 }
 
 .abrirMenuCap div:hover,
-.subMenuCap a:hover {
-    background-color: var(--color-segundario);
+.subMenuCap a:hover,
+#iconoAbrirMenuCapitulos:hover {
+    background-color: var(--color-secundario);
 
-}
-
-.subMenuCap {
-
-    background-color: var(--color-principal2);
 }
 
 .subMenuCap a {
     padding: 10px 15px;
-
+    background-color: var(--color-principal2);
     display: flex;
     width: 100%;
+}
+
+
+/* === Menu principal Movil ===*/
+#CapMovil {
+    display: none;
+    max-width: 320px;
+    height: 0;
+    margin-top: 10px;
+    position: sticky;
+    top: 50px;
+    z-index: 9;
+    
+}
+
+#CapMovil ul li {
+    background-color: var(--color-principal1);
+}
+
+#desplegarMenu {
+    width: fit-content;
+    display: flex;
+    height: fit-content;
+    max-height: 80vh;
+    position: sticky;
+    left: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-width: thin;
+    white-space: nowrap;
+}
+
+#desplegarMenu ul {
+    list-style: none;
+}
+#iconoAbrirMenuCapitulos {
+    display: none;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    background-color: var(--color-principal1);
+}
+
+#iconoAbrirMenuCapitulos img {
+    width: 40px;
+    padding: 6px;
+}
+
+/* === SubMenus escritorio ===*/
+@media screen and (max-width:1000px) {
+
+    #menuCapitulos {
+        display: none;
+    }
+
+    #CapMovil {
+        display: flex;
+    }
+
+    #iconoAbrirMenuCapitulos {
+        display: flex;
+
+    }
+
+}
+
+/* === Transicion Submenus === */
+.slideSeccion-enter-active,
+.slideSeccion-leave-active {
+    transition: all 0.4s ease-in-out;
+    overflow: hidden;
+}
+
+.slideSeccion-enter-from,
+.slideSeccion-leave-to {
+    max-height: 0px;
+
+}
+
+.slideSeccion-leave-from,
+.slideSeccion-enter-to {
+    max-height: 500px;
+}
+
+
+/* === Transicion del menu modo movil */
+.slideMovilMenu-enter-active,
+.slideMovilMenu-leave-active {
+    transition: all 0.4s ease-in-out;
+}
+
+.slideMovilMenu-enter-from,
+.slideMovilMenu-leave-to {
+    max-width: 0;
+}
+
+.slideMovilMenu-enter-to,
+.slideMovilMenu-leave-from {
+    max-width: 320px;
 }
 
 /* ======================= CAPITULOS ======================= */
@@ -123,7 +263,8 @@ aside {
     padding: 20px;
 }
 
-#capitulos h2 {
+#capitulos h2,
+#capitulos h1 {
     color: var(--color-texto);
 }
 
@@ -187,81 +328,7 @@ aside {
     margin: 0 auto;
 }
 
-/* Añadir otro media intermedio para el tamaño de letra
-@media screen and (max-width:1000px) {
-    body {
-        display: flex;
-        flex-direction: column;
-    }
-
-    #capitulos {
-        width: 95%;
-    }
-
-    #iconoAbrirMenuCapitulos {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    #menuCapitulos2 {
-        display: flex;
-        height: 0;
-    }
-
-    #desplegarMenu2 {
-        display: flex;
-        width: 0;
-        height: fit-content;
-        max-height: 92vh;
-        position: sticky;
-        left: 10;
-        transition: top 0.3s ease;
-    }
-
-    #desplegarMenu2 ul {
-        overflow-y: auto;
-        overflow-x: hidden;
-        scrollbar-width: thin;
-    }
-
-    #iconoAbrirMenuCapitulos,
-    #menuCapitulos2 {
-        position: sticky;
-        top: 50px;
-    }
-
-    #menuCapitulos2 {
-        margin-top: 10px;
-    }
-
-    #menuCapitulos {
-        display: none;
-    }
-
-    #capitulos {
-        margin: 30px auto;
-    }
-
-    #capitulos p {
-        font-size: 13px;
-    }
-
-    #capitulos h1 {
-        font-size: 20px;
-    }
-
-    #capitulos summary {
-        font-size: 16px;
-    }
-
-    .rotar {
-        transform: rotate(180deg);
-        transition: transform 0.1s ease-in-out;
-    }
-}
-
- ======================= TABLAS DE CAPITULOS ======================= */
+/* ======================= TABLAS DE CAPITULOS ======================= */
 .tablaCapitulos,
 .tablaNaturaleza {
     text-align: center;

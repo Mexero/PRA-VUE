@@ -279,7 +279,7 @@ function handleClassChange(claseNueva) {
     margin: none;
     border-radius: 5px;
     margin: 5px;
-    background-color: var(--color-segundario);
+    background-color: var(--color-secundario);
 
 }
 
@@ -385,7 +385,7 @@ tr:nth-of-type(2n) {
 .featureSubSub summary {
 
     font-size: 16px;
-    background-color: var(--color-segundario);
+    background-color: var(--color-secundario);
 }
 
 :deep(li) {

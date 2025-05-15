@@ -163,7 +163,7 @@ nav div {
 /* ====== Menu principal ====== */
 .abrirMenu {
     flex: 1;
-    border-left: 1px solid var(--color-segundario2);
+    border-left: 1px solid var(--color-secundario2);
 }
 
 .abrirMenu:first-child {
@@ -188,7 +188,7 @@ nav div {
 }
 
 .subMenu li a {
-    border-bottom: 1px solid var(--color-segundario2);
+    border-bottom: 1px solid var(--color-secundario2);
     background-color: var(--color-principal2);
     height: 40px;
     display: flex;
@@ -211,7 +211,7 @@ nav div {
 .subMenu li a:hover,
 .search-button:hover,
 #botonMenu:hover {
-    background-color: var(--color-segundario);
+    background-color: var(--color-secundario);
     cursor: pointer;
 }
 
@@ -297,7 +297,7 @@ nav div {
     .divMenu {
         justify-content: flex-start;
         padding-left: 10px;
-        border-top: 1px solid var(--color-segundario2);
+        border-top: 1px solid var(--color-secundario2);
     }
 
     /* ====== Sub menus ====== */
@@ -316,7 +316,7 @@ nav div {
 
     /* ====== Barra de buscar del menu principal ====== */
     .buscador {
-        border-top: 1px solid var(--color-segundario2);
+        border-top: 1px solid var(--color-secundario2);
     }
 }
 

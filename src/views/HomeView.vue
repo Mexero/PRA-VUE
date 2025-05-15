@@ -237,7 +237,7 @@ Son 2 filas de 2 parejas de bloques cada uno que se acomodan segun el tamaño de
 }
 
 #infoDescargas div:hover {
-    background-color: var(--color-segundario);
+    background-color: var(--color-secundario);
     border-color: var(--color-texto);
 }
 

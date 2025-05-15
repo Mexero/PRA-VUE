@@ -28,8 +28,8 @@ function toggleModo() {
     root.style.setProperty('--color-sombraTexto', oscuro.value ? '#ff0051' : '#F8F8F8')
     root.style.setProperty('--color-principal1', oscuro.value ? '#ff0051' : '#94c4ff')
     root.style.setProperty('--color-principal2', oscuro.value ? '#dd576d' : '#b2d7ff')
-    root.style.setProperty('--color-segundario', oscuro.value ? '#ff8f8f' : '#529CE6')
-    root.style.setProperty('--color-segundario2', oscuro.value ? '#ffffff' : '#badfff')
+    root.style.setProperty('--color-secundario', oscuro.value ? '#ff8f8f' : '#529CE6')
+    root.style.setProperty('--color-secundario2', oscuro.value ? '#ffffff' : '#badfff')
     root.style.setProperty('--color-tabla1', oscuro.value ? '#a92e4d' : '#76aef1')
     root.style.setProperty('--color-tabla2', oscuro.value ? '#de4a54' : '#b7dbf4')
     root.style.setProperty('--color-fondoTexto', oscuro.value ? '#293141' : '#EEF5FF')
@@ -64,7 +64,6 @@ header {
     align-items: center;
     padding-left: 20px;
     background-color: var(--color-header);
-
 }
 
 header img {
