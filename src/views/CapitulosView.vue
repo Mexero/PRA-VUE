@@ -16,7 +16,7 @@ const route = useRoute()
 </script>
 
 <template>
-    <main>
+    <main id="mainCaps">
         <aside>
             <nav id="menuCapitulos">
                 <ul>
@@ -47,7 +47,7 @@ const route = useRoute()
 </template>
 
 <style>
-main {
+#mainCaps {
     display: flex;
     flex-direction: row;
     width: 100%;
@@ -77,11 +77,12 @@ aside {
 }
 
 
-.abrirMenuCap div a{
+.abrirMenuCap div a {
     display: flex;
     width: 100%;
 
 }
+
 .abrirMenuCap div {
     display: flex;
     align-items: center;
