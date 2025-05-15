@@ -1,6 +1,6 @@
 <script setup>
 import { RouterLink, useRoute } from 'vue-router'
-import { ref, watch, Transition } from 'vue'
+import { ref, watch } from 'vue'
 import menu from '../localData/json/datosMenuHeader.json' //Info submenus
 
 const menuVisible = ref(true)

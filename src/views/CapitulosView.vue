@@ -1,114 +1,121 @@
 <script setup>
-import { RouterView } from 'vue-router'
-import data from '../localData/json/datosMenuHeader.json' //Info secciones
+import { RouterLink, RouterView, useRoute } from 'vue-router'
+import { ref } from 'vue'
+import indiceCapitulos from '../localData/json/indiceCapitulos.json' //Info menu indice de capitulos
+
+const menuVisible = ref(true)
+
+function toggleSubmenu(indice) {
+    openIndex.value = openIndex.value === indice ? null : indice
+}
+
+//METODOS PARA SUBMENUS
+const openIndex = ref(null)
+const route = useRoute()
+
 </script>
 
-
-
-
 <template>
+    <main>
+        <aside>
+            <nav id="menuCapitulos">
+                <ul>
+                    <li class="abrirMenuCap" v-for="(capitulo, indice) in indiceCapitulos" :key="indice">
+                        <div @click.stop="toggleSubmenu(indice)">
+                            <RouterLink :to="capitulo.ruta">
+                                {{ capitulo.capitulo }}
+                            </RouterLink>
+                        </div>
 
-    <div id="capitulos">
-        <RouterView />
-    </div>
+                        <ul v-if="openIndex === indice">
+
+                            <li class="subMenuCap" v-for="(seccion, subindice) in capitulo.secciones" :key="subindice">
+                                <a :href="seccion.ruta">{{ seccion.nombre }}</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <section>
+            <div id="capitulos">
+                <RouterView />
+            </div>
+        </section>
+    </main>
 </template>
 
 <style>
-/* ======================= ASIDE CAPITULOS ======================= */
+main {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+section {
+    width: 100%;
+    overflow: hidden;
+}
+
+aside {
+    padding: 40px 0;
+}
 
 #menuCapitulos {
-    grid-area: side-nav;
     width: 300px;
     height: fit-content;
     max-height: 85vh;
     position: sticky;
     top: 60px;
-    z-index: 5;
     overflow-y: auto;
     overflow-x: hidden;
     scrollbar-width: thin;
     border-radius: 5px;
-    margin: 40px 0 0 20px;
-}
-
-#menuCapitulos li,
-#menuCapitulos2 li {
+    margin: 0 20px;
     background-color: var(--color-principal1);
 }
 
-#menuCapitulos li a,
-#menuCapitulos2 li a {
+
+.abrirMenuCap div a{
     display: flex;
-    padding: 10px 0;
-    text-decoration: none;
-    color: var(--color-texto);
-    padding-left: 10px;
-    font-size: 14px;
+    width: 100%;
+
+}
+.abrirMenuCap div {
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    width: 100%;
+    height: 40px;
+    cursor: pointer;
+
 }
 
-#menuCapitulos summary:hover,
-#menuCapitulos a:hover,
-#menuCapitulos2 summary:hover,
-#menuCapitulos2 a:hover {
+.abrirMenuCap div:hover,
+.subMenuCap a:hover {
     background-color: var(--color-segundario);
+
 }
 
+.subMenuCap {
 
-.abrirMenuCapitulos summary {
-    color: var(--color-texto);
-    cursor: pointer;
-    border-bottom: 1px solid var(--color-segundario2);
-    border-top: 1px solid var(--color-segundario2);
-}
-
-.abrirMenuCapitulos:first-child summary {
-    border-top: none;
-}
-
-.abrirMenuCapitulos details {
-    color: var(--color-texto);
-    cursor: pointer;
-}
-
-.abrirMenuCapitulos details a {
     background-color: var(--color-principal2);
-    margin-left: 10px;
-    border-left: 1px solid var(--color-segundario2);
-    border-bottom: 1px solid var(--color-segundario2);
 }
 
-.abrirMenuCapitulos summary {
-    padding: 10px 0px 10px 10px;
-}
+.subMenuCap a {
+    padding: 10px 15px;
 
-#iconoAbrirMenuCapitulos {
-    display: none;
-    cursor: pointer;
-    background-color: var(--color-principal1);
-    border-radius: 5px;
-    height: fit-content;
-    width: 35px;
-    height: 35px;
-}
-
-#iconoAbrirMenuCapitulos img {
-    width: 30px;
-    margin: 0 auto;
-    padding: 5px;
-}
-
-#menuCapitulos2 {
-    display: none;
+    display: flex;
+    width: 100%;
 }
 
 /* ======================= CAPITULOS ======================= */
 #capitulos {
     display: flex;
     flex-direction: column;
-    justify-self: flex-end;
-    width: auto;
     min-height: 100vh;
-    margin: 40px 20px 0 0;
+    margin: 40px 20px;
     overflow: hidden;
     background-color: var(--color-fondoTexto);
     border-radius: 10px;
@@ -179,7 +186,7 @@ import data from '../localData/json/datosMenuHeader.json' //Info secciones
     margin: 0 auto;
 }
 
-/* Añadir otro media intermedio para el tamaño de letra*/
+/* Añadir otro media intermedio para el tamaño de letra
 @media screen and (max-width:1000px) {
     body {
         display: flex;
@@ -253,7 +260,7 @@ import data from '../localData/json/datosMenuHeader.json' //Info secciones
     }
 }
 
-/* ======================= TABLAS DE CAPITULOS ======================= */
+ ======================= TABLAS DE CAPITULOS ======================= */
 .tablaCapitulos,
 .tablaNaturaleza {
     text-align: center;
@@ -275,8 +282,7 @@ import data from '../localData/json/datosMenuHeader.json' //Info secciones
     padding: 8px;
 }
 
-/* APLICAR BORDES A LA DERECHA */
-.tablaCapitulos tr td:first-child,
+APLICAR BORDES A LA DERECHA .tablaCapitulos tr td:first-child,
 .tablaCapitulos th:first-child,
 .tablaAmistad tr td:first-child,
 .tablaAmistad th:first-child {

@@ -1,13 +1,405 @@
 [
-    {
-        "capitulo": "Introduccion",
-        "ruta": "/introduccion",
-        "secciones": [
-            {
-                "nombre": "¿Qué necesito para jugar?",
-                "ruta": "#idquetuledesaestaseccion"
-            },
-            {}
-        ]
-    }
+  {
+    "capitulo": "Introduccion",
+    "ruta": "/capitulos/introduccion",
+    "secciones": [
+      {
+        "nombre": "¿Qué Necesito Para Jugar?",
+        "ruta": "#apartado1"
+      },
+      {
+        "nombre": "¿Qué Hay en Este Libro?",
+        "ruta": "#apartado2"
+      }
+    ]
+  },{
+    "capitulo": "Cómo jugar",
+    "ruta": "/capitulos/comojugar",
+    "secciones": [
+      {
+        "nombre": "Las Escenas",
+        "ruta": "#apartado1"
+      },
+      {
+        "nombre": "¿Cuánto Duran Las Aacciones?",
+        "ruta": "#apartado2"
+      },
+      {
+        "nombre": "Movimientos",
+        "ruta": "#apartado3"
+      },
+      {
+        "nombre": "Las Estadísticas",
+        "ruta": "#apartado4"
+      },
+      {
+        "nombre": "Tiradas Naturales",
+        "ruta": "#apartado5"
+      },
+      {
+        "nombre": "Las Pruebas de d20",
+        "ruta": "#apartado6"
+      },
+      {
+        "nombre": "Nivel y Bono de Habilidad",
+        "ruta": "#apartado7"
+      },
+      {
+        "nombre": "Grados de Habilidad",
+        "ruta": "#apartado8"
+      },
+      {
+        "nombre": "Tiradas de Habilidad Habituales",
+        "ruta": "#apartado9"
+      },
+      {
+        "nombre": "Ventaja y Desventaja",
+        "ruta": "#apartado10"
+      },
+      {
+        "nombre": "Tiradas Enfrentadas",
+        "ruta": "#apartado11"
+      },
+      {
+        "nombre": "Tiradas en Grupo",
+        "ruta": "#apartado12"
+      }
+    ]
+  },{
+    "capitulo": "Creación de Personaje",
+    "ruta": "/capitulos/creacionpj",
+    "secciones": [
+      {
+        "nombre": "Paso 1: Concepto del Personaje",
+        "ruta": "#apartado1"
+      },
+      {
+        "nombre": "Paso 2: El Trasfondo",
+        "ruta": "#apartado2"
+      },
+      {
+        "nombre": "Paso 3: Elige tu Clase",
+        "ruta": "#apartado3"
+      },
+      {
+        "nombre": "Paso 4: Distribuye tus Estadísticas",
+        "ruta": "#apartado4"
+      },
+      {
+        "nombre": "Paso 5: Calcular Otros Valores",
+        "ruta": "#apartado5"
+      },
+      {
+        "nombre": "Paso 6: Describe a tu Personaje",
+        "ruta": "#apartado6"
+      },
+      {
+        "nombre": "Paso 7: Elige tus Pokémon",
+        "ruta": "#apartado7"
+      },
+      {
+        "nombre": "Paso 8: Dinero y Objetos",
+        "ruta": "#apartado8"
+      },
+      {
+        "nombre": "La Progresión de Personaje",
+        "ruta": "#apartado9"
+      },
+      {
+        "nombre": "Reentrenar",
+        "ruta": "#apartado10"
+      }
+    ]
+  },{
+    "capitulo": "Clases",
+    "ruta": "/capitulos/clases"
+  },{
+    "capitulo": "Movimientos, Habilidades y Dotes",
+    "ruta": "/capitulos/movhabdot",
+    "secciones": [
+      {
+        "nombre": "Movimientos",
+        "ruta": "#apartado1"
+      },
+      {
+        "nombre": "Mejorar el Daño Base",
+        "ruta": "#apartado2"
+      },
+      {
+        "nombre": "Los Golpes Críticos",
+        "ruta": "#apartado3"
+      },
+      {
+        "nombre": "Bonus de Ataque por Mismo Tipo",
+        "ruta": "#apartado4"
+      },
+      {
+        "nombre": "Movimientos Fuera de Combate",
+        "ruta": "#apartado5"
+      },
+      {
+        "nombre": "Lista de Etiquetas",
+        "ruta": "#apartado6"
+      },
+      {
+        "nombre": "Habilidades",
+        "ruta": "#apartado7"
+      },
+      {
+        "nombre": "Dotes",
+        "ruta": "#apartado8"
+      }
+    ]
+  },{
+    "capitulo": "Pokémon",
+    "ruta": "/capitulos/pokemon",
+    "secciones": [
+      {
+        "nombre": "¿Cuántos Pokémon Llevo?",
+        "ruta": "#apartado1"
+      },
+      {
+        "nombre": "Las Entradas de la Pokédex",
+        "ruta": "#apartado2"
+      },
+      {
+        "nombre": "Movimientos Enseñables",
+        "ruta": "#apartado3"
+      },
+      {
+        "nombre": "Las Fichas de tus Pokémon",
+        "ruta": "#apartado4"
+      },
+      {
+        "nombre": "Progresión Pokémon",
+        "ruta": "#apartado5"
+      },
+      {
+        "nombre": "Aprender Movimientos",
+        "ruta": "#apartado6"
+      },
+      {
+        "nombre": "Mejoras de Daño",
+        "ruta": "#apartado7"
+      },
+      {
+        "nombre": "Mejoras de Estadísticas",
+        "ruta": "#apartado8"
+      },
+      {
+        "nombre": "Reentrenar",
+        "ruta": "#apartado9"
+      },
+      {
+        "nombre": "La Evolución Pokémon",
+        "ruta": "#apartado10"
+      },
+      {
+        "nombre": "La Amistad",
+        "ruta": "#apartado11"
+      },
+      {
+        "nombre": "Capturar",
+        "ruta": "#apartado12"
+      },
+      {
+        "nombre": "Intercambiar y Liberar Pokémon",
+        "ruta": "#apartado13"
+      },
+      {
+        "nombre": "Pokémon Variocolor",
+        "ruta": "#apartado14"
+      },
+      {
+        "nombre": "Poké-Monturas",
+        "ruta": "#apartado15"
+      },
+      {
+        "nombre": "Megaevolución",
+        "ruta": "#apartado16"
+      },
+      {
+        "nombre": "Regresiones Primigenias",
+        "ruta": "#apartado17"
+      },
+      {
+        "nombre": "Movimientos Z",
+        "ruta": "#apartado18"
+      },
+      {
+        "nombre": "Dinamax y Gigamax",
+        "ruta": "#apartado19"
+      },
+      {
+        "nombre": "Teracristalización",
+        "ruta": "#apartado20"
+      }
+    ]
+  },{
+    "capitulo": "Combate",
+    "ruta": "/capitulos/combate",
+    "secciones": [
+      {
+        "nombre": "La Iniciativa",
+        "ruta": "#apartado1"
+      },
+      {
+        "nombre": "Los Turnos",
+        "ruta": "#apartado2"
+      },
+      {
+        "nombre": "Preparar Acción",
+        "ruta": "#apartado3"
+      },
+      {
+        "nombre": "Dar Órdenes",
+        "ruta": "#apartado4"
+      },
+      {
+        "nombre": "Cambiar de Pokémon",
+        "ruta": "#apartado5"
+      },
+      {
+        "nombre": "Tipos de Ataques",
+        "ruta": "#apartado6"
+      },
+      {
+        "nombre": "Usar una Cuadrícula",
+        "ruta": "#apartado7"
+      },
+      {
+        "nombre": "Recibir Daño",
+        "ruta": "#apartado8"
+      },
+      {
+        "nombre": "La Tabla de Tipos",
+        "ruta": "#apartado9"
+      },
+      {
+        "nombre": "Muerte",
+        "ruta": "#apartado10"
+      },
+      {
+        "nombre": "Áreas en la Cuadrícula",
+        "ruta": "#apartado11"
+      },
+      {
+        "nombre": "Cobertura",
+        "ruta": "#apartado12"
+      },
+      {
+        "nombre": "Escudo",
+        "ruta": "#apartado13"
+      }
+    ]
+  },{
+    "capitulo": "Concursos Pokémon",
+    "ruta": "/capitulos/concursos",
+    "secciones": [
+      {
+        "nombre": "Concursos Pokémon",
+        "ruta": "#apartado1"
+      },
+      {
+        "nombre": "Tipos de Concursos",
+        "ruta": "#apartado2"
+      },
+      {
+        "nombre": "Orden en los Concurso",
+        "ruta": "#apartado3"
+      },
+      {
+        "nombre": "Ganar Puntos de Exhibición",
+        "ruta": "#apartado4"
+      },
+      {
+        "nombre": "Centro de Atención",
+        "ruta": "#apartado5"
+      },
+      {
+        "nombre": "Bonos y Penalizadores",
+        "ruta": "#apartado6"
+      },
+      {
+        "nombre": "Bonos",
+        "ruta": "#apartado7"
+      },
+      {
+        "nombre": "Penalizadores",
+        "ruta": "#apartado8"
+      }
+    ]
+  },{
+    "capitulo": "Reglas Menores",
+    "ruta": "/capitulos/otrasreglas",
+    "secciones": [
+      {
+        "nombre": "Estados",
+        "ruta": "#apartado1"
+      },{
+        "nombre": "Fatiga",
+        "ruta": "#apartado2"
+      },{
+        "nombre": "Tipos de Tamaños",
+        "ruta": "#apartado3"
+      },{
+        "nombre": "Cargar Peso",
+        "ruta": "#apartado4"
+      },{
+        "nombre": "Velocidades",
+        "ruta": "#apartado5"
+      },{
+        "nombre": "Correr y Terreno Difícil",
+        "ruta": "#apartado6"
+      },{
+        "nombre": "Salto",
+        "ruta": "#apartado7"
+      },{
+        "nombre": "Oscuridad e Iluminación",
+        "ruta": "#apartado8"
+      },{
+        "nombre": "Visibilidad",
+        "ruta": "#apartado9"
+      },{
+        "nombre": "Sentidos",
+        "ruta": "#apartado10"
+      },{
+        "nombre": "Agarrar",
+        "ruta": "#apartado11"
+      },{
+        "nombre": "Empujar",
+        "ruta": "#apartado12"
+      },{
+        "nombre": "Daño por Caída",
+        "ruta": "#apartado13"
+      },{
+        "nombre": "Mantener la Respiración",
+        "ruta": "#apartado14"
+      },{
+        "nombre": "Climas",
+        "ruta": "#apartado15"
+      },{
+        "nombre": "Campos",
+        "ruta": "#apartado16"
+      },{
+        "nombre": "Pokémon que No Hacen Caso",
+        "ruta": "#apartado17"
+      },{
+        "nombre": "Reconocer un Huevo",
+        "ruta": "#apartado18"
+      },{
+        "nombre": "Recordar Información Sobre un Pokémon",
+        "ruta": "#apartado19"
+      },{
+        "nombre": "Regla Variante: Hacer Cuidadosamente",
+        "ruta": "#apartado20"
+      },{
+        "nombre": "Regla Variante: Multiclase",
+        "ruta": "#apartado21"
+      }
+    ]
+  },{
+    "capitulo": "Dirigiendo el Juego",
+    "ruta": "/capitulos/dirigir"
+  }
 ]

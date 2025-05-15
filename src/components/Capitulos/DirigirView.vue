@@ -1,1 +1,1 @@
-<template><h1>Capítulo 11: Dirigiendo el juego</h1></template>
+<template><h1>Capítulo 11: Dirigiendo el Juego</h1></template>
