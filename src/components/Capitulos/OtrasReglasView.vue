@@ -1,5 +1,5 @@
 <template>
-    <h1>Capítulo 10: Reglas Menores</h1>
+    <h1 >Capítulo 10: Reglas Menores</h1>
     <p>
         En este capítulo hay una miscelánea de reglas que puedes decidir implementar
         o no en tus partidas. También se aclaran algunos conceptos que, aunque

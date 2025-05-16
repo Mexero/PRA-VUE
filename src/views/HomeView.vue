@@ -34,7 +34,7 @@ import { RouterLink } from 'vue-router'
                     </RouterLink>
                     <RouterLink to="/movimientos">
                         <div class="bloque">
-                            <img src="../assets/icons/MovIcon2.webp" alt="">
+                            <img src="../assets/icons/MovIcon.svg" alt="">
 
                             <span class="textoBloqueG"> Movimientos</span>
 
@@ -47,12 +47,12 @@ import { RouterLink } from 'vue-router'
                 <div class="pareja">
                     <RouterLink to="#"> <!-- Falta poner este link -->
                         <div class="bloque">
-                            <img src="../assets/icons/ReglasIcon2.webp" alt="">
+                            <img src="../assets/icons/ReglasIcon.svg" alt="">
                             <span class="textoBloque"> Reglas</span>
 
                         </div>
                     </RouterLink>
-                    <RouterLink to="/capitulos"> <!-- cAMBIAR LINK A REGLAS -->
+                    <RouterLink to="/capitulos"> <!-- CAMBIAR LINK A REGLAS -->
                         <div class="bloque">
                             <img src="../assets/icons/EstadosIcon.webp" alt="">
                             <span class="textoBloque"> Estados</span>
@@ -68,7 +68,7 @@ import { RouterLink } from 'vue-router'
                     </RouterLink>
                     <RouterLink to="/dotes">
                         <div class="bloque">
-                            <img src="../assets/icons/DotesIcon.webp" alt="">
+                            <img src="../assets/icons/DotesIcon.svg" alt="">
                             <span class="textoBloque"> Dotes </span>
                         </div>
                     </RouterLink>

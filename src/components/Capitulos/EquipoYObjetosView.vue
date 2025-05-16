@@ -1,5 +1,5 @@
 <template>
-    <h1>Capítulo 9: Equipo y Objetos</h1>
+    <h1 >Capítulo 9: Equipo y Objetos</h1>
 
     <p>
         A lo largo de sus aventuras y dependiendo de su campaña, los entrenadores

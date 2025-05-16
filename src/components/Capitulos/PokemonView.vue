@@ -1,5 +1,5 @@
 <template>
-    <h1>Capítulo 6: Pokémon</h1>
+    <h1 >Capítulo 6: Pokémon</h1>
     <p>
         Las criaturas mágicas conocidas como Pokémon son, junto a los personajes,
         los protagonistas de las campañas de PRA. Para que el sistema sea lo más

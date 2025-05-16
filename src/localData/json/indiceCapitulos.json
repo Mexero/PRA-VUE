@@ -1,7 +1,7 @@
 [
   {
     "capitulo": "Introduccion",
-    "ruta": "/capitulos/introduccion",
+    "ruta": "/capitulos/introduccion/#chapterStart",
     "secciones": [
       {
         "nombre": "¿Qué Necesito Para Jugar?",
@@ -14,7 +14,7 @@
     ]
   },{
     "capitulo": "Cómo jugar",
-    "ruta": "/capitulos/comojugar",
+    "ruta": "/capitulos/comojugar/#chapterStart",
     "secciones": [
       {
         "nombre": "Las Escenas",
@@ -67,7 +67,7 @@
     ]
   },{
     "capitulo": "Creación de Personaje",
-    "ruta": "/capitulos/creacionpj",
+    "ruta": "/capitulos/creacionpj/#chapterStart",
     "secciones": [
       {
         "nombre": "Paso 1: Concepto del Personaje",
@@ -112,10 +112,10 @@
     ]
   },{
     "capitulo": "Clases",
-    "ruta": "/capitulos/clases"
+    "ruta": "/capitulos/clases/#chapterStart"
   },{
     "capitulo": "Movimientos, Habilidades y Dotes",
-    "ruta": "/capitulos/movhabdot",
+    "ruta": "/capitulos/movhabdot/#chapterStart",
     "secciones": [
       {
         "nombre": "Movimientos",
@@ -152,7 +152,7 @@
     ]
   },{
     "capitulo": "Pokémon",
-    "ruta": "/capitulos/pokemon",
+    "ruta": "/capitulos/pokemon/#chapterStart",
     "secciones": [
       {
         "nombre": "¿Cuántos Pokémon Llevo?",
@@ -237,7 +237,7 @@
     ]
   },{
     "capitulo": "Combate",
-    "ruta": "/capitulos/combate",
+    "ruta": "/capitulos/combate/#chapterStart",
     "secciones": [
       {
         "nombre": "La Iniciativa",
@@ -294,7 +294,7 @@
     ]
   },{
     "capitulo": "Concursos Pokémon",
-    "ruta": "/capitulos/concursos",
+    "ruta": "/capitulos/concursos/#chapterStart",
     "secciones": [
       {
         "nombre": "Concursos Pokémon",
@@ -331,7 +331,7 @@
     ]
   },{
     "capitulo": "Reglas Menores",
-    "ruta": "/capitulos/otrasreglas",
+    "ruta": "/capitulos/otrasreglas/#chapterStart",
     "secciones": [
       {
         "nombre": "Estados",
@@ -400,6 +400,6 @@
     ]
   },{
     "capitulo": "Dirigiendo el Juego",
-    "ruta": "/capitulos/dirigir"
+    "ruta": "/capitulos/dirigir/#chapterStart"
   }
 ]

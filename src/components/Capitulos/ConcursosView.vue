@@ -1,5 +1,5 @@
 <template>
-    <h1>Capítulo 8: Concursos Pokémon</h1>
+    <h1 id="chapterStart">Capítulo 8: Concursos Pokémon</h1>
 
     <p>
         No todo en el Mundo Pokémon se reduce al combate y a convertirse en el

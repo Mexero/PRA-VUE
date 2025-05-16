@@ -8,12 +8,13 @@ function toggleSubmenu(indice) {
     openIndex.value = openIndex.value === indice ? null : indice
 }
 function toggleMenu() {
-    openMobileNav.value = !openMobileNav.value
+    openMobileCap.value = !openMobileCap.value
 }
+
 
 //METODOS PARA SUBMENUS
 const openIndex = ref(null)
-const openMobileNav = ref(false)
+const openMobileCap = ref(false)
 
 </script>
 
@@ -21,37 +22,37 @@ const openMobileNav = ref(false)
 
 
     <nav id="CapMovil">
-        <Transition :name="'slideMovilMenu'">
-            <div id="desplegarMenu" v-if="openMobileNav">
+        <div class="navLogic" v-click-outside="() => openMobileCap = false">
+            <Transition :name="'slideMovilMenu'">
+                <div id="desplegarMenu" v-if="openMobileCap">
 
-                <ul >
+                    <ul>
+                        <li class="abrirMenuCap" v-for="(capitulo, indice) in indiceCapitulos" :key="indice">
 
-                    <li class="abrirMenuCap" v-for="(capitulo, indice) in indiceCapitulos" :key="indice">
+                            <div @click.stop="toggleSubmenu(indice)">
+                                <RouterLink :to="capitulo.ruta"> {{ capitulo.capitulo }} </RouterLink>
+                            </div>
 
-                        <div @click.stop="toggleSubmenu(indice)">
-                            <RouterLink :to="capitulo.ruta">
-                                {{ capitulo.capitulo }}
-                            </RouterLink>
-                        </div>
+                            <Transition :name="'slideSeccion'">
+                                <ul v-if="openIndex === indice">
+                                    <li class="subMenuCap" v-for="(seccion, subindice) in capitulo.secciones"
+                                        :key="subindice">
+                                        <RouterLink :to="seccion.ruta">{{ seccion.nombre }}</RouterLink>
+                                    </li>
+                                </ul>
+                            </Transition>
+                        </li>
+                    </ul>
 
-                        <Transition :name="'slideSeccion'">
-                            <ul v-if="openIndex === indice">
-                                <li class="subMenuCap" v-for="(seccion, subindice) in capitulo.secciones"
-                                    :key="subindice">
-                                    <a :href="seccion.ruta">{{ seccion.nombre }}</a>
-                                </li>
-                            </ul>
-                        </Transition>
-                    </li>
-                </ul>
-
-            </div>
-        </Transition>
-        <div id="iconoAbrirMenuCapitulos" @click="toggleMenu">
-            <img src="../assets/icons/flechaDobleIcon.png" alt="icono flechas">
+                </div>
+            </Transition>
+        </div>
+        <div id="iconoAbrirMenuCapitulos" aria-label="Abrir menú" @click.stop="toggleMenu"
+            :class="{ rotado: openMobileCap }"> <img src="../assets/icons/flechaDobleIcon.png" alt="icono flechas">
         </div>
     </nav>
 
+    <span id="chapterStart"></span>
     <main id="mainCaps">
         <aside>
             <nav id="menuCapitulos">
@@ -65,27 +66,20 @@ const openMobileNav = ref(false)
                         </div>
 
                         <Transition :name="'slideSeccion'">
-
                             <ul v-if="openIndex === indice">
 
                                 <li class="subMenuCap" v-for="(seccion, subindice) in capitulo.secciones"
                                     :key="subindice">
-                                    <a :href="seccion.ruta">{{ seccion.nombre }}</a>
+                                    <RouterLink :to="seccion.ruta">{{ seccion.nombre }}</RouterLink>
                                 </li>
 
                             </ul>
-
                         </Transition>
-
                     </li>
-
                 </ul>
-
             </nav>
-
         </aside>
         <section>
-
             <div id="capitulos">
                 <RouterView />
             </div>
@@ -156,13 +150,12 @@ aside {
 /* === Menu principal Movil ===*/
 #CapMovil {
     display: none;
-    max-width: 320px;
     height: 0;
     margin-top: 10px;
+    z-index: 9;
     position: sticky;
     top: 50px;
-    z-index: 9;
-    
+
 }
 
 #CapMovil ul li {
@@ -170,7 +163,7 @@ aside {
 }
 
 #desplegarMenu {
-    width: fit-content;
+
     display: flex;
     height: fit-content;
     max-height: 80vh;
@@ -179,12 +172,16 @@ aside {
     overflow-y: auto;
     overflow-x: hidden;
     scrollbar-width: thin;
-    white-space: nowrap;
+}
+
+#desplegarMenu .abrirMenuCap {
+    width: 270px;
 }
 
 #desplegarMenu ul {
     list-style: none;
 }
+
 #iconoAbrirMenuCapitulos {
     display: none;
     cursor: pointer;
@@ -211,10 +208,18 @@ aside {
 
     #iconoAbrirMenuCapitulos {
         display: flex;
-
     }
 
 }
+/* === Transicion icono flecha menu movil cap === */
+#iconoAbrirMenuCapitulos img {
+    transition: all 0.6s ease-in-out;
+}
+
+.rotado img {
+    transform: rotateY(180deg);
+}
+
 
 /* === Transicion Submenus === */
 .slideSeccion-enter-active,
@@ -248,7 +253,7 @@ aside {
 
 .slideMovilMenu-enter-to,
 .slideMovilMenu-leave-from {
-    max-width: 320px;
+    max-width: 350px;
 }
 
 /* ======================= CAPITULOS ======================= */
@@ -258,9 +263,10 @@ aside {
     min-height: 100vh;
     margin: 40px 20px;
     overflow: hidden;
-    background-color: var(--color-fondoTexto);
     border-radius: 10px;
     padding: 20px;
+    background-color: var(--color-fondoTexto);
+
 }
 
 #capitulos h2,
@@ -296,20 +302,22 @@ aside {
 
 #capitulos summary {
     border-radius: 5px;
-    color: var(--color-texto);
     font-size: 25px;
     font-weight: bold;
     padding: 10px 0 10px 10px;
     cursor: pointer;
+    color: var(--color-texto);
     background-color: var(--color-principal1);
+
 }
 
 .consejoCapitulo {
     margin-top: 10px;
-    color: var(--color-texto);
-    background-color: var(--color-principal2);
     padding: 1px 20px;
     border-radius: 10px;
+    color: var(--color-texto);
+    background-color: var(--color-principal2);
+
 }
 
 .consejoCapitulo p {
@@ -350,7 +358,8 @@ aside {
     padding: 8px;
 }
 
-APLICAR BORDES A LA DERECHA .tablaCapitulos tr td:first-child,
+/* APLICAR BORDES A LA DERECHA */
+.tablaCapitulos tr td:first-child,
 .tablaCapitulos th:first-child,
 .tablaAmistad tr td:first-child,
 .tablaAmistad th:first-child {

@@ -1,5 +1,5 @@
 <template>
-    <h1>Capítulo 1: Introducción</h1>
+    <h1 >Capítulo 1: Introducción</h1>
 
     <p>
         ¡Bienvenido a Pokémon Roleplaying Adventures (PRA), un sistema de rol de

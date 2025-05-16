@@ -1,5 +1,5 @@
 <template>
-    <h1 >Capítulo 4: Clases</h1>
+    <h1>Capítulo 4: Clases</h1>
     <p>
         Además de sus Pokémon, lo que más definirá a un personaje será su Clase,
         pues esta le otorgará la mayor parte de sus habilidades y definirá las

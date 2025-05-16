@@ -1,5 +1,5 @@
 <template>
-    <h1>Capítulo 5: Movimientos, Habilidades y Dotes</h1>
+    <h1 >Capítulo 5: Movimientos, Habilidades y Dotes</h1>
 
     <p>
         Los Pokémon y entrenadores de PRA no sólo son definidos por sus tipos,
