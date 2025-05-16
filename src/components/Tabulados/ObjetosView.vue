@@ -11,7 +11,7 @@ const router = useRouter()
 
 //Datos principales
 const objetos = ref([])
-const objetoSeleccionado = ref(null)
+const objetoSeleccionado = ref(route.query.seleccionado ? route.query.seleccionado : null)
 const mostrarFiltros = ref(false)
 
 //Filtros
@@ -32,8 +32,26 @@ const ordenAscendente = ref(route.query.ordenAscendente !== 'false')
 // =================== CARGAR DATOS AL ABRIR ==================
 
 onMounted(async () => {
-    const res = await fetch('/data/json/objetos/objetos.json')
-    objetos.value = await res.json()
+    try {
+        const res = await fetch('/data/json/objetos/objetos.json');
+
+        if (!res.ok) throw new Error(`Error HTTP: ${res.status}`);
+
+        objetos.value = await res.json();
+
+        if (objetos.value.length > 0) {
+            if (objetoSeleccionado.value) {
+                seleccionarObjeto(objetos.value.find(obj => obj.Nombre === objetoSeleccionado.value))
+            }
+            else {
+                seleccionarObjeto(objetos.value[0]);
+            }
+        } else {
+            console.warn("El archivo JSON está vacío.");
+        }
+    } catch (error) {
+        console.error("Error al cargar los objetos:", error);
+    }
 })
 
 
@@ -52,7 +70,6 @@ function limpiarFiltros() {
     filtroNombre.value = ''
     ordenColumna.value = ''
     ordenAscendente.value = true
-    objetoSeleccionado.value = null
 }
 
 
@@ -65,6 +82,7 @@ const rarezasUnicas = computed(() => [...new Set(objetos.value.map(o => o.Rareza
 
 // ========================= PONER FILTROS EN LA URL ===========================
 watch([
+    objetoSeleccionado,
     filtroTipos,
     filtroRarezas,
     filtroPrecioMin,
@@ -80,7 +98,8 @@ watch([
         precioMax: filtroPrecioMax.value !== null ? filtroPrecioMax.value : undefined,
         nombre: filtroNombre.value || undefined,
         ordenColumna: ordenColumna.value || undefined,
-        ordenAscendente: ordenColumna.value ? ordenAscendente.value : undefined
+        ordenAscendente: ordenColumna.value ? ordenAscendente.value : undefined,
+        seleccionado: objetoSeleccionado.value.Nombre ? objetoSeleccionado.value.Nombre : undefined
     }
     router.replace({ query })
 }, { deep: true })
@@ -256,13 +275,15 @@ const objetosFiltrados = computed(() => {
     background-color: var(--color-principal1);
     color: var(--color-texto);
 }
-#mostrarFiltros{
+
+#mostrarFiltros {
     padding: 10px;
 }
+
 /*ontenedor de los botones*/
-.botones{
+.botones {
     display: flex;
-    gap:10px;
+    gap: 10px;
 }
 
 .filtros button:hover {
