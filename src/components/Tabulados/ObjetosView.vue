@@ -146,46 +146,7 @@ const objetosFiltrados = computed(() => {
 
 <template>
 
-    <!--FILTROS-->
-    <div class="filtros">
-        <div>
-            <button @click="mostrarFiltros = !mostrarFiltros">
-                {{ mostrarFiltros ? 'Ocultar filtros' : 'Mostrar filtros' }}
-            </button>
-        </div>
 
-        <div v-if="mostrarFiltros">
-            <input v-model="filtroNombre" type="text" placeholder="Buscar por nombre" />
-
-            <div>
-                <p>Tipos</p>
-                <div>
-                    <label v-for="tipo in tiposUnicos" :key="tipo">
-                        <input type="checkbox" :value="tipo" v-model="filtroTipos" /> {{ tipo }}
-                    </label>
-                </div>
-            </div>
-
-            <div>
-                <p>Rarezas</p>
-                <div>
-                    <label v-for="rareza in rarezasUnicas" :key="rareza">
-                        <input type="checkbox" :value="rareza" v-model="filtroRarezas" /> {{ rareza }}
-                    </label>
-                </div>
-            </div>
-
-            <input type="number" v-model.number="filtroPrecioMin" placeholder="Precio mínimo" />
-            <input type="number" v-model.number="filtroPrecioMax" placeholder="Precio máximo" />
-        </div>
-
-        <div>
-            <button @click="limpiarFiltros">
-                Limpiar filtros
-            </button>
-        </div>
-
-    </div>
 
 
 
@@ -193,6 +154,48 @@ const objetosFiltrados = computed(() => {
 
         <!--TABLA-->
         <div class="div-tabla">
+            <!--FILTROS-->
+            <div class="filtros">
+                <div class="botones">
+                    <div>
+                        <button @click="mostrarFiltros = !mostrarFiltros">
+                            {{ mostrarFiltros ? 'Ocultar filtros' : 'Mostrar filtros' }}
+                        </button>
+                    </div>
+                    <div>
+                        <button @click="limpiarFiltros">
+                            Limpiar filtros
+                        </button>
+                    </div>
+                </div>
+                <div v-if="mostrarFiltros" id="mostrarFiltros">
+                    <input v-model="filtroNombre" type="text" placeholder="Buscar por nombre" />
+
+                    <div>
+                        <p>Tipos</p>
+                        <div>
+                            <label v-for="tipo in tiposUnicos" :key="tipo">
+                                <input type="checkbox" :value="tipo" v-model="filtroTipos" /> {{ tipo }}
+                            </label>
+                        </div>
+                    </div>
+
+                    <div>
+                        <p>Rarezas</p>
+                        <div>
+                            <label v-for="rareza in rarezasUnicas" :key="rareza">
+                                <input type="checkbox" :value="rareza" v-model="filtroRarezas" /> {{ rareza }}
+                            </label>
+                        </div>
+                    </div>
+
+                    <input type="number" v-model.number="filtroPrecioMin" placeholder="Precio mínimo" />
+                    <input type="number" v-model.number="filtroPrecioMax" placeholder="Precio máximo" />
+                </div>
+
+
+
+            </div>
             <table class="tabla">
                 <thead>
                     <tr>
@@ -215,28 +218,73 @@ const objetosFiltrados = computed(() => {
         <!--SELECCIONADO-->
         <div v-if="objetoSeleccionado" class="seleccionado">
             <h2>{{ objetoSeleccionado.Nombre }}</h2>
-            <p><strong>Descripción:</strong> {{ objetoSeleccionado.Descripcion }}</p>
             <p><strong>Tipo:</strong> {{ objetoSeleccionado.Tipo }}</p>
             <p><strong>Rareza:</strong> {{ objetoSeleccionado.Rareza }}</p>
             <p><strong>Coste:</strong> {{ objetoSeleccionado.Coste ?? '—' }}</p>
             <p><strong>Valor material:</strong> {{ objetoSeleccionado.ValorMaterial ?? '—' }}</p>
+            <p><strong>Descripción:</strong> {{ objetoSeleccionado.Descripcion }}</p>
         </div>
     </div>
 </template>
 
 <style scoped>
+/* === "Main" contiene todo === */
 .cuerpo {
-    padding: 40px 5%;
     display: flex;
     justify-content: space-between;
-
+    gap: 50px;
+    margin: 0 auto;
+    margin-top: 50px;
+    width: 95%;
+    padding-bottom: 20px;
 }
 
+/* === Filtro de la tabla === */
+.filtros {
+    background-color: lightgray;
+    position: sticky;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.filtros button {
+    border: none;
+    padding: 5px;
+    width: 100px;
+    cursor: pointer;
+    background-color: var(--color-principal1);
+    color: var(--color-texto);
+}
+#mostrarFiltros{
+    padding: 10px;
+}
+/*ontenedor de los botones*/
+.botones{
+    display: flex;
+    gap:10px;
+}
+
+.filtros button:hover {
+    background-color: var(--color-secundario);
+}
+
+
+
+thead {
+    background-color: lightgray;
+    position: sticky;
+    top: 25px;
+    cursor: pointer;
+}
+
+
+/* === La Tabla de objetos === */
 .div-tabla {
+    background-color: var(--color-principal1);
     max-height: 80vh;
     width: 60%;
     overflow-y: auto;
-
 }
 
 .tabla {
@@ -252,19 +300,17 @@ const objetosFiltrados = computed(() => {
     text-align: left;
 }
 
-.tabla thead {
-    background-color: #f3f4f6;
-    font-weight: 600;
-    cursor: pointer;
-}
+
 
 .tabla tbody tr:hover {
     background-color: #f1f5f9;
 }
 
+
+/* === Mostrar la Info de la tabla === */
 .seleccionado {
-    min-width: 250px;
-    max-width: 100%;
+    width: 40%;
+    height: fit-content;
     background-color: white;
     border: 1px solid #e5e7eb;
     border-radius: 0.75rem;
