@@ -2223,312 +2223,6 @@
     "ValorMaterial": null
   },
   {
-    "Nombre": "Kit de botánica",
-    "Imagen": null,
-    "Descripcion": "Puede ser usado para plantar Plantas y Bayas.",
-    "Tipo": "Objetos de entrenador",
-    "Rareza": "Común",
-    "Coste": 1000,
-    "ValorMaterial": null
-  },
-  {
-    "Nombre": "Kit de acampada",
-    "Imagen": null,
-    "Descripcion": "Contiene todo lo necesario para acampar, incluido un hornito portátil, un saco de dormir y una tienda de campaña para 2, entre otros. Este kit tiene un valor total de 1.000$. Su Carga es de 30.",
-    "Tipo": "Objetos de entrenador",
-    "Rareza": "Común",
-    "Coste": 1000,
-    "ValorMaterial": null
-  },
-  {
-    "Nombre": "Kit de explorador",
-    "Imagen": null,
-    "Descripcion": "Tiene todo lo necesario para salir a explorar en la naturaleza, como equipo de escalada, una linterna, … Este kit tiene un valor total de 1.000$. Su carga es de 25.",
-    "Tipo": "Objetos de entrenador",
-    "Rareza": "Común",
-    "Coste": 1000,
-    "ValorMaterial": null
-  },
-  {
-    "Nombre": "Kit de primeros auxilios",
-    "Imagen": null,
-    "Descripcion": "Contiene vendas y productos médicos mundanos que pueden usarse como Acción Extendida sobre una criatura a 0 PV. Para hacerlo, el entrenador realiza una Tirada de Conocimiento Médico (Mente) CD 10. Si la pasa, la criatura recupera 1 PV y deja de estar inconsciente. Este kit tiene 10 usos y un valor total del 500$ y su Carga es de 25.",
-    "Tipo": "Objetos de entrenador",
-    "Rareza": "Común",
-    "Coste": 1000,
-    "ValorMaterial": null
-  },
-  {
-    "Nombre": "Kit de miscelánea",
-    "Imagen": null,
-    "Descripcion": "Este kit representa un conjunto de objetos normales varios que un entrenador podría o no tener, como un traje de baño si proviene de un lugar sin costa o una cartera de repuesto. Este kit tiene 10 usos y decir que tienes un objeto que no está claro si tendrías te cuesta una cantidad de puntos a discreción de tu DJ y que variarán según la conveniencia del objeto en la situación en la que decides que lo tienes. Tu DJ también podría decir que no es posible que tengas un objeto, incluso si intentas usar este Kit, en cuyo caso no gastas usos. Este kit vale 1.000$. Su Carga es de 25.",
-    "Tipo": "Objetos de entrenador",
-    "Rareza": "Común",
-    "Coste": 1000,
-    "ValorMaterial": null
-  },
-  {
-    "Nombre": "Herramientas de Medicina",
-    "Imagen": null,
-    "Descripcion": "Pueden ser usadas para preparar y estudiar Medicinas y venenos. Estas herramientas tienen un valor de 500$. Es un objeto Pequeño.",
-    "Tipo": "Objetos de entrenador",
-    "Rareza": "Común",
-    "Coste": 1000,
-    "ValorMaterial": null
-  },
-  {
-    "Nombre": "Herramientas de Poké Ball",
-    "Imagen": null,
-    "Descripcion": "Pueden ser usadas para fabricar y estudiar Poké Balls. Estas herramientas tienen un valor de 500$. Es un objeto Pequeño.",
-    "Tipo": "Objetos de entrenador",
-    "Rareza": "Común",
-    "Coste": 1000,
-    "ValorMaterial": null
-  },
-  {
-    "Nombre": "Herramientas de química",
-    "Imagen": null,
-    "Descripcion": "Pueden ser usadas para fabricar Potenciadores y estudiar químicos, venenos y Potenciadores. Estas herramientas tienen un valor de 500$. Es un objeto Pequeño.",
-    "Tipo": "Objetos de entrenador",
-    "Rareza": "Común",
-    "Coste": 1000,
-    "ValorMaterial": null
-  },
-  {
-    "Nombre": "Herramientas de Inventor",
-    "Imagen": null,
-    "Descripcion": "Los inventores las usan para crear sus Invenciones. Estas herramientas tienen un valor de 500$. Es un objeto Pequeño.",
-    "Tipo": "Objetos de entrenador",
-    "Rareza": "Común",
-    "Coste": 1000,
-    "ValorMaterial": null
-  },
-  {
-    "Nombre": "Utensilios de cocina",
-    "Imagen": null,
-    "Descripcion": "Pueden ser usadas para cocinar comida para todo un grupo como Acción Extendida y puede crear Comidas de rareza común. Estos utensilios tienen un valor de 500$. Es un objeto Pequeño.",
-    "Tipo": "Objetos de entrenador",
-    "Rareza": "Común",
-    "Coste": 1000,
-    "ValorMaterial": null
-  },
-  {
-    "Nombre": "Pokédex",
-    "Imagen": null,
-    "Descripcion": "Como Acción, escaneas un Pokémon. Puedes leer su entrada de la Pokédex y tu DJ puede darte información sobre este.",
-    "Tipo": "Objetos de entrenador",
-    "Rareza": "Raro",
-    "Coste": 10000,
-    "ValorMaterial": null
-  },
-  {
-    "Nombre": "Flauta amarilla",
-    "Imagen": null,
-    "Descripcion": "Puedes tocar esta flauta como Acción y gastar 2 PP para sanar de estar envenenado, quemado, helado, paralizado a las criaturas a 5 metros de ti.",
-    "Tipo": "Objetos de entrenador",
-    "Rareza": "Raro",
-    "Coste": 10000,
-    "ValorMaterial": null
-  },
-  {
-    "Nombre": "Flauta azul",
-    "Imagen": null,
-    "Descripcion": "Puedes tocar esta flauta como Acción y gastar 2 PP para sanar de estar dormido a las criaturas a 5 metros de ti.",
-    "Tipo": "Objetos de entrenador",
-    "Rareza": "Raro",
-    "Coste": 10000,
-    "ValorMaterial": null
-  },
-  {
-    "Nombre": "Flauta roja",
-    "Imagen": null,
-    "Descripcion": "Puedes tocar esta flauta como Acción y gastar 2 PP para sanar de estar infatuado a las criaturas a 5 metros de ti.",
-    "Tipo": "Objetos de entrenador",
-    "Rareza": "Raro",
-    "Coste": 10000,
-    "ValorMaterial": null
-  },
-  {
-    "Nombre": "Flauta blanca",
-    "Imagen": null,
-    "Descripcion": "Puedes tocar esta flauta como Acción y gastar 2 PP. Cuando lo haces, las criaturas a menos de 2 metros de ti hacen una Tirada de Salvación de Espíritu CD 15. Si la fallan, quedan infatuados por ti hasta el final de la Escena.",
-    "Tipo": "Objetos de entrenador",
-    "Rareza": "Raro",
-    "Coste": 10000,
-    "ValorMaterial": null
-  },
-  {
-    "Nombre": "Flauta negra",
-    "Imagen": null,
-    "Descripcion": "Puedes tocar esta flauta como Acción y gastar 1 PP. Cuando lo haces, las criaturas a menos de 2 metros de ti hacen una Tirada de Salvación de Espíritu CD 15. Si la fallan, quedan asustados de ti hasta el final de su próximo turno.",
-    "Tipo": "Objetos de entrenador",
-    "Rareza": "Raro",
-    "Coste": 10000,
-    "ValorMaterial": null
-  },
-  {
-    "Nombre": "Holomisor",
-    "Imagen": null,
-    "Descripcion": "Sirve para hacer llamadas holográficas con tus amigos siempre que tengas cobertura.",
-    "Tipo": "Objetos de entrenador",
-    "Rareza": "Poco común",
-    "Coste": 6000,
-    "ValorMaterial": null
-  },
-  {
-    "Nombre": "Sincromisor",
-    "Imagen": null,
-    "Descripcion": "Como Acción, tomas el control de uno de tus Pokémon si este te lo permite mediante ondas psíquicas que tienen un rango de 1 kilómetro. Puedes controlarlo como si fueras el Pokémon y puedes ver lo que ve en la pantallita.",
-    "Tipo": "Objetos de entrenador",
-    "Rareza": "Muy raro",
-    "Coste": 25000,
-    "ValorMaterial": null
-  },
-  {
-    "Nombre": "Caña",
-    "Imagen": null,
-    "Descripcion": "Puedes usar la caña como Acción Extendida para pescar Pokémon. Lanzas 1d100. Si la tirada es de 50 o menos, un Pokémon a discreción del DJ pica y puedes combatir contra él.",
-    "Tipo": "Objetos de entrenador",
-    "Rareza": "Poco común",
-    "Coste": 6000,
-    "ValorMaterial": null
-  },
-  {
-    "Nombre": "Pokéradar",
-    "Imagen": null,
-    "Descripcion": "Como Acción, puedes escanear un Pokémon a menos de 10 metros de ti. Posteriormente puedes usar tu Acción para localizar los Pokémon de una especie que has escaneado a menos de 1 kilómetro de ti.",
-    "Tipo": "Objetos de entrenador",
-    "Rareza": "Muy raro",
-    "Coste": 25000,
-    "ValorMaterial": null
-  },
-  {
-    "Nombre": "Traje de buzo",
-    "Imagen": null,
-    "Descripcion": "Cuando llevas puesto este traje, puedes respirar bajo el agua y no te ves afectado por altas presiones por estar bajo el agua.",
-    "Tipo": "Objetos de entrenador",
-    "Rareza": "Raro",
-    "Coste": 20000,
-    "ValorMaterial": null
-  },
-  {
-    "Nombre": "Videomisor",
-    "Imagen": null,
-    "Descripcion": "Este reloj de pulsera sirve para hacer videollamadas con tus amigos siempre que tengas cobertura.",
-    "Tipo": "Objetos de entrenador",
-    "Rareza": "Poco común",
-    "Coste": 10000,
-    "ValorMaterial": null
-  },
-  {
-    "Nombre": "Piedra espíritu",
-    "Imagen": null,
-    "Descripcion": "Cuando una criatura muere a 20 metros, su alma es absorbida por la piedra. Cuando hay 108 almas dentro, se vuelve un Spiritomb.",
-    "Tipo": "Objetos de entrenador",
-    "Rareza": "Insólito",
-    "Coste": 50000,
-    "ValorMaterial": null
-  },
-  {
-    "Nombre": "Aerosol sigilo",
-    "Imagen": null,
-    "Descripcion": "Cuando lo usas, hasta el final del día tu y hasta 5 criaturas más ganáis un bono de +5 a las Tiradas de Sigilo.",
-    "Tipo": "Objetos de entrenador (Consumible)",
-    "Rareza": "Raro",
-    "Coste": 1000,
-    "ValorMaterial": null
-  },
-  {
-    "Nombre": "Bola de lodo",
-    "Imagen": null,
-    "Descripcion": "Puedes lanzar esta bola como Acción a una distancia de 5 metros. La criatura hace una Tirada de Salvación de Resistencia CD 12, llenándole el rostro de barro si la falla. La criatura está cegada mientras tenga barro en la cara, el cual puede quitarse como Acción.\nPuede ser recolectada en zonas embarradas como Acción Extendida.",
-    "Tipo": "Objetos de entrenador (Consumible)",
-    "Rareza": "Común",
-    "Coste": 100,
-    "ValorMaterial": null
-  },
-  {
-    "Nombre": "Bola de humo",
-    "Imagen": null,
-    "Descripcion": "Puedes lanzar esta bola como Acción a una distancia de 5 metros. La bola explota liberando humo en un radio de 2 metros que se mantiene en ese lugar hasta el final de la Escena o hasta que un Movimiento con la etiqueta de Viento afecte el área. Este humo bloquea completamente la visión más allá de 1 metro.",
-    "Tipo": "Objetos de entrenador (Consumible)",
-    "Rareza": "Poco común",
-    "Coste": 400,
-    "ValorMaterial": null
-  },
-  {
-    "Nombre": "Bola mala",
-    "Imagen": null,
-    "Descripcion": "Puedes lanzar esta bola como Acción a una distancia de 5 metros. La bola explota liberando vapor venenoso en un radio de 2 metros que se mantiene en ese lugar hasta el final de la Escena o hasta que un Movimiento con la etiqueta de Viento afecte el área. Este humo no bloquea la visión. Una criatura que entra o que empieza su turno en el humo hace una Salvación de Resistencia CD 14. Si la falla, queda envenenada hasta el final de la Escena.",
-    "Tipo": "Objetos de entrenador (Consumible)",
-    "Rareza": "Poco común",
-    "Coste": 400,
-    "ValorMaterial": null
-  },
-  {
-    "Nombre": "Bola luminiscente",
-    "Imagen": null,
-    "Descripcion": "Puedes lanzar esta bola como Acción a una distancia de 5 metros. La bola explota, esparciendo un líquido luminiscente sobre el suelo que deja de brillar al final de la Escena. Si una criatura está en el radio de explosión, debe hacer una Tirada de Salvación de Agilidad CD 14. Si la falla, esta también queda empapada y empieza a brillar. \nEste brillo la deslumbra, por lo que tiene Desventaja Tiradas de Habilidad de Percepción y las Tiradas de Ataque hechas contra esta se hacen en Ventaja. Una criatura empapada de este líquido puede usar su Acción o su Movimiento para quitarse el líquido.",
-    "Tipo": "Objetos de entrenador (Consumible)",
-    "Rareza": "Poco común",
-    "Coste": 400,
-    "ValorMaterial": null
-  },
-  {
-    "Nombre": "Bola pegajosa",
-    "Imagen": null,
-    "Descripcion": "Puedes lanzar esta bola como Acción a una distancia de 5 metros. La bola explota en un radio de 2 metros, esparciendo un líquido sobre el suelo. El suelo manchado por el líquido se considera Terreno Difícil hasta el final de la Escena y las criaturas que inician su turno en este área o que entran en esta hacen una Tirada de Salvación de Fuerza CD 14. Si la fallan, quedan pegadas al suelo y se consideran apresadas.\nComo Acción, una criatura puede repetir la Tirada, despegándose de la red y dejando de estar apresadas si la pasan.",
-    "Tipo": "Objetos de entrenador (Consumible)",
-    "Rareza": "Raro",
-    "Coste": 600,
-    "ValorMaterial": null
-  },
-  {
-    "Nombre": "Bola ruidosa",
-    "Imagen": null,
-    "Descripcion": "Puedes lanzar esta bola como Acción a una distancia de 5 metros. La bola explota en un radio de 2 metros, con un ruido estridente. \nSi una criatura está en el radio de explosión, debe hacer una Tirada de Salvación de Espíritu CD 14. Si la falla, queda asustada hasta el final de la Escena.",
-    "Tipo": "Objetos de entrenador (Consumible)",
-    "Rareza": "Poco común",
-    "Coste": 400,
-    "ValorMaterial": null
-  },
-  {
-    "Nombre": "Calmaesfera",
-    "Imagen": null,
-    "Descripcion": "Puedes lanzar esta bola como Acción a una distancia de 5 metros. La bola explota en un radio de 2 metros, liberando un vapor calmante que rápidamente se disipa. \nSi una criatura está en el radio de explosión, debe hacer una Tirada de Salvación de Espíritu CD 14. Si la falla, queda infatuada por ti hasta el final de la Escena.",
-    "Tipo": "Objetos de entrenador (Consumible)",
-    "Rareza": "Poco común",
-    "Coste": 400,
-    "ValorMaterial": null
-  },
-  {
-    "Nombre": "Abrojos metálicos",
-    "Imagen": null,
-    "Descripcion": "Lanzas abrojos en un área circular de 1 metro de radio a menos de 5 metros de ti. Este área es considerada Terreno Difícil y, por cada metro que una criatura avance dentro de los abrojos, recibe daño 2d6 de daño de tipo Acero.",
-    "Tipo": "Objetos de entrenador (Consumible)",
-    "Rareza": "Raro",
-    "Coste": 600,
-    "ValorMaterial": null
-  },
-  {
-    "Nombre": "Toxiestrellas",
-    "Imagen": null,
-    "Descripcion": "Lanzas estrellas tóxicas en un área circular de 1 metro de radio a menos de 5 metros de ti. Este área es considerada Terreno Difícil y, cuando una criatura empieza su turno o entra en el área hace una Tirada de Salvación de Resistencia CD 14. Si la falla, queda envenenada hasta el final de su próximo turno.",
-    "Tipo": "Objetos de entrenador (Consumible)",
-    "Rareza": "Raro",
-    "Coste": 600,
-    "ValorMaterial": null
-  },
-  {
-    "Nombre": "Gema de tipo",
-    "Imagen": null,
-    "Descripcion": "Hay una gema de cada Tipo Elemental. Puedes aumentar en dos dados el daño base de un Movimiento del mismo tipo que el de la gema, tras lo cual la gema pierde su poder.",
-    "Tipo": "Objetos de entrenador (Consumible)",
-    "Rareza": "Raro",
-    "Coste": 1000,
-    "ValorMaterial": null
-  },
-  {
     "Nombre": "Ámbar Viejo",
     "Imagen": null,
     "Descripcion": "Puede ser restaurado en un Aerodactyl.",
@@ -2868,6 +2562,312 @@
     "Tipo": "Objetos míticos",
     "Rareza": "Insólito",
     "Coste": null,
+    "ValorMaterial": null
+  },
+  {
+    "Nombre": "Kit de botánica",
+    "Imagen": null,
+    "Descripcion": "Puede ser usado para plantar Plantas y Bayas.",
+    "Tipo": "Objetos de entrenador",
+    "Rareza": "Común",
+    "Coste": 1000,
+    "ValorMaterial": null
+  },
+  {
+    "Nombre": "Kit de acampada",
+    "Imagen": null,
+    "Descripcion": "Contiene todo lo necesario para acampar, incluido un hornito portátil, un saco de dormir y una tienda de campaña para 2, entre otros. Este kit tiene un valor total de 1.000$. Su Carga es de 30.",
+    "Tipo": "Objetos de entrenador",
+    "Rareza": "Común",
+    "Coste": 1000,
+    "ValorMaterial": null
+  },
+  {
+    "Nombre": "Kit de explorador",
+    "Imagen": null,
+    "Descripcion": "Tiene todo lo necesario para salir a explorar en la naturaleza, como equipo de escalada, una linterna, … Este kit tiene un valor total de 1.000$. Su carga es de 25.",
+    "Tipo": "Objetos de entrenador",
+    "Rareza": "Común",
+    "Coste": 1000,
+    "ValorMaterial": null
+  },
+  {
+    "Nombre": "Kit de primeros auxilios",
+    "Imagen": null,
+    "Descripcion": "Contiene vendas y productos médicos mundanos que pueden usarse como Acción Extendida sobre una criatura a 0 PV. Para hacerlo, el entrenador realiza una Tirada de Conocimiento Médico (Mente) CD 10. Si la pasa, la criatura recupera 1 PV y deja de estar inconsciente. Este kit tiene 10 usos y un valor total del 500$ y su Carga es de 25.",
+    "Tipo": "Objetos de entrenador",
+    "Rareza": "Común",
+    "Coste": 1000,
+    "ValorMaterial": null
+  },
+  {
+    "Nombre": "Kit de miscelánea",
+    "Imagen": null,
+    "Descripcion": "Este kit representa un conjunto de objetos normales varios que un entrenador podría o no tener, como un traje de baño si proviene de un lugar sin costa o una cartera de repuesto. Este kit tiene 10 usos y decir que tienes un objeto que no está claro si tendrías te cuesta una cantidad de puntos a discreción de tu DJ y que variarán según la conveniencia del objeto en la situación en la que decides que lo tienes. Tu DJ también podría decir que no es posible que tengas un objeto, incluso si intentas usar este Kit, en cuyo caso no gastas usos. Este kit vale 1.000$. Su Carga es de 25.",
+    "Tipo": "Objetos de entrenador",
+    "Rareza": "Común",
+    "Coste": 1000,
+    "ValorMaterial": null
+  },
+  {
+    "Nombre": "Herramientas de Medicina",
+    "Imagen": null,
+    "Descripcion": "Pueden ser usadas para preparar y estudiar Medicinas y venenos. Estas herramientas tienen un valor de 500$. Es un objeto Pequeño.",
+    "Tipo": "Objetos de entrenador",
+    "Rareza": "Común",
+    "Coste": 1000,
+    "ValorMaterial": null
+  },
+  {
+    "Nombre": "Herramientas de Poké Ball",
+    "Imagen": null,
+    "Descripcion": "Pueden ser usadas para fabricar y estudiar Poké Balls. Estas herramientas tienen un valor de 500$. Es un objeto Pequeño.",
+    "Tipo": "Objetos de entrenador",
+    "Rareza": "Común",
+    "Coste": 1000,
+    "ValorMaterial": null
+  },
+  {
+    "Nombre": "Herramientas de química",
+    "Imagen": null,
+    "Descripcion": "Pueden ser usadas para fabricar Potenciadores y estudiar químicos, venenos y Potenciadores. Estas herramientas tienen un valor de 500$. Es un objeto Pequeño.",
+    "Tipo": "Objetos de entrenador",
+    "Rareza": "Común",
+    "Coste": 1000,
+    "ValorMaterial": null
+  },
+  {
+    "Nombre": "Herramientas de Inventor",
+    "Imagen": null,
+    "Descripcion": "Los inventores las usan para crear sus Invenciones. Estas herramientas tienen un valor de 500$. Es un objeto Pequeño.",
+    "Tipo": "Objetos de entrenador",
+    "Rareza": "Común",
+    "Coste": 1000,
+    "ValorMaterial": null
+  },
+  {
+    "Nombre": "Utensilios de cocina",
+    "Imagen": null,
+    "Descripcion": "Pueden ser usadas para cocinar comida para todo un grupo como Acción Extendida y puede crear Comidas de rareza común. Estos utensilios tienen un valor de 500$. Es un objeto Pequeño.",
+    "Tipo": "Objetos de entrenador",
+    "Rareza": "Común",
+    "Coste": 1000,
+    "ValorMaterial": null
+  },
+  {
+    "Nombre": "Pokédex",
+    "Imagen": null,
+    "Descripcion": "Como Acción, escaneas un Pokémon. Puedes leer su entrada de la Pokédex y tu DJ puede darte información sobre este.",
+    "Tipo": "Objetos de entrenador",
+    "Rareza": "Raro",
+    "Coste": 10000,
+    "ValorMaterial": null
+  },
+  {
+    "Nombre": "Flauta amarilla",
+    "Imagen": null,
+    "Descripcion": "Puedes tocar esta flauta como Acción y gastar 2 PP para sanar de estar envenenado, quemado, helado, paralizado a las criaturas a 5 metros de ti.",
+    "Tipo": "Objetos de entrenador",
+    "Rareza": "Raro",
+    "Coste": 10000,
+    "ValorMaterial": null
+  },
+  {
+    "Nombre": "Flauta azul",
+    "Imagen": null,
+    "Descripcion": "Puedes tocar esta flauta como Acción y gastar 2 PP para sanar de estar dormido a las criaturas a 5 metros de ti.",
+    "Tipo": "Objetos de entrenador",
+    "Rareza": "Raro",
+    "Coste": 10000,
+    "ValorMaterial": null
+  },
+  {
+    "Nombre": "Flauta roja",
+    "Imagen": null,
+    "Descripcion": "Puedes tocar esta flauta como Acción y gastar 2 PP para sanar de estar infatuado a las criaturas a 5 metros de ti.",
+    "Tipo": "Objetos de entrenador",
+    "Rareza": "Raro",
+    "Coste": 10000,
+    "ValorMaterial": null
+  },
+  {
+    "Nombre": "Flauta blanca",
+    "Imagen": null,
+    "Descripcion": "Puedes tocar esta flauta como Acción y gastar 2 PP. Cuando lo haces, las criaturas a menos de 2 metros de ti hacen una Tirada de Salvación de Espíritu CD 15. Si la fallan, quedan infatuados por ti hasta el final de la Escena.",
+    "Tipo": "Objetos de entrenador",
+    "Rareza": "Raro",
+    "Coste": 10000,
+    "ValorMaterial": null
+  },
+  {
+    "Nombre": "Flauta negra",
+    "Imagen": null,
+    "Descripcion": "Puedes tocar esta flauta como Acción y gastar 1 PP. Cuando lo haces, las criaturas a menos de 2 metros de ti hacen una Tirada de Salvación de Espíritu CD 15. Si la fallan, quedan asustados de ti hasta el final de su próximo turno.",
+    "Tipo": "Objetos de entrenador",
+    "Rareza": "Raro",
+    "Coste": 10000,
+    "ValorMaterial": null
+  },
+  {
+    "Nombre": "Holomisor",
+    "Imagen": null,
+    "Descripcion": "Sirve para hacer llamadas holográficas con tus amigos siempre que tengas cobertura.",
+    "Tipo": "Objetos de entrenador",
+    "Rareza": "Poco común",
+    "Coste": 6000,
+    "ValorMaterial": null
+  },
+  {
+    "Nombre": "Sincromisor",
+    "Imagen": null,
+    "Descripcion": "Como Acción, tomas el control de uno de tus Pokémon si este te lo permite mediante ondas psíquicas que tienen un rango de 1 kilómetro. Puedes controlarlo como si fueras el Pokémon y puedes ver lo que ve en la pantallita.",
+    "Tipo": "Objetos de entrenador",
+    "Rareza": "Muy raro",
+    "Coste": 25000,
+    "ValorMaterial": null
+  },
+  {
+    "Nombre": "Caña",
+    "Imagen": null,
+    "Descripcion": "Puedes usar la caña como Acción Extendida para pescar Pokémon. Lanzas 1d100. Si la tirada es de 50 o menos, un Pokémon a discreción del DJ pica y puedes combatir contra él.",
+    "Tipo": "Objetos de entrenador",
+    "Rareza": "Poco común",
+    "Coste": 6000,
+    "ValorMaterial": null
+  },
+  {
+    "Nombre": "Pokéradar",
+    "Imagen": null,
+    "Descripcion": "Como Acción, puedes escanear un Pokémon a menos de 10 metros de ti. Posteriormente puedes usar tu Acción para localizar los Pokémon de una especie que has escaneado a menos de 1 kilómetro de ti.",
+    "Tipo": "Objetos de entrenador",
+    "Rareza": "Muy raro",
+    "Coste": 25000,
+    "ValorMaterial": null
+  },
+  {
+    "Nombre": "Traje de buzo",
+    "Imagen": null,
+    "Descripcion": "Cuando llevas puesto este traje, puedes respirar bajo el agua y no te ves afectado por altas presiones por estar bajo el agua.",
+    "Tipo": "Objetos de entrenador",
+    "Rareza": "Raro",
+    "Coste": 20000,
+    "ValorMaterial": null
+  },
+  {
+    "Nombre": "Videomisor",
+    "Imagen": null,
+    "Descripcion": "Este reloj de pulsera sirve para hacer videollamadas con tus amigos siempre que tengas cobertura.",
+    "Tipo": "Objetos de entrenador",
+    "Rareza": "Poco común",
+    "Coste": 10000,
+    "ValorMaterial": null
+  },
+  {
+    "Nombre": "Piedra espíritu",
+    "Imagen": null,
+    "Descripcion": "Cuando una criatura muere a 20 metros, su alma es absorbida por la piedra. Cuando hay 108 almas dentro, se vuelve un Spiritomb.",
+    "Tipo": "Objetos de entrenador",
+    "Rareza": "Insólito",
+    "Coste": 50000,
+    "ValorMaterial": null
+  },
+  {
+    "Nombre": "Aerosol sigilo",
+    "Imagen": null,
+    "Descripcion": "Cuando lo usas, hasta el final del día tu y hasta 5 criaturas más ganáis un bono de +5 a las Tiradas de Sigilo.",
+    "Tipo": "Objetos de entrenador (Consumible)",
+    "Rareza": "Raro",
+    "Coste": 1000,
+    "ValorMaterial": null
+  },
+  {
+    "Nombre": "Bola de lodo",
+    "Imagen": null,
+    "Descripcion": "Puedes lanzar esta bola como Acción a una distancia de 5 metros. La criatura hace una Tirada de Salvación de Resistencia CD 12, llenándole el rostro de barro si la falla. La criatura está cegada mientras tenga barro en la cara, el cual puede quitarse como Acción.\nPuede ser recolectada en zonas embarradas como Acción Extendida.",
+    "Tipo": "Objetos de entrenador (Consumible)",
+    "Rareza": "Común",
+    "Coste": 100,
+    "ValorMaterial": null
+  },
+  {
+    "Nombre": "Bola de humo",
+    "Imagen": null,
+    "Descripcion": "Puedes lanzar esta bola como Acción a una distancia de 5 metros. La bola explota liberando humo en un radio de 2 metros que se mantiene en ese lugar hasta el final de la Escena o hasta que un Movimiento con la etiqueta de Viento afecte el área. Este humo bloquea completamente la visión más allá de 1 metro.",
+    "Tipo": "Objetos de entrenador (Consumible)",
+    "Rareza": "Poco común",
+    "Coste": 400,
+    "ValorMaterial": null
+  },
+  {
+    "Nombre": "Bola mala",
+    "Imagen": null,
+    "Descripcion": "Puedes lanzar esta bola como Acción a una distancia de 5 metros. La bola explota liberando vapor venenoso en un radio de 2 metros que se mantiene en ese lugar hasta el final de la Escena o hasta que un Movimiento con la etiqueta de Viento afecte el área. Este humo no bloquea la visión. Una criatura que entra o que empieza su turno en el humo hace una Salvación de Resistencia CD 14. Si la falla, queda envenenada hasta el final de la Escena.",
+    "Tipo": "Objetos de entrenador (Consumible)",
+    "Rareza": "Poco común",
+    "Coste": 400,
+    "ValorMaterial": null
+  },
+  {
+    "Nombre": "Bola luminiscente",
+    "Imagen": null,
+    "Descripcion": "Puedes lanzar esta bola como Acción a una distancia de 5 metros. La bola explota, esparciendo un líquido luminiscente sobre el suelo que deja de brillar al final de la Escena. Si una criatura está en el radio de explosión, debe hacer una Tirada de Salvación de Agilidad CD 14. Si la falla, esta también queda empapada y empieza a brillar. \nEste brillo la deslumbra, por lo que tiene Desventaja Tiradas de Habilidad de Percepción y las Tiradas de Ataque hechas contra esta se hacen en Ventaja. Una criatura empapada de este líquido puede usar su Acción o su Movimiento para quitarse el líquido.",
+    "Tipo": "Objetos de entrenador (Consumible)",
+    "Rareza": "Poco común",
+    "Coste": 400,
+    "ValorMaterial": null
+  },
+  {
+    "Nombre": "Bola pegajosa",
+    "Imagen": null,
+    "Descripcion": "Puedes lanzar esta bola como Acción a una distancia de 5 metros. La bola explota en un radio de 2 metros, esparciendo un líquido sobre el suelo. El suelo manchado por el líquido se considera Terreno Difícil hasta el final de la Escena y las criaturas que inician su turno en este área o que entran en esta hacen una Tirada de Salvación de Fuerza CD 14. Si la fallan, quedan pegadas al suelo y se consideran apresadas.\nComo Acción, una criatura puede repetir la Tirada, despegándose de la red y dejando de estar apresadas si la pasan.",
+    "Tipo": "Objetos de entrenador (Consumible)",
+    "Rareza": "Raro",
+    "Coste": 600,
+    "ValorMaterial": null
+  },
+  {
+    "Nombre": "Bola ruidosa",
+    "Imagen": null,
+    "Descripcion": "Puedes lanzar esta bola como Acción a una distancia de 5 metros. La bola explota en un radio de 2 metros, con un ruido estridente. \nSi una criatura está en el radio de explosión, debe hacer una Tirada de Salvación de Espíritu CD 14. Si la falla, queda asustada hasta el final de la Escena.",
+    "Tipo": "Objetos de entrenador (Consumible)",
+    "Rareza": "Poco común",
+    "Coste": 400,
+    "ValorMaterial": null
+  },
+  {
+    "Nombre": "Calmaesfera",
+    "Imagen": null,
+    "Descripcion": "Puedes lanzar esta bola como Acción a una distancia de 5 metros. La bola explota en un radio de 2 metros, liberando un vapor calmante que rápidamente se disipa. \nSi una criatura está en el radio de explosión, debe hacer una Tirada de Salvación de Espíritu CD 14. Si la falla, queda infatuada por ti hasta el final de la Escena.",
+    "Tipo": "Objetos de entrenador (Consumible)",
+    "Rareza": "Poco común",
+    "Coste": 400,
+    "ValorMaterial": null
+  },
+  {
+    "Nombre": "Abrojos metálicos",
+    "Imagen": null,
+    "Descripcion": "Lanzas abrojos en un área circular de 1 metro de radio a menos de 5 metros de ti. Este área es considerada Terreno Difícil y, por cada metro que una criatura avance dentro de los abrojos, recibe daño 2d6 de daño de tipo Acero.",
+    "Tipo": "Objetos de entrenador (Consumible)",
+    "Rareza": "Raro",
+    "Coste": 600,
+    "ValorMaterial": null
+  },
+  {
+    "Nombre": "Toxiestrellas",
+    "Imagen": null,
+    "Descripcion": "Lanzas estrellas tóxicas en un área circular de 1 metro de radio a menos de 5 metros de ti. Este área es considerada Terreno Difícil y, cuando una criatura empieza su turno o entra en el área hace una Tirada de Salvación de Resistencia CD 14. Si la falla, queda envenenada hasta el final de su próximo turno.",
+    "Tipo": "Objetos de entrenador (Consumible)",
+    "Rareza": "Raro",
+    "Coste": 600,
+    "ValorMaterial": null
+  },
+  {
+    "Nombre": "Gema de tipo",
+    "Imagen": null,
+    "Descripcion": "Hay una gema de cada Tipo Elemental. Puedes aumentar en dos dados el daño base de un Movimiento del mismo tipo que el de la gema, tras lo cual la gema pierde su poder.",
+    "Tipo": "Objetos de entrenador (Consumible)",
+    "Rareza": "Raro",
+    "Coste": 1000,
     "ValorMaterial": null
   }
 ]

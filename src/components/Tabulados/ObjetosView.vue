@@ -158,21 +158,15 @@ const objetosFiltrados = computed(() => {
 
     return resultado
 })
-
-
 </script>
-
 
 <template>
 
-
-
-
-
     <div class="cuerpo">
 
-        <!--TABLA-->
-        <div class="div-tabla">
+
+        <div id="flitroTabla">
+
             <!--FILTROS-->
             <div class="filtros">
                 <div class="botones">
@@ -181,17 +175,19 @@ const objetosFiltrados = computed(() => {
                             {{ mostrarFiltros ? 'Ocultar filtros' : 'Mostrar filtros' }}
                         </button>
                     </div>
-                    <div>
-                        <button @click="limpiarFiltros">
-                            Limpiar filtros
-                        </button>
-                    </div>
                 </div>
                 <div v-if="mostrarFiltros" id="mostrarFiltros">
+
                     <input v-model="filtroNombre" type="text" placeholder="Buscar por nombre" />
 
-                    <div>
-                        <p>Tipos</p>
+
+                    <button @click="limpiarFiltros">
+                        Limpiar filtros
+                    </button>
+
+
+                    <div id="flitroTipos">
+                        <h3>Tipos</h3>
                         <div>
                             <label v-for="tipo in tiposUnicos" :key="tipo">
                                 <input type="checkbox" :value="tipo" v-model="filtroTipos" /> {{ tipo }}
@@ -199,8 +195,8 @@ const objetosFiltrados = computed(() => {
                         </div>
                     </div>
 
-                    <div>
-                        <p>Rarezas</p>
+                    <h3>Rarezas</h3>
+                    <div id="flitroRarezas">
                         <div>
                             <label v-for="rareza in rarezasUnicas" :key="rareza">
                                 <input type="checkbox" :value="rareza" v-model="filtroRarezas" /> {{ rareza }}
@@ -208,31 +204,37 @@ const objetosFiltrados = computed(() => {
                         </div>
                     </div>
 
-                    <input type="number" v-model.number="filtroPrecioMin" placeholder="Precio mínimo" />
-                    <input type="number" v-model.number="filtroPrecioMax" placeholder="Precio máximo" />
+                    <h3>Coste</h3>
+                    <div id="flitroCostes">
+                        <input type="number" v-model.number="filtroPrecioMin" placeholder="Precio mínimo" />
+                        <input type="number" v-model.number="filtroPrecioMax" placeholder="Precio máximo" />
+                    </div>
                 </div>
-
-
-
             </div>
-            <table class="tabla">
-                <thead>
-                    <tr>
-                        <th @click="ordenarPor('Nombre')">Objeto</th>
-                        <th @click="ordenarPor('Tipo')">Tipo</th>
-                        <th @click="ordenarPor('Rareza')">Rareza</th>
-                        <th @click="ordenarPor('Coste')">Coste</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr v-for="(objeto, index) in objetosFiltrados" :key="index" @click="seleccionarObjeto(objeto)">
-                        <td>{{ objeto.Nombre }}</td>
-                        <td>{{ objeto.Tipo }}</td>
-                        <td>{{ objeto.Rareza }}</td>
-                        <td>{{ objeto.Coste ?? '—' }}</td>
-                    </tr>
-                </tbody>
-            </table>
+
+
+            <!--TABLA-->
+            <div class="div-tabla">
+
+                <table class="tabla">
+                    <thead>
+                        <tr>
+                            <th @click="ordenarPor('Nombre')">Objeto</th>
+                            <th @click="ordenarPor('Tipo')">Tipo</th>
+                            <th @click="ordenarPor('Rareza')">Rareza</th>
+                            <th @click="ordenarPor('Coste')">Coste</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="(objeto, index) in objetosFiltrados" :key="index" @click="seleccionarObjeto(objeto)">
+                            <td>{{ objeto.Nombre }}</td>
+                            <td>{{ objeto.Tipo }}</td>
+                            <td>{{ objeto.Rareza }}</td>
+                            <td>{{ objeto.Coste ?? '—' }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
         <!--SELECCIONADO-->
         <div v-if="objetoSeleccionado" class="seleccionado">
@@ -244,46 +246,103 @@ const objetosFiltrados = computed(() => {
             <p><strong>Descripción:</strong> {{ objetoSeleccionado.Descripcion }}</p>
         </div>
     </div>
+
 </template>
 
 <style scoped>
+/* 
+Todo 
+Flechita para hedaer filtro tabla 
+Min - max slider para coste
+Tamaño fijo de itmes  tabla
+Responsivo
+Marcado el objeto seleccionado
+Filtro se cierra solo en movil
+Añadir $ a precios en tabla y en tarjeta
+*/
 /* === "Main" contiene todo === */
 .cuerpo {
     display: flex;
     justify-content: space-between;
-    gap: 50px;
     margin: 0 auto;
     margin-top: 50px;
     width: 95%;
-    padding-bottom: 20px;
+    margin-bottom: 50px;
+    letter-spacing: 0.5px;
+}
+
+#flitroTabla {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    margin-right: 30px;
 }
 
 /* === Filtro de la tabla === */
 .filtros {
-    background-color: lightgray;
-    position: sticky;
-    top: 0;
+    width: 100%;
     display: flex;
     flex-direction: column;
 }
 
+#flitroTipos div {
+    margin: 10px 5px;
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    gap: 5px;
+    flex-wrap: wrap;
+}
+
+
+input[type="text"] {
+    padding: 7px;
+    border-radius: 5px;
+    font-size: 17px;
+    outline: none;
+    transition: border-color 0.3s ease;
+    margin-right: 20px;
+}
+
+input[type="text"]:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.2);
+}
+
+#flitroCostes {
+    display: flex;
+    gap: 20px
+}
+
+input[type="number"] {
+    padding: 7px;
+    border-radius: 5px;
+    font-size: 17px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
 .filtros button {
     border: none;
-    padding: 5px;
-    width: 100px;
+    padding: 10px;
+    width: 150px;
     cursor: pointer;
     background-color: var(--color-principal1);
     color: var(--color-texto);
+    font-size: 17px;
 }
 
 #mostrarFiltros {
-    padding: 10px;
+    background-color: var(--color-fondoTexto);
+    padding: 15px;
+    width: 100%;
+    font-size: 15px;
 }
 
 /*ontenedor de los botones*/
 .botones {
     display: flex;
-    gap: 10px;
+    gap: 5px;
+
 }
 
 .filtros button:hover {
@@ -291,20 +350,33 @@ const objetosFiltrados = computed(() => {
 }
 
 
-
-thead {
-    background-color: lightgray;
-    position: sticky;
-    top: 25px;
-    cursor: pointer;
+@media screen and (max-width: 1170px) {
+    #flitroTipos div {
+        grid-template-columns: repeat(3, auto);
+    }
+}
+@media screen and (max-width: 960px) {
+    #flitroTipos div {
+        grid-template-columns: repeat(2, auto);
+    }
 }
 
 
+
+
 /* === La Tabla de objetos === */
+thead {
+    background-color: var(--color-tituloTabla);
+    position: sticky;
+    top: 0;
+    cursor: pointer;
+    z-index: 1;
+    font-size: 18px;
+}
+
 .div-tabla {
-    background-color: var(--color-principal1);
-    max-height: 80vh;
-    width: 60%;
+    max-height: 75vh;
+    width: 100%;
     overflow-y: auto;
 }
 
@@ -312,24 +384,40 @@ thead {
     border-collapse: collapse;
     width: 100%;
     font-size: 14px;
+    color: var(--color-texto);
 }
 
 .tabla th,
 .tabla td {
-    padding: 5px 2px;
+    font-size: 18px;
+
+    padding: 10px 5px;
     border-bottom: 1px solid #e5e7eb;
     text-align: left;
 }
 
+/* 
+  root.style.setProperty('--color-tabla1', oscuro ? '#a92e4d' : '#76aef1')
+  root.style.setProperty('--color-tabla2', oscuro ? '#de4a54' : '#b7dbf4')
+*/
 
+.tabla tbody tr:nth-child(even) {
+    background-color: var(--color-tabla1);
+}
+
+.tabla tbody tr:nth-child(odd) {
+    background-color: var(--color-tabla2);
+}
 
 .tabla tbody tr:hover {
     background-color: #f1f5f9;
+    cursor: pointer;
 }
 
 
 /* === Mostrar la Info de la tabla === */
 .seleccionado {
+    margin-top: 40px;
     width: 40%;
     height: fit-content;
     background-color: white;

@@ -16,4 +16,5 @@
             Acabo de ver que esto apartado es dificil, esperar a Mexe.
         </div>
     </details>
+    <!-- Mucho texto + enlace con ruta con los filtros a objetos (Recordar importar routerview)-->
 </template>
