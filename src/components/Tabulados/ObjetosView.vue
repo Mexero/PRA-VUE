@@ -219,10 +219,10 @@ const objetosFiltrados = computed(() => {
                 <table class="tabla">
                     <thead>
                         <tr>
-                            <th @click="ordenarPor('Nombre')">Objeto</th>
-                            <th @click="ordenarPor('Tipo')">Tipo</th>
-                            <th @click="ordenarPor('Rareza')">Rareza</th>
-                            <th @click="ordenarPor('Coste')">Coste</th>
+                            <th @click="ordenarPor('Nombre')">Objeto <img src="../../assets/icons/filtroFelcha.svg" alt=""></th>
+                            <th @click="ordenarPor('Tipo')">Tipo <img src="../../assets/icons/filtroFelcha.svg" alt=""></th>
+                            <th @click="ordenarPor('Rareza')">Rareza <img src="../../assets/icons/filtroFelcha.svg" alt=""></th>
+                            <th @click="ordenarPor('Coste')">Coste <img src="../../assets/icons/filtroFelcha.svg" alt=""></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -230,7 +230,7 @@ const objetosFiltrados = computed(() => {
                             <td>{{ objeto.Nombre }}</td>
                             <td>{{ objeto.Tipo }}</td>
                             <td>{{ objeto.Rareza }}</td>
-                            <td>{{ objeto.Coste ?? '—' }}</td>
+                            <td>{{ objeto.Coste ?? '—' }}$</td>
                         </tr>
                     </tbody>
                 </table>
@@ -241,8 +241,8 @@ const objetosFiltrados = computed(() => {
             <h2>{{ objetoSeleccionado.Nombre }}</h2>
             <p><strong>Tipo:</strong> {{ objetoSeleccionado.Tipo }}</p>
             <p><strong>Rareza:</strong> {{ objetoSeleccionado.Rareza }}</p>
-            <p><strong>Coste:</strong> {{ objetoSeleccionado.Coste ?? '—' }}</p>
-            <p><strong>Valor material:</strong> {{ objetoSeleccionado.ValorMaterial ?? '—' }}</p>
+            <p><strong>Coste:</strong> {{ objetoSeleccionado.Coste ?? '—' }}$</p>
+            <p><strong>Valor material:</strong> {{ objetoSeleccionado.ValorMaterial ?? '—' }}$</p>
             <p><strong>Descripción:</strong> {{ objetoSeleccionado.Descripcion }}</p>
         </div>
     </div>
@@ -253,13 +253,11 @@ const objetosFiltrados = computed(() => {
 /* 
 Todo 
 Flechita para hedaer filtro tabla 
-Min - max slider para coste
-Tamaño fijo de itmes  tabla
+Min - max slider para coste (Paso de los formularios)
 Responsivo
 Marcado el objeto seleccionado
 Filtro se cierra solo en movil
-Añadir $ a precios en tabla y en tarjeta
-*/
+
 /* === "Main" contiene todo === */
 .cuerpo {
     display: flex;
@@ -355,6 +353,7 @@ input[type="number"] {
         grid-template-columns: repeat(3, auto);
     }
 }
+
 @media screen and (max-width: 960px) {
     #flitroTipos div {
         grid-template-columns: repeat(2, auto);
@@ -390,16 +389,17 @@ thead {
 .tabla th,
 .tabla td {
     font-size: 18px;
-
     padding: 10px 5px;
     border-bottom: 1px solid #e5e7eb;
     text-align: left;
+    width: 30%;
+
 }
 
-/* 
-  root.style.setProperty('--color-tabla1', oscuro ? '#a92e4d' : '#76aef1')
-  root.style.setProperty('--color-tabla2', oscuro ? '#de4a54' : '#b7dbf4')
-*/
+.tabla th img {
+    transform: translateY(2px);
+    width: 15px;
+}
 
 .tabla tbody tr:nth-child(even) {
     background-color: var(--color-tabla1);
@@ -410,7 +410,7 @@ thead {
 }
 
 .tabla tbody tr:hover {
-    background-color: #f1f5f9;
+    background-color: #8d8d8d;
     cursor: pointer;
 }
 
@@ -426,4 +426,5 @@ thead {
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
     padding: 1.5rem;
 }
+
 </style>

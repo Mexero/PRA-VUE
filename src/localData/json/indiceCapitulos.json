@@ -12,7 +12,8 @@
         "ruta": "#apartado2"
       }
     ]
-  },{
+  },
+  {
     "capitulo": "Cómo jugar",
     "ruta": "/capitulos/comojugar/#chapterStart",
     "secciones": [
@@ -65,7 +66,8 @@
         "ruta": "#apartado12"
       }
     ]
-  },{
+  },
+  {
     "capitulo": "Creación de Personaje",
     "ruta": "/capitulos/creacionpj/#chapterStart",
     "secciones": [
@@ -110,10 +112,12 @@
         "ruta": "#apartado10"
       }
     ]
-  },{
+  },
+  {
     "capitulo": "Clases",
     "ruta": "/capitulos/clases/#chapterStart"
-  },{
+  },
+  {
     "capitulo": "Movimientos, Habilidades y Dotes",
     "ruta": "/capitulos/movhabdot/#chapterStart",
     "secciones": [
@@ -150,7 +154,8 @@
         "ruta": "#apartado8"
       }
     ]
-  },{
+  },
+  {
     "capitulo": "Pokémon",
     "ruta": "/capitulos/pokemon/#chapterStart",
     "secciones": [
@@ -235,7 +240,8 @@
         "ruta": "#apartado20"
       }
     ]
-  },{
+  },
+  {
     "capitulo": "Combate",
     "ruta": "/capitulos/combate/#chapterStart",
     "secciones": [
@@ -292,7 +298,8 @@
         "ruta": "#apartado13"
       }
     ]
-  },{
+  },
+  {
     "capitulo": "Concursos Pokémon",
     "ruta": "/capitulos/concursos/#chapterStart",
     "secciones": [
@@ -329,76 +336,124 @@
         "ruta": "#apartado8"
       }
     ]
-  },{
+  },
+  {
+    "capitulo": "Equipo y Objetos",
+    "ruta": "/capitulos/objetos/#chapterStart",
+    "secciones": [
+      {
+        "nombre": "Los objetos en tu Campaña",
+        "ruta": "#apartado1"
+      },
+      {
+        "nombre": "Los Tipos de Objetos",
+        "ruta": "#apartado2"
+      },
+      {
+        "nombre": "Materiales de Fabricación",
+        "ruta": "#apartado2"
+      },
+      {
+        "nombre": "Poké Balls",
+        "ruta": "#apartado2"
+      },
+      {
+        "nombre": "Potenciadores",
+        "ruta": "#apartado2"
+      }
+    ]
+  },
+  {
     "capitulo": "Reglas Menores",
     "ruta": "/capitulos/otrasreglas/#chapterStart",
     "secciones": [
       {
         "nombre": "Estados",
         "ruta": "#apartado1"
-      },{
+      },
+      {
         "nombre": "Fatiga",
         "ruta": "#apartado2"
-      },{
+      },
+      {
         "nombre": "Tipos de Tamaños",
         "ruta": "#apartado3"
-      },{
+      },
+      {
         "nombre": "Cargar Peso",
         "ruta": "#apartado4"
-      },{
+      },
+      {
         "nombre": "Velocidades",
         "ruta": "#apartado5"
-      },{
+      },
+      {
         "nombre": "Correr y Terreno Difícil",
         "ruta": "#apartado6"
-      },{
+      },
+      {
         "nombre": "Salto",
         "ruta": "#apartado7"
-      },{
+      },
+      {
         "nombre": "Oscuridad e Iluminación",
         "ruta": "#apartado8"
-      },{
+      },
+      {
         "nombre": "Visibilidad",
         "ruta": "#apartado9"
-      },{
+      },
+      {
         "nombre": "Sentidos",
         "ruta": "#apartado10"
-      },{
+      },
+      {
         "nombre": "Agarrar",
         "ruta": "#apartado11"
-      },{
+      },
+      {
         "nombre": "Empujar",
         "ruta": "#apartado12"
-      },{
+      },
+      {
         "nombre": "Daño por Caída",
         "ruta": "#apartado13"
-      },{
+      },
+      {
         "nombre": "Mantener la Respiración",
         "ruta": "#apartado14"
-      },{
+      },
+      {
         "nombre": "Climas",
         "ruta": "#apartado15"
-      },{
+      },
+      {
         "nombre": "Campos",
         "ruta": "#apartado16"
-      },{
+      },
+      {
         "nombre": "Pokémon que No Hacen Caso",
         "ruta": "#apartado17"
-      },{
+      },
+      {
         "nombre": "Reconocer un Huevo",
         "ruta": "#apartado18"
-      },{
+      },
+      {
         "nombre": "Recordar Información Sobre un Pokémon",
         "ruta": "#apartado19"
-      },{
+      },
+      {
         "nombre": "Regla Variante: Hacer Cuidadosamente",
         "ruta": "#apartado20"
-      },{
+      },
+      {
         "nombre": "Regla Variante: Multiclase",
         "ruta": "#apartado21"
       }
     ]
-  },{
+  },
+  {
     "capitulo": "Dirigiendo el Juego",
     "ruta": "/capitulos/dirigir/#chapterStart"
   }
