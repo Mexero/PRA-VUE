@@ -5,6 +5,70 @@ import { useRoute, useRouter } from 'vue-router'
 const route = useRoute()
 const router = useRouter()
 
+const allowedValues = [
+    0, 100, 200, 250, 300, 400, 500, 600, 800, 1000, 1200, 1400,
+    1500, 2000, 2500, 3000, 4000, 5000, 6000, 8000, 10000, 15000,
+    20000, 25000, 50000, 100000
+];
+
+const minIndex = ref(0);
+const maxIndex = ref(allowedValues.length - 1);
+
+const sliderStyle = computed(() => {
+    const total = allowedValues.length - 1;
+    return {
+        left: `${(minIndex.value / total) * 100}%`,
+        right: `${100 - (maxIndex.value / total) * 100}%`
+    };
+});
+
+function closestAllowed(val) {
+    return allowedValues.reduce((prev, curr) =>
+        Math.abs(curr - val) < Math.abs(prev - val) ? curr : prev
+    );
+}
+
+function valueToIndex(val) {
+    return allowedValues.findIndex(v => v === val);
+}
+
+function indexToValue(index) {
+    return allowedValues[index];
+}
+
+// Sincronizar inputs numéricos con sliders
+function onSliderInput() {
+    if (minIndex.value > maxIndex.value) {
+        const temp = minIndex.value;
+        minIndex.value = maxIndex.value;
+        maxIndex.value = temp;
+    }
+    filtroPrecioMin.value = indexToValue(minIndex.value);
+    filtroPrecioMax.value = indexToValue(maxIndex.value);
+}
+
+function onNumberInput() {
+    let minVal = closestAllowed(Number(filtroPrecioMin.value));
+    let maxVal = closestAllowed(Number(filtroPrecioMax.value));
+    let minIdx = valueToIndex(minVal);
+    let maxIdx = valueToIndex(maxVal);
+
+    if (minIdx > maxIdx) {
+        const temp = minIdx;
+        minIdx = maxIdx;
+        maxIdx = temp;
+    }
+    minIndex.value = minIdx;
+    maxIndex.value = maxIdx;
+    filtroPrecioMin.value = minVal;
+    filtroPrecioMax.value = maxVal;
+}
+
+// Inicializar valores al montar
+onMounted(() => {
+    if (filtroPrecioMin.value !== null) minIndex.value = valueToIndex(closestAllowed(filtroPrecioMin.value));
+    if (filtroPrecioMax.value !== null) maxIndex.value = valueToIndex(closestAllowed(filtroPrecioMax.value));
+});
 
 
 // ======================== DATOS ========================
@@ -165,7 +229,7 @@ const objetosFiltrados = computed(() => {
     <div class="cuerpo">
 
 
-        <div id="flitroTabla">
+        <div id="filtroTabla">
 
             <!--FILTROS-->
             <div class="filtros">
@@ -180,13 +244,11 @@ const objetosFiltrados = computed(() => {
 
                     <input v-model="filtroNombre" type="text" placeholder="Buscar por nombre" />
 
-
                     <button @click="limpiarFiltros">
                         Limpiar filtros
                     </button>
 
-
-                    <div id="flitroTipos">
+                    <div id="filtroTipos">
                         <h3>Tipos</h3>
                         <div>
                             <label v-for="tipo in tiposUnicos" :key="tipo">
@@ -196,7 +258,7 @@ const objetosFiltrados = computed(() => {
                     </div>
 
                     <h3>Rarezas</h3>
-                    <div id="flitroRarezas">
+                    <div id="filtroRarezas">
                         <div>
                             <label v-for="rareza in rarezasUnicas" :key="rareza">
                                 <input type="checkbox" :value="rareza" v-model="filtroRarezas" /> {{ rareza }}
@@ -205,13 +267,28 @@ const objetosFiltrados = computed(() => {
                     </div>
 
                     <h3>Coste</h3>
-                    <div id="flitroCostes">
-                        <input type="number" v-model.number="filtroPrecioMin" placeholder="Precio mínimo" />
-                        <input type="number" v-model.number="filtroPrecioMax" placeholder="Precio máximo" />
+                    <div id="filtroCostes">
+
+                        <input type="number" v-model.number="filtroPrecioMin" @input="onNumberInput"
+                            :min="allowedValues[0]" :max="allowedValues[allowedValues.length - 1]"
+                            placeholder="Precio mínimo" />
+
+                        <div class="slider">
+                            <div class="price-slider" :style="sliderStyle"></div>
+                            <div class="range-input">
+                                <input type="range" :min="0" :max="allowedValues.length - 1" v-model.number="minIndex"
+                                    @input="onSliderInput" />
+                                <input type="range" :min="0" :max="allowedValues.length - 1" v-model.number="maxIndex"
+                                    @input="onSliderInput" />
+                            </div>
+                        </div>
+
+                        <input type="number" v-model.number="filtroPrecioMax" @input="onNumberInput"
+                            :min="allowedValues[0]" :max="allowedValues[allowedValues.length - 1]"
+                            placeholder="Precio máximo" />
                     </div>
                 </div>
             </div>
-
 
             <!--TABLA-->
             <div class="div-tabla">
@@ -219,13 +296,13 @@ const objetosFiltrados = computed(() => {
                 <table class="tabla">
                     <thead>
                         <tr>
-                            <th @click="ordenarPor('Nombre')">Objeto <img src="../../assets/icons/filtroFelcha.svg" alt=""></th>
-                            <th @click="ordenarPor('Tipo')">Tipo <img src="../../assets/icons/filtroFelcha.svg" alt=""></th>
-                            <th @click="ordenarPor('Rareza')">Rareza <img src="../../assets/icons/filtroFelcha.svg" alt=""></th>
-                            <th @click="ordenarPor('Coste')">Coste <img src="../../assets/icons/filtroFelcha.svg" alt=""></th>
+                            <th @click="ordenarPor('Nombre')">Objeto <img src="../../assets/icons/filtroFelcha.svg" alt="icono filtro"></th>
+                            <th @click="ordenarPor('Tipo')">Tipo <img src="../../assets/icons/filtroFelcha.svg" alt="icono filtro"></th>
+                            <th @click="ordenarPor('Rareza')">Rareza <img src="../../assets/icons/filtroFelcha.svg" alt="icono filtro"></th>
+                            <th @click="ordenarPor('Coste')">Coste <img src="../../assets/icons/filtroFelcha.svg" alt="icono filtro"></th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody v-if="objetosFiltrados.length !== 0">
                         <tr v-for="(objeto, index) in objetosFiltrados" :key="index" @click="seleccionarObjeto(objeto)">
                             <td>{{ objeto.Nombre }}</td>
                             <td>{{ objeto.Tipo }}</td>
@@ -233,8 +310,16 @@ const objetosFiltrados = computed(() => {
                             <td>{{ objeto.Coste ?? '—' }}$</td>
                         </tr>
                     </tbody>
+                    <tbody v-else>
+                        <tr>
+                            <td colspan="4" class="textoCentrado">
+                                <div>Resultados no encontrados con los filtros actuales :&lpar;</div>
+                            </td>
+                        </tr>
+                    </tbody>
                 </table>
             </div>
+
         </div>
         <!--SELECCIONADO-->
         <div v-if="objetoSeleccionado" class="seleccionado">
@@ -250,13 +335,82 @@ const objetosFiltrados = computed(() => {
 </template>
 
 <style scoped>
+
 /* 
-Todo 
-Flechita para hedaer filtro tabla 
-Min - max slider para coste (Paso de los formularios)
-Responsivo
-Marcado el objeto seleccionado
-Filtro se cierra solo en movil
+Todo:
+- Transicion Filtros
+- Responsivo
+- Marcado el objeto seleccionado
+- Filtro se cierra solo en movil
+*/
+.textoCentrado div {
+    text-align: center;
+    font-size: 40px;
+}
+
+#filtroCostes {
+    display: flex;
+    gap: 20px;
+    flex-direction: row;
+    width: 100%;
+}
+
+input[type="number"] {
+    width: 80px;
+    padding: 7px;
+    border-radius: 5px;
+    font-size: 17px;
+    outline: none;
+    text-align: center;
+}
+
+/* Remove Arrows/Spinners */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.slider {
+    align-self: center;
+    height: 8px;
+    position: relative;
+    background: #e4e4e4;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.slider .price-slider {
+    height: 100%;
+    left: 0;
+    right: 0;
+    position: absolute;
+    border-radius: 5px;
+    background: var(--color-principal1);
+}
+
+.range-input input {
+    position: absolute;
+    width: 100%;
+    height: 5px;
+    background: none;
+    pointer-events: none;
+    cursor: pointer;
+    -webkit-appearance: none;
+}
+
+/* Styles for the range thumb in WebKit browsers */
+input[type="range"]::-webkit-slider-thumb {
+    height: 20px;
+    width: 20px;
+    margin-top: 3px;
+    border-radius: 50%;
+    background: #555;
+    pointer-events: auto;
+    -webkit-appearance: none;
+}
+
+
 
 /* === "Main" contiene todo === */
 .cuerpo {
@@ -269,7 +423,7 @@ Filtro se cierra solo en movil
     letter-spacing: 0.5px;
 }
 
-#flitroTabla {
+#filtroTabla {
     display: flex;
     flex-direction: column;
     width: 60%;
@@ -283,7 +437,7 @@ Filtro se cierra solo en movil
     flex-direction: column;
 }
 
-#flitroTipos div {
+#filtroTipos div {
     margin: 10px 5px;
     display: grid;
     grid-template-columns: repeat(4, auto);
@@ -291,6 +445,9 @@ Filtro se cierra solo en movil
     flex-wrap: wrap;
 }
 
+#filtroTipos h3 {
+    margin: 10px 0px;
+}
 
 input[type="text"] {
     padding: 7px;
@@ -306,18 +463,12 @@ input[type="text"]:focus {
     box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.2);
 }
 
-#flitroCostes {
+#filtroRarezas div{
+    padding: 8px 0;
     display: flex;
-    gap: 20px
+    gap: 20px;
 }
 
-input[type="number"] {
-    padding: 7px;
-    border-radius: 5px;
-    font-size: 17px;
-    outline: none;
-    transition: border-color 0.3s ease;
-}
 
 .filtros button {
     border: none;
@@ -330,6 +481,7 @@ input[type="number"] {
 }
 
 #mostrarFiltros {
+    color: var(--color-texto);
     background-color: var(--color-fondoTexto);
     padding: 15px;
     width: 100%;
@@ -349,13 +501,13 @@ input[type="number"] {
 
 
 @media screen and (max-width: 1170px) {
-    #flitroTipos div {
+    #filtroTipos div {
         grid-template-columns: repeat(3, auto);
     }
 }
 
 @media screen and (max-width: 960px) {
-    #flitroTipos div {
+    #filtroTipos div {
         grid-template-columns: repeat(2, auto);
     }
 }
@@ -374,7 +526,7 @@ thead {
 }
 
 .div-tabla {
-    max-height: 75vh;
+    height: 65vh;
     width: 100%;
     overflow-y: auto;
 }
@@ -392,11 +544,13 @@ thead {
     padding: 10px 5px;
     border-bottom: 1px solid #e5e7eb;
     text-align: left;
-    width: 30%;
-
 }
 
-.tabla th img {
+.tabla td {
+    width: 30%;
+}
+
+th img {
     transform: translateY(2px);
     width: 15px;
 }
@@ -410,7 +564,7 @@ thead {
 }
 
 .tabla tbody tr:hover {
-    background-color: #8d8d8d;
+    background-color: #bf9ed0fd;
     cursor: pointer;
 }
 
@@ -426,5 +580,4 @@ thead {
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
     padding: 1.5rem;
 }
-
 </style>
