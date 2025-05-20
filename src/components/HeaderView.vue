@@ -30,7 +30,7 @@ function toggleModo() {
     root.style.setProperty('--color-principal2', oscuro.value ? '#dd576d' : '#b2d7ff')
     root.style.setProperty('--color-secundario', oscuro.value ? '#ff8f8f' : '#529CE6')
     root.style.setProperty('--color-secundario2', oscuro.value ? '#ffffff' : '#badfff')
-  root.style.setProperty('--color-tituloTabla', oscuro.value ? 'rgb(176, 28, 60)' : 'rgb(0, 174, 255)')
+    root.style.setProperty('--color-tituloTabla', oscuro.value ? 'rgb(176, 28, 60)' : 'rgb(0, 174, 255)')
     root.style.setProperty('--color-tabla1', oscuro.value ? '#f96262' : '#a3cdff')
     root.style.setProperty('--color-tabla2', oscuro.value ? '#ef8181' : '#bae2ff')
     root.style.setProperty('--color-fondoTexto', oscuro.value ? '#293141' : '#EEF5FF')

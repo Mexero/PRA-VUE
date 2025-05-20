@@ -13,6 +13,12 @@ function toggleSubmenu(index) {
     openIndex.value = openIndex.value === index ? null : index
 }
 
+const root = document.documentElement;
+function countSubmenu(maxSubindex) {
+    root.style.setProperty('--submenu-height', maxSubindex);
+    console.log(maxSubindex)
+}
+
 //METODOS PARA SUBMENUS
 const openIndex = ref(null)
 const openMobileNav = ref(false)
@@ -22,7 +28,6 @@ const route = useRoute()
 watch(() => route.fullPath, () => {
     openIndex.value = null
 })
-
 
 </script>
 <template>
@@ -40,13 +45,11 @@ watch(() => route.fullPath, () => {
             <li class="abrirMenu" v-for="(section, index) in menu" :key="index"
                 v-click-outside="() => openIndex = null">
 
-                <div class="divMenu" @click.stop="toggleSubmenu(index)">
+                <div class="divMenu" @click.stop="toggleSubmenu(index)" @click="countSubmenu(section.submenu.length)">
                     {{ section.title }}
                 </div>
 
-                <!--Crea un name de Transicion diferente a cada submenu 
-                    para ajustar el estilo de cada transicion por separado-->
-                <Transition :name="'slideSubMenu' + (index + 1)">
+                <Transition :name="'slideSubMenu'">
 
                     <ul class="subMenu" v-if="openIndex === index" v-click-outside="() => openIndex = null">
 
@@ -95,13 +98,12 @@ watch(() => route.fullPath, () => {
                     <li class="abrirMenu" v-for="(section, index) in menu" :key="index"
                         v-click-outside="() => openIndex = null">
 
-                        <div class="divMenu" @click.stop="toggleSubmenu(index)">
+                        <div class="divMenu" @click.stop="toggleSubmenu(index)"
+                            @click="countSubmenu(section.submenu.length)">
                             {{ section.title }}
                         </div>
 
-                        <!--Crea un name de Transicion diferente a cada submenu 
-                    para ajustar el estilo de cada transicion por separado -->
-                        <Transition :name="'slideSubMenu' + (index + 1)">
+                        <Transition :name="'slideSubMenu'">
 
                             <ul class="subMenu" v-if="openIndex === index" v-click-outside="() => openIndex = null">
 
@@ -340,64 +342,21 @@ nav div {
 
 /* ===== Transicion para cada submenu ===== */
 /* Mismo efecto de transicion para todos */
-.slideSubMenu1-enter-active,
-.slideSubMenu1-leave-active,
-.slideSubMenu2-enter-active,
-.slideSubMenu2-leave-active,
-.slideSubMenu3-enter-active,
-.slideSubMenu3-leave-active,
-.slideSubMenu4-enter-active,
-.slideSubMenu4-leave-active,
-.slideSubMenu5-enter-active,
-.slideSubMenu5-leave-active {
+.slideSubMenu-enter-active,
+.slideSubMenu-leave-active {
     transition: all 0.3s ease;
     overflow: hidden;
 }
 
 /* Mismo inicio de altura para todos */
-.slideSubMenu1-enter-from,
-.slideSubMenu1-leave-to,
-.slideSubMenu2-enter-from,
-.slideSubMenu2-leave-to,
-.slideSubMenu3-enter-from,
-.slideSubMenu3-leave-to,
-.slideSubMenu4-enter-active,
-.slideSubMenu4-leave-active,
-.slideSubMenu4-enter-from,
-.slideSubMenu4-leave-to,
-.slideSubMenu5-enter-from,
-.slideSubMenu5-leave-to {
+.slideSubMenu-enter-from,
+.slideSubMenu-leave-to {
     max-height: 0;
 }
 
 /* Diferente altura para cada menu, a su altura maxima para una transicion consistente */
-/*  Capitulos */
-.slideSubMenu1-enter-to,
-.slideSubMenu1-leave-from {
-    max-height: 440px;
-}
-
-/*  Jugador */
-.slideSubMenu2-enter-to,
-.slideSubMenu2-leave-from {
-    max-height: 120px;
-}
-
-/*  Pokemon */
-.slideSubMenu3-enter-to,
-.slideSubMenu3-leave-from {
-    max-height: 160px;
-}
-
-/*  Reglas */
-.slideSubMenu4-enter-to,
-.slideSubMenu4-leave-from {
-    max-height: 40px;
-}
-
-/*  Utilidades */
-.slideSubMenu5-enter-to,
-.slideSubMenu5-leave-from {
-    max-height: 80px;
+.slideSubMenu-enter-to,
+.slideSubMenu-leave-from {
+    max-height: calc(var(--submenu-height) * 40px);
 }
 </style>
