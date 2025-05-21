@@ -19,6 +19,7 @@ const openMobileCap = ref(false)
 </script>
 
 <template>
+    <span id="chapterStart"></span>
     <nav id="CapMovil">
         <div class="navLogic" v-click-outside="() => openMobileCap = false">
             <Transition :name="'slideMovilMenu'">
@@ -50,7 +51,7 @@ const openMobileCap = ref(false)
         </div>
     </nav>
 
-    <span id="chapterStart"></span>
+
     <main id="mainCaps">
         <aside>
             <nav id="menuCapitulos">
@@ -91,6 +92,7 @@ const openMobileCap = ref(false)
     display: flex;
     flex-direction: row;
     width: 100%;
+    min-height: 100vh;;
 }
 
 /* === Menu principal escritorio ===*/
@@ -100,6 +102,10 @@ section {
 
 aside {
     padding: 40px 0;
+}
+
+.weight {
+    font-weight: bold;
 }
 
 #menuCapitulos {
@@ -257,13 +263,12 @@ aside {
 #capitulos {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
-    margin: 40px 20px;
+    height: fit-content;
     overflow: hidden;
     border-radius: 10px;
     padding: 20px;
+    margin: 40px 20px;
     background-color: var(--color-fondoTexto);
-
 }
 
 #capitulos h1,
@@ -317,7 +322,6 @@ aside {
     background-color: var(--color-principal1);
 }
 
-
 .consejoCapitulo {
     margin-top: 10px;
     padding: 1px 20px;
@@ -342,13 +346,10 @@ aside {
     margin: 0 auto;
 }
 
-
-
 .enlaceObjetos {
     background-color: var(--color-principal1);
     border-radius: 5px;
     width: fit-content;
-
 }
 
 .enlaceObjetos a {
@@ -359,6 +360,10 @@ aside {
 }
 
 /* ======================= TABLAS DE CAPITULOS ======================= */
+th{
+    background-color: var(--color-tituloTabla);
+    font-size: 18px;
+}
 .tablaCapitulos,
 .tablaNaturaleza {
     text-align: center;
@@ -403,17 +408,18 @@ aside {
 }
 
 .subDetails {
-    width: 98%;
+    wid: 98%;
     margin: 0 auto;
-    padding: 10px 0!important;
-}
-.subDetails p{
-    font-size: 15px !important;
-}
-.subSummary {
-    background-color: var(--color-tabla1)!important;
-    font-size: 20px !important;
-    font-weight: lighter; 
+    padding: 10px 0 !important;
 }
 
+.subDetails p {
+    font-size: 15px !important;
+}
+
+.subSummary {
+    background-color: var(--color-tabla1) !important;
+    font-size: 20px !important;
+    font-weight: lighter;
+}
 </style>

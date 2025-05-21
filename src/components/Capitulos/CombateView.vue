@@ -304,7 +304,7 @@
         </div>
     </details>
 
-    <details id="apartado9">
+    <details open id="apartado9">
         <summary>La Tabla de Tipos</summary>
         <div class="detailsBloque">
             <p>

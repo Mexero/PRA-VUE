@@ -613,33 +613,33 @@
                 guía a la hora de saber cómo diseñar armas</p>
             <div class="ejemploArma">
                 <div class="arma">
-                    <p><span class="negrita">Bate de béisbol</span></p>
-                    <p><span class="negrita">Tipo asociado:</span> Normal.</p>
-                    <p><span class="negrita">Movimiento Estándar:</span> Golpear</p>
-                    <p><span class="negrita">Movimientos Especiales:</span> Quebrar, Barrido</p>
-                    <p><span class="negrita">Movimiento Especial Superior:</span> Contusión</p>
+                    <p><span class="weight">Bate de béisbol</span></p>
+                    <p><span class="weight">Tipo asociado:</span> Normal.</p>
+                    <p><span class="weight">Movimiento Estándar:</span> Golpear</p>
+                    <p><span class="weight">Movimientos Especiales:</span> Quebrar, Barrido</p>
+                    <p><span class="weight">Movimiento Especial Superior:</span> Contusión</p>
                 </div>
                 <div class="arma">
-                    <p><span class="negrita">Estrellas Ninja</span></p>
-                    <p><span class="negrita">Tipo asociado:</span> Acero.</p>
-                    <p><span class="negrita">Movimiento Estándar:</span> Lanzar</p>
-                    <p><span class="negrita">Movimientos Especiales:</span> Disparo ágil, Doble
+                    <p><span class="weight">Estrellas Ninja</span></p>
+                    <p><span class="weight">Tipo asociado:</span> Acero.</p>
+                    <p><span class="weight">Movimiento Estándar:</span> Lanzar</p>
+                    <p><span class="weight">Movimientos Especiales:</span> Disparo ágil, Doble
                         lanzamiento</p>
-                    <p><span class="negrita">Movimiento Especial Superior:</span> Rociar</p>
+                    <p><span class="weight">Movimiento Especial Superior:</span> Rociar</p>
                 </div>
                 <div class="arma">
-                    <p><span class="negrita">Sable</span></p>
-                    <p><span class="negrita">Tipo asociado:</span> Acero.</p>
-                    <p><span class="negrita">Movimiento Estándar:</span> Tajar</p>
-                    <p><span class="negrita">Movimientos Especiales:</span> Lacerar, Bloquear</p>
-                    <p><span class="negrita">Movimiento Especial Superior:</span> Riposte</p>
+                    <p><span class="weight">Sable</span></p>
+                    <p><span class="weight">Tipo asociado:</span> Acero.</p>
+                    <p><span class="weight">Movimiento Estándar:</span> Tajar</p>
+                    <p><span class="weight">Movimientos Especiales:</span> Lacerar, Bloquear</p>
+                    <p><span class="weight">Movimiento Especial Superior:</span> Riposte</p>
                 </div>
                 <div class="arma">
-                    <p><span class="negrita">Hacha de Cleavor</span></p>
-                    <p><span class="negrita">Tipo asociado:</span> Roca.</p>
-                    <p><span class="negrita">Movimiento Estándar:</span> Tajar</p>
-                    <p><span class="negrita">Movimientos Especiales:</span> Lacerar, Hendir</p>
-                    <p><span class="negrita">Movimiento Especial Superior:</span> Abrir herida</p>
+                    <p><span class="weight">Hacha de Cleavor</span></p>
+                    <p><span class="weight">Tipo asociado:</span> Roca.</p>
+                    <p><span class="weight">Movimiento Estándar:</span> Tajar</p>
+                    <p><span class="weight">Movimientos Especiales:</span> Lacerar, Hendir</p>
+                    <p><span class="weight">Movimiento Especial Superior:</span> Abrir herida</p>
                 </div>
             </div>
         </div>
@@ -778,9 +778,7 @@
 </template>
 
 <style scoped>
-.negrita {
-    font-weight: bold;
-}
+
 
 .ejemploArma {
     width: 100%;

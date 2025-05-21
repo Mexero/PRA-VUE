@@ -1076,6 +1076,7 @@
                 que se les presenta más adelante
             </p>
 
+
             <details class="subDetails">
                 <summary class="subSummary">Prepara las fichas </summary>
                 <div class="detailsBloque">
@@ -1086,11 +1087,14 @@
                         Pokémon que los personajes podrían encontrar. Para solventar esto se
                         recomienda seguir las siguientes pautas:
                     </p>
-                    <p>Para los PNJs, usa las fichas de la Entrenadex.</p>
+
+                    <p>Para los PNJs, <span class="weight">usa las fichas de la Entrenadex</span>.</p>
 
                     <p>
-                        Cuando prepares Pokémon, no prepares todos los Movimientos prepara sólo
-                        los Movimientos que planees usar o usa los Pokémon de la Lifedex. A la
+                        <span class="weight">Cuando prepares un Pokémon</span>, no prepares todos los Movimientos
+                        prepara <strong>sólo
+                            los Movimientos que planees</strong> usar o usa los Pokémon de la <strong>Lifedex</strong>.
+                        A la
                         hora de asignar Mejoras de Estadísticas ponlas en la Estadística
                         principal que use para mejorar sus Movimientos o en la que usa para
                         mejorar su CA. Pon los Aumentos de Grados de Habilidad en la Habilidad
@@ -1099,12 +1103,13 @@
                         excepcionales o en caso de que sus entrenadores sean relevantes.
                     </p>
                     <p>
-                        No abarques demasiado, preparar un par de PNJs con todo su equipo de
+                        <span class="weight">No abarques demasiado</span>, preparar un par de PNJs con todo su equipo de
                         Pokémon ya es más que suficiente.
                     </p>
 
                     <p>
-                        Apóyate en lo que has preparado para las sesiones previas. Si un PNJ es
+                        <span class="weight">Apóyate en lo que has preparado</span> para las sesiones previas. Si un PNJ
+                        es
                         recurrente, no hace falta cambiar su ficha todo el rato y, si preparas
                         un Pokémon para que se encuentre en la naturaleza en cierta
                         localización, puedes volver a usarlo más adelante si vuelven a este
@@ -1189,7 +1194,7 @@
                     </p>
 
                     <p>
-                        Si haces uso del Clima, recuerda que no debes restringirte a los efectos
+                        Si haces uso del <strong>Clima</strong>, recuerda que no debes restringirte a los efectos
                         provocados por los climas que son generados por Movimientos con la
                         Etiqueta Clima, sino que también puedes añadir efectos extra a estos
                         para hacerlos sentir de una forma particular. Por ejemplo, si llueve
@@ -1201,7 +1206,7 @@
 
                     <p>
                         Ciertas regiones, por ejemplo, las afectadas por poderosos Pokémon
-                        podrían estar siempre bajo los efectos de un Campo. Por ejemplo, podrías
+                        podrían estar siempre bajo los efectos de un <strong>Campo</strong>. Por ejemplo, podrías
                         elegir que una cueva cargada electromagnéticamente tuviera rocas y focos
                         de electricidad alrededor de los cuales hay un Campo Eléctrico. También
                         podrías definir que una pradera asociada a un pokémon Legendario
@@ -1217,7 +1222,7 @@
                     </p>
 
                     <p>
-                        Lagos de Magma y volcanes. Los volcanes activos y los lagos de magma son
+                        <strong>Lagos de Magma y volcanes</strong>. Los volcanes activos y los lagos de magma son
                         el hogar natural para muchos Pokémon de Tipo Fuego, pero son hostiles
                         casi todas las otras criaturas. Cualquier criatura a menos de una cierta
                         distancia del magma podría quedar siempre acalorada. Tu, como DJ,
@@ -1233,7 +1238,7 @@
                     </p>
 
                     <p>
-                        Arenas movedizas. Las arenas movedizas son Terreno Difícil y debe
+                        <strong>Arenas movedizas</strong>. Las arenas movedizas son Terreno Difícil y debe
                         superarse una Tirada de Habilidad de Supervivencia o Percepción con CD
                         15 para detectarse antes de pisarlas. Una Criatura que termina su turno
                         tocándolas, o que las pisa fuera de Iniciativa sin saber que están ahí,
@@ -1270,35 +1275,49 @@
                     </p>
 
                     <p>
-                        Zonas repletas de Niebla. Una zona repleta de Niebla puede obstaculizar
+                        <strong>Zonas repletas de Niebla</strong>. Una zona repleta de Niebla puede obstaculizar
                         la visión en cierto grado en función de lo espesa que sea la Niebla.
                         Puedes elegir que ciertas regiones de la Niebla sean más espesas que
                         otras. Los distintos grados de espesor son los siguientes:
                     </p>
+                    <ul>
+                        <li>
+                            <p>
+                                <strong>Bruma leve</strong>: Las Tiradas de Percepción para ver a más de 10 metros se
+                                hacen en Desventaja y no se puede ver a más de 20 metros.
+                            </p>
+                        </li>
 
-                    <p>
-                        Bruma leve: Las Tiradas de Percepción para ver a más de 10 metros se
-                        hacen en Desventaja y no se puede ver a más de 20 metros.
-                    </p>
+                        <li>
+                            <p>
+                                <strong>Niebla normal</strong>: Las Tiradas de Percepción para ver a más de una
+                                distancia
+                                en metros superior a 1 e inferior a 9 metros se hacen en Desventaja y no
+                                se puede ver a más del doble de esa distancia en metros.
+                            </p>
+                        </li>
 
-                    <p>
-                        Niebla normal: Las Tiradas de Percepción para ver a más de una distancia
-                        en metros superior a 1 e inferior a 9 metros se hacen en Desventaja y no
-                        se puede ver a más del doble de esa distancia en metros.
-                    </p>
+                        <li>
+                            <p>
+                                <strong>Niebla espesa</strong>: Las criaturas no ven a más de 1 metro de sí mismas
+                                cuando
+                                están inmersas en esta niebla. Niebla total: Las criaturas no ven dentro
+                                de esta niebla.
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <strong>Niebla total</strong>: Las criaturas no ven dentro
+                                de esta niebla.
+                            </p>
+                        </li>
 
+                    </ul>
                     <p>
-                        Niebla espesa: Las criaturas no ven a más de 1 metro de sí mismas cuando
-                        están inmersas en esta niebla. Niebla total: Las criaturas no ven dentro
-                        de esta niebla.
-                    </p>
-
-                    <p>
-                        Zonas repletas de Gas Venenoso. Algunas zonas estarán llenas de gas
+                        <strong>Zonas repletas de Gas Venenoso</strong>. Algunas zonas estarán llenas de gas
                         venenoso. Decides si este gas venenoso además cuenta como una zona de
                         Niebla y, si decides que si, eliges el espesor de esta.
                     </p>
-
                     <p>
                         Además, una criatura que no es Tipo Veneno ni Tipo Acero hace una Tirada
                         de Salvación de Resistencia contra un CD que tu eliges, el CD del Gas
@@ -1311,7 +1330,7 @@
                     </p>
 
                     <p>
-                        Zonas tenebrosas o malditas. Estas regiones poseen un aura terrorífica.
+                        <strong>Zonas tenebrosas o malditas</strong>. Estas regiones poseen un aura terrorífica.
                         Todas las Tiradas de Salvación de Espíritu hechas por criaturas que no
                         tienen Sentido Espectral dentro de estas regiones se hacen en
                         Desventaja. Además, las criaturas que no tienen Sentido Espectral no
@@ -1329,21 +1348,21 @@
                     </p>
 
                     <p>
-                        Región de Espacio raro. La región está bajo uno o varios de los efectos
+                        <strong>Región de Espacio raro</strong>. La región está bajo uno o varios de los efectos
                         del Movimiento Espacio raro, con un CD a tu elección
                     </p>
 
                     <p>
-                        Región de Zona extraña. La región está bajo uno o varios de los efectos
+                        <strong>Región de Zona extraña</strong>. La región está bajo uno o varios de los efectos
                         del Movimiento Zona extraña.
                     </p>
                     <p>
-                        Región de Zona mágica. La región está bajo uno o varios de los efectos
+                        <strong>Región de Zona mágica</strong>. La región está bajo uno o varios de los efectos
                         del Movimiento Zona mágica.
                     </p>
 
                     <p>
-                        Mundo distorsión. Esta región está hecha de islotes, cada uno con su
+                        <strong>Mundo distorsión</strong>. Esta región está hecha de islotes, cada uno con su
                         gravedad propia que sólo toma efecto cuando se está muy cerca de ellos.
                         Saltar de un Islote a otro requiere de Tiradas de Acrobacias o Atletismo
                         con CD dependiente de la distancia entre estas, el cual defines tu. Una
@@ -1352,16 +1371,20 @@
                         esta región además esté afectada también por los efectos de una Región
                         de Espacio raro.
                     </p>
-
+                </div>
+            </details>
+            <details class="subDetails">
+                <summary class="subSummary">Daño provocado por el ambiente</summary>
+                <div class="detailsBloque">
                     <p>
-                        Daño provocado por el ambiente En ciertas ocasiones, el entorno puede
+                        En ciertas ocasiones, el entorno puede
                         provocar daño a una criatura que lo navega. Este daño depende tanto en
                         su Tipo Elemental como en su cantidad del efecto que lo provoque.
                         Algunos ejemplos son los siguientes:
                     </p>
 
                     <p>
-                        Fuego: Una criatura que entra en contacto con el fuego o que termina su
+                        <strong>Fuego</strong>: Una criatura que entra en contacto con el fuego o que termina su
                         turno sobre este recibe daño de Tipo Fuego. Este daño depende del origen
                         de esta, pudiendo hacer 1 Punto de daño si es una pequeña ascua o una
                         cantidad de d10 de daño que oscila entre 1 y 5 y puede hacer ganar 1 o 2
@@ -1375,7 +1398,7 @@
                     </p>
 
                     <p>
-                        Lava: Una criatura que entra en contacto con la Lava o que termina su
+                        <strong>Lava</strong>: Una criatura que entra en contacto con la Lava o que termina su
                         turno sobre esta recibe 10d10 de daño de Tipo Fuego y gana 2 Niveles de
                         Quemado. Una criatura que recibe daño de Lava estando Inconsciente gana
                         2 Niveles de Fatiga o 3 si el Tipo Fuego es súper efectivo contra ella,
@@ -1383,7 +1406,7 @@
                     </p>
 
                     <p>
-                        Descarga eléctrica: Algunos aparatos eléctricos o algunas rocas cargadas
+                        <strong>Descarga eléctrica</strong>: Algunos aparatos eléctricos o algunas rocas cargadas
                         eléctricamente pueden provocar daño de Tipo Eléctrico y hacerle ganar de
                         1 a 2 Niveles de Paralizado. Este daño depende del origen de esta,
                         pudiendo hacer 1 Punto de daño si es una chispa leve o una cantidad de
@@ -1391,7 +1414,7 @@
                     </p>
 
                     <p>
-                        Espinas: Las espinas de una planta pueden hacer daño a una criatura que
+                        <strong>Espinas</strong>: Las espinas de una planta pueden hacer daño a una criatura que
                         cae sobre ellas o que se raspa contra ellas cuando va a la carrera. Si
                         se cae sobre espinas, estas duplican el daño de caída y, si te arañas
                         contra estas, recibes 1d10 de daño de Tipo Normal o Planta (a tu
@@ -1404,7 +1427,6 @@
                     </p>
                 </div>
             </details>
-
 
         </div>
     </details>
@@ -1437,7 +1459,7 @@
             </p>
 
             <p>
-                Los combates diseñados para fatigar al grupo
+                Los <span class="weight"> combates diseñados para fatigar al grupo</span>
                 serán útiles en múltiples contextos, como durante
                 los viajes a través de la naturaleza, pues
                 presentarán pequeños retos a superar que poco a
@@ -1466,7 +1488,7 @@
 
             <p>
 
-                Los combates diseñados para ser retos por sí
+                Los <span class="weight">combates diseñados para ser retos</span> por sí
                 mismos son combates finales, ya sean contra un
                 rival del grupo, un villano de un grupo malvado o el
                 líder de un gimnasio. Puesto que estos combates
@@ -1486,7 +1508,7 @@
             </p>
 
             <p>
-                Los combates imposibles son combates en los que
+                Los <span class="weight">combates imposibles</span> son combates en los que
                 los rivales sobrepasan por demasiado a los PJs.
                 Esto no tiene que verse como un combate en el que
                 no tienen posibilidades y simplemente son
@@ -1501,250 +1523,1026 @@
             </p>
 
 
+            <details class="subDetails">
+                <summary class="subSummary">Combates balanceados </summary>
+                <div class="detailsBloque">
+                    <p>
+                        No todos los combates tienen porqué ser ganados
+                        con fuerza bruta, quizás algunos se pierdan, de
+                        otros haya que huir y en otros tantos los jugadores
+                        tengan que utilizar factores propios del escenario
+                        para ganar una ventaja sobre los rivales.
+                    </p>
+                    <p>
+                        Aun así, la mayoría de los combates que diseñes
+                        deberán ser retos razonables para los jugadores,
+                        en los que, usando principalmente las mecánicas
+                        principales del sistema, puedan derrotar a sus
+                        rivales. El que estos combates estén balanceados
+                        dependen de una gran cantidad de factores muy
+                        difíciles de cuantificar, como lo son el terreno, la
+                        sinergia entre los Personajes o entre sus rivales,
+                        pero, a grandes rasgos, hay 5 factores principales
+                        a tener en cuenta: Los tipos de los Pokémon, si los
+                        Pokémon son salvajes, la cantidad de turnos en la
+                        Iniciativa de los rivales contra la cantidad de turnos
+                        de los aliados, la comparación de niveles de los
+                        Pokémon y el poder de los Pokémon.
+                    </p>
 
-            <p>
-                Combates balanceados
-                No todos los combates tienen porqué ser ganados
-                con fuerza bruta, quizás algunos se pierdan, de
-                otros haya que huir y en otros tantos los jugadores
-                tengan que utilizar factores propios del escenario
-                para ganar una ventaja sobre los rivales.
-            </p>
-
-            <p>
-                Aun así, la mayoría de los combates que diseñes
-                deberán ser retos razonables para los jugadores,
-                en los que, usando principalmente las mecánicas
-                principales del sistema, puedan derrotar a sus
-                rivales. El que estos combates estén balanceados
-                dependen de una gran cantidad de factores muy
-                difíciles de cuantificar, como lo son el terreno, la
-                sinergia entre los Personajes o entre sus rivales,
-                pero, a grandes rasgos, hay 5 factores principales
-                a tener en cuenta: Los tipos de los Pokémon, si los
-                Pokémon son salvajes, la cantidad de turnos en la
-                Iniciativa de los rivales contra la cantidad de turnos
-                de los aliados, la comparación de niveles de los
-                Pokémon y el poder de los Pokémon.
-            </p>
-
-            <p>
-                La cantidad de Iniciativas. Como es natural, el
-                grupo que posea más iniciativas en igualdad de
-                condiciones siempre tendrá la ventaja en un
-                combate y, de hecho, una sola Criatura más puede
-                marcar la diferencia. Definimos el Factor de
-                Iniciativa como un número que puedes establecer
-                según la siguiente tabla
-            </p>
-
-
-            <table>
-
-            </table>
-
-            <p>
-                La Ventaja de Tipos. Los Tipos Elementales son
-                una de las partes más importantes del combate y,
-                usualmente, dictaminan qué criaturas tienen
-                ventaja contra otras en combate. Una criatura que
-                tiene una desventaja contra el grupo de los
-                jugadores cuenta como media criatura del mismo
-                tipo a la hora de hacer el recuento de criaturas de
-                la Iniciativa y, si son los jugadores los que no tienen
-                herramientas para lidiar con esta eficientemente,
-                cuenta como 2 criaturas del mismo tipo.
-            </p>
-
-            <p>
-                Considera que, en la mayoría de las ocasiones, los
-                Pokémon que encuentres en la naturaleza estarán
-                en desventaja contra el grupo de jugadores, que
-                pueden cambiar de Pokémon para lidiar con ellos
-                eficientemente, lo que es menos probable que
-                ocurra en los combates de entrenador, en los que
-                los rivales también pueden cambiar.
-            </p>
-
-            <p>
-                Pokémon salvajes. Los Pokémon salvajes no
-                comparten turno con un entrenador que los apoya
-                y, por lo tanto, representan un reto inferior. Cada
-                uno de estos cuentan como dos tercios de un turno.
-                Es decir, 3 Pokémon salvajes cuentan como 2
-                turnos.
-            </p>
-
-            <p>
-                El poder de las criaturas. El poder de combate de
-                cada una de las criaturas que vaya a participar en
-                el combate es crucial a la hora de saber que tan
-                difícil va a ser el encuentro. Para resumir este valor
-                usaremos la Vitalidad de las criaturas. Primero, se
-                debe calcular el promedio de la Vitalidad del grupo
-                de las criaturas aliadas a los personajes y a este
-                restarle el promedio de las de las rivales.
-                Definiremos el Factor de Poder como la diferencia
-                entre la Vitalidad promedio de los Pokémon aliados
-                menos la de los Enemigos según la siguiente tabla:
-            </p>
-
-            <table></table>
-
-            <p>
-                El Nivel de las criaturas. El último factor realmente
-                decisivo en los combates será la diferencia de Nivel
-                entre las criaturas. Definimos el Factor de Nivel
-                como la diferencia entre el promedio de los niveles
-                de las criaturas aliadas involucradas menos el de
-                las rivales según la siguiente tabla
-            <p></p>
-            </p>
-
-            <table>
-
-            </table>
-
-            <p>
-                El Factor de Dificultad de un encuentro se calcula
-                multiplicando los tres factores previos, es decir:
-            </p>
-
-            <p>
-                Factor de Dificultad = Factor de Iniciativa x Factor
-                de Poder x Factor de Vitalidad.
-            </p>
-
-            <table>
-
-            </table>
-
-            <p>
-                Considera que este factor de dificultad está
-                pensado para entrenadores con 1 Pokémon. Por
-                cada Pokémon que tengan los entrenadores en
-                promedio por encima del primero, reduce el factor
-                de dificultad en 0,25 hasta un mínimo de 0.
-                Además, piensa también que este factor es
-                orientativo y en encuentros con muchísimas
-                criaturas, con una distribución espacial particular
-                o con ciertos Pokémon que contrarresten a tu
-                grupo podrían ser mucho más difíciles o fáciles de
-                lo que aparentan.
-            </p>
+                    <p>
+                        <strong>La cantidad de Iniciativas</strong>. Como es natural, el
+                        grupo que posea más iniciativas en igualdad de
+                        condiciones siempre tendrá la ventaja en un
+                        combate y, de hecho, una sola Criatura más puede
+                        marcar la diferencia. Definimos el <strong>Factor de
+                            Iniciativa</strong> como un número que puedes establecer
+                        según la siguiente tabla
+                    </p>
 
 
-            <p>
-                Puntos de Superioridad
-                En ciertas ocasiones, como por ejemplo cuando
-                hay un Entrenador o Pokémon muy superior al
-                grupo de los PJs o cuando los PJs enfrenten a una
-                criatura bajo un efecto que la potencia tanto que
-                la hace perder el control, querrás que dicho
-                Entrenador o Pokémon se sienta mucho más
-                poderoso que los jugadores. Podrías recurrir a
-                darles más nivel, pero esto produciría una situación
-                en la que los jugadores serían arrasados, siendo
-                incapaces de afectar a los Pokémon rivales y estos,
-                a su vez, haciendo muchísimo daño a los jugadores.
-                En lugar de esto, cuando quieras crear
-                Entrenadores o Pokémon que se sientan mucho
-                más poderosos sin ser injustos, deberías hacer uso
-                de las reglas de Puntos de Superioridad.
-            </p>
-            <p>
+                    <table class="tablaCapitulos">
+                        <thead>
+                            <tr>
+                                <th>Cantidad de criaturas de ambos grupos</th>
+                                <th>Factor de Iniciativa</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Hay dos turnos aliados de más en la Iniciativa o más.</td>
+                                <td>0.5</td>
+                            </tr>
+                            <tr>
+                                <td>Hay un turno aliado más en la Iniciativa.</td>
+                                <td>0.7</td>
+                            </tr>
+                            <tr>
+                                <td>Hay la misma cantidad de turnos aliados que rivales en la Iniciativa.</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>Hay un turno rival más en la Iniciativa.</td>
+                                <td>1.5</td>
+                            </tr>
+                            <tr>
+                                <td>Hay dos turnos rivales más en la Iniciativa.</td>
+                                <td>2</td>
+                            </tr>
+                        </tbody>
+                    </table>
 
-                Los Puntos de Superioridad son un recurso que
-                pueden tener las criaturas que controla el Director
-                de Juego y que tienen varios usos y efectos sobre
-                estas:
-            </p>
+                    <p>
+                        <strong>La Ventaja de Tipos</strong>. Los Tipos Elementales son
+                        una de las partes más importantes del combate y,
+                        usualmente, dictaminan qué criaturas tienen
+                        ventaja contra otras en combate. Una criatura que
+                        tiene una desventaja contra el grupo de los
+                        jugadores cuenta como media criatura del mismo
+                        tipo a la hora de hacer el recuento de criaturas de
+                        la Iniciativa y, si son los jugadores los que no tienen
+                        herramientas para lidiar con esta eficientemente,
+                        cuenta como 2 criaturas del mismo tipo.
+                    </p>
 
-            <p>
-                Mejora de Resiliencia. Una criatura que empieza un
-                combate con Puntos de Superioridad multiplica sus
-                PV y sus PP máximos por su cantidad de Puntos de
-                Superioridad más 1
-            </p>
+                    <p>
+                        Considera que, en la mayoría de las ocasiones, los
+                        Pokémon que encuentres en la naturaleza estarán
+                        en desventaja contra el grupo de jugadores, que
+                        pueden cambiar de Pokémon para lidiar con ellos
+                        eficientemente, lo que es menos probable que
+                        ocurra en los combates de entrenador, en los que
+                        los rivales también pueden cambiar.
+                    </p>
 
-            <p>
-                Acciones de Superioridad. Una criatura con Puntos
-                de Superioridad puede tomar un Turno de
-                Superioridad al final de cada uno de los turnos de
-                otras Criaturas rivales en la Iniciativa. La cantidad
-                máxima de Turnos de Superioridad que puede
-                tomar una Criatura por ronda es igual a la cantidad
-                de Puntos de Superioridad que tiene.
-            </p>
+                    <p>
+                        <strong>Pokémon salvajes</strong>. Los Pokémon salvajes no
+                        comparten turno con un entrenador que los apoya
+                        y, por lo tanto, representan un reto inferior. Cada
+                        uno de estos cuentan como dos tercios de un turno.
+                        Es decir, 3 Pokémon salvajes cuentan como 2
+                        turnos.
+                    </p>
 
-            <p>
-                Los Turnos de Superioridad son turnos en los que
-                sólo pueden tomarse una Acción o Acción
-                compartida y en los que la criatura puede moverse
-                una cantidad de metros igual a la mitad de su
-                Velocidad.
-            </p>
+                    <p>
+                        <strong>El poder de las criaturas</strong>. El poder de combate de
+                        cada una de las criaturas que vaya a participar en
+                        el combate es crucial a la hora de saber que tan
+                        difícil va a ser el encuentro. Para resumir este valor
+                        usaremos la Vitalidad de las criaturas. Primero, se
+                        debe calcular el promedio de la Vitalidad del grupo
+                        de las criaturas aliadas a los personajes y a este
+                        restarle el promedio de las de las rivales.
+                        Definiremos el Factor de Poder como la diferencia
+                        entre la Vitalidad promedio de los Pokémon aliados
+                        menos la de los Enemigos según la siguiente tabla:
+                    </p>
 
-            <p>
-                Evitar Efectos. Una criatura puede gastar un
-                Punto de Superioridad para liberarse de un Estado
-                o ignorar el efecto de un Movimiento, Rasgo o
-                Habilidad. Una vez un Punto de Superioridad se
-                gasta de esta forma, este no se recupera hasta que
-                la criatura Descanse y, por lo tanto, la criatura
-                pierde una de sus Acciones de Superioridad.
-            </p>
+                    <table></table>
 
-            <p>
-                Movimientos Extra. La criatura puede conocer
-                varios Movimientos Enseñables, los cuales podría
-                no olvidar si pierde los Puntos de Superioridad (tu
-                elección como DJ cuando le das dichos
-                Movimientos).
-            </p>
+                    <p>
+                        El Nivel de las criaturas. El último factor realmente
+                        decisivo en los combates será la diferencia de Nivel
+                        entre las criaturas. Definimos el Factor de Nivel
+                        como la diferencia entre el promedio de los niveles
+                        de las criaturas aliadas involucradas menos el de
+                        las rivales según la siguiente tabla
+                    <p></p>
+                    </p>
 
-            <p>
-                Efectos Extra. Si quieres hacer que un Pokémon
-                con Puntos de Superioridad se sienta de una forma
-                determinada, como, por ejemplo, que es muy
-                resistente, muy ágil o poderoso puedes darle uno o
-                varios de los siguientes efectos:
-                • La criatura gana Puntos de Escudo igual a
-                su cantidad de Puntos de Superioridad
-                multiplicada por la Mitad de su Nivel al
-                principio de cada uno de sus turnos.
-                • La criatura puede usar una Acción de
-                Superioridad para moverse toda su
-                velocidad, provocando o no ataques de
-                oportunidad (tu elección cuando le
-                otorgas esta capacidad).
-                • La criatura añade un dado al daño al Daño
-                Base de todos sus Movimientos.
-            </p>
+                    <table class="tablaCapitulos">
+                        <thead>
+                            <tr>
+                                <th>Diferencia promedio de Vitalidades</th>
+                                <th>Factor de Poder</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>La diferencia está entre 2 y 3.</td>
+                                <td>0,5</td>
+                            </tr>
+                            <tr>
+                                <td>La diferencia de los promedios es de menos de 2.</td>
+                                <td>0,7</td>
+                            </tr>
+                            <tr>
+                                <td>La diferencia está entre -2 y -3.</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>La diferencia es inferior a -3.</td>
+                                <td>1,5</td>
+                            </tr>
+                            <tr>
+                                <td>La diferencia está entre 2 y 3.</td>
+                                <td>2</td>
+                            </tr>
+                        </tbody>
+                    </table>
 
-            <p>
-                Por cada Efecto Extra que le otorgas a un
-                Pokémon, este puede tomar una Acción de
-                Superioridad menos en cada ronda, a no ser que el
-                efecto ya consuma una.
-            </p>
+                    <p><strong>El Nivel de las criaturas</strong>. El último factor realmente
+                        decisivo en los combates será la diferencia de Nivel
+                        entre las criaturas. Definimos el <strong>Factor de Nivel</strong>
+                        como la diferencia entre el promedio de los niveles
+                        de las criaturas aliadas involucradas menos el de
+                        las rivales según la siguiente tabla:
+                    </p>
+
+                    <table class="tablaCapitulos">
+                        <thead>
+                            <tr>
+                                <th>Diferencia promedio de Niveles</th>
+                                <th>Factor de Nivel</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>La diferencia es superior a 4.</td>
+                                <td>0,5</td>
+                            </tr>
+                            <tr>
+                                <td>La diferencia está entre 2 y 4.</td>
+                                <td>0,7</td>
+                            </tr>
+                            <tr>
+                                <td>La diferencia de los promedios es de menos de 2.</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>La diferencia está entre -2 y -4.</td>
+                                <td>1,5</td>
+                            </tr>
+                            <tr>
+                                <td>La diferencia es inferior a -4.</td>
+                                <td>2</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p>
+                        El <strong>Factor de Dificultad</strong> de un encuentro se calcula
+                        multiplicando los tres factores previos, es decir:
+                    </p>
+
+                    <p>
+                        Factor de Dificultad = Factor de Iniciativa x Factor
+                        de Poder x Factor de Vitalidad.
+                    </p>
+
+                    <table class="tablaCapitulos">
+                        <thead>
+                            <tr>
+                                <th>Factor de Dificultad</th>
+                                <th>Dificultad</th>
+                                <th>Descripción</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Menos de 0,7</td>
+                                <td>Trivial</td>
+                                <td>El combate será un paseo para los PJs a no ser que sus rivales tengan una gran
+                                    ventaja.</td>
+                            </tr>
+                            <tr>
+                                <td>De 0,7 a 1</td>
+                                <td>Normal</td>
+                                <td>El combate fatigará a algunos de los Pokémon de los PJs y, quizás, también a los
+                                    PJs.</td>
+                            </tr>
+                            <tr>
+                                <td>De 1 a 1,5</td>
+                                <td>Difícil</td>
+                                <td>El combate será duro para los PJs y estará muy reñido cuál es el bando ganador.</td>
+                            </tr>
+                            <tr>
+                                <td>De 1,5 a 2,5</td>
+                                <td>Muy Difícil</td>
+                                <td>El combate será muy duro para los PJs y probablemente estos sean derrotados.</td>
+                            </tr>
+                            <tr>
+                                <td>Más de 2,5</td>
+                                <td>Imposible</td>
+                                <td>El combate será una derrota aplastante para los PJs si no hay un factor que ayude a
+                                    los aliados.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <p>
+                        Considera que este factor de dificultad está
+                        pensado para entrenadores con 1 Pokémon. Por
+                        cada Pokémon que tengan los entrenadores en
+                        promedio por encima del primero, reduce el factor
+                        de dificultad en 0,25 hasta un mínimo de 0.
+                        Además, piensa también que este factor es
+                        orientativo y en encuentros con muchísimas
+                        criaturas, con una distribución espacial particular
+                        o con ciertos Pokémon que contrarresten a tu
+                        grupo podrían ser mucho más difíciles o fáciles de
+                        lo que aparentan.
+                    </p>
+                </div>
+            </details>
 
 
-            <p>
-                Nota: Considera que, si das Puntos de Superioridad
-                a un Entrenador que quieres que sólo use un
-                Pokémon a la vez, tienes que darle la misma
-                cantidad de Puntos de Superioridad a todos sus
-                Pokémon. De lo contrario, estos no podrían seguir
-                el ritmo de las Órdenes que éste les comanda.
-            </p>
+            <details class="subDetails">
+                <summary class="subSummary"> Puntos de Superioridad </summary>
+                <div class="detailsBloque">
+
+
+
+                    <p>
+                        Puntos de Superioridad
+                        En ciertas ocasiones, como por ejemplo cuando
+                        hay un Entrenador o Pokémon muy superior al
+                        grupo de los PJs o cuando los PJs enfrenten a una
+                        criatura bajo un efecto que la potencia tanto que
+                        la hace perder el control, querrás que dicho
+                        Entrenador o Pokémon se sienta mucho más
+                        poderoso que los jugadores. Podrías recurrir a
+                        darles más nivel, pero esto produciría una situación
+                        en la que los jugadores serían arrasados, siendo
+                        incapaces de afectar a los Pokémon rivales y estos,
+                        a su vez, haciendo muchísimo daño a los jugadores.
+                        En lugar de esto, cuando quieras crear
+                        Entrenadores o Pokémon que se sientan mucho
+                        más poderosos sin ser injustos, deberías hacer uso
+                        de las reglas de <strong>Puntos de Superioridad</strong>.
+                    </p>
+                    <p>
+
+                        Los Puntos de Superioridad son un recurso que
+                        pueden tener las criaturas que controla el Director
+                        de Juego y que tienen varios usos y efectos sobre
+                        estas:
+                    </p>
+
+                    <p>
+                        <strong>Mejora de Resiliencia</strong>. Una criatura que empieza un
+                        combate con Puntos de Superioridad multiplica sus
+                        PV y sus PP máximos por su cantidad de Puntos de
+                        Superioridad más 1
+                    </p>
+
+                    <p>
+                        <strong> Acciones de Superioridad</strong>. Una criatura con Puntos
+                        de Superioridad puede tomar un Turno de
+                        Superioridad al final de cada uno de los turnos de
+                        otras Criaturas rivales en la Iniciativa. La cantidad
+                        máxima de Turnos de Superioridad que puede
+                        tomar una Criatura por ronda es igual a la cantidad
+                        de Puntos de Superioridad que tiene.
+                    </p>
+
+                    <p>
+                        Los <strong>Turnos de Superioridad</strong> son turnos en los que
+                        sólo pueden tomarse una Acción o Acción
+                        compartida y en los que la criatura puede moverse
+                        una cantidad de metros igual a la mitad de su
+                        Velocidad.
+                    </p>
+
+                    <p>
+                        <strong>Evitar Efectos</strong>. Una criatura puede gastar un
+                        Punto de Superioridad para liberarse de un Estado
+                        o ignorar el efecto de un Movimiento, Rasgo o
+                        Habilidad. Una vez un Punto de Superioridad se
+                        gasta de esta forma, este no se recupera hasta que
+                        la criatura Descanse y, por lo tanto, la criatura
+                        pierde una de sus Acciones de Superioridad.
+                    </p>
+
+                    <p>
+                        <strong>Movimientos Extra</strong>. La criatura puede conocer
+                        varios Movimientos Enseñables, los cuales podría
+                        no olvidar si pierde los Puntos de Superioridad (tu
+                        elección como DJ cuando le das dichos
+                        Movimientos).
+                    </p>
+
+                    <p>
+                        <strong>Efectos Extra</strong>. Si quieres hacer que un Pokémon
+                        con Puntos de Superioridad se sienta de una forma
+                        determinada, como, por ejemplo, que es muy
+                        resistente, muy ágil o poderoso puedes darle uno o
+                        varios de los siguientes efectos:
+                    <ul>
+                        <li>
+                            <p>
+                                La criatura gana Puntos de Escudo igual a
+                                su cantidad de Puntos de Superioridad
+                                multiplicada por la Mitad de su Nivel al
+                                principio de cada uno de sus turnos.
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                La criatura puede usar una Acción de
+                                Superioridad para moverse toda su
+                                velocidad, provocando o no ataques de
+                                oportunidad (tu elección cuando le
+                                otorgas esta capacidad).
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                La criatura añade un dado al daño al Daño
+                                Base de todos sus Movimientos.
+                            </p>
+                        </li>
+                    </ul>
+
+
+
+
+                    </p>
+
+                    <p>
+                        Por cada Efecto Extra que le otorgas a un
+                        Pokémon, este puede tomar una Acción de
+                        Superioridad menos en cada ronda, a no ser que el
+                        efecto ya consuma una.
+                    </p>
+
+
+                    <div class="consejoCapitulo">
+                        <p>
+                            <strong>Nota</strong>: Considera que, si das Puntos de Superioridad
+                            a un Entrenador que quieres que sólo use un
+                            Pokémon a la vez, tienes que darle la misma
+                            cantidad de Puntos de Superioridad a todos sus
+                            Pokémon. De lo contrario, estos no podrían seguir
+                            el ritmo de las Órdenes que éste les comanda.
+                        </p>
+                    </div>
+
+
+                    <p>
+                        <strong>Poder de Puntos de Superioridad</strong>. Una criatura con
+                        Puntos de Superioridad cuenta como una cantidad
+                        de criaturas equivalentes iguales a sus Puntos de
+                        Superioridad más 1. Por lo tanto, si quieres que una
+                        criatura pueda rivalizar con 1 Pokémon de cada
+                        uno de tus jugadores deberás darle una cantidad
+                        de Puntos de Superioridad igual a tu cantidad de
+                        jugadores menos 1 y, si quieres que equivalga a dos
+                        Pokémon de estos, deberás de darle el doble de
+                        esos Puntos de Superioridad.
+                    </p>
+
+                    <p>
+                        <strong>Capturar Pokémon con Puntos de Superioridad</strong>. En
+                        muchas ocasiones, capturar un Pokémon que
+                        posee Puntos de Superioridad será imposible, al
+                        menos, hasta que se quede sin estos Puntos de
+                        Superioridad. Si, por algún motivo, un Entrenador
+                        consigue capturar un Pokémon con Puntos de
+                        Superioridad, este los pierde automáticamente,
+                        junto a todos los efectos que tenerlos le otorgasen.
+                    </p>
+
+                    <p>
+                        <strong>De uno en uno</strong>. La mayor parte de las veces que un
+                        grupo enfrente a una criatura con Puntos de
+                        Superioridad lo harán en solitario, puesto que estas
+                        ya son lo suficientemente poderosas como para
+                        plantar cara al grupo y, en general, no deberías
+                        utilizar múltiples entrenadores y Pokémon que no
+                        son de Entrenadores que tengan Puntos de
+                        Superioridad en un mismo combate, puesto que
+                        esto haría el combate imposible de ganar y muy
+                        lento.
+                    </p>
+                </div>
+            </details>
+
+            <details class="subDetails">
+                <summary class="subSummary">Pokémon esbirro
+                </summary>
+                <div class="detailsBloque">
+                    <p>En ocasiones querrás presentar a un gran grupo de
+                        Pokémon de la misma especie mucho más débiles
+                        que los personajes que acompañarán a otro
+                        enemigo en un conflicto. Cuando esto ocurra, no
+                        añadas una docena de estos enemigos normales,
+                        cada uno con su propia iniciativa y con niveles muy
+                        inferiores, pues eso va a hacer que el combate se
+                        vuelva muy tedioso. En estos casos deberías usar
+                        <strong>Pokémon Esbirros</strong>.
+                    </p>
+                    <p>
+                        Un Pokémon esbirro es un Pokémon que,
+                        independientemente de su Vitalidad o Nivel,
+                        siempre tiene 10 PV. El objetivo de estos Pokémon
+                        es presentar enemigos que hay que enfrentar
+                        antes de acabar con el villano principal porque
+                        presentan un peligro y que, a su vez, son fáciles de
+                        despachar.
+                    </p>
+                    <p>
+                        Para crear un Pokémon esbirro prepara el
+                        Pokémon al nivel que desees usarlo (lo
+                        recomendable es que sea unos 2 niveles inferior a
+                        los de los PJs) y, a la hora de calcular sus PV,
+                        simplemente anota que tiene 10 PV. De esta forma
+                        sólo aguantará uno o dos golpes como mucho. Un
+                        Pokémon esbirro cuenta, a la hora de calcular la
+                        dificultad de un encuentro, como ⅓ de un Pokémon
+                        normal, así que por cada 3 esbirros que añadas
+                        cuéntalos como un Pokémon de su misma especie
+                        y Nivel. Considera, además, usar la misma Iniciativa
+                        para estos grupitos de 3 esbirros y que actúen
+                        todos de forma similar, usando los mismos
+                        Movimientos y atacando a los mismos objetivos
+                        para que la Iniciativa no se vuelva muy larga.
+                    </p>
+                </div>
+            </details>
+            <details class="subDetails">
+                <summary class="subSummary">Pokémon Especiales
+                </summary>
+                <div class="detailsBloque">
+                    <p>Para ciertos encuentros temáticos querrás usar
+                        <strong>Pokémon Especiales</strong>. Los Pokémon Especiales son
+                        Pokémon que tienen alguna condición especial
+                        sobre los mismos. Por ejemplo, que son Pokémon
+                        Alfa o Pokémon Oscuros. En la siguiente sección
+                        podrás aprender más sobre ellos.
+                    </p>
+                </div>
+            </details>
+
+            <details class="subDetails">
+                <summary class="subSummary">Transformaciones Pokémon
+                </summary>
+                <div class="detailsBloque">
+                    <p>En ciertas ocasiones, querrás que el grupo se
+                        enfrente a una criatura Megaevolucionada, en su
+                        forma primigenia o Dinamaxeada. Estas ocasiones
+                        son buenos momentos para hacer uso de la regla
+                        de Puntos de Superioridad antes comentada, pero
+                        también debes considerar el efecto que estas
+                        transformaciones podrían tener sobre el combate.
+                        En general, cuando una criatura megaevoluciona o
+                        está en su forma primigenia, considérala como si
+                        fuese 2 niveles superior a la hora de calcular la
+                        dificultad que representa. Si ha sido dinamaxeada,
+                        considérala 4 niveles superior.</p>
+                </div>
+            </details>
+
+            <details class="subDetails">
+                <summary class="subSummary">Recomendaciones generales
+                </summary>
+                <div class="detailsBloque">
+                    <p>Además de todas las recomendaciones anteriores
+                        sobre cómo diseñar combates Pokémon, intenta no
+                        cometer los siguientes errores:</p>
+
+                    <p>
+                        Añadir <strong>demasiados enemigos diferentes</strong>: Controlar
+                        de forma simultánea varias fichas distintas puede
+                        volverse muy complicado, así que intenta no usar
+                        más de 2 o 3 fichas de Pokémon y entrenador
+                        diferentes a la vez. Por ejemplo, en un encuentro
+                        en un bioma concreto no pongas las 10 especies
+                        distintas que lo habitan, sino que limítate a 2 o 3.
+                    </p>
+
+                    <p>
+                        <strong>Usar todos los Movimientos</strong> que tienen los
+                        Pokémon más complejos: Hay Pokémon que tienen
+                        movimientos de apoyo, de aplicar Estados, de daño
+                        en área y daño individual. No uses todos, pues te
+                        va a ser complicado elegir. Limítate a unos cuantos
+                        Movimientos, que serán los que añadas a la ficha
+                        cuando las estés preparando.
+                    </p>
+
+                    <p>
+                        Añadir <strong>demasiadas iniciativas</strong>: Intenta que la
+                        iniciativa no se salga de control. En lugar de poner
+                        muchos enemigos débiles usa enemigos de más
+                        nivel o que tengan el terreno o la ventaja de tipos
+                        a su favor y, si usas muchos enemigos a la vez,
+                        plantéate usar la regla de <strong>Pokémon Esbirros</strong> y
+                        agrupar sus turnos para que los tomen de forma
+                        simultánea.
+                    </p>
+
+                </div>
+            </details>
+
         </div>
     </details>
 
     <details open id="apartado6">
-        <summary>Prepara tu campaña</summary>
+        <summary>Pokémon especiales</summary>
         <div class="detailsBloque">
-            <p></p>
+            <p>
+                En el Mundo Pokémon hay múltiples efectos o condiciones que pueden afectar a los Pokémon. Puedes
+                inventar
+                algunas propias, pues es común, sobre todo en las iteraciones del Mundo Pokémon más recientes, que haya
+                alguna condición de este estilo. También puedes usar las siguientes condiciones o modificarlas si así lo
+                ves
+                necesario.
+            </p>
+
+            <details class="subDetails">
+                <summary class="subSummary">Pokémon Oscuros
+                </summary>
+                <div class="detailsBloque">
+                    <p>
+                        En ciertas iteraciones del mundo Pokémon existen
+                        los <strong>Pokémon Oscuros</strong>. Estos son Pokémon que,
+                        fruto del maltrato sufrido por sus entrenadores,
+                        han absorbido una energía maléfica y dañina. Los
+                        Pokémon Oscuros exuden un aura maléfica y
+                        tenebrosa y sus ojos son de color rojo.
+                    </p>
+
+                    <p>
+                        Los Pokémon oscuros tienen un beneficio y una
+                        desventaja. El daño de todos los Movimientos que
+                        usan aumenta en 1 dado (o en 2 dados si son de
+                        Nivel 14 o más) y, cuando reciben daño del un
+                        Movimiento, el daño base de dicho Movimiento
+                        aumenta en un dado (o en 2 dados si son de Nivel
+                        14 o más) contra ellos.
+                    </p>
+
+                    <p>
+                        Los Pokémon Oscuros tienen las Habilidades de
+                        Intimidación o Presión además de sus Habilidades
+                        usuales.
+                    </p>
+
+                    <p>
+                        Los Pokémon Oscuros aumentan su rango de
+                        Captura en 5 y, a discreción del DJ, pueden incluso
+                        no ser capturables en este estado.
+                    </p>
+
+                    <p>
+                        Un Pokémon deja de ser Oscuro con el tiempo y el
+                        buen trato de un Entrenador y un Pokémon puede
+                        volverse un Pokémon oscuro cuando es abusado
+                        por el mismo. Ambas transformaciones están a
+                        discreción del DJ, pero una buena guía es que un
+                        Pokémon deja de ser Oscuro al alcanzar el Nivel 2
+                        de Amistad con su entrenador (empieza en 0 al ser
+                        capturado) y se vuelve Oscuro cuando alcanza el
+                        Nivel 0 y no puede escapar.
+                    </p>
+
+                    <p>
+                        Además, estos Pokémon pueden entrar en un
+                        frenesí destructivo que les otorga poder extra, por
+                        lo que son grandes candidatos para ser enemigos
+                        con Puntos de Superioridad.
+                    </p>
+                </div>
+            </details>
+
+
+            <details class="subDetails">
+                <summary class="subSummary">Pokémon Infundidos
+                </summary>
+                <div class="detailsBloque">
+                    <p>
+                        En el mundo Pokémon, en ocasiones, pueden
+                        encontrarse Pokémon Dominantes o Pokémon Alfa,
+                        entre otros. Estos Pokémon, a los que llamaremos
+                        de forma genérica <strong>Pokémon Infundidos</strong>, son
+                        especímenes particularmente poderosos dentro de
+                        su especie y que, usualmente, juegan un papel
+                        fundamental dentro de su ecosistema o dentro de
+                        su grupo o que, por el contrario, han absorbido
+                        tanto poder que se han vuelto locos y son un
+                        peligro para estos.
+                    </p>
+
+                    <p>
+                        El poder que poseen los Pokémon Infundidos
+                        puede provenir de algún tipo de energía que los
+                        potencia, como la energía de Alola, la energía
+                        Terastal o Dinamax o el poder de un Pokémon
+                        muchísimo más poderoso como Giratina, el efecto
+                        de unas ondas de radio particulares o cualquier
+                        otro motivo que se te ocurra. Por cualquiera de
+                        estos motivos, el Pokémon ha absorbido poder, lo
+                        cual suele representarse no por un Nivel elevado
+                        sino por tener Puntos de Superioridad.
+                        Usualmente, una múltiplo de tu cantidad de
+                        jugadores menos uno. Además, muchos Pokémon
+                        Infundidos son de un tamaño mayor al de sus
+                        congéneres debido a la exposición al poder que los
+                        potencia.
+                    </p>
+
+                    <p>
+                        El Ratio de Captura de los Pokémon Infundidos no
+                        se pueden capturar hasta que el poder con el que
+                        están infundidos desaparece. Un Pokémon
+                        Infundido puede o no perder su tamaño aumentado
+                        al perder este poder (el DJ elige en función de la
+                        fuente del poder y el tiempo con el que lo infundió)
+                        y, si este se conserva y el Pokémon fuera a
+                        evolucionar, su forma e volucionada también es de
+                        un tamaño mayor al usual.
+                    </p>
+
+                </div>
+            </details>
+
+            <details class="subDetails">
+                <summary class="subSummary">Pokémon Espectrales
+                </summary>
+                <div class="detailsBloque">
+                    <p>Cuando un Pokémon fallece en circunstancias
+                        especiales, como cuando está retenido por un
+                        poder extraño, cuando aun tiene algo por hacer o
+                        cuando lo hace de una forma atroz, su espíritu no
+                        va al más allá y vuelve en forma de espectro. A
+                        estos Pokémon se los conoce como <strong>Pokémon
+                            Espectrales</strong>.</p>
+
+                    <p>Los Pokémon Espectrales se ven translúcidos y
+                        pueden o no tener un aura que los identifica como
+                        tales. Estos Pokémon no pueden ser capturados y
+                        son candidatos a poseer Puntos de Superioridad.
+                        Todos los Pokémon Espectrales poseen una forma
+                        para poder marchar al más allá, ya sea
+                        simplemente ser derrotados en combate, alejarse
+                        de una influencia concreta o que algo ocurra. Por
+                        ejemplo, un Pokémon Espectral podría ser el
+                        espíritu de una madre marowak que busca
+                        desesperadamente que su cría esté a salvo. Por lo
+                        tanto, no todos los Pokémon Espectrales son
+                        malvados, aunque es común que, cuando un
+                        Espíritu de un Pokémon pasa mucho tiempo del
+                        lado de los vivos empiece a enloquecer.</p>
+
+                    <p>Por último, además de poder poseer Puntos de
+                        Superioridad, los Pokémon Espectrales poseen las
+                        siguientes características:</p>
+                    <ul>
+                        <li>
+                            <p>
+                                Son Pokémon de Tipo Fantasma, además
+                                de sus otros Tipos Elementales.
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                Poseen una Velocidad de Levitado igual a
+                                su mayor velocidad.
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                Pueden atravesar objetos sólidos como si
+                                fuese Terreno Difícil.
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                Pueden poseer Movimientos de Tipo
+                                Fantasma y tener Habilidades usualmente
+                                asociadas al Tipo Fantasma, como Cuerpo
+                                maldito.
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                Al caer a 0 PV, si eso no hace que vayan al
+                                más allá, se esfuman dejando un rastro de
+                                ectoplasma y reaparecen en el lugar
+                                donde se volvieron un Pokémon Espectral
+                                pasado un tiempo a definir por el DJ (un
+                                día, una Escena, en la siguiente luna llena,
+                                dentro de 1000 años, …).
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+            </details>
+
+
+            <details class="subDetails">
+                <summary class="subSummary">Pokéconstructos</summary>
+                <div class="detailsBloque">
+                    <p>Los Pokéconstructos no son Pokémon sino que son
+                        réplicas enteramente artificiales de un Pokémon.
+                        Por ejemplo, un mecha tyranitar robótico, una
+                        estatua de bronce de Arcanine o un golem de
+                        cristal de Steelix. Usualmente, estos Pokémon son
+                        controlados por alguien, ya sea que esté dentro de
+                        ellos o que lo controla remotamente, por voz o
+                        usando algún tipo de señal, pero también pueden
+                        ser controlados por una IA o unas órdenes que
+                        recibieron de su creador en el pasado.</p>
+                    <p>Los Pokéconstructos usan de base la entrada de la
+                        Pokédex del Pokémon que replican y, además,
+                        tienen los siguientes cambios:
+                    </p>
+                    <ul>
+                        <li>
+                            <p>Son de Tipo Acero, Roca o Tierra según el material del que están hechos o, si ya tiene
+                                dos, sustituyen uno de ambos por este Tipo Fundamental.</p>
+                        </li>
+                        <li>
+                            <p>No necesitan comer o dormir, pero necesitan recargarse de alguna forma.</p>
+                        </li>
+                        <li>
+                            <p>Opcionalmente, pueden tener la Habilidad Golem.</p>
+                        </li>
+                        <li>
+                            <p>Opcionalmente, aprenden Movimientos extra que no aprenden de forma usual, usualmente del
+                                Tipo Elemental que han ganado con Coste en PP menor o igual a los Movimientos que
+                                podrían aprender de su lista de Movimientos por Nivel en su Nivel actual.</p>
+                        </li>
+                        <li>
+                            <p>Opcionalmente, su tamaño aumenta entre 1 y 5 tamaños.</p>
+                        </li>
+                        <li>
+                            <p>Los Pokéconstructos pueden tener Dotes y tienen Mejoras de Estadísticas como los tendría
+                                un Pokémon usual.</p>
+                        </li>
+                    </ul>
+                </div>
+            </details>
+
+            <table class="tablaCapitulos">
+                <thead>
+                    <tr>
+                        <th>Tipo</th>
+                        <th>Niveles de evolución</th>
+                        <th>1ª Evo.</th>
+                        <th>2ª Evo.</th>
+                        <th>3ª Evo.</th>
+                        <th>Ejemplos</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Bicho inicial de 3 evoluciones</td>
+                        <td>2 y 4</td>
+                        <td>
+                            RE: 2,1,1,0,-1,-1<br>
+                            Vel: 4<br>
+                            Salv: 1 Experto<br>
+                            VIT: 4<br>
+                            Sen: 10 m<br>
+                            RC: 6
+                        </td>
+                        <td>
+                            RE: 2,2,1,0,0,-1<br>
+                            Vel: 1<br>
+                            Salv: 3 Experto<br>
+                            VIT: 7<br>
+                            Sen: 20 m<br>
+                            RC: 8
+                        </td>
+                        <td>
+                            RE: 3,3,2,1,1,1<br>
+                            Vel: 6<br>
+                            Salv: 4 Experto<br>
+                            VIT: 8<br>
+                            Sen: 30 m<br>
+                            RC: 14
+                        </td>
+                        <td>Caterpie, Kakuna, Dustox</td>
+                    </tr>
+                    <tr>
+                        <td>Bebé y una evolución más</td>
+                        <td>4 y 8</td>
+                        <td>
+                            RE: 2,1,1,0,-1,-1<br>
+                            Vel: 4<br>
+                            Salv: 1 Experto<br>
+                            VIT: 5<br>
+                            Sen: 10 m<br>
+                            RC: 10
+                        </td>
+                        <td>
+                            RE: 3,2,2,2,1,0<br>
+                            Vel: 5<br>
+                            Salv: 3 Experto<br>
+                            VIT: 7<br>
+                            Sen: 20 m<br>
+                            RC: 13
+                        </td>
+                        <td>
+                            RE: 4,3,2,2,1,1<br>
+                            Vel: 6<br>
+                            Salv: 4 Experto<br>
+                            VIT: 9<br>
+                            Sen: 30 m<br>
+                            RC: 16/17
+                        </td>
+                        <td>Igglybuff, Magmar, Electivire</td>
+                    </tr>
+                    <tr>
+                        <td>Familia de 3 especies usual</td>
+                        <td>6 y 12</td>
+                        <td>
+                            RE: 2,2,1,1,0,-1<br>
+                            Vel: 4<br>
+                            Salv: 2 Experto<br>
+                            VIT: 6<br>
+                            Sen: 10 m<br>
+                            RC: 9 a 12
+                        </td>
+                        <td>
+                            RE: 3,2,2,1,1,0<br>
+                            Vel: 5<br>
+                            Salv: 3 Experto<br>
+                            VIT: 8<br>
+                            Sen: 20 m<br>
+                            RC: La anterior + 3
+                        </td>
+                        <td>
+                            RE: 4,3,3,2,2,1<br>
+                            Vel: 6<br>
+                            Salv: 4 Experto<br>
+                            VIT: 10<br>
+                            Sen: 30 m<br>
+                            RC: La anterior + 3
+                        </td>
+                        <td>Bulbasaur, Graveler, Pidgeot</td>
+                    </tr>
+                    <tr>
+                        <td>Familia de pseudolegendario</td>
+                        <td>8 y 16</td>
+                        <td>
+                            RE: 3,2,1,1,0,-1<br>
+                            Vel: 4<br>
+                            Salv: 2 Experto<br>
+                            VIT: 7<br>
+                            Sen: 15 m<br>
+                            RC: 14
+                        </td>
+                        <td>
+                            RE: 4,3,2,1,1,0<br>
+                            Vel: 6<br>
+                            Salv: 3 Experto<br>
+                            VIT: 9<br>
+                            Sen: 30 m<br>
+                            RC: 17
+                        </td>
+                        <td>
+                            RE: 5,4,3,3,3,2<br>
+                            Vel: 7<br>
+                            Salv: 3 Exp, 1 Maestr.<br>
+                            VIT: 11<br>
+                            Sen: 40 m<br>
+                            RC: 20/22
+                        </td>
+                        <td>Dratini, Gabite, Metagross</td>
+                    </tr>
+                    <tr>
+                        <td>De bebé a adulto o bicho de evolución rápida</td>
+                        <td>4</td>
+                        <td>
+                            RE: 2,1,1,1,0,-1<br>
+                            Vel: 4<br>
+                            Salv: 1 Experto<br>
+                            VIT: 5<br>
+                            Sen: 10 m<br>
+                            RC: 8 a 10
+                        </td>
+                        <td>
+                            RE: 4/3,3,2,2,1,1<br>
+                            Vel: 6<br>
+                            Salv: 4 Experto<br>
+                            VIT: 8/9<br>
+                            Sen: 20 m<br>
+                            RC: La anterior + 4
+                        </td>
+                        <td>-</td>
+                        <td>Bonsly, Jinx</td>
+                    </tr>
+                    <tr>
+                        <td>Familia de 2 especies de evolución rápida</td>
+                        <td>6</td>
+                        <td>
+                            RE: 2,2,2,1,1,-1<br>
+                            Vel: 4<br>
+                            Salv: 2 Experto<br>
+                            VIT: 5<br>
+                            Sen: 10/15 m<br>
+                            RC: 9 a 11
+                        </td>
+                        <td>
+                            RE: 3,3,2,2,2,1<br>
+                            Vel: 6<br>
+                            Salv: 4 Experto<br>
+                            VIT: 8 (+1 si objeto)<br>
+                            Sen: 30 m<br>
+                            RC: La anterior + 4
+                        </td>
+                        <td>-</td>
+                        <td>Rattata, Flareon</td>
+                    </tr>
+                    <tr>
+                        <td>Familia de 2 especies usual o lenta</td>
+                        <td>8 ó 10</td>
+                        <td>
+                            RE: 3,2,2,1,1,-1 (+1, máx 3, si evol. al 10)<br>
+                            Vel: 4<br>
+                            Salv: 2 Experto<br>
+                            VIT: 7<br>
+                            Sen: 10 m<br>
+                            RC: 10 a 13
+                        </td>
+                        <td>
+                            RE: 4,3,2,2,2,1 (+1, máx 4, si evol. al 10)<br>
+                            Vel: 6<br>
+                            Salv: 4 Experto<br>
+                            VIT: 9 o 10<br>
+                            Sen: 30 m<br>
+                            RC: La anterior +4
+                        </td>
+                        <td>-</td>
+                        <td>Growlithe, Cloyster</td>
+                    </tr>
+                    <tr>
+                        <td>No evoluciona</td>
+                        <td>-</td>
+                        <td>
+                            RE: 4/3,3/2,2,2,1,1<br>
+                            Vel: 6<br>
+                            Salv: 4 Experto<br>
+                            VIT: 7-9<br>
+                            Sen: 20 m<br>
+                            RC: 10 a 15
+                        </td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>Tauros, Mimikyu</td>
+                    </tr>
+                    <tr>
+                        <td>Legendario / Mítico</td>
+                        <td>-</td>
+                        <td>
+                            RE: 5,4,3,3,3,2<br>
+                            Vel: 7<br>
+                            Salv: 3 Experto, 1 Maestro<br>
+                            VIT: 11<br>
+                            Sen: 40 m<br>
+                            RC: 25
+                        </td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>Zapdos, Mew</td>
+                    </tr>
+                </tbody>
+            </table>
+
+
         </div>
     </details>
+
 </template>
