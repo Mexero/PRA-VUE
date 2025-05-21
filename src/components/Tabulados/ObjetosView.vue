@@ -379,7 +379,7 @@ Todo:
     justify-content: space-between;
     margin: 30px auto;
     width: 95%;
-    height: 75vh;
+    min-height: 75vh;
     letter-spacing: 0.5px;
 }
 

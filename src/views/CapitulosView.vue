@@ -19,8 +19,6 @@ const openMobileCap = ref(false)
 </script>
 
 <template>
-
-
     <nav id="CapMovil">
         <div class="navLogic" v-click-outside="() => openMobileCap = false">
             <Transition :name="'slideMovilMenu'">
@@ -146,7 +144,6 @@ aside {
     width: 100%;
 }
 
-
 /* === Menu principal Movil ===*/
 #CapMovil {
     display: none;
@@ -155,7 +152,6 @@ aside {
     z-index: 9;
     position: sticky;
     top: 50px;
-
 }
 
 #CapMovil ul li {
@@ -211,6 +207,7 @@ aside {
     }
 
 }
+
 /* === Transicion icono flecha menu movil cap === */
 #iconoAbrirMenuCapitulos img {
     transition: all 0.6s ease-in-out;
@@ -269,9 +266,18 @@ aside {
 
 }
 
+#capitulos h1,
 #capitulos h2,
-#capitulos h1 {
+#capitulos h3 {
     color: var(--color-texto);
+}
+
+#capitulos h1 {
+    font-size: 36px;
+}
+
+#capitulos h2 {
+    font-size: 28px;
 }
 
 #capitulos p {
@@ -279,7 +285,7 @@ aside {
     color: var(--color-texto);
     letter-spacing: 1px;
     line-height: 22px;
-    margin: 15px 0;
+    margin: 10px 0 15px 0;
     font-size: 17px;
 }
 
@@ -300,6 +306,7 @@ aside {
     padding-top: 35px;
 }
 
+
 #capitulos summary {
     border-radius: 5px;
     font-size: 25px;
@@ -308,8 +315,8 @@ aside {
     cursor: pointer;
     color: var(--color-texto);
     background-color: var(--color-principal1);
-
 }
+
 
 .consejoCapitulo {
     margin-top: 10px;
@@ -317,7 +324,6 @@ aside {
     border-radius: 10px;
     color: var(--color-texto);
     background-color: var(--color-principal2);
-
 }
 
 .consejoCapitulo p {
@@ -334,6 +340,22 @@ aside {
 .centrarTiposImg img {
     display: block;
     margin: 0 auto;
+}
+
+
+
+.enlaceObjetos {
+    background-color: var(--color-principal1);
+    border-radius: 5px;
+    width: fit-content;
+
+}
+
+.enlaceObjetos a {
+    font-weight: bold;
+    text-decoration: underline;
+    padding: 5px 10px;
+    display: flex;
 }
 
 /* ======================= TABLAS DE CAPITULOS ======================= */
@@ -379,4 +401,19 @@ aside {
 .consejoCapitulo tr td {
     padding: 5px 10px;
 }
+
+.subDetails {
+    width: 98%;
+    margin: 0 auto;
+    padding: 10px 0!important;
+}
+.subDetails p{
+    font-size: 15px !important;
+}
+.subSummary {
+    background-color: var(--color-tabla1)!important;
+    font-size: 20px !important;
+    font-weight: lighter; 
+}
+
 </style>

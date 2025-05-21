@@ -342,24 +342,60 @@
     "ruta": "/capitulos/objetos/#chapterStart",
     "secciones": [
       {
-        "nombre": "Los objetos en tu Campaña",
+        "nombre": "Poké Balls",
         "ruta": "#apartado1"
       },
       {
-        "nombre": "Los Tipos de Objetos",
-        "ruta": "#apartado2"
-      },
-      {
-        "nombre": "Materiales de Fabricación",
-        "ruta": "#apartado2"
-      },
-      {
-        "nombre": "Poké Balls",
+        "nombre": "Medicina",
         "ruta": "#apartado2"
       },
       {
         "nombre": "Potenciadores",
-        "ruta": "#apartado2"
+        "ruta": "#apartado3"
+      },
+      {
+        "nombre": "Plantas y Bayas",
+        "ruta": "#apartado4"
+      },
+      {
+        "nombre": "Comida",
+        "ruta": "#apartado5"
+      },
+      {
+        "nombre": "Objetos Evolutivos",
+        "ruta": "#apartado6"
+      },
+      {
+        "nombre": "Máquinas Técnicas",
+        "ruta": "#apartado7"
+      },
+      {
+        "nombre": "Amuletos",
+        "ruta": "#apartado8"
+      },
+      {
+        "nombre": "Equipo",
+        "ruta": "#apartado9"
+      },
+      {
+        "nombre": "Objetos de Entrenador",
+        "ruta": "#apartado10"
+      },
+      {
+        "nombre": "Armas",
+        "ruta": "#apartado11"
+      },
+      {
+        "nombre": "Fósiles",
+        "ruta": "#apartado12"
+      },
+      {
+        "nombre": "Objetos Míticos",
+        "ruta": "#apartado13"
+      },
+      {
+        "nombre": "Objetos de Transformaciones y Movimientos Especiales",
+        "ruta": "#apartado14"
       }
     ]
   },
@@ -455,6 +491,20 @@
   },
   {
     "capitulo": "Dirigiendo el Juego",
-    "ruta": "/capitulos/dirigir/#chapterStart"
+    "ruta": "/capitulos/dirigir/#chapterStart",
+    "secciones": [
+      {
+        "nombre": "El Rol del Director de Juego",
+        "ruta": "#apartado1"
+      },{
+        "nombre": "Diseña tu campaña",
+        "ruta": "#apartado2"
+      },{
+        "nombre": "Diseña tu mundo",
+        "ruta": "#apartado3"
+      }
+    ]
   }
+
+    
 ]

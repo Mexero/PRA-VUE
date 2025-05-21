@@ -16,7 +16,6 @@ function toggleSubmenu(index) {
 const root = document.documentElement;
 function countSubmenu(maxSubindex) {
     root.style.setProperty('--submenu-height', maxSubindex);
-    console.log(maxSubindex)
 }
 
 //METODOS PARA SUBMENUS

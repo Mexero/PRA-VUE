@@ -10,61 +10,46 @@
         hacer uso.
     </p>
 
-    <details open>
-        <summary>Los objetos en tu Campaña</summary>
-        <div class="detailsBloque">
-            <p>
-                Dependiendo del contexto de tu campaña es posible que tengas acceso a
-                diferentes objetos, de cuya existencia y accesibilidad te informará tu
-                DJ. Más abajo, encontrarás tablas con los precios y rarezas recomendadas
-                para múltiples objetos. Estos son sólo recomendaciones y, al final, el
-                que tendrá la última palabra será el DJ.
-            </p>
+    <h2>Los objetos en tu Campaña</h2>
+    <p>
+        Dependiendo del contexto de tu campaña es posible que tengas acceso a
+        diferentes objetos, de cuya existencia y accesibilidad te informará tu DJ.
+        Más abajo, encontrarás tablas con los precios y rarezas recomendadas para
+        múltiples objetos. Estos son sólo recomendaciones y, al final, el que tendrá
+        la última palabra será el DJ.
+    </p>
 
-            <p>
-                Es muy probable, por ejemplo, que en algunas localizaciones puedan
-                encontrarse algunos objetos raros que tengan sentidos con el entorno que
-                no estén disponibles en otros lugares. Por ejemplo, si llegáis a una
-                ciudad costera es muy posible que podáis encontrar Buceo Balls, pero si
-                os encontráis en mitad del desierto es muy difícil que encontréis un
-                vendedor bien surtido de las mismas.
-            </p>
-        </div>
-    </details>
+    <p>
+        Es muy probable, por ejemplo, que en algunas localizaciones puedan
+        encontrarse algunos objetos raros que tengan sentidos con el entorno que no
+        estén disponibles en otros lugares. Por ejemplo, si llegáis a una ciudad
+        costera es muy posible que podáis encontrar Buceo Balls, pero si os
+        encontráis en mitad del desierto es muy difícil que encontréis un vendedor
+        bien surtido de las mismas.
+    </p>
+    <h2>Los Tipos de Objetos</h2>
+    <p>
+        Dentro del Mundo Pokémon hay múltiples tipos de objetos que no existen en el
+        mundo real y, otros, que son diferentes. En los siguientes apartados
+        trataremos los distintos tipos de objetos que podrás encontrar y sus efectos
+    </p>
+    <h2>Materiales de Fabricación</h2>
+    <p>
+        A lo largo del capítulo habrá múltiples situaciones en las que se haga
+        referencia a crear objetos con Herramientas. Los personajes poseen estas
+        habilidades deberían poder tener acceso a usarla.
+    </p>
+    <p>
+        Para potenciar que puedan usar sus habilidades de creación existen los
+        <strong>Materiales de Fabricación</strong>. Cada tipo de Materiales de
+        Fabricación tiene un valor monetario asociado pero no podrán venderse, sino
+        que este referencia la cantidad del valor que reduce del costo de
+        fabricación de un objeto. Por ejemplo, sería difícil vender las piezas de un
+        aparato roto, pero un Inventor podría usarlas para sus Invenciones o para
+        hacer Poké Balls.
+    </p>
 
-    <details open>
-        <summary>Los Tipos de Objetos</summary>
-        <div class="detailsBloque">
-            <p>
-                Dentro del Mundo Pokémon hay múltiples tipos de objetos que no existen
-                en el mundo real y, otros, que son diferentes. En los siguientes
-                apartados trataremos los distintos tipos de objetos que podrás encontrar
-                y sus efectos
-            </p>
-        </div>
-    </details>
-
-    <details open>
-        <summary>Materiales de Fabricación</summary>
-        <div class="detailsBloque">
-            <p>
-                A lo largo del capítulo habrá múltiples situaciones en las que se haga
-                referencia a crear objetos con Herramientas. Los personajes poseen estas
-                habilidades deberían poder tener acceso a usarla.
-            </p>
-            <p>
-                Para potenciar que puedan usar sus habilidades de creación existen los
-                <strong>Materiales de Fabricación</strong>. Cada tipo de Materiales de
-                Fabricación tiene un valor monetario asociado pero no podrán venderse,
-                sino que este referencia la cantidad del valor que reduce del costo de
-                fabricación de un objeto. Por ejemplo, sería difícil vender las piezas
-                de un aparato roto, pero un Inventor podría usarlas para sus Invenciones
-                o para hacer Poké Balls.
-            </p>
-        </div>
-    </details>
-
-    <details open>
+    <details open id="apartado1">
         <summary>Poké Balls</summary>
         <div class="detailsBloque">
             <p>
@@ -107,10 +92,19 @@
                 usarse como materiales para fabricar Poké Balls por valor igual a un
                 cuarto de su coste.
             </p>
+
+            <div class="enlaceObjetos">
+                <router-link :to="{
+                    path: '/objetos',
+                    query: { tipos: 'Poké ball', seleccionado: 'Poké Ball' },
+                }">
+                    Ver todas las Poké Balls
+                </router-link>
+            </div>
         </div>
     </details>
 
-    <details open>
+    <details open id="apartado2">
         <summary>Medicina</summary>
         <div class="detailsBloque">
             <p>
@@ -144,10 +138,19 @@
                 su coste de compra. Además, algunos químicos y Plantas también podrían
                 servir como materiales para preparar Medicinas.
             </p>
+
+            <div class="enlaceObjetos">
+                <router-link :to="{
+                    path: '/objetos',
+                    query: { tipos: 'Medicina', seleccionado: 'Poción' },
+                }">
+                    Ver todas las Medicinas
+                </router-link>
+            </div>
         </div>
     </details>
 
-    <details open>
+    <details open id="apartado3">
         <summary>Potenciadores</summary>
         <div class="detailsBloque">
             <p>
@@ -180,10 +183,18 @@
                 dificultad es 10, si es Poco Común, 15, si es Raro, 20 y, si es Muy
                 Raro, 25.
             </p>
+            <div class="enlaceObjetos">
+                <router-link :to="{
+                    path: '/objetos',
+                    query: { tipos: 'Potenciador', seleccionado: 'Ataque X' },
+                }">
+                    Ver todos los Potenciadores
+                </router-link>
+            </div>
         </div>
     </details>
 
-    <details open>
+    <details open id="apartado4">
         <summary>Plantas y Bayas</summary>
         <div class="detailsBloque">
             <p>
@@ -214,10 +225,18 @@
                 rareza, junto a sus descripciones y el tipo de comidas y medicinas que
                 pueden producirse con estas.
             </p>
+            <div class="enlaceObjetos">
+                <router-link :to="{
+                    path: '/objetos',
+                    query: { tipos: 'Baya,Planta', seleccionado: 'Hierba blanca' },
+                }">
+                    Ver todas las Plantas y Bayas
+                </router-link>
+            </div>
         </div>
     </details>
 
-    <details open>
+    <details open id="apartado5">
         <summary>Comida</summary>
         <div class="detailsBloque">
             <p>
@@ -254,10 +273,18 @@
                 recomendaciones, puedes darle los que desees para adaptarse a la comida
                 que cocines.
             </p>
+            <div class="enlaceObjetos">
+                <router-link :to="{
+                    path: '/objetos',
+                    query: { tipos: 'Comida', seleccionado: 'Tapa estado' },
+                }">
+                    Ver todas las Comida
+                </router-link>
+            </div>
         </div>
     </details>
 
-    <details open>
+    <details open id="apartado6">
         <summary>Objetos Evolutivos</summary>
         <div class="detailsBloque">
             <p>
@@ -285,10 +312,18 @@
                 Extraño, podrían ser creados por personajes que sean hábiles en unas
                 herramientas adecuadas para producirlos y puedan fabricar objetos raros.
             </p>
+            <div class="enlaceObjetos">
+                <router-link :to="{
+                    path: '/objetos',
+                    query: { tipos: 'Objeto evolutivo', seleccionado: 'Piedra agua' },
+                }">
+                    Ver todos los Objetos Evolutivos
+                </router-link>
+            </div>
         </div>
     </details>
 
-    <details open>
+    <details open id="apartado7">
         <summary>Máquinas Técnicas</summary>
         <div class="detailsBloque">
             <p>
@@ -332,7 +367,7 @@
         </div>
     </details>
 
-    <details open>
+    <details open id="apartado8">
         <summary>Amuletos</summary>
         <div class="detailsBloque">
             <p>
@@ -359,23 +394,19 @@
                 poder considerable si se compaginan con las Habilidades y Movimientos
                 adecuados.
             </p>
-            <p>
-                Los siguientes amuletos son, dentro de todo, los más comunes, y tienen
-                un valor recomendado de 10.000$. Al ligarse a estos, otorgan un bono al
-                Daño Base de los Movimientos Tipo asociado igual al BH de la criatura.
-            </p>
 
-            -----------
-
-            <p>
-                Por otro lado, los amuletos de la siguiente tabla son aún más raros y
-                sus efectos son mucho más diversos. El precio recomendado para estos
-                amuletos es aún mayor, de unos 20.000$.
-            </p>
+            <div class="enlaceObjetos">
+                <router-link :to="{
+                    path: '/objetos',
+                    query: { tipos: 'Amuleto', seleccionado: 'Agua mística' },
+                }">
+                    Ver todos los Amuletos
+                </router-link>
+            </div>
         </div>
     </details>
 
-    <details open>
+    <details open id="apartado9">
         <summary>Equipo</summary>
         <div class="detailsBloque">
             <p>
@@ -391,10 +422,18 @@
                 usualmente, sólo se encuentran en grandes ciudades o en localizaciones
                 particulares.
             </p>
+            <div class="enlaceObjetos">
+                <router-link :to="{
+                    path: '/objetos',
+                    query: { tipos: 'Equipo', seleccionado: 'Botas gruesas' },
+                }">
+                    Ver todas las Piezas de Equipo
+                </router-link>
+            </div>
         </div>
     </details>
 
-    <details open>
+    <details open id="apartado10">
         <summary>Objetos de Entrenador</summary>
         <div class="detailsBloque">
             <p>
@@ -483,18 +522,34 @@
                 Bayas
             </p>
             <p>
-                Por último, en la siguiente tabla encontrarás otros objetos menos
-                comunes que los entrenadores podrían llegar a obtener y, en algunos
-                casos, a comprar. Todos son objetos Enanos.
+                Además existen objetos menos comunes, que los entrenadores podrían llegar a obtener y, en algunos
+                casos comprar. Todos estos son objetos Enanos.
             </p>
             <p>
-                Por último, en la siguiente tabla encontrarás otros objetos menos
-                comunes que los entrenadores podrían llegar a obtener y, en algunos
-                casos, a comprar. Todos son objetos Enanos.
+                Por ultimo, también existen objetos consumibles. Estos tienen
+                un único uso y usualmente pueden comprarse en tiendas o fabricarse
+                con Herramientas de Inventor si se conocen las
+                invenciones adecuadas. Los objetos consumibles son elementos esenciales
+                en el arsenal de cualquier Entrenador, ya que pueden marcar la
+                diferencia entre la victoria y la derrota en un enfrentamiento. Su
+                disponibilidad en las tiendas puede ser limitada, así que no tengas miedo de
+                gastar el dinero en estas cuando las veas.
             </p>
+
+            <div class="enlaceObjetos">
+                <router-link :to="{
+                    path: '/objetos',
+                    query: {
+                        tipos: 'Objetos de entrenador,Objetos de entrenador (Consumible)',
+                        seleccionado: 'Kit de botánica',
+                    },
+                }">
+                    Ver todos los Objetos de Entrenador
+                </router-link>
+            </div>
         </div>
     </details>
-    <details open>
+    <details open id="apartado11">
         <summary>Armas</summary>
         <div class="detailsBloque">
             <p>
@@ -507,8 +562,9 @@
                 ejemplo un martillo que sea como el de Tinkaton o estrellas ninja que
                 sean como estrellas del Movimiento Meteoros.
             </p>
+            <h2>¿Cómo funcionan las armas?</h2>
             <p>
-                ¿Cómo funcionan las armas? Cada arma tienen 4 Movimientos asociados. 1
+                Cada arma tienen 4 Movimientos asociados. 1
                 Movimiento Estándar, que hace más daño y tiene más efectos a más PP se
                 usan con este, dos Movimientos Especiales, que representan propiedades
                 únicas del arma y un Movimiento Especial Superior. Una persona hábil con
@@ -516,8 +572,9 @@
                 la tiene en sus manos. Por último, las armas son objetos Pequeños.
             </p>
 
+            <h2>Crear armas</h2>
             <p>
-                Crear armas No existe una lista de armas. En su lugar, puedes crear
+                No existe una lista de armas. En su lugar, puedes crear
                 armas eligiendo un tipo entre Normal, Lucha, Acero y Roca, el cual debe
                 tener sentido con el material del que está hecha el arma, y eligiendo
                 los Movimientos de Armas que tengan sentido para la idea que tienes, los
@@ -528,17 +585,18 @@
                 Especiales Superiores: Abrir herida, Riposte, Vaciar recámara,
                 Contusión, Ataque múltiple, Rociar, Disparo perforante
             </p>
-
+            <h2>Precio de las armas</h2>
             <p>
-                Precio de las armas El precio de las armas dependerá de cómo se vean
+                El precio de las armas dependerá de cómo se vean
                 estas y de qué tan raras son en el Mundo de tu campaña pero un buen
                 precio es 3.000$. Si usas armas que se lanza, como cuchillos o estrellas
                 ninja, considera que tu arma son 10 de estos. Si tu arma usa munición de
                 algún tipo, las piezas de munición que usas cuestan 25$ y gastas una
                 pieza por cada Movimiento que usas.
             </p>
+            <h2>Fabricar armas</h2>
             <p>
-                Fabricar armas Si tu DJ lo permite y eres hábil con un tipo de arma que
+                Si tu DJ lo permite y eres hábil con un tipo de arma que
                 no es tecnológicamente muy avanzada, como las armas de fuego, puedes
                 fabricar este arma o munición para esta como Acción Extendida. Cuando lo
                 haces, esta te cuesta materiales igual a su valor. Un Inventor puede
@@ -550,10 +608,46 @@
                 estos Movimientos dependerá del material del arma pero deberá ser uno de
                 los siguientes: Normal, Lucha, A cero o Roca.
             </p>
+            <h2>Ejemplos de armas</h2>
+            <p>Aquí dejamos un par de ejemplos para que te hagas una idea de cuáles podrían ser las armas que uses como
+                guía a la hora de saber cómo diseñar armas</p>
+            <div class="ejemploArma">
+                <div class="arma">
+                    <p><span class="negrita">Bate de béisbol</span></p>
+                    <p><span class="negrita">Tipo asociado:</span> Normal.</p>
+                    <p><span class="negrita">Movimiento Estándar:</span> Golpear</p>
+                    <p><span class="negrita">Movimientos Especiales:</span> Quebrar, Barrido</p>
+                    <p><span class="negrita">Movimiento Especial Superior:</span> Contusión</p>
+                </div>
+                <div class="arma">
+                    <p><span class="negrita">Estrellas Ninja</span></p>
+                    <p><span class="negrita">Tipo asociado:</span> Acero.</p>
+                    <p><span class="negrita">Movimiento Estándar:</span> Lanzar</p>
+                    <p><span class="negrita">Movimientos Especiales:</span> Disparo ágil, Doble
+                        lanzamiento</p>
+                    <p><span class="negrita">Movimiento Especial Superior:</span> Rociar</p>
+                </div>
+                <div class="arma">
+                    <p><span class="negrita">Sable</span></p>
+                    <p><span class="negrita">Tipo asociado:</span> Acero.</p>
+                    <p><span class="negrita">Movimiento Estándar:</span> Tajar</p>
+                    <p><span class="negrita">Movimientos Especiales:</span> Lacerar, Bloquear</p>
+                    <p><span class="negrita">Movimiento Especial Superior:</span> Riposte</p>
+                </div>
+                <div class="arma">
+                    <p><span class="negrita">Hacha de Cleavor</span></p>
+                    <p><span class="negrita">Tipo asociado:</span> Roca.</p>
+                    <p><span class="negrita">Movimiento Estándar:</span> Tajar</p>
+                    <p><span class="negrita">Movimientos Especiales:</span> Lacerar, Hendir</p>
+                    <p><span class="negrita">Movimiento Especial Superior:</span> Abrir herida</p>
+                </div>
+            </div>
         </div>
+
+
     </details>
 
-    <details open>
+    <details open id="apartado12">
         <summary>Fósiles</summary>
         <div class="detailsBloque">
             <p>
@@ -573,10 +667,18 @@
                 pasado, puede elegir crear fósiles para estos, así que, cuando entres a
                 una cueva, presta atención, quizás te encuentres con alguna sorpresa.
             </p>
+            <div class="enlaceObjetos">
+                <router-link :to="{
+                    path: '/objetos',
+                    query: { tipos: 'Fósil', seleccionado: 'Ámbar Viejo' },
+                }">
+                    Ver todos los Fósiles
+                </router-link>
+            </div>
         </div>
     </details>
 
-    <details open>
+    <details open id="apartado13">
         <summary>Objetos Míticos</summary>
         <div class="detailsBloque">
             <p>
@@ -586,10 +688,18 @@
                 guía de algunos objetos que podrían aparecer a lo largo de las aventuras
                 de tu campaña.
             </p>
+            <div class="enlaceObjetos">
+                <router-link :to="{
+                    path: '/objetos',
+                    query: { tipos: 'Objetos míticos', seleccionado: 'Arca de Zygarde' },
+                }">
+                    Ver todos los Objetos Míticos
+                </router-link>
+            </div>
         </div>
     </details>
 
-    <details open>
+    <details open id="apartado14">
         <summary>Objetos de Transformaciones y Movimientos Especiales</summary>
         <div class="detailsBloque">
             <p>
@@ -598,15 +708,17 @@
                 comprar. En esta sección trataremos estos objetos, sus rarezas y sus
                 precios.
             </p>
+            <h2>Megaevolución</h2>
             <p>
-                Megaevolución La Megaevolución requiere, entre otros, de dos objetos:
+                La Megaevolución requiere, entre otros, de dos objetos:
                 Una Megapiedra de la especie del Pokémon, un objeto Enano, y un Mega
                 abalorio, un objeto Enano. Tanto la Megapiedra como el Mega abalorio son
                 de rareza Muy Rara, pero las primeras cuestan, de poder comprarse,
                 25.000$ y las segundas 50.000$.
             </p>
+            <h2>Movimientos Z</h2>
             <p>
-                Movimientos Z Los Movimientos Z requieren, entre otros, de dos objetos:
+                Los Movimientos Z requieren, entre otros, de dos objetos:
                 Un Cristal Z de la especie del Pokémon, un objeto Enano, y una Pulsera
                 Z, otro objeto Enano. Tanto los Cristales Z como la Pulsera Z son de
                 rareza Muy Rara, pero los primeros cuestan, de poder comprarse, 25.000$
@@ -619,14 +731,16 @@
                 usados por miembros de dicha especie. Los segundos son los más raros y
                 podrían llegar a ser más caros si se encuentran a la venta.
             </p>
+            <h2>Dinamax y Gigamax</h2>
             <p>
-                Dinamax y Gigamax Para usar el Dinamax o el Gigamax el entrenador debe
+                Para usar el Dinamax o el Gigamax el entrenador debe
                 tener una Maxi muñequera, un objeto Enano. Esta es un objeto Raro que
                 usualmente tiene valor de 15.000$. Para que los Pokémon puedan usar el
                 Dinamax requieren de Energía Dinamax. Podrán encontrar fuentes de esta
                 energía para absorber y, además, objetos que al ser consumidos o tocados
                 imbuyen de energía. Los precios de estos objetos rondarán los 5.000$.
             </p>
+            <h2>Teracristalización</h2>
             <p>
                 Teracristalización Para usar la Teracristalización es necesario un Orbe
                 Teracristal, un objeto Raro y Enano hecho con cristales imbuidos de
@@ -642,8 +756,9 @@
                 Pokémon que los absorberá como Acción Extendida. Esta punzada no causa
                 dolor, pero el Teralito debe mantenerse
             </p>
+            <h2>Fabricar Objetos</h2>
             <p>
-                Fabricar Objetos Los Mega Abalorios, Las Pulseras Z, las Maximuñequeras
+                Los Mega Abalorios, Las Pulseras Z, las Maximuñequeras
                 y los Orbes Teracristal no existen de forma natural, sino que son
                 creados a partir de materiales tan raros como estos objetos. Estos
                 materiales son una Piedra Activadora para los Mega abalorios, Piedras
@@ -661,3 +776,24 @@
         </div>
     </details>
 </template>
+
+<style scoped>
+.negrita {
+    font-weight: bold;
+}
+
+.ejemploArma {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.arma {
+    width: 400px;
+    border-radius: 5px;
+    padding: 5px 10px;
+    background-color: var(--color-secundario);
+}
+</style>
