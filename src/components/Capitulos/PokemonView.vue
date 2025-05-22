@@ -1,5 +1,5 @@
 <template>
-    <h1 >Capítulo 6: Pokémon</h1>
+    <h1>Capítulo 6: Pokémon</h1>
     <p>
         Las criaturas mágicas conocidas como Pokémon son, junto a los personajes,
         los protagonistas de las campañas de PRA. Para que el sistema sea lo más
@@ -230,8 +230,8 @@
                 Habilidad si no lo era ya.
             </p>
 
-            <div class="tablaNaturaleza">
-                <table>
+            <div class="tablaAdaptable">
+                <table class="tablaCapitulos">
                     <tr>
                         <th>Naturaleza</th>
                         <td>Activa</td>
@@ -298,7 +298,8 @@
                 (ME) y Aumentos de su Grado de Habilidad (AGH) que tiene un Pokémon
                 según su Nivel e indica si aprende nuevos Movimientos.
             </p>
-            <table class="tablaCapitulos progresionPokemon">
+            <div class="tablaAdaptable">
+            <table class="tablaCapitulos">
                 <th>NIV</th>
                 <th>Movimientos</th>
                 <th>BH</th>
@@ -468,6 +469,7 @@
                     <td>3</td>
                 </tr>
             </table>
+            </div>
         </div>
     </details>
 
@@ -626,111 +628,112 @@
                 maltratado o si se le fuerza a hacer muchas cosas que no desea hacer.
             </p>
 
-            <table class="tablaAmistad">
-                <tr>
-                    <th>Nivel 0: Odio</th>
-                    <td>
-                        <ul>
-                            <li>El Pokémon se muestra hostil hacia su entrenador.</li>
-                            <li>
-                                Puede desobedecer órdenes, atacar al entrenador o intentar huir.
-                            </li>
-                            <li>
-                                Se necesita trabajar mucho en la relación para cambiar esta
-                                actitud.
-                            </li>
-                        </ul>
-                    </td>
-                </tr>
-                <tr>
-                    <th>Nivel 1: Desconfianza</th>
-                    <td>
-                        <ul>
-                            <li>
-                                El Pokémon muestra poco interés en seguir las órdenes y es
-                                difícil de entrenar.
-                            </li>
-                            <li>Aunque no ataca al entrenador, evita el contacto cercano.</li>
-                        </ul>
-                    </td>
-                </tr>
-                <tr>
-                    <th>Nivel 2: Aceptación</th>
-                    <td>
-                        <ul>
-                            <li>
-                                El Pokémon sigue las órdenes, pero de manera un tanto mecánica.
-                            </li>
-                            <li>
-                                Muestra una actitud neutral hacia su entrenador, sin mucha
-                                interacción más allá del entrenamiento.
-                            </li>
-                        </ul>
-                    </td>
-                </tr>
-                <tr>
-                    <th>Nivel 3: Amistad</th>
-                    <td>
-                        <ul>
-                            <li>
-                                El Pokémon responde de manera más entusiasta a las órdenes del
-                                entrenador.
-                            </li>
-                            <li>
-                                Muestra signos de apego y cuidado, aunque aún hay espacio para
-                                mejorar la relación.
-                            </li>
-                        </ul>
-                    </td>
-                </tr>
-                <tr>
-                    <th>Nivel 4: Conexión</th>
-                    <td>
-                        <ul>
-                            <li>
-                                El Pokémon ve al entrenador como su autoridad y compañero más
-                                cercano.
-                            </li>
-                            <li>
-                                Existe una relación cercana con el Pokémon buscando activamente
-                                la interacción y apoyo del entrenador.
-                            </li>
-                        </ul>
-                    </td>
-                </tr>
-                <tr>
-                    <th>Nivel 5: Lealtad</th>
-                    <td>
-                        <ul>
-                            <li>
-                                El Pokémon y el entrenador se entienden y confían el uno en el
-                                otro.
-                            </li>
-                            <li>
-                                El Pokémon está dispuesto a hacer cualquier cosa por el
-                                entrenador.
-                            </li>
-                        </ul>
-                    </td>
-                </tr>
-                <tr>
-                    <th>Nivel 6: Inseparables</th>
-                    <td>
-                        <ul>
-                            <li>El Pokémon y el entrenador son inseparables.</li>
-                            <li>
-                                Se comunican tan bien que el Pokémon puede recibir Órdenes con
-                                meros gestos.
-                            </li>
-                            <li>
-                                El Pokémon se preocupa más por el bienestar de su entrenador que
-                                por el suyo.
-                            </li>
-                        </ul>
-                    </td>
-                </tr>
-            </table>
-
+            <div class="tablaAdaptable">
+                <table class="tablaCapitulos">
+                    <tr>
+                        <th>Nivel 0: Odio</th>
+                        <td>
+                            <ul>
+                                <li>El Pokémon se muestra hostil hacia su entrenador.</li>
+                                <li>
+                                    Puede desobedecer órdenes, atacar al entrenador o intentar huir.
+                                </li>
+                                <li>
+                                    Se necesita trabajar mucho en la relación para cambiar esta
+                                    actitud.
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Nivel 1: Desconfianza</th>
+                        <td>
+                            <ul>
+                                <li>
+                                    El Pokémon muestra poco interés en seguir las órdenes y es
+                                    difícil de entrenar.
+                                </li>
+                                <li>Aunque no ataca al entrenador, evita el contacto cercano.</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Nivel 2: Aceptación</th>
+                        <td>
+                            <ul>
+                                <li>
+                                    El Pokémon sigue las órdenes, pero de manera un tanto mecánica.
+                                </li>
+                                <li>
+                                    Muestra una actitud neutral hacia su entrenador, sin mucha
+                                    interacción más allá del entrenamiento.
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Nivel 3: Amistad</th>
+                        <td>
+                            <ul>
+                                <li>
+                                    El Pokémon responde de manera más entusiasta a las órdenes del
+                                    entrenador.
+                                </li>
+                                <li>
+                                    Muestra signos de apego y cuidado, aunque aún hay espacio para
+                                    mejorar la relación.
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Nivel 4: Conexión</th>
+                        <td>
+                            <ul>
+                                <li>
+                                    El Pokémon ve al entrenador como su autoridad y compañero más
+                                    cercano.
+                                </li>
+                                <li>
+                                    Existe una relación cercana con el Pokémon buscando activamente
+                                    la interacción y apoyo del entrenador.
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Nivel 5: Lealtad</th>
+                        <td>
+                            <ul>
+                                <li>
+                                    El Pokémon y el entrenador se entienden y confían el uno en el
+                                    otro.
+                                </li>
+                                <li>
+                                    El Pokémon está dispuesto a hacer cualquier cosa por el
+                                    entrenador.
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Nivel 6: Inseparables</th>
+                        <td>
+                            <ul>
+                                <li>El Pokémon y el entrenador son inseparables.</li>
+                                <li>
+                                    Se comunican tan bien que el Pokémon puede recibir Órdenes con
+                                    meros gestos.
+                                </li>
+                                <li>
+                                    El Pokémon se preocupa más por el bienestar de su entrenador que
+                                    por el suyo.
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+            </div>
             <p>
                 Es importante tener en cuenta que estas descripciones son flexibles y
                 buscan ser una guía más que una regla estricta y sólo dictaminan como tu
@@ -1179,39 +1182,3 @@
         </div>
     </details>
 </template>
-
-<style scoped>
-/* === TABLA DE NATURALEZAS */
-.tablaNaturaleza {
-    overflow: scroll;
-    overflow-x: auto;
-    overflow-y: hidden;
-}
-
-.tablaNaturaleza table {
-    border-collapse: collapse;
-    margin: 0 auto;
-}
-
-.tablaNaturaleza td {
-    padding: 5px;
-}
-
-.tablaNaturaleza tr:last-child,
-.progresionPokemon tr:nth-child(2) {
-    border-top: 1px solid rgb(31, 31, 31);
-}
-
-.tablaNaturaleza th {
-    padding: 5px;
-    background-color: var(--color-tabla1);
-}
-
-.tablaNaturaleza td:nth-child(odd) {
-    background-color: var(--color-tabla1);
-}
-
-.tablaNaturaleza td:nth-child(even) {
-    background-color: var(--color-tabla2);
-}
-</style>

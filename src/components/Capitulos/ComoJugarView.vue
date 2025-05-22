@@ -43,7 +43,7 @@
     </details>
 
     <details open id="apartado2">
-        <summary>¿Cuánto duran las acciones?</summary>
+        <summary>¿Cuánto Duran las Acciones?</summary>
         <div class="detailsBloque">
             <p>
                 En la mayoría de los casos, será responsabilidad del DJ determinar

@@ -1,5 +1,5 @@
-<template >
-    <h1 >Capítulo 3: Creación de Personaje</h1>
+<template>
+    <h1>Capítulo 3: Creación de Personaje</h1>
 
     <p>
         Para empezar a jugar a PRA debes crear el personaje que representarás
@@ -11,7 +11,7 @@
     </p>
 
     <details open id="apartado1">
-        <summary>Paso 1: Concepto del personaje</summary>
+        <summary>Paso 1: Concepto del Personaje</summary>
         <div class="detailsBloque">
             <p>
                 Puede que te sientas tentado a comenzar de inmediato a calcular números,
@@ -42,7 +42,7 @@
     </details>
 
     <details open id="apartado2">
-        <summary>Paso 2: El trasfondo</summary>
+        <summary>Paso 2: El Trasfondo</summary>
         <div class="detailsBloque">
             <p>
                 Un <strong>trasfondo</strong> es una historia, ya sea un par de frases o
@@ -132,7 +132,7 @@
     </details>
 
     <details open id="apartado5">
-        <summary>Paso 5: Calcular otros valores</summary>
+        <summary>Paso 5: Calcular Otros Valores</summary>
         <div class="detailsBloque">
             <p>
                 Ahora que ya has elegido en qué es bueno tu Personaje, su Clase y has
@@ -201,28 +201,28 @@
                 La siguiente tabla resume los cálculos explicados a lo largo de esta
                 sección:
             </p>
-
-            <table class="tablaCapitulos">
-                <th>Valor</th>
-                <th>Cáluclo</th>
-                <tr>
-                    <td>CA</td>
-                    <td>8 + BH + AGI</td>
-                </tr>
-                <tr>
-                    <td>PV</td>
-                    <td>10 + Nivel x (VIT + RES)</td>
-                </tr>
-                <tr>
-                    <td>PP</td>
-                    <td>NIV + ESP</td>
-                </tr>
-                <tr>
-                    <td>Tiradas de Salvación</td>
-                    <td>BH + Estadística asociada + 2</td>
-                </tr>
-            </table>
-
+            <div class="tablaAdaptable">
+                <table class="tablaCapitulos">
+                    <th>Valor</th>
+                    <th>Cáluclo</th>
+                    <tr>
+                        <td>CA</td>
+                        <td>8 + BH + AGI</td>
+                    </tr>
+                    <tr>
+                        <td>PV</td>
+                        <td>10 + Nivel x (VIT + RES)</td>
+                    </tr>
+                    <tr>
+                        <td>PP</td>
+                        <td>NIV + ESP</td>
+                    </tr>
+                    <tr>
+                        <td>Tiradas de Salvación</td>
+                        <td>BH + Estadística asociada + 2</td>
+                    </tr>
+                </table>
+            </div>
             <p>
                 Por último, todos los personajes son <strong>Tipo Normal</strong> y
                 conocen el Movimiento <strong>Destructor</strong>, pero al usarlo el
@@ -234,7 +234,7 @@
     </details>
 
     <details open id="apartado6">
-        <summary>Paso 6: Describe a tu personaje</summary>
+        <summary>Paso 6: Describe a tu Personaje</summary>
         <div class="detailsBloque">
             <p>
                 A este punto, los aspectos mecánicos de tu personaje ya están casi
@@ -294,7 +294,7 @@
             </div>
         </div>
     </details>
-    
+
     <details open id="apartado8">
         <summary>Paso 8: Dinero y Objetos</summary>
         <div class="detailsBloque">
@@ -319,7 +319,7 @@
     </details>
 
     <details open id="apartado9">
-        <summary>La progresión de personaje</summary>
+        <summary>La Progresión de Personaje</summary>
         <div class="detailsBloque">
             <p>
                 A lo largo de la campaña, cada cierto tiempo tu y tu grupo subiréis de

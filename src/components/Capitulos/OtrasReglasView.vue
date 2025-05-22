@@ -1,5 +1,5 @@
 <template>
-    <h1 >Capítulo 10: Reglas Menores</h1>
+    <h1>Capítulo 10: Reglas Menores</h1>
     <p>
         En este capítulo hay una miscelánea de reglas que puedes decidir implementar
         o no en tus partidas. También se aclaran algunos conceptos que, aunque
@@ -388,7 +388,7 @@
                     </p>
                 </div>
             </div>
-            <h2>Estados más generales:</h2>
+            <h2 class="espaciado">Estados más generales:</h2>
             <div class="estadosBloque">
                 <div class="estados generico">
                     <div class="headerEstados">
@@ -554,44 +554,46 @@
                 La siguiente tabla clasifica a las criaturas y objetos en función del
                 espacio mínimo en el que caben:
             </p>
+            <div class="tablaAdaptable">
 
-            <table class="tablaAmistad progresionPokemon">
-                <th>Tamaño</th>
-                <th>Descripcion</th>
-                <tr>
-                    <td>Enano</td>
-                    <td>
-                        Mide menos de un tercio de lo que mide una persona en promedio en
-                        todas sus dimensiones.
-                    </td>
-                </tr>
-                <tr>
-                    <td>Pequeño</td>
-                    <td>
-                        Mide alrededor de la mitad que una persona en promedio en la mayor
-                        de sus dimensiones.
-                    </td>
-                </tr>
-                <tr>
-                    <td>Mediano</td>
-                    <td>
-                        Mide una cantidad similar a una persona promedio y en ninguna de sus
-                        dimensiones excede demasiado a una persona promedio.
-                    </td>
-                </tr>
-                <tr>
-                    <td>Grande</td>
-                    <td>Mide entre 2 y 2,5 metros en la mayor de sus dimensiones.</td>
-                </tr>
-                <tr>
-                    <td>Enorme</td>
-                    <td>Mide entre 2,5 y 3 metros en la mayor de sus dimensiones.</td>
-                </tr>
-                <tr>
-                    <td>Colosal</td>
-                    <td>Más de 3 metros en alguna de sus dimensiones.</td>
-                </tr>
-            </table>
+                <table class="tablaCapitulos">
+                    <th>Tamaño</th>
+                    <th>Descripcion</th>
+                    <tr>
+                        <td>Enano</td>
+                        <td>
+                            Mide menos de un tercio de lo que mide una persona en promedio en
+                            todas sus dimensiones.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Pequeño</td>
+                        <td>
+                            Mide alrededor de la mitad que una persona en promedio en la mayor
+                            de sus dimensiones.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Mediano</td>
+                        <td>
+                            Mide una cantidad similar a una persona promedio y en ninguna de sus
+                            dimensiones excede demasiado a una persona promedio.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Grande</td>
+                        <td>Mide entre 2 y 2,5 metros en la mayor de sus dimensiones.</td>
+                    </tr>
+                    <tr>
+                        <td>Enorme</td>
+                        <td>Mide entre 2,5 y 3 metros en la mayor de sus dimensiones.</td>
+                    </tr>
+                    <tr>
+                        <td>Colosal</td>
+                        <td>Más de 3 metros en alguna de sus dimensiones.</td>
+                    </tr>
+                </table>
+            </div>
         </div>
     </details>
 
@@ -1052,7 +1054,7 @@
     </details>
 
     <details open id="apartado19">
-        <summary>Recordar Información Sobre un Pokémon</summary>
+        <summary>Recordar Información sobre un Pokémon</summary>
         <div class="detailsBloque">
             <p>
                 Cuando un Personaje ve a un Pokémon puede pedir al DJ información sobre

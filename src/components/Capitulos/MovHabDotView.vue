@@ -1,5 +1,5 @@
 <template>
-    <h1 >Capítulo 5: Movimientos, Habilidades y Dotes</h1>
+    <h1>Capítulo 5: Movimientos, Habilidades y Dotes</h1>
 
     <p>
         Los Pokémon y entrenadores de PRA no sólo son definidos por sus tipos,
@@ -63,62 +63,68 @@
             </p>
 
             <div class="consejoCapitulo">
-                <table>
-                    <tr>
-                        <td><span class="negrita">Nombre</span></td>
-                    </tr>
-                    <tr>
-                        <td>
-                            (<span class="negrita">Acción</span> o
-                            <span class="negrita">Reacción</span>)
-                        </td>
-                        <td>
-                            <span class="negrita">Coste</span>: (Coste en PP), (Cantidad de
-                            usos)
-                        </td>
-                        <td><span class="negrita">Rango</span>: (Rango del Movimiento)</td>
-                    </tr>
-                    <tr>
-                        <td><span class="negrita">Daño</span>: (Si lo tiene, aparece)</td>
-                        <td>
-                            <span class="negrita">Estadísticas</span>: (Si las tiene, aparece)
-                        </td>
-                        <td>
-                            <span class="negrita">Etiquetas</span>: (Si las tiene, aparece)
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><span class="negrita">Descripción</span>:</td>
-                    </tr>
-                </table>
+                <div class="tablaAdaptable">
+
+                    <table>
+                        <tr>
+                            <td><span class="negrita">Nombre</span></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                (<span class="negrita">Acción</span> o
+                                <span class="negrita">Reacción</span>)
+                            </td>
+                            <td>
+                                <span class="negrita">Coste</span>: (Coste en PP), (Cantidad de
+                                usos)
+                            </td>
+                            <td><span class="negrita">Rango</span>: (Rango del Movimiento)</td>
+                        </tr>
+                        <tr>
+                            <td><span class="negrita">Daño</span>: (Si lo tiene, aparece)</td>
+                            <td>
+                                <span class="negrita">Estadísticas</span>: (Si las tiene, aparece)
+                            </td>
+                            <td>
+                                <span class="negrita">Etiquetas</span>: (Si las tiene, aparece)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span class="negrita">Descripción</span>:</td>
+                        </tr>
+                    </table>
+                </div>
             </div>
 
-            <p>Ejemplo:</p>
+            <h2>Ejemplo:</h2>
             <div class="consejoCapitulo">
-                <table>
-                    <tr>
-                        <td><span class="negrita">Ala de acero</span></td>
-                    </tr>
-                    <tr>
-                        <td><span class="negrita">Acción</span></td>
-                        <td><span class="negrita">Coste</span>: 1 PP</td>
-                        <td><span class="negrita">Rango</span>: Cuerpo a cuerpo</td>
-                    </tr>
-                    <tr>
-                        <td><span class="negrita">Daño</span>: 2d10 + EST</td>
-                        <td><span class="negrita">Estadísticas</span>: FUE y AGI</td>
-                        <td><span class="negrita">Etiquetas</span>: -</td>
-                    </tr>
-                    <tr>
-                        <td colspan="3">
-                            <span class="negrita">Descripción</span>:Endureces tus alas y
-                            golpeas con ellas. Haz una Tirada de Ataque cuerpo a cuerpo contra
-                            una criatura. Si golpea, el objetivo recibe daño. Si la Tirada
-                            Natural fue de 15+, tu CA aumenta en 2 hasta el inicio de tu
-                            próximo turno.
-                        </td>
-                    </tr>
-                </table>
+                <div class="tablaAdaptable">
+
+                    <table>
+                        <tr>
+                            <td><span class="negrita">Ala de acero</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="negrita">Acción</span></td>
+                            <td><span class="negrita">Coste</span>: 1 PP</td>
+                            <td><span class="negrita">Rango</span>: Cuerpo a cuerpo</td>
+                        </tr>
+                        <tr>
+                            <td><span class="negrita">Daño</span>: 2d10 + EST</td>
+                            <td><span class="negrita">Estadísticas</span>: FUE y AGI</td>
+                            <td><span class="negrita">Etiquetas</span>: -</td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">
+                                <span class="negrita">Descripción</span>:Endureces tus alas y
+                                golpeas con ellas. Haz una Tirada de Ataque cuerpo a cuerpo contra
+                                una criatura. Si golpea, el objetivo recibe daño. Si la Tirada
+                                Natural fue de 15+, tu CA aumenta en 2 hasta el inicio de tu
+                                próximo turno.
+                            </td>
+                        </tr>
+                    </table>
+                </div>
             </div>
 
             <p>
@@ -212,7 +218,7 @@
     </details>
 
     <details open id="apartado2">
-        <summary>Mejorar el daño base</summary>
+        <summary>Mejorar el Daño Base</summary>
         <div class="detailsBloque">
             <p>
                 El Daño base de los Movimientos puede ser aumentado. Hay dos formas
@@ -244,7 +250,7 @@
     </details>
 
     <details open id="apartado3">
-        <summary>Los Golpes críticos</summary>
+        <summary>Los Golpes Críticos</summary>
         <div class="detailsBloque">
             <p>
                 En ciertas ocasiones, los Movimientos harán mucho más daño del esperado.

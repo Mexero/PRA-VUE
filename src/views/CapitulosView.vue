@@ -92,7 +92,8 @@ const openMobileCap = ref(false)
     display: flex;
     flex-direction: row;
     width: 100%;
-    min-height: 100vh;;
+    min-height: 100vh;
+    ;
 }
 
 /* === Menu principal escritorio ===*/
@@ -360,47 +361,47 @@ aside {
 }
 
 /* ======================= TABLAS DE CAPITULOS ======================= */
-th{
-    background-color: var(--color-tituloTabla);
-    font-size: 18px;
+
+
+.tablaAdaptable {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
 }
-.tablaCapitulos,
-.tablaNaturaleza {
+
+.tablaCapitulos {
+    min-width: 550px;
     text-align: center;
     margin: 0 auto;
     border-collapse: collapse;
     color: var(--color-texto);
 }
 
-.tablaAmistad {
-    margin: 0 auto;
-    border-collapse: collapse;
-    color: var(--color-texto);
-}
-
-.tablaCapitulos td,
 .tablaCapitulos th,
-.tablaAmistad td,
-.tablaAmistad th {
-    padding: 8px;
+.tablaCapitulos td {
+    padding: 5px 10px;
 }
 
-/* APLICAR BORDES A LA DERECHA */
-.tablaCapitulos tr td:first-child,
-.tablaCapitulos th:first-child,
-.tablaAmistad tr td:first-child,
-.tablaAmistad th:first-child {
-    border-right: 1px solid black;
+th {
+    background-color: var(--color-tituloTabla);
+    font-size: 18px;
 }
 
-.tablaCapitulos tr:nth-child(odd),
-.tablaAmistad tr:nth-child(odd) {
+.tablaCapitulos tr:nth-child(odd) {
     background-color: var(--color-tabla1);
 }
 
-.tablaCapitulos tr:nth-child(even),
-.tablaAmistad tr:nth-child(even) {
+.tablaCapitulos tr:nth-child(even) {
     background-color: var(--color-tabla2);
+}
+
+.noSeparar {
+    white-space: nowrap;
+}
+
+.espaciado {
+    margin-top: 30px;
 }
 
 .consejoCapitulo tr td {
@@ -408,7 +409,7 @@ th{
 }
 
 .subDetails {
-    wid: 98%;
+    width: 98%;
     margin: 0 auto;
     padding: 10px 0 !important;
 }
@@ -421,5 +422,39 @@ th{
     background-color: var(--color-tabla1) !important;
     font-size: 20px !important;
     font-weight: lighter;
+}
+
+@media screen and (max-width:1000px) {
+    #capitulos h1 {
+        font-size: 33px;
+    }
+
+    #capitulos h2 {
+        font-size: 25px;
+    }
+
+    #capitulos p {
+        letter-spacing: 0.8px;
+        line-height: 18px;
+        font-size: 15px;
+    }
+
+    #capitulos summary {
+        font-size: 22px;
+    }
+
+    th {
+        font-size: 16px;
+    }
+
+    .subSummary {
+        background-color: var(--color-tabla1) !important;
+        font-size: 17px !important;
+        font-weight: lighter;
+    }
+
+    .subDetails p {
+        font-size: 13px !important;
+    }
 }
 </style>

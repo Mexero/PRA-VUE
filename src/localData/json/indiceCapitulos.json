@@ -497,11 +497,38 @@
         "nombre": "El Rol del Director de Juego",
         "ruta": "#apartado1"
       },{
-        "nombre": "Diseña tu campaña",
+        "nombre": "Diseña tu Campaña",
         "ruta": "#apartado2"
       },{
         "nombre": "Diseña tu mundo",
         "ruta": "#apartado3"
+      },{
+        "nombre": "Prepara tu campaña",
+        "ruta": "#apartado4"
+      },{
+        "nombre": "Diseña Sesiones",
+        "ruta": "#apartado5"
+      },{
+        "nombre": "Diseña Combates",
+        "ruta": "#apartado6"
+      },{
+        "nombre": "Pokémon Especiales",
+        "ruta": "#apartado7"
+      },{
+        "nombre": "Preparando la Exploración",
+        "ruta": "#apartado8"
+      },{
+        "nombre": "Coste de la Vida",
+        "ruta": "#apartado9"
+      },{
+        "nombre": "Reglas variante",
+        "ruta": "#apartado10"
+      },{
+        "nombre": "Cómo Crear Contenido Propio",
+        "ruta": "#apartado11"
+      },{
+        "nombre": "Crear Pokémon desde cero",
+        "ruta": "#apartado12"
       }
     ]
   }

@@ -40,7 +40,7 @@
     </p>
 
     <details open id="apartado1">
-        <summary>¿Qué necesito para jugar?</summary>
+        <summary>¿Qué Necesito para Jugar?</summary>
         <div class="detailsBloque">
             <p>
                 PRA utiliza la variedad de dados tradicional en los juegos de rol de
@@ -63,7 +63,7 @@
     </details>
 
     <details open id="apartado2">
-        <summary>¿Qué hay en este libro?</summary>
+        <summary>¿Qué Hay en este Libro?</summary>
         <div class="detailsBloque">
             <p>
                 <strong>Capítulo 2: Cómo jugar</strong> describe los mecanismos de juego
