@@ -7,7 +7,7 @@ const router = useRouter();
 
 const allowedValues = [
     0, 100, 200, 250, 300, 400, 500, 600, 800, 1000, 1200, 1400, 1500, 2000, 2500,
-    3000, 4000, 5000, 6000, 8000, 10000, 15000, 20000, 25000, 50000, 100000,
+    3000, 4000, 5000, 6000, 8000, 10000, 15000, 20000, 25000, 50000, 100000
 ];
 
 const minIndex = ref(0);
@@ -306,7 +306,7 @@ const objetosFiltrados = computed(() => {
                     <thead>
                         <tr>
                             <th @click="ordenarPor('Nombre')">
-                                Objeto
+                                Nombre
                                 <img src="../../assets/icons/filtroFelcha.svg" alt="icono filtro" />
                             </th>
                             <th @click="ordenarPor('Tipo')">
