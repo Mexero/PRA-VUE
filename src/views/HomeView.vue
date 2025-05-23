@@ -88,7 +88,7 @@ import { RouterLink } from 'vue-router'
                 <p>
                     Somos un grupito de amigos que comenzó a jugar rol por Discord desde hace ya algunos años. Empezamos
                     a jugar una campaña de Pokémon y, como no encontramos un sistema que nos convencía, adaptamos uno
-                    que ya conocíamos, el clásico Dragones y Mazmorras (D&D) de 5ª edición.
+                    que ya conocíamos, el clásico Dragones y Mazmorras (D&D) 5ª edición.
                 </p>
                 <p>
                     Tras las primeras partidas haciendo malabares para que no desentonaran un "Artificiero", un "Pícaro"
@@ -116,13 +116,11 @@ import { RouterLink } from 'vue-router'
                     <h2>¡Unete a nuestra comunidad!</h2>
                     <RouterLink to=""><img src="../assets/icons/discord.webp" alt=""></RouterLink>
                 </div>
-                <div >
+                <div>
                     <p>
-                        Puedes unirte a nuestra comunidad de discord para saber más, preguntarnos directamente tus dudas
-                        y hacer amigos con los que jugar ¿A que estas esperando?
-                    </p>
-                    <p>
-                        Tambien podras compartir con todos tus propias historias, opiniones, arte y mucho más :D
+                        En nuestra comunidad de Discord podrás mantenerte al día con las novedades del sistema,
+                        compartir historias, personajes, arte, y conocer a otros fans del rol y Pokémon que comparten tu
+                        pasión. ¡Únete y sé parte de la aventura!
                     </p>
                 </div>
 
@@ -152,28 +150,30 @@ import { RouterLink } from 'vue-router'
             <article id="FAQ">
                 <h2>FAQ</h2>
                 <div>
-                    <h3>¿Como empezar a jugar? </h3>
-                    <p>Asi y asa, aqui y alla con esto y aquello</p>
+                    <h3>¿Todo el contenido es gratis?</h3>
+                    <p>Si.</p> <!-- No nos podemos permitir una demanda de Nintendo  -->
                 </div>
                 <div>
-                    <h3>¿Todo el contenido es gratis? </h3>
-                    <p>Si.</p>
-                </div>
-                <div>
-                    <h3>¿Puedo contribuir al proyecto? </h3>
-                    <p>Si, de varias formas. Desde simples reportes de erratas, bugs o problemas de balance hasta
-                        pequeñas donaciones para ayudarnos a mantener esta pagina web. Más detalles en nuestro discord.
+                    <h3>¿Cómo empezar a jugar?</h3>
+                    <p>
+                        Puedes comenzar leyendo el sistema de <strong>Pokémon Roleplaying Adventure</strong> en esta
+                        misma pagina web o abrir y descargar el PDF de la ultima version. Despues solo convence algunos
+                        amigos de jugar o pregunta en nuestro Discord si algun DJ busca jugadores.
                     </p>
                 </div>
+
                 <div>
-                    <h3>¿Se guardan mis ajustes? </h3>
-                    <p>Esta pagina no tiene un sistema de cuentas de usuario. Todos los ajustes estan guardados en
-                        cookies, si las eliminas o estas en pesataña incognito se borraran. </p>
+                    <h3>¿Puedo contribuir al proyecto?</h3>
+                    <p>
+                        Sí, puedes contribuir de varias formas. Desde compartir tu opinión sobre el sistema hasta
+                        ayudarnos a mejorar con tus sugerencias. En nuestro Discord puedes darnos feedback, reportar
+                        erratas, bugs o problemas de balance. La opinión de los jugadores es muy importante para
+                        nosotros.
+
+                        También, puedes apoyarnos con pequeñas donaciones que nos ayudan a mantener esta página web.
+                    </p>
                 </div>
-                <div>
-                    <h3>¿Como encuentro gente para jugar? </h3>
-                    <p>En nuestro discord.</p>
-                </div>
+
             </article>
         </section>
 
@@ -186,6 +186,10 @@ main {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
+}
+
+h2 {
+    font-size: 26px;
 }
 
 /* ======================= SECTION DE BLOQUES DEL INDEX ======================= */
@@ -296,21 +300,113 @@ solo cambia el tamaños de los bloques y el margen con el header*/
 
 }
 
-#infoNosotros {
+
+
+/* ======================= SECCIÓN INFO NOSOTROS Y BLOQUES ======================= */
+
+#infoNosotros,
+#infoContacto,
+#descargaPDF {
+    background-color: var(--color-fondoTexto);
+    border: 1px solid var(--color-principal1);
+    color: var(--color-texto);
+    box-shadow: 0px 0px 4px var(--color-principal1);
+
+}
+
+#infoNosotros,
+#infoBloque {
     width: 90%;
     max-width: 1700px;
     max-height: 650px;
     margin-top: 60px;
     display: flex;
     align-self: center;
-    overflow: hidden;
-    border-radius: 10px;
-    background-color: var(--color-fondoTexto);
-    border: 1px solid var(--color-principal1);
-    box-shadow: 0px 0px 4px var(--color-principal1);
-    color: var(--color-texto);
 }
 
+#infoNosotros,
+#infoContacto {
+    border-radius: 10px;
+}
+
+#infoBloque {
+    gap: 30px;
+}
+
+/* Contacto */
+#infoContacto {
+    width: 70%;
+    min-width: 280px;
+    padding: 24px 20px;
+    font-size: 22px;
+}
+
+#infoContacto h2 {
+    font-size: 30px;
+}
+
+#infoContacto p {
+    margin-top: 16px;
+    text-align: justify;
+    line-height: 1.5;
+}
+
+#infoContacto div {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+#infoContacto img,
+#infoContacto a {
+    width: 50px;
+    height: 50px;
+    transition: transform 0.2s;
+}
+
+#infoContacto a:hover img {
+    transform: scale(1.15) rotate(-8deg);
+    filter: drop-shadow(0 0 6px var(--color-principal1));
+}
+
+/* Descargas */
+#descargaPDF {
+    width: 30%;
+    min-width: 280px;
+    height: fit-content;
+    padding: 24px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 15px;
+    gap: 10px;
+}
+
+#descargaPDF a {
+    width: 100%;
+}
+
+#descargaPDF div {
+    width: 100%;
+    background-color: var(--color-principal1);
+    border-radius: 5px;
+    padding: 5px 0;
+    text-align: center;
+    font-size: 20px;
+    transition: all 0.15s;
+    cursor: pointer;
+}
+
+#descargaPDF h2 {
+    text-align: center;
+}
+
+#descargaPDF div:hover {
+    transform: scale(1.03);
+}
+
+/* Texto info */
 .textoInfo {
     padding: 30px 20px;
     width: 90%;
@@ -323,6 +419,7 @@ solo cambia el tamaños de los bloques y el margen con el header*/
     text-align: justify;
 }
 
+/* Imagen info */
 #imgInfoNosotros {
     overflow: hidden;
     width: 60%;
@@ -333,6 +430,8 @@ solo cambia el tamaños de los bloques y el margen con el header*/
     height: 100%;
     object-fit: cover;
 }
+
+/* ======================= SECCIÓN INFO MOVIL =======================  */
 
 @media screen and (max-width:1050px) {
     .textoInfo p {
@@ -358,155 +457,26 @@ solo cambia el tamaños de los bloques y el margen con el header*/
     }
 
     #imgInfoNosotros {
-        overflow: hidden;
         width: 100%;
         max-height: 300px;
-
     }
 
     #imgInfoNosotros img {
         object-position: top;
-
     }
 }
 
-
-
-
-/* ======================= SECCIÓN INFO =======================  */
-
-
-/* ======================= ARTICLE REDES ======================= */
-
-#infoBloque {
-    width: 90%;
-    max-width: 1700px;
-    max-height: 650px;
-    margin-top: 60px;
-    display: flex;
-    align-self: center;
-    color: var(--color-texto);
-    gap: 20px;
-}
-
-#infoContacto {
-    display: flex;
-    flex-direction: column;
-    align-self: center;
-    width: 70%;
-    min-width: 280px;
-    padding: 24px 20px;
-    border-radius: 15px;
-    background-color: var(--color-fondoTexto);
-    border: 1px solid var(--color-principal1);
-    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
-
-}
-
-#infoContacto > div:first-child {
-    display: flex;
-    align-items: center;
-    gap: 18px;
-    margin-bottom: 10px;
-}
-
-#infoContacto img,
-#infoContacto a {
-    width: 48px;
-    height: 48px;
-    display: inline-block;
-    transition: transform 0.2s;
-}
-
-
-#infoContacto a:hover img {
-    transform: scale(1.15) rotate(-8deg);
-    filter: drop-shadow(0 0 6px var(--color-principal1));
-}
-
-#infoContacto > div:last-child p {
-    text-align: justify;
-    font-size: 1rem;
-    color: var(--color-texto, #e0e0e0);
-    margin: 10px 0 0 0;
-    line-height: 1.6;
-}
-
-@media (max-width: 900px) {
-    #infoContacto {
-        width: 90%;
-        max-width: 100%;
-        padding: 16px 8px;
+@media (max-width: 690px) {
+    #infoBloque {
+        flex-direction: column;
+        max-height: none;
     }
-    #infoContacto h2 {
-        font-size: 1.1rem;
-    }
-    #infoContacto img,
-    #infoContacto a {
-        width: 38px;
-        height: 38px;
-    }
-}
-/* ======================= ARTICLE DESCARGAS ======================= */
-#descargaPDF {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 40%;
-    min-width: 250px;
-    padding: 24px 20px;
-    border-radius: 15px;
-    background-color: var(--color-fondoTexto);
-    border: 1px solid var(--color-principal1);
-    gap: 18px;
-}
 
-#descargaPDF h2 {
-    font-size: 1.3rem;
-    color: var(--color-principal1);
-    margin-bottom: 18px;
-    font-weight: 700;
-    text-align: center;
-}
-
-#descargaPDF a {
-    width: 100%;
-    text-decoration: none;
-}
-
-#descargaPDF div {
-    width: 100%;
-    background-color: var(--color-principal1);
-    border-radius: 8px;
-    padding: 12px 0;
-    margin-bottom: 10px;
-    text-align: center;
-    font-size: 1.1rem;
-    font-weight: 600;
-    transition: background 0.2s, color 0.2s, transform 0.15s;
-    cursor: pointer;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
-}
-
-#descargaPDF div:hover {
-    background-color: var(--color-hoverBloque);
-    transform: scale(1.04);
-}
-
-@media (max-width: 900px) {
+    #infoContacto,
     #descargaPDF {
-        max-width: 100%;
-        padding: 16px 8px;
-    }
-    #descargaPDF h2 {
-        font-size: 1.1rem;
-    }
-    #descargaPDF div {
-        font-size: 1rem;
-        padding: 10px 0;
+        width: 100%;
     }
 }
-
 
 /* ======================= SECTION PREGUNTAS FRECUENTES ======================= */
 #infoFAQ {
@@ -515,13 +485,29 @@ solo cambia el tamaños de los bloques y el margen con el header*/
 }
 
 #FAQ h2 {
-    padding: 10px;
+    padding: 10px 30px;
 }
 
 #FAQ div {
     background-color: var(--color-oscuro1);
     border-bottom: 1px solid gray;
+    padding: 10px 30px;
+    font-size: 20px;
+}
+
+#FAQ p {
     padding: 10px;
-    font-size: 13px;
+}
+
+@media (max-width: 690px) {
+    #FAQ div {
+        padding: 10px;
+
+        font-size: 16px;
+    }
+
+    #FAQ p {
+        padding: 5px;
+    }
 }
 </style>

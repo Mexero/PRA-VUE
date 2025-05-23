@@ -183,7 +183,7 @@ nav div {
 .subMenu {
     display: flex;
     flex-direction: column;
-    width: 260px;
+    width: 270px;
     left: auto;
     position: absolute;
 }
@@ -193,7 +193,6 @@ nav div {
     background-color: var(--color-principal2);
     height: 40px;
     display: flex;
-    width: 260px;
     padding-left: 5px;
     align-items: center;
 }
