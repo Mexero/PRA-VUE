@@ -41,13 +41,13 @@ function onSliderInput() {
         minIndex.value = maxIndex.value;
         maxIndex.value = temp;
     }
-    filtronivelMin.value = indexToValue(minIndex.value);
-    filtronivelMax.value = indexToValue(maxIndex.value);
+    filtroNivelMin.value = indexToValue(minIndex.value);
+    filtroNivelMax.value = indexToValue(maxIndex.value);
 }
 
 function onNumberInput() {
-    let minVal = closestAllowed(Number(filtronivelMin.value));
-    let maxVal = closestAllowed(Number(filtronivelMax.value));
+    let minVal = closestAllowed(Number(filtroNivelMin.value));
+    let maxVal = closestAllowed(Number(filtroNivelMax.value));
     let minIdx = valueToIndex(minVal);
     let maxIdx = valueToIndex(maxVal);
 
@@ -58,22 +58,34 @@ function onNumberInput() {
     }
     minIndex.value = minIdx;
     maxIndex.value = maxIdx;
-    filtronivelMin.value = minVal;
-    filtronivelMax.value = maxVal;
+    filtroNivelMin.value = minVal;
+    filtroNivelMax.value = maxVal;
 }
 
 // Inicializar valores al montar
 onMounted(() => {
-    if (filtronivelMin.value !== null)
-        minIndex.value = valueToIndex(closestAllowed(filtronivelMin.value));
-    if (filtronivelMax.value !== null)
-        maxIndex.value = valueToIndex(closestAllowed(filtronivelMax.value));
+    if (filtroNivelMin.value !== null)
+        minIndex.value = valueToIndex(closestAllowed(filtroNivelMin.value));
+    if (filtroNivelMax.value !== null)
+        maxIndex.value = valueToIndex(closestAllowed(filtroNivelMax.value));
 });
 
 // ======================== DATOS ========================
 
 //Datos principales
 const dotes = ref([]);
+
+
+// Tipos únicos para el filtro de tipos
+const tiposUnicos = computed(() => {
+    const set = new Set();
+    dotes.value.forEach(dot => {
+        if (dot.Tipo) set.add(dot.Tipo);
+    });
+    return Array.from(set).sort();
+});
+
+
 const doteSeleccionado = ref(
     route.query.seleccionado ? route.query.seleccionado : null
 );
@@ -84,18 +96,18 @@ const filtroTipos = ref(route.query.tipos ? route.query.tipos.split(",") : []);
 const filtroPrerrequisitos = ref(
     route.query.prerrequisitos ? route.query.prerrequisitos.split(",") : []
 );
-const filtronivelMin = ref(
+const filtroNivelMin = ref(
     route.query.nivelMin ? Number(route.query.nivelMin) : null
 );
-filtronivelMin.value = isNaN(filtronivelMin.value)
+filtroNivelMin.value = isNaN(filtroNivelMin.value)
     ? null
-    : filtronivelMin.value;
-const filtronivelMax = ref(
+    : filtroNivelMin.value;
+const filtroNivelMax = ref(
     route.query.nivelMax ? Number(route.query.nivelMax) : null
 );
-filtronivelMax.value = isNaN(filtronivelMax.value)
+filtroNivelMax.value = isNaN(filtroNivelMax.value)
     ? null
-    : filtronivelMax.value;
+    : filtroNivelMax.value;
 const filtroNombre = ref(route.query.nombre || "");
 
 //Orden de tabla
@@ -104,6 +116,8 @@ const ordenAscendente = ref(route.query.ordenAscendente !== "false");
 
 // =================== CARGAR DATOS AL ABRIR ==================
 
+
+const filtroPrerrequisitosRadio = ref("Todos");
 onMounted(async () => {
     try {
         const res = await fetch("/data/json/dotes/dotes.json");
@@ -137,8 +151,8 @@ function seleccionarDote(dote) {
 function limpiarFiltros() {
     filtroTipos.value = [];
     filtroPrerrequisitos.value = [];
-    filtronivelMin.value = null;
-    filtronivelMax.value = null;
+    filtroNivelMin.value = null;
+    filtroNivelMax.value = null;
     filtroNombre.value = "";
     ordenColumna.value = "";
     ordenAscendente.value = true;
@@ -151,8 +165,8 @@ watch(
         doteSeleccionado,
         filtroTipos,
         filtroPrerrequisitos,
-        filtronivelMin,
-        filtronivelMax,
+        filtroNivelMin,
+        filtroNivelMax,
         filtroNombre,
         ordenColumna,
         ordenAscendente,
@@ -164,9 +178,9 @@ watch(
                 ? filtroPrerrequisitos.value.join(",")
                 : undefined,
             nivelMin:
-                filtronivelMin.value !== null ? filtronivelMin.value : undefined,
+                filtroNivelMin.value !== null ? filtroNivelMin.value : undefined,
             nivelMax:
-                filtronivelMax.value !== null ? filtronivelMax.value : undefined,
+                filtroNivelMax.value !== null ? filtroNivelMax.value : undefined,
             nombre: filtroNombre.value || undefined,
             ordenColumna: ordenColumna.value || undefined,
             ordenAscendente: ordenColumna.value ? ordenAscendente.value : undefined,
@@ -195,13 +209,20 @@ const dotesFiltrados = computed(() => {
         const nivel = dot.Nivel ?? null;
         const nombre = dot.Nombre.toLowerCase();
 
-        //Expresión lógica infernal
+        // Filtro de prerrequisitos por radio
+        let pasaFiltroPrerrequisitos = true;
+        if (filtroPrerrequisitosRadio.value === "Si") {
+            pasaFiltroPrerrequisitos = !!dot.Prerrequisitos && dot.Prerrequisitos.trim() !== "";
+        } else if (filtroPrerrequisitosRadio.value === "No") {
+            pasaFiltroPrerrequisitos = !dot.Prerrequisitos || dot.Prerrequisitos.trim() === "";
+        }
+        // "Todos" deja pasaFiltroPrerrequisitos en true
+
         return (
             (!filtroTipos.value.length || filtroTipos.value.includes(dot.Tipo)) &&
-            (!filtroPrerrequisitos.value.length ||
-                filtroPrerrequisitos.value.includes(dot.Prerrequisitos)) &&
-            (filtronivelMin.value === null || nivel >= filtronivelMin.value) &&
-            (filtronivelMax.value === null || nivel <= filtronivelMax.value) &&
+            pasaFiltroPrerrequisitos &&
+            (filtroNivelMin.value === null || nivel >= filtroNivelMin.value) &&
+            (filtroNivelMax.value === null || nivel <= filtroNivelMax.value) &&
             (!filtroNombre.value || nombre.includes(filtroNombre.value.toLowerCase()))
         );
     });
@@ -227,10 +248,13 @@ const dotesFiltrados = computed(() => {
 
     return resultado;
 });
+ 
+
 </script>
 
 <template>
-    <div class="cuerpo">
+    <h1 class="titulo">Dotes</h1>
+    <main class="cuerpo">
         <div id="filtroTabla">
             <!--FILTROS-->
             <div class="filtros">
@@ -251,7 +275,7 @@ const dotesFiltrados = computed(() => {
                             <button @click="limpiarFiltros">Limpiar filtros</button>
                             <h3>Nivel</h3>
                             <div id="filtroNiveles">
-                                <input type="number" v-model.number="filtronivelMin" @input="onNumberInput"
+                                <input type="number" v-model.number="filtroNivelMin" @input="onNumberInput"
                                     :min="allowedValues[0]" :max="allowedValues[allowedValues.length - 1]"
                                     placeholder="Lv. min" class="input-min" />
 
@@ -264,7 +288,7 @@ const dotesFiltrados = computed(() => {
                                             v-model.number="maxIndex" @input="onSliderInput" />
                                     </div>
                                 </div>
-                                <input type="number" v-model.number="filtronivelMax" @input="onNumberInput"
+                                <input type="number" v-model.number="filtroNivelMax" @input="onNumberInput"
                                     :min="allowedValues[0]" :max="allowedValues[allowedValues.length - 1]"
                                     placeholder="Lv. max" class="input-max" />
                             </div>
@@ -273,15 +297,18 @@ const dotesFiltrados = computed(() => {
                             <div id="filtroPrerrequisitos">
                                 <div>
                                     <label>
-                                        <input type="radio" name="tienePrerrequisitos" />
+                                        <input type="radio" name="tienePrerrequisitos" value="Si"
+                                            v-model="filtroPrerrequisitosRadio" />
                                         Si
                                     </label>
-                                    <label >
-                                        <input type="radio" name="tienePrerrequisitos" />
+                                    <label>
+                                        <input type="radio" name="tienePrerrequisitos" value="No"
+                                            v-model="filtroPrerrequisitosRadio" />
                                         No
                                     </label>
-                                    <label >
-                                        <input type="radio" name="tienePrerrequisitos" />
+                                    <label>
+                                        <input type="radio" name="tienePrerrequisitos" value="Todos"
+                                            v-model="filtroPrerrequisitosRadio" />
                                         Todos
                                     </label>
                                 </div>
@@ -353,15 +380,28 @@ const dotesFiltrados = computed(() => {
         <div v-if="doteSeleccionado" class="seleccionado">
             <h2>{{ doteSeleccionado.Nombre }}</h2>
             <p><strong>Tipo:</strong> {{ doteSeleccionado.Tipo }} </p>
-            <p><strong>Prerrequisitos:</strong> {{ doteSeleccionado.PrerrequisitosDescripcion ?? "—" }}</p>
+            <p><strong>Prerrequisitos:</strong> {{ doteSeleccionado.Prerrequisitos ?? "—" }}</p>
             <p><strong>Nivel:</strong> {{ doteSeleccionado.Nivel ?? "—" }}</p>
-            <p><strong>Descripción:</strong><u><strong>{{ doteSeleccionado.Repetible }}</strong></u> {{
-                doteSeleccionado.Descripcion }}</p>
+            <p><strong>Descripción:</strong>
+
+                <u v-if="doteSeleccionado.Repetible">
+                    <p><strong>Repetible</strong></p>
+                </u>
+
+                {{ doteSeleccionado.Descripcion }}
+            </p>
         </div>
-    </div>
+    </main>
 </template>
 
 <style scoped>
+.titulo{
+    letter-spacing: 5px;
+    font-family: "Staatliches", sans-serif;
+    color:var(--color-texto);
+    font-size: 50px;
+    padding: 10px 0 0px 2%;
+}
 .paddingBloque {
     padding: 15px;
 }
@@ -392,9 +432,8 @@ const dotesFiltrados = computed(() => {
 
 #filtroTipos div {
     margin: 10px 5px;
-    display: grid;
-    grid-template-columns: repeat(4, auto);
-    gap: 5px;
+    display: flex;
+    gap: 40px;
     flex-wrap: wrap;
 }
 
@@ -491,6 +530,8 @@ input::-webkit-inner-spin-button {
     pointer-events: none;
     cursor: pointer;
     -webkit-appearance: none;
+        appearance: none;
+
 }
 
 /* Styles for the range thumb in WebKit browsers */
@@ -502,6 +543,8 @@ input[type="range"]::-webkit-slider-thumb {
     background: #555;
     pointer-events: auto;
     -moz-appearance: none;
+        appearance: none;
+
     -webkit-appearance: none;
 }
 
@@ -519,18 +562,6 @@ input[type="range"]::-webkit-slider-thumb {
 /* Optional: Remove default Firefox styles */
 .range-input input[type="range"]::-moz-range-track {
     background: transparent;
-}
-
-@media screen and (max-width: 1170px) {
-    #filtroTipos div {
-        grid-template-columns: repeat(3, auto);
-    }
-}
-
-@media screen and (max-width: 960px) {
-    #filtroTipos div {
-        grid-template-columns: repeat(2, auto);
-    }
 }
 
 #mostrarFiltros {
@@ -601,21 +632,41 @@ thead {
     padding: 6px 0px 6px 10px;
     text-align: left;
     border-bottom: 1px solid #e5e7eb;
+
 }
 
 .tabla th {
-    min-width: 120px;
+    min-width: 100px;
     padding: 10px 5px;
 }
 
-.tabla th:nth-child(1),
-.tabla th:nth-child(2) {
-    width: 30%;
+
+.tabla th:nth-child(1) {
+        width: 20%;
+
 }
 
-.tabla th:nth-child(3),
-.tabla th:nth-child(4) {
-    width: 25%;
+.tabla th:nth-child(2),.tabla td:nth-child(2) {
+    width: 15%;
+        text-align: center;
+
+}
+
+.tabla th:nth-child(3) {
+    width: 40%;
+    text-align: center;
+}
+
+.tabla td:nth-child(3) {
+        text-align: center;
+
+
+}
+
+.tabla th:nth-child(4),
+.tabla td:nth-child(4) {
+    width: 15%;
+    text-align: center;
 }
 
 th img {

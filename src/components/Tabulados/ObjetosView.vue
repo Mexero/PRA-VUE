@@ -238,7 +238,9 @@ const objetosFiltrados = computed(() => {
 </script>
 
 <template>
-    <div class="cuerpo">
+        <h1 class="titulo">Objetos</h1>
+
+    <main class="cuerpo">
         <div id="filtroTabla">
             <!--FILTROS-->
             <div class="filtros">
@@ -360,7 +362,7 @@ const objetosFiltrados = computed(() => {
             </p>
             <p><strong>Descripción:</strong> {{ objetoSeleccionado.Descripcion }}</p>
         </div>
-    </div>
+    </main>
 </template>
 
 <style scoped>
@@ -368,6 +370,14 @@ const objetosFiltrados = computed(() => {
 Todo:
 - Filtro se cierra solo en movil
 */
+
+.titulo{
+    letter-spacing: 5px;
+    font-family: "Staatliches", sans-serif;
+    color:var(--color-texto);
+    font-size: 50px;
+    padding: 10px 0 0px 2%;
+}
 
 .paddingBloque {
     padding: 15px;
@@ -498,6 +508,8 @@ input::-webkit-inner-spin-button {
     pointer-events: none;
     cursor: pointer;
     -webkit-appearance: none;
+        appearance: none;
+
 }
 
 /* Styles for the range thumb in WebKit browsers */
@@ -510,6 +522,7 @@ input[type="range"]::-webkit-slider-thumb {
     pointer-events: auto;
     -moz-appearance: none;
     -webkit-appearance: none;
+    appearance: none;
 }
 
 /* Firefox slider thumb */

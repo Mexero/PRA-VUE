@@ -2,929 +2,1075 @@
   {
     "Nombre": "Área de control",
     "Tipo": "General",
-    "Prerrequisitos": "",
+    "Nivel": null,
+    "Prerrequisitos": null,
     "Descripcion": "Cuando una criatura entra a un rango desde el cual puedes realizarle la Tirada de Ataque cuerpo a cuerpo de uno de tus Movimientos que no te cuesta PP usar, puedes usar ese Movimiento como Reacción contra la criatura por 1 PP."
   },
   {
     "Nombre": "Carga",
     "Tipo": "General",
-    "Prerrequisitos": "",
+    "Nivel": null,
+    "Prerrequisitos": null,
     "Descripcion": "Cuando te mueves 4 metros o más en línea recta justo antes de golpear a una criatura con un Movimiento que hace una solaTirada de Ataque cuerpo a cuerpo, ganas los siguientes beneficios: \n\n    • Si la Tirada de Ataque del Movimiento golpea y la criatura objetivo es de un tamaño menor o igual al tuyo, la empujas 1 metro y, si la Tirada Natural fue de 18+, cae tumbada.\n\n    • Ganas un bono al daño del Movimiento igual a la tu BH."
   },
   {
     "Nombre": "Centros sobrecargados",
     "Tipo": "General",
-    "Prerrequisitos": "",
+    "Nivel": null,
+    "Prerrequisitos": null,
     "Descripcion": "Cuando usas un Movimiento que hace daño en un área, el daño aumenta en un dado contra las criaturas en el centro del área. El centro de un cuadrado es un cuadrado con la mitad de lado centrado alrededor de su centro, de un radio es círculo con la mitad de radio centrado en un mismo punto que el primero, de una línea es la primera mitad de la longitud de la línea y de un cono es una línea de la misma longitud que el cono y grosor de 1 metro que apunta a la misma dirección que el cono."
   },
   {
     "Nombre": "Combador",
     "Tipo": "General",
+    "Nivel": null,
     "Prerrequisitos": "Conocer un Movimiento con la Etiqueta “Golpea Varias Veces”",
     "Descripcion": "Eres hábil golpeando múltiples veces a un objetivo. Ganas lo siguientes beneficios:\n\n    • Cuando usas un Movimiento con la Etiqueta “Golpea Varias Veces” puedes seguir golpeando si sacaste 10- en la Tirada Natural si la Tirada de Ataque golpeó.\n\n    • Si golpeas 4 veces con un Movimiento con la etiqueta de “Golpea Varias Veces”, puedes hacer una quinta Tirada de Ataque."
   },
   {
     "Nombre": "Combo elemental",
     "Tipo": "General",
-    "Prerrequisitos": "",
+    "Nivel": null,
+    "Prerrequisitos": null,
     "Descripcion": "Cuando infliges daño a una criatura, puedes hacer que esta se considere del Tipo Elemental asociado a la última instancia de daño que recibió desde el principio de la Escena. Por ejemplo, si Pikachu recibe daño de Ascuas y usas Pistola Agua contra este, el daño es super efectivo porque se considera de Tipo Fuego. Puedes usar este rasgo una vez por Escena."
   },
   {
     "Nombre": "Combo ilimitado",
     "Tipo": "General",
+    "Nivel": null,
     "Prerrequisitos": "Dote Combador",
     "Descripcion": "Eres un maestro golpeando múltiples veces, tanto así que puedes repartir tus golpes entre varias criaturas. Ganas lo siguientes beneficios:\n\n    • Después de golpear con una Tirada de Ataque de un Movimiento con la Etiqueta “Golpea Varias Veces” puedes cambiar el objetivo de la siguiente Tirada de Ataque a una criatura dentro del rango del Movimento que esté a 1 metro del primer objetivo.\n\n    • Después de golpear la cuarta vez con un Movimiento  con la Etiqueta “Golpea Varias Veces”, en lugar de hacer el quinto ataque que te da la Dote de Combador puedes decidir volver a usar ese mismo Movimiento, pagando su coste en PP pero no su coste de Acciones."
   },
   {
     "Nombre": "Concentración elemental",
     "Tipo": "General",
+    "Nivel": null,
     "Prerrequisitos": "No tener la Dote de Diversificación Elemental",
     "Descripcion": "Sabes concentrar el poder de los Movimientos con los que compartes tu Tipo Elemental. Tu bono de STAB aumenta en una cantidad igual a la mitad de tu BH."
   },
   {
     "Nombre": "Contradisparo",
     "Tipo": "General",
+    "Nivel": null,
     "Prerrequisitos": "Conocer un Movimiento que hace una única Tirada de Ataque a Rango",
     "Descripcion": "Cuando un Movimiento hace que una criatura a menos de 5 metros de ti sea objetivo de una Tirada de Ataque a rango, puedes usar tu Reacción para usar un Movimiento que conoces que hace una única Tirada de Ataque a rango por 1 PP más de lo normal.\n\nHaces una Tirada de Ataque contra la CD del Movimiento que provocó la Reacción y, si la pasas, reduces su daño en una cantidad igual a una tirada de daño de tu Movimiento. Si el daño se reduce a 0 de esta forma, el Movimiento se anula completamente."
   },
   {
     "Nombre": "Críticos atroces",
     "Tipo": "General",
-    "Prerrequisitos": "",
+    "Nivel": null,
+    "Prerrequisitos": null,
     "Descripcion": "Tus golpes críticos son especialmente peligrosos. Cuando asestas un golpe crítico con una Tirada de Ataque, aumentas el daño base del Movimiento asociado a esta Tirada en un dado."
   },
   {
     "Nombre": "Cuchilla afilada",
     "Tipo": "General",
+    "Nivel": null,
     "Prerrequisitos": "Conocer un Movimiento con la Etiqueta de Cortante",
     "Descripcion": "Tus filos son muy agudos y pueden herir gravemente a tus rivales. Ganas los siguientes beneficios:\n\n    • Tu Rango de Crítico aumenta en 1 para los Movimientos con la Etiqueta de Cortante.\n\n    • Cuando asestas un crítico con un Movimiento con la etiqueta de Cortante, la criatura que lo recibe reduce sus velocidades en 2 metros hasta el final de su próximo turno."
   },
   {
     "Nombre": "Disparo lejano",
     "Tipo": "General",
+    "Nivel": null,
     "Prerrequisitos": "Conocer un Movimiento que hace una única Tirada de Ataque a Rango",
     "Descripcion": "Cuando usas un Movimiento que hace una Tirada de Ataque a rango, puedes usar 1 PP para duplicar el rango de este Movimiento."
   },
   {
     "Nombre": "Diversificación elemental",
     "Tipo": "General",
+    "Nivel": null,
     "Prerrequisitos": "No tener la dote de Concentración Elemental",
     "Descripcion": "Dejas de lado tu capacidad para concentrar el poder de los Movimientos con los que compartes un tipo en favor de potenciar todos los Movimientos que conoces en menor medida. Tu Bono de STAB se vuelve igual a la mitad de tu BH pero aplica a todos los Movimientos que usas, independientemente de su Tipo Elemental."
   },
   {
     "Nombre": "Efectos agobiantes",
     "Tipo": "General",
-    "Prerrequisitos": "",
+    "Nivel": null,
+    "Prerrequisitos": null,
     "Repetible": true,
     "Descripcion": "Cuando tomas esta Dote, elige dos de los siguientes Estados: Quemado, Helado, Paralizado, Envenenado, Asustado, Enfurecido o Confuso. Cuando uno de tus Movimientos hace que una criatura gane un Nivel de uno de esos dos Estados, la criatura gana 1 Nivel más de este mismo tipo de Estado. \n\nCada vez que subes de Nivel puedes reelegir estos Estados."
   },
   {
     "Nombre": "Escombros molestos",
     "Tipo": "General",
+    "Nivel": null,
     "Prerrequisitos": "Conocer un Movimiento que crea Terreno Difícil",
     "Descripcion": "Moverse a través del Terreno Difícil que creas haciendo uso de Movimientos cuesta el triple de Velocidad de movimiento, en lugar del doble."
   },
   {
     "Nombre": "Espolvorear",
     "Tipo": "General",
+    "Nivel": null,
     "Prerrequisitos": "Conocer un Movimiento con la Etiqueta de Polvo",
     "Descripcion": "Los Movimientos de Polvo que usas lanzan tanto polvo y esporas que pueden afectar a varias criaturas. Cuando usas un Movimiento con la Etiqueta de Polvo que afecta a sólo una criatura, puedes usar 1 PP para que afecte en un radio de 1 metro centrado en un punto a una distancia menor o igual al rango del Movimiento"
   },
   {
     "Nombre": "Evitar obstáculos",
     "Tipo": "General",
-    "Prerrequisitos": "",
+    "Nivel": null,
+    "Prerrequisitos": null,
     "Descripcion": "Te has vuelto un experto para navegar el Terreno Difícil. Ganas los siguientes beneficios:\n\n    • Te mueves por el Terreno Difícil como si no lo fuese.\n\n    • Si un efecto que crea Terreno Difícil también te fuerza a hacer una Tirada de Salvación, tienes Ventaja en esta Tirada.\n\n    • Si un efecto que crea Terreno Difícil también te hace daño al atravesarlo, sólo recibes la mitad de este daño."
   },
   {
     "Nombre": "Excavadora",
     "Tipo": "General",
+    "Nivel": null,
     "Prerrequisitos": "Tener Velocidad de Excavado",
     "Descripcion": "Aprendes a excavar bajo la superficie siempre que la dureza del terreno lo permita (a discreción del DJ, pero usualmente no podrás excavar en metales o en rocas particularmente duras). Excavar de esta forma te cuesta 4 metros por cada metro que excavas y debes usar tu Acción para poder hacerlo. \n\nCuando excavas de esta forma, si el terreno lo permite, los túneles que creas se mantienen, ya sea por un tiempo o de forma permanente. Mientras los túneles duran, tu, las criaturas de tu especie y las criaturas más pequeñas que tú pueden moverse a través de estos túneles y las de tu mismo tamaño pero de otra especie pueden hacerlo como Terreno Difícil. Una criatura que navega por estos túneles recibe el doble de daño de los Movimientos Por Tierra que afectan el área."
   },
   {
     "Nombre": "Fauces apresadoras",
     "Tipo": "General",
+    "Nivel": null,
     "Prerrequisitos": "Conocer un Movimiento con la Etiqueta de Mordisco",
     "Descripcion": "Muerdes con tanta fuerza que puedes apresar a tus rivales. Cuando una Tirada Natural de una Tirada de Ataque asociada a uno de tus Movimientos con la Etiqueta de Mordisco es de 16+, puedes dejar a la criatura afectada agarrada por ti y, mientras lo está, se considera apresada. Como Acción, una criatura puede hacer una Tirada de Salvación de Fuerza o Agilidad contra la dificultad del Movimiento, liberándose de tus fauces si la pasa."
   },
   {
     "Nombre": "Fauces aumentadas",
     "Tipo": "General",
-    "Prerrequisitos": "Nivel 11, Conocer un Movimiento con la Etiqueta de Mordisco",
+    "Nivel": 11,
+    "Prerrequisitos": "Conocer un Movimiento con la Etiqueta de Mordisco",
     "Descripcion": "Has aprendido a mejorar los mordiscos que das. Cuando usas un Movimiento con la Etiqueta de Mordisco cuyo coste es inferior a 3 PP, puedes volverlo 3 PP. Si lo haces, el Movimiento mejora de las siguientes formas:\n\n    • Su daño base aumenta en una cantidad de dados iguales a la diferencia entre 3 PP y su coste usual. Por ejemplo, si cuesta 1 PP, aumenta su daño en 2 dados.\n\n    • Si el Movimiento tiene un efecto secundario que ocurre en ciertas Tiradas Naturales, el rango del efecto aumenta en 1. Por ejemplo, si era 19+, se vuelve 18+."
   },
   {
     "Nombre": "Fauces potentes",
     "Tipo": "General",
+    "Nivel": null,
     "Prerrequisitos": "Dote Fauces aumentadas",
     "Descripcion": "Puedes volver tus mordiscos  aún más poderosos. Cuando usas un Movimiento con la Etiqueta de Mordisco cuyo coste es inferior a 4 PP, puedes volverlo 4 PP. Si lo haces, mejoran de las siguientes formas:\n\n    • Su daño base aumenta en una cantidad de dados iguales a la diferencia entre 4 PP y su coste usual y añade su Estadística asociada una vez más de lo normal a este. \n\n    • Si tiene un efecto secundario que ocurre en ciertas Tiradas Naturales, el rango aumenta en 2 si el Movimiento costaba 3 PP o en 1 si costaba 3 PP."
   },
   {
     "Nombre": "Fuerza espiritual",
     "Tipo": "General",
+    "Nivel": null,
     "Prerrequisitos": "Ser un Pokémon con Espíritu de 6 o más",
     "Descripcion": "Afectas a otras criaturas con tu poder espiritual. Cuando usas un Movimiento que no hace daño y que tiene Mente como una Estadística asociada, puedes usarlo con tu Espíritu."
   },
   {
     "Nombre": "Golpes descontrolados",
     "Tipo": "General",
+    "Nivel": null,
     "Prerrequisitos": "Conocer un Movimiento con la Etiqueta de Retroceso",
     "Descripcion": "No tienes nada de miedo a hacerte daño con tal de derrotar a tus contrincantes. Cuando usas un Movimiento con la Etiqueta de retroceso, puedes decidir añadir dos dados al daño base a cambio de tomar la mitad del daño que el Movimiento inflige en lugar de ⅓."
   },
   {
     "Nombre": "Gran rango",
     "Tipo": "General",
+    "Nivel": null,
     "Prerrequisitos": "Eres de tamaño Grande o mayor",
     "Descripcion": "Tu mayor tamaño te permite controlar más terreno durante el combate. Puedes hacer Tiradas de Ataque cuerpo a cuerpo a un metro de distancia más de lo normal y las criaturas que se alejan de ti a más de 2 metros ahora provocan ataques de oportunidad de ti."
   },
   {
     "Nombre": "Guardián",
     "Tipo": "General",
-    "Prerrequisitos": "",
+    "Nivel": null,
+    "Prerrequisitos": null,
     "Descripcion": "Eres adepto en proteger a las criaturas que están cerca de ti del peligro. Cuando una criatura a menos de 1 metro de ti es objetivo de una Tirada de Ataque, puedes usar tu Reacción para interponerte y volverte tú el objetivo de la Tirada de Ataque. Además, si la Tirada de Ataque era Cuerpo a cuerpo, puedes usar 1 PP más para, con la misma Reacción, moverte junto al atacante y usar un Movimiento que hace una Tirada de Ataque cuerpo a cuerpo y que no te cueste PP usar."
   },
   {
     "Nombre": "Habilidoso",
     "Tipo": "General",
-    "Prerrequisitos": "",
+    "Nivel": null,
+    "Prerrequisitos": null,
     "Repetible": true,
     "Descripcion": "Aumentas tu Grado de Habilidad en una Tirada de Habilidad en 1, hasta un máximo de Maestro. Si tomas esta Dote a Nivel 18, el máximo es de Legendario."
   },
   {
     "Nombre": "In crescendo",
     "Tipo": "General",
+    "Nivel": null,
     "Prerrequisitos": "Conocer un Movimiento con la Etiqueta de Sonido",
     "Descripcion": "Tus cantos crecen en volumen y poder a medida en que calientas tu voz. Por cada dos Movimientos con la Etiqueta de Sonido que has usado anteriormente desde que empezó la Escena, ganas un bono de +1 a las Tiradas de Ataque y a la CD de tus Movimientos con la Etiqueta de Sonido hasta un máximo de +3."
   },
   {
     "Nombre": "Incansable",
     "Tipo": "General",
-    "Prerrequisitos": "",
+    "Nivel": null,
+    "Prerrequisitos": null,
     "Descripcion": "Tus PP Máximos aumentan en 2."
   },
   {
     "Nombre": "Irradiación climática",
     "Tipo": "General",
+    "Nivel": null,
     "Prerrequisitos": "Conocer un Movimiento con la Etiqueta de Clima",
     "Descripcion": "Cuando usas un Movimiento con la Etiqueta de Clima, el tamaño del radio del área que este afecta se duplica. Además, este Clima no puede ser cambiado ni eliminado por criaturas que no son Pokémon Legendarios sin la Dote Irradiación Climática siempre que estés consciente dentro de la región afectada por el Movimiento."
   },
   {
     "Nombre": "Maestro de los agarres",
     "Tipo": "General",
+    "Nivel": null,
     "Prerrequisitos": "Ser Bueno en Combate",
     "Descripcion": "Eres muy hábil a la hora de hacer agarres. Obtienes los siguientes beneficios:\n\n    • Cuando una criatura provoca un Ataque de Oportunidad, puedes intentar agarrarla como Reacción.\n\n    • Cuando tienes a una criatura agarrada, puedes usar tu Acción para someterla. Vuelve a intentar agarrarla. Si lo consigues, esta queda Apresada hasta que se libere del agarre."
   },
   {
     "Nombre": "Maestro de la defensa",
     "Tipo": "General",
+    "Nivel": null,
     "Prerrequisitos": "Conocer un Movimiento con la Etiqueta de Escudo",
     "Descripcion": "Te vuelves muy bueno usando los Movimientos que te protegen. Puedes beneficiarte de dos Efectos con la Etiqueta de Escudo simultáneamente, pero no de 2 bonos a tu CA gracias a estos."
   },
   {
     "Nombre": "Maestro de las potenciaciones",
     "Tipo": "General",
+    "Nivel": null,
     "Prerrequisitos": "Conocer un Movimiento con la Etiqueta de Potenciación",
     "Descripcion": "Te vuelves muy bueno usando los Movimientos que te potencian. Puedes beneficiarte de dos Movimientos con la Etiqueta de Potenciación simultáneamente, pero no de 2 bonos a tus Tiradas de Ataque gracias a estos."
   },
   {
     "Nombre": "Malhumorado",
     "Tipo": "General",
-    "Prerrequisitos": "",
+    "Nivel": null,
+    "Prerrequisitos": null,
     "Descripcion": "Cuando estás Envenenado, Paralizado, Quemado, Helado o Confuso, tu Rango de Crítico aumenta en 1 y, cuando haces una Tirada de Ataque, puedes usar 1 PP para hacerla en Ventaja."
   },
   {
     "Nombre": "Mole",
     "Tipo": "General",
-    "Prerrequisitos": "Ser un Pokémon con Resistencia de 6 o más",
+    "Nivel": null,
+    "Prerrequisitos": "Ser un Pokémon con 6 de Resistencia o más",
     "Descripcion": "Tus movimientos son tan imperturbables como tú. Cuando usas un Movimiento que no hace daño y que tiene Fuerza como una Estadística asociada, puedes usarlo con tu Resistencia."
   },
   {
     "Nombre": "Montura ejemplar",
     "Tipo": "General",
-    "Prerrequisitos": "",
+    "Nivel": null,
+    "Prerrequisitos": null,
     "Descripcion": "Eres una montura entrenada y has aprendido a proteger a los que te montan. Ganas lo siguientes beneficios:\n\n    • Cuando una criatura que te monta es hecha objetivo de una Tirada de Ataque, puedes usar tu Reacción para redirigir la Tirada de Ataque a ti. \n\n    • Las criaturas que te montan tienen Ventaja en Tiradas de d20 para no ser desmontadas o empujadas cuando te monta."
   },
   {
     "Nombre": "Movimiento extra",
     "Tipo": "General",
-    "Prerrequisitos": "Ser Pokémon",
+    "Nivel": null,
+    "Prerrequisitos": "Ser un Pokémon",
     "Descripcion": "Aprendes uno de los Movimientos de tu lista de Movimientos Enseñables que tengan un coste en PP de 1 o menos. Este Movimiento no cuenta para la cantidad de Movimientos que conoces.\n\nA partir de Nivel 8, el Movimiento puede tener un coste de 3 PP y, a partir de Nivel 12, el Movimiento puede tener un coste de 4 PP y puedes aprender otro Movimiento de la misma lista de la misma forma con Coste de un 1 PP."
   },
   {
     "Nombre": "Movimientos amplios",
     "Tipo": "General",
+    "Nivel": null,
     "Prerrequisitos": "Conocer un Movimiento que afecta un área",
     "Descripcion": "Cuando usas un Movimiento que afecta un área, puedes usar 1 PP para aumentar el tamaño del área que afecta un área en 2 metros si es cuadrado o cono o en 1 metro si es un radio y, si es una línea, aumentar el grosor en 1 metro o la longitud en 2 metros"
   },
   {
     "Nombre": "Patadas inhabilitantes",
     "Tipo": "General",
+    "Nivel": null,
     "Prerrequisitos": "Conocer un Movimiento con la Etiqueta de Patada",
     "Descripcion": "Tus patadas golpean precisamente con el objetivo de dejar inhabilitadas a sus objetivos. Cuando una Tirada Natural de una Tirada de Ataque asociada a uno de tus Movimientos con la Etiqueta de Patada es de 16+, puedes elegir uno de los dos siguientes efectos:\n\n    • Haces un barrido. La criatura cae tumbada.\n\n    • La criatura pierde el sentido del equilibrio y tiene Desventaja en sus Tiradas de Ataque  y de Salvación de Agilidad hasta el final del próximo turno."
   },
   {
     "Nombre": "Puñetazos aumentados",
     "Tipo": "General",
-    "Prerrequisitos": "Nivel 11, Conocer un Movimiento con la Etiqueta de Puño",
+    "Nivel": 11,
+    "Prerrequisitos": "Conocer un Movimiento con la Etiqueta de Puño",
     "Descripcion": "Has aprendido a mejorar los puñetazos que das. Cuando usas un Movimiento con la Etiqueta de Puño cuyo coste es inferior a 3 PP, puedes volverlo 3 PP. Si lo haces, el Movimiento mejora de las siguientes formas:\n\n    • Su daño base aumenta en una cantidad de dados iguales a la diferencia entre 3 PP y su coste usual. Por ejemplo, si cuesta 1 PP, aumenta su daño en 2 dados.\n\n    • Si el Movimiento tiene un efecto secundario que ocurre en ciertas Tiradas Naturales, el rango del efecto aumenta en 1. Por ejemplo, si era 19+, se vuelve 18+."
   },
   {
     "Nombre": "Puñetazos potentes",
     "Tipo": "General",
+    "Nivel": null,
     "Prerrequisitos": "Dote Puñetazos aumentados",
     "Descripcion": "Puedes volver tus puñetazos aun más poderosos. Cuando usas un Movimiento con la Etiqueta de Puño cuyo coste es inferior a 4 PP, puedes volverlo 4 PP. Si lo haces, mejoran de las siguientes formas:\n\n    • Su daño base aumenta en una cantidad de dados iguales a la diferencia entre 4 PP y su coste usual y añade su Estadística asociada una vez más de lo normal a este. \n\n    • Si tiene un efecto secundario que ocurre en ciertas Tiradas Naturales, el rango aumenta en 2 si el Movimiento costaba 3 PP o en 1 si costaba 3 PP."
   },
   {
     "Nombre": "Potenciación de campo",
     "Tipo": "General",
+    "Nivel": null,
     "Prerrequisitos": "Conocer un Movimiento con la Etiqueta de Campo",
     "Descripcion": "Cuando usas un Movimiento con la Etiqueta de Campo, el tamaño del radio del área que este afecta se duplica. Además, este Campo no puede ser cambiado ni eliminado por criaturas sin la Dote Potenciación de Campo siempre que estés consciente dentro de la región afectada"
   },
   {
     "Nombre": "Rango colosal",
     "Tipo": "General",
+    "Nivel": null,
     "Prerrequisitos": "Eres de tamaño Colosal o mayor, Dote Gran rango",
     "Descripcion": "Tu mayor tamaño te permite controlar más terreno durante el combate. Puedes hacer Tiradas de Ataque cuerpo a cuerpo a un metro de distancia más de lo normal y las criaturas que se alejan de ti a más de 3 metros ahora provocan ataques de oportunidad de ti."
   },
   {
     "Nombre": "Reactivo",
     "Tipo": "General",
-    "Prerrequisitos": "",
+    "Nivel": null,
+    "Prerrequisitos": null,
     "Descripcion": "Cuando ocurre un evento que te permite usar tu Reacción para usar un Rasgo, Movimiento o Habilidad pero no la tienes disponible, puedes pagar 1 PP para recuperarla y usar dicha Reacción. El coste de usar esta Dote aumenta en 1 PP por cada vez que lo has usado a lo largo de la Escena."
   },
   {
     "Nombre": "Regeneración amplificada",
     "Tipo": "General",
+    "Nivel": null,
     "Prerrequisitos": "Conocer un Movimiento con la Etiqueta de Restauración",
     "Descripcion": "Cuando usas un Movimiento con la Etiqueta de Restauración puedes decidir perder los 2 PP en lugar de pagar su coste. Cuando pierdes PP, no los recuperas hasta que Descanses, pero usar el Movimiento de esta forma no cuenta para la cantidad de Movimientos de Restauración que puedes utilizar en un Día."
   },
   {
     "Nombre": "Resistente",
     "Tipo": "General",
-    "Prerrequisitos": "",
+    "Nivel": null,
+    "Prerrequisitos": null,
     "Repetible": true,
     "Descripcion": "Elige una Estadística entre Fuerza, Agilidad, Resistencia o Espíritu. Aumentas en 1 tu Grado de Habilidad en la Tirada de Salvación asociada a la Estadística elegida, hasta un máximo de Maestro."
   },
   {
     "Nombre": "Suertudo",
     "Tipo": "General",
-    "Prerrequisitos": "",
+    "Nivel": null,
+    "Prerrequisitos": null,
     "Descripcion": "Tienes más suerte de lo normal. Cuando fallas una Tirada de d20, puedes volver a lanzar esa Tirada. Puedes usar esta propiedad una cantidad de veces igual a un cuarto de tu Nivel por día."
   },
   {
     "Nombre": "Talento oculto",
     "Tipo": "General",
-    "Prerrequisitos": "Ser un Pokémon.",
+    "Nivel": null,
+    "Prerrequisitos": "Ser un Pokémon",
     "Repetible": true,
     "Descripcion": "Ganas una de tus Habilidades Ocultas que no tienes."
   },
   {
     "Nombre": "Velocista",
     "Tipo": "General",
-    "Prerrequisitos": "",
+    "Nivel": null,
+    "Prerrequisitos": null,
     "Descripcion": "Tienes una gran habilidad para moverte a gran velocidad, incluso en situaciones en las que otros tendrían problemas.  Ganas los siguientes beneficios:\n\n    • Tus Velocidades aumentan en 2 metros.\n\n    • Te mueves por Terreno Difícil como si fuese no lo fuese."
   },
   {
     "Nombre": "Acróbata",
-    "Tipo": "Humano",
-    "Prerrequisitos": "Ser humano, ser Bueno en Acrobacias",
+    "Tipo": "Personaje",
+    "Nivel": null,
+    "Prerrequisitos": "Ser Bueno en Acrobacias",
     "Descripcion": "u movimiento y tu andar son especialmente gráciles. Ganas los siguientes beneficios:\n\n    • Levantarte del suelo no te cuesta velocidad.\n\n    • Puedes usar tu Agilidad en lugar de tu Fuerza a la hora de calcular tus distancias de salto."
   },
   {
     "Nombre": "Adepto en las Armas",
-    "Tipo": "Humano",
-    "Prerrequisitos": "Ser humano, nivel 12, Novato en las Armas",
+    "Tipo": "Personaje",
+    "Nivel": 11,
+    "Prerrequisitos": "Novato en las Armas",
     "Descripcion": "Elige un arma en la que eres hábil. Puedes usar sus Movimientos Especiales y puedes usar sus modos de hasta 4 PP."
   },
   {
     "Nombre": "Al margen",
-    "Tipo": "Humano",
-    "Prerrequisitos": "Ser humano, nivel 6 de Entrenador",
+    "Tipo": "Clase",
+    "Nivel": 6,
+    "Prerrequisitos": "Ser Entrenador",
     "Descripcion": "Cuando al final de uno de tus turnos no has usado un Movimiento con tu Acción, las Tiradas de Ataque realizadas contra ti hasta el principio de tu próximo turno se hacen en Desventaja y recibes la mitad de daño."
   },
   {
     "Nombre": "Alerta",
-    "Tipo": "Humano",
-    "Prerrequisitos": "Ser humano",
+    "Tipo": "Personaje",
+    "Nivel": null,
+    "Prerrequisitos": null,
     "Descripcion": "Siempre estás listo para entrar en combate, incluso cuando te emboscan: \n\n    • Ganas la habilidad de Alerta.\n\n    • Tienes Ventaja en las Tiradas de Iniciativa."
   },
   {
     "Nombre": "Alquimista",
-    "Tipo": "Humano",
-    "Prerrequisitos": "Ser Humano, Químico",
+    "Tipo": "Personaje",
+    "Nivel": null,
+    "Prerrequisitos": "Dote Químico",
     "Descripcion": "Aprendes a preparar Potenciadores de rareza Poco Común de la misma forma que con la Dote de Químico, salvo que la dificultad de la Tirada para preparar adecuadamente estos objetos es de 15. \n\nSi eres Maestro en Conocimiento de Química, también puedes fabricar Potenciadores de rareza Rara, para los que la dificultad de la Tirada para prepararlos adecuadamente es de 20."
   },
   {
     "Nombre": "Aprendiz de todo",
-    "Tipo": "Humano",
-    "Prerrequisitos": "Ser humano, Nivel 9",
+    "Tipo": "Personaje",
+    "Nivel": 9,
+    "Prerrequisitos": null,
     "Descripcion": "Sabes un poco de todo y has aprendido a sacarle buen provecho. Ganas un bono a las Tiradas de Habilidad en las que tienes un Grado de Entrenamiento de No entrenado igual a la mitad de tu BC."
   },
   {
     "Nombre": "Atleta",
-    "Tipo": "Humano",
-    "Prerrequisitos": "Ser humano, ser Bueno en Atletismo",
+    "Tipo": "Personaje",
+    "Nivel": null,
+    "Prerrequisitos": "Ser Bueno en Atletismo",
     "Descripcion": "Tienes una condición física portentosa. Ganas los siguientes beneficios: \n\n    • Ganas Velocidades de Nado y Escalado iguales a tu Velocidad de Caminado.\n\n    • Si fueras a ganar Niveles de Fatiga por hacer esfuerzo físico prolongado, ganas un Nivel de Fatiga menos."
   },
   {
     "Nombre": "Aura terrorífica",
-    "Tipo": "Humano",
-    "Prerrequisitos": "Ser Humano, ser Maestro en Intimidación",
+    "Tipo": "Personaje",
+    "Nivel": null,
+    "Prerrequisitos": "Ser Maestro en Intimidación",
     "Descripcion": "Exudas un aura capaz de causar terror. Ganas los siguientes beneficios:\n\n    • Ganas la Habilidad Intimidación. Si ya tenías esta Habilidad, ahora puedes usarla sin pagar su coste en PP.\n\n    • Aprendes el Movimiento Cara susto. Si ya conocías este Movimiento, ahora puedes usarlo por 1 PP menos de lo que normalmente te cuesta usarlo."
   },
   {
     "Nombre": "Barrera fragmentada",
-    "Tipo": "Humano",
-    "Prerrequisitos": "Ser humano, nivel 12 de Mentalista",
+    "Tipo": "Clase",
+    "Nivel": 12,
+    "Prerrequisitos": "Ser Mentalista",
     "Descripcion": "Aprendes a fragmentar la barrera mágica que te protege y a compartirla con una Criatura. Como Acción Extendida, compartes tu barrera con otra Criatura dispuesta, a la cual que tocas. Tu CA se reduce en 1 y la CA de la Criatura se vuelve igual a la tuya si es inferior a esta. Además, puedes usar tus Movimientos de Mentalista desde la posición de la Criatura con la que compartes tu barrera.\n\nComo Acción, puedes dejar de compartir tu barrera y, si vuelves a compartir tu barrera con otra Criatura la que habías otorgado a la primera se disipa. "
   },
   {
     "Nombre": "Botánico",
-    "Tipo": "Humano",
+    "Tipo": "Personaje",
+    "Nivel": null,
     "Prerrequisitos": "Ser bueno en Conocimiento Natural, Mano para las plantas",
     "Descripcion": "Mejoras tus habilidades con el Kit de Botánica. Ahora puedes plantar Bayas o Plantas de rareza Poco común y, si tu Nivel es de 16 o más, también de rareza Rara.\n\nPuedes tener 4 plantas que dan fruto en un mismo Kit de Botánica. Estas plantas tardan lo mismo en crecer y en producir copias de su Baya o Planta respectiva que las que plantabas con tu dote de Mano para las Plantas."
   },
   {
     "Nombre": "Catalizador",
-    "Tipo": "Humano",
-    "Prerrequisitos": "Ser humano, ser Mentalista",
+    "Tipo": "Clase",
+    "Nivel": null,
+    "Prerrequisitos": "Ser Mentalista",
     "Descripcion": "Tu propio cuerpo es el catalizador de tu poder, por lo que dejas de necesitar un Amuleto Místico para usar tus Movimientos de Mentalista"
   },
   {
     "Nombre": "Caída cuidadosa",
-    "Tipo": "Humano",
-    "Prerrequisitos": "Ser Humano,  ser Maestro en Acrobacias",
+    "Tipo": "Personaje",
+    "Nivel": null,
+    "Prerrequisitos": "Ser Maestro en Acrobacias",
     "Descripcion": "Aprendes a caer con cuidado de no hacerte daño y sin perder el equilibrio. Ganas los siguientes beneficios:\n\n    • Cuando caes desde una altura en metros igual a la mitad de la cantidad de tu BH no recibes daño de caída.\n\n    • No caes tumbado al recibir daño de caída."
   },
   {
     "Nombre": "Capturador persistente",
-    "Tipo": "Humano",
-    "Prerrequisitos": "Ser humano, ser Bueno en Trato Pokémon.",
+    "Tipo": "Personaje",
+    "Nivel": null,
+    "Prerrequisitos": "Ser Bueno en Trato Pokémon",
     "Descripcion": "Eres muy persistente ganándote el respeto de los Pokémon y sabes como ganártelos eventualmente. Cuando fallas una Tirada de Trato Pokémon para capturar a un Pokémon, la próxima que hagas para volver a intentarlo antes del final de la Escena se hace en Ventaja"
   },
   {
     "Nombre": "Chef",
-    "Tipo": "Humano",
-    "Prerrequisitos": "Ser Humano, Dote Cocinero",
+    "Tipo": "Personaje",
+    "Nivel": null,
+    "Prerrequisitos": "Dote Cocinero",
     "Descripcion": "Tus Habilidades culinarias mejoran aún más. Aprendes a cocinar Comidas de rareza Poco Común de la misma forma que con la dote de Cocinero, salvo que la dificultad de la Tirada para cocinar adecuadamente estos objetos es de 15. \n\nSi eres Maestro en Conocimiento de Cocina, también puedes fabricar Comidas de rareza Rara, para las que la dificultad de la Tirada para cocinarlas adecuadamente es de dificultad 20."
   },
   {
     "Nombre": "Cocinero",
-    "Tipo": "Humano",
-    "Prerrequisitos": "Ser Humano, ser Bueno en Conocimiento de Cocina",
+    "Tipo": "Personaje",
+    "Nivel": null,
+    "Prerrequisitos": "Ser Bueno en Conocimiento de Cocina",
     "Descripcion": "Te vuelves un cocinero capaz de crear comidas tan deliciosas que otorgan beneficios a quienes las consumen. Aprendes a cocinar Comidas de rareza Común con tus Utensilios de Cocina. Para cocinarlas, debes tomar una Acción Extendida que dura 30 minutos por cada 1000$ que estas Comidas cuestan y consume materiales por de valor equivalente a tres cuartas partes de su coste. Al final de esta Acción Extendida, haces una Tirada de Conocimiento de Cocina (Espíritu) CD 10 por cada Comida que cocinas. Si la fallas, la comida asociada no otorga beneficios pero puede comerse de todas formas."
   },
   {
     "Nombre": "Conocer los trucos",
-    "Tipo": "Humano",
-    "Prerrequisitos": "Ser Humano, ser Experto en Conocimiento Pokémon",
+    "Tipo": "Personaje",
+    "Nivel": null,
+    "Prerrequisitos": "Ser Experto en Conocimiento Pokémon",
     "Descripcion": "Te sirves de tu amplio conocimiento sobre los Pokémon para interactuar con ellos. Cuando haces una Tirada de Habilidad de Trato Pokémon, en su lugar puedes hacer una Tirada de Conocimiento Pokémon (Mente)."
   },
   {
     "Nombre": "Copiar al compañero",
-    "Tipo": "Humano",
-    "Prerrequisitos": "Ser humano, nivel 12 de Entrenador",
+    "Tipo": "Clase",
+    "Nivel": 12,
+    "Prerrequisitos": "Ser Entrenador",
     "Descripcion": "Como Acción Extendida, puedes hacer que uno de tus Pokémon enseñe uno de los Movimientos que conoce a otros Pokémon que lo tiene en su lista de Movimientos Enseñables."
   },
   {
     "Nombre": "Dedos largos",
-    "Tipo": "Humano",
-    "Prerrequisitos": "Ser humano, ser Experto en Juego de manos",
+    "Tipo": "Personaje",
+    "Nivel": null,
+    "Prerrequisitos": "Ser Experto en Juego de manos",
     "Descripcion": "Eres adepto en tomar y dejar cosas en otras personas sin que estas se den cuenta. Aprendes el Movimiento Trapicheo."
   },
   {
     "Nombre": "Efecto placebo",
-    "Tipo": "Humano",
-    "Prerrequisitos": "Ser Humano",
+    "Tipo": "Personaje",
+    "Nivel": null,
+    "Prerrequisitos": null,
     "Descripcion": "Eres consciente de cuando estás aventajado y cuando estás en desventaja y, cuando esto ocurre, te creces o te achicas, respectivamente. Ganas la Habilidad Simple."
   },
   {
     "Nombre": "Embaucador",
-    "Tipo": "Humano",
-    "Prerrequisitos": "Ser humano, ser Bueno en Engaño",
+    "Tipo": "Personaje",
+    "Nivel": null,
+    "Prerrequisitos": "Ser Bueno en Engaño",
     "Descripcion": "Eres muy hábil desviando y retorciendo la verdad. Cuando una criatura falla una Tirada Enfrentada de Empatía contra tu Engaño, si falla por 5 o más, cree todo lo que le dices siempre que esto no contradiga ningún hecho del que está completamente segura."
   },
   {
     "Nombre": "Empático",
-    "Tipo": "Humano",
-    "Prerrequisitos": "Ser humano, ser bueno en Empatía",
+    "Tipo": "Personaje",
+    "Nivel": null,
+    "Prerrequisitos": "Ser bueno en Empatía",
     "Descripcion": "Eres muy bueno interpretando las emociones e intenciones de los demás. Tras pasar unos minutos observando a una criatura, puedes aprender qué opinión tiene de ti o de otra criatura que haya sido mencionada o esté presente y si tiene intenciones buenas o malas para con esta criatura"
   },
   {
     "Nombre": "Enseñar a usar",
-    "Tipo": "Humano",
+    "Tipo": "Personaje",
+    "Nivel": 12,
     "Prerrequisitos": "Ser un Humano de Nivel 12 que conoce a un Inventor dispuesto a enseñarle a usar una de sus Invenciones",
     "Descripcion": "Como Acción Extendida, un Inventor que conoces te enseña a usar una de sus Invenciones que no pertenezca a su Especialidad de la misma forma que este lo hace, como si tuvieras su misma Mente y su mismo Nivel de Inventor."
   },
   {
     "Nombre": "Entre las sombras",
-    "Tipo": "Humano",
-    "Prerrequisitos": "Ser humano, ser Bueno en Sigilo",
+    "Tipo": "Personaje",
+    "Nivel": null,
+    "Prerrequisitos": "Ser Bueno en Sigilo",
     "Descripcion": "Eres adepto escondiéndote haciendo uso de la oscuridad. Puedes esconderte en zonas Mal Iluminadas, incluso si no hay nada que bloquee directamente la visión."
   },
   {
     "Nombre": "Entrenador novato",
-    "Tipo": "Humano",
-    "Prerrequisitos": "Ser Humano",
+    "Tipo": "Personaje",
+    "Nivel": null,
+    "Prerrequisitos": null,
     "Descripcion": "Has aprendido a dar órdenes más especializadas. Aprendes una Orden de Entrenador de la Lista de Órdenes de Entrenador, que puedes usar por 1 PP y como Acción. \n\nTu Dado de Orden es 1d6, si no eres un Entrenador, y lo añades a la primera instancia de daño que realice el Pokémon que ha recibido la Orden de Entrenador. Además, si la Orden que eliges hace alusión a tu Rango de Orden, este es igual 20 menos tu Mente, Espíritu o Presencia (lo eliges al tomar la Dote) y, si no eres Entrenador, este no puede ser inferior a 17."
   },
   {
     "Nombre": "Entrenamientos intensivos",
-    "Tipo": "Humano",
-    "Prerrequisitos": "Ser un Humano, Nivel 6 de Luchador",
+    "Tipo": "Clase",
+    "Nivel": 6,
+    "Prerrequisitos": "Ser Luchador",
     "Descripcion": "Ganas una segunda Habilidad de las que puedes tomar con tu Rasgo de Habilidad de Combate. A partir de Nivel 10, en su lugar puedes elegir una Habilidad de tu Rasgo de Más Habilidades de Combate."
   },
   {
     "Nombre": "Entusiasmado",
-    "Tipo": "Humano",
-    "Prerrequisitos": "Ser humano",
+    "Tipo": "Personaje",
+    "Nivel": null,
+    "Prerrequisitos": null,
     "Descripcion": "Ganas la habilidad de Entusiasmo."
   },
   {
     "Nombre": "Evasivo",
-    "Tipo": "Humano",
-    "Prerrequisitos": "Ser humano",
+    "Tipo": "Personaje",
+    "Nivel": null,
+    "Prerrequisitos": null,
     "Descripcion": "Has aprendido a evadir el combate y eres muy difícil de atrapar. Ganas los siguientes beneficios:\n\n    • Ganas la habilidad de Fuga.\n\n    • Tus Velocidades aumentan en 2 m cuando te mueves en la dirección opuesta en la que están tus rivales."
   },
   {
     "Nombre": "Expandir psique",
-    "Tipo": "Humano",
-    "Prerrequisitos": "Ser humano, nivel 6 de Mentalista.",
+    "Tipo": "Clase",
+    "Nivel": 6,
+    "Prerrequisitos": "Ser Mentalista",
     "Descripcion": "Ganas una segunda Habilidad de las que puedes tomar con tu Rasgo de Habilidades en el Misticismo. A partir de Nivel 10, en su lugar puedes elegir una Habilidad de tu Rasgo de Más Habilidades en el Misticismo."
   },
   {
     "Nombre": "Fabricar más Poké Balls",
-    "Tipo": "Humano",
-    "Prerrequisitos": "Ser Humano, Dote Fabricar Poké Balls",
+    "Tipo": "Personaje",
+    "Nivel": null,
+    "Prerrequisitos": "Dote Fabricar Poké Balls",
     "Descripcion": "Aprendes a fabricar Poké Balls de rareza Poco Común de la misma forma que con la Dote de Fabricar Poké Balls, salvo que la dificultad de la Tirada para fabricar adecuadamente estos objetos es de 15. \n\nSi eres Maestro en Conocimiento de Poké Balls, también puedes fabricar Poké Balls de rareza Rara, para las que la dificultad de la Tirada para fabricarlos adecuadamente es de 20."
   },
   {
     "Nombre": "Fabricar Poké Balls",
-    "Tipo": "Humano",
-    "Prerrequisitos": "Ser Humano, ser Bueno en Conocimiento de Poké Balls",
+    "Tipo": "Personaje",
+    "Nivel": null,
+    "Prerrequisitos": "Ser Bueno en Conocimiento de Poké Balls",
     "Descripcion": "Aprendes a fabricar Poké Balls. Ganas los siguientes beneficios. Aprendes a preparar Poké Balls de rareza Común (usualmente, esto quiere decir que sólo puedes crear Poké Balls normales) con tus Herramientas de Poké Balls. Para prepararlas, debes tomar una Acción Extendida que dura 30 minutos por cada 1000$ que estas Poké Balls cuestan y consume materiales por de valor equivalente a tres cuartas partes de su coste. Al final de esta Acción Extendida, haces una Tirada de Habilidad de Conocimiento de Poké Balls (Mente) CD 10 por cada Poké Ball que preparas. Si la fallas, la Poké Ball no funciona."
   },
   {
     "Nombre": "Farmacólogo consumado",
-    "Tipo": "Humano",
-    "Prerrequisitos": "Ser Humano, Dote Farmacólogo novato",
+    "Tipo": "Personaje",
+    "Nivel": null,
+    "Prerrequisitos": "Dote Farmacólogo novato",
     "Descripcion": "Aprendes a preparar Medicinas de rareza Poco Común de la misma forma que con la Dote de Farmacólogo novato, salvo que la dificultad de la Tirada para preparar adecuadamente estos objetos es de 15. \n\nSi eres Maestro en Conocimiento Médico, también puedes preparar Medicinas de rareza Rara, para las que la dificultad de la Tirada para prepararlas adecuadamente es de 20."
   },
   {
     "Nombre": "Farmacólogo novato",
-    "Tipo": "Humano",
-    "Prerrequisitos": "Ser Humano, ser Bueno en Conocimiento Médico",
+    "Tipo": "Personaje",
+    "Nivel": null,
+    "Prerrequisitos": "Ser Bueno en Conocimiento Médico",
     "Descripcion": "Aprendes a preparar algunos Potenciadores básicos. Aprendes a preparar Medicinas de rareza Común con tus Herramientas de Medicina. Para prepararlas, debes tomar una Acción Extendida que dura 30 minutos por cada 1000$ que estas Medicinas cuestan y consume materiales por de valor equivalente a tres cuartas partes de su coste. Al final de esta Acción Extendida, haces una Tirada de Conocimiento Médico (Mente) CD 10 por cada Medicina que preparas. Si la fallas, la Medicina es defectuosa y no otorga ningún beneficio al consumirse."
   },
   {
     "Nombre": "Fórmulas precisas",
-    "Tipo": "Humano",
-    "Prerrequisitos": "Ser humano, nivel 6 de Inventor",
+    "Tipo": "Clase",
+    "Nivel": 6,
+    "Prerrequisitos": "Ser Inventor",
     "Descripcion": "Cuando creas un objeto que puedes fabricar gracias a tu Rasgo de Hábil con las Herramientas no puedes fallar la Tirada de Habilidad necesaria paria para crearlo."
   },
   {
     "Nombre": "Fuerte afecto",
-    "Tipo": "Humano",
-    "Prerrequisitos": "Ser humano, nivel 18 de Entrenador",
+    "Tipo": "Clase",
+    "Nivel": 18,
+    "Prerrequisitos": "Ser Entrenador",
     "Descripcion": "Al tomar esta Dote eliges a un Pokémon que tienes desde que eras Nivel 3 o menos o con el que empezaste tu aventura. Este Pokémon gana una nueva forma que le hace asemejarse a ti. Para que el Pokémon entre en esta nueva forma debes usar tu Acción cuando este no está Megaevolucionado ni Dinamaxizado. Cuando lo haces, las Estadísticas del Pokémon aumentan en 1 y el daño de sus Movimientos aumenta en 2 dados hasta el final de la Escena.\n\nMientras El Pokémon está transformado de esta forma, ambos sentís lo que siente el otro y cuando uno recibe daño puedes hacer que parte de este se transfiera al otro. Además, puedes usar sus PP como si fueran tuyos y viceversa."
   },
   {
     "Nombre": "Fuerza heroica",
-    "Tipo": "Humano",
-    "Prerrequisitos": "Ser Humano, ser Maestro en Atletismo",
+    "Tipo": "Personaje",
+    "Nivel": null,
+    "Prerrequisitos": "Ser Maestro en Atletismo",
     "Descripcion": "Tu poder físico rivaliza con el de criaturas más grandes que tú. Ganas los siguientes beneficios:\n\n    • A la hora de agarrar, empujar y cargar peso, cuentas como un Tamaño más grande de lo que eres.\n\n    • A la hora de cargar peso, cuentas como un Tamaño más grande de lo que eres.\n\n    • Cuando fallas una Tirada de d20 asociada a tu Fuerza, puedes usar un impulso de poder para ganar un bono de +5 a la Tirada, pudiendo convertir el fallo en un acierto. Puedes usar este beneficio una vez al Día."
   },
   {
     "Nombre": "Gran montador",
-    "Tipo": "Humano",
-    "Prerrequisitos": "Ser Humano,  nivel 9",
+    "Tipo": "Personaje",
+    "Nivel": 9,
+    "Prerrequisitos": null,
     "Descripcion": "Eres hábil montando, desmontando y guiando a tus Monturas. Una vez por turno, puedes montar, desmontar u ordenar a una Montura que esta se mueva sin coste de Acciones. Además, cuando montas a un Pokémon y un efecto fuese a hacer que quedaras desmontado, por ejemplo, al empujarte, puedes hacer una Tirada Acrobacias (Agilidad) contra la CD del efecto, manteniéndote en tu montura si la pasas."
   },
   {
     "Nombre": "Identidad falsa",
-    "Tipo": "Humano",
-    "Prerrequisitos": "Ser Humano,  ser Maestro en Actuación o Engaño",
+    "Tipo": "Personaje",
+    "Nivel": null,
+    "Prerrequisitos": "Ser Maestro en Actuación o Engaño",
     "Descripcion": "Sabes como copiar e inventar identidades. Tras estudiar a una persona durante una Acción Extendida durante la cual interactúa con otra criatura, aprendes a copiar su forma de hablar, de expresarse y de moverse. Cuando haces esto, tienes Ventaja en Tiradas de Actuación y Engaño para suplantar la identidad de esta persona."
   },
   {
     "Nombre": "Inquisitivo",
-    "Tipo": "Humano",
-    "Prerrequisitos": "Ser Ser humano, ser Bueno en Investigación",
+    "Tipo": "Personaje",
+    "Nivel": null,
+    "Prerrequisitos": "Ser Ser Bueno en Investigación",
     "Descripcion": "No se te escapa una sola pista y eres muy hábil a la hora de resolver puzzles y enigmas. No olvidas datos o pistas relevantes para dilucidar enigmas o resolver puzzles y, si en algún momento algún dato que conocieras se vuelve relevante para descubrir algún tipo de información, este te viene a la mente sin importar si en primera instancia lo pasaste por alto. (El DJ te lo recuerda)."
   },
   {
     "Nombre": "Intimidatorio",
-    "Tipo": "Humano",
-    "Prerrequisitos": "Ser humano, ser Bueno en Intimidación",
+    "Tipo": "Personaje",
+    "Nivel": null,
+    "Prerrequisitos": "Ser Bueno en Intimidación",
     "Descripcion": "Tu presencia es tan intimidatoria que con un par de gestos o palabras puedes conseguir que otros hagan lo que deseas. Aprendes el Movimiento Malicioso, que puedes usar por 1 PP."
   },
   {
     "Nombre": "Inventor novato",
-    "Tipo": "Humano",
-    "Prerrequisitos": "Ser humano",
+    "Tipo": "Personaje",
+    "Nivel": null,
+    "Prerrequisitos": null,
     "Repetible": true,
     "Descripcion": "Eres un Inventor Novato. Ganas los siguientes beneficios. Aprendes a diseñar una Invención de Inventor sin prerequisitos, de la que puedes tener hasta 2 copias.  Puedes crear una copia de esta Invención como una Acción Extendida, haciendo uso de tus Herramientas de Inventor y consumiendo materiales por valor de 2.000$ para cada una. "
   },
   {
     "Nombre": "Juggernaut",
-    "Tipo": "Humano",
-    "Prerrequisitos": "Ser humano, nivel 12 de Luchador",
+    "Tipo": "Clase",
+    "Nivel": 12,
+    "Prerrequisitos": "Ser Luchador",
     "Descripcion": "Ganas la Habilidad Robustez. Si ya la tenías, además puedes usar 3 PP para volver a usarla cuando no te quedan más usos."
   },
   {
     "Nombre": "Ladrón del foco",
-    "Tipo": "Humano",
-    "Prerrequisitos": "Ser humano, ser Bueno Actuación",
+    "Tipo": "Personaje",
+    "Nivel": null,
+    "Prerrequisitos": "Ser Bueno Actuación",
     "Descripcion": "Eres muy bueno actuando como otras personas e interpretando papeles. Cuando una criatura está viéndote actuar queda tan absorta que se distrae y hace en Desventaja todas las Tiradas de Percepción que no tengan que ver contigo."
   },
   {
     "Nombre": "Luchador novato",
-    "Tipo": "Humano",
-    "Prerrequisitos": "Ser humano, nivel 6",
+    "Tipo": "Personaje",
+    "Nivel": 6,
+    "Prerrequisitos": null,
     "Descripcion": "Aprendes un Movimiento con coste de A voluntad o 1 PP de la lista de Luchador. "
   },
   {
     "Nombre": "Maniobra defensiva",
-    "Tipo": "Humano",
-    "Prerrequisitos": "Ser humano",
+    "Tipo": "Personaje",
+    "Nivel": null,
+    "Prerrequisitos": null,
     "Descripcion": "Has aprendido a protegerte en el combate y a aprovechar estos momentos. Ganas los siguientes beneficios:\n\n    • Aprendes el movimiento Protección.\n\n    • Cuando usas Protección puedes ordenar a uno de tus Pokémon que use 1 PP para usar un Movimiento con su Reacción contra la criatura que realizó el ataque contra el que te protegiste. El Movimiento debe hacer una Tirada de Ataque, tener un Coste de Acción de Acción y no costar PP al Pokémon."
   },
   {
     "Nombre": "Mano para las plantas",
-    "Tipo": "Humano",
-    "Prerrequisitos": "Ser humano, ser Bueno en Conocimiento Natural o Supervivencia",
+    "Tipo": "Personaje",
+    "Nivel": null,
+    "Prerrequisitos": "Ser Bueno en Conocimiento Natural o Supervivencia",
     "Descripcion": "Aprendes a usar un Kit de Botánica para hacer crecer Plantas y Bayas. En tu kit de Botánica puedes plantar Bayas o Plantas de rareza Común. Todos los días debes tomar una Acción Extendida para cuidar de estas.\n\nUna semana después de plantar la Baya o Planta, crece una plantita de la que crecerán más copias de estas Bayas o Plantas. Cada plantita de estas produce Bayas o Plantas a un ritmo de 1 copia cada 2 Días. Puedes tener hasta dos de estas plantas con un mismo Kit de Botánica.\n\nSi un Día no tomas la Acción Extendida para cuidar de tus plantas, estas no crecen y no producen y, si además pasas 1 semana sin tomar esta Acción Extendida, las plantas se mueren."
   },
   {
     "Nombre": "Manos veloces",
-    "Tipo": "Humano",
-    "Prerrequisitos": "Ser Humano, ser Maestro en Juego de Manos, Conocer el Movimiento Trapicheo",
+    "Tipo": "Personaje",
+    "Nivel": null,
+    "Prerrequisitos": "Ser Maestro en Juego de Manos, Conocer el Movimiento Trapicheo",
     "Descripcion": "Tu capacidad para robar objetos mejora aún más. Ganas los siguientes beneficios:\n\n    • Cuando una criatura realiza una Tirada de Ataque cuerpo a cuerpo contra ti estando a menos de 1 metro de ti y falla, puedes usar tu Reacción para usar Trapicheo sobre un objeto que esta criatura lleva encima pero que no está empuñando ni lleva puesto.\n\n    • Usar Trapicheo con tu Acción no te cuesta PP."
   },
   {
     "Nombre": "Mapa mental",
-    "Tipo": "Humano",
-    "Prerrequisitos": "Ser Humano,  ser Bueno en Supervivencia",
+    "Tipo": "Personaje",
+    "Nivel": null,
+    "Prerrequisitos": "Ser Bueno en Supervivencia",
     "Descripcion": "Eres muy bueno reconociendo el terreno por el que te mueves. Ganas los siguientes beneficios:\n\n    • No puedes perderte al navegar por territorio desconocido y puedes trazar mapas de estos territorios mientras los navegas.\n\n    • Si estás en una localización en la que esto es razonable, siempre puedes encontrar comida y agua potable."
   },
   {
-    "Nombre": "Juggernaut",
-    "Tipo": "Humano",
-    "Prerrequisitos": "Ser humano, nivel 12 de Luchador",
-    "Descripcion": "Ganas la Habilidad Robustez. Si ya la tenías, además puedes usar 3 PP para volver a usarla cuando no te quedan más usos."
-  },
-  {
     "Nombre": "Más Movimientos de Luchador",
-    "Tipo": "Humano",
-    "Prerrequisitos": "Ser humano, nivel 6 de Luchador",
+    "Tipo": "Clase",
+    "Nivel": 6,
+    "Prerrequisitos": "Ser Luchador",
     "Repetible": true,
     "Descripcion": "La cantidad de Movimientos de Luchador que puedes conocer aumenta en 1. A partir de Nivel 12 de Luchador, dicha cantidad aumenta otra vez en 1."
   },
   {
     "Nombre": "Más Movimientos de Mentalista",
-    "Tipo": "Humano",
-    "Prerrequisitos": "Ser humano, nivel 6 de Mentalista.",
+    "Tipo": "Clase",
+    "Nivel": 6,
+    "Prerrequisitos": "Ser Mentalista",
     "Repetible": true,
     "Descripcion": "La cantidad de Movimientos de Mentalista que puedes conocer aumenta en 1. A partir de Nivel 12 de Mentalista, dicha cantidad aumenta otra vez en 1."
   },
   {
     "Nombre": "Naturaleza extraña",
-    "Tipo": "Humano",
-    "Prerrequisitos": "Ser Humano, nivel 12 de Mentalista",
+    "Tipo": "Clase",
+    "Nivel": 12,
+    "Prerrequisitos": "Ser Mentalista",
     "Descripcion": "Tu cuerpo está tan imbuido en fuerzas sobrenaturales que tu fisionomía funciona de formas extrañas.\n\n    • Puedes dejar de ser de Tipo Normal (tu elección).\n\n    • No necesitas comer ni beber.\n\n    • No necesitas dormir para Descansar, pero no puedes hacer actividades extenuantes.\n\n    • Una vez por Día, puedes usar cualquier Movimiento de Mentalista que conoces sin usar PP."
   },
   {
     "Nombre": "Navegar entre climas",
-    "Tipo": "Humano",
-    "Prerrequisitos": "Ser Humano, ser Maestro en Conocimiento Natural o Supervivencia",
+    "Tipo": "Personaje",
+    "Nivel": null,
+    "Prerrequisitos": "Ser Maestro en Conocimiento Natural o Supervivencia",
     "Descripcion": "Eres muy hábil comprendiendo el clima y sabes como evitar sus inclemencias. Ganas los siguientes beneficios:\n\n    • Eres inmune a todos los efectos provocados por los Movimientos con la etiqueta de Clima y por eventos climáticos similares.\n\n    • Eres capaz de predecir los cambios que ocurrirán de forma natural en el clima en las próximas 24 horas."
   },
   {
     "Nombre": "Novato en las armas",
-    "Tipo": "Humano",
-    "Prerrequisitos": "Ser humano, nivel 6",
-    "Repetible": true,
+    "Tipo": "Personaje",
+    "Nivel": null,
+    "Prerrequisitos": null,
+    "Repetible": 6,
     "Descripcion": "Te vuelves hábil usando un arma a tu elección, pero sólo puedes usar su Movimiento Estándar y, cómo máximo, puedes usar el modo de 1 PP."
   },
   {
     "Nombre": "Ojo avizor",
-    "Tipo": "Humano",
-    "Prerrequisitos": "Ser humano, ser Bueno Percepción",
+    "Tipo": "Personaje",
+    "Nivel": null,
+    "Prerrequisitos": "Ser Bueno Percepción",
     "Descripcion": "Tienes una vista sin par que te permite observar detalles que otros pasarían por alto. Ganas los siguientes beneficios: \n\n    • Puedes visualizar los detalles de objetos a menos de 10 metros de ti.\n\n    • No puedes tener Desventaja en Tiradas de Percepción para ver objetos en zonas Mal Iluminadas ni para ver a través de lluvia, nevadas o condiciones climáticas similares."
   },
   {
     "Nombre": "Optimización de recursos",
-    "Tipo": "Humano",
-    "Prerrequisitos": "Ser Humano, nivel 12 de Inventor",
+    "Tipo": "Clase",
+    "Nivel": 12,
+    "Prerrequisitos": "Ser Inventor",
     "Descripcion": "Elige una invención que sabes fabricar. Cuando creas una copia de esta Invención, creas una segunda copia sin necesidad de gastar más materiales (cuando desmontas estas Invenciones, recuperas la mitad de materiales que de forma usual). Además, cada una de estas invenciones cuenta como media invención a la hora de calcular el máximo de intenciones que tienes."
   },
   {
     "Nombre": "Palabras suaves",
-    "Tipo": "Humano",
-    "Prerrequisitos": "Ser Humano, ser Maestro en Empatía o Persuasión",
+    "Tipo": "Personaje",
+    "Nivel": null,
+    "Prerrequisitos": "Ser Maestro en Empatía o Persuasión",
     "Descripcion": "Cuando una criatura a menos de 5 metros de ti que te entiende y puede oírte está Asustada o Infatuada, puedes calmarla con tus palabras. Como Acción, puedes hacer una Tirada de Habilidad de Empatía (Espíritu) o Persuasión (Presencia) contra la CD del efecto que dejó Infatuada o Asustada a la criatura. Si la pasas, la criatura deja de estar Asustada e Infatuada."
   },
   {
     "Nombre": "Persuasivo",
-    "Tipo": "Humano",
-    "Prerrequisitos": "Ser humano, ser Bueno en Persuasión",
+    "Tipo": "Personaje",
+    "Nivel": null,
+    "Prerrequisitos": "Ser Bueno en Persuasión",
     "Descripcion": "Eres muy hábil convenciendo y argumentado a los demás para que te hagan caso y te es muy fácil ganarte la confianza de la gente. Cuando pasas unos minutos estudiando a una persona antes de interactuar con ella puedes aprender a imitar sus gestos, acento y forma de hablar a la perfección, lo que hace que obtengas Ventaja en Tiradas de Persuasión para ganarte su confianza"
   },
   {
     "Nombre": "Polímata",
-    "Tipo": "Humano",
-    "Prerrequisitos": "Ser Humano, nivel 6 de Inventor",
+    "Tipo": "Clase",
+    "Nivel": 6,
+    "Prerrequisitos": "Ser Inventor",
     "Descripcion": "Puedes elegir una segunda opción con tu Rasgo de Hábil con las Herramientas."
   },
   {
     "Nombre": "Químico",
-    "Tipo": "Humano",
-    "Prerrequisitos": "Ser Humano, ser Bueno en Conocimiento de Química",
+    "Tipo": "Personaje",
+    "Nivel": null,
+    "Prerrequisitos": "Ser Bueno en Conocimiento de Química",
     "Descripcion": "Aprendes a preparar algunos Potenciadores básicos. Aprendes a preparar Potenciadores de rareza Común con tus Herramientas de Química. Para prepararlos, debes tomar una Acción Extendida que dura 30 minutos por cada 1000$ que estos Potenciadores cuestan y consume materiales por de valor equivalente a tres cuartas partes de su coste. Al final de esta Acción Extendida, haces una Tirada de Conocimiento de Química (Mente) CD 10 por cada Potenciador que preparas. Si la fallas, el Potenciador es defectuoso y no otorga ningún beneficio."
   },
   {
     "Nombre": "Rastreador",
-    "Tipo": "Humano",
-    "Prerrequisitos": "Ser humano, ser Maesto en Supervivencia",
+    "Tipo": "Personaje",
+    "Nivel": null,
+    "Prerrequisitos": "Ser Maesto en Supervivencia",
     "Descripcion": "Eres muy bueno encontrando recursos y persiguiendo a criaturas en la naturaleza:\n\n    • Si estás en una localización en la que esto es razonable, una vez por Día puedes tomar una Acción extendida que dura al menos 1 hora para buscar Bayas, Plantas o materiales de fabricación de origen natural. Al terminar esta Acción Extendida, haces una Tirada de Habilidad de Supervivencia (Espíritu) y consigues objetos de estos tipos por valor total igual a el resultado de la Tirada por 50 Poké Dólares.\n\n    • Cuando encuentras el rastro de una criatura, no puedes perderlo si lo dejó hace menos de un día.\n\n    • Cuando haces una Tirada de Conocimiento Pokémon, puedes usar tu bono en Tiradas de Supervivencia en su lugar si has visto un rastro de esta especie de Pokémon con anterioridad."
   },
   {
     "Nombre": "Relevos",
-    "Tipo": "Humano",
-    "Prerrequisitos": "Ser Humano, nivel 12 de Luchador",
+    "Tipo": "Clase",
+    "Nivel": 12,
+    "Prerrequisitos": "Ser Luchador",
     "Descripcion": "Cuando tu  desestabilizas a una criatura con tu rasgo de Lucha sincronizada y tu Pokémon también la desestabiliza, usas 1 PP para aprovechar la apertura para volver a golpear. Recuperas tu Acción, la cual sólo puedes usar para realizar un Movimiento que afecta sólo a una criatura contra la criatura desestabilizada. Tu rango de Crítico aumenta en 2 para este Movimiento. Sólo puedes usar esta Dote una vez por turno."
   },
   {
     "Nombre": "Revelar el talento",
-    "Tipo": "Humano",
-    "Prerrequisitos": "Ser Humano, nivel 12 de Entrenador",
+    "Tipo": "Clase",
+    "Nivel": 12,
+    "Prerrequisitos": "Ser Entrenador",
     "Descripcion": "Todos tus Pokémon ganan una de sus Habilidades Ocultas."
   },
   {
     "Nombre": "Sabelotodo",
-    "Tipo": "Humano",
-    "Prerrequisitos": "Ser humano, ser Experto en un tipo de Conocimiento",
+    "Tipo": "Personaje",
+    "Nivel": null,
+    "Prerrequisitos": "Ser Experto en un tipo de Conocimiento",
     "Repetible": true,
     "Descripcion": "Eres un especialista de un campo del conocimiento en particular en el que eres al menos Experto y que eliges al tomar esta Dote. Cuando alguien pasa una Tirada de Conocimiento que has elegido, puedes añadir un dato extra a esta información para completarla, incluso si tu fallaste la Tirada."
   },
   {
     "Nombre": "Seguir la pista",
-    "Tipo": "Humano",
-    "Prerrequisitos": "Ser Humano, ser Maestro en Investigación",
+    "Tipo": "Personaje",
+    "Nivel": null,
+    "Prerrequisitos": "Ser Maestro en Investigación",
     "Descripcion": "Te vuelves muy hábil siguiendo pistas una vez ya has encontrado la primera. Cuando has encontrado una trampa o tesoros dentro de una localización o ya has encontrado una pista clave para resolver un acertijo o un puzzle, ganas Ventaja en Tiradas de Investigación subsecuentes para encontrar más trampas o tesoros en dicha localización o para resolver el puzzle o el acertijo."
   },
   {
     "Nombre": "Sentidos aumentados",
-    "Tipo": "Humano",
-    "Prerrequisitos": "Ser Humano,  ser Maestro en Percepción",
+    "Tipo": "Personaje",
+    "Nivel": null,
+    "Prerrequisitos": "Ser Maestro en Percepción",
     "Descripcion": "Tus sentidos se agudizan tanto que puedes ver lo que otras personas no. Ganas los siguientes beneficios:\n\n    • Ganas Visión en la Oscuridad en un rango de 10 metros.\n\n    • Si tienes otro Sentido además de Visión en la Oscuridad, su rango crece en 10 metros."
   },
   {
     "Nombre": "Sin presencia",
-    "Tipo": "Humano",
-    "Prerrequisitos": "Ser Humano,  ser Maestro en Sigilo",
+    "Tipo": "Personaje",
+    "Nivel": null,
+    "Prerrequisitos": "Ser Maestro en Sigilo",
     "Descripcion": "Sabes como ocultar tu presencia a la perfección. Cuando estás escondido, ganas los siguientes beneficios:\n\n    • Puedes moverte una distancia igual a la mitad de tu Velocidad de Caminado sin que haya obstáculos entre las criaturas que podrían detectarte y tu y, aun así, te mantienes en sigilo si acabas el movimiento detrás de cobertura.\n\n    • Cuando tiras Iniciativa estando escondido de todos tus rivales, obtienes un 20 en la Tirada Natural del d20 de la Tirada de Iniciativa y si la primera Tirada de Ataque que tú o uno de tus Pokémon hagáis en el primer turno de una Iniciativa en la que esto haya ocurrido golpea, se considera un Golpe Crítico."
   },
   {
     "Nombre": "Traductor de glifos",
-    "Tipo": "Humano",
-    "Prerrequisitos": "Ser Humano,  ser Maestro en Conocimiento de Historia",
+    "Tipo": "Personaje",
+    "Nivel": null,
+    "Prerrequisitos": "Ser Maestro en Conocimiento de Historia",
     "Descripcion": "Eres un estudioso de las civilizaciones pasadas. Cuando te encuentras textos escritos en lenguas muertas o antiguas, puedes tomar una Acción Extendida para descifrarlas incluso si no entiendes el idioma. Esta Acción Extendida puede durar desde unos minutos hasta varios días, dependiendo de la complejidad de los textos y tu familiaridad con esta lengua. Al completar esta Acción Extendida, consigues obtener el significado literal del texto."
   },
   {
     "Nombre": "Tutor de Movimientos",
-    "Tipo": "Humano",
-    "Prerrequisitos": "Ser Humano, ser Bueno en Trato Pokémon o Conocimiento Pokémon",
+    "Tipo": "Personaje",
+    "Nivel": null,
+    "Prerrequisitos": "Ser Bueno en Trato Pokémon o Conocimiento Pokémon",
     "Repetible": true,
     "Descripcion": "Elige una Etiqueta de Movimientos o un Tipo Elemental. Aprendes a enseñar Movimientos con esa Etiqueta o de ese Tipo Elemental a los Pokémon cuyo Coste sea de “A Voluntad”. Para enseñar estos Movimientos, tomas una Acción Extendida que dura al menos 1 hora junto al Pokémon, tras lo cual aprende el Movimiento. \n\nCada vez que tomas esta Dote, puedes elegir una Etiqueta o Tipo Elemental nuevos. Si eliges una Etiqueta o Tipo Elemental que ya has elegido previamente y tu Grado de Habilidad en Conocimiento Pokémon o Trato Pokémon es suficiente, el Coste máximo en PP de los Movimientos que puedes enseñar aumenta. Si tu máximo era antes A voluntad y eres Maestro, se vuelve 1 PP. Si era 1 PP y eres Maestro se vuelve 3 PP y si era 3 PP y eres Legendario se vuelve 4 PP."
   },
   {
     "Nombre": "Uno con el ocultismo",
-    "Tipo": "Humano",
-    "Prerrequisitos": "Ser Humano, ser Maestro en Conocimiento del Ocultismo",
+    "Tipo": "Personaje",
+    "Nivel": null,
+    "Prerrequisitos": "Ser Maestro en Conocimiento del Ocultismo",
     "Descripcion": "Tu conocimiento sobre el ocultismo es tan profundo que ha deformado tu esencia. Ganas los siguientes beneficios:\n\n    • Ganas Sentido Espectral en un radio de 10 metros.\n\n    • Sientes todos los objetos de naturaleza mágica o mística a menos de 10 metros de ti. Este efecto cuenta como un Sentido a efectos de Rasgos, Dotes y Habilidades que los modifican."
   },
   {
     "Nombre": "Cuerpo cromado",
     "Tipo": "Elemental",
-    "Prerrequisitos": "Ser de Tipo Acero",
+    "Nivel": null,
+    "Prerrequisitos": "Ser Tipo Acero",
     "Descripcion": "La belleza de tu cuerpo viene dada por lo bien cuidado y pulido que está tu acero. Si es inferior, tu Presencia se vuelve igual a tu Resistencia y, si tu Resistencia aumenta, tu Presencia aumenta de la misma forma."
   },
   {
     "Nombre": "Refuerzo extra",
     "Tipo": "Elemental",
-    "Prerrequisitos": "Ser de Tipo Acero, Nivel 11",
+    "Nivel": 11,
+    "Prerrequisitos": "Ser Tipo Acero",
     "Descripcion": "Tu cuerpo resiste demasiado bien el daño que no debería poder aguantar. Elige un Tipo Elemental que no te hace daño súper efectivo. Recibes la mitad de daño de ese Tipo Elemental."
   },
   {
     "Nombre": "Lluvia torrencial",
     "Tipo": "Elemental",
-    "Prerrequisitos": "Ser de Tipo Agua, Nivel 11",
+    "Nivel": 11,
+    "Prerrequisitos": "Ser Tipo Agua",
     "Descripcion": "Aprendes a crear lluvia torrenciales. Ganas los siguientes beneficios:\n\n    • Aprendes el Movimiento Danza lluvia.\n\n    • Cuando creas lluvia con un Movimiento, puedes decidir que esta sea torrencial. Las Tiradas de Ataque a rango de Movimientos que no son de Tipo Agua o Eléctrico se hacen en Desventaja si entran, salen o cruzan esta lluvia torrencial. Además, las Tiradas de Ataque de los Movimientos de Tipo Eléctrico se hacen en Ventaja dentro de esta lluvia torrencial y las Tiradas de Salvación contra dichos Movimientos se hacen en Desventaja."
   },
   {
     "Nombre": "Navegante experto",
     "Tipo": "Elemental",
-    "Prerrequisitos": "Ser de Tipo Agua",
+    "Nivel": null,
+    "Prerrequisitos": "Ser Tipo Agua",
     "Descripcion": "Eres una criatura maestra al navegar las aguas. Ganas los siguientes beneficios:\n\n    • Cuando estás nadando bajo el agua sabes usar las corrientes y la temperatura de esta para guiarte, por lo que tienes Ventaja en Tiradas de Supervivencia y Percepción para orientarte.\n\n    • Estás acostumbrado a las tretas que pueden realizarse bajo el mar, por lo que no puedes ser Sorprendido cuando estás nadando en un cuerpo de agua, a no ser que asalten desde la oscuridad.\n\n    • Cuando una criatura te monta bajo el agua, puedes crear una burbuja de aire para que esta pueda respirar incluso si no es de Tipo Agua y que lo protege de las altas presiones submarinas."
   },
   {
     "Nombre": "Crecimiento acelerado",
     "Tipo": "Elemental",
-    "Prerrequisitos": "Ser de Tipo Bicho",
+    "Nivel": null,
+    "Prerrequisitos": "Ser Tipo Bicho",
     "Descripcion": "Creces y desarrollas tu poder a mayor ritmo que las demás criaturas. Ganas los siguientes beneficios:\n\n    • Puedes Evolucionar un nivel antes de lo normal.\n\n    • Cuentas como 2 niveles más a efectos de que Movimientos puedes aprender de tu Lista de Movimientos por Nivel."
   },
   {
     "Nombre": "Escurridizo",
     "Tipo": "Elemental",
-    "Prerrequisitos": "Ser de Tipo Bicho, Nivel 11",
+    "Nivel": 11,
+    "Prerrequisitos": "Ser Tipo Bicho",
     "Descripcion": "Sabes cómo evitar el conflicto y escapar de cualquier situación. Ganas los siguientes beneficios:\n\n    • Por 1 PP y con la mitad de tu Velocidad, puedes liberarte de cualquier agarre y dejar de estar apresado.\n\n    • Cuando fueses a recibir daño letal, puedes decidir volver a tu Pokéball. Puedes usar este efecto una vez por Escena."
   },
   {
     "Nombre": "Poder legendario",
     "Tipo": "Elemental",
-    "Prerrequisitos": "Ser de Tipo Dragón",
+    "Nivel": null,
+    "Prerrequisitos": "Ser Tipo Dragón",
     "Descripcion": "Cuando fallas una Tirada de Ataque, puedes decidir que la Tirada de Ataque golpee. Puedes usar esta Dote una vez y recuperas este uso cuando Descansas o cuando haces que una criatura caiga a 0 PV."
   },
   {
     "Nombre": "Terror de los pusilánimes",
     "Tipo": "Elemental",
-    "Prerrequisitos": "Ser de Tipo Dragón y no poder evolucionar o ser un Pokémon Legendario",
+    "Nivel": null,
+    "Prerrequisitos": "Ser Tipo Dragón y no poder evolucionar o ser un Pokémon Legendario",
     "Descripcion": "Cuando haces que una criatura caiga a 0 PV, todas las criaturas rivales a menos de 4 metros de ti hacen una Tirada de Salvación de Espíritu con CD = 10 + tu BH + tu FUE, AGI, MEN ó PRE. Si la fallan, ganan 1 Nivel de Asustado de ti y, cuando están asustados de ti de esta forma, todas sus velocidades se vuelven 0."
   },
   {
     "Nombre": "Voluntad del emperador",
     "Tipo": "Elemental",
-    "Prerrequisitos": "Ser de Tipo Dragón",
+    "Nivel": null,
+    "Prerrequisitos": "Ser Tipo Dragón",
     "Descripcion": "Cuando fallas una Tirada de Salvación, puedes decidir pasarla. Puedes usar esta Dote una vez y recuperas este uso cuando Descansas o cuando haces que una criatura caiga a 0 PV."
   },
   {
     "Nombre": "Electropropulsión",
     "Tipo": "Elemental",
-    "Prerrequisitos": "Ser de Tipo Eléctrico, Nivel 11",
+    "Nivel": 11,
+    "Prerrequisitos": "Ser Tipo Eléctrico",
     "Descripcion": "Eres una criatura de pura electricidad y puedes canalizarla para aumentar tu celeridad. Ganas los siguientes beneficios:\n\n    • Aprendes el Movimiento Campo Eléctrico, que no cuenta para el máximo de Movimientos que conoces.\n\n    • Cuando estás acelerado por un Campo Eléctrico tus velocidades aumentan en 2 metros más y  dejas de provocar ataques de oportunidad.\n\n    • Cuando estás acelerado por un Campo Eléctrico, puedes convertir tu Reacción en una Acción  por 2 PP."
   },
   {
     "Nombre": "Parálisis completa",
     "Tipo": "Elemental",
-    "Prerrequisitos": "Ser de Tipo Eléctrico",
+    "Nivel": null,
+    "Prerrequisitos": "Ser Tipo Eléctrico",
     "Descripcion": "Una criatura que queda paralizada por uno de tus Movimientos o Habilidades tira 1d20 al principio de sus turnos. Si la Tirada es inferior o igual a la cantidad de Niveles de Paralizado que tiene la criatura esta no puede tomar Acciones ni Reacciones."
   },
   {
     "Nombre": "Cuerpo espectral",
     "Tipo": "Elemental",
-    "Prerrequisitos": "Ser de Tipo Fantasma",
+    "Nivel": null,
+    "Prerrequisitos": "Ser Tipo Fantasma",
     "Descripcion": "Tu cuerpo puede volverse espectral, lo que te otorga los siguientes beneficios: \n\n    • Puedes atravesar objetos sólidos. Hacerlo cuenta como cruzar Terreno Difícil y, si terminas tu turno dentro de uno de estos, eres expulsado del objeto por el lado más cercano posible y pierdes una cantidad de PV igual a tu Nivel multiplicado por la distancia en metros que recorres al ser expulsado.\n\n    • No puedes ser agarrado ni apresado en contra de tu voluntad."
   },
   {
     "Nombre": "Maldición tenebrosa",
     "Tipo": "Elemental",
-    "Prerrequisitos": "Ser de Tipo Fantasma, Nivel 11",
+    "Nivel": 11,
+    "Prerrequisitos": "Ser Tipo Fantasma",
     "Descripcion": "Cuando usas un Movimiento que no hace daño y que genera un Estado sobre una o varias criaturas si fallan una Tirada de Salvación de Espíritu puedes hacer que, además, la criatura gane esa misma cantidad de Niveles de Asustado."
   },
   {
     "Nombre": "Quemaduras de tercer grado",
     "Tipo": "Elemental",
-    "Prerrequisitos": "Ser de Tipo Fuego",
+    "Nivel": null,
+    "Prerrequisitos": "Ser Tipo Fuego",
     "Descripcion": "Las quemaduras que infliges son tan profundas que causan daño a las criaturas que las sufren. Al final de cada uno de sus turnos, una criatura quemada por ti pierde PV equivalentes a una cantidad de d4 igual a su Bono de Habilidad. Una criatura a 0 PV no recibe daño de esta forma."
   },
   {
     "Nombre": "Sol calcinador",
     "Tipo": "Elemental",
-    "Prerrequisitos": "Ser de Tipo Fuego, Nivel 11.",
+    "Nivel": 11,
+    "Prerrequisitos": "Ser Tipo Fuego",
     "Descripcion": "Aprendes a crear un sol abrasador tan poderoso que puede quemar a las criaturas. Ganas los siguientes beneficios:\n\n    • Aprendes el Movimiento Día Soleado.\n\n    • Cuando creas sol abrasador con tu Día Soleado, puedes decidir que este sea especialmente potente. Si lo haces, una criatura que no es de Tipo Fuego que acaba su turno bajo este sol estando ya acalorada hace una Tirada de Salvación de Resistencia contra un CD = 10 + tu BH + Tu FUE, AGI, MEN ó PRE. Si la falla, gana 1 Nivel de Quemado."
   },
   {
     "Nombre": "Amor febril",
     "Tipo": "Elemental",
-    "Prerrequisitos": "Ser de Tipo Hada",
+    "Nivel": null,
+    "Prerrequisitos": "Ser Tipo Hada",
     "Descripcion": "Cuando fueses a dejar infatuada a una criatura que ya está infatuada, esta queda enamorada de ti hasta que deje de estar infatuada. Una criatura enamorada de ti no toma ninguna acción que pueda ser dañina para ti y, como Acción, puedes pedirle que tome una Acción que no sea perjudicial para ella. Esta hace una Tirada de Salvación de Espíritu de CD = 10 + tu BH + tu PRE y, si la falla, debe seguir el curso de acción que has descrito de la mejor forma posible."
   },
   {
     "Nombre": "Vapores infatuadores",
     "Tipo": "Elemental",
-    "Prerrequisitos": "Ser de Tipo Hada, Nivel 11.",
+    "Nivel": 11,
+    "Prerrequisitos": "Ser Tipo Hada",
     "Descripcion": "Puedes crear campos de niebla que infatúan a tus rivales. Ganas los siguientes beneficios:\n\n    • Aprendes el Movimiento Campo de Niebla, que no cuenta para el máximo de Movimientos que conoces.\n\n    • Ves a través de la niebla de los Campos de Niebla que creas.\n\n    • Cuando usas un Campo de Niebla, puedes decidir que emita magia infatuadora. Una criatura que no es de Tipo Hada que acaba su turno en un campo que emite esta magia debe hacer una Salvación de Espíritu de CD = 10 + tu BH + tu MEN ó PRE. Si la falla, gana 1 Nivel de infatuado de ti."
   },
   {
     "Nombre": "Congelación",
     "Tipo": "Elemental",
-    "Prerrequisitos": "Ser de Tipo Hielo",
+    "Nivel": null,
+    "Prerrequisitos": "Ser Tipo Hielo",
     "Descripcion": "Cuando una criatura gana Niveles de Helado debido a uno de tus efectos y esta tiene 3 o más Niveles de Helado, queda Congelada hasta el final de su próximo turno. Una criatura Congelada deja de estar acalorada, queda apresada y no puede usar Movimientos que no sean de Tipo Fuego.\n\nLa primera vez que la criatura reciba daño mientras está congelada, recibe el doble de ese daño. Una criatura que recibe daño estando congelada deja de estarlo y queda con 3 Niveles de Helado.\n\nAdemás, si los niveles de Helado de la criatura caen por debajo de 3 o la criatura usa un Movimiento de Tipo Fuego, deja de estar Congelada."
   },
   {
     "Nombre": "Escudo níveo",
     "Tipo": "Elemental",
-    "Prerrequisitos": "Ser de Tipo Hielo, Nivel 11",
+    "Nivel": 11,
+    "Prerrequisitos": "Ser Tipo Hielo",
     "Descripcion": "Aprendes a crear nevadas y a defenderte con ellas. Ganas los siguientes beneficios:\n\n    • Aprendes el Movimiento Paisaje Nevado.\n\n    • Cuando acabas tu turno en una nevada, ganas una cantidad de Puntos de Escudo igual a tu Espíritu.\n\n    • Las criaturas Heladas bajo tu nevada no pueden aumentar sus velocidades y estas se reducen a la mitad."
   },
   {
     "Nombre": "Lucha en tándem",
     "Tipo": "Elemental",
-    "Prerrequisitos": "Ser de Tipo Lucha",
+    "Nivel": null,
+    "Prerrequisitos": "Ser Tipo Lucha",
     "Descripcion": "Has aprendido a aprovechar las oportunidades que te brindan tus aliados en combate. Cuando un aliado provoca que una criatura a 1 metro de ti quede asustada, confusa, infatuada, envenenada, quemada, paralizada, congelada, dormida, cegada o apresada, o si es agarrada o empujada contra su voluntad, puedes usar tu Reacción y gastar 1 PP para realizar un Movimiento que no te cueste PP. Este Movimiento debe incluir una Tirada de Ataque cuerpo a cuerpo contra la criatura."
   },
   {
     "Nombre": "Romper las barreras",
     "Tipo": "Elemental",
-    "Prerrequisitos": "Ser de Tipo Lucha",
+    "Nivel": null,
+    "Prerrequisitos": "Ser Tipo Lucha",
     "Descripcion": "Tus golpes son capaces de demoler cualquier estructura y escudo. Ganas los siguientes beneficios:\n\n    • El daño que haces a estructuras y objetos con tus Movimientos se duplica.\n\n    • Cuando realizas una Tirada de Ataque con un Movimiento de Tipo Lucha contra una criatura bajo los efectos de un Movimiento con la Etiqueta de Escudo, lo ignoras. Además, si golpeas con dicha Tirada de Ataque, los efectos de Escudo que afectan a la criatura objetivo acaban prematuramente."
   },
   {
     "Nombre": "Físico adaptable",
     "Tipo": "Elemental",
-    "Prerrequisitos": "Ser un Pokémon de Tipo Normal",
+    "Nivel": null,
+    "Prerrequisitos": "Ser Tipo Normal",
     "Descripcion": "Eres una criatura muy versátil. Cuando ganas esta dote puedes realizarte los siguientes cambios:\n\n    • Puedes redistribuir todas tus Estadísticas, cambiándolas unas por otras.\n\n    • Si calculas tu CA con Resistencia, puedes calcularla como el mismo valor fijo menos 2 más tu Agilidad más tu Bono de Habilidad y si la calculas con Agilidad, puedes calcularla como el mismo valor fijo más dos más tu Resistencia más tu Bono de Habilidad.\n\n    • Puedes redistribuir los bonos que ganas en las Tiradas de Salvación.\n\n    • Puedes cambiar la Tirada de Habilidad en la que eres Naturalmente Hábil, así como tu Naturaleza."
   },
   {
     "Nombre": "Movimientos versátiles",
     "Tipo": "Elemental",
-    "Prerrequisitos": "Ser un Pokémon de Tipo Normal",
+    "Nivel": null,
+    "Prerrequisitos": "Ser Tipo Normal",
     "Descripcion": "Cuando tomas esta Dote, eliges tres Movimientos de tu Lista de Movimientos por Nivel y los cambias por Movimientos con el mismo Coste de tu Lista de Movimientos Enseñables. Si conoces alguno de los Movimientos que cambias por otro, los olvidas y aprendes el que has seleccionado en su lugar."
   },
   {
     "Nombre": "Hierba alta",
     "Tipo": "Elemental",
-    "Prerrequisitos": "Ser de Tipo Planta, Nivel 11",
+    "Nivel": 11,
+    "Prerrequisitos": "Ser Tipo Planta",
     "Descripcion": "Tu poder te permite crear grandes campos de hierba. Ganas los siguientes beneficios:\n\n    • Aprendes el Movimiento Campo de Hierba, que no cuenta para el máximo de Movimientos que conoces.\n\n    • Cuando creas un Campo de Hierba, puedes decidir que la hierba sea alta. Si lo decides, las criaturas de tamaño mediano o menor que pisan el campo de hierba no puede ver más allá de un metro, pues la hierba bloquea su visión. Además, este Campo de Hierba se considera Terreno Difícil para las criaturas que no son de Tipo Planta.\n\n    • Si recuperas PV dentro de este Campo de Hierba, recuperas una cantidad de PV extra igual a tu RES o ESP."
   },
   {
     "Nombre": "Revitalizar la naturaleza",
     "Tipo": "Elemental",
-    "Prerrequisitos": "Ser de Tipo Planta, Nivel 11",
+    "Nivel": 11,
+    "Prerrequisitos": "Ser Tipo Planta",
     "Descripcion": "Tu poder te permite multiplicar y sanar la vegetación y criaturas de tu entorno. Ganas los siguientes beneficios:\n\n    • Puedes multiplicar plantas y bayas. Como Acción extendida, puedes multiplicar una o varias bayas y plantas que tocas que han crecido de forma natural y que aun no han sido recolectadas. La suma de los costes de las bayas y plantas producidas no puede superar en valor una cantidad de Poké dólares igual a 100 por tu Nivel. Puedes usar este beneficio de nuevo hasta que Descanses.\n\n    • Como una Acción Extendida que dura un minuto, puedes restaurar la salud de las plantas en un radio de 5 metros a tu alrededor, incluso se estaban casi completamente quemadas, deshidratadas o envenenadas.\n\n    • Como una Acción Extendida que dura un minuto, puedes hacer que una criatura afectada por los efectos nocivos asociados a caer inconsciente por el veneno se libere de estos."
   },
   {
     "Nombre": "Campo psíquico selectivo",
     "Tipo": "Elemental",
-    "Prerrequisitos": "Ser de Tipo Psíquico, Nivel 11",
+    "Nivel": 11,
+    "Prerrequisitos": "Ser Tipo Psíquico",
     "Descripcion": "Tu poder psíquico te permite crear y dar forma a tu campo psíquico. Ganas los siguientes beneficios:\n\n    • Aprendes el Movimiento Campo Psíquico, que no cuenta para el máximo de Movimientos que conoces.\n\n    • Cuando usas el Movimiento Campo Psíquico, puedes darle forma y designar a criaturas para que no sean afectadas por este, independientemente de si son de Tipo Psíquico o no."
   },
   {
     "Nombre": "Nublar mentes",
     "Tipo": "Elemental",
-    "Prerrequisitos": "Ser de Tipo Psíquico",
+    "Nivel": null,
+    "Prerrequisitos": "Ser Tipo Psíquico",
     "Descripcion": "Cuando una criatura gana Niveles de Confusión debido a uno de tus efectos y esta tiene 3 o más Niveles de Confusión y haces que gane Niveles de Confusión le nublas la mente completamente. Si una criatura confundida de esta forma por ti tira un 2, en el d4 que lanza al principio de cada uno de sus turnos fruto de su confusión, debe utilizar su Acción para golpearse a sí mismo usando uno de sus Movimientos que no le cuestan PP contra sí misma y, si tira un 1, además de esto sólo se puede mover en una dirección aleatoria, provocando ataques de oportunidad, los cuales se realizan en Ventaja (puedes tirar 1d4 o 1d8 para decidir la dirección)."
   },
   {
     "Nombre": "Escudo de las arenas",
     "Tipo": "Elemental",
-    "Prerrequisitos": "er de Tipo Roca, Nivel 11",
+    "Nivel": 11,
+    "Prerrequisitos": "Ser Tipo Roca",
     "Descripcion": "Aprendes a crear Tormentas de Arena y a defenderte con ellas. Ganas los siguientes beneficios:\n\n    • Aprendes el Movimiento Tormenta de Arena.\n\n    • Cuando acabas tu turno en una tormenta de arena, ganas una cantidad de Puntos de Escudo igual a tu Resistencia."
   },
   {
     "Nombre": "Inquebrantable",
     "Tipo": "Elemental",
-    "Prerrequisitos": "Ser de Tipo Roca",
+    "Nivel": null,
+    "Prerrequisitos": "Ser Tipo Roca",
     "Descripcion": "Cuando recibes daño súper efectivo, puedes usar tu Reacción y usar 2 PP para que deje de serlo. El coste de usar esta Reacción aumenta en 2 PP por cada vez que la has usado desde el inicio de la Escena."
   },
   {
     "Nombre": "Infligir terror",
     "Tipo": "Elemental",
-    "Prerrequisitos": "Ser de Tipo Siniestro, Nivel 11",
+    "Nivel": 11,
+    "Prerrequisitos": "Ser Tipo Siniestro",
     "Descripcion": "Eres una criatura capaz de infligir tanto terror que este despierta el instinto de huida en tus rivales. Cuando una criatura gana Niveles de Asustado debido a uno de tus efectos y esta tiene 3 o más Niveles de Asustado, queda Aterrada hasta el final de su próximo turno. Tienes Ventaja en Tiradas de d20 contra las Criaturas que están Aterradas de ti y contra los efectos que estas provocan.\n\nAdemás, si los Niveles de Asustado de la Criatura caen por debajo de 3 o sales de su campo de visión esta deja de estar Aterrada. "
   },
   {
     "Nombre": "Manto de la noche",
     "Tipo": "Elemental",
-    "Prerrequisitos": "Ser de Tipo Siniestro",
+    "Nivel": null,
+    "Prerrequisitos": "Ser Tipo Siniestro",
     "Descripcion": "Eres uno con la oscuridad y sabes esconderte en esta. Cuando estás en una localización Mal iluminada, puedes usar tu Acción para hacer una Tirada enfrentada de Sigilo (Agilidad) contra la Percepción (Espíritu) a más de un metro de ti que te ven Mal iluminado. Si ganas la Tirada enfrentada, las criaturas no pueden verte hasta que usen una Acción para buscarte (repitiendo la tirada) o recibas daño."
   },
   {
     "Nombre": "Arenas movedizas",
     "Tipo": "Elemental",
-    "Prerrequisitos": "Ser de Tipo Tierra, Nivel 11",
+    "Nivel": 11,
+    "Prerrequisitos": "Ser Tipo Tierra",
     "Descripcion": "El Terreno Difícil que creas se llena de arenas movedizas. Cuando una criatura termina su turno en Terreno Difícil que tu has creado, hace una Tirada de Salvación de Fuerza con CD = 10 + tu BH  + tu FUE, AGI ó MEN. Si falla, queda apresada por las arenas movedizas. Una criatura puede repetir la Tirada de Salvación como Acción, liberándose si la pasa."
   },
   {
     "Nombre": "Efecto sísmico",
     "Tipo": "Elemental",
-    "Prerrequisitos": "Ser de Tipo Tierra, conocer un Movimiento con la Etiqueta “Por Tierra”",
+    "Nivel": null,
+    "Prerrequisitos": "Ser Tipo Tierra, conocer un Movimiento con la Etiqueta “Por Tierra”",
     "Descripcion": "Cuando afectas el suelo con uno de tus Movimientos, creas ondas sísmicas que hacen temblar el suelo. Cuando una criatura falla una Tirada de Salvación contra uno de tus Movimientos con la Etiqueta “Por Tierra”, cae tumbada al suelo."
   },
   {
     "Nombre": "Choque tóxico",
     "Tipo": "Elemental",
-    "Prerrequisitos": "Ser de Tipo Veneno, Nivel 11",
+    "Nivel": 11,
+    "Prerrequisitos": "Ser Tipo Veneno",
     "Descripcion": "Tu veneno enferma de gravedad a las criaturas a las que afecta y las vuelve más vulnerables a tus toxinas. Cuando haces daño de Tipo Veneno a una criatura envenenada con uno de tus Movimientos, añades 2 dados al daño contra esa criatura."
   },
   {
     "Nombre": "Toxinas progresivas",
     "Tipo": "Elemental",
-    "Prerrequisitos": "Ser de Tipo Veneno, Nivel 11",
+    "Nivel": 11,
+    "Prerrequisitos": "Ser Tipo Veneno",
     "Descripcion": "Tu veneno aumenta en potencia a más tiempo pasa dentro de una criatura. La pérdida de vida que genera el estar envenenado por uno de tus Movimientos o Habilidades aumenta en 1d4 por cada turno que la criatura que pasa envenenada, hasta un máximo de 6d4 extra."
   },
   {
     "Nombre": "Corriente ascendente",
     "Tipo": "Elemental",
-    "Prerrequisitos": "Ser de Tipo Volador y tener Velocidad de Vuelo",
+    "Nivel": null,
+    "Prerrequisitos": "Ser Tipo Volador y tener Velocidad de Vuelo",
     "Descripcion": "Eres un volador experto, especializado en atacar desde los cielos a las criaturas en el suelo. Ganas los siguientes beneficios:\n\n    • Si al principio de tu turno estás volando, puedes decidir planear en lugar de controlar tu vuelo hasta el final de tu turno. Al planear te mueves 3 metros en línea recta en una dirección paralela al suelo. Mientras estás planeando tienes Ventaja en Tiradas de Ataque a rango contra criaturas que están a ras del suelo.\n\n    • No tienes Desventaja en Tiradas de Ataque a más de 5 metros de distancia a causa de usar tu Velocidad de Vuelo."
   },
   {
     "Nombre": "Creador de brisas",
     "Tipo": "Elemental",
-    "Prerrequisitos": "Ser de Tipo Volador, Nivel 11",
+    "Nivel": 11,
+    "Prerrequisitos": "Ser Tipo Volador",
     "Descripcion": "El viento se arremolina a tu alrededor para protegerte. Ganas los siguientes beneficios:\n\n    • Cuando usas un Movimiento de Tipo Volador, los ataques de oportunidad que generas se hacen en Desventaja por el resto del turno.\n\n    • Cuando una criatura recibe daño de uno de tus Movimientos con la Etiqueta de Viento, este es empujado 1 metro de ti."
   }
 ]

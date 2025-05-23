@@ -79,51 +79,66 @@ import { RouterLink } from 'vue-router'
         <!-- ============ INFO "SOBRE NOSOTROS" ============= -->
 
         <section id="infoNosotros">
-            <div>
-                <div id=imgInfoNosotros>
-                    <img src="../assets/img/literalmentenosotros.jpg" alt="">
-                </div>
-                <div id=textoInfoNosotros>
-                    <h2 class="tituloInfo">¿Quienes somos?</h2>
-                    <!-- Texto de ejemplo, reemplazar en la version final -->
-                    <p class="textoInfo">Un día, un grupo de amigos y yo estábamos buscando algo nuevo para jugar, y
-                        Ruben propuso: "¿Qué
-                        tal un juego de rol de Pokémon?". Al principio, no había ningún sistema que nos convenciera, así
-                        que decidimos crear el nuestro. Usamos dados de muchas caras y diseñamos un sistema donde tanto
-                        los entrenadores como los Pokémon podían evolucionar y formar una relación más profunda.
-                        Queríamos que las decisiones de los jugadores influyeran en la historia.</p>
-                </div>
+
+            <div id=imgInfoNosotros>
+                <img src="../assets/img/literalmentenosotros.webp" alt="">
             </div>
+            <div class="textoInfo">
+                <h2>¿Quienes somos?</h2>
+                <p>
+                    Somos un grupito de amigos que comenzó a jugar rol por Discord desde hace ya algunos años. Empezamos
+                    a jugar una campaña de Pokémon y, como no encontramos un sistema que nos convencía, adaptamos uno
+                    que ya conocíamos, el clásico Dragones y Mazmorras (D&D) de 5ª edición.
+                </p>
+                <p>
+                    Tras las primeras partidas haciendo malabares para que no desentonaran un "Artificiero", un "Pícaro"
+                    y un "Bardo" en el mundo de Pokémon, nuestro querido DJ llego una tarde diciendo "Chavales, mirar
+                    esto" y de alguna forma que no entendemos, el que decía nunca tener tiempo libre ya había escrito
+                    300 páginas de su propio sistema de rolplay de Pokémon.
+                </p>
+                <p>
+
+                    Desde entonces jugamos la camñana con ese sistema. Ayudando a mejorar, añadir, corregir y pulir lo
+                    que ahora se llama <strong>Pokémon Roleplaying Adventure</strong> (o <strong>PRA</strong> para
+                    abreviar). Y finalmente, tras un par de años, lo hicimos público para aquellos fans del rol y
+                    Pokémon.
+                </p>
+            </div>
+
         </section>
 
-        <!-- ============ INFO "CONTACTOS" ============= -->
-        <section id="bloqueInfo2">
-            <article id="infoRedes">
-                <div>
-                    <h2 class="tituloInfo">¡Unete a nuestra comunidad!</h2>
 
-                    <p class="textoInfo">
+        <section id="infoBloque">
+
+            <!-- ============ INFO "CONTACTOS" ============= -->
+            <article id="infoContacto">
+                <div>
+                    <h2>¡Unete a nuestra comunidad!</h2>
+                    <RouterLink to=""><img src="../assets/icons/discord.webp" alt=""></RouterLink>
+                </div>
+                <div >
+                    <p>
                         Puedes unirte a nuestra comunidad de discord para saber más, preguntarnos directamente tus dudas
                         y hacer amigos con los que jugar ¿A que estas esperando?
-                        <br><br>
+                    </p>
+                    <p>
                         Tambien podras compartir con todos tus propias historias, opiniones, arte y mucho más :D
                     </p>
                 </div>
-                <RouterLink to=""><img src="../assets/icons/discord.webp" alt="" width="50px"></RouterLink>
 
             </article>
 
             <!-- ============ INFO "DESCAGARS" ============= -->
 
-            <article id="infoDescargas">
-                <h2 class="tituloInfo">Descarga las ultimas versiones</h2>
+            <article id="descargaPDF">
+                <h2>Descarga las ultimas versiones</h2>
                 <RouterLink to="" target="_blank">
                     <div>PDF Base</div>
                 </RouterLink>
-                <RouterLink to="">
+                <RouterLink to="" target="_blank">
                     <div>PDF Pokedex</div>
                 </RouterLink>
-                <RouterLink to="">
+                <RouterLink to="" target="_blank">
                     <div>PDF Pokedex DM</div>
                 </RouterLink>
             </article>
@@ -167,6 +182,12 @@ import { RouterLink } from 'vue-router'
 
 
 <style scoped>
+main {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
 /* ======================= SECTION DE BLOQUES DEL INDEX ======================= */
 #menuPlayer {
     /* Margen con el header */
@@ -275,77 +296,217 @@ solo cambia el tamaños de los bloques y el margen con el header*/
 
 }
 
-
-/* ======================= SECCIÓN INFO ======================= */
-#infoNosotros,
-#bloqueInfo2 {
+#infoNosotros {
     width: 90%;
-    margin-top: 50px;
+    max-width: 1700px;
+    max-height: 650px;
+    margin-top: 60px;
     display: flex;
     align-self: center;
-}
-
-#infoNosotros {
     overflow: hidden;
-}
-
-#infoNosotros,
-#infoDescargas,
-#infoRedes {
-    border-radius: 15px;
+    border-radius: 10px;
     background-color: var(--color-fondoTexto);
     border: 1px solid var(--color-principal1);
     box-shadow: 0px 0px 4px var(--color-principal1);
     color: var(--color-texto);
 }
 
+.textoInfo {
+    padding: 30px 20px;
+    width: 90%;
+}
+
+.textoInfo p {
+    line-height: 30px;
+    padding: 15px;
+    font-size: 18px;
+    text-align: justify;
+}
+
 #imgInfoNosotros {
-    width: 100%;
-    height: 200px;
     overflow: hidden;
+    width: 60%;
 }
 
 #imgInfoNosotros img {
     width: 100%;
+    height: 100%;
     object-fit: cover;
-    object-position: top;
-    display: block;
-    transform: translateY(-20px);
 }
 
-.textoInfo {
-    padding: 0 15px 15px 15px;
-    font-size: 14px;
-    text-align: justify;
+@media screen and (max-width:1050px) {
+    .textoInfo p {
+        line-height: 25px;
+        font-size: 15px;
+    }
 }
 
-.tituloInfo {
-    margin: 10px;
-    font-size: 18px;
+@media screen and (max-width:750px) {
+    #infoNosotros {
+        flex-direction: column;
+        max-height: none;
+    }
+
+    .textoInfo {
+        padding: 10px;
+        width: 100%;
+    }
+
+    .textoInfo p {
+        padding: 10px;
+        font-size: 16px;
+    }
+
+    #imgInfoNosotros {
+        overflow: hidden;
+        width: 100%;
+        max-height: 300px;
+
+    }
+
+    #imgInfoNosotros img {
+        object-position: top;
+
+    }
 }
+
+
+
+
+/* ======================= SECCIÓN INFO =======================  */
+
 
 /* ======================= ARTICLE REDES ======================= */
-#infoRedes {
+
+#infoBloque {
+    width: 90%;
+    max-width: 1700px;
+    max-height: 650px;
+    margin-top: 60px;
     display: flex;
+    align-self: center;
+    color: var(--color-texto);
+    gap: 20px;
 }
 
-#infoRedes a {
-    margin: 45px 10px;
-}
-
-/* ======================= ARTICLE DESCARGAS ======================= */
-#bloqueInfo2 {
+#infoContacto {
+    display: flex;
     flex-direction: column;
-    gap: 30px;
+    align-self: center;
+    width: 70%;
+    min-width: 280px;
+    padding: 24px 20px;
+    border-radius: 15px;
+    background-color: var(--color-fondoTexto);
+    border: 1px solid var(--color-principal1);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+
 }
 
-#infoDescargas div {
-    border: 1px solid var(--color-principal1);
-    background-color: var(--color-BloqueDescargas);
-    border-radius: 10px;
-    padding: 10px;
-    margin: 10px;
+#infoContacto > div:first-child {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 10px;
 }
+
+#infoContacto img,
+#infoContacto a {
+    width: 48px;
+    height: 48px;
+    display: inline-block;
+    transition: transform 0.2s;
+}
+
+
+#infoContacto a:hover img {
+    transform: scale(1.15) rotate(-8deg);
+    filter: drop-shadow(0 0 6px var(--color-principal1));
+}
+
+#infoContacto > div:last-child p {
+    text-align: justify;
+    font-size: 1rem;
+    color: var(--color-texto, #e0e0e0);
+    margin: 10px 0 0 0;
+    line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+    #infoContacto {
+        width: 90%;
+        max-width: 100%;
+        padding: 16px 8px;
+    }
+    #infoContacto h2 {
+        font-size: 1.1rem;
+    }
+    #infoContacto img,
+    #infoContacto a {
+        width: 38px;
+        height: 38px;
+    }
+}
+/* ======================= ARTICLE DESCARGAS ======================= */
+#descargaPDF {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40%;
+    min-width: 250px;
+    padding: 24px 20px;
+    border-radius: 15px;
+    background-color: var(--color-fondoTexto);
+    border: 1px solid var(--color-principal1);
+    gap: 18px;
+}
+
+#descargaPDF h2 {
+    font-size: 1.3rem;
+    color: var(--color-principal1);
+    margin-bottom: 18px;
+    font-weight: 700;
+    text-align: center;
+}
+
+#descargaPDF a {
+    width: 100%;
+    text-decoration: none;
+}
+
+#descargaPDF div {
+    width: 100%;
+    background-color: var(--color-principal1);
+    border-radius: 8px;
+    padding: 12px 0;
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: background 0.2s, color 0.2s, transform 0.15s;
+    cursor: pointer;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+
+#descargaPDF div:hover {
+    background-color: var(--color-hoverBloque);
+    transform: scale(1.04);
+}
+
+@media (max-width: 900px) {
+    #descargaPDF {
+        max-width: 100%;
+        padding: 16px 8px;
+    }
+    #descargaPDF h2 {
+        font-size: 1.1rem;
+    }
+    #descargaPDF div {
+        font-size: 1rem;
+        padding: 10px 0;
+    }
+}
+
 
 /* ======================= SECTION PREGUNTAS FRECUENTES ======================= */
 #infoFAQ {
@@ -362,49 +523,5 @@ solo cambia el tamaños de los bloques y el margen con el header*/
     border-bottom: 1px solid gray;
     padding: 10px;
     font-size: 13px;
-}
-
-/* ======================= DISEÑO RESPONSIVO DE LOS SECTION DE INFORMACION Y PREGUNTAS FRECUENTES ======================= */
-@media screen and (min-width:600px) {
-
-    #infoNosotros,
-    #bloqueInfo2 {
-        width: 80%;
-    }
-
-    #infoNosotros div {
-        display: flex;
-    }
-
-    #textoInfoNosotros {
-        width: 50%;
-        flex-direction: column;
-        font-size: 16px;
-        line-height: 30px;
-    }
-
-    #imgInfoNosotros {
-        width: 50%;
-        height: 100%;
-    }
-
-    #imgInfoNosotros img {
-        object-position: unset;
-        transform: none;
-    }
-
-    #FAQ div {
-        font-size: 15px;
-    }
-}
-
-@media screen and (min-width:800px) {
-    #bloqueInfo2 {
-        flex-direction: row;
-    }
-
-    #infoDescargas {
-        width: 60%;
-    }
 }
 </style>

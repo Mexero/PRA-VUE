@@ -66,7 +66,7 @@ watch(() => route.fullPath, () => {
             <li class="buscador">
                 <form method="get" class="buscar">
                     <fieldset class="barraBuscar">
-                        <input type="text" class="search-input" placeholder="Buscar" aria-label="Buscar" />
+                        <input type="text" class="search-input" placeholder="Buscar" aria-label="Buscar" name="buscador" />
                         <button type="submit" class="search-button" aria-label="Buscar">
                             <img src="../assets/icons/lupa.svg" alt="Icono de búsqueda" />
                         </button>
@@ -119,7 +119,7 @@ watch(() => route.fullPath, () => {
                     <li class="buscador">
                         <form method="get" class="buscar">
                             <fieldset class="barraBuscar">
-                                <input type="text" class="search-input" placeholder="Buscar" aria-label="Buscar" />
+                                <input type="text" class="search-input" placeholder="Buscar" aria-label="Buscar" name="buscador" />
                                 <button type="submit" class="search-button" aria-label="Buscar">
                                     <img src="../assets/icons/lupa.svg" alt="Icono de búsqueda" />
                                 </button>
