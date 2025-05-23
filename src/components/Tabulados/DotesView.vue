@@ -93,9 +93,7 @@ const mostrarFiltros = ref(false);
 
 //Filtros
 const filtroTipos = ref(route.query.tipos ? route.query.tipos.split(",") : []);
-const filtroPrerrequisitos = ref(
-    route.query.prerrequisitos ? route.query.prerrequisitos.split(",") : []
-);
+const filtroPrerrequisitos = ref(route.query.prerrequisitos ? route.query.prerrequisitos : null);
 const filtroNivelMin = ref(
     route.query.nivelMin ? Number(route.query.nivelMin) : null
 );
@@ -116,8 +114,6 @@ const ordenAscendente = ref(route.query.ordenAscendente !== "false");
 
 // =================== CARGAR DATOS AL ABRIR ==================
 
-
-const filtroPrerrequisitosRadio = ref("Todos");
 onMounted(async () => {
     try {
         const res = await fetch("/data/json/dotes/dotes.json");
@@ -150,7 +146,7 @@ function seleccionarDote(dote) {
 // ======================== LIMPIAR FILTROS ============================
 function limpiarFiltros() {
     filtroTipos.value = [];
-    filtroPrerrequisitos.value = [];
+    filtroPrerrequisitos.value = null;
     filtroNivelMin.value = null;
     filtroNivelMax.value = null;
     filtroNombre.value = "";
@@ -174,8 +170,8 @@ watch(
     () => {
         const query = {
             tipos: filtroTipos.value.length ? filtroTipos.value.join(",") : undefined,
-            prerrequisitos: filtroPrerrequisitos.value.length
-                ? filtroPrerrequisitos.value.join(",")
+            prerrequisitos: filtroPrerrequisitos.value ?
+                filtroPrerrequisitos.value
                 : undefined,
             nivelMin:
                 filtroNivelMin.value !== null ? filtroNivelMin.value : undefined,
@@ -211,9 +207,9 @@ const dotesFiltrados = computed(() => {
 
         // Filtro de prerrequisitos por radio
         let pasaFiltroPrerrequisitos = true;
-        if (filtroPrerrequisitosRadio.value === "Si") {
+        if (filtroPrerrequisitos.value === "Si") {
             pasaFiltroPrerrequisitos = !!dot.Prerrequisitos && dot.Prerrequisitos.trim() !== "";
-        } else if (filtroPrerrequisitosRadio.value === "No") {
+        } else if (filtroPrerrequisitos.value === "No") {
             pasaFiltroPrerrequisitos = !dot.Prerrequisitos || dot.Prerrequisitos.trim() === "";
         }
         // "Todos" deja pasaFiltroPrerrequisitos en true
@@ -248,7 +244,7 @@ const dotesFiltrados = computed(() => {
 
     return resultado;
 });
- 
+
 
 </script>
 
@@ -298,17 +294,17 @@ const dotesFiltrados = computed(() => {
                                 <div>
                                     <label>
                                         <input type="radio" name="tienePrerrequisitos" value="Si"
-                                            v-model="filtroPrerrequisitosRadio" />
+                                            v-model="filtroPrerrequisitos" />
                                         Si
                                     </label>
                                     <label>
                                         <input type="radio" name="tienePrerrequisitos" value="No"
-                                            v-model="filtroPrerrequisitosRadio" />
+                                            v-model="filtroPrerrequisitos" />
                                         No
                                     </label>
                                     <label>
                                         <input type="radio" name="tienePrerrequisitos" value="Todos"
-                                            v-model="filtroPrerrequisitosRadio" />
+                                            v-model="filtroPrerrequisitos" />
                                         Todos
                                     </label>
                                 </div>
@@ -395,13 +391,14 @@ const dotesFiltrados = computed(() => {
 </template>
 
 <style scoped>
-.titulo{
+.titulo {
     letter-spacing: 5px;
     font-family: "Staatliches", sans-serif;
-    color:var(--color-texto);
+    color: var(--color-texto);
     font-size: 50px;
     padding: 10px 0 0px 2%;
 }
+
 .paddingBloque {
     padding: 15px;
 }
@@ -530,7 +527,7 @@ input::-webkit-inner-spin-button {
     pointer-events: none;
     cursor: pointer;
     -webkit-appearance: none;
-        appearance: none;
+    appearance: none;
 
 }
 
@@ -543,7 +540,7 @@ input[type="range"]::-webkit-slider-thumb {
     background: #555;
     pointer-events: auto;
     -moz-appearance: none;
-        appearance: none;
+    appearance: none;
 
     -webkit-appearance: none;
 }
@@ -642,13 +639,14 @@ thead {
 
 
 .tabla th:nth-child(1) {
-        width: 20%;
+    width: 20%;
 
 }
 
-.tabla th:nth-child(2),.tabla td:nth-child(2) {
+.tabla th:nth-child(2),
+.tabla td:nth-child(2) {
     width: 15%;
-        text-align: center;
+    text-align: center;
 
 }
 
@@ -658,7 +656,7 @@ thead {
 }
 
 .tabla td:nth-child(3) {
-        text-align: center;
+    text-align: center;
 
 
 }

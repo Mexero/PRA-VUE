@@ -86,22 +86,21 @@ import { RouterLink } from 'vue-router'
             <div class="textoInfo">
                 <h2>¿Quienes somos?</h2>
                 <p>
-                    Somos un grupito de amigos que comenzó a jugar rol por Discord desde hace ya algunos años. Empezamos
-                    a jugar una campaña de Pokémon y, como no encontramos un sistema que nos convencía, adaptamos uno
-                    que ya conocíamos, el clásico Dragones y Mazmorras (D&D) 5ª edición.
+                    Somos un grupito de amigos que comenzó a jugar rol por Discord desde hace algunos años. Empezamos
+                    a jugar una campaña de Pokémon y, como no encontramos un sistema que nos terminara de convencer
+                    adaptamos uno con el que éramos muy cercanos, el clásico Dragones y Mazmorras (D&D) 5ª edición.
                 </p>
                 <p>
                     Tras las primeras partidas haciendo malabares para que no desentonaran un "Artificiero", un "Pícaro"
-                    y un "Bardo" en el mundo de Pokémon, nuestro querido DJ llego una tarde diciendo "Chavales, mirar
-                    esto" y de alguna forma que no entendemos, el que decía nunca tener tiempo libre ya había escrito
-                    300 páginas de su propio sistema de rolplay de Pokémon.
+                    y un "Bardo" en el mundo de Pokémon, nuestro querido DJ llegó diciendo "Chavales, mirad
+                    esto" y, de alguna forma que no entendemos, el que decía nunca tener tiempo libre ya había escrito
+                    300 páginas de su propio sistema de roleplay de Pokémon.
                 </p>
                 <p>
-
-                    Desde entonces jugamos la camñana con ese sistema. Ayudando a mejorar, añadir, corregir y pulir lo
+                    Desde entonces, jugamos la campaña con ese sistema. Ayudando a mejorar, añadir, corregir y pulir lo
                     que ahora se llama <strong>Pokémon Roleplaying Adventure</strong> (o <strong>PRA</strong> para
-                    abreviar). Y finalmente, tras un par de años, lo hicimos público para aquellos fans del rol y
-                    Pokémon.
+                    abreviar). Y, finalmente, tras un par de años, lo hicimos público para aquellos fans del rol y
+                    Pokémon que quisieran jugarlo.
                 </p>
             </div>
 
@@ -119,7 +118,7 @@ import { RouterLink } from 'vue-router'
                 <div>
                     <p>
                         En nuestra comunidad de Discord podrás mantenerte al día con las novedades del sistema,
-                        compartir historias, personajes, arte, y conocer a otros fans del rol y Pokémon que comparten tu
+                        compartir historias, personajes, arte,y conocer a otros fans del rol y Pokémon que comparten tu
                         pasión. ¡Únete y sé parte de la aventura!
                     </p>
                 </div>
@@ -154,11 +153,11 @@ import { RouterLink } from 'vue-router'
                     <p>Si.</p> <!-- No nos podemos permitir una demanda de Nintendo  -->
                 </div>
                 <div>
-                    <h3>¿Cómo empezar a jugar?</h3>
+                    <h3>¿Cómo empiezo a jugar?</h3>
                     <p>
                         Puedes comenzar leyendo el sistema de <strong>Pokémon Roleplaying Adventure</strong> en esta
-                        misma pagina web o abrir y descargar el PDF de la ultima version. Despues solo convence algunos
-                        amigos de jugar o pregunta en nuestro Discord si algun DJ busca jugadores.
+                        misma pagina web o abrir y descargar el PDF de la ultima versión. Después, convence a algunos
+                        amigos de jugar o pregunta en nuestro Discord si algún DJ busca jugadores.
                     </p>
                 </div>
 
@@ -171,6 +170,7 @@ import { RouterLink } from 'vue-router'
                         nosotros.
 
                         También, puedes apoyarnos con pequeñas donaciones que nos ayudan a mantener esta página web.
+                        <!--Y a comprar peluches de fuecoco-->
                     </p>
                 </div>
 
