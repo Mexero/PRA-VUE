@@ -1,0 +1,66 @@
+{
+    "nombre": "Maestro de las Crías",
+    "prerrequisito": "Tu Bono de Entrenador es tu Espíritu.",
+    "nombreClase": "Entrenador",
+    "descripcion": [
+        "La evolución es un proceso propio y natural para muchas especies de Pokémon y la mayoría lo comprende como un requisito fundamental para volverse más poderoso. Los entrenadores que siguen esta filosofía, sin embargo, creen que la evolución es sólo la manifestación del poder que sus Pokémon siempre han tenido dentro pero que usualmente se mantiene latente y han aprendido a enseñar a sus Pokémon a hacer uso de este."
+    ],
+    "rasgos": [
+        {
+            "nombre": "Poder Interior",
+            "nivel": 2,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Maestro de las Crías",
+            "contenido": [
+                "A partir de nivel 2, aprendes a reconocer el potencial que tus Pokémon tienen para evolucionar y sabes cómo hacer que aprendan a canalizarlo aun sin haber evolucionado. Cuando usas una Acción Extendida para Entrenar a Pokémon que no han Evolucionado y que pueden Evolucionar, puedes hacer que ganen el beneficio de otro de tus Entrenamientos."
+            ]
+        },
+        {
+            "nombre": "Movimientos Desproporcionados",
+            "nivel": 5,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Maestro de las Crías",
+            "contenido": [
+                "A partir de nivel 5, sabes cómo hacer que tus Pokémon usen un poder que sólo podrían controlar al evolucionar. Tus Pokémon pueden aprender Movimientos de las listas de Movimientos por Nivel de todas sus evoluciones y las evoluciones de estas cuando son de un Nivel igual o superior al Nivel al que estas los aprenderían.",
+                "Para enseñar estos Movimientos a tus Pokémon tomas una Acción Extendida en la que les enseñas cómo canalizar su poder oculto. Tus Pokémon olvidan estos Movimientos si dejan de ser tus Pokémon para volverse los Pokémon de otro entrenador.",
+                "Además, tus Pokémon añaden a su lista de Movimientos Enseñables los Movimientos Enseñables de todas sus evoluciones y las evoluciones de estas.",
+                "Cuando un Pokémon usa un Movimiento que ha aprendido con este Rasgo que requiere de una parte del cuerpo que no posee, esta aparece momentáneamente de forma espectral. Por ejemplo, si un Charmander usa Ataque Ala aprendido de esta forma, momentáneamente aparecen alas espectrales en su espalda que desaparecen después de realizar el golpe."
+            ]
+        },
+        {
+            "nombre": "Extraer el Potencial",
+            "nivel": 8,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Maestro de las Crías",
+            "contenido": [
+                "A partir de nivel 8, tus Pokémon aprenden a canalizar el poder potencial de la evolución para aumentar sus cuerpos. La Vitalidad de tus Pokémon que no han evolucionado y pueden evolucionar aumenta en 3, hasta un máximo de 10, todas sus Velocidades aumentan en 2 metros, su Cantidad Máxima de Movimientos Conocidos aumenta en 2, y todas sus Estadísticas aumentan en 1. Estos beneficios desaparecen si estos Pokémon cambian de dueño, pues dejan de realizar el entrenamiento especial que hacen contigo."
+            ]
+        },
+        {
+            "nombre": "El Tamaño no lo es todo",
+            "nivel": 13,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Maestro de las Crías",
+            "contenido": [
+                "A partir de nivel 13, has aprendido a enseñar a tus Pokémon a enfrentar a criaturas más grandes que ellos y ahora saben darle la vuelta a la ventaja de tamaño. Cuando uno de tus Pokémon falla una Tirada de Ataque contra una criatura de mayor tamaño o falla una Tirada de Salvación o Habilidad contra un efecto provocado por una criatura de mayor tamaño, puede usar 1 PP para volver a realizar la Tirada, pudiendo convertir un fallo en un acierto.",
+                "Además, si uno de tus Pokémon puede evolucionar dos veces, aumentas una de sus Estadísticas en 1 mientras sea tu Pokémon, hasta un máximo de 5."
+            ]
+        },
+        {
+            "nombre": "Potencial Realizado",
+            "nivel": 17,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Maestro de las Crías",
+            "contenido": [
+                "A partir del nivel 17, enseñas a tus Pokémon a liberar todo el Potencial que contienen. Cuando das una Orden a uno de tus Pokémon, puedes usar una Acción para comandar que se abra a todo su poder. Cuando tu Pokémon lo hace, entra en un trance especial que le permite liberar una forma espectral y translúcida de una de sus evoluciones o las evoluciones de estas a tu elección  que aparece rodeándolo y replicando sus Movimientos.",
+                "Este estado dura hasta el final de la Escena, hasta que el Pokémon vuelva a su Pokéball o hasta que sus PV caigan a 0. Un Pokémon que está en este trance gana los siguientes beneficios:",
+                "El Pokémon gana las Habilidades y Habilidades Ocultas de la evolución que manifiesta si no las tenía ya.",
+                "El Pokémon cambia sus Tipos Elementales por los de la evolución que manifiesta.",
+                "El Pokémon gana todas las Velocidades de la evolución que manifiesta.",
+                "El Pokémon gana 40 Puntos de Escudo.",
+                "El daño base de los Movimientos del Pokémon aumenta en dos dados.",
+                "Puedes usar este Rasgo una vez por Escena y, cuando el trance acaba, el Pokémon gana 2 Niveles de Fatiga."
+            ]
+        }
+    ]
+}

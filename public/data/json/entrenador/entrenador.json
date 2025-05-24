@@ -255,12 +255,87 @@
         {
             "acortado": "Resiliencia",
             "completo": "Camino de la Resiliencia",
-            "ruta": "resiliencia"
+            "ruta": "Camino_de_la_Resiliencia"
         },
         {
             "acortado": "Bailarín",
             "completo": "Camino del Bailarín",
-            "ruta": "bailarin"
+            "ruta": "Camino_del_Bailarín"
+        },
+        {
+            "acortado": "Campeón",
+            "completo": "Camino del Campeón",
+            "ruta": "Camino_del_Campeón"
+        },
+        {
+            "acortado": "Coordinador",
+            "completo": "Camino del Coordinador",
+            "ruta": "Camino_del_Coordinador"
+        },
+        {
+            "acortado": "Músico",
+            "completo": "Camino del Músico",
+            "ruta": "Camino_del_Músico"
+        },
+        {
+            "acortado": "Sádico",
+            "completo": "Camino del Sadismo",
+            "ruta": "Camino_del_Sadismo"
+        },
+        {
+            "acortado": "Oyente",
+            "completo": "Conexión del Oyente",
+            "ruta": "Conexión_del_Oyente"
+        },
+        {
+            "acortado": "Monotipo",
+            "completo": "Especialista de Tipo",
+            "ruta": "Especialista_de_Tipo"
+        },
+        {
+            "acortado": "Enfermero",
+            "completo": "Enfermero Experto",
+            "ruta": "Enfermero_Experto"
+        },
+        {
+            "acortado": "Animador",
+            "completo": "Filosofía del Animador",
+            "ruta": "Filosofía_del_Animador"
+        },
+        {
+            "acortado": "Hogar",
+            "completo": "Hogar en el Viaje",
+            "ruta": "Hogar_en_el_Viaje"
+        },
+        {
+            "acortado": "Combate",
+            "completo": "Líder de Combate",
+            "ruta": "Líder_de_Combate"
+        },
+        {
+            "acortado": "Criador",
+            "completo": "Maestro de las Crías",
+            "ruta": "Maestro_de_las_Crías"
+        },
+        {
+            "acortado": "Cambio",
+            "completo": "Maestro del Cambio",
+            "ruta": "Maestro_del_Cambio"
+        },
+        {
+            "acortado": "Manipulador",
+            "completo": "Maestro Manipulador",
+            "ruta": "Maestro_Manipulador"
+        },
+        {
+            "acortado": "Inercia",
+            "completo": "Manipulador de la Inercia",
+            "ruta": "Manipulador_de_la_Inercia"
+        },
+        {
+            "acortado": "Mente Maestra",
+            "completo": "Mente Maestra",
+            "ruta": "Mente_Maestra"
         }
     ],
     "descripcion": [

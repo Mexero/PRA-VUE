@@ -1,0 +1,55 @@
+{
+    "nombre": "Camino del Campeón",
+    "prerrequisito": "",
+    "nombreClase": "Entrenador",
+    "descripcion": [
+        "Los Entrenadores que siguen el Camino del Campeón intentan emular a las grandes leyendas del mundo Pokémon y aspiran a unirse a estas en el futuro. Usualmente, los entrenadores que siguen el Camino del Campeón siguen regímenes de entrenamiento estrictos y dedican gran parte de sus vidas a viajar para conocer entrenadores habilidosos contra los que poder batirse en duelo y Pokémon poderosos para unir a su equipo. Los Entrenadores que siguen este camino quizás puedan aparentar ser prepotentes o sobreconfiados, pero usualmente son personas concienzudas y trabajadoras con una gran fuerza de voluntad y un espíritu de competitividad innato."
+    ],
+    "rasgos": [
+        {
+            "nombre": "Llegaré a Ser el Mejor",
+            "nivel": 2,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Camino del Campeón",
+            "contenido": [
+                "A nivel 2, tu habilidad para entrenar a tus Pokémon sobrepasa incluso a la de tus pares. Cuando entrenas a tus Pokémon, puedes elegir centrarte en uno de estos. Cuando lo haces, este Pokémon recibe los beneficios de otro de tus Entrenamientos."
+            ]
+        },
+        {
+            "nombre": "Órdenes Mutables",
+            "nivel": 5,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Camino del Campeón",
+            "contenido": [
+                "A nivel 5, puedes hacer pequeños cambios a una orden cuando ves que algo no sale como planeabas. Cuando tiras un Dado de Entrenador, puedes usar 1 PP para volver a tirarlo. Si lo haces, debes quedarte con el nuevo resultado."
+            ]
+        },
+        {
+            "nombre": "“¡Una vez más!”",
+            "nivel": 8,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Camino del Campeón",
+            "contenido": [
+                "A partir de nivel 8, puedes gastar 3 PP después de usar “Y ahora…”. Cuando lo haces, das otra Orden rápida a tu Pokémon, el cual vuelve a recuperar su Acción y ejecuta tu orden."
+            ]
+        },
+        {
+            "nombre": "Órdenes de As",
+            "nivel": 13,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Camino del Campeón",
+            "contenido": [
+                "A nivel 13, tu entendimiento con tus Pokémon gracias a vuestros entrenamientos juntos es tan alto que estos comprenden perfectamente las órdenes que les das. El mínimo que puedes sacar al lanzar tu Dado de Entrenador es la mitad de su valor máximo."
+            ]
+        },
+        {
+            "nombre": "Al Nivel de las Leyendas",
+            "nivel": 17,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Camino del Campeón",
+            "contenido": [
+                "A nivel 17, tu habilidad roza la de los entrenadores que admiras. Puedes usar tu rasgo de Doble Orden sin usar PP si la primera Orden de Entrenador que usaste fue tu Orden Insignia."
+            ]
+        }
+    ]
+}

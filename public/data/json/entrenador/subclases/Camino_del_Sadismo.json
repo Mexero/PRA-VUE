@@ -1,0 +1,57 @@
+{
+    "nombre": "Camino del Sadismo",
+    "prerrequisito": "Ninguno.",
+    "nombreClase": "Entrenador",
+    "descripcion": [
+        "Los entrenadores con esta mentalidad son brutales con los Pokémon. Estos entrenadores suelen ver a sus Pokémon como poco más que herramientas para sus objetivos y están dispuestos a sacrificar su bienestar, salud e incluso sus vidas por su propio beneficio, aunque también pueden ser entrenadores que genuinamente creen que esta es la mejor forma de entrenar. Los Pokémon de estos entrenadores suelen temerlos aunque, en algunas ocasiones, aprenden a aceptar el trato que les dan como algo natural y necesario para hacerlos llegar al máximo de sus capacidades.",
+        "Debido a la propia naturaleza de estos entrenadores, si quieres seleccionar esta filosofía háblalo con tu DJ, puesto que muchas campañas no serán aptas para este tipo de personajes."
+    ],
+    "rasgos": [
+        {
+            "nombre": "Entrenamiento Brutal",
+            "nivel": 2,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Camino del Sadismo",
+            "contenido": [
+                "A nivel 2, las sesiones de entrenamiento a las que sometes a tus Pokémon son tan brutales que salen dañados de estas, aunque cumplen su objetivo de volverlos más poderosos. Cuando usas la Acción Extendida de Entrenar a tus Pokémon, puedes hacer que ganen 1 nivel de fatiga a cambio de recibir un segundo entrenamiento. Además, tus Pokémon puede que te odien o estén resentidos contigo, pero no son capaces de huir, no seguir tus órdenes o de atacarte por muy bajo que sea vuestro Nivel de Amistad."
+            ]
+        },
+        {
+            "nombre": "Maestro del Látigo",
+            "nivel": 5,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Camino del Sadismo",
+            "contenido": [
+                "A nivel 5, puedes dar Órdenes de Entrenador a tus Pokémon con un látigo o una herramienta similar. Cuando lo haces, estos pierden una cantidad de PV igual a su nivel, dejan de estar infatuados o asustados si lo estaban y el daño base de cualquier Movimiento que utilicen hasta el final del turno aumenta en una cantidad igual a la cantidad de PV que han perdido."
+            ]
+        },
+        {
+            "nombre": "Acostumbrados al Sufrimiento",
+            "nivel": 8,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Camino del Sadismo",
+            "contenido": [
+                "A partir de nivel 8, tus Pokémon están tan acostumbrados a tus brutales entrenamientos que han aprendido a ignorar el dolor y canalizarlo contra los demás. Tus Pokémon ignoran los efectos de los niveles de fatiga si estos no superan la mitad de tu Bono de Entrenador.",
+                "Además, añades la Habilidad Irascible a las Habilidades ocultas tus Pokémon."
+            ]
+        },
+        {
+            "nombre": "Sin Permiso Para el Descanso",
+            "nivel": 13,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Camino del Sadismo",
+            "contenido": [
+                "A nivel 13, tus Pokémon están tan acostumbrados a recibir golpes que, cuando fuesen a caer Inconscientes, puedes ordenarles que no caigan. Cuando lo haces, quedan a 1 PV y ganan 1 nivel de fatiga. Si vuelves a usar este Rasgo sobre un Pokémon, este gana un nivel más de fatiga por cada vez que has usado este Rasgo en él a lo largo de la Escena."
+            ]
+        },
+        {
+            "nombre": "Un Sacrificio Necesario",
+            "nivel": 17,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Camino del Sadismo",
+            "contenido": [
+                "A nivel 17, tus Pokémon han sufrido tanto tus entrenamientos que han perdido todo instinto de evitar los golpes. Cuando realizan una Tirada de Ataque contra uno de tus Pokémon, les ordenas como Reacción que tomen el golpe. La Tirada de Ataque golpea automáticamente como un golpe crítico. A cambio, tu Pokémon utiliza como Reacción un Movimiento que hace daño y sólo afecta a la criatura que lo dañó. Si este Movimiento hace Tiradas de Ataque, se hacen en Ventaja y si fuerza a otra criatura a hacer Tiradas de Salvación, estas se hacen en Desventaja."
+            ]
+        }
+    ]
+}

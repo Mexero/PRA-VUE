@@ -1,0 +1,70 @@
+{
+    "nombre": "Líder de Combate",
+    "prerrequisito": "Ninguno.",
+    "nombreClase": "Entrenador",
+    "descripcion": [
+        "Los Líderes de Combate no buscan comandar a sus Pokémon sino que los lideran al ser partícipes de la batalla. Estos entrenadores entrenan junto a sus Pokémon para desarrollar sus capacidades físicas y su destreza en el combate, por lo que son más hábiles a la hora de defenderse en batalla que la mayoría de Entrenadores."
+    ],
+    "rasgos": [
+        {
+            "nombre": "Líder de Combate 2",
+            "nivel": 2,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Líder de Combate",
+            "tieneSubrasgos": true,
+            "contenido": [
+                {
+                    "nombre": "Dentro del combate",
+                    "descripcion": [
+                        "A nivel 2, has aprendido a comprender los combates al ser partícipe de estos. Puedes calcular tu CA como 10 + RES + BH y tu Vitalidad se vuelve 8 si no es superior.",
+                        "Por último, cuando entrenas a tus Pokémon tú también entrenas con ellos. Tú también te beneficias de uno de los Entrenamientos que hacen tus Pokémon."
+                    ]
+                },
+                {
+                    "nombre": "Movimientos de Luchador",
+                    "descripcion": [
+                        "A nivel 2, aprendes a combatir usando Movimientos. Aprendes 1 Movimiento A voluntad y 1 Movimiento con coste de 1 PP de la Lista de Luchador. A nivel 5 aprendes 1 Movimiento con coste de 1 PP más de esta misma lista. Cada vez que subes de nivel puedes cambiar un Movimiento que te otorga este rasgo por otro que pudieras elegir con este."
+                    ]
+                }
+            ]
+        },
+        {
+            "nombre": "Codo con codo",
+            "nivel": 5,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Líder de Combate",
+            "contenido": [
+                "A nivel 5, cuando usas tu Acción para dar una Orden de Entrenador, puedes usar 1 PP más del coste normal de un Movimiento que usa tu Acción para usarlo como parte de esta misma Acción si tanto tu como tu Pokémon estáis a menos de 1 metro el uno del otro."
+            ]
+        },
+        {
+            "nombre": "Predicar con el ejemplo",
+            "nivel": 8,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Líder de Combate",
+            "contenido": [
+                "A nivel 8, te vuelves mejor luchando. tu Vitalidad aumenta en 1 y aprendes a usar Movimientos más poderosos. Aprendes 1 Movimiento con coste de 2 PP de la lista de Luchador.",
+                "A nivel 13, aprendes otro Movimiento con estas características. Cada vez que subes de nivel puedes cambiar un Movimiento que te otorga este rasgo por otro con las mismas características."
+            ]
+        },
+        {
+            "nombre": "Luchador adepto",
+            "nivel": 13,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Líder de Combate",
+            "contenido": [
+                "A partir de nivel 13, aprendes a realizar las órdenes que sabes dar a tus Pokémon para poder enseñárselas mejor. Cuando usas tu Rasgo de Codo con codo, tú también recibes el beneficio que otorga la Orden de Entrenador que has dado, pero no añades tu Dado de Orden al daño de tus Movimientos.",
+                "Además, los costes de tus Movimientos de Luchador se reducen en 1 PP y el daño base de tus Movimientos aumenta en una cantidad igual a la mayor de tu Fuerza o Agilidad."
+            ]
+        },
+        {
+            "nombre": "Luchar al unísono",
+            "nivel": 17,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Líder de Combate",
+            "contenido": [
+                "A nivel 17, tus Pokémon y tu lucháis como una unidad. Cuando tú o un Pokémon sobre el que has usado una Orden este turno golpeáis con una Tirada de Ataque a una criatura, el otro gana Ventaja en su próxima Tirada de Ataque contra dicha criatura hasta el final del turno."
+            ]
+        }
+    ]
+}

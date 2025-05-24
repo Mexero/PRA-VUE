@@ -1,0 +1,84 @@
+{
+    "nombre": "Maestro Manipulador",
+    "prerrequisito": "Tu bono de Entrenador es Presencia.",
+    "nombreClase": "Entrenador",
+    "descripcion": [
+        "Aunque muchos las pasan por alto, las emociones son capaces de dar forma a los combates Pokémon. Los Maestros Manipuladores son conscientes de esto y especializan su forma de combatir en abusar y controlar las emociones de los demás con sus palabras, gestos y forma de actuar.",
+        "Los Maestros Manipuladores no tienen por qué ser manipuladores villanescos que sólo buscan el beneficio propio, también pueden usar sus talentos para conseguir objetivos nobles y ayudar a las personas a darse cuenta de cosas que de otra forma no podrían comprender. De cualquier forma, si algo une a todos los Maestros Manipuladores es su carácter utilitario y el talento de su lengua para entrelazar las palabras más dulces y las más venenosas."
+    ],
+    "rasgos": [
+        {
+            "nombre": "Maestro Manipulador 2",
+            "nivel": 2,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Maestro Manipulador",
+            "tieneSubrasgos": true,
+            "contenido": [
+                {
+                    "nombre": "Lengua de oro",
+                    "descripcion": [
+                        "A nivel 2, te vuelves un experto en influenciar la opinión de los demás a través de comentarios sagaces y alguna mentirijilla ocasional. Aumentas en 1 tu Grado de Habilidad en Persuasión o Engaño (tú eliges) hasta un máximo de Experto."
+                    ]
+                },
+                {
+                    "nombre": "Movimientos de Manipulador",
+                    "descripcion": [
+                        "A nivel 2, aprendes a usar tus palabras para usar Movimientos. Debes usar tu Presencia como la Estadística asociada a estos Movimientos y sus costes aumentan en 1 PP para ti.",
+                        "Aprendes 3 de los siguientes Movimientos: Látigo, Malicioso, Última palabra, Beso Amoroso, Beso dulce, Camaradería, Mofa, Tormento, Llanto falso.",
+                        "Cada vez que subes de nivel, puedes cambiar uno de estos Movimientos que conoces por otro de la misma lista."
+                    ]
+                }
+            ]
+        },
+        {
+            "nombre": "Órdenes envenenadas",
+            "nivel": 5,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Maestro Manipulador",
+            "contenido": [
+                "A nivel 5, aprendes otro Movimiento de la lista de Movimientos de Manipulador. Además, aprendes a entrelazar comentarios hirientes y mentiras en tus órdenes para confundir y engañar a tus contrincantes. Cuando usas tu Acción para dar una Orden de Entrenador, puedes usar 1 PP más del coste normal de un Movimiento de manipulador que conoces y que usa tu Acción para usarlo como parte de esta misma Acción."
+            ]
+        },
+        {
+            "nombre": "Maestro Manipulador 8",
+            "nivel": 8,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Maestro Manipulador",
+            "tieneSubrasgos": true,
+            "contenido": [
+                {
+                    "nombre": "Nuevos Movimientos de Manipulador",
+                    "descripcion": [
+                        "A partir de nivel 8, tus habilidades de manipulación mejoran. A la lista de Movimientos que puedes aprender gracias a tu rasgo de Movimientos de Manipulador se añaden los siguientes Movimientos: Ojitos tiernos, Ojos llorosos, Encanto, Cara susto, Otra vez, Camelo, Contoneo y Maquinación. Además, aprendes otros dos Movimientos de la lista de Movimientos de Manipulador."
+                    ]
+                },
+                {
+                    "nombre": "Tutor de Manipulación",
+                    "descripcion": [
+                        "A partir de nivel 8, los Pokémon aprenden de tus habilidades. Como una Acción Extendida que dura al menos una hora, puedes enseñar a un Pokémon un Movimiento de Manipulador que conoces que pertenece a su lista de Movimientos Enseñables."
+                    ]
+                }
+            ]
+        },
+        {
+            "nombre": "Maestro de las Maquinaciones",
+            "nivel": 13,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Maestro Manipulador",
+            "contenido": [
+                "Desde nivel 13, cuando usas uno de tus Movimientos de Manipulador que afecta a una única criatura, puedes hacer que este Movimiento afecte a una segunda criatura a menos de 2 metros de la primera y estos Movimientos ya no te cuestan 1 PP más de lo normal.",
+                "Además, aprendes otro Movimiento de la lista de Movimientos de Manipulador."
+            ]
+        },
+        {
+            "nombre": "Maestro Titiritero",
+            "nivel": 17,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Maestro Manipulador",
+            "contenido": [
+                "Desde nivel 17, las criaturas que caen en tus manipulaciones tienen serias dificultades para discernir cómo las estás afectando. Cuando una criatura gana Niveles de Asustado, Confusión, Furia o Infatuación de uno de tus Movimientos, gana 1 Nivel de lo normal. Además, cuando una criatura que ganó un Nivel de Confusión, Asustado, Furia o Infatuación de ti termina su turno con Niveles de Confusión, Asustado de ti o Infatuación de ti puedes cambiarle estos Niveles por una misma cantidad de Niveles de Confusión, Asustado, Infatuado o Furia.",
+                "Por último, aprendes otro Movimiento de la lista de Movimientos de Manipulador."
+            ]
+        }
+    ]
+}

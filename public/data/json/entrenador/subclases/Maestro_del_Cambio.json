@@ -1,0 +1,57 @@
+{
+    "nombre": "Maestro del Cambio",
+    "prerrequisito": "Ninguno.",
+    "nombreClase": "Entrenador",
+    "descripcion": [
+        "En un mundo lleno de reglas y orden, los Maestros del cambio son entrenadores que desentonan incluso al compararlos con sus iguales. Su máxima es el vivir nuevas experiencias cada día y construirse a sí mismos en base a estas.",
+        "En lo referente a los combates Pokémon, los Maestros del Cambio llevan el arte de cambiar de Pokémon a otro nivel, convirtiéndolo en la piedra angular de su forma de luchar, creando combates ágiles en los que buscan tomar la iniciativa gracias a su habilidad para dominar la batalla de la ventaja de tipos."
+    ],
+    "rasgos": [
+        {
+            "nombre": "Cambio rápido",
+            "nivel": 2,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Maestro del Cambio",
+            "contenido": [
+                "A nivel 2, te vuelves hábil a la hora de manejar las Poké Balls. Puedes sacar a tus Pokémon y lanzar Poké Balls a una distancia en metros igual a 5 más tu Agilidad. Además, puedes usar tu Acción para cambiar de Pokémon y dar una Orden al Pokémon que sacas. Después de utilizar este rasgo por primera vez en una Escena, puedes volver a usarlo por 4 PP."
+            ]
+        },
+        {
+            "nombre": "Llegada triunfal",
+            "nivel": 5,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Maestro del Cambio",
+            "contenido": [
+                "A partir de nivel 5, has enseñado a tus Pokémon a prepararse para entrar al combate con agilidad. Hasta el principio del segundo turno que toma un Pokémon después de salir de su Poké Ball, esta gana Ventaja en todas las Tiradas de d20 que hace."
+            ]
+        },
+        {
+            "nombre": "Tutor del movimiento",
+            "nivel": 8,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Maestro del Cambio",
+            "contenido": [
+                "A partir de nivel 8, aprendes a enseñar a los Pokémon a usar Movimientos que les permiten liberarse de agarres y volver rápidamente a su Poké Ball. Como una Acción Extendida que dura al menos una hora, puedes enseñar a un Pokémon uno de los siguientes Movimientos: Giro bola, Giro rápido, Ida y vuelta, Rueda fuego, Teletransporte, Viraje y Voltio cambio."
+            ]
+        },
+        {
+            "nombre": "Libre de cadenas",
+            "nivel": 13,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Maestro del Cambio",
+            "contenido": [
+                "A partir de nivel 13, aprendes cómo cambiar a tus Pokémon en cualquier situación. Ningún efecto ni Estado puede hacer que tus Pokémon no puedan volver a su Poké Ball."
+            ]
+        },
+        {
+            "nombre": "Vía de escape",
+            "nivel": 17,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Maestro del Cambio",
+            "contenido": [
+                "A nivel 17, tu habilidad para manejar los cambios es tal que puedes usarla para proteger a tus Pokémon de un efecto que fuese a dañarlos. Cuando una criatura fuese a hacer una Tirada de Ataque contra uno de tus Pokémon o fuese a forzarlo a hacer una Tirada de Salvación, usas tu Reacción para cambiarlo por otro Pokémon. En tu próximo turno, puedes dar una Orden al Pokémon que sacas como si no hubieses cambiado de Pokémon.",
+                "Puedes usar este rasgo una vez por Escena."
+            ]
+        }
+    ]
+}

@@ -1,0 +1,88 @@
+{
+    "nombre": "Manipulador de la Inercia",
+    "prerrequisito": "Tu Bono de Entrenador es tu Mente.",
+    "nombreClase": "Entrenador",
+    "descripcion": [
+        "Los manipuladores de la inercia son entrenadores perfeccionistas que han aprendido a aprovechar cada pequeña ventaja que obtienen en el campo de batalla y a materiarizarlas en los momentos adecuados. Usualmente, estos entrenadores buscan hacer uso de un estilo de combate que alterna entre la defensa y el ataque para desestabilizar a sus rivales y acabar con ellos aprovechando sus errores."
+    ],
+    "rasgos": [
+        {
+            "nombre": "Manipulador de la Inercia 2",
+            "nivel": 2,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Manipulador de la Inercia",
+            "tieneSubrasgos": true,
+            "contenido": [
+                {
+                    "nombre": "Visualizador de la Inercia",
+                    "descripcion": [
+                        "A nivel 2, aprendes a visualizar las pequeñas ventajas que ganas en el combate que otros pasan por alto. Estas ventajas se ven representadas por tus Puntos de Inercia, cada vez que tiras iniciativa, cambias de Pokémon o terminas un combate tus Puntos de Inercia se vuelven 0 y como máximo, puedes tener una cantidad de Puntos de Inercia igual a tu Bono de Entrenador (mínimo de 1). No puedes ganar más de 1 Punto de Inercia por turno, pero no hay límite a cuantos Puntos de Inercia puedes ganar por ronda. Ganas 1 Punto de Inercia cuando:",
+                        "Tu Pokémon golpea con una Tirada de Ataque a un rival.",
+                        "Tu Pokémon hace daño súper eficaz a un rival.",
+                        "Una Tirada de Ataque realizada por un rival falla contra tu Pokémon.",
+                        "Tu Pokémon pasa una Tirada de Salvación que le forzó a hacer un rival."
+                    ]
+                },
+                {
+                    "nombre": "Entrenamiento Impulsante",
+                    "descripcion": [
+                        "A nivel 2, aprendes a entrenar a tus Pokémon para que fuercen a sus rivales a cometer más errores de los que sacar provecho. Aprendes el siguiente entrenamiento:",
+                        "¡Sed imparables!: Enseñas a tus Pokémon cómo moverse y atacar para generar más inercia en el combate. El Pokémon puede hacerte ganar 2 Puntos de Inercia en cada turno y, si está consciente al final de la ronda, ganas 1 Punto de Inercia.",
+                        "“¡Impúlsate!”: Ordenas a tu Pokémon que aproveche la ventaja que ya tiene sobre sus rivales para dañarlos. Gastas 2 Puntos de Inercia para hacer que el daño base del siguiente Movimiento que realice el Pokémon aumente en 1 dado.",
+                        "Perfeccionamiento: Si el Movimiento hace Tiradas de Ataque estas se hacen en Ventaja y el daño base aumenta en 1 dado más."
+                    ]
+                }
+            ]
+        },
+        {
+            "nombre": "Recuperar el Control",
+            "nivel": 5,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Manipulador de la Inercia",
+            "contenido": [
+                "A nivel 5, aprendes a traducir la Inercia en segundas oportunidades que palien los errores de tus Pokémon y te permitan volver a controlar el combate. Cuando uno de tus Pokémon falla una Tirada de d20, puedes gastar 3 Puntos de Inercia para volver a realizar la tirada. Debes quedarte con el nuevo resultado y, si el pasar esta tirada fuese a generar puntos de Inercia, no los genera."
+            ]
+        },
+        {
+            "nombre": "Manipulador de la Inercia 8",
+            "nivel": 8,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Manipulador de la Inercia",
+            "tieneSubrasgos": true,
+            "contenido": [
+                {
+                    "nombre": "Impacto fulgurante",
+                    "descripcion": [
+                        "Desde Nivel 8, puedes usar el Perfeccionamiento de tu Orden de Entrenador “Impúlsate”."
+                    ]
+                },
+                {
+                    "nombre": "Imposible de Frenar",
+                    "descripcion": [
+                        "A partir de Nivel 8, tus Pokémon no sólo saben hacer uso de las pequeñas victorias, sino que saben minimizar las derrotas, haciendo que si tomas el control del combate sea muy difícil arrebatártelo. Si tienes 4 o más Puntos de Inercia, tus Pokémon reducen sus Niveles de Helado, Quemado, Paralizado, Envenenado, Dormido, Asustado e Infatuado en 1 Nivel más de lo normal al final de cada uno de sus turnos.",
+                        "A partir de nivel 17, sólo necesitas tener 3 o más Puntos de Inercia para que este rasgo se active."
+                    ]
+                }
+            ]
+        },
+        {
+            "nombre": "Fracciones de Segundo",
+            "nivel": 13,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Manipulador de la Inercia",
+            "contenido": [
+                "A nivel 13, descubres que tu Inercia te permite aventajarte en el ritmo del combate y obtener un instante del que sacar aún más ventaja. Durante tu turno, puedes gastar 6 Puntos de Inercia para usar “Y ahora…” sin consumir el uso que te otorga dicho Rasgo."
+            ]
+        },
+        {
+            "nombre": "Fuerza imparable, Objeto inamovible",
+            "nivel": 17,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Manipulador de la Inercia",
+            "contenido": [
+                "A nivel 17, tus Pokémon se vuelven parangones de la inercia, volviéndose capaces de magnificar las pequeñas victorias y volverlas ventajas para todo el combate. Siempre que tengas 3 o más Puntos de Inercia, tus Pokémon ganan un bonificador de +2 a todas sus Tiradas de d20.",
+                "Además, como Reacción a que tu Pokémon reciba daño super eficaz, puedes gastar 3 Puntos de Inercia para que este daño deje de serlo."
+            ]
+        }
+    ]
+}

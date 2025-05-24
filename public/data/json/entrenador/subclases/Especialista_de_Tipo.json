@@ -1,0 +1,124 @@
+{
+    "nombre": "Especialista de Tipo",
+    "prerrequisito": "Ninguno.",
+    "nombreClase": "Entrenador",
+    "descripcion": [
+        "La mayoría de los entrenadores acaban construyendo equipos con Pokémon con puntos en común, ya sea porque estos combinan mejor con su estilo de combate o porque ese tipo de Pokémon es su favorito. Los Especialistas de Tipo llevan esta idea al extremo, especializándose en entrenar exclusivamente Pokémon de un cierto Tipo Elemental que conocen a la perfección y del que sacan el máximo provecho."
+    ],
+    "rasgos": [
+        {
+            "nombre": "Especialista de Tipo 2",
+            "nivel": 2,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Especialista de Tipo",
+            "tieneSubrasgos": true,
+            "contenido": [
+                {
+                    "nombre": "Especialidad Elemental",
+                    "descripcion": [
+                        "Desde nivel 2, comprendes la naturaleza y particularidades de los Pokémon pertenecientes a un cierto Tipo Elemental. Cuando ganas este rasgo eliges un Tipo Elemental en el que te especializas. Tienes Ventaja en Tiradas de Habilidad de Conocimiento Pokémon, Empatía y Trato Pokémon relacionadas a Pokémon de tu Tipo Elemental."
+                    ]
+                },
+                {
+                    "nombre": "Orden de la Especialidad",
+                    "descripcion": [
+                        "A partir de nivel 2, aprendes una Orden de Entrenador que depende del Tipo Elemental en el que te especializas y la cual sólo puede usarse sobre un Pokémon del Tipo Elemental en el que te especializas. Las órdenes son las siguientes:",
+                        "¡Nada puede dañarte! (Acero): Los Pokémon de Tipo Acero son los más resistentes de todos. Cuando usas esta Orden de Entrenador sobre un Pokémon de Tipo Acero, este concentra su poder defensivo. Hasta el principio de tu próximo turno, cada vez que el Pokémon reciba daño, este se reduce en una cantidad igual a tu Bono de Entrenador.",
+                        "Perfeccionamiento: La reducción de daño aumenta en 1d4.",
+                        "¡Deja los problemas fluir! (Agua): El agua es la fuente de toda la vida y los Pokémon de este tipo son los más cercanos a ella. Cuando usas esta Orden sobre un Pokémon, este se siente revitalizado, ganando Puntos de Escudo igual a tu Bono de Entrenador más una Tirada de tu Dado de Orden los cuales duran hasta el principio de tu próximo turno y, mientras tiene estos Puntos de Escudo, reduce sus Niveles de Envenenado en uno más de lo normal al final de sus turnos.",
+                        "Perfeccionamiento: Mientras tu Pokémon tiene estos Puntos de Escudo no pierde PV a causa del veneno ni se ve afectada por otros efectos nocivos asociados a estar Envenenado.",
+                        "“Déjalos pegados” (Bicho): Los Pokémon de Tipo Bicho secretan sustancias pegajosas, como redes o mucosas. Cuando un Pokémon de Tipo Bicho utiliza un Movimiento de Tipo Bicho tras recibir esta Orden de Entrenador este turno, puede lanzar una mucosa o una red de 1 metro de radio alrededor del punto en el que usó el Movimiento, la cual no afecta a los Pokémon Tipo Bicho. La zona afectada se vuelve Terreno Difícil y toda criatura que acabe su turno en esta queda reduce todas sus Velocidades en 1 metro cada vez que lo haga. Si todas sus Velocidades llegan a 0, queda Apresada. Una criatura puede usar su Acción para quitarse la sustancia pegajosa y liberarse de la reducción a sus Velocidades.",
+                        "Perfeccionamiento: La cantidad de metros que reduce sus Velocidades una Criatura por acabar su turno en esta área es de 2 metros en lugar de 1.",
+                        "“¡Destrúyelos!” (Dragón): Los Pokémon de Tipo Dragón poseen el poder de arrasar con todo a su paso. El primer Movimiento de Tipo Dragón que hace una Tirada de Ataque que usa un Pokémon sobre el que has usado esta Orden de Entrenador este turno deja de hacer Tiradas de Ataque. En su lugar, ahora el Movimiento afecta un cono de 3 metros si la Tirada de Ataque era cuerpo a cuerpo y una Línea de 1 metro de grosor y longitud igual al rango del Movimiento para las Tiradas de Ataque a rango. Todas las criaturas en el área hacen Tiradas de Salvación de AGI y, si la fallan, reciben el daño que fuesen a recibir si la Tirada de Ataque los golpease. Si el Movimiento tenía otro efecto además de hacer daño, este aplica si fallan la Tirada de Salvación y, además, la Tirada Natural de esta es de 4-.",
+                        "Perfeccionamiento: Si una criatura falla la Tirada de Salvación del Movimiento al obtener una Tirada Natural de 2- el daño que recibe se duplica.",
+                        "¡Aumenta tu voltaje! (Eléctrico): Los Pokémon de Tipo Eléctrico contienen grandes cantidades de electricidad de interior, que pueden liberar de diferentes formas. Un Pokémon que recibe esta Orden aumenta sus Velocidades en una cantidad igual a la mitad de tu Bono de Entrenador y, mientras usa su velocidad de caminado o nado, deja un rastro de electricidad que dura hasta el principio de tu próximo turno. Una criatura que inicia su turno adyacente al rastro o entra a este hace una Tirada de Salvación de Resistencia contra una CD = 10 + BH del Pokémon + EST, donde EST es la estadística más alta del Pokémon para no quedar paralizada hasta el principio de su próximo turno y recibir una cantidad de d4 de daño de tipo Eléctrico igual a tu Bono de Entrenador.",
+                        "Perfeccionamiento: Los d4 de daño provocados por fallar la Tirada de Salvación se vuelven d6.",
+                        "¡Agota su espíritu! (Fantasma): Los Pokémon de Tipo Fantasma contienen la energía del más allá su interior y pueden transmitirla. Cuando un Pokémon de Tipo Fantasma hace daño a una Criatura o le inflige un Estado en el mismo turno en el que recibe esta orden, la Criatura hace una Salvación de Espíritu de CD = 10 + BH del Pokémon + EST, donde EST es la Estadística más alta del Pokémon, ganando 1 Nivel de Fatiga en un fallo. Estos Niveles de Fatiga duran hasta el final de la Escena. Una criatura puede repetir la Tirada de Salvación al final de cada uno de sus turnos para liberarse de los Niveles de Fatiga ganados de esta forma.",
+                        "Perfeccionamiento: Los Puntos de Fatiga ganados de esta forma no se pierden cuando la Criatura repite la Tirada de Salvación al final de sus turnos.",
+                        "¡Arde como tu espíritu! (Fuego): El ardiente espíritu de lucha del Pokémon sobre el que usas esta Orden se materializa en forma de calor a su alrededor. Las criaturas a menos de 2 metros de tu Pokémon quedan Acaloradas hasta el principio de tu próximo turno si no son de Tipo Fuego.",
+                        "Perfeccionamiento: Las Criaturas acaloradas de esta forma que usan Movimientos de Tipo Agua infligen la mitad de daño con estos Movimientos que de forma usual.",
+                        "¡Demuéstrales tu belleza! (Hada): Los Pokémon de Tipo Hada poseen magia infatuadora y bromista. La próxima vez antes del final de este turno que el Pokémon golpee con una Tirada de Ataque cuerpo a cuerpo a una criatura, si la Tirada Natural alcanza tu Rango de Orden, la criatura gana 1 Nivel de Infatuado de tu Pokémon.",
+                        "Perfeccionamiento: Una Criatura que gana 1 Nivel de Infatuado de esta forma también gana 1 Nivel de Confusión.",
+                        "¡Congélalo todo! (Hielo): Si el Movimiento afecta un área, esta se congela y si afecta a una o varias criaturas, el suelo bajo estas se congela. El suelo se descongela al final de la Escena. Una criatura que no es de Tipo Hielo que entra caminando a esta área o se mueve por esta caminando debe hacer una Salvación de Agilidad con CD igual a la del Movimiento que la creó. Si la falla cae tumbada. Una criatura sólo hace esta Tirada de Salvación una vez por ronda.",
+                        "Perfeccionamiento: Una Criatura que cae tumbada de esta forma debe usar todo su Movimiento restante para levantarse si aún le queda más de la mitad de este.",
+                        "¡Golpéalo en cadena! (Lucha): Los Pokémon de Tipo Lucha se especializan en el combate cercano. La próxima vez antes del final de este turno que el Pokémon golpee con una Tirada de Ataque cuerpo a cuerpo a una Criatura, si la Tirada Natural alcanza tu Rango de Orden, la Criatura recibe uno de los siguientes efectos: Cae tumbada, es empujada 1 metro, gana 1 Nivel de Confusión o no puede usar Movimientos con la Etiqueta de Sonido con su voz hasta el principio de su próximo turno.",
+                        "Perfeccionamiento: Una Criatura que fuera a recibir uno de los efectos recibe dos en su lugar.",
+                        "¡Eres puro potencial! (Normal): Sabes que los Pokémon de tipo normal brillan por su versatilidad. Hasta el principio de tu próximo turno, el Pokémon afectado por esta Orden de Entrenador puede elegir añadir la mitad de tu Bono de Entrenador a una Tirada de d20 a su elección antes de hacerla.",
+                        "Perfeccionamiento: El Pokémon puede añadir la mitad de tu Bono de Entrenador a la Tirada después de hacerla, pero antes de saber el resultado de esta.",
+                        "¡Drena sus energías! (Planta): Los Pokémon de Tipo Planta tienen la habilidad de absorber energía y recuperarse en tiempo récord. La primera vez que un Pokémon de Tipo Planta inflige daño con un Movimiento de Tipo Planta a una criatura en el mismo turno en el que recibe esta Orden de Entrenador, elige entre reducir sus Niveles de Envenenado, Paralizado, Quemado o Helado en 1 o ganar una cantidad de Puntos de Escudo que duran hasta el final de la Escena iguales a ¼ del daño infligido a esa criatura.",
+                        "Perfeccionamiento: Cuando el Pokémon fuera a elegir uno de los beneficios que esta Orden otorga, en su lugar los gana todos.",
+                        "¡Usa el poder de tu psique! (Psíquico): Los Pokémon de Tipo Psíquico tienen poderes mentales que pueden manifestar de diferentes formas. La próxima vez antes del final de este turno que el Pokémon golpee con una Tirada de Ataque cuerpo a cuerpo a una criatura y la Tirada Natural alcance tu Rango de Orden o fuerza una Tirada de Salvación cuya tirada Natural sea inferior o igual a tu Rango de Orden, la criatura recibe uno de los siguientes efectos: Es movida 2 metros en cualquier dirección, gana 1 Nivel de Confusión o tiene Desventaja en Tiradas de d20 de Mente y Espíritu hasta el final de su próximo turno.",
+                        "Perfeccionamiento: Una Criatura que fuera a recibir uno de los efectos recibe dos en su lugar.",
+                        "¡Invoca rocas! (Roca): Los Pokémon de Tipo Roca poseen poderes geománticos. Cuando un Pokémon de Tipo Roca utiliza un Movimiento de Tipo Roca tras recibir esta Orden de Entrenador este turno, puede invocar una gran roca de 1 metro en todas sus dimensiones que sale del suelo alrededor de un punto a 10 metros. Si la roca sale bajo una Criatura, esta es empujada a un lado de la roca que esta elija.",
+                        "Perfeccionamiento: Si la roca empuja a una Criatura, tú eliges en qué dirección la empuja.",
+                        "¡Enséñales el verdadero terror! (Siniestro): Los Pokémon de Tipo Siniestro contienen la energía terrorífica de la noche. La próxima vez antes del final de este turno que el Pokémon golpee con una Tirada de Ataque cuerpo a cuerpo a una criatura, si la Tirada Natural alcanza tu Rango de Orden, la Criatura gana 1 Nivel de Asustado. Si esta Orden de Entrenador se usa durante la noche o en un lugar oscuro, la Criatura siempre queda asustada, incluso si la Tirada Natural no alcanza tu Rango de Orden.",
+                        "Perfeccionamiento: Una Criatura que fuese a gana 1 Nivel de asustado de esta forma en su lugar gana 2 Niveles de Asustado.",
+                        "¡Entiérralos! (Tierra): Cuando el Pokémon hace una Tirada de Ataque con un Movimiento de Tipo Tierra este turno y esta alcanza el Rango de Orden, el objetivo queda parcialmente sepultado por tierra. Sus velocidades se reducen a la mitad hasta el final de su próximo turno y su distancia de salto se reduce a la mitad, pues le cuesta escapar de la tierra.",
+                        "Perfeccionamiento: Si la Tirada Natural alcanza el Rango de Orden, la Criatura objetivo no puede saltar hasta el final de su próximo turno.",
+                        "¡Hazlos enfermar! (Veneno): Los Pokémon de Tipo Veneno pueden liberar sustancias tóxicas para la vida. Cuando un Pokémon de Tipo Veneno hace daño a una criatura o le inflige un Estado en el mismo turno en el que recibe esta orden, la criatura hace una Salvación de Espíritu contra una CD = 10 + BH del Pokémon + EST, donde EST es la estadística más alta del Pokémon. Si falla, gana 1 Nivel de Envenenado.",
+                        "Perfeccionamiento: Si la Criatura objetivo fuese a ganar 1 Nivel de Envenenado y ya está envenenada, gana 1 Nivel de Envenenado más de lo normal.",
+                        "¡Sal volando! (Volador): Los Pokémon de Tipo Volador son ágiles por naturaleza. Cuando un Pokémon de Tipo Volador recibe esta orden se mueve la mitad de su Velocidad de vuelo sin provocar Ataques de Oportunidad.",
+                        "Perfeccionamiento: Cuando un Pokémon de Tipo Volador recibe esta Orden, deja de estar Agarrado y Apresado si lo estaba y, si no lo estaba, gana Ventaja en la Próxima Tirada de Ataque asociada a un Movimiento de Tipo Volador que haga hasta antes del final de este turno."
+                    ]
+                }
+            ]
+        },
+        {
+            "nombre": "Tutor Elemental",
+            "nivel": 5,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Especialista de Tipo",
+            "contenido": [
+                "A partir de nivel 5, aprendes a enseñar a los Pokémon a usar Movimientos del Tipo Elemental en el que estás especializado. Como una Acción Extendida que dura al menos una hora, puedes enseñar a un Pokémon un Movimiento del tipo en el que estás especializado perteneciente a su lista de Movimientos Enseñables. El Movimiento no puede tener una limitación por usos al Día y la cantidad máxima de PP que puede costar el Movimiento elegido es de 2 PP.",
+                "La cantidad máxima de PP que puede costar el Movimiento elegido aumenta a 3 PP a partir de nivel 8 y vuelve a aumentar a 4 PP a partir de nivel 13."
+            ]
+        },
+        {
+            "nombre": "Poder Elemental",
+            "nivel": 8,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Especialista de Tipo",
+            "contenido": [
+                "A partir de nivel 8, entrenas a tus Pokémon para que aprendan a sacar el máximo potencial de los Movimientos del Tipo Elemental en el que te especializas. Una vez por Escena, cuando uno de tus Pokémon sobre el que has usado una Órden de Entrenador usa un Movimiento del Tipo Elemental en el que te especializas que hace daño, puedes decidir hacer daño máximo en lugar de hacer la tirada.",
+                "Además, ganas el Perfeccionamiento de la Órden de Entrenador que ganas con tu Rasgo Orden de especialidad."
+            ]
+        },
+        {
+            "nombre": "Talentos Naturales",
+            "nivel": 13,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Especialista de Tipo",
+            "contenido": [
+                "A partir de nivel 13, enseñas a los Pokémon del Tipo Elemental en el que te especializas a sacar acceder a los talentos que les otorga su elemento pero que los demás miembros de su especie no son capaces de utilizar. Tus Pokémon ganan una de las siguientes Habilidades como una de sus Habilidades ocultas si son del Tipo Elemental del que eres especialista.",
+                "Las Habilidades son:",
+                "Acero: Robustez, Metal pesado, Metal liviano y Cuerpo puro.",
+                "Agua: Absorbe agua, Nado rápido, Torrente e Hidratación.",
+                "Bicho: Ojo compuesto, Polvo escudo, Enjambre y Cromolente.",
+                "Dragón: Presión, Escama especial, Multiescamas e Intimidación.",
+                "Eléctrico: Electricidad estática, Absorbe electricidad, Piel eléctrica y Electrogénesis.",
+                "Fantasma: Sombra trampa, Presión, Cuerpo maldito y Allanamiento.",
+                "Fuego: Absorbe fuego, Cuerpo llama, Mar llamas y Poder solar.",
+                "Hada: Gran encanto, Muro mágico, Espejo mágico y Nebulogénesis.",
+                "Hielo: Manto níveo, Gélido, Piel helada y Quitanieves.",
+                "Lucha: Fuerza mental, Intrépido, Agallas y Autoestima.",
+                "Normal: Simple, Entusiasmo, Normalidad e Intrépido.",
+                "Planta: Clorofila, Espesura, Defensa hoja y Herbogénesis.",
+                "Psíquico: Sincronía, Muro mágico, Telepatía y Psicogénesis.",
+                "Roca: Robustez, Cabeza roca, Roca sólida y Antibalas.",
+                "Siniestro: Intimidación, Presión, Hurto y Bromista.",
+                "Tierra: Velo arena, Trampa arena, Poder arena e Ímpetu arena.",
+                "Veneno: Hedor, Punto tóxico, Toque tóxico e Intimidación.",
+                "Volador: Piel celeste, Vista lince, Impulso y Allanamiento."
+            ]
+        },
+        {
+            "nombre": "Superar la debilidad",
+            "nivel": 17,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Especialista de Tipo",
+            "contenido": [
+                "A partir de nivel 17, eres tan hábil entrenado a los Pokémon del Tipo en el que te especializas que sabes cómo enseñar a tus Pokémon a cubrirse de una de sus debilidades comunes. Elige un Tipo Elemental que hace daño súper efectivo contra el Tipo Elemental en el que te especializas. Cuando tus Pokémon reciben daño de este Tipo Elemental, este no es súper efectivo contra ellos."
+            ]
+        }
+    ]
+}

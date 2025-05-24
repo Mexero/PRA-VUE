@@ -1,0 +1,74 @@
+{
+    "nombre": "Hogar en el Viaje",
+    "prerrequisito": "Tu Bono de Entrenador es tu Espíritu.",
+    "nombreClase": "Entrenador",
+    "descripcion": [
+        "Los entrenadores que siguen esta filosofía creen que el hogar está con las personas y Pokémon que amas y que los lazos que se crean en el camino pueden ser tanto o más fuerte que los de la sangre. Estos entrenadores ven a sus Pokémon como miembros de su familia, llegando a tratarlos de forma paternal en muchas ocasiones.",
+        "Los entrenadores que siguen el Camino del hogar comprenden también que una de las cosas que más unen tanto a personas como a Pokémon es la comida y disfrutan de cocinarla y compartirla con la gente a su alrededor, ya sean personas o Pokémon."
+    ],
+    "rasgos": [
+        {
+            "nombre": "Cocinero del Camino",
+            "nivel": 2,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Hogar en el Viaje",
+            "contenido": [
+                "A partir de nivel 2, aprendes a cocinar comidas sabrosas, incluso con las limitadas herramientas que puedas tener cuando acampas. Aumentas en 1 tu Grado de Habilidad en Conocimiento de Cocina, hasta un máximo de Experto. Además, puedes cocinar Comidas de rareza Común.",
+                "Para cocinar Comidas, tomas una Acción Extendida que dura media hora por cada 1000 Poké dólares que cuestan las comidas que creas, haciendo uso de tus Utensilios de Cocina y consumiendo materiales por valor de la mitad del coste de dichos objetos. Al final de dicha Acción Extendida, realizas una Tirada de Habilidad de Conocimiento de Cocina (Espíritu por cada Comida que estás creando. Por cada Tirada que falles, la comida no otorga efectos, pero puede comerse. La dificultad de dichas Tiradas varía en función de la rareza de la Comida a crear. Para las comidas Comunes, la dificultad es 10.",
+                "Por último, una vez al Día puedes cocinar un almuerzo especial para tus Pokémon, tus compañeros y todos sus Pokémon como Acción Extendida. Las criaturas que comen esta comida ganan una cantidad de Puntos de Escudo igual a su nivel. Estos puntos de Escudo duran hasta que la criatura Descanse."
+            ]
+        },
+        {
+            "nombre": "Hogar en el Viaje 5",
+            "nivel": 5,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Hogar en el Viaje",
+            "tieneSubrasgos": true,
+            "contenido": [
+                {
+                    "nombre": "Tutor magistral",
+                    "descripcion": [
+                        "A partir de nivel 5, conoces tan bien a tus Pokémon que sabes dónde están exactamente sus límites y sabes cómo hacer que los alcancen. La Cantidad Máxima de Movimientos Conocidos de tus Pokémon aumenta en 2, y, como una Acción Extendida que dura al menos una hora, puedes enseñar a uno de tus Pokémon un Movimiento perteneciente a su lista de Movimientos Enseñables de un Tipo Elemental del que ya conozca al menos un Movimiento. La cantidad máxima de PP que puede costar usar el Movimiento elegido es de 1 PP.",
+                        "La cantidad máxima de PP que puede costar el Movimiento elegido aumenta a 2 PP a partir de nivel 8 y vuelve a aumentar a 3 PP a partir de nivel 13."
+                    ]
+                },
+                {
+                    "nombre": "Chef del camino",
+                    "descripcion": [
+                        "Desde nivel 5, aprendes a cocinar comidas aún más complejas y deliciosas. Aprendes a cocinar Comidas de rareza Poco común. La dificultad de la Tirada para cocinarlas adecuadamente es 15."
+                    ]
+                }
+            ]
+        },
+        {
+            "nombre": "El sabor del hogar",
+            "nivel": 8,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Hogar en el Viaje",
+            "contenido": [
+                "A partir de nivel 8, tus habilidades de cocina mejoran aún más. Aprendes a cocinar Comidas raras. La dificultad de la Tirada para cocinarlas adecuadamente es 20.",
+                "Además, cuando cocinas Comidas, si estas otorgan un beneficio temporal, pueden usarse el doble de veces antes de dejar de hacer efecto."
+            ]
+        },
+        {
+            "nombre": "Lazos familiares",
+            "nivel": 13,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Hogar en el Viaje",
+            "contenido": [
+                "Desde nivel 13, los lazos que has creado con tus Pokémon son tan fuertes que pensáis los unos en los otros como una familia. Cuando tú y uno de tus Pokémon o dos de tus Pokémon están a menos de 2 metros entre sí, os sentís más confiados y añadís 1d4 a todas las Tiradas de Ataque y Salvación que hacéis."
+            ]
+        },
+        {
+            "nombre": "Unidos para siempre",
+            "nivel": 17,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Hogar en el Viaje",
+            "contenido": [
+                "A nivel 17, tus habilidades de cocina llegan a la cúspide culinaria y los lazos con tus Pokémon se vuelven tan fuertes que podéis comprenderos perfectamente con apenas un par de gestos y palabras.",
+                "Cuando das una Orden, puedes dar otra a otro de tus Pokémon. Además, cuando das una Orden a dos de tus Pokémon y usas una de tus Órdenes de Entrenador sobre uno de los Pokémon, puedes usar otra Orden de Entrenador sobre otro con la misma Acción pagando su coste de PP usual.",
+                "Además, puedes cocinar comidas de rareza Muy Rara. La dificultad de la Tirada para cocinarlas adecuadamente es 25."
+            ]
+        }
+    ]
+}

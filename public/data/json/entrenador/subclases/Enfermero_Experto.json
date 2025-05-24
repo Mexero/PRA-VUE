@@ -1,0 +1,55 @@
+{
+    "nombre": "Enfermero Experto",
+    "prerrequisito": "Ninguno.",
+    "nombreClase": "Entrenador",
+    "descripcion": [
+        "Los Entrenadores que siguen este camino tienen conocimientos médicos variados aplicables tanto a otros entrenadores como a sus Pokémon. Aunque en el combate directo no son tienen habilidades tan destacables como otros Entrenadores, lo compensan con que sus Pokémon siempre están en mejor forma física gracias al minucioso cuidado que hacen de ellos."
+    ],
+    "rasgos": [
+        {
+            "nombre": "Tratamiento médico",
+            "nivel": 2,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Enfermero Experto",
+            "contenido": [
+                "Desde nivel 2, eres un sanador experimentado. Aumentas en 1 tu Grado de Habilidad en Conocimiento Médico, hasta un máximo de Experto y, cuando una o varias criaturas acaban un combate con sus PV por debajo de la mitad de sus PV Máximos, pero no han caído a 0 PV a lo largo de este, puedes tomar una Acción Extendida justo tras el combate para tratar las heridas y masajear los músculos adoloridos a una cantidad de estas criaturas igual a tu Bono de Entrenador. Cuando lo haces, recuperan PV hasta alcanzar la mitad de sus PV Máximos."
+            ]
+        },
+        {
+            "nombre": "Médico de combate",
+            "nivel": 5,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Enfermero Experto",
+            "contenido": [
+                "A partir de nivel 5, te vuelves hábil a lo hora de usar el Kit de primeros auxilios. Cuando usas tu Acción para curar a una criatura con el Kit de Primeros Auxilios, puedes gastar 1 PP para que la criatura recupere una cantidad de PV igual a una tirada de una cantidad de d6 igual a tu Bono de Entrenador. Sólo puedes hacer que una criatura recupere PV de esta forma una vez por Descanso (recuerda anotar sobre qué criaturas lo has usado)."
+            ]
+        },
+        {
+            "nombre": "Estiramientos contra la fatiga",
+            "nivel": 8,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Enfermero Experto",
+            "contenido": [
+                "A partir de nivel 8, aprendes a ayudar a una criatura a estirar. Cuando tomas la Acción Extendida para masajear a una criatura de tu rasgo de Masaje sanador, puedes además ayudarla a estirar, por lo que si este combate ha hecho que la criatura gane 1 o varios Niveles de Fatiga, esta pierde 1 Nivel de Fatiga."
+            ]
+        },
+        {
+            "nombre": "Comidas contra el malestar",
+            "nivel": 13,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Enfermero Experto",
+            "contenido": [
+                "A partir de nivel 13, aprendes a crear comidas para tus Pokémon que están adaptadas para sus necesidades nutricionales particulares. Mientras tomas la Acción Extendida de Entrenar a tus Pokémon, puedes preparar comida para cada uno de ellos, la cual toman al final del entrenamiento. Elige uno de los siguientes Estados para cada Pokémon que entrenas: Envenenado, Paralizado, Quemado o Helado. Los Pokémon no pueden quedar afectados por el Estado que elegiste para ellos hasta que Descansen."
+            ]
+        },
+        {
+            "nombre": "Renovar energías",
+            "nivel": 17,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Enfermero Experto",
+            "contenido": [
+                "A partir del nivel 17, tu capacidad para sanar a tus Pokémon aumenta mucho. Una vez al Día, como la Acción que tomas para curar a una criatura con el Kit de Primeros Auxilios, restauras completamente a una criatura. Esta criatura recupera todos sus PV y PP, deja de estar envenenada, paralizada, quemada, helada, dormida, infatuada y confusa y pierde hasta 5 Niveles de Fatiga."
+            ]
+        }
+    ]
+}

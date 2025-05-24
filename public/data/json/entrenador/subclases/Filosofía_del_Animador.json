@@ -1,0 +1,57 @@
+{
+    "nombre": "Filosofía del Animador",
+    "prerrequisito": "Tu Bono de Entrenador es tu Presencia.",
+    "nombreClase": "Entrenador",
+    "descripcion": [
+        "Los entrenadores que siguen esta filosofía tienen una forma mucho más laxa que la mayoría de entender lo que es dar órdenes y entrenar a sus Pokémon, pues se limitan a dejarles decidir por ellos mismos y apoyarlos con pequeños consejos, palabras de ánimo y felicitaciones."
+    ],
+    "rasgos": [
+        {
+            "nombre": "Palabras de ánimo",
+            "nivel": 2,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Filosofía del Animador",
+            "contenido": [
+                "Desde nivel 2, siempre sabes cómo animar a los demás. Cuando ves a una criatura realizar una Tirada de d20 a menos de 10 metros de ti, la animas como Reacción. Tira tu dado de Orden y la criatura añade el resultado a la Tirada. Puedes usar este Rasgo una cantidad de veces al Día igual a tu Bono de Entrenador."
+            ]
+        },
+        {
+            "nombre": "Refuerzo positivo",
+            "nivel": 5,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Filosofía del Animador",
+            "contenido": [
+                "A nivel 5, desarrollas formas de reforzar el espíritu de lucha de tus Pokémon en el combate con palabras de ánimo. Después de que tu Pokémon ejecute una Orden de Entrenador que le has dado, lo alentas si falla en su objetivo o lo felicitas si lo consigue:",
+                "Felicitar: Tu Pokémon se siente orgulloso por lo que ha hecho y se prepara para seguir actuando así. Si en su próximo turno le ordenas que tome la misma Acción o use un Movimiento que acaba de usar, tiene Ventaja en todas las Tiradas de d20 asociadas a dicha Acción o Movimiento.",
+                "Alentar: Tu Pokémon queda alentado a seguir luchando gracias a tus ánimos. Tu Pokémon gana Puntos de Escudo igual al doble de tu Bono de Entrenador, los cuales duran hasta el final de tu próximo turno. Mientras un Pokémon tiene al menos uno de estos Puntos de Escudo, tiene Ventaja en las Tiradas de Salvación de Espíritu."
+            ]
+        },
+        {
+            "nombre": "Subidón de autoestima",
+            "nivel": 8,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Filosofía del Animador",
+            "contenido": [
+                "A partir de nivel 8, cuando un aliado hace que una criatura caiga a 0 PV, puedes usar 1 PP para motivarlo con palabras de ánimo, haciendo uso de tu Reacción. Hasta el final de su próximo turno, sus Tiradas de Ataque se hacen en Ventaja y el daño base de sus Movimientos aumenta en 1 dado."
+            ]
+        },
+        {
+            "nombre": "Llenar de entusiasmo",
+            "nivel": 13,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Filosofía del Animador",
+            "contenido": [
+                "A partir de nivel 13, aprendes a animar a tus Pokémon de nuevas formas. Cuando usas una Orden de Entrenador sobre uno de tus Pokémon, estos se entusiasman y pueden decidir tener un penalizador inferior o igual a tu Bono de Entrenador su próxima Tirada de Ataque del turno. Si lo hacen, añaden una cantidad de daño igual al doble del penalizador tomado."
+            ]
+        },
+        {
+            "nombre": "Animar al equipo",
+            "nivel": 17,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Filosofía del Animador",
+            "contenido": [
+                "A nivel 17, aprendes a animar no sólo a tus Pokémon sino también a tus aliados. Como una Acción, puedes animar a una cantidad de criaturas menor o igual a tu Bono de Entrenador. Cuando lo haces, ganan Ventaja en todas las Tiradas de Ataque y Habilidad que hagan hasta el final de su próximo turno. Puedes usar este rasgo una vez por Escena y, después de esto, puedes volver a usarlo por 2 PP."
+            ]
+        }
+    ]
+}

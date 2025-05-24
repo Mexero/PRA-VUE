@@ -1,0 +1,56 @@
+{
+    "nombre": "Camino de la Resiliencia",
+    "prerrequisito": "Tu Bono de Entrenador es tu Espíritu.",
+    "nombreClase": "Entrenador",
+    "descripcion": [
+        "Los entrenadores que siguen esta filosofía creen que el camino a la victoria es el esfuerzo y la perseverancia. Estos entrenadores son capaces aceptar la derrota y de canalizarla para aprender y mejorar gracias a ella, sin embargo, no por ser capaces de aceptarla es que no vayan a luchar por evitarla. Estos entrenadores y sus Pokémon se hacen conocer gracias a su increíble resistencia y su inusual capacidad para convertir las situaciones más desfavorables en momentos de crecimiento y superación de sus propios límites."
+    ],
+    "rasgos": [
+        {
+            "nombre": "Esfuerzo y perseverancia",
+            "nivel": 2,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Camino de la Resiliencia",
+            "contenido": [
+                "A partir de nivel 2, tu y tus Pokémon entrenáis con tanto esfuerzo que habéis aprendido a sobrepasar vuestros límites con puro esfuerzo y fuerza de voluntad. Cuando tu o tus Pokémon tenéis Puntos de Escudo, añadís la mitad de tu Bono de Entrenador a las Tiradas de Salvación que hacéis."
+            ]
+        },
+        {
+            "nombre": "Tutor de la Resiliencia",
+            "nivel": 5,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Camino de la Resiliencia",
+            "contenido": [
+                "A partir de nivel 5, sabes cómo hacer que un Pokémon saque fuerza de la debilidad. Aprendes a usar el Movimiento Aguante y ganas la Habilidad Agallas. Además, como una Acción Extendida que dura al menos una hora, puedes enseñar a un Pokémon los Movimientos de Aguante, Esfuerzo e Imagen si estos están en su lista de Movimientos Enseñables.",
+                "Por último, como una Acción Extendida que dura al menos una hora, puedes hacer que tus Pokémon ganen la Habilidad de Agallas."
+            ]
+        },
+        {
+            "nombre": "Enfrentar la adversidad",
+            "nivel": 8,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Camino de la Resiliencia",
+            "contenido": [
+                "A partir de nivel 8, cuando tu o uno de tus Pokémon recibís un golpe crítico que no os deja inconscientes, vuestro espíritu de lucha se enciende, haciendo que recuperéis una cantidad de PP igual a un tercio de tu Bono de Entrenador."
+            ]
+        },
+        {
+            "nombre": "Mantenerse en pie",
+            "nivel": 13,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Camino de la Resiliencia",
+            "contenido": [
+                "Desde nivel 13, tu y tus Pokémon sois capaces de aguantar mucho más de lo que deberíais simplemente haciendo uso de vuestra fuerza de voluntad. Tanto tú como tus Pokémon que conocen el Movimiento de Aguante podéis usarlo 2 veces por Escena, pero la segunda vez cuesta 5 PP en lugar de su coste usual."
+            ]
+        },
+        {
+            "nombre": "Hasta el final",
+            "nivel": 17,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Camino de la Resiliencia",
+            "contenido": [
+                "A nivel 17, cuando tú y tus Pokémon os encontráis en un aprieto es cuando más poderosos sois. Cuando tu o uno de tus Pokémon caéis a 1 PV ganáis 20 Puntos de Escudo y mientras tenéis sólo 1 PV, tenéis Ventaja en todas las Tiradas de d20 que hacéis."
+            ]
+        }
+    ]
+}

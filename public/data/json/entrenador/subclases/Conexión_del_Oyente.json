@@ -1,0 +1,75 @@
+{
+    "nombre": "Conexión del Oyente",
+    "prerrequisito": "Tu Bono de Entrenador es tu Espíritu.",
+    "nombreClase": "Entrenador",
+    "descripcion": [
+        "Los Oyentes son Entrenadores con una conexión sobrenatural con los Pokémon que les permite comprender sus pensamientos, inquietudes, miedos y personalidades y compartir los propios con ellos. Esta conexión hace a los Oyentes mucho más empáticos con los Pokémon, que ven como iguales y, a su vez, hace que los Pokémon estén predispuestos a cooperar con ellos.",
+        "Muchos Oyentes prefieren la compañía de otros Pokémon antes que la de los humanos, a los que pueden llegar a tratar con desprecio u hostilidad."
+    ],
+    "rasgos": [
+        {
+            "nombre": "Oír el espíritu",
+            "nivel": 2,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Conexión del Oyente",
+            "contenido": [
+                "A partir de nivel 2, aprendes a escuchar la voz de la mente los Pokémon y estos pueden sentir tus pensamientos, lo que os conecta profundamente. Ganas Sentido del Aura en un radio de 20 metros y tu Grado de Habilidad en Empatía aumenta en 1, hasta un máximo de Experto.",
+                "Además, puedes tomar una Acción para estrechar la conexión con un Pokémon que tocas para Sintonizarte con este si así lo permite. Una vez Sintonizado con un Pokémon, si este se aleja a una distancia superior en Kilómetros igual a tu Espíritu o si este así lo desea, la conexión se rompe. Devolver a un Pokémon en su Pokéball no rompe la conexión.",
+                "Cuando estás Sintonizado con un Pokémon, aprendes todo lo que puedes hacer y puedes usar tu Acción para sentir a través de los sentidos de esta criatura en lugar de a través de los tuyos propios. Además, puedes dar Órdenes a una criatura con la que estás Sintonizado de forma telepática.",
+                "Puedes estar Sintonizado con una cantidad de Pokémon igual a tu Bono de Entrenador. Si te sintonizas con un Pokémon cuando estás Sintonizado con una cantidad de Pokémon igual a tu Bono de Entrenador, eliges a un Pokémon con el que estás sintonizado, con el que dejas de estarlo."
+            ]
+        },
+        {
+            "nombre": "Poder del Círculo",
+            "nivel": 5,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Conexión del Oyente",
+            "contenido": [
+                "A partir de nivel 5, ganas una cantidad de PP Máximos extra igual a la cantidad de Pokémon con los que estás Sintonizado. Además, tú y los Pokémon con los que estás Sintonizado que están fuera de su Poké Ball y a menos de 5 metros de ti creáis un Círculo de Sintonía, del cual formáis parte y mediante el cual compartís vuestro poder. Cualquier criatura en el Círculo de Sintonía puede usar los PP de las otras criaturas dentro del Círculo en lugar de los suyos."
+            ]
+        },
+        {
+            "nombre": "Conexión del Oyente 8",
+            "nivel": 8,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Conexión del Oyente",
+            "tieneSubrasgos": true,
+            "contenido": [
+                {
+                    "nombre": "Compartir el esfuerzo",
+                    "descripcion": [
+                        "A partir de nivel 8, la distancia a la que pueden estar los Pokémon que forman parte de tu Círculo de Sintonía se vuelve de 10 metros. Además, cuando una criatura dentro del Círculo fuese a perder PV, esta pérdida de PV puede repartirse equitativamente entre cualquier cantidad de criaturas que estén dentro del Círculo que elijas.",
+                        "Puedes usar este efecto una vez por Escena y, además, puedes usar 2 PP para volver a usarlo.",
+                        "Por último, tu Sentido del Aura ahora tiene un rango de 30 metros."
+                    ]
+                },
+                {
+                    "nombre": "Gran sintonía",
+                    "descripcion": [
+                        "A partir de nivel 8, puedes comunicarte telepáticamente con los Pokémon con los que estás Sintonizado y ganas la Habilidad de Telepatía pero sólo puedes usarla con Pokémon o con otros Oyentes."
+                    ]
+                }
+            ]
+        },
+        {
+            "nombre": "Sintonía Calmante",
+            "nivel": 13,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Conexión del Oyente",
+            "contenido": [
+                "A nivel 13, puedes usar tu Acción para enviar una sensación de calma y seguridad a todos los Pokémon en tu Círculo de Sintonía que dura hasta el final de la Escena. Al principio de cada uno de sus turnos, los Pokémon en el Círculo ganan Puntos de Escudo igual a tu Nivel de Entrenador más tu Bono de Entrenador y, mientras tienen Puntos de Escudo otorgados por este Rasgo, tienen Ventaja en las Tiradas de Salvación de Espíritu que hacen contra efectos que no hacen daño.",
+                "Una vez usas este efecto no puedes volver a usarlo hasta que Descanses."
+            ]
+        },
+        {
+            "nombre": "Círculo de Comando",
+            "nivel": 17,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Conexión del Oyente",
+            "contenido": [
+                "A nivel 17, como parte de la Acción que tomas cuando das una Orden de Entrenador, puedes dar una segunda Orden a otro de tus Pokémon que está dentro de tu Círculo de Sincronía, ignorando la restricción de sólo poder dar una Orden por turno.",
+                "Además, tu Sentido del Aura ahora tiene un rango de 100 metros."
+            ]
+        }
+    ]
+}

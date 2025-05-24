@@ -1,0 +1,96 @@
+{
+    "nombre": "Camino del Músico",
+    "prerrequisito": "Tu bono de Entrenador es Presencia.",
+    "nombreClase": "Entrenador",
+    "descripcion": [
+        "Los entrenadores que siguen esta filosofía quieren llevar su música al mundo a través no sólo de actuaciones, sino también a través de los combates. Los entrenadores que siguen este camino creen en la belleza de la lucha, que inspira su música y, a su vez, hacen uso de esta para entrenar a sus Pokémon y dirigirlos."
+    ],
+    "rasgos": [
+        {
+            "nombre": "Camino del Músico 2",
+            "nivel": 2,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Camino del Músico",
+            "tieneSubrasgos": true,
+            "contenido": [
+                {
+                    "nombre": "Habilidad Musical",
+                    "descripcion": [
+                        "A nivel 2, te vuelves un músico habilidoso. Cuando ganas este rasgo, aumentas en 1 tu Grado de Habilidad en Actuación, hasta un máximo de Experto.",
+                        "Cuando tocas un instrumento o cantas como Acción Extendida, las criaturas que te escuchan tocar ganan 1 Nivel de Infatuado de ti, que no pierden hasta el final de la Escena. Una criatura Infatuada de esta forma elogia tu talento musical, tiene Desventaja en Tiradas de Percepción y, además, si haces una Tirada de Habilidad de Persuasión contra una criatura Infatuada de esta forma, tratas cualquier Tirada Natural en el d20 de 9 o menos como un 10 natural."
+                    ]
+                },
+                {
+                    "nombre": "Movimientos de Músico",
+                    "descripcion": [
+                        "A nivel 2, aprendes a usar tu talento musical para usar Movimientos que realizas con tu voz o tu instrumento, independientemente de si la descripción dice que cantas o haces un cierto tipo de sonido. Debes usar tu Presencia como la Estadística asociada a estos Movimientos y sus costes aumentan en 1 PP para ti.",
+                        "Aprendes 3 de los siguientes Movimientos: Alboroto, Voz cautivadora, Canon, Canto, Eco voz, Supersónico, Alarido. Cada vez que subes de nivel, puedes cambiar uno de estos Movimientos que conoces por otro de la misma lista."
+                    ]
+                }
+            ]
+        },
+        {
+            "nombre": "Órdenes Musicales",
+            "nivel": 5,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Camino del Músico",
+            "contenido": [
+                "A nivel 5, aprendes otro Movimiento de la lista de Movimientos de músico. Cuando usas tu Acción para dar una Orden de Entrenador, puedes usar 1 PP más del coste normal de este para usar un Movimiento de músico que conoces y que usa tu Acción para usarlo como parte de esta misma Acción."
+            ]
+        },
+        {
+            "nombre": "Camino del Músico 8",
+            "nivel": 8,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Camino del Músico",
+            "tieneSubrasgos": true,
+            "contenido": [
+                {
+                    "nombre": "Nuevos Movimientos de Músico",
+                    "descripcion": [
+                        "A partir de nivel 8, tu habilidad Musical mejora. A la lista de Movimientos que puedes aprender gracias a tu rasgo de Movimientos de músico se añaden los siguientes Movimientos: Eco metálico, Canto Encantador, Chirrido, Vozarrón, Silbato, Refuerzo. Además, aprendes otros dos Movimientos de la lista de Movimientos de músico."
+                    ]
+                },
+                {
+                    "nombre": "Tutor Musical",
+                    "descripcion": [
+                        "A partir de nivel 8, enseñas a los Pokémon a acompañar tu música. Como una Acción Extendida que dura al menos una hora, puedes enseñar a un Pokémon un Movimiento de Músico que conoces que pertenece a su lista de Movimientos Enseñables."
+                    ]
+                }
+            ]
+        },
+        {
+            "nombre": "Camino del Músico 13",
+            "nivel": 13,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Camino del Músico",
+            "tieneSubrasgos": true,
+            "contenido": [
+                {
+                    "nombre": "Música Emotiva",
+                    "descripcion": [
+                        "Desde nivel 13, tu música es capaz de conmover incluso en el fragor de la batalla. Cuando usas tu rasgo de Órdenes musicales, el Pokémon sobre el que usas la Orden de Entrenador gana uno de los siguientes beneficios en función de cómo suene tu música:",
+                        "Valentía: Tu música inspira a tu Pokémon a luchar con todo. El Pokémon gana una cantidad de Puntos de Escudo igual a tu Bono de Entrenador más tu BH.",
+                        "Calma: Tu música calma las emociones de tu Pokémon. El Pokémon gana Ventaja en Tiradas de Salvación para no quedar, Asustado, Confuso o Enfurecido y, si tiene Niveles de estos Estados, los reduce en 1.",
+                        "Además, aprendes otro Movimiento de la lista de Movimientos de músico."
+                    ]
+                },
+                {
+                    "nombre": "Mejores Movimientos Musicales",
+                    "descripcion": [
+                        "A nivel 13, tu maestría con tus Movimientos de Musicales aumenta, por lo que los costes de estos Movimientos ya no te cuestan 1 PP más de lo normal."
+                    ]
+                }
+            ]
+        },
+        {
+            "nombre": "Dueño del escenario",
+            "nivel": 17,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Camino del Músico",
+            "contenido": [
+                "Desde nivel 17, tu música destaca sobre toda la que suena a tu alrededor, opacando los sonidos que son disonantes con esta. Cuando usas un Movimiento de Músico, las criaturas a menos de 20 metros de ti reducen a la mitad el daño que reciben de los Movimientos con la Etiqueta de Sonido usados por tus rivales hasta el principio de tu próximo turno. Además, aprendes el Movimiento Estruendo, que cuenta como un Movimiento de músico para ti."
+            ]
+        }
+    ]
+}

@@ -1,0 +1,58 @@
+{
+    "nombre": "Mente Maestra",
+    "prerrequisito": "Tu bono de Entrenador es Mente.",
+    "nombreClase": "Entrenador",
+    "descripcion": [
+        "Los entrenadores que siguen la filosofía de la Mente Maestra creen que la mejor forma de resolver problemas es trazando planes enrevesados y originales. Esta forma de pensar se traduce en una mente despierta y una capacidad de planificación e improvisación en el combate únicos. Usualmente, los entrenadores que siguen esta filosofía prefieren ganar con astucia y maña, aprovechando y modificando el terreno y aplicando estados que debilitan a sus contrincantes, entrando a rematar cuando tienen todas las de ganar."
+    ],
+    "rasgos": [
+        {
+            "nombre": "Entrenamiento Ingenioso",
+            "nivel": 2,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Mente Maestra",
+            "contenido": [
+                "A nivel 2, te vuelve especialmente talentoso a la hora de crear estrategias muy diversas y entrenas a tus Pokémon para que puedan ejecutarlas correctamente. Aprendes el siguiente entrenamiento:",
+                "¡Sed ingeniosos!: Enseñas a tus Pokémon cómo improvisar estrategias en el momento para que ciertos movimientos les generen una mayor ventaja. Cuando un Pokémon afectado por este entrenamiento usa un Movimiento que no tiene la Etiqueta de Potenciación o Escudo ni hace daño este deja de provocar ataques de oportunidad por el resto del turno y gana Puntos de Escudo iguales a tu Bono de Entrenador."
+            ]
+        },
+        {
+            "nombre": "Tutor de Estratagemas",
+            "nivel": 5,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Mente Maestra",
+            "contenido": [
+                "A partir de nivel 5, aprendes a visualizar qué Movimientos podrían llegar a utilizar tus Pokémon que te permitieran crear aún más estrategias. Como una Acción Extendida que dura al menos una hora, puedes enseñar a un Pokémon un Movimiento que no hace daño ni tiene la etiqueta Potenciación que esté en su lista de Movimientos Enseñables. La cantidad máxima de PP que puede costar el Movimiento que enseñas con este Rasgo es de 1 PP y esta limitación desaparece a partir de Nivel 8."
+            ]
+        },
+        {
+            "nombre": "Mentalidad Pícara",
+            "nivel": 8,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Mente Maestra",
+            "contenido": [
+                "A nivel 8, tus Pokémon ganan tu picardía y empiezan a comprender mejor tus líneas de pensamiento, lo que les permite prepararse para tus órdenes. Tus Pokémon ganan la Habilidad Bromista como una de sus Habilidades Ocultas."
+            ]
+        },
+        {
+            "nombre": "Estrategias improvisadas",
+            "nivel": 13,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Mente Maestra",
+            "contenido": [
+                "Desde nivel 13, aprendes a hacer cambios a tus estrategias muy rápidamente. Cuando una criatura provoca un Ataque de oportunidad de uno de tus Pokémon, puedes usar tu Reacción y 1 PP para decirle que aproveche ese momento para usar un Movimiento que usualmente no podría usar de esta forma. En lugar de un Movimiento A voluntad que hace una Tirada de Ataque cuerpo a cuerpo, tu Pokémon puede usar un Movimiento que sólo afecta a la criatura y que no hace daño."
+            ]
+        },
+        {
+            "nombre": "Plan sin fisuras",
+            "nivel": 17,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Mente Maestra",
+            "contenido": [
+                "Desde nivel 17, cuando tus Pokémon utilizan un Movimiento, estos Movimientos ganan los siguientes beneficios:",
+                "Si el Movimiento hace que una criatura gane Niveles de cualquier Estado Nivelado, gana 1 Nivel más de lo normal.",
+                "Si el Movimiento crea Terreno difícil, cruzar 1 metro de este Terreno cuesta un metro de Velocidad más de lo normal."
+            ]
+        }
+    ]
+}

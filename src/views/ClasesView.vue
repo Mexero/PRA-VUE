@@ -18,6 +18,7 @@ const subclasesCargadas = ref([]);
 
 
 
+
 //=============FETCH Y MANIPULACIÓN DE DATOS===========
 async function cargarClase(clase) {
     if (clase === claseCargada.value) {
@@ -51,15 +52,11 @@ async function cargarClase(clase) {
     console.timeEnd('fetchData');
 }
 
-async function toggleSubclase(ruta, e) {
+async function toggleSubclase(ruta, e = null) {
     const existente = subclasesCargadas.value.find(s => s.ruta === ruta);
 
     if (existente) {
         existente.activo = !existente.activo;
-        if (existente.activo) { e.target.className = "class-active" }
-        else {
-            e.target.className = "class-inactive"
-        }
     } else {
         const datosSubclase = await fetch(`/data/json/${claseCargada.value}/subclases/${ruta}.json`)
             .then(res => res.json())
@@ -74,18 +71,53 @@ async function toggleSubclase(ruta, e) {
                 activo: true,
                 subclase: datosSubclase
             });
-            console.log(`Cargado ${ruta}`)
-            e.target.className = "class-active"
         }
     }
-
+    updateSubclasesQuery();
 }
 
-//==============EN CARGA===========
-onMounted(() => {
-    cargarClase('entrenador');
+// =========== CHECHEA SI UNA SUBCLASE ESTÁ ACTIVA ==========
+function isSubclaseActiva(ruta) {
+    const sub = subclasesCargadas.value.find(s => s.ruta === ruta);
+    return sub && sub.activo;
+}
 
+
+
+//=============== AÑADE A LA RUTAS LAS SUBCLASES CARGADAS =============
+function updateSubclasesQuery() {
+    const subclasesActivas = subclasesCargadas.value
+        .filter(s => s.activo)
+        .map(s => s.ruta);
+
+    router.replace({
+        query: {
+            ...route.query,
+            subclases: subclasesActivas.join(',')
+        }
+    });
+}
+
+
+
+
+
+//==============EN CARGA===========
+
+onMounted(async () => {
+    const claseURL = route.query.clase || 'entrenador';
+    await cargarClase(claseURL);
+
+    const subclasesURL = route.query.subclases;
+    if (subclasesURL) {
+        const rutas = subclasesURL.split(',');
+        for (const ruta of rutas) {
+            await toggleSubclase(ruta);
+        }
+    }
 });
+
+
 
 
 //==============CAMBIO DE RUTA AL CAMBIAR CLASE===========
@@ -104,8 +136,11 @@ function handleClassChange(claseNueva) {
                 <div @click="cargarClase('entrenador')"
                     :class="claseCargada === 'entrenador' ? 'class-active' : 'class-inactive'">Entrenador
                     <div class="subclasses" v-if="claseCargada === 'entrenador'">
-                        <div v-for="(subclase) in subclasesIndex" @click="e => (toggleSubclase(subclase.ruta, e))">{{
-                            subclase.acortado }}</div>
+                        <div v-for="(subclase) in subclasesIndex" :key="subclase.ruta"
+                            :class="isSubclaseActiva(subclase.ruta) ? 'class-active' : 'class-inactive'"
+                            @click="e => toggleSubclase(subclase.ruta, e)">
+                            {{ subclase.acortado }}
+                        </div>
                     </div>
                 </div>
                 <div @click="console.log(' pinga')"
@@ -175,65 +210,79 @@ function handleClassChange(claseNueva) {
 
         <div class="bottom-section">
             <!-- Rasgos -->
-            <div>
-                <p v-for="(parrafo) in Array.isArray(descripcion) ? descripcion : [descripcion]" class="description"
-                    v-html="parrafo"></p>
 
-                <details class="feature" open>
-                    <summary>{{ tiradas.nombre }}</summary>
-                    <div>
-                        <p v-for="(parrafo) in Array.isArray(tiradas.descripcion) ? tiradas.descripcion : [tiradas.descripcion]"
-                            v-html="parrafo"></p>
-                    </div>
-                </details>
-
-                <details v-for="(rasgo, i) in rasgos" :key="i" class="feature" open>
-                    <summary :id="rasgo.nombre + rasgo.nivel">
-                        {{ rasgo.nombre }}
-                    </summary>
-                    <div class="detailsBlock">
-                        <p class="feature-origin">{{ rasgo.claseNombre }} {{ rasgo.nivel }}</p>
-                        <div>
-                            <p v-for="(parrafo, j) in Array.isArray(rasgo.descripcion) ? rasgo.descripcion : [rasgo.descripcion]"
-                                :key="j" v-html="parrafo">
+            <!--Descripción-->
+            <details class="feature" open>
+                <summary>Descripción</summary>
+                <div>
+                    <p v-for="(parrafo) in Array.isArray(descripcion) ? descripcion : [descripcion]" class="description"
+                        v-html="parrafo"></p>
+                    <!--Descripciones subclases-->
+                    <div v-for="(subclase) in subclasesCargadas">
+                        <details v-if="subclase.activo" class="featureSubSub" open>
+                            <summary>{{ subclase.subclase.nombre }}</summary>
+                            <p v-for="parrafo in subclase.subclase.descripcion">{{ parrafo }}
                             </p>
-                        </div>
-                        <!-- subclase -->
-                        <div v-if="rasgo.esSubclase" :id="'subclase' + rasgo.nivel">
-                            <div v-for="(subclase) in subclasesCargadas">
-                                <template v-if="subclase.activo">
-                                    <template v-for="(rasgoSub) in subclase.subclase.rasgos">
-                                        <div v-if="rasgoSub.nivel === rasgo.nivel">
-                                            <details class="featureSub" open>
-                                                <summary>{{ rasgoSub.nombre }}</summary>
-                                                <p class="feature-origin">{{ rasgoSub.nombreSubclase }} {{ rasgo.nivel
-                                                    }}</p>
-                                                <!-- tiene más de 1 rasgo al nivel -->
-                                                <template v-if="rasgoSub.tieneSubrasgos">
-                                                    <div v-for="(subrasgo) in rasgoSub.contenido">
-                                                        <details class="featureSubSub" open>
-                                                            <summary>{{ subrasgo.nombre }}
-                                                            </summary>
-                                                            <p v-for="(parrafo) in Array.isArray(subrasgo.descripcion) ? subrasgo.descripcion : [subrasgo.descripcion]"
-                                                                v-html="parrafo">
-                                                            </p>
-                                                        </details>
-                                                    </div>
-                                                </template>
-                                                <!-- tiene sólo 1 rasgo al nivel -->
-                                                <template v-else>
-                                                    <p v-for="(parrafo) in Array.isArray(rasgoSub.contenido) ? rasgoSub.contenido : [rasgoSub.contenido]"
-                                                        v-html="parrafo"> </p>
-                                                </template>
-                                            </details>
-                                        </div>
-                                    </template>
+                        </details>
+                    </div>
+                </div>
+            </details>
+            <!--Tiradas de salvación-->
+            <details class="feature" open>
+                <summary>{{ tiradas.nombre }}</summary>
+                <div>
+                    <p v-for="(parrafo) in Array.isArray(tiradas.descripcion) ? tiradas.descripcion : [tiradas.descripcion]"
+                        v-html="parrafo"></p>
+                </div>
+            </details>
+
+            <details v-for="(rasgo, i) in rasgos" :key="i" class="feature" open>
+                <summary :id="rasgo.nombre + rasgo.nivel">
+                    {{ rasgo.nombre }}
+                </summary>
+                <div class="detailsBlock">
+                    <p class="feature-origin">{{ rasgo.claseNombre }} {{ rasgo.nivel }}</p>
+                    <div>
+                        <p v-for="(parrafo, j) in Array.isArray(rasgo.descripcion) ? rasgo.descripcion : [rasgo.descripcion]"
+                            :key="j" v-html="parrafo">
+                        </p>
+                    </div>
+                    <!-- subclase -->
+                    <div v-if="rasgo.esSubclase" :id="'subclase' + rasgo.nivel">
+                        <div v-for="(subclase) in subclasesCargadas">
+                            <template v-if="subclase.activo">
+                                <template v-for="(rasgoSub) in subclase.subclase.rasgos">
+                                    <div v-if="rasgoSub.nivel === rasgo.nivel">
+                                        <details class="featureSub" open>
+                                            <summary>{{ rasgoSub.nombre }}</summary>
+                                            <p class="feature-origin">{{
+                                                rasgoSub.nombreSubclase }} {{ rasgo.nivel
+                                                }}</p>
+                                            <!-- tiene más de 1 rasgo al nivel -->
+                                            <template v-if="rasgoSub.tieneSubrasgos">
+                                                <div v-for="(subrasgo) in rasgoSub.contenido">
+                                                    <details class="featureSubSub" open>
+                                                        <summary>{{ subrasgo.nombre }}
+                                                        </summary>
+                                                        <p v-for="(parrafo) in Array.isArray(subrasgo.descripcion) ? subrasgo.descripcion : [subrasgo.descripcion]"
+                                                            v-html="parrafo">
+                                                        </p>
+                                                    </details>
+                                                </div>
+                                            </template>
+                                            <!-- tiene sólo 1 rasgo al nivel -->
+                                            <template v-else>
+                                                <p v-for="(parrafo) in Array.isArray(rasgoSub.contenido) ? rasgoSub.contenido : [rasgoSub.contenido]"
+                                                    v-html="parrafo"> </p>
+                                            </template>
+                                        </details>
+                                    </div>
                                 </template>
-                            </div>
+                            </template>
                         </div>
                     </div>
-                </details>
-            </div>
+                </div>
+            </details>
         </div>
     </div>
 </template>
