@@ -235,7 +235,7 @@
     },
     "subclases": [
         {
-            "acortado": "Marcial",
+            "acortado": "Artista Marcial",
             "completo": "Artista marcial",
             "ruta": "Artista_marcial"
         },
@@ -245,12 +245,12 @@
             "ruta": "Cazador"
         },
         {
-            "acortado": "Viento",
+            "acortado": "Domador del Viento",
             "completo": "Domador del Viento",
             "ruta": "Domador_del_Viento"
         },
         {
-            "acortado": "Aura",
+            "acortado": "Guardián del Aura",
             "completo": "Guardián del Aura",
             "ruta": "Guardián_del_Aura"
         },
@@ -260,7 +260,7 @@
             "ruta": "Ninja"
         },
         {
-            "acortado": "Callejero",
+            "acortado": "Peleador Callejero",
             "completo": "Peleador Callejero",
             "ruta": "Peleador_Callejero"
         }
