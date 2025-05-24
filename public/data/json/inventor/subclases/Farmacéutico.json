@@ -1,0 +1,71 @@
+{
+    "nombre": "Farmacéutico",
+    "prerrequisito": "Haber elegido Preparar Medicinas o Preparar Potenciadores con el rasgo de Hábil con las Herramientas.",
+    "nombreClase": "Entrenador",
+    "descripcion": [
+        "Los Farmacéuticos son Inventores especializados en la fabricación y aplicación de medicinas. Gracias a su mente ágil y sus invenciones, estos Inventores mantienen a sus compañeros en buen estado de salud tanto a lo largo de los combates como a lo largo de las jornadas."
+    ],
+    "rasgos": [
+        {
+            "nombre": "Farmacéutico 2",
+            "nivel": 2,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Farmacéutico",
+            "tieneSubrasgos": true,
+            "contenido": [
+                {
+                    "nombre": "Primeros Auxílios",
+                    "descripcion": [
+                        "A partir de nivel 2, te vuelves un experto a lo hora de usar el Kit de primeros auxilios. Cuando usas tu Acción para curar a una criatura con el Kit de Primeros Auxilios, puedes usar 1 PP para que la criatura recupere una cantidad de PV igual a su Vitalidad más una cantidad de d4 igual a tu Bono de Habilidad. Una criatura no puede recuperar PV de esta forma otra vez hasta que Descanse."
+                    ]
+                },
+                {
+                    "nombre": "Aromatizador",
+                    "descripcion": [
+                        "A partir de nivel 2, aprendes a crear una Invención nueva, el Aromatizador. La primera copia de este Aromatizador que creas no cuenta para el máximo de invenciones que tienes creadas. El aromatizador es un objeto del tamaño de un puño que vaporiza en el aire esencias de plantas medicinales que ayudan a sanar más rápidamente. Activar o desactivar el Aromatizador es una Interacción y, al principio de cada día, debes recargar cada Aromatizador que tengas tomando una Acción Extendida que dura unos minutos.",
+                        "Una criatura que termina su turno a menos de 2 metros del aromatizador reduce sus Niveles de Helado, Quemado, Envenenado, Parálisis y Dormido en un nivel más de lo normal. Además, una criatura que toma una Acción Extendida para descansar cerca del aromatizador reduce sus Niveles de Fatiga en 1. Una criatura sólo puede beneficiarse de esta Acción Extendida una vez al día.",
+                        "A partir de Nivel 7, cuando una criatura termina su turno a menos de 2 metros de tu Aromatizador también reduce sus Niveles de Confuso, Asustado, Furia e Infatuado en un Nivel más de lo normal y la cantidad de Niveles de Fatiga que reduce descansar cerca de tu Aromatizador se vuelve 2 Niveles de Fatiga.",
+                        "A partir de Nivel 14, cuando una criatura termina su turno a menos de 2 metros de tu Aromatizador esta gana Puntos de Escudo iguales a tu Mente que duran hasta el final de su próximo turno."
+                    ]
+                }
+            ]
+        },
+        {
+            "nombre": "Medicinas concentradas",
+            "nivel": 5,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Farmacéutico",
+            "contenido": [
+                "A partir de nivel 5, aprendes a crear medicinas concentradas. Las medicinas concentradas son versiones de las Medicinas que puedes crear que restauran PV. Crear una Medicina concentrada tiene el mismo costo que crear su versión normal.",
+                "La primera vez que se consume una medicina concentrada, esta restaura el máximo de PV que su versión normal puede restaurar. Sin embargo, si se consume otra medicina concentrada antes de Descansar, esta provoca 2 Niveles de Fatiga a la criatura que la consumió."
+            ]
+        },
+        {
+            "nombre": "Ingenio médico",
+            "nivel": 8,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Farmacéutico",
+            "contenido": [
+                "A partir de nivel 8, aprendes a detectar enfermedades raras y a fabricar medicamentos para tratarlas. Cuando encuentras a una criatura enferma puedes tomar una Acción Estándar para examinarla. Luego de examinar a una criatura, sabes que enfermedad la aflige, si la enfermedad es curable y el tratamiento necesario para que se recupere. En caso de ser necesario, sabes que medicina particular necesita y qué materiales necesitas para fabricarla como una Acción Extendida."
+            ]
+        },
+        {
+            "nombre": "Primeros auxilios mejorados",
+            "nivel": 13,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Farmacéutico",
+            "contenido": [
+                "A partir de nivel 13, cuando usas tu Kit de primeros Auxilios para curar a una criatura, ya se de forma normal o cuando usas tu Rasgo de Primeros Auxilios, puedes hacer que la criatura pierda todos sus Niveles de Quemado, Envenenado, Parálisis, Dormido, Helado, Infatuación, Asustado, Furia y Confusión."
+            ]
+        },
+        {
+            "nombre": "Revivir instantáneo",
+            "nivel": 17,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Farmacéutico",
+            "contenido": [
+                "A partir de nivel 17, una criatura puede consumir uno de los Revivir o Revivir máximo que tú has creado como una Acción y obtiene el beneficio de hacerlo instantáneamente."
+            ]
+        }
+    ]
+}

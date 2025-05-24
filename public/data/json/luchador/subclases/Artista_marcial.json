@@ -1,0 +1,56 @@
+{
+    "nombre": "Artista marcial",
+    "prerrequisito": "",
+    "nombreClase": "Entrenador",
+    "descripcion": [
+        "La mayoría de luchadores entrenan una o varias artes marciales de las que poder hacer uso en el combate, pero los Artistas marciales luchadores que optan por un estilo algo más abierto, apostando por la versatilidad en la mayor parte de las ocasiones y siendo, en consecuencia, destacables por su adaptabilidad a todas las situaciones."
+    ],
+    "rasgos": [
+        {
+            "nombre": "Artes mixtas",
+            "nivel": 2,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Artista marcial",
+            "contenido": [
+                "A nivel 2, te especializas en usar tus artes marciales para dominar a tus rivales. El rango de los efectos secundarios de los Movimientos de Luchador que conoces aumenta en 1. Por ejemplo, si era 18+, se vuelve 17+."
+            ]
+        },
+        {
+            "nombre": "Extremidades elementales",
+            "nivel": 5,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Artista marcial",
+            "contenido": [
+                "A partir de nivel 5, especializas tu estilo de combate para centrarte en las patadas o los puñetazos para poder aprender a concentrar energía en las unas o los otros. Si eliges puñetazos aprendes los Movimientos Puño fuego, Puño trueno y Puño hielo, que puedes usar por 2 PP en lugar de su coste en PP usual. Si eliges patadas, aprendes el Movimiento Puntapié y puedes cambiar el Tipo del Movimiento a Fuego, Eléctrico o Hielo. Si lo haces, el efecto secundario pasa a ser que la criatura gana 1 Nivel de Quemado, Paralizado o Helado, respectivamente.",
+                "Los Movimientos que aprendes con este rasgo son Movimientos de Luchador para ti pero que no cuentan para el Máximo de Movimientos de Luchador que conoces."
+            ]
+        },
+        {
+            "nombre": "Ráfaga de golpes",
+            "nivel": 8,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Artista marcial",
+            "contenido": [
+                "A nivel 8, aprendes a dar una rápida descarga de golpes a una criatura. Cuando golpeas con una Tirada de Ataque que hace un Movimiento de Luchador a una criatura, puedes recuperar tu Acción del turno, la cual sólo puedes usar para lanzar un Movimiento de Luchador. Puedes usar este rasgo una vez por Escena."
+            ]
+        },
+        {
+            "nombre": "Habilidad de combate extra",
+            "nivel": 13,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Artista marcial",
+            "contenido": [
+                "A partir de nivel 13, ganas una Habilidad que no tienes que puedes elegir entre las de las listas de los Rasgos de Habilidad de Combate y Más Habilidades de Combate."
+            ]
+        },
+        {
+            "nombre": "Avasallar a golpes",
+            "nivel": 17,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Artista marcial",
+            "contenido": [
+                "A nivel 17, ganas un segundo uso de tu ráfaga de golpes y el rango de los efectos secundarios de los Movimientos de Luchador que conoces aumenta en 1 de nuevo."
+            ]
+        }
+    ]
+}

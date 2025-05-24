@@ -1,0 +1,70 @@
+{
+    "nombre": "Conexión con el Alma",
+    "prerrequisito": "",
+    "nombreClase": "Entrenador",
+    "descripcion": [
+        "Tu espíritu ha tocado el alma del mundo y este te ha devuelto el contacto. Ya sea tras largas sesiones de meditación y estudio o tras un evento místico, has aprendido a sentir el alma que todas las cosas que existen contienen en su interior y eres capaz de comprender la bondad que contienen."
+    ],
+    "rasgos": [
+        {
+            "nombre": "Conexión con el Alma 2",
+            "nivel": 2,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Conexión con el Alma",
+            "tieneSubrasgos": true,
+            "contenido": [
+                {
+                    "nombre": "Conexión con el Alma",
+                    "descripcion": [
+                        "A nivel 2, tu conexión con el alma del mundo se fortifica. Te vuelves Tipo Hada. Si ya tienes 2 tipos, puedes sustituir uno de estos por el tipo Hada."
+                    ]
+                },
+                {
+                    "nombre": "Movimientos de la bondad",
+                    "descripcion": [
+                        "A nivel 2, aprendes a utilizar la bondad de tu alma para protegerte a ti y a tus aliados. Para ti, los siguientes Movimientos se añaden a la lista de Mentalista y tienen el coste que se les asigna, en lugar del usual:",
+                        "2 PP: Conjuro, Beso drenaje, Velo sagrado, Cascabel cura, Niebla aromática, Campo de niebla.",
+                        "4 PP: Cautivapor, Deseo cura, Pulso cura, Truco defensa.",
+                        "5 PP: Deseo, Fuerza lunar."
+                    ]
+                }
+            ]
+        },
+        {
+            "nombre": "Bendición purificadora",
+            "nivel": 5,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Conexión con el Alma",
+            "contenido": [
+                "A nivel 5, aprendes a sanar la enfermedad a ti y a otros y a convertirla en poder. Ganas la Habilidad Alma cura y, cuando sanas un Estado con esta Habilidad a una criatura, esta recupera 1 PP."
+            ]
+        },
+        {
+            "nombre": "Halo protector",
+            "nivel": 8,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Conexión con el Alma",
+            "contenido": [
+                "A partir de nivel 8, cuando usas un Movimiento que da un beneficio, recupera PV o elimina un Estado sobre una o varias criaturas, estas criaturas ganan Puntos de Escudo igual a tu Mente por cada PP que el Movimiento consume para ser lanzado. Los PP creados con tu rasgo de Alma hambrienta cuentan doble a la hora de calcular la cantidad de Puntos de Escudo que este rasgo otorga."
+            ]
+        },
+        {
+            "nombre": "Rezo fortalecedor",
+            "nivel": 13,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Conexión con el Alma",
+            "contenido": [
+                "A partir de nivel 13, tus protecciones potencian también a las criaturas a las que estas afectan. Si una criatura está siendo afectada por uno o varios de tus Movimientos que otorgan un beneficio, este gana un bono a sus Tiradas de Salvación y Ataque igual a la mitad de tu Mente."
+            ]
+        },
+        {
+            "nombre": "Purgar la maldad",
+            "nivel": 17,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Conexión con el Alma",
+            "contenido": [
+                "A nivel 17, tu alma libera tanta bondad que las criaturas a tu alrededor están protegidas del mal. Las criaturas a menos de 5 metros de ti a tu elección reciben la mitad de daño de los Movimientos de tipo Siniestro y Fantasma y no pueden quedar asustadas."
+            ]
+        }
+    ]
+}

@@ -1,0 +1,70 @@
+{
+    "nombre": "Conexión con el Más Allá",
+    "prerrequisito": "",
+    "nombreClase": "Entrenador",
+    "descripcion": [
+        "Quizás fue una vida de sufrimiento y odio reprimido, quizás un único evento devastador el que conectó tu alma a la energía de los que ya no nos rodean. De cualquier forma, ahora te has vuelto una vía de escape para los que en su lecho aún no descansan, lo que te otorga la capacidad de maldecir y afectar negativamente al espíritu de los vivos."
+    ],
+    "rasgos": [
+        {
+            "nombre": "Conexión con el Más Allá 2",
+            "nivel": 2,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Conexión con el Más Allá",
+            "tieneSubrasgos": true,
+            "contenido": [
+                {
+                    "nombre": "Conexión con los Espíritus",
+                    "descripcion": [
+                        "A nivel 2, tu conexión con el más allá se fortalece. Te vuelves tipo Fantasma. Si ya tienes 2 tipos, puedes sustituir uno de estos por el tipo Fantasma. Además, desarrollas Sentido Espiritual en un rango de 20 metros."
+                    ]
+                },
+                {
+                    "nombre": "Movimientos del Odio",
+                    "descripcion": [
+                        "A nivel 2, aprendes a canalizar la ira, la furia y el rencor de los que ya se fueron. Para ti, los siguientes Movimientos se añaden a la lista de Mentalista:",
+                        "2 PP: Halloween, Maldición, Sombra vil, Mal de ojo, Escalofrío, Fuego fatuo, Maquinación, Rencor.",
+                        "4 PP: Infortunio, Maquinación, Rencor reprimido.",
+                        "5 PP: Golpe fantasma, Mismo destino, Canto mortal."
+                    ]
+                }
+            ]
+        },
+        {
+            "nombre": "Maldición del Olvido",
+            "nivel": 5,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Conexión con el Más Allá",
+            "contenido": [
+                "A nivel 5, tu cuerpo queda completamente imbuido por energía maldita que ataca a los que te dañan, haciéndolos olvidar como dañarte. Ganas la Habilidad Cuerpo Maldito. Activar Cuerpo maldito te cuesta 1 PP en lugar de 2 PP y usar Anulación no tiene una limitación en la cantidad de veces por Objetivo y Escena que puede usarse para ti, pero por cada vez que lo uses sobre una criatura su coste en PP aumenta en 1."
+            ]
+        },
+        {
+            "nombre": "Difundir el Sufrimiento",
+            "nivel": 8,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Conexión con el Más Allá",
+            "contenido": [
+                "A partir de nivel 8, cuando usas un Movimiento que no hace daño pero sí que provoca efectos negativos con tu Acción haciendo uso de al menos 1 PP que has creado con tu Rasgo de Alma Hambrienta y que hace objetivo a una única criatura, puedes elegir un segundo objetivo a rango al que el Movimiento también afecta."
+            ]
+        },
+        {
+            "nombre": "Ladrón de vitalidad",
+            "nivel": 13,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Conexión con el Más Allá",
+            "contenido": [
+                "A partir de nivel 13, tu alma se sintoniza con el el camino que lleva la vida a la muerte y aprendes a navegar la línea entre ambos. Cuando una criatura cae inconsciente a menos de 10 metros de ti, puedes usar tu Reacción para hacer que tu u otra criatura a esa misma distancia recupere PV igual al doble de tu Vitalidad. Cuando lo haces, la criatura que ha caído inconsciente gana 2 Niveles de Fatiga."
+            ]
+        },
+        {
+            "nombre": "Infundir el terror",
+            "nivel": 17,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Conexión con el Más Allá",
+            "contenido": [
+                "A nivel 17, tus Movimientos están cargados por la energía de las almas en pena y sus chillidos y ruegos alcanzan la mente de las personas a las que afectan. Cuando al usar un Movimiento de Mentalista golpeas con una Tirada de Ataque a una criatura y la Tirada Natural es de 17+ o una criatura falla una Tirada de Salvación con una Tirada Natural de 4-, esta queda asustada de ti hasta el final de la Escena."
+            ]
+        }
+    ]
+}

@@ -1,0 +1,71 @@
+{
+    "nombre": "Conexión con la Psique",
+    "prerrequisito": "",
+    "nombreClase": "Entrenador",
+    "descripcion": [
+        "Tu mente ha absorbido una fuente de poder psíquico impropia para una persona gracias a un evento con Pokémon de Tipo Psíquico o a través de un arduo entrenamiento que se asemeja al que algunos de estos Pokémon realizan para fortalecerse."
+    ],
+    "rasgos": [
+        {
+            "nombre": "Conexión con la Psique 2",
+            "nivel": 2,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Conexión con la Psique",
+            "tieneSubrasgos": true,
+            "contenido": [
+                {
+                    "nombre": "Conexión con la Psique",
+                    "descripcion": [
+                        "A nivel 2, tu conexión con la fuente de poder de tu mente se fortalece. Te vuelves Tipo Psíquico. Si ya tienes 2 tipos, puedes sustituir uno de estos por el tipo Psíquico."
+                    ]
+                },
+                {
+                    "nombre": "Movimientos de psíquico",
+                    "descripcion": [
+                        "A nivel 2, aprendes a utilizar tus poderes psíquicos más tangiblemente. Para ti, los siguientes Movimientos se añaden a la lista de Mentalista:",
+                        "2 PP: Polvo mágico, Campo psíquico, Psicocambio, Telépata, Levitón, Truco, Cambio de banda.",
+                        "4 PP: Psicorruido, Gravedad, Psicocarga.",
+                        "5 PP: Psíquico, Premonición, Teletransporte."
+                    ]
+                }
+            ]
+        },
+        {
+            "nombre": "Expansión psíquica",
+            "nivel": 5,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Conexión con la Psique",
+            "contenido": [
+                "A nivel 5, aprendes a expandir el poder de tu mente. Ganas la Habilidad de Telepatía y, dentro del área en la que puedes comunicarte telepáticamente, puedes usar tu Acción y 1 PP para mover objetos o criaturas de tamaño pequeño o menor con telequinesis. La distancia máxima en metros que los puedes mover es igual a tu Mente. Una criatura que se opone a este movimiento hace una Tirada de Salvación de Fuerza contra la CD, siendo movida sólo si la falla.",
+                "El tamaño de las criaturas y objetos que puedes afectar con tu telekinesis aumenta a tamaño mediano a nivel 8, a tamaño grande a nivel 13 y a tamaño enorme a nivel 17."
+            ]
+        },
+        {
+            "nombre": "Teleportación mejorada",
+            "nivel": 8,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Conexión con la Psique",
+            "contenido": [
+                "A partir de nivel 8, aprendes el Movimiento Teletransporte, que no cuenta contra la cantidad de Movimientos de Mentalista que conoces. Los PP que creas con tu rasgo de Alma hambrienta cuentan como 2 PP a la hora de pagar el coste de un Movimiento o rasgo que teletransporta."
+            ]
+        },
+        {
+            "nombre": "Amplificación psíquica",
+            "nivel": 13,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Conexión con la Psique",
+            "contenido": [
+                "A partir de nivel 13, puedes transmitir tu capacidad para teleportarte a otras criaturas. Cuando una criatura con la que te puedes comunicar telepáticamente te lo pide, puedes usar tu Reacción y 3 PP para teleportarla una distancia igual a tu Mente."
+            ]
+        },
+        {
+            "nombre": "Trance psíquico",
+            "nivel": 17,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Conexión con la Psique",
+            "contenido": [
+                "A nivel 17, una vez por Día y como Acción puedes entrar en un trance psíquico que dura hasta el final de la Escena o hasta que lo acabes como Acción. Pierdes todas tus velocidades y ganas una velocidad de Levitado en metros igual a tu Mente. Además, el daño de todos tus Movimientos aumenta en un dado y tu radio de Telepatía y el de todos los Movimientos y rasgos que usas que teleportan criaturas u objetos se duplica."
+            ]
+        }
+    ]
+}

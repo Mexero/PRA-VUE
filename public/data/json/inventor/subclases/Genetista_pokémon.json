@@ -1,0 +1,124 @@
+{
+    "nombre": "Genetista pokémon",
+    "prerrequisito": "",
+    "nombreClase": "Entrenador",
+    "descripcion": [
+        "Los Inventores que toman esta Especialización son amantes de la genética Pokémon y tienen un interés particular en modificarla para extraer de esta su mayor potencial. Muchos los verán como científicos locos, aunque ellos saben bien que es el camino más óptimo a seguir.",
+        "¡Cuidado! Esta Especialización se vuelve progresivamente más problemática y malvada a medida en que gana Rasgos, así que si tu campaña no va a ser adecuada para este tipo de personaje, no uses esta Especialización. Ante todo, recuerda comunicarte con tu DJ y los demás jugadores si planeas jugarla."
+    ],
+    "rasgos": [
+        {
+            "nombre": "Genetista pokémon 2",
+            "nivel": 2,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Genetista pokémon",
+            "tieneSubrasgos": true,
+            "contenido": [
+                {
+                    "nombre": "Experto en Genética Pokémon",
+                    "descripcion": [
+                        "A partir de Nivel 2, te vuelves un experto en la genética de los Pokémon y sabes estudiar la naturaleza de estos. Aumentas tu Grado de Habilidad en Conocimiento Médico en 1, hasta un máximo de Experto."
+                    ]
+                },
+                {
+                    "nombre": "Pokégenesa",
+                    "descripcion": [
+                        "A partir de Nivel 2, aprendes a crear y creas con restos que llevas encima la Pokégenesa. La Pokégenesa es una Invención muy avanzada con un aspecto que tu eliges al crearla y de tamaño pequeño que sólo tú sabes cómo utilizar, la cual te permite crear Pokémon artificiales. Sólo puedes tener una Pokégenesa y crearla tiene el mismo coste que cualquier otra invención. Para crear ciertos Pokémon, debes aportar materiales según el Pokémon que deseas crear, tomar una Acción Extendida para preparar la máquina y dejarla trabajando 24 horas. Al final de este periodo, el Pokémon está listo pero Inconsciente y puedes capturarlo introduciendo una Poké Ball en la Pokégenesa.",
+                        "Los Pokémon que puedes crear con tu Pokégenesa y el precio asociado a estos es:",
+                        "Por 2.000 Pokedólares: Grimmer, Grimmer de alola, Voltorb, Voltorb de Hisui, Trubbish y Varoom.",
+                        "Por 3.000 Pokedólares: Porygon.",
+                        "Por 4.000 Pokedólares: Baltoy y Golett.",
+                        "Por 5.000 Pokedólares: Castform.",
+                        "Alternativamente, puedes usar la Pokégenesa para revivir un Pokémon de un fósil siempre y cuando sólo se necesite un fósil para revivir al Pokémon y este tenga un Nivel Mínimo de aparición de 1.",
+                        "Los Pokémon creados o revividos con la Pokégenesa nacen a Nivel 1 y tu eliges su Naturaleza."
+                    ]
+                }
+            ]
+        },
+        {
+            "nombre": "Modificador de ADN",
+            "nivel": 5,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Genetista pokémon",
+            "contenido": [
+                "Desde Nivel 5, aprendes a modificar el ADN de los Pokémon creados con tu Pokégenesa. Para modificar el ADN de un Pokémon introduces la Poké Ball del Pokémon con su Pokémon dentro en la Pokégenesa y tomas una Acción Extendida que dura una jornada entera de trabajo. Al terminar, la Pokégenesa se queda trabajando por 24 horas para implementar las modificaciones. Puedes realizar las siguientes modificaciones:",
+                "Cambias la Naturaleza del Pokémon.",
+                "Cambias una Tirada de Habilidad en la que el Pokémon es Naturalmente Bueno.",
+                "Redistribuir sus Estadísticas. Por ejemplo, puedes cambiar su Fuerza por su Mente.",
+                "Puedes elegir que el Pokémon pase a calcular su CA como 10 + Resistencia + Nivel ó como 8 + Agilidad + Nivel.",
+                "Puedes reducir una Estadística que no se encuentre entre las 3 más bajas en 1 para aumentar todas sus Velocidades en 1 y viceversa.",
+                "Puedes reducir una Estadística que no se encuentre entre las 3 más bajas en 1 para aumentar su Vitalidad en 1 y viceversa."
+            ]
+        },
+        {
+            "nombre": "Genetista pokémon 8",
+            "nivel": 8,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Genetista pokémon",
+            "tieneSubrasgos": true,
+            "contenido": [
+                {
+                    "nombre": "Nuevos genes",
+                    "descripcion": [
+                        "A partir de Nivel 8, puedes cambiar los genes de un Pokémon cualquiera por otros que has creado tú mismo de la misma forma que con tu Rasgo de Modificador de ADN. Estos nuevos genes otorgan un beneficio, pero traen consigo una consecuencia inesperada. Puedes ver los beneficios y las consecuencias más adelante.",
+                        "Tu eliges como se ven estos cambios genéticos. Un Pokémon sólo puede tener una de estas modificaciones pues tener varias resultaría letal. Aun así, las modificaciones son reversibles mediante el mismo proceso.",
+                        "Beneficios. Elige uno de los siguientes:",
+                        "Estatus mejorado: Dos Estadísticas base a tu elección del Pokémon aumentan en 1.",
+                        "Adaptaciones innaturales: La CA del Pokémon aumenta en 1 y el bono en la Tirada de Salvación a tu elección del Pokémon aumenta en +2 si aún no es de +4 o superior.",
+                        "Hiperespecialización: El Pokémon aumenta su Grado de Habilidad en 1 en las Habilidades en las que es Naturalmente Bueno.",
+                        "Gigantismo: El Pokémon se vuelve de un tamaño más de lo normal para su Especie.",
+                        "Enanismo: El Pokémon se vuelve de un tamaño menor de lo normal para su Especie.",
+                        "Hiperactividad: El Pokémon gana 2 PP extra y cuando fuese a ganar su Primer Nivel de Fatiga del Día, no lo gana.",
+                        "Dotado: El Pokémon gana una Dote extra para la que califica.",
+                        "Consecuencias. Lanza un 1d6 para elegir una consecuencia inesperada. Si obtienes una consecuencia que no puedes ganar debido al beneficio elegido, vuelve a lanzar el d6 hasta que obtengas una que puede elegirse:",
+                        "Fatiga constante: La mutación hace que tu Pokémon se fatigue más de lo normal. Cuando tu Pokémon fuera a ganar Puntos de Fatiga, gana 1 Punto de Fatiga más de lo normal. Además, tu Pokémon tiene 1 PP menos. No puede ganarse Fatiga constante si se tiene el beneficio Hiperactividad.",
+                        "Atrofia: Tu Pokémon ve una de sus Estadísticas reducida en 2. Lanza 1d6 para elegir la Estadística. 1 es Fuerza, 2 es Agilidad, 3 es Resistencia, 4 es Mente, 5 es Espíritu y 6 es Presencia. Si elegiste el beneficio Estatus mejorado, no puede atrofiarse la Estadística elegida.",
+                        "Inhabilidad: Tu Pokémon reduce el Grado de Habilidad en todas sus Tiradas de Habilidad en 1, hasta un mínimo de No Entrenado.",
+                        "Debilidad: La Vitalidad del Pokémon se reduce en 2.",
+                        "Fragilidad: La CA del Pokémon y todos los bonos a sus salvaciones se reducen en 1.",
+                        "Doble Consecuencia: Tu Pokémon gana 2 Consecuencias en lugar de sólo una. Esta consecuencia sólo puede ganarse una vez."
+                    ]
+                },
+                {
+                    "nombre": "Creador de Mejoras",
+                    "descripcion": [
+                        "A partir de Nivel 8, aprendes a crear la Mejora y el Disco raro. Crear ambos de estos objetos requiere que tomas una Acción Extendida con tus herramientas de Inventor y que gastes materiales por valor de 7.500 Pokedólares."
+                    ]
+                }
+            ]
+        },
+        {
+            "nombre": "Jugar a ser Arceus",
+            "nivel": 13,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Genetista pokémon",
+            "contenido": [
+                "A partir de Nivel 13, aprendes a crear Pokémon quiméricos haciendo uso de tus estudios sobre el ADN. Creas una Librería de ADN guardada en tu Pokégenesa y añades entradas propias de cada Pokémon que posees y cada Pokémon del que obtengas alguna muestra, como pelo, escamas, saliva o fósiles, y que introduzcas en tu Pokégenesa.",
+                "Puedes Quimerizar un Pokémon añadiéndoles ADN de una Especie Pokémon que tienes en tu Librería de ADN. Para hacerlo, introduces la Pokéball del Pokémon a modificar en tu Pokégenesa con el Pokémon dentro y eliges una especie de tu Librería de ADN como Acción Extendida y luego esperas 24 horas a que el proceso finalice. Tu eliges el aspecto final del Pokémon que Quimerizas. Al Quimerizar un Pokémon le haces todos los siguientes cambios, sin excepción:",
+                "El Pokémon a Quimerizar cambia uno de sus Tipos por un Tipo del Pokémon de la Librería.",
+                "El Pokémon a Quimerizar gana una Velocidad igual a la del Pokémon de la Librería y pierde otra o reduce la mayor de sus velocidades a la mitad, a tu elección.",
+                "El Pokémon a Quimerizar cambia una de sus Habilidades por una Habilidad o Habilidad Oculta del Pokémon de la Librería.",
+                "Por cada Nivel en el que el Pokémon a Quimerizar gana un Movimiento, sustituyes uno de los Movimientos de su Lista de Movimientos por Nivel que aprende a ese Nivel por otro Movimiento que aprende el Pokémon de la Librería de esa misma lista a ese mismo Nivel.",
+                "El Pokémon a Quimerizar gana un Sentido que tiene el Pokémon de la Librería y pierde un Sentido. Luego, pierde un Sentido, la vista, el oído o el olfato, a tu elección.",
+                "Un Pokémon puede ser Quimerizado más de una vez pero este proceso no es reversible. Los Pokémon Quimera, es decir, los Pokémon que has Quimerizado, son estériles y causan repulsión a todos los Pokémon de la familia Evolutiva de su Especie tanto original como la Especie con la que lo has Quimerizado.",
+                "Además, puedes revivir a los Pokémon que requieren de dos fósiles para ser revividos y aprendes a crear a Código Cero a Nivel 10 con tu Pokégenesa, el cual te cuesta materiales por valor de 10.000 Pokedólares. Sólo puedes crear un Código Cero a Nivel, pues este está ligado a tu Pokégenesa.",
+                "Por último, a partir de Nivel 17 puedes crear un único Mewtwo si obtienes ADN de Mew de la misma forma que con Código Cero, pero te cuesta 100.000 Pokedólares."
+            ]
+        },
+        {
+            "nombre": "Transpokemonismo",
+            "nivel": 17,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Genetista pokémon",
+            "contenido": [
+                "A partir de Nivel 17, te das cuenta de que la única forma de seguir mejorando a tus Pokémon es dejando atrás parte de su naturaleza orgánica en pos de una mecánica y más perfecta. Puedes someter a tus Pokémon a este proceso una única vez, haciendo que sean Robotizados. Robotizar a un Pokémon requiere de una Acción Extendida que dura una jornada de trabajo haciendo uso de tus Herramientas de Inventor y de materiales por valor de 100.000 Pokedólares.",
+                "El Pokémon pierde sus emociones. Ya no puede quedar Confuso, Asustado, Enfurecido o Infatuado ni afectado por efectos similares.",
+                "Decides si el Pokémon gana o no el Tipo Acero.",
+                "El Pokémon no necesita comer, beber o dormir.",
+                "El Pokémon no gana Niveles de Fatiga, sino que su cuerpo se rompe, perdiendo PV Máximos iguales a 10 PV por cada nivel de Fatiga que fuese a ganar. Puedes tomar una Acción Extendida para reparar el Pokémon, consumiendo materiales por valor de 500 Pokedólares por cada 10 PV que haces que recupere el Pokémon. Si los PV máximos llegan a 0 de esta forma, el Pokémon muere y no puede ser reparado.",
+                "El daño de Tipo Eléctrico se vuelve súper efectivo contra el Pokémon.",
+                "Además, aprendes a crear los Discos de Tipo de Silvally de la misma forma que creas tus Invenciones y puedes hacer Evolucionar a Código Cero a Silvally tras introducirlo por 24 horas en tu Pokégenesa y luego tomar una Acción para quitarle las protecciones. Silvally no puede ser Robotizado."
+            ]
+        }
+    ]
+}

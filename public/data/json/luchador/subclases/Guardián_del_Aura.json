@@ -1,0 +1,74 @@
+{
+    "nombre": "Guardián del Aura",
+    "prerrequisito": "",
+    "nombreClase": "Entrenador",
+    "descripcion": [
+        "Los Luchadores que siguen esta disciplina marcial han entrenado su mente para poder comprender los movimientos y objetivos de los demás y esto los dota de una capacidad sobrenatural para visualizar y sentir el espíritu, el aura, de todas las criaturas. Estos Luchadores son aptos no solo en el combate cuerpo a cuerpo, sino que también aprenden a canalizar y proyectar su aura para proteger a sus aliados y dañar a sus enemigos. Fuera de combate, son expertos en detectar las emociones y sentir las intenciones de los que los rodean."
+    ],
+    "rasgos": [
+        {
+            "nombre": "Sentir el aura",
+            "nivel": 2,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Guardián del Aura",
+            "contenido": [
+                "A nivel 2, ganas Sentido del Aura en un radio de 20 metros y aumentas tu Grado de Habilidad en Empatía en 1, hasta un máximo de Experto.",
+                "Además, como puedes sentir las intenciones de las criaturas que te rodean, prevees mejor los ataques que hacen contra ti. Puedes calcular tu CA como 10 + ESP + BH."
+            ]
+        },
+        {
+            "nombre": "Movimientos del aura",
+            "nivel": 5,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Guardián del Aura",
+            "contenido": [
+                "A nivel 5, aprendes a usar Movimientos haciendo uso de tu propia aura. Para ti, los siguientes Movimientos se añaden a la Lista de Luchador y tienen el coste que se les asigna, en lugar del usual. Además, aprendes 2 de estos Movimientos, que no cuentan para el Máximo de Movimientos de Luchador que conoces y que puedes cambiar cada vez que subes de nivel:",
+                "2 PP: Palmeo, Onda vacío, Hidropulso.",
+                "4 PP: Detección, Esfera aural, Puño drenaje, Pulso cura, Pulso umbrío, Pulso dragón.",
+                "5 PP: Onda certera."
+            ]
+        },
+        {
+            "nombre": "Aura protectora",
+            "nivel": 8,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Guardián del Aura",
+            "contenido": [
+                "A partir de nivel 8, aprendes a infundir tu aura sobre ti y las criaturas a tu alrededor para protegerlas. Tu y las criaturas a tu elección a una distancia de ti de 2 metros de ti añadís la mitad de tu Espíritu a vuestras Tiradas de Salvación."
+            ]
+        },
+        {
+            "nombre": "Guardián del Aura 13",
+            "nivel": 13,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Guardián del Aura",
+            "tieneSubrasgos": true,
+            "contenido": [
+                {
+                    "nombre": "Maestro de los pulsos",
+                    "descripcion": [
+                        "A partir de nivel 13, ganas la Habilidad de Megadisparador."
+                    ]
+                },
+                {
+                    "nombre": "Sentido amplificado",
+                    "descripcion": [
+                        "A partir de nivel 13, tu Sentido del Aura tiene un Radio de 20 metros."
+                    ]
+                }
+            ]
+        },
+        {
+            "nombre": "Proyección de aura",
+            "nivel": 17,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Guardián del Aura",
+            "contenido": [
+                "A nivel 17, aprendes a proyectar tu aura sobre tu cuerpo como Acción para que esta imbuya tus Movimientos hasta el final de la Escena, hasta que caigas inconsciente o hasta que uses tu Acción para acabarlo. Cuando estás en este estado:",
+                "El rango de tu aura de protectora se duplica.",
+                "Todos tus Movimientos ganan la etiqueta de Pulso.",
+                "Puedes hacer Tiradas de Ataque cuerpo a cuerpo a 5 metros o menos de ti y no haces contacto con las criaturas al hacerlas."
+            ]
+        }
+    ]
+}

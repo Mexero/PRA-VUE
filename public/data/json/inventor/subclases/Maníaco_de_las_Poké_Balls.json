@@ -1,0 +1,74 @@
+{
+    "nombre": "Maníaco de las Poké Balls",
+    "prerrequisito": "Haber elegido Fabricar Poké Balls con el rasgo de Hábil con las Herramientas.",
+    "nombreClase": "Entrenador",
+    "descripcion": [
+        "Los Inventores maníacos de las Poké Balls están maravillados por la tecnología que las hace funcionar y adoran crearlas, usarlas y mejorar sus utilidades con sus demás Invenciones, especialmente con su Lanzabolas. No es raro que este tipo de Inventores coleccionen Poké Balls extrañas."
+    ],
+    "rasgos": [
+        {
+            "nombre": "Maníaco de las Poké Balls 2",
+            "nivel": 2,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Maníaco de las Poké Balls",
+            "tieneSubrasgos": true,
+            "contenido": [
+                {
+                    "nombre": "Poké Balls duraderas",
+                    "descripcion": [
+                        "A partir de nivel 2, las Poké Balls que creas son muy resistentes. Si una Poké Ball falla al capturar a un Pokémon, la criatura que la lanzó tira 1d20. Si la Tirada Natural es inferior o igual a tu Nivel de Inventor, esta no se rompe."
+                    ]
+                },
+                {
+                    "nombre": "Experto del Lanzabolas",
+                    "descripcion": [
+                        "A partir de nivel 2, aprendes a crear la Invención Lanzabolas, que no cuenta para el máximo de Invenciones que conoces y, cuando alcanzas este nivel, lo creas con restos que tenías, así que no te cuesta materiales crearla.",
+                        "Cuando usas uno de tus Lanzabolas obtienes los siguientes beneficios: Cuando sacas a tus Pokémon o lanzas Poké Balls, puedes hacerlo a una distancia en metros igual a 5 más tu Mente. Además, los Lanzabolas que tu creas poseen ciertos modos extra que sólo un experto en ellos como tu puede usar. Puedes usar los siguientes modos de tu Lanzabolas, que cambias con tu Interacción:",
+                        "Modo ráfaga: Cuando lanzas una bola con una Acción, por ejemplo, una Poké Ball o una bola creada por uno de tus Paquetes, puedes lanzar una segunda bola con la misma Acción pagando su coste en PP si sacarla o lanzarla fuese a costártelos.",
+                        "Modo teledirigido: Cuando lanzas una Poké Ball con este modo, puedes controlar su movimiento si no te mueves durante tu turno. Cuando lo haces, puedes lanzarla tras cobertura y hacer que parezca que la bola fue lanzada desde otra dirección."
+                    ]
+                }
+            ]
+        },
+        {
+            "nombre": "Modo de cambio programado",
+            "nivel": 5,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Maníaco de las Poké Balls",
+            "contenido": [
+                "Desde nivel 5, tu Lanzabolas gana el siguiente modo:",
+                "Modo de Cambio programado: Programas un cambio de Pokémon para que este ocurra de forma automática. Como Acción, eliges cambiar un Pokémon que está a rango de poder ser cambiado por otro Pokémon que tienes en una Poké Ball. Elige en cuantas rondas quieres que ocurra el cambio, que puede programarse como máximo para una cantidad de rondas igual a tu Mente. Al principio de tu turno en dicha ronda, el cambio ocurre independientemente de la distancia a la que esté el Pokémon y sacas al Pokémon que habías seleccionado, al cual puedes dar una Orden de forma normal."
+            ]
+        },
+        {
+            "nombre": "Inventor de Cápsulas",
+            "nivel": 8,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Maníaco de las Poké Balls",
+            "contenido": [
+                "Desde nivel 8, estudias cómo mejorar tus Poké Balls con cápsulas. Aprendes y creas una Invención de Cápsulas que no cuenta para el máximo de Invenciones que conoces. Además, para ti, una Invención de Cápsulas cuenta con una cantidad de cápsulas igual al doble de tu Mente."
+            ]
+        },
+        {
+            "nombre": "Modos mejorados",
+            "nivel": 13,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Maníaco de las Poké Balls",
+            "contenido": [
+                "A partir de nivel 13, mejoras la funcionalidad de todos los modos de tu Lanzabolas.",
+                "Tu Modo ráfaga ahora te permite lanzar hasta tres bolas en lugar de dos.",
+                "Cuando usas tu Modo teledirigido, ganas Ventaja en toda Tirada de d20 asociada al lanzamiento de la Poké Ball, como la de capturar un Pokémon, y el rango al que puedes sacar un Pokémon o lanzar una Poké Ball se multiplica por 10 en lugar de por 2 y, si al fallar al capturar a un Pokémon una Poké Ball no se rompe, esta vuelve a ti automáticamente.",
+                "Cuando usas tu Modo de Cambio programado, puedes elegir un evento que haga que el cambio se adelante al principio de tu próximo turno. Hacer esto tiene un coste de 1 PP."
+            ]
+        },
+        {
+            "nombre": "Lanzabolas multimodal",
+            "nivel": 17,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Maníaco de las Poké Balls",
+            "contenido": [
+                "A partir de nivel 17, añades una última mejora a tu Lanzabolas que te permite usar todos los modos que quieras de forma simultánea."
+            ]
+        }
+    ]
+}

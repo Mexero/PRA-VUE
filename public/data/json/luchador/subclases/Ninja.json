@@ -1,0 +1,60 @@
+{
+    "nombre": "Ninja",
+    "prerrequisito": "",
+    "nombreClase": "Entrenador",
+    "descripcion": [
+        "Los ninja son Luchadores especializados en el sigilo y la sutileza los cuales aprovechan su maestría a la hora de crear ciertos objetos y, sus Movimientos particulares para engañar a sus enemigos y así ganar una ventaja sobre ellos."
+    ],
+    "rasgos": [
+        {
+            "nombre": "Luchador en las sombras",
+            "nivel": 2,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Ninja",
+            "contenido": [
+                "A nivel 2, aumentas tu Grado de Habilidad en Sigilo o Acrobacias en 1, hasta un máximo de Experto y añades tu Agilidad a tus distancias de salto y lanzado.",
+                "Además, te vuelves hábil con un arma a tu elección. Por ahora, puedes usar sus Movimientos Estándar y puedes gastar tantos PPs con este Movimiento como el Coste máximo en PP de los Movimientos."
+            ]
+        },
+        {
+            "nombre": "Movimientos del Ninjutsu",
+            "nivel": 5,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Ninja",
+            "contenido": [
+                "A nivel 5, aprendes a usar los Movimientos Especiales de las Armas con las que eres hábil. Además, desarrollas técnicas ninja. Para ti, los siguientes Movimientos se añaden a la Lista de Luchador y tienen el coste que se les asigna, en lugar del usual:",
+                "2 PP: Trapicheo, Pantalla de humo, Doble equipo.",
+                "4 PP: Púas, Tóxico.",
+                "5 PP: Púas tóxicas."
+            ]
+        },
+        {
+            "nombre": "Técnicas Taijustu",
+            "nivel": 8,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Ninja",
+            "contenido": [
+                "A partir de nivel 8, cuando usas un Movimiento de Luchador que no hace daño, ganas los efectos de la Acción de Correr o de Destrabarse sin necesidad de que la tomes.",
+                "Además, puedes usar los Movimientos Especiales de las armas con las que eres hábil."
+            ]
+        },
+        {
+            "nombre": "Jutsu de Velocidad",
+            "nivel": 13,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Ninja",
+            "contenido": [
+                "A partir de nivel 13, ganas la Habilidad Bromista."
+            ]
+        },
+        {
+            "nombre": "Técnicas Genjutsu",
+            "nivel": 17,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Ninja",
+            "contenido": [
+                "A partir de nivel 17, ganas la Habilidad de Ilusión y, además, aprendes a usar los Movimientos Especiales Superiores de las armas con las que eres hábil."
+            ]
+        }
+    ]
+}

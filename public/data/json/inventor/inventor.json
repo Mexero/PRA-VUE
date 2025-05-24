@@ -1,0 +1,468 @@
+{
+    "clase": "Inventor",
+    "descripcion": [
+        "La energía de los Pokémon impregna todo su mágico mundo, llenándolo de misticismo. Los inventores han aprendido a desentrañar los secretos escondidos en ese misticismo y saben cómo manipularlo para hacerlo alcanzar un nivel superior a través de sus inventos.",
+        "Los inventores no serán los entrenadores con más talento para relacionarse con los Pokémon ni serán tan diestros en la lucha como otros, pero pueden usar su conocimiento y su destreza para crear objetos que ayudan a suplir estas carencias y a resolver problemas de formas únicas."
+    ],
+    "estadísticasMasRelevantes": "Mente.",
+    "vitalidad": 7,
+    "tiradasSalvacion": {
+        "nombre": "Mejores Tiradas de Salvación",
+        "descripcion": [
+            "Al elegir esta Clase, te vuelves Maestro en Tiradas de Salvación de Espíritu y Experto en todas las demás."
+        ]
+    },
+    "tablaClase": {
+        "titulos": [
+            "Nivel",
+            "Rasgos",
+            "BH",
+            "ME",
+            "Invenciones diseñadas"
+        ],
+        "filas": [
+            [
+                1,
+                [
+                    "Hábil con las Herramientas",
+                    "Creador de invenciones"
+                ],
+                1,
+                0,
+                4
+            ],
+            [
+                2,
+                [
+                    "Mejoras de Estadísticas",
+                    "Especialidad"
+                ],
+                1,
+                1,
+                4
+            ],
+            [
+                3,
+                [
+                    "Dote"
+                ],
+                2,
+                1,
+                5
+            ],
+            [
+                4,
+                [
+                    "Manitas"
+                ],
+                2,
+                1,
+                5
+            ],
+            [
+                5,
+                [
+                    "Rasgo de Especialidad"
+                ],
+                3,
+                2,
+                6
+            ],
+            [
+                6,
+                [
+                    "Dote",
+                    "Mejora de Habilidades"
+                ],
+                3,
+                2,
+                6
+            ],
+            [
+                7,
+                [
+                    "Mejores invenciones"
+                ],
+                4,
+                2,
+                7
+            ],
+            [
+                8,
+                [
+                    "Rasgo de Especialidad"
+                ],
+                4,
+                3,
+                7
+            ],
+            [
+                9,
+                [
+                    "Dote"
+                ],
+                5,
+                3,
+                8
+            ],
+            [
+                10,
+                [
+                    "Mejorar las Patentes"
+                ],
+                5,
+                3,
+                8
+            ],
+            [
+                11,
+                [
+                    "Pensamiento lateral"
+                ],
+                6,
+                4,
+                9
+            ],
+            [
+                12,
+                [
+                    "Dote",
+                    "Mejora de Habilidades"
+                ],
+                6,
+                4,
+                9
+            ],
+            [
+                13,
+                [
+                    "Rasgo de Especialidad"
+                ],
+                7,
+                4,
+                10
+            ],
+            [
+                14,
+                [
+                    "Aún Mejores invenciones"
+                ],
+                7,
+                5,
+                10
+            ],
+            [
+                15,
+                [
+                    "Dote"
+                ],
+                8,
+                5,
+                11
+            ],
+            [
+                16,
+                [
+                    "Inventor Inmaculado"
+                ],
+                8,
+                5,
+                11
+            ],
+            [
+                17,
+                [
+                    "Rasgo de Especialidad"
+                ],
+                9,
+                6,
+                12
+            ],
+            [
+                18,
+                [
+                    "Dote",
+                    "Mejora de Habilidades"
+                ],
+                9,
+                6,
+                12
+            ],
+            [
+                19,
+                [
+                    "Reensamblaje Perfeccionado"
+                ],
+                10,
+                6,
+                13
+            ],
+            [
+                20,
+                [
+                    "Invenciones Multifunción"
+                ],
+                10,
+                7,
+                13
+            ]
+        ]
+    },
+    "subclases": [
+        {
+            "acortado": "Multiarma",
+            "completo": "Diseñador del Multiarma",
+            "ruta": "Diseñador_del_Multiarma"
+        },
+        {
+            "acortado": "Farmacéutico",
+            "completo": "Farmacéutico",
+            "ruta": "Farmacéutico"
+        },
+        {
+            "acortado": "Genetista",
+            "completo": "Genetista pokémon",
+            "ruta": "Genetista_pokémon"
+        },
+        {
+            "acortado": "Poké Balls",
+            "completo": "Maníaco de las Poké Balls",
+            "ruta": "Maníaco_de_las_Poké_Balls"
+        },
+        {
+            "acortado": "Químico",
+            "completo": "Químico",
+            "ruta": "Químico"
+        }
+    ],
+    "rasgos": [
+        {
+            "nombre": "Hábil con las Herramientas",
+            "claseNombre": "Inventor",
+            "nivel": 1,
+            "descripcion": [
+                "A nivel 1, aprendes a usar las Herramientas de Inventor y aumentas en 1 tu Grado de Habilidad en Conocimiento Tecnológico, hasta un máximo de Experto. Además, eliges entre uno de los tres siguientes beneficios:",
+                "Fabricar Poké Balls: Puedes considerar que tu grado de Habilidad en Conocimiento de Poké Balls es igual a tu Grado de Habilidad en Conocimiento Tecnológico y aprendes a fabricar Poké Balls de rareza Común con Herramientas de Poké Balls.",
+                "Preparar Medicinas: Puedes considerar que tu grado de Habilidad en Conocimiento Médico es igual a tu Grado de Habilidad en Conocimiento Tecnológico y aprendes a preparar Medicinas de rareza Común con Herramientas de Medicina.",
+                "Preparar Potenciadores: Puedes considerar que tu grado de Habilidad en Conocimiento Químico es igual a tu Grado de Habilidad en Conocimiento Tecnológico y aprendes a preparar Potenciadores de rareza Común con Herramientas de Química.",
+                "Tanto para fabricar Poké Balls como para preparar Medicinas y Potenciadores, tomas una Acción Extendida que dura media hora por cada 1.000 Poké dólares que cuestan los objetos que creas y consumiendo materiales por valor de tres cuartas partes del coste de dichos objetos. Al final de dicha Acción Extendida, realizas una Tirada de Habilidad del tipo de Conocimiento pertinente con tu Mente por cada objeto que estás creando. Por cada Tirada que falles, el objeto creado es defectuoso y no sirve. La dificultad de dichas Tiradas varía en función de la rareza del objeto. Para objetos de rareza Común, la dificultad es 10."
+            ]
+        },
+        {
+            "nombre": "Creador de invenciones",
+            "claseNombre": "Inventor",
+            "nivel": 1,
+            "descripcion": [
+                "Desde nivel 1, te vuelves capaz de diseñar invenciones que te ayudarán durante tus aventuras. Elige 4 Invenciones para las que cumplas los prerrequisitos de la sección de Invenciones que encontrarás más adelante. Diseñas dichas Invenciones, por lo que aprendes a fabricarlas. Puedes dar tus Invenciones a tus Pokémon o a otras personas.",
+                "A medida en que subas de Nivel podrás diseñar más Invenciones, tal y como puedes ver en la tabla resumen de la Clase. Además, cada vez que subes de Nivel, puedes olvidar el diseño de una Invención para diseñar otra.",
+                "En todo momento, puedes tener una cantidad máxima de Invenciones en funcionamiento igual al bono que tienes a tus Tiradas de Conocimiento Tecnológico. Puedes tener varias copias de una misma Invención. Además, si empiezas la aventura siendo de esta Clase, la empiezas con tantas Invenciones como puedes tener.",
+                "Para crear una copia de una Invención que has diseñado, tomas una Acción Extendida que dura 1 hora durante la cual usas tus Herramientas de Inventor. Crear una Invención tiene un coste en materiales por valor de 2.000 Poké dólares.",
+                "Cuando una Invención se rompe o la desmontas, obtienes materiales por valor de 1.000 Poké Dólares. Para desmontar una Invención, debes tomar una Acción Extendida que dura 1 hora con tus Herramientas de Inventor. Además, cuando olvidas cómo diseñar una Invención, desmontas todas las copias de estas que tu y tu grupo tenéis.",
+                "Finalmente, algunas de las Invenciones provocarán que algunas criaturas hagan Tiradas de Salvación. La Clase de Dificultad de estas Tiradas de Salvación es igual a 10 + tu BH + tu Mente."
+            ]
+        },
+        {
+            "nombre": "Mejoras de Estadísticas",
+            "claseNombre": "Inventor",
+            "nivel": 2,
+            "descripcion": [
+                "A partir del Nivel 2 y luego cada 3 niveles, obtienes una Mejora de Estadísticas (ME), según la tabla de la Clase. Cada vez que recibes una ME, puedes aumentar una Estadística en 1, hasta un máximo de 3 mejoras en la misma Estadística. Luego puedes aplicar una cuarta y quintas ME para volver a aumentar la Estadística en 1 más entre las dos.",
+                "Al subir de Nivel, puedes cambiar que Estadística aumenta una de tus ME."
+            ]
+        },
+        {
+            "nombre": "Especialidad",
+            "claseNombre": "Inventor",
+            "nivel": 2,
+            "descripcion": [
+                "A nivel 2, eliges una Especialidad. Esta especialidad representa el campo de estudio en el que más te has entrenado. Esta elección te otorga más rasgos en los niveles 5, 8, 13 y 17. Algunas Especialidades tienen prerrequisitos. Si no cumples sus prerrequisitos, no puedes elegir esas Especialidades."
+            ],
+            "esSubclase": true
+        },
+        {
+            "nombre": "Dote",
+            "claseNombre": "Inventor",
+            "nivel": 3,
+            "descripcion": [
+                "A nivel 3, tomas una Dote."
+            ],
+            "esDote": true
+        },
+        {
+            "nombre": "Manitas",
+            "claseNombre": "Inventor",
+            "nivel": 4,
+            "descripcion": [
+                "A partir de nivel 4, la rareza de los objetos que puedes crear gracias a tu rasgo de Hábil con las Herramientas se vuelve Poco común. La dificultad de la Tirada para crear estos objetos es de 15.",
+                "Además, aprendes a aprovechar mejor los materiales. Fabricar Poké Balls y preparar Medicinas o Potenciadores consume materiales por la mitad de su valor de compra, en lugar de tres cuartas partes."
+            ]
+        },
+        {
+            "nombre": "Rasgo de Especialidad",
+            "claseNombre": "Inventor",
+            "nivel": 5,
+            "descripcion": [
+                "A nivel 5, tu conocimiento sobre tu Especialidad aumenta, lo que te otorga un nuevo rasgo dependiendo de la que eligieras a nivel 2."
+            ],
+            "esSubclase": true
+        },
+        {
+            "nombre": "Dote",
+            "claseNombre": "Inventor",
+            "nivel": 6,
+            "descripcion": [
+                "A nivel 6, tomas una Dote."
+            ],
+            "esDote": true
+        },
+        {
+            "nombre": "Mejora de Habilidades",
+            "claseNombre": "Inventor",
+            "nivel": 6,
+            "descripcion": [
+                "A nivel 6, te vuelves más hábil. Puedes aumentar tu Grado de Habilidad en 2 tipos de Tiradas de Habilidad hasta un máximo de Experto o de Maestro si eliges una Tirada de Habilidad cuyo Grado de Habilidad has aumentado con uno de tus Rasgos de Clase."
+            ]
+        },
+        {
+            "nombre": "Mejores invenciones",
+            "claseNombre": "Inventor",
+            "nivel": 7,
+            "descripcion": [
+                "A partir de nivel 7, puedes aprender mejores invenciones y algunas de las que conoces mejoran."
+            ]
+        },
+        {
+            "nombre": "Rasgo de Especialidad",
+            "claseNombre": "Inventor",
+            "nivel": 8,
+            "descripcion": [
+                "A nivel 8, tu conocimiento sobre tu Especialidad aumenta, lo que te otorga un nuevo rasgo dependiendo de la que eligieras a nivel 2."
+            ],
+            "esSubclase": true
+        },
+        {
+            "nombre": "Dote",
+            "claseNombre": "Inventor",
+            "nivel": 9,
+            "descripcion": [
+                "A nivel 9, tomas una Dote."
+            ],
+            "esDote": true
+        },
+        {
+            "nombre": "Mejorar las Patentes",
+            "claseNombre": "Inventor",
+            "nivel": 10,
+            "descripcion": [
+                "A partir de nivel 10, la rareza de los objetos que puedes crear gracias a tu rasgo de Hábil con las Herramientas se vuelve Rara. La dificultad de la Tirada para estos objetos adecuadamente es 20.",
+                "Además, los objetos que creas con tus Herramientas mejoran de las siguientes formas:",
+                "Si elegiste Fabricar Poké Balls, las Poké Ball que fabricas tienen un bono extra a las tiradas que haces con ellas para capturar igual a la mitad de tu Mente, que se suma a cualquier otro bono que pudieran tener.",
+                "Si elegiste Preparar Medicinas, las Medicinas que restauran PV que creas restauran una cantidad de d6 extra igual a tu Mente, los éteres que creas restauran una cantidad PPs extra igual a la mitad de tu Mente y los revivires que creas reducen un Nivel de Fatiga más de lo normal.",
+                "Si elegiste Preparar Potenciadores, los Pokémon que consumen tus Potenciadores pueden verse afectados por 2 Potenciadores siempre que no sean ambos Vitaminas."
+            ]
+        },
+        {
+            "nombre": "Pensamiento lateral",
+            "claseNombre": "Inventor",
+            "nivel": 11,
+            "descripcion": [
+                "A partir de Nivel 11, gracias a tu ágil mente eres capaz de encontrar soluciones a los problemas en fracciones de segundo. Cuando tu o una criatura a menos de 10 metros de ti falla una Tirada de d20, puedes usar tu Reacción para buscar una solución. Si estás ayudando a otra criatura que ha fallado la tirada, le das un rápido consejo que le indica cómo puede resolverlo. La criatura vuelve a realizar la Tirada de d20 y se queda con el nuevo resultado, al que añade un bono igual a tu Mente, pudiendo convertir un fallo en un acierto.",
+                "Puedes usar esta Reacción un número de veces igual a tu Mente. Estos usos se recuperan después de Descansar."
+            ]
+        },
+        {
+            "nombre": "Dote",
+            "claseNombre": "Inventor",
+            "nivel": 12,
+            "descripcion": [
+                "A nivel 12, tomas una Dote."
+            ],
+            "esDote": true
+        },
+        {
+            "nombre": "Mejora de Habilidades",
+            "claseNombre": "Inventor",
+            "nivel": 12,
+            "descripcion": [
+                "A nivel 12, te vuelves más hábil. Puedes aumentar tu Grado de Habilidad en 2 tipos de Tiradas de Habilidad hasta un máximo de Experto o de Maestro si eliges una Tirada de Habilidad cuyo Grado de Habilidad has aumentado con uno de tus Rasgos de Clase."
+            ]
+        },
+        {
+            "nombre": "Rasgo de Especialidad",
+            "claseNombre": "Inventor",
+            "nivel": 13,
+            "descripcion": [
+                "A nivel 13, tu conocimiento sobre tu Especialidad aumenta, lo que te otorga un nuevo rasgo dependiendo de la que eligieras a nivel 2."
+            ],
+            "esSubclase": true
+        },
+        {
+            "nombre": "Aún Mejores invenciones",
+            "claseNombre": "Inventor",
+            "nivel": 14,
+            "descripcion": [
+                "A partir de nivel 14, puedes aprender nuevas invenciones y algunas de las que conoces vuelven a mejorar."
+            ]
+        },
+        {
+            "nombre": "Dote",
+            "claseNombre": "Inventor",
+            "nivel": 15,
+            "descripcion": [
+                "A nivel 15, tomas una Dote."
+            ],
+            "esDote": true
+        },
+        {
+            "nombre": "Inventor Inmaculado",
+            "claseNombre": "Inventor",
+            "nivel": 16,
+            "descripcion": [
+                "A partir de nivel 16, la rareza de los objetos que puedes crear gracias a tu rasgo de Hábil con las Herramientas es Muy Rara. La dificultad de la Tirada para crear estos objetos adecuadamente es 25.",
+                "Además, si elegiste Fabricar Poké Balls, puedes hacer que estas tengan los efectos de dos Poké Ball distintas. Sólo uno de los efectos puede ser el de mejorar el bono a la tirada incondicionalmente y sólo uno de los efectos puede multiplicar la distancia a la que puedes lanzar la Poké Ball."
+            ]
+        },
+        {
+            "nombre": "Rasgo de Especialidad",
+            "claseNombre": "Inventor",
+            "nivel": 17,
+            "descripcion": [
+                "A nivel 17, tu conocimiento sobre tu Especialidad aumenta, lo que te otorga un nuevo rasgo dependiendo de la que eligieras a nivel 2."
+            ],
+            "esSubclase": true
+        },
+        {
+            "nombre": "Dote",
+            "claseNombre": "Inventor",
+            "nivel": 18,
+            "descripcion": [
+                "A nivel 18, tomas una Dote."
+            ],
+            "esDote": true
+        },
+        {
+            "nombre": "Mejora de Habilidades",
+            "claseNombre": "Inventor",
+            "nivel": 18,
+            "descripcion": [
+                "A nivel 18, te vuelves más hábil. Puedes aumentar tu Grado de Habilidad en 2 tipos de Tiradas de Habilidad hasta un máximo de Maestro o de Legendario si eliges una Tirada de Habilidad cuyo Grado de Habilidad has aumentado con uno de tus Rasgos de Clase."
+            ]
+        },
+        {
+            "nombre": "Reensamblaje Perfeccionado",
+            "claseNombre": "Inventor",
+            "nivel": 19,
+            "descripcion": [
+                "A nivel 19, has aprendido a montar y desmontar invenciones. Cuando usas tu Acción Extendida para desmontar una invención, recuperas todos los materiales que gastaste para producirlo."
+            ]
+        },
+        {
+            "nombre": "Invenciones Multifunción",
+            "claseNombre": "Inventor",
+            "nivel": 20,
+            "descripcion": [
+                "A nivel 20, añades a tus invenciones un montón de pequeñas funciones extra que ayudan en una infinidad de tareas. Una criatura que lleva una de tus Invenciones obtiene un bono de +1 a sus Tiradas de Habilidad por cada Invención que lleva, hasta un máximo de +3."
+            ]
+        }
+    ]
+}

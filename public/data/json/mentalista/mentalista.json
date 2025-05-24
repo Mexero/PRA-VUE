@@ -1,0 +1,565 @@
+{
+    "clase": "Mentalista",
+    "descripcion": [
+        "Los mentalistas han desarrollado a lo largo de su vida habilidades sobrenaturales gracias a una conexión mística con algún aspecto sobrenatural del mundo. Muy raros de encontrar, los mentalistas suelen ser personas con formas de ver el mundo muy diferentes a las de la mayoría. En ciertos lugares los mentalistas serán reverenciados por sus talentos pero, en muchos otros lugares serán temidos o incluso perseguidos por tener habilidades más propias de un Pokémon que de una persona.",
+        "Esta Clase se puede sentir muy débil si en tu campaña no hay combates en los que los Mentalistas puedan participar activamente, como los que ocurren durante la exploración de alguna región natural o los combates fuera de reglamento, así que antes de elegirla recuerda hablar con tu DJ si esto será razonable."
+    ],
+    "estadísticasMasRelevantes": "Mente y Espíritu.",
+    "vitalidad": 10,
+    "tiradasSalvacion": {
+        "nombre": "Mejores Tiradas de Salvación",
+        "descripcion": [
+            "Al elegir esta Clase, tu Grado de Habilidad en Salvaciones de Agilidad se vuelve Experto y Maestro en Salvaciones de Espíritu."
+        ]
+    },
+    "tablaClase": {
+        "titulos": [
+            "Nivel",
+            "Rasgos",
+            "BH",
+            "ME",
+            "Cantidad de Movimientos",
+            "Coste máximo"
+        ],
+        "filas": [
+            [
+                1,
+                [
+                    "Barrera Mágica",
+                    "Movimientos de Mentalista"
+                ],
+                1,
+                0,
+                2,
+                "1 PP"
+            ],
+            [
+                2,
+                [
+                    "Mejoras de Estadísticas",
+                    "Conexión Mística"
+                ],
+                1,
+                1,
+                2,
+                "1 PP"
+            ],
+            [
+                3,
+                [
+                    "Dote"
+                ],
+                2,
+                1,
+                3,
+                "1 PP"
+            ],
+            [
+                4,
+                [
+                    "Habilidades en el Misticismo"
+                ],
+                2,
+                1,
+                3,
+                "1 PP"
+            ],
+            [
+                5,
+                [
+                    "Rasgo de Conexión Mística"
+                ],
+                3,
+                2,
+                4,
+                "2 PP"
+            ],
+            [
+                6,
+                [
+                    "Dote",
+                    "Mejora de Habilidades"
+                ],
+                3,
+                2,
+                4,
+                "2 PP"
+            ],
+            [
+                7,
+                [
+                    "Alma Hambrienta"
+                ],
+                4,
+                2,
+                5,
+                "2 PP"
+            ],
+            [
+                8,
+                [
+                    "Rasgo de Conexión Mística"
+                ],
+                4,
+                3,
+                5,
+                "2 PP"
+            ],
+            [
+                9,
+                [
+                    "Dote"
+                ],
+                5,
+                3,
+                6,
+                "2 PP"
+            ],
+            [
+                10,
+                [
+                    "Más Habilidades en el Misticismo"
+                ],
+                5,
+                3,
+                6,
+                "4 PP"
+            ],
+            [
+                11,
+                [
+                    "Mejores Movimientos",
+                    "Sobrecarga Arcana"
+                ],
+                6,
+                4,
+                7,
+                "4 PP"
+            ],
+            [
+                12,
+                [
+                    "Dote",
+                    "Mejora de Habilidades",
+                    "Mejora de Daño"
+                ],
+                6,
+                4,
+                7,
+                "4 PP"
+            ],
+            [
+                13,
+                [
+                    "Rasgo de Conexión Mística"
+                ],
+                7,
+                4,
+                8,
+                "4 PP"
+            ],
+            [
+                14,
+                [
+                    "Destilar el Cansancio"
+                ],
+                7,
+                5,
+                8,
+                "4 PP"
+            ],
+            [
+                15,
+                [
+                    "Dote"
+                ],
+                8,
+                5,
+                9,
+                "5 PP"
+            ],
+            [
+                16,
+                [
+                    "Protección Superior",
+                    "Aún Mejores Movimientos"
+                ],
+                8,
+                5,
+                9,
+                "5 PP"
+            ],
+            [
+                17,
+                [
+                    "Rasgo de Conexión Mística"
+                ],
+                9,
+                6,
+                10,
+                "5 PP"
+            ],
+            [
+                18,
+                [
+                    "Dote",
+                    "Mejora de Habilidades"
+                ],
+                9,
+                6,
+                10,
+                "5 PP"
+            ],
+            [
+                19,
+                [
+                    "Poder Liberado"
+                ],
+                10,
+                6,
+                11,
+                "5 PP"
+            ],
+            [
+                20,
+                [
+                    "Uno con la Mente"
+                ],
+                10,
+                7,
+                11,
+                "5 PP"
+            ]
+        ]
+    },
+    "subclases": [
+        {
+            "acortado": "Alma",
+            "completo": "Conexión con el Alma",
+            "ruta": "Conexión_con_el_Alma"
+        },
+        {
+            "acortado": "Más Allá",
+            "completo": "Conexión con el Más Allá",
+            "ruta": "Conexión_con_el_Más_Allá"
+        },
+        {
+            "acortado": "Psique",
+            "completo": "Conexión con la Psique",
+            "ruta": "Conexión_con_la_Psique"
+        }
+    ],
+    "rasgos": [
+        {
+            "nombre": "Barrera Mágica",
+            "claseNombre": "Mentalista",
+            "nivel": 1,
+            "descripcion": [
+                "Cuando alcanzas nivel 1, has despertado tus habilidades místicas, que crean una barrera mágica que te protege. Tu Vitalidad se vuelve 9, si no era superior y puedes calcular tu CA como 10 + ESP + BH."
+            ]
+        },
+        {
+            "nombre": "Movimientos de Mentalista",
+            "claseNombre": "Mentalista",
+            "nivel": 1,
+            "descripcion": [
+                "A nivel 1, tus habilidades místicas te permiten aprender Movimientos Pokémon de la Lista de Movimientos de Mentalista que puedes encontrar más abajo, los cuales para ti tienen los costes descritos en dicha lista, en lugar del usual. Para poder usar estos Movimientos necesitas tener tu Amuleto Místico, un objeto de tamaño Enano cuyo aspecto tú eliges, como un orbe, un cristal o un colgante, y que está cubierto de tu energía mística. Sólo puedes tener un Amuleto Místico a la vez y, si lo pierdes o se rompe el que tienes, puedes crear uno nuevo como una Acción Extendida.",
+                "A este nivel, aprendes 2 Movimientos con coste de 1 PP y eliges uno de estos, que pasa a costarte 0 PP.",
+                "A niveles más altos desbloquearás más Movimientos con coste de PP más altos, tal y como puedes ver en la tabla resumen de la clase. Cada vez que subas de nivel, puedes cambiar 1 Movimiento de Mentalista que conoces por otro."
+            ]
+        },
+        {
+            "nombre": "Mejoras de Estadísticas",
+            "claseNombre": "Mentalista",
+            "nivel": 2,
+            "descripcion": [
+                "A partir del Nivel 2 y luego cada 3 niveles, obtienes una Mejora de Estadísticas (ME), según la tabla de la Clase. Cada vez que recibes una ME, puedes aumentar una Estadística en 1, hasta un máximo de 3 mejoras en la misma Estadística. Luego puedes aplicar una cuarta y quintas ME para volver a aumentar la Estadística en 1 más entre las dos.",
+                "Al subir de Nivel, puedes cambiar que Estadística aumenta una de tus ME."
+            ]
+        },
+        {
+            "nombre": "Conexión Mística",
+            "claseNombre": "Mentalista",
+            "nivel": 2,
+            "descripcion": [
+                "A nivel 2, tu conexión con un Tipo Elemental se vuelve más fuerte, manifestándose a través de más poderes. Eliges una Conexión Mística. Esta elección te otorga más rasgos en los niveles 5, 8, 13 y 17. Algunas Conexiones Místicas tienen prerrequisitos. Si no cumples sus prerrequisitos, no puedes elegir esas Conexiones Místicas."
+            ],
+            "esSubclase": true
+        },
+        {
+            "nombre": "Dote",
+            "claseNombre": "Mentalista",
+            "nivel": 3,
+            "descripcion": [
+                "A nivel 3, tomas una Dote."
+            ],
+            "esDote": true
+        },
+        {
+            "nombre": "Habilidades en el Misticismo",
+            "claseNombre": "Mentalista",
+            "nivel": 4,
+            "descripcion": [
+                "A nivel 4, tus talentos sobrenaturales te otorgan una Habilidad de entre las siguientes: Anticipación, Cacheo, Calco, Cuerpo puro, Espíritu vital, Fuerza mental, Ilusión, Iluminación, Inmunidad, Presión, Sincronía."
+            ]
+        },
+        {
+            "nombre": "Rasgo de Conexión Mística",
+            "claseNombre": "Mentalista",
+            "nivel": 5,
+            "descripcion": [
+                "A nivel 5, Conexión Mística mejora, lo que te otorga un nuevo rasgo dependiendo de la que eligieras a nivel 2."
+            ],
+            "esSubclase": true
+        },
+        {
+            "nombre": "Refuerzo místico",
+            "claseNombre": "Mentalista",
+            "nivel": null,
+            "descripcion": [
+                "Tu lazo con tu conexión mística se refuerza. El coste de los Movimientos que usas se reducen en 1 PP."
+            ]
+        },
+        {
+            "nombre": "Dote",
+            "claseNombre": "Mentalista",
+            "nivel": 6,
+            "descripcion": [
+                "A nivel 6, tomas una Dote."
+            ],
+            "esDote": true
+        },
+        {
+            "nombre": "Mejora de Habilidades",
+            "claseNombre": "Mentalista",
+            "nivel": 6,
+            "descripcion": [
+                "A nivel 6, te vuelves más hábil. Puedes aumentar tu Grado de Habilidad en 2 tipos de Tiradas de Habilidad hasta un máximo de Experto o de Maestro si eliges una Tirada de Habilidad cuyo Grado de Habilidad has aumentado con uno de tus Rasgos de Clase."
+            ]
+        },
+        {
+            "nombre": "Alma Hambrienta",
+            "claseNombre": "Mentalista",
+            "nivel": 7,
+            "descripcion": [
+                "A nivel 7, tu conexión con lo místico crece por encima del tamaño de tus reservas de poder, por lo que aprendes a alimentarla con tu cuerpo. De forma gratuita al principio de cada uno de tus turnos puedes elegir perder PV Máximos para recuperar PP. Para recuperar 1 PP pierdes una cantidad de PV Máximos (pero no de PV) igual a tu Vitalidad. Si reduces tus PV Máximos a 0 o menos de esta forma no caes inconsciente hasta el final de tu turno pero, cuando este acaba, tu alma canibaliza tu cuerpo y falleces.",
+                "Si tu DJ decreta que la muerte es algo demasiado oscuro para su campaña, en lugar de esto, no puedes Reducir tus PV Máximos a 0 o por debajo de 0 de esta forma.",
+                "Los PV Máximos perdidos de esta forma no se recuperan hasta que Descanses."
+            ]
+        },
+        {
+            "nombre": "Rasgo de Conexión Mística",
+            "claseNombre": "Mentalista",
+            "nivel": 8,
+            "descripcion": [
+                "A nivel 8, Conexión Mística mejora, lo que te otorga un nuevo rasgo dependiendo de la que eligieras a nivel 2."
+            ],
+            "esSubclase": true
+        },
+        {
+            "nombre": "Dote",
+            "claseNombre": "Mentalista",
+            "nivel": 9,
+            "descripcion": [
+                "A nivel 9, tomas una Dote."
+            ],
+            "esDote": true
+        },
+        {
+            "nombre": "Más Habilidades en el Misticismo",
+            "claseNombre": "Mentalista",
+            "nivel": 10,
+            "descripcion": [
+                "A nivel 10, tus talentos sobrenaturales te otorgan una Habilidad de entre las siguientes:",
+                "Afortunado, Dicha, Espejo mágico, Muro mágico, Nebulogénesis, Psicogénesis, Sombra trampa."
+            ]
+        },
+        {
+            "nombre": "Mejores Movimientos",
+            "claseNombre": "Mentalista",
+            "nivel": 11,
+            "descripcion": [
+                "A nivel 11, tu conexión con tus Movimientos de Mentalista aumenta, por lo que los costes de todos tus Movimientos se reducen en 1 PP."
+            ]
+        },
+        {
+            "nombre": "Sobrecarga Arcana",
+            "claseNombre": "Mentalista",
+            "nivel": 11,
+            "descripcion": [
+                "A partir de Nivel 11, aprendes a sobrecargar tus Movimientos de poder. Cuando lanzas un Movimiento de Mentalista que realiza una Tirada de Ataque o que fuerza al menos una Tirada de Salvación, puedes usar 1 PP para ganar Ventaja en la Tirada de Ataque, forzar Desventaja en una de las Tiradas de Salvación o para añadir 1 dado al daño base del Movimiento. Además, puedes usar 2 PP para usar ambos efectos."
+            ]
+        },
+        {
+            "nombre": "Dote",
+            "claseNombre": "Mentalista",
+            "nivel": 12,
+            "descripcion": [
+                "A nivel 12, tomas una Dote."
+            ],
+            "esDote": true
+        },
+        {
+            "nombre": "Mejora de Habilidades",
+            "claseNombre": "Mentalista",
+            "nivel": 12,
+            "descripcion": [
+                "A nivel 12, te vuelves más hábil. Puedes aumentar tu Grado de Habilidad en 2 tipos de Tiradas de Habilidad hasta un máximo de Experto o de Maestro si eliges una Tirada de Habilidad cuyo Grado de Habilidad has aumentado con uno de tus Rasgos de Clase."
+            ]
+        },
+        {
+            "nombre": "Mejora de Daño",
+            "claseNombre": "Mentalista",
+            "nivel": 12,
+            "descripcion": [
+                "A nivel 12, el daño de todos tus Movimientos aumenta en una cantidad igual a la mayor de tu Agilidad o tu Fuerza."
+            ]
+        },
+        {
+            "nombre": "Rasgo de Conexión Mística",
+            "claseNombre": "Mentalista",
+            "nivel": 13,
+            "descripcion": [
+                "A nivel 13, Conexión Mística mejora, lo que te otorga un nuevo rasgo dependiendo de la que eligieras a nivel 2."
+            ],
+            "esSubclase": true
+        },
+        {
+            "nombre": "Destilar el Cansancio",
+            "claseNombre": "Mentalista",
+            "nivel": 14,
+            "descripcion": [
+                "A partir de nivel 14, sabes cómo invertir la fatiga que sufre tu cuerpo, volviéndo el cansancio una fuente de energías en sí misma. Como Acción, si tienes 1 o más Niveles de Fatiga, puedes consumirlos para generar PP Extra. Cada nivel de Fatiga que consumes genera 2 PP, los cuales no se pierden con el cambio de Escena, sino que se conservan hasta que Descanses.",
+                "La cantidad máxima de PP Extra que este rasgo te puede otorgar es igual a tu Mente."
+            ]
+        },
+        {
+            "nombre": "Dote",
+            "claseNombre": "Mentalista",
+            "nivel": 15,
+            "descripcion": [
+                "A nivel 15, tomas una Dote."
+            ],
+            "esDote": true
+        },
+        {
+            "nombre": "Protección Superior",
+            "claseNombre": "Mentalista",
+            "nivel": 16,
+            "descripcion": [
+                "A nivel 16, las defensas místicas que instintivamente protegen tu cuerpo se vuelven más poderosas y aprendes a controlar tu barrera mágica. Cuando recibes daño, puedes usar tu Reacción y 2 PP para potenciar tu barrera mágica y reducir ese daño a la mitad."
+            ]
+        },
+        {
+            "nombre": "Aún Mejores Movimientos",
+            "claseNombre": "Mentalista",
+            "nivel": 16,
+            "descripcion": [
+                "A nivel 16, tu conexión con tus Movimientos de Mentalista vuelve a aumentar, por lo que los costes de todos tus Movimientos se reducen en 1 PP de nuevo."
+            ]
+        },
+        {
+            "nombre": "Rasgo de Conexión Mística",
+            "claseNombre": "Mentalista",
+            "nivel": 17,
+            "descripcion": [
+                "A nivel 17, Conexión Mística mejora, lo que te otorga un nuevo rasgo dependiendo de la que eligieras a nivel 2."
+            ],
+            "esSubclase": true
+        },
+        {
+            "nombre": "Dote",
+            "claseNombre": "Mentalista",
+            "nivel": 18,
+            "descripcion": [
+                "A nivel 18, tomas una Dote."
+            ],
+            "esDote": true
+        },
+        {
+            "nombre": "Mejora de Habilidades",
+            "claseNombre": "Mentalista",
+            "nivel": 18,
+            "descripcion": [
+                "A nivel 18, te vuelves más hábil. Puedes aumentar tu Grado de Habilidad en 2 tipos de Tiradas de Habilidad hasta un máximo de Maestro o de Legendario si eliges una Tirada de Habilidad cuyo Grado de Habilidad has aumentado con uno de tus Rasgos de Clase."
+            ]
+        },
+        {
+            "nombre": "Poder Liberado",
+            "claseNombre": "Mentalista",
+            "nivel": 19,
+            "descripcion": [
+                "A partir de nivel 19, puedes usar 1 PP más de lo normal cuando usas uno de tus Movimientos de Mentalista. Cuando lo haces, si este golpea y tiene un efecto que ocurre sólo en ciertas Tiradas Naturales, este siempre ocurre."
+            ]
+        },
+        {
+            "nombre": "Uno con la Mente",
+            "claseNombre": "Mentalista",
+            "nivel": 20,
+            "descripcion": [
+                "A partir de nivel 20, tu mente se vuelve tan portentosa que es capaz de controlar tu cuerpo físico a la perfección. Ganas los siguientes beneficios:",
+                "Dejas de envejecer si no deseas hacerlo y, como Acción Extendida, puedes restaurar tu cuerpo para que se vuelva más joven.",
+                "Como Acción puedes alterar tu aspecto físico, cambiando cualquiera de tus rasgos, el tono de tu piel, el color de tu cabello u otro efecto similar."
+            ]
+        }
+    ],
+    "ListaMovimientos": [
+        {
+            "coste": "1 PP",
+            "movimientos": [
+                "Confusión",
+                "Tinieblas",
+                "Viento feérico",
+                "Voz cautivadora"
+            ]
+        },
+        {
+            "coste": "2 PP",
+            "movimientos": [
+                "Anulación",
+                "Bloqueo",
+                "Meteoros",
+                "Onda simple",
+                "Profecía",
+                "Psicoonda",
+                "Anticura",
+                "Beso dulce",
+                "Cambiadefensa",
+                "Cambiafuerza",
+                "Cambiapoder",
+                "Cambiavelocidad",
+                "Destello",
+                "Doble equipo",
+                "Hipnosis",
+                "Isofuerza",
+                "Isoguardia",
+                "Rayo confuso"
+            ]
+        },
+        {
+            "coste": "4 PP",
+            "movimientos": [
+                "Agilidad",
+                "Bola sombra",
+                "Brillo mágico",
+                "Capa mágica",
+                "Comesueños",
+                "Cólera Ardiente",
+                "Esfera aural",
+                "Foco resplandor",
+                "Llama embrujada",
+                "Manto espejo",
+                "Masa cósmica",
+                "Pantalla de luz",
+                "Paranormal",
+                "Paz mental",
+                "Poder Místico",
+                "Protección",
+                "Psicorrayo",
+                "Reflejo",
+                "Triataque",
+                "Zona mágica"
+            ]
+        }
+    ]
+}

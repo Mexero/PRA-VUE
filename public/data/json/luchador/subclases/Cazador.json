@@ -1,0 +1,72 @@
+{
+    "nombre": "Cazador",
+    "prerrequisito": "",
+    "nombreClase": "Entrenador",
+    "descripcion": [
+        "Los Luchadores que siguen esta disciplina marcial además de especializarse en el combate también saben perseguir y estudiar a sus rivales en la naturaleza, encontrando en muchas ocasiones su fuerza en sorprender a una criatura desde el sigilo o guiarlos hasta una trampa."
+    ],
+    "rasgos": [
+        {
+            "nombre": "Cazador 2",
+            "nivel": 2,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Cazador",
+            "tieneSubrasgos": true,
+            "contenido": [
+                {
+                    "nombre": "Preparar trampas",
+                    "descripcion": [
+                        "A nivel 2, eres experto en seguir rastros. Aumentas tu Grado de Habilidad en Supervivencia en 1, hasta un máximo de Experto. Además, aprendes a crear y preparar trampas.",
+                        "Crear una trampa tiene un coste de Acción Extendida y requiere de materiales por valor de 200$, que tu DJ decide si pueden reutilizarse tras la activación. Cuando creas una trampa, esta ocupa un área cuadrada de 1 metro de lado la cual sólo puede detectarse con una Tirada de Investigación y es activada si se pasa por la zona que ocupa sin saber que está ahí. Todos las CD asociadas a tus trampas son iguales a la CD de tus Movimientos de Luchador. Puedes elegir entre las siguientes trampas:",
+                        "Apresar: Pones una red, preparas un cepo o cavas un foso. La criatura que la activa hace una Tirada de Salvación de Agilidad y, si la falla, queda apresada por la trampa hasta que se libere usando su Acción para repetir una Tirada de Salvación de Fuerza o Agilidad.",
+                        "Veneno: Preparas una trampa que libera algún tipo de veneno. La criatura que la activa hace una Tirada de Salvación de Resistencia y, si la falla, gana 2 Niveles de Envenenado.",
+                        "Aturdidora: Preparas una trampa que ciega o ensordece a una criatura. U La criatura que la activa hace una Tirada de Salvación de Resistencia y, si la falla, gana 1 Nivel de Cegado o queda Ensordecida hasta el final de su próximo turno."
+                    ]
+                },
+                {
+                    "nombre": "Hábil con las armas",
+                    "descripcion": [
+                        "A nivel 2, te vuelves hábil usando un arma a tu elección. Por ahora, puedes usar su Movimiento Estándar y puedes gastar tantos PPs con este Movimiento como el Coste máximo en PP de los Movimientos.",
+                        "Además, si el arma tiene como tipo asociado el Tipo Acero, ganas un bono al daño de sus Movimientos igual a tu BH."
+                    ]
+                }
+            ]
+        },
+        {
+            "nombre": "Versatilidad con las armas",
+            "nivel": 5,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Cazador",
+            "contenido": [
+                "A nivel 5, mejoras tus habilidades con el uso de armas. Puedes usar los Movimientos Especiales de las armas con las que eres hábil y, además, cada vez que subes de nivel, inclusive cuando ganas este Rasgo, puedes volverte hábil con otra arma, lo cual cuenta como conocer dos Movimientos de Luchador para ti."
+            ]
+        },
+        {
+            "nombre": "Estudiar a la presa",
+            "nivel": 8,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Cazador",
+            "contenido": [
+                "A partir de nivel 8, cuando tomas una Acción Extendida estudiando a una criatura, aprendes sus Tipos Elementales, sus Habilidades y si cada una de sus Estadísticas, sus PV Máximos y su Nivel son inferiores, iguales o superiores a los tuyos."
+            ]
+        },
+        {
+            "nombre": "Sorprender a la presa",
+            "nivel": 13,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Cazador",
+            "contenido": [
+                "A partir de nivel 13, cuando una criatura entra en combate tras caer en una de tus trampas, siempre se considera Sorprendida, incluso si sabía de tu presencia. Además, cuando tu y tus Pokémon golpeáis a una criatura sorprendida con un Movimiento que hace una Tirada de Ataque cuerpo a cuerpo, esta se considera un golpe crítico."
+            ]
+        },
+        {
+            "nombre": "Maestro de las armas",
+            "nivel": 17,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Cazador",
+            "contenido": [
+                "A partir de nivel 17, aprendes a usar los Movimientos Especiales Superiores de las armas con las que eres hábil."
+            ]
+        }
+    ]
+}

@@ -1,7 +1,17 @@
 {
     "clase": "Entrenador",
-    "estadísticasMasRelevantes": "Mente, Espíritu o Presencia",
+    "descripcion": [
+        "Los Entrenadores han pasado gran parte de sus vidas estudiando cómo entrenar y dirigir a sus Pokémon. Son expertos en dar órdenes a sus Pokémon y poseen un talento natural para ganarse el respeto de estos.",
+        "Los Pokémon de un Entrenador cuantifican su poder, por lo que los entrenadores brillan especialmente en los combates en los que sólo participan Pokémon y deben tener más cuidado que los miembros de otras Clases en situaciones en las que ellos forman parte activa del combate, pues sus capacidades individuales no suelen estar muy desarrolladas."
+    ],
+    "estadísticasMasRelevantes": "Una entre Mente, Espíritu y Presencia.",
     "vitalidad": 7,
+    "tiradasSalvacion": {
+        "nombre": "Mejores Tiradas de Salvación",
+        "descripcion": [
+            "Al elegir esta Clase, te vuelves Maestro en Tiradas de Salvación de Espíritu y Experto en todas las demás."
+        ]
+    },
     "tablaClase": {
         "titulos": [
             "Nivel",
@@ -34,7 +44,7 @@
             [
                 2,
                 [
-                    "Mejora de Estadísticas",
+                    "Mejoras de Estadísticas",
                     "Entrenamientos",
                     "Filosofía de Entrenamiento"
                 ],
@@ -93,8 +103,8 @@
                 7,
                 [
                     "Nuevos Entrenamientos y Órdenes",
-                    "Entrenamiento diversificado",
-                    "Orden Insignia"
+                    "Entrenamiento Diversificado",
+                    "Orden insignia"
                 ],
                 4,
                 2,
@@ -105,7 +115,7 @@
             [
                 8,
                 [
-                    "rasgo de Filosofía de Entrenamiento"
+                    "Rasgo de Filosofía de Entrenamiento"
                 ],
                 4,
                 3,
@@ -195,7 +205,7 @@
             [
                 16,
                 [
-                    "Entrenamientos personalizados",
+                    "Entrenamientos Personalizados",
                     "Nuevos Entrenamientos y Órdenes"
                 ],
                 8,
@@ -241,7 +251,7 @@
             [
                 20,
                 [
-                    "Movimiento único"
+                    "Movimientos Insignia"
                 ],
                 10,
                 7,
@@ -338,17 +348,6 @@
             "ruta": "Mente_Maestra"
         }
     ],
-    "descripcion": [
-        "Los Entrenadores han pasado gran parte de sus vidas estudiando cómo entrenar y dirigir a sus Pokémon. Son expertos en dar órdenes a sus Pokémon y poseen un talento natural para ganarse el respeto de estos.",
-        "Los Pokémon de un Entrenador cuantifican su poder, por lo que los entrenadores brillan especialmente en los combates en los que sólo participan Pokémon y deben tener más cuidado que los miembros de otras Clases en situaciones en las que ellos forman parte activa del combate, pues sus capacidades individuales no suelen estar muy desarrolladas.",
-        "La siguiente tabla resume los rasgos que gana todo Entrenador a medida en que sube de Nivel."
-    ],
-    "tiradasSalvacion": {
-        "nombre": "Mejores tiradas de Salvación",
-        "descripcion": [
-            "Al elegir esta Clase, te vuelves Maestro en Tiradas de Salvación de Espíritu y Experto en todas las demás."
-        ]
-    },
     "rasgos": [
         {
             "nombre": "Talento de Entrenador",
@@ -366,7 +365,7 @@
             "nivel": 1,
             "descripcion": [
                 "A partir de nivel 1, tienes un entendimiento superior al de la media del combate. Cada vez que das una Orden a un Pokémon a menos de 10 metros de ti, puedes gastar 1 PP y tu Acción para dar una Orden de Entrenador, que hacen que la orden que le has dado tenga efectos especiales. Conoces 3 Órdenes de Entrenador de la Lista de Órdenes de Entrenador que puedes encontrar más adelante y a niveles superiores aprendes más Órdenes de Entrenador.",
-                "La primera vez en el turno en el que un Pokémon al que has dado una Orden de Entrenador hace daño a otra criatura con Movimiento, lanzas un dado que se añade al daño del Movimiento. Este dado es tu Dado de Orden, que es un d6 y aumenta tal y como puedes ver en la tabla resumen de la Clase. ",
+                "La primera vez en el turno en el que un Pokémon al que has dado una Orden de Entrenador hace daño a otra criatura con Movimiento, lanzas un dado que se añade al daño del Movimiento. Este dado es tu Dado de Orden, que es un d6 y aumenta tal y como puedes ver en la tabla resumen de la Clase.",
                 "Además, algunas órdenes dicen que tiras un Dado de Orden en ciertas situaciones y otras hablan de que las Tiradas de Ataque Naturales deben alcanzar tu Rango de Orden. Esto significa que la Tirada Natural debe ser mayor o igual a 21 menos tu Bono de Entrenador."
             ]
         },
@@ -392,7 +391,7 @@
             "claseNombre": "Entrenador",
             "nivel": 2,
             "descripcion": [
-                "A nivel 2, eliges una filosofía de entrenamiento. Esta filosofía afecta a los tipos de estrategias que sigues y tu forma de entrenar e interactuar con tus Pokémon. Esta elección te otorga más rasgos en los niveles 5, 8, 13 y 17. "
+                "A nivel 2, eliges una filosofía de entrenamiento. Esta filosofía afecta a los tipos de estrategias que sigues y tu forma de entrenar e interactuar con tus Pokémon. Esta elección te otorga más rasgos en los niveles 5, 8, 13 y 17."
             ],
             "esSubclase": true
         },
@@ -456,7 +455,7 @@
             ]
         },
         {
-            "nombre": "Orden insignia ",
+            "nombre": "Orden insignia",
             "claseNombre": "Entrenador",
             "nivel": 7,
             "descripcion": [
@@ -608,9 +607,10 @@
             "nivel": 20,
             "descripcion": [
                 "A nivel 20, te has vuelto uno de los entrenadores más hábiles del Mundo Pokémon y has aprendido a mejorar los Movimientos que más han practicado tus Pokémon. Como Acción Extendida, puedes enseñar un único Movimiento insignia a cada uno de tus Pokémon. Para crear un Movimiento Insignia, eliges uno de sus Movimientos y aplicas una de las siguientes modificaciones:",
-                "Gran Extensión: Si el Movimiento no es cuerpo a cuerpo, el rango aumenta en una cantidad de metros igual a tu Bono de Entrenador. Además, si el movimiento afecta un área, este área crece en una cantidad de metros igual a la mitad de tu Bono de Entrenador.",
+                "Gran Extensión: Si el Movimiento no es cuerpo a cuerpo, el rango aumenta en una cantidad de metros igual a tu Bono de Entrenador. Además, si el movimiento afecta un área, esta área crece en una cantidad de metros igual a la mitad de tu Bono de Entrenador.",
                 "Poder Inusitado: Si el Movimiento hace daño, el daño base del movimiento aumenta en 1 dado.",
-                "Instantáneo: Si el Movimiento hace una Tirada de Ataque cuerpo a cuerpo, el coste en PP del movimiento aumenta en 1 y puede usarse como Ataque de Oportunidad y cada vez que se usa otro Movimiento como parte de una Acción. Este movimiento puede usarse una cantidad de veces por Escena igual a la mitad de tu Bono de Entrenador si su versión normal no tiene una limitación mayor."
+                "Instantáneo: Si el Movimiento hace una Tirada de Ataque cuerpo a cuerpo, el coste en PP del movimiento aumenta en 1 y puede usarse como Ataque de Oportunidad y cada vez que se usa otro Movimiento como parte de una Acción. Este movimiento puede usarse una cantidad de veces por Escena igual a la mitad de tu Bono de Entrenador si su versión normal no tiene una limitación mayor.",
+                "un metro de Velocidad más de lo normal."
             ]
         }
     ]

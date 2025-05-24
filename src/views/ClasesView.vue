@@ -15,6 +15,7 @@ const tiradas = ref({ nombre: '', descripcion: [] });
 const rasgos = ref([]);
 const subclasesIndex = ref([]);
 const subclasesCargadas = ref([]);
+const listaMovimientos = ref([]);
 
 
 
@@ -42,6 +43,7 @@ async function cargarClase(clase) {
         tiradas.value = data.tiradasSalvacion;
         rasgos.value = data.rasgos;
         subclasesIndex.value = data.subclases;
+        listaMovimientos.value = data.ListaMovimientos ?? [];
 
         //Cambio ruta
         handleClassChange(claseCargada.value);
@@ -143,25 +145,34 @@ function handleClassChange(claseNueva) {
                         </div>
                     </div>
                 </div>
-                <div @click="console.log(' pinga')"
+                <div @click="cargarClase('inventor')"
                     :class="claseCargada === 'inventor' ? 'class-active' : 'class-inactive'">Inventor
                     <div class="subclasses" v-if="claseCargada === 'inventor'">
-                        <div v-for="(subclase) in subclasesIndex" @click="e => (toggleSubclase(subclase.ruta, e))">{{
-                            subclase.acortado }}</div>
+                        <div v-for="(subclase) in subclasesIndex" :key="subclase.ruta"
+                            :class="isSubclaseActiva(subclase.ruta) ? 'class-active' : 'class-inactive'"
+                            @click="e => toggleSubclase(subclase.ruta, e)">
+                            {{ subclase.acortado }}
+                        </div>
                     </div>
                 </div>
-                <div @click="console.log(' pinga')"
+                <div @click="cargarClase('mentalista')"
                     :class="claseCargada === 'mentalista' ? 'class-active' : 'class-inactive'">Mentalista
                     <div class="subclasses" v-if="claseCargada === 'mentalista'">
-                        <div v-for="(subclase) in subclasesIndex" @click="e => (toggleSubclase(subclase.ruta, e))">{{
-                            subclase.acortado }}</div>
+                        <div v-for="(subclase) in subclasesIndex" :key="subclase.ruta"
+                            :class="isSubclaseActiva(subclase.ruta) ? 'class-active' : 'class-inactive'"
+                            @click="e => toggleSubclase(subclase.ruta, e)">
+                            {{ subclase.acortado }}
+                        </div>
                     </div>
                 </div>
                 <div @click="cargarClase('luchador')"
                     :class="claseCargada === 'luchador' ? 'class-active' : 'class-inactive'">Luchador
                     <div class="subclasses" v-if="claseCargada === 'luchador'">
-                        <div v-for="(subclase) in subclasesIndex" @click="e => (toggleSubclase(subclase.ruta, e))">{{
-                            subclase.acortado }}</div>
+                        <div v-for="(subclase) in subclasesIndex" :key="subclase.ruta"
+                            :class="isSubclaseActiva(subclase.ruta) ? 'class-active' : 'class-inactive'"
+                            @click="e => toggleSubclase(subclase.ruta, e)">
+                            {{ subclase.acortado }}
+                        </div>
                     </div>
                 </div>
             </div>
@@ -235,7 +246,7 @@ function handleClassChange(claseNueva) {
                         v-html="parrafo"></p>
                 </div>
             </details>
-
+            <!--Rasgos-->
             <details v-for="(rasgo, i) in rasgos" :key="i" class="feature" open>
                 <summary :id="rasgo.nombre + rasgo.nivel">
                     {{ rasgo.nombre }}
@@ -279,6 +290,21 @@ function handleClassChange(claseNueva) {
                                     </div>
                                 </template>
                             </template>
+                        </div>
+                    </div>
+                </div>
+            </details>
+            <!--Lista Movimientos-->
+            <details v-if="listaMovimientos.length > 0" class="feature" open id="listaMovs">
+                <summary>Lista de Movimientos de {{ claseCargada }}</summary>
+                <div class="listaMovsContainer">
+                    <div v-for="par in listaMovimientos" class="parListaMov">
+
+                        <p class="listaMovsCoste">{{ par.coste }}</p>
+                        <div>
+                            <p v-for="mov in par.movimientos" class="movListaMov">
+                                {{ mov }}
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -388,7 +414,7 @@ tr:nth-of-type(2n) {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    padding: 15px 10px 0;
+    padding: 15px 10px;
     text-align: justify;
     margin-bottom: 20px;
 }
@@ -439,6 +465,27 @@ tr:nth-of-type(2n) {
 
 :deep(li) {
     margin-left: 20px;
+}
+
+
+/*===========LISTA DE MOVIMIENTOS=============*/
+
+.listaMovsContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.parListaMov {
+    width: 125px;
+}
+
+.listaMovsCoste {
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--color-principal2);
+
 }
 
 

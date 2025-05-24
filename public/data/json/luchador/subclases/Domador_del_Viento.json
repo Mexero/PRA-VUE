@@ -1,0 +1,58 @@
+{
+    "nombre": "Domador del Viento",
+    "prerrequisito": "",
+    "nombreClase": "Entrenador",
+    "descripcion": [
+        "Los Luchadores que siguen esta disciplina marcial son ágiles y sutiles, tan difíciles de atrapar como la brisa misma y tan maleables como el viento, por lo que brillan por sus talentos para desplazarse y escapar del peligro y por su sobrenatural talento para dominar los vientos y la energía que estos contienen."
+    ],
+    "rasgos": [
+        {
+            "nombre": "Fluir de la brisa",
+            "nivel": 2,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Domador del Viento",
+            "contenido": [
+                "A nivel 2, te especializas en usar tus artes marciales para dominar a tus rivales. Te vuelves Tipo Volador. Si ya tienes 2 Tipos Elementales, puedes sustituir uno de estos por el tipo Volador. Además, tu velocidad de caminado aumenta en 2 metros y, cuando golpeas a una criatura con una Tirada de Ataque, los ataques de oportunidad que generas al alejarte de esa criatura se hacen en Desventaja."
+            ]
+        },
+        {
+            "nombre": "Movimientos ágiles",
+            "nivel": 5,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Domador del Viento",
+            "contenido": [
+                "A nivel 5, aprendes a moverte tan ágilmente que el viento es moldeado por tu movimiento. Para ti, los siguientes Movimientos se añaden a la Lista de Luchador y tienen el coste que se les asigna, en lugar del usual. Además, aprendes 2 de estos Movimientos, que no cuentan para el Máximo de Movimientos de Luchador que conoces y que puedes cambiar cada vez que subes de nivel:",
+                "2 PP: Acróbata, Bote, Despejar, Golpe aéreo y Remolino.",
+                "3 PP: Tajo aéreo.",
+                "5 PP: Ataque aéreo."
+            ]
+        },
+        {
+            "nombre": "Cambio en la corriente",
+            "nivel": 8,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Domador del Viento",
+            "contenido": [
+                "A partir de nivel 8, aprendes a doblegar el viento, que te ayuda a redirigir los ataques a rango que se hacen contra ti. Cuando hacen una Tirada de Ataque a Rango contra ti asociada a un efecto que no sólo lanza energía, puedes usar tu Reacción y 1 PP para sumar tu Agilidad a tu CA para ese ataque. Si gracias a esto la Tirada de Ataque no golpea, puedes redirigir este ataque a una criatura a 3 metros o menos de ti por 2 PP más. Haz una Tirada de Ataque a rango en la que eres Bueno usando tu Agilidad contra la criatura. Si golpea, esta recibe los efectos que fuese a provocar sobre ti la primera Tirada de Ataque."
+            ]
+        },
+        {
+            "nombre": "Aprovechar el rebufo",
+            "nivel": 13,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Domador del Viento",
+            "contenido": [
+                "A partir de nivel 13, ganas la Habilidad de Impulso."
+            ]
+        },
+        {
+            "nombre": "Ojo del huracán",
+            "nivel": 17,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Domador del Viento",
+            "contenido": [
+                "A nivel 17, tus Movimientos están en completa sintonía con el viento. Como Acción, puedes hacer que se forme un remolino de un radio de 2 metros a tu alrededor que bloquea los ataques que entran a este e impulsa los que salen. Cuando se hace una Tirada de Ataque asociada a un efecto que no sólo lanza energía y que entra al remolino, esta se hace en Desventaja y si esta sale del remolino, se hace en Ventaja."
+            ]
+        }
+    ]
+}

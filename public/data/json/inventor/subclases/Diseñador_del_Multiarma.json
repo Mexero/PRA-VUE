@@ -1,0 +1,74 @@
+{
+    "nombre": "Diseñador del Multiarma",
+    "prerrequisito": "",
+    "nombreClase": "Entrenador",
+    "descripcion": [
+        "Algunos Inventores buscan crear un arma prodigiosa, capaz de todo y sin debilidad alguna. Aunque esto es un reto difícil, los inventores del Multiarma creen haber dado con la solución: Añadir tantas funciones como sea necesario, sin importar el costo o la complejidad de estos."
+    ],
+    "rasgos": [
+        {
+            "nombre": "Creador del Multiarma",
+            "nivel": 2,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Diseñador del Multiarma",
+            "contenido": [
+                "A nivel 2, fabricas un arma especial que puede usarse de múltiples formas, tu Multiarma. Sólo tú eres hábil con este arma y, si la pierdes, puedes volver a fabricarla por 3.000$. Por ejemplo, podrías crear un hacha que también es una escopeta y que, si le das a un botón, se vuelve una guadaña.",
+                "Por ahora, este arma sólo tiene 2 Movimientos Estándar, que puedes elegir de la Lista de Movimientos de Arma, los cuales puedes usar en sus modos de A voluntad y 1 PP. Además, puedes usar tu Mente en lugar de tu Fuerza o Agilidad para las Tiradas de Ataque y de daño de tu Multiarma."
+            ]
+        },
+        {
+            "nombre": "Función defensiva",
+            "nivel": 5,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Diseñador del Multiarma",
+            "contenido": [
+                "A partir de nivel 5, añades un nuevo modo a tu Multiarma que te protege, ya sea poniendo una barrera de fuerza, generando una armadura holográfica a tu alrededor o como tu decidas. Tu CA se vuelve 10 + MEN + BH y, cuando lanzas Iniciativa con tu Multiarma encima, ganas puntos de Escudo igual al doble de tu Nivel, que duran hasta el final del combate.",
+                "Además, puedes usa r los Movimientos Estándar de tu Multiarma por 2 PP."
+            ]
+        },
+        {
+            "nombre": "Infusión elemental",
+            "nivel": 8,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Diseñador del Multiarma",
+            "contenido": [
+                "A partir de nivel 8, añades a tu Multiarma un Tipo Elemental que te permite lanzar ciertos Movimientos extra. Además, puedes elegir uno de los siguientes Tipos Elementales:",
+                "Fuego: Puedes usar Ascuas por 1 PP y Giro fuego y Calcinación por por 2 PP. A partir de nivel 13 puedes usar Lanzallamas por 4 PP y, a partir de nivel 17, Llamarada por 5 PP.",
+                "Eléctrico: Puedes usar Chispa o Impactrueno por 1 PP y Onda voltio y Aura magnética por 2 PP. A partir de nivel 13 puedes usar Rayo por 4 PP y, a partir de nivel 17, Trueno por 5 PP.",
+                "Hielo: Puedes usar Nieve polvo por 1 PP y Rayo aurora y Niebla por 2 PP. A partir de nivel 13 puedes usar Rayo hielo por 4 PP y, a partir de nivel 17, Ventisca por 5 PP.",
+                "Veneno: Picotazo venenoso o Residuos por 1 PP y Gas corrosivo y Armadura Ácida por 2 PP. A partir de nivel 13 puedes usar Bomba lodo por 4 PP y, a partir de nivel 17, Tóxico por 5 PP."
+            ]
+        },
+        {
+            "nombre": "Diseñador del Multiarma 13",
+            "nivel": 13,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Diseñador del Multiarma",
+            "tieneSubrasgos": true,
+            "contenido": [
+                {
+                    "nombre": "Mejora del Multiarma",
+                    "descripcion": [
+                        "A partir de nivel 13, añades nuevas funcionalidades a tu Multiarma, que gana 2 Movimientos Especiales a tu elección, que aprendes a usar y añades una vez más tu Mente al daño base de tus Movimientos realizados con tu Multiarma.",
+                        "Además, añades nuevas funcionalidades a tu Multiarma. Esta gana 1 Movimiento Especial extra y 1 Movimiento Especial Superior, los cuales puedes usar y puedes usar los Movimientos Estándar de tu Multiarma por 4 PP."
+                    ]
+                },
+                {
+                    "nombre": "Multiarma Refinada",
+                    "descripcion": [
+                        "A nivel 13, optimizas tu Multiarma para que sea más fácil de utilizar y consuma menos recursos. Los costes de todos sus Movimientos, inclusive los del rasgo de Infusión Elemental, se reducen en 1 PP."
+                    ]
+                }
+            ]
+        },
+        {
+            "nombre": "Multiarma completa",
+            "nivel": 17,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Diseñador del Multiarma",
+            "contenido": [
+                "A partir del nivel 17, perfeccionas tu Multiarma, añadiendo nuevas funcionalidades. Tu multiarma gana 2 Movimientos Especiales Superiores y puedes elegir un segundo Tipo Elemental con tu Rasgo de Infusión Elemental y ganas todos los beneficios que esto te otorga."
+            ]
+        }
+    ]
+}

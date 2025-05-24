@@ -1,0 +1,74 @@
+{
+    "nombre": "Químico",
+    "prerrequisito": "Haber elegido Preparar Potenciadores con el rasgo de Hábil con las Herramientas.",
+    "nombreClase": "Entrenador",
+    "descripcion": [
+        "Los Inventores especializados en la Química se sirven de la ciencia para crear Potenciadores que ayudan a sus Pokémon y venenos y efectos nocivos que perjudican a sus rivales por igual."
+    ],
+    "rasgos": [
+        {
+            "nombre": "Bolas duales",
+            "nivel": 2,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Químico",
+            "contenido": [
+                "A partir de nivel 2, tu maestría con la química te permite crear una nueva Invención: Un paquete de bolas que emiten vapores que tienen efectos nocivos para la mayoría de especies pero efectos positivos para unas pocas que tu eliges que tú eliges llamado Paquete de Bolas duales. La primera copia que creas de este Paquete no cuenta para el máximo de Invenciones que tienes creadas. Cuando creas este Paquete de Bolas duales, eliges si los humanos reciben efectos nocivos o positivos y eliges una cantidad de Especies Pokémon que reciben efectos positivos de las bolas. La cantidad máxima de Especies de Pokémon que puedes elegir es igual a tu Mente.",
+                "Una criatura que tiene una de estas bolas puede lanzarla a un punto a una distancia de 5 metros y, cuando tocan una superficie, explotan liberando un vapor en un radio de 1 metro que permanece ahí hasta el final de la Escena o hasta que un Movimiento con la Etiqueta de Viento afecte el área. Una criatura que recibe efectos positivos de las bolas añade un dado al daño base de sus Movimientos o 2 dados a partir de Nivel 14. Una criatura que recibe efectos nocivos de estas bolas y termina su turno dentro de este área hace una Salvación de Resistencia. Si falla, gana 1 Nivel de Envenenado. Esta cantidad de Niveles aumenta a 2 a partir de Nivel 7 y a 3 a partir de Nivel 14.",
+                "A partir de nivel 7, el radio de explosión de una bola puede ser de 1 o 2 metros (se elige al sacarla del Paquete)."
+            ]
+        },
+        {
+            "nombre": "Potenciadores Especiales",
+            "nivel": 5,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Químico",
+            "contenido": [
+                "Desde nivel 5, aprendes a crear unos Potenciadores especiales diseñados para mejorar las capacidades de la criatura que los consume. Tu eliges como se ven estos potenciadores. Pueden ser pastillas, pócimas, inyecciones o pulverizadores, entre otros.",
+                "Puedes crear estos Potenciadores una vez al día como Acción Extendida y sin coste en Materiales y creas una cantidad igual a tu Mente. Pasadas 24 horas, estos Potenciadores pierden su efecto. Una criatura puede consumir estos Potenciadores como Acción y su beneficio dura hasta que pasen 24 horas desde que fueron creados. Puedes elegir entre los siguientes Potenciadores, que otorgan un beneficio:",
+                "Gran potencia: Te consideras de 1 tamaño a la hora de calcular el peso que puedes cargar y de ser agarrad tienes Ventaja contra ser empujado agarrardo, apresado y quedar tumbado.",
+                "Agilidad felina: Puedes calcular tu distancia de salto con tu Agilidad en lugar de con tu Fuerza y, si fueses a recibir daño de caída, redúcelo en una cantidad igual al doble de tu Agilidad.",
+                "Barrera inmunológica: Al final de tu turno, reduces tus Niveles de Quemado, Paralizado, Helado y Envenenado en 1 más de lo normal. Además, pierdes la mitad de PV de lo normal a causa de estados.",
+                "Concentración aumentada: Cuando fallas una Tirada de d20 asociada a tu Mente puedes volver a realizarla, pudiendo convertir un fallo en un acierto. Puedes usar este beneficio una vez por Escena.",
+                "Sentidos aguzados: Cuando fallas una Tirada de d20 asociada a tu Espíritu puedes volver a realizarla, pudiendo convertir un fallo en un acierto. Puedes usar este beneficio una vez por Escena.",
+                "Realzador: Cuando fallas una Tirada de d20 asociada a tu Presencia puedes volver a realizarla, pudiendo convertir un fallo en un acierto. Puedes usar este beneficio una vez por Escena.",
+                "Si quieres crear más Potenciadores especiales, puedes crearlos como si fueran Potenciadores Poco Comunes con un coste de 1000 Pokédolares. Cuando los creas de esta forma, no pierden su efecto pasadas 24 horas y su efecto dura hasta que la criatura que los consumió Descanse."
+            ]
+        },
+        {
+            "nombre": "Químicos corrosivos",
+            "nivel": 8,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Químico",
+            "contenido": [
+                "A partir de nivel 8, descubres la forma de que tus venenos se vuelvan corrosivos. Las criaturas de Tipo Veneno y Tipo Acero pueden ganar Niveles de Envenenado de tus Invenciones y, el daño de Tipo veneno que infliges no es poco eficaz contra las criaturas de Tipo Veneno ni las criaturas de Tipo Acero son inmunes a este daño."
+            ]
+        },
+        {
+            "nombre": "Mejores Potenciadores Especiales",
+            "nivel": 13,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Químico",
+            "contenido": [
+                "A partir de nivel 13, mejoras la fórmula de tus Potenciadores especiales. Ahora estos otorgan los siguientes beneficios extra, además de los que ya otorgaban:",
+                "Gran potencia: Ganas un bono al daño igual a la Mente del Químico que creó este Potenciador.",
+                "Agilidad felina: Cuando fallas una Tirada de Salvación de Agilidad o de Ataque hecho con Agilidad, como Reacción te otorgas un beneficio igual la mitad de la Mente del Químico que creó este Potenciador, pudiendo volver el fallo un acierto.",
+                "Barrera inmunológica: Al principio de cada uno de tus turnos ganas Puntos de Escudo iguales a la Mente del Químico que creó este Potenciador. Además, tienes Ventaja en Tiradas de Salvación de Resistencia que haces contra efectos que no hacen daño.",
+                "Concentración aumentada: Cuando una criatura gana Niveles de Envenenado, Helado, Quemado, Parálisis o Confusión a causa de uno de tus Movimientos que has usado con tu Mente, la cantidad de Niveles que gana aumenta en 1.",
+                "Sentidos aguzados: Tienes Ventaja en Tiradas de Salvación de Espíritu contra efectos que no hacen daño.",
+                "Realzador: Cuando una criatura gana Niveles de Confusión, Furia, Asustado o Infatuado a causa de uno de tus Movimientos que has usado con tu Presencia, la cantidad de Niveles que gana aumenta en 1.",
+                "Si quieres crear más de estos nuevos Potenciadores especiales, puedes crearlos como si fueran Potenciadores Raros con coste de 3000 Pokédolares de la misma forma que creas los otros."
+            ]
+        },
+        {
+            "nombre": "Químicos corrosivos",
+            "nivel": 17,
+            "nombreClase": "Entrenador",
+            "nombreSubclase": "Químico",
+            "contenido": [
+                "A partir de nivel 17, aprendes a fabricar un vial de un líquido estimulante con tus Herramientas de Química como Acción Extendida. Como Acción puedes inyectar este vial a una criatura. La criatura queda acelerada hasta el final de la Escena. Una criatura Acelerada de esta forma tiene dos Acciones, sus velocidades aumentan en 2 metros, no provoca ataques de oportunidad y tiene Ventaja en sus Tiradas de Salvación de Agilidad. Cuando el efecto del estimulante termina, la criatura gana 2 Niveles de Fatiga.",
+                "El primer vial de este estimulante que creas cada día no tiene coste en PP pero, si quieres crear más, usas 2 PP por cada vial extra, los cuales no puedes recuperar hasta que termine la Escena en la que los usas, los pierdes, o hasta que Descanses, tras lo cual los demás viales que habías creado pierden su efecto.",
+                "Por último, una criatura puede beneficiarse de los efectos de 2 Potenciadores que tu has creado siempre que no tengan el mismo efecto ni aumenten el mismo valor."
+            ]
+        }
+    ]
+}

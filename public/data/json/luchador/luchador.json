@@ -1,48 +1,48 @@
 {
     "clase": "Luchador",
-    "estadísticasMasRelevantes": "Mente, Espíritu o Presencia",
-    "vitalidad": 7,
+    "descripcion": [
+        "Los Luchadores son diestros peleadores cuerpo a cuerpo, capaces de combatir por sí mismos contra Pokémon que para una persona común serían imposibles de enfrentar. Los Luchadores entrenan sin descanso y transmiten a sus Pokémon esta mentalidad de mejora constante, incluso si no son los más diestros a la hora de diseñar entrenamientos para ellos.",
+        "Esta Clase se puede sentir muy débil si en tu campaña no hay combates en los que los luchadores puedan participar activamente, como los que ocurren durante la exploración de alguna región natural o los combates fuera de reglamento, así que antes de elegirla recuerda hablar con tu DJ si esto será razonable."
+    ],
+    "estadísticasMasRelevantes": "Resistencia y Fuerza o Agilidad.",
+    "vitalidad": 10,
+    "tiradasSalvacion": {
+        "nombre": "Mejores Tiradas de Salvación",
+        "descripcion": [
+            "Al elegir esta Clase, te vuelves Maestro en Tiradas de Salvación de Espíritu y Experto en todas las demás."
+        ]
+    },
     "tablaClase": {
         "titulos": [
             "Nivel",
             "Rasgos",
             "BH",
             "ME",
-            "AAAAAAAAAAA",
-            [
-                "Entrenamientos",
-                "RUTAENTRENAMIENTOS"
-            ],
-            [
-                "Órdenes",
-                "RUTAORDENES"
-            ]
+            "Cantidad de Movimientos",
+            "Coste máximo"
         ],
         "filas": [
             [
                 1,
                 [
-                    "Talento de Entrenador",
-                    "Órdenes de Entrenador"
+                    "Entrenamiento Marcial",
+                    "Movimientos de Luchador"
                 ],
                 1,
                 0,
-                "d6",
-                "-",
-                3
+                2,
+                "1 PP"
             ],
             [
                 2,
                 [
-                    "Mejora de Estadísticas",
-                    "Entrenamientos",
-                    "Filosofía de Entrenamiento"
+                    "Mejoras de Estadísticas",
+                    "Disciplina Marcial"
                 ],
                 1,
                 1,
-                "d6",
                 2,
-                3
+                "1 PP"
             ],
             [
                 3,
@@ -51,31 +51,29 @@
                 ],
                 2,
                 1,
-                "d6",
-                2,
-                3
+                3,
+                "1 PP"
             ],
             [
                 4,
                 [
-                    "“Y ahora…”"
+                    "Habilidades de Combate"
                 ],
                 2,
                 1,
-                "d6",
-                2,
-                3
+                3,
+                "1 PP"
             ],
             [
                 5,
                 [
-                    "Rasgo de Filosofía de Entrenamiento"
+                    "Facilidad para el combate",
+                    "Rasgo de Disciplina Marcial"
                 ],
                 3,
                 2,
-                "d6",
-                2,
-                3
+                4,
+                "2 PP"
             ],
             [
                 6,
@@ -85,33 +83,28 @@
                 ],
                 3,
                 2,
-                "d6",
-                2,
-                3
+                4,
+                "2 PP"
             ],
             [
                 7,
                 [
-                    "Nuevos Entrenamientos y Órdenes",
-                    "Entrenamiento diversificado",
-                    "Orden Insignia"
+                    "Tutor de Lucha"
                 ],
                 4,
                 2,
-                "d8",
-                3,
-                4
+                5,
+                "2 PP"
             ],
             [
                 8,
                 [
-                    "rasgo de Filosofía de Entrenamiento"
+                    "Rasgo de Disciplina Marcial"
                 ],
                 4,
                 3,
-                "d8",
-                3,
-                4
+                5,
+                "2 PP"
             ],
             [
                 9,
@@ -120,66 +113,61 @@
                 ],
                 5,
                 3,
-                "d8",
-                3,
-                4
+                6,
+                "2 PP"
             ],
             [
                 10,
                 [
-                    "Rastreador Pokémon"
+                    "Más Habilidades de Combate"
                 ],
                 5,
                 3,
-                "d8",
-                3,
-                4
+                6,
+                "4 PP"
             ],
             [
                 11,
                 [
-                    "Doble orden"
+                    "Mejores movimientos",
+                    "Lucha Sincronizada"
                 ],
                 6,
                 4,
-                "d8",
-                3,
-                4
+                7,
+                "4 PP"
             ],
             [
                 12,
                 [
                     "Dote",
-                    "Mejora de Habilidades"
+                    "Mejora de Habilidades",
+                    "Mejora de Daño"
                 ],
                 6,
                 4,
-                "d8",
-                3,
-                4
+                7,
+                "4 PP"
             ],
             [
                 13,
                 [
-                    "Rasgo de Filosofía de Entrenamiento"
+                    "Rasgo de Disciplina Marcial"
                 ],
                 7,
                 4,
-                "d10",
-                3,
-                4
+                8,
+                "4 PP"
             ],
             [
                 14,
                 [
-                    "Cambio de Plan",
-                    "Más “Y ahora…”"
+                    "Incansable"
                 ],
                 7,
                 5,
-                "d10",
-                3,
-                4
+                8,
+                "4 PP"
             ],
             [
                 15,
@@ -188,279 +176,435 @@
                 ],
                 8,
                 5,
-                "d10",
-                3,
-                4
+                9,
+                "5 PP"
             ],
             [
                 16,
                 [
-                    "Entrenamientos personalizados",
-                    "Nuevos Entrenamientos y Órdenes"
+                    "Cuerpo Resiliente",
+                    "Aún Mejores Movimientos"
                 ],
                 8,
                 5,
-                "d10",
-                4,
-                5
+                9,
+                "5 PP"
             ],
             [
                 17,
                 [
-                    "Rasgo de Filosofía de Entrenamiento"
+                    "Rasgo de Disciplina Marcial"
                 ],
                 9,
                 6,
-                "d10",
-                4,
-                5
+                10,
+                "5 PP"
             ],
             [
                 18,
                 [
-                    "Dote",
-                    "Mejora de Habilidades"
+                    "Mejora de Habilidades",
+                    "Dote"
                 ],
                 9,
                 6,
-                "d10",
-                4,
-                5
+                10,
+                "5 PP"
             ],
             [
                 19,
                 [
-                    "Contra Viento y Marea"
+                    "Golpe Nocivo"
                 ],
                 10,
                 6,
-                "d12",
-                4,
-                5
+                11,
+                "5 PP"
             ],
             [
                 20,
                 [
-                    "Movimiento único"
+                    "Maestro de la Lucha"
                 ],
                 10,
                 7,
-                "d12",
-                4,
-                5
+                11,
+                "5 PP"
             ]
         ]
     },
     "subclases": [
         {
-            "acortado": "Resiliencia",
-            "completo": "Camino de la Resiliencia"
+            "acortado": "Marcial",
+            "completo": "Artista marcial",
+            "ruta": "Artista_marcial"
         },
         {
-            "acortado": "pingaaaaaaaaa",
-            "completo": "Camino del Bailarín"
+            "acortado": "Cazador",
+            "completo": "Cazador",
+            "ruta": "Cazador"
         },
         {
-            "acortado": "elpepe",
-            "completo": "pipi"
+            "acortado": "Viento",
+            "completo": "Domador del Viento",
+            "ruta": "Domador_del_Viento"
+        },
+        {
+            "acortado": "Aura",
+            "completo": "Guardián del Aura",
+            "ruta": "Guardián_del_Aura"
+        },
+        {
+            "acortado": "Ninja",
+            "completo": "Ninja",
+            "ruta": "Ninja"
+        },
+        {
+            "acortado": "Callejero",
+            "completo": "Peleador Callejero",
+            "ruta": "Peleador_Callejero"
         }
     ],
-    "descripcion": "Los Entrenadores han pasado gran parte de sus vidas estudiando cómo entrenar y dirigir a sus Pokémon. Son expertos en dar órdenes a sus Pokémon y poseen un talento natural para ganarse el respeto de estos.\nLos Pokémon de un Entrenador cuantifican su poder, por lo que los entrenadores brillan especialmente en los combates en los que sólo participan Pokémon y deben tener más cuidado que los miembros de otras Clases en situaciones en las que ellos forman parte activa del combate, pues sus capacidades individuales no suelen estar muy desarrolladas.\nLa siguiente tabla resume los rasgos que gana todo Entrenador a medida en que sube de Nivel.",
-    "tiradasSalvacion": {
-        "nombre": "Mejores tiradas de Salvación",
-        "descripcion": "Al elegir esta Clase, te vuelves Maestro en Tiradas de Salvación de Espíritu y Experto en todas las demás."
-    },
     "rasgos": [
         {
-            "nombre": "Talento de Entrenador",
-            "claseNombre": "Entrenador",
+            "nombre": "Entrenamiento Marcial",
+            "claseNombre": "Luchador",
             "nivel": 1,
-            "descripcion": "En múltiples instancias a lo largo de la clase se hará referencia a tu Bono de Entrenador. Este bono es igual a tu bono de Mente, Espíritu o Presencia, lo eliges cuando tomas esta clase.\nAdemás, tu poder viene dado por tu capacidad para guiar a tus Pokémon. Puedes calcular tus PP Máximos como tu Nivel más tu Bono de Entrenador en lugar del cálculo normal.\nPor último, tu talento para relacionarte y capturar Pokémon se vuelve superior al de la mayoría. Aumentas tu Grado de Habilidad en Trato Pokémon en 1 hasta un máximo de Experto y puedes añadir tu Bono de Entrenador a las Tiradas de Habilidad de Trato Pokémon en lugar de tu Presencia."
+            "descripcion": [
+                "Cuando alcanzas nivel 1, resaltas por encima de los demás a la hora de pelear. Tu vitalidad se vuelve 9 si no es superior, puedes calcular tu CA como 10 + RES + BH y tu Grado de Habilidad en Combate aumenta en 1 hasta un máximo de Experto.",
+                "Además, puedes volverte tipo Lucha. Si ya tienes 2 tipos, puedes sustituir uno de estos por el tipo Lucha.",
+                "Por último, tus PP máximos aumentan en 2."
+            ]
         },
         {
-            "nombre": "Órdenes de Entrenador",
-            "claseNombre": "Entrenador",
+            "nombre": "Movimientos de Luchador",
+            "claseNombre": "Luchador",
             "nivel": 1,
-            "descripcion": "A partir de nivel 1, tienes un entendimiento superior al de la media del combate. Cada vez que das una Orden a un Pokémon a menos de 10 metros de ti, puedes gastar 1 PP y tu Acción para dar una Orden de Entrenador, que hacen que la orden que le has dado tenga efectos especiales. Conoces 3 Órdenes de Entrenador de la Lista de Órdenes de Entrenador que puedes encontrar más adelante y a niveles superiores aprendes más Órdenes de Entrenador.\nLa primera vez en el turno en el que un Pokémon al que has dado una Orden de Entrenador hace daño a otra criatura con Movimiento, lanzas un dado que se añade al daño del Movimiento. Este dado es tu Dado de Orden, que es un d6 y aumenta tal y como puedes ver en la tabla resumen de la Clase. \nAdemás, algunas órdenes dicen que tiras un Dado de Orden en ciertas situaciones y otras hablan de que las Tiradas de Ataque Naturales deben alcanzar tu Rango de Orden. Esto significa que la Tirada Natural debe ser mayor o igual a 21 menos tu Bono de Entrenador."
+            "descripcion": [
+                "A nivel 1, has desarrollado tus habilidades marciales lo suficiente como para aprender Movimientos de la Lista de Movimientos de Luchador que puedes encontrar más abajo, los cuales para ti tienen los costes descritos en dicha lista, en lugar del usual.",
+                "A este nivel, aprendes 1 Movimiento con coste de A Voluntad de dicha lista y un Movimiento de coste de 1 PP.",
+                "A niveles más altos desbloquearás más Movimientos con coste de PP más altos, tal y como puedes ver en la tabla resumen de la clase. Cada vez que subas de nivel, puedes cambiar 1 Movimiento de Luchador que conoces por otro que no conoces."
+            ]
         },
         {
             "nombre": "Mejoras de Estadísticas",
-            "claseNombre": "Entrenador",
+            "claseNombre": "Luchador",
             "nivel": 2,
-            "descripcion": "A partir del Nivel 2 y luego cada 3 niveles, obtienes una Mejora de Estadísticas (ME), según la tabla de la Clase. Cada vez que recibes una ME, puedes aumentar una Estadística en 1, hasta un máximo de 3 mejoras en la misma Estadística. Luego puedes aplicar una cuarta y quintas ME para volver a aumentar la Estadística en 1 más entre las dos.\nAl subir de Nivel, puedes cambiar que Estadística aumenta una de tus ME."
+            "descripcion": [
+                "A partir del Nivel 2 y luego cada 3 niveles, obtienes una Mejora de Estadísticas (ME), según la tabla de la Clase. Cada vez que recibes una ME, puedes aumentar una Estadística en 1, hasta un máximo de 3 mejoras en la misma Estadística. Luego puedes aplicar una cuarta y quintas ME para volver a aumentar la Estadística en 1 más entre las dos.",
+                "Al subir de Nivel, puedes cambiar que Estadística aumenta una de tus ME."
+            ]
         },
         {
-            "nombre": "Entrenamientos",
-            "claseNombre": "Entrenador",
+            "nombre": "Disciplina Marcial",
+            "claseNombre": "Luchador",
             "nivel": 2,
-            "descripcion": "A Nivel 2, sabes cómo preparar a tus Pokémon para los desafíos que os deparan para el día. Una vez al día y como Acción Extendida, puedes entrenar a una a los Pokémon que llevas contigo igual para potenciarlos hasta que los Pokémon Descansen. Aprendes 2 Entrenamientos (puedes encontrarlos al final de la clase en la Lista de Entrenamientos). Puedes cambiar uno de tus Entrenamientos cada vez que subes de Nivel."
-        },
-        {
-            "nombre": "Filosofía de Entrenamiento",
-            "claseNombre": "Entrenador",
-            "nivel": 2,
-            "descripcion": "A nivel 2, eliges una filosofía de entrenamiento. Esta filosofía afecta a los tipos de estrategias que sigues y tu forma de entrenar e interactuar con tus Pokémon. Esta elección te otorga más rasgos en los niveles 5, 8, 13 y 17. ",
+            "descripcion": [
+                "A nivel 2, eliges una Disciplina Marcial. Esta disciplina representa como peleas en el campo de batalla. Esta elección te otorga más rasgos en los niveles 5, 8, 13 y 17. Algunas Disciplinas Marciales tienen prerrequisitos. Si no cumples sus prerrequisitos, no puedes elegirlas."
+            ],
             "esSubclase": true
         },
         {
             "nombre": "Dote",
-            "claseNombre": "Entrenador",
+            "claseNombre": "Luchador",
             "nivel": 3,
-            "descripcion": "A nivel 3, tomas una Dote.",
+            "descripcion": [
+                "A nivel 3, tomas una Dote."
+            ],
             "esDote": true
         },
         {
-            "nombre": "“Y ahora…”",
-            "claseNombre": "Entrenador",
+            "nombre": "Habilidades de Combate",
+            "claseNombre": "Luchador",
             "nivel": 4,
-            "descripcion": "A nivel 4, aprendes a reconocer los instantes en los que puedes forzar a tus Pokémon a sobrepasar sus límites normales. Como una Acción que tomas después de haber dado una Orden a un Pokémon o como parte de la Acción que tomas cuando das una Orden de Entrenador, puedes dar una segunda Orden a tu Pokémon después de que realice la primera. Si lo haces, tu Pokémon recupera su Acción y ejecuta tu orden. Puedes usar este Rasgo una vez por Escena."
+            "descripcion": [
+                "A nivel 4, tu entrenamiento te otorga una Habilidad de entre las siguientes: Robustez, Flexibilidad, Intimidación, Fuga, Entusiasmo, Espíritu vital, Impasible, Simple, Pies rápidos, Alerta, Audaz, Justiciero."
+            ]
         },
         {
-            "nombre": "Rasgo de Filosofía de Entrenamiento",
-            "claseNombre": "Entrenador",
+            "nombre": "Facilidad para el combate",
+            "claseNombre": "Luchador",
             "nivel": 5,
-            "descripcion": "A nivel 5, tu maestría en tu Filosofía de Entrenamiento aumenta, lo que te otorga un nuevo rasgo dependiendo de la que eligieras a nivel 2.",
+            "descripcion": [
+                "A partir de nivel 5, tu entrenamiento te ha vuelto tan Hábil que el coste de los Movimientos que usas se reduce en 1 PP."
+            ]
+        },
+        {
+            "nombre": "Rasgo de Disciplina Marcial",
+            "claseNombre": "Luchador",
+            "nivel": 5,
+            "descripcion": [
+                "A nivel 5, tu maestría en tu Disciplina Marcial aumenta, lo que te otorga un nuevo rasgo dependiendo de la que eligieras a nivel 2."
+            ],
             "esSubclase": true
         },
         {
             "nombre": "Dote",
-            "claseNombre": "Entrenador",
+            "claseNombre": "Luchador",
             "nivel": 6,
-            "descripcion": "A nivel 6, tomas una Dote.",
+            "descripcion": [
+                "A nivel 6, tomas una Dote."
+            ],
             "esDote": true
         },
         {
             "nombre": "Mejora de Habilidades",
-            "claseNombre": "Entrenador",
+            "claseNombre": "Luchador",
             "nivel": 6,
-            "descripcion": "A nivel 6, te vuelves más hábil. Puedes aumentar tu Grado de Habilidad en 2 tipos de Tiradas de Habilidad hasta un máximo de Experto o de Maestro si eliges una Tirada de Habilidad cuyo Grado de Habilidad has aumentado con uno de tus Rasgos de Clase."
+            "descripcion": [
+                "A nivel 6, te vuelves más hábil. Puedes aumentar tu Grado de Habilidad en 2 tipos de Tiradas de Habilidad hasta un máximo de Experto o de Maestro si eliges una Tirada de Habilidad cuyo Grado de Habilidad has aumentado con uno de tus Rasgos de Clase."
+            ]
         },
         {
-            "nombre": "Nuevos Entrenamientos y Órdenes",
-            "claseNombre": "Entrenador",
+            "nombre": "Tutor de Lucha",
+            "claseNombre": "Luchador",
             "nivel": 7,
-            "descripcion": "A nivel 7, aprendes un entrenamiento y una orden más. Además, ganas el Perfeccionamiento de 2 de tus Órdenes de Entrenador, los cuales puedes usar gastando 1 PP cuando das la Orden de Entrenador."
+            "descripcion": [
+                "A nivel 7, aprendes a enseñar a tus Pokémon los Movimientos que tú mismo conoces. Como una Acción Extendida que dura al menos una hora, puedes hacer que uno de tus Pokémon aprenda uno de los Movimientos de Luchador que conoces si están en su lista de Movimientos Enseñables."
+            ]
         },
         {
-            "nombre": "Entrenamiento Diversificado",
-            "claseNombre": "Entrenador",
-            "nivel": 7,
-            "descripcion": "A partir de nivel 7, eres capaz de entrenar a dos grupos de Pokémon de formas diferentes simultáneamente. Cuando tomas tu Acción Extendida para aplicar un entrenamiento sobre tus Pokémon, puedes elegir dos entrenamientos en lugar de uno y aplicar uno de estos a cada Pokémon que entrenas en lugar de aplicar el mismo a todos."
-        },
-        {
-            "nombre": "Orden insignia ",
-            "claseNombre": "Entrenador",
-            "nivel": 7,
-            "descripcion": "A partir de nivel 7, te vuelves un experto en dar órdenes. Eliges una de las Órdenes de Entrenador que conoces. Esta se vuelve tu Orden Insignia. Usar esta Orden te cuesta 1 PP menos de lo usual."
-        },
-        {
-            "nombre": "Rasgo de Filosofía de Entrenamiento",
-            "claseNombre": "Entrenador",
+            "nombre": "Rasgo de Disciplina Marcial",
+            "claseNombre": "Luchador",
             "nivel": 8,
-            "descripcion": "A nivel 8, tu maestría en tu Filosofía de Entrenamiento aumenta, lo que te otorga un nuevo rasgo dependiendo de la que eligieras a nivel 2.",
+            "descripcion": [
+                "A nivel 8, tu maestría en tu Disciplina Marcial aumenta, lo que te otorga un nuevo rasgo dependiendo de la que eligieras a nivel 2."
+            ],
             "esSubclase": true
         },
         {
             "nombre": "Dote",
-            "claseNombre": "Entrenador",
+            "claseNombre": "Luchador",
             "nivel": 9,
-            "descripcion": "A nivel 9, tomas una Dote.",
+            "descripcion": [
+                "A nivel 9, tomas una Dote."
+            ],
             "esDote": true
         },
         {
-            "nombre": "Rastreador Pokémon",
-            "claseNombre": "Entrenador",
+            "nombre": "Más Habilidades de Combate",
+            "claseNombre": "Luchador",
             "nivel": 10,
-            "descripcion": "A nivel 10, te has vuelto un experto en buscar Pokémon en cualquier entorno. Una vez por día y como Acción Extendida, puedes aprender qué especies Pokémon aparecen comúnmente en un radio en kilómetros a tu alrededor igual a tu Bono de Entrenador.\nAdemás, una vez al día puedes buscar a un espécimen de una especie de Pokémon que sabes que habitan en el área. Haz una tirada de Trato Pokémon (Bono de Entrenador) CD 20. Si la pasas, encuentras pistas que te guían hasta su localización."
+            "descripcion": [
+                "A nivel 10, tu entrenamiento te otorga una Habilidad de entre las siguientes: Puño férreo, Encadenado, Experto, Potencia bruta, Intrépido, Patada férrea, Rivalidad, Autoestima."
+            ]
         },
         {
-            "nombre": "Doble orden",
-            "claseNombre": "Entrenador",
+            "nombre": "Mejores movimientos",
+            "claseNombre": "Luchador",
             "nivel": 11,
-            "descripcion": "A partir del nivel 11, cuando usas una de tus Órdenes de Entrenador, puedes gastar 1 PP adicional para que también reciba el efecto de otra de tus Orden de Entrenador."
+            "descripcion": [
+                "A nivel 11, tu maestría con tus Movimientos de Luchador aumenta, por lo que los costes de todos tus Movimientos se reducen en 1 PP."
+            ]
+        },
+        {
+            "nombre": "Lucha Sincronizada",
+            "claseNombre": "Luchador",
+            "nivel": 11,
+            "descripcion": [
+                "A nivel 11, tu y tus Pokémon sincronizáis vuestros ritmos de combate, cuando tu o tus Pokémon golpeáis a una criatura con una Tirada de Ataque podéis abrir paso el uno para el otro. Podéis gastar 1 PP para que la criatura se desestabilice, haciendo que la próxima Tirada de Ataque que haga el otro contra esta criatura antes de que acabe vuestro turno se haga en Ventaja."
+            ]
         },
         {
             "nombre": "Dote",
-            "claseNombre": "Entrenador",
+            "claseNombre": "Luchador",
             "nivel": 12,
-            "descripcion": "A nivel 12, tomas una Dote.",
+            "descripcion": [
+                "A nivel 12, tomas una Dote."
+            ],
             "esDote": true
         },
         {
             "nombre": "Mejora de Habilidades",
-            "claseNombre": "Entrenador",
+            "claseNombre": "Luchador",
             "nivel": 12,
-            "descripcion": "A nivel 12, te vuelves más hábil. Puedes aumentar tu Grado de Habilidad en 2 tipos de Tiradas de Habilidad hasta un máximo de Experto o de Maestro si eliges una Tirada de Habilidad cuyo Grado de Habilidad has aumentado con uno de tus Rasgos de Clase."
+            "descripcion": [
+                "A nivel 12, te vuelves más hábil. Puedes aumentar tu Grado de Habilidad en 2 tipos de Tiradas de Habilidad hasta un máximo de Experto o de Maestro si eliges una Tirada de Habilidad cuyo Grado de Habilidad has aumentado con uno de tus Rasgos de Clase."
+            ]
         },
         {
-            "nombre": "Rasgo de Filosofía de Entrenamiento",
-            "claseNombre": "Entrenador",
+            "nombre": "Mejora de Daño",
+            "claseNombre": "Luchador",
+            "nivel": 12,
+            "descripcion": [
+                "A nivel 12, el daño de todos tus Movimientos aumenta en una cantidad igual a la mayor de tu Agilidad o tu Fuerza."
+            ]
+        },
+        {
+            "nombre": "Rasgo de Disciplina Marcial",
+            "claseNombre": "Luchador",
             "nivel": 13,
-            "descripcion": "A nivel 13, tu maestría en tu Filosofía de Entrenamiento aumenta, lo que te otorga un nuevo rasgo dependiendo de la que eligieras a Nivel 2.",
+            "descripcion": [
+                "A nivel 13, tu maestría en tu Disciplina Marcial aumenta, lo que te otorga un nuevo rasgo dependiendo de la que eligieras a nivel 2."
+            ],
             "esSubclase": true
         },
         {
-            "nombre": "Cambio de Plan",
-            "claseNombre": "Entrenador",
+            "nombre": "Incansable",
+            "claseNombre": "Luchador",
             "nivel": 14,
-            "descripcion": "A nivel 14, eres capaz de prever el comportamiento de tus rivales instantes antes de que ocurra. Ganas una de las siguientes Reacciones, que puedes usar por 2 PP:\n¡No dejes que se marche!: Cuando uno de tus Pokémon realice un Ataque de Oportunidad contra una criatura que se aleja de ellos, le indicas que le impida hacerlo. Si la Tirada de Ataque del Ataque de oportunidad golpea, la criatura reduce todas sus velocidades a la mitad hasta el final del turno.\n¡Esquívalo!: Cuando un Movimiento o efecto que hace daño fuerza a uno de tus Pokémon a hacer una Tirada de Salvación de Fuerza, Agilidad o Resistencia o hace una Tirada de Ataque contra este, le indicas cómo evadirlo. Tu Pokémon tiene Ventaja en la Tirada de Salvación o la Criatura que usó el Movimiento tiene Desventaja en la Tirada de Ataque, respectivamente. Además, reduces el daño infligido a tu Pokémon por el Movimiento en una cantidad igual al doble de tu Bono de Entrenador si recibe daño a causa de esta.\n¡Intercepta el golpe!: Cuando un Movimiento que hace una Tirada de Ataque fuese a golpear a una criatura a 2 metros de tu Pokémon, le dices que intercepte el Movimiento y lo bloquee. Si al menos una de sus velocidades no es 0, tu Pokémon se mueve hasta la trayectoria del movimiento y se vuelve el objetivo del Movimiento."
-        },
-        {
-            "nombre": "Más “Y ahora…”",
-            "claseNombre": "Entrenador",
-            "nivel": 14,
-            "descripcion": "A partir de Nivel 14, puedes usar “Y ahora…” 2 veces por Escena, en lugar de una sola vez."
+            "descripcion": [
+                "A partir de nivel 14, has luchado en tantos combates que luchar en estos no te causa tanta fatiga como antes. Si fueses a ganar Niveles de Fatiga al final de un combate, ganas 1 nivel menos de esta cantidad.",
+                "Además, si tus PV están por debajo de la mitad de tus PV Máximos al finalizar una Escena, tus PV se vuelven la mitad de tus PV Máximos."
+            ]
         },
         {
             "nombre": "Dote",
-            "claseNombre": "Entrenador",
+            "claseNombre": "Luchador",
             "nivel": 15,
-            "descripcion": "A nivel 15, tomas una Dote.",
+            "descripcion": [
+                "A nivel 15, tomas una Dote."
+            ],
             "esDote": true
         },
         {
-            "nombre": "Entrenamientos PersonalizadosEntrenamientos Personalizados",
-            "claseNombre": "Entrenador",
+            "nombre": "Cuerpo Resiliente",
+            "claseNombre": "Luchador",
             "nivel": 16,
-            "descripcion": "A partir de nivel 16, cuando tomas una Acción Extendida para entrenar a tus Pokémon, puedes elegir un entrenamiento para cada uno de ellos, en lugar de tener que elegir entre dos de los que conoces."
+            "descripcion": [
+                "A partir de nivel 16, tu cuerpo está tan bien entrenado que tu Vitalidad se vuelve 12. Además, cuando eres envenenado, quemado, helado o paralizado puedes gastar 2 PP para liberarte de este estado."
+            ]
         },
         {
-            "nombre": "Nuevos Entrenamientos y Órdenes",
-            "claseNombre": "Entrenador",
+            "nombre": "Aún Mejores Movimientos",
+            "claseNombre": "Luchador",
             "nivel": 16,
-            "descripcion": "A partir de nivel 16, aprendes un entrenamiento y una orden nuevos. Además, ganas el Perfeccionamiento de otra de tus Órdenes de Entrenador."
+            "descripcion": [
+                "A nivel 16, tu maestría con tus Movimientos de Mentalista vuelve a aumentar, por lo que los costes de todos tus Movimientos se reducen en 1 PP de nuevo."
+            ]
         },
         {
-            "nombre": "Rasgo de Filosofía de Entrenamiento",
-            "claseNombre": "Entrenador",
+            "nombre": "Rasgo de Disciplina Marcial",
+            "claseNombre": "Luchador",
             "nivel": 17,
-            "descripcion": "A nivel 17, tu maestría en tu Filosofía de Entrenamiento aumenta, lo que te otorga un nuevo rasgo dependiendo de la que eligieras a nivel 2.",
+            "descripcion": [
+                "A nivel 17, tu maestría en tu Disciplina Marcial aumenta, lo que te otorga un nuevo rasgo dependiendo de la que eligieras a nivel 2."
+            ],
             "esSubclase": true
-        },
-        {
-            "nombre": "Dote",
-            "claseNombre": "Entrenador",
-            "nivel": 18,
-            "descripcion": "A nivel 18, tomas una Dote.",
-            "esDote": true
         },
         {
             "nombre": "Mejora de Habilidades",
-            "claseNombre": "Entrenador",
+            "claseNombre": "Luchador",
             "nivel": 18,
-            "descripcion": "A nivel 18, te vuelves más hábil. Puedes aumentar tu Grado de Habilidad en 2 tipos de Tiradas de Habilidad hasta un máximo de Maestro o de Legendario si eliges una Tirada de Habilidad cuyo Grado de Habilidad has aumentado con uno de tus Rasgos de Clase."
+            "descripcion": [
+                "A nivel 18, te vuelves más hábil. Puedes aumentar tu Grado de Habilidad en 2 tipos de Tiradas de Habilidad hasta un máximo de Maestro o de Legendario si eliges una Tirada de Habilidad cuyo Grado de Habilidad has aumentado con uno de tus Rasgos de Clase."
+            ]
         },
         {
-            "nombre": "Contra Viento y Marea",
-            "claseNombre": "Entrenador",
+            "nombre": "Dote",
+            "claseNombre": "Luchador",
+            "nivel": 18,
+            "descripcion": [
+                "A nivel 18, tomas una Dote."
+            ],
+            "esDote": true
+        },
+        {
+            "nombre": "Golpe Nocivo",
+            "claseNombre": "Luchador",
             "nivel": 19,
-            "descripcion": "A nivel 19, has luchado incontables batallas junto a tus Pokémon y habéis aprendido a sobreponeros a la adversidad. Cuando tu o uno de tus Pokémon falláis una Tirada de Salvación, puedes gastar 3 PP para que se repita la Tirada."
+            "descripcion": [
+                "A partir de nivel 19, puedes usar 1 PP más de lo normal cuando usas uno de tus Movimientos de Luchador. Cuando lo haces, si este golpea y tiene un efecto que ocurre sólo en ciertas Tiradas Naturales, este siempre ocurre."
+            ]
         },
         {
-            "nombre": "Movimientos Insignia",
-            "claseNombre": "Entrenador",
+            "nombre": "Maestro de la Lucha",
+            "claseNombre": "Luchador",
             "nivel": 20,
-            "descripcion": "A nivel 20, te has vuelto uno de los entrenadores más hábiles del Mundo Pokémon y has aprendido a mejorar los Movimientos que más han practicado tus Pokémon. Como Acción Extendida, puedes enseñar un único Movimiento insignia a cada uno de tus Pokémon. Para crear un Movimiento Insignia, eliges uno de sus Movimientos y aplicas una de las siguientes modificaciones:\nGran Extensión: Si el Movimiento no es cuerpo a cuerpo, el rango aumenta en una cantidad de metros igual a tu Bono de Entrenador. Además, si el movimiento afecta un área, este área crece en una cantidad de metros igual a la mitad de tu Bono de Entrenador.\nPoder Inusitado: Si el Movimiento hace daño, el daño base del movimiento aumenta en 1 dado.\nInstantáneo: Si el Movimiento hace una Tirada de Ataque cuerpo a cuerpo, el coste en PP del movimiento aumenta en 1 y puede usarse como Ataque de Oportunidad y cada vez que se usa otro Movimiento como parte de una Acción. Este movimiento puede usarse una cantidad de veces por Escena igual a la mitad de tu Bono de Entrenador si su versión normal no tiene una limitación mayor."
+            "descripcion": [
+                "A nivel 20, te has vuelto un luchador con habilidades incluso superiores a las de la mayoría de Pokémon. Una vez por Escena, cuando tiras el daño que hace un Movimiento, puedes elegir que este daño sea el máximo posible en lugar de tirar los dados. Luego de usarlo por primera vez en una Escena, puedes usar 3 PP para volver a usar este efecto."
+            ]
+        }
+    ],
+    "ListaMovimientos": [
+        {
+            "coste": "A voluntad",
+            "movimientos": [
+                "Destructor",
+                "Falso tortazo",
+                "Placaje"
+            ]
+        },
+        {
+            "coste": "1 PP",
+            "movimientos": [
+                "Destructor",
+                "Falso tortazo",
+                "Placaje",
+                "Golpe kárate",
+                "Golpe roca",
+                "Malicioso"
+            ]
+        },
+        {
+            "coste": "2 PP",
+            "movimientos": [
+                "Amago",
+                "Anticipo",
+                "Ataque furia",
+                "Ataque rápido",
+                "Atizar",
+                "Avivar",
+                "Cabezazo",
+                "Corpulencia",
+                "Demolición",
+                "Derribo",
+                "Desquite",
+                "Doble bofetón",
+                "Doble golpe",
+                "Doble patada",
+                "Empujón",
+                "Gancho alto",
+                "Golpes furia",
+                "Motivación",
+                "Patada baja",
+                "Puntapié",
+                "Puño incremento",
+                "Sumisión",
+                "Ultrapuño"
+            ]
+        },
+        {
+            "coste": "4 PP",
+            "movimientos": [
+                "Aguante",
+                "Contraataque",
+                "Detección",
+                "Esfuerzo",
+                "Espabila",
+                "Foco energía",
+                "Fuerza",
+                "Golpe cabeza",
+                "Golpe cuerpo",
+                "Imagen",
+                "Inversión",
+                "Llave giro",
+                "Machada",
+                "Megapuño",
+                "Palma rauda",
+                "Patada hacha",
+                "Plancha corporal",
+                "Puño dinámico",
+                "Represalia",
+                "Sorpresa",
+                "Sísmico",
+                "Triple patada",
+                "Velocidad extrema"
+            ]
+        },
+        {
+            "coste": "5 PP",
+            "movimientos": [
+                "A bocajarro",
+                "Danza espada",
+                "Doble filo",
+                "Fuerza bruta",
+                "Megapatada",
+                "Patada relámpago",
+                "Patada salto alta",
+                "Puño certero",
+                "Saña"
+            ]
         }
     ]
 }
