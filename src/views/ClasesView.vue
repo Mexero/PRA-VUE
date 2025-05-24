@@ -60,7 +60,7 @@ async function toggleSubclase(ruta, e = null) {
     if (existente) {
         existente.activo = !existente.activo;
     } else {
-        const datosSubclase = await fetch(`/data/json/${claseCargada.value}/subclases/${ruta}.json`)
+        const datosSubclase = await fetch(`/data/json/clases/${claseCargada.value}/subclases/${ruta}.json`)
             .then(res => res.json())
             .catch(err => {
                 console.error("Error al cargar subclase:", err);
