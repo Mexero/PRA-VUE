@@ -28,7 +28,7 @@ async function cargarClase(clase) {
     }
     console.time('fetchData');
     try {
-        const res = await fetch(`data/json/${clase}/${clase}.json`);
+        const res = await fetch(`data/json/clases/${clase}/${clase}.json`);
         if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
 
         const data = await res.json();
