@@ -76,6 +76,58 @@ import { RouterLink } from 'vue-router'
             </div>
         </section>
 
+        <section id="infoBloque">
+
+            <!-- ============ INFO "CONTACTOS" ============= -->
+            <article id="infoContacto">
+                <div>
+                    <h2>¡Unete a nuestra comunidad!</h2>
+                    <RouterLink to=""><img src="../assets/icons/discord.webp" alt=""></RouterLink>
+                </div>
+                <div>
+                    <p>
+                        En nuestra comunidad de Discord podrás mantenerte al día con las novedades del sistema,
+                        compartir historias, personajes, arte,y conocer a otros fans del rol y Pokémon que comparten tu
+                        pasión. ¡Únete y sé parte de la aventura!
+                    </p>
+                </div>
+
+            </article>
+            <article class="descargaPDF" id="inicioRapido">
+                <h2>
+                    Inicio rapido
+                </h2>
+                <p>
+                    Aqui puedes ver un resumen rapido del sistema
+                </p>
+                <div class="PDFlinks">
+                    <RouterLink to="" target="_blank">
+                        <div>PDF Resumen del sistema</div>
+                    </RouterLink>
+                    <RouterLink to="" target="_blank">
+                        <div>PDF Combate rapido</div>
+                    </RouterLink>
+                </div>
+            </article>
+
+            <!-- ============ INFO "DESCAGARS" ============= -->
+
+            <article class="descargaPDF" id="descargaLibro">
+                <h2>Descarga las ultimas versiones</h2>
+                <div class="PDFlinks">
+                    <RouterLink to="" target="_blank">
+                        <div>PDF Base</div>
+                    </RouterLink>
+                    <RouterLink to="" target="_blank">
+                        <div>PDF Pokedex</div>
+                    </RouterLink>
+                    <RouterLink to="" target="_blank">
+                        <div>PDF Pokedex DM</div>
+                    </RouterLink>
+                </div>
+            </article>
+        </section>
+
         <!-- ============ INFO "SOBRE NOSOTROS" ============= -->
 
         <section id="infoNosotros">
@@ -104,41 +156,6 @@ import { RouterLink } from 'vue-router'
                 </p>
             </div>
 
-        </section>
-
-
-        <section id="infoBloque">
-
-            <!-- ============ INFO "CONTACTOS" ============= -->
-            <article id="infoContacto">
-                <div>
-                    <h2>¡Unete a nuestra comunidad!</h2>
-                    <RouterLink to=""><img src="../assets/icons/discord.webp" alt=""></RouterLink>
-                </div>
-                <div>
-                    <p>
-                        En nuestra comunidad de Discord podrás mantenerte al día con las novedades del sistema,
-                        compartir historias, personajes, arte,y conocer a otros fans del rol y Pokémon que comparten tu
-                        pasión. ¡Únete y sé parte de la aventura!
-                    </p>
-                </div>
-
-            </article>
-
-            <!-- ============ INFO "DESCAGARS" ============= -->
-
-            <article id="descargaPDF">
-                <h2>Descarga las ultimas versiones</h2>
-                <RouterLink to="" target="_blank">
-                    <div>PDF Base</div>
-                </RouterLink>
-                <RouterLink to="" target="_blank">
-                    <div>PDF Pokedex</div>
-                </RouterLink>
-                <RouterLink to="" target="_blank">
-                    <div>PDF Pokedex DM</div>
-                </RouterLink>
-            </article>
         </section>
 
 
@@ -301,12 +318,11 @@ solo cambia el tamaños de los bloques y el margen con el header*/
 }
 
 
-
 /* ======================= SECCIÓN INFO NOSOTROS Y BLOQUES ======================= */
 
 #infoNosotros,
 #infoContacto,
-#descargaPDF {
+.descargaPDF {
     background-color: var(--color-fondoTexto);
     border: 1px solid var(--color-principal1);
     color: var(--color-texto);
@@ -327,6 +343,7 @@ solo cambia el tamaños de los bloques y el margen con el header*/
 #infoNosotros,
 #infoContacto {
     border-radius: 10px;
+    overflow: hidden;
 }
 
 #infoBloque {
@@ -371,38 +388,42 @@ solo cambia el tamaños de los bloques y el margen con el header*/
 }
 
 /* Descargas */
-#descargaPDF {
+.descargaPDF {
     width: 30%;
     min-width: 280px;
-    height: fit-content;
-    padding: 24px 20px;
+    max-height: fit-content;
+    padding: 20px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.PDFlinks {
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-radius: 15px;
+    justify-content: space-around;
     gap: 10px;
 }
 
-#descargaPDF a {
+.descargaPDF a {
     width: 100%;
 }
 
-#descargaPDF div {
+.PDFlinks div {
     width: 100%;
     background-color: var(--color-principal1);
-    border-radius: 5px;
-    padding: 5px 0;
+    border-radius: 8px;
+    padding: 10px 0;
     text-align: center;
     font-size: 20px;
     transition: all 0.15s;
     cursor: pointer;
 }
 
-#descargaPDF h2 {
-    text-align: center;
-}
-
-#descargaPDF div:hover {
+.PDFlinks div:hover {
     transform: scale(1.03);
 }
 
@@ -466,16 +487,59 @@ solo cambia el tamaños de los bloques y el margen con el header*/
     }
 }
 
-@media (max-width: 690px) {
+@media (max-width: 1300px) {
     #infoBloque {
-        flex-direction: column;
-        max-height: none;
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas:
+            "inicioRapido descargaLibro"
+            "infoContacto infoContacto";
+        gap: 30px;
+        width: 90%;
+        max-width: 1700px;
+        margin-top: 60px;
+        align-self: center;
+    }
+
+    #infoContacto {
+        grid-area: infoContacto;
+    }
+
+    #inicioRapido {
+        grid-area: inicioRapido;
+    }
+
+    .descargaPDF {
+        grid-area: descargaLibro;
     }
 
     #infoContacto,
-    #descargaPDF {
+    .descargaPDF {
         width: 100%;
     }
+}
+
+@media (max-width: 690px) {
+    .descargaPDF h2, .descargaPDF p {
+        margin-bottom: 10px;
+    }
+
+    .PDFlinks div {
+        margin: 2px 0;
+    }
+
+    #infoBloque {
+        max-height: none;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+        grid-template-areas:
+            "inicioRapido"
+            "descargaLibro"
+            "infoContacto";
+        gap: 40px;
+    }
+
 }
 
 /* ======================= SECTION PREGUNTAS FRECUENTES ======================= */

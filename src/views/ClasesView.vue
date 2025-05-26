@@ -101,9 +101,6 @@ function updateSubclasesQuery() {
 }
 
 
-
-
-
 //==============EN CARGA===========
 
 onMounted(async () => {
@@ -120,8 +117,6 @@ onMounted(async () => {
 });
 
 
-
-
 //==============CAMBIO DE RUTA AL CAMBIAR CLASE===========
 function handleClassChange(claseNueva) {
     router.push({ query: { clase: claseNueva } })
@@ -130,56 +125,59 @@ function handleClassChange(claseNueva) {
 
 </script>
 
-
 <template>
+    <h1 class="mainTitulo" id="top">Clases</h1>
+
     <div class="container">
+
         <div class="top-section">
             <div class="classes">
                 <div @click="cargarClase('entrenador')"
-                    :class="claseCargada === 'entrenador' ? 'class-active' : 'class-inactive'">Entrenador
+                    :class="claseCargada === 'entrenador' ? 'class-active' : 'class-inactive'">
+                    <div class="claseTitulo">Entrenador</div>
                     <div class="subclasses" v-if="claseCargada === 'entrenador'">
                         <div v-for="(subclase) in subclasesIndex" :key="subclase.ruta"
-                            :class="isSubclaseActiva(subclase.ruta) ? 'class-active' : 'class-inactive'"
+                            :class="isSubclaseActiva(subclase.ruta) ? 'subclas-active' : 'subclas-inactive'"
                             @click="e => toggleSubclase(subclase.ruta, e)">
                             {{ subclase.acortado }}
                         </div>
                     </div>
                 </div>
                 <div @click="cargarClase('inventor')"
-                    :class="claseCargada === 'inventor' ? 'class-active' : 'class-inactive'">Inventor
+                    :class="claseCargada === 'inventor' ? 'class-active' : 'class-inactive'">
+                    <div class="claseTitulo">Inventor</div>
+
                     <div class="subclasses" v-if="claseCargada === 'inventor'">
                         <div v-for="(subclase) in subclasesIndex" :key="subclase.ruta"
-                            :class="isSubclaseActiva(subclase.ruta) ? 'class-active' : 'class-inactive'"
+                            :class="isSubclaseActiva(subclase.ruta) ? 'subclas-active' : 'subclas-inactive'"
                             @click="e => toggleSubclase(subclase.ruta, e)">
                             {{ subclase.acortado }}
                         </div>
                     </div>
                 </div>
                 <div @click="cargarClase('mentalista')"
-                    :class="claseCargada === 'mentalista' ? 'class-active' : 'class-inactive'">Mentalista
+                    :class="claseCargada === 'mentalista' ? 'class-active' : 'class-inactive'">
+                    <div class="claseTitulo">Mentalista</div>
+
                     <div class="subclasses" v-if="claseCargada === 'mentalista'">
                         <div v-for="(subclase) in subclasesIndex" :key="subclase.ruta"
-                            :class="isSubclaseActiva(subclase.ruta) ? 'class-active' : 'class-inactive'"
+                            :class="isSubclaseActiva(subclase.ruta) ? 'subclas-active' : 'subclas-inactive'"
                             @click="e => toggleSubclase(subclase.ruta, e)">
                             {{ subclase.acortado }}
                         </div>
                     </div>
                 </div>
                 <div @click="cargarClase('luchador')"
-                    :class="claseCargada === 'luchador' ? 'class-active' : 'class-inactive'">Luchador
+                    :class="claseCargada === 'luchador' ? 'class-active' : 'class-inactive'">
+                    <div class="claseTitulo">Luchador</div>
                     <div class="subclasses" v-if="claseCargada === 'luchador'">
                         <div v-for="(subclase) in subclasesIndex" :key="subclase.ruta"
-                            :class="isSubclaseActiva(subclase.ruta) ? 'class-active' : 'class-inactive'"
+                            :class="isSubclaseActiva(subclase.ruta) ? 'subclas-active' : 'subclas-inactive'"
                             @click="e => toggleSubclase(subclase.ruta, e)">
                             {{ subclase.acortado }}
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <div class="menu">
-
-
             </div>
 
             <div class="table-div">
@@ -311,61 +309,117 @@ function handleClassChange(claseNueva) {
             </details>
         </div>
     </div>
+<div id="volverArriba">
+        <a href="#top">Arrow Up</a>
+        <!-- Añadir icono flecha arriba -->
+    </div>
 </template>
 
-
+<style>
+html {
+    scroll-behavior: smooth;
+}
+</style>
 <style scoped>
-* {
-    font-size: 14px;
-    color: var(--color-texto)
+#volverArriba {
+    width: 50px;
+    height: 50px;
+    background-color: var(--color-principal1);
+    border-radius: 5px;
+    position: fixed;
+    bottom: 5px;
+    right:  5px;
 }
 
 .container {
     display: flex;
     flex-direction: column;
-    padding: 0 15%;
+    width: 85%;
+    margin: 0 auto;
     font-family: sans-serif;
     min-height: 100vh;
-    background-color: var(--color-fondo);
 }
 
 /*=========PARTE DE ARRIBA==========*/
 
 .top-section {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     margin: 30px 0;
+    background-color: var(--color-fondoTexto);
 }
 
 
 /*=========Subsección arriba (botones)==========*/
+/* Mejora visual y responsiva para el selector de clases y subclases */
 .classes {
-    width: 150px;
-    padding: 10px 10px;
+    width: 40%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-content: center;
-    gap: 5px;
+    color: var(--color-texto)
+}
+
+.claseTitulo {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    padding-left: 10px;
+}
+
+.classes>div {
+    margin: 0;
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
 }
 
 
-.classes div {
-    margin: none;
-    border-radius: 5px;
-    margin: 5px;
+.class-inactive:hover,
+.subclas-inactive:hover {
     background-color: var(--color-secundario);
+    cursor: pointer;
+}
+
+.subclas-active:hover {
+    cursor: pointer;
+    background-color: var(--color-sombraTexto);
 
 }
 
-
-.classes .class-active {
+.class-active {
     background-color: var(--color-principal1);
+    font-weight: bold;
+}
+
+.class-inactive {
+    background-color: var(--color-tituloTabla);
+}
+
+.subclasses {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+    gap: 5px;
+    background-color: var(--color-principal2);
+    border-bottom: 1px solid;
+}
+
+.subclasses>div {
+    padding: 10px;
+    border-radius: 5px;
+    width: fit-content;
+}
+
+.subclas-active {
+    background-color: var(--color-principal1);
+    font-weight: bold;
+
 }
 
 /*=========Subsección arriba (tabla)==========*/
 .table-div {
-    width: 700px;
+    width: 80%;
     overflow-x: auto;
 }
 
@@ -373,6 +427,7 @@ table {
     border-radius: 2px;
     width: 100%;
     border-collapse: collapse;
+    color: var(--color-texto)
 }
 
 th,
@@ -381,44 +436,39 @@ td {
     text-align: center;
 }
 
-td:nth-child(2) {
-    text-align: left;
-}
-
 th a,
 td a {
     text-decoration: underline dotted lightgray;
 }
 
-tr {
-    background-color: var(--color-hoverBloque);
+th {
+    background-color: var(--color-tituloTabla);
+    height: 60px;
 }
 
-thead tr {
+tbody tr:nth-child(even) {
     background-color: var(--color-tabla1);
 }
 
-tr:nth-of-type(2n) {
+tbody tr:nth-child(odd) {
     background-color: var(--color-tabla2);
 }
 
-
-
-
-
+td:nth-child(2) {
+    text-align: left;
+}
 
 /*=========PARTE DE ABAJO==========*/
 .bottom-section {
     background-color: var(--color-fondoTexto);
-    border-radius: 10px;
+    border-radius: 5px;
     display: flex;
     flex-direction: column;
     gap: 10px;
-    padding: 15px 10px;
     text-align: justify;
-    margin-bottom: 20px;
+    margin: 20px 0;
+    color: var(--color-texto)
 }
-
 
 .description {
     margin-left: 10px;
@@ -433,38 +483,29 @@ tr:nth-of-type(2n) {
 .featureSub summary,
 .featureSubSub summary {
     background-color: var(--color-principal1);
-    padding: 5px 0 5px 5px;
-    margin-top: 15px;
-    border-radius: 5px;
     text-align: left;
     font-size: 20px;
     font-weight: bold;
     color: var(--color-texto);
     cursor: pointer;
+    padding: 10px;
 }
 
 .feature p {
-    margin-left: 10px;
+    margin: 15px;
 }
 
+.featureSub,
+.featureSubSub {
+    margin: 0 20px 20px 20px;
+    border: 1px solid var(--color-principal1);
 
-.featureSub summary {
+}
+
+.featureSub summary,
+.featureSubSub summary {
     font-size: 16px;
     background-color: var(--color-principal2);
-}
-
-.featureSubSub {
-    margin-left: 20px;
-}
-
-.featureSubSub summary {
-
-    font-size: 16px;
-    background-color: var(--color-secundario);
-}
-
-:deep(li) {
-    margin-left: 20px;
 }
 
 
@@ -488,7 +529,7 @@ tr:nth-of-type(2n) {
 
 }
 
-
+/* 
 @media (max-width:1100px) {
     .top-section {
         flex-direction: column;
@@ -526,4 +567,5 @@ tr:nth-of-type(2n) {
     }
 
 }
+    */
 </style>

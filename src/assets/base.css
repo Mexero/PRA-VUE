@@ -25,4 +25,10 @@ a{
   color: var(--color-texto);
 }
 
-
+.mainTitulo{
+    letter-spacing: 5px;
+    font-family: "Staatliches", sans-serif;
+    color:var(--color-texto);
+    font-size: 50px;
+    padding: 10px 0 0px 2%;
+}

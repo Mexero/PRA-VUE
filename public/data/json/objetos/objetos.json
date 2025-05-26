@@ -27,12 +27,12 @@
     "ValorMaterial": null
   },
   {
-    "Nombre": "Máster Ball",
+    "Nombre": "Aero Ball",
     "Imagen": null,
-    "Descripcion": "Obtienes un bono de +50 a la Tirada de Lanzar Poké Ball.",
+    "Descripcion": "La distancia a la que puedes Lanzar una Poké Ball es el cuádruple de la normal. Además, obtienes un bono de +4 a la tirada de Lanzar esta Poké Ball.",
     "Tipo": "Poké ball",
-    "Rareza": "Insólito",
-    "Coste": 100000,
+    "Rareza": "Muy raro",
+    "Coste": 2000,
     "ValorMaterial": null
   },
   {
@@ -108,12 +108,12 @@
     "ValorMaterial": null
   },
   {
-    "Nombre": "Aero Ball",
+    "Nombre": "Máster Ball",
     "Imagen": null,
-    "Descripcion": "La distancia a la que puedes Lanzar una Poké Ball es el cuádruple de la normal. Además, obtienes un bono de +4 a la tirada de Lanzar esta Poké Ball.",
+    "Descripcion": "Obtienes un bono de +50 a la Tirada de Lanzar Poké Ball.",
     "Tipo": "Poké ball",
-    "Rareza": "Muy raro",
-    "Coste": 2000,
+    "Rareza": "Insólito",
+    "Coste": 100000,
     "ValorMaterial": null
   },
   {

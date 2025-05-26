@@ -19,7 +19,9 @@ const openMobileCap = ref(false)
 </script>
 
 <template>
-    <span id="chapterStart"></span>
+            <h1 class="mainTitulo" id="chapterStart">Capítulos</h1>
+
+
     <nav id="CapMovil">
         <div class="navLogic" v-click-outside="() => openMobileCap = false">
             <Transition :name="'slideMovilMenu'">
@@ -93,7 +95,6 @@ const openMobileCap = ref(false)
     flex-direction: row;
     width: 100%;
     min-height: 100vh;
-    ;
 }
 
 /* === Menu principal escritorio ===*/
@@ -102,7 +103,7 @@ section {
 }
 
 aside {
-    padding: 40px 0;
+    padding: 10px 0;
 }
 
 .weight {
@@ -268,7 +269,7 @@ aside {
     overflow: hidden;
     border-radius: 10px;
     padding: 20px;
-    margin: 40px 20px;
+    margin: 10px 20px 40px 20px;
     background-color: var(--color-fondoTexto);
 }
 
@@ -394,14 +395,6 @@ th {
 
 .tablaCapitulos tr:nth-child(even) {
     background-color: var(--color-tabla2);
-}
-
-.noSeparar {
-    white-space: nowrap;
-}
-
-.espaciado {
-    margin-top: 30px;
 }
 
 .consejoCapitulo tr td {
