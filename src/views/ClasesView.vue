@@ -250,7 +250,7 @@ function handleClassChange(claseNueva) {
                     {{ rasgo.nombre }}
                 </summary>
                 <div class="detailsBlock">
-                    <p class="feature-origin">{{ rasgo.claseNombre }} {{ rasgo.nivel }}</p>
+                    <p class="feature-origin">{{ rasgo.claseNombre }} - Nivel {{ rasgo.nivel }}</p>
                     <div>
                         <p v-for="(parrafo, j) in Array.isArray(rasgo.descripcion) ? rasgo.descripcion : [rasgo.descripcion]"
                             :key="j" v-html="parrafo">
@@ -265,7 +265,7 @@ function handleClassChange(claseNueva) {
                                         <details class="featureSub" open>
                                             <summary>{{ rasgoSub.nombre }}</summary>
                                             <p class="feature-origin">{{
-                                                rasgoSub.nombreSubclase }} {{ rasgo.nivel
+                                                rasgoSub.nombreSubclase }} - Nivel {{ rasgo.nivel
                                                 }}</p>
                                             <!-- tiene más de 1 rasgo al nivel -->
                                             <template v-if="rasgoSub.tieneSubrasgos">
@@ -309,28 +309,17 @@ function handleClassChange(claseNueva) {
             </details>
         </div>
     </div>
-<div id="volverArriba">
-        <a href="#top">Arrow Up</a>
-        <!-- Añadir icono flecha arriba -->
+    <div id="volverArriba">
+        <a href="#modoNoche"><img src="../assets/icons/arrowUpIcon.svg" alt=""></a>
     </div>
 </template>
-
 <style>
-html {
-    scroll-behavior: smooth;
+html{
+    scroll-padding: 60px;
 }
 </style>
-<style scoped>
-#volverArriba {
-    width: 50px;
-    height: 50px;
-    background-color: var(--color-principal1);
-    border-radius: 5px;
-    position: fixed;
-    bottom: 5px;
-    right:  5px;
-}
 
+<style scoped>
 .container {
     display: flex;
     flex-direction: column;
@@ -340,18 +329,15 @@ html {
     min-height: 100vh;
 }
 
-/*=========PARTE DE ARRIBA==========*/
+/*========= PARTE DE ARRIBA ==========*/
 
 .top-section {
     display: flex;
-    justify-content: space-between;
+    gap: 50px;
     margin: 30px 0;
-    background-color: var(--color-fondoTexto);
 }
 
-
-/*=========Subsección arriba (botones)==========*/
-/* Mejora visual y responsiva para el selector de clases y subclases */
+/*========= Menu Clases ==========*/
 .classes {
     width: 40%;
     display: flex;
@@ -368,33 +354,33 @@ html {
 }
 
 .classes>div {
+    border-top: 1px solid var(--color-secundario);
+}
+
+.classes>div:first-child {
+    border: none;
+}
+
+.classes>div {
     margin: 0;
-    font-weight: 500;
     display: flex;
     flex-direction: column;
 }
 
-
-.class-inactive:hover,
-.subclas-inactive:hover {
-    background-color: var(--color-secundario);
-    cursor: pointer;
-}
-
-.subclas-active:hover {
-    cursor: pointer;
-    background-color: var(--color-sombraTexto);
-
-}
-
 .class-active {
-    background-color: var(--color-principal1);
-    font-weight: bold;
+    background-color: var(--color-tituloTabla);
 }
 
 .class-inactive {
-    background-color: var(--color-tituloTabla);
+    background-color: var(--color-principal1);
 }
+
+.class-inactive:hover {
+    background-color: var(--color-tituloTabla);
+    cursor: pointer;
+}
+
+/*========= Menu Subclases ==========*/
 
 .subclasses {
     display: flex;
@@ -402,22 +388,31 @@ html {
     padding: 10px;
     gap: 5px;
     background-color: var(--color-principal2);
-    border-bottom: 1px solid;
 }
 
 .subclasses>div {
-    padding: 10px;
+    padding: 5px 10px;
     border-radius: 5px;
     width: fit-content;
 }
 
-.subclas-active {
-    background-color: var(--color-principal1);
-    font-weight: bold;
-
+.subclas-active,
+.subclas-inactive {
+    background-color: var(--color-tabla2);
 }
 
-/*=========Subsección arriba (tabla)==========*/
+.subclas-active {
+    background-color: var(--color-tituloTabla);
+    font-weight: bold;
+}
+
+.subclas-active:hover,
+.subclas-inactive:hover {
+    background-color: var(--color-principal1);
+    cursor: pointer;
+}
+
+/*========= TABLA PRINCIPAL ==========*/
 .table-div {
     width: 80%;
     overflow-x: auto;
@@ -436,6 +431,10 @@ td {
     text-align: center;
 }
 
+tr {
+    height: 30px;
+}
+
 th a,
 td a {
     text-decoration: underline dotted lightgray;
@@ -443,7 +442,7 @@ td a {
 
 th {
     background-color: var(--color-tituloTabla);
-    height: 60px;
+    height: 50px;
 }
 
 tbody tr:nth-child(even) {
@@ -458,7 +457,7 @@ td:nth-child(2) {
     text-align: left;
 }
 
-/*=========PARTE DE ABAJO==========*/
+/* ========= PARTE DE ABAJO ==========*/
 .bottom-section {
     background-color: var(--color-fondoTexto);
     border-radius: 5px;
@@ -526,8 +525,29 @@ td:nth-child(2) {
     font-size: 20px;
     font-weight: bold;
     color: var(--color-principal2);
-
 }
+
+/* ===== Flecha subir arriba  ===== */
+#volverArriba {
+    width: 40px;
+    height: 40px;
+    background-color: var(--color-principal1);
+    border-radius: 8px;
+    margin-bottom: 10px;
+    position: sticky;
+    bottom: 5px;
+    left: 100%;
+    margin-right: 5px;
+    display: flex;
+    justify-content: center;
+}
+
+#volverArriba img {
+    margin-top: 5px;
+    width: 30px;
+    height: 30px;
+}
+
 
 /* 
 @media (max-width:1100px) {

@@ -12,6 +12,10 @@
   font-family: "Outfit", sans-serif;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
   background-color: var(--color-fondo);
   background-image: url(img/fondo.svg);
@@ -31,4 +35,24 @@ a{
     color:var(--color-texto);
     font-size: 50px;
     padding: 10px 0 0px 2%;
+}
+
+#volverArriba {
+    width: 40px;
+    height: 40px;
+    background-color: var(--color-principal1);
+    border-radius: 8px;
+    margin-bottom: 10px;
+    position: sticky;
+    bottom: 5px;
+    left: 100%;
+    margin-right: 5px;
+    display: flex;
+    justify-content: center;
+}
+
+#volverArriba img {
+    margin-top: 5px;
+    width: 30px;
+    height: 30px;
 }

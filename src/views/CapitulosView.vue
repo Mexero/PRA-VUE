@@ -19,7 +19,7 @@ const openMobileCap = ref(false)
 </script>
 
 <template>
-            <h1 class="mainTitulo" id="chapterStart">Capítulos</h1>
+    <h1 class="mainTitulo" id="chapterStart">Capítulos</h1>
 
 
     <nav id="CapMovil">
@@ -87,6 +87,10 @@ const openMobileCap = ref(false)
 
         </section>
     </main>
+
+    <div id="volverArriba">
+        <a href="#modoNoche"><img src="../assets/icons/arrowUpIcon.svg" alt=""></a>
+    </div>
 </template>
 
 <style>

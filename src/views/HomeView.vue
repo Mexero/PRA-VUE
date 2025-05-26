@@ -391,7 +391,7 @@ solo cambia el tamaños de los bloques y el margen con el header*/
 .descargaPDF {
     width: 30%;
     min-width: 280px;
-    max-height: fit-content;
+    min-height: fit-content;
     padding: 20px;
     border-radius: 15px;
     display: flex;
