@@ -135,48 +135,57 @@ function handleClassChange(claseNueva) {
                 <div @click="cargarClase('entrenador')"
                     :class="claseCargada === 'entrenador' ? 'class-active' : 'class-inactive'">
                     <div class="claseTitulo">Entrenador</div>
-                    <div class="subclasses" v-if="claseCargada === 'entrenador'">
-                        <div v-for="(subclase) in subclasesIndex" :key="subclase.ruta"
-                            :class="isSubclaseActiva(subclase.ruta) ? 'subclas-active' : 'subclas-inactive'"
-                            @click="e => toggleSubclase(subclase.ruta, e)">
-                            {{ subclase.acortado }}
+                    <Transition :name="'mostrarEntrenador'">
+                        <div class="subclasses" v-if="claseCargada === 'entrenador'">
+                            <div v-for="(subclase) in subclasesIndex" :key="subclase.ruta"
+                                :class="isSubclaseActiva(subclase.ruta) ? 'subclas-active' : 'subclas-inactive'"
+                                @click="e => toggleSubclase(subclase.ruta, e)">
+                                {{ subclase.acortado }}
+                            </div>
                         </div>
-                    </div>
+                    </Transition>
                 </div>
                 <div @click="cargarClase('inventor')"
                     :class="claseCargada === 'inventor' ? 'class-active' : 'class-inactive'">
                     <div class="claseTitulo">Inventor</div>
+                    <Transition :name="'mostrarSubclases'">
 
-                    <div class="subclasses" v-if="claseCargada === 'inventor'">
-                        <div v-for="(subclase) in subclasesIndex" :key="subclase.ruta"
-                            :class="isSubclaseActiva(subclase.ruta) ? 'subclas-active' : 'subclas-inactive'"
-                            @click="e => toggleSubclase(subclase.ruta, e)">
-                            {{ subclase.acortado }}
+                        <div class="subclasses" v-if="claseCargada === 'inventor'">
+                            <div v-for="(subclase) in subclasesIndex" :key="subclase.ruta"
+                                :class="isSubclaseActiva(subclase.ruta) ? 'subclas-active' : 'subclas-inactive'"
+                                @click="e => toggleSubclase(subclase.ruta, e)">
+                                {{ subclase.acortado }}
+                            </div>
                         </div>
-                    </div>
+                    </Transition>
                 </div>
                 <div @click="cargarClase('mentalista')"
                     :class="claseCargada === 'mentalista' ? 'class-active' : 'class-inactive'">
                     <div class="claseTitulo">Mentalista</div>
+                    <Transition :name="'mostrarSubclases'">
 
-                    <div class="subclasses" v-if="claseCargada === 'mentalista'">
-                        <div v-for="(subclase) in subclasesIndex" :key="subclase.ruta"
-                            :class="isSubclaseActiva(subclase.ruta) ? 'subclas-active' : 'subclas-inactive'"
-                            @click="e => toggleSubclase(subclase.ruta, e)">
-                            {{ subclase.acortado }}
+                        <div class="subclasses" v-if="claseCargada === 'mentalista'">
+                            <div v-for="(subclase) in subclasesIndex" :key="subclase.ruta"
+                                :class="isSubclaseActiva(subclase.ruta) ? 'subclas-active' : 'subclas-inactive'"
+                                @click="e => toggleSubclase(subclase.ruta, e)">
+                                {{ subclase.acortado }}
+                            </div>
                         </div>
-                    </div>
+                    </Transition>
                 </div>
                 <div @click="cargarClase('luchador')"
                     :class="claseCargada === 'luchador' ? 'class-active' : 'class-inactive'">
                     <div class="claseTitulo">Luchador</div>
-                    <div class="subclasses" v-if="claseCargada === 'luchador'">
-                        <div v-for="(subclase) in subclasesIndex" :key="subclase.ruta"
-                            :class="isSubclaseActiva(subclase.ruta) ? 'subclas-active' : 'subclas-inactive'"
-                            @click="e => toggleSubclase(subclase.ruta, e)">
-                            {{ subclase.acortado }}
+                    <Transition :name="'mostrarSubclases'">
+
+                        <div class="subclasses" v-if="claseCargada === 'luchador'">
+                            <div v-for="(subclase) in subclasesIndex" :key="subclase.ruta"
+                                :class="isSubclaseActiva(subclase.ruta) ? 'subclas-active' : 'subclas-inactive'"
+                                @click="e => toggleSubclase(subclase.ruta, e)">
+                                {{ subclase.acortado }}
+                            </div>
                         </div>
-                    </div>
+                    </Transition>
                 </div>
             </div>
 
@@ -218,7 +227,6 @@ function handleClassChange(claseNueva) {
 
 
         <div class="bottom-section">
-            <!-- Rasgos -->
 
             <!--Descripción-->
             <details class="feature" open>
@@ -269,13 +277,19 @@ function handleClassChange(claseNueva) {
                                                 }}</p>
                                             <!-- tiene más de 1 rasgo al nivel -->
                                             <template v-if="rasgoSub.tieneSubrasgos">
-                                                <div v-for="(subrasgo) in rasgoSub.contenido">
+                                                <div v-for="(subrasgo, idx) in rasgoSub.contenido" :key="idx">
                                                     <details class="featureSubSub" open>
-                                                        <summary>{{ subrasgo.nombre }}
-                                                        </summary>
-                                                        <p v-for="(parrafo) in Array.isArray(subrasgo.descripcion) ? subrasgo.descripcion : [subrasgo.descripcion]"
-                                                            v-html="parrafo">
+                                                        <summary>{{ subrasgo.nombre }}</summary>
+                                                        <p v-for="(parrafo, i) in Array.isArray(subrasgo.descripcion) ? subrasgo.descripcion : [subrasgo.descripcion]"
+                                                            :key="i" v-html="parrafo">
                                                         </p>
+                                                        <ul v-if="subrasgo.lista && Array.isArray(subrasgo.lista)">
+                                                            <li v-for="(item, j) in subrasgo.lista" :key="j"
+                                                                v-html="item"></li>
+                                                        </ul>
+                                                        <!-- Si subrasgo.lista es un array con un solo string que es HTML (como en tu ejemplo) -->
+                                                        <div v-else-if="subrasgo.lista && typeof subrasgo.lista[0] === 'string'"
+                                                            v-html="subrasgo.lista[0]"></div>
                                                     </details>
                                                 </div>
                                             </template>
@@ -314,7 +328,7 @@ function handleClassChange(claseNueva) {
     </div>
 </template>
 <style>
-html{
+html {
     scroll-padding: 60px;
 }
 </style>
@@ -369,6 +383,7 @@ html{
 
 .class-active {
     background-color: var(--color-tituloTabla);
+    font-weight: bold;
 }
 
 .class-inactive {
@@ -381,19 +396,18 @@ html{
 }
 
 /*========= Menu Subclases ==========*/
-
 .subclasses {
     display: flex;
     flex-wrap: wrap;
-    padding: 10px;
-    gap: 5px;
     background-color: var(--color-principal2);
 }
 
 .subclasses>div {
+    margin: 5px;
     padding: 5px 10px;
     border-radius: 5px;
-    width: fit-content;
+    text-align: center;
+    max-width: fit-content;
 }
 
 .subclas-active,
@@ -403,7 +417,8 @@ html{
 
 .subclas-active {
     background-color: var(--color-tituloTabla);
-    font-weight: bold;
+    text-decoration: underline;
+
 }
 
 .subclas-active:hover,
@@ -475,6 +490,7 @@ td:nth-child(2) {
 
 .feature-origin {
     font-style: italic;
+    font-weight: bold;
     padding: 5px 0;
 }
 
@@ -494,17 +510,20 @@ td:nth-child(2) {
     margin: 15px;
 }
 
+
 .featureSub,
 .featureSubSub {
     margin: 0 20px 20px 20px;
     border: 1px solid var(--color-principal1);
-
 }
 
 .featureSub summary,
 .featureSubSub summary {
     font-size: 16px;
     background-color: var(--color-principal2);
+}
+.featureSubSub li{
+    margin: 10px 15px 20px 30px;
 }
 
 
@@ -548,6 +567,40 @@ td:nth-child(2) {
     height: 30px;
 }
 
+
+.mostrarEntrenador-enter-active,
+.mostrarEntrenador-leave-active {
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.mostrarEntrenador-enter-from,
+.mostrarEntrenador-leave-to {
+    max-height: 0;
+}
+
+.mostrarEntrenador-enter-to,
+.mostrarEntrenador-leave-from {
+    max-height: 320px;
+}
+
+
+
+.mostrarSubclases-enter-active,
+.mostrarSubclases-leave-active {
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.mostrarSubclases-enter-from,
+.mostrarSubclases-leave-to {
+    max-height: 0;
+}
+
+.mostrarSubclases-enter-to,
+.mostrarSubclases-leave-from {
+    max-height: 270px;
+}
 
 /* 
 @media (max-width:1100px) {

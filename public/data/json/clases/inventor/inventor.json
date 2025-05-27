@@ -242,9 +242,9 @@
             "nivel": 1,
             "descripcion": [
                 "A nivel 1, aprendes a usar las Herramientas de Inventor y aumentas en 1 tu Grado de Habilidad en Conocimiento Tecnológico, hasta un máximo de Experto. Además, eliges entre uno de los tres siguientes beneficios:",
-                "Fabricar Poké Balls: Puedes considerar que tu grado de Habilidad en Conocimiento de Poké Balls es igual a tu Grado de Habilidad en Conocimiento Tecnológico y aprendes a fabricar Poké Balls de rareza Común con Herramientas de Poké Balls.",
-                "Preparar Medicinas: Puedes considerar que tu grado de Habilidad en Conocimiento Médico es igual a tu Grado de Habilidad en Conocimiento Tecnológico y aprendes a preparar Medicinas de rareza Común con Herramientas de Medicina.",
-                "Preparar Potenciadores: Puedes considerar que tu grado de Habilidad en Conocimiento Químico es igual a tu Grado de Habilidad en Conocimiento Tecnológico y aprendes a preparar Potenciadores de rareza Común con Herramientas de Química.",
+                "<strong>Fabricar Poké Balls</strong>: Puedes considerar que tu grado de Habilidad en Conocimiento de Poké Balls es igual a tu Grado de Habilidad en Conocimiento Tecnológico y aprendes a fabricar Poké Balls de rareza Común con Herramientas de Poké Balls.",
+                "<strong>Preparar Medicinas</strong>: Puedes considerar que tu grado de Habilidad en Conocimiento Médico es igual a tu Grado de Habilidad en Conocimiento Tecnológico y aprendes a preparar Medicinas de rareza Común con Herramientas de Medicina.",
+                "<strong>Preparar Potenciadores</strong>: Puedes considerar que tu grado de Habilidad en Conocimiento Químico es igual a tu Grado de Habilidad en Conocimiento Tecnológico y aprendes a preparar Potenciadores de rareza Común con Herramientas de Química.",
                 "Tanto para fabricar Poké Balls como para preparar Medicinas y Potenciadores, tomas una Acción Extendida que dura media hora por cada 1.000 Poké dólares que cuestan los objetos que creas y consumiendo materiales por valor de tres cuartas partes del coste de dichos objetos. Al final de dicha Acción Extendida, realizas una Tirada de Habilidad del tipo de Conocimiento pertinente con tu Mente por cada objeto que estás creando. Por cada Tirada que falles, el objeto creado es defectuoso y no sirve. La dificultad de dichas Tiradas varía en función de la rareza del objeto. Para objetos de rareza Común, la dificultad es 10."
             ]
         },
@@ -355,7 +355,10 @@
             "nivel": 10,
             "descripcion": [
                 "A partir de nivel 10, la rareza de los objetos que puedes crear gracias a tu rasgo de Hábil con las Herramientas se vuelve Rara. La dificultad de la Tirada para estos objetos adecuadamente es 20.",
-                "Además, los objetos que creas con tus Herramientas mejoran de las siguientes formas:",
+                "Además, los objetos que creas con tus Herramientas mejoran de las siguientes formas:"
+
+            ],
+            "lista": [
                 "Si elegiste Fabricar Poké Balls, las Poké Ball que fabricas tienen un bono extra a las tiradas que haces con ellas para capturar igual a la mitad de tu Mente, que se suma a cualquier otro bono que pudieran tener.",
                 "Si elegiste Preparar Medicinas, las Medicinas que restauran PV que creas restauran una cantidad de d6 extra igual a tu Mente, los éteres que creas restauran una cantidad PPs extra igual a la mitad de tu Mente y los revivires que creas reducen un Nivel de Fatiga más de lo normal.",
                 "Si elegiste Preparar Potenciadores, los Pokémon que consumen tus Potenciadores pueden verse afectados por 2 Potenciadores siempre que no sean ambos Vitaminas."

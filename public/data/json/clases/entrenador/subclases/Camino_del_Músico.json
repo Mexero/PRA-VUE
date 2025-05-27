@@ -70,11 +70,12 @@
                     "nombre": "Música Emotiva",
                     "descripcion": [
                         "Desde nivel 13, tu música es capaz de conmover incluso en el fragor de la batalla. Cuando usas tu rasgo de Órdenes musicales, el Pokémon sobre el que usas la Orden de Entrenador gana uno de los siguientes beneficios en función de cómo suene tu música:",
-                        "Valentía: Tu música inspira a tu Pokémon a luchar con todo. El Pokémon gana una cantidad de Puntos de Escudo igual a tu Bono de Entrenador más tu BH.",
-                        "Calma: Tu música calma las emociones de tu Pokémon. El Pokémon gana Ventaja en Tiradas de Salvación para no quedar, Asustado, Confuso o Enfurecido y, si tiene Niveles de estos Estados, los reduce en 1.",
+                        "<strong>Valentía</strong>: Tu música inspira a tu Pokémon a luchar con todo. El Pokémon gana una cantidad de Puntos de Escudo igual a tu Bono de Entrenador más tu BH.",
+                        "<strong>Calma</strong>: Tu música calma las emociones de tu Pokémon. El Pokémon gana Ventaja en Tiradas de Salvación para no quedar, Asustado, Confuso o Enfurecido y, si tiene Niveles de estos Estados, los reduce en 1.",
                         "Además, aprendes otro Movimiento de la lista de Movimientos de músico."
                     ]
                 },
+                
                 {
                     "nombre": "Mejores Movimientos Musicales",
                     "descripcion": [

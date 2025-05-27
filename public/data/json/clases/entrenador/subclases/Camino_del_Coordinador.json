@@ -1,77 +1,79 @@
 {
-    "nombre": "Camino del Coordinador",
-    "prerrequisito": "Tu Bono de Entrenador es tu Presencia",
-    "nombreClase": "Entrenador",
-    "descripcion": [
-        "Los Coordinadores que siguen el Camino del Coordinador Pokémon creen que la verdadera victoria se encuentra en la expresión creativa y la habilidad para cautivar al público. A diferencia de otros entrenadores, los Coordinadores no buscan simplemente ganar; buscan crear experiencias inolvidables que resalten la belleza y el talento de sus Pokémon. Su camino es uno de dedicación artística, donde la práctica, la innovación y la conexión emocional son tan importantes como la habilidad técnica."
-    ],
-    "rasgos": [
+  "nombre": "Camino del Coordinador",
+  "prerrequisito": "Tu Bono de Entrenador es tu Presencia",
+  "nombreClase": "Entrenador",
+  "descripcion": [
+    "Los Coordinadores que siguen el Camino del Coordinador Pokémon creen que la verdadera victoria se encuentra en la expresión creativa y la habilidad para cautivar al público. A diferencia de otros entrenadores, los Coordinadores no buscan simplemente ganar; buscan crear experiencias inolvidables que resalten la belleza y el talento de sus Pokémon. Su camino es uno de dedicación artística, donde la práctica, la innovación y la conexión emocional son tan importantes como la habilidad técnica."
+  ],
+  "rasgos": [
+    {
+      "nombre": "Camino del Coordinador 2",
+      "nivel": 2,
+      "nombreClase": "Entrenador",
+      "nombreSubclase": "Camino del Coordinador",
+      "tieneSubrasgos": true,
+      "contenido": [
         {
-            "nombre": "Camino del Coordinador 2",
-            "nivel": 2,
-            "nombreClase": "Entrenador",
-            "nombreSubclase": "Camino del Coordinador",
-            "tieneSubrasgos": true,
-            "contenido": [
-                {
-                    "nombre": "Coordinador Novicio",
-                    "descripcion": [
-                        "A nivel 2, te inicias en los Concursos Pokémon. Como acción, puedes gastar 1 PP para iniciar un Espectáculo Pokémon cuando estás en un Concurso Pokémon.. Al hacerlo, elige uno de los siguientes beneficios:",
-                        "Si diriges a tu Pokémon y pasa la Tirada de Habilidad contra la CD del concurso, ganas Puntos de Exhibición adicionales igual a la mitad de tu BH (redondeado hacia abajo).",
-                        "Si actúas junto a tu Pokémon y ambos pasáis la Tirada de Habilidad contra la CD del concurso, ganas Puntos de Exhibición adicionales igual a tu BH."
-                    ]
-                },
-                {
-                    "nombre": "Trabajo en Sincronía",
-                    "descripcion": [
-                        "A nivel 2, puedes dirigir a tus Pokémon en el escenario y en combate. Cuando das una Orden de Entrenador a un Pokémon, puedes gastar 2 PP adicionales. Si lo haces, elige a otro Pokémon amistoso a no más de 5 metros de tu objetivo. Ese Pokémon recibe todos los efectos de la Orden, excepto el dado de daño adicional.",
-                        "A nivel 17, puedes gastar 3 PP para aplicar este efecto a dos Pokémon en lugar de uno."
-                    ]
-                }
-            ]
+          "nombre": "Coordinador Novicio",
+          "descripcion": [
+            "A nivel 2, te inicias en los Concursos Pokémon. Como acción, puedes gastar 1 PP para iniciar un Espectáculo Pokémon cuando estás en un Concurso Pokémon.. Al hacerlo, elige uno de los siguientes beneficios:"
+          ],
+          "lista": [
+            "Si diriges a tu Pokémon y pasa la Tirada de Habilidad contra la CD del concurso, ganas Puntos de Exhibición adicionales igual a la mitad de tu BH (redondeado hacia abajo).",
+            "Si actúas junto a tu Pokémon y ambos pasáis la Tirada de Habilidad contra la CD del concurso, ganas Puntos de Exhibición adicionales igual a tu BH."
+          ]
         },
         {
-            "nombre": "Ojo para el Talento",
-            "nivel": 5,
-            "nombreClase": "Entrenador",
-            "nombreSubclase": "Camino del Coordinador",
-            "contenido": [
-                "A nivel 5, has desarrollado un sexto sentido para mejorar tanto las habilidades de tus Pokémon como las tuyas. Al obtener este rasgo, aumentas en 1 tu Grado de Habilidad en Actuación, hasta un máximo de Experto.",
-                "Puedes dar órdenes a tus Pokémon mediante gestos y expresiones, lo que les permite entenderte sin palabras. Esto les otorga un bono de +2 en todas sus Tiradas de Habilidad realizadas en Concursos mientras uses este método de comunicación.",
-                "Como Acción Extendida o como parte de la Acción Extendida que tomas al Entrenar a tus Pokémon, puedes hacer que tus Pokémon aumenten en 1 un Grado de Habilidad, hasta un máximo de Bueno, en una Tirada de Habilidad de tu elección. Puedes usar este rasgo con una cantidad de Pokémon igual a tu Bono de Entrenador. Este efecto dura hasta que dejen de ser tus Pokémon o uses este Rasgo otra vez."
-            ]
-        },
-        {
-            "nombre": "Tutor de Etiquetas",
-            "nivel": 8,
-            "nombreClase": "Entrenador",
-            "nombreSubclase": "Camino del Coordinador",
-            "contenido": [
-                "A partir del nivel 8, adquieres la capacidad de enseñar a tus Pokémon movimientos de tipos específicos. Elige dos Etiquetas de Movimiento que no sean “Legendario”. Como una Acción Extendida que dura al menos una hora, puedes enseñar a un Pokémon un Movimiento que tenga una de las Etiquetas seleccionadas y que esté dentro de su lista de Movimientos Enseñables. El costo máximo de PP de dicho Movimiento no puede superar 3 PP.",
-                "A partir del nivel 13, el costo máximo de PP para los movimientos que puedes enseñar aumenta a 4 PP."
-            ]
-        },
-        {
-            "nombre": "Coreografía de Batalla",
-            "nivel": 13,
-            "nombreClase": "Entrenador",
-            "nombreSubclase": "Camino del Coordinador",
-            "contenido": [
-                "A partir de nivel 13 y una vez por turno, al dar una Orden de Entrenador que incluya un Movimiento Pokémon, puedes gastar 2 PP para aplicar uno de estos efectos:",
-                "Entrada Estelar: Si tu Pokémon se mueve al menos 3 metros antes del Movimiento, puede deslumbrar a su llegada. Los enemigos a 5 metros hacen una Salvación de Espíritu con CD igual a 10 + el BH de tu Pokémon + su PRE. Si fallan, ganan un nivel de Aterrado o Infatuado (a tu elección) hacia tu Pokémon.",
-                "Ritmo Perfecto: Si el Movimiento hace una Tirada de Ataque y esta impacta y tiene una de tus Etiquetas del rasgo Tutor de Etiquetas, puedes dar una segunda Orden inmediatamente, usando otro Movimiento con esas etiquetas y coste máximo de 1 PP y que cuesta una Acción usar. Tu Pokémon recupera su acción para ejecutarlo.",
-                "El coste de usar este Rasgo aumenta en 1 PP por cada vez que lo hayas usado en una Escena."
-            ]
-        },
-        {
-            "nombre": "Clímax del Espectáculo",
-            "nivel": 17,
-            "nombreClase": "Entrenador",
-            "nombreSubclase": "Camino del Coordinador",
-            "contenido": [
-                "A partir del nivel 17, has aprendido a brindar al público el Gran Final que tanto anhelan. Una vez por Escena, al inicio de la ronda de un Espectáculo Pokémon, puedes declarar que vas a realizar un Momento Clímax, una actuación culminante que dura hasta el final de la ronda. Durante esta fase, tanto tú como tus Pokémon obtendréis ventajas en las Tiradas de Coordinación, y si superáis una Tirada de Coordinación, duplicáis los PE obtenidos por esa acción.",
-                "Si otro Coordinador es el Centro de Atención en el momento en que se desata el Clímax del Espectáculo, absorbes la emoción del público, transfiriendo el bono actual de Centro de Atención hacia ti. Si dos o más Coordinadores declaran un Clímax en la misma ronda, el Centro de Atención se reinicia a 0."
-            ]
+          "nombre": "Trabajo en Sincronía",
+          "descripcion": [
+            "A nivel 2, puedes dirigir a tus Pokémon en el escenario y en combate. Cuando das una Orden de Entrenador a un Pokémon, puedes gastar 2 PP adicionales. Si lo haces, elige a otro Pokémon amistoso a no más de 5 metros de tu objetivo. Ese Pokémon recibe todos los efectos de la Orden, excepto el dado de daño adicional.",
+            "A nivel 17, puedes gastar 3 PP para aplicar este efecto a dos Pokémon en lugar de uno."
+          ]
         }
-    ]
+      ]
+    },
+    {
+      "nombre": "Ojo para el Talento",
+      "nivel": 5,
+      "nombreClase": "Entrenador",
+      "nombreSubclase": "Camino del Coordinador",
+      "contenido": [
+        "A nivel 5, has desarrollado un sexto sentido para mejorar tanto las habilidades de tus Pokémon como las tuyas. Al obtener este rasgo, aumentas en 1 tu Grado de Habilidad en Actuación, hasta un máximo de Experto.",
+        "Puedes dar órdenes a tus Pokémon mediante gestos y expresiones, lo que les permite entenderte sin palabras. Esto les otorga un bono de +2 en todas sus Tiradas de Habilidad realizadas en Concursos mientras uses este método de comunicación.",
+        "Como Acción Extendida o como parte de la Acción Extendida que tomas al Entrenar a tus Pokémon, puedes hacer que tus Pokémon aumenten en 1 un Grado de Habilidad, hasta un máximo de Bueno, en una Tirada de Habilidad de tu elección. Puedes usar este rasgo con una cantidad de Pokémon igual a tu Bono de Entrenador. Este efecto dura hasta que dejen de ser tus Pokémon o uses este Rasgo otra vez."
+      ]
+    },
+    {
+      "nombre": "Tutor de Etiquetas",
+      "nivel": 8,
+      "nombreClase": "Entrenador",
+      "nombreSubclase": "Camino del Coordinador",
+      "contenido": [
+        "A partir del nivel 8, adquieres la capacidad de enseñar a tus Pokémon movimientos de tipos específicos. Elige dos Etiquetas de Movimiento que no sean “Legendario”. Como una Acción Extendida que dura al menos una hora, puedes enseñar a un Pokémon un Movimiento que tenga una de las Etiquetas seleccionadas y que esté dentro de su lista de Movimientos Enseñables. El costo máximo de PP de dicho Movimiento no puede superar 3 PP.",
+        "A partir del nivel 13, el costo máximo de PP para los movimientos que puedes enseñar aumenta a 4 PP."
+      ]
+    },
+    {
+      "nombre": "Coreografía de Batalla",
+      "nivel": 13,
+      "nombreClase": "Entrenador",
+      "nombreSubclase": "Camino del Coordinador",
+      "contenido": [
+        "A partir de nivel 13 y una vez por turno, al dar una Orden de Entrenador que incluya un Movimiento Pokémon, puedes gastar 2 PP para aplicar uno de estos efectos:",
+        "Entrada Estelar: Si tu Pokémon se mueve al menos 3 metros antes del Movimiento, puede deslumbrar a su llegada. Los enemigos a 5 metros hacen una Salvación de Espíritu con CD igual a 10 + el BH de tu Pokémon + su PRE. Si fallan, ganan un nivel de Aterrado o Infatuado (a tu elección) hacia tu Pokémon.",
+        "Ritmo Perfecto: Si el Movimiento hace una Tirada de Ataque y esta impacta y tiene una de tus Etiquetas del rasgo Tutor de Etiquetas, puedes dar una segunda Orden inmediatamente, usando otro Movimiento con esas etiquetas y coste máximo de 1 PP y que cuesta una Acción usar. Tu Pokémon recupera su acción para ejecutarlo.",
+        "El coste de usar este Rasgo aumenta en 1 PP por cada vez que lo hayas usado en una Escena."
+      ]
+    },
+    {
+      "nombre": "Clímax del Espectáculo",
+      "nivel": 17,
+      "nombreClase": "Entrenador",
+      "nombreSubclase": "Camino del Coordinador",
+      "contenido": [
+        "A partir del nivel 17, has aprendido a brindar al público el Gran Final que tanto anhelan. Una vez por Escena, al inicio de la ronda de un Espectáculo Pokémon, puedes declarar que vas a realizar un Momento Clímax, una actuación culminante que dura hasta el final de la ronda. Durante esta fase, tanto tú como tus Pokémon obtendréis ventajas en las Tiradas de Coordinación, y si superáis una Tirada de Coordinación, duplicáis los PE obtenidos por esa acción.",
+        "Si otro Coordinador es el Centro de Atención en el momento en que se desata el Clímax del Espectáculo, absorbes la emoción del público, transfiriendo el bono actual de Centro de Atención hacia ti. Si dos o más Coordinadores declaran un Clímax en la misma ronda, el Centro de Atención se reinicia a 0."
+      ]
+    }
+  ]
 }
