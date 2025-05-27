@@ -273,31 +273,45 @@ function handleClassChange(claseNueva) {
                                         <details class="featureSub" open>
                                             <summary>{{ rasgoSub.nombre }}</summary>
                                             <p class="feature-origin">{{
-                                                rasgoSub.nombreSubclase }} - Nivel {{ rasgo.nivel}}
-                                                </p>
+                                                rasgoSub.nombreSubclase }} - Nivel {{ rasgo.nivel }}
+                                            </p>
                                             <!-- tiene más de 1 rasgo al nivel -->
                                             <template v-if="rasgoSub.tieneSubrasgos">
                                                 <div v-for="(subrasgo, idx) in rasgoSub.contenido" :key="idx">
                                                     <details class="featureSubSub" open>
                                                         <summary>{{ subrasgo.nombre }}</summary>
-                                                        <p v-for="(parrafo, i) in Array.isArray(subrasgo.descripcion) ? subrasgo.descripcion : [subrasgo.descripcion]"
-                                                            :key="i" v-html="parrafo">
-                                                        </p>
-                                                        <ul v-if="subrasgo.lista && Array.isArray(subrasgo.lista)">
-                                                            <li v-for="(item, j) in subrasgo.lista" :key="j"
-                                                                v-html="item">
-                                                            </li>
-                                                        </ul>
-                                                        <!-- Si subrasgo.lista es un array con un solo string que es HTML (como en tu ejemplo) -->
-                                                        <div v-else-if="subrasgo.lista && typeof subrasgo.lista[0] === 'string'"
-                                                            v-html="subrasgo.lista[0]"></div>
+                                                        <template
+                                                            v-for="bloque in Array.isArray(subrasgo.descripcion) ? subrasgo.descripcion : [subrasgo.descripcion]">
+                                                            <p v-if="!bloque.tipo" v-html="bloque"></p>
+                                                            <ul v-else-if="bloque.tipo === 'listaU'" class="list">
+                                                                <li v-for="(item, j) in bloque.contenido" :key="j"
+                                                                    v-html="item">
+                                                                </li>
+                                                            </ul>
+                                                            <ol v-else-if="bloque.tipo === 'listaO'" class="list">
+                                                                <li v-for="(item, j) in bloque.contenido" :key="j"
+                                                                    v-html="item"></li>
+                                                            </ol>
+                                                        </template>
+
                                                     </details>
                                                 </div>
                                             </template>
                                             <!-- tiene sólo 1 rasgo al nivel -->
                                             <template v-else>
-                                                <p v-for="(parrafo) in Array.isArray(rasgoSub.contenido) ? rasgoSub.contenido : [rasgoSub.contenido]"
-                                                    v-html="parrafo"> </p>
+                                                <template
+                                                    v-for="bloque in Array.isArray(rasgoSub.contenido) ? rasgoSub.contenido : [rasgoSub.contenido]">
+                                                    <p v-if="!bloque.tipo" v-html="bloque"></p>
+                                                    <ul v-else-if="bloque.tipo === 'listaU'" class="list">
+                                                        <li v-for="(item, j) in bloque.contenido" :key="j"
+                                                            v-html="item">
+                                                        </li>
+                                                    </ul>
+                                                    <ol v-else-if="bloque.tipo === 'listaO'" class="list">
+                                                        <li v-for="(item, j) in bloque.contenido" :key="j"
+                                                            v-html="item"></li>
+                                                    </ol>
+                                                </template>
                                             </template>
                                         </details>
                                     </div>
@@ -524,7 +538,7 @@ td:nth-child(2) {
     background-color: var(--color-principal2);
 }
 
-.featureSubSub li {
+.list li {
     margin: 10px 15px 20px 30px;
 }
 
