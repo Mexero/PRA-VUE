@@ -273,8 +273,8 @@ function handleClassChange(claseNueva) {
                                         <details class="featureSub" open>
                                             <summary>{{ rasgoSub.nombre }}</summary>
                                             <p class="feature-origin">{{
-                                                rasgoSub.nombreSubclase }} - Nivel {{ rasgo.nivel
-                                                }}</p>
+                                                rasgoSub.nombreSubclase }} - Nivel {{ rasgo.nivel}}
+                                                </p>
                                             <!-- tiene más de 1 rasgo al nivel -->
                                             <template v-if="rasgoSub.tieneSubrasgos">
                                                 <div v-for="(subrasgo, idx) in rasgoSub.contenido" :key="idx">
@@ -285,7 +285,8 @@ function handleClassChange(claseNueva) {
                                                         </p>
                                                         <ul v-if="subrasgo.lista && Array.isArray(subrasgo.lista)">
                                                             <li v-for="(item, j) in subrasgo.lista" :key="j"
-                                                                v-html="item"></li>
+                                                                v-html="item">
+                                                            </li>
                                                         </ul>
                                                         <!-- Si subrasgo.lista es un array con un solo string que es HTML (como en tu ejemplo) -->
                                                         <div v-else-if="subrasgo.lista && typeof subrasgo.lista[0] === 'string'"
@@ -522,7 +523,8 @@ td:nth-child(2) {
     font-size: 16px;
     background-color: var(--color-principal2);
 }
-.featureSubSub li{
+
+.featureSubSub li {
     margin: 10px 15px 20px 30px;
 }
 
