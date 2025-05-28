@@ -1,42 +1,34 @@
 <script setup>
-import { onMounted, ref } from 'vue';
+import { ref, watch } from 'vue';
 import { useRouter, useRoute } from 'vue-router';
 
-//Navegación
+// Router y estado
 const router = useRouter();
 const route = useRoute();
-
-
-//Almacén de datos
 const claseCargada = ref('');
+const claseCargando = ref(false);
+const pendientes = ref([]);
+
+// Datos de clase
 const tabla = ref({ titulos: [], filas: [] });
 const descripcion = ref([]);
 const tiradas = ref({ nombre: '', descripcion: [] });
 const rasgos = ref([]);
 const subclasesIndex = ref([]);
-const subclasesCargadas = ref([]);
 const listaMovimientos = ref([]);
+const subclasesCargadas = ref([]);
 
-
-
-
-//=============FETCH Y MANIPULACIÓN DE DATOS===========
+// ========== CARGA DE CLASE ==========
 async function cargarClase(clase) {
-    if (clase === claseCargada.value) {
-        console.log("No se ha cargado la clase porque ya estaba cargada...");
-        return 0;
-    }
-    console.time('fetchData');
+    if (clase === claseCargada.value) return;
+
+    claseCargando.value = true;
     try {
         const res = await fetch(`data/json/clases/${clase}/${clase}.json`);
-        if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
+        if (!res.ok) throw new Error(`Error ${res.status}`);
 
         const data = await res.json();
-
-        // Borro subclases anteriores
         subclasesCargadas.value = [];
-
-        // Cargo clase
         claseCargada.value = clase;
         tabla.value = data.tablaClase;
         descripcion.value = data.descripcion;
@@ -45,84 +37,91 @@ async function cargarClase(clase) {
         subclasesIndex.value = data.subclases;
         listaMovimientos.value = data.ListaMovimientos ?? [];
 
-        //Cambio ruta
-        handleClassChange(claseCargada.value);
+        updateClaseQuery(clase);
     } catch (err) {
         console.error("Error al cargar clase:", err);
     }
-
-    console.timeEnd('fetchData');
+    claseCargando.value = false;
 }
 
-async function toggleSubclase(ruta, e = null) {
-    const existente = subclasesCargadas.value.find(s => s.ruta === ruta);
+// ========== CARGA Y TOGGLE DE SUBCLASE ==========
+async function toggleSubclase(ruta) {
+    if (claseCargando.value) {
+        if (!pendientes.value.includes(ruta)) pendientes.value.push(ruta);
+        return;
+    }
 
+    const existente = subclasesCargadas.value.find(s => s.ruta === ruta);
     if (existente) {
         existente.activo = !existente.activo;
     } else {
-        const datosSubclase = await fetch(`/data/json/clases/${claseCargada.value}/subclases/${ruta}.json`)
-            .then(res => res.json())
-            .catch(err => {
-                console.error("Error al cargar subclase:", err);
-                return null;
-            });
-
-        if (datosSubclase) {
-            subclasesCargadas.value.push({
-                ruta,
-                activo: true,
-                subclase: datosSubclase
-            });
+        try {
+            const res = await fetch(`/data/json/clases/${claseCargada.value}/subclases/${ruta}.json`);
+            const datos = await res.json();
+            subclasesCargadas.value.push({ ruta, activo: true, subclase: datos });
+        } catch (err) {
+            console.error(`Error al cargar subclase "${ruta}":, err`);
         }
     }
+
     updateSubclasesQuery();
 }
 
-// =========== CHECHEA SI UNA SUBCLASE ESTÁ ACTIVA ==========
-function isSubclaseActiva(ruta) {
-    const sub = subclasesCargadas.value.find(s => s.ruta === ruta);
-    return sub && sub.activo;
-}
+// ========== WATCHERS ==========
+watch(() => route.query.clase, async (nuevaClase) => {
+    const clase = nuevaClase || 'entrenador';
+    await cargarClase(clase);
 
+    const subclases = route.query.subclases
+        ? Array.isArray(route.query.subclases)
+            ? route.query.subclases
+            : route.query.subclases.split(',')
+        : [];
 
+    await Promise.all(subclases.map(ruta => toggleSubclase(ruta)));
+}, { immediate: true });
 
-//=============== AÑADE A LA RUTAS LAS SUBCLASES CARGADAS =============
-function updateSubclasesQuery() {
-    const subclasesActivas = subclasesCargadas.value
-        .filter(s => s.activo)
-        .map(s => s.ruta);
+watch(() => route.query.subclases, async (nuevasSubclases) => {
+    if (claseCargando.value) return;
 
-    router.replace({
-        query: {
-            ...route.query,
-            subclases: subclasesActivas.join(',')
-        }
-    });
-}
+    const rutasEnRuta = nuevasSubclases
+        ? Array.isArray(nuevasSubclases)
+            ? nuevasSubclases
+            : nuevasSubclases.split(',')
+        : [];
 
+    await Promise.all(
+        rutasEnRuta
+            .filter(ruta => !subclasesCargadas.value.find(s => s.ruta === ruta && s.activo))
+            .map(ruta => toggleSubclase(ruta))
+    );
 
-//==============EN CARGA===========
-
-onMounted(async () => {
-    const claseURL = route.query.clase || 'entrenador';
-    await cargarClase(claseURL);
-
-    const subclasesURL = route.query.subclases;
-    if (subclasesURL) {
-        const rutas = subclasesURL.split(',');
-        for (const ruta of rutas) {
-            await toggleSubclase(ruta);
+    for (const s of subclasesCargadas.value) {
+        if (!rutasEnRuta.includes(s.ruta) && s.activo) {
+            s.activo = false;
         }
     }
 });
 
-
-//==============CAMBIO DE RUTA AL CAMBIAR CLASE===========
-function handleClassChange(claseNueva) {
-    router.push({ query: { clase: claseNueva } })
+// ========== ACTUALIZA RUTA ==========
+function updateClaseQuery(clase) {
+    router.replace({ query: { ...route.query, clase } });
 }
 
+function updateSubclasesQuery() {
+    const activas = subclasesCargadas.value.filter(s => s.activo).map(s => s.ruta);
+    router.replace({
+        query: {
+            ...route.query,
+            subclases: activas.length ? activas.join(',') : undefined
+        }
+    });
+}
 
+// ========== UTILIDAD ==========
+function isSubclaseActiva(ruta) {
+    return subclasesCargadas.value.find(s => s.ruta === ruta)?.activo;
+}
 </script>
 
 <template>
@@ -276,7 +275,8 @@ function handleClassChange(claseNueva) {
 
                                                 {{ rasgoSub.nombreSubclase }} - Nivel {{ rasgo.nivel }}
                                             </p>
-                                            <p v-if="rasgoSub.nivel == 2"><strong>Prerrequisito:</strong> {{ subclase.subclase.prerrequisito }}</p>
+                                            <p v-if="rasgoSub.nivel == 2"><strong>Prerrequisito:</strong> {{
+                                                subclase.subclase.prerrequisito }}</p>
 
                                             <!-- tiene más de 1 rasgo al nivel -->
                                             <template v-if="rasgoSub.tieneSubrasgos">
