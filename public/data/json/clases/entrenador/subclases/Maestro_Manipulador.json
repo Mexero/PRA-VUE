@@ -8,7 +8,7 @@
     ],
     "rasgos": [
         {
-            "nombre": "Maestro Manipulador 2",
+            "nombre": "Maestro Manipulador",
             "nivel": 2,
             "nombreClase": "Entrenador",
             "nombreSubclase": "Maestro Manipulador",
@@ -40,7 +40,7 @@
             ]
         },
         {
-            "nombre": "Maestro Manipulador 8",
+            "nombre": "Maestro Manipulador",
             "nivel": 8,
             "nombreClase": "Entrenador",
             "nombreSubclase": "Maestro Manipulador",

@@ -272,9 +272,12 @@ function handleClassChange(claseNueva) {
                                     <div v-if="rasgoSub.nivel === rasgo.nivel">
                                         <details class="featureSub" open>
                                             <summary>{{ rasgoSub.nombre }}</summary>
-                                            <p class="feature-origin">{{
-                                                rasgoSub.nombreSubclase }} - Nivel {{ rasgo.nivel }}
+                                            <p class="feature-origin">
+
+                                                {{ rasgoSub.nombreSubclase }} - Nivel {{ rasgo.nivel }}
                                             </p>
+                                            <p v-if="rasgoSub.nivel == 2"><strong>Prerrequisito:</strong> {{ subclase.subclase.prerrequisito }}</p>
+
                                             <!-- tiene más de 1 rasgo al nivel -->
                                             <template v-if="rasgoSub.tieneSubrasgos">
                                                 <div v-for="(subrasgo, idx) in rasgoSub.contenido" :key="idx">
@@ -442,6 +445,7 @@ html {
     cursor: pointer;
 }
 
+
 /*========= TABLA PRINCIPAL ==========*/
 .table-div {
     width: 80%;
@@ -467,7 +471,7 @@ tr {
 
 th a,
 td a {
-    text-decoration: underline dotted lightgray;
+    text-decoration: underline dotted var(--color-texto);
 }
 
 th {

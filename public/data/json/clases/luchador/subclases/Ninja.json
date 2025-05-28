@@ -1,6 +1,6 @@
 {
     "nombre": "Ninja",
-    "prerrequisito": "",
+    "prerrequisito": "Ninguno.",
     "nombreClase": "Entrenador",
     "descripcion": [
         "Los ninja son Luchadores especializados en el sigilo y la sutileza los cuales aprovechan su maestría a la hora de crear ciertos objetos y, sus Movimientos particulares para engañar a sus enemigos y así ganar una ventaja sobre ellos."

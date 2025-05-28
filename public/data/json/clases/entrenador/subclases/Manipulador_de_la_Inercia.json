@@ -7,7 +7,7 @@
     ],
     "rasgos": [
         {
-            "nombre": "Manipulador de la Inercia 2",
+            "nombre": "Manipulador de la Inercia",
             "nivel": 2,
             "nombreClase": "Entrenador",
             "nombreSubclase": "Manipulador de la Inercia",
@@ -44,7 +44,7 @@
             ]
         },
         {
-            "nombre": "Manipulador de la Inercia 8",
+            "nombre": "Manipulador de la Inercia",
             "nivel": 8,
             "nombreClase": "Entrenador",
             "nombreSubclase": "Manipulador de la Inercia",

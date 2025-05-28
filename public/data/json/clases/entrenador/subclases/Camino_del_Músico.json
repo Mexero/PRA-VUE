@@ -7,7 +7,7 @@
     ],
     "rasgos": [
         {
-            "nombre": "Camino del Músico 2",
+            "nombre": "Camino del Músico",
             "nivel": 2,
             "nombreClase": "Entrenador",
             "nombreSubclase": "Camino del Músico",
@@ -39,7 +39,7 @@
             ]
         },
         {
-            "nombre": "Camino del Músico 8",
+            "nombre": "Camino del Músico",
             "nivel": 8,
             "nombreClase": "Entrenador",
             "nombreSubclase": "Camino del Músico",
@@ -60,7 +60,7 @@
             ]
         },
         {
-            "nombre": "Camino del Músico 13",
+            "nombre": "Camino del Músico",
             "nivel": 13,
             "nombreClase": "Entrenador",
             "nombreSubclase": "Camino del Músico",

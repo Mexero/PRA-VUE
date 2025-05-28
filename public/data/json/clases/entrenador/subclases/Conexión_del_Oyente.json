@@ -14,7 +14,7 @@
             "nombreSubclase": "Conexión del Oyente",
             "contenido": [
                 "A partir de nivel 2, aprendes a escuchar la voz de la mente los Pokémon y estos pueden sentir tus pensamientos, lo que os conecta profundamente. Ganas Sentido del Aura en un radio de 20 metros y tu Grado de Habilidad en Empatía aumenta en 1, hasta un máximo de Experto.",
-                "Además, puedes tomar una Acción para estrechar la conexión con un Pokémon que tocas para Sintonizarte con este si así lo permite. Una vez Sintonizado con un Pokémon, si este se aleja a una distancia superior en Kilómetros igual a tu Espíritu o si este así lo desea, la conexión se rompe. Devolver a un Pokémon en su Pokéball no rompe la conexión.",
+                "Además, puedes tomar una Acción para estrechar la conexión con un Pokémon que tocas para  <strong>Sintonizarte</strong> con este si así lo permite. Una vez Sintonizado con un Pokémon, si este se aleja a una distancia superior en Kilómetros igual a tu Espíritu o si este así lo desea, la conexión se rompe. Devolver a un Pokémon en su Pokéball no rompe la conexión.",
                 "Cuando estás Sintonizado con un Pokémon, aprendes todo lo que puedes hacer y puedes usar tu Acción para sentir a través de los sentidos de esta criatura en lugar de a través de los tuyos propios. Además, puedes dar Órdenes a una criatura con la que estás Sintonizado de forma telepática.",
                 "Puedes estar Sintonizado con una cantidad de Pokémon igual a tu Bono de Entrenador. Si te sintonizas con un Pokémon cuando estás Sintonizado con una cantidad de Pokémon igual a tu Bono de Entrenador, eliges a un Pokémon con el que estás sintonizado, con el que dejas de estarlo."
             ]
@@ -25,11 +25,11 @@
             "nombreClase": "Entrenador",
             "nombreSubclase": "Conexión del Oyente",
             "contenido": [
-                "A partir de nivel 5, ganas una cantidad de PP Máximos extra igual a la cantidad de Pokémon con los que estás Sintonizado. Además, tú y los Pokémon con los que estás Sintonizado que están fuera de su Poké Ball y a menos de 5 metros de ti creáis un Círculo de Sintonía, del cual formáis parte y mediante el cual compartís vuestro poder. Cualquier criatura en el Círculo de Sintonía puede usar los PP de las otras criaturas dentro del Círculo en lugar de los suyos."
+                "A partir de nivel 5, ganas una cantidad de PP Máximos extra igual a la cantidad de Pokémon con los que estás Sintonizado. Además, tú y los Pokémon con los que estás Sintonizado que están fuera de su Poké Ball y a menos de 5 metros de ti creáis un <strong>Círculo de Sintonía, del cual formáis parte y mediante el cual compartís vuestro poder. Cualquier criatura en el Círculo de Sintonía puede usar los PP de las otras criaturas dentro del Círculo en lugar de los suyos."
             ]
         },
         {
-            "nombre": "Conexión del Oyente 8",
+            "nombre": "Conexión del Oyente",
             "nivel": 8,
             "nombreClase": "Entrenador",
             "nombreSubclase": "Conexión del Oyente",

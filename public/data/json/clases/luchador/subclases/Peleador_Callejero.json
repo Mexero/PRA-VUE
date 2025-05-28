@@ -1,6 +1,6 @@
 {
     "nombre": "Peleador Callejero",
-    "prerrequisito": "",
+    "prerrequisito": "Ninguno.",
     "nombreClase": "Entrenador",
     "descripcion": [
         "Los Luchadores que siguen esta disciplina no han entrenado en entornos seguros y disciplinados, sino que han aprendido a base de golpes traicioneros y palizas inesperadas. Estos entrenadores saben lo que es necesario para poder sobrevivir en las peores calles y están muy acostumbrados a recibir golpes, lo que los vuelve enemigos temibles y brutales."

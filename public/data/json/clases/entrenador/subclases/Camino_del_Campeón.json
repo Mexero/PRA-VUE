@@ -1,6 +1,6 @@
 {
     "nombre": "Camino del Campeón",
-    "prerrequisito": "",
+    "prerrequisito": "Ninguno.",
     "nombreClase": "Entrenador",
     "descripcion": [
         "Los Entrenadores que siguen el Camino del Campeón intentan emular a las grandes leyendas del mundo Pokémon y aspiran a unirse a estas en el futuro. Usualmente, los entrenadores que siguen el Camino del Campeón siguen regímenes de entrenamiento estrictos y dedican gran parte de sus vidas a viajar para conocer entrenadores habilidosos contra los que poder batirse en duelo y Pokémon poderosos para unir a su equipo. Los Entrenadores que siguen este camino quizás puedan aparentar ser prepotentes o sobreconfiados, pero usualmente son personas concienzudas y trabajadoras con una gran fuerza de voluntad y un espíritu de competitividad innato."

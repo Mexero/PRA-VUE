@@ -299,7 +299,7 @@
   {
     "Nombre": "Poción máxima",
     "Imagen": null,
-    "Descripcion": "Como Acción puedes aplicarla sobre ti u otra criatura. Cuando lo haces, la criatura recupera todos tus PV.",
+    "Descripcion": "Como Acción puedes aplicarla sobre ti u otra criatura. Cuando lo haces, la criatura recupera todos sus PV.",
     "Tipo": "Medicina",
     "Rareza": "Muy raro",
     "Coste": 2500,
@@ -308,7 +308,7 @@
   {
     "Nombre": "Restaurar todo",
     "Imagen": null,
-    "Descripcion": "Como Acción puedes aplicarla sobre ti u otra criatura. Cuando lo haces, la criatura recupera todos tus PV y dejas de estar envenenado, helado, paralizado, quemado o dormido.",
+    "Descripcion": "Como Acción puedes aplicarla sobre ti u otra criatura. Cuando lo haces, la criatura recupera todos sus PV y dejas de estar envenenado, helado, paralizado, quemado o dormido.",
     "Tipo": "Medicina",
     "Rareza": "Muy raro",
     "Coste": 3000,
@@ -2513,7 +2513,7 @@
   {
     "Nombre": "Origen Ball",
     "Imagen": null,
-    "Descripcion": "Al lanzarse, captura automáticamente Dialga, Palkia o Giratina. Quizás no respondan a tus órdenes, pero no podrán escapar.",
+    "Descripcion": "Al lanzarse, captura automáticamente a Dialga, Palkia o Giratina. Quizás no respondan a tus órdenes, pero no podrán escapar.",
     "Tipo": "Objetos míticos",
     "Rareza": "Insólito",
     "Coste": null,

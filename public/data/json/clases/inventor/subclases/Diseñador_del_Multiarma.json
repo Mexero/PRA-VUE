@@ -1,6 +1,6 @@
 {
     "nombre": "Diseñador del Multiarma",
-    "prerrequisito": "",
+    "prerrequisito": "Ninguno.",
     "nombreClase": "Entrenador",
     "descripcion": [
         "Algunos Inventores buscan crear un arma prodigiosa, capaz de todo y sin debilidad alguna. Aunque esto es un reto difícil, los inventores del Multiarma creen haber dado con la solución: Añadir tantas funciones como sea necesario, sin importar el costo o la complejidad de estos."
@@ -40,7 +40,7 @@
             ]
         },
         {
-            "nombre": "Diseñador del Multiarma 13",
+            "nombre": "Diseñador del Multiarma",
             "nivel": 13,
             "nombreClase": "Entrenador",
             "nombreSubclase": "Diseñador del Multiarma",

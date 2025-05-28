@@ -1,13 +1,13 @@
 {
     "nombre": "Conexión con la Psique",
-    "prerrequisito": "",
+    "prerrequisito": "Ninguno.",
     "nombreClase": "Entrenador",
     "descripcion": [
         "Tu mente ha absorbido una fuente de poder psíquico impropia para una persona gracias a un evento con Pokémon de Tipo Psíquico o a través de un arduo entrenamiento que se asemeja al que algunos de estos Pokémon realizan para fortalecerse."
     ],
     "rasgos": [
         {
-            "nombre": "Conexión con la Psique 2",
+            "nombre": "Conexión con la Psique",
             "nivel": 2,
             "nombreClase": "Entrenador",
             "nombreSubclase": "Conexión con la Psique",

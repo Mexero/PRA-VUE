@@ -1,6 +1,6 @@
 {
     "nombre": "Domador del Viento",
-    "prerrequisito": "",
+    "prerrequisito": "Ninguno.",
     "nombreClase": "Entrenador",
     "descripcion": [
         "Los Luchadores que siguen esta disciplina marcial son ágiles y sutiles, tan difíciles de atrapar como la brisa misma y tan maleables como el viento, por lo que brillan por sus talentos para desplazarse y escapar del peligro y por su sobrenatural talento para dominar los vientos y la energía que estos contienen."

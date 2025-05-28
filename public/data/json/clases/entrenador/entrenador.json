@@ -364,9 +364,9 @@
             "claseNombre": "Entrenador",
             "nivel": 1,
             "descripcion": [
-                "A partir de nivel 1, tienes un entendimiento superior al de la media del combate. Cada vez que das una Orden a un Pokémon a menos de 10 metros de ti, puedes gastar 1 PP y tu Acción para dar una Orden de Entrenador, que hacen que la orden que le has dado tenga efectos especiales. Conoces 3 Órdenes de Entrenador de la Lista de Órdenes de Entrenador que puedes encontrar más adelante y a niveles superiores aprendes más Órdenes de Entrenador.",
+                "A partir de nivel 1, tienes un entendimiento superior al de la media del combate. Cada vez que das una Orden a un Pokémon a menos de 10 metros de ti, puedes gastar 1 PP y tu Acción para dar una <strong>Orden de Entrenador</strong>, que hacen que la orden que le has dado tenga efectos especiales. Conoces 3 Órdenes de Entrenador de la Lista de Órdenes de Entrenador que puedes encontrar más adelante y a niveles superiores aprendes más Órdenes de Entrenador.",
                 "La primera vez en el turno en el que un Pokémon al que has dado una Orden de Entrenador hace daño a otra criatura con Movimiento, lanzas un dado que se añade al daño del Movimiento. Este dado es tu Dado de Orden, que es un d6 y aumenta tal y como puedes ver en la tabla resumen de la Clase.",
-                "Además, algunas órdenes dicen que tiras un Dado de Orden en ciertas situaciones y otras hablan de que las Tiradas de Ataque Naturales deben alcanzar tu Rango de Orden. Esto significa que la Tirada Natural debe ser mayor o igual a 21 menos tu Bono de Entrenador."
+                "Además, algunas órdenes dicen que tiras un Dado de Orden en ciertas situaciones y otras hablan de que las Tiradas de Ataque Naturales deben alcanzar tu <strong>Rango de Orden</strong>. Esto significa que la Tirada Natural debe ser mayor o igual a 21 menos tu Bono de Entrenador."
             ]
         },
         {
@@ -459,7 +459,7 @@
             "claseNombre": "Entrenador",
             "nivel": 7,
             "descripcion": [
-                "A partir de nivel 7, te vuelves un experto en dar órdenes. Eliges una de las Órdenes de Entrenador que conoces. Esta se vuelve tu Orden Insignia. Usar esta Orden te cuesta 1 PP menos de lo usual."
+                "A partir de nivel 7, te vuelves un experto en dar órdenes. Eliges una de las Órdenes de Entrenador que conoces. Esta se vuelve tu <strong>Orden Insignia</strong>. Usar esta Orden te cuesta 1 PP menos de lo usual."
             ]
         },
         {

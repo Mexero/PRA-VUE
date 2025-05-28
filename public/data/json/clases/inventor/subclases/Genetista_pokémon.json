@@ -1,6 +1,6 @@
 {
     "nombre": "Genetista pokémon",
-    "prerrequisito": "",
+    "prerrequisito": "Ninguno.",
     "nombreClase": "Entrenador",
     "descripcion": [
         "Los Inventores que toman esta Especialización son amantes de la genética Pokémon y tienen un interés particular en modificarla para extraer de esta su mayor potencial. Muchos los verán como científicos locos, aunque ellos saben bien que es el camino más óptimo a seguir.",
@@ -8,7 +8,7 @@
     ],
     "rasgos": [
         {
-            "nombre": "Genetista pokémon 2",
+            "nombre": "Genetista pokémon",
             "nivel": 2,
             "nombreClase": "Entrenador",
             "nombreSubclase": "Genetista pokémon",
@@ -51,7 +51,7 @@
             ]
         },
         {
-            "nombre": "Genetista pokémon 8",
+            "nombre": "Genetista pokémon",
             "nivel": 8,
             "nombreClase": "Entrenador",
             "nombreSubclase": "Genetista pokémon",

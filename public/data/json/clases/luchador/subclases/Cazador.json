@@ -1,13 +1,13 @@
 {
     "nombre": "Cazador",
-    "prerrequisito": "",
+    "prerrequisito": "Ninguno.",
     "nombreClase": "Entrenador",
     "descripcion": [
         "Los Luchadores que siguen esta disciplina marcial además de especializarse en el combate también saben perseguir y estudiar a sus rivales en la naturaleza, encontrando en muchas ocasiones su fuerza en sorprender a una criatura desde el sigilo o guiarlos hasta una trampa."
     ],
     "rasgos": [
         {
-            "nombre": "Cazador 2",
+            "nombre": "Cazador",
             "nivel": 2,
             "nombreClase": "Entrenador",
             "nombreSubclase": "Cazador",

@@ -7,7 +7,7 @@
   ],
   "rasgos": [
     {
-      "nombre": "Camino del Coordinador 2",
+      "nombre": "Camino del Coordinador",
       "nivel": 2,
       "nombreClase": "Entrenador",
       "nombreSubclase": "Camino del Coordinador",
@@ -16,11 +16,14 @@
         {
           "nombre": "Coordinador Novicio",
           "descripcion": [
-            "A nivel 2, te inicias en los Concursos Pokémon. Como acción, puedes gastar 1 PP para iniciar un Espectáculo Pokémon cuando estás en un Concurso Pokémon.. Al hacerlo, elige uno de los siguientes beneficios:"
-          ],
-          "lista": [
-            "Si diriges a tu Pokémon y pasa la Tirada de Habilidad contra la CD del concurso, ganas Puntos de Exhibición adicionales igual a la mitad de tu BH (redondeado hacia abajo).",
-            "Si actúas junto a tu Pokémon y ambos pasáis la Tirada de Habilidad contra la CD del concurso, ganas Puntos de Exhibición adicionales igual a tu BH."
+            "A nivel 2, te inicias en los Concursos Pokémon. Como acción, puedes gastar 1 PP para iniciar un Espectáculo Pokémon cuando estás en un Concurso Pokémon.. Al hacerlo, elige uno de los siguientes beneficios:",
+            {
+              "tipo": "listaU",
+              "contenido": [
+                "Si diriges a tu Pokémon y pasa la Tirada de Habilidad contra la CD del concurso, ganas Puntos de Exhibición adicionales igual a la mitad de tu BH (redondeado hacia abajo).",
+                "Si actúas junto a tu Pokémon y ambos pasáis la Tirada de Habilidad contra la CD del concurso, ganas Puntos de Exhibición adicionales igual a tu BH."
+              ]
+            }
           ]
         },
         {
@@ -60,8 +63,13 @@
       "nombreSubclase": "Camino del Coordinador",
       "contenido": [
         "A partir de nivel 13 y una vez por turno, al dar una Orden de Entrenador que incluya un Movimiento Pokémon, puedes gastar 2 PP para aplicar uno de estos efectos:",
-        "Entrada Estelar: Si tu Pokémon se mueve al menos 3 metros antes del Movimiento, puede deslumbrar a su llegada. Los enemigos a 5 metros hacen una Salvación de Espíritu con CD igual a 10 + el BH de tu Pokémon + su PRE. Si fallan, ganan un nivel de Aterrado o Infatuado (a tu elección) hacia tu Pokémon.",
-        "Ritmo Perfecto: Si el Movimiento hace una Tirada de Ataque y esta impacta y tiene una de tus Etiquetas del rasgo Tutor de Etiquetas, puedes dar una segunda Orden inmediatamente, usando otro Movimiento con esas etiquetas y coste máximo de 1 PP y que cuesta una Acción usar. Tu Pokémon recupera su acción para ejecutarlo.",
+        {
+          "tipo": "listaU",
+          "contenido": [
+            "<strong>Entrada Estelar</strong>: Si tu Pokémon se mueve al menos 3 metros antes del Movimiento, puede deslumbrar a su llegada. Los enemigos a 5 metros hacen una Salvación de Espíritu con CD igual a 10 + el BH de tu Pokémon + su PRE. Si fallan, ganan un nivel de Aterrado o Infatuado (a tu elección) hacia tu Pokémon.",
+            "<strong>Ritmo Perfecto</strong>: Si el Movimiento hace una Tirada de Ataque y esta impacta y tiene una de tus Etiquetas del rasgo Tutor de Etiquetas, puedes dar una segunda Orden inmediatamente, usando otro Movimiento con esas etiquetas y coste máximo de 1 PP y que cuesta una Acción usar. Tu Pokémon recupera su acción para ejecutarlo."
+          ]
+        },
         "El coste de usar este Rasgo aumenta en 1 PP por cada vez que lo hayas usado en una Escena."
       ]
     },

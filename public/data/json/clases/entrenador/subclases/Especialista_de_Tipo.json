@@ -7,7 +7,7 @@
     ],
     "rasgos": [
         {
-            "nombre": "Especialista de Tipo 2",
+            "nombre": "Especialista de Tipo",
             "nivel": 2,
             "nombreClase": "Entrenador",
             "nombreSubclase": "Especialista de Tipo",

@@ -1,6 +1,6 @@
 {
     "nombre": "Artista marcial",
-    "prerrequisito": "",
+    "prerrequisito": "Ninguno.",
     "nombreClase": "Entrenador",
     "descripcion": [
         "La mayoría de luchadores entrenan una o varias artes marciales de las que poder hacer uso en el combate, pero los Artistas marciales luchadores que optan por un estilo algo más abierto, apostando por la versatilidad en la mayor parte de las ocasiones y siendo, en consecuencia, destacables por su adaptabilidad a todas las situaciones."

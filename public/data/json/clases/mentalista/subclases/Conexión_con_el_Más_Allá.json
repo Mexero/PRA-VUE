@@ -1,13 +1,13 @@
 {
     "nombre": "Conexión con el Más Allá",
-    "prerrequisito": "",
+    "prerrequisito": "Ninguno.",
     "nombreClase": "Entrenador",
     "descripcion": [
         "Quizás fue una vida de sufrimiento y odio reprimido, quizás un único evento devastador el que conectó tu alma a la energía de los que ya no nos rodean. De cualquier forma, ahora te has vuelto una vía de escape para los que en su lecho aún no descansan, lo que te otorga la capacidad de maldecir y afectar negativamente al espíritu de los vivos."
     ],
     "rasgos": [
         {
-            "nombre": "Conexión con el Más Allá 2",
+            "nombre": "Conexión con el Más Allá",
             "nivel": 2,
             "nombreClase": "Entrenador",
             "nombreSubclase": "Conexión con el Más Allá",

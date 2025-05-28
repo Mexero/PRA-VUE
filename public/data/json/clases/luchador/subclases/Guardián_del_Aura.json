@@ -1,6 +1,6 @@
 {
     "nombre": "Guardián del Aura",
-    "prerrequisito": "",
+    "prerrequisito": "Ninguno.",
     "nombreClase": "Entrenador",
     "descripcion": [
         "Los Luchadores que siguen esta disciplina marcial han entrenado su mente para poder comprender los movimientos y objetivos de los demás y esto los dota de una capacidad sobrenatural para visualizar y sentir el espíritu, el aura, de todas las criaturas. Estos Luchadores son aptos no solo en el combate cuerpo a cuerpo, sino que también aprenden a canalizar y proyectar su aura para proteger a sus aliados y dañar a sus enemigos. Fuera de combate, son expertos en detectar las emociones y sentir las intenciones de los que los rodean."
@@ -38,7 +38,7 @@
             ]
         },
         {
-            "nombre": "Guardián del Aura 13",
+            "nombre": "Guardián del Aura",
             "nivel": 13,
             "nombreClase": "Entrenador",
             "nombreSubclase": "Guardián del Aura",

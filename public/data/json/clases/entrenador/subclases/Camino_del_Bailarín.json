@@ -7,7 +7,7 @@
   ],
   "rasgos": [
     {
-      "nombre": "Camino del Bailarín 2",
+      "nombre": "Camino del Bailarín",
       "nivel": 2,
       "nombreClase": "Entrenador",
       "nombreSubclase": "Camino del Bailarín",
@@ -47,7 +47,7 @@
       ]
     },
     {
-      "nombre": "Camino del Bailarín 8",
+      "nombre": "Camino del Bailarín",
       "nivel": 8,
       "nombreClase": "Entrenador",
       "nombreSubclase": "Camino del Bailarín",

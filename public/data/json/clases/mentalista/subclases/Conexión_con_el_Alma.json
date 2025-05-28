@@ -1,13 +1,13 @@
 {
     "nombre": "Conexión con el Alma",
-    "prerrequisito": "",
+    "prerrequisito": "Ninguno.",
     "nombreClase": "Entrenador",
     "descripcion": [
         "Tu espíritu ha tocado el alma del mundo y este te ha devuelto el contacto. Ya sea tras largas sesiones de meditación y estudio o tras un evento místico, has aprendido a sentir el alma que todas las cosas que existen contienen en su interior y eres capaz de comprender la bondad que contienen."
     ],
     "rasgos": [
         {
-            "nombre": "Conexión con el Alma 2",
+            "nombre": "Conexión con el Alma",
             "nivel": 2,
             "nombreClase": "Entrenador",
             "nombreSubclase": "Conexión con el Alma",
