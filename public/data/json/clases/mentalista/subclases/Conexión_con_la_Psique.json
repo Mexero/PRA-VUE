@@ -23,9 +23,14 @@
                     "nombre": "Movimientos de psíquico",
                     "descripcion": [
                         "A nivel 2, aprendes a utilizar tus poderes psíquicos más tangiblemente. Para ti, los siguientes Movimientos se añaden a la lista de Mentalista:",
-                        "2 PP: Polvo mágico, Campo psíquico, Psicocambio, Telépata, Levitón, Truco, Cambio de banda.",
-                        "4 PP: Psicorruido, Gravedad, Psicocarga.",
-                        "5 PP: Psíquico, Premonición, Teletransporte."
+                        {
+                            "tipo": "listaU",
+                            "contenido": [
+                                "<strong>2 PP</strong>: Polvo mágico, Campo psíquico, Psicocambio, Telépata, Levitón, Truco, Cambio de banda.",
+                                "<strong>4 PP</strong>: Psicorruido, Gravedad, Psicocarga.",
+                                "<strong>5 PP</strong>: Psíquico, Premonición, Teletransporte."
+                            ]
+                        }
                     ]
                 }
             ]

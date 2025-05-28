@@ -33,10 +33,15 @@
             "nombreSubclase": "Diseñador del Multiarma",
             "contenido": [
                 "A partir de nivel 8, añades a tu Multiarma un Tipo Elemental que te permite lanzar ciertos Movimientos extra. Además, puedes elegir uno de los siguientes Tipos Elementales:",
-                "Fuego: Puedes usar Ascuas por 1 PP y Giro fuego y Calcinación por por 2 PP. A partir de nivel 13 puedes usar Lanzallamas por 4 PP y, a partir de nivel 17, Llamarada por 5 PP.",
-                "Eléctrico: Puedes usar Chispa o Impactrueno por 1 PP y Onda voltio y Aura magnética por 2 PP. A partir de nivel 13 puedes usar Rayo por 4 PP y, a partir de nivel 17, Trueno por 5 PP.",
-                "Hielo: Puedes usar Nieve polvo por 1 PP y Rayo aurora y Niebla por 2 PP. A partir de nivel 13 puedes usar Rayo hielo por 4 PP y, a partir de nivel 17, Ventisca por 5 PP.",
-                "Veneno: Picotazo venenoso o Residuos por 1 PP y Gas corrosivo y Armadura Ácida por 2 PP. A partir de nivel 13 puedes usar Bomba lodo por 4 PP y, a partir de nivel 17, Tóxico por 5 PP."
+                {
+                    "tipo": "listaU",
+                    "contenido": [
+                        "<strong>Fuego</strong>: Puedes usar Ascuas por 1 PP y Giro fuego y Calcinación por por 2 PP. A partir de nivel 13 puedes usar Lanzallamas por 4 PP y, a partir de nivel 17, Llamarada por 5 PP.",
+                        "<strong>Eléctrico</strong>: Puedes usar Chispa o Impactrueno por 1 PP y Onda voltio y Aura magnética por 2 PP. A partir de nivel 13 puedes usar Rayo por 4 PP y, a partir de nivel 17, Trueno por 5 PP.",
+                        "<strong>Hielo</strong>: Puedes usar Nieve polvo por 1 PP y Rayo aurora y Niebla por 2 PP. A partir de nivel 13 puedes usar Rayo hielo por 4 PP y, a partir de nivel 17, Ventisca por 5 PP.",
+                        "<strong>Veneno</strong>: Picotazo venenoso o Residuos por 1 PP y Gas corrosivo y Armadura Ácida por 2 PP. A partir de nivel 13 puedes usar Bomba lodo por 4 PP y, a partir de nivel 17, Tóxico por 5 PP."
+                    ]
+                }
             ]
         },
         {

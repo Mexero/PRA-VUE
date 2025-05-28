@@ -18,9 +18,9 @@
                     "descripcion": [
                         "A nivel 2, eres experto en seguir rastros. Aumentas tu Grado de Habilidad en Supervivencia en 1, hasta un máximo de Experto. Además, aprendes a crear y preparar trampas.",
                         "Crear una trampa tiene un coste de Acción Extendida y requiere de materiales por valor de 200$, que tu DJ decide si pueden reutilizarse tras la activación. Cuando creas una trampa, esta ocupa un área cuadrada de 1 metro de lado la cual sólo puede detectarse con una Tirada de Investigación y es activada si se pasa por la zona que ocupa sin saber que está ahí. Todos las CD asociadas a tus trampas son iguales a la CD de tus Movimientos de Luchador. Puedes elegir entre las siguientes trampas:",
-                        "Apresar: Pones una red, preparas un cepo o cavas un foso. La criatura que la activa hace una Tirada de Salvación de Agilidad y, si la falla, queda apresada por la trampa hasta que se libere usando su Acción para repetir una Tirada de Salvación de Fuerza o Agilidad.",
-                        "Veneno: Preparas una trampa que libera algún tipo de veneno. La criatura que la activa hace una Tirada de Salvación de Resistencia y, si la falla, gana 2 Niveles de Envenenado.",
-                        "Aturdidora: Preparas una trampa que ciega o ensordece a una criatura. U La criatura que la activa hace una Tirada de Salvación de Resistencia y, si la falla, gana 1 Nivel de Cegado o queda Ensordecida hasta el final de su próximo turno."
+                        "<strong>Apresar</strong>: Pones una red, preparas un cepo o cavas un foso. La criatura que la activa hace una Tirada de Salvación de Agilidad y, si la falla, queda apresada por la trampa hasta que se libere usando su Acción para repetir una Tirada de Salvación de Fuerza o Agilidad.",
+                        "<strong>Veneno</strong>: Preparas una trampa que libera algún tipo de veneno. La criatura que la activa hace una Tirada de Salvación de Resistencia y, si la falla, gana 2 Niveles de Envenenado.",
+                        "<strong>Aturdidora</strong>: Preparas una trampa que ciega o ensordece a una criatura. U La criatura que la activa hace una Tirada de Salvación de Resistencia y, si la falla, gana 1 Nivel de Cegado o queda Ensordecida hasta el final de su próximo turno."
                     ]
                 },
                 {

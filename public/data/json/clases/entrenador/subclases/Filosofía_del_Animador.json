@@ -22,8 +22,13 @@
             "nombreSubclase": "Filosofía del Animador",
             "contenido": [
                 "A nivel 5, desarrollas formas de reforzar el espíritu de lucha de tus Pokémon en el combate con palabras de ánimo. Después de que tu Pokémon ejecute una Orden de Entrenador que le has dado, lo alentas si falla en su objetivo o lo felicitas si lo consigue:",
-                "Felicitar: Tu Pokémon se siente orgulloso por lo que ha hecho y se prepara para seguir actuando así. Si en su próximo turno le ordenas que tome la misma Acción o use un Movimiento que acaba de usar, tiene Ventaja en todas las Tiradas de d20 asociadas a dicha Acción o Movimiento.",
-                "Alentar: Tu Pokémon queda alentado a seguir luchando gracias a tus ánimos. Tu Pokémon gana Puntos de Escudo igual al doble de tu Bono de Entrenador, los cuales duran hasta el final de tu próximo turno. Mientras un Pokémon tiene al menos uno de estos Puntos de Escudo, tiene Ventaja en las Tiradas de Salvación de Espíritu."
+                {
+                    "tipo": "listaU",
+                    "contenido": [
+                        "<strong>Felicitar</strong>: Tu Pokémon se siente orgulloso por lo que ha hecho y se prepara para seguir actuando así. Si en su próximo turno le ordenas que tome la misma Acción o use un Movimiento que acaba de usar, tiene Ventaja en todas las Tiradas de d20 asociadas a dicha Acción o Movimiento.",
+                        "<strong>Alentar</strong>: Tu Pokémon queda alentado a seguir luchando gracias a tus ánimos. Tu Pokémon gana Puntos de Escudo igual al doble de tu Bono de Entrenador, los cuales duran hasta el final de tu próximo turno. Mientras un Pokémon tiene al menos uno de estos Puntos de Escudo, tiene Ventaja en las Tiradas de Salvación de Espíritu."
+                    ]
+                }
             ]
         },
         {

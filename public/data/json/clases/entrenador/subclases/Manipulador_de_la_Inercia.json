@@ -16,20 +16,25 @@
                 {
                     "nombre": "Visualizador de la Inercia",
                     "descripcion": [
-                        "A nivel 2, aprendes a visualizar las pequeñas ventajas que ganas en el combate que otros pasan por alto. Estas ventajas se ven representadas por tus Puntos de Inercia, cada vez que tiras iniciativa, cambias de Pokémon o terminas un combate tus Puntos de Inercia se vuelven 0 y como máximo, puedes tener una cantidad de Puntos de Inercia igual a tu Bono de Entrenador (mínimo de 1). No puedes ganar más de 1 Punto de Inercia por turno, pero no hay límite a cuantos Puntos de Inercia puedes ganar por ronda. Ganas 1 Punto de Inercia cuando:",
-                        "Tu Pokémon golpea con una Tirada de Ataque a un rival.",
-                        "Tu Pokémon hace daño súper eficaz a un rival.",
-                        "Una Tirada de Ataque realizada por un rival falla contra tu Pokémon.",
-                        "Tu Pokémon pasa una Tirada de Salvación que le forzó a hacer un rival."
+                        "A nivel 2, aprendes a visualizar las pequeñas ventajas que ganas en el combate que otros pasan por alto. Estas ventajas se ven representadas por tus <strong>Puntos de Inercia</strong>, cada vez que tiras iniciativa, cambias de Pokémon o terminas un combate tus Puntos de Inercia se vuelven 0 y como máximo, puedes tener una cantidad de Puntos de Inercia igual a tu Bono de Entrenador (mínimo de 1). No puedes ganar más de 1 Punto de Inercia por turno, pero no hay límite a cuantos Puntos de Inercia puedes ganar por ronda. Ganas 1 Punto de Inercia cuando:",
+                        {
+                            "tipo": "listaU",
+                            "contenido": [
+                                "Tu Pokémon golpea con una Tirada de Ataque a un rival.",
+                                "Tu Pokémon hace daño súper eficaz a un rival.",
+                                "Una Tirada de Ataque realizada por un rival falla contra tu Pokémon.",
+                                "Tu Pokémon pasa una Tirada de Salvación que le forzó a hacer un rival."
+                            ]
+                        }
                     ]
                 },
                 {
                     "nombre": "Entrenamiento Impulsante",
                     "descripcion": [
                         "A nivel 2, aprendes a entrenar a tus Pokémon para que fuercen a sus rivales a cometer más errores de los que sacar provecho. Aprendes el siguiente entrenamiento:",
-                        "¡Sed imparables!: Enseñas a tus Pokémon cómo moverse y atacar para generar más inercia en el combate. El Pokémon puede hacerte ganar 2 Puntos de Inercia en cada turno y, si está consciente al final de la ronda, ganas 1 Punto de Inercia.",
-                        "“¡Impúlsate!”: Ordenas a tu Pokémon que aproveche la ventaja que ya tiene sobre sus rivales para dañarlos. Gastas 2 Puntos de Inercia para hacer que el daño base del siguiente Movimiento que realice el Pokémon aumente en 1 dado.",
-                        "Perfeccionamiento: Si el Movimiento hace Tiradas de Ataque estas se hacen en Ventaja y el daño base aumenta en 1 dado más."
+                        "<strong>¡Sed imparables!</strong>: Enseñas a tus Pokémon cómo moverse y atacar para generar más inercia en el combate. El Pokémon puede hacerte ganar 2 Puntos de Inercia en cada turno y, si está consciente al final de la ronda, ganas 1 Punto de Inercia.",
+                        "<strong>“¡Impúlsate!”</strong>: Ordenas a tu Pokémon que aproveche la ventaja que ya tiene sobre sus rivales para dañarlos. Gastas 2 Puntos de Inercia para hacer que el daño base del siguiente Movimiento que realice el Pokémon aumente en 1 dado.",
+                        "<strong>Perfeccionamiento</strong>: Si el Movimiento hace Tiradas de Ataque estas se hacen en Ventaja y el daño base aumenta en 1 dado más."
                     ]
                 }
             ]

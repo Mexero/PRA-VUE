@@ -24,8 +24,8 @@
                     "descripcion": [
                         "A partir de nivel 2, aprendes a crear la Invención Lanzabolas, que no cuenta para el máximo de Invenciones que conoces y, cuando alcanzas este nivel, lo creas con restos que tenías, así que no te cuesta materiales crearla.",
                         "Cuando usas uno de tus Lanzabolas obtienes los siguientes beneficios: Cuando sacas a tus Pokémon o lanzas Poké Balls, puedes hacerlo a una distancia en metros igual a 5 más tu Mente. Además, los Lanzabolas que tu creas poseen ciertos modos extra que sólo un experto en ellos como tu puede usar. Puedes usar los siguientes modos de tu Lanzabolas, que cambias con tu Interacción:",
-                        "Modo ráfaga: Cuando lanzas una bola con una Acción, por ejemplo, una Poké Ball o una bola creada por uno de tus Paquetes, puedes lanzar una segunda bola con la misma Acción pagando su coste en PP si sacarla o lanzarla fuese a costártelos.",
-                        "Modo teledirigido: Cuando lanzas una Poké Ball con este modo, puedes controlar su movimiento si no te mueves durante tu turno. Cuando lo haces, puedes lanzarla tras cobertura y hacer que parezca que la bola fue lanzada desde otra dirección."
+                        "<strong>Modo ráfaga</strong>: Cuando lanzas una bola con una Acción, por ejemplo, una Poké Ball o una bola creada por uno de tus Paquetes, puedes lanzar una segunda bola con la misma Acción pagando su coste en PP si sacarla o lanzarla fuese a costártelos.",
+                        "<strong>Modo teledirigido</strong>: Cuando lanzas una Poké Ball con este modo, puedes controlar su movimiento si no te mueves durante tu turno. Cuando lo haces, puedes lanzarla tras cobertura y hacer que parezca que la bola fue lanzada desde otra dirección."
                     ]
                 }
             ]
@@ -37,7 +37,7 @@
             "nombreSubclase": "Maníaco de las Poké Balls",
             "contenido": [
                 "Desde nivel 5, tu Lanzabolas gana el siguiente modo:",
-                "Modo de Cambio programado: Programas un cambio de Pokémon para que este ocurra de forma automática. Como Acción, eliges cambiar un Pokémon que está a rango de poder ser cambiado por otro Pokémon que tienes en una Poké Ball. Elige en cuantas rondas quieres que ocurra el cambio, que puede programarse como máximo para una cantidad de rondas igual a tu Mente. Al principio de tu turno en dicha ronda, el cambio ocurre independientemente de la distancia a la que esté el Pokémon y sacas al Pokémon que habías seleccionado, al cual puedes dar una Orden de forma normal."
+                "<strong>Modo de Cambio programado</strong>: Programas un cambio de Pokémon para que este ocurra de forma automática. Como Acción, eliges cambiar un Pokémon que está a rango de poder ser cambiado por otro Pokémon que tienes en una Poké Ball. Elige en cuantas rondas quieres que ocurra el cambio, que puede programarse como máximo para una cantidad de rondas igual a tu Mente. Al principio de tu turno en dicha ronda, el cambio ocurre independientemente de la distancia a la que esté el Pokémon y sacas al Pokémon que habías seleccionado, al cual puedes dar una Orden de forma normal."
             ]
         },
         {

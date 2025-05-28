@@ -23,9 +23,14 @@
             "nombreSubclase": "Ninja",
             "contenido": [
                 "A nivel 5, aprendes a usar los Movimientos Especiales de las Armas con las que eres hábil. Además, desarrollas técnicas ninja. Para ti, los siguientes Movimientos se añaden a la Lista de Luchador y tienen el coste que se les asigna, en lugar del usual:",
-                "2 PP: Trapicheo, Pantalla de humo, Doble equipo.",
-                "4 PP: Púas, Tóxico.",
-                "5 PP: Púas tóxicas."
+                {
+                    "tipo": "listaU",
+                    "contenido": [
+                        "<strong>2 PP</strong>: Trapicheo, Pantalla de humo, Doble equipo.",
+                        "<strong>4 PP</strong>: Púas, Tóxico.",
+                        "<strong>5 PP</strong>: Púas tóxicas."
+                    ]
+                }
             ]
         },
         {

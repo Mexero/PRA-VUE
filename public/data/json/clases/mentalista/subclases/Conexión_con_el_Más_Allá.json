@@ -23,9 +23,14 @@
                     "nombre": "Movimientos del Odio",
                     "descripcion": [
                         "A nivel 2, aprendes a canalizar la ira, la furia y el rencor de los que ya se fueron. Para ti, los siguientes Movimientos se añaden a la lista de Mentalista:",
-                        "2 PP: Halloween, Maldición, Sombra vil, Mal de ojo, Escalofrío, Fuego fatuo, Maquinación, Rencor.",
-                        "4 PP: Infortunio, Maquinación, Rencor reprimido.",
-                        "5 PP: Golpe fantasma, Mismo destino, Canto mortal."
+                        {
+                            "tipo": "listaU",
+                            "contenido": [
+                                "<strong>2 PP</strong>: Halloween, Maldición, Sombra vil, Mal de ojo, Escalofrío, Fuego fatuo, Maquinación, Rencor.",
+                                "<strong>4 PP</strong>: Infortunio, Maquinación, Rencor reprimido.",
+                                "<strong>5 PP</strong>: Golpe fantasma, Mismo destino, Canto mortal."
+                            ]
+                        }
                     ]
                 }
             ]

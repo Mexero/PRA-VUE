@@ -324,7 +324,7 @@ function isSubclaseActiva(ruta) {
                     </div>
                 </div>
             </details>
-            <!--Lista Movimientos-->
+            <!-- Lista Movimientos -->
             <details v-if="listaMovimientos.length > 0" class="feature" open id="listaMovs">
                 <summary>Lista de Movimientos de {{ claseCargada }}</summary>
                 <div class="listaMovsContainer">
@@ -361,7 +361,7 @@ html {
     min-height: 100vh;
 }
 
-/*========= PARTE DE ARRIBA ==========*/
+/* ========= PARTE DE ARRIBA ========== */
 
 .top-section {
     display: flex;
@@ -369,7 +369,7 @@ html {
     margin: 30px 0;
 }
 
-/*========= Menu Clases ==========*/
+/* ========= Menu Clases ========== */
 .classes {
     width: 40%;
     display: flex;
@@ -401,6 +401,9 @@ html {
 
 .class-active {
     background-color: var(--color-tituloTabla);
+}
+
+.class-active .claseTitulo {
     font-weight: bold;
 }
 
@@ -413,7 +416,7 @@ html {
     cursor: pointer;
 }
 
-/*========= Menu Subclases ==========*/
+/* ========= Menu Subclases ========== */
 .subclasses {
     display: flex;
     flex-wrap: wrap;
@@ -435,8 +438,7 @@ html {
 
 .subclas-active {
     background-color: var(--color-tituloTabla);
-    text-decoration: underline;
-
+    text-shadow: 0px 0px 1px var(--color-texto);
 }
 
 .subclas-active:hover,
@@ -446,7 +448,7 @@ html {
 }
 
 
-/*========= TABLA PRINCIPAL ==========*/
+/* ========= TABLA PRINCIPAL ========== */
 .table-div {
     width: 80%;
     overflow-x: auto;
@@ -491,7 +493,7 @@ td:nth-child(2) {
     text-align: left;
 }
 
-/* ========= PARTE DE ABAJO ==========*/
+/* ========= PARTE DE ABAJO ========== */
 .bottom-section {
     background-color: var(--color-fondoTexto);
     border-radius: 5px;
@@ -543,11 +545,11 @@ td:nth-child(2) {
 }
 
 .list li {
-    margin: 10px 15px 20px 30px;
+    margin: 10px 35px 20px 35px;
 }
 
 
-/*===========LISTA DE MOVIMIENTOS=============*/
+/* ===========LISTA DE MOVIMIENTOS============= */
 
 .listaMovsContainer {
     display: flex;
@@ -603,8 +605,6 @@ td:nth-child(2) {
 .mostrarEntrenador-leave-from {
     max-height: 320px;
 }
-
-
 
 .mostrarSubclases-enter-active,
 .mostrarSubclases-leave-active {

@@ -22,9 +22,14 @@
             "nombreSubclase": "Domador del Viento",
             "contenido": [
                 "A nivel 5, aprendes a moverte tan ágilmente que el viento es moldeado por tu movimiento. Para ti, los siguientes Movimientos se añaden a la Lista de Luchador y tienen el coste que se les asigna, en lugar del usual. Además, aprendes 2 de estos Movimientos, que no cuentan para el Máximo de Movimientos de Luchador que conoces y que puedes cambiar cada vez que subes de nivel:",
-                "2 PP: Acróbata, Bote, Despejar, Golpe aéreo y Remolino.",
-                "3 PP: Tajo aéreo.",
-                "5 PP: Ataque aéreo."
+                {
+                    "tipo": "listaU",
+                    "contenido": [
+                        "<strong>2 PP</strong>: Acróbata, Bote, Despejar, Golpe aéreo y Remolino.",
+                        "<strong>3 PP</strong>: Tajo aéreo.",
+                        "<strong>5 PP</strong>: Ataque aéreo."
+                    ]
+                }
             ]
         },
         {

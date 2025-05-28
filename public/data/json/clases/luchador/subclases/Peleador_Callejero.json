@@ -22,9 +22,14 @@
             "nombreSubclase": "Peleador Callejero",
             "contenido": [
                 "A nivel 5, tus movimientos se vuelven aún más brutos y temibles. Para ti, los siguientes Movimientos se añaden a la Lista de Luchador y tienen el coste que se les asigna, en lugar del usual. Además, aprendes 2 de estos Movimientos, que no cuentan para el Máximo de Movimientos de Luchador que conoces y que puedes cambiar cada vez que subes de nivel:",
-                "2 PP: Chulería, Desahogo, Desarme, Finta, Mofa, Cara susto.",
-                "4 PP: Irreverencia, Juego sucio, Golpe bajo, Paliza.",
-                "5 PP: Buena baza, Persecución."
+                {
+                    "tipo": "listaU",
+                    "contenido": [
+                        "<strong>2 PP</strong>: Chulería, Desahogo, Desarme, Finta, Mofa, Cara susto.",
+                        "<strong>4 PP</strong>: Irreverencia, Juego sucio, Golpe bajo, Paliza.",
+                        "<strong>5 PP</strong>: Buena baza, Persecución."
+                    ]
+                }
             ]
         },
         {

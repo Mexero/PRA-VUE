@@ -25,12 +25,12 @@
             "contenido": [
                 "Desde nivel 5, aprendes a crear unos Potenciadores especiales diseñados para mejorar las capacidades de la criatura que los consume. Tu eliges como se ven estos potenciadores. Pueden ser pastillas, pócimas, inyecciones o pulverizadores, entre otros.",
                 "Puedes crear estos Potenciadores una vez al día como Acción Extendida y sin coste en Materiales y creas una cantidad igual a tu Mente. Pasadas 24 horas, estos Potenciadores pierden su efecto. Una criatura puede consumir estos Potenciadores como Acción y su beneficio dura hasta que pasen 24 horas desde que fueron creados. Puedes elegir entre los siguientes Potenciadores, que otorgan un beneficio:",
-                "Gran potencia: Te consideras de 1 tamaño a la hora de calcular el peso que puedes cargar y de ser agarrad tienes Ventaja contra ser empujado agarrardo, apresado y quedar tumbado.",
-                "Agilidad felina: Puedes calcular tu distancia de salto con tu Agilidad en lugar de con tu Fuerza y, si fueses a recibir daño de caída, redúcelo en una cantidad igual al doble de tu Agilidad.",
-                "Barrera inmunológica: Al final de tu turno, reduces tus Niveles de Quemado, Paralizado, Helado y Envenenado en 1 más de lo normal. Además, pierdes la mitad de PV de lo normal a causa de estados.",
-                "Concentración aumentada: Cuando fallas una Tirada de d20 asociada a tu Mente puedes volver a realizarla, pudiendo convertir un fallo en un acierto. Puedes usar este beneficio una vez por Escena.",
-                "Sentidos aguzados: Cuando fallas una Tirada de d20 asociada a tu Espíritu puedes volver a realizarla, pudiendo convertir un fallo en un acierto. Puedes usar este beneficio una vez por Escena.",
-                "Realzador: Cuando fallas una Tirada de d20 asociada a tu Presencia puedes volver a realizarla, pudiendo convertir un fallo en un acierto. Puedes usar este beneficio una vez por Escena.",
+                "<strong>Gran potencia</strong>: Te consideras de 1 tamaño a la hora de calcular el peso que puedes cargar y de ser agarrad tienes Ventaja contra ser empujado agarrardo, apresado y quedar tumbado.",
+                "<strong>Agilidad felina</strong>: Puedes calcular tu distancia de salto con tu Agilidad en lugar de con tu Fuerza y, si fueses a recibir daño de caída, redúcelo en una cantidad igual al doble de tu Agilidad.",
+                "<strong>Barrera inmunológica</strong>: Al final de tu turno, reduces tus Niveles de Quemado, Paralizado, Helado y Envenenado en 1 más de lo normal. Además, pierdes la mitad de PV de lo normal a causa de estados.",
+                "<strong>Concentración aumentada</strong>: Cuando fallas una Tirada de d20 asociada a tu Mente puedes volver a realizarla, pudiendo convertir un fallo en un acierto. Puedes usar este beneficio una vez por Escena.",
+                "<strong>Sentidos aguzados</strong>: Cuando fallas una Tirada de d20 asociada a tu Espíritu puedes volver a realizarla, pudiendo convertir un fallo en un acierto. Puedes usar este beneficio una vez por Escena.",
+                "<strong>Realzador</strong>: Cuando fallas una Tirada de d20 asociada a tu Presencia puedes volver a realizarla, pudiendo convertir un fallo en un acierto. Puedes usar este beneficio una vez por Escena.",
                 "Si quieres crear más Potenciadores especiales, puedes crearlos como si fueran Potenciadores Poco Comunes con un coste de 1000 Pokédolares. Cuando los creas de esta forma, no pierden su efecto pasadas 24 horas y su efecto dura hasta que la criatura que los consumió Descanse."
             ]
         },
@@ -50,12 +50,12 @@
             "nombreSubclase": "Químico",
             "contenido": [
                 "A partir de nivel 13, mejoras la fórmula de tus Potenciadores especiales. Ahora estos otorgan los siguientes beneficios extra, además de los que ya otorgaban:",
-                "Gran potencia: Ganas un bono al daño igual a la Mente del Químico que creó este Potenciador.",
-                "Agilidad felina: Cuando fallas una Tirada de Salvación de Agilidad o de Ataque hecho con Agilidad, como Reacción te otorgas un beneficio igual la mitad de la Mente del Químico que creó este Potenciador, pudiendo volver el fallo un acierto.",
-                "Barrera inmunológica: Al principio de cada uno de tus turnos ganas Puntos de Escudo iguales a la Mente del Químico que creó este Potenciador. Además, tienes Ventaja en Tiradas de Salvación de Resistencia que haces contra efectos que no hacen daño.",
-                "Concentración aumentada: Cuando una criatura gana Niveles de Envenenado, Helado, Quemado, Parálisis o Confusión a causa de uno de tus Movimientos que has usado con tu Mente, la cantidad de Niveles que gana aumenta en 1.",
-                "Sentidos aguzados: Tienes Ventaja en Tiradas de Salvación de Espíritu contra efectos que no hacen daño.",
-                "Realzador: Cuando una criatura gana Niveles de Confusión, Furia, Asustado o Infatuado a causa de uno de tus Movimientos que has usado con tu Presencia, la cantidad de Niveles que gana aumenta en 1.",
+                "<strong>Gran potencia</strong>: Ganas un bono al daño igual a la Mente del Químico que creó este Potenciador.",
+                "<strong>Agilidad felina</strong>: Cuando fallas una Tirada de Salvación de Agilidad o de Ataque hecho con Agilidad, como Reacción te otorgas un beneficio igual la mitad de la Mente del Químico que creó este Potenciador, pudiendo volver el fallo un acierto.",
+                "<strong>Barrera inmunológica</strong>: Al principio de cada uno de tus turnos ganas Puntos de Escudo iguales a la Mente del Químico que creó este Potenciador. Además, tienes Ventaja en Tiradas de Salvación de Resistencia que haces contra efectos que no hacen daño.",
+                "<strong>Concentración aumentada</strong>: Cuando una criatura gana Niveles de Envenenado, Helado, Quemado, Parálisis o Confusión a causa de uno de tus Movimientos que has usado con tu Mente, la cantidad de Niveles que gana aumenta en 1.",
+                "<strong>Sentidos aguzados</strong>: Tienes Ventaja en Tiradas de Salvación de Espíritu contra efectos que no hacen daño.",
+                "<strong>Realzador</strong>: Cuando una criatura gana Niveles de Confusión, Furia, Asustado o Infatuado a causa de uno de tus Movimientos que has usado con tu Presencia, la cantidad de Niveles que gana aumenta en 1.",
                 "Si quieres crear más de estos nuevos Potenciadores especiales, puedes crearlos como si fueran Potenciadores Raros con coste de 3000 Pokédolares de la misma forma que creas los otros."
             ]
         },

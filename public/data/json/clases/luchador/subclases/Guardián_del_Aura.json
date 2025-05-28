@@ -23,9 +23,14 @@
             "nombreSubclase": "Guardián del Aura",
             "contenido": [
                 "A nivel 5, aprendes a usar Movimientos haciendo uso de tu propia aura. Para ti, los siguientes Movimientos se añaden a la Lista de Luchador y tienen el coste que se les asigna, en lugar del usual. Además, aprendes 2 de estos Movimientos, que no cuentan para el Máximo de Movimientos de Luchador que conoces y que puedes cambiar cada vez que subes de nivel:",
-                "2 PP: Palmeo, Onda vacío, Hidropulso.",
-                "4 PP: Detección, Esfera aural, Puño drenaje, Pulso cura, Pulso umbrío, Pulso dragón.",
-                "5 PP: Onda certera."
+                {
+                    "tipo": "listaU",
+                    "contenido": [
+                        "<strong>2 PP</strong>: Palmeo, Onda vacío, Hidropulso.",
+                        "<strong>4 PP</strong>: Detección, Esfera aural, Puño drenaje, Pulso cura, Pulso umbrío, Pulso dragón.",
+                        "<strong>5 PP</strong>: Onda certera."
+                    ]
+                }
             ]
         },
         {
@@ -65,9 +70,14 @@
             "nombreSubclase": "Guardián del Aura",
             "contenido": [
                 "A nivel 17, aprendes a proyectar tu aura sobre tu cuerpo como Acción para que esta imbuya tus Movimientos hasta el final de la Escena, hasta que caigas inconsciente o hasta que uses tu Acción para acabarlo. Cuando estás en este estado:",
-                "El rango de tu aura de protectora se duplica.",
-                "Todos tus Movimientos ganan la etiqueta de Pulso.",
-                "Puedes hacer Tiradas de Ataque cuerpo a cuerpo a 5 metros o menos de ti y no haces contacto con las criaturas al hacerlas."
+                {
+                    "tipo": "listaU",
+                    "contenido": [
+                        "El rango de tu aura de protectora se duplica.",
+                        "Todos tus Movimientos ganan la etiqueta de Pulso.",
+                        "Puedes hacer Tiradas de Ataque cuerpo a cuerpo a 5 metros o menos de ti y no haces contacto con las criaturas al hacerlas."
+                    ]
+                }
             ]
         }
     ]

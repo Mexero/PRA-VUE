@@ -23,9 +23,14 @@
                     "nombre": "Movimientos de la bondad",
                     "descripcion": [
                         "A nivel 2, aprendes a utilizar la bondad de tu alma para protegerte a ti y a tus aliados. Para ti, los siguientes Movimientos se añaden a la lista de Mentalista y tienen el coste que se les asigna, en lugar del usual:",
-                        "2 PP: Conjuro, Beso drenaje, Velo sagrado, Cascabel cura, Niebla aromática, Campo de niebla.",
-                        "4 PP: Cautivapor, Deseo cura, Pulso cura, Truco defensa.",
-                        "5 PP: Deseo, Fuerza lunar."
+                        {
+                            "tipo": "listaU",
+                            "contenido": [
+                                "<strong>2 PP</strong>: Conjuro, Beso drenaje, Velo sagrado, Cascabel cura, Niebla aromática, Campo de niebla.",
+                                "<strong>4 PP</strong>: Cautivapor, Deseo cura, Pulso cura, Truco defensa.",
+                                "<strong>5 PP</strong>: Deseo, Fuerza lunar."
+                            ]
+                        }
                     ]
                 }
             ]
