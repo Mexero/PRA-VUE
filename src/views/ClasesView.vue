@@ -622,7 +622,7 @@ td:nth-child(2) {
     max-height: 270px;
 }
 
-/* 
+
 @media (max-width:1100px) {
     .top-section {
         flex-direction: column;
@@ -631,34 +631,53 @@ td:nth-child(2) {
     }
 
     .classes {
-        width: 700px;
+        width: 100%;
         align-items: center;
     }
 
-}
-
-@media (max-width:850px) {
-    * {
-        font-size: 12px;
+    .class-inactive,
+    .class-active {
+        width: 100%;
     }
 
+    .table-div {
+        width: 100%;
+    }
+}
+
+@media (max-width:600px) {
+
+    
+
     table {
-        font-size: 10px;
+        font-size: 13px;
+    }
+    th {
+        font-size: 12px;
+        height: 30px;
     }
 
     .feature summary {
-        font-size: 16px;
+        font-size: 15px;
     }
 
     .feaureSub summary,
     .featureSubSub summary {
+        font-size: 13px;
+    }
+
+    .feature summary {
+        font-size: 15px;
+    }
+
+    .feaureSub summary,
+    .featureSubSub summary {
+        font-size: 13px;
+    }
+    p, li{
         font-size: 14px;
     }
-
-    .container {
-        padding: 0 20px;
-    }
-
+    /*
+*/
 }
-    */
 </style>
