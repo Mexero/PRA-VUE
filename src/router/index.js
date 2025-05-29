@@ -2,8 +2,8 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 
 const router = createRouter({
-    scrollBehavior(to) {
-      if (to.hash) {
+  scrollBehavior(to) {
+    if (to.hash) {
       return {
         el: to.hash,
         behavior: 'smooth',
@@ -101,6 +101,11 @@ const router = createRouter({
       path: '/pokedex',
       name: 'pokedex',
       component: () => import('../views/PokedexView.vue'),
+    },
+    {
+      path: '/reglas',
+      name: 'reglas',
+      component: () => import('../components/Tabulados/ReglasView.vue'),
     },
 
 

@@ -189,6 +189,37 @@ watch(
     { deep: true }
 );
 
+// ========================= PONER FILTROS DESDE LA URL ===========================
+watch(
+    () => route.query,
+    (query) => {
+        filtroTipos.value = query.tipos ? query.tipos.split(",") : [];
+        filtroPrerrequisitos.value = query.prerrequisitos ? query.prerrequisitos : null;
+        filtroNivelMin.value = query.nivelMin ? Number(query.nivelMin) : null;
+        filtroNivelMax.value = query.nivelMax ? Number(query.nivelMax) : null;
+        filtroNombre.value = query.nombre || "";
+
+        ordenColumna.value = query.ordenColumna || "";
+        ordenAscendente.value = query.ordenAscendente !== "false";
+
+        if (query.seleccionado) {
+            const dot = dotes.value.find((d) => d.Nombre === query.seleccionado);
+            if (dot) doteSeleccionado.value = dot;
+        }
+
+        // Sincronizar índices del slider
+        if (filtroNivelMin.value !== null)
+            minIndex.value = valueToIndex(closestAllowed(filtroNivelMin.value));
+        if (filtroNivelMax.value !== null)
+            maxIndex.value = valueToIndex(closestAllowed(filtroNivelMax.value));
+    },
+    { immediate: true }
+);
+
+
+
+
+
 // =============== LÓGICA DE CAMBIAR ORDENAMIENTO ==================
 function ordenarPor(columna) {
     if (ordenColumna.value === columna) {

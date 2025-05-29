@@ -45,14 +45,14 @@ import { RouterLink } from 'vue-router'
 
             <div class="filaMenuPlayer">
                 <div class="pareja">
-                    <RouterLink to="#"> <!-- Falta poner este link -->
+                    <RouterLink to="/reglas">
                         <div class="bloque">
                             <img src="../assets/icons/ReglasIcon.svg" alt="">
                             <span class="textoBloque"> Reglas</span>
 
                         </div>
                     </RouterLink>
-                    <RouterLink to="/capitulos"> <!-- CAMBIAR LINK A REGLAS -->
+                    <RouterLink to="/reglas">
                         <div class="bloque">
                             <img src="../assets/icons/EstadosIcon.webp" alt="">
                             <span class="textoBloque"> Estados</span>
@@ -227,10 +227,6 @@ Son 2 filas de 2 parejas de bloques cada uno que se acomodan segun el tamaño de
 
 .filaMenuPlayer {
     margin-bottom: 20px;
-}
-
-.pareja {
-    width: calc(50%-20px);
 }
 
 /* ======================= BLOQUE INDIVIDUAL DEL MENU INDEX ======================= */
@@ -521,7 +517,9 @@ solo cambia el tamaños de los bloques y el margen con el header*/
 }
 
 @media (max-width: 690px) {
-    .descargaPDF h2, .descargaPDF p {
+
+    .descargaPDF h2,
+    .descargaPDF p {
         margin-bottom: 10px;
     }
 

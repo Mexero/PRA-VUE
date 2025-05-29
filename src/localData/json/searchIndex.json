@@ -1,0 +1,3307 @@
+[
+    {
+        "nombre": "Clases",
+        "ruta": "/clases",
+        "tipo": "Sección"
+    },
+    {
+        "nombre": "Capítulos",
+        "ruta": "/capitulos",
+        "tipo": "Sección"
+    },
+    {
+        "nombre": "Dotes",
+        "ruta": "/dotes",
+        "tipo": "Sección"
+    },
+    {
+        "nombre": "Movimientos",
+        "ruta": "/movimientos",
+        "tipo": "Sección"
+    },
+    {
+        "nombre": "Habilidades",
+        "ruta": "/habilidades",
+        "tipo": "Sección"
+    },
+    {
+        "nombre": "Objetos",
+        "ruta": "/objetos",
+        "tipo": "Sección"
+    },
+    {
+        "nombre": "Pokédex",
+        "ruta": "/pokedex",
+        "tipo": "Sección"
+    },
+    {
+        "nombre": "Reglas",
+        "ruta": "/reglas",
+        "tipo": "Sección"
+    },
+    {
+        "nombre": "Introduccion",
+        "ruta": "/capitulos/introduccion/",
+        "tipo": "Capítulo"
+    },
+    {
+        "nombre": " ¿Qué Necesito Para Jugar?",
+        "ruta": "/capitulos/introduccion#apartado1",
+        "tipo": "Apartado: Introduccion"
+    },
+    {
+        "nombre": "¿Qué Hay en Este Libro?",
+        "ruta": "/capitulos/introduccion#apartado2",
+        "tipo": "Apartado: Introduccion"
+    },
+    {
+        "nombre": "Cómo jugar",
+        "ruta": "/capitulos/comojugar/",
+        "tipo": "Capítulo"
+    },
+    {
+        "nombre": "Las Escenas",
+        "ruta": "/capitulos/comojugar#apartado1",
+        "tipo": "Apartado: Cómo jugar"
+    },
+    {
+        "nombre": "¿Cuánto Duran Las Aacciones?",
+        "ruta": "/capitulos/comojugar#apartado2",
+        "tipo": "Apartado: Cómo jugar"
+    },
+    {
+        "nombre": "Movimientos",
+        "ruta": "/capitulos/comojugar#apartado3",
+        "tipo": "Apartado: Cómo jugar"
+    },
+    {
+        "nombre": "Las Estadísticas",
+        "ruta": "/capitulos/comojugar#apartado4",
+        "tipo": "Apartado: Cómo jugar"
+    },
+    {
+        "nombre": "Tiradas Naturales",
+        "ruta": "/capitulos/comojugar#apartado5",
+        "tipo": "Apartado: Cómo jugar"
+    },
+    {
+        "nombre": "Las Pruebas de d20",
+        "ruta": "/capitulos/comojugar#apartado6",
+        "tipo": "Apartado: Cómo jugar"
+    },
+    {
+        "nombre": "Nivel y Bono de Habilidad",
+        "ruta": "/capitulos/comojugar#apartado7",
+        "tipo": "Apartado: Cómo jugar"
+    },
+    {
+        "nombre": "Grados de Habilidad",
+        "ruta": "/capitulos/comojugar#apartado8",
+        "tipo": "Apartado: Cómo jugar"
+    },
+    {
+        "nombre": "Tiradas de Habilidad Habituales",
+        "ruta": "/capitulos/comojugar#apartado9",
+        "tipo": "Apartado: Cómo jugar"
+    },
+    {
+        "nombre": "Ventaja y Desventaja",
+        "ruta": "/capitulos/comojugar#apartado10",
+        "tipo": "Apartado: Cómo jugar"
+    },
+    {
+        "nombre": "Tiradas Enfrentadas",
+        "ruta": "/capitulos/comojugar#apartado11",
+        "tipo": "Apartado: Cómo jugar"
+    },
+    {
+        "nombre": "Tiradas en Grupo",
+        "ruta": "/capitulos/comojugar#apartado12",
+        "tipo": "Apartado: Cómo jugar"
+    },
+    {
+        "nombre": "Creación de Personaje",
+        "ruta": "/capitulos/creacionpj/",
+        "tipo": "Capítulo"
+    },
+    {
+        "nombre": "Paso 1: Concepto del Personaje",
+        "ruta": "/capitulos/creacionpj#apartado1",
+        "tipo": "Apartado: Creación de Personaje"
+    },
+    {
+        "nombre": "Paso 2: El Trasfondo",
+        "ruta": "/capitulos/creacionpj#apartado2",
+        "tipo": "Apartado: Creación de Personaje"
+    },
+    {
+        "nombre": "Paso 3: Elige tu Clase",
+        "ruta": "/capitulos/creacionpj#apartado3",
+        "tipo": "Apartado: Creación de Personaje"
+    },
+    {
+        "nombre": "Paso 4: Distribuye tus Estadísticas",
+        "ruta": "/capitulos/creacionpj#apartado4",
+        "tipo": "Apartado: Creación de Personaje"
+    },
+    {
+        "nombre": "Paso 5: Calcular Otros Valores",
+        "ruta": "/capitulos/creacionpj#apartado5",
+        "tipo": "Apartado: Creación de Personaje"
+    },
+    {
+        "nombre": "Paso 6: Describe a tu Personaje",
+        "ruta": "/capitulos/creacionpj#apartado6",
+        "tipo": "Apartado: Creación de Personaje"
+    },
+    {
+        "nombre": "Paso 7: Elige tus Pokémon",
+        "ruta": "/capitulos/creacionpj#apartado7",
+        "tipo": "Apartado: Creación de Personaje"
+    },
+    {
+        "nombre": "Paso 8: Dinero y Objetos",
+        "ruta": "/capitulos/creacionpj#apartado8",
+        "tipo": "Apartado: Creación de Personaje"
+    },
+    {
+        "nombre": "La Progresión de Personaje",
+        "ruta": "/capitulos/creacionpj#apartado9",
+        "tipo": "Apartado: Creación de Personaje"
+    },
+    {
+        "nombre": "Reentrenar",
+        "ruta": "/capitulos/creacionpj#apartado10",
+        "tipo": "Apartado: Creación de Personaje"
+    },
+    {
+        "nombre": "Clases",
+        "ruta": "/capitulos/clases/",
+        "tipo": "Capítulo"
+    },
+    {
+        "nombre": "Movimientos, Habilidades y Dotes",
+        "ruta": "/capitulos/movhabdot/",
+        "tipo": "Capítulo"
+    },
+    {
+        "nombre": "Movimientos",
+        "ruta": "/capitulos/movhabdot#apartado1",
+        "tipo": "Apartado: Movimientos, Habilidades y Dotes"
+    },
+    {
+        "nombre": "Mejorar el Daño Base",
+        "ruta": "/capitulos/movhabdot#apartado2",
+        "tipo": "Apartado: Movimientos, Habilidades y Dotes"
+    },
+    {
+        "nombre": "Los Golpes Críticos",
+        "ruta": "/capitulos/movhabdot#apartado3",
+        "tipo": "Apartado: Movimientos, Habilidades y Dotes"
+    },
+    {
+        "nombre": "Bonus de Ataque por Mismo Tipo",
+        "ruta": "/capitulos/movhabdot#apartado4",
+        "tipo": "Apartado: Movimientos, Habilidades y Dotes"
+    },
+    {
+        "nombre": "Movimientos Fuera de Combate",
+        "ruta": "/capitulos/movhabdot#apartado5",
+        "tipo": "Apartado: Movimientos, Habilidades y Dotes"
+    },
+    {
+        "nombre": "Lista de Etiquetas",
+        "ruta": "/capitulos/movhabdot#apartado6",
+        "tipo": "Apartado: Movimientos, Habilidades y Dotes"
+    },
+    {
+        "nombre": "Habilidades",
+        "ruta": "/capitulos/movhabdot#apartado7",
+        "tipo": "Apartado: Movimientos, Habilidades y Dotes"
+    },
+    {
+        "nombre": "Dotes",
+        "ruta": "/capitulos/movhabdot#apartado8",
+        "tipo": "Apartado: Movimientos, Habilidades y Dotes"
+    },
+    {
+        "nombre": "Pokémon",
+        "ruta": "/capitulos/pokemon/",
+        "tipo": "Capítulo"
+    },
+    {
+        "nombre": "¿Cuántos Pokémon Llevo?",
+        "ruta": "/capitulos/pokemon#apartado1",
+        "tipo": "Apartado: Pokémon"
+    },
+    {
+        "nombre": "Las Entradas de la Pokédex",
+        "ruta": "/capitulos/pokemon#apartado2",
+        "tipo": "Apartado: Pokémon"
+    },
+    {
+        "nombre": "Movimientos Enseñables",
+        "ruta": "/capitulos/pokemon#apartado3",
+        "tipo": "Apartado: Pokémon"
+    },
+    {
+        "nombre": "Las Fichas de tus Pokémon",
+        "ruta": "/capitulos/pokemon#apartado4",
+        "tipo": "Apartado: Pokémon"
+    },
+    {
+        "nombre": "Progresión Pokémon",
+        "ruta": "/capitulos/pokemon#apartado5",
+        "tipo": "Apartado: Pokémon"
+    },
+    {
+        "nombre": "Aprender Movimientos",
+        "ruta": "/capitulos/pokemon#apartado6",
+        "tipo": "Apartado: Pokémon"
+    },
+    {
+        "nombre": "Mejoras de Daño",
+        "ruta": "/capitulos/pokemon#apartado7",
+        "tipo": "Apartado: Pokémon"
+    },
+    {
+        "nombre": "Mejoras de Estadísticas",
+        "ruta": "/capitulos/pokemon#apartado8",
+        "tipo": "Apartado: Pokémon"
+    },
+    {
+        "nombre": "Reentrenar",
+        "ruta": "/capitulos/pokemon#apartado9",
+        "tipo": "Apartado: Pokémon"
+    },
+    {
+        "nombre": "La Evolución Pokémon",
+        "ruta": "/capitulos/pokemon#apartado10",
+        "tipo": "Apartado: Pokémon"
+    },
+    {
+        "nombre": "La Amistad",
+        "ruta": "/capitulos/pokemon#apartado11",
+        "tipo": "Apartado: Pokémon"
+    },
+    {
+        "nombre": "Capturar",
+        "ruta": "/capitulos/pokemon#apartado12",
+        "tipo": "Apartado: Pokémon"
+    },
+    {
+        "nombre": "Intercambiar y Liberar Pokémon",
+        "ruta": "/capitulos/pokemon#apartado13",
+        "tipo": "Apartado: Pokémon"
+    },
+    {
+        "nombre": "Pokémon Variocolor",
+        "ruta": "/capitulos/pokemon#apartado14",
+        "tipo": "Apartado: Pokémon"
+    },
+    {
+        "nombre": "Poké-Monturas",
+        "ruta": "/capitulos/pokemon#apartado15",
+        "tipo": "Apartado: Pokémon"
+    },
+    {
+        "nombre": "Megaevolución",
+        "ruta": "/capitulos/pokemon#apartado16",
+        "tipo": "Apartado: Pokémon"
+    },
+    {
+        "nombre": "Regresiones Primigenias",
+        "ruta": "/capitulos/pokemon#apartado17",
+        "tipo": "Apartado: Pokémon"
+    },
+    {
+        "nombre": "Movimientos Z",
+        "ruta": "/capitulos/pokemon#apartado18",
+        "tipo": "Apartado: Pokémon"
+    },
+    {
+        "nombre": "Dinamax y Gigamax",
+        "ruta": "/capitulos/pokemon#apartado19",
+        "tipo": "Apartado: Pokémon"
+    },
+    {
+        "nombre": "Teracristalización",
+        "ruta": "/capitulos/pokemon#apartado20",
+        "tipo": "Apartado: Pokémon"
+    },
+    {
+        "nombre": "Combate",
+        "ruta": "/capitulos/combate/",
+        "tipo": "Capítulo"
+    },
+    {
+        "nombre": "La Iniciativa",
+        "ruta": "/capitulos/combate#apartado1",
+        "tipo": "Apartado: Combate"
+    },
+    {
+        "nombre": "Los Turnos",
+        "ruta": "/capitulos/combate#apartado2",
+        "tipo": "Apartado: Combate"
+    },
+    {
+        "nombre": "Preparar Acción",
+        "ruta": "/capitulos/combate#apartado3",
+        "tipo": "Apartado: Combate"
+    },
+    {
+        "nombre": "Dar Órdenes",
+        "ruta": "/capitulos/combate#apartado4",
+        "tipo": "Apartado: Combate"
+    },
+    {
+        "nombre": "Cambiar de Pokémon",
+        "ruta": "/capitulos/combate#apartado5",
+        "tipo": "Apartado: Combate"
+    },
+    {
+        "nombre": "Tipos de Ataques",
+        "ruta": "/capitulos/combate#apartado6",
+        "tipo": "Apartado: Combate"
+    },
+    {
+        "nombre": "Usar una Cuadrícula",
+        "ruta": "/capitulos/combate#apartado7",
+        "tipo": "Apartado: Combate"
+    },
+    {
+        "nombre": "Recibir Daño",
+        "ruta": "/capitulos/combate#apartado8",
+        "tipo": "Apartado: Combate"
+    },
+    {
+        "nombre": "La Tabla de Tipos",
+        "ruta": "/capitulos/combate#apartado9",
+        "tipo": "Apartado: Combate"
+    },
+    {
+        "nombre": "Muerte",
+        "ruta": "/capitulos/combate#apartado10",
+        "tipo": "Apartado: Combate"
+    },
+    {
+        "nombre": "Áreas en la Cuadrícula",
+        "ruta": "/capitulos/combate#apartado11",
+        "tipo": "Apartado: Combate"
+    },
+    {
+        "nombre": "Cobertura",
+        "ruta": "/capitulos/combate#apartado12",
+        "tipo": "Apartado: Combate"
+    },
+    {
+        "nombre": "Escudo",
+        "ruta": "/capitulos/combate#apartado13",
+        "tipo": "Apartado: Combate"
+    },
+    {
+        "nombre": "Concursos Pokémon",
+        "ruta": "/capitulos/concursos/",
+        "tipo": "Capítulo"
+    },
+    {
+        "nombre": "Concursos Pokémon",
+        "ruta": "/capitulos/concursos#apartado1",
+        "tipo": "Apartado: Concursos Pokémon"
+    },
+    {
+        "nombre": "Tipos de Concursos",
+        "ruta": "/capitulos/concursos#apartado2",
+        "tipo": "Apartado: Concursos Pokémon"
+    },
+    {
+        "nombre": "Orden en los Concurso",
+        "ruta": "/capitulos/concursos#apartado3",
+        "tipo": "Apartado: Concursos Pokémon"
+    },
+    {
+        "nombre": "Ganar Puntos de Exhibición",
+        "ruta": "/capitulos/concursos#apartado4",
+        "tipo": "Apartado: Concursos Pokémon"
+    },
+    {
+        "nombre": "Centro de Atención",
+        "ruta": "/capitulos/concursos#apartado5",
+        "tipo": "Apartado: Concursos Pokémon"
+    },
+    {
+        "nombre": "Bonos y Penalizadores",
+        "ruta": "/capitulos/concursos#apartado6",
+        "tipo": "Apartado: Concursos Pokémon"
+    },
+    {
+        "nombre": "Bonos",
+        "ruta": "/capitulos/concursos#apartado7",
+        "tipo": "Apartado: Concursos Pokémon"
+    },
+    {
+        "nombre": "Penalizadores",
+        "ruta": "/capitulos/concursos#apartado8",
+        "tipo": "Apartado: Concursos Pokémon"
+    },
+    {
+        "nombre": "Equipo y Objetos",
+        "ruta": "/capitulos/objetos/",
+        "tipo": "Capítulo"
+    },
+    {
+        "nombre": "Poké Balls",
+        "ruta": "/capitulos/objetos#apartado1",
+        "tipo": "Apartado: Equipo y Objetos"
+    },
+    {
+        "nombre": "Medicina",
+        "ruta": "/capitulos/objetos#apartado2",
+        "tipo": "Apartado: Equipo y Objetos"
+    },
+    {
+        "nombre": "Potenciadores",
+        "ruta": "/capitulos/objetos#apartado3",
+        "tipo": "Apartado: Equipo y Objetos"
+    },
+    {
+        "nombre": "Plantas y Bayas",
+        "ruta": "/capitulos/objetos#apartado4",
+        "tipo": "Apartado: Equipo y Objetos"
+    },
+    {
+        "nombre": "Comida",
+        "ruta": "/capitulos/objetos#apartado5",
+        "tipo": "Apartado: Equipo y Objetos"
+    },
+    {
+        "nombre": "Objetos Evolutivos",
+        "ruta": "/capitulos/objetos#apartado6",
+        "tipo": "Apartado: Equipo y Objetos"
+    },
+    {
+        "nombre": "Máquinas Técnicas",
+        "ruta": "/capitulos/objetos#apartado7",
+        "tipo": "Apartado: Equipo y Objetos"
+    },
+    {
+        "nombre": "Amuletos",
+        "ruta": "/capitulos/objetos#apartado8",
+        "tipo": "Apartado: Equipo y Objetos"
+    },
+    {
+        "nombre": "Equipo",
+        "ruta": "/capitulos/objetos#apartado9",
+        "tipo": "Apartado: Equipo y Objetos"
+    },
+    {
+        "nombre": "Objetos de Entrenador",
+        "ruta": "/capitulos/objetos#apartado10",
+        "tipo": "Apartado: Equipo y Objetos"
+    },
+    {
+        "nombre": "Armas",
+        "ruta": "/capitulos/objetos#apartado11",
+        "tipo": "Apartado: Equipo y Objetos"
+    },
+    {
+        "nombre": "Fósiles",
+        "ruta": "/capitulos/objetos#apartado12",
+        "tipo": "Apartado: Equipo y Objetos"
+    },
+    {
+        "nombre": "Objetos Míticos",
+        "ruta": "/capitulos/objetos#apartado13",
+        "tipo": "Apartado: Equipo y Objetos"
+    },
+    {
+        "nombre": "Objetos de Transformaciones y Movimientos Especiales",
+        "ruta": "/capitulos/objetos#apartado14",
+        "tipo": "Apartado: Equipo y Objetos"
+    },
+    {
+        "nombre": "Reglas Menores",
+        "ruta": "/capitulos/otrasreglas/",
+        "tipo": "Capítulo"
+    },
+    {
+        "nombre": "Estados",
+        "ruta": "/capitulos/otrasreglas#apartado1",
+        "tipo": "Apartado: Reglas Menores"
+    },
+    {
+        "nombre": "Fatiga",
+        "ruta": "/capitulos/otrasreglas#apartado2",
+        "tipo": "Apartado: Reglas Menores"
+    },
+    {
+        "nombre": "Tipos de Tamaños",
+        "ruta": "/capitulos/otrasreglas#apartado3",
+        "tipo": "Apartado: Reglas Menores"
+    },
+    {
+        "nombre": "Cargar Peso",
+        "ruta": "/capitulos/otrasreglas#apartado4",
+        "tipo": "Apartado: Reglas Menores"
+    },
+    {
+        "nombre": "Velocidades",
+        "ruta": "/capitulos/otrasreglas#apartado5",
+        "tipo": "Apartado: Reglas Menores"
+    },
+    {
+        "nombre": "Correr y Terreno Difícil",
+        "ruta": "/capitulos/otrasreglas#apartado6",
+        "tipo": "Apartado: Reglas Menores"
+    },
+    {
+        "nombre": "Salto",
+        "ruta": "/capitulos/otrasreglas#apartado7",
+        "tipo": "Apartado: Reglas Menores"
+    },
+    {
+        "nombre": "Oscuridad e Iluminación",
+        "ruta": "/capitulos/otrasreglas#apartado8",
+        "tipo": "Apartado: Reglas Menores"
+    },
+    {
+        "nombre": "Visibilidad",
+        "ruta": "/capitulos/otrasreglas#apartado9",
+        "tipo": "Apartado: Reglas Menores"
+    },
+    {
+        "nombre": "Sentidos",
+        "ruta": "/capitulos/otrasreglas#apartado10",
+        "tipo": "Apartado: Reglas Menores"
+    },
+    {
+        "nombre": "Agarrar",
+        "ruta": "/capitulos/otrasreglas#apartado11",
+        "tipo": "Apartado: Reglas Menores"
+    },
+    {
+        "nombre": "Empujar",
+        "ruta": "/capitulos/otrasreglas#apartado12",
+        "tipo": "Apartado: Reglas Menores"
+    },
+    {
+        "nombre": "Daño por Caída",
+        "ruta": "/capitulos/otrasreglas#apartado13",
+        "tipo": "Apartado: Reglas Menores"
+    },
+    {
+        "nombre": "Mantener la Respiración",
+        "ruta": "/capitulos/otrasreglas#apartado14",
+        "tipo": "Apartado: Reglas Menores"
+    },
+    {
+        "nombre": "Climas",
+        "ruta": "/capitulos/otrasreglas#apartado15",
+        "tipo": "Apartado: Reglas Menores"
+    },
+    {
+        "nombre": "Campos",
+        "ruta": "/capitulos/otrasreglas#apartado16",
+        "tipo": "Apartado: Reglas Menores"
+    },
+    {
+        "nombre": "Pokémon que No Hacen Caso",
+        "ruta": "/capitulos/otrasreglas#apartado17",
+        "tipo": "Apartado: Reglas Menores"
+    },
+    {
+        "nombre": "Reconocer un Huevo",
+        "ruta": "/capitulos/otrasreglas#apartado18",
+        "tipo": "Apartado: Reglas Menores"
+    },
+    {
+        "nombre": "Recordar Información Sobre un Pokémon",
+        "ruta": "/capitulos/otrasreglas#apartado19",
+        "tipo": "Apartado: Reglas Menores"
+    },
+    {
+        "nombre": "Regla Variante: Hacer Cuidadosamente",
+        "ruta": "/capitulos/otrasreglas#apartado20",
+        "tipo": "Apartado: Reglas Menores"
+    },
+    {
+        "nombre": "Regla Variante: Multiclase",
+        "ruta": "/capitulos/otrasreglas#apartado21",
+        "tipo": "Apartado: Reglas Menores"
+    },
+    {
+        "nombre": "Dirigiendo el Juego",
+        "ruta": "/capitulos/dirigir/",
+        "tipo": "Capítulo"
+    },
+    {
+        "nombre": "El Rol del Director de Juego",
+        "ruta": "/capitulos/dirigir#apartado1",
+        "tipo": "Apartado: Dirigiendo el Juego"
+    },
+    {
+        "nombre": "Diseña tu Campaña",
+        "ruta": "/capitulos/dirigir#apartado2",
+        "tipo": "Apartado: Dirigiendo el Juego"
+    },
+    {
+        "nombre": "Diseña tu mundo",
+        "ruta": "/capitulos/dirigir#apartado3",
+        "tipo": "Apartado: Dirigiendo el Juego"
+    },
+    {
+        "nombre": "Prepara tu campaña",
+        "ruta": "/capitulos/dirigir#apartado4",
+        "tipo": "Apartado: Dirigiendo el Juego"
+    },
+    {
+        "nombre": "Diseña Sesiones",
+        "ruta": "/capitulos/dirigir#apartado5",
+        "tipo": "Apartado: Dirigiendo el Juego"
+    },
+    {
+        "nombre": "Diseña Combates",
+        "ruta": "/capitulos/dirigir#apartado6",
+        "tipo": "Apartado: Dirigiendo el Juego"
+    },
+    {
+        "nombre": "Pokémon Especiales",
+        "ruta": "/capitulos/dirigir#apartado7",
+        "tipo": "Apartado: Dirigiendo el Juego"
+    },
+    {
+        "nombre": "Preparando la Exploración",
+        "ruta": "/capitulos/dirigir#apartado8",
+        "tipo": "Apartado: Dirigiendo el Juego"
+    },
+    {
+        "nombre": "Coste de la Vida",
+        "ruta": "/capitulos/dirigir#apartado9",
+        "tipo": "Apartado: Dirigiendo el Juego"
+    },
+    {
+        "nombre": "Reglas variante",
+        "ruta": "/capitulos/dirigir#apartado10",
+        "tipo": "Apartado: Dirigiendo el Juego"
+    },
+    {
+        "nombre": "Cómo Crear Contenido Propio",
+        "ruta": "/capitulos/dirigir#apartado11",
+        "tipo": "Apartado: Dirigiendo el Juego"
+    },
+    {
+        "nombre": "Crear Pokémon desde cero",
+        "ruta": "/capitulos/dirigir#apartado12",
+        "tipo": "Apartado: Dirigiendo el Juego"
+    },
+    {
+        "nombre": "Entrenador",
+        "ruta": "/clases?clase=entrenador",
+        "tipo": "Clase"
+    },
+    {
+        "nombre": "Camino de la Resiliencia",
+        "ruta": "/clases?clase=entrenador&subclases=Camino_de_la_Resiliencia",
+        "tipo": "Filosofía de Entrenamiento"
+    },
+    {
+        "nombre": "Camino del Bailarín",
+        "ruta": "/clases?clase=entrenador&subclases=Camino_del_Bailarín",
+        "tipo": "Filosofía de Entrenamiento"
+    },
+    {
+        "nombre": "Camino del Campeón",
+        "ruta": "/clases?clase=entrenador&subclases=Camino_del_Campeón",
+        "tipo": "Filosofía de Entrenamiento"
+    },
+    {
+        "nombre": "Camino del Coordinador",
+        "ruta": "/clases?clase=entrenador&subclases=Camino_del_Coordinador",
+        "tipo": "Filosofía de Entrenamiento"
+    },
+    {
+        "nombre": "Camino del Músico",
+        "ruta": "/clases?clase=entrenador&subclases=Camino_del_Músico",
+        "tipo": "Filosofía de Entrenamiento"
+    },
+    {
+        "nombre": "Camino del Sadismo",
+        "ruta": "/clases?clase=entrenador&subclases=Camino_del_Sadismo",
+        "tipo": "Filosofía de Entrenamiento"
+    },
+    {
+        "nombre": "Conexión del Oyente",
+        "ruta": "/clases?clase=entrenador&subclases=Conexión_del_Oyente",
+        "tipo": "Filosofía de Entrenamiento"
+    },
+    {
+        "nombre": "Especialista de Tipo",
+        "ruta": "/clases?clase=entrenador&subclases=Especialista_de_Tipo",
+        "tipo": "Filosofía de Entrenamiento"
+    },
+    {
+        "nombre": "Enfermero Experto",
+        "ruta": "/clases?clase=entrenador&subclases=Enfermero_Experto",
+        "tipo": "Filosofía de Entrenamiento"
+    },
+    {
+        "nombre": "Filosofía del Animador",
+        "ruta": "/clases?clase=entrenador&subclases=Filosofía_del_Animador",
+        "tipo": "Filosofía de Entrenamiento"
+    },
+    {
+        "nombre": "Hogar en el Viaje",
+        "ruta": "/clases?clase=entrenador&subclases=Hogar_en_el_Viaje",
+        "tipo": "Filosofía de Entrenamiento"
+    },
+    {
+        "nombre": "Líder de Combate",
+        "ruta": "/clases?clase=entrenador&subclases=Líder_de_Combate",
+        "tipo": "Filosofía de Entrenamiento"
+    },
+    {
+        "nombre": "Maestro de las Crías",
+        "ruta": "/clases?clase=entrenador&subclases=Maestro_de_las_Crías",
+        "tipo": "Filosofía de Entrenamiento"
+    },
+    {
+        "nombre": "Maestro del Cambio",
+        "ruta": "/clases?clase=entrenador&subclases=Maestro_del_Cambio",
+        "tipo": "Filosofía de Entrenamiento"
+    },
+    {
+        "nombre": "Maestro Manipulador",
+        "ruta": "/clases?clase=entrenador&subclases=Maestro_Manipulador",
+        "tipo": "Filosofía de Entrenamiento"
+    },
+    {
+        "nombre": "Manipulador de la Inercia",
+        "ruta": "/clases?clase=entrenador&subclases=Manipulador_de_la_Inercia",
+        "tipo": "Filosofía de Entrenamiento"
+    },
+    {
+        "nombre": "Mente Maestra",
+        "ruta": "/clases?clase=entrenador&subclases=Mente_Maestra",
+        "tipo": "Filosofía de Entrenamiento"
+    },
+    {
+        "nombre": "Inventor",
+        "ruta": "/clases?clase=inventor",
+        "tipo": "Clase"
+    },
+    {
+        "nombre": "Diseñador del Multiarma",
+        "ruta": "/clases?clase=inventor&subclases=Diseñador_del_Multiarma",
+        "tipo": "Especialidad"
+    },
+    {
+        "nombre": "Farmacéutico",
+        "ruta": "/clases?clase=inventor&subclases=Farmacéutico",
+        "tipo": "Especialidad"
+    },
+    {
+        "nombre": "Genetista pokémon",
+        "ruta": "/clases?clase=inventor&subclases=Genetista_pokémon",
+        "tipo": "Especialidad"
+    },
+    {
+        "nombre": "Maníaco de las Poké Balls",
+        "ruta": "/clases?clase=inventor&subclases=Maníaco_de_las_Poké_Balls",
+        "tipo": "Especialidad"
+    },
+    {
+        "nombre": "Químico",
+        "ruta": "/clases?clase=inventor&subclases=Químico",
+        "tipo": "Especialidad"
+    },
+    {
+        "nombre": "Mentalista",
+        "ruta": "/clases?clase=mentalista",
+        "tipo": "Clase"
+    },
+    {
+        "nombre": "Conexión con el Alma",
+        "ruta": "/clases?clase=mentalista&subclases=Conexión_con_el_Alma",
+        "tipo": "Conexión Mística"
+    },
+    {
+        "nombre": "Conexión con el Más Allá",
+        "ruta": "/clases?clase=mentalista&subclases=Conexión_con_el_Más_Allá",
+        "tipo": "Conexión Mística"
+    },
+    {
+        "nombre": "Conexión con la Psique",
+        "ruta": "/clases?clase=mentalista&subclases=Conexión_con_la_Psique",
+        "tipo": "Conexión Mística"
+    },
+    {
+        "nombre": "Luchador",
+        "ruta": "/clases?clase=luchador",
+        "tipo": "Clase"
+    },
+    {
+        "nombre": "Artista marcial",
+        "ruta": "/clases?clase=luchador&subclases=Artista_marcial",
+        "tipo": "Disciplina marcial"
+    },
+    {
+        "nombre": "Cazador",
+        "ruta": "/clases?clase=luchador&subclases=Cazador",
+        "tipo": "Disciplina marcial"
+    },
+    {
+        "nombre": "Domador del Viento",
+        "ruta": "/clases?clase=luchador&subclases=Domador_del_Viento",
+        "tipo": "Disciplina marcial"
+    },
+    {
+        "nombre": "Guardián del Aura",
+        "ruta": "/clases?clase=luchador&subclases=Guardián_del_Aura",
+        "tipo": "Disciplina marcial"
+    },
+    {
+        "nombre": "Ninja",
+        "ruta": "/clases?clase=luchador&subclases=Ninja",
+        "tipo": "Disciplina marcial"
+    },
+    {
+        "nombre": "Peleador Callejero",
+        "ruta": "/clases?clase=luchador&subclases=Peleador_Callejero",
+        "tipo": "Disciplina marcial"
+    },
+    {
+        "nombre": "Poké Ball",
+        "ruta": "/objetos?tipos=Poké+ball",
+        "tipo": "Tipo de Objeto"
+    },
+    {
+        "nombre": "Baya",
+        "ruta": "/objetos?tipos=Baya",
+        "tipo": "Tipo de Objeto"
+    },
+    {
+        "nombre": "Equipo",
+        "ruta": "/objetos?tipos=Equipo",
+        "tipo": "Tipo de Objeto"
+    },
+    {
+        "nombre": "Objetos de Entrenador",
+        "ruta": "/objetos?tipos=objetos?tipos=Objetos+de+entrenador+(Consumible),Objetos+de+entrenador",
+        "tipo": "Tipo de Objeto"
+    },
+    {
+        "nombre": "Medicina",
+        "ruta": "/objetos?tipos=Medicina",
+        "tipo": "Tipo de Objeto"
+    },
+    {
+        "nombre": "Potenciador",
+        "ruta": "/objetos?tipos=Potenciador",
+        "tipo": "Tipo de Objeto"
+    },
+    {
+        "nombre": "Planta",
+        "ruta": "/objetos?tipos=Planta",
+        "tipo": "Tipo de Objeto"
+    },
+    {
+        "nombre": "Comida",
+        "ruta": "/objetos?tipos=Comida",
+        "tipo": "Tipo de Objeto"
+    },
+    {
+        "nombre": "Objeto evolutivo",
+        "ruta": "/objetos?tipos=Objeto+evolutivo",
+        "tipo": "Tipo de Objeto"
+    },
+    {
+        "nombre": "Amuleto",
+        "ruta": "/objetos?tipos=Amuleto",
+        "tipo": "Tipo de Objeto"
+    },
+    {
+        "nombre": "Fósil",
+        "ruta": "/objetos?tipos=Fósil",
+        "tipo": "Tipo de Objeto"
+    },
+    {
+        "nombre": "Objeto mítico",
+        "ruta": "/objetos?tipos=Objetos+míticos",
+        "tipo": "Tipo de Objeto"
+    },
+    {
+        "nombre": "Poké Ball",
+        "ruta": "/objetos?seleccionado=Pok%C3%A9+Ball",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Súper Ball",
+        "ruta": "/objetos?seleccionado=S%C3%BAper+Ball",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Ultra Ball",
+        "ruta": "/objetos?seleccionado=Ultra+Ball",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Aero Ball",
+        "ruta": "/objetos?seleccionado=Aero+Ball",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Lujo Ball",
+        "ruta": "/objetos?seleccionado=Lujo+Ball",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Honor Ball",
+        "ruta": "/objetos?seleccionado=Honor+Ball",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Gloria Ball",
+        "ruta": "/objetos?seleccionado=Gloria+Ball",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Extraña Ball",
+        "ruta": "/objetos?seleccionado=Extra%C3%B1a+Ball",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Parque Ball",
+        "ruta": "/objetos?seleccionado=Parque+Ball",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Safari Ball",
+        "ruta": "/objetos?seleccionado=Safari+Ball",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Pluma Ball",
+        "ruta": "/objetos?seleccionado=Pluma+Ball",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Ala Ball",
+        "ruta": "/objetos?seleccionado=Ala+Ball",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Máster Ball",
+        "ruta": "/objetos?seleccionado=M%C3%A1ster+Ball",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Acopio Ball",
+        "ruta": "/objetos?seleccionado=Acopio+Ball",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Amor Ball",
+        "ruta": "/objetos?seleccionado=Amor+Ball",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Buceo Ball",
+        "ruta": "/objetos?seleccionado=Buceo+Ball",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Cebo Ball",
+        "ruta": "/objetos?seleccionado=Cebo+Ball",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Ensueño Ball",
+        "ruta": "/objetos?seleccionado=Ensue%C3%B1o+Ball",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Luna Ball",
+        "ruta": "/objetos?seleccionado=Luna+Ball",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Malla Ball",
+        "ruta": "/objetos?seleccionado=Malla+Ball",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Nido Ball",
+        "ruta": "/objetos?seleccionado=Nido+Ball",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Nivel Ball",
+        "ruta": "/objetos?seleccionado=Nivel+Ball",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Ocaso Ball",
+        "ruta": "/objetos?seleccionado=Ocaso+Ball",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Peso Ball",
+        "ruta": "/objetos?seleccionado=Peso+Ball",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Rapid Ball",
+        "ruta": "/objetos?seleccionado=Rapid+Ball",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Turno Ball",
+        "ruta": "/objetos?seleccionado=Turno+Ball",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Veloz Ball",
+        "ruta": "/objetos?seleccionado=Veloz+Ball",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Amigo Ball",
+        "ruta": "/objetos?seleccionado=Amigo+Ball",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Sana Ball",
+        "ruta": "/objetos?seleccionado=Sana+Ball",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Ente Ball",
+        "ruta": "/objetos?seleccionado=Ente+Ball",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Poción",
+        "ruta": "/objetos?seleccionado=Poci%C3%B3n",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Superpoción",
+        "ruta": "/objetos?seleccionado=Superpoci%C3%B3n",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Hiperpoción",
+        "ruta": "/objetos?seleccionado=Hiperpoci%C3%B3n",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Poción máxima",
+        "ruta": "/objetos?seleccionado=Poci%C3%B3n+m%C3%A1xima",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Restaurar todo",
+        "ruta": "/objetos?seleccionado=Restaurar+todo",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Remedio",
+        "ruta": "/objetos?seleccionado=Remedio",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Superremedio",
+        "ruta": "/objetos?seleccionado=Superremedio",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Hiperremedio",
+        "ruta": "/objetos?seleccionado=Hiperremedio",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Antídoto",
+        "ruta": "/objetos?seleccionado=Ant%C3%ADdoto",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Antihielo",
+        "ruta": "/objetos?seleccionado=Antihielo",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Antiparalizador",
+        "ruta": "/objetos?seleccionado=Antiparalizador",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Antiquemar",
+        "ruta": "/objetos?seleccionado=Antiquemar",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Despertar",
+        "ruta": "/objetos?seleccionado=Despertar",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Cura total",
+        "ruta": "/objetos?seleccionado=Cura+total",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Éter",
+        "ruta": "/objetos?seleccionado=%C3%89ter",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Éter Máximo",
+        "ruta": "/objetos?seleccionado=%C3%89ter+M%C3%A1ximo",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Elixir",
+        "ruta": "/objetos?seleccionado=Elixir",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Elixir máximo",
+        "ruta": "/objetos?seleccionado=Elixir+m%C3%A1ximo",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Revivir",
+        "ruta": "/objetos?seleccionado=Revivir",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Revivir máximo",
+        "ruta": "/objetos?seleccionado=Revivir+m%C3%A1ximo",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Antifatiga",
+        "ruta": "/objetos?seleccionado=Antifatiga",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Ataque X",
+        "ruta": "/objetos?seleccionado=Ataque+X",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Crítico X",
+        "ruta": "/objetos?seleccionado=Cr%C3%ADtico+X",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Defensa X",
+        "ruta": "/objetos?seleccionado=Defensa+X",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Precisión X",
+        "ruta": "/objetos?seleccionado=Precisi%C3%B3n+X",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Protección X",
+        "ruta": "/objetos?seleccionado=Protecci%C3%B3n+X",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Velocidad X",
+        "ruta": "/objetos?seleccionado=Velocidad+X",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Gragea crítica",
+        "ruta": "/objetos?seleccionado=Gragea+cr%C3%ADtica",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Gragea defensiva",
+        "ruta": "/objetos?seleccionado=Gragea+defensiva",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Gragea evasiva",
+        "ruta": "/objetos?seleccionado=Gragea+evasiva",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Gragea ofensiva",
+        "ruta": "/objetos?seleccionado=Gragea+ofensiva",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Gragea multi",
+        "ruta": "/objetos?seleccionado=Gragea+multi",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Calcio mental",
+        "ruta": "/objetos?seleccionado=Calcio+mental",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Calcio presencia",
+        "ruta": "/objetos?seleccionado=Calcio+presencia",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Carburante",
+        "ruta": "/objetos?seleccionado=Carburante",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Hierro",
+        "ruta": "/objetos?seleccionado=Hierro",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Proteína",
+        "ruta": "/objetos?seleccionado=Prote%C3%ADna",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Zinc",
+        "ruta": "/objetos?seleccionado=Zinc",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Más PP",
+        "ruta": "/objetos?seleccionado=M%C3%A1s+PP",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Más PS",
+        "ruta": "/objetos?seleccionado=M%C3%A1s+PS",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Bi-tamina",
+        "ruta": "/objetos?seleccionado=Bi-tamina",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Hierba blanca",
+        "ruta": "/objetos?seleccionado=Hierba+blanca",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Hierba copia",
+        "ruta": "/objetos?seleccionado=Hierba+copia",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Hierba mental",
+        "ruta": "/objetos?seleccionado=Hierba+mental",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Semilla bruma",
+        "ruta": "/objetos?seleccionado=Semilla+bruma",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Semilla electro",
+        "ruta": "/objetos?seleccionado=Semilla+electro",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Semilla hierba",
+        "ruta": "/objetos?seleccionado=Semilla+hierba",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Semilla psique",
+        "ruta": "/objetos?seleccionado=Semilla+psique",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Semilla dominio",
+        "ruta": "/objetos?seleccionado=Semilla+dominio",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Raíz energía",
+        "ruta": "/objetos?seleccionado=Ra%C3%ADz+energ%C3%ADa",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Hierba revivir",
+        "ruta": "/objetos?seleccionado=Hierba+revivir",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Menta",
+        "ruta": "/objetos?seleccionado=Menta",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Zreza",
+        "ruta": "/objetos?seleccionado=Zreza",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Atania",
+        "ruta": "/objetos?seleccionado=Atania",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Meloc",
+        "ruta": "/objetos?seleccionado=Meloc",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Safre",
+        "ruta": "/objetos?seleccionado=Safre",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Perasi",
+        "ruta": "/objetos?seleccionado=Perasi",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Zanama",
+        "ruta": "/objetos?seleccionado=Zanama",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Aranja",
+        "ruta": "/objetos?seleccionado=Aranja",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Caquic",
+        "ruta": "/objetos?seleccionado=Caquic",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Ziuela",
+        "ruta": "/objetos?seleccionado=Ziuela",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Zidra",
+        "ruta": "/objetos?seleccionado=Zidra",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Higog",
+        "ruta": "/objetos?seleccionado=Higog",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Pabaya",
+        "ruta": "/objetos?seleccionado=Pabaya",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Ango",
+        "ruta": "/objetos?seleccionado=Ango",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Frambu",
+        "ruta": "/objetos?seleccionado=Frambu",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Oram",
+        "ruta": "/objetos?seleccionado=Oram",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Latano",
+        "ruta": "/objetos?seleccionado=Latano",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Peragu",
+        "ruta": "/objetos?seleccionado=Peragu",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Pinia",
+        "ruta": "/objetos?seleccionado=Pinia",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Lichi",
+        "ruta": "/objetos?seleccionado=Lichi",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Gonlan",
+        "ruta": "/objetos?seleccionado=Gonlan",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Aslac",
+        "ruta": "/objetos?seleccionado=Aslac",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Aricoc",
+        "ruta": "/objetos?seleccionado=Aricoc",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Zonlan",
+        "ruta": "/objetos?seleccionado=Zonlan",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Caoca",
+        "ruta": "/objetos?seleccionado=Caoca",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Biglia",
+        "ruta": "/objetos?seleccionado=Biglia",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Maranga",
+        "ruta": "/objetos?seleccionado=Maranga",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Tapa estado",
+        "ruta": "/objetos?seleccionado=Tapa+estado",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Café revigorizante",
+        "ruta": "/objetos?seleccionado=Caf%C3%A9+revigorizante",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Almuerzo picante",
+        "ruta": "/objetos?seleccionado=Almuerzo+picante",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Caldo tranquilizador",
+        "ruta": "/objetos?seleccionado=Caldo+tranquilizador",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Barrita Plus",
+        "ruta": "/objetos?seleccionado=Barrita+Plus",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Comida regional",
+        "ruta": "/objetos?seleccionado=Comida+regional",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Arroz aguante",
+        "ruta": "/objetos?seleccionado=Arroz+aguante",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Kebab de Kilo",
+        "ruta": "/objetos?seleccionado=Kebab+de+Kilo",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Ensalada fresca",
+        "ruta": "/objetos?seleccionado=Ensalada+fresca",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Almuerzo contundente",
+        "ruta": "/objetos?seleccionado=Almuerzo+contundente",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Encurtidoble",
+        "ruta": "/objetos?seleccionado=Encurtidoble",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Aperitivo elección",
+        "ruta": "/objetos?seleccionado=Aperitivo+elecci%C3%B3n",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Pastas agudas",
+        "ruta": "/objetos?seleccionado=Pastas+agudas",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Helado impacto",
+        "ruta": "/objetos?seleccionado=Helado+impacto",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Restos",
+        "ruta": "/objetos?seleccionado=Restos",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Curri caliente",
+        "ruta": "/objetos?seleccionado=Curri+caliente",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Lentejas lejanas",
+        "ruta": "/objetos?seleccionado=Lentejas+lejanas",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Caramelo Raro",
+        "ruta": "/objetos?seleccionado=Caramelo+Raro",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Plato gigante",
+        "ruta": "/objetos?seleccionado=Plato+gigante",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Armadura auspiciosa",
+        "ruta": "/objetos?seleccionado=Armadura+auspiciosa",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Bloque de turba",
+        "ruta": "/objetos?seleccionado=Bloque+de+turba",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Colmillo agudo",
+        "ruta": "/objetos?seleccionado=Colmillo+agudo",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Corona galanuez",
+        "ruta": "/objetos?seleccionado=Corona+galanuez",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Diente marino",
+        "ruta": "/objetos?seleccionado=Diente+marino",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Dulce de nata",
+        "ruta": "/objetos?seleccionado=Dulce+de+nata",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Escama bella",
+        "ruta": "/objetos?seleccionado=Escama+bella",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Escama marina",
+        "ruta": "/objetos?seleccionado=Escama+marina",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Magmatizador",
+        "ruta": "/objetos?seleccionado=Magmatizador",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Armadura maldita",
+        "ruta": "/objetos?seleccionado=Armadura+maldita",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Brazal galanuez",
+        "ruta": "/objetos?seleccionado=Brazal+galanuez",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Confite",
+        "ruta": "/objetos?seleccionado=Confite",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Cuenco exquisito",
+        "ruta": "/objetos?seleccionado=Cuenco+exquisito",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Disco extraño",
+        "ruta": "/objetos?seleccionado=Disco+extra%C3%B1o",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Electrizador",
+        "ruta": "/objetos?seleccionado=Electrizador",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Escama dragón",
+        "ruta": "/objetos?seleccionado=Escama+drag%C3%B3n",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Garra afilada",
+        "ruta": "/objetos?seleccionado=Garra+afilada",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Manuscrito aguas",
+        "ruta": "/objetos?seleccionado=Manuscrito+aguas",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Manuscrito sombras",
+        "ruta": "/objetos?seleccionado=Manuscrito+sombras",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Manzana dulce",
+        "ruta": "/objetos?seleccionado=Manzana+dulce",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Mejora",
+        "ruta": "/objetos?seleccionado=Mejora",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Mineral negro",
+        "ruta": "/objetos?seleccionado=Mineral+negro",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Piedra oval",
+        "ruta": "/objetos?seleccionado=Piedra+oval",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Revestimiento metálico",
+        "ruta": "/objetos?seleccionado=Revestimiento+met%C3%A1lico",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Tela terrible",
+        "ruta": "/objetos?seleccionado=Tela+terrible",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Manzana ácida",
+        "ruta": "/objetos?seleccionado=Manzana+%C3%A1cida",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Metal compuesto",
+        "ruta": "/objetos?seleccionado=Metal+compuesto",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Néctar de colores",
+        "ruta": "/objetos?seleccionado=N%C3%A9ctar+de+colores",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Protector",
+        "ruta": "/objetos?seleccionado=Protector",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Saquito fragrante",
+        "ruta": "/objetos?seleccionado=Saquito+fragrante",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Tetera rota",
+        "ruta": "/objetos?seleccionado=Tetera+rota",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Manzana ácida",
+        "ruta": "/objetos?seleccionado=Manzana+%C3%A1cida",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Piedra agua",
+        "ruta": "/objetos?seleccionado=Piedra+agua",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Piedra día",
+        "ruta": "/objetos?seleccionado=Piedra+d%C3%ADa",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Piedra hielo",
+        "ruta": "/objetos?seleccionado=Piedra+hielo",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Piedra lunar",
+        "ruta": "/objetos?seleccionado=Piedra+lunar",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Piedra solar",
+        "ruta": "/objetos?seleccionado=Piedra+solar",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Piedra alba",
+        "ruta": "/objetos?seleccionado=Piedra+alba",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Piedra fuego",
+        "ruta": "/objetos?seleccionado=Piedra+fuego",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Piedra hoja",
+        "ruta": "/objetos?seleccionado=Piedra+hoja",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Piedra noche",
+        "ruta": "/objetos?seleccionado=Piedra+noche",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Piedra trueno",
+        "ruta": "/objetos?seleccionado=Piedra+trueno",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Agua mística",
+        "ruta": "/objetos?seleccionado=Agua+m%C3%ADstica",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Carbón",
+        "ruta": "/objetos?seleccionado=Carb%C3%B3n",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Flecha venenosa",
+        "ruta": "/objetos?seleccionado=Flecha+venenosa",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Imán",
+        "ruta": "/objetos?seleccionado=Im%C3%A1n",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Piedra dura",
+        "ruta": "/objetos?seleccionado=Piedra+dura",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Revestimiento metálico",
+        "ruta": "/objetos?seleccionado=Revestimiento+met%C3%A1lico",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Anti- derretir",
+        "ruta": "/objetos?seleccionado=Anti-+derretir",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Colmillo dragón",
+        "ruta": "/objetos?seleccionado=Colmillo+drag%C3%B3n",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Gafas de sol",
+        "ruta": "/objetos?seleccionado=Gafas+de+sol",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Pañuelo de seda",
+        "ruta": "/objetos?seleccionado=Pa%C3%B1uelo+de+seda",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Pluma feérica",
+        "ruta": "/objetos?seleccionado=Pluma+fe%C3%A9rica",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Semilla milagro",
+        "ruta": "/objetos?seleccionado=Semilla+milagro",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Arena fina",
+        "ruta": "/objetos?seleccionado=Arena+fina",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Cuchara torcida",
+        "ruta": "/objetos?seleccionado=Cuchara+torcida",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Hechizo",
+        "ruta": "/objetos?seleccionado=Hechizo",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Pico afilado",
+        "ruta": "/objetos?seleccionado=Pico+afilado",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Polvo plata",
+        "ruta": "/objetos?seleccionado=Polvo+plata",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Cinturón negro",
+        "ruta": "/objetos?seleccionado=Cintur%C3%B3n+negro",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Banda recia",
+        "ruta": "/objetos?seleccionado=Banda+recia",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Cinto recio",
+        "ruta": "/objetos?seleccionado=Cinto+recio",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Pesa recia",
+        "ruta": "/objetos?seleccionado=Pesa+recia",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Amuleto",
+        "ruta": "/objetos?seleccionado=Amuleto",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Amuleto puro",
+        "ruta": "/objetos?seleccionado=Amuleto+puro",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Banda aguante",
+        "ruta": "/objetos?seleccionado=Banda+aguante",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Bola luminosa",
+        "ruta": "/objetos?seleccionado=Bola+luminosa",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Cinta elección",
+        "ruta": "/objetos?seleccionado=Cinta+elecci%C3%B3n",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Cinta aguante",
+        "ruta": "/objetos?seleccionado=Cinta+aguante",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Cola plúmbea",
+        "ruta": "/objetos?seleccionado=Cola+pl%C3%BAmbea",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Colmillo agudo",
+        "ruta": "/objetos?seleccionado=Colmillo+agudo",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Escudo habilidad",
+        "ruta": "/objetos?seleccionado=Escudo+habilidad",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Gafas especiales",
+        "ruta": "/objetos?seleccionado=Gafas+especiales",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Garra garfio",
+        "ruta": "/objetos?seleccionado=Garra+garfio",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Lazo destino",
+        "ruta": "/objetos?seleccionado=Lazo+destino",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Lodo negro",
+        "ruta": "/objetos?seleccionado=Lodo+negro",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Periscopio",
+        "ruta": "/objetos?seleccionado=Periscopio",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Refleluz",
+        "ruta": "/objetos?seleccionado=Refleluz",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Roca calor",
+        "ruta": "/objetos?seleccionado=Roca+calor",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Roca lluvia",
+        "ruta": "/objetos?seleccionado=Roca+lluvia",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Seguro debilidad",
+        "ruta": "/objetos?seleccionado=Seguro+debilidad",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Tarjeta roja",
+        "ruta": "/objetos?seleccionado=Tarjeta+roja",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Brazal recio",
+        "ruta": "/objetos?seleccionado=Brazal+recio",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Lente recia",
+        "ruta": "/objetos?seleccionado=Lente+recia",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Franja recia",
+        "ruta": "/objetos?seleccionado=Franja+recia",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Amuleto protector",
+        "ruta": "/objetos?seleccionado=Amuleto+protector",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Amuleto salud",
+        "ruta": "/objetos?seleccionado=Amuleto+salud",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Banda atadura",
+        "ruta": "/objetos?seleccionado=Banda+atadura",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Cascabel concha",
+        "ruta": "/objetos?seleccionado=Cascabel+concha",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Cinta experto",
+        "ruta": "/objetos?seleccionado=Cinta+experto",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Cinta fuerte",
+        "ruta": "/objetos?seleccionado=Cinta+fuerte",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Dado trucado",
+        "ruta": "/objetos?seleccionado=Dado+trucado",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Distintivo de líder",
+        "ruta": "/objetos?seleccionado=Distintivo+de+l%C3%ADder",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Gafas elección",
+        "ruta": "/objetos?seleccionado=Gafas+elecci%C3%B3n",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Garra afilada",
+        "ruta": "/objetos?seleccionado=Garra+afilada",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Garra rápida",
+        "ruta": "/objetos?seleccionado=Garra+r%C3%A1pida",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Llamasfera",
+        "ruta": "/objetos?seleccionado=Llamasfera",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Lupa",
+        "ruta": "/objetos?seleccionado=Lupa",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Raíz grande",
+        "ruta": "/objetos?seleccionado=Ra%C3%ADz+grande",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Roca del rey",
+        "ruta": "/objetos?seleccionado=Roca+del+rey",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Roca helada",
+        "ruta": "/objetos?seleccionado=Roca+helada",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Roca suave",
+        "ruta": "/objetos?seleccionado=Roca+suave",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Telescopio",
+        "ruta": "/objetos?seleccionado=Telescopio",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Toxiesfera",
+        "ruta": "/objetos?seleccionado=Toxiesfera",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Vida esfera",
+        "ruta": "/objetos?seleccionado=Vida+esfera",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Botas gruesas",
+        "ruta": "/objetos?seleccionado=Botas+gruesas",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Capa furtiva",
+        "ruta": "/objetos?seleccionado=Capa+furtiva",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Casco dentado",
+        "ruta": "/objetos?seleccionado=Casco+dentado",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Chaleco asalto",
+        "ruta": "/objetos?seleccionado=Chaleco+asalto",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Cubresuelos",
+        "ruta": "/objetos?seleccionado=Cubresuelos",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Espray bucal",
+        "ruta": "/objetos?seleccionado=Espray+bucal",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Gafa protectora",
+        "ruta": "/objetos?seleccionado=Gafa+protectora",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Guantes de boxeo",
+        "ruta": "/objetos?seleccionado=Guantes+de+boxeo",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Pieza de Armadura Pesada",
+        "ruta": "/objetos?seleccionado=Pieza+de+Armadura+Pesada",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Pieza de Armadura Ligera",
+        "ruta": "/objetos?seleccionado=Pieza+de+Armadura+Ligera",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Super tapones",
+        "ruta": "/objetos?seleccionado=Super+tapones",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Hueso grueso",
+        "ruta": "/objetos?seleccionado=Hueso+grueso",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Disco de tipo",
+        "ruta": "/objetos?seleccionado=Disco+de+tipo",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Energía potenciadora",
+        "ruta": "/objetos?seleccionado=Energ%C3%ADa+potenciadora",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Cartucho",
+        "ruta": "/objetos?seleccionado=Cartucho",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Ámbar Viejo",
+        "ruta": "/objetos?seleccionado=%C3%81mbar+Viejo",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Fósil Coraza",
+        "ruta": "/objetos?seleccionado=F%C3%B3sil+Coraza",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Fósil Domo",
+        "ruta": "/objetos?seleccionado=F%C3%B3sil+Domo",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Fósil Hélix",
+        "ruta": "/objetos?seleccionado=F%C3%B3sil+H%C3%A9lix",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Fósil Pluma",
+        "ruta": "/objetos?seleccionado=F%C3%B3sil+Pluma",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Fósil Tapa",
+        "ruta": "/objetos?seleccionado=F%C3%B3sil+Tapa",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Ictiofósil",
+        "ruta": "/objetos?seleccionado=Ictiof%C3%B3sil",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Ornitofósil",
+        "ruta": "/objetos?seleccionado=Ornitof%C3%B3sil",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Fósil Aleta",
+        "ruta": "/objetos?seleccionado=F%C3%B3sil+Aleta",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Fósil Cráneo",
+        "ruta": "/objetos?seleccionado=F%C3%B3sil+Cr%C3%A1neo",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Fósil Garra",
+        "ruta": "/objetos?seleccionado=F%C3%B3sil+Garra",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Fósil Mandíbula",
+        "ruta": "/objetos?seleccionado=F%C3%B3sil+Mand%C3%ADbula",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Fósil Raíz",
+        "ruta": "/objetos?seleccionado=F%C3%B3sil+Ra%C3%ADz",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Fósil Extra",
+        "ruta": "/objetos?seleccionado=F%C3%B3sil+Extra",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Dracofósil",
+        "ruta": "/objetos?seleccionado=Dracof%C3%B3sil",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Plesiofósil",
+        "ruta": "/objetos?seleccionado=Plesiof%C3%B3sil",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Arca de Zygarde",
+        "ruta": "/objetos?seleccionado=Arca+de+Zygarde",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Diamanesfera",
+        "ruta": "/objetos?seleccionado=Diamanesfera",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Escudo oxidado",
+        "ruta": "/objetos?seleccionado=Escudo+oxidado",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Espada oxidada",
+        "ruta": "/objetos?seleccionado=Espada+oxidada",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Espejo veraz",
+        "ruta": "/objetos?seleccionado=Espejo+veraz",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Flauta azur",
+        "ruta": "/objetos?seleccionado=Flauta+azur",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Flauta lunar",
+        "ruta": "/objetos?seleccionado=Flauta+lunar",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Flauta solar",
+        "ruta": "/objetos?seleccionado=Flauta+solar",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Griseosfera",
+        "ruta": "/objetos?seleccionado=Griseosfera",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Lustresfera",
+        "ruta": "/objetos?seleccionado=Lustresfera",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Máscara cimiento",
+        "ruta": "/objetos?seleccionado=M%C3%A1scara+cimiento",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Máscara fuente",
+        "ruta": "/objetos?seleccionado=M%C3%A1scara+fuente",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Máscara horno",
+        "ruta": "/objetos?seleccionado=M%C3%A1scara+horno",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Máscara turquesa",
+        "ruta": "/objetos?seleccionado=M%C3%A1scara+turquesa",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Orbe blanco",
+        "ruta": "/objetos?seleccionado=Orbe+blanco",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Orbe oscuro",
+        "ruta": "/objetos?seleccionado=Orbe+oscuro",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Origen Ball",
+        "ruta": "/objetos?seleccionado=Origen+Ball",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Prisma azul",
+        "ruta": "/objetos?seleccionado=Prisma+azul",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Prisma rojo",
+        "ruta": "/objetos?seleccionado=Prisma+rojo",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Punta ADN",
+        "ruta": "/objetos?seleccionado=Punta+ADN",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Rocío bondad",
+        "ruta": "/objetos?seleccionado=Roc%C3%ADo+bondad",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Tabla legendaria",
+        "ruta": "/objetos?seleccionado=Tabla+legendaria",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Kit de botánica",
+        "ruta": "/objetos?seleccionado=Kit+de+bot%C3%A1nica",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Kit de acampada",
+        "ruta": "/objetos?seleccionado=Kit+de+acampada",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Kit de explorador",
+        "ruta": "/objetos?seleccionado=Kit+de+explorador",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Kit de primeros auxilios",
+        "ruta": "/objetos?seleccionado=Kit+de+primeros+auxilios",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Kit de miscelánea",
+        "ruta": "/objetos?seleccionado=Kit+de+miscel%C3%A1nea",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Herramientas de Medicina",
+        "ruta": "/objetos?seleccionado=Herramientas+de+Medicina",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Herramientas de Poké Ball",
+        "ruta": "/objetos?seleccionado=Herramientas+de+Pok%C3%A9+Ball",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Herramientas de química",
+        "ruta": "/objetos?seleccionado=Herramientas+de+qu%C3%ADmica",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Herramientas de Inventor",
+        "ruta": "/objetos?seleccionado=Herramientas+de+Inventor",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Utensilios de cocina",
+        "ruta": "/objetos?seleccionado=Utensilios+de+cocina",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Pokédex",
+        "ruta": "/objetos?seleccionado=Pok%C3%A9dex",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Flauta amarilla",
+        "ruta": "/objetos?seleccionado=Flauta+amarilla",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Flauta azul",
+        "ruta": "/objetos?seleccionado=Flauta+azul",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Flauta roja",
+        "ruta": "/objetos?seleccionado=Flauta+roja",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Flauta blanca",
+        "ruta": "/objetos?seleccionado=Flauta+blanca",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Flauta negra",
+        "ruta": "/objetos?seleccionado=Flauta+negra",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Holomisor",
+        "ruta": "/objetos?seleccionado=Holomisor",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Sincromisor",
+        "ruta": "/objetos?seleccionado=Sincromisor",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Caña",
+        "ruta": "/objetos?seleccionado=Ca%C3%B1a",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Pokéradar",
+        "ruta": "/objetos?seleccionado=Pok%C3%A9radar",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Traje de buzo",
+        "ruta": "/objetos?seleccionado=Traje+de+buzo",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Videomisor",
+        "ruta": "/objetos?seleccionado=Videomisor",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Piedra espíritu",
+        "ruta": "/objetos?seleccionado=Piedra+esp%C3%ADritu",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Aerosol sigilo",
+        "ruta": "/objetos?seleccionado=Aerosol+sigilo",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Bola de lodo",
+        "ruta": "/objetos?seleccionado=Bola+de+lodo",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Bola de humo",
+        "ruta": "/objetos?seleccionado=Bola+de+humo",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Bola mala",
+        "ruta": "/objetos?seleccionado=Bola+mala",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Bola luminiscente",
+        "ruta": "/objetos?seleccionado=Bola+luminiscente",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Bola pegajosa",
+        "ruta": "/objetos?seleccionado=Bola+pegajosa",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Bola ruidosa",
+        "ruta": "/objetos?seleccionado=Bola+ruidosa",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Calmaesfera",
+        "ruta": "/objetos?seleccionado=Calmaesfera",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Abrojos metálicos",
+        "ruta": "/objetos?seleccionado=Abrojos+met%C3%A1licos",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Toxiestrellas",
+        "ruta": "/objetos?seleccionado=Toxiestrellas",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "Gema de tipo",
+        "ruta": "/objetos?seleccionado=Gema+de+tipo",
+        "tipo": "Objeto"
+    },
+    {
+        "nombre": "de Clase",
+        "ruta": "/dotes?tipos=Clase",
+        "tipo": "Tipo de Dote"
+    },
+    {
+        "nombre": "Tipo Elemental",
+        "ruta": "/dotes?tipos=Elemental",
+        "tipo": "Tipo de Dote"
+    },
+    {
+        "nombre": "General",
+        "ruta": "/dotes?tipos=General",
+        "tipo": "Tipo de Dote"
+    },
+    {
+        "nombre": "de Personaje",
+        "ruta": "/dotes?tipos=Personaje",
+        "tipo": "Tipo de Dote"
+    },
+    {
+        "nombre": "Área de control",
+        "ruta": "/dotes?seleccionado=%C3%81rea+de+control",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Carga",
+        "ruta": "/dotes?seleccionado=Carga",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Centros sobrecargados",
+        "ruta": "/dotes?seleccionado=Centros+sobrecargados",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Combador",
+        "ruta": "/dotes?seleccionado=Combador",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Combo elemental",
+        "ruta": "/dotes?seleccionado=Combo+elemental",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Combo ilimitado",
+        "ruta": "/dotes?seleccionado=Combo+ilimitado",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Concentración elemental",
+        "ruta": "/dotes?seleccionado=Concentraci%C3%B3n+elemental",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Contradisparo",
+        "ruta": "/dotes?seleccionado=Contradisparo",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Críticos atroces",
+        "ruta": "/dotes?seleccionado=Cr%C3%ADticos+atroces",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Cuchilla afilada",
+        "ruta": "/dotes?seleccionado=Cuchilla+afilada",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Disparo lejano",
+        "ruta": "/dotes?seleccionado=Disparo+lejano",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Diversificación elemental",
+        "ruta": "/dotes?seleccionado=Diversificaci%C3%B3n+elemental",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Efectos agobiantes",
+        "ruta": "/dotes?seleccionado=Efectos+agobiantes",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Escombros molestos",
+        "ruta": "/dotes?seleccionado=Escombros+molestos",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Espolvorear",
+        "ruta": "/dotes?seleccionado=Espolvorear",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Evitar obstáculos",
+        "ruta": "/dotes?seleccionado=Evitar+obst%C3%A1culos",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Excavadora",
+        "ruta": "/dotes?seleccionado=Excavadora",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Fauces apresadoras",
+        "ruta": "/dotes?seleccionado=Fauces+apresadoras",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Fauces aumentadas",
+        "ruta": "/dotes?seleccionado=Fauces+aumentadas",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Fauces potentes",
+        "ruta": "/dotes?seleccionado=Fauces+potentes",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Fuerza espiritual",
+        "ruta": "/dotes?seleccionado=Fuerza+espiritual",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Golpes descontrolados",
+        "ruta": "/dotes?seleccionado=Golpes+descontrolados",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Gran rango",
+        "ruta": "/dotes?seleccionado=Gran+rango",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Guardián",
+        "ruta": "/dotes?seleccionado=Guardi%C3%A1n",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Habilidoso",
+        "ruta": "/dotes?seleccionado=Habilidoso",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "In crescendo",
+        "ruta": "/dotes?seleccionado=In+crescendo",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Incansable",
+        "ruta": "/dotes?seleccionado=Incansable",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Irradiación climática",
+        "ruta": "/dotes?seleccionado=Irradiaci%C3%B3n+clim%C3%A1tica",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Maestro de los agarres",
+        "ruta": "/dotes?seleccionado=Maestro+de+los+agarres",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Maestro de la defensa",
+        "ruta": "/dotes?seleccionado=Maestro+de+la+defensa",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Maestro de las potenciaciones",
+        "ruta": "/dotes?seleccionado=Maestro+de+las+potenciaciones",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Malhumorado",
+        "ruta": "/dotes?seleccionado=Malhumorado",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Mole",
+        "ruta": "/dotes?seleccionado=Mole",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Montura ejemplar",
+        "ruta": "/dotes?seleccionado=Montura+ejemplar",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Movimiento extra",
+        "ruta": "/dotes?seleccionado=Movimiento+extra",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Movimientos amplios",
+        "ruta": "/dotes?seleccionado=Movimientos+amplios",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Patadas inhabilitantes",
+        "ruta": "/dotes?seleccionado=Patadas+inhabilitantes",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Puñetazos aumentados",
+        "ruta": "/dotes?seleccionado=Pu%C3%B1etazos+aumentados",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Puñetazos potentes",
+        "ruta": "/dotes?seleccionado=Pu%C3%B1etazos+potentes",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Potenciación de campo",
+        "ruta": "/dotes?seleccionado=Potenciaci%C3%B3n+de+campo",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Rango colosal",
+        "ruta": "/dotes?seleccionado=Rango+colosal",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Reactivo",
+        "ruta": "/dotes?seleccionado=Reactivo",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Regeneración amplificada",
+        "ruta": "/dotes?seleccionado=Regeneraci%C3%B3n+amplificada",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Resistente",
+        "ruta": "/dotes?seleccionado=Resistente",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Suertudo",
+        "ruta": "/dotes?seleccionado=Suertudo",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Talento oculto",
+        "ruta": "/dotes?seleccionado=Talento+oculto",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Velocista",
+        "ruta": "/dotes?seleccionado=Velocista",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Acróbata",
+        "ruta": "/dotes?seleccionado=Acr%C3%B3bata",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Adepto en las Armas",
+        "ruta": "/dotes?seleccionado=Adepto+en+las+Armas",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Al margen",
+        "ruta": "/dotes?seleccionado=Al+margen",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Alerta",
+        "ruta": "/dotes?seleccionado=Alerta",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Alquimista",
+        "ruta": "/dotes?seleccionado=Alquimista",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Aprendiz de todo",
+        "ruta": "/dotes?seleccionado=Aprendiz+de+todo",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Atleta",
+        "ruta": "/dotes?seleccionado=Atleta",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Aura terrorífica",
+        "ruta": "/dotes?seleccionado=Aura+terror%C3%ADfica",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Barrera fragmentada",
+        "ruta": "/dotes?seleccionado=Barrera+fragmentada",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Botánico",
+        "ruta": "/dotes?seleccionado=Bot%C3%A1nico",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Catalizador",
+        "ruta": "/dotes?seleccionado=Catalizador",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Caída cuidadosa",
+        "ruta": "/dotes?seleccionado=Ca%C3%ADda+cuidadosa",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Capturador persistente",
+        "ruta": "/dotes?seleccionado=Capturador+persistente",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Chef",
+        "ruta": "/dotes?seleccionado=Chef",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Cocinero",
+        "ruta": "/dotes?seleccionado=Cocinero",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Conocer los trucos",
+        "ruta": "/dotes?seleccionado=Conocer+los+trucos",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Copiar al compañero",
+        "ruta": "/dotes?seleccionado=Copiar+al+compa%C3%B1ero",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Dedos largos",
+        "ruta": "/dotes?seleccionado=Dedos+largos",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Efecto placebo",
+        "ruta": "/dotes?seleccionado=Efecto+placebo",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Embaucador",
+        "ruta": "/dotes?seleccionado=Embaucador",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Empático",
+        "ruta": "/dotes?seleccionado=Emp%C3%A1tico",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Enseñar a usar",
+        "ruta": "/dotes?seleccionado=Ense%C3%B1ar+a+usar",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Entre las sombras",
+        "ruta": "/dotes?seleccionado=Entre+las+sombras",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Entrenador novato",
+        "ruta": "/dotes?seleccionado=Entrenador+novato",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Entrenamientos intensivos",
+        "ruta": "/dotes?seleccionado=Entrenamientos+intensivos",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Entusiasmado",
+        "ruta": "/dotes?seleccionado=Entusiasmado",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Evasivo",
+        "ruta": "/dotes?seleccionado=Evasivo",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Expandir psique",
+        "ruta": "/dotes?seleccionado=Expandir+psique",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Fabricar más Poké Balls",
+        "ruta": "/dotes?seleccionado=Fabricar+m%C3%A1s+Pok%C3%A9+Balls",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Fabricar Poké Balls",
+        "ruta": "/dotes?seleccionado=Fabricar+Pok%C3%A9+Balls",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Farmacólogo consumado",
+        "ruta": "/dotes?seleccionado=Farmac%C3%B3logo+consumado",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Farmacólogo novato",
+        "ruta": "/dotes?seleccionado=Farmac%C3%B3logo+novato",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Fórmulas precisas",
+        "ruta": "/dotes?seleccionado=F%C3%B3rmulas+precisas",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Fuerte afecto",
+        "ruta": "/dotes?seleccionado=Fuerte+afecto",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Fuerza heroica",
+        "ruta": "/dotes?seleccionado=Fuerza+heroica",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Gran montador",
+        "ruta": "/dotes?seleccionado=Gran+montador",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Identidad falsa",
+        "ruta": "/dotes?seleccionado=Identidad+falsa",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Inquisitivo",
+        "ruta": "/dotes?seleccionado=Inquisitivo",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Intimidatorio",
+        "ruta": "/dotes?seleccionado=Intimidatorio",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Inventor novato",
+        "ruta": "/dotes?seleccionado=Inventor+novato",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Juggernaut",
+        "ruta": "/dotes?seleccionado=Juggernaut",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Ladrón del foco",
+        "ruta": "/dotes?seleccionado=Ladr%C3%B3n+del+foco",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Luchador novato",
+        "ruta": "/dotes?seleccionado=Luchador+novato",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Maniobra defensiva",
+        "ruta": "/dotes?seleccionado=Maniobra+defensiva",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Mano para las plantas",
+        "ruta": "/dotes?seleccionado=Mano+para+las+plantas",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Manos veloces",
+        "ruta": "/dotes?seleccionado=Manos+veloces",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Mapa mental",
+        "ruta": "/dotes?seleccionado=Mapa+mental",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Más Movimientos de Luchador",
+        "ruta": "/dotes?seleccionado=M%C3%A1s+Movimientos+de+Luchador",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Más Movimientos de Mentalista",
+        "ruta": "/dotes?seleccionado=M%C3%A1s+Movimientos+de+Mentalista",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Naturaleza extraña",
+        "ruta": "/dotes?seleccionado=Naturaleza+extra%C3%B1a",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Navegar entre climas",
+        "ruta": "/dotes?seleccionado=Navegar+entre+climas",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Novato en las armas",
+        "ruta": "/dotes?seleccionado=Novato+en+las+armas",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Ojo avizor",
+        "ruta": "/dotes?seleccionado=Ojo+avizor",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Optimización de recursos",
+        "ruta": "/dotes?seleccionado=Optimizaci%C3%B3n+de+recursos",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Palabras suaves",
+        "ruta": "/dotes?seleccionado=Palabras+suaves",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Persuasivo",
+        "ruta": "/dotes?seleccionado=Persuasivo",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Polímata",
+        "ruta": "/dotes?seleccionado=Pol%C3%ADmata",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Químico",
+        "ruta": "/dotes?seleccionado=Qu%C3%ADmico",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Rastreador",
+        "ruta": "/dotes?seleccionado=Rastreador",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Relevos",
+        "ruta": "/dotes?seleccionado=Relevos",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Revelar el talento",
+        "ruta": "/dotes?seleccionado=Revelar+el+talento",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Sabelotodo",
+        "ruta": "/dotes?seleccionado=Sabelotodo",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Seguir la pista",
+        "ruta": "/dotes?seleccionado=Seguir+la+pista",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Sentidos aumentados",
+        "ruta": "/dotes?seleccionado=Sentidos+aumentados",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Sin presencia",
+        "ruta": "/dotes?seleccionado=Sin+presencia",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Traductor de glifos",
+        "ruta": "/dotes?seleccionado=Traductor+de+glifos",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Tutor de Movimientos",
+        "ruta": "/dotes?seleccionado=Tutor+de+Movimientos",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Uno con el ocultismo",
+        "ruta": "/dotes?seleccionado=Uno+con+el+ocultismo",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Cuerpo cromado",
+        "ruta": "/dotes?seleccionado=Cuerpo+cromado",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Refuerzo extra",
+        "ruta": "/dotes?seleccionado=Refuerzo+extra",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Lluvia torrencial",
+        "ruta": "/dotes?seleccionado=Lluvia+torrencial",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Navegante experto",
+        "ruta": "/dotes?seleccionado=Navegante+experto",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Crecimiento acelerado",
+        "ruta": "/dotes?seleccionado=Crecimiento+acelerado",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Escurridizo",
+        "ruta": "/dotes?seleccionado=Escurridizo",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Poder legendario",
+        "ruta": "/dotes?seleccionado=Poder+legendario",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Terror de los pusilánimes",
+        "ruta": "/dotes?seleccionado=Terror+de+los+pusil%C3%A1nimes",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Voluntad del emperador",
+        "ruta": "/dotes?seleccionado=Voluntad+del+emperador",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Electropropulsión",
+        "ruta": "/dotes?seleccionado=Electropropulsi%C3%B3n",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Parálisis completa",
+        "ruta": "/dotes?seleccionado=Par%C3%A1lisis+completa",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Cuerpo espectral",
+        "ruta": "/dotes?seleccionado=Cuerpo+espectral",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Maldición tenebrosa",
+        "ruta": "/dotes?seleccionado=Maldici%C3%B3n+tenebrosa",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Quemaduras de tercer grado",
+        "ruta": "/dotes?seleccionado=Quemaduras+de+tercer+grado",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Sol calcinador",
+        "ruta": "/dotes?seleccionado=Sol+calcinador",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Amor febril",
+        "ruta": "/dotes?seleccionado=Amor+febril",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Vapores infatuadores",
+        "ruta": "/dotes?seleccionado=Vapores+infatuadores",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Congelación",
+        "ruta": "/dotes?seleccionado=Congelaci%C3%B3n",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Escudo níveo",
+        "ruta": "/dotes?seleccionado=Escudo+n%C3%ADveo",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Lucha en tándem",
+        "ruta": "/dotes?seleccionado=Lucha+en+t%C3%A1ndem",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Romper las barreras",
+        "ruta": "/dotes?seleccionado=Romper+las+barreras",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Físico adaptable",
+        "ruta": "/dotes?seleccionado=F%C3%ADsico+adaptable",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Movimientos versátiles",
+        "ruta": "/dotes?seleccionado=Movimientos+vers%C3%A1tiles",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Hierba alta",
+        "ruta": "/dotes?seleccionado=Hierba+alta",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Revitalizar la naturaleza",
+        "ruta": "/dotes?seleccionado=Revitalizar+la+naturaleza",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Campo psíquico selectivo",
+        "ruta": "/dotes?seleccionado=Campo+ps%C3%ADquico+selectivo",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Nublar mentes",
+        "ruta": "/dotes?seleccionado=Nublar+mentes",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Escudo de las arenas",
+        "ruta": "/dotes?seleccionado=Escudo+de+las+arenas",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Inquebrantable",
+        "ruta": "/dotes?seleccionado=Inquebrantable",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Infligir terror",
+        "ruta": "/dotes?seleccionado=Infligir+terror",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Manto de la noche",
+        "ruta": "/dotes?seleccionado=Manto+de+la+noche",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Arenas movedizas",
+        "ruta": "/dotes?seleccionado=Arenas+movedizas",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Efecto sísmico",
+        "ruta": "/dotes?seleccionado=Efecto+s%C3%ADsmico",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Choque tóxico",
+        "ruta": "/dotes?seleccionado=Choque+t%C3%B3xico",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Toxinas progresivas",
+        "ruta": "/dotes?seleccionado=Toxinas+progresivas",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Corriente ascendente",
+        "ruta": "/dotes?seleccionado=Corriente+ascendente",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Creador de brisas",
+        "ruta": "/dotes?seleccionado=Creador+de+brisas",
+        "tipo": "Dote"
+    }
+]

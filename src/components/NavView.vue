@@ -1,7 +1,9 @@
 <script setup>
 import { RouterLink, useRoute } from 'vue-router'
-import { ref, watch } from 'vue'
-import menu from '../localData/json/datosMenuHeader.json' //Info submenus
+import { ref, watch, computed } from 'vue'
+import menu from '@/localData/json/datosMenuHeader.json' //Info submenus
+import index from '@/localData/json/searchIndex.json' //Buscador
+
 
 const menuVisible = ref(true)
 
@@ -18,7 +20,7 @@ function countSubmenu(maxSubindex) {
     root.style.setProperty('--submenu-height', maxSubindex);
 }
 
-//METODOS PARA SUBMENUS
+//============== METODOS PARA SUBMENUS =================
 const openIndex = ref(null)
 const openMobileNav = ref(false)
 const route = useRoute()
@@ -27,6 +29,81 @@ const route = useRoute()
 watch(() => route.fullPath, () => {
     openIndex.value = null
 })
+
+//============== Buscador =================
+
+// Estado
+const query = ref('')
+const results = ref([])
+const currentPage = ref(1)
+const pageSize = 10
+
+// Función utilitaria para normalizar y quitar tildes
+const normalize = str =>
+    str.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim()
+
+// Función de búsqueda
+const search = () => {
+    const q = normalize(query.value)
+
+    const filtered = index
+        .map(item => {
+            let score = 0
+            if (normalize(item.nombre).includes(q)) score += 2
+            if (normalize(item.tipo).includes(q)) score += 1
+
+            return {
+                ...item,
+                score
+            }
+        })
+        .filter(item => item.score)
+        .sort((a, b) => b.score - a.score)
+
+    results.value = filtered
+    currentPage.value = 1
+}
+
+// Debounce
+let timeout = null
+const debouncedSearch = () => {
+    if (query.value.trim()) {
+        clearTimeout(timeout)
+        timeout = setTimeout(() => {
+            search()
+        }, 100)
+    }
+}
+
+// Paginación
+// Paginación
+const paginatedResults = computed(() => {
+    const start = (currentPage.value - 1) * pageSize
+    return results.value.slice(start, start + pageSize)
+})
+
+const showPagination = computed(() => results.value.length > pageSize)
+
+const maxPage = computed(() => Math.ceil(results.value.length / pageSize))
+
+const nextPage = () => {
+    if (currentPage.value < maxPage.value) {
+        currentPage.value++
+    }
+}
+
+const prevPage = () => {
+    if (currentPage.value > 1) {
+        currentPage.value--
+    }
+}
+
+// Limpiar búsqueda al hacer clic
+const resetSearch = () => {
+    query.value = ''
+    results.value = []
+    currentPage.value = 1
+}
 
 </script>
 <template>
@@ -66,10 +143,14 @@ watch(() => route.fullPath, () => {
             <li class="buscador">
                 <form method="get" class="buscar">
                     <fieldset class="barraBuscar">
-                        <input type="text" class="search-input" placeholder="Buscar" aria-label="Buscar" name="buscador" />
-                        <button type="submit" class="search-button" aria-label="Buscar">
+                        <input v-model="query" @input="debouncedSearch" placeholder="Buscar..." class="search-input" />
+                        <RouterLink v-if="paginatedResults.length" :to="paginatedResults[0].ruta" @click="resetSearch"
+                            class="search-button">
                             <img src="../assets/icons/lupa.svg" alt="Icono de búsqueda" />
-                        </button>
+                        </RouterLink>
+                        <div v-else class="search-button">
+                            <img src="../assets/icons/lupa.svg" alt="Icono de búsqueda" />
+                        </div>
                     </fieldset>
                 </form>
             </li>
@@ -119,18 +200,49 @@ watch(() => route.fullPath, () => {
                     <li class="buscador">
                         <form method="get" class="buscar">
                             <fieldset class="barraBuscar">
-                                <input type="text" class="search-input" placeholder="Buscar" aria-label="Buscar" name="buscador" />
-                                <button type="submit" class="search-button" aria-label="Buscar">
+                                <input v-model="query" @input="debouncedSearch" placeholder="Buscar..."
+                                    class="search-input" />
+                                <RouterLink v-if="paginatedResults.length" :to="paginatedResults[0].ruta"
+                                    @click="resetSearch" class="search-button">
                                     <img src="../assets/icons/lupa.svg" alt="Icono de búsqueda" />
-                                </button>
+                                </RouterLink>
+                                <div v-else class="search-button">
+                                    <img src="../assets/icons/lupa.svg" alt="Icono de búsqueda" />
+                                </div>
                             </fieldset>
                         </form>
                     </li>
                 </ul>
 
+
             </Transition>
         </div>
     </nav>
+    <div>
+        <template v-if="paginatedResults.length && query.trim()">
+            <ul>
+                <li v-for="item in paginatedResults" :key="item.ruta" @click="resetSearch">
+                    <router-link :to="item.ruta">
+                        {{ item.tipo }}: {{ item.nombre }}
+                    </router-link>
+                </li>
+            </ul>
+            <div v-if="showPagination && query">
+                <button @click="prevPage" :disabled="currentPage === 1">
+                    ◀
+                </button>
+                <span>Página {{ currentPage }} de {{ maxPage }}</span>
+                <button @click="nextPage" :disabled="currentPage * pageSize >= results.length">
+                    ▶
+                </button>
+            </div>
+        </template>
+        <p v-else-if="query.trim()">
+            No se encontraron resultados.
+        </p>
+
+
+    </div>
 </template>
 
 <style scoped>

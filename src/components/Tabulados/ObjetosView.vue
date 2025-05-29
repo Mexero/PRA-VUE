@@ -187,6 +187,33 @@ watch(
     { deep: true }
 );
 
+// ========================= PONER FILTROS DESDE LA URL ===========================
+watch(
+    () => route.query,
+    (query) => {
+        filtroTipos.value = query.tipos ? query.tipos.split(",") : [];
+        filtroRarezas.value = query.rareza ? query.rareza.split(",") : [];
+        filtroPrecioMin.value = query.precioMin ? Number(query.precioMin) : null;
+        filtroPrecioMax.value = query.precioMax ? Number(query.precioMax) : null;
+        filtroNombre.value = query.nombre || "";
+
+        ordenColumna.value = query.ordenColumna || "";
+        ordenAscendente.value = query.ordenAscendente !== "false";
+
+        if (query.seleccionado) {
+            const obj = objetos.value.find((o) => o.Nombre === query.seleccionado);
+            if (obj) objetoSeleccionado.value = obj;
+        }
+
+        // Sincronizar índices del slider
+        if (filtroPrecioMin.value !== null)
+            minIndex.value = valueToIndex(closestAllowed(filtroPrecioMin.value));
+        if (filtroPrecioMax.value !== null)
+            maxIndex.value = valueToIndex(closestAllowed(filtroPrecioMax.value));
+    },
+    { immediate: true }
+);
+
 // =============== LÓGICA DE CAMBIAR ORDENAMIENTO ==================
 function ordenarPor(columna) {
     if (ordenColumna.value === columna) {
@@ -238,7 +265,7 @@ const objetosFiltrados = computed(() => {
 </script>
 
 <template>
-        <h1 class="titulo">Objetos</h1>
+    <h1 class="titulo">Objetos</h1>
 
     <main class="cuerpo">
         <div id="filtroTabla">
@@ -371,10 +398,10 @@ Todo:
 - Filtro se cierra solo en movil
 */
 
-.titulo{
+.titulo {
     letter-spacing: 5px;
     font-family: "Staatliches", sans-serif;
-    color:var(--color-texto);
+    color: var(--color-texto);
     font-size: 50px;
     padding: 10px 0 0px 2%;
 }
@@ -508,7 +535,7 @@ input::-webkit-inner-spin-button {
     pointer-events: none;
     cursor: pointer;
     -webkit-appearance: none;
-        appearance: none;
+    appearance: none;
 
 }
 
