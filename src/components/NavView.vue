@@ -30,6 +30,12 @@ watch(() => route.fullPath, () => {
     openIndex.value = null
 })
 
+const onSubmit = () => {
+    if (paginatedResults.value.length) {
+        route.push(paginatedResults.value[0].ruta)
+        resetSearch()
+    }
+}
 //============== Buscador =================
 
 // Estado
@@ -153,6 +159,36 @@ const resetSearch = () => {
                         </div>
                     </fieldset>
                 </form>
+                <div id="resultBusqueda">
+                    <table>
+                        <template v-if="paginatedResults.length && query.trim()">
+
+                            <tbody>
+                                <tr v-for="item in paginatedResults" :key="item.ruta" @click="resetSearch">
+                                    <router-link :to="item.ruta">
+                                        <td>
+                                            <span><strong> {{ item.tipo }}:</strong> {{ item.nombre }}</span>
+                                        </td>
+                                    </router-link>
+                                </tr>
+                            </tbody>
+                        </template>
+                        <template v-else-if="query.trim()">
+                            <tr class="noResult">
+                                <td>No se encontraron resultados.</td>
+                            </tr>
+                        </template>
+                    </table>
+                    <div v-if="showPagination && query">
+                        <button @click="prevPage" :disabled="currentPage === 1">
+                            ◀
+                        </button>
+                        <span>Página {{ currentPage }} de {{ maxPage }}</span>
+                        <button @click="nextPage" :disabled="currentPage * pageSize >= results.length">
+                            ▶
+                        </button>
+                    </div>
+                </div>
             </li>
         </ul>
 
@@ -183,7 +219,7 @@ const resetSearch = () => {
                             {{ section.title }}
                         </div>
 
-                        <Transition :name="'slideSubMenu'">
+                        <Transition :name="'slideSubMenuMovil'">
 
                             <ul class="subMenu" v-if="openIndex === index" v-click-outside="() => openIndex = null">
 
@@ -196,37 +232,47 @@ const resetSearch = () => {
                         </Transition>
                     </li>
 
-                    <!-- Formulario de busqueda interno de la pagina -->
-                    <li class="buscador">
-                        <form method="get" class="buscar">
-                            <fieldset class="barraBuscar">
-                                <input v-model="query" @input="debouncedSearch" placeholder="Buscar..."
-                                    class="search-input" />
-                                <RouterLink v-if="paginatedResults.length" :to="paginatedResults[0].ruta"
-                                    @click="resetSearch" class="search-button">
-                                    <img src="../assets/icons/lupa.svg" alt="Icono de búsqueda" />
-                                </RouterLink>
-                                <div v-else class="search-button">
-                                    <img src="../assets/icons/lupa.svg" alt="Icono de búsqueda" />
-                                </div>
-                            </fieldset>
-                        </form>
-                    </li>
+
                 </ul>
 
-
             </Transition>
+
         </div>
-    </nav>
-    <div>
-        <template v-if="paginatedResults.length && query.trim()">
-            <ul>
-                <li v-for="item in paginatedResults" :key="item.ruta" @click="resetSearch">
-                    <router-link :to="item.ruta">
-                        {{ item.tipo }}: {{ item.nombre }}
-                    </router-link>
-                </li>
-            </ul>
+        <!-- Formulario de busqueda interno de la pagina -->
+        <div class="buscador">
+            <form method="get" class="buscar">
+                <fieldset class="barraBuscar">
+                    <input v-model="query" @input="debouncedSearch" placeholder="Buscar..." class="search-input" />
+                    <RouterLink v-if="paginatedResults.length" :to="paginatedResults[0].ruta" @click="resetSearch"
+                        class="search-button">
+                        <img src="../assets/icons/lupa.svg" alt="Icono de búsqueda" />
+                    </RouterLink>
+                    <div v-else class="search-button">
+                        <img src="../assets/icons/lupa.svg" alt="Icono de búsqueda" />
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+        <div id="resultBusqueda">
+            <table>
+                <template v-if="paginatedResults.length && query.trim()">
+
+                    <tbody>
+                        <tr v-for="item in paginatedResults" :key="item.ruta" @click="resetSearch">
+                            <router-link :to="item.ruta">
+                                <td>
+                                    <span><strong> {{ item.tipo }}:</strong> {{ item.nombre }}</span>
+                                </td>
+                            </router-link>
+                        </tr>
+                    </tbody>
+                </template>
+                <template v-else-if="query.trim()">
+                    <tr class="noResult">
+                        <td>No se encontraron resultados.</td>
+                    </tr>
+                </template>
+            </table>
             <div v-if="showPagination && query">
                 <button @click="prevPage" :disabled="currentPage === 1">
                     ◀
@@ -236,13 +282,9 @@ const resetSearch = () => {
                     ▶
                 </button>
             </div>
-        </template>
-        <p v-else-if="query.trim()">
-            No se encontraron resultados.
-        </p>
+        </div>
+    </nav>
 
-
-    </div>
 </template>
 
 <style scoped>
@@ -260,6 +302,7 @@ nav {
 .menu {
     display: flex;
     height: 40px;
+    z-index: 500;
 }
 
 ul {
@@ -307,6 +350,8 @@ nav div {
     display: flex;
     padding-left: 5px;
     align-items: center;
+    box-sizing: content-box;
+
 }
 
 .subMenu li:nth-child(5) a {
@@ -381,11 +426,83 @@ nav div {
     width: 40px;
 }
 
+
+
+#resultBusqueda {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: auto;
+    width: 420px;
+    min-width: 250px;
+    z-index: 1;
+    overflow-x: auto;
+}
+
+#resultBusqueda * {
+    font-family: "Outfit", sans-serif;
+    font-size: 15px;
+    letter-spacing: 1px;
+    color: black;
+}
+
+#resultBusqueda div {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: var(--color-tituloTabla);
+    padding: 5px;
+
+}
+
+#resultBusqueda div button {
+    width: 50px;
+}
+
+td {
+    padding: 10px 5px;
+    display: flex;
+}
+
+tbody tr:nth-child(even) {
+    background-color: var(--color-tabla1);
+}
+
+tbody tr:nth-child(odd) {
+    background-color: var(--color-tabla2);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    color: var(--color-texto)
+}
+
+tr:hover td {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.noResult {
+    background-color: var(--color-tabla1);
+}
+
+.noResult:hover td {
+    cursor: auto;
+    text-decoration: none;
+}
+
 @media screen and (max-width: 750px) {
 
     /* ====== Cambiar de modo ====== */
     #modoMovil {
-        display: block;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .navLogic {
+        display: flex;
+        justify-content: space-between;
     }
 
     #modoEscritorio {
@@ -400,6 +517,7 @@ nav div {
         display: flex;
         flex-direction: column;
         height: fit-content;
+
     }
 
     .abrirMenu {
@@ -407,33 +525,98 @@ nav div {
     }
 
     .divMenu {
+        width: 210px;
         justify-content: flex-start;
         padding-left: 10px;
         border-top: 1px solid var(--color-secundario2);
+        box-sizing: content-box;
     }
 
     /* ====== Sub menus ====== */
     .subMenu {
-        width: 100%;
+        width: 210px;
         position: absolute;
         top: auto;
-        left: 110px;
-        transform: translateY(-39px);
+        left: 130px;
+        transform: translateY(-40px);
     }
 
     .subMenu li a {
-        padding-left: 10px;
         width: 100%;
+        font-size: 17px;
+        min-width: 210px;
+    }
+
+    .subMenu li a {
+        border-radius: 0;
+    }
+
+    .subMenu li:first-child a {
+        border-radius: 0 5px 0 0;
+
+    }
+
+    .subMenu li:last-child a {
+        border-radius: 0 0 5px 0;
+
     }
 
     /* ====== Barra de buscar del menu principal ====== */
     .buscador {
-        border-top: 1px solid var(--color-secundario2);
+        flex: none;
+        border: none;
     }
+
+
+    /* ====== Resultados de la busqueda ====== */
+
+    #resultBusqueda {
+        min-width: auto;
+        max-width: 350px;
+    }
+
+    #resultBusqueda * {
+        font-size: 14px;
+    }
+
+    table {
+        min-width: 350px;
+        max-width: 350px;
+    }
+
+    td {
+        padding: 5px 5px;
+
+    }
+
 }
 
+
+/* ===== Transicion menu escritorio ===== */
+.slideSubMenu-enter-active,
+.slideSubMenu-leave-active {
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.slideSubMenu-enter-from,
+.slideSubMenu-leave-to {
+    max-height: 0;
+}
+
+.slideSubMenu-leave-to {
+    opacity: 0.2;
+}
+
+/* Diferente altura para cada menu, a su altura maxima para una transicion consistente */
+.slideSubMenu-enter-to,
+.slideSubMenu-leave-from {
+    max-height: calc(var(--submenu-height) * 40px);
+}
+
+
+
 /* ===== Transicion del Menu principal en modo movil ===== */
-/* Es la misma transicion que los submenus, esta a parte por claridad */
 .slideMenu-enter-active,
 .slideMenu-leave-active {
     transition: all 0.3s ease;
@@ -450,23 +633,27 @@ nav div {
     max-height: 280px;
 }
 
-/* ===== Transicion para cada submenu ===== */
-/* Mismo efecto de transicion para todos */
-.slideSubMenu-enter-active,
-.slideSubMenu-leave-active {
-    transition: all 0.3s ease;
+/* ============ Transicion Subemenus Movil ========= */
+.slideSubMenuMovil-enter-active,
+.slideSubMenuMovil-leave-active {
+    transition: all 0.3s ease-in-out;
     overflow: hidden;
 }
 
-/* Mismo inicio de altura para todos */
-.slideSubMenu-enter-from,
-.slideSubMenu-leave-to {
-    max-height: 0;
+.slideSubMenuMovil-enter-from,
+.slideSubMenuMovil-leave-to {
+    max-width: 0;
+
 }
 
-/* Diferente altura para cada menu, a su altura maxima para una transicion consistente */
-.slideSubMenu-enter-to,
-.slideSubMenu-leave-from {
-    max-height: calc(var(--submenu-height) * 40px);
+.slideSubMenuMovil-leave-to {
+    opacity: 0;
 }
+
+.slideSubMenuMovil-enter-to,
+.slideSubMenuMovil-leave-from {
+    max-width: 220px;
+}
+
+
 </style>

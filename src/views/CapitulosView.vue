@@ -171,7 +171,6 @@ aside {
 }
 
 #desplegarMenu {
-
     display: flex;
     height: fit-content;
     max-height: 80vh;
