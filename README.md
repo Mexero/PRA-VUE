@@ -26,4 +26,8 @@ npm run dev
 
 ```sh
 npm run build
+
+IMPORTANTE: CADA VEZ QUE SE DESPLIEGA UNA NUEVA VERSIÓN SE DEBE: 
+1. MODIFICAR /public/version.json de public. Si no lo haces, no sabe que se han modificado las partes.
+2. MODIFICAR LA VERSIÓN DE /src/sw.js, (const SWVersion = 'vX'). Si no lo haces, no se materializa el cambio de versión.
 ```
