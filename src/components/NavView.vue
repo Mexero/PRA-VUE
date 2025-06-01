@@ -147,7 +147,7 @@ const resetSearch = () => {
 
             <!-- Formulario de busqueda interno de la pagina -->
             <li class="buscador">
-                <form method="get" class="buscar">
+                <form method="get" class="buscar" name="buscador">
                     <fieldset class="barraBuscar">
                         <input v-model="query" @input="debouncedSearch" placeholder="Buscar..." class="search-input" />
                         <RouterLink v-if="paginatedResults.length" :to="paginatedResults[0].ruta" @click="resetSearch"
@@ -159,7 +159,7 @@ const resetSearch = () => {
                         </div>
                     </fieldset>
                 </form>
-                <div id="resultBusqueda">
+                <div class="resultBusqueda">
                     <table>
                         <template v-if="paginatedResults.length && query.trim()">
 
@@ -240,8 +240,8 @@ const resetSearch = () => {
         </div>
         <!-- Formulario de busqueda interno de la pagina -->
         <div class="buscador">
-            <form method="get" class="buscar">
-                <fieldset class="barraBuscar">
+            <form method="get" class="buscar" name="buscador">
+                <div class="barraBuscar">
                     <input v-model="query" @input="debouncedSearch" placeholder="Buscar..." class="search-input" />
                     <RouterLink v-if="paginatedResults.length" :to="paginatedResults[0].ruta" @click="resetSearch"
                         class="search-button">
@@ -250,13 +250,12 @@ const resetSearch = () => {
                     <div v-else class="search-button">
                         <img src="../assets/icons/lupa.svg" alt="Icono de búsqueda" />
                     </div>
-                </fieldset>
+                </div>
             </form>
         </div>
-        <div id="resultBusqueda">
+        <div class="resultBusqueda">
             <table>
                 <template v-if="paginatedResults.length && query.trim()">
-
                     <tbody>
                         <tr v-for="item in paginatedResults" :key="item.ruta" @click="resetSearch">
                             <router-link :to="item.ruta">
@@ -428,7 +427,7 @@ nav div {
 
 
 
-#resultBusqueda {
+.resultBusqueda {
     position: absolute;
     top: 100%;
     right: 0;
@@ -439,14 +438,14 @@ nav div {
     overflow-x: auto;
 }
 
-#resultBusqueda * {
+.resultBusqueda * {
     font-family: "Outfit", sans-serif;
     font-size: 15px;
     letter-spacing: 1px;
     color: black;
 }
 
-#resultBusqueda div {
+.resultBusqueda div {
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -455,7 +454,7 @@ nav div {
 
 }
 
-#resultBusqueda div button {
+.resultBusqueda div button {
     width: 50px;
 }
 
@@ -570,12 +569,12 @@ tr:hover td {
 
     /* ====== Resultados de la busqueda ====== */
 
-    #resultBusqueda {
+    .resultBusqueda {
         min-width: auto;
         max-width: 350px;
     }
 
-    #resultBusqueda * {
+    .resultBusqueda * {
         font-size: 14px;
     }
 
@@ -654,6 +653,4 @@ tr:hover td {
 .slideSubMenuMovil-leave-from {
     max-width: 220px;
 }
-
-
 </style>
