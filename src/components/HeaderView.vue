@@ -38,6 +38,15 @@ function toggleModo() {
     root.style.setProperty('--color-hoverBloqueDescargas', oscuro.value ? '#293141' : '#EEF5FF')
 }
 
+
+// Cache todo
+function cacheAll() {
+    if ('serviceWorker' in navigator && navigator.serviceWorker.controller) {
+        navigator.serviceWorker.controller.postMessage({ type: 'CACHE_ALL_RESOURCES' });
+    }
+}
+
+
 </script>
 
 <template>
@@ -46,6 +55,10 @@ function toggleModo() {
             <img src="../assets/img/logo.webp" alt="">
         </RouterLink>
         <h1>Pokémon Roleplaying Adventures</h1>
+
+        <button @click="cacheAll">
+            carga todo
+        </button>
 
         <div id="modoNoche" @click="toggleModo">
 

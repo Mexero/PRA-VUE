@@ -1,180 +1,139 @@
-import { cleanupOutdatedCaches } from 'workbox-precaching';
-const precacheAssets = self.__WB_MANIFEST;
+import { precacheAndRoute } from 'workbox-precaching';
+import { registerRoute } from 'workbox-routing';
+import { CacheFirst } from 'workbox-strategies';
+import { CacheableResponsePlugin } from 'workbox-cacheable-response';
 
-// Constantes
-const SWVersion = 'v1'; //Hay que cambiar esto en cada despliegue. Hace que el SW sepa que cosas han cambiado
-console.log('Versión SW: ' + SWVersion);
-const CACHE_PREFIX = 'PRA-cache';
-const VERSION_URL = '/version.json';
-const VERSION_CACHE = 'version-cache';
+// Version caches
+const JSON_CACHE_VERSION = 'v1';
+const SQLITE_CACHE_VERSION = 'v1';
+const DOCS_CACHE_VERSION = 'v2';
 
-const DOC_TYPES = ['page', 'json', 'sqlite'];
+//Nombre caches
+const JSON_CACHE = `json-cache-${JSON_CACHE_VERSION}`;
+const SQLITE_CACHE = `sqlite-cache-${SQLITE_CACHE_VERSION}`;
+const DOCS_CACHE = `docs-cache-${DOCS_CACHE_VERSION}`;
 
-// Instala Service Worker
-self.addEventListener('install', (event) => {
-    event.waitUntil(
-        (async () => {
-            await updateCaches();
-            const cacheName = await getCurrentCacheName('page');
-            const cache = await caches.open(cacheName);
+// Precargar solo recursos definidos en vite-plugin-pwa (__WB_MANIFEST)
+precacheAndRoute(self.__WB_MANIFEST);
 
-            await Promise.all(
-                precacheAssets.map(async (entry) => {
-                    try {
-                        const req = new Request(entry.url, {
-                            integrity: entry.integrity,
-                            cache: 'reload'
-                        });
-                        const response = await fetch(req);
-                        if (response.ok) {
-                            await cache.put(req, response);
-                        } else {
-                            console.warn('Failed to fetch precache asset:', entry.url);
-                        }
-                    } catch (e) {
-                        console.warn('Error precaching asset:', entry.url, e);
-                    }
-                })
-            )
-            await self.skipWaiting();
-        })()
-    );
-});
+// Recursos manuales
+const jsonResources = [ /* '/data/version.json', etc. */]; //AQUI HABRÁ QUE METER EL JSON DE BÚSQUEDA CREO
+const sqliteResources = [ /* '/data/database.sqlite', etc. */];
+const docsResources = ['/', /* index.html u otros si quieres */];
 
-// Activar SW
-self.addEventListener('activate', (event) => {
-    event.waitUntil(
-        cleanupOldCaches()
-            .then(() => self.clients.claim())
-    );
-});
-
-// Fetch Handling
-self.addEventListener('fetch', (event) => {
-    const url = new URL(event.request.url);
-
-
-    //Evita que se cachee el doc de versionado
-    if (url.pathname === VERSION_URL) {
-        console.warn("Versión no cacheada.")
-        return;
-    }
-
-
-    let cacheType = null;
-    if (url.pathname.startsWith('/data/json/')) {
-        cacheType = DOC_TYPES[1]; // 'json'
-    } else if (url.pathname.startsWith('/data/sqlite/')) {
-        cacheType = DOC_TYPES[2]; // 'sqlite'
-    } else {
-        cacheType = DOC_TYPES[0]; // 'page'
-    }
-
-    if (!cacheType) {
-        return;
-    }
-
-    event.respondWith(
-        getCurrentCacheName(cacheType).then(cacheName => {
-            if (!cacheName) {
-                return fetch(event.request);
+// Limpia versiones antiguas
+async function cleanOldCaches() {
+    const validCaches = [JSON_CACHE, SQLITE_CACHE, DOCS_CACHE];
+    const existingCaches = await caches.keys();
+    await Promise.all(
+        existingCaches.map(cache => {
+            if (!validCaches.includes(cache) && !cache.startsWith('workbox-precache-')) {
+                return caches.delete(cache);
             }
-
-            return caches.open(cacheName).then(cache => {
-                return cache.match(event.request).then(cachedResponse => {
-                    if (cachedResponse) {
-                        return cachedResponse;
-                    }
-
-                    return fetch(event.request).then(networkResponse => {
-                        if (networkResponse.ok) {
-                            cache.put(event.request, networkResponse.clone());
-                        }
-                        return networkResponse;
-                    }).catch((e) => {
-                        console.warn('Failed to fetch data', e);
-                    });
-                });
-            });
         })
     );
+}
+
+//Estrategias
+const jsonStrategy = new CacheFirst({
+    cacheName: JSON_CACHE,
+    plugins: [
+        new CacheableResponsePlugin({ statuses: [0, 200] }),
+    ],
+});
+
+const sqliteStrategy = new CacheFirst({
+    cacheName: SQLITE_CACHE,
+    plugins: [
+        new CacheableResponsePlugin({ statuses: [0, 200] }),
+    ],
+});
+
+const docsStrategy = new CacheFirst({
+    cacheName: DOCS_CACHE,
+    plugins: [
+        new CacheableResponsePlugin({ statuses: [0, 200] }),
+    ],
 });
 
 
-// ---- Cache management ----
+// precarga caché
+async function preloadCache(cacheName, resources) {
+    const cache = await caches.open(cacheName);
+    await cache.addAll(resources);
+}
 
-async function updateCaches() {
-    const versionCache = await caches.open(VERSION_CACHE);
+// Instalación
+self.addEventListener('install', event => {
+    event.waitUntil((async () => {
+        await cleanOldCaches();
+        await preloadCache(DOCS_CACHE, docsResources);
+        console.log('[SW] Instalado y precargado');
+        self.skipWaiting();
+    })());
+});
 
-    try {
-        const versionResp = await fetch(VERSION_URL, { cache: 'no-store' });
-        if (!versionResp.ok) {
-            console.warn('Failed to fetch version.json');
-            return;
-        }
+// toma control de inmediato
+self.addEventListener('activate', event => {
+    event.waitUntil(self.clients.claim());
+    console.log('[SW] Activado y controlando clientes');
+});
 
-        const serverVersions = await versionResp.json();
+// fetch
+registerRoute(
+    ({ request }) =>
+        request.destination === 'document' || request.destination === 'script' || request.destination === 'style' || request.destination === 'image'
+    ,
+    ({ event, request }) => docsStrategy.handle({ event, request })
+);
 
-        for (const type of DOC_TYPES) {
-            const serverVersion = serverVersions[type];
-            if (!serverVersion) continue;
+registerRoute(
+    ({ url }) => url.pathname.endsWith('.json'),
+    ({ event, request }) => jsonStrategy.handle({ event, request })
+);
 
-            const cachedVersionResp = await versionCache.match(type);
-            const cachedVersion = cachedVersionResp ? await cachedVersionResp.text() : null;
+registerRoute(
+    ({ url }) =>
+        url.pathname.endsWith('.sqlite') ||
+        url.pathname.endsWith('.sqlite-shm') ||
+        url.pathname.endsWith('.sqlite-wal'),
+    ({ event, request }) => sqliteStrategy.handle({ event, request })
+);
 
-            console.log(`[SW] ${type}: cached=${cachedVersion}, server=${serverVersion}`);
+self.addEventListener('message', async (event) => {
+    if (event.data?.type === 'CACHE_ALL_RESOURCES') {
+        try {
+            const response = await fetch('/file-index.json');
+            const allResources = await response.json();
 
-            if (cachedVersion !== serverVersion) {
-                await deleteOldCaches(type);
-                const newCacheName = getCacheName(type, serverVersion);
-                await caches.open(newCacheName);
-                await versionCache.put(type, new Response(serverVersion));
+            for (const path of allResources) {
+                const url = new URL(path, self.location.origin);
+                const pathname = url.pathname;
+
+                // Clasificación de caché según extensión
+                let cacheName;
+                if (
+                    pathname.endsWith('.sqlite') ||
+                    pathname.endsWith('.sqlite-shm') ||
+                    pathname.endsWith('.sqlite-wal')
+                ) {
+                    cacheName = SQLITE_CACHE;
+                } else if (pathname.endsWith('.json')) {
+                    cacheName = JSON_CACHE;
+                } else {
+                    cacheName = DOCS_CACHE;
+                }
+
+                try {
+                    const cache = await caches.open(cacheName);
+                    await cache.add(new Request(url, { cache: 'reload' }));
+                    console.log(`[SW] Se ha cacheado ${url} en ${cacheName}`);
+                } catch (e) {
+                    console.warn(`[SW] Fallo al cachear ${url}:`, e);
+                }
             }
-        }
-    } catch (e) {
-        console.warn('[SW] updateCaches error:', e);
-    }
-}
-
-async function deleteOldCaches(type) {
-    const keys = await caches.keys();
-    for (const key of keys) {
-        if (key.startsWith(`${CACHE_PREFIX}-${type}-`)) {
-            await caches.delete(key);
+        } catch (err) {
+            console.error('[SW] Fallo al fetchear file-index.json:', err);
         }
     }
-}
-
-async function cleanupOldCaches() {
-    const versionCache = await caches.open(VERSION_CACHE);
-
-    const currentVersions = {};
-    for (const type of DOC_TYPES) {
-        const resp = await versionCache.match(type);
-        currentVersions[type] = resp ? await resp.text() : null;
-    }
-
-    const keys = await caches.keys();
-    for (const key of keys) {
-        if (key === VERSION_CACHE) continue;
-
-        for (const type of DOC_TYPES) {
-            const expected = getCacheName(type, currentVersions[type]);
-            if (key.startsWith(`${CACHE_PREFIX}-${type}-`) && key !== expected) {
-                await caches.delete(key);
-            }
-        }
-    }
-}
-
-function getCacheName(type, version) {
-    return `${CACHE_PREFIX}-${type}-${version}`;
-}
-
-async function getCurrentCacheName(type) {
-    const versionCache = await caches.open(VERSION_CACHE);
-    const resp = await versionCache.match(type);
-    const version = resp ? await resp.text() : null;
-    if (!version) return null;
-    return getCacheName(type, version);
-}
+});
