@@ -7,9 +7,17 @@ import LightIcon from '@/assets/icons/LightIcon.webp' //ModoDia
 const oscuro = ref(false)
 const icono = ref(DarkIcon)
 
+
+const showBanner = ref(false);
+
 onMounted(() => {
+    //modo oscuro
     oscuro.value = localStorage.getItem('modoOscuro') === 'true';
     icono.value = oscuro.value ? DarkIcon : LightIcon;
+    // Mostrar el banner solo si el usuario había descargado todo antes
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.addEventListener('message', (event) => listenToSWMessages(event));
+    }
 })
 
 //TOGGLE MODO OSCURO. TAMBIEN HAY UNA PARTE EN App.vue Y LOS COLORES ESTÁN ALLÍ DUPLICADOS
@@ -41,15 +49,62 @@ function toggleModo() {
 
 // Cache todo
 function cacheAll() {
+    if (localStorage.getItem('offlineReady') === 'true') {
+        alert("¡Los datos ya están cacheados!")
+        return
+    }
     if ('serviceWorker' in navigator && navigator.serviceWorker.controller) {
         navigator.serviceWorker.controller.postMessage({ type: 'CACHE_ALL_RESOURCES' });
     }
 }
 
 
+
+// Mensaje actualización SW
+function listenToSWMessages(event) {
+    if (navigator.serviceWorker.controller) {
+        if (event.data?.type === 'NEW_VERSION_AVAILABLE' && localStorage.getItem('offlineReady') === 'true') {
+            showBanner.value = true;
+            localStorage.removeItem('offlineReady');
+        }
+        else if (event.data?.type === 'EVERYTHING_CACHED') {
+            localStorage.setItem('offlineReady', 'true');
+            alert("¡La página puede usarse offline!")
+        }
+        else if (event.data?.type === 'FAIL_TO_CACHE') {
+            alert("Error al cachear...")
+        }
+    }
+    else {
+        console.warn('No hay controlador SW activo para recibir mensajes.');
+    }
+}
+
+//Tratamiento botón banner
+function acceptUpdate() {
+    if (navigator.serviceWorker.controller) {
+        navigator.serviceWorker.controller.postMessage({ type: 'CACHE_ALL_RESOURCES' });
+        localStorage.setItem('offlineReady', 'true');
+    }
+    showBanner.value = false;
+}
+
+function ignoreUpdate() {
+    localStorage.removeItem('offlineReady');
+    showBanner.value = false;
+}
+
+
 </script>
 
 <template>
+    <!--Mensaje de actualización-->
+    <div v-if="showBanner" class="update-banner">
+        Nueva versión disponible.
+        <button @click="acceptUpdate">Actualizar</button>
+        <button @click="ignoreUpdate">Ignorar</button>
+    </div>
+    <!--Header-->
     <header>
         <RouterLink to="/">
             <img src="../assets/img/logo.webp" alt="">
@@ -71,6 +126,18 @@ function cacheAll() {
 
 
 <style scoped>
+/* ======================= BANNER ======================= */
+
+.update-banner {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #ffd700;
+    padding: 1em;
+    z-index: 10000;
+    text-align: center;
+}
+
 /* ======================= HEADER ======================= */
 header {
     height: 100px;

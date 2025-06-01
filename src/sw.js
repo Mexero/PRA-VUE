@@ -4,7 +4,7 @@ import { CacheFirst } from 'workbox-strategies';
 import { CacheableResponsePlugin } from 'workbox-cacheable-response';
 
 // Version caches
-const JSON_CACHE_VERSION = 'v1';
+const JSON_CACHE_VERSION = 'v2';
 const SQLITE_CACHE_VERSION = 'v1';
 const DOCS_CACHE_VERSION = 'v3';
 
@@ -25,14 +25,18 @@ const docsResources = ['/', /* index.html u otros si quieres */];
 async function cleanOldCaches() {
     const validCaches = [JSON_CACHE, SQLITE_CACHE, DOCS_CACHE];
     const existingCaches = await caches.keys();
-    await Promise.all(
-        existingCaches.map(cache => {
-            if (!validCaches.includes(cache) && !cache.startsWith('workbox-precache-')) {
-                return caches.delete(cache);
-            }
-        })
-    );
+    let deletedAny = false;
+
+    for (const cache of existingCaches) {
+        if (!validCaches.includes(cache) && !cache.startsWith('workbox-precache-')) {
+            await caches.delete(cache);
+            deletedAny = true;
+        }
+    }
+
+    return deletedAny;
 }
+
 
 //Estrategias
 const jsonStrategy = new CacheFirst({
@@ -66,17 +70,27 @@ async function preloadCache(cacheName, resources) {
 // Instalación
 self.addEventListener('install', event => {
     event.waitUntil((async () => {
-        await cleanOldCaches();
         await preloadCache(DOCS_CACHE, docsResources);
         console.log('[SW] Instalado y precargado');
         self.skipWaiting();
     })());
 });
 
-// toma control de inmediato
+// Activación
 self.addEventListener('activate', event => {
-    event.waitUntil(self.clients.claim());
-    console.log('[SW] Activado y controlando clientes');
+    event.waitUntil((async () => {
+        await self.clients.claim();
+        const cleaned = await cleanOldCaches();
+
+        if (cleaned) {
+            const clients = await self.clients.matchAll({ includeUncontrolled: true });
+            await Promise.all(
+                clients.map(client => client.postMessage({ type: 'NEW_VERSION_AVAILABLE' }))
+            );
+        }
+
+        console.log('[SW] Activado y controlando clientes');
+    })());
 });
 
 // fetch
@@ -132,8 +146,21 @@ self.addEventListener('message', async (event) => {
                     console.warn(`[SW] Fallo al cachear ${url}:`, e);
                 }
             }
+
+            const clients = await self.clients.matchAll({ includeUncontrolled: true });
+            await Promise.all(
+                clients.map(client => {
+                    client.postMessage({ type: 'EVERYTHING_CACHED' });
+                })
+            );
+
         } catch (err) {
             console.error('[SW] Fallo al fetchear file-index.json:', err);
+            const clients = await self.clients.matchAll({ includeUncontrolled: true });
+            await Promise.all(
+                clients.map(client => {
+                    client.postMessage({ type: 'FAIL_TO_CACHE' });
+                }))
         }
     }
 });
