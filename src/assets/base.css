@@ -1,15 +1,18 @@
 @font-face {
   font-family: "Staatliches";
-  src: url("./fonts/Staatliches-Regular.ttf") format("truetype");
+  src: url("./fonts/Staatliches-Regular.woff2") format("truetype");
   font-weight: normal;
   font-style: normal;
+    font-display: swap;
+
 }
 
 @font-face {
   font-family: "Outfit";
-  src: url("./fonts/OutfitRegular.ttf") format("truetype");
+  src: url("./fonts/OutfitRegular.woff2") format("truetype");
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
 :root {
