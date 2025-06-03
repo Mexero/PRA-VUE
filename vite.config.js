@@ -10,7 +10,14 @@ export default defineConfig({
     vueDevTools(),
     VitePWA({
       strategies: 'injectManifest',
-      //includeAssets: ['/assets/discord-C4p_KTJx.webp', '/assets/literalmentenosotros-DGGsUPbd.webp', '/assets/logo-CDIneW-9.webp', '/assets/HabIcon-5hK6Ejw0.svg', '/assets/PokedexIcon-P_6eSSZ8.webp', '/assets/ClasesIcon-D3jrF5OJ.webp', '/assets/DotesIcon-CYgV0zXz.svg', '/assets/ObjetosIcon-D9tIa6To.webp', '/assets/EstadosIcon-BGaW0WlS.webp', '/assets/ReglasIcon-CWN7kAUE.svg', '/assets/lupa-ByV5WMBw.svg', 'assets/Staatliches-Regular-D0tQKDij.ttf', 'assets/OutfitRegular-SQKIufFL.ttf'],
+      injectManifest: {
+        globPatterns: [
+          '*.*',
+          'assets/**/index*.{js,css}'
+        ],
+        globDirectory: 'dist',
+        swSrc: 'src/sw.js',
+      },
       srcDir: 'src',
       filename: 'sw.js',
       injectRegister: 'auto',

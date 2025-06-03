@@ -1,4 +1,4 @@
-import { precacheAndRoute } from 'workbox-precaching';
+import { precacheAndRoute, createHandlerBoundToURL } from 'workbox-precaching';
 import { registerRoute } from 'workbox-routing';
 import { CacheFirst } from 'workbox-strategies';
 import { CacheableResponsePlugin } from 'workbox-cacheable-response';
@@ -6,24 +6,36 @@ import { CacheableResponsePlugin } from 'workbox-cacheable-response';
 // Version caches
 const JSON_CACHE_VERSION = 'v2';
 const SQLITE_CACHE_VERSION = 'v1';
-const DOCS_CACHE_VERSION = 'v3';
+const VIEW_CACHE_VERSION = 'v3';
+const RESOURCES_CACHE_VERSION = 'v1';
 
 //Nombre caches
 const JSON_CACHE = `json-cache-${JSON_CACHE_VERSION}`;
 const SQLITE_CACHE = `sqlite-cache-${SQLITE_CACHE_VERSION}`;
-const DOCS_CACHE = `docs-cache-${DOCS_CACHE_VERSION}`;
+const VIEW_CACHE = `view-cache-${VIEW_CACHE_VERSION}`;
+const RESOURCES_CACHE = `resources-cache-${RESOURCES_CACHE_VERSION}`;
 
 // Precargar solo recursos definidos en vite-plugin-pwa (__WB_MANIFEST)
 precacheAndRoute(self.__WB_MANIFEST);
 
-// Recursos manuales
-const jsonResources = [ /* '/data/version.json', etc. */]; //AQUI HABRÁ QUE METER EL JSON DE BÚSQUEDA CREO
-const sqliteResources = [ /* '/data/database.sqlite', etc. */];
-const docsResources = ['/', /* index.html u otros si quieres */];
+
+//Handle navegación cuando todo cacheado con el botón
+const handler = createHandlerBoundToURL('/index.html');
+
+registerRoute(
+    ({ request }) => request.mode === 'navigate',
+    handler
+);
+
+// Recursos manuales. Esto si se usase en el futuro.
+const jsonResources = [];
+const sqliteResources = [];
+const viewResources = [];
+const ImgResources = [];
 
 // Limpia versiones antiguas
 async function cleanOldCaches() {
-    const validCaches = [JSON_CACHE, SQLITE_CACHE, DOCS_CACHE];
+    const validCaches = [JSON_CACHE, SQLITE_CACHE, RESOURCES_CACHE, VIEW_CACHE];
     const existingCaches = await caches.keys();
     let deletedAny = false;
 
@@ -53,8 +65,15 @@ const sqliteStrategy = new CacheFirst({
     ],
 });
 
-const docsStrategy = new CacheFirst({
-    cacheName: DOCS_CACHE,
+const viewStrategy = new CacheFirst({
+    cacheName: VIEW_CACHE,
+    plugins: [
+        new CacheableResponsePlugin({ statuses: [0, 200] }),
+    ],
+});
+
+const resourcesStrategy = new CacheFirst({
+    cacheName: RESOURCES_CACHE,
     plugins: [
         new CacheableResponsePlugin({ statuses: [0, 200] }),
     ],
@@ -70,7 +89,7 @@ async function preloadCache(cacheName, resources) {
 // Instalación
 self.addEventListener('install', event => {
     event.waitUntil((async () => {
-        await preloadCache(DOCS_CACHE, docsResources);
+        await preloadCache(VIEW_CACHE, viewResources);
         console.log('[SW] Instalado y precargado');
         self.skipWaiting();
     })());
@@ -88,17 +107,28 @@ self.addEventListener('activate', event => {
                 clients.map(client => client.postMessage({ type: 'NEW_VERSION_AVAILABLE' }))
             );
         }
-
         console.log('[SW] Activado y controlando clientes');
     })());
 });
 
 // fetch
-registerRoute(
-    ({ request }) =>
-        request.destination === 'document' || request.destination === 'script' || request.destination === 'style' || request.destination === 'image'
-    ,
-    ({ event, request }) => docsStrategy.handle({ event, request })
+registerRoute( //Handle manual que hay que tanquearse
+    ({ url }) => url.pathname.endsWith('.js') ||
+        url.pathname.endsWith('.css'),
+    async ({ request }) => {
+        const cache = await caches.open(VIEW_CACHE);
+        const cachedResponse = await cache.match(request.url);
+        if (cachedResponse) {
+            return cachedResponse;
+        }
+        try {
+            const response = await fetch(request);
+            return response;
+        } catch (err) {
+            console.error('[SW] Fetch fallido:', request.url, err);
+            throw err;
+        }
+    }
 );
 
 registerRoute(
@@ -114,53 +144,74 @@ registerRoute(
     ({ event, request }) => sqliteStrategy.handle({ event, request })
 );
 
+registerRoute(
+    ({ url }) => !url.pathname.endsWith('.json') &&
+        !url.pathname.endsWith('.sqlite') &&
+        !url.pathname.endsWith('.sqlite-shm') &&
+        !url.pathname.endsWith('.sqlite-wal') &&
+        !url.pathname.endsWith('.js') &&
+        !url.pathname.endsWith('.css'),
+    ({ event, request }) => resourcesStrategy.handle({ event, request })
+);
+
 self.addEventListener('message', async (event) => {
-    if (event.data?.type === 'CACHE_ALL_RESOURCES') {
-        try {
-            const response = await fetch('/file-index.json');
-            const allResources = await response.json();
+    if (event.data?.type !== 'CACHE_ALL_RESOURCES') return;
 
-            for (const path of allResources) {
-                const url = new URL(path, self.location.origin);
-                const pathname = url.pathname;
+    const failed = [];
 
-                // Clasificación de caché según extensión
-                let cacheName;
-                if (
-                    pathname.endsWith('.sqlite') ||
-                    pathname.endsWith('.sqlite-shm') ||
-                    pathname.endsWith('.sqlite-wal')
-                ) {
-                    cacheName = SQLITE_CACHE;
-                } else if (pathname.endsWith('.json')) {
-                    cacheName = JSON_CACHE;
-                } else {
-                    cacheName = DOCS_CACHE;
-                }
+    try {
+        const res = await fetch('/file-index.json');
+        if (!res.ok) throw new Error(`Error al hacer fetch de /file-index.json: ${res.status}`);
+        const docs = await res.json();
 
-                try {
-                    const cache = await caches.open(cacheName);
-                    await cache.add(new Request(url, { cache: 'reload' }));
-                    console.log(`[SW] Se ha cacheado ${url} en ${cacheName}`);
-                } catch (e) {
-                    console.warn(`[SW] Fallo al cachear ${url}:`, e);
-                }
+        const cachesMap = {
+            json: await caches.open(JSON_CACHE),
+            sqlite: await caches.open(SQLITE_CACHE),
+            view: await caches.open(VIEW_CACHE),
+            resources: await caches.open(RESOURCES_CACHE),
+        };
+
+        for (const url of docs) {
+            console.log(url);
+            const cacheKey = getCacheKeyForUrl(url);
+            const cache = cachesMap[cacheKey];
+
+            const cachedResponse = await cache.match(url);
+            if (cachedResponse) continue; // skip if cached
+
+            try {
+                // Fetch original response, no modification!
+                const absoluteUrl = new URL(url, self.location.origin).href;
+                const response = await fetch(absoluteUrl, { credentials: 'same-origin' });
+                if (!response.ok) throw new Error(`Error al fetchear ${url}: ${response.status}`);
+
+                // Cache the response as-is (clone it)
+                await cache.put(url, response.clone());
+            } catch (err) {
+                failed.push(url);
             }
-
-            const clients = await self.clients.matchAll({ includeUncontrolled: true });
-            await Promise.all(
-                clients.map(client => {
-                    client.postMessage({ type: 'EVERYTHING_CACHED' });
-                })
-            );
-
-        } catch (err) {
-            console.error('[SW] Fallo al fetchear file-index.json:', err);
-            const clients = await self.clients.matchAll({ includeUncontrolled: true });
-            await Promise.all(
-                clients.map(client => {
-                    client.postMessage({ type: 'FAIL_TO_CACHE' });
-                }))
         }
+
+        // Notify clients about result
+        const clients = await self.clients.matchAll();
+        clients.forEach(client =>
+            client.postMessage({
+                type: failed.length === 0 ? 'EVERYTHING_CACHED' : 'FAIL_TO_CACHE',
+                failed,
+            })
+        );
+    } catch (err) {
+        const clients = await self.clients.matchAll();
+        clients.forEach(client =>
+            client.postMessage({ type: 'FAIL_TO_CACHE', error: err.message })
+        );
     }
 });
+
+function getCacheKeyForUrl(url) {
+    const ext = url.split('.').pop().toLowerCase();
+    if (ext === 'json') return 'json';
+    if (['sqlite', 'sqlite-wal', 'sqlite-shm'].includes(ext)) return 'sqlite';
+    if (ext === 'js' || ext === 'css') return 'view'
+    return 'resources';
+}

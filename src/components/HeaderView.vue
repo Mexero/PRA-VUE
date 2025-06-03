@@ -49,13 +49,10 @@ function toggleModo() {
 
 // Cache todo
 function cacheAll() {
-    if (localStorage.getItem('offlineReady') === 'true') {
-        alert("¡Los datos ya están cacheados!")
-        return
-    }
     if ('serviceWorker' in navigator && navigator.serviceWorker.controller) {
         navigator.serviceWorker.controller.postMessage({ type: 'CACHE_ALL_RESOURCES' });
     }
+    else { alert("Error al cargar... Prueba más tarde.") }
 }
 
 
