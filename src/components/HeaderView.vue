@@ -1,8 +1,8 @@
 <script setup>
 import { useRoute, RouterLink } from 'vue-router'
 import { ref, onMounted } from 'vue'
-import DarkIcon from '@/assets/icons/DarkIcon.webp' //ModoNoche
-import LightIcon from '@/assets/icons/LightIcon.webp' //ModoDia
+import DarkIcon from '../../public/assets/icons/DarkIcon.webp' //ModoNoche
+import LightIcon from '../../public/assets/icons/LightIcon.webp' //ModoDia
 
 const oscuro = ref(false)
 const icono = ref(DarkIcon)
@@ -52,7 +52,7 @@ function cacheAll() {
 <template>
     <header>
         <RouterLink to="/">
-            <img src="../assets/img/logo.webp" alt="">
+            <img src="../../public/assets/img/logo.webp" alt="">
         </RouterLink>
         <h1>Pokémon Roleplaying Adventures</h1>
 

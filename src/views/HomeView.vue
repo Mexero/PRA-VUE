@@ -11,14 +11,14 @@ import { RouterLink } from 'vue-router'
                 <div class="pareja">
                     <RouterLink to="/clases">
                         <div class="bloque">
-                            <img src="../assets/icons/ClasesIcon.webp" alt="">
+                            <img src="../../public/assets/icons/ClasesIcon.webp" alt="">
                             <span class="textoBloque">Clases</span>
                         </div>
                     </RouterLink>
                     <RouterLink to="/pokedex">
 
                         <div class="bloque">
-                            <img src="../assets/icons/PokedexIcon.webp" alt="">
+                            <img src="../../public/assets/icons/PokedexIcon.webp" alt="">
                             <span class="textoBloque"> Pokédex</span>
                         </div>
                     </RouterLink>
@@ -27,14 +27,14 @@ import { RouterLink } from 'vue-router'
 
                     <RouterLink to="/habilidades">
                         <div class="bloque">
-                            <img src="../assets/icons/HabIcon.svg" alt="">
+                            <img src="../../public/assets/icons/HabIcon.svg" alt="">
 
                             <span class="textoBloqueG"> Habilidades </span>
                         </div>
                     </RouterLink>
                     <RouterLink to="/movimientos">
                         <div class="bloque">
-                            <img src="../assets/icons/MovIcon.svg" alt="">
+                            <img src="../../public/assets/icons/MovIcon.svg" alt="">
 
                             <span class="textoBloqueG"> Movimientos</span>
 
@@ -47,14 +47,14 @@ import { RouterLink } from 'vue-router'
                 <div class="pareja">
                     <RouterLink to="/reglas">
                         <div class="bloque">
-                            <img src="../assets/icons/ReglasIcon.svg" alt="">
+                            <img src="../../public/assets/icons/ReglasIcon.svg" alt="">
                             <span class="textoBloque"> Reglas</span>
 
                         </div>
                     </RouterLink>
                     <RouterLink to="/reglas">
                         <div class="bloque">
-                            <img src="../assets/icons/EstadosIcon.webp" alt="">
+                            <img src="../../public/assets/icons/EstadosIcon.webp" alt="">
                             <span class="textoBloque"> Estados</span>
                         </div>
                     </RouterLink>
@@ -62,13 +62,13 @@ import { RouterLink } from 'vue-router'
                 <div class="pareja">
                     <RouterLink to="/objetos">
                         <div class="bloque">
-                            <img src="../assets/icons/ObjetosIcon.webp" alt="">
+                            <img src="../../public/assets/icons/ObjetosIcon.webp" alt="">
                             <span class="textoBloque"> Objetos </span>
                         </div>
                     </RouterLink>
                     <RouterLink to="/dotes">
                         <div class="bloque">
-                            <img src="../assets/icons/DotesIcon.svg" alt="">
+                            <img src="../../public/assets/icons/DotesIcon.svg" alt="">
                             <span class="textoBloque"> Dotes </span>
                         </div>
                     </RouterLink>
@@ -82,7 +82,7 @@ import { RouterLink } from 'vue-router'
             <article id="infoContacto">
                 <div>
                     <h2>¡Unete a nuestra comunidad!</h2>
-                    <RouterLink to=""><img src="../assets/icons/discord.webp" alt=""></RouterLink>
+                    <RouterLink to=""><img src="../../public/assets/icons/discord.webp" alt=""></RouterLink>
                 </div>
                 <div>
                     <p>
@@ -133,7 +133,7 @@ import { RouterLink } from 'vue-router'
         <section id="infoNosotros">
 
             <div id=imgInfoNosotros>
-                <img src="../assets/img/literalmentenosotros.webp" alt="">
+                <img src="../../public/assets/img/literalmentenosotros.webp" alt="">
             </div>
             <div class="textoInfo">
                 <h2>¿Quienes somos?</h2>

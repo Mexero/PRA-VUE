@@ -332,7 +332,7 @@
                 tiene sobre otros:
             </p>
             <p class="centrarTiposImg">
-                <img src="/src/assets/img/tablaDeTipos.webp" alt="Tabla de tipos" />
+                <img src="../../../public/assets/img/tablaDeTipos.webp" alt="Tabla de tipos" />
             </p>
             <p>
                 La única diferencia con la de los juegos es que el Tipo Tierra hace daño

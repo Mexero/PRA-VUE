@@ -147,38 +147,39 @@ const resetSearch = () => {
 
             <!-- Formulario de busqueda interno de la pagina -->
             <li class="buscador">
+
                 <form method="get" class="buscar" name="buscador">
                     <fieldset class="barraBuscar">
                         <input v-model="query" @input="debouncedSearch" placeholder="Buscar..." class="search-input" />
                         <RouterLink v-if="paginatedResults.length" :to="paginatedResults[0].ruta" @click="resetSearch"
                             class="search-button">
-                            <img src="../assets/icons/lupa.svg" alt="Icono de búsqueda" />
+                            <img src="../../public/assets/icons/lupa.svg" alt="Icono de búsqueda" />
                         </RouterLink>
                         <div v-else class="search-button">
-                            <img src="../assets/icons/lupa.svg" alt="Icono de búsqueda" />
+                            <img src="../../public/assets/icons/lupa.svg" alt="Icono de búsqueda" />
                         </div>
                     </fieldset>
                 </form>
                 <div class="resultBusqueda">
-                    <table>
-                        <template v-if="paginatedResults.length && query.trim()">
 
-                            <tbody>
-                                <tr v-for="item in paginatedResults" :key="item.ruta" @click="resetSearch">
-                                    <router-link :to="item.ruta">
-                                        <td>
-                                            <span><strong> {{ item.tipo }}:</strong> {{ item.nombre }}</span>
-                                        </td>
-                                    </router-link>
-                                </tr>
-                            </tbody>
-                        </template>
-                        <template v-else-if="query.trim()">
-                            <tr class="noResult">
-                                <td>No se encontraron resultados.</td>
-                            </tr>
-                        </template>
-                    </table>
+                    <template v-if="paginatedResults.length && query.trim()">
+
+                        <ul>
+                            <li v-for="item in paginatedResults" :key="item.ruta" @click="resetSearch">
+                                <router-link :to="item.ruta">
+
+                                    <span><strong> {{ item.tipo }}:</strong> {{ item.nombre }}</span>
+                                </router-link>
+                            </li>
+
+                        </ul>
+                    </template>
+                    <template v-else-if="query.trim()">
+                        <tr class="noResult">
+                            <td>No se encontraron resultados.</td>
+                        </tr>
+                    </template>
+
                     <div v-if="showPagination && query">
                         <button @click="prevPage" :disabled="currentPage === 1">
                             ◀
@@ -189,6 +190,7 @@ const resetSearch = () => {
                         </button>
                     </div>
                 </div>
+
             </li>
         </ul>
 
@@ -198,7 +200,7 @@ const resetSearch = () => {
 
         <div class="navLogic" v-click-outside="() => openMobileNav = false">
             <div id="botonMenu" aria-label="Abrir menú" @click="toggleMenu">
-                <img src="../assets/icons/menu.svg" alt="">
+                <img src="../../public/assets/icons/menu.svg" alt="">
             </div>
 
             <Transition :name="'slideMenu'">
@@ -245,10 +247,10 @@ const resetSearch = () => {
                     <input v-model="query" @input="debouncedSearch" placeholder="Buscar..." class="search-input" />
                     <RouterLink v-if="paginatedResults.length" :to="paginatedResults[0].ruta" @click="resetSearch"
                         class="search-button">
-                        <img src="../assets/icons/lupa.svg" alt="Icono de búsqueda" />
+                        <img src="../../public/assets/icons/lupa.svg" alt="Icono de búsqueda" />
                     </RouterLink>
                     <div v-else class="search-button">
-                        <img src="../assets/icons/lupa.svg" alt="Icono de búsqueda" />
+                        <img src="../../public/assets/icons/lupa.svg" alt="Icono de búsqueda" />
                     </div>
                 </div>
             </form>
@@ -425,70 +427,57 @@ nav div {
     width: 40px;
 }
 
-
-
 .resultBusqueda {
+    background-color: var(--color-fondoTexto);
     position: absolute;
-    top: 100%;
+    top: auto;
     right: 0;
-    left: auto;
-    width: 420px;
-    min-width: 250px;
-    z-index: 1;
-    overflow-x: auto;
+    min-width: 30%;
+    max-width: 60%;
+    padding: 0px 10px 10px 10px;
+    border-radius: 0  0 5px 5px;
 }
 
-.resultBusqueda * {
-    font-family: "Outfit", sans-serif;
-    font-size: 15px;
-    letter-spacing: 1px;
-    color: black;
+.resultBusqueda span {
+    font-size: 14px;
 }
-
-.resultBusqueda div {
+.resultBusqueda li {
+    height: 25px;
+}
+.resultBusqueda a {
     display: flex;
-    align-items: center;
-    justify-content: space-around;
-    background-color: var(--color-tituloTabla);
-    padding: 5px;
-
-}
-
-.resultBusqueda div button {
-    width: 50px;
-}
-
-td {
-    padding: 10px 5px;
-    display: flex;
-}
-
-tbody tr:nth-child(even) {
-    background-color: var(--color-tabla1);
-}
-
-tbody tr:nth-child(odd) {
-    background-color: var(--color-tabla2);
-}
-
-table {
     width: 100%;
-    border-collapse: collapse;
-    color: var(--color-texto)
+    cursor: pointer;
+    padding: 0 5px;
 }
 
-tr:hover td {
-    cursor: pointer;
+
+.resultBusqueda ul li:hover {
     text-decoration: underline;
 }
 
-.noResult {
+.resultBusqueda ul li:nth-child(even) {
     background-color: var(--color-tabla1);
 }
 
-.noResult:hover td {
-    cursor: auto;
-    text-decoration: none;
+.resultBusqueda ul li:nth-child(odd) {
+    background-color: var(--color-tabla2);
+}
+
+.resultBusqueda div {
+    background-color: var(--color-tituloTabla);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.resultBusqueda div button {
+
+    border-radius: 0;
+    width: 50px;
+    height: 30px;
+    cursor: pointer;
 }
 
 @media screen and (max-width: 750px) {
