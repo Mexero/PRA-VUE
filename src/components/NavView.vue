@@ -428,26 +428,38 @@ nav div {
 }
 
 .resultBusqueda {
-    background-color: var(--color-fondoTexto);
     position: absolute;
     top: auto;
     right: 0;
     min-width: 30%;
-    max-width: 60%;
-    padding: 0px 10px 10px 10px;
-    border-radius: 0  0 5px 5px;
+    border-radius:5px;
+    box-shadow:
+        -5px 4px 5px 0 rgba(0, 0, 0, 0.18),
+        0 1.5px 6px 0 rgba(0, 0, 0, 0.10);
+}
+
+.resultBusqueda ul {
+    background-color: var(--color-tabla2);
+    border-radius: 5px 0 0 0 ;
+    padding: 5px 10px 0 10px;
 }
 
 .resultBusqueda span {
     font-size: 14px;
+    color:black;
 }
+
 .resultBusqueda li {
-    height: 25px;
+    display: flex;
+    height: 30px;
 }
+
 .resultBusqueda a {
+    height: 30px;
     display: flex;
     width: 100%;
     cursor: pointer;
+    align-items: center;
     padding: 0 5px;
 }
 
@@ -465,19 +477,46 @@ nav div {
 }
 
 .resultBusqueda div {
-    background-color: var(--color-tituloTabla);
+    background-color: var(--color-principal1);
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
+        border-radius: 0 0 5px 5px;
+}
+.resultBusqueda div span{
+    color:var(--color-texto) ;
 }
 
 .resultBusqueda div button {
-
-    border-radius: 0;
-    width: 50px;
-    height: 30px;
+    width: 45px;
+    height: 35px;
     cursor: pointer;
+    background: var(--color-tituloTabla);
+    color: var(--color-texto);
+    border: none;
+    font-size: 18px;
+    font-weight: bold;
+    transition:all 0.1s;
+
+}
+.resultBusqueda div button:first-child {
+    border-radius: 0 0 0px 5px;
+}
+.resultBusqueda div button:last-child {
+    border-radius: 0  0 5px 0px ;
+}
+
+.resultBusqueda div button:hover:not(:disabled) {
+    background: var(--color-secundario);
+    color: #fff;
+}
+
+.resultBusqueda div button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    background: var(--color-secundario2);
+    color: #888;
 }
 
 @media screen and (max-width: 750px) {

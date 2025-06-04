@@ -394,6 +394,8 @@ solo cambia el tamaños de los bloques y el margen con el header*/
     flex-direction: column;
     justify-content: space-around;
     text-align: center;
+    box-shadow: 5px 5px 10px black;
+
 }
 
 .PDFlinks {
