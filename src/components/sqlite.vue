@@ -2,10 +2,19 @@
 import { ref } from 'vue'
 import { useSQLite } from '@/worker/sqlite.js'
 
-const { isLoading, error, executeQuery, clearDatabase } = useSQLite()
+const {
+    isLoading,
+    error,
+    executeQuery,
+    loadDatabaseFromFile,
+    exportDatabase,
+    downloadUrl,
+} = useSQLite()
+
 const sqlQuery = ref('SELECT * FROM test_table')
 const queryResult = ref([])
 const queryError = ref(null)
+const selectedFile = ref(null)
 
 const exampleQueries = [
     { title: 'Select all', query: 'SELECT * FROM test_table' },
@@ -32,21 +41,26 @@ async function runQuery() {
     }
 }
 
-async function clear() {
-    await clearDatabase()
-    queryResult.value = []
-    queryError.value = null
-    // Opcional: recarga el query por defecto y ejecuta para mostrar la tabla vacía
-    sqlQuery.value = 'SELECT * FROM test_table'
+async function handleFileChange(event) {
+    const file = event.target.files[0]
+    if (!file) return
+    await loadDatabaseFromFile(file)
     await runQuery()
 }
 
+async function exportDb() {
+    await exportDatabase()
+}
 </script>
 
 <template>
     <div>
         <h2>SQLite Playground</h2>
-        <button @click="clear">Pingas</button>
+
+        <div>
+            <label>📂 Cargar base de datos:</label>
+            <input type="file" accept=".sqlite3,.db" @change="handleFileChange" />
+        </div>
 
         <div>
             <h3>Example Queries:</h3>
@@ -89,5 +103,12 @@ async function clear() {
                 </table>
             </div>
         </div>
+
+        <div v-if="downloadUrl">
+            <a :href="downloadUrl" download="modificada.sqlite3">
+                💾 Descargar base de datos modificada
+            </a>
+        </div>
+        <button @click="exportDb">Exportar base modificada</button>
     </div>
 </template>
