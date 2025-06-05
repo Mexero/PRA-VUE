@@ -52,7 +52,7 @@ function cacheAll() {
 <template>
     <header>
         <RouterLink to="/">
-            <img src="../../public/assets/img/logo.webp" alt="">
+            <img src="../../public/assets/img/logo.webp" alt="Logo">
         </RouterLink>
         <h1>Pokémon Roleplaying Adventures</h1>
 

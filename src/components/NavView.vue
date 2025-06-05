@@ -42,7 +42,7 @@ const onSubmit = () => {
 const query = ref('')
 const results = ref([])
 const currentPage = ref(1)
-const pageSize = 10
+const pageSize = 9
 
 // Función utilitaria para normalizar y quitar tildes
 const normalize = str =>
@@ -175,9 +175,9 @@ const resetSearch = () => {
                         </ul>
                     </template>
                     <template v-else-if="query.trim()">
-                        <tr class="noResult">
-                            <td>No se encontraron resultados.</td>
-                        </tr>
+                        <ul class="noResult">
+                            <li>No se encontraron resultados.</li>
+                        </ul>
                     </template>
 
                     <div v-if="showPagination && query">
@@ -200,7 +200,7 @@ const resetSearch = () => {
 
         <div class="navLogic" v-click-outside="() => openMobileNav = false">
             <div id="botonMenu" aria-label="Abrir menú" @click="toggleMenu">
-                <img src="../../public/assets/icons/menu.svg" alt="">
+                <img src="../../public/assets/icons/menu.svg" alt="Icono Menu hamburguesa">
             </div>
 
             <Transition :name="'slideMenu'">
@@ -256,24 +256,25 @@ const resetSearch = () => {
             </form>
         </div>
         <div class="resultBusqueda">
-            <table>
-                <template v-if="paginatedResults.length && query.trim()">
-                    <tbody>
-                        <tr v-for="item in paginatedResults" :key="item.ruta" @click="resetSearch">
-                            <router-link :to="item.ruta">
-                                <td>
-                                    <span><strong> {{ item.tipo }}:</strong> {{ item.nombre }}</span>
-                                </td>
-                            </router-link>
-                        </tr>
-                    </tbody>
-                </template>
-                <template v-else-if="query.trim()">
-                    <tr class="noResult">
-                        <td>No se encontraron resultados.</td>
-                    </tr>
-                </template>
-            </table>
+
+            <template v-if="paginatedResults.length && query.trim()">
+
+                <ul>
+                    <li v-for="item in paginatedResults" :key="item.ruta" @click="resetSearch">
+                        <router-link :to="item.ruta">
+
+                            <span><strong> {{ item.tipo }}:</strong> {{ item.nombre }}</span>
+                        </router-link>
+                    </li>
+
+                </ul>
+            </template>
+            <template v-else-if="query.trim()">
+                <ul class="noResult">
+                    <li>No se encontraron resultados.</li>
+                </ul>
+            </template>
+
             <div v-if="showPagination && query">
                 <button @click="prevPage" :disabled="currentPage === 1">
                     ◀
@@ -284,6 +285,7 @@ const resetSearch = () => {
                 </button>
             </div>
         </div>
+
     </nav>
 
 </template>
@@ -297,6 +299,8 @@ nav {
     letter-spacing: 1.3px;
     background-color: var(--color-principal1);
     color: var(--color-texto);
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
+
 }
 
 /* ====== Menus primarios ====== */
@@ -304,6 +308,7 @@ nav {
     display: flex;
     height: 40px;
     z-index: 500;
+
 }
 
 ul {
@@ -342,6 +347,8 @@ nav div {
     width: 270px;
     left: auto;
     position: absolute;
+    border-radius: 0 0 5px 5px;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2), -3px 3px 5px rgba(0, 0, 0, 0.2);
 }
 
 .subMenu li a {
@@ -411,6 +418,7 @@ nav div {
 /* ====== Modo movil ====== */
 #modoMovil {
     display: none;
+
 }
 
 #botonMenu {
@@ -431,8 +439,8 @@ nav div {
     position: absolute;
     top: auto;
     right: 0;
-    min-width: 30%;
-    border-radius:5px;
+    min-width: 40%;
+    border-radius: 5px;
     box-shadow:
         -5px 4px 5px 0 rgba(0, 0, 0, 0.18),
         0 1.5px 6px 0 rgba(0, 0, 0, 0.10);
@@ -440,13 +448,12 @@ nav div {
 
 .resultBusqueda ul {
     background-color: var(--color-tabla2);
-    border-radius: 5px 0 0 0 ;
     padding: 5px 10px 0 10px;
 }
 
 .resultBusqueda span {
     font-size: 14px;
-    color:black;
+    color: black;
 }
 
 .resultBusqueda li {
@@ -466,6 +473,7 @@ nav div {
 
 .resultBusqueda ul li:hover {
     text-decoration: underline;
+    color: black;
 }
 
 .resultBusqueda ul li:nth-child(even) {
@@ -482,10 +490,11 @@ nav div {
     display: flex;
     align-items: center;
     justify-content: space-between;
-        border-radius: 0 0 5px 5px;
+    border-radius: 0 0 5px 5px;
 }
-.resultBusqueda div span{
-    color:var(--color-texto) ;
+
+.resultBusqueda div span {
+    color: var(--color-texto);
 }
 
 .resultBusqueda div button {
@@ -497,14 +506,15 @@ nav div {
     border: none;
     font-size: 18px;
     font-weight: bold;
-    transition:all 0.1s;
-
+    transition: all 0.1s;
 }
+
 .resultBusqueda div button:first-child {
     border-radius: 0 0 0px 5px;
 }
+
 .resultBusqueda div button:last-child {
-    border-radius: 0  0 5px 0px ;
+    border-radius: 0 0 5px 0px;
 }
 
 .resultBusqueda div button:hover:not(:disabled) {
@@ -519,12 +529,32 @@ nav div {
     color: #888;
 }
 
+.noResult{
+        border-radius: 0 0 5px 5px;
+
+}
 @media screen and (max-width: 750px) {
 
     /* ====== Cambiar de modo ====== */
     #modoMovil {
         display: flex;
         justify-content: space-between;
+    }
+
+    #modoMovil .resultBusqueda {
+        top: 40px;
+        font-size: 14px;
+        min-width: 60%;
+
+    }
+
+    .resultBusqueda a,
+    .resultBusqueda li {
+        height: auto;
+    }
+
+    .resultBusqueda a {
+        padding: 6px 5px;
     }
 
     .navLogic {
@@ -544,6 +574,7 @@ nav div {
         display: flex;
         flex-direction: column;
         height: fit-content;
+        box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.25);
 
     }
 
@@ -566,6 +597,9 @@ nav div {
         top: auto;
         left: 130px;
         transform: translateY(-40px);
+        box-shadow: 8px 5px 5px rgba(0, 0, 0, 0.2), -4px 0px 5px rgba(0, 0, 0, 0.2);
+        border-radius: 0;
+
     }
 
     .subMenu li a {
@@ -574,18 +608,16 @@ nav div {
         min-width: 210px;
     }
 
-    .subMenu li a {
-        border-radius: 0;
-    }
-
     .subMenu li:first-child a {
         border-radius: 0 5px 0 0;
-
     }
 
     .subMenu li:last-child a {
         border-radius: 0 0 5px 0;
+    }
 
+    .subMenu li:only-child a {
+        border-radius: 0 5px 5px 0;
     }
 
     /* ====== Barra de buscar del menu principal ====== */
@@ -594,26 +626,8 @@ nav div {
         border: none;
     }
 
-
-    /* ====== Resultados de la busqueda ====== */
-
-    .resultBusqueda {
-        min-width: auto;
-        max-width: 350px;
-    }
-
-    .resultBusqueda * {
-        font-size: 14px;
-    }
-
-    table {
-        min-width: 350px;
-        max-width: 350px;
-    }
-
-    td {
-        padding: 5px 5px;
-
+    .noResult li {
+        padding: 10px 0;
     }
 
 }

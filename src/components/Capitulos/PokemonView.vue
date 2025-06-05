@@ -68,7 +68,7 @@
 
             <div class="consejoCapitulo">
                 <p>Temporal: Añadir final una vez tengamos la pokedex</p>
-                <img src="/src/assets/img/temporal.jpg" alt="" width="200px" />
+                <img src="../../../public/assets/img/temporal.jpg" alt="Imagen Temporal" width="200px" />
             </div>
 
             <p>
