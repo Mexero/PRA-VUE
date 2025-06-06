@@ -1,114 +1,96 @@
 <script setup>
-import { ref } from 'vue'
-import { useSQLite } from '@/worker/sqlite.js'
+import { ref, onMounted } from 'vue';
+import worker from '../sqlWorker.js';
 
-const {
-    isLoading,
-    error,
-    executeQuery,
-    loadDatabaseFromFile,
-    exportDatabase,
-    downloadUrl,
-} = useSQLite()
+const isReady = ref(false);
+const results = ref([]);
+const error = ref(null);
+const loading = ref(false);
 
-const sqlQuery = ref('SELECT * FROM test_table')
-const queryResult = ref([])
-const queryError = ref(null)
-const selectedFile = ref(null)
+const query = ref('SELECT * FROM my_table LIMIT 10');
 
-const exampleQueries = [
-    { title: 'Select all', query: 'SELECT * FROM test_table' },
-    { title: 'Insert', query: "INSERT INTO test_table (name) VALUES ('New Test Item')" },
-    { title: 'Update', query: "UPDATE test_table SET name = 'Updated Item' WHERE name LIKE 'New%'" },
-    { title: 'Delete', query: "DELETE FROM test_table WHERE name = 'Updated Item'" },
-]
+onMounted(() => {
+    worker.postMessage({ type: 'init' });
 
-async function runQuery() {
-    queryError.value = null
-    queryResult.value = []
-
-    try {
-        const result = await executeQuery(sqlQuery.value)
-        const isSelect = sqlQuery.value.trim().toLowerCase().startsWith('select')
-
-        if (isSelect) {
-            queryResult.value = result?.result?.resultRows || []
-        } else {
-            queryResult.value = (await executeQuery('SELECT * FROM test_table'))?.result?.resultRows || []
+    worker.onmessage = (e) => {
+        if (e.data.type === 'ready') {
+            isReady.value = true;
         }
-    } catch (err) {
-        queryError.value = err instanceof Error ? err.message : 'An error occurred'
-    }
+
+        if (e.data.type === 'result') {
+            loading.value = false;
+            results.value = e.data.result?.[0]?.values || [];
+        }
+
+        if (e.data.type === 'error') {
+            loading.value = false;
+            error.value = e.data.error;
+        }
+
+        if (e.data.type === 'exported') {
+            loading.value = false;
+            error.value = null;
+            const blob = new Blob([new Uint8Array(e.data.buffer)], {
+                type: 'application/x-sqlite3'
+            });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'exported_db.sqlite3';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+    };
+});
+
+
+function runQuery() {
+    if (!isReady.value) return;
+    loading.value = true;
+    error.value = null;
+
+    worker.postMessage({
+        type: 'query',
+        query: query.value,
+        params: []
+    });
 }
 
-async function handleFileChange(event) {
-    const file = event.target.files[0]
-    if (!file) return
-    await loadDatabaseFromFile(file)
-    await runQuery()
-}
-
-async function exportDb() {
-    await exportDatabase()
+function exportDatabase() {
+    if (!isReady.value) return;
+    loading.value = true;
+    error.value = null;
+    worker.postMessage({ type: 'export' });
 }
 </script>
 
 <template>
     <div>
-        <h2>SQLite Playground</h2>
+        <h2>Consulta SQLite</h2>
 
-        <div>
-            <label>📂 Cargar base de datos:</label>
-            <input type="file" accept=".sqlite3,.db" @change="handleFileChange" />
-        </div>
+        <textarea v-model="query" rows="4" placeholder="Escribe una consulta SQL"></textarea>
 
-        <div>
-            <h3>Example Queries:</h3>
-            <div>
-                <button v-for="example in exampleQueries" :key="example.title" @click="sqlQuery = example.query">
-                    {{ example.title }}
-                </button>
-            </div>
-        </div>
+        <button @click="runQuery" :disabled="!isReady || loading">
+            Ejecutar Consulta
+        </button>
+        <button @click="exportDatabase" :disabled="!isReady || loading">
+            Exportar Base de Datos
+        </button>
+        <p v-if="loading">Cargando...</p>
+        <p v-if="error">{{ error }}</p>
 
-        <div>
-            <textarea v-model="sqlQuery" rows="4" :disabled="isLoading"></textarea>
-            <button :disabled="isLoading" @click="runQuery">
-                {{ isLoading ? 'Running...' : 'Run Query' }}
-            </button>
-        </div>
+        <table v-if="results.length">
+            <tbody>
+                <tr v-for="(row, i) in results" :key="i">
+                    <td v-for="(cell, j) in row" :key="j">
+                        {{ cell }}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
 
-        <div v-if="error || queryError">
-            {{ error?.message || queryError }}
-        </div>
-
-        <div v-if="queryResult.length">
-            <h3>Results:</h3>
-            <div>
-                <table>
-                    <thead>
-                        <tr>
-                            <th v-for="column in Object.keys(queryResult[0])" :key="column">
-                                {{ column }}
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr v-for="(row, index) in queryResult" :key="index">
-                            <td v-for="column in Object.keys(row)" :key="column">
-                                {{ row[column] }}
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-
-        <div v-if="downloadUrl">
-            <a :href="downloadUrl" download="modificada.sqlite3">
-                💾 Descargar base de datos modificada
-            </a>
-        </div>
-        <button @click="exportDb">Exportar base modificada</button>
+        <p v-if="!results.length && !loading && isReady">Sin resultados.</p>
     </div>
 </template>
