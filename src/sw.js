@@ -114,7 +114,8 @@ self.addEventListener('activate', event => {
 // fetch
 registerRoute( //Handle manual que hay que tanquearse
     ({ url }) => url.pathname.endsWith('.js') ||
-        url.pathname.endsWith('.css'),
+        url.pathname.endsWith('.css') ||
+        url.pathname.endsWith('.wasm'),
     async ({ request }) => {
         const cache = await caches.open(VIEW_CACHE);
         const cachedResponse = await cache.match(request.url);
@@ -138,19 +139,16 @@ registerRoute(
 
 registerRoute(
     ({ url }) =>
-        url.pathname.endsWith('.sqlite') ||
-        url.pathname.endsWith('.sqlite-shm') ||
-        url.pathname.endsWith('.sqlite-wal'),
+        url.pathname.endsWith('.sqlite3'),
     ({ event, request }) => sqliteStrategy.handle({ event, request })
 );
 
 registerRoute(
     ({ url }) => !url.pathname.endsWith('.json') &&
-        !url.pathname.endsWith('.sqlite') &&
-        !url.pathname.endsWith('.sqlite-shm') &&
-        !url.pathname.endsWith('.sqlite-wal') &&
+        !url.pathname.endsWith('.sqlite3') &&
         !url.pathname.endsWith('.js') &&
-        !url.pathname.endsWith('.css'),
+        !url.pathname.endsWith('.css') &&
+        !url.pathname.endsWith('.wasm'),
     ({ event, request }) => resourcesStrategy.handle({ event, request })
 );
 
@@ -211,7 +209,7 @@ self.addEventListener('message', async (event) => {
 function getCacheKeyForUrl(url) {
     const ext = url.split('.').pop().toLowerCase();
     if (ext === 'json') return 'json';
-    if (['sqlite', 'sqlite-wal', 'sqlite-shm'].includes(ext)) return 'sqlite';
-    if (ext === 'js' || ext === 'css') return 'view'
+    if (ext === 'sqlite3') return 'sqlite';
+    if (ext === 'js' || ext === 'css' || ext === 'wasm') return 'view'
     return 'resources';
 }
