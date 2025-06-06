@@ -13,7 +13,8 @@ export default defineConfig({
       injectManifest: {
         globPatterns: [
           '*.*',
-          'assets/**/index*.{js,css,wasm}'
+          'assets/**/index*.{js,css,wasm}',
+          '**/*.woff2'
         ],
         globDirectory: 'dist',
         swSrc: 'src/sw.js',
