@@ -42,7 +42,7 @@ const onSubmit = () => {
 const query = ref('')
 const results = ref([])
 const currentPage = ref(1)
-const pageSize = 10
+const pageSize = 9
 
 // Función utilitaria para normalizar y quitar tildes
 const normalize = str =>
@@ -147,38 +147,39 @@ const resetSearch = () => {
 
             <!-- Formulario de busqueda interno de la pagina -->
             <li class="buscador">
+
                 <form method="get" class="buscar" name="buscador">
                     <fieldset class="barraBuscar">
                         <input v-model="query" @input="debouncedSearch" placeholder="Buscar..." class="search-input" />
                         <RouterLink v-if="paginatedResults.length" :to="paginatedResults[0].ruta" @click="resetSearch"
                             class="search-button">
-                            <img src="../assets/icons/lupa.svg" alt="Icono de búsqueda" />
+                            <img src="../../public/assets/icons/lupa.svg" alt="Icono de búsqueda" />
                         </RouterLink>
                         <div v-else class="search-button">
-                            <img src="../assets/icons/lupa.svg" alt="Icono de búsqueda" />
+                            <img src="../../public/assets/icons/lupa.svg" alt="Icono de búsqueda" />
                         </div>
                     </fieldset>
                 </form>
                 <div class="resultBusqueda">
-                    <table>
-                        <template v-if="paginatedResults.length && query.trim()">
 
-                            <tbody>
-                                <tr v-for="item in paginatedResults" :key="item.ruta" @click="resetSearch">
-                                    <router-link :to="item.ruta">
-                                        <td>
-                                            <span><strong> {{ item.tipo }}:</strong> {{ item.nombre }}</span>
-                                        </td>
-                                    </router-link>
-                                </tr>
-                            </tbody>
-                        </template>
-                        <template v-else-if="query.trim()">
-                            <tr class="noResult">
-                                <td>No se encontraron resultados.</td>
-                            </tr>
-                        </template>
-                    </table>
+                    <template v-if="paginatedResults.length && query.trim()">
+
+                        <ul>
+                            <li v-for="item in paginatedResults" :key="item.ruta" @click="resetSearch">
+                                <router-link :to="item.ruta">
+
+                                    <span><strong> {{ item.tipo }}:</strong> {{ item.nombre }}</span>
+                                </router-link>
+                            </li>
+
+                        </ul>
+                    </template>
+                    <template v-else-if="query.trim()">
+                        <ul class="noResult">
+                            <li>No se encontraron resultados.</li>
+                        </ul>
+                    </template>
+
                     <div v-if="showPagination && query">
                         <button @click="prevPage" :disabled="currentPage === 1">
                             ◀
@@ -189,6 +190,7 @@ const resetSearch = () => {
                         </button>
                     </div>
                 </div>
+
             </li>
         </ul>
 
@@ -198,7 +200,7 @@ const resetSearch = () => {
 
         <div class="navLogic" v-click-outside="() => openMobileNav = false">
             <div id="botonMenu" aria-label="Abrir menú" @click="toggleMenu">
-                <img src="../assets/icons/menu.svg" alt="">
+                <img src="../../public/assets/icons/menu.svg" alt="Icono Menu hamburguesa">
             </div>
 
             <Transition :name="'slideMenu'">
@@ -245,33 +247,34 @@ const resetSearch = () => {
                     <input v-model="query" @input="debouncedSearch" placeholder="Buscar..." class="search-input" />
                     <RouterLink v-if="paginatedResults.length" :to="paginatedResults[0].ruta" @click="resetSearch"
                         class="search-button">
-                        <img src="../assets/icons/lupa.svg" alt="Icono de búsqueda" />
+                        <img src="../../public/assets/icons/lupa.svg" alt="Icono de búsqueda" />
                     </RouterLink>
                     <div v-else class="search-button">
-                        <img src="../assets/icons/lupa.svg" alt="Icono de búsqueda" />
+                        <img src="../../public/assets/icons/lupa.svg" alt="Icono de búsqueda" />
                     </div>
                 </div>
             </form>
         </div>
         <div class="resultBusqueda">
-            <table>
-                <template v-if="paginatedResults.length && query.trim()">
-                    <tbody>
-                        <tr v-for="item in paginatedResults" :key="item.ruta" @click="resetSearch">
-                            <router-link :to="item.ruta">
-                                <td>
-                                    <span><strong> {{ item.tipo }}:</strong> {{ item.nombre }}</span>
-                                </td>
-                            </router-link>
-                        </tr>
-                    </tbody>
-                </template>
-                <template v-else-if="query.trim()">
-                    <tr class="noResult">
-                        <td>No se encontraron resultados.</td>
-                    </tr>
-                </template>
-            </table>
+
+            <template v-if="paginatedResults.length && query.trim()">
+
+                <ul>
+                    <li v-for="item in paginatedResults" :key="item.ruta" @click="resetSearch">
+                        <router-link :to="item.ruta">
+
+                            <span><strong> {{ item.tipo }}:</strong> {{ item.nombre }}</span>
+                        </router-link>
+                    </li>
+
+                </ul>
+            </template>
+            <template v-else-if="query.trim()">
+                <ul class="noResult">
+                    <li>No se encontraron resultados.</li>
+                </ul>
+            </template>
+
             <div v-if="showPagination && query">
                 <button @click="prevPage" :disabled="currentPage === 1">
                     ◀
@@ -282,6 +285,7 @@ const resetSearch = () => {
                 </button>
             </div>
         </div>
+
     </nav>
 
 </template>
@@ -295,6 +299,8 @@ nav {
     letter-spacing: 1.3px;
     background-color: var(--color-principal1);
     color: var(--color-texto);
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
+
 }
 
 /* ====== Menus primarios ====== */
@@ -302,6 +308,7 @@ nav {
     display: flex;
     height: 40px;
     z-index: 500;
+
 }
 
 ul {
@@ -340,6 +347,8 @@ nav div {
     width: 270px;
     left: auto;
     position: absolute;
+    border-radius: 0 0 5px 5px;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2), -3px 3px 5px rgba(0, 0, 0, 0.2);
 }
 
 .subMenu li a {
@@ -409,6 +418,7 @@ nav div {
 /* ====== Modo movil ====== */
 #modoMovil {
     display: none;
+
 }
 
 #botonMenu {
@@ -425,78 +435,126 @@ nav div {
     width: 40px;
 }
 
-
-
 .resultBusqueda {
     position: absolute;
-    top: 100%;
+    top: auto;
     right: 0;
-    left: auto;
-    width: 420px;
-    min-width: 250px;
-    z-index: 1;
-    overflow-x: auto;
+    min-width: 40%;
+    border-radius: 5px;
+    box-shadow:
+        -5px 4px 5px 0 rgba(0, 0, 0, 0.18),
+        0 1.5px 6px 0 rgba(0, 0, 0, 0.10);
 }
 
-.resultBusqueda * {
-    font-family: "Outfit", sans-serif;
-    font-size: 15px;
-    letter-spacing: 1px;
+.resultBusqueda ul {
+    background-color: var(--color-tabla2);
+    padding: 5px 10px 0 10px;
+}
+
+.resultBusqueda span {
+    font-size: 14px;
     color: black;
 }
 
-.resultBusqueda div {
+.resultBusqueda li {
     display: flex;
+    height: 30px;
+}
+
+.resultBusqueda a {
+    height: 30px;
+    display: flex;
+    width: 100%;
+    cursor: pointer;
     align-items: center;
-    justify-content: space-around;
-    background-color: var(--color-tituloTabla);
-    padding: 5px;
-
+    padding: 0 5px;
 }
 
-.resultBusqueda div button {
-    width: 50px;
+
+.resultBusqueda ul li:hover {
+    text-decoration: underline;
+    color: black;
 }
 
-td {
-    padding: 10px 5px;
-    display: flex;
-}
-
-tbody tr:nth-child(even) {
+.resultBusqueda ul li:nth-child(even) {
     background-color: var(--color-tabla1);
 }
 
-tbody tr:nth-child(odd) {
+.resultBusqueda ul li:nth-child(odd) {
     background-color: var(--color-tabla2);
 }
 
-table {
+.resultBusqueda div {
+    background-color: var(--color-principal1);
     width: 100%;
-    border-collapse: collapse;
-    color: var(--color-texto)
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 0 0 5px 5px;
 }
 
-tr:hover td {
+.resultBusqueda div span {
+    color: var(--color-texto);
+}
+
+.resultBusqueda div button {
+    width: 45px;
+    height: 35px;
     cursor: pointer;
-    text-decoration: underline;
+    background: var(--color-tituloTabla);
+    color: var(--color-texto);
+    border: none;
+    font-size: 18px;
+    font-weight: bold;
+    transition: all 0.1s;
 }
 
-.noResult {
-    background-color: var(--color-tabla1);
+.resultBusqueda div button:first-child {
+    border-radius: 0 0 0px 5px;
 }
 
-.noResult:hover td {
-    cursor: auto;
-    text-decoration: none;
+.resultBusqueda div button:last-child {
+    border-radius: 0 0 5px 0px;
 }
 
+.resultBusqueda div button:hover:not(:disabled) {
+    background: var(--color-secundario);
+    color: #fff;
+}
+
+.resultBusqueda div button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    background: var(--color-secundario2);
+    color: #888;
+}
+
+.noResult{
+        border-radius: 0 0 5px 5px;
+
+}
 @media screen and (max-width: 750px) {
 
     /* ====== Cambiar de modo ====== */
     #modoMovil {
         display: flex;
         justify-content: space-between;
+    }
+
+    #modoMovil .resultBusqueda {
+        top: 40px;
+        font-size: 14px;
+        min-width: 60%;
+
+    }
+
+    .resultBusqueda a,
+    .resultBusqueda li {
+        height: auto;
+    }
+
+    .resultBusqueda a {
+        padding: 6px 5px;
     }
 
     .navLogic {
@@ -516,6 +574,7 @@ tr:hover td {
         display: flex;
         flex-direction: column;
         height: fit-content;
+        box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.25);
 
     }
 
@@ -538,6 +597,9 @@ tr:hover td {
         top: auto;
         left: 130px;
         transform: translateY(-40px);
+        box-shadow: 8px 5px 5px rgba(0, 0, 0, 0.2), -4px 0px 5px rgba(0, 0, 0, 0.2);
+        border-radius: 0;
+
     }
 
     .subMenu li a {
@@ -546,18 +608,16 @@ tr:hover td {
         min-width: 210px;
     }
 
-    .subMenu li a {
-        border-radius: 0;
-    }
-
     .subMenu li:first-child a {
         border-radius: 0 5px 0 0;
-
     }
 
     .subMenu li:last-child a {
         border-radius: 0 0 5px 0;
+    }
 
+    .subMenu li:only-child a {
+        border-radius: 0 5px 5px 0;
     }
 
     /* ====== Barra de buscar del menu principal ====== */
@@ -566,26 +626,8 @@ tr:hover td {
         border: none;
     }
 
-
-    /* ====== Resultados de la busqueda ====== */
-
-    .resultBusqueda {
-        min-width: auto;
-        max-width: 350px;
-    }
-
-    .resultBusqueda * {
-        font-size: 14px;
-    }
-
-    table {
-        min-width: 350px;
-        max-width: 350px;
-    }
-
-    td {
-        padding: 5px 5px;
-
+    .noResult li {
+        padding: 10px 0;
     }
 
 }

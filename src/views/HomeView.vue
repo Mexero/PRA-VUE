@@ -11,14 +11,14 @@ import { RouterLink } from 'vue-router'
                 <div class="pareja">
                     <RouterLink to="/clases">
                         <div class="bloque">
-                            <img src="../assets/icons/ClasesIcon.webp" alt="">
+                            <img src="../../public/assets/icons/ClasesIcon.webp" alt="Icono Clases">
                             <span class="textoBloque">Clases</span>
                         </div>
                     </RouterLink>
                     <RouterLink to="/pokedex">
 
                         <div class="bloque">
-                            <img src="../assets/icons/PokedexIcon.webp" alt="">
+                            <img src="../../public/assets/icons/PokedexIcon.webp" alt="Icono Pokedex">
                             <span class="textoBloque"> Pokédex</span>
                         </div>
                     </RouterLink>
@@ -27,14 +27,14 @@ import { RouterLink } from 'vue-router'
 
                     <RouterLink to="/habilidades">
                         <div class="bloque">
-                            <img src="../assets/icons/HabIcon.svg" alt="">
+                            <img src="../../public/assets/icons/HabIcon.svg" alt="Icono Habilidades">
 
                             <span class="textoBloqueG"> Habilidades </span>
                         </div>
                     </RouterLink>
                     <RouterLink to="/movimientos">
                         <div class="bloque">
-                            <img src="../assets/icons/MovIcon.svg" alt="">
+                            <img src="../../public/assets/icons/MovIcon.svg" alt="Icono Movimientos">
 
                             <span class="textoBloqueG"> Movimientos</span>
 
@@ -47,14 +47,14 @@ import { RouterLink } from 'vue-router'
                 <div class="pareja">
                     <RouterLink to="/reglas">
                         <div class="bloque">
-                            <img src="../assets/icons/ReglasIcon.svg" alt="">
+                            <img src="../../public/assets/icons/ReglasIcon.svg" alt="Icono Reglas">
                             <span class="textoBloque"> Reglas</span>
 
                         </div>
                     </RouterLink>
                     <RouterLink to="/reglas">
                         <div class="bloque">
-                            <img src="../assets/icons/EstadosIcon.webp" alt="">
+                            <img src="../../public/assets/icons/EstadosIcon.webp" alt="Icono Estados">
                             <span class="textoBloque"> Estados</span>
                         </div>
                     </RouterLink>
@@ -62,13 +62,13 @@ import { RouterLink } from 'vue-router'
                 <div class="pareja">
                     <RouterLink to="/objetos">
                         <div class="bloque">
-                            <img src="../assets/icons/ObjetosIcon.webp" alt="">
+                            <img src="../../public/assets/icons/ObjetosIcon.webp" alt="Icono Objetos">
                             <span class="textoBloque"> Objetos </span>
                         </div>
                     </RouterLink>
                     <RouterLink to="/dotes">
                         <div class="bloque">
-                            <img src="../assets/icons/DotesIcon.svg" alt="">
+                            <img src="../../public/assets/icons/DotesIcon.svg" alt="Icono Dotes">
                             <span class="textoBloque"> Dotes </span>
                         </div>
                     </RouterLink>
@@ -81,13 +81,13 @@ import { RouterLink } from 'vue-router'
             <!-- ============ INFO "CONTACTOS" ============= -->
             <article id="infoContacto">
                 <div>
-                    <h2>¡Unete a nuestra comunidad!</h2>
-                    <RouterLink to=""><img src="../assets/icons/discord.webp" alt=""></RouterLink>
+                    <h2>¡Únete a nuestra comunidad!</h2>
+                    <RouterLink to=""><img src="../../public/assets/icons/discord.webp" alt="Icono Discord"></RouterLink>
                 </div>
                 <div>
                     <p>
                         En nuestra comunidad de Discord podrás mantenerte al día con las novedades del sistema,
-                        compartir historias, personajes, arte,y conocer a otros fans del rol y Pokémon que comparten tu
+                        compartir historias, personajes, arte, y conocer a otros fans del rol y Pokémon que comparten tu
                         pasión. ¡Únete y sé parte de la aventura!
                     </p>
                 </div>
@@ -95,31 +95,31 @@ import { RouterLink } from 'vue-router'
             </article>
             <article class="descargaPDF" id="inicioRapido">
                 <h2>
-                    Inicio rapido
+                    Inicio rápido
                 </h2>
                 <p>
-                    Aqui puedes ver un resumen rapido del sistema
+                    Aquí puedes ver un resumen rápido del sistema.
                 </p>
                 <div class="PDFlinks">
                     <RouterLink to="" target="_blank">
                         <div>PDF Resumen del sistema</div>
                     </RouterLink>
                     <RouterLink to="" target="_blank">
-                        <div>PDF Combate rapido</div>
+                        <div>PDF Combate rápido</div>
                     </RouterLink>
                 </div>
             </article>
 
-            <!-- ============ INFO "DESCAGARS" ============= -->
+            <!-- ============ INFO "DESCARGAS" ============= -->
 
             <article class="descargaPDF" id="descargaLibro">
-                <h2>Descarga las ultimas versiones</h2>
+                <h2>Descarga las últimas versiones</h2>
                 <div class="PDFlinks">
                     <RouterLink to="" target="_blank">
                         <div>PDF Base</div>
                     </RouterLink>
                     <RouterLink to="" target="_blank">
-                        <div>PDF Pokedex</div>
+                        <div>PDF Pokédex</div>
                     </RouterLink>
                     <RouterLink to="" target="_blank">
                         <div>PDF Pokedex DM</div>
@@ -132,11 +132,11 @@ import { RouterLink } from 'vue-router'
 
         <section id="infoNosotros">
 
-            <div id=imgInfoNosotros>
-                <img src="../assets/img/literalmentenosotros.webp" alt="">
+            <div id="imgInfoNosotros">
+                <img src="../../public/assets/img/literalmentenosotros.webp" alt="Imagen Nosotros">
             </div>
             <div class="textoInfo">
-                <h2>¿Quienes somos?</h2>
+                <h2>¿Quiénes somos?</h2>
                 <p>
                     Somos un grupito de amigos que comenzó a jugar rol por Discord desde hace algunos años. Empezamos
                     a jugar una campaña de Pokémon y, como no encontramos un sistema que nos terminara de convencer
@@ -144,15 +144,15 @@ import { RouterLink } from 'vue-router'
                 </p>
                 <p>
                     Tras las primeras partidas haciendo malabares para que no desentonaran un "Artificiero", un "Pícaro"
-                    y un "Bardo" en el mundo de Pokémon, nuestro querido DJ llegó diciendo "Chavales, mirad
-                    esto" y, de alguna forma que no entendemos, el que decía nunca tener tiempo libre ya había escrito
+                    y un "Bardo" en el mundo de Pokémon, nuestro querido DJ llegó diciendo: “Chavales, mirad esto”, y de
+                     alguna forma que no entendemos, el que decía nunca tener tiempo libre ya había escrito
                     300 páginas de su propio sistema de roleplay de Pokémon.
                 </p>
                 <p>
                     Desde entonces, jugamos la campaña con ese sistema. Ayudando a mejorar, añadir, corregir y pulir lo
                     que ahora se llama <strong>Pokémon Roleplaying Adventure</strong> (o <strong>PRA</strong> para
                     abreviar). Y, finalmente, tras un par de años, lo hicimos público para aquellos fans del rol y
-                    Pokémon que quisieran jugarlo.
+                    Pokémon que quieran jugarlo.
                 </p>
             </div>
 
@@ -164,17 +164,18 @@ import { RouterLink } from 'vue-router'
         <section id="infoFAQ">
 
             <article id="FAQ">
-                <h2>FAQ</h2>
                 <div>
+                    <h2>FAQ</h2>
+
                     <h3>¿Todo el contenido es gratis?</h3>
-                    <p>Si.</p> <!-- No nos podemos permitir una demanda de Nintendo  -->
+                    <p>Sí.</p> <!-- No nos podemos permitir una demanda de Nintendo  -->
                 </div>
                 <div>
                     <h3>¿Cómo empiezo a jugar?</h3>
                     <p>
                         Puedes comenzar leyendo el sistema de <strong>Pokémon Roleplaying Adventure</strong> en esta
-                        misma pagina web o abrir y descargar el PDF de la ultima versión. Después, convence a algunos
-                        amigos de jugar o pregunta en nuestro Discord si algún DJ busca jugadores.
+                        misma página web o abrir y descargar el PDF de la última versión. Después, convence a algunos
+                        amigos de jugar o pregunta en nuestro Discord si algún Director de Juego (DJ)" busca jugadores.
                     </p>
                 </div>
 
@@ -182,11 +183,11 @@ import { RouterLink } from 'vue-router'
                     <h3>¿Puedo contribuir al proyecto?</h3>
                     <p>
                         Sí, puedes contribuir de varias formas. Desde compartir tu opinión sobre el sistema hasta
-                        ayudarnos a mejorar con tus sugerencias. En nuestro Discord puedes darnos feedback, reportar
+                        ayudarnos a mejorar con tus sugerencias. En nuestro Discord puedes comentar, reportar
                         erratas, bugs o problemas de balance. La opinión de los jugadores es muy importante para
                         nosotros.
 
-                        También, puedes apoyarnos con pequeñas donaciones que nos ayudan a mantener esta página web.
+                        También, puedes apoyarnos con pequeñas donaciones que nos ayudan a mantener esta página web y pagar artistas.
                         <!--Y a comprar peluches de fuecoco-->
                     </p>
                 </div>
@@ -213,6 +214,15 @@ h2 {
 #menuPlayer {
     /* Margen con el header */
     margin-top: 50px;
+}
+
+/* Evitar que se corten sombras y y transforms */
+#menuPlayer,
+.filaMenuPlayer,
+.pareja,
+.descargaPDF,
+#infoBloque {
+    overflow: visible;
 }
 
 /* ======================= CONTENIDO DEL SECTION MENU DEL INDEX ======================= 
@@ -242,6 +252,7 @@ Son 2 filas de 2 parejas de bloques cada uno que se acomodan segun el tamaño de
     background-color: var(--color-oscuro1);
     border: 1px solid var(--color-principal1);
     border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.464);
 }
 
 .bloque img {
@@ -268,6 +279,28 @@ Son 2 filas de 2 parejas de bloques cada uno que se acomodan segun el tamaño de
     font-size: 32px;
 }
 
+.bloque:hover {
+    animation: cartaSutil 0.4s ease-out forwards;
+}
+
+@keyframes cartaSutil {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    30% {
+        transform: translateY(-4px) rotate(-0.6deg);
+    }
+
+    60% {
+        transform: translateY(-5px) rotate(0.5deg);
+    }
+
+    100% {
+        transform: translateY(-4px) rotate(0deg);
+    }
+}
+
 .bloque:hover,
 #infoDescargas div:hover {
     background-color: var(--color-hoverBloque);
@@ -277,6 +310,7 @@ Son 2 filas de 2 parejas de bloques cada uno que se acomodan segun el tamaño de
 #infoDescargas div:hover {
     background-color: var(--color-secundario);
     border-color: var(--color-texto);
+
 }
 
 
@@ -322,7 +356,12 @@ solo cambia el tamaños de los bloques y el margen con el header*/
     background-color: var(--color-fondoTexto);
     border: 1px solid var(--color-principal1);
     color: var(--color-texto);
-    box-shadow: 0px 0px 4px var(--color-principal1);
+
+}
+
+#infoNosotros {
+    overflow: hidden;
+    box-shadow: 2px 2px 5px rgba(32, 32, 32, 0.511);
 
 }
 
@@ -339,11 +378,15 @@ solo cambia el tamaños de los bloques y el margen con el header*/
 #infoNosotros,
 #infoContacto {
     border-radius: 10px;
-    overflow: hidden;
+}
+
+#infoNosotros,
+#infoContacto {
+    border-radius: 10px;
 }
 
 #infoBloque {
-    gap: 30px;
+    gap: 20px;
 }
 
 /* Contacto */
@@ -352,6 +395,8 @@ solo cambia el tamaños de los bloques y el margen con el header*/
     min-width: 280px;
     padding: 24px 20px;
     font-size: 22px;
+    box-shadow: 2px 2px 5px rgba(32, 32, 32, 0.511);
+
 }
 
 #infoContacto h2 {
@@ -394,6 +439,7 @@ solo cambia el tamaños de los bloques y el margen con el header*/
     flex-direction: column;
     justify-content: space-around;
     text-align: center;
+    box-shadow: 2px 2px 5px rgba(32, 32, 32, 0.511);
 }
 
 .PDFlinks {
@@ -438,8 +484,8 @@ solo cambia el tamaños de los bloques y el margen con el header*/
 
 /* Imagen info */
 #imgInfoNosotros {
-    overflow: hidden;
     width: 60%;
+
 }
 
 #imgInfoNosotros img {
@@ -535,7 +581,6 @@ solo cambia el tamaños de los bloques y el margen con el header*/
             "inicioRapido"
             "descargaLibro"
             "infoContacto";
-        gap: 40px;
     }
 
 }
@@ -547,7 +592,8 @@ solo cambia el tamaños de los bloques y el margen con el header*/
 }
 
 #FAQ h2 {
-    padding: 10px 30px;
+    padding: 10px 0;
+    text-decoration: underline;
 }
 
 #FAQ div {

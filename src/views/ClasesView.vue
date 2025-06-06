@@ -342,7 +342,7 @@ function isSubclaseActiva(ruta) {
         </div>
     </div>
     <div id="volverArriba">
-        <a href="#modoNoche"><img src="../assets/icons/arrowUpIcon.svg" alt=""></a>
+        <a href="#modoNoche"><img src="../../public/assets/icons/arrowUpIcon.svg" alt="Icono volver arriba"></a>
     </div>
 </template>
 <style>
@@ -374,7 +374,13 @@ html {
     width: 40%;
     display: flex;
     flex-direction: column;
-    color: var(--color-texto)
+    color: var(--color-texto);
+    box-shadow:
+        -2px 2px 10px rgba(0, 0, 0, 0.1),
+        2px -2px 10px rgba(0, 0, 0, 0.1),
+        2px 2px 10px rgba(0, 0, 0, 0.1),
+        -2px -2px 10px rgba(0, 0, 0, 0.1);
+    height: fit-content;
 }
 
 .claseTitulo {
@@ -421,14 +427,18 @@ html {
     display: flex;
     flex-wrap: wrap;
     background-color: var(--color-principal2);
+    gap: 10px;
+    padding: 10px 5px;
 }
 
 .subclasses>div {
-    margin: 5px;
     padding: 5px 10px;
     border-radius: 5px;
     text-align: center;
     max-width: fit-content;
+    cursor: pointer;
+    border: 1px solid rgba(0, 0, 0, 0);
+    box-sizing: border-box;
 }
 
 .subclas-active,
@@ -441,24 +451,32 @@ html {
     text-shadow: 0px 0px 1px var(--color-texto);
 }
 
-.subclas-active:hover,
 .subclas-inactive:hover {
     background-color: var(--color-principal1);
-    cursor: pointer;
 }
 
+.subclasses>div:hover {
+    border: 1px solid black;
+
+}
 
 /* ========= TABLA PRINCIPAL ========== */
 .table-div {
     width: 80%;
     overflow-x: auto;
+    box-shadow:
+        -2px 2px 10px rgba(0, 0, 0, 0.1),
+        2px -2px 10px rgba(0, 0, 0, 0.1),
+        2px 2px 10px rgba(0, 0, 0, 0.1),
+        -2px -2px 10px rgba(0, 0, 0, 0.1);
 }
 
 table {
     border-radius: 2px;
     width: 100%;
     border-collapse: collapse;
-    color: var(--color-texto)
+    color: var(--color-texto);
+
 }
 
 th,
@@ -502,7 +520,13 @@ td:nth-child(2) {
     gap: 10px;
     text-align: justify;
     margin: 20px 0;
-    color: var(--color-texto)
+    color: var(--color-texto);
+    border-radius: 5px;
+    box-shadow:
+        -2px 2px 10px rgba(0, 0, 0, 0.1),
+        2px -2px 10px rgba(0, 0, 0, 0.1),
+        2px 2px 10px rgba(0, 0, 0, 0.1),
+        -2px -2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .description {
@@ -647,11 +671,12 @@ td:nth-child(2) {
 
 @media (max-width:600px) {
 
-    
+
 
     table {
         font-size: 13px;
     }
+
     th {
         font-size: 12px;
         height: 30px;
@@ -674,9 +699,12 @@ td:nth-child(2) {
     .featureSubSub summary {
         font-size: 13px;
     }
-    p, li{
+
+    p,
+    li {
         font-size: 14px;
     }
+
     /*
 */
 }

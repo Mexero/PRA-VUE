@@ -336,19 +336,19 @@ const objetosFiltrados = computed(() => {
                         <tr>
                             <th @click="ordenarPor('Nombre')">
                                 Nombre
-                                <img src="../../assets/icons/filtroFelcha.svg" alt="icono filtro" />
+                                <img src="../../../public/assets/icons/filtroFelcha.svg" alt="icono filtro" />
                             </th>
                             <th @click="ordenarPor('Tipo')">
                                 Tipo
-                                <img src="../../assets/icons/filtroFelcha.svg" alt="icono filtro" />
+                                <img src="../../../public/assets/icons/filtroFelcha.svg" alt="icono filtro" />
                             </th>
                             <th @click="ordenarPor('Rareza')">
                                 Rareza
-                                <img src="../../assets/icons/filtroFelcha.svg" alt="icono filtro" />
+                                <img src="../../../public/assets/icons/filtroFelcha.svg" alt="icono filtro" />
                             </th>
                             <th @click="ordenarPor('Coste')">
                                 Coste
-                                <img src="../../assets/icons/filtroFelcha.svg" alt="icono filtro" />
+                                <img src="../../../public/assets/icons/filtroFelcha.svg" alt="icono filtro" />
                             </th>
                         </tr>
                     </thead>
@@ -584,7 +584,14 @@ input[type="range"]::-webkit-slider-thumb {
     color: var(--color-texto);
     background-color: var(--color-fondoTexto);
     width: 100%;
+        border-radius: 0 10px 0 0;
+
     font-size: 15px;
+        box-shadow:
+        -2px 2px 10px rgba(0, 0, 0, 0.1),
+        2px -2px 10px rgba(0, 0, 0, 0.1),
+        2px 2px 10px rgba(0, 0, 0, 0.1),
+        -2px -2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .slideFiltros-enter-active,
@@ -614,8 +621,12 @@ input[type="range"]::-webkit-slider-thumb {
     background-color: white;
     border: 1px solid #e5e7eb;
     border-radius: 0.75rem;
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
-    padding: 1.5rem;
+    box-shadow:
+        -2px 2px 10px rgba(0, 0, 0, 0.1),
+        2px -2px 10px rgba(0, 0, 0, 0.1),
+        2px 2px 10px rgba(0, 0, 0, 0.1),
+        -2px -2px 10px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem;
 }
 
 /* ================== La Tabla de objetos ===================== */
@@ -629,9 +640,13 @@ thead {
 }
 
 .div-tabla {
-    height: 70vh;
     width: 100%;
+    height: fit-content;
+    max-height: 70vh;
     overflow-y: auto;
+    box-shadow:
+        -2px 3px 6px rgb(0, 0, 0, 0.3),
+        2px 3px 6px rgba(0, 0, 0, 0.3);
 }
 
 .tabla {
@@ -770,6 +785,9 @@ th img {
         margin: 0 auto;
         margin-bottom: 80px;
         overflow-x: auto;
+        height: fit-content;
+        max-height: 70vh;
+
     }
 
     .tabla th {

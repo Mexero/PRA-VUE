@@ -363,19 +363,19 @@ const dotesFiltrados = computed(() => {
                         <tr>
                             <th @click="ordenarPor('Nombre')">
                                 Nombre
-                                <img src="../../assets/icons/filtroFelcha.svg" alt="icono filtro" />
+                                <img src="../../../public/assets/icons/filtroFelcha.svg" alt="icono filtro" />
                             </th>
                             <th @click="ordenarPor('Tipo')">
                                 Tipo
-                                <img src="../../assets/icons/filtroFelcha.svg" alt="icono filtro" />
+                                <img src="../../../public/assets/icons/filtroFelcha.svg" alt="icono filtro" />
                             </th>
                             <th @click="ordenarPor('Prerrequisitos')">
                                 Prerrequisitos
-                                <img src="../../assets/icons/filtroFelcha.svg" alt="icono filtro" />
+                                <img src="../../../public/assets/icons/filtroFelcha.svg" alt="icono filtro" />
                             </th>
                             <th @click="ordenarPor('Nivel')">
                                 Nivel
-                                <img src="../../assets/icons/filtroFelcha.svg" alt="icono filtro" />
+                                <img src="../../../public/assets/icons/filtroFelcha.svg" alt="icono filtro" />
                             </th>
                         </tr>
                     </thead>
@@ -432,6 +432,7 @@ const dotesFiltrados = computed(() => {
 
 .paddingBloque {
     padding: 15px;
+   
 }
 
 /* === "Main" contiene todo === */
@@ -442,6 +443,7 @@ const dotesFiltrados = computed(() => {
     width: 95%;
     min-height: 75vh;
     letter-spacing: 0.5px;
+
 }
 
 #filtroTabla {
@@ -449,6 +451,7 @@ const dotesFiltrados = computed(() => {
     flex-direction: column;
     width: 60%;
     margin-right: 30px;
+
 }
 
 /* === Filtro de la tabla === */
@@ -456,6 +459,7 @@ const dotesFiltrados = computed(() => {
     width: 100%;
     display: flex;
     flex-direction: column;
+
 }
 
 #filtroTipos div {
@@ -559,7 +563,6 @@ input::-webkit-inner-spin-button {
     cursor: pointer;
     -webkit-appearance: none;
     appearance: none;
-
 }
 
 /* Styles for the range thumb in WebKit browsers */
@@ -597,7 +600,15 @@ input[type="range"]::-webkit-slider-thumb {
     background-color: var(--color-fondoTexto);
     width: 100%;
     font-size: 15px;
+    border-radius: 0 10px 0 0;
+    box-shadow:
+        -2px 2px 10px rgba(0, 0, 0, 0.1),
+        2px -2px 10px rgba(0, 0, 0, 0.1),
+        2px 2px 10px rgba(0, 0, 0, 0.1),
+        -2px -2px 10px rgba(0, 0, 0, 0.1);
 }
+
+
 
 .slideFiltros-enter-active,
 .slideFiltros-leave-active {
@@ -611,6 +622,7 @@ input[type="range"]::-webkit-slider-thumb {
     opacity: 0.5;
     padding: 0;
 }
+
 
 .slideFiltros-enter-to,
 .slideFiltros-leave-from {
@@ -626,9 +638,13 @@ input[type="range"]::-webkit-slider-thumb {
     background-color: white;
     border: 1px solid #e5e7eb;
     border-radius: 0.75rem;
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
     padding: 1.5rem;
     white-space: pre-line;
+    box-shadow:
+        -2px 2px 10px rgba(0, 0, 0, 0.1),
+        2px -2px 10px rgba(0, 0, 0, 0.1),
+        2px 2px 10px rgba(0, 0, 0, 0.1),
+        -2px -2px 10px rgba(0, 0, 0, 0.1);
 }
 
 /* ================== La Tabla de dotes ===================== */
@@ -642,9 +658,12 @@ thead {
 }
 
 .div-tabla {
-    height: 70vh;
     width: 100%;
+    height: fit-content;
+    max-height: 70vh;
     overflow-y: auto;
+    box-shadow: -2px 3px 6px rgb(0, 0, 0, 0.3), 2px 3px 6px rgba(0, 0, 0, 0.3);
+
 }
 
 .tabla {

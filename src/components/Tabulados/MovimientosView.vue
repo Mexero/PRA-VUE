@@ -1,3 +1,3 @@
 <template>
-    <h1>MovimientosS</h1>
+    <h1 class="titulo">Movimientos</h1>
 </template>
