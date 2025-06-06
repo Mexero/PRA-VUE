@@ -52,20 +52,23 @@ function cacheAll() {
 <template>
     <header>
         <RouterLink to="/">
-            <img src="../../public/assets/img/logo.webp" alt="Logo">
+            <img id="logo" src="../../public/assets/img/logo.webp" alt="Logo">
         </RouterLink>
         <h1>Pokémon Roleplaying Adventures</h1>
 
-        <button @click="cacheAll">
-            carga todo
-        </button>
-
-        <div id="modoNoche" @click="toggleModo">
-
-            <img :src="icono" alt="Imagen modo oscuro">
-
+        <div id="iconosHeader">
+            <div class="icono icono-cargar" title="Cargar toda la web">
+                <img src="../../public/assets/icons/CargarTodoIcon.svg" alt="" @click="cacheAll">
+            </div>
+            <RouterLink to="/">
+                <div class="icono icono-discord">
+                    <img src="../../public/assets/icons/DiscordIcon.svg" alt="">
+                </div>
+            </RouterLink>
+            <div id="modoNoche" class="icono icono-modo" @click="toggleModo">
+                <img :src="icono" alt="Icono cambio de modo">
+            </div>
         </div>
-
     </header>
 </template>
 
@@ -80,8 +83,15 @@ header {
     background-color: var(--color-header);
 }
 
-header img {
+#logo {
     width: 80px;
+    transition: all 0.2s ease;
+}
+
+#logo:hover {
+    margin-top: 2px;
+        transform: scale(1.05);
+
 }
 
 header h1 {
@@ -94,45 +104,103 @@ header h1 {
     font-family: "Staatliches", sans-serif;
 }
 
-@media screen and (max-width: 820px) {
+@media screen and (max-width: 920px) {
     header h1 {
         font-size: 35px;
     }
 }
 
-@media screen and (max-width: 695px) {
+@media screen and (max-width: 800px) {
     header h1 {
         font-size: 30px;
     }
-}
 
-@media screen and (max-width: 465px) {
-    header h1 {
-        font-size: 24px;
+    .icono img {
+        width: 25px;
+        height: 25px;
     }
 }
 
+@media screen and (max-width: 550px) {
+    header h1 {
+        font-size: 24px;
+        padding-right: 40px;
+
+    }
+}
 
 /* ================== Icono cambio de modo ======================*/
-#modoNoche {
+#iconosHeader {
+    display: flex;
+    gap: 5px;
     position: absolute;
     top: 5px;
     right: 0px;
+    height: 30px;
+    margin-right: 5px;
+}
+
+.icono:hover img {
+    transform: scale(0.90);
+}
+
+.icono {
+    cursor: pointer;
+    height: fit-content;
+}
+
+.icono img {
     width: 30px;
     height: 30px;
-}
-
-#modoNoche:hover {
-    cursor: pointer;
-}
-
-#modoNoche img {
-    width: 30px;
+    aspect-ratio: 1/1;
     filter: var(--color-icon);
     transition: transform 0.1s ease-out;
 }
 
-#modoNoche:hover img {
-    transform: scale(0.90);
+
+@media screen and (max-width: 600px) {
+    #iconosHeader {
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+        grid-template-areas:
+            "discord modo"
+            "cargar cargar";
+        gap: 5px;
+        max-width: 70px;
+        height: fit-content;
+    }
+
+    .icono-cargar {
+        grid-area: cargar;
+        justify-self: end;
+    }
+
+    .icono-discord {
+        grid-area: discord;
+    }
+
+    .icono-modo {
+        grid-area: modo;
+    }
+
+    .icono img {
+        width: 25px;
+        height: 25px;
+    }
+}
+
+@media screen and (max-width: 460px) {
+    #iconosHeader {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column-reverse;
+        width: 50px;
+        height: fit-content;
+    }
+
+    .icono {
+        display: flex;
+        justify-content: end;
+    }
 }
 </style>
