@@ -80,17 +80,17 @@ const router = createRouter({
     {
       path: '/dotes',
       name: 'dotes',
-      component: () => import('../components/Tabulados/DotesView.vue'),
+      component: () => import('../views/DotesView.vue'),
     },
     {
       path: '/movimientos',
       name: 'movimientos',
-      component: () => import('../components/Tabulados/MovimientosView.vue'),
+      component: () => import('../views/MovimientosView.vue'),
     },
     {
       path: '/habilidades',
       name: 'habilidades',
-      component: () => import('../components/Tabulados/HabilidadesView.vue'),
+      component: () => import('../views/HabilidadesView.vue'),
     },
     {
       path: '/objetos',
@@ -105,7 +105,7 @@ const router = createRouter({
     {
       path: '/reglas',
       name: 'reglas',
-      component: () => import('../components/Tabulados/ReglasView.vue'),
+      component: () => import('../views/ReglasView.vue'),
     },
 
 

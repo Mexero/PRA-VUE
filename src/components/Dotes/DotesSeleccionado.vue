@@ -1,12 +1,12 @@
 <template>
-    <div v-if="datosCargados && objeto" class="seleccionado">
-        <h2>{{ objeto.Nombre }}</h2>
-        <p><strong>Tipo:</strong> {{ objeto.Tipo }}</p>
-        <p><strong>Rareza:</strong> {{ objeto.Rareza }}</p>
-        <p v-if="objeto.Coste"><strong>Coste:</strong> {{ objeto.Coste }}$</p>
-        <p v-if="objeto.ValorMaterial"><strong>Valor como Material:</strong> {{ objeto.ValorMaterial }}</p>
+    <div v-if="datosCargados && dote" class="seleccionado">
+        <h2>{{ dote.Nombre }}</h2>
+        <p><strong>Tipo:</strong> {{ dote.Tipo }} </p>
+        <p v-if="dote.Prerrequisitos"><strong>Prerrequisitos:</strong> {{ dote.Prerrequisitos }}</p>
+        <p v-if="dote.Nivel"><strong>Nivel:</strong> {{ dote.Nivel }}</p>
+        <p v-if="dote.Repetible"><strong>Repetible</strong></p>
         <p><strong>Descripción:</strong></p>
-        <p class="descripcion">{{ objeto.Descripcion }}</p>
+        <p class="descripcion">{{ dote.Descripcion }}</p>
     </div>
     <div v-else class="seleccionado">
         <p>Cargando...</p>
@@ -16,7 +16,7 @@
 <script setup>
 defineProps([
     'datosCargados',
-    'objeto'
+    'dote'
 ]);
 </script>
 

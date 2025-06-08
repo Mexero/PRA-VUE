@@ -32,7 +32,7 @@ const emit = defineEmits(['seleccionar', 'ordenar']);
                 <tr>
                     <td colspan="4" class="textoCentrado">
                         <div>
-                            Resultados no encontrados con los filtros actuales :&lpar;
+                            Resultados no encontrados :&lpar;
                         </div>
                     </td>
                 </tr>

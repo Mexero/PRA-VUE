@@ -8,11 +8,10 @@ import Slider from '@/components/sliderView.vue'
 const props = defineProps([
     'datosCargados',
     'tipos',
-    'rarezas',
     'filtroTipos',
-    'filtroRarezas',
-    'filtroPrecioMin',
-    'filtroPrecioMax',
+    'filtroPrerrequisitos',
+    'filtroNivelMin',
+    'filtroNivelMax',
     'filtroNombre'
 ]);
 
@@ -46,16 +45,6 @@ const emitirNombreDebounced = debounce((valor) => {
     emit('actualizarFiltros', { clave: 'nombre', valor });
 }, 100);
 
-//Rarezas
-function toggleRareza(event, rareza) {
-    const seleccionadas = new Set(props.filtroRarezas);
-    if (event.target.checked) {
-        seleccionadas.add(rareza);
-    } else {
-        seleccionadas.delete(rareza);
-    }
-    emit('actualizarFiltros', { clave: 'rarezas', valor: Array.from(seleccionadas) });
-}
 
 //Tipos
 function toggleTipo(event, tipo) {
@@ -70,27 +59,25 @@ function toggleTipo(event, tipo) {
 
 //Precios
 function emitirPrecios(valorMin, valorMax) {
-    precioMin.value = valorMin;
-    precioMax.value = valorMax;
-    actualizarFiltros('precioMin', precioMin.value);
-    actualizarFiltros('precioMax', precioMax.value);
+    nivelMin.value = valorMin;
+    nivelMax.value = valorMax;
+    actualizarFiltros('nivelMin', nivelMin.value);
+    actualizarFiltros('nivelMax', nivelMax.value);
 }
 
 // =============== DATOS SLIDER ================
 const allowedValues = [
-    0, 100, 200, 250, 300, 400, 500, 600, 800, 1000, 1200,
-    1400, 1500, 2000, 2500, 3000, 4000, 5000, 6000, 8000,
-    10000, 15000, 20000, 25000, 50000, 100000
+    0, 6, 9, 11, 12, 18
 ];
 
-const precioMin = ref(allowedValues[0]);
-const precioMax = ref(allowedValues[allowedValues.length - 1]);
+const nivelMin = ref(allowedValues[0]);
+const nivelMax = ref(allowedValues[allowedValues.length - 1]);
 
 // =============== HABLAR SLIDER ================
 let limpiarSliderFlag = ref(false);
 
 watch(
-    () => [props.filtroPrecioMin, props.filtroPrecioMax],
+    () => [props.filtroNivelMin, props.filtroNivelMax],
     ([min, max]) => {
         if (typeof max !== "number" && !min && !max) {
             limpiarSliderFlag.value = !limpiarSliderFlag.value;
@@ -123,13 +110,14 @@ watch(
                     <Slider :allowedValues="allowedValues" :limpiar="limpiarSliderFlag"
                         @actualizarMinMax="emitirPrecios" />
 
-                    <h3>Rarezas</h3>
-                    <div id="filtroRarezas">
+                    <div id="filtroPrerrequisitos">
+                        <h3>Prerrequisitos</h3>
                         <div>
-                            <label v-for="rareza in rarezas" :key="rareza">
-                                <input type="checkbox" :value="rareza" :checked="filtroRarezas.includes(rareza)"
-                                    @change="event => toggleRareza(event, rareza)" />
-                                {{ rareza }}
+                            <label v-for="opcion in ['Si', 'No', 'Todos']" :key="opcion">
+                                <input type="radio" name="tienePrerrequisitos" :value="opcion"
+                                    :checked="filtroPrerrequisitos === opcion"
+                                    @change="actualizarFiltros('prerrequisitos', opcion)" />
+                                {{ opcion }}
                             </label>
                         </div>
                     </div>
@@ -160,11 +148,15 @@ watch(
     flex-direction: column;
 }
 
+#filtroPrerrequisitos div {
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
 #filtroTipos div {
     margin: 10px 5px;
-    display: grid;
-    grid-template-columns: repeat(4, auto);
-    gap: 5px;
+    display: flex;
+    gap: 40px;
     flex-wrap: wrap;
 }
 
@@ -181,7 +173,7 @@ input[type="text"]:focus {
     box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.2);
 }
 
-#filtroRarezas div {
+#filtroPrerrequisitos div {
     padding: 8px 0;
     display: flex;
     gap: 20px;
@@ -270,7 +262,7 @@ input[type="text"]:focus {
     }
 
     #filtroTipos div,
-    #filtroRarezas div {
+    #filtroPrerrequisitos div {
         grid-template-columns: repeat(2, auto) !important;
         gap: 8px;
         flex-wrap: wrap;
