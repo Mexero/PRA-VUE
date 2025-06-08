@@ -52,7 +52,7 @@
             <div class="estadosBloque">
                 <div class="estados helado">
                     <div class="headerEstados">
-                        <img src="../../../public/assets/icons/HeladoIcon.webp" alt="Helado icono" width="25px" />
+                        <img src="/assets/icons/HeladoIcon.webp" alt="Helado icono" width="25px" />
                         <h2>Helado</h2>
                     </div>
 
@@ -81,7 +81,7 @@
 
                 <div class="estados quemado">
                     <div class="headerEstados">
-                        <img src="../../../public/assets/icons/QuemadoIcon.webp" alt="Quemado icono" width="25px" />
+                        <img src="/assets/icons/QuemadoIcon.webp" alt="Quemado icono" width="25px" />
                         <h2>Quemado</h2>
                     </div>
 
@@ -114,7 +114,7 @@
 
                 <div class="estados paralizado">
                     <div class="headerEstados">
-                        <img src="../../../public/assets/icons/ParalizadoIcon.webp" alt="Paralizado icono" width="25px" />
+                        <img src="/assets/icons/ParalizadoIcon.webp" alt="Paralizado icono" width="25px" />
                         <h2>Paralizado</h2>
                     </div>
 
@@ -144,7 +144,7 @@
 
                 <div class="estados envenenado">
                     <div class="headerEstados">
-                        <img src="../../../public/assets/icons/EnvenenadoIcon.webp" alt="Envenenado icono" width="25px" />
+                        <img src="/assets/icons/EnvenenadoIcon.webp" alt="Envenenado icono" width="25px" />
                         <h2>Envenenado</h2>
                     </div>
                     <p>
@@ -184,7 +184,7 @@
 
                 <div class="estados dormido">
                     <div class="headerEstados">
-                        <img src="../../../public/assets/icons/DormidoIcon.webp" alt="Dormido icono" width="25px" />
+                        <img src="/assets/icons/DormidoIcon.webp" alt="Dormido icono" width="25px" />
                         <h2>Dormido</h2>
                     </div>
 
@@ -210,7 +210,7 @@
 
                 <div class="estados confuso">
                     <div class="headerEstados">
-                        <img src="../../../public/assets/icons/ConfusoIcon.webp" alt="Confuso icono" width="25px" />
+                        <img src="/assets/icons/ConfusoIcon.webp" alt="Confuso icono" width="25px" />
                         <h2>Confuso</h2>
                     </div>
 
@@ -237,7 +237,7 @@
 
                 <div class="estados infatuado">
                     <div class="headerEstados">
-                        <img src="../../../public/assets/icons/InfatuadoIcon.webp" alt="Infatuado icono" width="25px" />
+                        <img src="/assets/icons/InfatuadoIcon.webp" alt="Infatuado icono" width="25px" />
                         <h2>Infatuado</h2>
                     </div>
 
@@ -262,7 +262,7 @@
 
                 <div class="estados asustado">
                     <div class="headerEstados">
-                        <img src="../../../public/assets/icons/AsustadoIcon.webp" alt="Asustado icono" width="25px" />
+                        <img src="/assets/icons/AsustadoIcon.webp" alt="Asustado icono" width="25px" />
                         <h2>Asustado</h2>
                     </div>
 
@@ -285,7 +285,7 @@
                 </div>
                 <div class="estados enfurecido">
                     <div class="headerEstados">
-                        <img src="../../../public/assets/icons/EnfurecidoIcon2.webp" alt="Enfurecido icono" width="25px" />
+                        <img src="/assets/icons/EnfurecidoIcon2.webp" alt="Enfurecido icono" width="25px" />
                         <h2>Enfurecido</h2>
                     </div>
                     <p>
@@ -316,7 +316,7 @@
 
                 <div class="estados acalorado">
                     <div class="headerEstados">
-                        <img src="../../../public/assets/icons/AcaloradoIcon.webp" alt="Acalorado icono" width="25px" />
+                        <img src="/assets/icons/AcaloradoIcon.webp" alt="Acalorado icono" width="25px" />
                         <h2>Acalorado</h2>
                     </div>
                     <p>
@@ -348,7 +348,7 @@
 
                 <div class="estados empapado">
                     <div class="headerEstados">
-                        <img src="../../../public/assets/icons/EmpapadoIcon.webp" alt="Empapado icono" width="25px" />
+                        <img src="/assets/icons/EmpapadoIcon.webp" alt="Empapado icono" width="25px" />
                         <h2>Empapado</h2>
                     </div>
                     <p>
@@ -369,7 +369,7 @@
 
                 <div class="estados cegado">
                     <div class="headerEstados">
-                        <img src="../../../public/assets/icons/CegadoIcon.webp" alt="Empapado icono" width="25px" />
+                        <img src="/assets/icons/CegadoIcon.webp" alt="Empapado icono" width="25px" />
                         <h2>Cegado</h2>
                     </div>
                     <p>

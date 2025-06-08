@@ -11,14 +11,14 @@ import { RouterLink } from 'vue-router'
                 <div class="pareja">
                     <RouterLink to="/clases">
                         <div class="bloque">
-                            <img src="../../public/assets/icons/ClasesIcon.webp" alt="Icono Clases">
+                            <img src="/assets/icons/ClasesIcon.webp" alt="Icono Clases">
                             <span class="textoBloque">Clases</span>
                         </div>
                     </RouterLink>
                     <RouterLink to="/pokedex">
 
                         <div class="bloque">
-                            <img src="../../public/assets/icons/PokedexIcon.webp" alt="Icono Pokedex">
+                            <img src="/assets/icons/PokedexIcon.webp" alt="Icono Pokedex">
                             <span class="textoBloque"> Pokédex</span>
                         </div>
                     </RouterLink>
@@ -27,14 +27,14 @@ import { RouterLink } from 'vue-router'
 
                     <RouterLink to="/habilidades">
                         <div class="bloque">
-                            <img src="../../public/assets/icons/HabIcon.svg" alt="Icono Habilidades">
+                            <img src="/assets/icons/HabIcon.svg" alt="Icono Habilidades">
 
                             <span class="textoBloqueG"> Habilidades </span>
                         </div>
                     </RouterLink>
                     <RouterLink to="/movimientos">
                         <div class="bloque">
-                            <img src="../../public/assets/icons/MovIcon.svg" alt="Icono Movimientos">
+                            <img src="/assets/icons/MovIcon.svg" alt="Icono Movimientos">
 
                             <span class="textoBloqueG"> Movimientos</span>
 
@@ -47,14 +47,14 @@ import { RouterLink } from 'vue-router'
                 <div class="pareja">
                     <RouterLink to="/reglas">
                         <div class="bloque">
-                            <img src="../../public/assets/icons/ReglasIcon.svg" alt="Icono Reglas">
+                            <img src="/assets/icons/ReglasIcon.svg" alt="Icono Reglas">
                             <span class="textoBloque"> Reglas</span>
 
                         </div>
                     </RouterLink>
                     <RouterLink to="/reglas">
                         <div class="bloque">
-                            <img src="../../public/assets/icons/EstadosIcon.webp" alt="Icono Estados">
+                            <img src="/assets/icons/EstadosIcon.webp" alt="Icono Estados">
                             <span class="textoBloque"> Estados</span>
                         </div>
                     </RouterLink>
@@ -62,13 +62,13 @@ import { RouterLink } from 'vue-router'
                 <div class="pareja">
                     <RouterLink to="/objetos">
                         <div class="bloque">
-                            <img src="../../public/assets/icons/ObjetosIcon.webp" alt="Icono Objetos">
+                            <img src="/assets/icons/ObjetosIcon.webp" alt="Icono Objetos">
                             <span class="textoBloque"> Objetos </span>
                         </div>
                     </RouterLink>
                     <RouterLink to="/dotes">
                         <div class="bloque">
-                            <img src="../../public/assets/icons/DotesIcon.svg" alt="Icono Dotes">
+                            <img src="/assets/icons/DotesIcon.svg" alt="Icono Dotes">
                             <span class="textoBloque"> Dotes </span>
                         </div>
                     </RouterLink>
@@ -82,7 +82,7 @@ import { RouterLink } from 'vue-router'
             <article id="infoContacto">
                 <div>
                     <h2>¡Únete a nuestra comunidad!</h2>
-                    <RouterLink to=""><img src="../../public/assets/icons/discord.webp" alt="Icono Discord"></RouterLink>
+                    <RouterLink to=""><img src="/assets/icons/discord.webp" alt="Icono Discord"></RouterLink>
                 </div>
                 <div>
                     <p>
@@ -133,7 +133,7 @@ import { RouterLink } from 'vue-router'
         <section id="infoNosotros">
 
             <div id="imgInfoNosotros">
-                <img src="../../public/assets/img/literalmentenosotros.webp" alt="Imagen Nosotros">
+                <img src="/assets/img/literalmentenosotros.webp" alt="Imagen Nosotros">
             </div>
             <div class="textoInfo">
                 <h2>¿Quiénes somos?</h2>
@@ -145,7 +145,7 @@ import { RouterLink } from 'vue-router'
                 <p>
                     Tras las primeras partidas haciendo malabares para que no desentonaran un "Artificiero", un "Pícaro"
                     y un "Bardo" en el mundo de Pokémon, nuestro querido DJ llegó diciendo: “Chavales, mirad esto”, y de
-                     alguna forma que no entendemos, el que decía nunca tener tiempo libre ya había escrito
+                    alguna forma que no entendemos, el que decía nunca tener tiempo libre ya había escrito
                     300 páginas de su propio sistema de roleplay de Pokémon.
                 </p>
                 <p>
@@ -187,7 +187,8 @@ import { RouterLink } from 'vue-router'
                         erratas, bugs o problemas de balance. La opinión de los jugadores es muy importante para
                         nosotros.
 
-                        También, puedes apoyarnos con pequeñas donaciones que nos ayudan a mantener esta página web y pagar artistas.
+                        También, puedes apoyarnos con pequeñas donaciones que nos ayudan a mantener esta página web y
+                        pagar artistas.
                         <!--Y a comprar peluches de fuecoco-->
                     </p>
                 </div>

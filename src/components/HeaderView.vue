@@ -1,8 +1,8 @@
 <script setup>
-import { useRoute, RouterLink } from 'vue-router'
+import { RouterLink } from 'vue-router'
 import { ref, onMounted } from 'vue'
-import DarkIcon from '../../public/assets/icons/DarkIcon.webp' //ModoNoche
-import LightIcon from '../../public/assets/icons/LightIcon.webp' //ModoDia
+import DarkIcon from '/assets/icons/DarkIcon.webp' //ModoNoche
+import LightIcon from '/assets/icons/LightIcon.webp' //ModoDia
 
 const oscuro = ref(false)
 const icono = ref(DarkIcon)
@@ -104,17 +104,17 @@ function ignoreUpdate() {
     <!--Header-->
     <header>
         <RouterLink to="/">
-            <img id="logo" src="../../public/assets/img/logo.webp" alt="Logo">
+            <img id="logo" src="/assets/img/logo.webp" alt="Logo">
         </RouterLink>
         <h1>Pokémon Roleplaying Adventures</h1>
 
         <div id="iconosHeader">
             <div class="icono icono-cargar" title="Cargar toda la web">
-                <img src="../../public/assets/icons/CargarTodoIcon.svg" alt="" @click="cacheAll">
+                <img src="/assets/icons/CargarTodoIcon.svg" alt="" @click="cacheAll">
             </div>
             <RouterLink to="/">
                 <div class="icono icono-discord">
-                    <img src="../../public/assets/icons/DiscordIcon.svg" alt="">
+                    <img src="/assets/icons/DiscordIcon.svg" alt="">
                 </div>
             </RouterLink>
             <div id="modoNoche" class="icono icono-modo" @click="toggleModo">
@@ -154,7 +154,7 @@ header {
 
 #logo:hover {
     margin-top: 2px;
-        transform: scale(1.05);
+    transform: scale(1.05);
 
 }
 

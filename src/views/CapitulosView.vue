@@ -49,8 +49,7 @@ const openMobileCap = ref(false)
             </Transition>
         </div>
         <div id="iconoAbrirMenuCapitulos" aria-label="Abrir menú" @click.stop="toggleMenu"
-            :class="{ rotado: openMobileCap }"> <img src="../../public/assets/icons/flechaDobleIcon.png"
-                alt="icono flechas">
+            :class="{ rotado: openMobileCap }"> <img src="/assets/icons/flechaDobleIcon.png" alt="icono flechas">
         </div>
     </nav>
 
@@ -90,7 +89,7 @@ const openMobileCap = ref(false)
     </main>
 
     <div id="volverArriba">
-        <a href="#modoNoche"><img src="../../public/assets/icons/arrowUpIcon.svg" alt=""></a>
+        <a href="#modoNoche"><img src="/assets/icons/arrowUpIcon.svg" alt=""></a>
     </div>
 </template>
 
@@ -182,7 +181,7 @@ aside {
     overflow-y: auto;
     overflow-x: hidden;
     scrollbar-width: thin;
-            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 
 }
 

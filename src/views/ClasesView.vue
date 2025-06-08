@@ -342,7 +342,7 @@ function isSubclaseActiva(ruta) {
         </div>
     </div>
     <div id="volverArriba">
-        <a href="#modoNoche"><img src="../../public/assets/icons/arrowUpIcon.svg" alt="Icono volver arriba"></a>
+        <a href="#modoNoche"><img src="/assets/icons/arrowUpIcon.svg" alt="Icono volver arriba"></a>
     </div>
 </template>
 <style>

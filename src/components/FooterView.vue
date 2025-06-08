@@ -6,8 +6,8 @@ import { RouterLink } from 'vue-router'
   <footer>
 
     <div id="redes">
-      <h2>Redes:</h2>
-      <RouterLink to=""><img src="../../public/assets/icons/discord.webp" alt="Icono discord" width="30"></RouterLink>
+      <h2>Redes: </h2>
+      <RouterLink to=""><img src="/assets/icons/discord.webp" alt="Icono discord" width="30"></RouterLink>
 
     </div>
 

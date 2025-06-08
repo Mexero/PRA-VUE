@@ -75,7 +75,7 @@ watch(() => route.fullPath, () => {
 
         <div class="navLogic" v-click-outside="() => openMobileNav = false">
             <div id="botonMenu" aria-label="Abrir menú" @click="toggleMenu">
-                <img src="../../public/assets/icons/menu.svg" alt="Icono Menu hamburguesa">
+                <img src="/assets/icons/menu.svg" alt="Icono Menu hamburguesa">
             </div>
 
             <Transition :name="'slideMenu'">

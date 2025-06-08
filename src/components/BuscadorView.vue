@@ -98,10 +98,10 @@ const resetSearch = () => {
             <input v-model="query" @input="debouncedSearch" placeholder="Buscar..." class="search-input" />
             <RouterLink v-if="paginatedResults.length" :to="paginatedResults[0].ruta" @click="resetSearch"
                 class="search-button">
-                <img src="../../public/assets/icons/lupa.svg" alt="Icono de búsqueda" />
+                <img src="/assets/icons/lupa.svg" alt="Icono de búsqueda" />
             </RouterLink>
             <div v-else class="search-button">
-                <img src="../../public/assets/icons/lupa.svg" alt="Icono de búsqueda" />
+                <img src="/assets/icons/lupa.svg" alt="Icono de búsqueda" />
             </div>
         </fieldset>
     </form>

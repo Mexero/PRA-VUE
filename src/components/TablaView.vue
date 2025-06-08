@@ -15,7 +15,7 @@ const emit = defineEmits(['seleccionar', 'ordenar']);
                 <tr>
                     <th v-for="columna of columnas" @click="emit('ordenar', columna)">
                         {{ columna }}
-                        <img src="../../../public/assets/icons/filtroFelcha.svg" alt="icono filtro" />
+                        <img src="/assets/icons/filtroFelcha.svg" alt="icono filtro" />
                     </th>
                 </tr>
             </thead>
