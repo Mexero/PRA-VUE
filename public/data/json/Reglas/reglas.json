@@ -1,0 +1,677 @@
+[
+    {
+        "nombre": "“¡Ve allí!”",
+        "tipos": [
+            "Clase",
+            "Entrenador"
+        ],
+        "subtipos": [
+            "Orden de Entrenador"
+        ],
+        "descripciones": [
+            "Cuando usas esta orden sobre un Pokémon, este puede moverse una cantidad de metros igual a la mitad de tu Bono de Entrenador automáticamente.",
+            "<b>Perfeccionamiento:</b> Si el movimiento se hace en línea recta, la cantidad de metros que puede moverse es igual a tu Bono de Entrenador."
+        ]
+    },
+    {
+        "nombre": "“¡Muévete con cuidado!”",
+        "tipos": [
+            "Clase",
+            "Entrenador"
+        ],
+        "subtipos": [
+            "Orden de Entrenador"
+        ],
+        "descripciones": [
+            "Cuando usas esta orden sobre un Pokémon, esta no provoca Ataques de Oportunidad y puede moverse por espacio ocupado por criaturas rivales como Terreno Difícil siempre que no acabe su turno en este.",
+            "<b>Perfeccionamiento:</b> Además del efecto normal, el Pokémon no se ve afectado por Terreno Difícil ni por ningún efecto nocivo asociado a este."
+        ]
+    },
+    {
+        "nombre": "“¡Atento a sus movimientos!”",
+        "tipos": [
+            "Clase",
+            "Entrenador"
+        ],
+        "subtipos": [
+            "Orden de Entrenador"
+        ],
+        "descripciones": [
+            "Avisas al Pokémon sobre el que usas la orden de los ataques que podrían hacerle. La próxima vez que el Pokémon haga una tirada de Salvación de Fuerza, Agilidad o Resistencia, tira un Dado de Orden y añádelo al resultado.",
+            "<b>Perfeccionamiento:</b> Además del efecto normal, el Pokémon añade el resultado del dado de orden que lanzó a todas las salvaciones del mismo tipo que la que hizo que se lanzara dicho dado."
+        ]
+    },
+    {
+        "nombre": "“¡En el punto débil!”",
+        "tipos": [
+            "Clase",
+            "Entrenador"
+        ],
+        "subtipos": [
+            "Orden de Entrenador"
+        ],
+        "descripciones": [
+            "Señalas en lugar donde el Pokémon sobre el que aplicas la orden debe golpear a una criatura. El Rango de Crítico de tu Pokémon contra dicha criatura se vuelve la mitad de tu Bono de Entrenador hasta el final de este turno, independientemente del que fuese.",
+            "<b>Perfeccionamiento:</b> El rango de Crítico se vuelve igual a la mitad de tu Bono de Entrenador más 1 en lugar del usual."
+        ]
+    },
+    {
+        "nombre": "“¡No permitas que te afecte!”",
+        "tipos": [
+            "Clase",
+            "Entrenador"
+        ],
+        "subtipos": [
+            "Orden de Entrenador"
+        ],
+        "descripciones": [
+            "Recuerdas al Pokémon sobre el que usas de orden que juntos podéis soportar cualquier cosa. La próxima vez que el Pokémon haga una tirada de Salvación de Espíritu, tira un Dado de Orden y añádelo al resultado.",
+            "<b>Perfeccionamiento:</b> Además del efecto normal, el Pokémon añade el resultado del dado de orden que lanzó a todas las salvaciones del mismo tipo que la que hizo que se lanzara dicho dado."
+        ]
+    },
+    {
+        "nombre": "“¡Mándalo a volar!”",
+        "tipos": [
+            "Clase",
+            "Entrenador"
+        ],
+        "subtipos": [
+            "Orden de Entrenador"
+        ],
+        "descripciones": [
+            "Indicas a tu Pokémon que empuje a una criatura con todas sus fuerzas. La próxima vez antes del final de este turno que el Pokémon golpee con una Tirada de Ataque cuerpo a cuerpo a dicha criatura, si la Tirada Natural alcanza tu Rango de Orden, la criatura es empujada 1 metro.",
+            "<b>Perfeccionamiento:</b> El objetivo de la Tirada de Ataque siempre es empujado 1 metro, además del efecto usual."
+        ]
+    },
+    {
+        "nombre": "“¡Distráelo!”",
+        "tipos": [
+            "Clase",
+            "Entrenador"
+        ],
+        "subtipos": [
+            "Orden de Entrenador"
+        ],
+        "descripciones": [
+            "Indicas a tu Pokémon como distraer a una criatura. Hasta el principio de tu próximo turno y mientras tu Pokémon esté a 1 metro de la criatura, la próxima tirada de Ataque que otra criatura haga contra la primera se hace en Ventaja.",
+            "<b>Perfeccionamiento:</b> Si una Tirada de Ataque realizada en Ventaja debido a esta Orden de Entrenador golpea, la Ventaja se conserva para la siguiente Tirada de Ataque."
+        ]
+    },
+    {
+        "nombre": "“¡No dejes que ataque a tus compañeros!”",
+        "tipos": [
+            "Clase",
+            "Entrenador"
+        ],
+        "subtipos": [
+            "Orden de Entrenador"
+        ],
+        "descripciones": [
+            "Indicas a tu Pokémon que debe molestar a una criatura para que no pueda atacar a los demás. Hasta el principio de tu próximo turno, mientras tu Pokémon esté a 1 metro de la Criatura, esta tiene Desventaja en Tiradas de Ataque contra todas las demás criaturas que no sean tu Pokémon.",
+            "<b>Perfeccionamiento:</b> Si la Criatura afectada hace una Tirada de Ataque contra otra Criatura que no sea tu Pokémon mientras este está a menos de 1 metro de ella esta provoca un Ataque de Oportunidad de tu Pokémon."
+        ]
+    },
+    {
+        "nombre": "“¡Agárralo!”",
+        "tipos": [
+            "Clase",
+            "Entrenador"
+        ],
+        "subtipos": [
+            "Orden de Entrenador"
+        ],
+        "descripciones": [
+            "Indicas a tu Pokémon que realice un agarre contra la criatura contra la que va a usar un Movimiento. La próxima vez que tu Pokémon golpee con una Tirada de Ataque cuerpo a cuerpo a la criatura, si la Tirada Natural alcanza tu Rango de Orden y tu Pokémon tiene una forma de hacerlo, la agarra.",
+            "<b>Perfeccionamiento:</b> Cuando un Pokémon es agarrado de esta forma, este no puede volver a su Poké Ball."
+        ]
+    },
+    {
+        "nombre": "“¡Desde atrás!”",
+        "tipos": [
+            "Clase",
+            "Entrenador"
+        ],
+        "subtipos": [
+            "Orden de Entrenador"
+        ],
+        "descripciones": [
+            "Indicas a tu Pokémon como golpear a una criatura sin acercarse demasiado. El rango de los Movimientos cuyo rango tiene una cantidad de metros estos aumentan en una cantidad igual a tu Bono de Entrenador.",
+            "<b>Perfeccionamiento:</b> Además del efecto usual, si el Movimiento que usa tu Pokémon tiene un rango de Cuerpo a cuerpo, esta puede realizarse desde 1 metro más lejos del objetivo de lo normal."
+        ]
+    },
+    {
+        "nombre": "“¡Derríbalo!”",
+        "tipos": [
+            "Clase",
+            "Entrenador"
+        ],
+        "subtipos": [
+            "Orden de Entrenador"
+        ],
+        "descripciones": [
+            "Indicas a tu Pokémon como golpear a una criatura de forma que esta caiga al suelo. La próxima vez antes del final de este turno que el Pokémon golpee con una Tirada de Ataque cuerpo a cuerpo a dicha criatura, si la Tirada Natural alcanza tu Rango de Orden, la criatura cae tumbada.",
+            "<b>Perfeccionamiento:</b> Si la Criatura cae tumbada, esta tiene Desventaja en las Tiradas de Ataque que haga hasta el final de su próximo turno incluso si se levanta."
+        ]
+    },
+    {
+        "nombre": "“¡Créales una apertura!”",
+        "tipos": [
+            "Clase",
+            "Entrenador"
+        ],
+        "subtipos": [
+            "Orden de Entrenador"
+        ],
+        "descripciones": [
+            "Indicas a tu Pokémon que use un proyectil para molestar a una criatura. La próxima vez antes del final de este turno que el Pokémon golpee con una Tirada de Ataque a rango a dicha criatura, si la Tirada Natural alcanza tu Rango de Orden, la próxima Tirada de Ataque que se haga contra esa criatura antes del principio de tu próximo turno se hace en Ventaja.",
+            "<b>Perfeccionamiento:</b> Si una Tirada de Ataque realizada en Ventaja debido a esta Orden de Entrenador golpea, la Ventaja se conserva para la siguiente Tirada de Ataque."
+        ]
+    },
+    {
+        "nombre": "¡Puedes con esto y más!”",
+        "tipos": [
+            "Clase",
+            "Entrenador"
+        ],
+        "subtipos": [
+            "Orden de Entrenador"
+        ],
+        "descripciones": [
+            "Animas a tu Pokémon a seguir luchando y aguantar un poco más. Este gana una cantidad de Puntos de Escudo igual a tu Bono de Entrenador más una tirada de tu Dado de Orden.",
+            "<b>Perfeccionamiento:</b> Tu Pokémon gana una cantidad de Puntos de Escudo extra iguales a su Bono de Habilidad."
+        ]
+    },
+    {
+        "nombre": "“¡Haz un barrido!”",
+        "tipos": [
+            "Clase",
+            "Entrenador"
+        ],
+        "subtipos": [
+            "Orden de Entrenador"
+        ],
+        "descripciones": [
+            "Indicas a tu Pokémon que golpee haciendo un barrido. La próxima vez en este turno que tu Pokémon haga daño con un Movimiento que hace una Tirada de Ataque y deja inconsciente a una criatura, puedes hacer que redirija el daño sobrante a una criatura a menos de 1 metro de la que ha caído debilitada si la Tirada de Ataque la hubiera golpeado.",
+            "<b>Perfeccionamiento:</b> En lugar de redirigir el daño sobrante, inflige todo el daño asociado a la Tirada de Ataque a la segunda Criatura si esta hubiera golpeado."
+        ]
+    },
+    {
+        "nombre": "“¡Ralentízalo!”",
+        "tipos": [
+            "Clase",
+            "Entrenador"
+        ],
+        "subtipos": [
+            "Orden de Entrenador"
+        ],
+        "descripciones": [
+            "Indicas a tu Pokémon que ralentice a una criatura para que no se le escape. La próxima vez antes del final de este turno que el Pokémon golpee con una Tirada de Ataque a dicha criatura, si la Tirada Natural alcanza tu Rango de Orden, la criatura reduce todas sus velocidades en una cantidad igual a la mitad de tu Bono de Entrenador.",
+            "<b>Perfeccionamiento:</b> Una Criatura ralentizada de esta forma no puede tomar Reacciones hasta el principio de su próximo turno."
+        ]
+    },
+    {
+        "nombre": "“¡Bloquea su vista”",
+        "tipos": [
+            "Clase",
+            "Entrenador"
+        ],
+        "subtipos": [
+            "Orden de Entrenador"
+        ],
+        "descripciones": [
+            "Indicas a tu Pokémon que bloquee la visibilidad de una criatura con uno de sus Movimientos. La próxima vez antes del final de este turno que el Pokémon golpee con una Tirada de Ataque a dicha criatura, si la Tirada Natural alcanza tu Rango de Orden, esta gana 1 Nivel de Cegado.",
+            "<b>Perfeccionamiento:</b> Una Criatura Cegada de esta forma queda aturdida, así que debe elegir entre tomar una Acción o usar su Movimiento."
+        ]
+    },
+    {
+        "nombre": "¡Nada puede dañarte!",
+        "tipos": [
+            "Clase",
+            "Entrenador",
+            "Subclase"
+        ],
+        "subtipos": [
+            "Orden de Entrenador"
+        ],
+        "origen": "Especialista de tipo: Acero",
+        "descripciones": [
+            "Los Pokémon de Tipo Acero son los más resistentes de todos. Cuando usas esta Orden de Entrenador sobre un Pokémon de Tipo Acero, este concentra su poder defensivo. Hasta el principio de tu próximo turno, cada vez que el Pokémon reciba daño, este se reduce en una cantidad igual a tu Bono de Entrenador.",
+            "<b>Perfeccionamiento:</b> La reducción de daño aumenta en 1d4."
+        ]
+    },
+    {
+        "nombre": "¡Deja los problemas fluir!",
+        "tipos": [
+            "Clase",
+            "Entrenador",
+            "Subclase"
+        ],
+        "subtipos": [
+            "Orden de Entrenador"
+        ],
+        "origen": "Especialista de tipo: Agua",
+        "descripciones": [
+            "El agua es la fuente de toda la vida y los Pokémon de este tipo son los más cercanos a ella. Cuando usas esta Orden sobre un Pokémon, este se siente revitalizado, ganando Puntos de Escudo igual a tu Bono de Entrenador más una Tirada de tu Dado de Orden los cuales duran hasta el principio de tu próximo turno y, mientras tiene estos Puntos de Escudo, reduce sus Niveles de Envenenado en uno más de lo normal al final de sus turnos.",
+            "<b>Perfeccionamiento:</b> Mientras tu Pokémon tiene estos Puntos de Escudo no pierde PV a causa del veneno ni se ve afectada por otros efectos nocivos asociados a estar Envenenado."
+        ]
+    },
+    {
+        "nombre": "“Déjalos pegados”",
+        "tipos": [
+            "Clase",
+            "Entrenador",
+            "Subclase"
+        ],
+        "subtipos": [
+            "Orden de Entrenador"
+        ],
+        "origen": "Especialista de tipo: Bicho",
+        "descripciones": [
+            "Los Pokémon de Tipo Bicho secretan sustancias pegajosas, como redes o mucosas. Cuando un Pokémon de Tipo Bicho utiliza un Movimiento de Tipo Bicho tras recibir esta Orden de Entrenador este turno, puede lanzar una mucosa o una red de 1 metro de radio alrededor del punto en el que usó el Movimiento, la cual no afecta a los Pokémon Tipo Bicho. La zona afectada se vuelve Terreno Difícil y toda criatura que acabe su turno en esta queda reduce todas sus Velocidades en 1 metro cada vez que lo haga. Si todas sus Velocidades llegan a 0, queda Apresada. Una criatura puede usar su Acción para quitarse la sustancia pegajosa y liberarse de la reducción a sus Velocidades.",
+            "<b>Perfeccionamiento:</b> La cantidad de metros que reduce sus Velocidades una Criatura por acabar su turno en esta área es de 2 metros en lugar de 1."
+        ]
+    },
+    {
+        "nombre": "“¡Destrúyelos!”",
+        "tipos": [
+            "Clase",
+            "Entrenador",
+            "Subclase"
+        ],
+        "subtipos": [
+            "Orden de Entrenador"
+        ],
+        "origen": "Especialista de tipo: Dragón",
+        "descripciones": [
+            "Los Pokémon de Tipo Dragón poseen el poder de arrasar con todo a su paso. El primer Movimiento de Tipo Dragón que hace una Tirada de Ataque que usa un Pokémon sobre el que has usado esta Orden de Entrenador este turno deja de hacer Tiradas de Ataque. En su lugar, ahora el Movimiento afecta un cono de 3 metros si la Tirada de Ataque era cuerpo a cuerpo y una Línea de 1 metro de grosor y longitud igual al rango del Movimiento para las Tiradas de Ataque a rango. Todas las criaturas en el área hacen Tiradas de Salvación de AGI y, si la fallan, reciben el daño que fuesen a recibir si la Tirada de Ataque los golpease. Si el Movimiento tenía otro efecto además de hacer daño, este aplica si fallan la Tirada de Salvación y, además, la Tirada Natural de esta es de 4-.",
+            "<b>Perfeccionamiento:</b> Si una criatura falla la Tirada de Salvación del Movimiento al obtener una Tirada Natural de 2- el daño que recibe se duplica."
+        ]
+    },
+    {
+        "nombre": "¡Aumenta tu voltaje!",
+        "tipos": [
+            "Clase",
+            "Entrenador",
+            "Subclase"
+        ],
+        "subtipos": [
+            "Orden de Entrenador"
+        ],
+        "origen": "Especialista de tipo: Eléctrico",
+        "descripciones": [
+            "Tipo Eléctrico contienen grandes cantidades de electricidad de interior, que pueden liberar de diferentes formas. Un Pokémon que recibe esta Orden aumenta sus Velocidades en una cantidad igual a la mitad de tu Bono de Entrenador y, mientras usa su velocidad de caminado o nado, deja un rastro de electricidad que dura hasta el principio de tu próximo turno. Una criatura que inicia su turno adyacente al rastro o entra a este hace una Tirada de Salvación de Resistencia contra una CD = 10 + BH del Pokémon + EST, donde EST es la estadística más alta del Pokémon para no quedar paralizada hasta el principio de su próximo turno y recibir una cantidad de d4 de daño de tipo Eléctrico igual a tu Bono de Entrenador.",
+            "<b>Perfeccionamiento:</b> Los d4 de daño provocados por fallar la Tirada de Salvación se vuelven d6."
+        ]
+    },
+    {
+        "nombre": "¡Agota su espíritu!",
+        "tipos": [
+            "Clase",
+            "Entrenador",
+            "Subclase"
+        ],
+        "subtipos": [
+            "Orden de Entrenador"
+        ],
+        "origen": "Especialista de tipo: Fantasma",
+        "descripciones": [
+            "Los Pokémon de Tipo Fantasma contienen la energía del más allá su interior y pueden transmitirla. Cuando un Pokémon de Tipo Fantasma hace daño a una Criatura o le inflige un Estado en el mismo turno en el que recibe esta orden, la Criatura hace una Salvación de Espíritu de CD = 10 + BH del Pokémon + EST, donde EST es la Estadística más alta del Pokémon, ganando 1 Nivel de Fatiga en un fallo. Estos Niveles de Fatiga duran hasta el final de la Escena. Una criatura puede repetir la Tirada de Salvación al final de cada uno de sus turnos para liberarse de los Niveles de Fatiga ganados de esta forma.",
+            "<b>Perfeccionamiento:</b> Los Puntos de Fatiga ganados de esta forma no se pierden cuando la Criatura repite la Tirada de Salvación al final de sus turnos."
+        ]
+    },
+    {
+        "nombre": "¡Arde como tu espíritu!",
+        "tipos": [
+            "Clase",
+            "Entrenador",
+            "Subclase"
+        ],
+        "subtipos": [
+            "Orden de Entrenador"
+        ],
+        "origen": "Especialista de tipo: Fuego",
+        "descripciones": [
+            "El ardiente espíritu de lucha del Pokémon sobre el que usas esta Orden se materializa en forma de calor a su alrededor. Las criaturas a menos de 2 metros de tu Pokémon quedan Acaloradas hasta el principio de tu próximo turno si no son de Tipo Fuego.",
+            "<b>Perfeccionamiento:</b> Las Criaturas acaloradas de esta forma que usan Movimientos de Tipo Agua infligen la mitad de daño con estos Movimientos que de forma usual."
+        ]
+    },
+    {
+        "nombre": "¡Demuéstrales tu belleza!",
+        "tipos": [
+            "Clase",
+            "Entrenador",
+            "Subclase"
+        ],
+        "subtipos": [
+            "Orden de Entrenador"
+        ],
+        "origen": "Especialista de tipo: Hada",
+        "descripciones": [
+            "Los Pokémon de Tipo Hada poseen magia infatuadora y bromista. La próxima vez antes del final de este turno que el Pokémon golpee con una Tirada de Ataque cuerpo a cuerpo a una criatura, si la Tirada Natural alcanza tu Rango de Orden, la criatura gana 1 Nivel de Infatuado de tu Pokémon.",
+            "<b>Perfeccionamiento:</b> Una Criatura que gana 1 Nivel de Infatuado de esta forma también gana 1 Nivel de Confusión."
+        ]
+    },
+    {
+        "nombre": "¡Congélalo todo!",
+        "tipos": [
+            "Clase",
+            "Entrenador",
+            "Subclase"
+        ],
+        "subtipos": [
+            "Orden de Entrenador"
+        ],
+        "origen": "Especialista de tipo: Hielo",
+        "descripciones": [
+            "Si el Movimiento afecta un área, esta se congela y si afecta a una o varias criaturas, el suelo bajo estas se congela. El suelo se descongela al final de la Escena. Una criatura que no es de Tipo Hielo que entra caminando a esta área o se mueve por esta caminando debe hacer una Salvación de Agilidad con CD igual a la del Movimiento que la creó. Si la falla cae tumbada. Una criatura sólo hace esta Tirada de Salvación una vez por ronda.",
+            "<b>Perfeccionamiento:</b> Una Criatura que cae tumbada de esta forma debe usar todo su Movimiento restante para levantarse si aún le queda más de la mitad de este."
+        ]
+    },
+    {
+        "nombre": "¡Golpéalo en cadena!",
+        "tipos": [
+            "Clase",
+            "Entrenador",
+            "Subclase"
+        ],
+        "subtipos": [
+            "Orden de Entrenador"
+        ],
+        "origen": "Especialista de tipo: Lucha",
+        "descripciones": [
+            "Los Pokémon de Tipo Lucha se especializan en el combate cercano. La próxima vez antes del final de este turno que el Pokémon golpee con una Tirada de Ataque cuerpo a cuerpo a una Criatura, si la Tirada Natural alcanza tu Rango de Orden, la Criatura recibe uno de los siguientes efectos: Cae tumbada, es empujada 1 metro, gana 1 Nivel de Confusión o no puede usar Movimientos con la Etiqueta de Sonido con su voz hasta el principio de su próximo turno.",
+            "<b>Perfeccionamiento:</b> Una Criatura que fuera a recibir uno de los efectos recibe dos en su lugar."
+        ]
+    },
+    {
+        "nombre": "¡Eres puro potencial!",
+        "tipos": [
+            "Clase",
+            "Entrenador",
+            "Subclase"
+        ],
+        "subtipos": [
+            "Orden de Entrenador"
+        ],
+        "origen": "Especialista de tipo: Normal",
+        "descripciones": [
+            "Sabes que los Pokémon de tipo normal brillan por su versatilidad. Hasta el principio de tu próximo turno, el Pokémon afectado por esta Orden de Entrenador puede elegir añadir la mitad de tu Bono de Entrenador a una Tirada de d20 a su elección antes de hacerla.",
+            "<b>Perfeccionamiento:</b> El Pokémon puede añadir la mitad de tu Bono de Entrenador a la Tirada después de hacerla, pero antes de saber el resultado de esta."
+        ]
+    },
+    {
+        "nombre": "¡Drena sus energías",
+        "tipos": [
+            "Clase",
+            "Entrenador",
+            "Subclase"
+        ],
+        "subtipos": [
+            "Orden de Entrenador"
+        ],
+        "origen": "Especialista de tipo: Planta",
+        "descripciones": [
+            "Los Pokémon de Tipo Planta tienen la habilidad de absorber energía y recuperarse en tiempo récord. La primera vez que un Pokémon de Tipo Planta inflige daño con un Movimiento de Tipo Planta a una criatura en el mismo turno en el que recibe esta Orden de Entrenador, elige entre reducir sus Niveles de Envenenado, Paralizado, Quemado o Helado en 1 o ganar una cantidad de Puntos de Escudo que duran hasta el final de la Escena iguales a ¼ del daño infligido a esa criatura.",
+            "<b>Perfeccionamiento:</b> Cuando el Pokémon fuera a elegir uno de los beneficios que esta Orden otorga, en su lugar los gana todos."
+        ]
+    },
+    {
+        "nombre": "¡Usa el poder de tu psique!",
+        "tipos": [
+            "Clase",
+            "Entrenador",
+            "Subclase"
+        ],
+        "subtipos": [
+            "Orden de Entrenador"
+        ],
+        "origen": "Especialista de tipo: Psíquico",
+        "descripciones": [
+            "Los Pokémon de Tipo Psíquico tienen poderes mentales que pueden manifestar de diferentes formas. La próxima vez antes del final de este turno que el Pokémon golpee con una Tirada de Ataque cuerpo a cuerpo a una criatura y la Tirada Natural alcance tu Rango de Orden o fuerza una Tirada de Salvación cuya tirada Natural sea inferior o igual a tu Rango de Orden, la criatura recibe uno de los siguientes efectos: Es movida 2 metros en cualquier dirección, gana 1 Nivel de Confusión o tiene Desventaja en Tiradas de d20 de Mente y Espíritu hasta el final de su próximo turno.",
+            "<b>Perfeccionamiento:</b> Una Criatura que fuera a recibir uno de los efectos recibe dos en su lugar."
+        ]
+    },
+    {
+        "nombre": "¡Invoca rocas!",
+        "tipos": [
+            "Clase",
+            "Entrenador",
+            "Subclase"
+        ],
+        "subtipos": [
+            "Orden de Entrenador"
+        ],
+        "origen": "Especialista de tipo: Roca",
+        "descripciones": [
+            "Los Pokémon de Tipo Roca poseen poderes geománticos. Cuando un Pokémon de Tipo Roca utiliza un Movimiento de Tipo Roca tras recibir esta Orden de Entrenador este turno, puede invocar una gran roca de 1 metro en todas sus dimensiones que sale del suelo alrededor de un punto a 10 metros. Si la roca sale bajo una Criatura, esta es empujada a un lado de la roca que esta elija.",
+            "<b>Perfeccionamiento:</b> Si la roca empuja a una Criatura, tú eliges en qué dirección la empuja."
+        ]
+    },
+    {
+        "nombre": "¡Enséñales el verdadero terror!",
+        "tipos": [
+            "Clase",
+            "Entrenador",
+            "Subclase"
+        ],
+        "subtipos": [
+            "Orden de Entrenador"
+        ],
+        "origen": "Especialista de tipo: Siniestro",
+        "descripciones": [
+            "Los Pokémon de Tipo Siniestro contienen la energía terrorífica de la noche. La próxima vez antes del final de este turno que el Pokémon golpee con una Tirada de Ataque cuerpo a cuerpo a una criatura, si la Tirada Natural alcanza tu Rango de Orden, la Criatura gana 1 Nivel de Asustado. Si esta Orden de Entrenador se usa durante la noche o en un lugar oscuro, la Criatura siempre queda asustada, incluso si la Tirada Natural no alcanza tu Rango de Orden.",
+            "<b>Perfeccionamiento:</b> Una Criatura que fuese a gana 1 Nivel de asustado de esta forma en su lugar gana 2 Niveles de Asustado."
+        ]
+    },
+    {
+        "nombre": "¡Entiérralos!",
+        "tipos": [
+            "Clase",
+            "Entrenador",
+            "Subclase"
+        ],
+        "subtipos": [
+            "Orden de Entrenador"
+        ],
+        "origen": "Especialista de tipo: Tierra",
+        "descripciones": [
+            "Cuando el Pokémon hace una Tirada de Ataque con un Movimiento de Tipo Tierra este turno y esta alcanza el Rango de Orden, el objetivo queda parcialmente sepultado por tierra. Sus velocidades se reducen a la mitad hasta el final de su próximo turno y su distancia de salto se reduce a la mitad, pues le cuesta escapar de la tierra.",
+            "<b>Perfeccionamiento:</b> Si la Tirada Natural alcanza el Rango de Orden, la Criatura objetivo no puede saltar hasta el final de su próximo turno."
+        ]
+    },
+    {
+        "nombre": "¡Hazlos enfermar!",
+        "tipos": [
+            "Clase",
+            "Entrenador",
+            "Subclase"
+        ],
+        "subtipos": [
+            "Orden de Entrenador"
+        ],
+        "origen": "Especialista de tipo: Veneno",
+        "descripciones": [
+            "Los Pokémon de Tipo Veneno pueden liberar sustancias tóxicas para la vida. Cuando un Pokémon de Tipo Veneno hace daño a una criatura o le inflige un Estado en el mismo turno en el que recibe esta orden, la criatura hace una Salvación de Espíritu contra una CD = 10 + BH del Pokémon + EST, donde EST es la estadística más alta del Pokémon. Si falla, gana 1 Nivel de Envenenado.",
+            "<b>Perfeccionamiento:</b> Si la Criatura objetivo fuese a ganar 1 Nivel de Envenenado y ya está envenenada, gana 1 Nivel de Envenenado más de lo normal."
+        ]
+    },
+    {
+        "nombre": "¡Sal volando!",
+        "tipos": [
+            "Clase",
+            "Entrenador",
+            "Subclase"
+        ],
+        "subtipos": [
+            "Orden de Entrenador"
+        ],
+        "origen": "Especialista de tipo: Volador",
+        "descripciones": [
+            "Los Pokémon de Tipo Volador son ágiles por naturaleza. Cuando un Pokémon de Tipo Volador recibe esta orden se mueve la mitad de su Velocidad de vuelo sin provocar Ataques de Oportunidad.",
+            "<b>Perfeccionamiento:</b> Cuando un Pokémon de Tipo Volador recibe esta Orden, deja de estar Agarrado y Apresado si lo estaba y, si no lo estaba, gana Ventaja en la Próxima Tirada de Ataque asociada a un Movimiento de Tipo Volador que haga hasta antes del final de este turno."
+        ]
+    },
+    {
+        "nombre": "“¡Impúlsate!”",
+        "tipos": [
+            "Clase",
+            "Entrenador",
+            "Subclase"
+        ],
+        "subtipos": [
+            "Orden de Entrenador"
+        ],
+        "origen": "Manipulador de la inercia",
+        "descripciones": [
+            "Ordenas a tu Pokémon que aproveche la ventaja que ya tiene sobre sus rivales para dañarlos. Gastas 2 Puntos de Inercia para hacer que el daño base del siguiente Movimiento que realice el Pokémon aumente en 1 dado.",
+            "<b>Perfeccionamiento:</b> Si el Movimiento hace Tiradas de Ataque estas se hacen en Ventaja y el daño base aumenta en 1 dado más."
+        ]
+    },
+    {
+        "nombre": "A tope!",
+        "tipos": [
+            "Clase",
+            "Entrenador"
+        ],
+        "subtipos": [
+            "Entrenamiento"
+        ],
+        "descripciones": [
+            "Mientras uno de tus Pokémon tenga una de sus velocidades aumentadas gracias a uno de sus Movimientos o Habilidades, deja de provocar Ataques de Oportunidad y, cuando aumenta una de sus velocidades con un Movimiento o se mueve como parte de un Movimiento que usa, el daño base de sus Movimientos aumenta en una cantidad de dados igual a un tercio de tu Bono de Habilidad hasta el final de su próximo turno o hasta que inflijan daño con uno de estos."
+        ]
+    },
+    {
+        "nombre": "¡Aguante sin par!",
+        "tipos": [
+            "Clase",
+            "Entrenador"
+        ],
+        "subtipos": [
+            "Entrenamiento"
+        ],
+        "descripciones": [
+            "Preparas a tus Pokémon mentalmente para resistir más. Cuando uno de tus Pokémon pasa una Tirada de Salvación provocada por un rival, este gana Puntos de Escudo iguales a tu Bono de Habilidad más tu Bono de Entrenador."
+        ]
+    },
+    {
+        "nombre": "¡Potencia devastadora!",
+        "tipos": [
+            "Clase",
+            "Entrenador"
+        ],
+        "subtipos": [
+            "Entrenamiento"
+        ],
+        "descripciones": [
+            "Preparas a tus Pokémon para aprovechar sus ventajas para acabar con sus rivales. Cuando tus Pokémon hacen daño Súper efectivo con uno de sus Movimientos, añaden una cantidad de dados a este daño iguales a un tercio de tu Bono de Habilidad."
+        ]
+    },
+    {
+        "nombre": "¡Aprovecha tu talento!",
+        "tipos": [
+            "Clase",
+            "Entrenador"
+        ],
+        "subtipos": [
+            "Entrenamiento"
+        ],
+        "descripciones": [
+            "Preparas a tus Pokémon para que puedan usar su talento. Cuando uno de tus Pokémon pasa una Tirada de Habilidad, gana Ventaja en la próxima Tirada de Habilidad que usa la misma Estadística que la Tirada de Habilidad que pasó hasta el final de la Escena."
+        ]
+    },
+    {
+        "nombre": "¡Sigue el ritmo!",
+        "tipos": [
+            "Clase",
+            "Entrenador"
+        ],
+        "subtipos": [
+            "Entrenamiento"
+        ],
+        "descripciones": [
+            "Haces que tus Pokémon practiquen como no dar descanso a sus rivales. Por cada dos Movimientos usados por tus Pokémon cuyas Tiradas de Ataque hayan golpeado a Criaturas rivales desde el principio de la Escena o desde que salieron de la Poké Ball, estos añaden un dado al daño base de sus Movimientos, hasta un máximo de dados igual a la mitad de tu Bono de Habilidad."
+        ]
+    },
+    {
+        "nombre": "¡Se intocable!",
+        "tipos": [
+            "Clase",
+            "Entrenador"
+        ],
+        "subtipos": [
+            "Entrenamiento"
+        ],
+        "descripciones": [
+            "Preparar a tus Pokémon para evadir y bloquear todos los golpes que les lanzan. Cuando una Tirada de Ataque realizada por una criatura rival a tus Pokémon falla contra estos, la CA de tu Pokémon aumenta en 1 hasta el final de su próximo turno."
+        ]
+    },
+    {
+        "nombre": "¡Movimientos peligrosos!",
+        "tipos": [
+            "Clase",
+            "Entrenador"
+        ],
+        "subtipos": [
+            "Entrenamiento"
+        ],
+        "descripciones": [
+            "Haces que tus Pokémon practiquen como causar daño explosivo. Tus Pokémon añaden una cantidad de dados al daño base de sus golpes críticos iguales a un tercio de tu Bono de Entrenador."
+        ]
+    },
+    {
+        "nombre": "¡Movimientos ineludibles!",
+        "tipos": [
+            "Clase",
+            "Entrenador"
+        ],
+        "subtipos": [
+            "Entrenamiento"
+        ],
+        "descripciones": [
+            "Indicas a tus Pokémon cómo hacer que no se puedan evadir sus Movimientos. Cuando una criatura pasa una Tirada de Salvación contra uno de los Movimientos que hace daño de tus Pokémon, esta recibe un cuarto del daño si no fuera a recibir daño por pasarla."
+        ]
+    },
+    {
+        "nombre": "¡Calibra tu precisión!",
+        "tipos": [
+            "Clase",
+            "Entrenador"
+        ],
+        "subtipos": [
+            "Entrenamiento"
+        ],
+        "descripciones": [
+            "Ayudas a tus Pokémon a prepararse para calibrar sus Movimientos durante el combate. Cuando una Criatura pasa una Tirada de Salvación contra el Movimiento de uno de tus Pokémon que sólo hace objetivo a una criatura, esta criatura tiene un penalizador igual a la mitad de tu Bono de Entrenador hasta el final del próximo turno de tu Pokémon en Tiradas de Salvación provocadas por dicho Movimiento si lo usa tu Pokémon."
+        ]
+    },
+    {
+        "nombre": "¡Sed imparables!",
+        "tipos": [
+            "Clase",
+            "Entrenador",
+            "Subclase"
+        ],
+        "subtipos": [
+            "Entrenamiento"
+        ],
+        "origen": "Mente maestra",
+        "descripciones": [
+            "Enseñas a tus Pokémon cómo moverse y atacar para generar más inercia en el combate. El Pokémon puede hacerte ganar 2 Puntos de Inercia en cada turno y, si está consciente al final de la ronda, ganas 1 Punto de Inercia."
+        ]
+    },
+    {
+        "nombre": "¡Sed ingeniosos!",
+        "tipos": [
+            "Clase",
+            "Entrenador",
+            "Subclase"
+        ],
+        "subtipos": [
+            "Entrenamiento"
+        ],
+        "origen": "Manipulador de la inercia",
+        "descripciones": [
+            "Enseñas a tus Pokémon cómo improvisar estrategias en el momento para que ciertos movimientos les generen una mayor ventaja. Cuando un Pokémon afectado por este entrenamiento usa un Movimiento que no tiene la Etiqueta de Potenciación o Escudo ni hace daño este deja de provocar ataques de oportunidad por el resto del turno y gana Puntos de Escudo iguales a tu Bono de Entrenador."
+        ]
+    }
+]
