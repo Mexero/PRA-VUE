@@ -95,7 +95,7 @@ const router = createRouter({
     {
       path: '/objetos',
       name: 'objetos',
-      component: () => import('../components/Tabulados/ObjetosView.vue'),
+      component: () => import('../views/ObjetosView.vue'),
     },
     {
       path: '/pokedex',
