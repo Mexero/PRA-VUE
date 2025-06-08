@@ -1,11 +1,15 @@
 <script setup>
 import { RouterLink, useRoute } from 'vue-router'
-import { ref, watch, computed } from 'vue'
+import { ref, watch } from 'vue'
 import menu from '@/localData/json/datosMenuHeader.json' //Info submenus
-import index from '@/localData/json/searchIndex.json' //Buscador
 
+import Buscador from '@/components/BuscadorView.vue'
 
 const menuVisible = ref(true)
+
+const openIndex = ref(null)
+const openMobileNav = ref(false)
+const route = useRoute()
 
 function toggleMenu() {
     openMobileNav.value = !openMobileNav.value
@@ -20,96 +24,11 @@ function countSubmenu(maxSubindex) {
     root.style.setProperty('--submenu-height', maxSubindex);
 }
 
-//============== METODOS PARA SUBMENUS =================
-const openIndex = ref(null)
-const openMobileNav = ref(false)
-const route = useRoute()
-
 // Cierra submenus al cambiar de ruta
 watch(() => route.fullPath, () => {
     openIndex.value = null
 })
 
-const onSubmit = () => {
-    if (paginatedResults.value.length) {
-        route.push(paginatedResults.value[0].ruta)
-        resetSearch()
-    }
-}
-//============== Buscador =================
-
-// Estado
-const query = ref('')
-const results = ref([])
-const currentPage = ref(1)
-const pageSize = 9
-
-// Función utilitaria para normalizar y quitar tildes
-const normalize = str =>
-    str.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim()
-
-// Función de búsqueda
-const search = () => {
-    const q = normalize(query.value)
-
-    const filtered = index
-        .map(item => {
-            let score = 0
-            if (normalize(item.nombre).includes(q)) score += 2
-            if (normalize(item.tipo).includes(q)) score += 1
-
-            return {
-                ...item,
-                score
-            }
-        })
-        .filter(item => item.score)
-        .sort((a, b) => b.score - a.score)
-
-    results.value = filtered
-    currentPage.value = 1
-}
-
-// Debounce
-let timeout = null
-const debouncedSearch = () => {
-    if (query.value.trim()) {
-        clearTimeout(timeout)
-        timeout = setTimeout(() => {
-            search()
-        }, 100)
-    }
-}
-
-// Paginación
-// Paginación
-const paginatedResults = computed(() => {
-    const start = (currentPage.value - 1) * pageSize
-    return results.value.slice(start, start + pageSize)
-})
-
-const showPagination = computed(() => results.value.length > pageSize)
-
-const maxPage = computed(() => Math.ceil(results.value.length / pageSize))
-
-const nextPage = () => {
-    if (currentPage.value < maxPage.value) {
-        currentPage.value++
-    }
-}
-
-const prevPage = () => {
-    if (currentPage.value > 1) {
-        currentPage.value--
-    }
-}
-
-// Limpiar búsqueda al hacer clic
-const resetSearch = () => {
-    query.value = ''
-    results.value = []
-    currentPage.value = 1
-}
 
 </script>
 <template>
@@ -145,52 +64,8 @@ const resetSearch = () => {
 
             </li>
 
-            <!-- Formulario de busqueda interno de la pagina -->
             <li class="buscador">
-
-                <form method="get" class="buscar" name="buscador">
-                    <fieldset class="barraBuscar">
-                        <input v-model="query" @input="debouncedSearch" placeholder="Buscar..." class="search-input" />
-                        <RouterLink v-if="paginatedResults.length" :to="paginatedResults[0].ruta" @click="resetSearch"
-                            class="search-button">
-                            <img src="../../public/assets/icons/lupa.svg" alt="Icono de búsqueda" />
-                        </RouterLink>
-                        <div v-else class="search-button">
-                            <img src="../../public/assets/icons/lupa.svg" alt="Icono de búsqueda" />
-                        </div>
-                    </fieldset>
-                </form>
-                <div class="resultBusqueda">
-
-                    <template v-if="paginatedResults.length && query.trim()">
-
-                        <ul>
-                            <li v-for="item in paginatedResults" :key="item.ruta" @click="resetSearch">
-                                <router-link :to="item.ruta">
-
-                                    <span><strong> {{ item.tipo }}:</strong> {{ item.nombre }}</span>
-                                </router-link>
-                            </li>
-
-                        </ul>
-                    </template>
-                    <template v-else-if="query.trim()">
-                        <ul class="noResult">
-                            <li>No se encontraron resultados.</li>
-                        </ul>
-                    </template>
-
-                    <div v-if="showPagination && query">
-                        <button @click="prevPage" :disabled="currentPage === 1">
-                            ◀
-                        </button>
-                        <span>Página {{ currentPage }} de {{ maxPage }}</span>
-                        <button @click="nextPage" :disabled="currentPage * pageSize >= results.length">
-                            ▶
-                        </button>
-                    </div>
-                </div>
-
+                <Buscador />
             </li>
         </ul>
 
@@ -220,72 +95,20 @@ const resetSearch = () => {
                             @click="countSubmenu(section.submenu.length)">
                             {{ section.title }}
                         </div>
-
                         <Transition :name="'slideSubMenuMovil'">
 
                             <ul class="subMenu" v-if="openIndex === index" v-click-outside="() => openIndex = null">
-
                                 <li v-for="(subsection, subindex) in section.submenu" :key="subindex">
                                     <RouterLink :to="subsection.route">{{ subsection.name }}</RouterLink>
                                 </li>
-
                             </ul>
 
                         </Transition>
                     </li>
-
-
                 </ul>
-
             </Transition>
-
         </div>
-        <!-- Formulario de busqueda interno de la pagina -->
-        <div class="buscador">
-            <form method="get" class="buscar" name="buscador">
-                <div class="barraBuscar">
-                    <input v-model="query" @input="debouncedSearch" placeholder="Buscar..." class="search-input" />
-                    <RouterLink v-if="paginatedResults.length" :to="paginatedResults[0].ruta" @click="resetSearch"
-                        class="search-button">
-                        <img src="../../public/assets/icons/lupa.svg" alt="Icono de búsqueda" />
-                    </RouterLink>
-                    <div v-else class="search-button">
-                        <img src="../../public/assets/icons/lupa.svg" alt="Icono de búsqueda" />
-                    </div>
-                </div>
-            </form>
-        </div>
-        <div class="resultBusqueda">
-
-            <template v-if="paginatedResults.length && query.trim()">
-
-                <ul>
-                    <li v-for="item in paginatedResults" :key="item.ruta" @click="resetSearch">
-                        <router-link :to="item.ruta">
-
-                            <span><strong> {{ item.tipo }}:</strong> {{ item.nombre }}</span>
-                        </router-link>
-                    </li>
-
-                </ul>
-            </template>
-            <template v-else-if="query.trim()">
-                <ul class="noResult">
-                    <li>No se encontraron resultados.</li>
-                </ul>
-            </template>
-
-            <div v-if="showPagination && query">
-                <button @click="prevPage" :disabled="currentPage === 1">
-                    ◀
-                </button>
-                <span>Página {{ currentPage }} de {{ maxPage }}</span>
-                <button @click="nextPage" :disabled="currentPage * pageSize >= results.length">
-                    ▶
-                </button>
-            </div>
-        </div>
-
+        <Buscador />
     </nav>
 
 </template>
@@ -371,6 +194,15 @@ nav div {
     border: none;
 }
 
+#modoMovil .navLogic {
+    width: 40px;
+}
+
+.buscador {
+    flex: 2;
+    border: none;
+}
+
 /* ====== Todos los hover ====== */
 .divMenu:hover,
 .subMenu li a:hover,
@@ -378,41 +210,6 @@ nav div {
 #botonMenu:hover {
     background-color: var(--color-secundario);
     cursor: pointer;
-}
-
-/* ====== Barra de buscar del menu principal ====== */
-.buscador {
-    flex: 2;
-    border: none;
-}
-
-.barraBuscar {
-    display: flex;
-    flex-direction: row;
-    border: none;
-}
-
-.search-input {
-    width: 100%;
-    height: 40px;
-    padding-left: 10px;
-    border: none;
-}
-
-.search-input:focus {
-    outline: none;
-}
-
-.search-button {
-    height: 40px;
-    background-color: var(--color-principal1);
-    border: none;
-}
-
-.search-button img {
-    width: 40px;
-    height: 40px;
-    padding: 5px;
 }
 
 /* ====== Modo movil ====== */
@@ -431,133 +228,10 @@ nav div {
     height: 40px;
 }
 
-#modoMovil .navLogic {
-    width: 40px;
-}
-
-.resultBusqueda {
-    position: absolute;
-    top: auto;
-    right: 0;
-    min-width: 40%;
-    border-radius: 5px;
-    box-shadow:
-        -5px 4px 5px 0 rgba(0, 0, 0, 0.18),
-        0 1.5px 6px 0 rgba(0, 0, 0, 0.10);
-}
-
-.resultBusqueda ul {
-    background-color: var(--color-tabla2);
-    padding: 5px 10px 0 10px;
-}
-
-.resultBusqueda span {
-    font-size: 14px;
-    color: black;
-}
-
-.resultBusqueda li {
-    display: flex;
-    height: 30px;
-}
-
-.resultBusqueda a {
-    height: 30px;
-    display: flex;
-    width: 100%;
-    cursor: pointer;
-    align-items: center;
-    padding: 0 5px;
-}
-
-
-.resultBusqueda ul li:hover {
-    text-decoration: underline;
-    color: black;
-}
-
-.resultBusqueda ul li:nth-child(even) {
-    background-color: var(--color-tabla1);
-}
-
-.resultBusqueda ul li:nth-child(odd) {
-    background-color: var(--color-tabla2);
-}
-
-.resultBusqueda div {
-    background-color: var(--color-principal1);
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-radius: 0 0 5px 5px;
-}
-
-.resultBusqueda div span {
-    color: var(--color-texto);
-}
-
-.resultBusqueda div button {
-    width: 45px;
-    height: 35px;
-    cursor: pointer;
-    background: var(--color-tituloTabla);
-    color: var(--color-texto);
-    border: none;
-    font-size: 18px;
-    font-weight: bold;
-    transition: all 0.1s;
-}
-
-.resultBusqueda div button:first-child {
-    border-radius: 0 0 0px 5px;
-}
-
-.resultBusqueda div button:last-child {
-    border-radius: 0 0 5px 0px;
-}
-
-.resultBusqueda div button:hover:not(:disabled) {
-    background: var(--color-secundario);
-    color: #fff;
-}
-
-.resultBusqueda div button:disabled {
-    opacity: 0.6;
-    cursor: not-allowed;
-    background: var(--color-secundario2);
-    color: #888;
-}
-
-.noResult{
-        border-radius: 0 0 5px 5px;
-
-}
 @media screen and (max-width: 750px) {
 
     /* ====== Cambiar de modo ====== */
     #modoMovil {
-        display: flex;
-        justify-content: space-between;
-    }
-
-    #modoMovil .resultBusqueda {
-        top: 40px;
-        font-size: 14px;
-        min-width: 60%;
-
-    }
-
-    .resultBusqueda a,
-    .resultBusqueda li {
-        height: auto;
-    }
-
-    .resultBusqueda a {
-        padding: 6px 5px;
-    }
-
-    .navLogic {
         display: flex;
         justify-content: space-between;
     }
@@ -588,6 +262,11 @@ nav div {
         padding-left: 10px;
         border-top: 1px solid var(--color-secundario2);
         box-sizing: content-box;
+    }
+
+    .navLogic {
+        display: flex;
+        justify-content: space-between;
     }
 
     /* ====== Sub menus ====== */
@@ -624,10 +303,6 @@ nav div {
     .buscador {
         flex: none;
         border: none;
-    }
-
-    .noResult li {
-        padding: 10px 0;
     }
 
 }
