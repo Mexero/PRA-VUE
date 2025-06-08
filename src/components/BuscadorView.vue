@@ -125,7 +125,7 @@ const resetSearch = () => {
             </ul>
         </template>
 
-        <div v-if="showPagination && query">
+        <div v-if="showPagination && query.trim()">
             <button @click="prevPage" :disabled="currentPage === 1">
                 ◀
             </button>
