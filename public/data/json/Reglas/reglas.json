@@ -673,5 +673,428 @@
         "descripciones": [
             "Enseñas a tus Pokémon cómo improvisar estrategias en el momento para que ciertos movimientos les generen una mayor ventaja. Cuando un Pokémon afectado por este entrenamiento usa un Movimiento que no tiene la Etiqueta de Potenciación o Escudo ni hace daño este deja de provocar ataques de oportunidad por el resto del turno y gana Puntos de Escudo iguales a tu Bono de Entrenador."
         ]
+    },
+    {
+        "nombre": "Sol abrasador",
+        "tipos": [
+            "Regla",
+            "Clima"
+        ],
+        "descripciones": [
+            "El sol calcina el suelo con fuerza, elevando la temperatura. Las criaturas que no son de tipo Fuego que acaban su turno en este clima quedan Acaloradas y, si pasan más de una hora sin tomar refrigerios o si no se tiene ropas adecuadas, ganan un nivel de fatiga."
+        ]
+    },
+    {
+        "nombre": "Tormenta de arena",
+        "tipos": [
+            "Regla",
+            "Clima"
+        ],
+        "descripciones": [
+            "La tormenta de arena bloquea la visibilidad y molesta a las criaturas que no se protegen del polvo. Más allá de 10 metros, la visibilidad queda siempre bloqueada."
+        ]
+    },
+    {
+        "nombre": "Lluvia",
+        "tipos": [
+            "Regla",
+            "Clima"
+        ],
+        "descripciones": [
+            "La lluvia deja Empapadas a todas las criaturas bajo ella. Las Tiradas de Percepción se hacen en Desventaja si son para detectar a criaturas u objetos a más de 10 metros de distancia y no puede usarse la Ecolocalización durante la lluvia."
+        ]
+    },
+    {
+        "nombre": "Nevada",
+        "tipos": [
+            "Regla",
+            "Clima"
+        ],
+        "descripciones": [
+            "El frío de la nevada hace que las criaturas que no son de Tipo Hielo que no llevan ropas adecuadas reciban un nivel de fatiga por cada hora que pasan en la nieve sin calentarse de alguna forma. Además, si la nevada es muy intensa (discreción del DJ), las Tiradas de Percepción se hacen en Desventaja e incluso puede que no haya visibilidad a partir de cierta distancia."
+        ]
+    },
+    {
+        "nombre": "Clima",
+        "tipos": [
+            "Regla"
+        ],
+        "descripciones": [
+            "No todas las aventuras ocurren en días ideales. En muchas ocasiones, los entrenadores encontrarán dificultades climáticas que los forzarán a cambiar su actuar y plantearse nuevas estrategias para alcanzar sus objetivos. Principalmente, existen los siguientes cuatro climas, a los cuales el DJ puede añadir efectos extra en función de la intensidad o naturaleza de estos",
+            "Los 4 Climas son: Sol abrasador, Tormenta de Arena, Lluvia y Nevada."
+        ]
+    },
+    {
+        "nombre": "Campo Eléctrico",
+        "tipos": [
+            "Regla",
+            "Campo"
+        ],
+        "descripciones": [
+            "Chispas eléctricas surgen del suelo. Todas las criaturas que inician su turno pisando un campo eléctrico quedan aceleradas. Cuando una criatura está acelerada de esta forma, sus velocidades aumentan en 2 metros y tiene una segunda Reacción por cada turno que toma. Además, los Movimientos de tipo Eléctrico lanzados desde un campo Eléctrico aumentan su daño en una cantidad igual al Bono de Habilidad de su usuario."
+        ]
+    },
+    {
+        "nombre": "Campo de Hierba",
+        "tipos": [
+            "Regla",
+            "Campo"
+        ],
+        "descripciones": [
+            "Cubren la superficie afectada de hierba llena de vitalidad. Todas las criaturas que inician su turno pisando un campo de hierba reciben una Cantidad de Puntos de Escudo igual a su Vitalidad. Además, los Movimientos de tipo Planta lanzados desde un campo de hierba aumentan su daño en una cantidad igual al Bono de Habilidad su usuario."
+        ]
+    },
+    {
+        "nombre": "Campo de Nieba",
+        "tipos": [
+            "Regla",
+            "Campo"
+        ],
+        "descripciones": [
+            "El suelo emite niebla que cubre hasta los 2 metros de altura y que se disipa si sale del área. Dentro de la niebla, las criaturas no pueden ver más allá de 1 metro dentro de esta y no pueden quedar quemadas, dormidas, envenenadas, paralizadas, heladas, confundidas o asustadas y dejan de estarlo si lo están cuando entran a este campo. Además, los Movimientos de tipo Hada lanzados desde un campo de Niebla aumentan su daño en una cantidad igual al Bono de Habilidad de su usuario."
+        ]
+    },
+    {
+        "nombre": "Campo Psíquico",
+        "tipos": [
+            "Regla",
+            "Campo"
+        ],
+        "descripciones": [
+            "El suelo y el ambiente se llena de un color rosado que manipula la mente de las criaturas dentro de este, ralentizando su toma de acciones. Las criaturas que no son de tipo Psíquico que pisan un campo Psíquico pierden su Reacción y sólo pueden elegir entre usar su Movimiento o usar una Acción en su turno (las Acciones Compartidas pueden tomarse normalmente). Además, los Movimientos de tipo Psíquico lanzados desde un campo de Psíquico aumentan su daño en una cantidad igual al Bono de Habilidad de su usuario."
+        ]
+    },
+    {
+        "nombre": "Campos",
+        "tipos": [
+            "Regla"
+        ],
+        "descripciones": [
+            "Algunos Movimientos o eventos pueden crear <b>Campos</b>. Los campos se extienden por el suelo y sólo puede haber un mismo campo a la vez, que es el último que se creó. Cada campo tiene efecto sobre las criaturas que lo pisan.",
+            "Existen 4 Campos y estos son los Campos Eléctrico, de Hierba, de Niebla y Psíquico."
+        ]
+    },
+    {
+        "nombre": "Visión en la oscuridad",
+        "tipos": [
+            "Regla",
+            "Sentido"
+        ],
+        "descripciones": [
+            "En el radio establecido, una criatura con visión en la oscuridad trata las localizaciones y puntos en Oscuridad como Mal iluminados y las localizaciones y puntos Mal iluminados como si estuvieran normalmente iluminados."
+        ]
+    },
+    {
+        "nombre": "Electrorrecepción",
+        "tipos": [
+            "Regla",
+            "Sentido"
+        ],
+        "descripciones": [
+            "Puedes sentir campos eléctricos y magnéticos, así como la corriente eléctrica y Movimientos de tipo eléctrico que se usan en un radio a tu alrededor."
+        ]
+    },
+    {
+        "nombre": "Sentido de la vibración",
+        "tipos": [
+            "Regla",
+            "Sentido"
+        ],
+        "descripciones": [
+            "Puedes sentir las vibraciones del suelo, por lo que notas el movimiento de otras criaturas y sabes localizarlas."
+        ]
+    },
+    {
+        "nombre": "Ecolocalización",
+        "tipos": [
+            "Regla",
+            "Sentido"
+        ],
+        "descripciones": [
+            "Puedes ver a través de infrasonidos que escuchas en un radio a tu alrededor. Si recibes daño de un Movimiento de Sonido, tu ecolocalización deja de funcionar hasta el final de tu próximo turno. Si estás Ensordecido no puedes usar tu ecolocalización."
+        ]
+    },
+    {
+        "nombre": "Sentido espectral",
+        "tipos": [
+            "Regla",
+            "Sentido"
+        ],
+        "descripciones": [
+            "Detectas a las almas en pena, las criaturas Tipo Fantasma y los lugares y objetos malditos a tu alrededor. Como Acción Extendida, puedes comprender la maldición que aflige un objeto o lugar, así como comprender los motivos de las almas en pena que encuentres."
+        ]
+    },
+    {
+        "nombre": "Sentido del aura",
+        "tipos": [
+            "Regla",
+            "Sentido"
+        ],
+        "descripciones": [
+            "Sientes la posición y a las almas de las criaturas a rango, la cual visualizas como una luz espectral que rodea a todo ser vivo, y que cambia en función de las emociones que siente y de la naturaleza de sus intenciones. Si no ves a una criatura con otro sentido, igualmente sientes su alma."
+        ]
+    },
+    {
+        "nombre": "Sentidos",
+        "tipos": [
+            "Regla"
+        ],
+        "descripciones": [
+            "Algunas criaturas poseen un <b>Sentido</b> extra más allá de los normales o tienen un sentido más desarrollado de lo normal. Lon sentidos siempre tienen asociado el radio en el que toman efecto."
+        ]
+    },
+    {
+        "nombre": "Sentidos",
+        "tipos": [
+            "Regla"
+        ],
+        "descripciones": [
+            "Algunas criaturas poseen un <b>Sentido</b> extra más allá de los normales o tienen un sentido más desarrollado de lo normal. Lon sentidos siempre tienen asociado el radio en el que toman efecto."
+        ]
+    },
+    {
+        "nombre": "Estado",
+        "tipos": [
+            "Regla"
+        ],
+        "descripciones": [
+            "En algunas situaciones, una criatura quedará afectada por algún <b>Estado</b>. Entre estos no sólo se encuentran los que usualmente se ven en los juegos, sino que hay algunos otros.",
+            "En general, cuando un efecto impone un Estado, este aclara cuando acaba, aunque algunos estados tienen otras condiciones para acabar además de las que se especifiquen."
+        ]
+    },
+    {
+        "nombre": "Estado nivelado",
+        "tipos": [
+            "Regla"
+        ],
+        "descripciones": [
+            "Muchos Estados son <b>Estados Nivelados</b>. Esto significa que cuando un efecto otorga ese Estado a una criatura, también le otorga una cierta cantidad de Niveles del mismo. Al final de cada uno de sus turnos, una criatura reduce en 1 todos los Niveles de los Estados Nivelados que sufre y, si estos llegan a 0, deja de sufrir ese Estado. Además, cuando una criatura con Niveles de un Estado gana más niveles de este mismo Estado estos se suman.",
+            "Por ejemplo, cuando una criatura que tiene 3 Niveles de Envenenado y 1 Nivel de Furia termina su turno reduce sus Niveles de Envenenado se reducen a 2 y sus Niveles de Furia a 0 y, por lo tanto, deja de estar Enfurecido. Si luego esta criatura gana 2 Niveles de Envenenado, la criatura queda con 4 Niveles de Envenenado.",
+            "<b>Nota:</b> Como una Pokémon termina su turno al volver a su Poké Ball, este reduce todos sus Niveles de Estados Nivelados en 1 al hacerlo."
+        ]
+    },
+    {
+        "nombre": "Helado",
+        "tipos": [
+            "Regla",
+            "Estado"
+        ],
+        "descripciones": [
+            "Helado es un Estado Nivelado. Por lo tanto, una criatura se considera Helada mientras tenga <b>Niveles de Helado</b>.",
+            "<b>Tiritar. </b>Una Criatura Helada sufre desventaja en sus tiradas d20 de Mente, Espíritu y Presencia.",
+            "<b>Quebradizo (3+).</b> Una Criatura que tenga 3 o más Niveles de Helado la criatura reduce su CA en 1 y no puede ver su CA aumentada por efectos de Movimientos o Habilidades.",
+            "<b>Inmunidad.</b> Las criaturas Tipo Hielo no pueden estar Heladas."
+        ]
+    },
+    {
+        "nombre": "Quemado",
+        "tipos": [
+            "Regla",
+            "Estado"
+        ],
+        "descripciones": [
+            "Quemado es un Estado Nivelado. Por lo tanto, una criatura se considera Quemada mientras tenga <b>Niveles de Quemado</b>.",
+            "<b>Quemaduras.</b> Cuando una Criatura Quemada usa un Movimiento que hace daño y hace una Tirada de Ataque cuerpo a cuerpo con su Fuerza o Agilidad, este Movimiento gana la Etiqueta de Retroceso si no la tiene y cuando la Criatura hace daño con este Movimiento pierde una cantidad de PV iguales a ⅓ del daño realizado.",
+            "<b>Debilidad (3+).</b> Una Criatura que tiene 3 o más Niveles de Quemado el daño de sus Movimientos que usan Agilidad o Fuerza se reduce a la mitad y, si estos hacen Tiradas de Ataque, no pueden tener Ventaja en ellas.",
+            "<b>Inmunidad.</b> Las criaturas Tipo Fuego no pueden estar Quemadas."
+        ]
+    },
+    {
+        "nombre": "Paralizado",
+        "tipos": [
+            "Regla",
+            "Estado"
+        ],
+        "descripciones": [
+            "Paralizado es un Estado Nivelado. Por lo tanto, una criatura se considera Paralizada mientras tenga <b>Niveles de Parálisis.</b>",
+            "<b>Lentitud.</b> Una Criatura Paralizada no tiene Reacción y todas sus Velocidades se reducen a la mitad.",
+            "<b>Inmovilidad (3+).</b> Una Criatura que tiene 3 o más Niveles de Paralizado pierde su Velocidad de Vuelo si la tenía y no puede aumentar sus Velocidades ni moverse mediante Movimientos ni Habilidades.",
+            "<b>Inmunidad.</b> Las criaturas Tipo Eléctrico no pueden estar Paralizadas."
+        ]
+    },
+    {
+        "nombre": "Envenenado",
+        "tipos": [
+            "Regla",
+            "Estado"
+        ],
+        "descripciones": [
+            "Envenenado es un Estado Nivelado. Por lo tanto, una criatura se considera Envenenada mientras tenga <b>Niveles de Envenenado</b>.",
+            "<b>Toxinas.</b> Al final de cada uno de sus turnos, una criatura Envenenada pierde una cantidad de d4 de PV igual a su BH.",
+            "<b>Letal.</b> Si una criatura cae a 0 PV por estar envenenada, esta deja de estarlo y pasa a requerir de tratamiento médico urgente, ganando 1 Nivel de Fatiga tras cada hora que pasa en este estado. ",
+            "El tratamiento requiere de Equipo Médico o Medicinas a discreción del DJ y de una Tirada de Conocimiento Médico (Mente) con CD la del efecto que envenenó a la criatura.",
+            "<b>Enfermizo (3+).</b> Una Criatura que tiene 3 o más Niveles de Envenenado tiene Desventaja en Tiradas de Salvación de Resistencia.",
+            "<b>Inmunidad.</b> Una Criatura de Tipo Veneno o Acero no puede quedar Envenenada."
+        ]
+    },
+    {
+        "nombre": "Dormido",
+        "tipos": [
+            "Regla",
+            "Estado"
+        ],
+        "descripciones": [
+            "Dormido es un Estado Nivelado. Por lo tanto, una criatura se considera Dormida mientras tenga <b>Niveles de Dormido</b>.",
+            "<b>Dormido.</b> Cuando una Criatura queda Dormida, cae Inconsciente. Si esta Criatura recibe daño mientras está Dormida, se despierta automáticamente y pierde todos sus Niveles de Dormido restantes.",
+            "<b>Sueño profundo (3+).</b> Una Criatura con 5 Niveles de dormido o más no empieza a perder Niveles de dormido hasta el final de la Escena."
+        ]
+    },
+    {
+        "nombre": "Confuso",
+        "tipos": [
+            "Regla",
+            "Estado"
+        ],
+        "descripciones": [
+            "Confuso es un Estado Nivelado. Por lo tanto, una criatura se considera Confusa mientras tenga <b>Niveles de Confusión</b>.",
+            "<b>Inconsistente.</b> Una Criatura Confusa tira 1d4 al inicio de cada uno de sus turnos. Si tira un 1, debe utilizar su Acción para golpearse a sí mismo usando uno de sus Movimientos que no le cuestan PP contra sí misma.",
+            "<b>Inestable (3+).</b> Una Criatura que tiene 3 o más Niveles de Confusión tiene Desventaja en Tiradas de Salvación de Espíritu y reduce el daño de los Movimientos que usa con su Mente a la mitad."
+        ]
+    },
+    {
+        "nombre": "Infatuado",
+        "tipos": [
+            "Regla",
+            "Estado"
+        ],
+        "descripciones": [
+            "Infatuado es un Estado Nivelado. Por lo tanto, una criatura se considera Infatuada mientras tenga <b>Niveles de Infatuación</b>.",
+            "<b>Amistoso.</b> Una Criatura Infatuada no puede atacar a quien la infatuó ni hacer que sea el objetivo de sus Rasgos, Habilidades o Movimientos dañinos.",
+            "<b>Traicionado.</b> Si una criatura Infatuada es atacada por la criatura que la infatuó o por uno de sus Pokémon, esta pierde todos sus niveles de Infatuado."
+        ]
+    },
+    {
+        "nombre": "Asustado",
+        "tipos": [
+            "Regla",
+            "Estado"
+        ],
+        "descripciones": [
+            "Asustado es un Estado Nivelado. Por lo tanto, una criatura se considera Asustada mientras tenga <b>Niveles de Asustado.</b> ",
+            "<b>Miedo.</b> Una Criatura Asustada tiene Desventaja en las Tiradas de Habilidad y las Tiradas de ataque que hace mientras la fuente de su miedo se encuentre en su línea de visión.",
+            "<b>Terror (3+).</b> Una Criatura que tiene 3 o más Niveles de Asustado no puede acercarse a ninguna fuente de su miedo."
+        ]
+    },
+    {
+        "nombre": "Enfurecido",
+        "tipos": [
+            "Regla",
+            "Estado"
+        ],
+        "descripciones": [
+            "Enfurecido es un Estado Nivelado. Por lo tanto, una criatura se considera Enfurecida mientras tenga <b>Niveles de Furia</b>.",
+            "<b>Violento.</b> Una criatura Enfurecida debe usar un Movimiento que haga daño con su Acción a no ser que no posea ninguno y está obligada a usarlo contra una Criatura que la Enfureció o, en el caso de que afecte un área, que el área esté centrada sobre una criatura que la Enfureció.",
+            "<b>Descontrolado (3+).</b> Una Criatura que tiene 3 o más Niveles de Enfurecido, debe moverse hacia una de las causas de su furia.",
+            "<b>Cabeza de turco.</b> Si una Criatura no tiene forma de alcanzar o no puede golpear a una Criatura con la que está enfurecido, también se considera enfurecido con el aliado más cercano de la segunda y si está enfurecido con un Entrenador pero no puede alcanzarlo se considera enfurecido contra sus Pokémon."
+        ]
+    },
+    {
+        "nombre": "Acalorado",
+        "tipos": [
+            "Regla",
+            "Estado"
+        ],
+        "descripciones": [
+            "<b>Precalentado.</b> Una criatura Acalorada que recibe daño de Tipo Fuego de un efecto, recibe 4 puntos más de daño y si recibe daño de Tipo Fuego recibe 4 puntos de daño menos si recibe daño de Tipo Agua y deja de estar acalorada.",
+            "<b>Fatigado.</b> Una criatura que pasa una hora Acalorada gana un Nivel de Fatiga.",
+            "<b>Frío o calor.</b> Una criatura Acalorada que queda Helada deja de estar acalorada. Una criatura Helada que queda acalorada deja de estar Helada.",
+            "<b>Refrescarse.</b> Una criatura acalorada puede tomar una Acción para lanzarse agua o refrescarse de alguna otra forma para dejar de estarlo.",
+            "<b>Inmunidad.</b> Las criaturas Tipo Fuego no pueden estar Acaloradas."
+        ]
+    },
+    {
+        "nombre": "Empapado",
+        "tipos": [
+            "Regla",
+            "Estado"
+        ],
+        "descripciones": [
+            "<b>Mojado.</b> Una criatura Empapada que recibe daño de Tipo Eléctrico de un efecto, recibe 4 puntos más de daño y si recibe daño de Tipo Fuego recibe 4 puntos menos de daño y deja de estar Empapada.",
+            "<b>Al agua Ducklett.</b> Una criatura que se sumerge en agua queda Empapada.",
+            "<b>Secarse.</b> Una criatura empapada puede tomar una Acción para secarse."
+        ]
+    },
+    {
+        "nombre": "Cegado",
+        "tipos": [
+            "Regla",
+            "Estado"
+        ],
+        "descripciones": [
+            "Cegado es un Estado Nivelado. Por lo tanto,  una criatura se considera Cegada mientras tenga <b>Niveles de Cegado</b>.",
+            "<b>Invidente.</b> Una criatura Cegada no puede ver y falla automáticamente cualquier Tirada de Habilidad que requiera ver.",
+            "<b>Ataques empeorados.</b> Las Tiradas de ataque que se hagan contra la criatura tienen Ventaja y las Tiradas de ataque que haga la criatura tienen Desventaja."
+        ]
+    },
+    {
+        "nombre": "Agarrado",
+        "tipos": [
+            "Regla",
+            "Estado"
+        ],
+        "descripciones": [
+            "<b>Quieto.</b> Las Velocidades de una criatura agarrada son 0, y esta no puede beneficiarse de ningún bonificador a sus Velocidades.",
+            "<b>Soltado.</b> Una criatura Agarrada deja de estarlo si un efecto la del alcance del agarrador o del efecto que la agarra."
+        ]
+    },
+    {
+        "nombre": "Apresado",
+        "tipos": [
+            "Regla",
+            "Estado"
+        ],
+        "descripciones": [
+            "<b>Quieto.</b> Las Velocidades de una criatura apresada son 0, y esta no puede beneficiarse de ningún bonificador a sus Velocidades.",
+            "<b>Objetivo fácil.</b> Las Tiradas de ataque que se hagan contra la criatura tienen ventaja y las que haga la criatura tienen desventaja.",
+            "<b>Ataques empeorados.</b> La criatura tiene Desventaja en las Tiradas de Salvación de Agilidad.",
+            "<b>Sin escape.</b> La criatura no puede ser devuelta a su Poké Ball."
+        ]
+    },
+    {
+        "nombre": "Ensordecido",
+        "tipos": [
+            "Regla",
+            "Estado"
+        ],
+        "descripciones": [
+            "<b>Sordo.</b> no puede oír, falla automáticamente cualquier Tirada de Habilidad que requiera escuchar.",
+            "<b>“¿Qué?”.</b> Una criatura Enosrdecida es inmune a Movimientos con la etiqueta de Sonido."
+        ]
+    },
+    {
+        "nombre": "Inconsciente",
+        "tipos": [
+            "Regla",
+            "Estado"
+        ],
+        "descripciones": [
+            "<b>Sin acciones.</b> Una criatura Inconsciente no puede realizar acciones de ningún tipo ni tomar reacciones, no puede moverse ni hablar y no se percata de lo que la rodea.",
+            "<b>Sin fuerzas.</b> La criatura deja caer cualquier cosa que sujete, cae tumbada y falla todas las Tiradas de Salvación de Fuerza y Agilidad.",
+            "<b>Objetivo fácil.</b> Las Tiradas de ataque que se hagan contra la criatura tienen Ventaja y cualquier ataque que golpee a la criatura es un golpe crítico si el atacante está a 1 metro o menos de ella."
+        ]
+    },
+    {
+        "nombre": "Sorprendido",
+        "tipos": [
+            "Regla",
+            "Estado"
+        ],
+        "descripciones": [
+            "<b>Apurado.</b> Una Criatura que empieza su turno Sorprendida debe elegir entre usar una Acción o su Movimiento y no tiene Reacción. ",
+            "<b>Defensas bajas.</b> Además, las Tiradas de Ataque contra una criatura sorprendida se hacen en Ventaja.",
+            "<b>Comprender la situación.</b> Al final de su turno, la criatura deja de estar sorprendida."
+        ]
+    },
+    {
+        "nombre": "Tumbado",
+        "tipos": [
+            "Regla",
+            "Estado"
+        ],
+        "descripciones": [
+            "<b>Gatear.</b> Si su anatomía lo permite, una criatura tumbada puede moverse a la mitad de su Velocidad de caminado.",
+            "<b>Ataques empeorados.</b> La criatura tiene Desventaja en las Tiradas de Ataque y las Tiradas de Ataque que se hagan contra la criatura tienen Ventaja.",
+            "<b>Levantarse.</b> Para levantarse, una criatura debe tener alguna Velocidad que pueda usar superior a 0 y usar la mitad de la más alta de sus Velocidades en su turno."
+        ]
     }
 ]
