@@ -1,10 +1,13 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
+import { RouterView } from 'vue-router'
 import { onMounted, onBeforeUnmount } from 'vue'
 import HeaderView from './components/HeaderView.vue'
 import FooterView from './components/FooterView.vue'
 import NavView from './components/NavView.vue'
+import sqlite from './components/sqlite.vue'
 
+
+const mostarSqlite = false;
 
 //MODO OSCURO. TAMBIEN HAY UNA PARTE EN HEADER VIEW Y LOS COLORES ESTÁN ALLÍ DUPLICADOS
 function aplicarModo() {
@@ -49,8 +52,10 @@ onBeforeUnmount(() => {
 
 <template>
   <HeaderView />
-  
+
   <NavView />
+
+  <sqlite v-if="mostarSqlite" />
 
   <RouterView />
 
