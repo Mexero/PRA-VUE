@@ -62,6 +62,10 @@
             {
                 "name": "Objetos",
                 "route": "/objetos"
+            },
+            {
+                "name": "Movimientos de armas",
+                "route": "/movarmas"
             }
         ]
     },
@@ -79,6 +83,10 @@
             {
                 "name": "Habilidades",
                 "route": "/habilidades"
+            },
+            {
+                "name": "Movimientos Z",
+                "route": "/movz"
             },
             {
                 "name": "Tabla de Tipos",

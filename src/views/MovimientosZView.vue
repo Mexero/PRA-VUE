@@ -1,16 +1,16 @@
 <template>
-    <h1 class="titulo">Objetos</h1>
+    <h1 class="titulo">Movimientos Z</h1>
     <main class="cuerpo">
         <div id="filtroTabla">
-            <Filtros :datosCargados="datosCargados" :tipos="tiposUnicos" :rarezas="rarezasUnicas"
-                :filtroTipos="filtroTipos" :filtroRarezas="filtroRarezas" :filtroPrecioMin="filtroPrecioMin"
-                :filtroPrecioMax="filtroPrecioMax" :filtroNombre="filtroNombre" @limpiarFiltros="limpiarFiltros"
+
+            <Filtros :datosCargados="datosCargados" :tipos="tipos" :filtroTipos="filtroTipos"
+                :filtroEspecie="filtroEspecie" :filtroNombre="filtroNombre" @limpiarFiltros="limpiarFiltros"
                 @actualizarFiltros="manejarFiltros" />
 
             <Tabla :datos="filtrados" :datosCargados="datosCargados" :seleccionado="seleccionado" :columnas="columnas"
                 :clavesColumnas="clavesColumnas" @seleccionar="seleccionarObjeto" @ordenar="ordenarPor" />
         </div>
-        <Seleccionado :datosCargados="datosCargados" :objeto="seleccionado" />
+        <Seleccionado :datosCargados="datosCargados" :mov="seleccionado" />
     </main>
 </template>
 
@@ -19,8 +19,8 @@ import { ref, onMounted, computed, watch } from "vue";
 import { useRoute, useRouter } from "vue-router";
 
 import Tabla from "@/components/TablaView.vue"
-import Seleccionado from "@/components/Objetos/ObjetoSeleccionado.vue"
-import Filtros from "@/components/Objetos/ObjetosFiltrosView.vue"
+import Seleccionado from "@/components/Movimientos/MovZSeleccionado.vue"
+import Filtros from "@/components/Movimientos/MovZFiltrosView.vue"
 
 const route = useRoute();
 const router = useRouter();
@@ -28,8 +28,9 @@ const router = useRouter();
 // ======================== DATOS ========================
 
 //Datos para la tabla
-const columnas = ['Nombre', 'Tipo', 'Rareza', 'Coste']
-const clavesColumnas = ['Nombre', 'Tipo', 'Rareza', 'Coste']
+const columnas = ['Nombre', 'Tipo', 'Cristal Z', 'Rango', 'EST']
+const clavesColumnas = ['Nombre', 'Tipo', 'CristalZ', 'Rango', 'StatsAsociados']
+const tipos = ["Acero", "Agua", "Bicho", "Dragón", "Eléctrico", "Fantasma", "Fuego", "Hada", "Hielo", "Lucha", "Normal", "Planta", "Psíquico", "Roca", "Siniestro", "Tierra", "Veneno", "Volador"];
 
 //Datos principales
 const datos = ref([]);
@@ -38,10 +39,8 @@ const seleccionado = ref(route.query.seleccionado ?? undefined);
 
 //Filtros
 const filtroTipos = ref(route.query.tipos ? route.query.tipos.split(",") : []);
-const filtroRarezas = ref(route.query.rareza ? route.query.rareza.split(",") : []);
-const filtroPrecioMin = ref(route.query.precioMin ? Number(route.query.precioMin) : null);
-const filtroPrecioMax = ref(route.query.precioMax ? Number(route.query.precioMax) : null);
 const filtroNombre = ref(route.query.nombre ?? null);
+const filtroEspecie = ref(route.query.especie ?? null);
 
 //Orden de tabla
 const ordenColumna = ref(route.query.ordenColumna ?? null);
@@ -51,7 +50,7 @@ const ordenAscendente = ref(route.query.ordenAscendente !== "false");
 
 onMounted(async () => {
     try {
-        const res = await fetch("/data/json/objetos/objetos.json");
+        const res = await fetch("/data/json/movimientos/MovimientosZ.json");
 
         if (!res.ok) throw new Error(`Error HTTP: ${res.status}`);
 
@@ -78,15 +77,6 @@ function seleccionarObjeto(objeto) {
     seleccionado.value = objeto;
 }
 
-// ================ CREA LOS FILTROS DE RAREZA Y TIPOS MIRANDO LOS DE LA TABLA DIRECTAMENTE ===================
-const tiposUnicos = computed(() => [
-    ...new Set(datos.value.map((o) => o.Tipo).filter(Boolean)),
-]);
-const rarezasUnicas = computed(() => [
-    ...new Set(datos.value.map((o) => o.Rareza).filter(Boolean)),
-]);
-
-
 // ========== FILTROS Y ORDENAMIENTOS EN RUTA
 
 //Modifica filtros
@@ -95,17 +85,11 @@ function manejarFiltros({ clave, valor }) {
         case 'nombre':
             filtroNombre.value = valor;
             break;
-        case 'precioMin':
-            filtroPrecioMin.value = valor;
-            break;
-        case 'precioMax':
-            filtroPrecioMax.value = valor;
-            break;
         case 'tipos':
             filtroTipos.value = valor;
             break;
-        case 'rarezas':
-            filtroRarezas.value = valor;
+        case 'unico':
+            filtroEspecie.value = valor;
             break;
     }
 }
@@ -113,9 +97,7 @@ function manejarFiltros({ clave, valor }) {
 // Limpia filtros
 function limpiarFiltros() {
     filtroTipos.value = [];
-    filtroRarezas.value = [];
-    filtroPrecioMin.value = null;
-    filtroPrecioMax.value = null;
+    filtroEspecie.value = null;
     filtroNombre.value = null;
     ordenColumna.value = null;
     ordenAscendente.value = true;
@@ -126,9 +108,7 @@ watch(
     [
         seleccionado,
         filtroTipos,
-        filtroRarezas,
-        filtroPrecioMin,
-        filtroPrecioMax,
+        filtroEspecie,
         filtroNombre,
         ordenColumna,
         ordenAscendente,
@@ -151,9 +131,7 @@ watch(
 function construirQuery() {
     return {
         tipos: filtroTipos.value.length ? filtroTipos.value.join(",") : undefined,
-        rareza: filtroRarezas.value.length ? filtroRarezas.value.join(",") : undefined,
-        precioMin: filtroPrecioMin.value ?? undefined,
-        precioMax: filtroPrecioMax.value ?? undefined,
+        especie: filtroEspecie.value ?? undefined,
         nombre: filtroNombre.value ?? undefined,
         ordenColumna: ordenColumna.value ?? undefined,
         ordenAscendente: ordenColumna.value ? ordenAscendente.value : undefined,
@@ -163,11 +141,8 @@ function construirQuery() {
 
 function aplicarQuery(query) {
     filtroTipos.value = query.tipos?.split(",") ?? [];
-    filtroRarezas.value = query.rareza?.split(",") ?? [];
-    filtroPrecioMin.value = query.precioMin ? Number(query.precioMin) : null;
-    filtroPrecioMax.value = query.precioMax ? Number(query.precioMax) : null;
+    filtroEspecie.value = query.especie ?? null;
     filtroNombre.value = query.nombre ?? null;
-
     ordenColumna.value = query.ordenColumna ?? null;
     ordenAscendente.value = query.ordenAscendente !== "false";
 
@@ -187,18 +162,16 @@ function ordenarPor(columna) {
 }
 
 // ========================= APLICAR FILTROS A TABLA Y ORDENAR ===========================
+
 const filtrados = computed(() => {
     let resultado = datos.value.filter((dato) => {
-        const coste = dato.Coste ?? null;
         const nombre = dato.Nombre.toLowerCase();
+        const especie = dato.Solo1Especie;
 
         //Expresión lógica infernal
         return (
             (!filtroTipos.value.length || filtroTipos.value.includes(dato.Tipo)) &&
-            (!filtroRarezas.value.length ||
-                filtroRarezas.value.includes(dato.Rareza)) &&
-            (filtroPrecioMin.value === null || coste >= filtroPrecioMin.value) &&
-            (filtroPrecioMax.value === null || coste <= filtroPrecioMax.value) &&
+            (!filtroEspecie.value || filtroEspecie.value === 'todos' || especie && filtroEspecie.value === "único" || !especie && filtroEspecie.value === "de tipo elemental") &&
             (!filtroNombre.value || nombre.includes(filtroNombre.value.toLowerCase()))
         );
     });

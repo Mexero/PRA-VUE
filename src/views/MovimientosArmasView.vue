@@ -1,16 +1,16 @@
 <template>
-    <h1 class="titulo">Objetos</h1>
+    <h1 class="titulo">Movimientos de Armas</h1>
     <main class="cuerpo">
         <div id="filtroTabla">
-            <Filtros :datosCargados="datosCargados" :tipos="tiposUnicos" :rarezas="rarezasUnicas"
-                :filtroTipos="filtroTipos" :filtroRarezas="filtroRarezas" :filtroPrecioMin="filtroPrecioMin"
-                :filtroPrecioMax="filtroPrecioMax" :filtroNombre="filtroNombre" @limpiarFiltros="limpiarFiltros"
-                @actualizarFiltros="manejarFiltros" />
+
+            <Filtros :datosCargados="datosCargados" :tipos="tiposUnicos" :filtroTipos="filtroTipos"
+                :filtroAccion="filtroAccion" :filtroPPMin="filtroPPMin" :filtroPPMax="filtroPPMax"
+                :filtroNombre="filtroNombre" @limpiarFiltros="limpiarFiltros" @actualizarFiltros="manejarFiltros" />
 
             <Tabla :datos="filtrados" :datosCargados="datosCargados" :seleccionado="seleccionado" :columnas="columnas"
                 :clavesColumnas="clavesColumnas" @seleccionar="seleccionarObjeto" @ordenar="ordenarPor" />
         </div>
-        <Seleccionado :datosCargados="datosCargados" :objeto="seleccionado" />
+        <Seleccionado :datosCargados="datosCargados" :mov="seleccionado" />
     </main>
 </template>
 
@@ -19,8 +19,8 @@ import { ref, onMounted, computed, watch } from "vue";
 import { useRoute, useRouter } from "vue-router";
 
 import Tabla from "@/components/TablaView.vue"
-import Seleccionado from "@/components/Objetos/ObjetoSeleccionado.vue"
-import Filtros from "@/components/Objetos/ObjetosFiltrosView.vue"
+import Seleccionado from "@/components/Movimientos/MovArmasSeleccionado.vue"
+import Filtros from "@/components/Movimientos/MovArmasFiltrosView.vue"
 
 const route = useRoute();
 const router = useRouter();
@@ -28,8 +28,9 @@ const router = useRouter();
 // ======================== DATOS ========================
 
 //Datos para la tabla
-const columnas = ['Nombre', 'Tipo', 'Rareza', 'Coste']
-const clavesColumnas = ['Nombre', 'Tipo', 'Rareza', 'Coste']
+const columnas = ['Nombre', 'Tipo', 'Acción', 'Coste', 'Rango', 'EST']
+const clavesColumnas = ['Nombre', 'TipoAtaque', 'Accion', 'Coste', 'Rango', 'StatsAsociados']
+const tiposUnicos = ["Movimiento Estándar", "Movimiento Especial", "Movimiento Especial Superior"]
 
 //Datos principales
 const datos = ref([]);
@@ -38,10 +39,10 @@ const seleccionado = ref(route.query.seleccionado ?? undefined);
 
 //Filtros
 const filtroTipos = ref(route.query.tipos ? route.query.tipos.split(",") : []);
-const filtroRarezas = ref(route.query.rareza ? route.query.rareza.split(",") : []);
-const filtroPrecioMin = ref(route.query.precioMin ? Number(route.query.precioMin) : null);
-const filtroPrecioMax = ref(route.query.precioMax ? Number(route.query.precioMax) : null);
+const filtroPPMin = ref(route.query.PPMin ? Number(route.query.PPMin) : null);
+const filtroPPMax = ref(route.query.PPMax ? Number(route.query.PPMax) : null);
 const filtroNombre = ref(route.query.nombre ?? null);
+const filtroAccion = ref(route.query.accion ?? null);
 
 //Orden de tabla
 const ordenColumna = ref(route.query.ordenColumna ?? null);
@@ -51,7 +52,7 @@ const ordenAscendente = ref(route.query.ordenAscendente !== "false");
 
 onMounted(async () => {
     try {
-        const res = await fetch("/data/json/objetos/objetos.json");
+        const res = await fetch("/data/json/movimientos/MovimientosArmas.json");
 
         if (!res.ok) throw new Error(`Error HTTP: ${res.status}`);
 
@@ -78,15 +79,6 @@ function seleccionarObjeto(objeto) {
     seleccionado.value = objeto;
 }
 
-// ================ CREA LOS FILTROS DE RAREZA Y TIPOS MIRANDO LOS DE LA TABLA DIRECTAMENTE ===================
-const tiposUnicos = computed(() => [
-    ...new Set(datos.value.map((o) => o.Tipo).filter(Boolean)),
-]);
-const rarezasUnicas = computed(() => [
-    ...new Set(datos.value.map((o) => o.Rareza).filter(Boolean)),
-]);
-
-
 // ========== FILTROS Y ORDENAMIENTOS EN RUTA
 
 //Modifica filtros
@@ -95,17 +87,17 @@ function manejarFiltros({ clave, valor }) {
         case 'nombre':
             filtroNombre.value = valor;
             break;
-        case 'precioMin':
-            filtroPrecioMin.value = valor;
+        case 'PPMin':
+            filtroPPMin.value = valor;
             break;
-        case 'precioMax':
-            filtroPrecioMax.value = valor;
+        case 'PPMax':
+            filtroPPMax.value = valor;
             break;
         case 'tipos':
             filtroTipos.value = valor;
             break;
-        case 'rarezas':
-            filtroRarezas.value = valor;
+        case 'accion':
+            filtroAccion.value = valor;
             break;
     }
 }
@@ -113,9 +105,9 @@ function manejarFiltros({ clave, valor }) {
 // Limpia filtros
 function limpiarFiltros() {
     filtroTipos.value = [];
-    filtroRarezas.value = [];
-    filtroPrecioMin.value = null;
-    filtroPrecioMax.value = null;
+    filtroAccion.value = null;
+    filtroPPMin.value = null;
+    filtroPPMax.value = null;
     filtroNombre.value = null;
     ordenColumna.value = null;
     ordenAscendente.value = true;
@@ -126,9 +118,9 @@ watch(
     [
         seleccionado,
         filtroTipos,
-        filtroRarezas,
-        filtroPrecioMin,
-        filtroPrecioMax,
+        filtroAccion,
+        filtroPPMin,
+        filtroPPMax,
         filtroNombre,
         ordenColumna,
         ordenAscendente,
@@ -151,9 +143,9 @@ watch(
 function construirQuery() {
     return {
         tipos: filtroTipos.value.length ? filtroTipos.value.join(",") : undefined,
-        rareza: filtroRarezas.value.length ? filtroRarezas.value.join(",") : undefined,
-        precioMin: filtroPrecioMin.value ?? undefined,
-        precioMax: filtroPrecioMax.value ?? undefined,
+        accion: filtroAccion.value ?? undefined,
+        PPMin: filtroPPMin.value ?? undefined,
+        PPMax: filtroPPMax.value ?? undefined,
         nombre: filtroNombre.value ?? undefined,
         ordenColumna: ordenColumna.value ?? undefined,
         ordenAscendente: ordenColumna.value ? ordenAscendente.value : undefined,
@@ -163,9 +155,9 @@ function construirQuery() {
 
 function aplicarQuery(query) {
     filtroTipos.value = query.tipos?.split(",") ?? [];
-    filtroRarezas.value = query.rareza?.split(",") ?? [];
-    filtroPrecioMin.value = query.precioMin ? Number(query.precioMin) : null;
-    filtroPrecioMax.value = query.precioMax ? Number(query.precioMax) : null;
+    filtroAccion.value = query.accion ?? null;
+    filtroPPMin.value = query.PPMin ? Number(query.PPMin) : null;
+    filtroPPMax.value = query.PPMax ? Number(query.PPMax) : null;
     filtroNombre.value = query.nombre ?? null;
 
     ordenColumna.value = query.ordenColumna ?? null;
@@ -187,18 +179,32 @@ function ordenarPor(columna) {
 }
 
 // ========================= APLICAR FILTROS A TABLA Y ORDENAR ===========================
+
+//UTILIDAD
+function parsePP(coste) {
+    if (!coste) return null;
+    if (typeof coste === 'string' && coste.toLowerCase().includes('variable')) {
+        return 'Variable';
+    }
+    if (typeof coste === 'string' && coste.toLowerCase().includes('a voluntad')) {
+        return 'A voluntad';
+    }
+    const match = coste.match(/\d+/);
+    return match ? parseInt(match[0]) : null;
+}
+
 const filtrados = computed(() => {
     let resultado = datos.value.filter((dato) => {
-        const coste = dato.Coste ?? null;
+        const coste = parsePP(dato.Coste);
         const nombre = dato.Nombre.toLowerCase();
+        const accion = dato.Accion.toLowerCase();
 
         //Expresión lógica infernal
         return (
-            (!filtroTipos.value.length || filtroTipos.value.includes(dato.Tipo)) &&
-            (!filtroRarezas.value.length ||
-                filtroRarezas.value.includes(dato.Rareza)) &&
-            (filtroPrecioMin.value === null || coste >= filtroPrecioMin.value) &&
-            (filtroPrecioMax.value === null || coste <= filtroPrecioMax.value) &&
+            (!filtroTipos.value.length || filtroTipos.value.includes(dato.TipoAtaque)) &&
+            (!filtroAccion.value || filtroAccion.value === 'ambos' || accion === filtroAccion.value) &&
+            (filtroPPMin.value === null || coste >= filtroPPMin.value) &&
+            (filtroPPMax.value === null || coste <= filtroPPMax.value) &&
             (!filtroNombre.value || nombre.includes(filtroNombre.value.toLowerCase()))
         );
     });

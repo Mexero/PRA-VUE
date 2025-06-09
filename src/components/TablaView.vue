@@ -3,9 +3,20 @@ defineProps([
     'datosCargados',
     'datos',
     'seleccionado',
-    'columnas'
+    'columnas',
+    'clavesColumnas'
 ]);
 const emit = defineEmits(['seleccionar', 'ordenar']);
+
+function mostrarDato(dato) {
+    if (!dato) return "—"
+    if (!Array.isArray(dato)) return dato
+    if (!dato.length) return "—"
+    if (dato.length === 1) return dato[0]
+    return dato.slice(0, -1).join(', ') + ' y ' + dato[dato.length - 1];
+}
+
+
 </script>
 
 <template>
@@ -25,12 +36,12 @@ const emit = defineEmits(['seleccionar', 'ordenar']);
                         seleccionado &&
                         seleccionado.Nombre === fila[columnas[0]],
                 }">
-                    <td v-for="columna of columnas">{{ fila[columna] ?? "—" }}</td>
+                    <td v-for="columna of clavesColumnas">{{ mostrarDato(fila[columna]) }}</td>
                 </tr>
             </tbody>
             <tbody v-else>
                 <tr>
-                    <td colspan="4" class="textoCentrado">
+                    <td :colspan="columnas.length" class="textoCentrado">
                         <div>
                             Resultados no encontrados :&lpar;
                         </div>

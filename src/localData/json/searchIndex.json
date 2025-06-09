@@ -3303,5 +3303,130 @@
         "nombre": "Creador de brisas",
         "ruta": "/dotes?seleccionado=Creador+de+brisas",
         "tipo": "Dote"
+    },
+    {
+        "nombre": "Movimiento Estándar",
+        "ruta": "/movarmas?tipos=Movimiento+Estándar",
+        "tipo": "Tipo de Movimiento de Armas"
+    },
+    {
+        "nombre": "Movimiento Especial",
+        "ruta": "/movarmas?tipos=Movimiento+Especial",
+        "tipo": "Tipo de Movimiento de Armas"
+    },
+    {
+        "nombre": "Movimiento Especial Superior",
+        "ruta": "/movarmas?tipos=Movimiento+Especial+Superior",
+        "tipo": "Tipo de Movimiento de Armas"
+    },
+    {
+        "nombre": "Tirar",
+        "ruta": "/movarmas?seleccionado=Tirar",
+        "tipo": "Movimiento de Arma"
+    },
+    {
+        "nombre": "Golpear",
+        "ruta": "/movarmas?seleccionado=Golpear",
+        "tipo": "Movimiento de Arma"
+    },
+    {
+        "nombre": "Tajar",
+        "ruta": "/movarmas?seleccionado=Tajar",
+        "tipo": "Movimiento de Arma"
+    },
+    {
+        "nombre": "Disparar",
+        "ruta": "/movarmas?seleccionado=Disparar",
+        "tipo": "Movimiento de Arma"
+    },
+    {
+        "nombre": "Abrir herida",
+        "ruta": "/movarmas?seleccionado=Abrir herida",
+        "tipo": "Movimiento de Arma"
+    },
+    {
+        "nombre": "Ataque distante",
+        "ruta": "/movarmas?seleccionado=Ataque distante",
+        "tipo": "Movimiento de Arma"
+    },
+    {
+        "nombre": "Ataque doble",
+        "ruta": "/movarmas?seleccionado=Ataque doble",
+        "tipo": "Movimiento de Arma"
+    },
+    {
+        "nombre": "Ataque múltiple",
+        "ruta": "/movarmas?seleccionado=Ataque múltiple",
+        "tipo": "Movimiento de Arma"
+    },
+    {
+        "nombre": "Ataque perforante",
+        "ruta": "/movarmas?seleccionado=Ataque perforante",
+        "tipo": "Movimiento de Arma"
+    },
+    {
+        "nombre": "Barrido",
+        "ruta": "/movarmas?seleccionado=Barrido",
+        "tipo": "Movimiento de Arma"
+    },
+    {
+        "nombre": "Bloquear",
+        "ruta": "/movarmas?seleccionado=Bloquear",
+        "tipo": "Movimiento de Arma"
+    },
+    {
+        "nombre": "Contusión",
+        "ruta": "/movarmas?seleccionado=Contusión",
+        "tipo": "Movimiento de Arma"
+    },
+    {
+        "nombre": "Disparo a las piernas",
+        "ruta": "/movarmas?seleccionado=Disparo a las piernas",
+        "tipo": "Movimiento de Arma"
+    },
+    {
+        "nombre": "Disparo ágil",
+        "ruta": "/movarmas?seleccionado=Disparo ágil",
+        "tipo": "Movimiento de Arma"
+    },
+    {
+        "nombre": "Doble lanzamiento",
+        "ruta": "/movarmas?seleccionado=Doble lanzamiento",
+        "tipo": "Movimiento de Arma"
+    },
+    {
+        "nombre": "Floritura",
+        "ruta": "/movarmas?seleccionado=Floritura",
+        "tipo": "Movimiento de Arma"
+    },
+    {
+        "nombre": "Hender",
+        "ruta": "/movarmas?seleccionado=Hender",
+        "tipo": "Movimiento de Arma"
+    },
+    {
+        "nombre": "Lacerar",
+        "ruta": "/movarmas?seleccionado=Lacerar",
+        "tipo": "Movimiento de Arma"
+    },
+    {
+        "nombre": "Quebrar",
+        "ruta": "/movarmas?seleccionado=Quebrar",
+        "tipo": "Movimiento de Arma"
+    },
+    {
+        "nombre": "Riposte",
+        "ruta": "/movarmas?seleccionado=Riposte",
+        "tipo": "Movimiento de Arma"
+    },
+    {
+        "nombre": "Rociar",
+        "ruta": "/movarmas?seleccionado=Rociar",
+        "tipo": "Movimiento de Arma"
+    },
+    {
+        "nombre": "Vaciar recámara",
+        "ruta": "/movarmas?seleccionado=Vaciar recámara",
+        "tipo": "Movimiento de Arma"
     }
 ]
