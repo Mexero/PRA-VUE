@@ -123,7 +123,6 @@ nav {
     background-color: var(--color-principal1);
     color: var(--color-texto);
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
-
 }
 
 /* ====== Menus primarios ====== */
@@ -131,7 +130,6 @@ nav {
     display: flex;
     height: 40px;
     z-index: 500;
-
 }
 
 ul {
@@ -182,7 +180,6 @@ nav div {
     padding-left: 5px;
     align-items: center;
     box-sizing: content-box;
-
 }
 
 .subMenu li:nth-child(5) a {
@@ -215,7 +212,6 @@ nav div {
 /* ====== Modo movil ====== */
 #modoMovil {
     display: none;
-
 }
 
 #botonMenu {
