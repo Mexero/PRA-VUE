@@ -76,7 +76,7 @@ function toggleTipo(event, tipo) {
 
 
                     <div id="filtroEspecie">
-                        <h3>Acción</h3>
+                        <h3>Categoría</h3>
                         <div>
                             <div>
                                 <label v-for="opcion in ['Único', 'de Tipo Elemental', 'Todos']" :key="opcion">

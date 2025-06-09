@@ -3428,5 +3428,190 @@
         "nombre": "Vaciar recámara",
         "ruta": "/movarmas?seleccionado=Vaciar recámara",
         "tipo": "Movimiento de Arma"
+    },
+    {
+        "nombre": "Hélice trepanadora",
+        "ruta": "/movz?seleccionado=Hélice trepanadora",
+        "tipo": "Movimiento Z"
+    },
+    {
+        "nombre": "Hidrovórtice abisal",
+        "ruta": "/movz?seleccionado=Hidrovórtice abisal",
+        "tipo": "Movimiento Z"
+    },
+    {
+        "nombre": "Guadaña sedosa",
+        "ruta": "/movz?seleccionado=Guadaña sedosa",
+        "tipo": "Movimiento Z"
+    },
+    {
+        "nombre": "Dracoaliento devastador",
+        "ruta": "/movz?seleccionado=Dracoaliento devastador",
+        "tipo": "Movimiento Z"
+    },
+    {
+        "nombre": "Gigavoltio destructor",
+        "ruta": "/movz?seleccionado=Gigavoltio destructor",
+        "tipo": "Movimiento Z"
+    },
+    {
+        "nombre": "Presa espectral",
+        "ruta": "/movz?seleccionado=Presa espectral",
+        "tipo": "Movimiento Z"
+    },
+    {
+        "nombre": "Hecatombe pírica",
+        "ruta": "/movz?seleccionado=Hecatombe pírica",
+        "tipo": "Movimiento Z"
+    },
+    {
+        "nombre": "Arrumaco sideral",
+        "ruta": "/movz?seleccionado=Arrumaco sideral",
+        "tipo": "Movimiento Z"
+    },
+    {
+        "nombre": "Crioaliento despiadado",
+        "ruta": "/movz?seleccionado=Crioaliento despiadado",
+        "tipo": "Movimiento Z"
+    },
+    {
+        "nombre": "Ráfaga demoledora",
+        "ruta": "/movz?seleccionado=Ráfaga demoledora",
+        "tipo": "Movimiento Z"
+    },
+    {
+        "nombre": "Carrera arrolladora",
+        "ruta": "/movz?seleccionado=Carrera arrolladora",
+        "tipo": "Movimiento Z"
+    },
+    {
+        "nombre": "Megatón floral",
+        "ruta": "/movz?seleccionado=Megatón floral",
+        "tipo": "Movimiento Z"
+    },
+    {
+        "nombre": "Disruptor psíquico",
+        "ruta": "/movz?seleccionado=Disruptor psíquico",
+        "tipo": "Movimiento Z"
+    },
+    {
+        "nombre": "Aplastamiento gigalítico",
+        "ruta": "/movz?seleccionado=Aplastamiento gigalítico",
+        "tipo": "Movimiento Z"
+    },
+    {
+        "nombre": "Agujero negro aniquilador",
+        "ruta": "/movz?seleccionado=Agujero negro aniquilador",
+        "tipo": "Movimiento Z"
+    },
+    {
+        "nombre": "Barrena telúrica",
+        "ruta": "/movz?seleccionado=Barrena telúrica",
+        "tipo": "Movimiento Z"
+    },
+    {
+        "nombre": "Diluvio corrosivo",
+        "ruta": "/movz?seleccionado=Diluvio corrosivo",
+        "tipo": "Movimiento Z"
+    },
+    {
+        "nombre": "Picado supersónico",
+        "ruta": "/movz?seleccionado=Picado supersónico",
+        "tipo": "Movimiento Z"
+    },
+    {
+        "nombre": "Pikavoltio letal",
+        "ruta": "/movz?seleccionado=Pikavoltio letal",
+        "tipo": "Movimiento Z"
+    },
+    {
+        "nombre": "Gigarrayo fulminante",
+        "ruta": "/movz?seleccionado=Gigarrayo fulminante",
+        "tipo": "Movimiento Z"
+    },
+    {
+        "nombre": "Surfeo galvánico",
+        "ruta": "/movz?seleccionado=Surfeo galvánico",
+        "tipo": "Movimiento Z"
+    },
+    {
+        "nombre": "Novena potencia",
+        "ruta": "/movz?seleccionado=Novena potencia",
+        "tipo": "Movimiento Z"
+    },
+    {
+        "nombre": "Arrojo intempestivo",
+        "ruta": "/movz?seleccionado=Arrojo intempestivo",
+        "tipo": "Movimiento Z"
+    },
+    {
+        "nombre": "Supernova original",
+        "ruta": "/movz?seleccionado=Supernova original",
+        "tipo": "Movimiento Z"
+    },
+    {
+        "nombre": "Aluvión de flechas sombrías",
+        "ruta": "/movz?seleccionado=Aluvión de flechas sombrías",
+        "tipo": "Movimiento Z"
+    },
+    {
+        "nombre": "Hiperplancha oscura",
+        "ruta": "/movz?seleccionado=Hiperplancha oscura",
+        "tipo": "Movimiento Z"
+    },
+    {
+        "nombre": "Sinfonía de la diva marina",
+        "ruta": "/movz?seleccionado=Sinfonía de la diva marina",
+        "tipo": "Movimiento Z"
+    },
+    {
+        "nombre": "Cólera del guardián",
+        "ruta": "/movz?seleccionado=Cólera del guardián",
+        "tipo": "Movimiento Z"
+    },
+    {
+        "nombre": "Constelación robaalmas",
+        "ruta": "/movz?seleccionado=Constelación robaalmas",
+        "tipo": "Movimiento Z"
+    },
+    {
+        "nombre": "Tempestad rocosa",
+        "ruta": "/movz?seleccionado=Tempestad rocosa",
+        "tipo": "Movimiento Z"
+    },
+    {
+        "nombre": "Somanta amistosa",
+        "ruta": "/movz?seleccionado=Somanta amistosa",
+        "tipo": "Movimiento Z"
+    },
+    {
+        "nombre": "Estruendo implacable",
+        "ruta": "/movz?seleccionado=Estruendo implacable",
+        "tipo": "Movimiento Z"
+    },
+    {
+        "nombre": "Embestida solar",
+        "ruta": "/movz?seleccionado=Embestida solar",
+        "tipo": "Movimiento Z"
+    },
+    {
+        "nombre": "Deflagración lunar",
+        "ruta": "/movz?seleccionado=Deflagración lunar",
+        "tipo": "Movimiento Z"
+    },
+    {
+        "nombre": "Fotodestrucción apocalíptica",
+        "ruta": "/movz?seleccionado=Fotodestrucción apocalíptica",
+        "tipo": "Movimiento Z"
+    },
+    {
+        "nombre": "Movimiento Único",
+        "ruta": "/movz?especie=único",
+        "tipo": "Tipo de Movimiento Z"
+    },
+    {
+        "nombre": "Movimiento de Tipo Elemental",
+        "ruta": "/movz?especie=de+tipo+elemental",
+        "tipo": "Tipo de Movimiento Z"
     }
 ]
