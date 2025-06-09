@@ -105,10 +105,6 @@ watch(
                         @input="actualizarFiltros('nombre', nombre)" />
 
                     <button @click="limpiarFiltros">Limpiar filtros</button>
-                    <h3>Coste</h3>
-
-                    <Slider :allowedValues="allowedValues" :limpiar="limpiarSliderFlag"
-                        @actualizarMinMax="emitirPrecios" />
 
                     <div id="filtroPrerrequisitos">
                         <h3>Prerrequisitos</h3>
@@ -131,6 +127,11 @@ watch(
                             </label>
                         </div>
                     </div>
+
+                    <h3>Nivel</h3>
+
+                    <Slider :allowedValues="allowedValues" :limpiar="limpiarSliderFlag"
+                        @actualizarMinMax="emitirPrecios" />
                 </div>
             </div>
         </transition>

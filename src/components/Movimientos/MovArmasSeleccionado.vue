@@ -10,7 +10,7 @@
             <p><strong>Descripción:</strong></p>
             <p v-for="parrafo of mov.Descripcion" v-html="parrafo"></p>
         </div>
-        <p class="notaFinal"><strong>Armas recomendadas: </strong> {{ mov.ArmasRecomendadas }}</p>
+        <p class="notaFinal"><strong>Armas recomendadas: </strong> {{ mov.ArmasRecomendadas }}.</p>
     </div>
     <div v-else class="seleccionado">
         <p>Cargando...</p>
