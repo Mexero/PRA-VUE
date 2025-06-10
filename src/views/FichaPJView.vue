@@ -59,11 +59,10 @@
                 <section class="checks">
                     <h3>Tiradas de habilidad</h3>
                     <div class="checks-list">
-                        <div class="item" v-for="(check, i) in ficha.checks" :key="i"
-                            :class="{ modificado: check.modificado }">
+                        <div class="item" v-for="(check, i) in ficha.checks" :key="i">
                             <select v-model="check.stat">
                                 <option v-for="(v, stat) in ficha.stats" :key="stat" :value="stat">{{ stat.toUpperCase()
-                                }}</option>
+                                    }}</option>
                             </select>
                             <select v-model="check.grado" @change="recalcularCheck(check)">
                                 <option value="no">No entrenado</option>
@@ -73,7 +72,7 @@
                                 <option value="legendario">Legendario</option>
                             </select>
                             <label>Total:</label>
-                            <input type="number" v-model.number="check.total" @change="verificarModificacion(check)" />
+                            <input type="number" v-model.number="check.total" />
                             <button @click="removeCheck(i)">✕</button>
                         </div>
                         <div class="item">
@@ -87,10 +86,11 @@
                 </section>
 
                 <section class="destacados">
-                    <div class="item" :class="{ modificado: overrides.bc }">
-                        <label>BC:</label>
-                        <input type="number" v-model.number="usados.bc" @input="verificarCampo('bc', adecuados.bc)" />
-                        <span v-if="!overrides.bc">({{ adecuados.bc }})</span>
+                    <div class="item">
+                        <label><input type="checkbox" v-model="manual.bc" @change="updateStatsDerivadas()" />
+                            BC:</label>
+                        <input type="number" v-model.number="ficha.bc" :readonly="!manual.bc" />
+                        <span v-if="manual.bc">({{ calculado.bc }})</span>
                     </div>
                     <div class="item">CA: <input v-model.number="ficha.ca" /></div>
                     <div class="item">INIT: <input v-model.number="ficha.init" /></div>
@@ -171,9 +171,8 @@
 <script setup>
 import { reactive, ref, computed, onMounted, watch } from 'vue'
 
-const overrides = reactive({ bc: false, pp: false })
-const usados = reactive({ bc: undefined, pp: undefined })
-const adecuados = reactive({ bc: 0, pp: 0 })
+const manual = reactive({ bc: false, pp: false })
+const calculado = reactive({ bc: 0, pp: 0 })
 
 const nuevaCheck = ref('')
 const fichaSeleccionada = ref('')
@@ -185,15 +184,13 @@ const ficha = reactive({
     stats: { fue: 0, agi: 0, res: 0, men: 0, esp: 0, pre: 0 },
     salvaciones: { fue: 0, agi: 0, res: 0, esp: 0 },
     checks: [],
+    bc: 0, pp: 0,
     pv: 0, pvMax: 0, ppMax: 0, escudo: 0, fatiga: 0,
     velocidades: { base: 0, nado: 0, vuelo: 0, trepar: 0, cavar: 0, otros: 0 },
     movimientos: [], habilidades: [], dotes: [],
     otros: { dieta: '', tamano: '', sexo: '', sentidos: '', teratipo: '' },
     carga: 0
 })
-
-const bcFinal = computed(() => usados.bc ?? adecuados.bc)
-const ppFinal = computed(() => usados.pp ?? adecuados.pp)
 
 const opcionesChecksDisponibles = [
     'Acrobacias', 'Actuación', 'Atletismo', 'Combate', 'Empatía', 'Engaño',
@@ -203,26 +200,18 @@ const opcionesChecksDisponibles = [
 
 const grados = {
     no: 0,
-    bueno: () => bcFinal.value,
-    experto: () => bcFinal.value + 2,
-    maestro: () => bcFinal.value + 4,
-    legendario: () => bcFinal.value + 6
+    bueno: () => ficha.bc,
+    experto: () => ficha.bc + 2,
+    maestro: () => ficha.bc + 4,
+    legendario: () => ficha.bc + 6
 }
 
 function updateStatsDerivadas() {
-    adecuados.bc = Math.ceil(ficha.nivel / 2)
-    adecuados.pp = ficha.stats.esp + ficha.nivel
-    verificarCampo('bc', adecuados.bc)
-    verificarCampo('pp', adecuados.pp)
-}
-
-function verificarCampo(campo, esperado) {
-    if (usados[campo] === esperado) {
-        usados[campo] = undefined
-        overrides[campo] = false
-    } else {
-        overrides[campo] = usados[campo] !== undefined
-    }
+    calculado.bc = Math.ceil(ficha.nivel / 2)
+    calculado.pp = ficha.stats.esp + ficha.nivel
+    if (!manual.bc) ficha.bc = calculado.bc
+    if (!manual.pp) ficha.pp = calculado.pp
+    for (let check of ficha.checks) recalcularCheck(check)
 }
 
 function recalcularCheck(check) {
@@ -231,13 +220,6 @@ function recalcularCheck(check) {
     const nuevoTotal = statVal + bonoGrado
     check.total = nuevoTotal
     check.modificado = false
-}
-
-function verificarModificacion(check) {
-    const statVal = ficha.stats[check.stat] || 0
-    const bonoGrado = typeof grados[check.grado] === 'function' ? grados[check.grado]() : grados[check.grado]
-    const esperado = statVal + bonoGrado
-    check.modificado = check.total !== esperado
 }
 
 function addCheck() {
@@ -252,7 +234,7 @@ function removeCheck(index) {
 
 function guardarFicha() {
     if (!fichaSeleccionada.value) return
-    fichasGuardadas[fichaSeleccionada.value] = JSON.parse(JSON.stringify({ ficha, usados }))
+    fichasGuardadas[fichaSeleccionada.value] = JSON.parse(JSON.stringify({ ficha, manual }))
     localStorage.setItem('fichas_vue', JSON.stringify(fichasGuardadas))
 }
 
@@ -260,7 +242,7 @@ function cargarFicha(nombre) {
     const data = fichasGuardadas[nombre]
     if (data) {
         Object.assign(ficha, data.ficha || {})
-        Object.assign(usados, data.usados || {})
+        Object.assign(manual, data.manual || {})
     }
 }
 
@@ -276,7 +258,6 @@ onMounted(() => {
 watch(ficha, () => {
     updateStatsDerivadas()
     guardarFicha()
-    ficha.checks.forEach(verificarModificacion)
 }, { deep: true })
 </script>
 
@@ -305,6 +286,10 @@ watch(ficha, () => {
 }
 
 /* Básicos */
+input {
+    width: 100%;
+}
+
 .toolbar {
     display: flex;
     gap: 8px;
