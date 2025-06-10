@@ -107,6 +107,11 @@ const router = createRouter({
       name: 'reglas',
       component: () => import('../views/ReglasView.vue'),
     },
+    {
+      path: '/utilidades/fichapj',
+      name: 'fichapj',
+      component: () => import('../views/FichaPJView.vue'),
+    },
 
 
 

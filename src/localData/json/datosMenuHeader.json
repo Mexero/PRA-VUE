@@ -105,6 +105,10 @@
             {
                 "name": "Movimientos",
                 "route": "/utilidades/dados"
+            },
+            {
+                "name": "Ficha de PJ",
+                "route": "/utilidades/fichapj"
             }
         ]
     }
