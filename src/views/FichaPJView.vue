@@ -57,28 +57,6 @@
                     </div>
                 </section>
 
-                <section class="ResumenHabs">
-                    <h3>Habilidades</h3>
-                    <div class="habilidades-list">
-                        <div class="item"></div>
-                        <div class="item"></div>
-                        <div class="item"></div>
-                        <div class="item"></div>
-                        <div class="item"></div>
-                    </div>
-                </section>
-
-                <section class="ResumenFeats">
-                    <h3>Dotes</h3>
-                    <div class="feats-list">
-                        <div class="item"></div>
-                        <div class="item"></div>
-                        <div class="item"></div>
-                        <div class="item"></div>
-                        <div class="item"></div>
-                    </div>
-                </section>
-
             </section>
         </div>
         <section class="moves">
@@ -399,8 +377,10 @@ cargarFicha()*/
 }
 
 .stats {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-auto-flow: column;
     gap: 8px;
 }
 
@@ -409,11 +389,10 @@ cargarFicha()*/
     width: 100%;
     display: grid;
     gap: 12px;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, auto);
+    grid-template-columns: repeat(3, 1fr) 150px;
+    grid-template-rows: repeat(1, 1fr);
     grid-template-areas:
-        "checks destacados dinam"
-        "vels resumenHabs resumenFeats";
+        "checks destacados dinam vels";
 }
 
 /* Grid areas */
@@ -429,21 +408,19 @@ cargarFicha()*/
     grid-area: destacados;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, auto);
-    gap: 8px;
+    grid-template-rows: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.destacados div {
+    width: 70px;
+    height: 70px;
 }
 
 .speeds {
     grid-area: vels;
 }
 
-.resumenHabs {
-    grid-area: resumenHabs;
-}
-
-.resumenFeats {
-    grid-area: resumenFeats;
-}
 
 /* Secciones con títulos */
 section {
@@ -457,8 +434,6 @@ section h3 {
     border-bottom: 2px solid #3498db;
     padding-bottom: 4px;
 }
-
-/* Movimientos */
 
 
 
@@ -474,7 +449,6 @@ section h3 {
 }
 
 /* Grillas generales */
-.changing-grid,
 .others-list {
     display: grid;
     gap: 10px;
@@ -529,10 +503,18 @@ section h3 {
     padding: 12px;
     min-height: 80px;
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 1fr);
     gap: 8px;
     font-weight: 600;
     color: #196f3d;
     text-align: center;
+}
+
+.moves-grid div {
+    background: #4eb67b;
+    border-radius: 8px;
+    min-height: 100px;
+
 }
 </style>
