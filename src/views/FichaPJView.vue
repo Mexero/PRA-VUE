@@ -1,220 +1,64 @@
 <template>
     <div class="character-sheet container">
-        <div class="toolbar">
-            <select v-model="fichaSeleccionada">
-                <option v-for="key in Object.keys(fichasGuardadas)" :key="key" :value="key">{{ key }}</option>
-            </select>
-            <input v-model="nuevaFichaNombre" placeholder="Nombre nueva ficha" />
-            <button @click="crearFicha">Crear</button>
-            <button @click="borrarFicha">Borrar</button>
-            <button @click="exportarFicha">Exportar</button>
-            <input type="file" accept="application/json" @change="importarFicha" />
-        </div>
-        <section class="info-basica">
-            <div>
-                <span class="label">Nombre:</span>
-                <input v-model="ficha.nombre" />
-            </div>
-            <div>
-                <span class="label">Especie:</span>
-                <input v-model="ficha.especie" />
-            </div>
-            <div>
-                <span class="label">Nivel:</span>
-                <input type="number" v-model.number="ficha.nivel" />
-            </div>
-            <div>
-                <span class="label">Tipos:</span>
-                <input v-model="ficha.tipos" />
-            </div>
-        </section>
+        <FichaToolbar :fichaSeleccionada="fichaSeleccionada" :nuevaFichaNombre="nuevaFichaNombre"
+            :fichasGuardadas="fichasGuardadas" @update:fichaSeleccionada="fichaSeleccionada = $event"
+            @update:nuevaFichaNombre="nuevaFichaNombre = $event" @crear="crearFicha" @borrar="borrarFicha"
+            @exportar="exportarFicha" @importar="importarFicha" />
 
-        <div class="principal">
-            <section class="stats">
-                <div class="item">
-                    FUE: <input type="number" v-model.number="ficha.stats.fue" /> (+<input type="number"
-                        v-model.number="ficha.salvaciones.fue" />)
-                </div>
-                <div class="item">
-                    AGI: <input type="number" v-model.number="ficha.stats.agi" /> (+<input type="number"
-                        v-model.number="ficha.salvaciones.agi" />)
-                </div>
-                <div class="item">
-                    RES: <input type="number" v-model.number="ficha.stats.res" /> (+<input type="number"
-                        v-model.number="ficha.salvaciones.res" />)
-                </div>
-                <div class="item">
-                    MEN: <input type="number" v-model.number="ficha.stats.men" />
-                </div>
-                <div class="item">
-                    ESP: <input type="number" v-model.number="ficha.stats.esp" /> (+<input type="number"
-                        v-model.number="ficha.salvaciones.esp" />)
-                </div>
-                <div class="item">
-                    PRE: <input type="number" v-model.number="ficha.stats.pre" />
-                </div>
-            </section>
+        <FichaInfoBasica :ficha="ficha" />
+        <FichaStats :ficha="ficha" @cambiar-mejora="cambiarMejoraEST" />
 
-            <section class="info-principal">
-                <section class="checks">
-                    <h3>Tiradas de habilidad</h3>
-                    <div class="checks-list">
-                        <div class="item" v-for="(check, i) in ficha.checks" :key="i">
-                            <select v-model="check.stat">
-                                <option v-for="(v, stat) in ficha.stats" :key="stat" :value="stat">{{ stat.toUpperCase()
-                                    }}</option>
-                            </select>
-                            <select v-model="check.grado" @change="recalcularCheck(check)">
-                                <option value="no">No entrenado</option>
-                                <option value="bueno">Bueno</option>
-                                <option value="experto">Experto</option>
-                                <option value="maestro">Maestro</option>
-                                <option value="legendario">Legendario</option>
-                            </select>
-                            <label>Total:</label>
-                            <input type="number" v-model.number="check.total" />
-                            <button @click="removeCheck(i)">✕</button>
-                        </div>
-                        <div class="item">
-                            <select v-model="nuevaCheck">
-                                <option disabled value="">Añadir nueva habilidad</option>
-                                <option v-for="op in opcionesChecksDisponibles" :key="op" :value="op">{{ op }}</option>
-                            </select>
-                            <button @click="addCheck">Añadir</button>
-                        </div>
-                    </div>
-                </section>
-
-                <section class="destacados">
-                    <div class="item">
-                        <label><input type="checkbox" v-model="manual.bc" @change="updateStatsDerivadas()" />
-                            BC:</label>
-                        <input type="number" v-model.number="ficha.bc" :readonly="!manual.bc" />
-                        <span v-if="manual.bc">({{ calculado.bc }})</span>
-                    </div>
-                    <div class="item">CA: <input v-model.number="ficha.ca" /></div>
-                    <div class="item">INIT: <input v-model.number="ficha.init" /></div>
-                    <div class="item">VIT: <input v-model.number="ficha.vit" /></div>
-                </section>
-
-                <section class="info-dinamica">
-                    <h3>Cosas que cambian</h3>
-                    <div class="changing-grid">
-                        <div class="item">PV: <input v-model.number="ficha.pv" /> / <input
-                                v-model.number="ficha.pvMax" /></div>
-                        <div class="item">Escudo: <input v-model.number="ficha.escudo" /></div>
-                        <div class="item">PP: <input v-model.number="ficha.pp" /> / <input
-                                v-model.number="ficha.ppMax" /></div>
-                        <div class="item">Fatiga: <input v-model.number="ficha.fatiga" /></div>
-                    </div>
-                </section>
-
-                <section class="speeds">
-                    <h3>Velocidades</h3>
-                    <div class="speeds-list">
-                        <div class="item" v-for="(val, tipo) in ficha.velocidades" :key="tipo">
-                            {{ tipo }}: <input type="number" v-model.number="ficha.velocidades[tipo]" />
-                        </div>
-                    </div>
-                </section>
-            </section>
+        <div class="info-principal">
+            <FichaChecks :ficha="ficha" :ChecksBase="ChecksBase" @actualizar-check="updateCheck"
+                @eliminar-check="removeCheck" @anadir-check="addCheck" />
+            <FichaDestacados :ficha="ficha" @actualizar="actualizar" />
+            <FichaInfoDinamica :ficha="ficha" />
+            <FichaVelocidades :ficha="ficha" />
         </div>
 
-        <section class="moves">
-            <h3>Movimientos</h3>
-            <div class="moves-grid">
-                <div v-for="(mov, i) in ficha.movimientos" :key="i">
-                    <input v-model="mov.nombre" placeholder="Nombre" />
-                    <input v-model="mov.tipo" placeholder="Tipo" />
-                    <input v-model="mov.dano" placeholder="Daño" />
-                </div>
-            </div>
-        </section>
-
-        <section class="habsFeats">
-            <section class="habilidades">
-                <h3>Habilidades</h3>
-                <div class="habilidades-list">
-                    <div class="item" v-for="(hab, i) in ficha.habilidades" :key="i">
-                        <input v-model="hab.nombre" placeholder="Nombre" />: <input type="number"
-                            v-model.number="hab.valor" />
-                    </div>
-                </div>
-            </section>
-
-            <section class="feats">
-                <h3>Dotes</h3>
-                <div class="feats-list">
-                    <div class="item" v-for="(dote, i) in ficha.dotes" :key="i">
-                        <input v-model="ficha.dotes[i]" placeholder="Nombre de dote" />
-                    </div>
-                </div>
-            </section>
-        </section>
-
-        <section class="info-secundaria">
-            <section class="others">
-                <h3>Otros</h3>
-                <div class="others-list">
-                    <div class="item">Dieta: <input v-model="ficha.otros.dieta" /></div>
-                    <div class="item">Tamaño: <input v-model="ficha.otros.tamano" /></div>
-                    <div class="item">Sexo: <input v-model="ficha.otros.sexo" /></div>
-                    <div class="item">Sentidos: <input v-model="ficha.otros.sentidos" /></div>
-                    <div class="item">Teratipo: <input v-model="ficha.otros.teratipo" /></div>
-                    <div class="item">Carga: <input type="number" :value="ficha.carga" readonly /></div>
-                </div>
-            </section>
-        </section>
+        <FichaMovimientos :ficha="ficha" />
+        <FichaHabilidades :ficha="ficha" />
+        <FichaDotes :ficha="ficha" />
+        <FichaOtros :ficha="ficha" />
     </div>
 </template>
 
 <script setup>
-import { reactive, ref, computed, onMounted, watch } from 'vue'
+import { ref, reactive, onMounted, watch } from 'vue'
 
-const manual = reactive({ bc: false, pp: false })
-const calculado = reactive({ bc: 0, pp: 0 })
+import FichaToolbar from '@/components/fichaPJ/Toolbar.vue'
+import FichaInfoBasica from '@/components/fichaPJ/InfoBasica.vue'
+import FichaStats from '@/components/fichaPJ/Stats.vue'
+import FichaChecks from '@/components/fichaPJ/Checks.vue'
+import FichaDestacados from '@/components/fichaPJ/Destacados.vue'
+import FichaInfoDinamica from '@/components/fichaPJ/InfoDinamica.vue'
+import FichaVelocidades from '@/components/fichaPJ/Velocidades.vue'
+import FichaMovimientos from '@/components/fichaPJ/Movimientos.vue'
+import FichaHabilidades from '@/components/fichaPJ/Habilidades.vue'
+import FichaDotes from '@/components/fichaPJ/Dotes.vue'
+import FichaOtros from '@/components/fichaPJ/Otros.vue'
 
-const nuevaCheck = ref('')
+import { crearFichaBase } from '@/utils/TemplateFicha.js'
+
+const ficha = reactive(crearFichaBase())
 const fichaSeleccionada = ref('')
 const nuevaFichaNombre = ref('')
 const fichasGuardadas = reactive({})
 
-const ficha = reactive({
-    nombre: '', especie: '', nivel: 1, tipos: '',
-    stats: { fue: 0, agi: 0, res: 0, men: 0, esp: 0, pre: 0 },
-    salvaciones: { fue: 0, agi: 0, res: 0, esp: 0 },
-    checks: [],
-    bc: 0, pp: 0,
-    pv: 0, pvMax: 0, ppMax: 0, escudo: 0, fatiga: 0,
-    velocidades: { base: 0, nado: 0, vuelo: 0, trepar: 0, cavar: 0, otros: 0 },
-    movimientos: [], habilidades: [], dotes: [],
-    otros: { dieta: '', tamano: '', sexo: '', sentidos: '', teratipo: '' },
-    carga: 0
-})
-
-const opcionesChecksDisponibles = [
+const ChecksBase = [
     'Acrobacias', 'Actuación', 'Atletismo', 'Combate', 'Empatía', 'Engaño',
     'Intimidación', 'Investigación', 'Juego de Manos', 'Percepción',
     'Persuasión', 'Supervivencia', 'Trato Pokémon'
 ]
-
 const grados = {
     no: 0,
-    bueno: () => ficha.bc,
-    experto: () => ficha.bc + 2,
-    maestro: () => ficha.bc + 4,
-    legendario: () => ficha.bc + 6
+    bueno: () => ficha.derivados.bh,
+    experto: () => ficha.derivados.bh + 2,
+    maestro: () => ficha.derivados.bh + 4,
+    legendario: () => ficha.derivados.bh + 6
 }
 
-function updateStatsDerivadas() {
-    calculado.bc = Math.ceil(ficha.nivel / 2)
-    calculado.pp = ficha.stats.esp + ficha.nivel
-    if (!manual.bc) ficha.bc = calculado.bc
-    if (!manual.pp) ficha.pp = calculado.pp
-    for (let check of ficha.checks) recalcularCheck(check)
-}
-
-function recalcularCheck(check) {
+function updateCheck(check) {
     const statVal = ficha.stats[check.stat] || 0
     const bonoGrado = typeof grados[check.grado] === 'function' ? grados[check.grado]() : grados[check.grado]
     const nuevoTotal = statVal + bonoGrado
@@ -222,28 +66,139 @@ function recalcularCheck(check) {
     check.modificado = false
 }
 
-function addCheck() {
-    if (!nuevaCheck.value) return
-    ficha.checks.push({ nombre: nuevaCheck.value, stat: 'fue', grado: 'no', total: 0, modificado: false })
-    nuevaCheck.value = ''
+
+
+//Añadir checks
+function addCheck(nombre) {
+    if (!nombre) return
+    ficha.checks.push({ nombre, stat: 'fue', grado: 'no', total: 0, modificado: false })
 }
 
 function removeCheck(index) {
     ficha.checks.splice(index, 1)
 }
 
+
+
+//cambiar Mejoras de EST
+function cambiarMejoraEST(stat, delta) {
+    const mejoras = ficha.personaliz.mejorasEst;
+    const max = ficha.derivados.cantidadMejorasEST;
+
+    if (delta > 0) {
+        while (delta > 0 && mejoras.length < max) {
+            mejoras.push(stat);
+            delta--;
+        }
+    } else if (delta < 0) {
+        let eliminadas = 0;
+        for (let i = mejoras.length - 1; i >= 0 && eliminadas < -delta; i--) {
+            if (mejoras[i] === stat) {
+                mejoras.splice(i, 1);
+                eliminadas++;
+            }
+        }
+    }
+}
+
+//Actualizar datos
+function actualizar() {
+    const mejoraToValor = (mejoras) => {
+        if (mejoras <= 3) return mejoras;
+        if (mejoras === 4) return 3;
+        return 4;
+    };
+
+    // Actualizar estadísticas con mejoras de estadísticas
+    for (const stat in ficha.derivados.stats) {
+        const baseStat = ficha.pokedex.statsBase[stat] || 0;
+        const mejorasAplicadas = ficha.personaliz.mejorasEst.filter(s => s === stat).length;
+        ficha.derivados.stats[stat] = baseStat + mejoraToValor(mejorasAplicadas);
+    }
+
+    // Actualizar salvaciones con bonificaciones personalizadas
+    for (const stat in ficha.derivados.salvaciones) {
+        const statTotal = ficha.derivados.stats[stat] || 0;
+        const bonificacion = ficha.personaliz.salvaciones[stat] || 0;
+        ficha.derivados.salvaciones[stat] = statTotal + bonificacion;
+    }
+
+    // Valores derivados automáticos si no están definidos manualmente
+    if (!ficha.manual.bh) {
+        ficha.derivados.bh = Math.ceil(ficha.nivel / 2);
+    }
+
+    if (!ficha.manual.ppMax) {
+        ficha.derivados.ppMax = ficha.derivados.stats.esp + ficha.nivel;
+    }
+
+    if (!ficha.manual.cantidadMejorasEST) {
+        ficha.derivados.cantidadMejorasEST = 1 + Math.floor((ficha.nivel - 2) / 3);
+    }
+
+    // Recalcular checks personalizados
+    ficha.derivados.checks.forEach(updateCheck);
+}
+
+
+//Manipular fichas
+
 function guardarFicha() {
     if (!fichaSeleccionada.value) return
-    fichasGuardadas[fichaSeleccionada.value] = JSON.parse(JSON.stringify({ ficha, manual }))
+    fichasGuardadas[fichaSeleccionada.value] = JSON.parse(JSON.stringify({ ficha }))
     localStorage.setItem('fichas_vue', JSON.stringify(fichasGuardadas))
 }
 
 function cargarFicha(nombre) {
     const data = fichasGuardadas[nombre]
-    if (data) {
-        Object.assign(ficha, data.ficha || {})
-        Object.assign(manual, data.manual || {})
+    if (data) Object.assign(ficha, data.ficha || {})
+}
+
+function crearFicha() {
+    if (!nuevaFichaNombre.value || fichasGuardadas[nuevaFichaNombre.value]) return
+    const nueva = crearFichaBase(nuevaFichaNombre.value)
+    fichaSeleccionada.value = nuevaFichaNombre.value
+    Object.assign(ficha, JSON.parse(JSON.stringify(nueva)))
+    guardarFicha()
+    nuevaFichaNombre.value = ''
+}
+
+function borrarFicha() {
+    if (!fichaSeleccionada.value) return
+    delete fichasGuardadas[fichaSeleccionada.value]
+    localStorage.setItem('fichas_vue', JSON.stringify(fichasGuardadas))
+    fichaSeleccionada.value = ''
+    Object.assign(ficha, crearFichaBase())
+}
+
+function exportarFicha() {
+    const blob = new Blob([JSON.stringify({ ficha }, null, 2)], { type: 'application/json' })
+    const url = URL.createObjectURL(blob)
+    const a = document.createElement('a')
+    a.href = url
+    a.download = `${ficha.nombre || 'ficha'}.json`
+    a.click()
+    URL.revokeObjectURL(url)
+}
+
+function importarFicha(event) {
+    const file = event.target.files[0]
+    if (!file) return
+    const reader = new FileReader()
+    reader.onload = e => {
+        try {
+            const data = JSON.parse(e.target.result)
+            if (data.ficha) Object.assign(ficha, data.ficha)
+            if (ficha.nombre) {
+                fichasGuardadas[ficha.nombre] = JSON.parse(JSON.stringify({ ficha }))
+                fichaSeleccionada.value = ficha.nombre
+                guardarFicha()
+            }
+        } catch (err) {
+            console.error('Error al importar ficha:', err)
+        }
     }
+    reader.readAsText(file)
 }
 
 onMounted(() => {
@@ -256,19 +211,55 @@ onMounted(() => {
 })
 
 watch(ficha, () => {
-    updateStatsDerivadas()
+    actualizar()
     guardarFicha()
 }, { deep: true })
 </script>
 
-
-
-
 <style scoped>
-/* WARNING */
+/* inputs */
 
-.modificado input {
-    border: 2px dashed red;
+.item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    position: relative;
+}
+
+.item label {
+    margin-right: 0.25rem;
+}
+
+.item input[type="number"] {
+    width: 5rem;
+    padding: 0.25rem 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 0.25rem;
+    transition: border-color 0.2s ease-in-out;
+}
+
+.item input[type="checkbox"] {
+    appearance: none;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 1px solid #666;
+    background-color: #fff;
+    margin-left: auto;
+    margin-right: 4px;
+    cursor: pointer;
+    position: relative;
+}
+
+.item input[type="checkbox"]:checked {
+    background-color: #444;
+    box-shadow: inset 0 0 0 2px #fff;
+}
+
+.item span {
+    font-size: 0.8rem;
+    color: #888;
 }
 
 
@@ -287,7 +278,7 @@ watch(ficha, () => {
 
 /* Básicos */
 input {
-    width: 100%;
+    width: 50px;
 }
 
 .toolbar {
