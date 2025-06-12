@@ -11,12 +11,12 @@ export function crearFichaBase(nombre = '') {
             natHabil: '',
             vit: 0,
             velocidades: { Caminado: 0, Trepado: 0, Excavado: 0, Nado: 0, Vuelo: 0, Levitado: 0 },
-            movimientosDisponibles: [],
-            Habilidades: [],
-            HabilidadesOcultas: [],
+            movimientosNivel: [],
+            movimientosEnseñables: [],
+            historyabilidades: [],
+            habilidadesOcultas: [],
             calculosCA: ['', ''],
-            Evolución: [],
-            otros: { dieta: '', tamano: '', sexo: '', sentidos: '' },
+            otros: { dieta: '', tamano: '', sexo: '', sentidos: '', evolución: [] },
         },
         personaliz: {
             mejorasEst: [],
@@ -25,8 +25,8 @@ export function crearFichaBase(nombre = '') {
             dotes: [],
             checksActivos: [],
             checksBonos: [],
-            checksNuevos: ['TDA personalizadas'],
-            mejorasHab: ['TDA', 'Numero de mejoras'],
+            checksNuevos: [], //TDA personalizadas
+            mejorasHab: [],
             caDisponibles: ['', ''],
             bonosExtraEst: { fue: 0, agi: 0, res: 0, men: 0, esp: 0, pre: 0 },
             mejorasVelocidades: { Caminado: 0, Trepado: 0, Excavado: 0, Nado: 0, Vuelo: 0, Levitado: 0 },
@@ -42,7 +42,7 @@ export function crearFichaBase(nombre = '') {
             bh: 0,
             stats: { fue: 0, agi: 0, res: 0, men: 0, esp: 0, pre: 0 },
             salvaciones: { fue: 0, agi: 0, res: 0, esp: 0 },
-            checks: [{ check: 'nombreCheck', bono: 'bono' }],
+            checks: [], //{ check: 'nombreCheck', bono: 'bono' }
             velocidades: { Caminado: 0, Trepado: 0, Excavado: 0, Nado: 0, Vuelo: 0, Levitado: 0 },
             cantidadMejorasEST: 0,
             init: 0,
@@ -59,7 +59,11 @@ export function crearFichaBase(nombre = '') {
         manual: {
             bh: false,
             ppMax: false,
-            cantidadMejorasEST: false
+            pvMax: false,
+            vit: false,
+            cantidadMejorasEST: false,
+            movimientosExtra: false,
+            habilidadesExtra: false
         },
     }
 }

@@ -3,7 +3,8 @@
         <div class="item" v-for="stat in ['fue', 'agi', 'res', 'men', 'esp', 'pre']" :key="stat">
             {{ stat.toUpperCase() }}:
             <span>{{ ficha.derivados.stats[stat] }}</span>
-            (<span>{{ ficha.derivados.salvaciones[stat] || 0 }}</span>)
+            <span v-if="['fue', 'agi', 'res', 'esp'].includes(stat)">({{ ficha.derivados.salvaciones[stat] || 0
+            }})</span>
             <button @click="$emit('cambiar-mejora', stat, -1)">−</button>
             <span> Mejora: {{Array.isArray(ficha.personaliz.mejorasEst)
                 ? ficha.personaliz.mejorasEst.filter(s => s === stat).length
@@ -21,8 +22,14 @@ defineEmits(['cambiar-mejora'])
 <style scoped>
 .stats {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(6, 1fr);
     grid-auto-flow: column;
     gap: 8px;
+    margin-right: 20px;
+}
+
+.stats .item {
+    height: 65px;
 }
 </style>

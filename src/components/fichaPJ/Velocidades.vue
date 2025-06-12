@@ -15,8 +15,8 @@ defineProps(['ficha'])
 
 <style scoped>
 .speeds-list {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template: repeat(3, 1fr) / repeat(2, 1fr);
     gap: 10px;
 }
 </style>

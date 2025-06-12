@@ -23,6 +23,10 @@ defineProps(['ficha'])
     gap: 10px;
 }
 
+.others-list div {
+    width: 18%;
+}
+
 .item {
     flex: 1 1 30%;
     min-width: 150px;

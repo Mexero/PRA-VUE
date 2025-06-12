@@ -6,14 +6,13 @@
             @exportar="exportarFicha" @importar="importarFicha" />
 
         <FichaInfoBasica :ficha="ficha" />
-        <FichaStats :ficha="ficha" @cambiar-mejora="cambiarMejoraEST" />
 
         <div class="info-principal">
+            <FichaStats :ficha="ficha" @cambiar-mejora="cambiarMejoraEST" />
+            <FichaDestacados :ficha="ficha" @actualizar="actualizar" />
+            <FichaVelocidades :ficha="ficha" />
             <FichaChecks :ficha="ficha" :ChecksBase="ChecksBase" @actualizar-check="updateCheck"
                 @eliminar-check="removeCheck" @anadir-check="addCheck" />
-            <FichaDestacados :ficha="ficha" @actualizar="actualizar" />
-            <FichaInfoDinamica :ficha="ficha" />
-            <FichaVelocidades :ficha="ficha" />
         </div>
 
         <FichaMovimientos :ficha="ficha" />
@@ -31,7 +30,6 @@ import FichaInfoBasica from '@/components/fichaPJ/InfoBasica.vue'
 import FichaStats from '@/components/fichaPJ/Stats.vue'
 import FichaChecks from '@/components/fichaPJ/Checks.vue'
 import FichaDestacados from '@/components/fichaPJ/Destacados.vue'
-import FichaInfoDinamica from '@/components/fichaPJ/InfoDinamica.vue'
 import FichaVelocidades from '@/components/fichaPJ/Velocidades.vue'
 import FichaMovimientos from '@/components/fichaPJ/Movimientos.vue'
 import FichaHabilidades from '@/components/fichaPJ/Habilidades.vue'
@@ -61,12 +59,10 @@ const grados = {
 function updateCheck(check) {
     const statVal = ficha.stats[check.stat] || 0
     const bonoGrado = typeof grados[check.grado] === 'function' ? grados[check.grado]() : grados[check.grado]
-    const nuevoTotal = statVal + bonoGrado
+    const nuevoTotal = statVal + bonoGrado - Math.max(ficha.derivados.fatiga, 0)
     check.total = nuevoTotal
     check.modificado = false
 }
-
-
 
 //Añadir checks
 function addCheck(nombre) {
@@ -77,8 +73,6 @@ function addCheck(nombre) {
 function removeCheck(index) {
     ficha.checks.splice(index, 1)
 }
-
-
 
 //cambiar Mejoras de EST
 function cambiarMejoraEST(stat, delta) {
@@ -102,42 +96,60 @@ function cambiarMejoraEST(stat, delta) {
 }
 
 //Actualizar datos
+watch(ficha, () => {
+    actualizar()
+    guardarFicha()
+}, { deep: true })
+
+
 function actualizar() {
+
+    // Chequear mejoras de estadísticas no se pasan. Si lo hacen, quitar las últimas aplicadas
+    while (ficha.nivel > 0 && ficha.derivados.cantidadMejorasEST < ficha.personaliz.mejorasEst.length) {
+        ficha.personaliz.mejorasEst.pop()
+    }
+
     const mejoraToValor = (mejoras) => {
-        if (mejoras <= 3) return mejoras;
-        if (mejoras === 4) return 3;
-        return 4;
-    };
+        if (mejoras < 0) return 0
+        if (mejoras <= 3) return mejoras
+        if (mejoras === 4) return 3
+        if (mejoras > 4) return 5
+    }
 
     // Actualizar estadísticas con mejoras de estadísticas
     for (const stat in ficha.derivados.stats) {
-        const baseStat = ficha.pokedex.statsBase[stat] || 0;
-        const mejorasAplicadas = ficha.personaliz.mejorasEst.filter(s => s === stat).length;
-        ficha.derivados.stats[stat] = baseStat + mejoraToValor(mejorasAplicadas);
+        const baseStat = ficha.pokedex.statsBase[stat] || 0
+        const mejorasAplicadas = ficha.personaliz.mejorasEst.filter(s => s === stat).length
+        ficha.derivados.stats[stat] = baseStat + mejoraToValor(mejorasAplicadas)
     }
 
     // Actualizar salvaciones con bonificaciones personalizadas
     for (const stat in ficha.derivados.salvaciones) {
-        const statTotal = ficha.derivados.stats[stat] || 0;
-        const bonificacion = ficha.personaliz.salvaciones[stat] || 0;
-        ficha.derivados.salvaciones[stat] = statTotal + bonificacion;
+        const statTotal = ficha.derivados.stats[stat] || 0
+        const bono = ficha.personaliz.salvaciones[stat] || 0
+        ficha.derivados.salvaciones[stat] = statTotal + bono - Math.max(ficha.derivados.fatiga, 0)
     }
 
     // Valores derivados automáticos si no están definidos manualmente
     if (!ficha.manual.bh) {
-        ficha.derivados.bh = Math.ceil(ficha.nivel / 2);
+        ficha.derivados.bh = Math.ceil(ficha.nivel / 2)
     }
 
     if (!ficha.manual.ppMax) {
-        ficha.derivados.ppMax = ficha.derivados.stats.esp + ficha.nivel;
+        ficha.derivados.ppMax = ficha.derivados.stats.esp + ficha.nivel - Math.max(ficha.derivados.fatiga, 0)
     }
 
     if (!ficha.manual.cantidadMejorasEST) {
-        ficha.derivados.cantidadMejorasEST = 1 + Math.floor((ficha.nivel - 2) / 3);
+        ficha.derivados.cantidadMejorasEST = 1 + Math.floor((ficha.nivel - 2) / 3)
     }
 
+    if (!ficha.manual.pvMax) {
+        ficha.derivados.pvMax = 10 + ficha.nivel * (ficha.derivados.vit + ficha.derivados.stats.res)
+    }
+
+
     // Recalcular checks personalizados
-    ficha.derivados.checks.forEach(updateCheck);
+    ficha.derivados.checks.forEach(updateCheck)
 }
 
 
@@ -201,6 +213,9 @@ function importarFicha(event) {
     reader.readAsText(file)
 }
 
+
+// Inicicio
+
 onMounted(() => {
     const guardadas = localStorage.getItem('fichas_vue')
     if (guardadas) Object.assign(fichasGuardadas, JSON.parse(guardadas))
@@ -210,13 +225,10 @@ onMounted(() => {
     }
 })
 
-watch(ficha, () => {
-    actualizar()
-    guardarFicha()
-}, { deep: true })
 </script>
 
-<style scoped>
+
+<style>
 /* inputs */
 
 .item {
@@ -230,9 +242,7 @@ watch(ficha, () => {
     margin-right: 0.25rem;
 }
 
-.item input[type="number"] {
-    width: 5rem;
-    padding: 0.25rem 0.5rem;
+.item input {
     font-size: 1rem;
     border: 1px solid #ccc;
     border-radius: 0.25rem;
@@ -262,9 +272,20 @@ watch(ficha, () => {
     color: #888;
 }
 
+/* Quitar flechitas de input number*/
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
 
 
-
+/* Básicos */
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -276,23 +297,8 @@ watch(ficha, () => {
     color: #333;
 }
 
-/* Básicos */
 input {
     width: 50px;
-}
-
-.toolbar {
-    display: flex;
-    gap: 8px;
-    margin-bottom: 16px;
-    align-items: center;
-}
-
-.info-basica {
-    display: flex;
-    gap: 24px;
-    justify-content: space-between;
-    margin-bottom: 20px;
 }
 
 .info-item {
@@ -300,73 +306,41 @@ input {
     font-size: 1rem;
 }
 
-.label {
-    font-weight: 600;
-    color: #34495e;
-}
-
 .value {
     margin-left: 6px;
     color: #555;
-}
-
-/* Sección principal */
-.principal {
-    display: flex;
-    gap: 8px;
-    height: fit-content;
-}
-
-.stats {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    grid-auto-flow: column;
-    gap: 8px;
 }
 
 /* PRICIPAL GRID */
 .info-principal {
     width: 100%;
     display: grid;
-    gap: 12px;
-    grid-template-columns: repeat(3, 1fr) 150px;
-    grid-template-rows: repeat(1, 1fr);
+    grid-template-columns: 1fr repeat(2, 2fr);
+    grid-template-rows: 200px 240px;
     grid-template-areas:
-        "checks destacados dinam vels";
+        "stats central vels"
+        "stats checks checks"
+    ;
 }
 
 /* Grid areas */
-.info-dinamica {
-    grid-area: dinam;
+.central {
+    grid-area: central;
+}
+
+.stats {
+    grid-area: stats;
 }
 
 .checks {
     grid-area: checks;
 }
 
-.destacados {
-    grid-area: destacados;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    gap: 20px;
-}
-
-.destacados div {
-    width: 70px;
-    height: 70px;
-}
-
 .speeds {
     grid-area: vels;
 }
 
-
 /* Secciones con títulos */
-section {
-    margin-bottom: 20px;
-}
 
 section h3 {
     font-size: 1.2rem;
@@ -376,45 +350,11 @@ section h3 {
     padding-bottom: 4px;
 }
 
-
-
 /* Habilidades y Feats */
-.habsFeats {
-    display: flex;
-    gap: 4%;
-}
 
 .habilidades,
 .feats {
     width: 48%;
-}
-
-/* Grillas generales */
-.others-list {
-    display: flex;
-    gap: 10px;
-}
-
-.others-list div {
-    width: 18%;
-}
-
-.changing-grid {
-    grid-template: repeat(2, 1fr) / repeat(2, 1fr);
-}
-
-.checks-list,
-.speeds-list,
-.habilidades-list,
-.feats-list {
-    display: flex;
-    gap: 10px;
-    flex-direction: column;
-}
-
-
-.others-list {
-    grid-template-columns: repeat(4, 1fr);
 }
 
 /* Ítems */
@@ -425,41 +365,5 @@ section h3 {
     text-align: center;
     color: #2c3e50;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-}
-
-/* Base stats */
-.base-stats {
-    display: flex;
-    gap: 16px;
-    justify-content: space-around;
-    margin-bottom: 20px;
-}
-
-.base-item {
-    background: #d6eaf8;
-    color: #21618c;
-    font-weight: 700;
-}
-
-/* Movimientos */
-.moves-grid {
-    background: #d5f5e3;
-    border-radius: 8px;
-    padding: 12px;
-    min-height: 80px;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(4, 1fr);
-    gap: 8px;
-    font-weight: 600;
-    color: #196f3d;
-    text-align: center;
-}
-
-.moves-grid div {
-    background: #4eb67b;
-    border-radius: 8px;
-    min-height: 100px;
-
 }
 </style>

@@ -39,8 +39,8 @@ defineEmits(['actualizar-check', 'eliminar-check', 'anadir-check'])
 
 <style scoped>
 .checks-list {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template: repeat(4, 1fr) / repeat(2, 1fr);
     gap: 10px;
 }
 </style>
