@@ -8,16 +8,15 @@
         <FichaInfoBasica :ficha="ficha" />
 
         <div class="info-principal">
-            <FichaStats :ficha="ficha" @cambiar-mejora="cambiarMejoraEST" />
-            <FichaDestacados :ficha="ficha" @actualizar="actualizar" />
+            <FichaStats :ficha="ficha" />
+            <FichaDestacados :ficha="ficha" />
             <FichaVelocidades :ficha="ficha" />
-            <FichaChecks :ficha="ficha" :ChecksBase="ChecksBase" @actualizar-check="updateCheck"
-                @eliminar-check="removeCheck" @anadir-check="addCheck" />
+            <FichaChecks :ficha="ficha" :ChecksBase="ChecksBase" />
         </div>
 
         <FichaMovimientos :ficha="ficha" />
         <FichaHabilidades :ficha="ficha" />
-        <FichaDotes :ficha="ficha" />
+        <FichaDotes :ficha="ficha" :dotes="dotes" />
         <FichaOtros :ficha="ficha" />
     </div>
 </template>
@@ -38,10 +37,13 @@ import FichaOtros from '@/components/fichaPJ/Otros.vue'
 
 import { crearFichaBase } from '@/utils/TemplateFicha.js'
 
+const dotes = ref([])
+
 const ficha = reactive(crearFichaBase())
 const fichaSeleccionada = ref('')
 const nuevaFichaNombre = ref('')
 const fichasGuardadas = reactive({})
+
 
 const ChecksBase = [
     'Acrobacias', 'Actuación', 'Atletismo', 'Combate', 'Empatía', 'Engaño',
@@ -64,36 +66,8 @@ function updateCheck(check) {
     check.modificado = false
 }
 
-//Añadir checks
-function addCheck(nombre) {
-    if (!nombre) return
-    ficha.checks.push({ nombre, stat: 'fue', grado: 'no', total: 0, modificado: false })
-}
 
-function removeCheck(index) {
-    ficha.checks.splice(index, 1)
-}
 
-//cambiar Mejoras de EST
-function cambiarMejoraEST(stat, delta) {
-    const mejoras = ficha.personaliz.mejorasEst;
-    const max = ficha.derivados.cantidadMejorasEST;
-
-    if (delta > 0) {
-        while (delta > 0 && mejoras.length < max) {
-            mejoras.push(stat);
-            delta--;
-        }
-    } else if (delta < 0) {
-        let eliminadas = 0;
-        for (let i = mejoras.length - 1; i >= 0 && eliminadas < -delta; i--) {
-            if (mejoras[i] === stat) {
-                mejoras.splice(i, 1);
-                eliminadas++;
-            }
-        }
-    }
-}
 
 //Actualizar datos
 watch(ficha, () => {
@@ -103,32 +77,6 @@ watch(ficha, () => {
 
 
 function actualizar() {
-
-    // Chequear mejoras de estadísticas no se pasan. Si lo hacen, quitar las últimas aplicadas
-    while (ficha.nivel > 0 && ficha.derivados.cantidadMejorasEST < ficha.personaliz.mejorasEst.length) {
-        ficha.personaliz.mejorasEst.pop()
-    }
-
-    const mejoraToValor = (mejoras) => {
-        if (mejoras < 0) return 0
-        if (mejoras <= 3) return mejoras
-        if (mejoras === 4) return 3
-        if (mejoras > 4) return 5
-    }
-
-    // Actualizar estadísticas con mejoras de estadísticas
-    for (const stat in ficha.derivados.stats) {
-        const baseStat = ficha.pokedex.statsBase[stat] || 0
-        const mejorasAplicadas = ficha.personaliz.mejorasEst.filter(s => s === stat).length
-        ficha.derivados.stats[stat] = baseStat + mejoraToValor(mejorasAplicadas)
-    }
-
-    // Actualizar salvaciones con bonificaciones personalizadas
-    for (const stat in ficha.derivados.salvaciones) {
-        const statTotal = ficha.derivados.stats[stat] || 0
-        const bono = ficha.personaliz.salvaciones[stat] || 0
-        ficha.derivados.salvaciones[stat] = statTotal + bono - Math.max(ficha.derivados.fatiga, 0)
-    }
 
     // Valores derivados automáticos si no están definidos manualmente
     if (!ficha.manual.bh) {
@@ -147,9 +95,51 @@ function actualizar() {
         ficha.derivados.pvMax = 10 + ficha.nivel * (ficha.derivados.vit + ficha.derivados.stats.res)
     }
 
+    if (!ficha.manual.cantidadDotes) {
+        ficha.derivados.cantidadDotes = Math.floor((ficha.nivel + 1) / 4)
+    }
+
+    //Para tiradas de Habilidad
+    const mejoraToValor = (mejoras) => {
+        if (mejoras < 0) return 0
+        if (mejoras <= 3) return mejoras
+        if (mejoras === 4) return 3
+        if (mejoras > 4) return 5
+    }
+
+    //Iniciativa
+    if (!ficha.manual.init) {
+        const bonoGrado = typeof grados[ficha.personaliz.initGrado] === 'function' ? grados[ficha.personaliz.initGrado]() : grados[ficha.personaliz.initGrado]
+        ficha.derivados.init = Math.max(ficha.derivados.stats.agi, ficha.derivados.stats.esp) + bonoGrado - Math.max(ficha.derivados.fatiga, 0)
+    }
 
     // Recalcular checks personalizados
     ficha.derivados.checks.forEach(updateCheck)
+
+
+    // Chequear mejoras de estadísticas no se pasan. Si lo hacen, quitar las últimas aplicadas
+    while (ficha.nivel > 0 && ficha.derivados.cantidadMejorasEST < ficha.personaliz.mejorasEst.length) {
+        ficha.personaliz.mejorasEst.pop()
+    }
+
+    // Chequear mejoras de estadísticas no se pasan. Si lo hacen, quitar las últimas aplicadas
+    while (ficha.nivel > 0 && ficha.derivados.cantidadDotes < ficha.personaliz.dotes.length) {
+        ficha.personaliz.dotes.pop()
+    }
+
+    // Actualizar estadísticas con mejoras de estadísticas
+    for (const stat in ficha.derivados.stats) {
+        const baseStat = ficha.pokedex.statsBase[stat] || 0
+        const mejorasAplicadas = ficha.personaliz.mejorasEst.filter(s => s === stat).length
+        ficha.derivados.stats[stat] = baseStat + mejoraToValor(mejorasAplicadas)
+    }
+
+    // Actualizar salvaciones con bonificaciones personalizadas
+    for (const stat in ficha.derivados.salvaciones) {
+        const statTotal = ficha.derivados.stats[stat] || 0
+        const bono = ficha.personaliz.salvaciones[stat] || 0
+        ficha.derivados.salvaciones[stat] = statTotal + bono - Math.max(ficha.derivados.fatiga, 0)
+    }
 }
 
 
@@ -216,12 +206,27 @@ function importarFicha(event) {
 
 // Inicicio
 
-onMounted(() => {
+onMounted(async () => {
     const guardadas = localStorage.getItem('fichas_vue')
     if (guardadas) Object.assign(fichasGuardadas, JSON.parse(guardadas))
     if (Object.keys(fichasGuardadas).length > 0) {
         fichaSeleccionada.value = Object.keys(fichasGuardadas)[0]
         cargarFicha(fichaSeleccionada.value)
+    }
+
+
+    //Importar dotes
+    try {
+        const res = await fetch("/data/json/dotes/dotes.json");
+
+        if (!res.ok) throw new Error(`Error HTTP: ${res.status}`);
+
+        dotes.value = await res.json();
+        if (!dotes.value.length) {
+            console.warn("El archivo JSON de dotes está vacío.");
+        }
+    } catch (error) {
+        console.error("Error al cargar las dotes:", error);
     }
 })
 

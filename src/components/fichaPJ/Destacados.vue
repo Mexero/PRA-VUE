@@ -2,29 +2,35 @@
     <div class="central">
         <section class="destacados">
             <div class="item">
-                <label>bh: <input type="checkbox" v-model="ficha.manual.bh" @change="$emit('actualizar')" /></label>
+                <label>bh: <input type="checkbox" v-model="ficha.manual.bh" /></label>
                 <input type="number" v-model.number="ficha.derivados.bh" :readonly="!ficha.manual.bh" />
             </div>
             <div class="item">CA: <input v-model.number="ficha.derivados.ca" /></div>
-            <div class="item">INIT: <input v-model.number="ficha.derivados.init" /></div>
-            <div class="item"> <label>VIT: <input type="checkbox" v-model="ficha.manual.vit"
-                        @change="$emit('actualizar')" /></label>
+            <div class="item"><label>INIT: <input type="checkbox" v-model="ficha.manual.init" /></label>
+                <input v-model.number="ficha.derivados.init" :readonly="!ficha.manual.init" />
+                <select v-model="ficha.personaliz.initGrado">
+                    <option value="no">N</option>
+                    <option value="bueno">E</option>
+                    <option value="experto">B</option>
+                    <option value="maestro">M</option>
+                    <option value="legendario">L</option>
+                </select>
+            </div>
+            <div class="item"> <label>VIT: <input type="checkbox" v-model="ficha.manual.vit" /></label>
                 <input v-model.number="ficha.derivados.vit" :readonly="!ficha.manual.vit" />
 
             </div>
         </section>
 
         <section class="info-dinamica">
-            <div class="item"> <label>PV: <input type="checkbox" v-model="ficha.manual.pvMax"
-                        @change="$emit('actualizar')" /></label>
+            <div class="item"> <label>PV: <input type="checkbox" v-model="ficha.manual.pvMax" /></label>
                 <div><input v-model.number="ficha.derivados.pv" /> /
                     <input v-model.number="ficha.derivados.pvMax" :readonly="!ficha.manual.pvMax" />
                 </div>
             </div>
             <div class="item">Escudo: <div><input v-model.number="ficha.escudo" /></div>
             </div>
-            <div class="item"> <label>PP: <input type="checkbox" v-model="ficha.manual.ppMax"
-                        @change="$emit('actualizar')" /></label>
+            <div class="item"> <label>PP: <input type="checkbox" v-model="ficha.manual.ppMax" /></label>
                 <div><input v-model.number="ficha.derivados.pp" /> /
                     <input v-model.number="ficha.derivados.ppMax" :readonly="!ficha.manual.ppMax" />
                 </div>
@@ -37,7 +43,7 @@
 
 <script setup>
 defineProps(['ficha'])
-defineEmits(['actualizar'])
+
 </script>
 
 <style scoped>
