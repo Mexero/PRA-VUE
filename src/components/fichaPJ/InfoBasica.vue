@@ -2,7 +2,7 @@
     <section class="info-basica">
         <div>
             <span class="label">Nombre:</span>
-            <input v-model="ficha.nombre" />
+            <input v-model="ficha.nombre" @keyup.enter="emit('cambiarNombre', ficha.nombre)" />
         </div>
 
         <div>
@@ -28,6 +28,7 @@
 import { ref, watch } from 'vue'
 
 const props = defineProps(['ficha'])
+const emit = defineEmits(['cambiarNombre'])
 
 const nivelTemp = ref(props.ficha.nivel)
 

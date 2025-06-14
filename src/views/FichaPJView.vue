@@ -5,7 +5,7 @@
             @update:nuevaFichaNombre="nuevaFichaNombre = $event" @crear="crearFicha" @borrar="borrarFicha"
             @exportar="exportarFicha" @importar="importarFicha" />
 
-        <FichaInfoBasica :ficha="ficha" />
+        <FichaInfoBasica :ficha="ficha" @cambiarNombre="cambiarNombreFicha" />
 
         <div class="info-principal">
             <FichaStats :ficha="ficha" />
@@ -39,7 +39,17 @@ import { crearFichaBase } from '@/utils/TemplateFicha.js'
 
 const dotes = ref([])
 
-const ficha = reactive(crearFichaBase())
+const ficha = reactive(new Proxy(crearFichaBase(), {
+    set(target, key, value) {
+        if (!(key in target)) {
+            console.warn(`[AVISO] Se está agregando una propiedad no prevista a ficha: "${key}"`);
+            console.trace();
+        }
+        target[key] = value;
+        return true;
+    }
+}));
+
 const fichaSeleccionada = ref('')
 const nuevaFichaNombre = ref('')
 const fichasGuardadas = reactive({})
@@ -59,13 +69,12 @@ const grados = {
 }
 
 function updateCheck(check) {
-    const statVal = ficha.stats[check.stat] || 0
+    const statVal = ficha.derivados.stats[check.stat] || 0
     const bonoGrado = typeof grados[check.grado] === 'function' ? grados[check.grado]() : grados[check.grado]
     const nuevoTotal = statVal + bonoGrado - Math.max(ficha.derivados.fatiga, 0)
     check.total = nuevoTotal
     check.modificado = false
 }
-
 
 
 
@@ -145,6 +154,12 @@ function actualizar() {
 
 //Manipular fichas
 
+watch(fichaSeleccionada, (nuevoNombre) => {
+    if (nuevoNombre && fichasGuardadas[nuevoNombre]) {
+        cargarFicha(nuevoNombre)
+    }
+})
+
 function guardarFicha() {
     if (!fichaSeleccionada.value) return
     fichasGuardadas[fichaSeleccionada.value] = JSON.parse(JSON.stringify({ ficha }))
@@ -157,19 +172,32 @@ function cargarFicha(nombre) {
 }
 
 function crearFicha() {
-    if (!nuevaFichaNombre.value || fichasGuardadas[nuevaFichaNombre.value]) return
-    const nueva = crearFichaBase(nuevaFichaNombre.value)
-    fichaSeleccionada.value = nuevaFichaNombre.value
+    let nombreFicha
+    if (nuevaFichaNombre.value.trim()) {
+        nombreFicha = nombreUnico(nuevaFichaNombre.value.trim())
+    }
+    else {
+        nombreFicha = nombreUnico('Nueva Ficha')
+    }
+
+    const nueva = crearFichaBase(nombreFicha)
+    fichaSeleccionada.value = nombreFicha
     Object.assign(ficha, JSON.parse(JSON.stringify(nueva)))
+
+    ficha.nombre = nombreUnico(ficha.nombre)
+    fichasGuardadas[ficha.nombre] = JSON.parse(JSON.stringify({ ficha }))
+    fichaSeleccionada.value = ficha.nombre
+
     guardarFicha()
     nuevaFichaNombre.value = ''
 }
 
 function borrarFicha() {
+    if (prompt("¿Estás seguro de que quieres borrar la ficha seleccionada? Si lo haces, no prodras recuperarla.\nEscribe 'BORRAR' para borrar permanentemente la ficha.") !== "BORRAR") return
     if (!fichaSeleccionada.value) return
     delete fichasGuardadas[fichaSeleccionada.value]
     localStorage.setItem('fichas_vue', JSON.stringify(fichasGuardadas))
-    fichaSeleccionada.value = ''
+    fichaSeleccionada.value = Object.keys(fichasGuardadas)[0] || ''
     Object.assign(ficha, crearFichaBase())
 }
 
@@ -191,16 +219,57 @@ function importarFicha(event) {
         try {
             const data = JSON.parse(e.target.result)
             if (data.ficha) Object.assign(ficha, data.ficha)
-            if (ficha.nombre) {
-                fichasGuardadas[ficha.nombre] = JSON.parse(JSON.stringify({ ficha }))
-                fichaSeleccionada.value = ficha.nombre
-                guardarFicha()
+            if (!ficha.nombre) {
+                ficha.nombre = 'Nueva Ficha'
             }
+            ficha.nombre = nombreUnico(ficha.nombre)
+            fichasGuardadas[ficha.nombre] = JSON.parse(JSON.stringify({ ficha }))
+            fichaSeleccionada.value = ficha.nombre
+            guardarFicha()
         } catch (err) {
             console.error('Error al importar ficha:', err)
         }
     }
     reader.readAsText(file)
+}
+
+function nombreUnico(nombreBase) {
+    let nombre = nombreBase
+    let cont = 1
+    while (fichasGuardadas[nombre]) {
+        nombre = nombreBase + " (" + cont + ")"
+        cont++;
+    }
+    return nombre
+}
+
+function cambiarNombreFicha(nuevoNombre) {
+    if (fichaSeleccionada.value === nuevoNombre.trim()) return
+    if (!nuevoNombre.trim()) {
+        ficha.nombre = ''
+        return
+    }
+    if (fichasGuardadas[nuevoNombre]) {
+        alert(`Ya existe una ficha guardada con el nombre "${nuevoNombre}"`)
+        ficha.nombre = ''
+        return
+    }
+
+    const nombreViejo = fichaSeleccionada.value
+
+    if (!fichasGuardadas[nombreViejo]) {
+        console.warn(`No existe ficha guardada con el nombre "${nombreViejo}"`)
+        return
+    }
+
+    // Cambiar la key en fichasGuardadas
+    fichasGuardadas[nuevoNombre] = fichasGuardadas[nombreViejo]
+    delete fichasGuardadas[nombreViejo]
+
+    // Actualizar el nombre en la ficha reactiva y el seleccionado
+    fichaSeleccionada.value = nuevoNombre
+
+    guardarFicha()
 }
 
 

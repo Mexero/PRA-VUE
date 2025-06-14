@@ -10,123 +10,77 @@
 
         <!-- Dotes normales -->
         <div class="feats-list">
-            <div class="item" v-for="(dote, i) in slotsNormales" :key="'normal-' + i">
+            <div class="item" v-for="(dote, i) in slotsDote" :key="'normal-' + i">
                 <template v-if="dote">
-                    <input v-model="ficha.personaliz.dotes[i]" />
-                    <button @click="eliminarDote(i)" class="borrar-btn">X</button>
+                    <template v-if="doteData(ficha.personaliz.dotes[i])">
+                        <DoteDetails :dote="doteData(ficha.personaliz.dotes[i])" @eliminaDote="eliminarDote(i)" />
+                        <button @click="ficha.personaliz.dotes[i] = ''" class="borrar-btn">X</button>
+                    </template>
                 </template>
                 <template v-else>
-                    <div>
-                        <input v-model="busquedasNormales[i].valor" placeholder="Buscar dote..."
-                            @focus="busquedasNormales[i].mostrar = true" @blur="ocultarConDelay(i)"
-                            @keydown.enter.prevent="seleccionarDote(i)" />
-                        <ul v-if="busquedasNormales[i].mostrar && sugerenciasNormales(i).length" class="sugerencias">
-                            <li v-for="d in sugerenciasNormales(i)" :key="d.Nombre"
-                                @mousedown.prevent="seleccionarDote(i, d.Nombre)">
-                                {{ d.Nombre }}
-                            </li>
-                        </ul>
-                    </div>
+                    <BusquedaDote :usados="usados" :dotes="dotes" @select="ficha.personaliz.dotes[i] = $event" />
                 </template>
+
             </div>
         </div>
 
         <!-- Dotes extra -->
         <div class="feats-list" v-if="ficha.manual.dotesExtra">
             <h4>Dotes Extra</h4>
+
             <div class="item" v-for="(dote, i) in ficha.personaliz.dotesExtra" :key="'extra-' + i">
-                <input v-model="ficha.personaliz.dotesExtra[i]" />
-                <button @click="eliminarDoteExtra(i)" class="borrar-btn">X</button>
+                <template v-if="doteData(dote)">
+                    <DoteDetails :dote="doteData(dote)" @eliminaDote="eliminarDoteExtra(i)" />
+                    <button @click="ficha.personaliz.dotesExtra.splice(i, 1)" class="borrar-btn">X</button>
+                </template>
+                <template v-else>
+                    <input v-model="ficha.personaliz.dotesExtra[i]" />
+                </template>
             </div>
 
-            <div class="item">
-                <input v-model="busquedaExtra.valor" placeholder="Buscar dote extra..."
-                    @focus="busquedaExtra.mostrar = true" @blur="ocultarExtraConDelay"
-                    @keydown.enter.prevent="seleccionarDoteExtra" />
-                <ul v-if="busquedaExtra.mostrar && sugerenciasExtra.length" class="sugerencias">
-                    <li v-for="d in sugerenciasExtra" :key="'extra-' + d.Nombre"
-                        @mousedown.prevent="seleccionarDoteExtra(d.Nombre)">
-                        {{ d.Nombre }}
-                    </li>
-                </ul>
-            </div>
+            <!-- Añadir nueva dote extra -->
+            <BusquedaDote v-model="nuevaDoteExtra" :dotes="dotes" :usados="usados" @select="addDoteExtra" />
         </div>
+
     </section>
 </template>
 
 <script setup>
-import { ref, computed, watch } from 'vue'
+import { computed, ref } from 'vue'
+import BusquedaDote from './busquedaDote.vue'
+import DoteDetails from './detailsDote.vue'
 
-const props = defineProps(['ficha', 'dotes'])
-const ficha = props.ficha
-const dotes = props.dotes
+const { ficha, dotes } = defineProps(['ficha', 'dotes'])
 
-const slotsNormales = computed(() => {
+const doteData = (nombre) => dotes.find(d => d.Nombre === nombre) || null
+
+const slotsDote = computed(() => {
     const total = ficha.derivados.cantidadDotes
-    const actuales = ficha.personaliz.dotes
-    return [...actuales, ...Array(total - actuales.length).fill("")]
+    const usados = ficha.personaliz.dotes
+    return [...usados, ...Array(total - usados.length).fill("")]
 })
 
-const busquedasNormales = ref([])
+const usados = computed(() => [
+    ...ficha.personaliz.dotes,
+    ...(ficha.personaliz.dotesExtra || [])
+])
 
-watch(slotsNormales, (nuevos) => {
-    busquedasNormales.value = nuevos.map((_, i) =>
-        busquedasNormales.value[i] || { valor: '', mostrar: false }
-    )
-}, { immediate: true })
 
-function sugerenciasNormales(index) {
-    const texto = busquedasNormales.value[index].valor.toLowerCase()
-    const usados = [...ficha.personaliz.dotes, ...(ficha.personaliz.dotesExtra || [])]
-    return dotes.filter(
-        d => d.Nombre.toLowerCase().includes(texto) && !usados.includes(d.Nombre)
-    )
-}
+// Dotes extra
+const nuevaDoteExtra = ref('')
 
-function seleccionarDote(index, nombre = null) {
-    const final = nombre || sugerenciasNormales(index)[0]?.Nombre
-    if (!final) return
-    ficha.personaliz.dotes[index] = final
-    busquedasNormales.value[index].valor = ''
-    busquedasNormales.value[index].mostrar = false
-}
-
-function eliminarDote(index) {
-    ficha.personaliz.dotes[index] = ''
-}
-
-function ocultarConDelay(index) {
-    setTimeout(() => busquedasNormales.value[index].mostrar = false, 200)
-}
-
-// ======== Extra ========
-
-const busquedaExtra = ref({ valor: '', mostrar: false })
-
-const sugerenciasExtra = computed(() => {
-    const texto = busquedaExtra.value.valor.toLowerCase()
-    const usados = [...ficha.personaliz.dotes, ...(ficha.personaliz.dotesExtra || [])]
-    return dotes.filter(
-        d => d.Nombre.toLowerCase().includes(texto) && !usados.includes(d.Nombre)
-    )
-})
-
-function seleccionarDoteExtra(nombre = null) {
-    const final = nombre || sugerenciasExtra.value[0]?.Nombre
-    if (!final) return
-    if (!ficha.personaliz.dotesExtra.includes(final)) {
-        ficha.personaliz.dotesExtra.push(final)
+// Añadir una dote extra desde el buscador
+function addDoteExtra(nombre) {
+    if (!nombre) return
+    if (!ficha.personaliz.dotesExtra.includes(nombre)) {
+        ficha.personaliz.dotesExtra.push(nombre)
     }
-    busquedaExtra.value.valor = ''
-    busquedaExtra.value.mostrar = false
+    nuevaDoteExtra.value = ''
 }
 
+// Eliminar una dote extra por índice
 function eliminarDoteExtra(index) {
     ficha.personaliz.dotesExtra.splice(index, 1)
-}
-
-function ocultarExtraConDelay() {
-    setTimeout(() => busquedaExtra.value.mostrar = false, 200)
 }
 </script>
 
