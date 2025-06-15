@@ -37,18 +37,11 @@ import FichaOtros from '@/components/fichaPJ/Otros.vue'
 
 import { crearFichaBase } from '@/utils/TemplateFicha.js'
 
+import { guardarFichaIndexedDB, borrarFichaIndexedDB, obtenerTodasLasFichas, obtenerFicha } from '@/utils/FichasDB.js'
+
 const dotes = ref([])
 
-const ficha = reactive(new Proxy(crearFichaBase(), {
-    set(target, key, value) {
-        if (!(key in target)) {
-            console.warn(`[AVISO] Se está agregando una propiedad no prevista a ficha: "${key}"`);
-            console.trace();
-        }
-        target[key] = value;
-        return true;
-    }
-}));
+const ficha = reactive(crearFichaBase());
 
 const fichaSeleccionada = ref('')
 const nuevaFichaNombre = ref('')
@@ -160,15 +153,16 @@ watch(fichaSeleccionada, (nuevoNombre) => {
     }
 })
 
-function guardarFicha() {
-    if (!fichaSeleccionada.value) return
-    fichasGuardadas[fichaSeleccionada.value] = JSON.parse(JSON.stringify({ ficha }))
-    localStorage.setItem('fichas_vue', JSON.stringify(fichasGuardadas))
+async function guardarFicha() {
+    if (!fichaSeleccionada.value) return;
+    const fichaData = JSON.parse(JSON.stringify(ficha));
+    await guardarFichaIndexedDB(fichaData);
+    fichasGuardadas[fichaData.nombre] = fichaData;
 }
 
-function cargarFicha(nombre) {
-    const data = fichasGuardadas[nombre]
-    if (data) Object.assign(ficha, data.ficha || {})
+async function cargarFicha(nombre) {
+    const data = await obtenerFicha(nombre);
+    if (data) Object.assign(ficha, data || {});
 }
 
 function crearFicha() {
@@ -181,28 +175,34 @@ function crearFicha() {
     }
 
     const nueva = crearFichaBase(nombreFicha)
+
     fichaSeleccionada.value = nombreFicha
+    Object.keys(ficha).forEach(k => delete ficha[k])
     Object.assign(ficha, JSON.parse(JSON.stringify(nueva)))
 
-    ficha.nombre = nombreUnico(ficha.nombre)
-    fichasGuardadas[ficha.nombre] = JSON.parse(JSON.stringify({ ficha }))
-    fichaSeleccionada.value = ficha.nombre
+    fichasGuardadas[ficha.nombre] = JSON.parse(JSON.stringify(ficha))
 
     guardarFicha()
     nuevaFichaNombre.value = ''
 }
 
-function borrarFicha() {
+async function borrarFicha() {
     if (prompt("¿Estás seguro de que quieres borrar la ficha seleccionada? Si lo haces, no prodras recuperarla.\nEscribe 'BORRAR' para borrar permanentemente la ficha.") !== "BORRAR") return
-    if (!fichaSeleccionada.value) return
-    delete fichasGuardadas[fichaSeleccionada.value]
-    localStorage.setItem('fichas_vue', JSON.stringify(fichasGuardadas))
-    fichaSeleccionada.value = Object.keys(fichasGuardadas)[0] || ''
-    Object.assign(ficha, crearFichaBase())
+    if (!fichaSeleccionada.value) return;
+
+    await borrarFichaIndexedDB(fichaSeleccionada.value);
+    delete fichasGuardadas[fichaSeleccionada.value];
+
+    if (Object.keys(fichasGuardadas).length) {
+        fichaSeleccionada.value = Object.keys(fichasGuardadas)[0]
+    }
+    else {
+        crearFicha()
+    }
 }
 
 function exportarFicha() {
-    const blob = new Blob([JSON.stringify({ ficha }, null, 2)], { type: 'application/json' })
+    const blob = new Blob([JSON.stringify(ficha, null, 2)], { type: 'application/json' })
     const url = URL.createObjectURL(blob)
     const a = document.createElement('a')
     a.href = url
@@ -218,12 +218,13 @@ function importarFicha(event) {
     reader.onload = e => {
         try {
             const data = JSON.parse(e.target.result)
-            if (data.ficha) Object.assign(ficha, data.ficha)
+            if (data) Object.assign(ficha, data)
+
             if (!ficha.nombre) {
                 ficha.nombre = 'Nueva Ficha'
             }
             ficha.nombre = nombreUnico(ficha.nombre)
-            fichasGuardadas[ficha.nombre] = JSON.parse(JSON.stringify({ ficha }))
+            fichasGuardadas[ficha.nombre] = JSON.parse(JSON.stringify(ficha))
             fichaSeleccionada.value = ficha.nombre
             guardarFicha()
         } catch (err) {
@@ -276,11 +277,16 @@ function cambiarNombreFicha(nuevoNombre) {
 // Inicicio
 
 onMounted(async () => {
-    const guardadas = localStorage.getItem('fichas_vue')
-    if (guardadas) Object.assign(fichasGuardadas, JSON.parse(guardadas))
-    if (Object.keys(fichasGuardadas).length > 0) {
-        fichaSeleccionada.value = Object.keys(fichasGuardadas)[0]
-        cargarFicha(fichaSeleccionada.value)
+
+    //Cargar fichas
+    const todas = await obtenerTodasLasFichas();
+    todas.forEach(f => {
+        fichasGuardadas[f.nombre] = f;
+    });
+
+    if (todas.length > 0) {
+        fichaSeleccionada.value = todas[0].nombre;
+        await cargarFicha(fichaSeleccionada.value);
     }
 
 

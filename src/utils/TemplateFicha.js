@@ -1,4 +1,3 @@
-// Archivo: fichaBase.js
 export function crearFichaBase(nombre = '') {
     return {
         nombre,
