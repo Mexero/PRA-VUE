@@ -5,7 +5,11 @@
             <p><strong>Tipo:</strong> {{ dote.Tipo }}</p>
             <p v-if="dote.Nivel !== null"><strong>Nivel:</strong> {{ dote.Nivel }}</p>
             <p v-if="dote.Prerrequisitos !== null"><strong>Prerrequisitos:</strong> {{ dote.Prerrequisitos }}</p>
-            <p><strong>Descripción:</strong> {{ dote.Descripcion }}</p>
+            <p><strong>Descripción:</strong>
+            <div class="descripcion">
+                <p v-for="parrafo in dote.Descripcion" v-html="parrafo"></p>
+            </div>
+            </p>
         </div>
     </details>
 </template>
@@ -21,5 +25,9 @@ const props = defineProps(['dote'])
 
 .titulo {
     font-weight: bold;
+}
+
+.descripcion p {
+    text-align: justify;
 }
 </style>

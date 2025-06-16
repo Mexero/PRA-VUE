@@ -6,7 +6,9 @@
         <p v-if="dote.Nivel"><strong>Nivel:</strong> {{ dote.Nivel }}</p>
         <p v-if="dote.Repetible"><strong>Repetible</strong></p>
         <p><strong>Descripción:</strong></p>
-        <p class="descripcion">{{ dote.Descripcion }}</p>
+        <div class="descripcion">
+            <p v-for="parrafo in dote.Descripcion" v-html="parrafo"></p>
+        </div>
     </div>
     <div v-else class="seleccionado">
         <p>Cargando...</p>
@@ -37,7 +39,7 @@ defineProps([
     padding: 1.5rem;
 }
 
-.descripcion {
+.descripcion p {
     text-align: justify;
 }
 

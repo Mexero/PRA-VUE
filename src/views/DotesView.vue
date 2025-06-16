@@ -35,6 +35,27 @@ const datos = ref([]);
 const datosCargados = ref(false);
 const seleccionado = ref(route.query.seleccionado ?? undefined);
 
+
+// Formato prerrequisitos
+
+/*
+    "PrerreqComputable": {
+      "Humano": true,
+      "Movimiento": [],
+      "Clase": [],
+      "Dote": [],
+      "TiradaHab:"[{TdA: "", Grado=""}],
+      "Pokemon": true,
+      "Tipo": [],
+      "EtiquetaMov": [],
+      "Velocidad": [],
+      "Stats":[{"stat":"", "valorMin":}],
+      "Tamaño: [] //ARRAY de TAMAÑOS VALIDOS",
+          "Rango": ["Área","TdACaC","TdAR","TdA"],
+          "TerrenoDif": true
+    },
+*/
+
 //Filtros
 const filtroTipos = ref(route.query.tipos ? route.query.tipos.split(",") : []);
 const filtroPrerrequisitos = ref(route.query.prerrequisitos ?? null);
