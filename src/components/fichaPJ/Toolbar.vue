@@ -1,8 +1,12 @@
 <template>
     <div class="toolbar">
         <select :value="fichaSeleccionada" @change="$emit('update:fichaSeleccionada', $event.target.value)">
-            <option v-for="key in Object.keys(fichasGuardadas)" :key="key" :value="key">{{ key }}</option>
+            <option v-for="key in ordenFichas" :key="key" :value="key">{{ key }}</option>
         </select>
+        <button @click="$emit('moverFicha', 'principio')">▲▲</button>
+        <button @click="$emit('moverFicha', -1)">▲</button>
+        <button @click="$emit('moverFicha', 1)">▼</button>
+        <button @click="$emit('moverFicha', 'final')">▼▼</button>
 
         <input :value="nuevaFichaNombre" @input="$emit('update:nuevaFichaNombre', $event.target.value)"
             placeholder="Nombre nueva ficha" />
@@ -19,7 +23,8 @@
 defineProps({
     fichaSeleccionada: String,
     nuevaFichaNombre: String,
-    fichasGuardadas: Object
+    fichasGuardadas: Object,
+    ordenFichas: Array
 })
 
 defineEmits([
@@ -28,7 +33,8 @@ defineEmits([
     'exportar',
     'importar',
     'update:fichaSeleccionada',
-    'update:nuevaFichaNombre'
+    'update:nuevaFichaNombre',
+    'moverFicha',
 ])
 </script>
 

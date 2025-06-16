@@ -1,9 +1,10 @@
 <template>
     <div class="character-sheet container">
         <FichaToolbar :fichaSeleccionada="fichaSeleccionada" :nuevaFichaNombre="nuevaFichaNombre"
-            :fichasGuardadas="fichasGuardadas" @update:fichaSeleccionada="fichaSeleccionada = $event"
-            @update:nuevaFichaNombre="nuevaFichaNombre = $event" @crear="crearFicha" @borrar="borrarFicha"
-            @exportar="exportarFicha" @importar="importarFicha" />
+            :ordenFichas="ordenFichas" :fichasGuardadas="fichasGuardadas"
+            @update:fichaSeleccionada="fichaSeleccionada = $event" @update:nuevaFichaNombre="nuevaFichaNombre = $event"
+            @crear="crearFicha" @borrar="borrarFicha" @exportar="exportarFicha" @importar="importarFicha"
+            @moverFicha="moverFicha" />
 
         <FichaInfoBasica :ficha="ficha" @cambiarNombre="cambiarNombreFicha" />
 
@@ -37,7 +38,7 @@ import FichaOtros from '@/components/fichaPJ/Otros.vue'
 
 import { crearFichaBase } from '@/utils/TemplateFicha.js'
 
-import { guardarFichaIndexedDB, borrarFichaIndexedDB, obtenerTodasLasFichas, obtenerFicha } from '@/utils/FichasDB.js'
+import { guardarFichaIndexedDB, borrarFichaIndexedDB, obtenerTodasLasFichas, obtenerFicha, guardarOrdenFichas, cargarOrdenFichas } from '@/utils/FichasDB.js'
 
 const dotes = ref([])
 
@@ -46,6 +47,7 @@ const ficha = reactive(crearFichaBase());
 const fichaSeleccionada = ref('')
 const nuevaFichaNombre = ref('')
 const fichasGuardadas = reactive({})
+const ordenFichas = ref([])
 
 
 const ChecksBase = [
@@ -76,7 +78,6 @@ watch(ficha, () => {
     actualizar()
     guardarFicha()
 }, { deep: true })
-
 
 function actualizar() {
 
@@ -154,15 +155,15 @@ watch(fichaSeleccionada, (nuevoNombre) => {
 })
 
 async function guardarFicha() {
-    if (!fichaSeleccionada.value) return;
-    const fichaData = JSON.parse(JSON.stringify(ficha));
-    await guardarFichaIndexedDB(fichaData);
-    fichasGuardadas[fichaData.nombre] = fichaData;
+    if (!fichaSeleccionada.value) return
+    const fichaData = JSON.parse(JSON.stringify(ficha))
+    await guardarFichaIndexedDB(fichaData)
+    fichasGuardadas[fichaData.nombre] = fichaData
 }
 
 async function cargarFicha(nombre) {
-    const data = await obtenerFicha(nombre);
-    if (data) Object.assign(ficha, data || {});
+    const data = await obtenerFicha(nombre)
+    if (data) Object.assign(ficha, data || {})
 }
 
 function crearFicha() {
@@ -181,6 +182,7 @@ function crearFicha() {
     Object.assign(ficha, JSON.parse(JSON.stringify(nueva)))
 
     fichasGuardadas[ficha.nombre] = JSON.parse(JSON.stringify(ficha))
+    ordenFichas.value.push(ficha.nombre)
 
     guardarFicha()
     nuevaFichaNombre.value = ''
@@ -188,13 +190,15 @@ function crearFicha() {
 
 async function borrarFicha() {
     if (prompt("¿Estás seguro de que quieres borrar la ficha seleccionada? Si lo haces, no prodras recuperarla.\nEscribe 'BORRAR' para borrar permanentemente la ficha.") !== "BORRAR") return
-    if (!fichaSeleccionada.value) return;
+    if (!fichaSeleccionada.value) return
 
-    await borrarFichaIndexedDB(fichaSeleccionada.value);
-    delete fichasGuardadas[fichaSeleccionada.value];
 
-    if (Object.keys(fichasGuardadas).length) {
-        fichaSeleccionada.value = Object.keys(fichasGuardadas)[0]
+    await borrarFichaIndexedDB(fichaSeleccionada.value)
+    delete fichasGuardadas[fichaSeleccionada.value]
+    ordenFichas.value = ordenFichas.value.filter(n => n !== fichaSeleccionada.value)
+
+    if (ordenFichas.value.length) {
+        fichaSeleccionada.value = ordenFichas.value[0]
     }
     else {
         crearFicha()
@@ -225,6 +229,7 @@ function importarFicha(event) {
             }
             ficha.nombre = nombreUnico(ficha.nombre)
             fichasGuardadas[ficha.nombre] = JSON.parse(JSON.stringify(ficha))
+            ordenFichas.value.push(ficha.nombre)
             fichaSeleccionada.value = ficha.nombre
             guardarFicha()
         } catch (err) {
@@ -239,7 +244,7 @@ function nombreUnico(nombreBase) {
     let cont = 1
     while (fichasGuardadas[nombre]) {
         nombre = nombreBase + " (" + cont + ")"
-        cont++;
+        cont++
     }
     return nombre
 }
@@ -267,11 +272,42 @@ function cambiarNombreFicha(nuevoNombre) {
     fichasGuardadas[nuevoNombre] = fichasGuardadas[nombreViejo]
     delete fichasGuardadas[nombreViejo]
 
+    //Cambiar la ficha en OrdenFichas
+    const index = ordenFichas.value.indexOf(nombreViejo)
+    if (index !== -1) ordenFichas.value[index] = nuevoNombre
+
     // Actualizar el nombre en la ficha reactiva y el seleccionado
     fichaSeleccionada.value = nuevoNombre
 
     guardarFicha()
 }
+
+//Mover Fichas de orden
+function moverFicha(desplazamiento) {
+    const index = ordenFichas.value.indexOf(fichaSeleccionada.value)
+    let nuevoIndex
+    switch (desplazamiento) {
+        case 'principio':
+            nuevoIndex = 0
+            break
+        case 'final':
+            nuevoIndex = ordenFichas.value.length - 1
+            break
+        default:
+            nuevoIndex = index + desplazamiento
+    }
+
+    if (index === -1 || nuevoIndex < 0 || nuevoIndex >= ordenFichas.value.length) return
+
+    const temp = ordenFichas.value[nuevoIndex]
+    ordenFichas.value[nuevoIndex] = ordenFichas.value[index]
+    ordenFichas.value[index] = temp
+}
+
+//Guardar movimiento de fichas
+watch(ordenFichas, async (nuevoOrden) => {
+    await guardarOrdenFichas(nuevoOrden)
+}, { deep: true })
 
 
 // Inicicio
@@ -279,29 +315,41 @@ function cambiarNombreFicha(nuevoNombre) {
 onMounted(async () => {
 
     //Cargar fichas
-    const todas = await obtenerTodasLasFichas();
+    const todas = await obtenerTodasLasFichas()
     todas.forEach(f => {
-        fichasGuardadas[f.nombre] = f;
-    });
+        fichasGuardadas[f.nombre] = f
+    })
 
-    if (todas.length > 0) {
-        fichaSeleccionada.value = todas[0].nombre;
-        await cargarFicha(fichaSeleccionada.value);
+    //Cargar Orden fichas
+    const ordenGuardado = await cargarOrdenFichas()
+    if (ordenGuardado) {
+        //Por si ha pasado algo raro con datos
+        const nombresDisponibles = todas.map(f => f.nombre)
+        ordenFichas.value = ordenGuardado.filter(n => nombresDisponibles.includes(n))
+        const nuevos = nombresDisponibles.filter(n => !ordenFichas.value.includes(n))
+        ordenFichas.value.push(...nuevos)
+    }
+    else {
+        ordenFichas.value = todas.map(f => f.nombre)
     }
 
+    if (ordenFichas.value.length > 0) {
+        fichaSeleccionada.value = ordenFichas.value[0]
+        await cargarFicha(fichaSeleccionada.value)
+    }
 
     //Importar dotes
     try {
-        const res = await fetch("/data/json/dotes/dotes.json");
+        const res = await fetch("/data/json/dotes/dotes.json")
 
-        if (!res.ok) throw new Error(`Error HTTP: ${res.status}`);
+        if (!res.ok) throw new Error(`Error HTTP: ${res.status}`)
 
-        dotes.value = await res.json();
+        dotes.value = await res.json()
         if (!dotes.value.length) {
-            console.warn("El archivo JSON de dotes está vacío.");
+            console.warn("El archivo JSON de dotes está vacío.")
         }
     } catch (error) {
-        console.error("Error al cargar las dotes:", error);
+        console.error("Error al cargar las dotes:", error)
     }
 })
 
