@@ -7,7 +7,16 @@
         <p v-if="dote.Repetible"><strong>Repetible</strong></p>
         <p><strong>Descripción:</strong></p>
         <div class="descripcion">
-            <p v-for="parrafo in dote.Descripcion" v-html="parrafo"></p>
+            <template v-for="bloque in Array.isArray(dote.Descripcion) ? dote.Descripcion : [dote.Descripcion]">
+                <p v-if="!bloque.tipo" v-html="bloque"></p>
+                <ul v-else-if="bloque.tipo === 'listaU'" class="list">
+                    <li v-for="(item, j) in bloque.contenido" :key="j" v-html="item">
+                    </li>
+                </ul>
+                <ol v-else-if="bloque.tipo === 'listaO'" class="list">
+                    <li v-for="(item, j) in bloque.contenido" :key="j" v-html="item"></li>
+                </ol>
+            </template>
         </div>
     </div>
     <div v-else class="seleccionado">
@@ -39,8 +48,13 @@ defineProps([
     padding: 1.5rem;
 }
 
-.descripcion p {
+.descripcion p,
+.descripcion li {
     text-align: justify;
+}
+
+li {
+    margin: 10px 0 0 25px;
 }
 
 @media screen and (max-width: 890px) {

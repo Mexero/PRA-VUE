@@ -15,8 +15,13 @@
     "Prerrequisitos": null,
     "Descripcion": [
       "Cuando te mueves 4 metros o más en línea recta justo antes de golpear a una criatura con un Movimiento que hace una solaTirada de Ataque cuerpo a cuerpo, ganas los siguientes beneficios: ",
-      "    • Si la Tirada de Ataque del Movimiento golpea y la criatura objetivo es de un tamaño menor o igual al tuyo, la empujas 1 metro y, si la Tirada Natural fue de 18+, cae tumbada.",
-      "    • Ganas un bono al daño del Movimiento igual a la tu BH."
+      {
+        "tipo": "listaU",
+        "contenido": [
+          "Si la Tirada de Ataque del Movimiento golpea y la criatura objetivo es de un tamaño menor o igual al tuyo, la empujas 1 metro y, si la Tirada Natural fue de 18+, cae tumbada.",
+          "Ganas un bono al daño del Movimiento igual a la tu BH."
+        ]
+      }
     ]
   },
   {
@@ -40,8 +45,13 @@
     },
     "Descripcion": [
       "Eres hábil golpeando múltiples veces a un objetivo. Ganas lo siguientes beneficios:",
-      "    • Cuando usas un Movimiento con la Etiqueta “Golpea Varias Veces” puedes seguir golpeando si sacaste 10- en la Tirada Natural si la Tirada de Ataque golpeó.",
-      "    • Si golpeas 4 veces con un Movimiento con la etiqueta de “Golpea Varias Veces”, puedes hacer una quinta Tirada de Ataque."
+      {
+        "tipo": "listaU",
+        "contenido": [
+          "Cuando usas un Movimiento con la Etiqueta “Golpea Varias Veces” puedes seguir golpeando si sacaste 10- en la Tirada Natural si la Tirada de Ataque golpeó.",
+          "Si golpeas 4 veces con un Movimiento con la etiqueta de “Golpea Varias Veces”, puedes hacer una quinta Tirada de Ataque."
+        ]
+      }
     ]
   },
   {
@@ -65,8 +75,13 @@
     },
     "Descripcion": [
       "Eres un maestro golpeando múltiples veces, tanto así que puedes repartir tus golpes entre varias criaturas. Ganas lo siguientes beneficios:",
-      "    • Después de golpear con una Tirada de Ataque de un Movimiento con la Etiqueta “Golpea Varias Veces” puedes cambiar el objetivo de la siguiente Tirada de Ataque a una criatura dentro del rango del Movimento que esté a 1 metro del primer objetivo.",
-      "    • Después de golpear la cuarta vez con un Movimiento  con la Etiqueta “Golpea Varias Veces”, en lugar de hacer el quinto ataque que te da la Dote de Combador puedes decidir volver a usar ese mismo Movimiento, pagando su coste en PP pero no su coste de Acciones."
+      {
+        "tipo": "listaU",
+        "contenido": [
+          "Después de golpear con una Tirada de Ataque de un Movimiento con la Etiqueta “Golpea Varias Veces” puedes cambiar el objetivo de la siguiente Tirada de Ataque a una criatura dentro del rango del Movimento que esté a 1 metro del primer objetivo.",
+          "Después de golpear la cuarta vez con un Movimiento  con la Etiqueta “Golpea Varias Veces”, en lugar de hacer el quinto ataque que te da la Dote de Combador puedes decidir volver a usar ese mismo Movimiento, pagando su coste en PP pero no su coste de Acciones."
+        ]
+      }
     ]
   },
   {
@@ -114,8 +129,13 @@
     },
     "Descripcion": [
       "Tus filos son muy agudos y pueden herir gravemente a tus rivales. Ganas los siguientes beneficios:",
-      "    • Tu Rango de Crítico aumenta en 1 para los Movimientos con la Etiqueta de Cortante.",
-      "    • Cuando asestas un crítico con un Movimiento con la etiqueta de Cortante, la criatura que lo recibe reduce sus velocidades en 2 metros hasta el final de su próximo turno."
+      {
+        "tipo": "listaU",
+        "contenido": [
+          "Tu Rango de Crítico aumenta en 1 para los Movimientos con la Etiqueta de Cortante.",
+          "Cuando asestas un crítico con un Movimiento con la etiqueta de Cortante, la criatura que lo recibe reduce sus velocidades en 2 metros hasta el final de su próximo turno."
+        ]
+      }
     ]
   },
   {
@@ -180,9 +200,14 @@
     "Prerrequisitos": null,
     "Descripcion": [
       "Te has vuelto un experto para navegar el Terreno Difícil. Ganas los siguientes beneficios:",
-      "    • Te mueves por el Terreno Difícil como si no lo fuese.",
-      "    • Si un efecto que crea Terreno Difícil también te fuerza a hacer una Tirada de Salvación, tienes Ventaja en esta Tirada.",
-      "    • Si un efecto que crea Terreno Difícil también te hace daño al atravesarlo, sólo recibes la mitad de este daño."
+      {
+        "tipo": "listaU",
+        "contenido": [
+          "Te mueves por el Terreno Difícil como si no lo fuese.",
+          "Si un efecto que crea Terreno Difícil también te fuerza a hacer una Tirada de Salvación, tienes Ventaja en esta Tirada.",
+          "Si un efecto que crea Terreno Difícil también te hace daño al atravesarlo, sólo recibes la mitad de este daño."
+        ]
+      }
     ]
   },
   {
@@ -226,8 +251,13 @@
     },
     "Descripcion": [
       "Has aprendido a mejorar los mordiscos que das. Cuando usas un Movimiento con la Etiqueta de Mordisco cuyo coste es inferior a 3 PP, puedes volverlo 3 PP. Si lo haces, el Movimiento mejora de las siguientes formas:",
-      "    • Su daño base aumenta en una cantidad de dados iguales a la diferencia entre 3 PP y su coste usual. Por ejemplo, si cuesta 1 PP, aumenta su daño en 2 dados.",
-      "    • Si el Movimiento tiene un efecto secundario que ocurre en ciertas Tiradas Naturales, el rango del efecto aumenta en 1. Por ejemplo, si era 19+, se vuelve 18+."
+      {
+        "tipo": "listaU",
+        "contenido": [
+          "Su daño base aumenta en una cantidad de dados iguales a la diferencia entre 3 PP y su coste usual. Por ejemplo, si cuesta 1 PP, aumenta su daño en 2 dados.",
+          "Si el Movimiento tiene un efecto secundario que ocurre en ciertas Tiradas Naturales, el rango del efecto aumenta en 1. Por ejemplo, si era 19+, se vuelve 18+."
+        ]
+      }
     ]
   },
   {
@@ -242,8 +272,13 @@
     },
     "Descripcion": [
       "Puedes volver tus mordiscos  aún más poderosos. Cuando usas un Movimiento con la Etiqueta de Mordisco cuyo coste es inferior a 4 PP, puedes volverlo 4 PP. Si lo haces, mejoran de las siguientes formas:",
-      "    • Su daño base aumenta en una cantidad de dados iguales a la diferencia entre 4 PP y su coste usual y añade su Estadística asociada una vez más de lo normal a este. ",
-      "    • Si tiene un efecto secundario que ocurre en ciertas Tiradas Naturales, el rango aumenta en 2 si el Movimiento costaba 3 PP o en 1 si costaba 3 PP."
+      {
+        "tipo": "listaU",
+        "contenido": [
+          "Su daño base aumenta en una cantidad de dados iguales a la diferencia entre 4 PP y su coste usual y añade su Estadística asociada una vez más de lo normal a este. ",
+          "Si tiene un efecto secundario que ocurre en ciertas Tiradas Naturales, el rango aumenta en 2 si el Movimiento costaba 3 PP o en 1 si costaba 3 PP."
+        ]
+      }
     ]
   },
   {
@@ -360,8 +395,13 @@
     },
     "Descripcion": [
       "Eres muy hábil a la hora de hacer agarres. Obtienes los siguientes beneficios:",
-      "    • Cuando una criatura provoca un Ataque de Oportunidad, puedes intentar agarrarla como Reacción.",
-      "    • Cuando tienes a una criatura agarrada, puedes usar tu Acción para someterla. Vuelve a intentar agarrarla. Si lo consigues, esta queda Apresada hasta que se libere del agarre."
+      {
+        "tipo": "listaU",
+        "contenido": [
+          "Cuando una criatura provoca un Ataque de Oportunidad, puedes intentar agarrarla como Reacción.",
+          "Cuando tienes a una criatura agarrada, puedes usar tu Acción para someterla. Vuelve a intentar agarrarla. Si lo consigues, esta queda Apresada hasta que se libere del agarre."
+        ]
+      }
     ]
   },
   {
@@ -426,8 +466,13 @@
     "Prerrequisitos": null,
     "Descripcion": [
       "Eres una montura entrenada y has aprendido a proteger a los que te montan. Ganas lo siguientes beneficios:",
-      "    • Cuando una criatura que te monta es hecha objetivo de una Tirada de Ataque, puedes usar tu Reacción para redirigir la Tirada de Ataque a ti. ",
-      "    • Las criaturas que te montan tienen Ventaja en Tiradas de d20 para no ser desmontadas o empujadas cuando te monta."
+      {
+        "tipo": "listaU",
+        "contenido": [
+          "Cuando una criatura que te monta es hecha objetivo de una Tirada de Ataque, puedes usar tu Reacción para redirigir la Tirada de Ataque a ti. ",
+          "Las criaturas que te montan tienen Ventaja en Tiradas de d20 para no ser desmontadas o empujadas cuando te monta."
+        ]
+      }
     ]
   },
   {
@@ -469,8 +514,13 @@
     },
     "Descripcion": [
       "Tus patadas golpean precisamente con el objetivo de dejar inhabilitadas a sus objetivos. Cuando una Tirada Natural de una Tirada de Ataque asociada a uno de tus Movimientos con la Etiqueta de Patada es de 16+, puedes elegir uno de los dos siguientes efectos:",
-      "    • Haces un barrido. La criatura cae tumbada.",
-      "    • La criatura pierde el sentido del equilibrio y tiene Desventaja en sus Tiradas de Ataque  y de Salvación de Agilidad hasta el final del próximo turno."
+      {
+        "tipo": "listaU",
+        "contenido": [
+          "Haces un barrido. La criatura cae tumbada.",
+          "La criatura pierde el sentido del equilibrio y tiene Desventaja en sus Tiradas de Ataque  y de Salvación de Agilidad hasta el final del próximo turno."
+        ]
+      }
     ]
   },
   {
@@ -485,8 +535,13 @@
     },
     "Descripcion": [
       "Has aprendido a mejorar los puñetazos que das. Cuando usas un Movimiento con la Etiqueta de Puño cuyo coste es inferior a 3 PP, puedes volverlo 3 PP. Si lo haces, el Movimiento mejora de las siguientes formas:",
-      "    • Su daño base aumenta en una cantidad de dados iguales a la diferencia entre 3 PP y su coste usual. Por ejemplo, si cuesta 1 PP, aumenta su daño en 2 dados.",
-      "    • Si el Movimiento tiene un efecto secundario que ocurre en ciertas Tiradas Naturales, el rango del efecto aumenta en 1. Por ejemplo, si era 19+, se vuelve 18+."
+      {
+        "tipo": "listaU",
+        "contenido": [
+          "Su daño base aumenta en una cantidad de dados iguales a la diferencia entre 3 PP y su coste usual. Por ejemplo, si cuesta 1 PP, aumenta su daño en 2 dados.",
+          "Si el Movimiento tiene un efecto secundario que ocurre en ciertas Tiradas Naturales, el rango del efecto aumenta en 1. Por ejemplo, si era 19+, se vuelve 18+."
+        ]
+      }
     ]
   },
   {
@@ -502,8 +557,13 @@
     },
     "Descripcion": [
       "Puedes volver tus puñetazos aun más poderosos. Cuando usas un Movimiento con la Etiqueta de Puño cuyo coste es inferior a 4 PP, puedes volverlo 4 PP. Si lo haces, mejoran de las siguientes formas:",
-      "    • Su daño base aumenta en una cantidad de dados iguales a la diferencia entre 4 PP y su coste usual y añade su Estadística asociada una vez más de lo normal a este. ",
-      "    • Si tiene un efecto secundario que ocurre en ciertas Tiradas Naturales, el rango aumenta en 2 si el Movimiento costaba 3 PP o en 1 si costaba 3 PP."
+      {
+        "tipo": "listaU",
+        "contenido": [
+          "Su daño base aumenta en una cantidad de dados iguales a la diferencia entre 4 PP y su coste usual y añade su Estadística asociada una vez más de lo normal a este. ",
+          "Si tiene un efecto secundario que ocurre en ciertas Tiradas Naturales, el rango aumenta en 2 si el Movimiento costaba 3 PP o en 1 si costaba 3 PP."
+        ]
+      }
     ]
   },
   {
@@ -599,8 +659,13 @@
     "Prerrequisitos": null,
     "Descripcion": [
       "Tienes una gran habilidad para moverte a gran velocidad, incluso en situaciones en las que otros tendrían problemas.  Ganas los siguientes beneficios:",
-      "    • Tus Velocidades aumentan en 2 metros.",
-      "    • Te mueves por Terreno Difícil como si fuese no lo fuese."
+      {
+        "tipo": "listaU",
+        "contenido": [
+          "Tus Velocidades aumentan en 2 metros.",
+          "Te mueves por Terreno Difícil como si fuese no lo fuese."
+        ]
+      }
     ]
   },
   {
@@ -619,8 +684,13 @@
     },
     "Descripcion": [
       "u movimiento y tu andar son especialmente gráciles. Ganas los siguientes beneficios:",
-      "    • Levantarte del suelo no te cuesta velocidad.",
-      "    • Puedes usar tu Agilidad en lugar de tu Fuerza a la hora de calcular tus distancias de salto."
+      {
+        "tipo": "listaU",
+        "contenido": [
+          "Levantarte del suelo no te cuesta velocidad.",
+          "Puedes usar tu Agilidad en lugar de tu Fuerza a la hora de calcular tus distancias de salto."
+        ]
+      }
     ]
   },
   {
@@ -660,8 +730,13 @@
     "Prerrequisitos": null,
     "Descripcion": [
       "Siempre estás listo para entrar en combate, incluso cuando te emboscan: ",
-      "    • Ganas la habilidad de Alerta.",
-      "    • Tienes Ventaja en las Tiradas de Iniciativa."
+      {
+        "tipo": "listaU",
+        "contenido": [
+          "Ganas la habilidad de Alerta.",
+          "Tienes Ventaja en las Tiradas de Iniciativa."
+        ]
+      }
     ]
   },
   {
@@ -705,8 +780,13 @@
     },
     "Descripcion": [
       "Tienes una condición física portentosa. Ganas los siguientes beneficios: ",
-      "    • Ganas Velocidades de Nado y Escalado iguales a tu Velocidad de Caminado.",
-      "    • Si fueras a ganar Niveles de Fatiga por hacer esfuerzo físico prolongado, ganas un Nivel de Fatiga menos."
+      {
+        "tipo": "listaU",
+        "contenido": [
+          "Ganas Velocidades de Nado y Escalado iguales a tu Velocidad de Caminado.",
+          "Si fueras a ganar Niveles de Fatiga por hacer esfuerzo físico prolongado, ganas un Nivel de Fatiga menos."
+        ]
+      }
     ]
   },
   {
@@ -725,8 +805,13 @@
     },
     "Descripcion": [
       "Exudas un aura capaz de causar terror. Ganas los siguientes beneficios:",
-      "    • Ganas la Habilidad Intimidación. Si ya tenías esta Habilidad, ahora puedes usarla sin pagar su coste en PP.",
-      "    • Aprendes el Movimiento Cara susto. Si ya conocías este Movimiento, ahora puedes usarlo por 1 PP menos de lo que normalmente te cuesta usarlo."
+      {
+        "tipo": "listaU",
+        "contenido": [
+          "Ganas la Habilidad Intimidación. Si ya tenías esta Habilidad, ahora puedes usarla sin pagar su coste en PP.",
+          "Aprendes el Movimiento Cara susto. Si ya conocías este Movimiento, ahora puedes usarlo por 1 PP menos de lo que normalmente te cuesta usarlo."
+        ]
+      }
     ]
   },
   {
@@ -798,8 +883,13 @@
     },
     "Descripcion": [
       "Aprendes a caer con cuidado de no hacerte daño y sin perder el equilibrio. Ganas los siguientes beneficios:",
-      "    • Cuando caes desde una altura en metros igual a la mitad de la cantidad de tu BH no recibes daño de caída.",
-      "    • No caes tumbado al recibir daño de caída."
+      {
+        "tipo": "listaU",
+        "contenido": [
+          "Cuando caes desde una altura en metros igual a la mitad de la cantidad de tu BH no recibes daño de caída.",
+          "No caes tumbado al recibir daño de caída."
+        ]
+      }
     ]
   },
   {
@@ -1011,8 +1101,13 @@
     "Prerrequisitos": null,
     "Descripcion": [
       "Has aprendido a evadir el combate y eres muy difícil de atrapar. Ganas los siguientes beneficios:",
-      "    • Ganas la habilidad de Fuga.",
-      "    • Tus Velocidades aumentan en 2 m cuando te mueves en la dirección opuesta en la que están tus rivales."
+      {
+        "tipo": "listaU",
+        "contenido": [
+          "Ganas la habilidad de Fuga.",
+          "Tus Velocidades aumentan en 2 m cuando te mueves en la dirección opuesta en la que están tus rivales."
+        ]
+      }
     ]
   },
   {
@@ -1145,9 +1240,14 @@
     },
     "Descripcion": [
       "Tu poder físico rivaliza con el de criaturas más grandes que tú. Ganas los siguientes beneficios:",
-      "    • A la hora de agarrar, empujar y cargar peso, cuentas como un Tamaño más grande de lo que eres.",
-      "    • A la hora de cargar peso, cuentas como un Tamaño más grande de lo que eres.",
-      "    • Cuando fallas una Tirada de d20 asociada a tu Fuerza, puedes usar un impulso de poder para ganar un bono de +5 a la Tirada, pudiendo convertir el fallo en un acierto. Puedes usar este beneficio una vez al Día."
+      {
+        "tipo": "listaU",
+        "contenido": [
+          "A la hora de agarrar, empujar y cargar peso, cuentas como un Tamaño más grande de lo que eres.",
+          "A la hora de cargar peso, cuentas como un Tamaño más grande de lo que eres.",
+          "Cuando fallas una Tirada de d20 asociada a tu Fuerza, puedes usar un impulso de poder para ganar un bono de +5 a la Tirada, pudiendo convertir el fallo en un acierto. Puedes usar este beneficio una vez al Día."
+        ]
+      }
     ]
   },
   {
@@ -1276,8 +1376,13 @@
     "Prerrequisitos": null,
     "Descripcion": [
       "Has aprendido a protegerte en el combate y a aprovechar estos momentos. Ganas los siguientes beneficios:",
-      "    • Aprendes el movimiento Protección.",
-      "    • Cuando usas Protección puedes ordenar a uno de tus Pokémon que use 1 PP para usar un Movimiento con su Reacción contra la criatura que realizó el ataque contra el que te protegiste. El Movimiento debe hacer una Tirada de Ataque, tener un Coste de Acción de Acción y no costar PP al Pokémon."
+      {
+        "tipo": "listaU",
+        "contenido": [
+          "Aprendes el movimiento Protección.",
+          "Cuando usas Protección puedes ordenar a uno de tus Pokémon que use 1 PP para usar un Movimiento con su Reacción contra la criatura que realizó el ataque contra el que te protegiste. El Movimiento debe hacer una Tirada de Ataque, tener un Coste de Acción de Acción y no costar PP al Pokémon."
+        ]
+      }
     ]
   },
   {
@@ -1323,8 +1428,13 @@
     },
     "Descripcion": [
       "Tu capacidad para robar objetos mejora aún más. Ganas los siguientes beneficios:",
-      "    • Cuando una criatura realiza una Tirada de Ataque cuerpo a cuerpo contra ti estando a menos de 1 metro de ti y falla, puedes usar tu Reacción para usar Trapicheo sobre un objeto que esta criatura lleva encima pero que no está empuñando ni lleva puesto.",
-      "    • Usar Trapicheo con tu Acción no te cuesta PP."
+      {
+        "tipo": "listaU",
+        "contenido": [
+          "Cuando una criatura realiza una Tirada de Ataque cuerpo a cuerpo contra ti estando a menos de 1 metro de ti y falla, puedes usar tu Reacción para usar Trapicheo sobre un objeto que esta criatura lleva encima pero que no está empuñando ni lleva puesto.",
+          "Usar Trapicheo con tu Acción no te cuesta PP."
+        ]
+      }
     ]
   },
   {
@@ -1343,8 +1453,13 @@
     },
     "Descripcion": [
       "Eres muy bueno reconociendo el terreno por el que te mueves. Ganas los siguientes beneficios:",
-      "    • No puedes perderte al navegar por territorio desconocido y puedes trazar mapas de estos territorios mientras los navegas.",
-      "    • Si estás en una localización en la que esto es razonable, siempre puedes encontrar comida y agua potable."
+      {
+        "tipo": "listaU",
+        "contenido": [
+          "No puedes perderte al navegar por territorio desconocido y puedes trazar mapas de estos territorios mientras los navegas.",
+          "Si estás en una localización en la que esto es razonable, siempre puedes encontrar comida y agua potable."
+        ]
+      }
     ]
   },
   {
@@ -1392,10 +1507,15 @@
     },
     "Descripcion": [
       "Tu cuerpo está tan imbuido en fuerzas sobrenaturales que tu fisionomía funciona de formas extrañas.",
-      "    • Puedes dejar de ser de Tipo Normal (tu elección).",
-      "    • No necesitas comer ni beber.",
-      "    • No necesitas dormir para Descansar, pero no puedes hacer actividades extenuantes.",
-      "    • Una vez por Día, puedes usar cualquier Movimiento de Mentalista que conoces sin usar PP."
+      {
+        "tipo": "listaU",
+        "contenido": [
+          "Puedes dejar de ser de Tipo Normal (tu elección).",
+          "No necesitas comer ni beber.",
+          "No necesitas dormir para Descansar, pero no puedes hacer actividades extenuantes.",
+          "Una vez por Día, puedes usar cualquier Movimiento de Mentalista que conoces sin usar PP."
+        ]
+      }
     ]
   },
   {
@@ -1418,8 +1538,13 @@
     },
     "Descripcion": [
       "Eres muy hábil comprendiendo el clima y sabes como evitar sus inclemencias. Ganas los siguientes beneficios:",
-      "    • Eres inmune a todos los efectos provocados por los Movimientos con la etiqueta de Clima y por eventos climáticos similares.",
-      "    • Eres capaz de predecir los cambios que ocurrirán de forma natural en el clima en las próximas 24 horas."
+      {
+        "tipo": "listaU",
+        "contenido": [
+          "Eres inmune a todos los efectos provocados por los Movimientos con la etiqueta de Clima y por eventos climáticos similares.",
+          "Eres capaz de predecir los cambios que ocurrirán de forma natural en el clima en las próximas 24 horas."
+        ]
+      }
     ]
   },
   {
@@ -1448,8 +1573,13 @@
     },
     "Descripcion": [
       "Tienes una vista sin par que te permite observar detalles que otros pasarían por alto. Ganas los siguientes beneficios: ",
-      "    • Puedes visualizar los detalles de objetos a menos de 10 metros de ti.",
-      "    • No puedes tener Desventaja en Tiradas de Percepción para ver objetos en zonas Mal Iluminadas ni para ver a través de lluvia, nevadas o condiciones climáticas similares."
+      {
+        "tipo": "listaU",
+        "contenido": [
+          "Puedes visualizar los detalles de objetos a menos de 10 metros de ti.",
+          "No puedes tener Desventaja en Tiradas de Percepción para ver objetos en zonas Mal Iluminadas ni para ver a través de lluvia, nevadas o condiciones climáticas similares."
+        ]
+      }
     ]
   },
   {
@@ -1556,9 +1686,14 @@
     },
     "Descripcion": [
       "Eres muy bueno encontrando recursos y persiguiendo a criaturas en la naturaleza:",
-      "    • Si estás en una localización en la que esto es razonable, una vez por Día puedes tomar una Acción extendida que dura al menos 1 hora para buscar Bayas, Plantas o materiales de fabricación de origen natural. Al terminar esta Acción Extendida, haces una Tirada de Habilidad de Supervivencia (Espíritu) y consigues objetos de estos tipos por valor total igual a el resultado de la Tirada por 50 Poké Dólares.",
-      "    • Cuando encuentras el rastro de una criatura, no puedes perderlo si lo dejó hace menos de un día.",
-      "    • Cuando haces una Tirada de Conocimiento Pokémon, puedes usar tu bono en Tiradas de Supervivencia en su lugar si has visto un rastro de esta especie de Pokémon con anterioridad."
+      {
+        "tipo": "listaU",
+        "contenido": [
+          "Si estás en una localización en la que esto es razonable, una vez por Día puedes tomar una Acción extendida que dura al menos 1 hora para buscar Bayas, Plantas o materiales de fabricación de origen natural. Al terminar esta Acción Extendida, haces una Tirada de Habilidad de Supervivencia (Espíritu) y consigues objetos de estos tipos por valor total igual a el resultado de la Tirada por 50 Poké Dólares.",
+          "Cuando encuentras el rastro de una criatura, no puedes perderlo si lo dejó hace menos de un día.",
+          "Cuando haces una Tirada de Conocimiento Pokémon, puedes usar tu bono en Tiradas de Supervivencia en su lugar si has visto un rastro de esta especie de Pokémon con anterioridad."
+        ]
+      }
     ]
   },
   {
@@ -1668,8 +1803,13 @@
     },
     "Descripcion": [
       "Tus sentidos se agudizan tanto que puedes ver lo que otras personas no. Ganas los siguientes beneficios:",
-      "    • Ganas Visión en la Oscuridad en un rango de 10 metros.",
-      "    • Si tienes otro Sentido además de Visión en la Oscuridad, su rango crece en 10 metros."
+      {
+        "tipo": "listaU",
+        "contenido": [
+          "Ganas Visión en la Oscuridad en un rango de 10 metros.",
+          "Si tienes otro Sentido además de Visión en la Oscuridad, su rango crece en 10 metros."
+        ]
+      }
     ]
   },
   {
@@ -1688,8 +1828,13 @@
     },
     "Descripcion": [
       "Sabes como ocultar tu presencia a la perfección. Cuando estás escondido, ganas los siguientes beneficios:",
-      "    • Puedes moverte una distancia igual a la mitad de tu Velocidad de Caminado sin que haya obstáculos entre las criaturas que podrían detectarte y tu y, aun así, te mantienes en sigilo si acabas el movimiento detrás de cobertura.",
-      "    • Cuando tiras Iniciativa estando escondido de todos tus rivales, obtienes un 20 en la Tirada Natural del d20 de la Tirada de Iniciativa y si la primera Tirada de Ataque que tú o uno de tus Pokémon hagáis en el primer turno de una Iniciativa en la que esto haya ocurrido golpea, se considera un Golpe Crítico."
+      {
+        "tipo": "listaU",
+        "contenido": [
+          "Puedes moverte una distancia igual a la mitad de tu Velocidad de Caminado sin que haya obstáculos entre las criaturas que podrían detectarte y tu y, aun así, te mantienes en sigilo si acabas el movimiento detrás de cobertura.",
+          "Cuando tiras Iniciativa estando escondido de todos tus rivales, obtienes un 20 en la Tirada Natural del d20 de la Tirada de Iniciativa y si la primera Tirada de Ataque que tú o uno de tus Pokémon hagáis en el primer turno de una Iniciativa en la que esto haya ocurrido golpea, se considera un Golpe Crítico."
+        ]
+      }
     ]
   },
   {
@@ -1750,8 +1895,13 @@
     },
     "Descripcion": [
       "Tu conocimiento sobre el ocultismo es tan profundo que ha deformado tu esencia. Ganas los siguientes beneficios:",
-      "    • Ganas Sentido Espectral en un radio de 10 metros.",
-      "    • Sientes todos los objetos de naturaleza mágica o mística a menos de 10 metros de ti. Este efecto cuenta como un Sentido a efectos de Rasgos, Dotes y Habilidades que los modifican."
+      {
+        "tipo": "listaU",
+        "contenido": [
+          "Ganas Sentido Espectral en un radio de 10 metros.",
+          "Sientes todos los objetos de naturaleza mágica o mística a menos de 10 metros de ti. Este efecto cuenta como un Sentido a efectos de Rasgos, Dotes y Habilidades que los modifican."
+        ]
+      }
     ]
   },
   {
@@ -1794,8 +1944,13 @@
     },
     "Descripcion": [
       "Aprendes a crear lluvia torrenciales. Ganas los siguientes beneficios:",
-      "    • Aprendes el Movimiento Danza lluvia.",
-      "    • Cuando creas lluvia con un Movimiento, puedes decidir que esta sea torrencial. Las Tiradas de Ataque a rango de Movimientos que no son de Tipo Agua o Eléctrico se hacen en Desventaja si entran, salen o cruzan esta lluvia torrencial. Además, las Tiradas de Ataque de los Movimientos de Tipo Eléctrico se hacen en Ventaja dentro de esta lluvia torrencial y las Tiradas de Salvación contra dichos Movimientos se hacen en Desventaja."
+      {
+        "tipo": "listaU",
+        "contenido": [
+          "Aprendes el Movimiento Danza lluvia.",
+          "Cuando creas lluvia con un Movimiento, puedes decidir que esta sea torrencial. Las Tiradas de Ataque a rango de Movimientos que no son de Tipo Agua o Eléctrico se hacen en Desventaja si entran, salen o cruzan esta lluvia torrencial. Además, las Tiradas de Ataque de los Movimientos de Tipo Eléctrico se hacen en Ventaja dentro de esta lluvia torrencial y las Tiradas de Salvación contra dichos Movimientos se hacen en Desventaja."
+        ]
+      }
     ]
   },
   {
@@ -1810,9 +1965,14 @@
     },
     "Descripcion": [
       "Eres una criatura maestra al navegar las aguas. Ganas los siguientes beneficios:",
-      "    • Cuando estás nadando bajo el agua sabes usar las corrientes y la temperatura de esta para guiarte, por lo que tienes Ventaja en Tiradas de Supervivencia y Percepción para orientarte.",
-      "    • Estás acostumbrado a las tretas que pueden realizarse bajo el mar, por lo que no puedes ser Sorprendido cuando estás nadando en un cuerpo de agua, a no ser que asalten desde la oscuridad.",
-      "    • Cuando una criatura te monta bajo el agua, puedes crear una burbuja de aire para que esta pueda respirar incluso si no es de Tipo Agua y que lo protege de las altas presiones submarinas."
+      {
+        "tipo": "listaU",
+        "contenido": [
+          "Cuando estás nadando bajo el agua sabes usar las corrientes y la temperatura de esta para guiarte, por lo que tienes Ventaja en Tiradas de Supervivencia y Percepción para orientarte.",
+          "Estás acostumbrado a las tretas que pueden realizarse bajo el mar, por lo que no puedes ser Sorprendido cuando estás nadando en un cuerpo de agua, a no ser que asalten desde la oscuridad.",
+          "Cuando una criatura te monta bajo el agua, puedes crear una burbuja de aire para que esta pueda respirar incluso si no es de Tipo Agua y que lo protege de las altas presiones submarinas."
+        ]
+      }
     ]
   },
   {
@@ -1827,8 +1987,13 @@
     },
     "Descripcion": [
       "Creces y desarrollas tu poder a mayor ritmo que las demás criaturas. Ganas los siguientes beneficios:",
-      "    • Puedes Evolucionar un nivel antes de lo normal.",
-      "    • Cuentas como 2 niveles más a efectos de que Movimientos puedes aprender de tu Lista de Movimientos por Nivel."
+      {
+        "tipo": "listaU",
+        "contenido": [
+          "Puedes Evolucionar un nivel antes de lo normal.",
+          "Cuentas como 2 niveles más a efectos de que Movimientos puedes aprender de tu Lista de Movimientos por Nivel."
+        ]
+      }
     ]
   },
   {
@@ -1843,8 +2008,13 @@
     },
     "Descripcion": [
       "Sabes cómo evitar el conflicto y escapar de cualquier situación. Ganas los siguientes beneficios:",
-      "    • Por 1 PP y con la mitad de tu Velocidad, puedes liberarte de cualquier agarre y dejar de estar apresado.",
-      "    • Cuando fueses a recibir daño letal, puedes decidir volver a tu Pokéball. Puedes usar este efecto una vez por Escena."
+      {
+        "tipo": "listaU",
+        "contenido": [
+          "Por 1 PP y con la mitad de tu Velocidad, puedes liberarte de cualquier agarre y dejar de estar apresado.",
+          "Cuando fueses a recibir daño letal, puedes decidir volver a tu Pokéball. Puedes usar este efecto una vez por Escena."
+        ]
+      }
     ]
   },
   {
@@ -1901,9 +2071,14 @@
     },
     "Descripcion": [
       "Eres una criatura de pura electricidad y puedes canalizarla para aumentar tu celeridad. Ganas los siguientes beneficios:",
-      "    • Aprendes el Movimiento Campo Eléctrico, que no cuenta para el máximo de Movimientos que conoces.",
-      "    • Cuando estás acelerado por un Campo Eléctrico tus velocidades aumentan en 2 metros más y  dejas de provocar ataques de oportunidad.",
-      "    • Cuando estás acelerado por un Campo Eléctrico, puedes convertir tu Reacción en una Acción  por 2 PP."
+      {
+        "tipo": "listaU",
+        "contenido": [
+          "Aprendes el Movimiento Campo Eléctrico, que no cuenta para el máximo de Movimientos que conoces.",
+          "Cuando estás acelerado por un Campo Eléctrico tus velocidades aumentan en 2 metros más y  dejas de provocar ataques de oportunidad.",
+          "Cuando estás acelerado por un Campo Eléctrico, puedes convertir tu Reacción en una Acción  por 2 PP."
+        ]
+      }
     ]
   },
   {
@@ -1932,8 +2107,13 @@
     },
     "Descripcion": [
       "Tu cuerpo puede volverse espectral, lo que te otorga los siguientes beneficios: ",
-      "    • Puedes atravesar objetos sólidos. Hacerlo cuenta como cruzar Terreno Difícil y, si terminas tu turno dentro de uno de estos, eres expulsado del objeto por el lado más cercano posible y pierdes una cantidad de PV igual a tu Nivel multiplicado por la distancia en metros que recorres al ser expulsado.",
-      "    • No puedes ser agarrado ni apresado en contra de tu voluntad."
+      {
+        "tipo": "listaU",
+        "contenido": [
+          "Puedes atravesar objetos sólidos. Hacerlo cuenta como cruzar Terreno Difícil y, si terminas tu turno dentro de uno de estos, eres expulsado del objeto por el lado más cercano posible y pierdes una cantidad de PV igual a tu Nivel multiplicado por la distancia en metros que recorres al ser expulsado.",
+          "No puedes ser agarrado ni apresado en contra de tu voluntad."
+        ]
+      }
     ]
   },
   {
@@ -1976,8 +2156,13 @@
     },
     "Descripcion": [
       "Aprendes a crear un sol abrasador tan poderoso que puede quemar a las criaturas. Ganas los siguientes beneficios:",
-      "    • Aprendes el Movimiento Día Soleado.",
-      "    • Cuando creas sol abrasador con tu Día Soleado, puedes decidir que este sea especialmente potente. Si lo haces, una criatura que no es de Tipo Fuego que acaba su turno bajo este sol estando ya acalorada hace una Tirada de Salvación de Resistencia contra un CD = 10 + tu BH + Tu FUE, AGI, MEN ó PRE. Si la falla, gana 1 Nivel de Quemado."
+      {
+        "tipo": "listaU",
+        "contenido": [
+          "Aprendes el Movimiento Día Soleado.",
+          "Cuando creas sol abrasador con tu Día Soleado, puedes decidir que este sea especialmente potente. Si lo haces, una criatura que no es de Tipo Fuego que acaba su turno bajo este sol estando ya acalorada hace una Tirada de Salvación de Resistencia contra un CD = 10 + tu BH + Tu FUE, AGI, MEN ó PRE. Si la falla, gana 1 Nivel de Quemado."
+        ]
+      }
     ]
   },
   {
@@ -2006,9 +2191,14 @@
     },
     "Descripcion": [
       "Puedes crear campos de niebla que infatúan a tus rivales. Ganas los siguientes beneficios:",
-      "    • Aprendes el Movimiento Campo de Niebla, que no cuenta para el máximo de Movimientos que conoces.",
-      "    • Ves a través de la niebla de los Campos de Niebla que creas.",
-      "    • Cuando usas un Campo de Niebla, puedes decidir que emita magia infatuadora. Una criatura que no es de Tipo Hada que acaba su turno en un campo que emite esta magia debe hacer una Salvación de Espíritu de CD = 10 + tu BH + tu MEN ó PRE. Si la falla, gana 1 Nivel de infatuado de ti."
+      {
+        "tipo": "listaU",
+        "contenido": [
+          "Aprendes el Movimiento Campo de Niebla, que no cuenta para el máximo de Movimientos que conoces.",
+          "Ves a través de la niebla de los Campos de Niebla que creas.",
+          "Cuando usas un Campo de Niebla, puedes decidir que emita magia infatuadora. Una criatura que no es de Tipo Hada que acaba su turno en un campo que emite esta magia debe hacer una Salvación de Espíritu de CD = 10 + tu BH + tu MEN ó PRE. Si la falla, gana 1 Nivel de infatuado de ti."
+        ]
+      }
     ]
   },
   {
@@ -2039,9 +2229,14 @@
     },
     "Descripcion": [
       "Aprendes a crear nevadas y a defenderte con ellas. Ganas los siguientes beneficios:",
-      "    • Aprendes el Movimiento Paisaje Nevado.",
-      "    • Cuando acabas tu turno en una nevada, ganas una cantidad de Puntos de Escudo igual a tu Espíritu.",
-      "    • Las criaturas Heladas bajo tu nevada no pueden aumentar sus velocidades y estas se reducen a la mitad."
+      {
+        "tipo": "listaU",
+        "contenido": [
+          "Aprendes el Movimiento Paisaje Nevado.",
+          "Cuando acabas tu turno en una nevada, ganas una cantidad de Puntos de Escudo igual a tu Espíritu.",
+          "Las criaturas Heladas bajo tu nevada no pueden aumentar sus velocidades y estas se reducen a la mitad."
+        ]
+      }
     ]
   },
   {
@@ -2070,8 +2265,13 @@
     },
     "Descripcion": [
       "Tus golpes son capaces de demoler cualquier estructura y escudo. Ganas los siguientes beneficios:",
-      "    • El daño que haces a estructuras y objetos con tus Movimientos se duplica.",
-      "    • Cuando realizas una Tirada de Ataque con un Movimiento de Tipo Lucha contra una criatura bajo los efectos de un Movimiento con la Etiqueta de Escudo, lo ignoras. Además, si golpeas con dicha Tirada de Ataque, los efectos de Escudo que afectan a la criatura objetivo acaban prematuramente."
+      {
+        "tipo": "listaU",
+        "contenido": [
+          "El daño que haces a estructuras y objetos con tus Movimientos se duplica.",
+          "Cuando realizas una Tirada de Ataque con un Movimiento de Tipo Lucha contra una criatura bajo los efectos de un Movimiento con la Etiqueta de Escudo, lo ignoras. Además, si golpeas con dicha Tirada de Ataque, los efectos de Escudo que afectan a la criatura objetivo acaban prematuramente."
+        ]
+      }
     ]
   },
   {
@@ -2087,10 +2287,15 @@
     },
     "Descripcion": [
       "Eres una criatura muy versátil. Cuando ganas esta dote puedes realizarte los siguientes cambios:",
-      "    • Puedes redistribuir todas tus Estadísticas, cambiándolas unas por otras.",
-      "    • Si calculas tu CA con Resistencia, puedes calcularla como el mismo valor fijo menos 2 más tu Agilidad más tu Bono de Habilidad y si la calculas con Agilidad, puedes calcularla como el mismo valor fijo más dos más tu Resistencia más tu Bono de Habilidad.",
-      "    • Puedes redistribuir los bonos que ganas en las Tiradas de Salvación.",
-      "    • Puedes cambiar la Tirada de Habilidad en la que eres Naturalmente Hábil, así como tu Naturaleza."
+      {
+        "tipo": "listaU",
+        "contenido": [
+          "Puedes redistribuir todas tus Estadísticas, cambiándolas unas por otras.",
+          "Si calculas tu CA con Resistencia, puedes calcularla como el mismo valor fijo menos 2 más tu Agilidad más tu Bono de Habilidad y si la calculas con Agilidad, puedes calcularla como el mismo valor fijo más dos más tu Resistencia más tu Bono de Habilidad.",
+          "Puedes redistribuir los bonos que ganas en las Tiradas de Salvación.",
+          "Puedes cambiar la Tirada de Habilidad en la que eres Naturalmente Hábil, así como tu Naturaleza."
+        ]
+      }
     ]
   },
   {
@@ -2120,9 +2325,14 @@
     },
     "Descripcion": [
       "Tu poder te permite crear grandes campos de hierba. Ganas los siguientes beneficios:",
-      "    • Aprendes el Movimiento Campo de Hierba, que no cuenta para el máximo de Movimientos que conoces.",
-      "    • Cuando creas un Campo de Hierba, puedes decidir que la hierba sea alta. Si lo decides, las criaturas de tamaño mediano o menor que pisan el campo de hierba no puede ver más allá de un metro, pues la hierba bloquea su visión. Además, este Campo de Hierba se considera Terreno Difícil para las criaturas que no son de Tipo Planta.",
-      "    • Si recuperas PV dentro de este Campo de Hierba, recuperas una cantidad de PV extra igual a tu RES o ESP."
+      {
+        "tipo": "listaU",
+        "contenido": [
+          "Aprendes el Movimiento Campo de Hierba, que no cuenta para el máximo de Movimientos que conoces.",
+          "Cuando creas un Campo de Hierba, puedes decidir que la hierba sea alta. Si lo decides, las criaturas de tamaño mediano o menor que pisan el campo de hierba no puede ver más allá de un metro, pues la hierba bloquea su visión. Además, este Campo de Hierba se considera Terreno Difícil para las criaturas que no son de Tipo Planta.",
+          "Si recuperas PV dentro de este Campo de Hierba, recuperas una cantidad de PV extra igual a tu RES o ESP."
+        ]
+      }
     ]
   },
   {
@@ -2132,9 +2342,14 @@
     "Prerrequisitos": "Ser Tipo Planta",
     "Descripcion": [
       "Tu poder te permite multiplicar y sanar la vegetación y criaturas de tu entorno. Ganas los siguientes beneficios:",
-      "    • Puedes multiplicar plantas y bayas. Como Acción extendida, puedes multiplicar una o varias bayas y plantas que tocas que han crecido de forma natural y que aun no han sido recolectadas. La suma de los costes de las bayas y plantas producidas no puede superar en valor una cantidad de Poké dólares igual a 100 por tu Nivel. Puedes usar este beneficio de nuevo hasta que Descanses.",
-      "    • Como una Acción Extendida que dura un minuto, puedes restaurar la salud de las plantas en un radio de 5 metros a tu alrededor, incluso se estaban casi completamente quemadas, deshidratadas o envenenadas.",
-      "    • Como una Acción Extendida que dura un minuto, puedes hacer que una criatura afectada por los efectos nocivos asociados a caer inconsciente por el veneno se libere de estos."
+      {
+        "tipo": "listaU",
+        "contenido": [
+          "Puedes multiplicar plantas y bayas. Como Acción extendida, puedes multiplicar una o varias bayas y plantas que tocas que han crecido de forma natural y que aun no han sido recolectadas. La suma de los costes de las bayas y plantas producidas no puede superar en valor una cantidad de Poké dólares igual a 100 por tu Nivel. Puedes usar este beneficio de nuevo hasta que Descanses.",
+          "Como una Acción Extendida que dura un minuto, puedes restaurar la salud de las plantas en un radio de 5 metros a tu alrededor, incluso se estaban casi completamente quemadas, deshidratadas o envenenadas.",
+          "Como una Acción Extendida que dura un minuto, puedes hacer que una criatura afectada por los efectos nocivos asociados a caer inconsciente por el veneno se libere de estos."
+        ]
+      }
     ]
   },
   {
@@ -2149,8 +2364,13 @@
     },
     "Descripcion": [
       "Tu poder psíquico te permite crear y dar forma a tu campo psíquico. Ganas los siguientes beneficios:",
-      "    • Aprendes el Movimiento Campo Psíquico, que no cuenta para el máximo de Movimientos que conoces.",
-      "    • Cuando usas el Movimiento Campo Psíquico, puedes darle forma y designar a criaturas para que no sean afectadas por este, independientemente de si son de Tipo Psíquico o no."
+      {
+        "tipo": "listaU",
+        "contenido": [
+          "Aprendes el Movimiento Campo Psíquico, que no cuenta para el máximo de Movimientos que conoces.",
+          "Cuando usas el Movimiento Campo Psíquico, puedes darle forma y designar a criaturas para que no sean afectadas por este, independientemente de si son de Tipo Psíquico o no."
+        ]
+      }
     ]
   },
   {
@@ -2179,8 +2399,13 @@
     },
     "Descripcion": [
       "Aprendes a crear Tormentas de Arena y a defenderte con ellas. Ganas los siguientes beneficios:",
-      "    • Aprendes el Movimiento Tormenta de Arena.",
-      "    • Cuando acabas tu turno en una tormenta de arena, ganas una cantidad de Puntos de Escudo igual a tu Resistencia."
+      {
+        "tipo": "listaU",
+        "contenido": [
+          "Aprendes el Movimiento Tormenta de Arena.",
+          "Cuando acabas tu turno en una tormenta de arena, ganas una cantidad de Puntos de Escudo igual a tu Resistencia."
+        ]
+      }
     ]
   },
   {
@@ -2300,8 +2525,13 @@
     },
     "Descripcion": [
       "Eres un volador experto, especializado en atacar desde los cielos a las criaturas en el suelo. Ganas los siguientes beneficios:",
-      "    • Si al principio de tu turno estás volando, puedes decidir planear en lugar de controlar tu vuelo hasta el final de tu turno. Al planear te mueves 3 metros en línea recta en una dirección paralela al suelo. Mientras estás planeando tienes Ventaja en Tiradas de Ataque a rango contra criaturas que están a ras del suelo.",
-      "    • No tienes Desventaja en Tiradas de Ataque a más de 5 metros de distancia a causa de usar tu Velocidad de Vuelo."
+      {
+        "tipo": "listaU",
+        "contenido": [
+          "Si al principio de tu turno estás volando, puedes decidir planear en lugar de controlar tu vuelo hasta el final de tu turno. Al planear te mueves 3 metros en línea recta en una dirección paralela al suelo. Mientras estás planeando tienes Ventaja en Tiradas de Ataque a rango contra criaturas que están a ras del suelo.",
+          "No tienes Desventaja en Tiradas de Ataque a más de 5 metros de distancia a causa de usar tu Velocidad de Vuelo."
+        ]
+      }
     ]
   },
   {
@@ -2316,8 +2546,13 @@
     },
     "Descripcion": [
       "El viento se arremolina a tu alrededor para protegerte. Ganas los siguientes beneficios:",
-      "    • Cuando usas un Movimiento de Tipo Volador, los ataques de oportunidad que generas se hacen en Desventaja por el resto del turno.",
-      "    • Cuando una criatura recibe daño de uno de tus Movimientos con la Etiqueta de Viento, este es empujado 1 metro de ti."
+      {
+        "tipo": "listaU",
+        "contenido": [
+          "Cuando usas un Movimiento de Tipo Volador, los ataques de oportunidad que generas se hacen en Desventaja por el resto del turno.",
+          "Cuando una criatura recibe daño de uno de tus Movimientos con la Etiqueta de Viento, este es empujado 1 metro de ti."
+        ]
+      }
     ]
   }
 ]
