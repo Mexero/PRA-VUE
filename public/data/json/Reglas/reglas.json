@@ -1096,5 +1096,168 @@
             "<b>Ataques empeorados.</b> La criatura tiene Desventaja en las Tiradas de Ataque y las Tiradas de Ataque que se hagan contra la criatura tienen Ventaja.",
             "<b>Levantarse.</b> Para levantarse, una criatura debe tener alguna Velocidad que pueda usar superior a 0 y usar la mitad de la más alta de sus Velocidades en su turno."
         ]
+    },
+    {
+        "nombre": "Atletismo",
+        "tipos": [
+            "Tirada de Habilidad"
+        ],
+        "descripciones": [
+            "<strong>Atletismo</strong> mide las habilidades atléticas, como lacapacidad para correr distancias prolongadas, lanzar algo o levantar objetos pesados.",
+            "Las Tiradas de Atletismo suelen hacerse con Fuerza."
+        ]
+    },
+    {
+        "nombre": "Combate",
+        "tipos": [
+            "Tirada de Habilidad"
+        ],
+        "descripciones": [
+            "<strong>Combate</strong> representa tu maestría a la hora de hacer pelear cuerpo a cuerpo, haciendo agarres, evadiéndolos o empujando a rivales. En ocasiones, Combate también se usa con Agilidad.",
+            "Las Tiradas de Combate suelen hacerse con Fuerza."
+        ]
+    },
+    {
+        "nombre": "Acrobacias",
+        "tipos": [
+            "Tirada de Habilidad"
+        ],
+        "descripciones": [
+            "<strong>Acrobacias</strong> mide tu habilidad para hacer piruetas complicadas o escurrirte por lugares estrechos.",
+            "Las Tiradas de Acrobacias suelen hacerse con Agilidad."
+        ]
+    },
+    {
+        "nombre": "Juego de Manos",
+        "tipos": [
+            "<strong>Juego de Manos</strong> mide tu habilidad para hacer movimientos sutiles, como hacer trucos de magia o para robar algo.",
+            "Tirada de Habilidad"
+        ],
+        "descripciones": [
+            "",
+            "Las Tiradas de Juego de Manos suelen hacerse con Agilidad."
+        ]
+    },
+    {
+        "nombre": "Sigilo",
+        "tipos": [
+            "Tirada de Habilidad"
+        ],
+        "descripciones": [
+            "<strong>Sigilo</strong> mide qué tan fácilmente puedes ocultar tu presencia de otros.",
+            "Las Tiradas de Sigilo suelen hacerse con Agilidad."
+        ]
+    },
+    {
+        "nombre": "Iniciativa",
+        "tipos": [
+            "Tirada de Habilidad"
+        ],
+        "descripciones": [
+            "<strong>Iniciativa</strong> mide tu habilidad para entrar en combate y actuar antes que los demás. Esta Habilidad puede usarse sólo con Agilidad o Espíritu (tu elección al hacer la Tirada).",
+            "Las Tiradas de Iniciativa pueden hacerse con Agilidad o Espíritu.",
+            "Todos los personajes y Pokémon son, al menos, Buenos en Iniciativa."
+        ]
+    },
+    {
+        "nombre": "Investigación",
+        "tipos": [
+            "Tirada de Habilidad"
+        ],
+        "descripciones": [
+            "<strong>Investigación</strong> mide tu habilidad para deducir o encontrar información de detalles de una escena.",
+            "Las Tiradas de Investigación suelen hacerse con ::::."
+        ]
+    },
+    {
+        "nombre": "Conocimiento",
+        "tipos": [
+            "Tirada de Habilidad"
+        ],
+        "descripciones": [
+            "Las tiradas de <strong>Conocimiento</strong> representan la cantidad de información que conoces sobre un área específica. Los varios tipos de tiradas de Conocimiento son:",
+            "Conocimiento Pokémon, Conocimiento de Historia, Conocimiento Tecnológico, Conocimiento Químico, Conocimiento de Poké Balls, Conocimiento Natural, Conocimiento Médico, Conocimiento del Ocultismo y Conocimiento de Cocina.",
+            "Las Tiradas de Conocimiento suelen hacerse con Mente, salvo conocimiento de Cocina, que suele hacerse con Espíritu."
+        ]
+    },
+    {
+        "nombre": "Empatía",
+        "tipos": [
+            "Tirada de Habilidad"
+        ],
+        "descripciones": [
+            "<strong>Empatía</strong> mide que tan fácilmente puedes leer y comprender los sentimientos de otros, incluso si buscan ocultarlos.",
+            "Las Tiradas de Empatía suelen hacerse con Espíritu."
+        ]
+    },
+    {
+        "nombre": "Percepción",
+        "tipos": [
+            "Tirada de Habilidad"
+        ],
+        "descripciones": [
+            "<strong>Percepción</strong> caracteriza tu habilidad no sólo de percibir tu entorno mediante tus sentidos sino también la de fijarte en detalles relevantes.",
+            "Las Tiradas de Percepción suelen hacerse con Espíritu."
+        ]
+    },
+    {
+        "nombre": "Supervivencia",
+        "tipos": [
+            "Tirada de Habilidad"
+        ],
+        "descripciones": [
+            "<strong>Supervivencia</strong> es la habilidad de desenvolverte en la naturaleza, ya sea para encender una fogata u orientarte en mitad del bosque.",
+            "Las Tiradas de Supervivencia suelen hacerse con Espíritu."
+        ]
+    },
+    {
+        "nombre": "Actuación",
+        "tipos": [
+            "Tirada de Habilidad"
+        ],
+        "descripciones": [
+            "<strong>Actuación:</strong> Mide tus habilidades para interpretar algo, ya sea tocar una canción o hacer como que no te duele el pie después de patear una mesa.",
+            "Las Tiradas de Actuación suelen hacerse con Presencia."
+        ]
+    },
+    {
+        "nombre": "Engaño",
+        "tipos": [
+            "Tirada de Habilidad"
+        ],
+        "descripciones": [
+            "<strong>Engaño:</strong> Mide qué tan bien puedes convencer a alguien de algo en lo que no crees, ya sea mediante tus palabras, tu lenguaje corporal o una mezcla de ambos.",
+            "Las Tiradas de Engaño suelen hacerse con Presencia."
+        ]
+    },
+    {
+        "nombre": "Intimidación",
+        "tipos": [
+            "Tirada de Habilidad"
+        ],
+        "descripciones": [
+            "<strong>Intimidación:</strong> Representa lo hábil que se es para imponerse sobre otros, amedrentándolos de hacer algo con tu mera presencia.",
+            "Las Tiradas de Intimidación suelen hacerse con Presencia."
+        ]
+    },
+    {
+        "nombre": "Persuasión",
+        "tipos": [
+            "Tirada de Habilidad"
+        ],
+        "descripciones": [
+            "<strong>Persuasión:</strong> Es la habilidad para convencer a otros de hacer algo para lo que en un principio no están completamente predispuestos.",
+            "Las Tiradas de Persuasión suelen hacerse con Presencia."
+        ]
+    },
+    {
+        "nombre": "Trato Pokémon",
+        "tipos": [
+            "Tirada de Habilidad"
+        ],
+        "descripciones": [
+            "<strong>Trato Pokémon:</strong> Representa la habilidad del entrenador para establecer relaciones con los Pokémon, hacer que estos se sientan cómodos a su alrededor y que sigan sus órdenes.",
+            "Las Tiradas de Persuasión suelen hacerse con Presencia."
+        ]
     }
 ]
