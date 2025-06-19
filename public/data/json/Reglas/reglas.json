@@ -1259,5 +1259,912 @@
             "<strong>Trato Pokémon:</strong> Representa la habilidad del entrenador para establecer relaciones con los Pokémon, hacer que estos se sientan cómodos a su alrededor y que sigan sus órdenes.",
             "Las Tiradas de Persuasión suelen hacerse con Presencia."
         ]
-    }
+    },
+    [
+        {
+            "nombre": "Abrojos metálicos",
+            "tipos": [
+                "Clase",
+                "Inventor",
+                "Invención"
+            ],
+            "subtipos": [
+                "Paquetes"
+            ],
+            "descripciones": [
+                "<b>Prerrequisitos:</b> Nivel 7.",
+                "Creas un Paquete con saquitos de abrojos. Una criatura que tiene uno de estos saquitos puede lanzarla a un punto a una distancia de 5 metros y, cuando tocan una superficie se rompen, liberando los abrojos por el suelo en un radio de 1 metro. Este área es considerada Terreno Difícil y, por cada metro que una criatura avance dentro de los abrojos, recibe daño 2d4 de daño de tipo Acero.",
+                "A partir de Nivel 7, el Inventor que creó los abrojos aprende a lanzarlos mejor que los demás. Por 1 PP más puede hacer que el daño de estos se vuelva 2d6 y que el radio donde caen se vuelva de 2 metros. A partir de Nivel 14, este puede usar 2 PP extra para que el radio sea de hasta 3 metros y el daño de 2d8."
+            ]
+        },
+        {
+            "nombre": "Bolas de humo",
+            "tipos": [
+                "Clase",
+                "Inventor",
+                "Invención"
+            ],
+            "subtipos": [
+                "Paquetes"
+            ],
+            "descripciones": [
+                "<b>Prerrequisitos:</b> Ninguno.",
+                "Creas un Paquete con bolas que liberan humo al estallar. Una criatura que tiene una de estas bombas puede lanzarla a un punto a una distancia de 5 metros y, cuando tocan una superficie, explotan liberando humo en un radio de 2 metros que se mantiene en ese lugar hasta el final de la Escena o hasta que un Movimiento con la etiqueta de Viento afecte el área. Este humo bloquea completamente la visión más allá de 1 metro.",
+                "A partir de Nivel 7, el Inventor que creó las bolas de humo aprende a lanzarlas mejor que los demás. Por 1 PP más puede hacer que el que el radio donde caen se vuelva de 3 metros. A partir de Nivel 14, este puede usar 2 PP extra para que el radio sea de hasta 4 metros y para no verse afectado por los efectos esta bola de humo en el turno en el que la lanza."
+            ]
+        },
+        {
+            "nombre": "Bolas de humo blanco",
+            "tipos": [
+                "Clase",
+                "Inventor",
+                "Invención"
+            ],
+            "subtipos": [
+                "Paquetes"
+            ],
+            "descripciones": [
+                "<b>Prerrequisitos:</b> Ninguno.",
+                "Creas un Paquete con bombas que liberan humo al estallar. Una criatura que tiene una de estas bombas puede lanzarla a un punto a una distancia de 5 metros y, cuando tocan una superficie, explotan liberando vapor calmante en un radio de 1 metro que se mantiene en ese lugar hasta el final de la Escena o hasta que un Movimiento con la etiqueta de Viento afecte el área. Este humo no bloquea la visión. Una criatura que está en el radio de explosión cuando la bola estalla deja de estar infatuada, asustada o confusa y una criatura que está en el humo tiene Ventaja en Tiradas de Salvación para no quedar infatuado, Asustado, Enfurecido o Confuso.",
+                "A partir de Nivel 7, el Inventor que creó las bolas de humo aprende a lanzarlas mejor que los demás. Por 1 PP más puede hacer que el que el radio donde caen se vuelva de 2 metros. A partir de Nivel 14, este puede usar 2 PP extra para que el radio sea de hasta 3 metros y que el humo no persista."
+            ]
+        },
+        {
+            "nombre": "Bolas malas",
+            "tipos": [
+                "Clase",
+                "Inventor",
+                "Invención"
+            ],
+            "subtipos": [
+                "Paquetes"
+            ],
+            "descripciones": [
+                "<b>Prerrequisitos:</b> Ninguno.",
+                "Creas un Paquete con bolas que liberan humo al estallar. Una criatura que tiene una de estas bombas puede lanzarla a un punto a una distancia de 5 metros y, cuando tocan una superficie, explotan liberando vapor venenoso en un radio de 1 metro que se mantiene en ese lugar hasta el final de la Escena o hasta que un Movimiento con la etiqueta de Viento afecte el área. Este humo no bloquea la visión. Una criatura que entra o que empieza su turno en el humo hace una Salvación de Resistencia. Si la falla, gana 1 Nivel de Envenenado.",
+                "A partir de Nivel 7, el Inventor que creó las bolas aprende a lanzarlas mejor que los demás. Por 1 PP más puede hacer que el que el radio donde caen se vuelva de 2 metros. A partir de Nivel 14, este puede usar 2 PP extra para que el radio sea de hasta 3 metros y que la cantididad de Niveles que gana una criatura al fallar la Tirada de Salvación se vuelva 2."
+            ]
+        },
+        {
+            "nombre": "Bolas pegajosas",
+            "tipos": [
+                "Clase",
+                "Inventor",
+                "Invención"
+            ],
+            "subtipos": [
+                "Paquetes"
+            ],
+            "descripciones": [
+                "<b>Prerrequisitos:</b> Nivel 7",
+                "Creas un Paquete con bombas llenas de un líquido pegajoso que sólo tú puedes llevar. Una criatura que tiene una de estas bombas puede lanzarla a una distancia de 5 metros y, cuando tocan una superficie, explotan en un radio de 2 metros, esparciendo un líquido sobre el suelo.",
+                "El suelo manchado por el líquido se considera Terreno Difícil hasta el final de la Escena y las criaturas que inician su turno en este área o que entran en esta hacen una Tirada de Salvación de Agilidad. Si la fallan, quedan pegadas al suelo y se consideran Apresadas. Como Acción, una criatura se despega de la red.",
+                "A partir de Nivel 7, el Inventor que creó las bolas de humo aprende a lanzarlas mejor que los demás. Por 1 PP más puede hacer que el que el radio donde caen se vuelva de 3 metros. A partir de Nivel 14, este puede usar 2 PP extra para que el radio sea de hasta 3 metros y para que si una criatura intenta despegarse con su Acción deba superar una Tirada de Salvación de Fuerza para poder hacerlo."
+            ]
+        },
+        {
+            "nombre": "Bolas ruidosas",
+            "tipos": [
+                "Clase",
+                "Inventor",
+                "Invención"
+            ],
+            "subtipos": [
+                "Paquetes"
+            ],
+            "descripciones": [
+                "<b>Prerrequisitos:</b> Ninguno.",
+                "Creas un Paquete con bolas que estallan liberando mucho ruido. Una criatura que tiene una de estas bombas puede lanzarla a un punto a una distancia de 5 metros y, cuando tocan una superficie, explotan en un radio de 1 metro, con un ruido estridente. Las criaturas en el radio de explosión deben hacer una Tirada de Salvación de Espíritu. Si la fallan, gana 1 Nivel de Asustado del lanzador.",
+                "A partir de Nivel 7, el Inventor que creó las bolas aprende a lanzarlas mejor que los demás. Por 1 PP más puede hacer que el que el radio que afectan se vuelva de 2 metros. A partir de Nivel 14, este puede usar 2 PP extra para que el radio sea de hasta 3 metros y que la cantidad de Niveles que gana una criatura al fallar la Tirada de Salvación se vuelva 2."
+            ]
+        },
+        {
+            "nombre": "Bombas luminiscentes",
+            "tipos": [
+                "Clase",
+                "Inventor",
+                "Invención"
+            ],
+            "subtipos": [
+                "Paquetes"
+            ],
+            "descripciones": [
+                "<b>Prerrequisitos:</b> Ninguno.",
+                "Creas un Paquete con bombas de fluido luminiscente que sólo tú puedes llevar. Una criatura que tiene una de estas bombas puede lanzarla a un punto a una distancia de 5 metros y, cuando tocan una superficie, explotan en un radio de 1 metro, esparciendo un líquido sobre el suelo que brilla hasta el final de la Escena.",
+                "Si una criatura está en el radio de explosión, debe hacer una Tirada de Salvación de Agilidad. Si la falla, esta también queda empapada y empieza a brillar tanto que se deslumbra haciendo que la criatura tenga Desventaja Tiradas de Percepción y las Tiradas de Ataque hechas contra esta se hagan en Ventaja. Una criatura empapada de este líquido puede usar su Acción o todo su Movimiento para dejar de estar empapada.",
+                "A partir de Nivel 7, el Inventor que creó las bolas aprende a lanzarlas mejor que los demás. Por 1 PP más puede hacer que el que el radio donde caen se vuelva de 2 metros. A partir de Nivel 14, este puede usar 2 PP extra para que el radio sea de hasta 3 metros y que una criatura deba usar su Acción y todo su Movimiento para dejar de estar empapada si supera una Tirada de Salvación de Fuerza o Agilidad."
+            ]
+        },
+        {
+            "nombre": "Calmaesferas",
+            "tipos": [
+                "Clase",
+                "Inventor",
+                "Invención"
+            ],
+            "subtipos": [
+                "Paquetes"
+            ],
+            "descripciones": [
+                "<b>Prerrequisitos:</b> Ninguno.",
+                "Creas un Paquete con bolas que liberan gas infatuante. Una criatura que tiene una de estas bombas puede lanzarla a un punto a una distancia de 5 metros y, cuando tocan una superficie, explotan liberando gas en un radio de 1 metro que rápidamente se disipa. Una criatura que está en el radio de la explosión cuando esta ocurre hace una Salvación de Espíritu. Si falla, gana 1 Nivel de Infatuado del lanzador.",
+                "A partir de Nivel 7, el Inventor que creó las bolas aprende a lanzarlas mejor que los demás. Por 1 PP más puede hacer que el que el radio que afectan se vuelva de 2 metros. A partir de Nivel 14, este puede usar 2 PP extra para que el radio sea de hasta 3 metros y que la cantidad de Niveles que gana una criatura al fallar la Tirada de Salvación se vuelva 2."
+            ]
+        },
+        {
+            "nombre": "Toxiestrellas",
+            "tipos": [
+                "Clase",
+                "Inventor",
+                "Invención"
+            ],
+            "subtipos": [
+                "Paquetes"
+            ],
+            "descripciones": [
+                "<b>Prerrequisitos:</b> Nivel 7.",
+                "Creas un Paquete con saquitos de estrellas tóxicas. Una criatura que tiene uno de estos saquitos puede lanzarla a un punto a una distancia de 5 metros y, cuando tocan una superficie se rompen, liberando las estrellas por el suelo en un radio de 1 metro. Este área es considerada Terreno Difícil y, cuando una criatura se mueve 1 metro entrando, saliendo o moviéndose a través del área hace una Tirada de Salvación de Resistencia. Si la falla, gana 1 Nivel de Envenenado.",
+                "A partir de Nivel 7, el Inventor que creó las estrellas aprende a lanzarlas mejor que los demás. Por 1 PP más puede hacer que el que el radio donde caen se vuelva de 2 metros. A partir de Nivel 14, este puede usar 2 PP extra para moverse 1 metro entrando, saliendo o moviéndose a través de las estrellas siempre genere 1 Nivel de Envenenado.",
+                "Las cápsulas son un tipo de Invención que se usa para cubrir una Poké Ball y que otorgan efectos especiales que se activan cuando un Pokémon entra, sale o está en su Poké Ball o cambian el cómo o cuándo los Pokémon pueden entrar o salir de su Poké Ball. Una sola Invención de Cápsulas cuenta con una cantidad de estas igual a tu Mente.",
+                "Poner o quitar una Cápsula a una Poké Ball cuenta como una Acción Extendida y, aunque una Poké Ball puede llevar varias cápsulas puestas a la vez, si lleva varias cápsulas del mismo tipo sólo una de ellas surte efecto."
+            ]
+        },
+        {
+            "nombre": "Cápsulas atronadoras",
+            "tipos": [
+                "Clase",
+                "Inventor",
+                "Invención"
+            ],
+            "subtipos": [
+                "Cápsulas"
+            ],
+            "descripciones": [
+                "<b>Prerrequisitos:</b> Ninguno.",
+                "Cuando un Pokémon sale de una Poké Ball con esta cápsula puesta, su entrenador puede usar 1 PP (sin coste de acción) para que el Pokémon libere un sonido atronador. Las criaturas a 2 metros o menos del punto donde aparece el Pokémon hacen una Tirada de Salvación de Espíritu, ganando 1 Nivel de Asustado."
+            ]
+        },
+        {
+            "nombre": "Cápsulas de Potenciación Elemental",
+            "tipos": [
+                "Clase",
+                "Inventor",
+                "Invención"
+            ],
+            "subtipos": [
+                "Cápsulas"
+            ],
+            "descripciones": [
+                "<b>Prerrequisitos:</b> Nivel 7.",
+                "Cuando una Poké Ball tiene esta cápsula puesta potencia el daño de los Movimientos de un Tipo Elemental para el que la criatura no tiene STAB, el cual se elige al colocar la cápsula en la Poké Ball. El bono al daño es igual a la mitad del Nivel del Pokémon asociado a la Poké Ball."
+            ]
+        },
+        {
+            "nombre": "Cápsulas de Protección",
+            "tipos": [
+                "Clase",
+                "Inventor",
+                "Invención"
+            ],
+            "subtipos": [
+                "Cápsulas"
+            ],
+            "descripciones": [
+                "<b>Prerrequisitos:</b> Ninguno.",
+                "Cuando un Pokémon sale de una Poké ball con una de estas Cápsulas, ganan Puntos de Escudo igual a su Vitalidad más tu Mente que dura hasta el final de la Escena o hasta que vuelva a su Poké Ball. Este efecto puede usarse una vez por Escena.",
+                "A partir de nivel 7, este efecto puede usarse dos veces por Escena y, a partir de nivel 14, puede usarse cada vez que se usa la Poké Ball."
+            ]
+        },
+        {
+            "nombre": "Cápsulas de salud",
+            "tipos": [
+                "Clase",
+                "Inventor",
+                "Invención"
+            ],
+            "subtipos": [
+                "Cápsulas"
+            ],
+            "descripciones": [
+                "<b>Prerrequisitos:</b> Ninguno.",
+                "Cuando un Pokémon entra a su Poké Ball y esta tiene puesta esta cápsula todos los Estados que la afligen desaparecen."
+            ]
+        },
+        {
+            "nombre": "Cápsulas de último impulso",
+            "tipos": [
+                "Clase",
+                "Inventor",
+                "Invención"
+            ],
+            "subtipos": [
+                "Cápsulas"
+            ],
+            "descripciones": [
+                "<b>Prerrequisitos:</b> Nivel 7.",
+                "Cuando un Pokémon cuya Poké Ball lleva esta cápsula puesta fuese a caer a 0 PV, la Poké Ball le da una descarga de energía que lo hace mantenerse consciente, por lo que cae a 1 PV en su lugar. Este efecto puede usarse una vez al Día por Pokémon y genera 1 Nivel de Fatiga."
+            ]
+        },
+        {
+            "nombre": "Cápsulas destellantes",
+            "tipos": [
+                "Clase",
+                "Inventor",
+                "Invención"
+            ],
+            "subtipos": [
+                "Cápsulas"
+            ],
+            "descripciones": [
+                "<b>Prerrequisitos:</b> Ninguno.",
+                "Cuando un Pokémon sale de una Poké Ball con esta cápsula puesta, su entrenador puede usar 1 PP (sin coste de acción) para usar parte de su poder en su salida y hacer que el brillo que genera al hacerlo sea mucho más fuerte. Las criaturas a 1 metro o menos del punto donde aparece el Pokémon hacen una Tirada de Salvación de Resistencia, ganan 1 Nivel de Cegado."
+            ]
+        },
+        {
+            "nombre": "Cápsulas Inerciales",
+            "tipos": [
+                "Clase",
+                "Inventor",
+                "Invención"
+            ],
+            "subtipos": [
+                "Cápsulas"
+            ],
+            "descripciones": [
+                "<b>Prerrequisitos:</b> Ninguno.",
+                "Cuando un Pokémon sale de una Poké Ball con esta cápsula puesta puede utilizar el impulso que genera al salir de esta para arremeter con más fuerza. En el primer turno que el Pokémon tome tras salir de la Poké Ball, este gana un bono a su primera Tirada de Ataque del turno y a sus Velocidades igual a la mitad de tu Mente."
+            ]
+        },
+        {
+            "nombre": "Cápsulas Sensoriales",
+            "tipos": [
+                "Clase",
+                "Inventor",
+                "Invención"
+            ],
+            "subtipos": [
+                "Cápsulas"
+            ],
+            "descripciones": [
+                "<b>Prerrequisitos:</b> Nivel 7.",
+                "Cuando una Poké Ball tiene esta cápsula puesta siente cuando el Pokémon que tiene asociado se encuentra mal para devolverlo a esta. Si el Pokémon asociado a la Poké Ball queda asustado o confuso, puede volver a la Poké Ball como Reacción por 2 PP. Si lo hace, su Entrenador puede sacar un Pokémon gratuitamente y darle una Orden normalmente en su turno. Este efecto puede usarse una vez por Escena.",
+                "A partir de nivel 14, el Pokémon también puede volver a la Poké Ball cuando recibe daño súper efectivo si el entrenador es el inventor que creó las cápsulas y este usa 2 PP.",
+                "Las Herramientas son piezas de equipo tecnológico muy avanzado que has diseñado y que, en ocasiones, sólo tú sabes hacer funcionar. Algunas Herramientas tienen una forma de realizar daño mediante una Tirada de Ataque o de Salvación. Estas Herramientas cuentan como Armas, a efectos de Rasgos que afecten el funcionamiento de Armas."
+            ]
+        },
+        {
+            "nombre": "Aerosol sigilo",
+            "tipos": [
+                "Clase",
+                "Inventor",
+                "Invención"
+            ],
+            "subtipos": [
+                "Herramientas"
+            ],
+            "descripciones": [
+                "<b>Prerrequisitos:</b> Nivel 14.",
+                "Un frasco lleno de un líquido que te vuelve más sigiloso. Cuando lo usas como Acción Extendida gastas 2 PP que no recuperas hasta que decidas que el efecto que este aerosol otorga acabe o hasta el final del día. Puedes afectar hasta a 5 criaturas con cada uso del Aerosol y estas obtienen bono igual a tu Mente a las Tiradas de Sigilo."
+            ]
+        },
+        {
+            "nombre": "Electrificador",
+            "tipos": [
+                "Clase",
+                "Inventor",
+                "Invención"
+            ],
+            "subtipos": [
+                "Herramientas"
+            ],
+            "descripciones": [
+                "<b>Prerrequisitos:</b> Ninguno.",
+                "Creas un electrificador que sólo tú sabes cómo utilizar correctamente. Este electrificador puede usarse como un kit de primeros auxilios por 1 PP. Cuando lo haces, la criatura añade su Vitalidad a la cantidad de PV que recupera.",
+                "Además, puedes usar este electrificador para electrocutar a una criatura como Acción. Al hacerlo, Realizas una Tirada de Ataque Cuerpo a cuerpo en la que eres Bueno usando tu Mente. Si golpea, la criatura recibe daño eléctrico igual a 1d6 y no puede usar Reacciones hasta el principio de su próximo turno.",
+                "A partir de nivel 7, si el Inventor usa 1 PP realizar una Tirada de Ataque con este, la criatura gana 1 Nivel de paralizado y el daño del electrificador aumenta en un dado. Además, a partir de Nivel 14, el inventor también puede usar 3 PP en lugar de 1 PP para que el daño aumente en 2 dados y que la criatura gane 2 Niveles de paralizado."
+            ]
+        },
+        {
+            "nombre": "Espray bucal",
+            "tipos": [
+                "Clase",
+                "Inventor",
+                "Invención"
+            ],
+            "subtipos": [
+                "Herramientas"
+            ],
+            "descripciones": [
+                "<b>Prerrequisitos:</b> Nivel 7.",
+                "Una criatura puede usar este espray una vez por Escena como una Acción y por 2 PP. Cuando lo hace, puede usar un Movimiento con la Etiqueta de Sonido que cuesta una Acción sin usar PP y todos los Movimientos, Habilidades y Rasgos que hacen uso de su voz, como los Movimientos con la etiqueta de Sonido o las Órdenes, ven su rango aumentado en una cantidad de metros igual a tu Mente si sólo hacen objetivo a una criatura o la mitad de tu mente si afectan un área."
+            ]
+        },
+        {
+            "nombre": "Flauta Amarilla",
+            "tipos": [
+                "Clase",
+                "Inventor",
+                "Invención"
+            ],
+            "subtipos": [
+                "Herramientas"
+            ],
+            "descripciones": [
+                "<b>Prerrequisitos:</b> Nivel 7.",
+                "Una flauta de color violeta que cualquiera puede tocar como Acción y gastar 2 PP para sanar de estar envenenado, quemado, helado, paralizado a las criaturas a 5 metros de ella."
+            ]
+        },
+        {
+            "nombre": "Flauta Blanca",
+            "tipos": [
+                "Clase",
+                "Inventor",
+                "Invención"
+            ],
+            "subtipos": [
+                "Herramientas"
+            ],
+            "descripciones": [
+                "<b>Prerrequisitos:</b> Nivel 7.",
+                "Una flauta de color blanco que cualquiera puede tocar como Acción, gastando 2 PP. Cuando lo hace, las criaturas a menos de 2 metros de la criatura hacen una Tirada de Salvación de Espíritu. Si la fallan, quedan infatuadas por ella hasta el final de la Escena."
+            ]
+        },
+        {
+            "nombre": "Flauta Negra",
+            "tipos": [
+                "Clase",
+                "Inventor",
+                "Invención"
+            ],
+            "subtipos": [
+                "Herramientas"
+            ],
+            "descripciones": [
+                "<b>Prerrequisitos:</b> Nivel 7.",
+                "Una flauta de color negro que cualquiera puede tocar como Acción, gastando 2 PP. Cuando lo hace, las criaturas a menos de 2 metros de la criatura hacen una Tirada de Salvación de Espíritu. Si la fallan, quedan asustadas de ella hasta el final de la Escena."
+            ]
+        },
+        {
+            "nombre": "Flauta Violeta",
+            "tipos": [
+                "Clase",
+                "Inventor",
+                "Invención"
+            ],
+            "subtipos": [
+                "Herramientas"
+            ],
+            "descripciones": [
+                "<b>Prerrequisitos:</b> Nivel 7.",
+                "Una flauta de color violeta que cualquiera puede tocar como Acción y gastar 2 PP para sanar de estar dormido, infatuado, confuso o asustado a las criaturas a 5 metros de ella."
+            ]
+        },
+        {
+            "nombre": "Lanzabolas",
+            "tipos": [
+                "Clase",
+                "Inventor",
+                "Invención"
+            ],
+            "subtipos": [
+                "Herramientas"
+            ],
+            "descripciones": [
+                "<b>Prerrequisitos:</b> Ninguno.",
+                "Un aparato que sirve para lanzar bolas a mayor distancia. Cuando una criatura lanza una bola creada por uno de tus Paquetes, un objeto similar o una Poké Ball, el rango al que puede lanzarlo se duplica.",
+                "A partir de nivel 7, cuando una persona lanza una Poké Ball para capturar a un Pokémon con esta Invención, añade tu Mente en lugar de su Presencia a la Tirada de Trato Pokémon que hace para capturar al Pokémon."
+            ]
+        },
+        {
+            "nombre": "Pokerádar",
+            "tipos": [
+                "Clase",
+                "Inventor",
+                "Invención"
+            ],
+            "subtipos": [
+                "Herramientas"
+            ],
+            "descripciones": [
+                "<b>Prerrequisitos:</b> Nivel 14.",
+                "Un aparato electrónico con una antenita y una pantalla. Como Acción, puede usarse para escanear un Pokémon a menos de 10 metros del usuario y su información queda almacenada en este. Posteriormente un usuario puede usar su Acción para localizar los Pokémon de una especie que has escaneado en un rango en Kilómetros a tu alrededor igual a la mitad de tu Mente."
+            ]
+        },
+        {
+            "nombre": "Sincromisor",
+            "tipos": [
+                "Clase",
+                "Inventor",
+                "Invención"
+            ],
+            "subtipos": [
+                "Herramientas"
+            ],
+            "descripciones": [
+                "<b>Prerrequisitos:</b> Nivel 14.",
+                "Un aparato electrónico con una antenita y una pantalla. Cualquier persona puede usar su Acción para el control de uno de sus Pokémon si este te lo permite mediante ondas psíquicas que tienen un rango en kilómetros igual a la mitad de tu Mente. Puedes controlarlo como si fueras el Pokémon y puedes ver lo que ve en la pantalla."
+            ]
+        },
+        {
+            "nombre": "Termopulsor",
+            "tipos": [
+                "Clase",
+                "Inventor",
+                "Invención"
+            ],
+            "subtipos": [
+                "Herramientas"
+            ],
+            "descripciones": [
+                "<b>Prerrequisitos:</b> Ninguno.",
+                "Creas un aparato que expulsa aire frío o caliente que sólo tú sabes cómo utilizar correctamente. Puedes usar el termopulsor para lanzar este aire, ya sea frío o cálido, en un cono de 2 metros como Acción. Al hacerlo, las criaturas en el cono hacen una Tirada de Salvación de Resistencia. Si la fallan, reciben daño de Tipo Hielo o Fuego (a tu elección) igual a 1d6. Usar este aparato cuenta cómo usar un Movimiento con la Etiqueta de Viento.",
+                "A partir de nivel 7, si el Inventor puede usar el termopulsor por 1 PP, aumentando el daño base de este en un dado y haciendo que el cono se vuelva de 3 metros. Además, a partir de Nivel 14, puede usarlo por 3 PP que el daño aumente en 2 dados, el cono sea de hasta 4 metros y que las criaturas que fallen la Tirada de Salvación ganen 1 Nivel de Quemado (si se eligió aire caliente) o Helado (si se eligió aire frío)."
+            ]
+        },
+        {
+            "nombre": "Vaporizador",
+            "tipos": [
+                "Clase",
+                "Inventor",
+                "Invención"
+            ],
+            "subtipos": [
+                "Herramientas"
+            ],
+            "descripciones": [
+                "<b>Prerrequisitos:</b> Ninguno.",
+                "Creas un vaporizador que expulsa sustancias tóxicas que sólo tú sabes cómo utilizar correctamente. Puedes usar este vaporizador para lanzar veneno sobre una criatura a menos de 3 metros de ti como Acción. Al hacerlo, la criatura hace una Tirada de Salvación de Resistencia. Si la falla, la criatura recibe daño de Tipo Veneno igual a 1d8. Si, además, la Tirada Natural de la criatura es de 2-, gana 1 Nivel de Envenenado.",
+                "A partir de nivel 7, si el Inventor puede usar el Vaporizador por 1 PP, aumentando el daño base de este en un dado y que la criatura gane 1 Nivel de Envenenado si la Tirada Natural es de 4- Además, a partir de Nivel 14, puede usarlo por 3 PP, haciendo que el daño aumente en 2 dados y que la criatura gane 1 Nivel de Envenenado si falla la Tirada de Salvación.",
+                "Los Equipos son invenciones que fueron creadas para llevarse encima del cuerpo y, por lo tanto, una vez creadas sólo puede usarlas una criatura con una fisionomía similar a la de la especie de la criatura para la que se creó en primer lugar. Cambiar quién puede usar estas piezas de equipo requiere una Acción Extendida y 300$ en materiales.",
+                "Una criatura puede llevar tantas Invenciones de Equipo como quiera, pero si lleva varias con el mismo nombre sólo se beneficia una vez del efecto que estas le dan. También es importante resaltar que, por ejemplo, si dos invenciones son gafas, no pueden usarse a la vez, puesto que se llevan puestas en el mismo lugar."
+            ]
+        },
+        {
+            "nombre": "Armadura de Batalla",
+            "tipos": [
+                "Clase",
+                "Inventor",
+                "Invención"
+            ],
+            "subtipos": [
+                "Equipo"
+            ],
+            "descripciones": [
+                "<b>Prerrequisitos:</b> Nivel 14.",
+                "Esta pieza de armadura se lleva en el pecho y cuenta como una pieza de Armadura ligera o pesada, a elección del Inventor al crearla. Una criatura que lleva esta pieza de armadura se vuelve inmune al daño extra de los movimientos críticos."
+            ]
+        },
+        {
+            "nombre": "Botas de Carreras",
+            "tipos": [
+                "Clase",
+                "Inventor",
+                "Invención"
+            ],
+            "subtipos": [
+                "Equipo"
+            ],
+            "descripciones": [
+                "<b>Prerrequisitos:</b> Ninguno.",
+                "Estas botas están hechas para correr a toda velocidad y llevarlas puestas te vuelve más ágil. Cuando una criatura lleva las botas puestas, su velocidad de caminado aumenta en 2 metros.",
+                "A partir de nivel 7, las Tiradas de los Ataques de Oportunidad generados por una criatura que lleva estas botas se hacen en Desventaja y, a partir de nivel 14, las criatura que lleva estas botas no provoca Ataques de Oportunidad."
+            ]
+        },
+        {
+            "nombre": "Botas de Movilidad",
+            "tipos": [
+                "Clase",
+                "Inventor",
+                "Invención"
+            ],
+            "subtipos": [
+                "Equipo"
+            ],
+            "descripciones": [
+                "<b>Prerrequisitos:</b> Nivel 7.",
+                "Estas botas tienen dos modalidades que pueden activarse como una Acción. El Modo Escalado, que hace que salgan pinchos de la parte frontal que dan al usuario una Velocidad de Escalado igual a su Velocidad de Caminado y el Modo Aletas, que hace que las botas se vuelvan aletas de nado que dan al usuario una Velocidad de Nado igual a su Velocidad de Caminado.",
+                "A partir del nivel 14, una criatura que lleva estas botas no se ve afectada por el Terreno Difícil."
+            ]
+        },
+        {
+            "nombre": "Botas Gruesas",
+            "tipos": [
+                "Clase",
+                "Inventor",
+                "Invención"
+            ],
+            "subtipos": [
+                "Equipo"
+            ],
+            "descripciones": [
+                "<b>Prerrequisitos:</b> Nivel 7.",
+                "Estas botas tienen una suela dura y resistente que protegen a quien las lleve puestas del daño provocado por púas, rocas afiladas y objetos similares en el suelo."
+            ]
+        },
+        {
+            "nombre": "Capa protectora",
+            "tipos": [
+                "Clase",
+                "Inventor",
+                "Invención"
+            ],
+            "subtipos": [
+                "Equipo"
+            ],
+            "descripciones": [
+                "<b>Prerrequisitos:</b> Nivel 7.",
+                "Esta capa está hecha de una tela especial que te protege de los efectos secundarios de los Movimientos provocados por obtener una cierta Tirada Natural.",
+                "A partir de nivel 14, cuando una criatura que lleva esta capa es forzada a hacer una Tirada de Salvación por un efecto que fuese a dejarla envenenada, paralizada, quemada o helada, puede usar 1 PP y su Reacción para protegerse con la capa y ganar Ventaja en dicha Tirada."
+            ]
+        },
+        {
+            "nombre": "Casco dentado",
+            "tipos": [
+                "Clase",
+                "Inventor",
+                "Invención"
+            ],
+            "subtipos": [
+                "Equipo"
+            ],
+            "descripciones": [
+                "<b>Prerrequisitos:</b> Nivel 7.",
+                "Cuando llevas este casco puesto y te asestan un golpe crítico con una Tirada de Ataque Cuerpo a cuerpo, la criatura que realizó la Tirada de Ataque recibe la misma cantidad de daño Tipo Roca o Acero (se elige cuando se crea la invención).",
+                "A partir de nivel 14, cuando una criatura que lleva este casco recibe daño de una Tirada de Ataque cuerpo a cuerpo, el atacante recibe una cantidad de puntos de daño del tipo elegido al crear la Invención igual a tu Mente."
+            ]
+        },
+        {
+            "nombre": "Chaleco antibalas",
+            "tipos": [
+                "Clase",
+                "Inventor",
+                "Invención"
+            ],
+            "subtipos": [
+                "Equipo"
+            ],
+            "descripciones": [
+                "<b>Prerrequisitos:</b> Nivel 7.",
+                "Cuando una criatura lleva puesto este chaleco, recibe la mitad de daño de los Movimientos con la etiqueta de Bala.",
+                "A partir de nivel 14, además reduce el daño de los Movimientos con la etiqueta de Bala tu Mente del daño de los movimientos de bala en una cantidad igual a tu Mente."
+            ]
+        },
+        {
+            "nombre": "Chaleco asalto",
+            "tipos": [
+                "Clase",
+                "Inventor",
+                "Invención"
+            ],
+            "subtipos": [
+                "Equipo"
+            ],
+            "descripciones": [
+                "<b>Prerrequisitos:</b> Nivel 7.",
+                "Cuando una criatura lleva este chaleco puesto y recibe daño provocado por una Tirada de Ataque a rango, reduce este daño en una cantidad igual a tu Mente."
+            ]
+        },
+        {
+            "nombre": "Colector de energía",
+            "tipos": [
+                "Clase",
+                "Inventor",
+                "Invención"
+            ],
+            "subtipos": [
+                "Equipo"
+            ],
+            "descripciones": [
+                "<b>Prerrequisitos:</b> Nivel 7.",
+                "Este collar puede contener energía eléctrica por un tiempo. Cuando una criatura que lo lleva recibe daño de Tipo Eléctrico, puede usar su Reacción y 2 PP para que el colector recoja la energía, haciendo que la criatura no reciba daño ni otros efectos asociados al efecto que lo causaba. Cuando el colector está cargado de energía eléctrica no puede usarse de nuevo hasta que se descargue al final de la Escena o cuando la criatura que lo lleva toque o infrinja daño a otra criatura, que recibe una cantidad de d4 de daño de Tipo Eléctrico igual a tu Mente."
+            ]
+        },
+        {
+            "nombre": "Cubrefauces",
+            "tipos": [
+                "Clase",
+                "Inventor",
+                "Invención"
+            ],
+            "subtipos": [
+                "Equipo"
+            ],
+            "descripciones": [
+                "<b>Prerrequisitos:</b> Nivel 7.",
+                "Este cubrefauces se diseña para una especie Pokémon específica. En un Descanso se puede modificar el usuario. Si el usuario no tiene la habilidad Mandíbula fuerte, la gana."
+            ]
+        },
+        {
+            "nombre": "Cubregarras",
+            "tipos": [
+                "Clase",
+                "Inventor",
+                "Invención"
+            ],
+            "subtipos": [
+                "Equipo"
+            ],
+            "descripciones": [
+                "<b>Prerrequisitos:</b> Nivel 7.",
+                "Este cubregarras se diseña para una especie Pokémon específica. En un Descanso se puede modificar el usuario. Si el usuario no tiene la habilidad Garra dura, la gana."
+            ]
+        },
+        {
+            "nombre": "Cubrepatas",
+            "tipos": [
+                "Clase",
+                "Inventor",
+                "Invención"
+            ],
+            "subtipos": [
+                "Equipo"
+            ],
+            "descripciones": [
+                "<b>Prerrequisitos:</b> Nivel 7.",
+                "Este cubrepatas se diseña para una especie Pokémon específica. En un Descanso se puede modificar el usuario. Si el usuario no tiene la habilidad Patada férrea, la gana."
+            ]
+        },
+        {
+            "nombre": "Cubrepuños",
+            "tipos": [
+                "Clase",
+                "Inventor",
+                "Invención"
+            ],
+            "subtipos": [
+                "Equipo"
+            ],
+            "descripciones": [
+                "<b>Prerrequisitos:</b> Nivel 7.",
+                "Este cubrepuños se diseña para una especie Pokémon específica. En un Descanso se puede modificar el usuario. Si el usuario no tiene la habilidad Puño férreo, la gana."
+            ]
+        },
+        {
+            "nombre": "Cubresuelos",
+            "tipos": [
+                "Clase",
+                "Inventor",
+                "Invención"
+            ],
+            "subtipos": [
+                "Equipo"
+            ],
+            "descripciones": [
+                "<b>Prerrequisitos:</b> Nivel 14.",
+                "Este pequeño tanque de gas puede contener un Movimiento de Campo. Una criatura puede usar un Movimiento con la Etiqueta de Campo en este tanque y este queda contenido en su interior hasta que una criatura lo libere como Acción y sin gastar PP."
+            ]
+        },
+        {
+            "nombre": "Gafa protectora",
+            "tipos": [
+                "Clase",
+                "Inventor",
+                "Invención"
+            ],
+            "subtipos": [
+                "Equipo"
+            ],
+            "descripciones": [
+                "<b>Prerrequisitos:</b> Nivel 7.",
+                "Cuando una criatura lleva estas gafas puestas, es inmune a los Movimientos con la etiqueta de Polvo, la Habilidad Efecto espora y su visión no puede verse afectada por el polvo, barro o sustancias similares."
+            ]
+        },
+        {
+            "nombre": "Gafas de Visión de Sableye",
+            "tipos": [
+                "Clase",
+                "Inventor",
+                "Invención"
+            ],
+            "subtipos": [
+                "Equipo"
+            ],
+            "descripciones": [
+                "<b>Prerrequisitos:</b> Ninguno.",
+                "Estas gafas imitan los ojos de un Sableye y permiten ver como si se fuese uno. Cuando una criatura lleva puestas estas gafas, gana un bono a las Tiradas de Habilidad de Percepción e Investigación igual a tu Mente.",
+                "A partir de nivel 7, mejoras las gafas. Por 1 PP y como interacción, su usuario puede tocar los dos cristales de las gafas a la vez y hacer que las gafas brillen con una tenue luz roja hasta que las apague como interacción o hasta el final de la Escena. Mientras las gafas brillan, la criatura gana Visión en la Oscuridad de 10 metros. A partir de nivel 14, el radio de esta visión aumenta a 20 metros"
+            ]
+        },
+        {
+            "nombre": "Guantes de boxeo",
+            "tipos": [
+                "Clase",
+                "Inventor",
+                "Invención"
+            ],
+            "subtipos": [
+                "Equipo"
+            ],
+            "descripciones": [
+                "<b>Prerrequisitos:</b> Nivel 7.",
+                "Cuando una criatura que lleva estos guantes puestos usa un Movimiento con la etiqueta de Puño, añade la mitad de tu Mente al daño base de dicho Movimiento. Además, no puede recibir daño por golpear con los Movimientos que hace con sus puños a una criatura."
+            ]
+        },
+        {
+            "nombre": "Pieza de armadura ligera",
+            "tipos": [
+                "Clase",
+                "Inventor",
+                "Invención"
+            ],
+            "subtipos": [
+                "Equipo"
+            ],
+            "descripciones": [
+                "<b>Prerrequisitos:</b> Nivel 7.",
+                "Una pieza de armadura que protege del daño levemente. Las partes que cubren una pieza de la armadura son pecho, brazos (si se tienen), piernas o cabeza. Por cada dos piezas de armadura ligera que una criatura lleva, su CA aumenta en 1."
+            ]
+        },
+        {
+            "nombre": "Pieza de armadura pesada",
+            "tipos": [
+                "Clase",
+                "Inventor",
+                "Invención"
+            ],
+            "subtipos": [
+                "Equipo"
+            ],
+            "descripciones": [
+                "<b>Prerrequisitos:</b> Nivel 7.",
+                "Una pieza de armadura que protege del daño a costa de movilidad. Las partes que cubren una pieza de la armadura son pecho, brazos (si se tienen), piernas o cabeza. Por cada pieza de armadura pesada que una criatura lleva, su CA aumenta en 1 y sus Velocidades se reducen en 1."
+            ]
+        },
+        {
+            "nombre": "Replicar amuleto",
+            "tipos": [
+                "Clase",
+                "Inventor",
+                "Invención"
+            ],
+            "subtipos": [
+                "Equipo"
+            ],
+            "descripciones": [
+                "<b>Prerrequisitos:</b> Nivel 7.",
+                "Replicas uno de los amuletos que puedes encontrar en Capítulo 9: Equipo y Objetos. Cuando aprendes esta invención elige uno de los amuletos de la tabla de Amuletos elementales o de la Tabla de Amuletos no elementales. Puedes crear ese amuleto. Puedes cambiar el amuleto que eliges cuando aprendes esta Invención cada vez que subes de nivel y, si lo haces, el amuleto creado cambia al nuevo.",
+                "Puedes aprender a crear esta Invención tantas veces como quieras, eligiendo amuletos nuevos cada vez que la aprendes.",
+                "A partir de nivel 14, por cada vez que aprendes a crear esta Invención aprendes a crear dos amuletos en lugar de uno."
+            ]
+        },
+        {
+            "nombre": "Ropas térmicas",
+            "tipos": [
+                "Clase",
+                "Inventor",
+                "Invención"
+            ],
+            "subtipos": [
+                "Equipo"
+            ],
+            "descripciones": [
+                "<b>Prerrequisitos:</b> Ninguno.",
+                "Estas ropas pueden ser diseñadas para personas o para una especie pokémon específica. Una criatura que lleva estas ropas puestas no se ve afectada por el calor o frío extremos causados por el clima.",
+                "A partir de nivel 7, la criatura que las lleva puestas no puede quedar helada o acalorada y, a partir de Nivel 14, resiste el daño de Tipo Fuego y Hielo."
+            ]
+        },
+        {
+            "nombre": "Supertapones",
+            "tipos": [
+                "Clase",
+                "Inventor",
+                "Invención"
+            ],
+            "subtipos": [
+                "Equipo"
+            ],
+            "descripciones": [
+                "<b>Prerrequisitos:</b> Ninguno.",
+                "Este par de tapones para los oídos bloquea los ruidos demasiado fuertes. Ponerse o quitarse los tapones cuenta como una Acción y, cuando una criatura los lleva puestos, recibe la mitad de daño de los Movimientos con la Etiqueta de Sonido.",
+                "A partir de nivel 7, los tapones también pueden amplificar los sonidos más débiles del entorno. Por 1 PP, una criatura puede activar este efecto de los tapones con su Acción, haciendo que gane un bono a las Tiradas de Percepción e investigación asociadas a oír."
+            ]
+        },
+        {
+            "nombre": "Traje de Alas de Noivern",
+            "tipos": [
+                "Clase",
+                "Inventor",
+                "Invención"
+            ],
+            "subtipos": [
+                "Equipo"
+            ],
+            "descripciones": [
+                "<b>Prerrequisitos:</b> Nivel 7.",
+                "Este traje imita las alas de un Noivern y puede colocarse en la espalda de cualquier pieza de ropa o usarse como ropa. Sólo una criatura con forma humanoide puede usar este traje.",
+                "Cuando una criatura que lleva este traje cae puede abrir las alas del traje, que se ven como membranas que unen sus brazos a su torso y le permiten planear, de forma que por cada metro que cae puede avanzar 2 metros de forma horizontal y no recibe daño de caída cuando toca el suelo. En combate, una criatura que planea con el traje cae un mínimo de 5 metros por ronda.",
+                "Además, a partir de nivel 14, una criatura que lleva el traje puede batir las alas como Acción por 1 PP. Cuando lo hace, se dispara en el aire una cantidad de metros menor o igual al doble de tu Mente y sin provocar ataques de oportunidad."
+            ]
+        },
+        {
+            "nombre": "Traje de buzo",
+            "tipos": [
+                "Clase",
+                "Inventor",
+                "Invención"
+            ],
+            "subtipos": [
+                "Equipo"
+            ],
+            "descripciones": [
+                "<b>Prerrequisitos:</b> Ninguno.",
+                "Este traje de buzo puede ser diseñado para personas o para una especie pokémon específica. Una criatura que lo lleva puesto puede respirar bajo el agua y gana una velocidad de nado igual a su velocidad de caminado."
+            ]
+        },
+        {
+            "nombre": "Paquetes",
+            "tipos": [
+                "Clase",
+                "Inventor",
+                "Invención",
+                "Tipo de Invención"
+            ],
+            "subtipos": [
+                "Paquetes"
+            ],
+            "descripciones": [
+                "Tal y como su nombre indica, los Paquetes son invenciones que te permiten crear varios objetos de un tipo que guardas en una bolsa, maletín o similar. Todos los Paquetes siguen las siguientes reglas:",
+                "Sólo tú puedes llevar tus Paquetes, pues requieren de cuidados particulares que sólo tú sabes cómo y cuándo dárselos. Este Paquete tiene un tipo de Objetos definidos por la Invención. Con tu permiso y como interacción, cualquier criatura puede sacar del paquete uno de estos objetos, lo que te cuesta 1 PP. Si uno de estos objetos no ha sido usado al final de una Escena, puedes elegir entre que deje de funcionar o que este siga funcionando. Si eliges que siga funcionando, no recuperas los PP gastados por sacarlo del Paquete hasta el final de la Escena en la que se la use.",
+                "Además, puedes crear copias extra de los objetos que creas para guardar en el paquete como una Acción Extendida de 10 minutos por 200$. Estos objetos no pierden nunca su efecto y no te cuesta PP usarlos."
+            ]
+        },
+        {
+            "nombre": "Cápsulas",
+            "tipos": [
+                "Clase",
+                "Inventor",
+                "Invención",
+                "Tipo de Invención"
+            ],
+            "subtipos": [
+                "Cápsulas"
+            ],
+            "descripciones": [
+                "Las cápsulas son un tipo de Invención que se usa para cubrir una Poké Ball y que otorgan efectos especiales que se activan cuando un Pokémon entra, sale o está en su Poké Ball o cambian el cómo o cuándo los Pokémon pueden entrar o salir de su Poké Ball. Una sola Invención de Cápsulas cuenta con una cantidad de estas igual a tu Mente.",
+                "Poner o quitar una Cápsula a una Poké Ball cuenta como una Acción Extendida y, aunque una Poké Ball puede llevar varias cápsulas puestas a la vez, si lleva varias cápsulas del mismo tipo sólo una de ellas surte efecto."
+            ]
+        },
+        {
+            "nombre": "Herramientas",
+            "tipos": [
+                "Clase",
+                "Inventor",
+                "Invención",
+                "Tipo de Invención"
+            ],
+            "subtipos": [
+                "Herramientas"
+            ],
+            "descripciones": [
+                "Las Herramientas son piezas de equipo tecnológico muy avanzado que has diseñado y que, en ocasiones, sólo tú sabes hacer funcionar. Algunas Herramientas tienen una forma de realizar daño mediante una Tirada de Ataque o de Salvación. Estas Herramientas cuentan como Armas, a efectos de Rasgos que afecten el funcionamiento de Armas."
+            ]
+        },
+        {
+            "nombre": "Equipo",
+            "tipos": [
+                "Clase",
+                "Inventor",
+                "Invención",
+                "Tipo de Invención"
+            ],
+            "subtipos": [
+                "Equipo"
+            ],
+            "descripciones": [
+                "Los Equipos son invenciones que fueron creadas para llevarse encima del cuerpo y, por lo tanto, una vez creadas sólo puede usarlas una criatura con una fisionomía similar a la de la especie de la criatura para la que se creó en primer lugar. Cambiar quién puede usar estas piezas de equipo requiere una Acción Extendida y 300$ en materiales.",
+                "Una criatura puede llevar tantas Invenciones de Equipo como quiera, pero si lleva varias con el mismo nombre sólo se beneficia una vez del efecto que estas le dan. También es importante resaltar que, por ejemplo, si dos invenciones son gafas, no pueden usarse a la vez, puesto que se llevan puestas en el mismo lugar."
+            ]
+        },
+        {
+            "nombre": "Invenciones",
+            "tipos": [
+                "Clase",
+                "Inventor",
+                "Invención"
+            ],
+            "descripciones": [
+                "Las Invenciones que un Inventor sabe crear son, junto a sus Pokémon, lo que más los caracteriza. Hay cuatro tipos de Invenciones: Paquetes, que tienen pequeñas invenciones dentro que pueden sacarse y lanzarse a cambio de PP, Cápsulas para las Poké Balls, que les darán efectos especiales a estas, herramientas que el Inventor y en ocasiones también sus compañeros podrán utilizar y piezas de Equipo tanto para Humanos como Pokémon."
+            ]
+        }
+    ]
 ]
