@@ -98,8 +98,8 @@
         "title": "Reglas",
         "submenu": [
             {
-                "name": "Índice",
-                "route": "/"
+                "name": "Todas las reglas",
+                "route": "/reglas"
             }
         ]
     },

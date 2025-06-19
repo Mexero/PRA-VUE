@@ -127,6 +127,11 @@ const router = createRouter({
       name: 'movz',
       component: () => import('../views/MovimientosZView.vue'),
     },
+    {
+      path: "/reglas",
+      name: 'reglas',
+      component: () => import('../views/ReglasView.vue'),
+    },
 
 
     { //Este redirige si no hay una regla definida
