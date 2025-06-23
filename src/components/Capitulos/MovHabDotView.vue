@@ -266,19 +266,15 @@
                 El <strong>Rango de Crítico</strong> es un valor que aumenta el rango de
                 las Tiradas Naturales en las que la Tirada de Ataque de un Movimiento es
                 un Golpe Crítico. Por ejemplo, si una criatura tiene un Rango de Crítico
-                de 3 y el Movimiento que usa hace Crítico en
-            </p>
-
-            <p>
-                19+, el Movimiento será Crítico en 16+ y si el Movimiento hiciera
-                Crítico en 20 y el Rango de Crítico es de 2, una Tirada Natural de 18+
-                asestaría un Golpe Crítico
+                de 3 y el Movimiento que usa hace Crítico en 19+, el Movimiento será Crítico en 16+ y si el Movimiento
+                hiciera Crítico en 20 y el Rango de Crítico es de 2, una Tirada Natural de 18+
+                asestaría un Golpe Crítico.
             </p>
 
             <p>
                 De forma natural, el <strong>Rango de Crítico</strong> de todas las
                 criaturas <strong>es de 0</strong>, pero este puede aumentar, usualmente
-                gracias a otros Movimientos usados previamente o Habilidades
+                gracias a otros Movimientos usados previamente o Habilidades.
             </p>
         </div>
     </details>
@@ -287,7 +283,7 @@
         <summary>Bonus de Ataque por Mismo Tipo</summary>
         <div class="detailsBloque">
             <p>
-                El bonus de ataque por mismo tipo, o STAB por sus siglas en inglés, es
+                El <strong>bonus de ataque por mismo tipo</strong>, o <strong>STAB</strong> por sus siglas en inglés, es
                 un bono que se añade al daño de un Movimiento que comparte Tipo
                 Elemental con su usuario y es igual al BH del usuario. Como todos los
                 bonos al daño, el STAB sólo se añade a la primera instancia de daño que
@@ -311,7 +307,7 @@
                 ordenador haciendo que su Pikachu use Rayo es más que razonable que
                 pueda hacerlo. De la misma forma, en ninguna parte de la descripción de
                 Pistola de Agua se dice que apague fuegos pero es razonable que usarlo
-                pudiese ayudar a hacerlo
+                pudiese ayudar a hacerlo.
             </p>
         </div>
     </details>
@@ -390,7 +386,7 @@
                 </li>
                 <li>
                     <p>
-                        <strong>Mordisco</strong>: Son Movimientos que se basan en morder
+                        <strong>Mordisco</strong>: Son Movimientos que se basan en morder.
                     </p>
                 </li>
                 <li>

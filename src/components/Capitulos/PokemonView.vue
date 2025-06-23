@@ -152,7 +152,7 @@
 
             <p>
                 <strong>Movimientos por nivel</strong>: Es una lista que describe qué
-                Movimientos aprende el Pokémon al subir deNivel.
+                Movimientos aprende el Pokémon al subir de Nivel.
             </p>
         </div>
     </details>
@@ -164,7 +164,7 @@
                 En la Pokédex hay una segunda sección bajo todas las entradas en la que
                 se encuentran las Listas de Movimientos Enseñables de todos los Pokémon.
                 Esta contiene los movimientos que el Pokémon puede aprender por MT,
-                mediante Tutor o de cualquier otra forma
+                mediante Tutor o de cualquier otra forma.
             </p>
         </div>
     </details>
@@ -584,6 +584,10 @@
                 nuevas Estadísticas, cambiando sus Tipos, Habilidades y otros rasgos que
                 posea a los de su forma evolucionada y recuperando la mitad de sus PV y
                 PP.
+            </p>
+            <p>
+                Por otro lado, un Pokémon puede evolucionar también por su cuenta y, si requiere de un objeto para
+                hacerlo, evoluciona involuntariamente si lo toca mientras cumple los demás prerrequisitos.
             </p>
 
             <p>

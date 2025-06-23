@@ -2163,5 +2163,1186 @@
         "descripciones": [
             "Las Invenciones que un Inventor sabe crear son, junto a sus Pokémon, lo que más los caracteriza. Hay cuatro tipos de Invenciones: Paquetes, que tienen pequeñas invenciones dentro que pueden sacarse y lanzarse a cambio de PP, Cápsulas para las Poké Balls, que les darán efectos especiales a estas, herramientas que el Inventor y en ocasiones también sus compañeros podrán utilizar y piezas de Equipo tanto para Humanos como Pokémon."
         ]
+    },
+    {
+        "nombre": "Redondeo",
+        "tipos": [
+            "Regla",
+            "Capítulo 2"
+        ],
+        "descripciones": [
+            "Si una regla habla de dividir un número y el resultado obtenido es un número decimal, siempre se redondea hacia abajo, a no ser que se especifique lo contrario. Es decir, 5'9999 se redondea a 5, no a 6. "
+        ]
+    },
+    {
+        "nombre": "Las Escenas",
+        "tipos": [
+            "Término",
+            "Capítulo 2"
+        ],
+        "descripciones": [
+            " Las partidas que juegues estarán divididas en <b>Escenas</b>. Puedes pensar en estas Escenas como en las de una serie. Es decir, no tienen una duración fija, sino que están definidas por la narrativa. En general, si hay un corte de transición, salto de tiempo o todo el mundo están abandonando el lugar después de un evento, probablemente haya un cambio de Escena. ",
+            " Un ejemplo de Escena muy fácil de comprender son los combates, que a menudo son una Escena en si misma o una parte integral de la misma y cuyo final suele ir de la mano con el final de su Escena. "
+        ]
+    },
+    {
+        "nombre": "Las Acciones",
+        "tipos": [
+            "Término",
+            "Capítulo 2"
+        ],
+        "descripciones": [
+            "Los tipos de acciones que existen son:",
+            "Las <b>Acciones</b>, que tardan unos segundos en ejecutarse. ",
+            "Las <b>Interracciones</b> suelen ser aún más rápidas que suelen implicar interactuar de forma sencilla con el entorno, como abrir una puerta y coger algo del suelo.",
+            "Las <b>Acciones Extendidas</b> toman al menos el tiempo suficiente como para ser imposibles de realizar en medio de un combate o en otras situaciones en las que no hay mucho tiempo disponible. Algunas Acciones Extendidas además indican su duración exacta y otras lo dejan a discreción del DJ."
+        ]
+    },
+    {
+        "nombre": "Las Estadísticas",
+        "tipos": [
+            "Término",
+            "Capítulo 2"
+        ],
+        "descripciones": [
+            "Todas las Criaturas tienen capacidades definidas por sus seis <b>Estadísticas.</b> ",
+            " Las Estadísticas son <b>Fuerza (FUE)</b>, que representa el poder físico, <b>Agilidad (AGI)</b>, que representa la destreza, <b>Resistencia (RES)</b>, que mide el aguante y la constitución física, <b>Mente (MEN)</b>, que mide tu habilidad memorística, de razonamiento, conocimientos y, de tenerlos, la fuerza de los poderes mentales, <b>Espíritu (ESP)</b>, que representa tu fuerza de voluntad y tu sintonía con tu entorno y el mundo natural, y <b>Presencia (PRE)</b>, que representa tu habilidad para influir en otros. En general, las Estadísticas suelen oscilar entre -1 y 7. "
+        ]
+    },
+    {
+        "nombre": "Criatura",
+        "tipos": [
+            "Término",
+            "Capítulo 2"
+        ],
+        "descripciones": [
+            "Tanto los Personajes como los Pokémon son considerados <b>Criaturas</b>."
+        ]
+    },
+    {
+        "nombre": "Tiradas Naturales",
+        "tipos": [
+            "Término",
+            "Capítulo 2"
+        ],
+        "descripciones": [
+            "Cuando lanzas un d20, la <b>Tirada Natural</b> de dicha tirada es el número que obtuviste en el dado. Algunos efectos harán referencia a que ocurre algo si una Tirada Natural cumple cierta condición. Algunas de las condiciones más usuales tienen una forma abreviada de escribirse y estas son: ",
+            "La Tirada Natural es de un valor X o superior, que se escribe “La Tirada Natural es de X+”.",
+            "La Tirada Natural es de un valor X o inferior, que se escribe “La Tirada Natural es de X-”. "
+        ]
+    },
+    {
+        "nombre": "Pruebas de d20",
+        "tipos": [
+            "Término",
+            "Capítulo 2"
+        ],
+        "descripciones": [
+            "Cuando un personaje o Pokémon intenta realizar una acción cuyo acierto o fallo pudiera tener algún tipo de relevancia, el jugador que lo controla realiza una <b>Prueba de d20</b>. Para hacerlo, tira un d20 y añade la Estadística pertinente y los demás bonus que sean y compara el total obtenido contra la <b>Clase de Dificultad de la prueba (CD)</b>. Si la tirada es superior o igual, el personaje realiza la acción tal y como deseaba, si es inferior, el DJ puede elegir entre que simplemente se falle al realizar la acción o que se acierte pero con una consecuencia. ",
+            "Es importante considerar que no todos los fallos ni aciertos son iguales, si un personaje intenta saltar de un acantilado a otro y falla por 1 o 2 esto puede representar casi resbalar pero conseguir mantenerse en él a costa de torcerse el tobillo y un fallo por 6 o 7 puede representar un tropiezo estrepitoso y una inevitable caída al vacío."
+        ]
+    },
+    {
+        "nombre": "Dificultad de una Tirada (CD)",
+        "tipos": [
+            "Término",
+            "Capítulo 2"
+        ],
+        "descripciones": [
+            "Cuando se realiza una Tirada de d20, esta debe alcanzar un valor conocido como su <b>Clase de Dificultad (CD)</b>. Esta CD es establecida por el efecto que provoca la tirada o por el DJ si no lo tiene, en función de que tan difícil es la Tirada."
+        ]
+    },
+    {
+        "nombre": "Tipos de Pruebas de d20",
+        "tipos": [
+            "Término",
+            "Capítulo 2"
+        ],
+        "descripciones": [
+            "Dentro de las Pruebas de d20 hay tres tipos:",
+            "Las <b>Tiradas de Habilidad</b>, que se realizan cuando un personaje quiere hacer algún tipo de acción general, tienen una CD establecida por el DJ dependiente de la dificultad de la acción a tomar. Cuando el DJ te pida una Tirada de Habilidad, te dirá que Habilidad y que Estadística están involucradas. Para abreviar, usualmente estas se describen de la forma “Habilidad (Estadística)”.",
+            "Las <b>Tiradas de Ataque</b>, que se realizan cuando se intenta atacar a una criatura, y cuya dificultad es la Clase de Armadura (CA) de la misma. ",
+            "Las <b>Tiradas de Salvación</b>, que son tiradas que realizan las criaturas para evitar sufrir un efecto provocado por algún tipo de efecto el cual define cuál es su CD. Sólo hay las Tiradas de Salvación de Fuerza, Agilidad, Resistencia y Espíritu."
+        ]
+    },
+    {
+        "nombre": "Nivel",
+        "tipos": [
+            "Término",
+            "Capítulo 2"
+        ],
+        "descripciones": [
+            "Todo Pokémon y Personaje posee un <b>Nivel</b>. Este es un valor que usualmente va desde 1 a 20."
+        ]
+    },
+    {
+        "nombre": "Bono de Habilidad",
+        "tipos": [
+            "Término",
+            "Capítulo 2"
+        ],
+        "descripciones": [
+            "El <b>Bono de Habilidad</b> es un valor que posee toda Criatura y que depende de su Nivel, calculándose como la mitad del mismo redondeada hacia arriba.",
+            "El Bono de Habilidad se añade a múltiples valores, principalmente los asociados a Tiradas hechas en el Combate y a las Tiradas de Habilidad en las que la criatura es hábil."
+        ]
+    },
+    {
+        "nombre": "Grado de Habilidad",
+        "tipos": [
+            "Término",
+            "Capítulo 2"
+        ],
+        "descripciones": [
+            "El <b>Grado de Habilidad</b> representa qué tan hábil es una criatura en una Tirada de d20, ya sea una Tirada de Habilidad, de Ataque o de Salvación.",
+            "Existen 5 Grados de Habilidad, cada uno asociado con un valor numérico que va desde 0 hasta 4:",
+            "<b>No entrenado (0)</b>: La Criatura no tiene ningún talento ni conocimiento especial que lo ayude con estas Tiradas de d20. Las Criaturas sólo añaden la Estadística pertinente a estas Tiradas al hacerlas.",
+            "<b>Bueno (1)</b>: La Criatura es buena al hacer dicha Tirada. La Criatura añade su Bono de Habilidad (BH) alresultado de la Tirada de d20.",
+            "<b>Experto (2)</b>: La Criatura es destaca al hacer dicha Tirada de Habilidad. La Criatura añade su Bono de Habilidad (BH) + 2 a la Tirada de d20.",
+            "<b>Maestro (3)</b>: La Criatura es extremadamente buena al hacer dicha Tirada de Habilidad. La Criatura añade su Bono de Habilidad (BH) + 4 a la Tirada de d20.",
+            "<b>Lengendario (4)</b>: La Criatura posee una habilidad increible para hacer dicha Tirada de Habilidad. La Criatura añade su Bono de Habilidad (BH) + 6 a la Tirada de d20.",
+            " Cuando un efecto dice que un grado de Habilidad aumenta en 1 quiere decir que pasa al siguiente grado. Por ejemplo, si tu Grado de Habilidad en una Tirada de d20 es de No entrenado, se vuelve Bueno y si es de Experto, se vuelve Maestro.  Cuando un efecto dice que un grado de Habilidad aumenta en 1 quiere decir que pasa al siguiente grado. Por ejemplo, si tu Grado de Habilidad en una Tirada de d20 es de No entrenado, se vuelve Bueno y si es de Experto, se vuelve Maestro."
+        ]
+    },
+    {
+        "nombre": "Tiradas de Habilidad Habituales",
+        "tipos": [
+            "Término",
+            "Capítulo 2"
+        ],
+        "descripciones": [
+            " Las Tiradas de Habilidad están asociadas al tipo de capacidades necesarias para realizar una Acción. ",
+            " Las Tiradas de Habilidad no siempre tienen asociada a la misma Estadística, pero si que suele haber una Estadística con la que suelen hacerse.",
+            " Las Habilidades asociadas usualmente a <b>Fuerza</b> son:",
+            {
+                "tipo": "listaU",
+                "contenido": [
+                    "<b>Atletismo</b> mide las habilidades atléticas, como la capacidad para correr distancias prolongadas, lanzar algo o levantar objetos pesados. ",
+                    "<b>Combate</b> representa tu maestría a la hora de hacer pelear cuerpo a cuerpo, haciendo agarres, evadiéndolos o empujando a rivales. En ocasiones, Combate también se usa con Agilidad. "
+                ]
+            },
+            " Las Habilidades asociadas usualmente a Agilidad son: ",
+            {
+                "tipo": "listaU",
+                "contenido": [
+                    "<b>Acrobacias</b> mide tu habilidad para hacer piruetas complicadas o escurrirte por lugares estrechos. ",
+                    "<b>Juego de Manos</b> mide tu habilidad para hacer movimientos sutiles, como hacer trucos de magia o para robar algo. ",
+                    "<b>Sigilo</b> mide qué tan fácilmente puedes ocultar tu presencia de otros. ",
+                    "<b>Iniciativa</b> mide tu habilidad para entrar en combate y actuar antes que los demás. Esta Habilidad puede usarse sólo con Agilidad o Espíritu (tu elección al hacer la Tirada). "
+                ]
+            },
+            "Las Habilidades asociadas usualmente a <b>Mente</b> son:",
+            {
+                "tipo": "listaU",
+                "contenido": [
+                    "<b>Investigación</b> mide tu habilidad para deducir o encontrar información de detalles de una escena. ",
+                    "Las tiradas de <b>Conocimiento</b> representan la cantidad de información que conoces sobre un área específica. Los varios tipos de tiradas de Conocimiento son: Conocimiento Pokémon, Conocimiento de Historia, Conocimiento Tecnológico, Conocimiento Químico, Conocimiento de Poké Balls, Conocimiento Natural, Conocimiento Médico, Conocimiento de Ocultismo, Conocimiento de Cocina"
+                ]
+            },
+            " Las Habilidades asociadas usualmente a <b>Espíritu</b> son: ",
+            {
+                "tipo": "listaU",
+                "contenido": [
+                    "<b>Empatía</b> mide que tan fácilmente puedes leer y comprender los sentimientos de otros, incluso si buscan ocultarlos. ",
+                    "<b>Percepción</b> caracteriza tu habilidad no sólo de percibir tu entorno mediante tus sentidos sino también la de fijarte en detalles relevantes. ",
+                    "<b>Supervivencia</b> es la habilidad de desenvolverte en la naturaleza, ya sea para encender una fogata u orientarte en mitad del bosque. "
+                ]
+            },
+            " Las Habilidades asociadas usualmente a <b>Presencia</b> son: ",
+            {
+                "tipo": "listaU",
+                "contenido": [
+                    "<b>Actuación</b>: Mide tus habilidades para interpretar algo, ya sea tocar una canción o hacer como que no te duele el pie después de patear una mesa.",
+                    "<b>Engaño</b>: Mide qué tan bien puedes convencer a alguien de algo en lo que no crees, ya sea mediante tus palabras, tu lenguaje corporal o una mezcla de ambos. ",
+                    "<b>Intimidación</b>: Representa lo hábil que se es para imponerse sobre otros, amedrentándolos de hacer algo con tu mera presencia. ",
+                    "<b>Persuasión</b>: Es la habilidad para convencer a otros de hacer algo para lo que en un principio no están completamente predispuestos. ",
+                    "<b>Trato Pokémon</b>: Representa la habilidad del entrenador para establecer relaciones con los Pokémon, hacer que estos se sientan cómodos a su alrededor y que sigan sus órdenes. "
+                ]
+            }
+        ]
+    },
+    {
+        "nombre": "Ventaja y Desventaja",
+        "tipos": [
+            "Regla",
+            "Capítulo 2"
+        ],
+        "descripciones": [
+            "Algunas veces un efecto te dice que tienes <b>Ventaja</b> o <b>Desventaja</b> en una Prueba de d20. Cuando esto suceda, tira un segundo d20 al hacer la tirada. Usa el mayor resultado si tienes Ventaja y el menor si tienes Desventaja. Por ejemplo, si tienes desventaja y sacas 17 y 5, usas el 5. Si, en cambio, tienes ventaja y sacas esos mismos números, usas el 17. ",
+            "Si dos situaciones favorables garantizan una Ventaja sigues tirando un solo d20 adicional. Lo mismo ocurre con la Desventaja.",
+            "Si tienes tanto Ventaja como Desventaja en una Prueba de d20, se considera que no tienes ninguna de las dos y tiras un único d20. Esto se cumple incluso si hay más efectos que te otorgan Ventaja que Desventaja y viceversa. "
+        ]
+    },
+    {
+        "nombre": "Tiradas Enfrentadas",
+        "tipos": [
+            "Término",
+            "Capítulo 2"
+        ],
+        "descripciones": [
+            " No todas las Tiradas de Habilidad se realizan contra un CD. En muchas ocasiones, intentarás una acción que está directamente en conflicto con la de otra persona, como pasar desapercibido ante un guardia vigilante o mentirle a alguien. En ese caso, tanto tú como tu oponente realizan una Tirada de Habilidad y comparan los resultados. En los ejemplos anteriores, se pondrían a prueba Sigilo contra Percepción y Engaño contra Empatía, respectivamente. Quien saque un resultado más alto gana la Tirada enfrentada.",
+            " En caso de empate, gana el defensor, es decir, la persona que mantiene el status quo. Por lo tanto, en los ejemplos anteriores, el guardia que está vigilando y la persona que intenta detectar una mentira se consideran los defensores. "
+        ]
+    },
+    {
+        "nombre": "Tiradas en Grupo",
+        "tipos": [
+            "Término",
+            "Capítulo 2"
+        ],
+        "descripciones": [
+            " Las criaturas pueden, y a menudo deben, cooperar en las Tiradas de Habilidad. Hay dos formas de hacerlo.",
+            " La primera forma es a través de las <b>Tiradas de Habilidad en Grupo</b> , que se utilizan para actividades en las que varios participantes pueden contribuir de manera equitativa a una tarea sin un actor principal. A menudo, estas Tiradas de Habilidad son demasiado difíciles para que una sola persona o Pokémon las maneje por sí solo o tratan una tarea que debe realizar todo el grupo. Un buen ejemplo de esto sería cuando varios Entrenadores y Pokémon evitan que una roca ruede cuesta abajo o cuando todo el grupo tiene que pasar sigilosamente ante un guardia. En estos casos, cada jugador realiza su tirada por separado y se obtiene el promedio de estas. Si este promedio supera o iguala la CD, la tirada se supera, si no, se falla. ",
+            " La segunda forma es mediante las <b>Tiradas con Ayuda</b>. En estas hay un actor principal en la tarea y alguien más puede ayudar de manera secundaria. En estos casos, si la persona que ayuda es al menos Buena en la Habilidad del tipo de Tirada a realizar, este puede dar Ventaja al actor principal para hacer su tirada. "
+        ]
+    },
+    {
+        "nombre": "Trasfondo",
+        "tipos": [
+            "Término",
+            "Capítulo 3"
+        ],
+        "descripciones": [
+            "Un trasfondo es una historia, ya sea un par de frases o unos párrafos, que describe las experiencias previas que tuvo tu personaje antes de empezar la campaña. Dependiendo de lo que definas en tu trasfondo, tu personaje habrá desarrollado unas Habilidades u otras. Estas representan las cosas en las que es bueno, las cosas que le interesan e incluso algunos rasgos de su personalidad. Cuando creas a tu personaje, eres Bueno en Iniciativa y Percepción y eliges otras 4 Habilidades"
+        ]
+    },
+    {
+        "nombre": "Clase",
+        "tipos": [
+            "Término",
+            "Capítulo 3"
+        ],
+        "descripciones": [
+            "Todos los Personajes tienen una <b>Clase</b>. Esta es un conjunto de Habilidades que indica en que es bueno un personaje y que talentos únicos tiene. Al subir de Nivel, una clase otorga <b>Rasgos</b>, los cuales dan habilidades especiales a los personajes de esa Clase que han alcanzado dicho Nivel.",
+            "Hay 4 Clases y estas son: Entrenador, Inventor, Lucachador y Mentalista."
+        ]
+    },
+    {
+        "nombre": "Puntos de Vida",
+        "tipos": [
+            "Término",
+            "Capítulo 3",
+            "Capítulo 6"
+        ],
+        "descripciones": [
+            " Tus <b>Puntos de Vida (PV)</b> son una abstracción de la estamina que aún te queda y de la cantidad de golpes que aún puedes soportar. Ciertos efectos te harán daño, reduciendo tus PV. Cuando estos llegan a 0, caes inconsciente y quedas a completa merced del entorno y de los que te rodean hasta que pase una cantidad de tiempo que determina tu DJ, usualmente unos minutos o un par de horas. Cuando despiertas, lo haces con 1 PV. La cantidad de PV que tienes al inicio del día, tus <b>PV Máximos</b>, se calcula como: 10 + Nivel x (VIT + RES)"
+        ]
+    },
+    {
+        "nombre": "Vitalidad",
+        "tipos": [
+            "Término",
+            "Capítulo 3",
+            "Capítulo 6"
+        ],
+        "descripciones": [
+            "La <b>Vitalidad o <b>VIT</b> es un valor numérico que poseen todas las Criaturas."
+        ]
+    },
+    {
+        "nombre": "Puntos de Poder (PP)",
+        "tipos": [
+            "Término",
+            "Capítulo 3"
+        ],
+        "descripciones": [
+            " Tus <b>Puntos de Poder (PP)</b> representan cuantos Movimientos y Rasgos puedes activar. Estos se calculan sumando tu Nivel y tu Estadística de Espíritu. Los PP se recuperan al final de una Escena en la que se gastaron."
+        ]
+    },
+    {
+        "nombre": "Clase de Armadura (CA)",
+        "tipos": [
+            "Término",
+            "Capítulo 3",
+            "Capítulo 6"
+        ],
+        "descripciones": [
+            "La <b>Clase de Armadura (CA)</b> de una Criatura es la Dificultad (DC) de las Tiradas de Ataque que se hacen contra la misma contra el que tendrán que lanzar sus ataques tus rivales para poder golpearte. Una Tirada de Ataque que te golpea suele implicar recibir daño y, en ciertas ocasiones, ser afectado por otros efectos."
+        ]
+    },
+    {
+        "nombre": "Reentrenar (Personaje)",
+        "tipos": [
+            "Regla",
+            "Capítulo 3"
+        ],
+        "descripciones": [
+            "Puede que te arrepientas de alguna decisión que hayas tomado durante tu Creación de Personaje o en alguna subida de Nivel. Cada vez que pasais unos cuantos días o semanas descansado o cuando tu DJ os diga que podéis hacerlo, puedes Reentrenar una de tus Dotes de las que puedes aprender más en el Capítulo 5.",
+            "Para Reentrenar, cambia una Dote por otra que pudieras haber tomado en la misma situación en la que tomaste la que deseas cambiar. Este cambio no puede hacerse si tener la Dote es prerrequisito para alguna otra Dote. Recuerda que debes obtener el permiso de tu DJ para Reentrenar y que este podría pedirte que le expliques el motivo por el que deseas realizar el cambio, ya sea porque no te gusta la decisión que tomaste o porque consideras que tu personaje ha cambiado de alguna forma sustancial que lo hace perder algunas habilidades y ganar otras. ",
+            "A demás de lo antes descrito, algunos Rasgos te hacen tomar decisiones cuando los tomas. Las decisiones tomadas a la hora de elegir Rasgos pueden repetirse cada vez que puedes Reentrenar. "
+        ]
+    },
+    {
+        "nombre": "Movimientos",
+        "tipos": [
+            "Regla",
+            "Capítulo 5"
+        ],
+        "descripciones": [
+            "Los Movimientos son uno de los puntos más característicos del Mundo Pokémon y son uno de los pilares fundamentales del sistema. Los siguientes son los términos más importantes asociados a estos:",
+            "El Tipo del Movimiento representa el Tipo Elemental asociado a un movimiento. Todos los Movimientos tienen un Tipo asociado y están agrupados por listas en el Capítulo 14. Movimientos. Puedes saber el Tipo de un Movimiento mirando en que lista está o por el color que tiene ",
+            "El Coste de Acción, o Acción para abreviar, de un Movimiento representa el tipo de Acción que se tarda en usar el Movimiento y es la primera información que aparece bajo el nombre. La mayor parte de Movimientos suelen consumir la Acción o la Reacción. ",
+            "El Coste de un Movimiento representa la cantidad de PP que este consume, es decir, lo costoso que es para su usuario lanzarlo. Algunos Movimientos, además, sólo pueden usarse unas cuantas veces, ya sea por Día, Escena o Criatura. Por ejemplo, un Movimiento que consume 2 PP para poder usarlo y que puede usarse 2 veces al día se escribiría “2PP, 2 / Día”. Si un Movimiento tiene el coste de “A voluntad” significa que puede usarse tantas veces como se quiera. ",
+            "El Rango de un Movimiento representa la distancia sobre la que este tiene efecto. Si un Movimiento sólo hace referencia a una distancia, por ejemplo, “5 m”, significa que este Movimiento puede lanzarse a un máximo de 5 metros del objetivo. Si un Movimiento tiene el rango “Cuerpo a Cuerpo”, significa que sólo puede usarse contra criaturas a 1 m de distancia, a no ser que la descripción indique alguna excepción. ",
+            "Si un Movimiento tiene efecto sobre un área, el tamaño y forma del área se escriben como Forma (Dimensiones en metros). El área se origina de ti, a no ser que se declare un rango para este área, en cuyo caso el punto de origen debe de estar dentro de este área. Por ejemplo, Radio (2 m), indica que el Movimiento afecta un radio de 2 metros a tu alrededor y el rango 4 m / Radio (2 m) indica que el Movimiento afecta un radio de 2 metros originado desde un punto a 4 metros de distancia de ti. Además, la dimensión descrita dentro de un Movimiento hace referencia a diferentes valores que describen la forma. En el caso del Radio, esta representa la distancia que este mide, en el Cubo, la dimensión del lado del cubo, en el caso del Cilindro, la primera dimensión representa el radio y la segunda la altura, en el Cono, la distancia dada representa tanto la altura como la base del mismo y, en el caso de la Línea, la primera la longitud y la última el grosor (diámetro). ",
+            "El <b>Daño</b> o <b>Daño base</b> de un Movimiento se refiere a la cantidad de daño que se inflige cuando su descripción dice que lo hace. ",
+            "Usualmente, el Daño de un Movimiento viene dado por una fórmula que hace referencia a cantidad de dados más un bono de daño dependiente de una o varias Estadísticas. Por ejemplo, si el daño de un Movimiento es 1d8 + FUE, el daño que este realiza es de 1d8 más su Fuerza ",
+            "Además, si un Movimiento hace daño a múltiples Criaturas en un área, el daño se lanza una sola vez y es el mismo para todas las criaturas afectadas. ",
+            "Las <b>Etiquetas</b> de un Movimiento son un conjunto de categorías que ayudan a clasificar los Movimientos a la hora de que ciertos efectos los modifiquen. Por ejemplo, la habilidad Mandíbula Fuerte potencia los Movimientos con la Etiqueta de Mordisco. La mayoría de Etiquetas son autoexplicativas pero más abajo hay un apartado que las comenta y da sus reglas especiales, si las tienen.",
+            "Las <b>Estadísticas Asociadas</b> a un Movimiento es una Estadística que puede elegir una Criatura para usar un Movimiento de entre la lista ofrecida por el mismo. Si un valor asociado a un Movimiento depende de esta Estadística asociada, esta dice que depende de su EST.",
+            "Si un Movimiento requiere realizar una Tirada de Ataque para que este tome efecto, la Criatura que lo usa se considera Buena en la Tirada de Ataque y añade a esta la Estadística Asociada que elige. Es decir, que su bono a la Tirada de Ataque es igual a la EST + BH. ",
+            "<b>Todos los Movimientos tienen un CD</b>, el cual es el valor que deben igualar o superar las Criaturas al hacer Tiradas de Salvación contra el Movimiento si este requiere que se hagan para evitar su efecto. Este CD se calcula como 10 + BH + EST. ",
+            "La <b>Descripción</b> de un Movimiento explica lo que ocurre al usarlo y las Tiradas de d20 que este requiere hacer y los efectos de estas. Si un Movimiento hace daño y provoca otro efecto, este segundo se denomina su <b>Efecto Secundario</b>. ",
+            "Los Movimientos que cuestan una Reacción tienen una condición para poder utilizarse que se detalla al principio de su descripción, la cual siempre empieza con la palabra “Cuando”. "
+        ]
+    },
+    {
+        "nombre": "Mejorar el Daño Base",
+        "tipos": [
+            "Regla",
+            "Capítulo 5"
+        ],
+        "descripciones": [
+            "El Daño base de los Movimientos puede ser aumentado. Hay dos formas principales de que esto ocurra: Que se añada un bono de daño fijo o que se añadan dados al daño base.",
+            "Los efectos que dicen que <b>añades un dado al daño base</b> añaden un dado del mismo tamaño que ya lanza el movimiento. Es decir, si el movimiento lanza d6, añades 1d6, si lanza d10, añades 1d10.",
+            "Si un efecto <b>añade un bono fijo</b>, este simplemente se añade. Sin embargo, si dos o más efectos añaden un bono al daño base de un Movimiento que depende del BH del usuario no se suman ambos, sino que se toma sólo el mayor. ",
+            "Además, si un Movimiento hace <b>daño en múltiples instancias</b>, por ejemplo, cuando hace dos Tiradas de Ataque por separado, los bonos al daño de un Movimiento sólo aplican a la primera instancia de daño que el Movimiento provoque. "
+        ]
+    },
+    {
+        "nombre": "Los Golpes Críticos",
+        "tipos": [
+            "Regla",
+            "Capítulo 5"
+        ],
+        "descripciones": [
+            "En ciertas ocasiones, los Movimientos harán mucho más daño del esperado. Este tipo de golpes se consideran <b>Golpes Críticos</b>. Todos los Movimientos que hacen Tiradas de Ataque pueden asestar Golpes Críticos, usualmente en un 20 en la Tirada Natural de su Tirada de Ataque si en su descripción no se indica otra condición. Cuando asestas un golpe crítico, duplicas los dados que lanzas a la hora de calcular el daño asociado, incluidos los que añades gracias a otros efectos. ",
+            "El <b>Rango de Crítico</b> es un valor que aumenta el rango de las Tiradas Naturales en las que la Tirada de Ataque de un Movimiento es un Golpe Crítico. Por ejemplo, si una criatura tiene un Rango de Crítico de 3 y el Movimiento que usa hace Crítico en  19+, el Movimiento será Crítico en 16+ y si el Movimiento hiciera Crítico en 20 y el Rango de Crítico es de 2, una Tirada Natural de 18+ asestaría un Golpe Crítico.",
+            "De forma natural, el Rango de Crítico de todas las criaturas es de 0, pero este puede aumentar, usualmente gracias a otros Movimientos usados previamente o Habilidades."
+        ]
+    },
+    {
+        "nombre": "Bonus de Ataque por Mismo Tipo (STAB)",
+        "tipos": [
+            "Regla",
+            "Capítulo 5"
+        ],
+        "descripciones": [
+            " El <b>Bonus de ataque por mismo tipo</b>, o <b>STAB</b> por sus siglas en inglés, es un bono que se añade al daño de un Movimiento que comparte Tipo Elemental con su usuario y es igual al BH del usuario. Como todos los bonos al daño, el STAB sólo se añade a la primera instancia de daño que un movimiento provoca, pero puede acumularse con otro efecto que aumente el daño base en una cantidad que depende del BH usuario."
+        ]
+    },
+    {
+        "nombre": "Movimientos Fuera de Combate",
+        "tipos": [
+            "Regla",
+            "Capítulo 5"
+        ],
+        "descripciones": [
+            "La mayoría de Movimientos Pokémon han sido redactados con el objetivo de ser sencillos de usar en combate. Sin embargo, no debe descartarse su uso fuera de este o incluso el darle otros usos durante el combate.",
+            "Por ejemplo, puede que Rayo no diga que puede romper aparatos eléctricos al sobrecargarlos, pero si un jugador dice que quiere romper un ordenador haciendo que su Pikachu use Rayo es más que razonable que pueda hacerlo. De la misma forma, en ninguna parte de la descripción de Pistola de Agua se dice que apague fuegos pero es razonable que usarlo pudiese ayudar a hacerlo."
+        ]
+    },
+    {
+        "nombre": "Etiquetas",
+        "tipos": [
+            "Término",
+            "Capítulo 5"
+        ],
+        "descripciones": [
+            " Las <b>Etiquetas</b> son propiedades de los Movimientos que están asociadas a su naturaleza. La mayoría de Etiquetas no tienen un efecto más allá de servir para clasificar a ciertos tipos de Movimientos. Las que sí que lo tienen son las siguientes: ",
+            {
+                "tipo": "listaU",
+                "contenido": [
+                    "<b>Escudo</b>: Los Movimientos de Escudo protegen a una criatura. Una criatura sólo puede beneficiarse de un Movimiento de Escudo que tiene una duración superior a hasta el final de la Escena a la vez.",
+                    "<b>Por Tierra</b>: Los Movimientos Por Tierra afectan sólo a criaturas que están en la misma superficie que el usuario.",
+                    "<b>Potenciación</b>: Los Movimientos de Potenciación hacen que una criatura sea más poderosa. Una criatura sólo puede beneficiarse de un Movimiento de Potenciación a la vez.",
+                    "<b>Sonido</b>: Los Movimientos de sonido involucran ruido o hacer sonido, por lo que estos Movimientos no tienen efecto si algo bloquea el sonido.",
+                    "<b>Restauración</b>: Los Movimientos de restauración recuperan PV. Sólo puedes usar Movimientos con esta etiqueta 2 veces al Día.",
+                    "<b>Terreno</b>: Son Movimientos que crean Terreno. Una criatura sólo puede lanzar 2 Movimientos de Terreno por Escena y, si lanza otro, debe elegir uno de los 2 anteriores y hacer que su efecto se disipe. "
+                ]
+            },
+            "Las siguientes Etiquetas sólo tienen por objetivo clasificar los Movimientos y, por si solas, no tienen ningún efecto a considerar:",
+            {
+                "tipo": "listaU",
+                "contenido": [
+                    "<b>Polvo</b>: Los Movimientos de Polvo lanzan un polvo o polen sobre una criatura.",
+                    "<b>Puño</b>: Son Movimientos que se basan en dar puñetazos.",
+                    "<b>Mordisco</b>: Son Movimientos que se basan en morder.",
+                    "<b>Patada</b>: Son Movimientos que se basan en dar patadas.",
+                    "<b>Golpea X veces</b>: Son Movimientos que pueden realizar más de una Tirada de Ataque.",
+                    "<b>Legendario</b>: Son Movimientos propios de Pokémon Legendarios.",
+                    "<b>Explosión</b>: Son Movimientos que hacen mucho daño al usuario, que estalla.",
+                    "<b>Retroceso</b>: Son Movimientos que pueden hacer daño al usuario por ser muy peligrosos.",
+                    "<b>Bala</b>: Son Movimientos que lanzan un proyectil similar a una bala.",
+                    "<b>Campo</b>: Son Movimientos que crean Campos.",
+                    "<b>Clima</b>: Son Movimientos que crean efectos climáticos.",
+                    "<b>Danza</b>: Son Movimientos que involucran bailar."
+                ]
+            }
+        ]
+    },
+    {
+        "nombre": "Habilidades",
+        "tipos": [
+            "Regla",
+            "Capítulo 5"
+        ],
+        "descripciones": [
+            "Todas las especies Pokémon tienen sus particularidades. Para representar estas capacidades únicas y especiales todas las especies Pokémon tienen dos <b>Habilidades</b> y una o dos <b>Habilidades Ocultas</b>.",
+            "Las Habilidades son las capacidades que tienen todos los miembros de su especie y la Habilidades Ocultas capacidades que sólo unos pocos de esta poseen y la cual puede obtenerse de diferentes formas a medida en que los entrenadores y Pokémon suben de nivel. ",
+            "Algunas Habilidades hacen uso de la notación EST de la misma forma que los Movimientos para referirse a las Estadísticas Asocidas a las mismas."
+        ]
+    },
+    {
+        "nombre": "Dotes",
+        "tipos": [
+            "Regla",
+            "Capítulo 5"
+        ],
+        "descripciones": [
+            "Previo al inicio de la campaña, tu DJ establecerá si en esta utilizareis las Dotes. Estas son Rasgos extra que tanto Entrenadores como Pokémon ganan a ciertos niveles que permiten personalizar más a entrenadores y Pokémon y que pueden estar enfocadas en el Combate o en otras actividades fueras de este, como la exploración, la interacción social o la fabricación de Objetos.",
+            "Si no usas las Dotes, simplemente ignóralas, si usas las Dotes, estas sólo pueden tomarse una vez, a no ser que estas sean Repetibles, lo cual se indica en la información de estas.",
+            "Algunas Dotes tienen prerrequisitos. Es decir, que sólo las Criaturas que cumplen ciertas condiciones pueden tomarlas. Una Criatura que deja de cumplir los prerrequisitos de una Dote la pierde automáticamente y puede tomar otra Dote que pudiera haber tomado en el momento en el que tomó dicha Dote. Por ejemplo, si dejas de calificar para una Dote que tomaste a Nivel 3, no puedes cambiarla por una Dote que requiere que seas de Nivel 9, incluso si tu nivel ahora es de 9 o más.",
+            "Si de alguna forma puedes cambiar una de tus Dotes por otra, sólo puedes cambiarla por una que pudieras tomar en el Momento en el que la ganaste."
+        ]
+    },
+    {
+        "nombre": "Naturalmente Bueno",
+        "tipos": [
+            "Término",
+            "Capítulo 6"
+        ],
+        "descripciones": [
+            "Un Pokémon Naturalmente Bueno en una Tirada de Habilidad aumenta su Grado de Habilidad en dicha Habilidad en 1."
+        ]
+    },
+    {
+        "nombre": "Nivel mínimo de aparición",
+        "tipos": [
+            "Regla",
+            "Capítulo 6"
+        ],
+        "descripciones": [
+            "Representa el mínimo que puede tener el Pokémon."
+        ]
+    },
+    {
+        "nombre": "Movimientos por nivel",
+        "tipos": [
+            "Regla",
+            "Capítulo 6"
+        ],
+        "descripciones": [
+            "Es una lista que describe qué Movimientos aprende el Pokémon al subir de Nivel."
+        ]
+    },
+    {
+        "nombre": "Movimientos Enseñables",
+        "tipos": [
+            "Regla",
+            "Capítulo 6"
+        ],
+        "descripciones": [
+            "En la Pokédex hay una segunda sección bajo todas las entradas en la que se encuentran las Listas de Movimientos Enseñables de todos los Pokémon. Esta contiene los movimientos que el Pokémon puede aprender por MT, mediante Tutor o de cualquier otra forma."
+        ]
+    },
+    {
+        "nombre": "Naturaleza",
+        "tipos": [
+            "Regla",
+            "Capítulo 6"
+        ],
+        "descripciones": [
+            "La <b>Naturaleza</b> de un Pokémon representa su personalidad, ya sea la que tiene de forma natural, la que las circunstancias de su entorno le han dado o, más usualmente, una mezcla de ambas. Cuando capturas un Pokémon, tu DJ te dice cual es su Naturaleza o te permite elegir de las que hay en la tabla inferior o inventar una propia. Cada naturaleza vuelve Naturalmente Bueno a un Pokémon en una Tirada de Habilidad si no lo era ya.",
+            "Puedes ver las Naturalezas disponibles y sus Tiradas de Habilidad asociadas en el <RouterLink to='/capitulos/pokemon/#apartado4'>Capítulo 6. Pokémon.</RouterLink>"
+        ]
+    },
+    {
+        "nombre": "Progresión Pokémon",
+        "tipos": [
+            "Regla",
+            "Capítulo 6"
+        ],
+        "descripciones": [
+            "De la misma forma que sus entrenadores, los Pokémon pueden progresar durante la aventura de diferentes formas. Cuando tu personaje sube de Nivel, puedes subir de Nivel a todos los Pokémon que lleve consigo si son de un Nivel inferior al que acabas de alcanzar. Además, cuando un Pokémon es varios niveles inferior a ti, este gana 1 Nivel extra por cada sesión que juegues en la que participe activamente (a discreción del DJ).",
+            "Cuando un Pokémon sube de Nivel, gana PV de acuerdo con la fórmula, gana 1 PP extra y se recalculan todos los valores que dependen de su BH si este aumenta. También puede aprender Movimientos de acuerdo con su entrada de la Pokédex y, en ciertas ocasiones, reducir el coste en PP de sus Movimientos en 1 o mejorar su daño, conseguir Mejoras de Estadísticas y aumentar su Grado de Habilidad en 1 en una Habilidad. Además, si estáis usando las reglas de Dotes, también puede ganarlas en ciertos niveles.",
+            "La siguiente tabla resume la cantidad de Dotes, Mejoras de Estadísticas (ME) y Aumentos de su Grado de Habilidad (AGH) que tiene un Pokémon según su Nivel e indica si aprende nuevos Movimientos.",
+            "Puedes ver la Tabla de Progresión Pokémon en el Capítulo 6. Pokémon, en la sección <RouterLink to='/capitulos/pokemon/#apartado5'>Progresión Pokémon.</RouterLink>"
+        ]
+    },
+    {
+        "nombre": "Aprender Movimientos",
+        "tipos": [
+            "Regla",
+            "Capítulo 6"
+        ],
+        "descripciones": [
+            "Cada vez que un Pokémon sube de Nivel, puede aprender nuevos Movimientos de su lista de Movimientos por Nivel si es de un Nivel suficiente.",
+            "El <b>máximo de Movimientos</b> que puede conocer un Pokémon es igual a 2 más su BH (máximo 8). ",
+            "Además, si la Mente de un Pokémon es de 4 o más, puede aprender 1 Movimiento extra o, si es de 8 o más, 2 Movimientos extra. ",
+            "Si un Pokémon ya ha alcanzado el máximo de Movimientos que puede conocer intenta aprender otro Movimiento (al subir de Nivel, usar Mts o mediante un tutor), puede olvidar un Movimiento para hacerlo. ",
+            "Si por algún Motivo se reduce la cantidad de Movimientos que puede Conocer un Pokémon, debe olvidar Movimientos hasta tener la cantidad adecuada la próxima vez que Descanse. "
+        ]
+    },
+    {
+        "nombre": "Mejoras de Daño (Pokémon)",
+        "tipos": [
+            "Regla",
+            "Capítulo 6"
+        ],
+        "descripciones": [
+            "En los Niveles 12 y 18 el daño base de los Movimientos que hacen daño del Pokémon aumenta en una cantidad igual a la Estadística asociada a dicho Movimiento. Es decir, si un Movimiento hace 4d8 + EST, pasa a hacer 4d8 + 2 x EST a Nivel 12 y 4d8 + 3 x EST a Nivel 18. "
+        ]
+    },
+    {
+        "nombre": "Mejoras de Estadísticas (Pokémon)",
+        "tipos": [
+            "Regla",
+            "Capítulo 6"
+        ],
+        "descripciones": [
+            "Cada vez que un Pokémon recibe una Mejora de Estadísticas (ME), puedes aumentar una de sus Estadística en 1, hasta un máximo de 3 mejoras en la misma Estadística. Luego puede aplicar una cuarta y quinta ME para volver a aumentar esa Estadística en 1 más entre las dos.",
+            "Al subir de Nivel, puedes cambiar que Estadística aumenta una de sus ME. "
+        ]
+    },
+    {
+        "nombre": "Reentrenar (Pokémon)",
+        "tipos": [
+            "Regla",
+            "Capítulo 6"
+        ],
+        "descripciones": [
+            "Los Pokémon también pueden reenfocar su entrenamiento. Cada vez que un Pokémon sube de Nivel, puede cambiar uno de sus Aumentos de Grado de Habilidad y asignarlo a otra Habilidad y cambiar la Estadística que aumenta una de sus Mejoras de Estadísticas. ",
+            "Además, si la personalidad de un Pokémon cambia, ya sea por un evento específico o por un cúmulo de e vividos junto a su entrenador, su Jugador puede pedirle a su DJ cambiarle su Naturaleza. ",
+            "Por último, si estáis usando las Dotes y cuando el DJ lo indique, usualmente cuando los personajes se toman unos días de descanso, un Pokémon puede cambiar una de sus Dotes por otra. "
+        ]
+    },
+    {
+        "nombre": "Evolución",
+        "tipos": [
+            "Regla",
+            "Capítulo 6"
+        ],
+        "descripciones": [
+            "Además de subir de Nivel, los Pokémon pueden <b>Evolucionar</b>, un proceso casi instantáneo similar a una rápida metamorfosis. Los Pokémon que pueden evolucionar tienen en su entrada de la Pokédex información sobre a qué especie evolucionan y que requisitos tienen que cumplirse. Se dice que dos Pokémon comparten Familia Evolutiva cuando uno puede llegar a evolucionar a el otro eventualmente o cuando evolucionan de una misma especie. ",
+            "Cuando uno de tus Pokémon cumple los prerrequisitos para evolucionar, este puede evolucionar. Como parte de la Acción compartida que entrenador y Pokémon toman para dar y recibir una Orden, el segundo puede evolucionar y automáticamente toma su nueva forma, adoptando sus nuevas Estadísticas, cambiando sus Tipos, Habilidades y otros rasgos que posea a los de su forma evolucionada y recuperando la mitad de sus PV y PP. ",
+            "Por otro lado, un Pokémon puede evolucionar también por su cuenta y, si requiere de un objeto para hacerlo, evoluciona involuntariamente si lo toca mientras cumple los demás prerrequisitos.",
+            "Además, al evolucionar un Pokémon puede ganar Acceso a Nuevos Movimientos y perder acceso a otros. Cuando un Pokémon Evoluciona, reeliges todos los Movimientos que conoce entre los de su Nueva Lista de Movimientos por Nivel para los que es del nivel adecuado y los Movimientos de su Lista de Movimientos Enseñables que conocía y aún están en esta. "
+        ]
+    },
+    {
+        "nombre": "Amistad",
+        "tipos": [
+            "Regla",
+            "Capítulo 6"
+        ],
+        "descripciones": [
+            "En el Mundo Pokémon, los entrenadores crean vínculos con sus Pokémon. Estos vínculos son ampliamente diversos y complejos, por lo que no siempre tienen que tener un aspecto similar entre sí y pueden cambiar con el paso del tiempo. La Amistad que un Pokémon siente hacia su entrenador representa lo cercanos que son y está clasificada en niveles que no son estrictos. Estos niveles van de 0 a 6 y los Pokémon recién capturados en suelen encontrarse en el nivel 2, aunque esto puede variar en función de lo que ocurriese antes de la captura.",
+            "Los niveles de amistad pueden aumentar gracias al buen trato, el tiempo de calidad pasado juntos o la lucha contra la adversidad como un equipo, pero también puede perderse si el Pokémon se ve dejado de lado, es maltratado o si se le fuerza a hacer muchas cosas que no desea hacer.",
+            "Puedes ver los distintos niveles de Habilidad <RouterLink to='/capitulos/pokemon/#apartado11'>aquí.</RouterLink>"
+        ]
+    },
+    {
+        "nombre": "Capturar",
+        "tipos": [
+            "Regla",
+            "Capítulo 6"
+        ],
+        "descripciones": [
+            "A lo largo de tus aventuras, encontrarás diversas situaciones en las que puedas añadir nuevos Pokémon a tu equipo. A este acto de obtener nuevos compañeros Pokémon se le llama Capturar. Hay diferentes formas de Capturar Pokémon.",
+            "El tipo de captura más común es capturar lanzando una Poké Ball. Las Poké Ball son esferas algo más pequeñas que un puño, en parte tecnológicas y en parte mágicas, que pueden contener a un Pokémon en su interior y que crean una conexión entre entrenador y Pokémon que les permite comprenderse con mayor facilidad. Para que una Poké Ball pueda intentar capturar a un Pokémon primero debe tocarlo, lo que usualmente se consigue lanzando la Poké Ball. Los entrenadores pueden Lanzar Poké Balls como una Acción a una distancia en metros igual a 5 más su Fuerza. Si el Pokémon no pertenece a otro entrenador, entra a la Poké Ball , aunque esto no significa que ya haya sido capturado, pues aún puede escapar. Luego de que el Pokémon entre a la Poké Ball, el entrenador debe hacer una Tirada de Trato Pokémon (Presencia) cuya CD se calcula de la siguiente forma: ",
+            "Ratio de Captura + Nivel + PV restantes / 10",
+            "Esta dificultad puede aumentar o disminuir en función de la predisposición del Pokémon a ser capturado por el entrenador (a discreción del DJ). Si la tirada supera dicha dificultad, el Pokémon es capturado y queda en la Poké Ball. Si falla, el Pokémon escapa de esta, rompiéndola en el proceso y, en ciertas ocasiones, un Pokémon puede dejarse capturar sin necesidad de realizar una Tirada. "
+        ]
+    },
+    {
+        "nombre": "Restaurar fósiles",
+        "tipos": [
+            "Regla",
+            "Capítulo 6"
+        ],
+        "descripciones": [
+            "Restaurar fósiles requiere de un equipo tecnológico que normalmente no estará a disposición de los personajes en todo momento, sino que lo encontrarán en lugares específicos. Usualmente, laboratorios dedicados a este objetivo. Un jugador que lleve un fósil a restaurar automáticamente se vuelve el entrenador del Pokémon restaurado y deberá aportar una Poké Ball para que lo contenga."
+        ]
+    },
+    {
+        "nombre": "Reproducción Pokémon. Eclosión de huevos",
+        "tipos": [
+            "Regla",
+            "Capítulo 6"
+        ],
+        "descripciones": [
+            "Dos Pokémon de distinto sexo que pertenecen a Especies que tienen cierta similitud (a discreción del DJ) pueden reproducirse y la hembra genera un huevo después una jornada. Este huevo contiene una cría de la primera fase evolutiva de la madre y se abre en una cantidad de semanas igual al nivel mínimo en el que un Pokémon de esa Familia Evolutiva puede alcanzar uno de sus Estados finales. Cuando un Pokémon nace al eclosionar de su huevo, estará especialmente predispuesto a ser capturado o será demasiado débil para evitar que ocurra, por lo que con sólo tocarlos con una Poké Ball quedarán capturados."
+        ]
+    },
+    {
+        "nombre": "Pokémon Variocolor",
+        "tipos": [
+            "Regla",
+            "Capítulo 6"
+        ],
+        "descripciones": [
+            "Los Pokémon variocolor son Pokémon extremadamente raros que podrás encontrar en contadas ocasiones. No poseen ninguna propiedad destacable más allá de tener una paleta de colores completamente distinta a la usual y que, en ocasiones, brillan con tenues chispas de luz."
+        ]
+    },
+    {
+        "nombre": "Poké-Monturas",
+        "tipos": [
+            "Regla",
+            "Capítulo 6"
+        ],
+        "descripciones": [
+            "Si la fisionomía de un Pokémon lo permite y es de un tamaño mayor o igual al de su entrenador, este puede dejarse montar. Cuando esto ocurre, se refiere al Pokémon como <b>Montura</b> y al entrenador como <b>Montador</b>. Una Montura puede quedar Levemente sobrecargada o Sobrecargada al llevar a su Montador encima.",
+            "Montarse o desmontarse de un Pokémon es parte de la Acción Compartida que se toma para dar una Orden al Pokémon o una Acción. Además, la Montura sólo puede moverse si el Montador le ha dado una Órden o si usa su Acción para indicarle a donde moverse. ",
+            "Si un efecto mueve al Montador o la Montura queda tumbada, el primero cae de la Montura, quedando tumbado a no ser que supere una tirada de Atletismo (Fuerza) o Acrobacias (Agilidad) CD 10. ",
+            "Cuando una Montura carga con su entrenador, puede que algunos de sus Movimientos no puedan usarse. Por ejemplo, un Machoke que carga su entrenador en brazos no podría usar Tajo Cruzado porque no tiene las manos libres para hacerlo. ",
+            "Si una montura genera un ataque de oportunidad, este puede lanzarse contra el Montador si está a rango de ser atacado por un Movimiento cuerpo a cuerpo "
+        ]
+    },
+    {
+        "nombre": "Megaevolución",
+        "tipos": [
+            "Regla",
+            "Capítulo 6"
+        ],
+        "descripciones": [
+            "La <b>Megaevolución</b> es un proceso mediante el cual un Pokémon puede alcanzar temporalmente una forma evolucionada de sí mismo incluso tras haber alcanzado su forma final, extrayendo poder de su conexión con su entrenador, que es canalizada a través de una <b>Megapiedra</b> asociada a su especie que debe llevar el Pokémon encima y un <b>Mega abalorio</b>, que debe llevar el entrenador, aunque en ocasiones extrañas puede ocurrir sin un Mega abalorio a un Pokémon salvaje.",
+            "Para poder Megaevolucionar, la Amistad de un Pokémon con su entrenador debe ser de nivel 5 como mínimo. ",
+            "Al igual que la evolución, como parte de la Acción Compartida que toman Entrenador y Pokémon para dar y recibir una Orden, un Pokémon puede Megaevolucionar a su Pokémon, el cual automáticamente toma su nueva forma, adoptando nuevas Estadísticas, pudiendo cambiar sus Tipos, y ganar una Habilidad, una nueva forma de calcular su CA, nuevas Velocidades y Sentidos. Esta información se encuentra detallada en las entradas de la Pokédex de las especies que pueden Megaevolucionar. ",
+            "Además, al Megaevolucionar un Pokémon se libera de todos los Estados que lo afligen, se ganan 100 Puntos de Escudo y el daño base de todos su Movimientos aumenta en 2 dados. ",
+            "Un Pokémon Megaevolucionado vuelve a su estado natural al final de una Escena, cuando cae a 0 PV o cuando su entrenador use una Acción para que esto ocurra. La Megaevolución es un proceso duro, tanto entrenador como Pokémon, así que, cuando este estado acaba tanto entrenador como Pokémon ganan 2 Niveles de Fatiga y, además, ni el Pokémon puede volver a Megaevolucionar hasta que Descanse ni el entrenador puede hacer Megaevolucionar a otro Pokémon hasta lo haga. ",
+            "Una excepción a la regla de requerir una Megapiedra es el caso de Mega Rayquaza, que se transforma cuando va a usar Ascenso Draco pero antes de ejecutar el Movimiento y sin entrenador. ",
+            "En ciertas ocasiones, un Pokémon que tiene su megapiedra puede verse afectado por un evento que emule la energía que su entrenador le daría para poder Megaevolucionar. En estos casos, el Pokémon no puede ser capturado hasta ser derrotado y la Megaevolución hace que pierda completamente el control y empiece a atacar a todo a su alrededor. "
+        ]
+    },
+    {
+        "nombre": "Regresiones Primigenias",
+        "tipos": [
+            "Regla",
+            "Capítulo 6"
+        ],
+        "descripciones": [
+            "Similares a las Megaevoluciones, las Regresiones Primigenias son transformaciones temporales que algunos Pokémon Míticos pueden alcanzar que no representan un potencial oculto sino un poder antiguo que contienen que ahora ha quedado dormido. Para que un Pokémon obtenga su Regresión Primigenia usualmente este requerirá de un objeto o que se de un cierto evento. ",
+            "Para usar su Regresión Primigenia, un Pokémon usa su Acción y automáticamente toma su antigua forma, adoptando nuevas Estadísticas, pudiendo cambiar sus Tipos, y ganar una Habilidad, entre otros rasgos. Esta información también se encuentra detallada en las entradas de la Pokédex de las especies que pueden Megaevolucionar. ",
+            "Además, al obtener su regresión primigenia, un Pokémon se libera de hasta 1 Estado que lo aflige, gana 100 Puntos de Escudo y el daño base de todos su Movimientos aumenta en un dado. Un Pokémon vuelve a su estado natural al final de una Escena, cuando cae a 0 PV, o su entrenador, si lo tiene, usa una Acción para que esto ocurra. Un Pokémon sólo puede usar su Regresión Primigenia de nuevo hasta que Descanse. "
+        ]
+    },
+    {
+        "nombre": "Movimientos Z",
+        "tipos": [
+            "Regla",
+            "Capítulo 6"
+        ],
+        "descripciones": [
+            "Los <b>Movimientos Z</b> son un tipo especial de Movimiento de gran poder que utiliza la conexión entre entrenador y Pokémon.",
+            "Los Movimientos Z sólo puede usarse en ciertas localizaciones del Mundo Pokémon y, para hacerlo, son necesarias cuatro condiciones: Que el nivel de Amistad entre entrenador y Pokémon sea de 5 o más, que el Pokémon lleve encima un <b>Cristal Z</b> asociado a su especie o conozca un Movimiento del Tipo Elemental asociado al Cristal Z, que el entrenador lleve una <b>Pulsera Z</b> y que ambos conozcan la danza ritual necesaria para usarlo, la cual pueden aprender de otras Criaturas o de escritos. ",
+            "Si se dan todas las condiciones anteriores, un entrenador puede dar una Orden a su Pokémon y usar su Acción para hacer junto a su Pokémon la danza del Cristal Z que lleva encima con su Acción mientras el entrenador también lo hace. Esto libera el Movimiento Z asociado al Cristal que lleva el Pokémon, el cual lo usa con su Acción como un Movimiento normal. Puedes encontrar los Movimientos Z en la Lista de Movimientos Z, en el Capítulo 11. ",
+            "Los Movimientos Z que hacen daño calculan la cantidad de dados que lanzan en base al BH del Pokémon que los usa. Esto se ve reflejado en su daño. ",
+            "Tras lanzar un Movimiento Z, un Pokémon no puede usar otro Movimiento Z hasta que Descanse y un entrenador no puede participar de uno de estos Movimientos hasta que también lo haga. Además, cuando el Pokémon caiga a 0 PV o deje de combatir, gana 1 Nivel de Fatiga a causa del esfuerzo generado por liberar la energía del Movimiento Z. ",
+            "En ciertas ocasiones, como por ejemplo durante un torneo importante, los Movimientos Z podrán utilizarse fuera de las regiones a las que suelen estar resrtingidos. Usualmente, esto se debe a que de alguna forma se ha contenido parte de esa energía y se está liberando en esa localización o cuando se crea de alguna forma una energía que emula su efecto. "
+        ]
+    },
+    {
+        "nombre": "Dinamax y Gigamax",
+        "tipos": [
+            "Regla",
+            "Capítulo 6"
+        ],
+        "descripciones": [
+            "El Dinamax y Gigamax son dos efectos que hacen que un Pokémon proyecte une versión gigantesca de si mismo de forma temporal que emite una luz rojiza. Esta proyección es completamente sólida, los Pokémon pueden controlarla como si fuese su propio cuerpo y aumenta las capacidades físicas del Pokémon considerablemente.",
+            "La diferencia entre el Dinamax y el Gigamax es que el Gigamax sólo puede ser usado por algunos Pokémon, otorgándoles además un aspecto especial, y los Pokémon Dinamax simplemente se ven más grandes que su forma normal. ",
+            "Para poder usar el Dinamax y el Gigamax, un Pokémon debe contener <b>Energía Dinamax</b>, obtenida a través de exposición a la misma y su entrenador que debe llevar una <b>Maxi muñequera</b>. En algunas regiones del mundo Pokémon esta energía se obtiene en ciertos puntos particulares o nodos dinamax, en otros estará siempre en el ambiente y en la mayoría quizás nisiquiera esté presente y, por lo tanto, no pueda recargarse. ",
+            "Para usar el Dinamax o Gigantamax, un entrenador usa su Acción para devolver a su Pokémon a su Poké Ball para que absorba la Energía Dinamax de forma segura y luego saca al Pokémon de la Poké Ball en un punto a 10 metros de si mismo, el cual sale ya de esta Dinamaxeado o Gigamaxeado, según su especie. Luego de esto, el Entrenador puede dar órdenes con su Acción Compartida al Pokémon como de costumbre. La Energía Dinamax provoca los siguientes cambios al Pokémon: ",
+            {
+                "tipo": "listaU",
+                "contenido": [
+                    "El Pokémon gana Puntos de Escudo iguales a sus PV Máximos que duran indefinidamente. Cuando el Pokémon se queda sin estos Puntos de Escudo o es devuelto a su Poké Ball, sale de su forma Dinamax o Gigantamax. ",
+                    "Al final de cada uno de sus turnos, el Pokémon reduce en 2 todos los Niveles de los Estados Nivelados que lo aflijen. ",
+                    "Añade 2 dados al daño base de sus Movimientos.",
+                    "Su tamaño aumenta en 4 metros en todas sus dimensiones."
+                ]
+            },
+            "Tras usar su forma Dinamax, un Pokémon no puede usarla de nuevo hasta que Descanse y la Maximuñequera necesita recuperarse con Energía Dinamax para poder volver a usarse. Además, un Pokémon que ha Dinamaxeado o Gigamaxeado gana 1 Nivel de Fatiga cuando el combate termina. ",
+            "Si un entrenador usa su Acción para Dinamaxear o Gigamaxear a su Pokémon pero no lo devuelve a su Poké Ball para hacerlo o cuando un Pokémon recibe un impacto directo de Energía Dinamax, como por ejemplo cuando un nodo de esta energía se abre muy cerca suya, se verá abrumado por esta y entrará en su forma Dinamax o Gigamax de forma descontrolada. Cuando esto ocurre, este Pokémon pierde el control totalmente y su poder puede aumentar incluso por encima de lo normal cuando entra en esta forma (a discreción del DJ), haciéndole ganar Puntos de Superioridad. Un Pokémon en este estado no puede ser capturado hasta que deje de estar Dinaxeado o Gigamaxeado, se vuelve muy agresivo y no acepta órdenes. "
+        ]
+    },
+    {
+        "nombre": "Teracristalización",
+        "tipos": [
+            "Regla",
+            "Capítulo 6"
+        ],
+        "descripciones": [
+            "La <b>Teracristalización</b> es un tipo de transformación que cambia los Tipos Elementales de un Pokémon a un nuevo Tipo Elemental de forma temporal. Cuando un Pokémon usa su Teracristalización su piel se recubre de cristales brillantes del color que usualmente se asocia al Tipo Elemental que toma. ",
+            "Para poder usar la Teracristalización, un Pokémon debe contener energía terastal. La cual puede obtener por exposición a esta o por usar un <b>Teralito</b>, de los que encontrarás más información en el Capítulo 8. Un Pokémon que tiene energía terastal tiene un Teratipo, usualmente el del Teralito que se ha usado sobre él u otro que obtuvo por exposición a la energía terastal. ",
+            "Un entrenador que tiene un <b>Orbe Teracristal</b> puede usar su Acción para sujetarlo en una mano y usarlo en uno de sus Pokémon que tiene energía terastal. Cuando esto ocurre, el Pokémon pierde sus Tipos Elementales y gana el Tipo Elemental asociado a la energía terastal que contiene. Cuando esto ocurre, no pierde el bono al daño que tenía para sus Tipos Elementales originales y gana un bono al daño del Tipo Elemental del que se vuelve igual a su BH. ",
+            "Además de poder tener energía teracristal de Tipos Elementales, hay un Tipo extra, el Tipo Astral. El Tipo Astral no recibe daño extra, reduce daño ni es inmune al daño de ningún Tipo Elemental. Además, aunque un Pokémon Teracristalizado a este tipo no gana ningún bono al daño, considera que todos sus Movimientos son súper efectivos contra los Pokémon Teracristalizados, independientemente de sus Tipos elementales. ",
+            "Un Pokémon deja de estar teracristalizado cuando cae a 0 PV, cuando la Escena acaba o cuando su entrenador usa su Acción para hacerlo. ",
+            "Un Pokémon que se ha teracristalizado no puede volver a hacerlo hasta la siguiente Escena y un entrenador sólo puede usar un Orbe Teracristal cuando este está cargado. En las regiones con energía Terastal en el ambiente, como Paldea, esto suele tardar una Escena. ",
+            "En ciertas ocasiones, un Pokémon que reciba un impacto de energía terastal se verá abrumado por esta y se Teracristalizará. Cuando esto ocurre, este Pokémon pierde el control totalmente, no puede ser capturado mientras está en este estado y no puede recibir órdenes. Además, un Pokémon que Teracristaliza de esta forma puede volverse muy poderoso de forma temporal, ganando Puntos de Superioridad (a discreción del DJ). "
+        ]
+    },
+    {
+        "nombre": "La Iniciativa",
+        "tipos": [
+            "Regla",
+            "Capítulo 7"
+        ],
+        "descripciones": [
+            "Aunque en un combate todos los involucrados tomarían sus acciones de forma simultánea, para simplificar estas situaciones haremos uso de la Iniciativa. La Iniciativa es una lista que indica el orden de los turnos de los participantes en el combate. Para determinar el orden de la Iniciativa, al inicio del combate, o cuando se unan a la misma, los participantes hacen una Tirada de Habilidad de Iniciativa y luego estas se ordenan de forma descendente. Si dos participantes de bandos distintos empatan, el que tenga mayor Agilidad elige si va primero o último. Además, si un grupo de participantes de la Iniciativa que pertenecen a un mismo bando (es decir, que trabajan como equipo) toman sus iniciativas consecutivamente, pueden tomar sus turnos conjuntamente.",
+            "Al inicio del combate, todos los entrenadores que no están Sorprendidos pueden sacar un Pokémon a la vez y pueden sacar un arma de forma gratuita. Los Pokémon que tienen un entrenador toman su turno a la vez que su entrenador y, si este llegase a quedar fuera de combate, toman su turno libremente cuando lo hubiese tomado su entrenador. "
+        ]
+    },
+    {
+        "nombre": "Turnos en el combate",
+        "tipos": [
+            "Regla",
+            "Capítulo 7"
+        ],
+        "descripciones": [
+            "Cada participante del combate tiene durante un turno una Acción, una Interacción, Movimiento y una Reacción. Además, un entrenador y su Pokémon comparten una Acción Compartida. ",
+            "Las <b>Acciones</b> suelen ser la parte más importante de los turnos, pues la mayoría de Movimientos y Rasgos suelen consumirlas. Algunos otros ejemplos de Acciones que pueden usarse en combate son: ",
+            {
+                "tipo": "listaU",
+                "contenido": [
+                    "Hacer una tirada de Combate (Fuerza) para hacer un Agarre (Ver la sección de “Agarrar” en el Capítulo 10. Glosario de Reglas Menores).",
+                    "Hacer una tirada de Combate (Fuerza) para Empujar. (Ver la sección de “Empujar” en el Capítulo 10. Glosario de Reglas Menores).",
+                    "Lanzar una Poké Ball.",
+                    "Usar la Pokédex para obtener información de un Pokémon.",
+                    "Usar una Acción Interacción.",
+                    "Tomar la acción de Correr, que hace que todas las velocidades se dupliquen hasta el final del turno.",
+                    "Tomar la acción de Destrabarse, que hace que el movimiento durante este turno no genere Ataques de Oportunidad. "
+                ]
+            },
+            " Las <b>Acciones Compartidas</b> son acciones que entrenador y Pokémon hacen en sintonía. Usualmente las acciones compartidas se usan para: ",
+            {
+                "tipo": "listaU",
+                "contenido": [
+                    "Dar una orden a un Pokémon que controlas y que este la reciba.",
+                    "Montar o desmontar a un Pokémon.",
+                    "Devolver, cambiar o sacar a un Pokémon de su Poké Ball."
+                ]
+            },
+            "El <b>Movimiento</b> permite a una criatura usar sus Velocidades. Una criatura puede moverse un máximo de metros durante su turno igual a la Velocidad de la que hace uso. Si, durante un turno, primero se hace uso de un tipo de Velocidad y luego de otro, el movimiento total en metros no puede superar la Velocidad del último tipo de movimiento que se ha usado. ",
+            "Cuando un efecto dice que un grado de Habilidad aumenta en 1 quiere decir que pasa al siguiente grado. Por ejemplo, si tu Grado de Habilidad en una Tirada de d20 es de No entrenado, se vuelve Bueno y si es de Experto, se vuelve Maestro.  Cuando un efecto dice que un grado de Habilidad aumenta en 1 quiere decir que pasa al siguiente grado. Por ejemplo, si tu Grado de Habilidad en una Tirada de d20 es de No entrenado, se vuelve Bueno y si es de Experto, se vuelve Maestro.",
+            "La <b>Interacción</b> es un tipo de acción que se usa para interactuar con el entorno, ya sea para decir algo a alguien, abrir o cerrar una puerta, tomar un objeto que está tirado por el suelo u otro tipo de acciones similares. ",
+            "La <b>Reacción</b> es la única parte de un turno que puede usarse fuera del propio turno. Todas las Reacciones tienen una condición que te dice cuando puedes usarlas. La reacción más común es hacer un Ataque de Oportunidad. Una criatura genera un Ataque de Oportunidad cuando sale de tu rango de cuerpo a cuerpo haciendo uso de su movimiento. Estos Ataques de Oportunidad te permiten realizar un Movimiento que conozcas y puedas usar sin consumir PP que haga exactamente una Tirada de Ataque Cuerpo a Cuerpo contra la criatura que generó el Ataque de Oportunidad. "
+        ]
+    },
+    {
+        "nombre": "Preparar Acción",
+        "tipos": [
+            "Regla",
+            "Capítulo 7"
+        ],
+        "descripciones": [
+            "En ciertas ocasiones, querrás esperar a que ocurra algo antes de usar una de tus Acciones. Cuando esto ocurre, gastas la Acción que te preparas para usar y declaras un evento para el que te preparas. Hasta el principio de tu próximo turno, cuando ocurra el evento descrito, puedes usar tu Reacción para usar la Acción que preparaste.",
+            "Tanto Pokémon como entrenadores pueden preparar sus acciones y si usar una acción que preparas consume un recurso, como los PP, este no se gasta hasta que se lanza como Reacción. "
+        ]
+    },
+    {
+        "nombre": "Dar órdenes",
+        "tipos": [
+            "Regla",
+            "Capítulo 7"
+        ],
+        "descripciones": [
+            "Dar una <b>Orden</b> a un Pokémon que controlas es una Acción Compartida. Además, sólo puede darse una Orden por turno y a una criatura a menos de 20 metros de ti.",
+            "Estas órdenes incluyen todas las acciones y el movimiento que un Pokémon toma durante su turno, excepto las Reacciones, que puede tomar por su cuenta. ",
+            "Un Pokémon con su entrenador consciente que no recibe una Orden no hace nada durante su turno, salvo moverse si hay un peligro inminente. "
+        ]
+    },
+    {
+        "nombre": "Cambiar de Pokémon",
+        "tipos": [
+            "Regla",
+            "Capítulo 7"
+        ],
+        "descripciones": [
+            "Un entrenador puede <b>Cambiar</b> a su Pokémon devolviéndolo a la Poké Ball para sacar a otro. Cambiar de Pokémon tiene un Coste de Acción de Acción Compartida y, además, el Pokémon que sale no puede recibir Órdenes hasta el principio de su próximo turno. Para poder Cambiar un Pokémon este debe de estar a menos de 10 metros de su entrenador y el Pokémon que sale puede sacarse a una distancia máxima de 5 metros. Además, Como parte de la Acción Compartida de Cambiar a un Pokémon, este último puede usar su Movimiento para acercarse a ti hasta estar a rango de ser cambiado. ",
+            "Un Pokémon que es devuelto a su Poké Ball termina su turno y, además, todos los efectos que solo afectan a este y acaban al final de la Escena o dependen de su posición terminan prematuramente. Los Niveles de los Estados Nivelados no se pierden al volver a la Poké Ball, pero si que se reducen en 1 porque el Pokémon termina su turno. ",
+            "Una excepción a la regla de cambiar Pokémon ocurre cuando un Pokémon cae a 0 PV. En este caso, el entrenador puede devolverlo a la Poké Ball de forma gratuita e instantáneamente, independientemente de la distancia entre ambos y, en su próximo turno, sacar otro Pokémon de forma gratuita, al cual puede dar una Orden en ese mismo turno. "
+        ]
+    },
+    {
+        "nombre": "Retirar a un Pokémon",
+        "tipos": [
+            "Regla",
+            "Capítulo 7"
+        ],
+        "descripciones": [
+            "Siempre que un entrenador pueda Cambiar a su Pokémon también puede Retirarlo con su Acción Compartida. La única diferencia entre estas dos Acciones es que el entrenador no saca otro Pokémon tras devolver al primero a su Poké Ball. "
+        ]
+    },
+    {
+        "nombre": "Sacar a un Pokémon",
+        "tipos": [
+            "Regla",
+            "Capítulo 7"
+        ],
+        "descripciones": [
+            "Un entrenador puede querer Sacar un Pokémon cuando no tiene a ningún otro fuera de la Poké Ball. Al principio de la Iniciativa, cuando un entrenador se une a esta o durante el primer turno en el que no está Sorprendido, un entrenador puede Sacar un Pokémon sin ningún coste de acciones ni restricciones pero, en el resto de casos, hacerlo cuesta una Acción Compartida y el Pokémon sacado no puede recibir Órdenes esa Ronda. "
+        ]
+    },
+    {
+        "nombre": "Tipos de Ataques",
+        "tipos": [
+            "Término",
+            "Capítulo 7"
+        ],
+        "descripciones": [
+            "Un Rasgo o Movimiento puede describir que haces un ataque de cierto tipo. Los ataques cuerpo a cuerpo sólo pueden realizarse contra criaturas a 1 metro de ti, a no ser que se describa lo contrario. Los ataques a rango siempre tienen una distancia máxima a la que pueden hacerse. ",
+            "Para realizar un ataque, haces una Tirada de Ataque contra la CA del objetivo. Si la superas o igualas, se considera que el ataque golpea. "
+        ]
+    },
+    {
+        "nombre": "Usar una cuadrícula",
+        "tipos": [
+            "Regla",
+            "Capítulo 7"
+        ],
+        "descripciones": [
+            "Para hacer más visual un combate, el DJ puede decidir usar una cuadrícula. Cuando se hace uso de una de estas, cada cuadrado representa 1 metro cuadrado de distancia, por lo que las criaturas de tamaño Mediano o inferior ocupan una casilla, las Grandes ocupan un cuadrado de 2 casillas de lado, las Enormes 3 un cuadrado de 3 casillas de lado y las Colosales un cuadrado de tantas casillas de lado como midan. ",
+            "Hay dos formas de medir las distancias en las cuadrículas, la Simple o la Realista. La forma Simple asume que moverse de una casilla a otra casilla adyacente cuesta 1 metro de movimiento. La forma Realista requiere de usar una regla que mida la distancia del recorrido que quiere hacerse. ",
+            "Cuando se usa una cuadrícula, las criaturas de tamaño Mediano o superior bloquean el paso a sus rivales por las casillas que ocupan y sus aliados pueden cruzarlas como Terreno Difícil "
+        ]
+    },
+    {
+        "nombre": "Recibir daño",
+        "tipos": [
+            "Regla",
+            "Capítulo 7"
+        ],
+        "descripciones": [
+            "Muchos movimientos y otros efectos similares dicen que una criatura recibe daño, recibir daño equivale a sustraer la cantidad de daño recibido de los PV actuales que tiene una criatura. Si un efecto multiplica o divide el daño y otro sustrae o añade una cantidad a este, primero se calculan las cantidades añadidas y sustraídas y luego se multiplica o divide el daño.",
+            "Cuando una criatura llega a 0 PV, queda Inconsciente."
+        ]
+    },
+    {
+        "nombre": "La Tabla de Tipos",
+        "tipos": [
+            "Regla",
+            "Capítulo 7"
+        ],
+        "descripciones": [
+            "En el mundo de los Pokémon, cada criatura está asociada con uno o varios tipos, los cuales influyen en sus fortalezas y debilidades en combate. Los tipos determinan la eficacia de los ataques, siguiendo una tabla de tipos. Las personas, de forma natural son de tipo Normal.",
+            "Si una Criatura recibe daño de un Tipo que es Poco eficaz contra uno de sus Tipos, el daño de ese tipo se divide a la mitad. Si un tipo de daño es Súper efectivo contra uno de sus Tipos, se multiplica por dos. Si una criatura recibe daño de un tipo que es Poco eficaz o super eficaz contra sus dos Tipos este daño no vuelve a multiplicarse ni a dividirse. Si el daño es Súper eficaz contra uno de sus tipos y Poco eficaz contra el otro, el daño no cambia. Finalmente, si uno de sus Tipos es inmune a un Tipo de daño, ese daño no le hace nada. ",
+            "Puedes encontrar la tabla de tipos aquí.",
+            "La única diferencia con la de los juegos es que el Tipo Tierra hace daño poco eficaz al Tipo Volador en lugar de que el Tipo Volador sea inmune al Tierra. Esto se debe a que los Pokémon de Tipo Volador son inmunes a los movimientos Por Tierra, que son movimientos que solo afectan la superficie del terreno y de los que forman parte muchos movimientos de Tipo Tierra. "
+        ]
+    },
+    {
+        "nombre": "Muerte",
+        "tipos": [
+            "Regla",
+            "Capítulo 7"
+        ],
+        "descripciones": [
+            "Cuando una criatura queda inconsciente por caer a 0 PV gana 1 Nivel de Fatiga y queda a merced de los que están a su alrededor. Cualquier otra criatura puede atacar a esta criatura y esto podría llegar a causar su muerte. ",
+            "Si una criatura recibe daño estando a 0 PV, gana 2 Niveles de Fatiga y, si este daño fue provocado por una Tirada de Ataque cuerpo a cuerpo, en su lugar gana 3 Niveles de Fatiga. Cuando una criatura llega a 11 Niveles de Fatiga, muere. ",
+            "Una criatura puede tomar una Acción para hacer una tirada de Conocimiento Médico (Mente) CD 15 para hacer que una criatura Inconsciente recupere 1 PV. Cuando esto ocurre, la criatura que ha recuperado el PV pierde su próxima Acción. Tomar esta Acción no elimina los Niveles de Fatiga acumulados por recibir daño estando a 0 PV. "
+        ]
+    },
+    {
+        "nombre": "Cobertura",
+        "tipos": [
+            "Regla",
+            "Capítulo 7"
+        ],
+        "descripciones": [
+            "Una criatura puede estar más o menos cubierta de un ataque a rango o de un área. Para saber qué tan cubierta está una criatura, considera cuántos obstáculos hay entre el origen del ataque y la criatura o desde el origen del área y la criatura. ",
+            "Los ataques contra una criatura que tenga cubierta la mitad de su cuerpo de esta forma tienen un penalizador de -2 y estas criaturas obtienen un +2 para las salvaciones que sean provocadas por áreas contra las que tengan esta cobertura. ",
+            "Los ataques contra una criatura que tenga tres cuartas partes de su cuerpo de esta forma tienen un penalizador de -5 y estas criaturas obtienen un +5 para las salvaciones que sean provocadas por áreas contra las que tengan esta cobertura. ",
+            "Por último, las criaturas totalmente cubiertas de un ataque o área son inmunes a estos. "
+        ]
+    },
+    {
+        "nombre": "Escudo y Puntos de Escudo",
+        "tipos": [
+            "Regla",
+            "Capítulo 7"
+        ],
+        "descripciones": [
+            "Los <b>Puntos de Escudo</b> son un recurso extra otorgado por distintos rasgos, objetos y Movimientos que te permite absorber daño sin perder tus PV. Lo que represente este escudo depende del efecto que te lo otorgó. Pueden ser palabras de aliento que te motivan a luchar un poco más e ignorar los golpes o puede ser una barrera física que hay que romper antes de dañarte. ",
+            "Cuando una criatura recibe daño teniendo Puntos de Escudo, primero sustrae tantos puntos de Escudo como daño recibe y, si el escudo no es suficiente para anular todo el daño, el daño restante reduce sus PV como de costumbre. Por ejemplo, si tienes 5 Puntos de Escudo y recibes 7 de daño, te quedas sin Puntos de Escudo y pierdes 2 PV. ",
+            "Una criatura que recibe Puntos de Escudo de un efecto cuando ya tiene otra cantidad de Puntos de Escudo no suma ambas cantidades, sino que elige la mayor entre las dos. "
+        ]
+    },
+    {
+        "nombre": "Concursos Pokémon",
+        "tipos": [
+            "Regla",
+            "Capítulo 8"
+        ],
+        "descripciones": [
+            "Los Concursos Pokémon son torneos de habilidad y talento en los que varios Coordinadores Pokémon, entrenadores especializados en los Concursos Pokémon, batallan por demostrar las habilidades únicas de sus Pokémon y la capacidad que tienen para coordinarlos y colaborar junto a estos. ",
+            "Los Concursos Pokémon son una celebración de la belleza que surge de los lazos entre Coordinador y Pokémon y el objetivo dentro de los mismos es el de demostrar estos lazos a través de crear un hermoso y llamativo espectáculo capaz de eclipsar al de los demás Coordinadores. "
+        ]
+    },
+    {
+        "nombre": "Tipos de Concursos",
+        "tipos": [
+            "Regla",
+            "Capítulo 8"
+        ],
+        "descripciones": [
+            "En un concurso Pokémon participan entre 2 y 4 Coordinadores y de 1 a 3 de sus Pokémon por coordinador, que actúan de forma simultánea. El objetivo de los concursos es crear un espectáculo que destaque entre los de todos los demás Coordinadores. Para ganar, se deben alcanzar 100 de Puntos de Exhibición antes que los demás a lo largo de un máximo de 10 rondas. Si al final del concurso nadie ha alcanzado el límite de Puntos de Exhibición, gana el Coordinador con más Puntos.",
+            "<b>Dificultad de Concurso.</b> Todos los Concursos Pokémon tienen una Clase de Dificultad del Concurso, que representa el nivel esperado de los Coordinadores y la exigencia de los jueces o el público. Usualmente, un Concurso se considera de nivel adecuado para un Personaje cuando la CD del Concurso es igual a 5 más el BH del Personaje. ",
+            "<b>Prohibiciones.</b> En los concursos está prohibido provocar daño, provocar pérdida de PV o provocar un Estado sobre una Criatura. Hacer cualquiera de estas cosas genera una descalificación. ",
+            "<b>Temática.</b> Los concursos Pokémon pueden y suelen tener Temática. La Temática de un Concurso Pokémon indica que tipo de pruebas se van a proponer y pueden restringir el uso de Pokémon de ciertos Tipos Elementales o con ciertas Velocidades, restringir o penalizar el uso de ciertos Movimientos y beneficiar ciertas Tiradas de Habilidad. Por ejemplo, un concurso basado en la danza submarina podría permitir sólo Pokémon con Velocidad de Nado, penalizar los Movimientos con Etiqueta de Sonido y beneficiar los Movimientos con Etiqueta de Danza. "
+        ]
+    },
+    {
+        "nombre": "Orden en los Concursos",
+        "tipos": [
+            "Regla",
+            "Capítulo 8"
+        ],
+        "descripciones": [
+            "Al principio de un Concurso Pokémon, todos los Coordinadores entran en Iniciativa, como si fuera con Combate Pokémon. Cuando llega el turno de un Coordinador en la Iniciativa, este puede tomar su turno, moviéndose, tomando una Acción y tomando una Acción Compartida para dar una Orden a uno de sus Pokémon para que este tome su turno y ganar así Puntos de Exhibición. "
+        ]
+    },
+    {
+        "nombre": "Ganar Puntos de Exhibición",
+        "tipos": [
+            "Regla",
+            "Capítulo 8"
+        ],
+        "descripciones": [
+            "Un Coordinador gana Puntos de Exhibición una vez por turno si da una Orden a uno de sus Pokémon de usar un Movimiento el cual los jueces o el público deben poder ver y oír. Al usar el Movimiento, el jugador describe lo que hace el Pokémon y propone una Tirada de Habilidad que quiere que haga el Pokémon y, si el Coordinador participa en las acciones descritas, también elige una Tirada de Habilidad que hace este. Si el DJ está de acuerdo, se realizan las Tiradas y el Coordinador gana puntos de Exhibición. ",
+            "Si sólo actúa el Pokémon el Coordinador ganan Puntos de Exhibición iguales a la diferencia del resultado de la Tirada de Habilidad con la CD del Concurso (mínimo 0). ",
+            "Si actúan Coordinador y Pokémon, ambos calculan la diferencia entre el resultado de la Tirada de Habilidad con la CD del Concurso y se ganan Puntos de Exhibición iguales a la mayor de ambas diferencias (mínimo 0). Sin embargo, sí el Coordinador o su Pokémon obtienen un 1 en la Tirada Natural de su Tirada de Habilidad, la actuación sale fatal por estar muy descoordinada y el Coordinador no sólo no gana Puntos de Exhibición. sino que pierde 10 y, si era el Centro de Atención, deja de serlo."
+        ]
+    },
+    {
+        "nombre": "Centro de Atención",
+        "tipos": [
+            "Regla",
+            "Capítulo 8"
+        ],
+        "descripciones": [
+            "Al final de una ronda, el Coordinador que más Puntos de Exhibición ha ganado se vuelve el Centro de Atención y gana 2 Puntos de Exhibición extra por cada ronda que ha sido el centro de Atención de forma consecutiva, inclusive la primera. "
+        ]
+    },
+    {
+        "nombre": "Bonos y Penalizadores en Concursos",
+        "tipos": [
+            "Regla",
+            "Capítulo 8"
+        ],
+        "descripciones": [
+            " En los Concursos Pokémon se valora la creatividad, el talento, y la adaptabilidad y se penaliza la monotonía y las actuaciones demasiado rígidas. En función de las acciones previas y de la situación del concurso, ciertas acciones se verán realzadas y otras se verán penalizadas. Los bonos se añaden a la cantidad de Puntos de Exhibición ganados y los penalizadores."
+        ]
+    },
+    {
+        "nombre": "Bonos en Concursos",
+        "tipos": [
+            "Regla",
+            "Capítulo 8"
+        ],
+        "descripciones": [
+            " Los siguientes son los posibles bonos que puede ganar un Coordinador en un Concurso Pokémon: ",
+            {
+                "tipo": "listaU",
+                "contenido": [
+                    "+2 Puntos por ordenar que los Pokémon usen un Movimiento mejorado por un Clima o Campo presente.",
+                    "+1 punto hasta un máximo de +3 por cada Movimiento distinto pero del mismo Tipo Elemental que el Coordinador ordena a sus Pokémon usar de forma consecutiva.",
+                    "+1 punto hasta un máximo de +3 por cada Movimiento distinto pero con una misma Etiqueta que el Coordinador ordena a sus Pokémon usar de forma consecutiva.",
+                    "+2 puntos por interactuar de forma creativa y no repetitiva (discreción de DJ) con las actuaciones que han tomado otros Coordinadores en su último turno o con efectos que estas han dejado en el escenario o +3 puntos si se interactúa directamente con la actuación del Centro de Atención. "
+                ]
+            }
+        ]
+    },
+    {
+        "nombre": "Penalizadores en Concursos",
+        "tipos": [
+            "Regla",
+            "Capítulo 8"
+        ],
+        "descripciones": [
+            "Los siguientes son los posibles penalizadores que puede ganar un Coordinador en un Concurso Pokémon: ",
+            {
+                "tipo": "listaU",
+                "contenido": [
+                    "-2 puntos por ordenar que los Pokémon repitan un Movimiento que usaron en el turno anterior o que ha indicado usar el Centro de Atención en su anterior turno.",
+                    "-2 puntos por repetir el Pokémon al que se le da la orden si no se es el Centro de Atención y se participa con varios Pokémon.",
+                    "-2 puntos por realizar una Tirada de Habilidad usada en el turno anterior por el Coordinador o por el Centro de Atención u ordenar a un Pokémon que este lo haga.",
+                    "-2 puntos por ordenar que se use un Movimiento que comparte una Etiqueta con el usado por el Centro de Atención en su anterior turno. "
+                ]
+            }
+        ]
+    },
+    {
+        "nombre": "Poké Balls",
+        "tipos": [
+            "Regla",
+            "Capítulo 9"
+        ],
+        "descripciones": [
+            "Las <b>Poké Balls</b> son dispositivos tecnológicos de tamaño Enano diseñados para capturar y transformar en energía a los Pokémon. Las Poké Ball hacen naturalmente algo más amistosos a los Pokémon, pero no doblegan su voluntad, por lo que haberlos capturado no implica que te obedezcan o, en casos más extremos, que no te ataquen tan pronto como te vean.",
+            "Las Poké Balls vienen en diversas variedades, algunas son simplemente mejores que otras pero la mayoría son más o menos útiles según el contexto. Puedes encontrar las reglas de cómo usar las Poké Balls en más detalle en el Capítulo 6: Pokémon, en la sección titulada Capturar. En resumen, capturar con una Poké Ball se reduce a hacer una Tirada de Trato Pokémon al lanzarla contra una dificultad que depende del nivel del Pokémon, su estado actual y su Especie. Si pasas la Tirada, el Pokémon queda capturado y, si la fallas, el Pokémon escapará, rompiendo la Poké Ball en el proceso. ",
+            "Las Poké Balls pueden ser fabricadas por algunos personajes con ciertas Clases o con ciertas Dotes haciendo uso de sus Herramientas de Poké Balls. Cuando un personaje fabrica Poké Balls, debe tomar una Acción Extendida que dura 30 minutos por cada 1000$ que estas Poké Balls cuestan y consume materiales por valor de tres cuartas partes del coste de dichas Poké Balls a no ser que el Rasgo o Dote que les permite fabricarlas especifique otros costes. Al final de la Acción Extendida, el personaje hace una Tirada de Habilidad de Conocimiento de Poké Ball (Mente) por cada Poké Ball que ha preparado. Si la falla, la Poké Ball no funciona. La dificultad de dichas Tiradas varía en función de la rareza de la Poké Ball. Si es Común, la dificultad es 10, si es Poco Común, 15, si es Rara, 20 y, si es Muy Rara, 25. ",
+            "Una Poké Ball rota debido a fallar en la captura de un Pokémon puede usarse como materiales para fabricar Poké Balls por valor igual a un cuarto de su coste. ",
+            "Puedes ver todas las Poké Balls <RouterLink to='/objetos?tipos=Pok%C3%A9+ball&seleccionado=Pok%C3%A9+Ball'>aquí</RouterLink>."
+        ]
+    },
+    {
+        "nombre": "Medicinas",
+        "tipos": [
+            "Regla",
+            "Capítulo 9"
+        ],
+        "descripciones": [
+            "Durante sus aventuras, tanto entrenadores como Pokémon perderán PV e irán fatigándose hasta no poder seguir más o, incluso, quedar heridos. Para evitar esto es que existen las Medicinas. Las Medicinas son objetos Enanos y, aunque algunas están diseñadas para poder usarse durante la acción del combate, como las Pociones, otras, como los Remedios, sólo pueden usarse en los tiempos de descanso, lo cual compensan con su precio reducido y mayor efectividad.",
+            "Estas Medicinas pueden ser preparadas por algunos personajes con ciertas Clases o con ciertas Dotes haciendo uso de sus Herramientas de Medicinas. Cuando un personaje prepara Medicinas, debe tomar una Acción Extendida que dura 30 minutos por cada 1000$ que estas Medicinas cuestan y consume materiales por valor de tres cuartas partes del coste de dichas Medicinas a no ser que el Rasgo o Dote que les permite prepararlas especifique otros costes. Al final de la Acción Extendida, el personaje hace una Tirada de Habilidad de Conocimiento Médico (Mente) por cada Medicina que ha preparado. Si la falla, la Medicina no sirve de nada. La dificultad de dichas Tiradas varía en función de la rareza de la Medicina. Si es Común, la dificultad es 10, si es Poco Común, 15, si es Rara, 20 y, si es Muy Rara, 25. ",
+            "Las Bayas que poseen un efecto similar al de una Medicina equivalen a materiales para el preparado de dichas Medicinas por valor igual al de su coste de compra. Además, algunos químicos y Plantas también podrían servir como materiales para preparar Medicinas. ",
+            "Puedes ver todas las Medicinas <RouterLink to='/objetos?tipos=Medicina&seleccionado=Poci%C3%B3n'>aquí</RouterLink>."
+        ]
+    },
+    {
+        "nombre": "Plantas y Bayas",
+        "tipos": [
+            "Regla",
+            "Capítulo 9"
+        ],
+        "descripciones": [
+            "Cuando estéis en la naturaleza quizás los entrenadores o vuestros Pokémon podréis encontrar ciertas plantas que poder utilizar. Estas plantas pasan por hierbas y raíces que podrían ser de utilidad para fabricar Medicina, Potenciadores o Comidas para crear o reparar Poké Balls o Bayas con utilidad de por sí. Las Plantas recolectables son, en general, objetos Enanos.",
+            "Cuando acampáis o mientras viajáis por la naturaleza a cambio de viajar a la mitad de Velocidad, podéis intentar recolectar plantas y frutos como Acción Extendida. Para hacerlo, los que busquen recursos hacen una Tirada de Habilidad grupal de Supervivencia (Espíritu). En función del resultado, del entorno y de las criaturas que busquen, el DJ dice que encontráis. Además, también es posible obtener copias de una Planta usando un Kit de Botánica. ",
+            "Las Bayas usualmente se utilizan para hacer comidas y medicinas, que potencian sus efectos. Aun así, estas tienen también valor por sí mismas. Todas las bayas pueden ser consumidas como Acción, lo que otorga un beneficio que dura hasta el final del día o hasta que se utilice por primera vez. Este beneficio cuenta como un beneficio otorgado por una comida. En la siguiente tabla están enlistadas las bayas en base a su rareza, junto a sus descripciones y el tipo de comidas y medicinas que pueden producirse con estas. ",
+            "Puedes ver todas las Plantas y Bayas <RouterLink to='/objetos?tipos=Baya,Planta&seleccionado=Hierba+blanca'>aquí</RouterLink>."
+        ]
+    },
+    {
+        "nombre": "Potenciadores",
+        "tipos": [
+            "Regla",
+            "Capítulo 9"
+        ],
+        "descripciones": [
+            "Tal y como su nombre indica, los Potenciadores son objetos Enanos que mejoran características tanto de entrenadores como de Pokémon. Los hay de tres tipos principales: Objetos X, Grageas y Vitaminas. ",
+            "Las grageas y objetos X tienen una duración corta, pero son considerablemente más baratas que las proteínas, que poseen efectos algo más limitados pero duran por todo el día. Todos los Potenciadores pueden consumirse con una Acción y otorgan su efecto inmediatamente. Además, una criatura no puede estar bajo los efectos de dos o más Potenciadores a la vez. Si una criatura consume un Potenciador estando bajo los efectos de otro, se beneficia sólo del consumido más recientemente. ",
+            "Estos Potenciadores pueden ser preparados por algunos personajes con ciertas Clases o con ciertas Dotes haciendo uso de sus Herramientas de Química. Cuando un personaje prepara Potenciadores, debe tomar una Acción Extendida que dura 30 minutos por cada 1000$ que estos Potenciadores cuestan y consume materiales por valor de tres cuartas partes del coste de dichos Potenciadores a no ser que el Rasgo o Dote que les permite prepararlos especifique otros costes. Al final de la Acción Extendida, el personaje hace una Tirada de Habilidad de Conocimiento de Química (Mente) por cada Potenciador que ha preparado. Si la falla, el Potenciador no sirve de nada. La dificultad de dichas Tiradas varía en función de la rareza del Potenciador. Si es Común, la dificultad es 10, si es Poco Común, 15, si es Raro, 20 y, si es Muy Raro, 25. ",
+            "Puedes ver todos los Potenciadores <RouterLink to='/objetos?tipos=Potenciador&seleccionado=Ataque+X'>aquí</RouterLink>."
+        ]
+    },
+    {
+        "nombre": "Comida",
+        "tipos": [
+            "Regla",
+            "Capítulo 9"
+        ],
+        "descripciones": [
+            "Algunos de los alimentos del mundo Pokémon, como las Bayas, tienen propiedades restauradoras y potenciadoras. Usualmente, estos alimentos son utilizados para crear Medicinas y Potenciadores, pero también hay formas de usarlos para crear Comida especialmente nutritiva, la cual posee efectos extra. La Comida es un objeto de tamaño Enano. ",
+            "Estas Comidas pueden comprarse ya preparadas o pueden ser hechas por algunos entrenadores con ciertas Clases o con ciertas Dotes haciendo uso de sus Utensilios de cocina. Cuando un personaje cocina Comidas, debe tomar una Acción Extendida que dura 30 minutos por cada 1000$ que estas Comidas cuestan y consume materiales por valor de tres cuartas partes del coste de dichas Comidas a no ser que el Rasgo o Dote que les permite prepararlos especifique otros costes. Al final de la Acción Extendida, el personaje hace una Tirada de Habilidad de Conocimiento de Cocina (Espíritu) por cada Comida que ha preparado. Si la falla, la Comida no otorga beneficio alguno, pero puede comerse. La dificultad de dichas Tiradas varía en función de la rareza de la Comida. Si es Común, la dificultad es 10, si es Poco Común, 15, si es Raro, 20, y, si es Muy Raro, 25. ",
+            "Algunas comidas otorgan un beneficio temporal cuando se comen como una Acción Extendida de mínimo 5 minutos, el cual desaparece si no se ha usado al final del día, tiene un sólo uso y no puede acumularse con los efectos de otras Comidas. Si consumes una Comida que da un beneficio temporal cuando se está bajo los efectos de otra, debes elegir con cual beneficio quedarte. La siguiente tabla contiene todas las comidas que otorgan uno de estos beneficios temporales. Los nombres son recomendaciones, puedes darle los que desees para adaptarse a la comida que cocines. ",
+            "Puedes ver todas las Comidas <RouterLink to='/objetos?tipos=Comida&seleccionado=Tapa+estado'>aquí</RouterLink>."
+        ]
+    },
+    {
+        "nombre": "Objetos Evolutivos",
+        "tipos": [
+            "Regla",
+            "Capítulo 9"
+        ],
+        "descripciones": [
+            "Algunos Pokémon requieren de objetos para poder evolucionar. Estos objetos suelen ser raros de encontrar, por lo que es probable que los Pokémon que los requieren tarden algo más en poder evolucionar que los que no necesitan de dichos objetos. ",
+            "Cuando un Pokémon requiere de un Objeto Evolutivo no es mala idea ir buscando lugares donde poder encontrarlo, como tiendas especializadas o entornos naturales en los que podrían aparecer. Si el plan es comprar el objeto, es bueno ir planificando el ahorro, puesto que el precio recomendado de estos objetos oscila alrededor de los 10.000$ si son piedras evolutivas o 15.000$ si son otro tipo de objeto. Usualmente, los objetos evolutivos son objetos de tamaño Enano. ",
+            "Por otro lado, algunos Pokémon que requieren de objetos evolutivos, principalmente los que requieren de piedras evolutivas, podrían no requerir de éstas en ciertos entornos. Por ejemplo, quizás Eevee no necesite de una piedra hoja para evolucionar si visitas una selva especialmente frondosa. Por otro lado, algunos objetos que claramente podrían ser fabricados, como los Confites, el Magmatizador o el Disco Extraño, podrían ser creados por personajes que sean hábiles en unas herramientas adecuadas para producirlos y puedan fabricar objetos raros. ",
+            "Puedes ver todos los Objetos Evolutivos <RouterLink to='/objetos?tipos=Objeto+evolutivo&seleccionado=Piedra+agua'>aquí</RouterLink>."
+        ]
+    },
+    {
+        "nombre": "Máquinas Técnicas",
+        "tipos": [
+            "Regla",
+            "Capítulo 9"
+        ],
+        "descripciones": [
+            "El que son, como funcionan o incluso si existen las Máquinas Técnicas (MTs) dependerá del mundo en el que transcurra vuestra campaña, aunque usualmente serán objetos Enanos. Vuestro DJ explicará como funcionan, si es que las podéis encontrar, y el que son exactamente estas MTs. Quizás de una lista de MTs disponibles, aunque en general puede haber MTs de cualquier Movimiento que no tenga la etiqueta de Legendario, y os diga dónde podéis encontrarlas o quizás las recibáis como recompensa. Lo que es seguro es que los entrenadores que busquen hacer más fuertes a su equipo Pokémon buscarán estas MTs para poder defenderse de otros tipos o aprender Movimientos que aporten utilidad que de otra forma no podrían aprender.",
+            "Las Mts funcionan como objetos consumibles que enseñan un Movimiento, el asociado a dicha MT, al Pokémon sobre el que se usan como Acción Extendida. Una criatura sólo puede aprender un Movimiento mediante MT si este Movimiento está en su lista de Movimientos Enseñables. ",
+            "El precio y rareza de cada MT viene asociado a la cantidad de PP que consume al usarse. Las MT de Movimientos que no consumen PP y de 1 PP son poco comunes y su precio ronda los 2.500$ y 5.000$, respectivamente. Las de Movimientos de 3 PP son raras y cuestan unos 10.000$ y las de 4 PP son muy raras y cuestan unos 20.000$ "
+        ]
+    },
+    {
+        "nombre": "Amuletos",
+        "tipos": [
+            "Regla",
+            "Capítulo 9"
+        ],
+        "descripciones": [
+            "Los Amuletos son colgantes, abalorios o complementos de tamaño Enano que están imbuidos con energía de los Pokémon de alguna forma. Una criatura puede llevar múltiples Amuletos encima pero sólo puede ligarse a uno. Al ligarse a un amuleto, una criatura gana un beneficio. ",
+            "Para ligarse a un Amuleto debes llevarlo puesto mientras tomas una Acción Extendida que dura 1 hora. Cuando te quitas un Amuleto, te desligas de él. En las siguientes tablas encontrarás los amuletos existentes, junto a un precio recomendado para estos, aunque este podría variar. ",
+            "Todos los amuletos se consideran objetos raros de encontrar y, de hecho, en contadas ocasiones encontrarás muchos amuletos a la venta. En su lugar, lo más probable es que los recibas como recompensa por ayudar a alguien o que los encuentres extraviados en algún lugar que investigues. Eso sí, no será muy complicado encontrar compradores, ya sea entre coleccionistas u otros entrenadores, puesto que el uso de amuletos está permitido en los combates reglados generalmente y ofrecen un aumento de poder considerable si se compaginan con las Habilidades y Movimientos adecuados. ",
+            "Puedes ver todos los Amuletos <RouterLink to='/objetos?tipos=Amuleto&seleccionado=Agua+m%C3%ADstica'>aquí</RouterLink>."
+        ]
+    },
+    {
+        "nombre": "Equipo",
+        "tipos": [
+            "Regla",
+            "Capítulo 9"
+        ],
+        "descripciones": [
+            "Similares a los Amuletos pero distintos en su naturaleza, no hay un límite a la cantidad de Piezas de Equipo que una criatura puede usar, más allá de que es complicado que se use, por ejemplo, una capucha y un casco a la vez. La mayoría de Piezas de Equipo equipos son Enanos ",
+            "Las Piezas de Equipo pueden equiparse y desequiparse como Acción y sólo pueden equiparse si fueron diseñados para una criatura de la misma especie. Los equipos suelen comprarse en tiendas especializadas que, usualmente, sólo se encuentran en grandes ciudades o en localizaciones particulares. ",
+            "Puedes ver todas las Piezas de Equipo <RouterLink to='/objetos?tipos=Equipo&seleccionado=Botas+gruesas'>aquí</RouterLink>."
+        ]
+    },
+    {
+        "nombre": "Objetos de Entrenador",
+        "tipos": [
+            "Regla",
+            "Capítulo 9"
+        ],
+        "descripciones": [
+            "No es extraño que los entrenadores viajen por el mundo en busca de aventuras y nuevos desafíos con los que poder superarse. En estos viajes, todos los entrenadores necesitarán de equipaje. Es natural dar por hecho que todos los entrenadores llevan consigo al menos una mochila con unos cuantos cambios de ropa y materiales de aseo básicos. Sin embargo, se presentarán múltiples situaciones en las que los entrenadores requieran objetos especializados.",
+            "Además existen objetos menos comunes, que los entrenadores podrían llegar a obtener y, en algunos casos comprar. Todos estos son objetos Enanos. ",
+            "Por ultimo, también existen objetos consumibles. Estos tienen un único uso y usualmente pueden comprarse en tiendas o fabricarse con Herramientas de Inventor si se conocen las invenciones adecuadas. Los objetos consumibles son elementos esenciales en el arsenal de cualquier Entrenador, ya que pueden marcar la diferencia entre la victoria y la derrota en un enfrentamiento. Su disponibilidad en las tiendas puede ser limitada, así que no tengas miedo de gastar el dinero en estas cuando las veas. ",
+            "Puedes ver todos los Objetos de Entrenador <RouterLink to='/objetos?tipos=Objetos+de+entrenador,Objetos+de+entrenador+(Consumible)&seleccionado=Kit+de+bot%C3%A1nica'>aquí</RouterLink>."
+        ]
+    },
+    {
+        "nombre": "Armas",
+        "tipos": [
+            "Regla",
+            "Capítulo 9"
+        ],
+        "descripciones": [
+            "Puede que en la versión del Mundo Pokémon de tu campaña existan las armas. Esto no significa que necesariamente tengas que apuñalar o disparar con una pistola a tus Pokémon. Quizás las armas que se usen sean un poco anacrónicas para nuestro mundo porque estas sean las únicas que se sabe cómo potenciar con el poder de los Pokémon, por dar algún argumento. Además, las armas podrían ser caricaturescas, como por ejemplo un martillo que sea como el de Tinkaton o estrellas ninja que sean como estrellas del Movimiento Meteoros.",
+            "Puedes encontrar más información sobre las armas <RouterLink to='/capitulos/objetos/#apartado11'>aquí</RouterLink>"
+        ]
+    },
+    {
+        "nombre": "Fósiles",
+        "tipos": [
+            "Regla",
+            "Capítulo 9"
+        ],
+        "descripciones": [
+            "Los Fósiles son rocas que conservan el ADN o algún rastro de estructuras biológicas de una especie Pokémon del pasado. Estos fósiles pueden restaurarse en facilidades adecuadas, usualmente como un favor o pagando un precio alto.",
+            "Tu DJ decide cuánto tardan en traer a la vida y el nivel de los Pokémon creados con un fósil, pero lo normal es que vuelvan siendo nivel 4 y que tarden uno o dos días en restaurarlos.",
+            "Si en tus campañas tu DJ decide que hay Pokémon que vienen del pasado que usualmente no provienen de este, como los Pokémon paradoja del pasado, puede elegir crear fósiles para estos, así que, cuando entres a una cueva, presta atención, quizás te encuentres con alguna sorpresa.",
+            "Puedes encontrar todos los Fósiles <RouterLink to='/objetos?tipos=F%C3%B3sil&seleccionado=%C3%81mbar+Viejo'>aquí</RouterLink>"
+        ]
+    },
+    {
+        "nombre": "Objetos Míticos",
+        "tipos": [
+            "Regla",
+            "Capítulo 9"
+        ],
+        "descripciones": [
+            "Los objetos míticos son objetos únicos o inusitadamente raros. En muchas ocasiones, serán el centro de alguna trama de una campaña. Tu DJ puede inventar otros o modificar los de la tabla inferior, pero estos son una guía de algunos objetos que podrían aparecer a lo largo de las aventuras de tu campaña. ",
+            "Puedes encontrar todos los Objetos Míticos <RouterLink to='/objetos?tipos=Objetos+m%C3%ADticos&seleccionado=Arca+de+Zygarde'>aquí</RouterLink>"
+        ]
+    },
+    {
+        "nombre": "",
+        "tipos": [
+            "Regla",
+            "Capítulo 10"
+        ],
+        "descripciones": [
+            ""
+        ]
     }
 ]
