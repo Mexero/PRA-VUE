@@ -1,0 +1,724 @@
+[
+    {
+        "Nombre": "Hélice trepanadora",
+        "Prerrequisitos": "Conocer un Movimiento de Tipo Acero que hace daño",
+        "CristalZ": "Metalostal Z",
+        "Tipo": "Acero",
+        "TipoSalvacion": "AGI",
+        "Danno": "BHd10 + 3 × EST",
+        "hasDC": true,
+        "hasAt": false,
+        "Etiquetas": null,
+        "Rango": "Línea (10 m , X m)",
+        "Descripcion": [
+            "Taladras en una línea recta de hasta 5 metros de longitud y un grosor igual al tuyo o 2 metros, el que sea mayor de ambos. Destruyes todo lo que encuentras a tu paso. Las criaturas en el área hacen una Tirada de Salvación de AGI. Si la fallan, reciben daño y son empujadas hacia el punto más cercano fuera de la línea en la que taladras. Si la pasan, reciben la mitad de ese daño y ningún otro efecto."
+        ],
+        "StatsAsociados": [
+            "FUE",
+            "AGI",
+            "MEN"
+        ]
+    },
+    {
+        "Nombre": "Hidrovórtice abisal",
+        "Prerrequisitos": "Conocer un Movimiento de Tipo Agua que hace daño",
+        "CristalZ": "Hidrostal Z",
+        "Tipo": "Agua",
+        "TipoSalvacion": "FUE",
+        "Danno": "BHd10 + 3 × EST",
+        "hasDC": true,
+        "hasAt": false,
+        "Etiquetas": null,
+        "Rango": "10 m, Radio (2 m)",
+        "Descripcion": [
+            "Creas un vórtice de agua de 2 metros de radio alrededor de un Punto. Todas las criaturas a rango hacen una Tirada de Salvación de FUE. Si la fallan, reciben daño, quedan empapadas y, si no pueden respirar bajo el agua, pierden el aliento, por lo que en su siguiente turno no pueden hablar, usar Movimientos de Sonido si usan su voz para lanzarlos ni dar Órdenes. Si la pasan, reciben la mitad de ese daño y ningún otro efecto."
+        ],
+        "StatsAsociados": [
+            "FUE",
+            "AGI",
+            "MEN"
+        ]
+    },
+    {
+        "Nombre": "Guadaña sedosa",
+        "Prerrequisitos": "Conocer un Movimiento de Tipo Bicho que hace daño",
+        "CristalZ": "Insectostal Z",
+        "Tipo": "Bicho",
+        "TipoSalvacion": "FUE",
+        "Danno": "BHd12 + 3 × EST",
+        "hasDC": true,
+        "hasAt": false,
+        "Etiquetas": null,
+        "Rango": "10 m",
+        "Descripcion": [
+            "Rodeas a una criatura con seda super resistente. La criatura hace una Tirada de Salvación de FUE. Si falla, la criatura recibe daño y queda apresada. Una criatura no puede liberarse de esta seda de ninguna forma que no sea rompiendo la seda por si misma. Si la criatura pasa la Tirada de Salvación, recibe la mitad de daño pero también queda apresada.",
+            "Si la criatura falló la Tirada de Salvación, la seda tiene una cantidad de PV iguales a 5 veces tu Nivel, tiene una CA de 15 más tu BH y se considera de Tipo Bicho. Si la criatura pasó la Tirada de Salvación, tiene la mitad de esos PV, redondada hacia abajo."
+        ],
+        "StatsAsociados": [
+            "FUE",
+            "AGI",
+            "MEN"
+        ]
+    },
+    {
+        "Nombre": "Dracoaliento devastador",
+        "Prerrequisitos": "Conocer un Movimiento de Tipo Dragón que hace daño",
+        "CristalZ": "Dracostal Z",
+        "Tipo": "Dragón",
+        "TipoSalvacion": "FUE",
+        "Danno": "BHd10 + 3 × EST",
+        "hasDC": true,
+        "hasAt": false,
+        "Etiquetas": null,
+        "Rango": "Cono (10 m)",
+        "Descripcion": [
+            "Liberas un aliento de energía primal que arrasa con todo a su paso en un cono de 10 metros. Todos los objetos en el área de Tamaño enorme o inferior salen volando hasta el final del cono y las criaturas en este hacen una Tirada de Salvación de FUE. Si la falla, reciben daño y salen volando hasta el final del cono y caen tumbadas. Si la pasan, recibe la mitad de ese daño y ningún otro efecto."
+        ],
+        "StatsAsociados": [
+            "FUE",
+            "AGI",
+            "MEN"
+        ]
+    },
+    {
+        "Nombre": "Gigavoltio destructor",
+        "Prerrequisitos": "Conocer un Movimiento de Tipo Eléctrico que hace daño",
+        "CristalZ": "Electrostal Z",
+        "Tipo": "Eléctrico",
+        "TipoSalvacion": null,
+        "Danno": "BHd12 + 3 × EST",
+        "hasDC": false,
+        "hasAt": true,
+        "Etiquetas": null,
+        "Rango": "10 m",
+        "Descripcion": [
+            "Lanzas un rayo de energía que sigue persigue a una criatura. La criatura no puede beneficiarse de efectos de Escudo ni de cobertura para protegerse de este Movimiento. Haces una Tirada de Ataque en Ventaja contra la criatura. Si golpeas, la criatura recibe daño y gana 4 Niveles de Paralizado. Si la fallas, la criatura recibe la mitad de ese daño y gana 2 Niveles de Paralizado."
+        ],
+        "StatsAsociados": [
+            "FUE",
+            "AGI",
+            "MEN"
+        ]
+    },
+    {
+        "Nombre": "Presa espectral",
+        "Prerrequisitos": "Conocer un Movimiento de Tipo Fantasma que hace daño",
+        "CristalZ": "Espectrostal Z",
+        "Tipo": "Fantasma",
+        "TipoSalvacion": "ESP",
+        "Danno": "BHd10 + 3 × EST",
+        "hasDC": true,
+        "hasAt": false,
+        "Etiquetas": null,
+        "Rango": "10 m, Radio (2 m)",
+        "Descripcion": [
+            "Invocas manos fantasmagóricas que salen del suelo y apresan a criaturas en un radio de 2 metros alrededor de un punto a menos de 10 metros de ti. Las criaturas en el área quedan Apresadas y hacen una Tirada de Salvación de ESP. Si la fallan, reciben daño y, si la pasan, reciben la mitad de ese daño. ",
+            "Una criatura puede usar su Acción para hacer una Tirada de Salvación de ESP para liberarse de estar apresada de esta forma."
+        ],
+        "StatsAsociados": [
+            "MEN"
+        ]
+    },
+    {
+        "Nombre": "Hecatombe pírica",
+        "Prerrequisitos": "Conocer un Movimiento de Tipo Fuego que hace daño",
+        "CristalZ": "Pirostal Z",
+        "Tipo": "Fuego",
+        "TipoSalvacion": "AGI",
+        "Danno": "BHd10 + 3 × EST",
+        "hasDC": true,
+        "hasAt": false,
+        "Etiquetas": null,
+        "Rango": "10 m, Radio (2 m)",
+        "Descripcion": [
+            "Lanzas un orbe de llamas tan ardientes como el sol que estallan al contacto con un punto a 10 metros de ti en un radio de 2 metros. Las criaturas en la explosión hacen una Tirada de Salvación de AGI. Si la fallan, reciben daño y ganan 4 Niveles de Quemado y no pueden ganar Puntos de Escudo hasta el final de la Escena. Si la pasan reciben la mitad de este daño y ningún otro efecto."
+        ],
+        "StatsAsociados": [
+            "FUE",
+            "AGI",
+            "MEN"
+        ]
+    },
+    {
+        "Nombre": "Arrumaco sideral",
+        "Prerrequisitos": "Conocer un Movimiento de Tipo Hada que hace daño",
+        "CristalZ": "Feeristal Z",
+        "Tipo": "Hada",
+        "TipoSalvacion": null,
+        "Danno": "BHd12 + 3 × EST",
+        "hasDC": false,
+        "hasAt": true,
+        "Etiquetas": null,
+        "Rango": "Sobre ti",
+        "Descripcion": [
+            "Corres a toda velocidad contra una criatura a 5 metros o menos de ti para golpearla con toda tu energía faérica. Haz una Tirada de Ataque cuerpo a cuerpo en Ventaja. Si golpea, la criatura recibe daño y queda engatusada, ganando 3 Niveles de Infatuado de ti. Si la falla, recibe la mitad de ese daño y gana 1 Nivel de Infatuado de ti."
+        ],
+        "StatsAsociados": [
+            "FUE",
+            "AGI",
+            "MEN"
+        ]
+    },
+    {
+        "Nombre": "Crioaliento despiadado",
+        "Prerrequisitos": "Conocer un Movimiento de Tipo Hielo que hace daño",
+        "CristalZ": "Criostal Z",
+        "Tipo": "Hielo",
+        "TipoSalvacion": "RES",
+        "Danno": "BHd10 + 3 × EST",
+        "hasDC": true,
+        "hasAt": false,
+        "Etiquetas": null,
+        "Rango": "Cono (10 m)",
+        "Descripcion": [
+            "Lanzas un aliento gélido tan frío que congelan todo objeto, líquido y superficie que tocan. El suelo congelado se considera Terreno difícil para una criatura que no sea de Tipo Hielo y las criaturas atrapadas por el aliento hacen una Tirada de Salvación de RES. Si la fallan reciben daño y ganan 4 Niveles de Helado. Si la pasan reciben la mitad de ese daño y ningún otro efecto."
+        ],
+        "StatsAsociados": [
+            "FUE",
+            "AGI",
+            "MEN"
+        ]
+    },
+    {
+        "Nombre": "Ráfaga demoledora",
+        "Prerrequisitos": "Conocer un Movimiento de Tipo Lucha que hace daño",
+        "CristalZ": "Lizastal Z",
+        "Tipo": "Lucha",
+        "TipoSalvacion": null,
+        "Danno": "BHd12 + 3 × EST",
+        "hasDC": false,
+        "hasAt": true,
+        "Etiquetas": "Patada, Puñetazo",
+        "Rango": "Cuerpo a cuerpo",
+        "Descripcion": [
+            "Demueles a golpes a un objeto o criatura. Si es un objeto de tamaño enorme o inferior, lo haces añicos. Si es una criatura, haz una Tirada de Ataque cuerpo a cuerpo en Ventaja. Si golpea, la criatura recibe daño y queda tumbada, gana 2 Niveles de Fatiga y 2 Niveles de Confusión y no puede levantarse del suelo hasta que pierda estos 2 Niveles de Confusión. Si falla, la criatura recibe la mitad de daño y cae tumbada."
+        ],
+        "StatsAsociados": [
+            "FUE",
+            "AGI"
+        ]
+    },
+    {
+        "Nombre": "Carrera arrolladora",
+        "Prerrequisitos": "Conocer un Movimiento de Tipo Normal que hace daño",
+        "CristalZ": "Normastal Z",
+        "Tipo": "Normal",
+        "TipoSalvacion": null,
+        "Danno": "BHd12 + 3 × EST",
+        "hasDC": false,
+        "hasAt": true,
+        "Etiquetas": null,
+        "Rango": "10 m",
+        "Descripcion": [
+            "Corres a toda velocidad contra una criatura a 10 metros o menos de ti. Haz una Tirada de Ataque cuerpo a cuerpo en Ventaja. Si golpea, la criatura recibe daño, cae tumbada y es empujada 4 metros. Si no golpea, la criatura recibe la mitad de ese daño y es empujada 2 metros."
+        ],
+        "StatsAsociados": [
+            "FUE",
+            "AGI"
+        ]
+    },
+    {
+        "Nombre": "Megatón floral",
+        "Prerrequisitos": "Conocer un Movimiento de Tipo Planta que hace daño",
+        "CristalZ": "Fitostal Z",
+        "Tipo": "Planta",
+        "TipoSalvacion": "RES",
+        "Danno": "BHd10 + 3 × EST",
+        "hasDC": true,
+        "hasAt": false,
+        "Etiquetas": null,
+        "Rango": "Línea (10 m, 2 m)",
+        "Descripcion": [
+            "Sintentizas una gran cantidad de energía y la liberas en forma de rayo de luz de 10 metros de longitud y 2 metros de grosor. Toda superficie que toque este rayo de energía se vuelve un Campo de Hierba cubierto de flores. Además, las criaturas atrapadas en el rayo hacen una Tirada de Salvación de Resistencia. Si la fallan, reciben daño y quedan cegadas hasta que terminen dos de sus próximos turnos. Si la pasan, reciben la mitad de ese daño y quedan cegadas hasta el principio de su próximo turno."
+        ],
+        "StatsAsociados": [
+            "FUE",
+            "AGI",
+            "MEN"
+        ]
+    },
+    {
+        "Nombre": "Disruptor psíquico",
+        "Prerrequisitos": "Conocer un Movimiento de Tipo Psíquico que hace daño",
+        "CristalZ": "Psicostal Z",
+        "Tipo": "Psíquico",
+        "TipoSalvacion": "ESP",
+        "Danno": "BHd12 + 3 × EST",
+        "hasDC": true,
+        "hasAt": false,
+        "Etiquetas": null,
+        "Rango": "10 m",
+        "Descripcion": [
+            "Atrapas con poder psíquico a una criatura y la lanzas a cualquier punto a 5 metros de su posición inicial y cae tumbada. Además, la criatura hace una Tirada de Salvación de ESP. Si la falla, recibe daño y gana 3 Niveles de Confusión. Si la pasa, recibe la mitad de ese daño."
+        ],
+        "StatsAsociados": [
+            "MEN"
+        ]
+    },
+    {
+        "Nombre": "Aplastamiento gigalítico",
+        "Prerrequisitos": "Conocer un Movimiento de Tipo Roca que hace daño",
+        "CristalZ": "Litostal Z",
+        "Tipo": "Roca",
+        "TipoSalvacion": "AGI",
+        "Danno": "BHd10 + 3 × EST",
+        "hasDC": true,
+        "hasAt": false,
+        "Etiquetas": null,
+        "Rango": "10 m, Radio (2 m)",
+        "Descripcion": [
+            "Creas y lanzas una pila Colosal en de roca sobre un área en forma de radio de 2 metros alrededor de un punto a menos de 10 metros de ti. Las criaturas hacen una Tirada de Salvación de AGI. Si la fallan, reciben daño y quedan aplastadas por la roca. Una criatura aplastada por la roca debe romperla para escapar. Si la pasa, recibe la mitad de ese daño pero se escapa, tumbada, por el lado de la roca más cercano que tenga.",
+            "La roca posee una CA de 15 más tu BH y una cantidad de PV totales de 10 veces tu Nivel y se considera de Tipo Roca."
+        ],
+        "StatsAsociados": [
+            "FUE",
+            "AGI",
+            "MEN"
+        ]
+    },
+    {
+        "Nombre": "Agujero negro aniquilador",
+        "Prerrequisitos": "Conocer un Movimiento de Tipo Siniestro que hace daño",
+        "CristalZ": "Nictostal Z",
+        "Tipo": "Siniestro",
+        "TipoSalvacion": "ESP",
+        "Danno": "BHd10 + 3 × EST",
+        "hasDC": true,
+        "hasAt": false,
+        "Etiquetas": null,
+        "Rango": "10 m, Radio (2 m)",
+        "Descripcion": [
+            "Creas un agujero de oscuridad absoluta y dañina de dos metros de radio alrededor de un punto a menos de 10 metros de ti. Las criaturas en el área hacen una Tirada de Salvación de ESP. Si la fallan, reciben daño y ganan 3 Niveles de asustado y quedan cegadas hasta que dejen de estar asustadas. Si la pasan, reciben la mitad de daño y ningún otro efecto."
+        ],
+        "StatsAsociados": [
+            "FUE",
+            "AGI",
+            "MEN"
+        ]
+    },
+    {
+        "Nombre": "Barrena telúrica",
+        "Prerrequisitos": "Conocer un Movimiento de Tipo Tierra que hace daño",
+        "CristalZ": "Geostal Z",
+        "Tipo": "Tierra",
+        "TipoSalvacion": "AGI",
+        "Danno": "BHd10 + 3 × EST",
+        "hasDC": true,
+        "hasAt": false,
+        "Etiquetas": "Por tierra",
+        "Rango": "Línea (10 m, 2 m)",
+        "Descripcion": [
+            "Agrietas el suelo en una línea de 10 metros de longitud, 2 metros de grosor y 5 metros de profundidad. Las criaturas en la línea hacen una Tirada de Salvación de AGI. Si la fallan, caen al fondo de la grieta y reciben daño, además del daño de caida pertinente. Si la pasan, se mueven apartan de la grieta por el camino más cercano posible pero igualmente los escombros generados le hacen la mitad de ese daño."
+        ],
+        "StatsAsociados": [
+            "FUE",
+            "AGI",
+            "MEN"
+        ]
+    },
+    {
+        "Nombre": "Diluvio corrosivo",
+        "Prerrequisitos": "Conocer un Movimiento de Tipo Veneno que hace daño",
+        "CristalZ": "Toxistal Z",
+        "Tipo": "Veneno",
+        "TipoSalvacion": "RES",
+        "Danno": "BHd10 + 3 × EST",
+        "hasDC": true,
+        "hasAt": false,
+        "Etiquetas": null,
+        "Rango": "10 m, Radio (2 m)",
+        "Descripcion": [
+            "Creas una nube de lluvia corrosiva de 2 metros de radio alrededor de un punto a 10 metros de ti y esta descarga todas las sustancias tóxicas que contiene en un rápido aluvión. Las criaturas en el área hacen una Tirada de Salvación de RES. Si la fallan reciben daño y, además, ganan 3 Niveles de Envenenado. Si la pasan, reciben la mitad de ese daño.",
+            "Las criaturas inmunes al daño de Tipo Veneno no se consideran inmunes a este daño."
+        ],
+        "StatsAsociados": [
+            "FUE",
+            "AGI",
+            "MEN"
+        ]
+    },
+    {
+        "Nombre": "Picado supersónico",
+        "Prerrequisitos": "Conocer un Movimiento de Tipo Volador que hace daño",
+        "CristalZ": "Aerostal Z",
+        "Tipo": "Volador",
+        "TipoSalvacion": null,
+        "Danno": "BHd12 + 3 × EST",
+        "hasDC": false,
+        "hasAt": true,
+        "Etiquetas": null,
+        "Rango": "15 m",
+        "Descripcion": [
+            "Vuelas a una velocidad vertiginosa una distancia de hasta 15 metros. A lo largo de tu movimiento, puedes golpear a una criatura con toda tu fuerza y luego seguir tu trayectoria. Haz una Tirada de Ataque cuerpo a cuerpo en Ventaja. Si golpea, la criatura recibe daño y te la llevas hasta el punto en el que acabas tu vuelo. Si falla, recibe la mitad de ese daño y es empujada 3 metros por la corriente de aire que creas con tu movimiento."
+        ],
+        "StatsAsociados": [
+            "FUE",
+            "AGI"
+        ]
+    },
+    {
+        "Nombre": "Pikavoltio letal",
+        "Prerrequisitos": "Ser Pikachu, conocer Placaje eléctrico",
+        "CristalZ": "Pikastal Z",
+        "Tipo": "Eléctrico",
+        "TipoSalvacion": null,
+        "Danno": "BHd12 + 3 × EST",
+        "hasDC": false,
+        "hasAt": true,
+        "Etiquetas": null,
+        "Rango": "10 m",
+        "Descripcion": [
+            "Te lanzas al aire y cargas en un picado contra una criatura a 10 metros de ti. Haz una Tirada de Ataque en Ventaja. Si golpea, la criatura recibe daño y gana 4 Niveles de paralizado. Si falla, la criatura recibe la mitad de ese daño y gana 2 Niveles de paralizado."
+        ],
+        "StatsAsociados": [
+            "FUE",
+            "AGI"
+        ],
+        "Solo1Especie": true
+    },
+    {
+        "Nombre": "Gigarrayo fulminante",
+        "Prerrequisitos": "Ser Pikachu, conocer Rayo",
+        "CristalZ": "AshPikastal Z",
+        "Tipo": "Eléctrico",
+        "TipoSalvacion": "AGI",
+        "Danno": "BHd10 + 3 × EST",
+        "hasDC": true,
+        "hasAt": false,
+        "Etiquetas": null,
+        "Rango": "10 m, Radio (1 m)",
+        "Descripcion": [
+            "Creas 5 rayos de electricidad de colores. Uno azul, uno violeta, uno amarillo, uno rojo y uno verde y lanzas cada uno a un punto a menos de 10 metros de ti. Al impactar contra una superficie o una criatura, los rayos explotan en un radio de 1 metro.",
+            "las criaturas en las áreas de explosión hacen una Tirada de Salvación de AGI. Si la fallan, reciben daño y se ven afectadas por un efecto dependiente del color del rayo que generó la explosión que les impactó. Si la pasan reciben la mitad de daño y ningún otro efecto.",
+            "Rayo azul: La criatura sólo puede elegir entre tomar una Acción o su moverse en su próximo turno.",
+            "Rayo violeta: La criatura gana 2 Niveles de Confusión.",
+            "Rayo amarillo: La criatura gana 3 Niveles de Parálisis.",
+            "Rayo rojo: La criatura gana 2 Niveles de Quemado.",
+            "Rayo verde: La criatura queda Cegada hasta el final de su próximo turno.",
+            "Una criatura a rango de varias explosiones sólo hace una salvación y recibe daño una vez, pero se ve afectada por todos los otros efectos de estos rayos si falla la Tirada de Salvación."
+        ],
+        "StatsAsociados": [
+            "FUE",
+            "AGI",
+            "MEN"
+        ],
+        "Solo1Especie": true
+    },
+    {
+        "Nombre": "Surfeo galvánico",
+        "Prerrequisitos": "Ser Raichu de Alola",
+        "CristalZ": "AloRaistal Z",
+        "Tipo": "Eléctrico",
+        "TipoSalvacion": null,
+        "Danno": "BHd12 + 3 × EST",
+        "hasDC": false,
+        "hasAt": true,
+        "Etiquetas": null,
+        "Rango": "15 m",
+        "Descripcion": [
+            "Te montas en tu cola y empiezas a moverte a toda velocidad y sin provocar ataques de oportunidad sobre esta en una trayectoria de hasta 15 metros de longitud. A lo largo de tu movimiento, puedes golpear a una criatura con toda tu fuerza y liberar sobre esta una descarga eléctrica. Haz una Tirada de Ataque cuerpo a cuerpo en Ventaja. Si golpea, la criatura recibe daño y gana 4 Niveles de paralizado. Si falla, recibe la mitad de ese daño y gana 2 Niveles de parálisis.",
+            "Toda la superficie sobre la que te mueves se vuelve un Campo eléctrico hasta el final de la Escena y, con tu movimiento rodeas completamente una región, esta también se vuelve un campo eléctrico."
+        ],
+        "StatsAsociados": [
+            "FUE",
+            "AGI",
+            "MEN"
+        ],
+        "Solo1Especie": true
+    },
+    {
+        "Nombre": "Novena potencia",
+        "Prerrequisitos": "Ser Eevee",
+        "CristalZ": "Eeveestal Z",
+        "Tipo": "Normal",
+        "TipoSalvacion": null,
+        "Danno": null,
+        "hasDC": false,
+        "hasAt": false,
+        "Etiquetas": "Potenciación",
+        "Rango": null,
+        "Descripcion": [
+            "Todas tus stats se vuelven 8 si son inferiores y todo el daño se vuelve poco efectivo contra ti. Además, aprendes todos los Movimientos con coste en PP de 4 o menos que conocen todas tus evoluciones hasta que caigas inconsciente o hasta el final de la Escena. Además, tomas otro turno tras este primero."
+        ],
+        "StatsAsociados": null,
+        "Solo1Especie": true
+    },
+    {
+        "Nombre": "Arrojo intempestivo",
+        "Prerrequisitos": "Ser Snorlax",
+        "CristalZ": "Snorlastal Z",
+        "Tipo": "Normal",
+        "TipoSalvacion": "FUE",
+        "Danno": "BHd12 + 3 × EST",
+        "hasDC": true,
+        "hasAt": true,
+        "Etiquetas": null,
+        "Rango": "5 m",
+        "Descripcion": [
+            "Dejas tu vagancia atrás y corres a toda velocidad contra una criatura a 5 metros o menos de ti y saltas sobre esta. Haz una Tirada de Ataque cuerpo a cuerpo en Ventaja. Si golpea, la criatura recibe daño, cae tumbada está apresada por ti. Si no golpea, la criatura recibe la mitad de ese daño y sólo cae tumbada.",
+            "Una criatura apresada de esta forma debe hacer una Tirada de Salvación de FUE para escapar de tu peso y, además, hace la Tirada de Salvación en Desventaja si su tamaño es más pequeño que el tuyo."
+        ],
+        "StatsAsociados": [
+            "FUE",
+            "AGI"
+        ],
+        "Solo1Especie": true
+    },
+    {
+        "Nombre": "Supernova original",
+        "Prerrequisitos": "Ser Mew",
+        "CristalZ": "Mewstal Z",
+        "Tipo": "Psíquico",
+        "TipoSalvacion": "ESP",
+        "Danno": "BHd10 + 3 × EST",
+        "hasDC": true,
+        "hasAt": false,
+        "Etiquetas": null,
+        "Rango": "10 m, Radio (2 m)",
+        "Descripcion": [
+            "Creas orbes de energía psíquica que unes en una gran esfera de 2 metros de radio que lanzas a un punto a 10 metros de ti. Las criaturas impactadas por la esfera al llegar a su destino hacen una tirada de Salvación de ESP. Si la fallan, reciben daño y 2 Niveles de Confusión, si la pasan, reciben la mitad de ese daño y ningún otro efecto.",
+            "Además, al llegar a su destino, la esfera estalla, creando un campo psíquico de 5 metros de radio alrededor del punto sobre el cual estalló que dura hasta el final de la Escena."
+        ],
+        "StatsAsociados": [
+            "MEN"
+        ],
+        "Solo1Especie": true
+    },
+    {
+        "Nombre": "Aluvión de flechas sombrías",
+        "Prerrequisitos": "Ser Decidueye",
+        "CristalZ": "Dueyestal Z",
+        "Tipo": "Fantasma",
+        "TipoSalvacion": null,
+        "Danno": "BHd6 + 2 × EST",
+        "hasDC": false,
+        "hasAt": true,
+        "Etiquetas": null,
+        "Rango": "10 m",
+        "Descripcion": [
+            "Vuelas a toda velocidad contra una criatura a menos de 10 metros de ti y arremetes contra ella para luego volver a tu punto de origen. Haz una Tirada de ataque cuerpo a cuerpo contra la criatura en Ventaja. Si la Tirada de Ataque golpea, esta recibe daño y tienes Venjata en tu próxima Tirada de Ataque contra ella. Si falla, recibe la mitad de ese daño.",
+            "Luego, aprovechando el aturdimiento de la criatura, lanzas una andanada de flechas sombrías sobre esta. Haz una Tirada de Ataque a rango. Si golpea, la criatura recibe daño y no puede volver a su Poké ball en su siguiente turno. Si falla, la criatura recibe la mitad de este daño."
+        ],
+        "StatsAsociados": [
+            "FUE",
+            "AGI",
+            "MEN"
+        ],
+        "Solo1Especie": true
+    },
+    {
+        "Nombre": "Hiperplancha oscura",
+        "Prerrequisitos": "Ser Incineroar",
+        "CristalZ": "Incinostal Z",
+        "Tipo": "Siniestro",
+        "TipoSalvacion": null,
+        "Danno": "BHd12 + 3 × EST",
+        "hasDC": false,
+        "hasAt": true,
+        "Etiquetas": null,
+        "Rango": "5 m",
+        "Descripcion": [
+            "Das un salto al aire mientras te cargas de llamas y caes sobre una criatura a 5 metros o menos de ti. Haz una Tirada de Ataque en Ventaja. Si golpea, la criatura recibe daño y gana 3 Niveles de Quemado y de Asustado de ti. Si falla, al criatura recibe la mitad de ese daño y gana 1 Nivel de Quemado y de Asustado de ti."
+        ],
+        "StatsAsociados": [
+            "FUE",
+            "AGI"
+        ],
+        "Solo1Especie": true
+    },
+    {
+        "Nombre": "Sinfonía de la diva marina",
+        "Prerrequisitos": "Ser Primarira",
+        "CristalZ": "Primastal Z",
+        "Tipo": "Agua",
+        "TipoSalvacion": "AGI",
+        "Danno": "BHd10 + 3 × EST",
+        "hasDC": true,
+        "hasAt": false,
+        "Etiquetas": "Sonido",
+        "Rango": "10 m, Radio (3 m)",
+        "Descripcion": [
+            "Usas el poder de tu canto para acumular una enorme cantidad de agua en forma de esfera y la haces estallar sobre un punto a rango en un radio de 3 metros. Las criaturas en el área quedan empapadas y hacen una Tirada de Salvación de AGI. Si la fallan, reciben daño y ganan 2 Niveles de Confusión y de Infatuación de ti. Si la pasan, reciben la mitad de ese daño y ningún otro efecto."
+        ],
+        "StatsAsociados": [
+            "FUE",
+            "AGI",
+            "MEN",
+            "PRE"
+        ],
+        "Solo1Especie": true
+    },
+    {
+        "Nombre": "Cólera del guardián",
+        "Prerrequisitos": "Conocer Furia Natural",
+        "CristalZ": "Tapistal Z",
+        "Tipo": "Hada",
+        "TipoSalvacion": "FUE",
+        "Danno": "(BH+2)d12 + 4 × EST",
+        "hasDC": true,
+        "hasAt": false,
+        "Etiquetas": null,
+        "Rango": "10 m, Radio (2 m)",
+        "Descripcion": [
+            "Invocas una figura humanoide hecha de con la energía de alola y descargas un poderoso golpe contra un punto a 5 metros o menos de ti en un Radio de 2 metros. Las criaturas a rango caen tumbadas y hacen una Tirada de Salvación de FUE. Si la fallan, reciben daño y su mente deja de permitirles actuar en contra de Alola y de sus habitantes hasta el final de la Escena. Si la pasan reciben la mitad de daño y ningún otro efecto.",
+            "Puedes usar este Movimiento Z sin la necesidad de un entrenador."
+        ],
+        "StatsAsociados": [
+            "FUE",
+            "AGI",
+            "MEN"
+        ],
+        "Solo1Especie": true
+    },
+    {
+        "Nombre": "Constelación robaalmas",
+        "Prerrequisitos": "Ser Marshadow",
+        "CristalZ": "Marshastal Z",
+        "Tipo": "Fantasma",
+        "TipoSalvacion": null,
+        "Danno": "BHd12 + 3 × EST",
+        "hasDC": false,
+        "hasAt": true,
+        "Etiquetas": null,
+        "Rango": "10 m",
+        "Descripcion": [
+            "Te lanzas al aire y usas tu entrenamiento marcial para prepararte para un poderoso impacto contra una criatura a 10 metros o menos de ti y te lanzas a por ella. Haz una Tirada de Ataque en Ventaja. Si golpea, la criatura recibe daño y no puede volver a su Poké Ball hasta el final de la Escena. Si falla, la criatura recibe la mitad de ese daño y ningún otro efecto."
+        ],
+        "StatsAsociados": [
+            "FUE",
+            "AGI",
+            "MEN"
+        ],
+        "Solo1Especie": true
+    },
+    {
+        "Nombre": "Tempestad rocosa",
+        "Prerrequisitos": "Ser Lycanroc",
+        "CristalZ": "Lycanrostal Z",
+        "Tipo": "Roca",
+        "TipoSalvacion": "AGI",
+        "Danno": "BHd10 + 3 × EST",
+        "hasDC": true,
+        "hasAt": false,
+        "Etiquetas": null,
+        "Rango": "10 m, Radio (2 m)",
+        "Descripcion": [
+            "Te lanzas al aire fracturando el suelo y haciendo que trozos de este se alcen al vuelo. Luego, caes sobre un punto a 10 metros de distancia o menos de ti y los trozos de suelo te siguen, acribillando a las demás criaturas en un radio de 2 metros a tu alrededor. Las criaturas en el área hacen una Tirada de Salvación de AGI. Si la fallan, reciben daño y si la pasan reciben la mitad de este daño. El suelo queda repleto de estos trozos de rocas puntiagudas, volviéndolo Terreno difícil para todas las criaturas excepto para ti. ",
+            "Una criatura que no seas tu que se mueva por este área repleta de rocas recibe 3d6 de daño de Tipo Roca por cada metro que se mueva entrando, saliendo o moviéndose a través de esta."
+        ],
+        "StatsAsociados": [
+            "FUE",
+            "AGI"
+        ],
+        "Solo1Especie": true
+    },
+    {
+        "Nombre": "Somanta amistosa",
+        "Prerrequisitos": "Ser Mimikyu",
+        "CristalZ": "Mimikyustal Z",
+        "Tipo": "Hada",
+        "TipoSalvacion": "FUE",
+        "Danno": "BHd12 + 3 × EST",
+        "hasDC": true,
+        "hasAt": false,
+        "Etiquetas": null,
+        "Rango": "5 m",
+        "Descripcion": [
+            "Engulles con tu disfraz a una criatura a rango y empiezas a golpearla. La criatura está apresada y hace una Tirada de Salvación de FUE. Si la falla, recibe daño y, si la pasa, recibe la mitad de ese daño.",
+            "Una criatura debe usar su Acción para repetir la Tirada de Salvación, liberándose de estar apresada de esta forma si la pasa."
+        ],
+        "StatsAsociados": [
+            "FUE",
+            "AGI"
+        ],
+        "Solo1Especie": true
+    },
+    {
+        "Nombre": "Estruendo implacable",
+        "Prerrequisitos": "Ser Kommoo",
+        "CristalZ": "Kommostal Z",
+        "Tipo": "Dragón",
+        "TipoSalvacion": "RES",
+        "Danno": "BHd10 + 3 × EST",
+        "hasDC": false,
+        "hasAt": false,
+        "Etiquetas": "Sonido, Potenciación, Escudo",
+        "Rango": "Radio (5 m)",
+        "Descripcion": [
+            "Generas un estruendo en un radio de 5 metros a tu alrededor y te motivas con este. Las criaturas a Rango hacen una Tirada de Salvación de RES. Si la fallan, reciben daño y, si la pasan, reciben la mitad de ese daño.",
+            "Además, tu CA aumenta en 2, la CD de tus Movimientos aumenta en 2, ganas un bono de +2 a tus Tiradas de Ataque y añades 2 dados al daño de todos tus siguientes Movimientos hasta que caigas Inconsciente o acabe la Escena."
+        ],
+        "StatsAsociados": [
+            "FUE",
+            "AGI",
+            "MEN",
+            "PRE"
+        ],
+        "Solo1Especie": true
+    },
+    {
+        "Nombre": "Embestida solar",
+        "Prerrequisitos": "Ser Solgaleo o Necrozma melena crepuscular",
+        "CristalZ": "Solgaleostal Z",
+        "Tipo": "Acero",
+        "TipoSalvacion": "RES",
+        "Danno": "BHd12 + 3 × EST",
+        "hasDC": true,
+        "hasAt": false,
+        "Etiquetas": null,
+        "Rango": "10 m",
+        "Descripcion": [
+            "Cargas energía solar, te haces una bola y te lanzas sobre un punto a 10 metros o menos de ti. Las criaturas sobre las que caes caen tumbadas, son empujadas hasta no quedar debajo tuya y hacen una Tirada de Salvación de RES. Si la fallan, reciben daño y ganan 3 Niveles de Quemado. Si la pasan, reciben la mitad de ese daño y ningún otro efecto."
+        ],
+        "StatsAsociados": [
+            "FUE",
+            "AGI",
+            "MEN"
+        ],
+        "Solo1Especie": true
+    },
+    {
+        "Nombre": "Deflagración lunar",
+        "Prerrequisitos": "Ser Lunala o Necrozma luz del alba",
+        "CristalZ": "Lunalastal Z",
+        "Tipo": "Fantasma",
+        "TipoSalvacion": "RES",
+        "Danno": "BHd12 + 3 × EST",
+        "hasDC": true,
+        "hasAt": false,
+        "Etiquetas": null,
+        "Rango": "Línea (20 m, 4 m)",
+        "Descripcion": [
+            "Creas varios láseres de luz lunar que fusionas en uno solo y proyectas en una Línea de 20 metros de largo y 4 metros de grosor. Las criaturas en el área hacen una Tirada de Salvación de RES. Si la fallan, reciben daño y quedan cegadas hasta que acaben 2 de sus turnos. Si la pasan, reciben la mitad de ese daño y quedan cegadas hasta el final de su próximo turno."
+        ],
+        "StatsAsociados": [
+            "FUE",
+            "AGI",
+            "MEN"
+        ],
+        "Solo1Especie": true
+    },
+    {
+        "Nombre": "Fotodestrucción apocalíptica",
+        "Prerrequisitos": "Ser UltraNecrozma",
+        "CristalZ": "Ultranecrostal Z",
+        "Tipo": "Psíquico",
+        "TipoSalvacion": "RES",
+        "Danno": null,
+        "hasDC": true,
+        "hasAt": false,
+        "Etiquetas": null,
+        "Rango": "Radio (500 m, 20 m)",
+        "Descripcion": [
+            "Cargas energía en una esfera de luz que presagia una catástrofe por un turno. En tu siguiente turno, con tu Acción, la lanzas alrededor de un punto a 500 metros de ti y esta estalla en un radio de 20 metros. Todos los objetos y construcciones alcanzados por esta explosión son desintegrados. Además, todas las criaturas alcanzadas por la explosión que tengan Nivel 15 o menos mueren instantáneamente y no queda rastro de sus cuerpos y las criaturas de Nivel 16 o más hacen una Tirada de Salvación de RES. Si la fallan, caen a 0 PV. Si la pasan, caen a 1 PV.",
+            "Los Pokémon de Tipo Siniestro no son inmunes a perder PV por este Movimiento. ",
+            "Puedes usar este Movimiento Z sin la necesidad de un entrenador."
+        ],
+        "StatsAsociados": [
+            "FUE",
+            "AGI",
+            "MEN"
+        ],
+        "Solo1Especie": true
+    }
+]

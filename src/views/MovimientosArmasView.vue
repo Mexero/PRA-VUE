@@ -1,16 +1,16 @@
 <template>
-    <h1 class="titulo">Reglas</h1>
+    <h1 class="titulo">Movimientos de Armas</h1>
     <main class="cuerpo">
         <div id="filtroTabla">
+
             <Filtros :datosCargados="datosCargados" :tipos="tiposUnicos" :filtroTipos="filtroTipos"
-                :filtroPrerrequisitos="filtroPrerrequisitos" :filtroNivelMin="filtroNivelMin"
-                :filtroNivelMax="filtroNivelMax" :filtroNombre="filtroNombre" @limpiarFiltros="limpiarFiltros"
-                @actualizarFiltros="manejarFiltros" />
+                :filtroAccion="filtroAccion" :filtroPPMin="filtroPPMin" :filtroPPMax="filtroPPMax"
+                :filtroNombre="filtroNombre" @limpiarFiltros="limpiarFiltros" @actualizarFiltros="manejarFiltros" />
 
             <Tabla :datos="filtrados" :datosCargados="datosCargados" :seleccionado="seleccionado" :columnas="columnas"
-                :clavesColumnas="clavesColumnas" @seleccionar="seleccionarRegla" @ordenar="ordenarPor" />
+                :clavesColumnas="clavesColumnas" @seleccionar="seleccionarObjeto" @ordenar="ordenarPor" />
         </div>
-        <Seleccionado :datosCargados="datosCargados" :dote="seleccionado" />
+        <Seleccionado :datosCargados="datosCargados" :mov="seleccionado" />
     </main>
 </template>
 
@@ -19,8 +19,8 @@ import { ref, onMounted, computed, watch } from "vue";
 import { useRoute, useRouter } from "vue-router";
 
 import Tabla from "@/components/TablaView.vue"
-import Seleccionado from "@/components/Reglas/ReglasSeleccionado.vue"
-import Filtros from "@/components/Reglas/ReglasFiltrosView.vue"
+import Seleccionado from "@/components/Movimientos/MovArmasSeleccionado.vue"
+import Filtros from "@/components/Movimientos/MovArmasFiltrosView.vue"
 
 const route = useRoute();
 const router = useRouter();
@@ -28,8 +28,9 @@ const router = useRouter();
 // ======================== DATOS ========================
 
 //Datos para la tabla
-const columnas = ['Nombre', 'Tipos', 'Descripción']
-const clavesColumnas = ['nombre', 'tipos', 'descripciones']
+const columnas = ['Nombre', 'Tipo', 'Acción', 'Coste', 'Rango', 'EST']
+const clavesColumnas = ['Nombre', 'TipoAtaque', 'Accion', 'Coste', 'Rango', 'StatsAsociados']
+const tiposUnicos = ["Movimiento Estándar", "Movimiento Especial", "Movimiento Especial Superior"]
 
 //Datos principales
 const datos = ref([]);
@@ -38,10 +39,10 @@ const seleccionado = ref(route.query.seleccionado ?? undefined);
 
 //Filtros
 const filtroTipos = ref(route.query.tipos ? route.query.tipos.split(",") : []);
-const filtroPrerrequisitos = ref(route.query.prerrequisitos ?? null);
-const filtroNivelMin = ref(route.query.nivelMin ? Number(route.query.nivelMin) : null);
-const filtroNivelMax = ref(route.query.nivelMax ? Number(route.query.nivelMax) : null);
+const filtroPPMin = ref(route.query.PPMin ? Number(route.query.PPMin) : null);
+const filtroPPMax = ref(route.query.PPMax ? Number(route.query.PPMax) : null);
 const filtroNombre = ref(route.query.nombre ?? null);
+const filtroAccion = ref(route.query.accion ?? null);
 
 //Orden de tabla
 const ordenColumna = ref(route.query.ordenColumna ?? null);
@@ -51,39 +52,34 @@ const ordenAscendente = ref(route.query.ordenAscendente !== "false");
 
 onMounted(async () => {
     try {
-        const res = await fetch("/data/json/Reglas/reglas.json");
+        const res = await fetch("/data/json/movimientos/MovimientosArmas.json");
 
         if (!res.ok) throw new Error(`Error HTTP: ${res.status}`);
 
         datos.value = await res.json();
         if (datos.value.length > 0) {
             if (seleccionado.value) {
-                seleccionarRegla(
-                    datos.value.find((dato) => dato.nombre === seleccionado.value)
+                seleccionarObjeto(
+                    datos.value.find((dato) => dato.Nombre === seleccionado.value)
                 );
             } else {
-                seleccionarRegla(filtrados.value[0]);
+                seleccionarObjeto(filtrados.value[0]);
             }
             datosCargados.value = true;
         } else {
             console.warn("El archivo JSON está vacío.");
         }
     } catch (error) {
-        console.error("Error al cargar las reglas:", error);
+        console.error("Error al cargar los objetos:", error);
     }
 });
 
-// ===================== SELECCIONAR REGLAS PARA EL CUADRO ===================
-function seleccionarRegla(objeto) {
+// ===================== SELECCIONAR OBJETOS PARA EL CUADRO ===================
+function seleccionarObjeto(objeto) {
     seleccionado.value = objeto;
 }
 
-// ================ CREA EL FILTRO DE TIPOS MIRANDO LOS DE LA TABLA DIRECTAMENTE ===================
-const tiposUnicos = computed(() => [
-    ...new Set(datos.value.map((o) => o.Tipo).filter(Boolean)),
-]);
-
-// ========== FILTROS Y ORDENAMIENTOS EN RUTA. CAMBIAR
+// ========== FILTROS Y ORDENAMIENTOS EN RUTA
 
 //Modifica filtros
 function manejarFiltros({ clave, valor }) {
@@ -91,17 +87,17 @@ function manejarFiltros({ clave, valor }) {
         case 'nombre':
             filtroNombre.value = valor;
             break;
-        case 'nivelMin':
-            filtroNivelMin.value = valor;
+        case 'PPMin':
+            filtroPPMin.value = valor;
             break;
-        case 'nivelMax':
-            filtroNivelMax.value = valor;
+        case 'PPMax':
+            filtroPPMax.value = valor;
             break;
         case 'tipos':
             filtroTipos.value = valor;
             break;
-        case 'prerrequisitos':
-            filtroPrerrequisitos.value = valor;
+        case 'accion':
+            filtroAccion.value = valor;
             break;
     }
 }
@@ -109,9 +105,9 @@ function manejarFiltros({ clave, valor }) {
 // Limpia filtros
 function limpiarFiltros() {
     filtroTipos.value = [];
-    filtroPrerrequisitos.value = null;
-    filtroNivelMin.value = null;
-    filtroNivelMax.value = null;
+    filtroAccion.value = null;
+    filtroPPMin.value = null;
+    filtroPPMax.value = null;
     filtroNombre.value = null;
     ordenColumna.value = null;
     ordenAscendente.value = true;
@@ -122,9 +118,9 @@ watch(
     [
         seleccionado,
         filtroTipos,
-        filtroPrerrequisitos,
-        filtroNivelMin,
-        filtroNivelMax,
+        filtroAccion,
+        filtroPPMin,
+        filtroPPMax,
         filtroNombre,
         ordenColumna,
         ordenAscendente,
@@ -147,28 +143,28 @@ watch(
 function construirQuery() {
     return {
         tipos: filtroTipos.value.length ? filtroTipos.value.join(",") : undefined,
-        prerrequisitos: filtroPrerrequisitos.value ?? undefined,
-        nivelMin: filtroNivelMin.value ?? undefined,
-        nivelMax: filtroNivelMax.value ?? undefined,
+        accion: filtroAccion.value ?? undefined,
+        PPMin: filtroPPMin.value ?? undefined,
+        PPMax: filtroPPMax.value ?? undefined,
         nombre: filtroNombre.value ?? undefined,
         ordenColumna: ordenColumna.value ?? undefined,
         ordenAscendente: ordenColumna.value ? ordenAscendente.value : undefined,
-        seleccionado: seleccionado.value?.nombre || undefined,
+        seleccionado: seleccionado.value?.Nombre || undefined,
     };
 }
 
 function aplicarQuery(query) {
     filtroTipos.value = query.tipos?.split(",") ?? [];
-    filtroPrerrequisitos.value = query.prerrequisitos ?? null;
-    filtroNivelMin.value = query.nivelMin ? Number(query.nivelMin) : null;
-    filtroNivelMax.value = query.nivelMax ? Number(query.nivelMax) : null;
+    filtroAccion.value = query.accion ?? null;
+    filtroPPMin.value = query.PPMin ? Number(query.PPMin) : null;
+    filtroPPMax.value = query.PPMax ? Number(query.PPMax) : null;
     filtroNombre.value = query.nombre ?? null;
 
     ordenColumna.value = query.ordenColumna ?? null;
     ordenAscendente.value = query.ordenAscendente !== "false";
 
     if (datosCargados.value)
-        if (query.seleccionado) seleccionado.value = datos.value.find((o) => o.nombre === query.seleccionado);
+        if (query.seleccionado) seleccionado.value = datos.value.find((o) => o.Nombre === query.seleccionado);
         else seleccionado.value = filtrados.value[0];
 }
 
@@ -183,25 +179,32 @@ function ordenarPor(columna) {
 }
 
 // ========================= APLICAR FILTROS A TABLA Y ORDENAR ===========================
+
+//UTILIDAD
+function parsePP(coste) {
+    if (!coste) return null;
+    if (typeof coste === 'string' && coste.toLowerCase().includes('variable')) {
+        return 'Variable';
+    }
+    if (typeof coste === 'string' && coste.toLowerCase().includes('a voluntad')) {
+        return 'A voluntad';
+    }
+    const match = coste.match(/\d+/);
+    return match ? parseInt(match[0]) : null;
+}
+
 const filtrados = computed(() => {
     let resultado = datos.value.filter((dato) => {
-        const nivel = dato.Nivel ?? null;
-        const nombre = dato.nombre.toLowerCase();
+        const coste = parsePP(dato.Coste);
+        const nombre = dato.Nombre.toLowerCase();
+        const accion = dato.Accion.toLowerCase();
 
-        // Filtro de prerrequisitos por radio
-        let pasaFiltroPrerrequisitos = true;
-        if (filtroPrerrequisitos.value === "Si") {
-            pasaFiltroPrerrequisitos = !!dato.Prerrequisitos && dato.Prerrequisitos.trim() !== "";
-        } else if (filtroPrerrequisitos.value === "No") {
-            pasaFiltroPrerrequisitos = !dato.Prerrequisitos || dato.Prerrequisitos.trim() === "";
-        }
-        // "Todos" deja pasaFiltroPrerrequisitos en true
-
+        //Expresión lógica infernal
         return (
-            (!filtroTipos.value.length || filtroTipos.value.includes(dato.Tipo)) &&
-            pasaFiltroPrerrequisitos &&
-            (filtroNivelMin.value === null || nivel >= filtroNivelMin.value) &&
-            (filtroNivelMax.value === null || nivel <= filtroNivelMax.value) &&
+            (!filtroTipos.value.length || filtroTipos.value.includes(dato.TipoAtaque)) &&
+            (!filtroAccion.value || filtroAccion.value === 'ambos' || accion === filtroAccion.value) &&
+            (filtroPPMin.value === null || coste >= filtroPPMin.value) &&
+            (filtroPPMax.value === null || coste <= filtroPPMax.value) &&
             (!filtroNombre.value || nombre.includes(filtroNombre.value.toLowerCase()))
         );
     });

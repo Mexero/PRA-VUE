@@ -70,7 +70,7 @@
     </details>
 
     <details open id="apartado3">
-        <summary>Orden en los Concurso</summary>
+        <summary>Orden en los Concursos</summary>
         <div class="detailsBloque">
             <p>
                 Al principio de un Concurso Pokémon, todos los Coordinadores entran en

@@ -9,9 +9,9 @@ const props = defineProps([
     'datosCargados',
     'tipos',
     'filtroTipos',
-    'filtroPrerrequisitos',
-    'filtroNivelMin',
-    'filtroNivelMax',
+    'filtroAccion',
+    'filtroPPMin',
+    'filtroPPMax',
     'filtroNombre'
 ]);
 
@@ -57,34 +57,31 @@ function toggleTipo(event, tipo) {
     emit('actualizarFiltros', { clave: 'tipos', valor: Array.from(seleccionadas) });
 }
 
-//Precios
-function emitirPrecios(valorMin, valorMax) {
-    nivelMin.value = valorMin;
-    nivelMax.value = valorMax;
-    actualizarFiltros('nivelMin', nivelMin.value);
-    actualizarFiltros('nivelMax', nivelMax.value);
+//Coste en PP
+function emitirPP(valorMin, valorMax) {
+    PPMin.value = valorMin;
+    PPMax.value = valorMax;
+    actualizarFiltros('PPMin', PPMin.value);
+    actualizarFiltros('PPMax', PPMax.value);
 }
 
 // =============== DATOS SLIDER ================
-const allowedValues = [
-    0, 6, 9, 11, 12, 18
-];
+const allowedValues = [0, 1, 2, 3, 4, 5];
 
-const nivelMin = ref(allowedValues[0]);
-const nivelMax = ref(allowedValues[allowedValues.length - 1]);
+const PPMin = ref(allowedValues[0]);
+const PPMax = ref(allowedValues[allowedValues.length - 1]);
 
 // =============== HABLAR SLIDER ================
 let limpiarSliderFlag = ref(false);
 
 watch(
-    () => [props.filtroNivelMin, props.filtroNivelMax],
+    () => [props.filtroPPMin, props.filtroPPMax],
     ([min, max]) => {
         if (typeof max !== "number" && !min && !max) {
             limpiarSliderFlag.value = !limpiarSliderFlag.value;
         }
     }
 );
-
 
 </script>
 
@@ -106,15 +103,17 @@ watch(
 
                     <button @click="limpiarFiltros">Limpiar filtros</button>
 
-                    <div id="filtroPrerrequisitos">
-                        <h3>Prerrequisitos</h3>
+                    <div id="filtroAccion">
+                        <h3>Acción</h3>
                         <div>
-                            <label v-for="opcion in ['Si', 'No', 'Todos']" :key="opcion">
-                                <input type="radio" name="tienePrerrequisitos" :value="opcion"
-                                    :checked="filtroPrerrequisitos === opcion"
-                                    @change="actualizarFiltros('prerrequisitos', opcion)" />
-                                {{ opcion }}
-                            </label>
+                            <div>
+                                <label v-for="opcion in ['Acción', 'Reacción', 'Ambos']" :key="opcion">
+                                    <input type="radio" name="tieneAccion" :value="opcion"
+                                        :checked="filtroAccion === opcion.toLocaleLowerCase()"
+                                        @change="actualizarFiltros('accion', opcion.toLowerCase())" />
+                                    {{ opcion }}
+                                </label>
+                            </div>
                         </div>
                     </div>
                     <div id="filtroTipos">
@@ -127,11 +126,8 @@ watch(
                             </label>
                         </div>
                     </div>
-
-                    <h3>Nivel</h3>
-
-                    <Slider :allowedValues="allowedValues" :limpiar="limpiarSliderFlag"
-                        @actualizarMinMax="emitirPrecios" />
+                    <h3>Coste en PP</h3>
+                    <Slider :allowedValues="allowedValues" :limpiar="limpiarSliderFlag" @actualizarMinMax="emitirPP" />
                 </div>
             </div>
         </transition>
@@ -149,7 +145,7 @@ watch(
     flex-direction: column;
 }
 
-#filtroPrerrequisitos div {
+#filtroAccion div {
     gap: 8px;
     flex-wrap: wrap;
 }
@@ -174,7 +170,7 @@ input[type="text"]:focus {
     box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.2);
 }
 
-#filtroPrerrequisitos div {
+#filtroAccion div {
     padding: 8px 0;
     display: flex;
     gap: 20px;
@@ -263,7 +259,7 @@ input[type="text"]:focus {
     }
 
     #filtroTipos div,
-    #filtroPrerrequisitos div {
+    #filtroAccion div {
         grid-template-columns: repeat(2, auto) !important;
         gap: 8px;
         flex-wrap: wrap;

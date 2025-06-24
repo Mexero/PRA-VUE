@@ -336,7 +336,7 @@
                     </p>
                 </li>
             </ul>
-            <p>Las Habilidades asociadas usualmente a <strong>Mente</strong>son:</p>
+            <p>Las Habilidades asociadas usualmente a <strong>Mente</strong> son:</p>
             <ul>
                 <li>
                     <p>
@@ -352,11 +352,9 @@
                         tipos de tiradas de Conocimiento son:
                     </p>
                     <ul>
-                        <p>
-                            <li>
-                                <p>Conocimiento Pokémon</p>
-                            </li>
-                        </p>
+                        <li>
+                            <p>Conocimiento Pokémon</p>
+                        </li>
                         <li>
                             <p>Conocimiento de Historia</p>
                         </li>
@@ -514,7 +512,7 @@
 
             <p>
                 La primera forma es a través de las
-                <strong> Tiradas de Habilidad en Grupo </strong>, que se utilizan para
+                <strong> Tiradas de Habilidad en Grupo</strong>, que se utilizan para
                 actividades en las que varios participantes pueden contribuir de manera
                 equitativa a una tarea sin un actor principal. A menudo, estas Tiradas
                 de Habilidad son demasiado difíciles para que una sola persona o Pokémon
@@ -528,7 +526,7 @@
             </p>
 
             <p>
-                La segunda forma es mediante las <strong> Tiradas con Ayuda </strong>.
+                La segunda forma es mediante las <strong> Tiradas con Ayuda</strong>.
                 En estas hay un actor principal en la tarea y alguien más puede ayudar
                 de manera secundaria. En estos casos, si la persona que ayuda es al
                 menos Buena en la Habilidad del tipo de Tirada a realizar, este puede

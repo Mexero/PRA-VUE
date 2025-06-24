@@ -1,0 +1,451 @@
+[
+    {
+        "Nombre": "Tirar",
+        "TipoAtaque": "Movimiento Estándar",
+        "Accion": "Acción",
+        "Coste": "Variable",
+        "Tipo": "Tipo del arma",
+        "Danno": "Variable",
+        "hasDC": false,
+        "hasAt": true,
+        "Etiquetas": null,
+        "Rango": "Distancia de lanzado (5 + FUE)",
+        "Descripcion": [
+            "Lanzas un arma a una criatura. Haz una Tirada de Ataque a rango contra la criatura.",
+            "Si golpea, la criatura recibe daño dependiendo de los PP gastados al usar el Movimiento.",
+            "0 PP: 1d8.",
+            "1 PP: 1d8 + EST.",
+            "2 PP: 2d8 + EST.",
+            "4 PP: 4d8 + EST."
+        ],
+        "StatsAsociados": [
+            "FUE",
+            "AGI"
+        ],
+        "ArmasRecomendadas": "Lanzables"
+    },
+    {
+        "Nombre": "Golpear",
+        "TipoAtaque": "Movimiento Estándar",
+        "Accion": "Acción",
+        "Coste": "Variable",
+        "Tipo": "Tipo del arma",
+        "Danno": "Variable",
+        "hasDC": false,
+        "hasAt": true,
+        "Etiquetas": null,
+        "Rango": "Cuerpo a cuerpo",
+        "Descripcion": [
+            "Golpeas fuertemente un arma a una criatura. Haz una Tirada de Ataque a rango contra la criatura.",
+            "Si golpea, la criatura recibe daño dependiendo de los PP gastados al usar el Movimiento y, en ciertas tiradas naturales, empuja.",
+            "0 PP: 1d10. En 19+, empuja 1 metro.",
+            "1 PP: 1d10 + EST. En 18+, empuja 1 metro.",
+            "2 PP: 2d10 + EST. En 17+, empuja 1 metro.",
+            "4 PP: 4d10 + EST. En 17+, empuja 2 metros."
+        ],
+        "StatsAsociados": [
+            "FUE"
+        ],
+        "ArmasRecomendadas": "Contundentes o pesadas"
+    },
+    {
+        "Nombre": "Tajar",
+        "TipoAtaque": "Movimiento Estándar",
+        "Accion": "Acción",
+        "Coste": "Variable",
+        "Tipo": "Tipo del arma",
+        "Danno": "Variable",
+        "hasDC": false,
+        "hasAt": true,
+        "Etiquetas": "Cortante",
+        "Rango": "Cuerpo a cuerpo",
+        "Descripcion": [
+            "Cortas con un arma a una criatura. Haz una Tirada de Ataque cuerpo a cuerpo contra la criatura.",
+            "Si golpea, la criatura recibe daño dependiendo de los PP gastados al usar el Movimiento y, en ciertas tiradas naturales, es crítico.",
+            "0 PP: 1d10. En 19+, es crítico.",
+            "1 PP: 1d10 + EST. En 19+, es crítico.",
+            "2 PP: 2d10 + EST. En 18+, es crítico.",
+            "4 PP: 4d10 + EST. En 18+, es crítico."
+        ],
+        "StatsAsociados": [
+            "FUE",
+            "AGI"
+        ],
+        "ArmasRecomendadas": "Cortantes"
+    },
+    {
+        "Nombre": "Disparar",
+        "TipoAtaque": "Movimiento Estándar",
+        "Accion": "Acción",
+        "Coste": "Variable",
+        "Tipo": "Tipo del arma",
+        "Danno": "Variable",
+        "hasDC": false,
+        "hasAt": true,
+        "Etiquetas": null,
+        "Rango": "10 m",
+        "Descripcion": [
+            "Disparas un proyectil con tu arma. Haz una Tirada de Ataque cuerpo a cuerpo contra la criatura.",
+            "Si golpea, la criatura recibe daño dependiendo de los PP gastados al usar el Movimiento y, en ciertas tiradas naturales, es crítico.",
+            "0 PP: 1d8. En 19+, es crítico.",
+            "1 PP: 1d8 + EST. En 19+, es crítico.",
+            "2 PP: 2d8 + EST. En 18+, es crítico.",
+            "4 PP: 4d8 + EST. En 18+, es crítico."
+        ],
+        "StatsAsociados": [
+            "AGI"
+        ],
+        "ArmasRecomendadas": "Armas a rango"
+    },
+    {
+        "Nombre": "Abrir herida",
+        "TipoAtaque": "Movimiento Especial Superior",
+        "Accion": "Acción",
+        "Coste": "5 PP",
+        "Tipo": "Tipo del arma",
+        "Danno": "4d8 + 2 × EST",
+        "hasDC": false,
+        "hasAt": false,
+        "Etiquetas": "Cortante",
+        "Rango": "Cuerpo a cuerpo",
+        "Descripcion": [
+            "Hieres a una criatura con tu arma. Haz una Tirada de Ataque cuerpo a cuerpo contra la criatura. Si golpea, la criatura recibe daño y hace una Tirada de Salvación de RES. Si la falla, queda herida, por lo que gana un nivel de fatiga hasta el final de la Escena. Si acaba la Escena con 5 o más niveles de fatiga, los niveles de fatiga no desaparecen el final de la Escena."
+        ],
+        "StatsAsociados": [
+            "FUE",
+            "AGI"
+        ],
+        "ArmasRecomendadas": "Cortante"
+    },
+    {
+        "Nombre": "Ataque distante",
+        "TipoAtaque": "Movimiento Especial",
+        "Accion": "Acción",
+        "Coste": "2 PP",
+        "Tipo": "Tipo del arma",
+        "Danno": "2d8 + EST",
+        "hasDC": false,
+        "hasAt": true,
+        "Etiquetas": null,
+        "Rango": "Cuerpo a cuerpo",
+        "Descripcion": [
+            "Golpeas a una criatura aprovechando la longitud de tu arma. Haz una Tirada de Ataque cuerpo a cuerpo contra una criatura a una distancia de 2 metros. Si golpea, la criatura recibe daño."
+        ],
+        "StatsAsociados": [
+            "FUE",
+            "AGI"
+        ],
+        "ArmasRecomendadas": "Armas de asta y látigos"
+    },
+    {
+        "Nombre": "Ataque doble",
+        "TipoAtaque": "Movimiento Especial",
+        "Accion": "Acción",
+        "Coste": "2 PP",
+        "Tipo": "Tipo del arma",
+        "Danno": "1d8 + EST",
+        "hasDC": false,
+        "hasAt": true,
+        "Etiquetas": "Golpea dos veces",
+        "Rango": "Cuerpo a cuerpo",
+        "Descripcion": [
+            "Atacas dos veces con tus armas contra una o varias criaturas. Haz dos Tirada de Ataque cuerpo contra una o dos criaturas. Por cada uno de esos ataques que golpean, la criatura recibe daño."
+        ],
+        "StatsAsociados": [
+            "FUE",
+            "AGI"
+        ],
+        "ArmasRecomendadas": "Armas duales"
+    },
+    {
+        "Nombre": "Ataque múltiple",
+        "TipoAtaque": "Movimiento Especial Superior",
+        "Accion": "Acción",
+        "Coste": "5 PP",
+        "Tipo": "Tipo del arma",
+        "Danno": "2d10 + EST",
+        "hasDC": false,
+        "hasAt": true,
+        "Etiquetas": "Golpea varias veces",
+        "Rango": "Cuerpo a cuerpo",
+        "Descripcion": [
+            "Haces una rápida ráfaga de golpes contra una criatura. Haz una Tirada de Ataque cuerpo a cuerpo contra una criatura. Si golpea, el objetivo recibe daño y, si la Tirada Natural fue de 10+, vuelve a atacar de la misma forma. Repite este proceso hasta que falles, saques menos de 10 en la Tirada Natural de una Tirada de Ataque o des 4 golpes.",
+            "Este Movimiento golpea mínimo dos veces."
+        ],
+        "StatsAsociados": [
+            "FUE",
+            "AGI"
+        ],
+        "ArmasRecomendadas": "Armas duales"
+    },
+    {
+        "Nombre": "Ataque perforante",
+        "TipoAtaque": "Movimiento Especial Superior",
+        "Accion": "Acción",
+        "Coste": "5 PP",
+        "Tipo": "Tipo del arma",
+        "Danno": "4d8 + EST",
+        "hasDC": true,
+        "hasAt": false,
+        "Etiquetas": null,
+        "Rango": "Línea (10 m, 1 cm)",
+        "Descripcion": [
+            "Lanzas un disparo capaz de penetras a través de las criaturas. Tu disparo recorre una línea de 1 cm de grosor y 10 metros de longitud. Las criaturas en la línea hacen una Tirada de Salvación de AGI. Si la fallan, reciben daño."
+        ],
+        "StatsAsociados": [
+            "FUE",
+            "AGI"
+        ],
+        "ArmasRecomendadas": "Armas a rango"
+    },
+    {
+        "Nombre": "Barrido",
+        "TipoAtaque": "Movimiento Especial",
+        "Accion": "Acción",
+        "Coste": "2 PP",
+        "Tipo": "Tipo del arma",
+        "Danno": "2d8 + EST",
+        "hasDC": false,
+        "hasAt": true,
+        "Etiquetas": null,
+        "Rango": "Cuerpo a cuerpo",
+        "Descripcion": [
+            "Haces un barrido contra una criatura para itentar derribarla. Haz una Tirada de Ataque contra la criatura. Si golpea, la criatura recibe daño y hace una Tirada de Salvación de AGI. Si la falla, cae tumbada."
+        ],
+        "StatsAsociados": [
+            "FUE",
+            "AGI"
+        ],
+        "ArmasRecomendadas": "Bastones, látigos y armas de asta"
+    },
+    {
+        "Nombre": "Bloquear",
+        "TipoAtaque": "Movimiento Especial",
+        "Accion": "Reacción",
+        "Coste": "4 PP",
+        "Tipo": null,
+        "Danno": null,
+        "hasDC": false,
+        "hasAt": false,
+        "Etiquetas": null,
+        "Rango": "Sobre ti",
+        "Descripcion": [
+            "Cuando ves a una criatura hacer una Tirada de Ataque contra ti, te proteges. Tu CA aumenta  en 5 para este ataque."
+        ],
+        "StatsAsociados": [],
+        "ArmasRecomendadas": "Armas grandes o escudos"
+    },
+    {
+        "Nombre": "Contusión",
+        "TipoAtaque": "Movimiento Especial Superior",
+        "Accion": "Acción",
+        "Coste": "5 PP",
+        "Tipo": "Tipo del arma",
+        "Danno": "4d8 + 2 × EST",
+        "hasDC": false,
+        "hasAt": true,
+        "Etiquetas": null,
+        "Rango": "Cuerpo a cuerpo",
+        "Descripcion": [
+            "Machacas a una criatura con tu arma. Haz una Tirada de Ataque cuerpo a cuerpo contra la criatura. Si golpea, la criatura recibe daño y hace una Tirada de Salvación de RES. Si la falla, el golpe la deja tan confusa que queda cegada, pues solo ve negro, hasta el final de su próximo turno."
+        ],
+        "StatsAsociados": [
+            "FUE"
+        ],
+        "ArmasRecomendadas": "Contundentes o pesadas"
+    },
+    {
+        "Nombre": "Disparo a las piernas",
+        "TipoAtaque": "Movimiento Especial",
+        "Accion": "Acción",
+        "Coste": "2 PP",
+        "Tipo": "Tipo del arma",
+        "Danno": "2d8 + EST",
+        "hasDC": false,
+        "hasAt": true,
+        "Etiquetas": null,
+        "Rango": "10 m",
+        "Descripcion": [
+            "Disparas a las piernas de una criatura. Haz una Tirada de Ataque a rango contra una criatura. Si golpea, la criatura recibe daño y su velocidades se reducen en 2 metros hasta el final del turno."
+        ],
+        "StatsAsociados": [
+            "FUE"
+        ],
+        "ArmasRecomendadas": "Armas a rango"
+    },
+    {
+        "Nombre": "Disparo ágil",
+        "TipoAtaque": "Movimiento Especial",
+        "Accion": "Acción",
+        "Coste": "2 PP",
+        "Tipo": "Tipo del arma",
+        "Danno": "2d8 + EST",
+        "hasDC": false,
+        "hasAt": true,
+        "Etiquetas": null,
+        "Rango": "5 m",
+        "Descripcion": [
+            "Cuando usas este Movimiento moverte no genera ataques de oportunidad por el resto del turno y puedes moverte 2 metros. Luego, haces una Tirada de Ataque a rango contra una criatura. Si golpea, la criatura recibe daño."
+        ],
+        "StatsAsociados": [
+            "AGI"
+        ],
+        "ArmasRecomendadas": "Armas a rango, lanzables"
+    },
+    {
+        "Nombre": "Doble lanzamiento",
+        "TipoAtaque": "Movimiento Especial",
+        "Accion": "Acción",
+        "Coste": "2 PP",
+        "Tipo": "Tipo del arma",
+        "Danno": "1d6 + EST",
+        "hasDC": false,
+        "hasAt": true,
+        "Etiquetas": "Golpea dos veces",
+        "Rango": "Distancia de lanzado (5 + FUE)",
+        "Descripcion": [
+            "Lanzas dos de tus armas contra una o varias criaturas. Haz dos Tirada de Ataque a rango contra dichas criaturas. Por cada uno de esos ataques que golpean, la criatura recibe daño."
+        ],
+        "StatsAsociados": [
+            "FUE",
+            "AGI"
+        ],
+        "ArmasRecomendadas": "Armas duales"
+    },
+    {
+        "Nombre": "Floritura",
+        "TipoAtaque": "Movimiento Especial",
+        "Accion": "Acción",
+        "Coste": "4 PP",
+        "Tipo": "Tipo del arma",
+        "Danno": "2d4 + EST",
+        "hasDC": false,
+        "hasAt": true,
+        "Etiquetas": null,
+        "Rango": "Cuerpo a cuerpo",
+        "Descripcion": [
+            "Haces un ágil ataque con el objetivo de desconcertar a una criatura. Haz una Tirada de Ataque cuerpo a cuerpo. Si golpea, la criatura recibe daño y todas las Tiradas de Ataque hechas contra la criatura se hacen en Ventaja hasta el principio de tu próximo turno."
+        ],
+        "StatsAsociados": [
+            "FUE",
+            "AGI"
+        ],
+        "ArmasRecomendadas": "Punzantes"
+    },
+    {
+        "Nombre": "Hender",
+        "TipoAtaque": "Movimiento Especial",
+        "Accion": "Acción",
+        "Coste": "4 PP",
+        "Tipo": "Tipo del arma",
+        "Danno": "4d6 + EST",
+        "hasDC": true,
+        "hasAt": false,
+        "Etiquetas": "Cortante",
+        "Rango": "Cono (2 m)",
+        "Descripcion": [
+            "Das un golpe horizontal con tanta fuerza que puede cortar a varias criaturas. Las criaturas en un cono de 2 metros hacen una Tirada de Salvación de AGI. Si la fallan, reciben daño."
+        ],
+        "StatsAsociados": [
+            "FUE"
+        ],
+        "ArmasRecomendadas": "Armas grandes o de asta"
+    },
+    {
+        "Nombre": "Lacerar",
+        "TipoAtaque": "Movimiento Especial",
+        "Accion": "Acción",
+        "Coste": "2 PP",
+        "Tipo": "Tipo del arma",
+        "Danno": "2d10 + EST",
+        "hasDC": false,
+        "hasAt": true,
+        "Etiquetas": "Cortante",
+        "Rango": "Cuerpo a cuerpo",
+        "Descripcion": [
+            "Laceras a una criatura, provocándole una herida leve que le causa dolor. Haz una Tirada de Ataque contra la criatura. Si golpea, la criatura recibe daño y, si la Tirada Natural fue de 17+, tiene Desventaja en su próxima Tirada de Ataque antes del final de su próximo turno."
+        ],
+        "StatsAsociados": [
+            "FUE",
+            "AGI"
+        ],
+        "ArmasRecomendadas": "Cortantes y látigos"
+    },
+    {
+        "Nombre": "Quebrar",
+        "TipoAtaque": "Movimiento Especial",
+        "Accion": "Acción",
+        "Coste": "2 PP",
+        "Tipo": "Tipo del arma",
+        "Danno": "2d8 + EST",
+        "hasDC": false,
+        "hasAt": true,
+        "Etiquetas": null,
+        "Rango": "Cuerpo a cuerpo",
+        "Descripcion": [
+            "Golpeas para partir todas las defensas que recubren a una criatura. Haz una Tirada de Ataque contra una criatura, ignorando todos los efectos de Escudo que apliquen sobre esta. Si golpea, la criatura recibe daño y todos los efectos de Escudo que la afectan acaban prematuramente. Si la criatura calcula su CA con RES, reduce su CA en 2 hasta el final de tu próximo turno."
+        ],
+        "StatsAsociados": [
+            "FUE"
+        ],
+        "ArmasRecomendadas": "Contundentes"
+    },
+    {
+        "Nombre": "Riposte",
+        "TipoAtaque": "Movimiento Especial Superior",
+        "Accion": "Reacción",
+        "Coste": "4 PP",
+        "Tipo": "Tipo del arma",
+        "Danno": "2d8 + EST",
+        "hasDC": false,
+        "hasAt": true,
+        "Etiquetas": null,
+        "Rango": "Cuerpo a cuerpo",
+        "Descripcion": [
+            "Cuando ves a una criatura hacer una Tirada de Ataque contra ti, te proteges. Tu CA aumenta  en 5 para este ataque y, si la Tirada de Ataque se hizo a 1 metro de distancia de ti, haces una Tirada de Ataque cuerpo a cuerpo contra la criatura que la hizo. Si golpea, la criatura recibe daño."
+        ],
+        "StatsAsociados": [
+            "AGI"
+        ],
+        "ArmasRecomendadas": "Roperas o similares"
+    },
+    {
+        "Nombre": "Rociar",
+        "TipoAtaque": "Movimiento Especial Superior",
+        "Accion": "Acción",
+        "Coste": "5 PP",
+        "Tipo": "Tipo del arma",
+        "Danno": "4d8 + EST",
+        "hasDC": true,
+        "hasAt": false,
+        "Etiquetas": null,
+        "Rango": "5 m / Radio (2 m)",
+        "Descripcion": [
+            "Lanzas unas cuantas armas de golpe sobre un área general. Las criaturas en un radio de 2 metros a menos de 5 metros de ti hacen una Tirada de Salvación de AGI. Si la fallan, reciben daño."
+        ],
+        "StatsAsociados": [
+            "FUE",
+            "AGI"
+        ],
+        "ArmasRecomendadas": "Lanzables"
+    },
+    {
+        "Nombre": "Vaciar recámara",
+        "TipoAtaque": "Movimiento Especial Superior",
+        "Accion": "Acción",
+        "Coste": "5 PP",
+        "Tipo": "Tipo del arma",
+        "Danno": "4d8 + EST",
+        "hasDC": true,
+        "hasAt": false,
+        "Etiquetas": null,
+        "Rango": "Cono (5 m)",
+        "Descripcion": [
+            "Disparas desde la cintura, gastando 5 piezas de munición. Las criaturas en un cono de 5 metros hacen una Tirada de Salvación de AGI. Si la fallan, reciben daño."
+        ],
+        "StatsAsociados": [
+            "AGI"
+        ],
+        "ArmasRecomendadas": "Armas de fuego"
+    }
+]

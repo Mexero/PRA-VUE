@@ -3,15 +3,11 @@
 import { debounce } from 'lodash';
 import { ref, watch } from 'vue';
 
-import Slider from '@/components/sliderView.vue'
-
 const props = defineProps([
     'datosCargados',
     'tipos',
     'filtroTipos',
-    'filtroPrerrequisitos',
-    'filtroNivelMin',
-    'filtroNivelMax',
+    'filtroEspecie',
     'filtroNombre'
 ]);
 
@@ -57,34 +53,6 @@ function toggleTipo(event, tipo) {
     emit('actualizarFiltros', { clave: 'tipos', valor: Array.from(seleccionadas) });
 }
 
-//Precios
-function emitirPrecios(valorMin, valorMax) {
-    nivelMin.value = valorMin;
-    nivelMax.value = valorMax;
-    actualizarFiltros('nivelMin', nivelMin.value);
-    actualizarFiltros('nivelMax', nivelMax.value);
-}
-
-// =============== DATOS SLIDER ================
-const allowedValues = [
-    0, 6, 9, 11, 12, 18
-];
-
-const nivelMin = ref(allowedValues[0]);
-const nivelMax = ref(allowedValues[allowedValues.length - 1]);
-
-// =============== HABLAR SLIDER ================
-let limpiarSliderFlag = ref(false);
-
-watch(
-    () => [props.filtroNivelMin, props.filtroNivelMax],
-    ([min, max]) => {
-        if (typeof max !== "number" && !min && !max) {
-            limpiarSliderFlag.value = !limpiarSliderFlag.value;
-        }
-    }
-);
-
 
 </script>
 
@@ -106,15 +74,18 @@ watch(
 
                     <button @click="limpiarFiltros">Limpiar filtros</button>
 
-                    <div id="filtroPrerrequisitos">
-                        <h3>Prerrequisitos</h3>
+
+                    <div id="filtroEspecie">
+                        <h3>Categoría</h3>
                         <div>
-                            <label v-for="opcion in ['Si', 'No', 'Todos']" :key="opcion">
-                                <input type="radio" name="tienePrerrequisitos" :value="opcion"
-                                    :checked="filtroPrerrequisitos === opcion"
-                                    @change="actualizarFiltros('prerrequisitos', opcion)" />
-                                {{ opcion }}
-                            </label>
+                            <div>
+                                <label v-for="opcion in ['Único', 'de Tipo Elemental', 'Todos']" :key="opcion">
+                                    <input type="radio" name="esUnico" :value="opcion"
+                                        :checked="filtroEspecie === opcion.toLocaleLowerCase()"
+                                        @change="actualizarFiltros('unico', opcion.toLowerCase())" />
+                                    {{ opcion }}
+                                </label>
+                            </div>
                         </div>
                     </div>
                     <div id="filtroTipos">
@@ -127,11 +98,6 @@ watch(
                             </label>
                         </div>
                     </div>
-
-                    <h3>Nivel</h3>
-
-                    <Slider :allowedValues="allowedValues" :limpiar="limpiarSliderFlag"
-                        @actualizarMinMax="emitirPrecios" />
                 </div>
             </div>
         </transition>
@@ -149,7 +115,7 @@ watch(
     flex-direction: column;
 }
 
-#filtroPrerrequisitos div {
+#filtroEspecie div {
     gap: 8px;
     flex-wrap: wrap;
 }
@@ -174,7 +140,7 @@ input[type="text"]:focus {
     box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.2);
 }
 
-#filtroPrerrequisitos div {
+#filtroEspecie div {
     padding: 8px 0;
     display: flex;
     gap: 20px;
@@ -263,7 +229,7 @@ input[type="text"]:focus {
     }
 
     #filtroTipos div,
-    #filtroPrerrequisitos div {
+    #filtroEspecie div {
         grid-template-columns: repeat(2, auto) !important;
         gap: 8px;
         flex-wrap: wrap;
