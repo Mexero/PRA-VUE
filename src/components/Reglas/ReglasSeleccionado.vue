@@ -3,7 +3,19 @@
         <h2>{{ regla.nombre }}</h2>
         <p><strong>Tipo:</strong> {{ mostrarTipos(regla.tipos) }}. </p>
         <p><strong>Descripción:</strong></p>
-        <p class="descripcion">{{ regla.descripcion }}</p>
+        <div class="descripcion">
+            <template
+                v-for="bloque in Array.isArray(regla.descripciones) ? regla.descripciones : [regla.descripciones]">
+                <p v-if="!bloque.tipo" v-html="bloque"></p>
+                <ul v-else-if="bloque.tipo === 'listaU'" class="list">
+                    <li v-for="(item, j) in bloque.contenido" :key="j" v-html="item">
+                    </li>
+                </ul>
+                <ol v-else-if="bloque.tipo === 'listaO'" class="list">
+                    <li v-for="(item, j) in bloque.contenido" :key="j" v-html="item"></li>
+                </ol>
+            </template>
+        </div>
     </div>
     <div v-else class="seleccionado">
         <p>Cargando...</p>

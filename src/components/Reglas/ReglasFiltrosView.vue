@@ -111,7 +111,7 @@ function toggleTipo(event, tipo) {
 #filtroTipos div {
     margin: 10px 5px;
     display: flex;
-    gap: 40px;
+    gap: 20px;
     flex-wrap: wrap;
 }
 
