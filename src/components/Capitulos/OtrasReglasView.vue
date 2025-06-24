@@ -184,7 +184,7 @@
 
                 <div class="estados dormido">
                     <div class="headerEstados">
-                        <img src="/assets/icons/DormidoIcon.webp" alt="Dormido icono" width="25px" />
+                        <img src="/assets/icons/dormidoIcon.webp" alt="Dormido icono" width="25px" />
                         <h2>Dormido</h2>
                     </div>
 
@@ -557,41 +557,47 @@
             <div class="tablaAdaptable">
 
                 <table class="tablaCapitulos">
-                    <th>Tamaño</th>
-                    <th>Descripcion</th>
-                    <tr>
-                        <td>Enano</td>
-                        <td>
-                            Mide menos de un tercio de lo que mide una persona en promedio en
-                            todas sus dimensiones.
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Pequeño</td>
-                        <td>
-                            Mide alrededor de la mitad que una persona en promedio en la mayor
-                            de sus dimensiones.
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Mediano</td>
-                        <td>
-                            Mide una cantidad similar a una persona promedio y en ninguna de sus
-                            dimensiones excede demasiado a una persona promedio.
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Grande</td>
-                        <td>Mide entre 2 y 2,5 metros en la mayor de sus dimensiones.</td>
-                    </tr>
-                    <tr>
-                        <td>Enorme</td>
-                        <td>Mide entre 2,5 y 3 metros en la mayor de sus dimensiones.</td>
-                    </tr>
-                    <tr>
-                        <td>Colosal</td>
-                        <td>Más de 3 metros en alguna de sus dimensiones.</td>
-                    </tr>
+                    <thead>
+                        <tr>
+                            <th>Tamaño</th>
+                            <th>Descripcion</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Enano</td>
+                            <td>
+                                Mide menos de un tercio de lo que mide una persona en promedio en
+                                todas sus dimensiones.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Pequeño</td>
+                            <td>
+                                Mide alrededor de la mitad que una persona en promedio en la mayor
+                                de sus dimensiones.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Mediano</td>
+                            <td>
+                                Mide una cantidad similar a una persona promedio y en ninguna de sus
+                                dimensiones excede demasiado a una persona promedio.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Grande</td>
+                            <td>Mide entre 2 y 2,5 metros en la mayor de sus dimensiones.</td>
+                        </tr>
+                        <tr>
+                            <td>Enorme</td>
+                            <td>Mide entre 2,5 y 3 metros en la mayor de sus dimensiones.</td>
+                        </tr>
+                        <tr>
+                            <td>Colosal</td>
+                            <td>Más de 3 metros en alguna de sus dimensiones.</td>
+                        </tr>
+                    </tbody>
                 </table>
             </div>
         </div>
@@ -694,7 +700,7 @@
                 los Movimientos Por Tierra y, si cae desde una altura, desciende a una
                 velocidad constante que puede controlar. Además, por cada metro que se
                 mueve horizontalmente mientras cae, cae un metro si no está a 1 metro de
-                altura del suelo y, como mínimo, cae 5 metros cada ronda
+                altura del suelo y, como mínimo, cae 5 metros cada ronda.
             </p>
         </div>
     </details>

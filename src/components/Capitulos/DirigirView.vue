@@ -2851,85 +2851,89 @@
                     </p>
                 </div>
             </details>
+        </div>
+    </details>
 
-            <details class="subDetails">
-                <summary class="subSummary">Las Clases de Dificultad</summary>
-                <div class="detailsBloque">
-                    <p>
-                        A lo largo de las sesiones, en múltiples ocasiones pedirás a tus
-                        jugadores que realicen Tiradas de Habilidad. Por ejemplo, cuando
-                        intenten escalar un árbol para escapar de un Pokémon que los
-                        persigue una Tirada de Atletismo. En estas situaciones, podrías
-                        plantearte qué dificultad poner a la Tirada de Habilidad. Para
-                        responder a esto debes preguntarte qué tan difícil es lo que se
-                        plantean hacer y usar la siguiente tabla para definir la dificultad.
-                    </p>
-                    <div class="tablaAdaptable">
+    <details open id="apartado9">
+        <summary>Las Clases de Dificultad</summary>
+        <div class="detailsBloque">
+            <p>
+                A lo largo de las sesiones, en múltiples ocasiones pedirás a tus
+                jugadores que realicen Tiradas de Habilidad. Por ejemplo, cuando
+                intenten escalar un árbol para escapar de un Pokémon que los
+                persigue una Tirada de Atletismo. En estas situaciones, podrías
+                plantearte qué dificultad poner a la Tirada de Habilidad. Para
+                responder a esto debes preguntarte qué tan difícil es lo que se
+                plantean hacer y usar la siguiente tabla para definir la dificultad.
+            </p>
+            <div class="tablaAdaptable">
 
-                        <table class="tablaCapitulos">
-                            <thead>
-                                <tr>
-                                    <th>Dificultad</th>
-                                    <th>CD</th>
-                                    <th>Descripción</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Muy fácil</td>
-                                    <td>5 a 10</td>
-                                    <td>
-                                        Cualquier persona sin entrenamiento en lo que se busca hacer
-                                        podría hacerlo la mayor parte de las veces.
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Fácil</td>
-                                    <td>10 a 15</td>
-                                    <td>
-                                        Cualquier persona con algo de entrenamiento podría hacerlo la
-                                        mayor parte de las veces y alguien sin entrenamiento lo haría
-                                        con cierta dificultad.
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Medio</td>
-                                    <td>16 a 20</td>
-                                    <td>
-                                        Una persona entrenada podría fallar, pero conseguiría hacerlo
-                                        casi siempre.
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Difícil</td>
-                                    <td>20 a 25</td>
-                                    <td>
-                                        Sería complicado para cualquiera que no fuera un experto en
-                                        hacerlo e incluso para estos podría suponer un reto.
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Muy difícil</td>
-                                    <td>25 a 30</td>
-                                    <td>
-                                        Sería complejo de realizar hasta para un experto, pero
-                                        plausible.
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Casi Imposible</td>
-                                    <td>31 o más</td>
-                                    <td>
-                                        Para la mayoría de las personas es algo inalcanzable e incluso
-                                        presenta un gran reto para los mayores expertos.
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </details>
-
+                <table class="tablaCapitulos">
+                    <thead>
+                        <tr>
+                            <th>Dificultad</th>
+                            <th>CD</th>
+                            <th>Descripción</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Muy fácil</td>
+                            <td>5 a 10</td>
+                            <td>
+                                Cualquier persona sin entrenamiento en lo que se busca hacer
+                                podría hacerlo la mayor parte de las veces.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Fácil</td>
+                            <td>10 a 15</td>
+                            <td>
+                                Cualquier persona con algo de entrenamiento podría hacerlo la
+                                mayor parte de las veces y alguien sin entrenamiento lo haría
+                                con cierta dificultad.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Medio</td>
+                            <td>16 a 20</td>
+                            <td>
+                                Una persona entrenada podría fallar, pero conseguiría hacerlo
+                                casi siempre.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Difícil</td>
+                            <td>20 a 25</td>
+                            <td>
+                                Sería complicado para cualquiera que no fuera un experto en
+                                hacerlo e incluso para estos podría suponer un reto.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Muy difícil</td>
+                            <td>25 a 30</td>
+                            <td>
+                                Sería complejo de realizar hasta para un experto, pero
+                                plausible.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Casi Imposible</td>
+                            <td>31 o más</td>
+                            <td>
+                                Para la mayoría de las personas es algo inalcanzable e incluso
+                                presenta un gran reto para los mayores expertos.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </details>
+    <details open id="apartado10">
+        <summary>Economía</summary>
+        <div class="detailsBloque">
             <details class="subDetails">
                 <summary class="subSummary">Dinero, Recompensas y Gastos</summary>
                 <div class="detailsBloque">
@@ -3070,564 +3074,564 @@
                     </p>
                 </div>
             </details>
+
+
+            <details class="subDetails">
+                <summary class="subSummary">Coste de la Vida</summary>
+                <div class="detailsBloque">
+                    <p>
+                        Salir de aventuras con tus Pokémon no es barato y, en general, los
+                        personajes tendrán que gastar dinero para poder subsistir. Quizás en la
+                        naturaleza se la puedan apañar con la recolección, pero, si esta falla o
+                        si no tienen acceso a esta, gastarán comida, que tiene un cierto precio
+                        y, en las ciudades, tendrán que pagar por alojamiento y ciertos
+                        servicios comunes. La siguiente tabla te indica los gastos que puede
+                        tener un personaje por sí mismo y los gastos que le genera cuidar de sus
+                        Pokémon que lleven encima en función del estilo de vida que lleven por
+                        cada día.
+                    </p>
+                    <p>
+                        Si no quieres tener esto en cuenta, puedes asumir que los personajes se
+                        alojan en los Centros Pokémon de forma gratuita y que aquí reciben toda
+                        la comida que necesiten.
+                    </p>
+                    <div class="tablaAdaptable">
+
+                        <table class="tablaCapitulos">
+                            <thead>
+                                <tr>
+                                    <th>Estilo de vida</th>
+                                    <th>Personaje</th>
+                                    <th>Gasto por Pokémon</th>
+                                    <th>Descripción</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Pobre</td>
+                                    <td>40$</td>
+                                    <td>
+                                        20$ para Pokémon de tamaño mediano o menor y 40$ para los grandes
+                                        o mayor.
+                                    </td>
+                                    <td>
+                                        El personaje subsiste a base de la comida más barata y se hospeda
+                                        en los peores hostales, si es que lo hace.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Común</td>
+                                    <td>60$</td>
+                                    <td>
+                                        30$ para Pokémon de tamaño mediano o menor y 60$ para los grandes
+                                        o mayor.
+                                    </td>
+                                    <td>
+                                        El personaje vive un estilo de vida normal, pero no se permite
+                                        gastos especiales ni servicios caros.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Acomodado</td>
+                                    <td>200$</td>
+                                    <td>
+                                        50$ para Pokémon de tamaño mediano o menor y 100$ para los grandes
+                                        o mayor.
+                                    </td>
+                                    <td>
+                                        El personaje vive un estilo de vida normal y se permite algunos
+                                        gastos especiales y ciertos caprichos.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Rico</td>
+                                    <td>500$</td>
+                                    <td>
+                                        100$ para Pokémon de tamaño mediano o menor y 200$ para los
+                                        grandes o mayor.
+                                    </td>
+                                    <td>
+                                        El personaje vive una vida cómoda, sólo se hospeda en locales de
+                                        alto estanding y consistentemente hace gastos innecesarios.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Opulento</td>
+                                    <td>1000$</td>
+                                    <td>250$ para cada Pokémon.</td>
+                                    <td>
+                                        El personaje vive rodeado de lujo y no le tiembla el pulso a la
+                                        hora de hacer gastos grandes, tiene acceso a criados y servicios
+                                        muy fuera del alcance de la mayoría.
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <details class="subDetails">
+                        <summary class="subSummary">Reglas para otros encuentros</summary>
+                        <div class="detailsBloque">
+                            <p>
+                                Si en tu campaña vas a añadir un encuentro nuevo que no se
+                                corresponde con el combate o los concursos y quieres que este se
+                                sienta más detallado, puedes crearlo siguiendo las siguientes
+                                pautas:
+                            </p>
+
+                            <p>
+                                <strong>Define los participantes</strong>. Define la cantidad de
+                                bandos y participantes de cada bando que pueden participar.
+                            </p>
+
+                            <p>
+                                <strong>Funcionamiento</strong>. El encuentro está formado por, al
+                                menos, 3 rondas. En cada Ronda, cada participante (o un participante
+                                por cada bando, a tu elección) realiza una Tirada de Habilidad que
+                                tú estableces. Puedes dar varias opciones para la Tirada de
+                                Habilidad, por ejemplo, Atletismo o Acrobacias, y las Tiradas que
+                                estableces que se deben hacer en cada Ronda pueden cambiar
+                                dependiendo del contexto.
+                            </p>
+
+                            <p>
+                                Si sólo hay 2 bandos, el bando cuyo participante obtiene una Tirada
+                                de Habilidad más alta gana 1 Punto. Si hay más de dos bandos, estos
+                                ordenan sus Tiradas de Habilidad de menor a mayor; el primero gana 0
+                                puntos, el segundo 1, el tercero, 2 y así hasta terminar con todos
+                                los bandos.
+                            </p>
+
+                            <p>
+                                Si hay un empate entre las Tiradas de Habilidad de dos bandos gana
+                                el que tenga un mayor bono a la Tirada de Habilidad y, si ambos son
+                                iguales, se repite la Tirada para desempatar.
+                            </p>
+
+                            <p>
+                                <strong>Molestar a otro bando (opcional)</strong>. Puedes establecer
+                                una regla para molestar a otro bando. Antes de hacer las Tiradas de
+                                Habilidad de la ronda, un miembro de un bando puede decidir molestar
+                                a otro bando. Por hacerlo, gana un -2 a la Tirada de Habilidad
+                                asociada a la ronda y, luego, hace una Tirada de Habilidad
+                                enfrentada (por ejemplo, de Combate contra Combate o Acrobacias)
+                                contra el miembro del otro bando que quiere molestar. Si el que
+                                quiere molestar gana la Tirada enfrentada, el molestado tiene un
+                                penalizador de -4 a la Tirada de Habilidad de esta Ronda. Si
+                                cualquiera de los 2 obtiene un 1 en la Tirada Natural de la Tirada
+                                de Habilidad, su bando pierde 1 punto si tiene sentido que esto
+                                pudiera ocurrir.
+                            </p>
+
+                            <p>
+                                Debes establecer qué tipos de Tiradas de Habilidad pueden hacerse
+                                para molestar a otro bando. Además, un bando sólo puede ser
+                                molestado una vez por ronda, aunque varios bandos pueden intentar
+                                molestarlo.
+                            </p>
+
+                            <p>
+                                <strong>Aprovecharse de otro bando (opcional)</strong>. En ciertos
+                                momentos de un encuentro, un miembro de un bando puede intentar
+                                aprovechar la ventaja que tiene otro bando para avanzar más. En este
+                                caso, en lugar de hacer la Tirada Habitual de una Ronda, el miembro
+                                del bando que quiere aprovecharse hace otra Tirada de Habilidad
+                                enfrentada contra una Tirada de Habilidad del bando del que se
+                                intentan aprovechar. Si el bando que intenta aprovecharse del otro,
+                                gana tantos puntos como pueden ganarse en una Ronda o la diferencia
+                                de puntos entre su bando y el otro, la que sea menor de ambas. Si el
+                                bando que intenta aprovecharse del otro falla la Tirada de
+                                Habilidad, no gana ningún punto esta Ronda y, si obtiene un 1 en la
+                                Tirada Natural, pierde 1 punto si tiene sentido que esto pudiera
+                                ocurrir.
+                            </p>
+
+                            <p>
+                                Debes establecer qué tipos de Tiradas de Habilidad pueden hacerse
+                                para aprovecharse de otro bando y qué Tiradas de Habilidad debe
+                                hacer el bando del que intentan aprovecharse para evitarlo.
+                            </p>
+
+                            <p>
+                                <strong>Ganador</strong>. El bando con más puntos al final de la
+                                última ronda gana.
+                            </p>
+
+                            <p>
+                                Los siguientes son dos ejemplos de tipos de encuentros que podrías
+                                utilizar.
+                            </p>
+                        </div>
+                    </details>
+
+                    <details class="subDetails">
+                        <summary class="subSummary">Encuentro: Búsqueda del tesoro</summary>
+                        <div class="detailsBloque">
+                            <p>
+                                Una búsqueda del tesoro inicia cuando varios bandos o equipos
+                                empiezan a buscar por separado una localización o un objeto, con el
+                                objetivo de llegar a este los primeros. Esta búsqueda no solo se
+                                refiere a la de un juego, sino que también puede representar una
+                                situación real entre varios grupos.
+                            </p>
+
+                            <p>
+                                <strong>Los equipos</strong>. Cada equipo está compuesto por uno o
+                                varios entrenadores o sus Pokémon y tiene una cantidad de Puntos de
+                                la Búsqueda que indica que tan bien van. Esta cantidad es secreta y
+                                sólo la conocen los miembros del grupo y el DJ. Usualmente, todos
+                                los grupos empiezan con 0 puntos, pero en ciertas ocasiones un grupo
+                                puede empezar con ventaja (a discreción del DJ), si tiene
+                                información extra o empieza más cerca del objetivo.
+                            </p>
+
+                            <p>
+                                Los equipos tienen 2 CD que se van actualizando cada vez que toman
+                                un turno. Su CD de Escondido y su CD de Rastro. Si nadie de un grupo
+                                toma ciertas Acciones, estas se vuelven 10 al final del turno del
+                                grupo.
+                            </p>
+
+                            <p>
+                                <strong>Iniciar la búsqueda</strong>. Al empezar la búsqueda, todos
+                                los equipos hacen Tiradas de Iniciativa y toman turnos en orden,
+                                como de costumbre. Si un equipo tiene más de un entrenador, la
+                                Iniciativa de su equipo es el promedio de sus Tiradas de Iniciativa.
+                                Lo que duran los turnos de la Iniciativa queda a criterio del DJ y
+                                puede variar entre unos minutos a, incluso, durar varias horas o
+                                incluso un día.
+                            </p>
+
+                            <p>
+                                <strong>Terminar la búsqueda</strong>. Cuando un equipo alcanza un
+                                número de puntos, usualmente 6, ese equipo gana y acaba la búsqueda.
+                            </p>
+
+                            <p>
+                                <strong>La dificultad</strong>. La búsqueda del Tesoro tiene una
+                                dificultad base, conocida como CD de la Búsqueda.
+                            </p>
+
+                            <p>
+                                <strong>Entre rondas</strong>. Al terminar una ronda de la
+                                Iniciativa, pueden ocurrir eventos, a discreción del DJ. Ejemplos de
+                                estos eventos son Combates contra Pokémon salvajes, una oportunidad
+                                de obtener recursos extra o incluso pistas que pudieran dar Ventaja
+                                en próximas Tiradas para Buscar, por ejemplo.
+                            </p>
+
+                            <h2>Los turnos de los participantes</h2>
+                            <p>
+                                Durante el turno de su grupo en la Iniciativa, cada entrenador puede
+                                tomar una Acción y puede comandar a uno de sus Pokémon para que tome
+                                otra Acción. Si todos los grupos están compuestos sólo por un único
+                                entrenador y sus Pokémon, en su lugar los entrenadores pueden
+                                comandar a todos sus Pokémon, además de tomar su Acción. Las
+                                Acciones de todos los participantes se deciden antes de realizar las
+                                Tiradas de Habilidad correspondientes. Las acciones que se pueden
+                                tomar son: Buscar, Esconder, Percibir, Borrar rastro, Rastrear,
+                                Poner trampa, Abrir paso.
+                            </p>
+
+                            <p>
+                                <strong>Buscar</strong>. Un miembro de cada equipo puede intentar
+                                Buscar el objetivo. Cuando lo hace, hace una Tirada de Supervivencia
+                                (Espíritu) o Investigación (Mente) (dependiendo de si hay formas de
+                                guiarse con el entorno o mediante pistas, respectivamente). La
+                                Dificultad de esta Tirada de Habilidad es igual a la CD de la
+                                Búsqueda más la cantidad de Puntos que tiene ese equipo. Por
+                                ejemplo, si la CD es 16 y se tienen 4 puntos, la CD es 20.
+                            </p>
+
+                            <p>
+                                Si todos los miembros de un grupo que intentan Buscar pasan la
+                                Tirada de Habilidad, ganan 1 punto por cada uno de ellos que han
+                                tomado esta acción. Si 1 o más fallan la Tirada, el grupo no ganan
+                                ningún punto. Por cada miembro del grupo que obtenga un 1 en la
+                                Tirada Natural de su Tirada de Habilidad, el grupo pierde 1 punto,
+                                hasta un mínimo de 0, pues el equipo se pierde debido a un error.
+                            </p>
+
+                            <p>
+                                <strong>Esconder</strong>. Un miembro de un grupo puede tomar la
+                                Acción de Esconder para controlar que el grupo no sea perceptible
+                                desde cerca. El miembro del grupo realiza una Tirada de Sigilo
+                                (Espíritu) o Supervivencia (Espíritu).
+                            </p>
+
+                            <p>
+                                Al final del turno del grupo, la CD de Escondido del grupo se vuelve
+                                la mayor entre las Tiradas de Esconder que han hecho los miembros
+                                del grupo, a no ser que uno haya obtenido un 1 en la Tirada Natural
+                                de su Tirada de Esconder. En cuyo caso, la CD es 5. Si nadie ha
+                                hecho una Tirada de Esconder, la CD de Escondido del grupo es de 10
+                                hasta que vuelva a empezar su turno.
+                            </p>
+
+                            <p>
+                                <strong>Percibir</strong>. Si un miembro del equipo decide Percibir,
+                                busca a otras Criaturas o cosas que pudieran ser relevantes en el
+                                entorno cercano del grupo. Una Criatura que intenta Percibir,
+                                realiza una Tirada de Habilidad de Percepción. Si el resultado de la
+                                Tirada supera la CD de la Búsqueda, puede recibir información del
+                                entorno, asociada principalmente a eventos que pudieran ocurrir
+                                entre rondas o información no directamente asociada a la Búsqueda.
+                            </p>
+
+                            <p>
+                                Una Criatura que toma la Acción de Percibir puede llegar a encontrar
+                                a miembros de otros equipos si su Tirada supera la CD de Escondido
+                                si estos están cerca en algún momento antes de que vuelva a empezar
+                                el turno de propio grupo. Un miembro de otro grupo se considera
+                                cercano cuando:
+                            </p>
+
+                            <ul>
+                                <li>
+                                    <p>
+                                        Rastrea al tuyo o el tuyo Rastrea al otro y la diferencia de
+                                        puntos de ambos grupos es de 1 o 0.
+                                    </p>
+                                </li>
+
+                                <li>
+                                    <p>Ambos grupos están a 1 punto de ganar la búsqueda.</p>
+                                </li>
+                            </ul>
+
+                            <p>
+                                <strong>Borrar rastro</strong>. Un miembro de un equipo puede tomar
+                                la Acción de Borrar rastro y, cuando lo hace, elimina pruebas del
+                                camino que ha estado siguiendo su grupo para que sea más difícil
+                                rastrearlos. El miembro del grupo realiza una Tirada de Sigilo
+                                (Espíritu) o Supervivencia (Espíritu).
+                            </p>
+
+                            <p>
+                                Al final del turno del grupo, la CD de Rastreo del grupo se vuelve
+                                la mayor entre las Tiradas de Borrar rastro que han hecho los
+                                miembros del grupo, a no ser que uno haya obtenido un 1 en la Tirada
+                                Natural de su Tirada de Borrar rastro. En este caso, la CD es 5. Si
+                                nadie ha hecho una Tirada de Borrar rastro, la CD de Rastreo del
+                                grupo es de 10 hasta que vuelva a empezar su turno.
+                            </p>
+
+                            <p>
+                                <strong>Rastrear</strong>. Si un miembro del equipo decide Rastrear,
+                                recolecta pistas para seguirle el rastro a otro grupo. Para hacerlo,
+                                realiza una Tirada de Supervivencia (Espíritu) contra la CD de
+                                Rastro del grupo elegido. Si la pasa y el otro equipo tiene más
+                                puntos que el suyo, puede decidir ganar 1 punto. Si la pasa y tiene
+                                menos puntos que el grupo objetivo, pierde 1 punto. Además, si un
+                                miembro del grupo obtiene un 1 en la Tirada Natural de Rastrear, el
+                                grupo pierde 1 Punto.
+                            </p>
+
+                            <p>
+                                Un grupo que decide Buscar y Rastrear, debe elegir entre cambiar su
+                                puntuación Buscando o Rastreando antes de hacer las Tiradas
+                                correspondientes. Si al rastrear a un grupo las puntuaciones de
+                                ambos grupos se igualan, ambos grupos pueden llegar a verse si uno
+                                de sus miembros Percibe al otro grupo, pudiendo desencadenar algún
+                                evento, como un Combate (a criterio de los grupos y el DJ).
+                            </p>
+
+                            <p>
+                                <strong>Poner trampa</strong>. Un miembro de un equipo puede decidir
+                                pararse a poner una trampa a otro grupo si tiene sentido en el
+                                contexto de la búsqueda (por ejemplo, si es un juego y esto está
+                                permitido, o si el entorno lo permite). Cuando lo hace, hace una
+                                Tirada de Supervivencia (Agilidad). La dificultad de la Trampa es
+                                igual al resultado de la Tirada menos 5 y la trampa dura hasta el
+                                principio del próximo turno de su equipo. Además, si uno de tus
+                                Rasgos dice que puedes poner trampas, la CD de tus Trampas es igual
+                                al resultado de tu Tirada en lugar de restarle 5 a esta.
+                            </p>
+
+                            <p>
+                                Si una Criatura de otro grupo decide Rastrear al tuyo y la
+                                diferencia de puntos entre ambos grupos es de 2 o menos puede caer
+                                en la trampa, haciendo que, en lugar de ganar puntos, pierda 1 Punto
+                                por cada trampa en la que caiga. Para que un grupo caiga en una
+                                trampa todos los miembros de dicho grupo que deciden Percibir deben
+                                de fallar la Tirada contra la CD de la trampa.
+                            </p>
+
+                            <p>
+                                <strong>Abrir paso</strong>. Un miembro del equipo se centra en
+                                abrirle paso a otro de los miembros, para que este pueda
+                                concentrarse en la tarea de Buscar o Rastrear. Cuando lo hace, hace
+                                una Tirada de Atletismo (Fuerza) contra la CD de la Búsqueda. Si la
+                                pasa, el compañero que está ayudando tiene Ventaja en su Tirada de
+                                Habilidad asociada a Buscar o Rastrear.
+                            </p>
+
+                            <p>
+                                <strong>Rasgos que permiten encontrar lugares u objetos</strong>.
+                                Una Criatura con la Habilidad Cacheo o un Rasgo similar que permita
+                                encontrar o buscar el objetivo puede repetir una vez la Tirada de
+                                Habilidad de Buscar si la falla una vez por Búsqueda del tesoro.
+                            </p>
+
+                            <p>
+                                <strong>Rasgos que permiten no perderse</strong>. Si un grupo fuera
+                                a perder 1 Punto al Buscar o Rastrear, una Criatura con un Rasgo que
+                                hace que no puedan perderse puede anular esa pérdida de puntos una
+                                única vez por Búsqueda del Tesoro.
+                            </p>
+                        </div>
+                    </details>
+
+                    <details class="subDetails">
+                        <summary class="subSummary">Encuentro: Capturar la bandera</summary>
+                        <div class="detailsBloque">
+                            <p>
+                                En juego de capturar el campo se divide en tantas regiones como
+                                equipo o equipos haya. Usualmente, de 2 a 4. En el centro del campo
+                                de cada equipo se encuentra una bandera propia al equipo que
+                                cualquier Criatura puede tomar. El objetivo es conseguir tantas
+                                banderas como sea posible mientras se defiende la propia.
+                            </p>
+
+                            <p>
+                                <strong>Los equipos</strong>. Cada equipo está compuesto por un
+                                entrenador y sus Pokémon o, alternativamente, puede estar compuesto
+                                por varios entrenadores y varios Pokémon de cada uno de estos (a
+                                definir por el DJ).
+                            </p>
+
+                            <p>
+                                <strong>Iniciar el juego</strong>. Al empezar el juego, todos los
+                                entrenadores se encuentran en su campo con su bandera y hacen
+                                Tiradas de Iniciativa y toman turnos en orden como de costumbre.
+                            </p>
+
+                            <p>
+                                <strong>Terminar el juego</strong>. Cuando un equipo captura todas
+                                las banderas o cuando finaliza el juego (tras 8 rondas), se hace un
+                                recuento de puntos y gana el equipo que más puntos tenga. Cada
+                                equipo tiene tantos puntos como banderas tiene en su posesión cuando
+                                acaba el juego y, si ha conseguido terminar el juego con la bandera
+                                de su propio equipo, gana 1 punto extra.
+                            </p>
+
+                            <p>Los turnos. En cada turno, un entrenador hace 3 cosas:</p>
+                            <ol>
+                                <li>
+                                    <p>
+                                        Quedarse en una región en la que está o moverse a una región
+                                        adyacente a esta.
+                                    </p>
+                                </li>
+
+                                <li>
+                                    <p>
+                                        Dar una orden a cada uno de sus Pokémon de la región en la que
+                                        empezó el turno y, si se ha movido, también a los de la región a
+                                        la que se ha movido. La orden tiene dos partes: Decirle si se
+                                        queda en la región en la que está o si se mueve a una región
+                                        adyacente y darle una Acción. Las acciones que puede dar son:
+                                        Atacar (sólo si está fuera de su región), Defender (sólo si está
+                                        en su región), Buscar rivales o Esconderse.
+                                    </p>
+                                </li>
+
+                                <li>
+                                    <p>Elige si Ataca, Defiende, Busca a rivales o se Esconde.</p>
+                                </li>
+                            </ol>
+
+                            <p>
+                                <strong>Defender</strong>. La acción de Defender sólo puede tomarse
+                                cuando la Criatura está en la región de su equipo. Al hacerlo se
+                                vuelve un Defensor y realiza una Tirada de Percepción (Espíritu) o
+                                Investigación (Mente). El resultado de sigilo es su Dificultad de
+                                Percepción hasta que empiece su próximo turno. Si esta dificultad
+                                iguala a la Dificultad de Sigilo de una Criatura escondida en la
+                                región, la ve.
+                            </p>
+                            <p>
+                                Cuando un Defensor ve a una Criatura en su región, como cuando la
+                                detecta con la Tirada anterior o cuando una criatura entra y se
+                                dispone a Atacar, puede decidir perseguirla. Si lo hace, hace una
+                                Tirada de Atletismo (Fuerza) contra dicha criatura y, si la pasa, la
+                                alcanza, toma cualquier bandera que lleve encima y la manda de
+                                vuelta a su región. Un Defensor sólo puede perseguir a una criatura
+                                por ronda.
+                            </p>
+
+                            <p>
+                                <strong>Atacar</strong>. La acción de Atacar sólo puede tomarse
+                                cuando se está en una región rival. Para hacerla, la Criatura hace
+                                una Tirada de Atletismo (Fuerza) enfrentada contra todos los
+                                Defensores que decidan perseguirla. Si la pasa, roba una de las
+                                banderas que tenga bajo su control el equipo de la región. Sólo las
+                                Criaturas del equipo de la región en la que estás pueden robarte la
+                                bandera y, para hacerlo, deben alcanzarte (ver Defender).
+                            </p>
+
+                            <p>
+                                <strong>Esconderse</strong>. Cuando una Criatura va a Esconderse,
+                                puede hacerlo antes de moverse de región. Para esconderse, una
+                                Criatura hace una Tirada de Sigilo (Agilidad). El resultado de la
+                                Tirada es su Dificultad de Sigilo hasta que empiece su próximo
+                                turno. Si el resultado de la tirada supera la Dificultad de
+                                Percepción más alta de los Defensores de la región en la que va a
+                                Esconderse, se esconde en este área. Si la pasa, nadie sabe dónde
+                                está y tiene Ventaja en todas las Tiradas de Habilidad que haga
+                                contra criaturas que no la vean antes del principio de su próximo
+                                turno.
+                            </p>
+
+                            <p>
+                                Una criatura debe seguir usando sus turnos para Esconderse si quiere
+                                seguir manteniéndose Escondida.
+                            </p>
+
+                            <p>
+                                <strong>Buscar rivales</strong>. Cuando una Criatura no está en la
+                                región de tu equipo no puedes Defender, pero igualmente puede buscar
+                                rivales. Para hacerlo, hace una Tirada de Percepción (Espíritu)
+                                contra las Dificultades de Sigilo de las Criaturas que están
+                                escondidas en la región y ve a todas las Criaturas cuyas
+                                Dificultades haya superado.
+                            </p>
+
+                            <p>
+                                <strong>Tener la bandera</strong>. Cuando una criatura empieza su
+                                turno con una bandera debe elegir entre dársela a un compañero o
+                                huir de la región. Dar la bandera es gratuito y hace que la Criatura
+                                se marche a una región adyacente a la que está, usualmente, en
+                                dirección a la suya. Si se decide huir, se debe hacer otra Tirada de
+                                Atletismo (Fuerza) enfrentada contra todos los Defensores que
+                                decidan seguirla. Si supera la tirada contra todos, huye con la
+                                bandera a una región adyacente. Cuando una criatura con una bandera
+                                llega a su región, la deja en el centro y la bandera queda bajo el
+                                control de su equipo, pero puede ser robada.
+                            </p>
+
+                            <p>
+                                <strong>¿Qué hace un Pokémon que no recibe órden?</strong> Este
+                                elige si quedarse en la región que está escondiéndose o si mueve
+                                hacia a su región y, si la alcanza se vuelve un Defensor,
+                                (dependiendo de su personalidad y la última órden recibida).
+                            </p>
+
+                            <p>
+                                <strong>Cambiar una Tirada de Habilidad</strong>. En ciertas
+                                ocasiones, el DJ puede permitirte cambiar una de las Tiradas de
+                                Habilidad por otra si se justifica adecuadamente que acción. Por
+                                ejemplo, si un Pokémon huye con la bandera y pasa por una zona muy
+                                accidentada puede decidir empezar a saltar entre los accidentes
+                                ágilmente para evitar que la alcancen y esto puede hacer que la
+                                Tirada se vuelva de Acrobacias (Agilidad).
+                            </p>
+                        </div>
+                    </details>
+                </div>
+            </details>
         </div>
     </details>
-
-    <details open id="apartado9">
-        <summary>Coste de la Vida</summary>
-        <div class="detailsBloque">
-            <p>
-                Salir de aventuras con tus Pokémon no es barato y, en general, los
-                personajes tendrán que gastar dinero para poder subsistir. Quizás en la
-                naturaleza se la puedan apañar con la recolección, pero, si esta falla o
-                si no tienen acceso a esta, gastarán comida, que tiene un cierto precio
-                y, en las ciudades, tendrán que pagar por alojamiento y ciertos
-                servicios comunes. La siguiente tabla te indica los gastos que puede
-                tener un personaje por sí mismo y los gastos que le genera cuidar de sus
-                Pokémon que lleven encima en función del estilo de vida que lleven por
-                cada día.
-            </p>
-            <p>
-                Si no quieres tener esto en cuenta, puedes asumir que los personajes se
-                alojan en los Centros Pokémon de forma gratuita y que aquí reciben toda
-                la comida que necesiten.
-            </p>
-            <div class="tablaAdaptable">
-
-                <table class="tablaCapitulos">
-                    <thead>
-                        <tr>
-                            <th>Estilo de vida</th>
-                            <th>Personaje</th>
-                            <th>Gasto por Pokémon</th>
-                            <th>Descripción</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Pobre</td>
-                            <td>40$</td>
-                            <td>
-                                20$ para Pokémon de tamaño mediano o menor y 40$ para los grandes
-                                o mayor.
-                            </td>
-                            <td>
-                                El personaje subsiste a base de la comida más barata y se hospeda
-                                en los peores hostales, si es que lo hace.
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Común</td>
-                            <td>60$</td>
-                            <td>
-                                30$ para Pokémon de tamaño mediano o menor y 60$ para los grandes
-                                o mayor.
-                            </td>
-                            <td>
-                                El personaje vive un estilo de vida normal, pero no se permite
-                                gastos especiales ni servicios caros.
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Acomodado</td>
-                            <td>200$</td>
-                            <td>
-                                50$ para Pokémon de tamaño mediano o menor y 100$ para los grandes
-                                o mayor.
-                            </td>
-                            <td>
-                                El personaje vive un estilo de vida normal y se permite algunos
-                                gastos especiales y ciertos caprichos.
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Rico</td>
-                            <td>500$</td>
-                            <td>
-                                100$ para Pokémon de tamaño mediano o menor y 200$ para los
-                                grandes o mayor.
-                            </td>
-                            <td>
-                                El personaje vive una vida cómoda, sólo se hospeda en locales de
-                                alto estanding y consistentemente hace gastos innecesarios.
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Opulento</td>
-                            <td>1000$</td>
-                            <td>250$ para cada Pokémon.</td>
-                            <td>
-                                El personaje vive rodeado de lujo y no le tiembla el pulso a la
-                                hora de hacer gastos grandes, tiene acceso a criados y servicios
-                                muy fuera del alcance de la mayoría.
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <details class="subDetails">
-                <summary class="subSummary">Reglas para otros encuentros</summary>
-                <div class="detailsBloque">
-                    <p>
-                        Si en tu campaña vas a añadir un encuentro nuevo que no se
-                        corresponde con el combate o los concursos y quieres que este se
-                        sienta más detallado, puedes crearlo siguiendo las siguientes
-                        pautas:
-                    </p>
-
-                    <p>
-                        <strong>Define los participantes</strong>. Define la cantidad de
-                        bandos y participantes de cada bando que pueden participar.
-                    </p>
-
-                    <p>
-                        <strong>Funcionamiento</strong>. El encuentro está formado por, al
-                        menos, 3 rondas. En cada Ronda, cada participante (o un participante
-                        por cada bando, a tu elección) realiza una Tirada de Habilidad que
-                        tú estableces. Puedes dar varias opciones para la Tirada de
-                        Habilidad, por ejemplo, Atletismo o Acrobacias, y las Tiradas que
-                        estableces que se deben hacer en cada Ronda pueden cambiar
-                        dependiendo del contexto.
-                    </p>
-
-                    <p>
-                        Si sólo hay 2 bandos, el bando cuyo participante obtiene una Tirada
-                        de Habilidad más alta gana 1 Punto. Si hay más de dos bandos, estos
-                        ordenan sus Tiradas de Habilidad de menor a mayor; el primero gana 0
-                        puntos, el segundo 1, el tercero, 2 y así hasta terminar con todos
-                        los bandos.
-                    </p>
-
-                    <p>
-                        Si hay un empate entre las Tiradas de Habilidad de dos bandos gana
-                        el que tenga un mayor bono a la Tirada de Habilidad y, si ambos son
-                        iguales, se repite la Tirada para desempatar.
-                    </p>
-
-                    <p>
-                        <strong>Molestar a otro bando (opcional)</strong>. Puedes establecer
-                        una regla para molestar a otro bando. Antes de hacer las Tiradas de
-                        Habilidad de la ronda, un miembro de un bando puede decidir molestar
-                        a otro bando. Por hacerlo, gana un -2 a la Tirada de Habilidad
-                        asociada a la ronda y, luego, hace una Tirada de Habilidad
-                        enfrentada (por ejemplo, de Combate contra Combate o Acrobacias)
-                        contra el miembro del otro bando que quiere molestar. Si el que
-                        quiere molestar gana la Tirada enfrentada, el molestado tiene un
-                        penalizador de -4 a la Tirada de Habilidad de esta Ronda. Si
-                        cualquiera de los 2 obtiene un 1 en la Tirada Natural de la Tirada
-                        de Habilidad, su bando pierde 1 punto si tiene sentido que esto
-                        pudiera ocurrir.
-                    </p>
-
-                    <p>
-                        Debes establecer qué tipos de Tiradas de Habilidad pueden hacerse
-                        para molestar a otro bando. Además, un bando sólo puede ser
-                        molestado una vez por ronda, aunque varios bandos pueden intentar
-                        molestarlo.
-                    </p>
-
-                    <p>
-                        <strong>Aprovecharse de otro bando (opcional)</strong>. En ciertos
-                        momentos de un encuentro, un miembro de un bando puede intentar
-                        aprovechar la ventaja que tiene otro bando para avanzar más. En este
-                        caso, en lugar de hacer la Tirada Habitual de una Ronda, el miembro
-                        del bando que quiere aprovecharse hace otra Tirada de Habilidad
-                        enfrentada contra una Tirada de Habilidad del bando del que se
-                        intentan aprovechar. Si el bando que intenta aprovecharse del otro,
-                        gana tantos puntos como pueden ganarse en una Ronda o la diferencia
-                        de puntos entre su bando y el otro, la que sea menor de ambas. Si el
-                        bando que intenta aprovecharse del otro falla la Tirada de
-                        Habilidad, no gana ningún punto esta Ronda y, si obtiene un 1 en la
-                        Tirada Natural, pierde 1 punto si tiene sentido que esto pudiera
-                        ocurrir.
-                    </p>
-
-                    <p>
-                        Debes establecer qué tipos de Tiradas de Habilidad pueden hacerse
-                        para aprovecharse de otro bando y qué Tiradas de Habilidad debe
-                        hacer el bando del que intentan aprovecharse para evitarlo.
-                    </p>
-
-                    <p>
-                        <strong>Ganador</strong>. El bando con más puntos al final de la
-                        última ronda gana.
-                    </p>
-
-                    <p>
-                        Los siguientes son dos ejemplos de tipos de encuentros que podrías
-                        utilizar.
-                    </p>
-                </div>
-            </details>
-
-            <details class="subDetails">
-                <summary class="subSummary">Encuentro: Búsqueda del tesoro</summary>
-                <div class="detailsBloque">
-                    <p>
-                        Una búsqueda del tesoro inicia cuando varios bandos o equipos
-                        empiezan a buscar por separado una localización o un objeto, con el
-                        objetivo de llegar a este los primeros. Esta búsqueda no solo se
-                        refiere a la de un juego, sino que también puede representar una
-                        situación real entre varios grupos.
-                    </p>
-
-                    <p>
-                        <strong>Los equipos</strong>. Cada equipo está compuesto por uno o
-                        varios entrenadores o sus Pokémon y tiene una cantidad de Puntos de
-                        la Búsqueda que indica que tan bien van. Esta cantidad es secreta y
-                        sólo la conocen los miembros del grupo y el DJ. Usualmente, todos
-                        los grupos empiezan con 0 puntos, pero en ciertas ocasiones un grupo
-                        puede empezar con ventaja (a discreción del DJ), si tiene
-                        información extra o empieza más cerca del objetivo.
-                    </p>
-
-                    <p>
-                        Los equipos tienen 2 CD que se van actualizando cada vez que toman
-                        un turno. Su CD de Escondido y su CD de Rastro. Si nadie de un grupo
-                        toma ciertas Acciones, estas se vuelven 10 al final del turno del
-                        grupo.
-                    </p>
-
-                    <p>
-                        <strong>Iniciar la búsqueda</strong>. Al empezar la búsqueda, todos
-                        los equipos hacen Tiradas de Iniciativa y toman turnos en orden,
-                        como de costumbre. Si un equipo tiene más de un entrenador, la
-                        Iniciativa de su equipo es el promedio de sus Tiradas de Iniciativa.
-                        Lo que duran los turnos de la Iniciativa queda a criterio del DJ y
-                        puede variar entre unos minutos a, incluso, durar varias horas o
-                        incluso un día.
-                    </p>
-
-                    <p>
-                        <strong>Terminar la búsqueda</strong>. Cuando un equipo alcanza un
-                        número de puntos, usualmente 6, ese equipo gana y acaba la búsqueda.
-                    </p>
-
-                    <p>
-                        <strong>La dificultad</strong>. La búsqueda del Tesoro tiene una
-                        dificultad base, conocida como CD de la Búsqueda.
-                    </p>
-
-                    <p>
-                        <strong>Entre rondas</strong>. Al terminar una ronda de la
-                        Iniciativa, pueden ocurrir eventos, a discreción del DJ. Ejemplos de
-                        estos eventos son Combates contra Pokémon salvajes, una oportunidad
-                        de obtener recursos extra o incluso pistas que pudieran dar Ventaja
-                        en próximas Tiradas para Buscar, por ejemplo.
-                    </p>
-
-                    <h2>Los turnos de los participantes</h2>
-                    <p>
-                        Durante el turno de su grupo en la Iniciativa, cada entrenador puede
-                        tomar una Acción y puede comandar a uno de sus Pokémon para que tome
-                        otra Acción. Si todos los grupos están compuestos sólo por un único
-                        entrenador y sus Pokémon, en su lugar los entrenadores pueden
-                        comandar a todos sus Pokémon, además de tomar su Acción. Las
-                        Acciones de todos los participantes se deciden antes de realizar las
-                        Tiradas de Habilidad correspondientes. Las acciones que se pueden
-                        tomar son: Buscar, Esconder, Percibir, Borrar rastro, Rastrear,
-                        Poner trampa, Abrir paso.
-                    </p>
-
-                    <p>
-                        <strong>Buscar</strong>. Un miembro de cada equipo puede intentar
-                        Buscar el objetivo. Cuando lo hace, hace una Tirada de Supervivencia
-                        (Espíritu) o Investigación (Mente) (dependiendo de si hay formas de
-                        guiarse con el entorno o mediante pistas, respectivamente). La
-                        Dificultad de esta Tirada de Habilidad es igual a la CD de la
-                        Búsqueda más la cantidad de Puntos que tiene ese equipo. Por
-                        ejemplo, si la CD es 16 y se tienen 4 puntos, la CD es 20.
-                    </p>
-
-                    <p>
-                        Si todos los miembros de un grupo que intentan Buscar pasan la
-                        Tirada de Habilidad, ganan 1 punto por cada uno de ellos que han
-                        tomado esta acción. Si 1 o más fallan la Tirada, el grupo no ganan
-                        ningún punto. Por cada miembro del grupo que obtenga un 1 en la
-                        Tirada Natural de su Tirada de Habilidad, el grupo pierde 1 punto,
-                        hasta un mínimo de 0, pues el equipo se pierde debido a un error.
-                    </p>
-
-                    <p>
-                        <strong>Esconder</strong>. Un miembro de un grupo puede tomar la
-                        Acción de Esconder para controlar que el grupo no sea perceptible
-                        desde cerca. El miembro del grupo realiza una Tirada de Sigilo
-                        (Espíritu) o Supervivencia (Espíritu).
-                    </p>
-
-                    <p>
-                        Al final del turno del grupo, la CD de Escondido del grupo se vuelve
-                        la mayor entre las Tiradas de Esconder que han hecho los miembros
-                        del grupo, a no ser que uno haya obtenido un 1 en la Tirada Natural
-                        de su Tirada de Esconder. En cuyo caso, la CD es 5. Si nadie ha
-                        hecho una Tirada de Esconder, la CD de Escondido del grupo es de 10
-                        hasta que vuelva a empezar su turno.
-                    </p>
-
-                    <p>
-                        <strong>Percibir</strong>. Si un miembro del equipo decide Percibir,
-                        busca a otras Criaturas o cosas que pudieran ser relevantes en el
-                        entorno cercano del grupo. Una Criatura que intenta Percibir,
-                        realiza una Tirada de Habilidad de Percepción. Si el resultado de la
-                        Tirada supera la CD de la Búsqueda, puede recibir información del
-                        entorno, asociada principalmente a eventos que pudieran ocurrir
-                        entre rondas o información no directamente asociada a la Búsqueda.
-                    </p>
-
-                    <p>
-                        Una Criatura que toma la Acción de Percibir puede llegar a encontrar
-                        a miembros de otros equipos si su Tirada supera la CD de Escondido
-                        si estos están cerca en algún momento antes de que vuelva a empezar
-                        el turno de propio grupo. Un miembro de otro grupo se considera
-                        cercano cuando:
-                    </p>
-
-                    <ul>
-                        <li>
-                            <p>
-                                Rastrea al tuyo o el tuyo Rastrea al otro y la diferencia de
-                                puntos de ambos grupos es de 1 o 0.
-                            </p>
-                        </li>
-
-                        <li>
-                            <p>Ambos grupos están a 1 punto de ganar la búsqueda.</p>
-                        </li>
-                    </ul>
-
-                    <p>
-                        <strong>Borrar rastro</strong>. Un miembro de un equipo puede tomar
-                        la Acción de Borrar rastro y, cuando lo hace, elimina pruebas del
-                        camino que ha estado siguiendo su grupo para que sea más difícil
-                        rastrearlos. El miembro del grupo realiza una Tirada de Sigilo
-                        (Espíritu) o Supervivencia (Espíritu).
-                    </p>
-
-                    <p>
-                        Al final del turno del grupo, la CD de Rastreo del grupo se vuelve
-                        la mayor entre las Tiradas de Borrar rastro que han hecho los
-                        miembros del grupo, a no ser que uno haya obtenido un 1 en la Tirada
-                        Natural de su Tirada de Borrar rastro. En este caso, la CD es 5. Si
-                        nadie ha hecho una Tirada de Borrar rastro, la CD de Rastreo del
-                        grupo es de 10 hasta que vuelva a empezar su turno.
-                    </p>
-
-                    <p>
-                        <strong>Rastrear</strong>. Si un miembro del equipo decide Rastrear,
-                        recolecta pistas para seguirle el rastro a otro grupo. Para hacerlo,
-                        realiza una Tirada de Supervivencia (Espíritu) contra la CD de
-                        Rastro del grupo elegido. Si la pasa y el otro equipo tiene más
-                        puntos que el suyo, puede decidir ganar 1 punto. Si la pasa y tiene
-                        menos puntos que el grupo objetivo, pierde 1 punto. Además, si un
-                        miembro del grupo obtiene un 1 en la Tirada Natural de Rastrear, el
-                        grupo pierde 1 Punto.
-                    </p>
-
-                    <p>
-                        Un grupo que decide Buscar y Rastrear, debe elegir entre cambiar su
-                        puntuación Buscando o Rastreando antes de hacer las Tiradas
-                        correspondientes. Si al rastrear a un grupo las puntuaciones de
-                        ambos grupos se igualan, ambos grupos pueden llegar a verse si uno
-                        de sus miembros Percibe al otro grupo, pudiendo desencadenar algún
-                        evento, como un Combate (a criterio de los grupos y el DJ).
-                    </p>
-
-                    <p>
-                        <strong>Poner trampa</strong>. Un miembro de un equipo puede decidir
-                        pararse a poner una trampa a otro grupo si tiene sentido en el
-                        contexto de la búsqueda (por ejemplo, si es un juego y esto está
-                        permitido, o si el entorno lo permite). Cuando lo hace, hace una
-                        Tirada de Supervivencia (Agilidad). La dificultad de la Trampa es
-                        igual al resultado de la Tirada menos 5 y la trampa dura hasta el
-                        principio del próximo turno de su equipo. Además, si uno de tus
-                        Rasgos dice que puedes poner trampas, la CD de tus Trampas es igual
-                        al resultado de tu Tirada en lugar de restarle 5 a esta.
-                    </p>
-
-                    <p>
-                        Si una Criatura de otro grupo decide Rastrear al tuyo y la
-                        diferencia de puntos entre ambos grupos es de 2 o menos puede caer
-                        en la trampa, haciendo que, en lugar de ganar puntos, pierda 1 Punto
-                        por cada trampa en la que caiga. Para que un grupo caiga en una
-                        trampa todos los miembros de dicho grupo que deciden Percibir deben
-                        de fallar la Tirada contra la CD de la trampa.
-                    </p>
-
-                    <p>
-                        <strong>Abrir paso</strong>. Un miembro del equipo se centra en
-                        abrirle paso a otro de los miembros, para que este pueda
-                        concentrarse en la tarea de Buscar o Rastrear. Cuando lo hace, hace
-                        una Tirada de Atletismo (Fuerza) contra la CD de la Búsqueda. Si la
-                        pasa, el compañero que está ayudando tiene Ventaja en su Tirada de
-                        Habilidad asociada a Buscar o Rastrear.
-                    </p>
-
-                    <p>
-                        <strong>Rasgos que permiten encontrar lugares u objetos</strong>.
-                        Una Criatura con la Habilidad Cacheo o un Rasgo similar que permita
-                        encontrar o buscar el objetivo puede repetir una vez la Tirada de
-                        Habilidad de Buscar si la falla una vez por Búsqueda del tesoro.
-                    </p>
-
-                    <p>
-                        <strong>Rasgos que permiten no perderse</strong>. Si un grupo fuera
-                        a perder 1 Punto al Buscar o Rastrear, una Criatura con un Rasgo que
-                        hace que no puedan perderse puede anular esa pérdida de puntos una
-                        única vez por Búsqueda del Tesoro.
-                    </p>
-                </div>
-            </details>
-
-            <details class="subDetails">
-                <summary class="subSummary">Encuentro: Capturar la bandera</summary>
-                <div class="detailsBloque">
-                    <p>
-                        En juego de capturar el campo se divide en tantas regiones como
-                        equipo o equipos haya. Usualmente, de 2 a 4. En el centro del campo
-                        de cada equipo se encuentra una bandera propia al equipo que
-                        cualquier Criatura puede tomar. El objetivo es conseguir tantas
-                        banderas como sea posible mientras se defiende la propia.
-                    </p>
-
-                    <p>
-                        <strong>Los equipos</strong>. Cada equipo está compuesto por un
-                        entrenador y sus Pokémon o, alternativamente, puede estar compuesto
-                        por varios entrenadores y varios Pokémon de cada uno de estos (a
-                        definir por el DJ).
-                    </p>
-
-                    <p>
-                        <strong>Iniciar el juego</strong>. Al empezar el juego, todos los
-                        entrenadores se encuentran en su campo con su bandera y hacen
-                        Tiradas de Iniciativa y toman turnos en orden como de costumbre.
-                    </p>
-
-                    <p>
-                        <strong>Terminar el juego</strong>. Cuando un equipo captura todas
-                        las banderas o cuando finaliza el juego (tras 8 rondas), se hace un
-                        recuento de puntos y gana el equipo que más puntos tenga. Cada
-                        equipo tiene tantos puntos como banderas tiene en su posesión cuando
-                        acaba el juego y, si ha conseguido terminar el juego con la bandera
-                        de su propio equipo, gana 1 punto extra.
-                    </p>
-
-                    <p>Los turnos. En cada turno, un entrenador hace 3 cosas:</p>
-                    <ol>
-                        <li>
-                            <p>
-                                Quedarse en una región en la que está o moverse a una región
-                                adyacente a esta.
-                            </p>
-                        </li>
-
-                        <li>
-                            <p>
-                                Dar una orden a cada uno de sus Pokémon de la región en la que
-                                empezó el turno y, si se ha movido, también a los de la región a
-                                la que se ha movido. La orden tiene dos partes: Decirle si se
-                                queda en la región en la que está o si se mueve a una región
-                                adyacente y darle una Acción. Las acciones que puede dar son:
-                                Atacar (sólo si está fuera de su región), Defender (sólo si está
-                                en su región), Buscar rivales o Esconderse.
-                            </p>
-                        </li>
-
-                        <li>
-                            <p>Elige si Ataca, Defiende, Busca a rivales o se Esconde.</p>
-                        </li>
-                    </ol>
-
-                    <p>
-                        <strong>Defender</strong>. La acción de Defender sólo puede tomarse
-                        cuando la Criatura está en la región de su equipo. Al hacerlo se
-                        vuelve un Defensor y realiza una Tirada de Percepción (Espíritu) o
-                        Investigación (Mente). El resultado de sigilo es su Dificultad de
-                        Percepción hasta que empiece su próximo turno. Si esta dificultad
-                        iguala a la Dificultad de Sigilo de una Criatura escondida en la
-                        región, la ve.
-                    </p>
-                    <p>
-                        Cuando un Defensor ve a una Criatura en su región, como cuando la
-                        detecta con la Tirada anterior o cuando una criatura entra y se
-                        dispone a Atacar, puede decidir perseguirla. Si lo hace, hace una
-                        Tirada de Atletismo (Fuerza) contra dicha criatura y, si la pasa, la
-                        alcanza, toma cualquier bandera que lleve encima y la manda de
-                        vuelta a su región. Un Defensor sólo puede perseguir a una criatura
-                        por ronda.
-                    </p>
-
-                    <p>
-                        <strong>Atacar</strong>. La acción de Atacar sólo puede tomarse
-                        cuando se está en una región rival. Para hacerla, la Criatura hace
-                        una Tirada de Atletismo (Fuerza) enfrentada contra todos los
-                        Defensores que decidan perseguirla. Si la pasa, roba una de las
-                        banderas que tenga bajo su control el equipo de la región. Sólo las
-                        Criaturas del equipo de la región en la que estás pueden robarte la
-                        bandera y, para hacerlo, deben alcanzarte (ver Defender).
-                    </p>
-
-                    <p>
-                        <strong>Esconderse</strong>. Cuando una Criatura va a Esconderse,
-                        puede hacerlo antes de moverse de región. Para esconderse, una
-                        Criatura hace una Tirada de Sigilo (Agilidad). El resultado de la
-                        Tirada es su Dificultad de Sigilo hasta que empiece su próximo
-                        turno. Si el resultado de la tirada supera la Dificultad de
-                        Percepción más alta de los Defensores de la región en la que va a
-                        Esconderse, se esconde en este área. Si la pasa, nadie sabe dónde
-                        está y tiene Ventaja en todas las Tiradas de Habilidad que haga
-                        contra criaturas que no la vean antes del principio de su próximo
-                        turno.
-                    </p>
-
-                    <p>
-                        Una criatura debe seguir usando sus turnos para Esconderse si quiere
-                        seguir manteniéndose Escondida.
-                    </p>
-
-                    <p>
-                        <strong>Buscar rivales</strong>. Cuando una Criatura no está en la
-                        región de tu equipo no puedes Defender, pero igualmente puede buscar
-                        rivales. Para hacerlo, hace una Tirada de Percepción (Espíritu)
-                        contra las Dificultades de Sigilo de las Criaturas que están
-                        escondidas en la región y ve a todas las Criaturas cuyas
-                        Dificultades haya superado.
-                    </p>
-
-                    <p>
-                        <strong>Tener la bandera</strong>. Cuando una criatura empieza su
-                        turno con una bandera debe elegir entre dársela a un compañero o
-                        huir de la región. Dar la bandera es gratuito y hace que la Criatura
-                        se marche a una región adyacente a la que está, usualmente, en
-                        dirección a la suya. Si se decide huir, se debe hacer otra Tirada de
-                        Atletismo (Fuerza) enfrentada contra todos los Defensores que
-                        decidan seguirla. Si supera la tirada contra todos, huye con la
-                        bandera a una región adyacente. Cuando una criatura con una bandera
-                        llega a su región, la deja en el centro y la bandera queda bajo el
-                        control de su equipo, pero puede ser robada.
-                    </p>
-
-                    <p>
-                        <strong>¿Qué hace un Pokémon que no recibe órden?</strong> Este
-                        elige si quedarse en la región que está escondiéndose o si mueve
-                        hacia a su región y, si la alcanza se vuelve un Defensor,
-                        (dependiendo de su personalidad y la última órden recibida).
-                    </p>
-
-                    <p>
-                        <strong>Cambiar una Tirada de Habilidad</strong>. En ciertas
-                        ocasiones, el DJ puede permitirte cambiar una de las Tiradas de
-                        Habilidad por otra si se justifica adecuadamente que acción. Por
-                        ejemplo, si un Pokémon huye con la bandera y pasa por una zona muy
-                        accidentada puede decidir empezar a saltar entre los accidentes
-                        ágilmente para evitar que la alcancen y esto puede hacer que la
-                        Tirada se vuelva de Acrobacias (Agilidad).
-                    </p>
-                </div>
-            </details>
-        </div>
-    </details>
-
-    <details open id="apartado10">
+    <details open id="apartado11">
         <summary>Reglas Variante</summary>
         <div class="detailsBloque">
             <details class="subDetails">
@@ -3911,7 +3915,7 @@
         </div>
     </details>
 
-    <details open id="apartado11">
+    <details open id="apartado12">
         <summary>Cómo Crear Contenido Propio</summary>
         <div class="detailsBloque">
             <p>
@@ -4318,7 +4322,7 @@
         </div>
     </details>
 
-    <details open id="apartado12">
+    <details open id="apartado13">
         <summary>Crear Pokémon desde Cero</summary>
         <div class="detailsBloque">
             <p>

@@ -66,32 +66,34 @@
                 <div class="tablaAdaptable">
 
                     <table>
-                        <tr>
-                            <td><span class="negrita">Nombre</span></td>
-                        </tr>
-                        <tr>
-                            <td>
-                                (<span class="negrita">Acción</span> o
-                                <span class="negrita">Reacción</span>)
-                            </td>
-                            <td>
-                                <span class="negrita">Coste</span>: (Coste en PP), (Cantidad de
-                                usos)
-                            </td>
-                            <td><span class="negrita">Rango</span>: (Rango del Movimiento)</td>
-                        </tr>
-                        <tr>
-                            <td><span class="negrita">Daño</span>: (Si lo tiene, aparece)</td>
-                            <td>
-                                <span class="negrita">Estadísticas</span>: (Si las tiene, aparece)
-                            </td>
-                            <td>
-                                <span class="negrita">Etiquetas</span>: (Si las tiene, aparece)
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><span class="negrita">Descripción</span>:</td>
-                        </tr>
+                        <tbody>
+                            <tr>
+                                <td><span class="negrita">Nombre</span></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    (<span class="negrita">Acción</span> o
+                                    <span class="negrita">Reacción</span>)
+                                </td>
+                                <td>
+                                    <span class="negrita">Coste</span>: (Coste en PP), (Cantidad de
+                                    usos)
+                                </td>
+                                <td><span class="negrita">Rango</span>: (Rango del Movimiento)</td>
+                            </tr>
+                            <tr>
+                                <td><span class="negrita">Daño</span>: (Si lo tiene, aparece)</td>
+                                <td>
+                                    <span class="negrita">Estadísticas</span>: (Si las tiene, aparece)
+                                </td>
+                                <td>
+                                    <span class="negrita">Etiquetas</span>: (Si las tiene, aparece)
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><span class="negrita">Descripción</span>:</td>
+                            </tr>
+                        </tbody>
                     </table>
                 </div>
             </div>
@@ -101,28 +103,30 @@
                 <div class="tablaAdaptable">
 
                     <table>
-                        <tr>
-                            <td><span class="negrita">Ala de acero</span></td>
-                        </tr>
-                        <tr>
-                            <td><span class="negrita">Acción</span></td>
-                            <td><span class="negrita">Coste</span>: 1 PP</td>
-                            <td><span class="negrita">Rango</span>: Cuerpo a cuerpo</td>
-                        </tr>
-                        <tr>
-                            <td><span class="negrita">Daño</span>: 2d10 + EST</td>
-                            <td><span class="negrita">Estadísticas</span>: FUE y AGI</td>
-                            <td><span class="negrita">Etiquetas</span>: -</td>
-                        </tr>
-                        <tr>
-                            <td colspan="3">
-                                <span class="negrita">Descripción</span>:Endureces tus alas y
-                                golpeas con ellas. Haz una Tirada de Ataque cuerpo a cuerpo contra
-                                una criatura. Si golpea, el objetivo recibe daño. Si la Tirada
-                                Natural fue de 15+, tu CA aumenta en 2 hasta el inicio de tu
-                                próximo turno.
-                            </td>
-                        </tr>
+                        <tbody>
+                            <tr>
+                                <td><span class="negrita">Ala de acero</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="negrita">Acción</span></td>
+                                <td><span class="negrita">Coste</span>: 1 PP</td>
+                                <td><span class="negrita">Rango</span>: Cuerpo a cuerpo</td>
+                            </tr>
+                            <tr>
+                                <td><span class="negrita">Daño</span>: 2d10 + EST</td>
+                                <td><span class="negrita">Estadísticas</span>: FUE y AGI</td>
+                                <td><span class="negrita">Etiquetas</span>: -</td>
+                            </tr>
+                            <tr>
+                                <td colspan="3">
+                                    <span class="negrita">Descripción</span>:Endureces tus alas y
+                                    golpeas con ellas. Haz una Tirada de Ataque cuerpo a cuerpo contra
+                                    una criatura. Si golpea, el objetivo recibe daño. Si la Tirada
+                                    Natural fue de 15+, tu CA aumenta en 2 hasta el inicio de tu
+                                    próximo turno.
+                                </td>
+                            </tr>
+                        </tbody>
                     </table>
                 </div>
             </div>
@@ -266,19 +270,15 @@
                 El <strong>Rango de Crítico</strong> es un valor que aumenta el rango de
                 las Tiradas Naturales en las que la Tirada de Ataque de un Movimiento es
                 un Golpe Crítico. Por ejemplo, si una criatura tiene un Rango de Crítico
-                de 3 y el Movimiento que usa hace Crítico en
-            </p>
-
-            <p>
-                19+, el Movimiento será Crítico en 16+ y si el Movimiento hiciera
-                Crítico en 20 y el Rango de Crítico es de 2, una Tirada Natural de 18+
-                asestaría un Golpe Crítico
+                de 3 y el Movimiento que usa hace Crítico en 19+, el Movimiento será Crítico en 16+ y si el Movimiento
+                hiciera Crítico en 20 y el Rango de Crítico es de 2, una Tirada Natural de 18+
+                asestaría un Golpe Crítico.
             </p>
 
             <p>
                 De forma natural, el <strong>Rango de Crítico</strong> de todas las
                 criaturas <strong>es de 0</strong>, pero este puede aumentar, usualmente
-                gracias a otros Movimientos usados previamente o Habilidades
+                gracias a otros Movimientos usados previamente o Habilidades.
             </p>
         </div>
     </details>
@@ -287,7 +287,7 @@
         <summary>Bonus de Ataque por Mismo Tipo</summary>
         <div class="detailsBloque">
             <p>
-                El bonus de ataque por mismo tipo, o STAB por sus siglas en inglés, es
+                El <strong>bonus de ataque por mismo tipo</strong>, o <strong>STAB</strong> por sus siglas en inglés, es
                 un bono que se añade al daño de un Movimiento que comparte Tipo
                 Elemental con su usuario y es igual al BH del usuario. Como todos los
                 bonos al daño, el STAB sólo se añade a la primera instancia de daño que
@@ -311,7 +311,7 @@
                 ordenador haciendo que su Pikachu use Rayo es más que razonable que
                 pueda hacerlo. De la misma forma, en ninguna parte de la descripción de
                 Pistola de Agua se dice que apague fuegos pero es razonable que usarlo
-                pudiese ayudar a hacerlo
+                pudiese ayudar a hacerlo.
             </p>
         </div>
     </details>
@@ -390,7 +390,7 @@
                 </li>
                 <li>
                     <p>
-                        <strong>Mordisco</strong>: Son Movimientos que se basan en morder
+                        <strong>Mordisco</strong>: Son Movimientos que se basan en morder.
                     </p>
                 </li>
                 <li>
@@ -472,6 +472,25 @@
                 puedes elegir entre varias Estadísticas para usarla. En el Capítulo 12:
                 Habilidades, encontrarás una lista que contiene todas las Habilidades.
             </p>
+            <p>Las Habilidades se clasifican en tres tipos:</p>
+            <p><strong>Habilidades Comunes</strong>: propias de Especies de Pokémon normales y, usualmente, compartidas
+                por varias
+                Especies.
+            </p>
+            <p><strong>Habilidades Legendarias</strong>: propias de Pokémon de estatus Legendario o similar, como pueden
+                ser las
+                Paradojas o los Ultraentes. La mayoría de estas son Habilidades complejas, pensadas para crear tramas a
+                su alrededor, dar capacidades de combate únicas a esos Pokémon o explicar su naturaleza. Estas
+                Habilidades no pueden copiarse ni anularse.
+            </p>
+            <p><strong>Habilidades de Transformación</strong>: propias de Pokémon que se transforman y, en algunos
+                casos, también son
+                Habilidades Legendarias. Estas Habilidades suelen ser largas porque explican los métodos de
+                transformación de un Pokémon y sus nuevas Estadísticas. Cuando usas un Pokémon con estas Habilidades que
+                requiere de cambiar muchas cosas en su ficha es mejor que tengas una ficha preparada para cada una de
+                las formas que puede tomar. Estas Habilidades no pueden copiarse ni anularse.
+            </p>
+
         </div>
     </details>
 

@@ -8,7 +8,7 @@
                 @actualizarFiltros="manejarFiltros" />
 
             <Tabla :datos="filtrados" :datosCargados="datosCargados" :seleccionado="seleccionado" :columnas="columnas"
-                @seleccionar="seleccionarObjeto" @ordenar="ordenarPor" />
+                :clavesColumnas="clavesColumnas" @seleccionar="seleccionarObjeto" @ordenar="ordenarPor" />
         </div>
         <Seleccionado :datosCargados="datosCargados" :objeto="seleccionado" />
     </main>
@@ -29,6 +29,7 @@ const router = useRouter();
 
 //Datos para la tabla
 const columnas = ['Nombre', 'Tipo', 'Rareza', 'Coste']
+const clavesColumnas = ['Nombre', 'Tipo', 'Rareza', 'Coste']
 
 //Datos principales
 const datos = ref([]);

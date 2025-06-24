@@ -203,7 +203,7 @@
                 plantas pasan por hierbas y raíces que podrían ser de utilidad para
                 fabricar Medicina, Potenciadores o Comidas para crear o reparar Poké
                 Balls o Bayas con utilidad de por sí. Las Plantas recolectables son, en
-                general, objetos Enanos
+                general, objetos Enanos.
             </p>
             <p>
                 Cuando acampáis o mientras viajáis por la naturaleza a cambio de viajar
@@ -654,12 +654,12 @@
                 Los Fósiles son rocas que conservan el ADN o algún rastro de estructuras
                 biológicas de una especie Pokémon del pasado. Estos fósiles pueden
                 restaurarse en facilidades adecuadas, usualmente como un favor o pagando
-                un precio alto
+                un precio alto.
             </p>
             <p>
                 Tu DJ decide cuánto tardan en traer a la vida y el nivel de los Pokémon
                 creados con un fósil, pero lo normal es que vuelvan siendo nivel 4 y que
-                tarden uno o dos días en restaurarlos
+                tarden uno o dos días en restaurarlos.
             </p>
             <p>
                 Si en tus campañas tu DJ decide que hay Pokémon que vienen del pasado
@@ -778,8 +778,6 @@
 </template>
 
 <style scoped>
-
-
 .ejemploArma {
     width: 100%;
     display: flex;

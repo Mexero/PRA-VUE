@@ -3303,5 +3303,315 @@
         "nombre": "Creador de brisas",
         "ruta": "/dotes?seleccionado=Creador+de+brisas",
         "tipo": "Dote"
+    },
+    {
+        "nombre": "Movimiento Estándar",
+        "ruta": "/movarmas?tipos=Movimiento+Estándar",
+        "tipo": "Tipo de Movimiento de Armas"
+    },
+    {
+        "nombre": "Movimiento Especial",
+        "ruta": "/movarmas?tipos=Movimiento+Especial",
+        "tipo": "Tipo de Movimiento de Armas"
+    },
+    {
+        "nombre": "Movimiento Especial Superior",
+        "ruta": "/movarmas?tipos=Movimiento+Especial+Superior",
+        "tipo": "Tipo de Movimiento de Armas"
+    },
+    {
+        "nombre": "Tirar",
+        "ruta": "/movarmas?seleccionado=Tirar",
+        "tipo": "Movimiento de Arma"
+    },
+    {
+        "nombre": "Golpear",
+        "ruta": "/movarmas?seleccionado=Golpear",
+        "tipo": "Movimiento de Arma"
+    },
+    {
+        "nombre": "Tajar",
+        "ruta": "/movarmas?seleccionado=Tajar",
+        "tipo": "Movimiento de Arma"
+    },
+    {
+        "nombre": "Disparar",
+        "ruta": "/movarmas?seleccionado=Disparar",
+        "tipo": "Movimiento de Arma"
+    },
+    {
+        "nombre": "Abrir herida",
+        "ruta": "/movarmas?seleccionado=Abrir herida",
+        "tipo": "Movimiento de Arma"
+    },
+    {
+        "nombre": "Ataque distante",
+        "ruta": "/movarmas?seleccionado=Ataque distante",
+        "tipo": "Movimiento de Arma"
+    },
+    {
+        "nombre": "Ataque doble",
+        "ruta": "/movarmas?seleccionado=Ataque doble",
+        "tipo": "Movimiento de Arma"
+    },
+    {
+        "nombre": "Ataque múltiple",
+        "ruta": "/movarmas?seleccionado=Ataque múltiple",
+        "tipo": "Movimiento de Arma"
+    },
+    {
+        "nombre": "Ataque perforante",
+        "ruta": "/movarmas?seleccionado=Ataque perforante",
+        "tipo": "Movimiento de Arma"
+    },
+    {
+        "nombre": "Barrido",
+        "ruta": "/movarmas?seleccionado=Barrido",
+        "tipo": "Movimiento de Arma"
+    },
+    {
+        "nombre": "Bloquear",
+        "ruta": "/movarmas?seleccionado=Bloquear",
+        "tipo": "Movimiento de Arma"
+    },
+    {
+        "nombre": "Contusión",
+        "ruta": "/movarmas?seleccionado=Contusión",
+        "tipo": "Movimiento de Arma"
+    },
+    {
+        "nombre": "Disparo a las piernas",
+        "ruta": "/movarmas?seleccionado=Disparo a las piernas",
+        "tipo": "Movimiento de Arma"
+    },
+    {
+        "nombre": "Disparo ágil",
+        "ruta": "/movarmas?seleccionado=Disparo ágil",
+        "tipo": "Movimiento de Arma"
+    },
+    {
+        "nombre": "Doble lanzamiento",
+        "ruta": "/movarmas?seleccionado=Doble lanzamiento",
+        "tipo": "Movimiento de Arma"
+    },
+    {
+        "nombre": "Floritura",
+        "ruta": "/movarmas?seleccionado=Floritura",
+        "tipo": "Movimiento de Arma"
+    },
+    {
+        "nombre": "Hender",
+        "ruta": "/movarmas?seleccionado=Hender",
+        "tipo": "Movimiento de Arma"
+    },
+    {
+        "nombre": "Lacerar",
+        "ruta": "/movarmas?seleccionado=Lacerar",
+        "tipo": "Movimiento de Arma"
+    },
+    {
+        "nombre": "Quebrar",
+        "ruta": "/movarmas?seleccionado=Quebrar",
+        "tipo": "Movimiento de Arma"
+    },
+    {
+        "nombre": "Riposte",
+        "ruta": "/movarmas?seleccionado=Riposte",
+        "tipo": "Movimiento de Arma"
+    },
+    {
+        "nombre": "Rociar",
+        "ruta": "/movarmas?seleccionado=Rociar",
+        "tipo": "Movimiento de Arma"
+    },
+    {
+        "nombre": "Vaciar recámara",
+        "ruta": "/movarmas?seleccionado=Vaciar recámara",
+        "tipo": "Movimiento de Arma"
+    },
+    {
+        "nombre": "Hélice trepanadora",
+        "ruta": "/movz?seleccionado=Hélice trepanadora",
+        "tipo": "Movimiento Z"
+    },
+    {
+        "nombre": "Hidrovórtice abisal",
+        "ruta": "/movz?seleccionado=Hidrovórtice abisal",
+        "tipo": "Movimiento Z"
+    },
+    {
+        "nombre": "Guadaña sedosa",
+        "ruta": "/movz?seleccionado=Guadaña sedosa",
+        "tipo": "Movimiento Z"
+    },
+    {
+        "nombre": "Dracoaliento devastador",
+        "ruta": "/movz?seleccionado=Dracoaliento devastador",
+        "tipo": "Movimiento Z"
+    },
+    {
+        "nombre": "Gigavoltio destructor",
+        "ruta": "/movz?seleccionado=Gigavoltio destructor",
+        "tipo": "Movimiento Z"
+    },
+    {
+        "nombre": "Presa espectral",
+        "ruta": "/movz?seleccionado=Presa espectral",
+        "tipo": "Movimiento Z"
+    },
+    {
+        "nombre": "Hecatombe pírica",
+        "ruta": "/movz?seleccionado=Hecatombe pírica",
+        "tipo": "Movimiento Z"
+    },
+    {
+        "nombre": "Arrumaco sideral",
+        "ruta": "/movz?seleccionado=Arrumaco sideral",
+        "tipo": "Movimiento Z"
+    },
+    {
+        "nombre": "Crioaliento despiadado",
+        "ruta": "/movz?seleccionado=Crioaliento despiadado",
+        "tipo": "Movimiento Z"
+    },
+    {
+        "nombre": "Ráfaga demoledora",
+        "ruta": "/movz?seleccionado=Ráfaga demoledora",
+        "tipo": "Movimiento Z"
+    },
+    {
+        "nombre": "Carrera arrolladora",
+        "ruta": "/movz?seleccionado=Carrera arrolladora",
+        "tipo": "Movimiento Z"
+    },
+    {
+        "nombre": "Megatón floral",
+        "ruta": "/movz?seleccionado=Megatón floral",
+        "tipo": "Movimiento Z"
+    },
+    {
+        "nombre": "Disruptor psíquico",
+        "ruta": "/movz?seleccionado=Disruptor psíquico",
+        "tipo": "Movimiento Z"
+    },
+    {
+        "nombre": "Aplastamiento gigalítico",
+        "ruta": "/movz?seleccionado=Aplastamiento gigalítico",
+        "tipo": "Movimiento Z"
+    },
+    {
+        "nombre": "Agujero negro aniquilador",
+        "ruta": "/movz?seleccionado=Agujero negro aniquilador",
+        "tipo": "Movimiento Z"
+    },
+    {
+        "nombre": "Barrena telúrica",
+        "ruta": "/movz?seleccionado=Barrena telúrica",
+        "tipo": "Movimiento Z"
+    },
+    {
+        "nombre": "Diluvio corrosivo",
+        "ruta": "/movz?seleccionado=Diluvio corrosivo",
+        "tipo": "Movimiento Z"
+    },
+    {
+        "nombre": "Picado supersónico",
+        "ruta": "/movz?seleccionado=Picado supersónico",
+        "tipo": "Movimiento Z"
+    },
+    {
+        "nombre": "Pikavoltio letal",
+        "ruta": "/movz?seleccionado=Pikavoltio letal",
+        "tipo": "Movimiento Z"
+    },
+    {
+        "nombre": "Gigarrayo fulminante",
+        "ruta": "/movz?seleccionado=Gigarrayo fulminante",
+        "tipo": "Movimiento Z"
+    },
+    {
+        "nombre": "Surfeo galvánico",
+        "ruta": "/movz?seleccionado=Surfeo galvánico",
+        "tipo": "Movimiento Z"
+    },
+    {
+        "nombre": "Novena potencia",
+        "ruta": "/movz?seleccionado=Novena potencia",
+        "tipo": "Movimiento Z"
+    },
+    {
+        "nombre": "Arrojo intempestivo",
+        "ruta": "/movz?seleccionado=Arrojo intempestivo",
+        "tipo": "Movimiento Z"
+    },
+    {
+        "nombre": "Supernova original",
+        "ruta": "/movz?seleccionado=Supernova original",
+        "tipo": "Movimiento Z"
+    },
+    {
+        "nombre": "Aluvión de flechas sombrías",
+        "ruta": "/movz?seleccionado=Aluvión de flechas sombrías",
+        "tipo": "Movimiento Z"
+    },
+    {
+        "nombre": "Hiperplancha oscura",
+        "ruta": "/movz?seleccionado=Hiperplancha oscura",
+        "tipo": "Movimiento Z"
+    },
+    {
+        "nombre": "Sinfonía de la diva marina",
+        "ruta": "/movz?seleccionado=Sinfonía de la diva marina",
+        "tipo": "Movimiento Z"
+    },
+    {
+        "nombre": "Cólera del guardián",
+        "ruta": "/movz?seleccionado=Cólera del guardián",
+        "tipo": "Movimiento Z"
+    },
+    {
+        "nombre": "Constelación robaalmas",
+        "ruta": "/movz?seleccionado=Constelación robaalmas",
+        "tipo": "Movimiento Z"
+    },
+    {
+        "nombre": "Tempestad rocosa",
+        "ruta": "/movz?seleccionado=Tempestad rocosa",
+        "tipo": "Movimiento Z"
+    },
+    {
+        "nombre": "Somanta amistosa",
+        "ruta": "/movz?seleccionado=Somanta amistosa",
+        "tipo": "Movimiento Z"
+    },
+    {
+        "nombre": "Estruendo implacable",
+        "ruta": "/movz?seleccionado=Estruendo implacable",
+        "tipo": "Movimiento Z"
+    },
+    {
+        "nombre": "Embestida solar",
+        "ruta": "/movz?seleccionado=Embestida solar",
+        "tipo": "Movimiento Z"
+    },
+    {
+        "nombre": "Deflagración lunar",
+        "ruta": "/movz?seleccionado=Deflagración lunar",
+        "tipo": "Movimiento Z"
+    },
+    {
+        "nombre": "Fotodestrucción apocalíptica",
+        "ruta": "/movz?seleccionado=Fotodestrucción apocalíptica",
+        "tipo": "Movimiento Z"
+    },
+    {
+        "nombre": "Movimiento Único",
+        "ruta": "/movz?especie=único",
+        "tipo": "Tipo de Movimiento Z"
+    },
+    {
+        "nombre": "Movimiento de Tipo Elemental",
+        "ruta": "/movz?especie=de+tipo+elemental",
+        "tipo": "Tipo de Movimiento Z"
     }
 ]

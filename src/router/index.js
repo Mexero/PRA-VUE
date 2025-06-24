@@ -2,13 +2,23 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 
 const router = createRouter({
-  scrollBehavior(to) {
+  scrollBehavior(to, from, savedPosition) {
+
+    if (savedPosition) {
+      return savedPosition
+    }
+
     if (to.hash) {
       return {
         el: to.hash,
         behavior: 'smooth',
       }
     }
+
+    if (to.path === from.path) {
+      return false
+    }
+
     return { top: 0 }
   },
 
@@ -107,7 +117,27 @@ const router = createRouter({
       name: 'reglas',
       component: () => import('../views/ReglasView.vue'),
     },
+    {
+      path: '/utilidades/fichapj',
+      name: 'fichapj',
+      component: () => import('../views/FichaPJView.vue'),
+    },
 
+    {
+      path: "/movarmas",
+      name: 'movarmas',
+      component: () => import('../views/MovimientosArmasView.vue'),
+    },
+    {
+      path: "/movz",
+      name: 'movz',
+      component: () => import('../views/MovimientosZView.vue'),
+    },
+    {
+      path: "/reglas",
+      name: 'reglas',
+      component: () => import('../views/ReglasView.vue'),
+    },
 
 
     { //Este redirige si no hay una regla definida

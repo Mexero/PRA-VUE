@@ -8,7 +8,7 @@
                 @actualizarFiltros="manejarFiltros" />
 
             <Tabla :datos="filtrados" :datosCargados="datosCargados" :seleccionado="seleccionado" :columnas="columnas"
-                @seleccionar="seleccionarObjeto" @ordenar="ordenarPor" />
+                :clavesColumnas="clavesColumnas" @seleccionar="seleccionarObjeto" @ordenar="ordenarPor" />
         </div>
         <Seleccionado :datosCargados="datosCargados" :dote="seleccionado" />
     </main>
@@ -29,11 +29,33 @@ const router = useRouter();
 
 //Datos para la tabla
 const columnas = ['Nombre', 'Tipo', 'Prerrequisitos', 'Nivel']
+const clavesColumnas = ['Nombre', 'Tipo', 'Prerrequisitos', 'Nivel']
 
 //Datos principales
 const datos = ref([]);
 const datosCargados = ref(false);
 const seleccionado = ref(route.query.seleccionado ?? undefined);
+
+
+// Formato prerrequisitos
+
+/*
+    "PrerreqComputable": {
+      "Humano": true,
+      "Movimiento": [],
+      "Clase": [],
+      "Dote": [],
+      "TiradaHab:"[{TdA: "", Grado=""}],
+      "Pokemon": true,
+      "Tipo": [],
+      "EtiquetaMov": [],
+      "Velocidad": [],
+      "Stats":[{"stat":"", "valorMin":}],
+      "Tamaño: [] //ARRAY de TAMAÑOS VALIDOS",
+          "Rango": ["Área","TdACaC","TdAR","TdA"],
+          "TerrenoDif": true
+    },
+*/
 
 //Filtros
 const filtroTipos = ref(route.query.tipos ? route.query.tipos.split(",") : []);
