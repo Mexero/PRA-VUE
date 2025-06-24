@@ -3,9 +3,7 @@
         "nombre": "“¡Ve allí!”",
         "tipos": [
             "Entrenador",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Orden de Entrenador"
         ],
         "descripciones": [
@@ -17,9 +15,7 @@
         "nombre": "“¡Muévete con cuidado!”",
         "tipos": [
             "Entrenador",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Orden de Entrenador"
         ],
         "descripciones": [
@@ -31,9 +27,7 @@
         "nombre": "“¡Atento a sus movimientos!”",
         "tipos": [
             "Entrenador",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Orden de Entrenador"
         ],
         "descripciones": [
@@ -45,9 +39,7 @@
         "nombre": "“¡En el punto débil!”",
         "tipos": [
             "Entrenador",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Orden de Entrenador"
         ],
         "descripciones": [
@@ -59,9 +51,7 @@
         "nombre": "“¡No permitas que te afecte!”",
         "tipos": [
             "Entrenador",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Orden de Entrenador"
         ],
         "descripciones": [
@@ -73,9 +63,7 @@
         "nombre": "“¡Mándalo a volar!”",
         "tipos": [
             "Entrenador",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Orden de Entrenador"
         ],
         "descripciones": [
@@ -87,9 +75,7 @@
         "nombre": "“¡Distráelo!”",
         "tipos": [
             "Entrenador",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Orden de Entrenador"
         ],
         "descripciones": [
@@ -101,9 +87,7 @@
         "nombre": "“¡No dejes que ataque a tus compañeros!”",
         "tipos": [
             "Entrenador",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Orden de Entrenador"
         ],
         "descripciones": [
@@ -115,9 +99,7 @@
         "nombre": "“¡Agárralo!”",
         "tipos": [
             "Entrenador",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Orden de Entrenador"
         ],
         "descripciones": [
@@ -129,9 +111,7 @@
         "nombre": "“¡Desde atrás!”",
         "tipos": [
             "Entrenador",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Orden de Entrenador"
         ],
         "descripciones": [
@@ -143,9 +123,7 @@
         "nombre": "“¡Derríbalo!”",
         "tipos": [
             "Entrenador",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Orden de Entrenador"
         ],
         "descripciones": [
@@ -157,9 +135,7 @@
         "nombre": "“¡Créales una apertura!”",
         "tipos": [
             "Entrenador",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Orden de Entrenador"
         ],
         "descripciones": [
@@ -171,9 +147,7 @@
         "nombre": "¡Puedes con esto y más!”",
         "tipos": [
             "Entrenador",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Orden de Entrenador"
         ],
         "descripciones": [
@@ -185,9 +159,7 @@
         "nombre": "“¡Haz un barrido!”",
         "tipos": [
             "Entrenador",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Orden de Entrenador"
         ],
         "descripciones": [
@@ -199,9 +171,7 @@
         "nombre": "“¡Ralentízalo!”",
         "tipos": [
             "Entrenador",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Orden de Entrenador"
         ],
         "descripciones": [
@@ -213,9 +183,7 @@
         "nombre": "“¡Bloquea su vista”",
         "tipos": [
             "Entrenador",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Orden de Entrenador"
         ],
         "descripciones": [
@@ -228,9 +196,7 @@
         "tipos": [
             "Entrenador",
             "Clase",
-            "Subclase"
-        ],
-        "subtipos": [
+            "Subclase",
             "Orden de Entrenador"
         ],
         "origen": "Especialista de tipo: Acero",
@@ -244,9 +210,7 @@
         "tipos": [
             "Entrenador",
             "Clase",
-            "Subclase"
-        ],
-        "subtipos": [
+            "Subclase",
             "Orden de Entrenador"
         ],
         "origen": "Especialista de tipo: Agua",
@@ -260,9 +224,7 @@
         "tipos": [
             "Entrenador",
             "Clase",
-            "Subclase"
-        ],
-        "subtipos": [
+            "Subclase",
             "Orden de Entrenador"
         ],
         "origen": "Especialista de tipo: Bicho",
@@ -276,9 +238,7 @@
         "tipos": [
             "Entrenador",
             "Clase",
-            "Subclase"
-        ],
-        "subtipos": [
+            "Subclase",
             "Orden de Entrenador"
         ],
         "origen": "Especialista de tipo: Dragón",
@@ -292,9 +252,7 @@
         "tipos": [
             "Entrenador",
             "Clase",
-            "Subclase"
-        ],
-        "subtipos": [
+            "Subclase",
             "Orden de Entrenador"
         ],
         "origen": "Especialista de tipo: Eléctrico",
@@ -308,9 +266,7 @@
         "tipos": [
             "Entrenador",
             "Clase",
-            "Subclase"
-        ],
-        "subtipos": [
+            "Subclase",
             "Orden de Entrenador"
         ],
         "origen": "Especialista de tipo: Fantasma",
@@ -324,9 +280,7 @@
         "tipos": [
             "Entrenador",
             "Clase",
-            "Subclase"
-        ],
-        "subtipos": [
+            "Subclase",
             "Orden de Entrenador"
         ],
         "origen": "Especialista de tipo: Fuego",
@@ -340,9 +294,7 @@
         "tipos": [
             "Entrenador",
             "Clase",
-            "Subclase"
-        ],
-        "subtipos": [
+            "Subclase",
             "Orden de Entrenador"
         ],
         "origen": "Especialista de tipo: Hada",
@@ -356,9 +308,7 @@
         "tipos": [
             "Entrenador",
             "Clase",
-            "Subclase"
-        ],
-        "subtipos": [
+            "Subclase",
             "Orden de Entrenador"
         ],
         "origen": "Especialista de tipo: Hielo",
@@ -372,9 +322,7 @@
         "tipos": [
             "Entrenador",
             "Clase",
-            "Subclase"
-        ],
-        "subtipos": [
+            "Subclase",
             "Orden de Entrenador"
         ],
         "origen": "Especialista de tipo: Lucha",
@@ -388,9 +336,7 @@
         "tipos": [
             "Entrenador",
             "Clase",
-            "Subclase"
-        ],
-        "subtipos": [
+            "Subclase",
             "Orden de Entrenador"
         ],
         "origen": "Especialista de tipo: Normal",
@@ -404,9 +350,7 @@
         "tipos": [
             "Entrenador",
             "Clase",
-            "Subclase"
-        ],
-        "subtipos": [
+            "Subclase",
             "Orden de Entrenador"
         ],
         "origen": "Especialista de tipo: Planta",
@@ -420,9 +364,7 @@
         "tipos": [
             "Entrenador",
             "Clase",
-            "Subclase"
-        ],
-        "subtipos": [
+            "Subclase",
             "Orden de Entrenador"
         ],
         "origen": "Especialista de tipo: Psíquico",
@@ -436,9 +378,7 @@
         "tipos": [
             "Entrenador",
             "Clase",
-            "Subclase"
-        ],
-        "subtipos": [
+            "Subclase",
             "Orden de Entrenador"
         ],
         "origen": "Especialista de tipo: Roca",
@@ -452,9 +392,7 @@
         "tipos": [
             "Entrenador",
             "Clase",
-            "Subclase"
-        ],
-        "subtipos": [
+            "Subclase",
             "Orden de Entrenador"
         ],
         "origen": "Especialista de tipo: Siniestro",
@@ -468,9 +406,7 @@
         "tipos": [
             "Entrenador",
             "Clase",
-            "Subclase"
-        ],
-        "subtipos": [
+            "Subclase",
             "Orden de Entrenador"
         ],
         "origen": "Especialista de tipo: Tierra",
@@ -484,9 +420,7 @@
         "tipos": [
             "Entrenador",
             "Clase",
-            "Subclase"
-        ],
-        "subtipos": [
+            "Subclase",
             "Orden de Entrenador"
         ],
         "origen": "Especialista de tipo: Veneno",
@@ -500,9 +434,7 @@
         "tipos": [
             "Entrenador",
             "Clase",
-            "Subclase"
-        ],
-        "subtipos": [
+            "Subclase",
             "Orden de Entrenador"
         ],
         "origen": "Especialista de tipo: Volador",
@@ -516,9 +448,7 @@
         "tipos": [
             "Entrenador",
             "Clase",
-            "Subclase"
-        ],
-        "subtipos": [
+            "Subclase",
             "Orden de Entrenador"
         ],
         "origen": "Manipulador de la inercia",
@@ -531,9 +461,7 @@
         "nombre": "A tope!",
         "tipos": [
             "Entrenador",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Entrenamiento"
         ],
         "descripciones": [
@@ -544,9 +472,7 @@
         "nombre": "¡Aguante sin par!",
         "tipos": [
             "Entrenador",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Entrenamiento"
         ],
         "descripciones": [
@@ -557,9 +483,7 @@
         "nombre": "¡Potencia devastadora!",
         "tipos": [
             "Entrenador",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Entrenamiento"
         ],
         "descripciones": [
@@ -570,9 +494,7 @@
         "nombre": "¡Aprovecha tu talento!",
         "tipos": [
             "Entrenador",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Entrenamiento"
         ],
         "descripciones": [
@@ -583,9 +505,7 @@
         "nombre": "¡Sigue el ritmo!",
         "tipos": [
             "Entrenador",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Entrenamiento"
         ],
         "descripciones": [
@@ -596,9 +516,7 @@
         "nombre": "¡Se intocable!",
         "tipos": [
             "Entrenador",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Entrenamiento"
         ],
         "descripciones": [
@@ -609,9 +527,7 @@
         "nombre": "¡Movimientos peligrosos!",
         "tipos": [
             "Entrenador",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Entrenamiento"
         ],
         "descripciones": [
@@ -622,9 +538,7 @@
         "nombre": "¡Movimientos ineludibles!",
         "tipos": [
             "Entrenador",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Entrenamiento"
         ],
         "descripciones": [
@@ -635,9 +549,7 @@
         "nombre": "¡Calibra tu precisión!",
         "tipos": [
             "Entrenador",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Entrenamiento"
         ],
         "descripciones": [
@@ -649,9 +561,7 @@
         "tipos": [
             "Entrenador",
             "Clase",
-            "Subclase"
-        ],
-        "subtipos": [
+            "Subclase",
             "Entrenamiento"
         ],
         "origen": "Mente maestra",
@@ -664,9 +574,7 @@
         "tipos": [
             "Entrenador",
             "Clase",
-            "Subclase"
-        ],
-        "subtipos": [
+            "Subclase",
             "Entrenamiento"
         ],
         "origen": "Manipulador de la inercia",
@@ -1264,9 +1172,7 @@
         "tipos": [
             "Invención",
             "Inventor",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Paquetes"
         ],
         "descripciones": [
@@ -1280,9 +1186,7 @@
         "tipos": [
             "Invención",
             "Inventor",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Paquetes"
         ],
         "descripciones": [
@@ -1296,9 +1200,7 @@
         "tipos": [
             "Invención",
             "Inventor",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Paquetes"
         ],
         "descripciones": [
@@ -1312,9 +1214,7 @@
         "tipos": [
             "Invención",
             "Inventor",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Paquetes"
         ],
         "descripciones": [
@@ -1328,9 +1228,7 @@
         "tipos": [
             "Invención",
             "Inventor",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Paquetes"
         ],
         "descripciones": [
@@ -1345,9 +1243,7 @@
         "tipos": [
             "Invención",
             "Inventor",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Paquetes"
         ],
         "descripciones": [
@@ -1361,9 +1257,7 @@
         "tipos": [
             "Invención",
             "Inventor",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Paquetes"
         ],
         "descripciones": [
@@ -1378,9 +1272,7 @@
         "tipos": [
             "Invención",
             "Inventor",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Paquetes"
         ],
         "descripciones": [
@@ -1394,9 +1286,7 @@
         "tipos": [
             "Invención",
             "Inventor",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Paquetes"
         ],
         "descripciones": [
@@ -1412,9 +1302,7 @@
         "tipos": [
             "Invención",
             "Inventor",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Cápsulas"
         ],
         "descripciones": [
@@ -1427,9 +1315,7 @@
         "tipos": [
             "Invención",
             "Inventor",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Cápsulas"
         ],
         "descripciones": [
@@ -1442,9 +1328,7 @@
         "tipos": [
             "Invención",
             "Inventor",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Cápsulas"
         ],
         "descripciones": [
@@ -1458,9 +1342,7 @@
         "tipos": [
             "Invención",
             "Inventor",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Cápsulas"
         ],
         "descripciones": [
@@ -1473,9 +1355,7 @@
         "tipos": [
             "Invención",
             "Inventor",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Cápsulas"
         ],
         "descripciones": [
@@ -1488,9 +1368,7 @@
         "tipos": [
             "Invención",
             "Inventor",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Cápsulas"
         ],
         "descripciones": [
@@ -1503,9 +1381,7 @@
         "tipos": [
             "Invención",
             "Inventor",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Cápsulas"
         ],
         "descripciones": [
@@ -1518,9 +1394,7 @@
         "tipos": [
             "Invención",
             "Inventor",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Cápsulas"
         ],
         "descripciones": [
@@ -1535,9 +1409,7 @@
         "tipos": [
             "Invención",
             "Inventor",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Herramientas"
         ],
         "descripciones": [
@@ -1550,9 +1422,7 @@
         "tipos": [
             "Invención",
             "Inventor",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Herramientas"
         ],
         "descripciones": [
@@ -1567,9 +1437,7 @@
         "tipos": [
             "Invención",
             "Inventor",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Herramientas"
         ],
         "descripciones": [
@@ -1582,9 +1450,7 @@
         "tipos": [
             "Invención",
             "Inventor",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Herramientas"
         ],
         "descripciones": [
@@ -1597,9 +1463,7 @@
         "tipos": [
             "Invención",
             "Inventor",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Herramientas"
         ],
         "descripciones": [
@@ -1612,9 +1476,7 @@
         "tipos": [
             "Invención",
             "Inventor",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Herramientas"
         ],
         "descripciones": [
@@ -1627,9 +1489,7 @@
         "tipos": [
             "Invención",
             "Inventor",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Herramientas"
         ],
         "descripciones": [
@@ -1642,9 +1502,7 @@
         "tipos": [
             "Invención",
             "Inventor",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Herramientas"
         ],
         "descripciones": [
@@ -1658,9 +1516,7 @@
         "tipos": [
             "Invención",
             "Inventor",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Herramientas"
         ],
         "descripciones": [
@@ -1673,9 +1529,7 @@
         "tipos": [
             "Invención",
             "Inventor",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Herramientas"
         ],
         "descripciones": [
@@ -1688,9 +1542,7 @@
         "tipos": [
             "Invención",
             "Inventor",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Herramientas"
         ],
         "descripciones": [
@@ -1704,9 +1556,7 @@
         "tipos": [
             "Invención",
             "Inventor",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Herramientas"
         ],
         "descripciones": [
@@ -1722,9 +1572,7 @@
         "tipos": [
             "Invención",
             "Inventor",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Equipo"
         ],
         "descripciones": [
@@ -1737,9 +1585,7 @@
         "tipos": [
             "Invención",
             "Inventor",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Equipo"
         ],
         "descripciones": [
@@ -1753,9 +1599,7 @@
         "tipos": [
             "Invención",
             "Inventor",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Equipo"
         ],
         "descripciones": [
@@ -1769,9 +1613,7 @@
         "tipos": [
             "Invención",
             "Inventor",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Equipo"
         ],
         "descripciones": [
@@ -1784,9 +1626,7 @@
         "tipos": [
             "Invención",
             "Inventor",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Equipo"
         ],
         "descripciones": [
@@ -1800,9 +1640,7 @@
         "tipos": [
             "Invención",
             "Inventor",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Equipo"
         ],
         "descripciones": [
@@ -1816,9 +1654,7 @@
         "tipos": [
             "Invención",
             "Inventor",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Equipo"
         ],
         "descripciones": [
@@ -1832,9 +1668,7 @@
         "tipos": [
             "Invención",
             "Inventor",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Equipo"
         ],
         "descripciones": [
@@ -1847,9 +1681,7 @@
         "tipos": [
             "Invención",
             "Inventor",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Equipo"
         ],
         "descripciones": [
@@ -1862,9 +1694,7 @@
         "tipos": [
             "Invención",
             "Inventor",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Equipo"
         ],
         "descripciones": [
@@ -1877,9 +1707,7 @@
         "tipos": [
             "Invención",
             "Inventor",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Equipo"
         ],
         "descripciones": [
@@ -1892,9 +1720,7 @@
         "tipos": [
             "Invención",
             "Inventor",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Equipo"
         ],
         "descripciones": [
@@ -1907,9 +1733,7 @@
         "tipos": [
             "Invención",
             "Inventor",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Equipo"
         ],
         "descripciones": [
@@ -1922,9 +1746,7 @@
         "tipos": [
             "Invención",
             "Inventor",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Equipo"
         ],
         "descripciones": [
@@ -1937,9 +1759,7 @@
         "tipos": [
             "Invención",
             "Inventor",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Equipo"
         ],
         "descripciones": [
@@ -1952,9 +1772,7 @@
         "tipos": [
             "Invención",
             "Inventor",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Equipo"
         ],
         "descripciones": [
@@ -1968,9 +1786,7 @@
         "tipos": [
             "Invención",
             "Inventor",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Equipo"
         ],
         "descripciones": [
@@ -1983,9 +1799,7 @@
         "tipos": [
             "Invención",
             "Inventor",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Equipo"
         ],
         "descripciones": [
@@ -1998,9 +1812,7 @@
         "tipos": [
             "Invención",
             "Inventor",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Equipo"
         ],
         "descripciones": [
@@ -2013,9 +1825,7 @@
         "tipos": [
             "Invención",
             "Inventor",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Equipo"
         ],
         "descripciones": [
@@ -2030,9 +1840,7 @@
         "tipos": [
             "Invención",
             "Inventor",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Equipo"
         ],
         "descripciones": [
@@ -2046,9 +1854,7 @@
         "tipos": [
             "Invención",
             "Inventor",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Equipo"
         ],
         "descripciones": [
@@ -2062,9 +1868,7 @@
         "tipos": [
             "Invención",
             "Inventor",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Equipo"
         ],
         "descripciones": [
@@ -2079,9 +1883,7 @@
         "tipos": [
             "Invención",
             "Inventor",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Equipo"
         ],
         "descripciones": [
@@ -2095,9 +1897,7 @@
             "Tipo de Invención",
             "Clase",
             "Inventor",
-            "Invención"
-        ],
-        "subtipos": [
+            "Invención",
             "Paquetes"
         ],
         "descripciones": [
@@ -2112,9 +1912,7 @@
             "Tipo de Invención",
             "Clase",
             "Inventor",
-            "Invención"
-        ],
-        "subtipos": [
+            "Invención",
             "Cápsulas"
         ],
         "descripciones": [
@@ -2128,9 +1926,7 @@
             "Tipo de Invención",
             "Clase",
             "Inventor",
-            "Invención"
-        ],
-        "subtipos": [
+            "Invención",
             "Herramientas"
         ],
         "descripciones": [
@@ -2143,9 +1939,7 @@
             "Tipo de Invención",
             "Clase",
             "Inventor",
-            "Invención"
-        ],
-        "subtipos": [
+            "Invención",
             "Equipo"
         ],
         "descripciones": [
@@ -3623,212 +3417,415 @@
         ]
     },
     {
-        "nombre": "",
+        "nombre": "Daño provocado por el ambiente",
         "tipos": [
             "Regla de DJ",
             "Regla",
             "Capítulo 11"
         ],
         "descripciones": [
-            ""
+            "<b>Fuego</b>: Una criatura que entra en contacto con el fuego o que termina su turno sobre este recibe daño de Tipo Fuego. Este daño depende del origen de esta, pudiendo hacer 1 Punto de daño si es una pequeña ascua o una cantidad de d10 de daño que oscila entre 1 y 5 y puede hacer ganar 1 o 2 Niveles de Quemado.",
+            "Una criatura que recibe daño de Lava estando Inconsciente gana 3 Niveles de Fatiga o 6 si el Tipo Fuego es súper efectiva contra ella, en lugar de los Niveles de Fatiga usuales. ",
+            "<b>Lava</b>: Una criatura que entra en contacto con la Lava o que termina su turno sobre esta recibe 10d10 de daño de Tipo Fuego y gana 2 Niveles de Quemado. Una criatura que recibe daño de Lava estando Inconsciente gana 2 Niveles de Fatiga o 3 si el Tipo Fuego es súper efectivo contra ella, en lugar de los Niveles de Fatiga usuales. ",
+            "<b>Descarga eléctrica</b>: Algunos aparatos eléctricos o algunas rocas cargadas eléctricamente pueden provocar daño de Tipo Eléctrico y hacerle ganar de 1 a 2 Niveles de Paralizado. Este daño depende del origen de esta, pudiendo hacer 1 Punto de daño si es una chispa leve o una cantidad de d10 de daño que oscila entre 1 y 10. ",
+            "<b>Espinas</b>: Las espinas de una planta pueden hacer daño a una criatura que cae sobre ellas o que se raspa contra ellas cuando va a la carrera. Si se cae sobre espinas, estas duplican el daño de caída y, si te arañas contra estas, recibes 1d10 de daño de Tipo Normal o Planta (a tu elección) por cada vez que te rozas contra estas. ",
+            "Una criatura que no se mueve cuando tiene espinas de plantas clavadas no recibe más daño de estas. "
         ]
     },
     {
-        "nombre": "",
+        "nombre": "Efectos ambientales",
         "tipos": [
             "Regla de DJ",
             "Regla",
             "Capítulo 11"
         ],
         "descripciones": [
-            ""
+            "Ciertas regiones, por ejemplo, las afectadas por poderosos Pokémon podrían estar siempre bajo los efectos de un Campo. Por ejemplo, podrías elegir que una cueva cargada electromagnéticamente tuviera rocas y focos de electricidad alrededor de los cuales hay un Campo Eléctrico. También podrías definir que una pradera asociada a un pokémon Legendario asociado a la vida se considera siempre un Campo de Hierba o que una región mágica y encantada está bajo los efectos de un Campo Psíquico o un Campo de Niebla constante.",
+            "Además del Clima o los Campos, también podrías inventar otros efectos que den carácter propio a ciertos encuentros o localizaciones. Algunos ejemplos de esto son: Lagos de magma y volcanes, arenas movedizas, zonas repletas de niebla, zonas repletas de gas venenoso, zonas tenebrosas o malditas, región de Espacio raro, región de Zona extraña, región de Zona mágica y el Mundo distorsión."
         ]
     },
     {
-        "nombre": "",
+        "nombre": "Lagos de Magma y volcanes",
         "tipos": [
-            "Regla de DJ",
+            "Efecto ambiental",
             "Regla",
             "Capítulo 11"
         ],
         "descripciones": [
-            ""
+            "Los volcanes activos y los lagos de magma son el hogar natural para muchos Pokémon de Tipo Fuego, pero son hostiles casi todas las otras criaturas. Cualquier criatura a menos de una cierta distancia del magma podría quedar siempre acalorada. Tu, como DJ, decides la distancia, pero un par de ejemplos son estar a menos de 10 metros de un lago de Magma te deja acalorado o estar a menos de 100 metros de la lava de la boca de un volcán también te deja acalorado. ",
+            "Una criatura inmune al daño de Tipo Fuego o con la Habilidad Escudo Magma puede nadar por el Magma a razón de 1 metro por cada 4 metros de Velocidad de Caminado que consuma para desplazarse. "
         ]
     },
     {
-        "nombre": "",
+        "nombre": "Arenas movedizas",
         "tipos": [
-            "Regla de DJ",
+            "Efecto ambiental",
             "Regla",
             "Capítulo 11"
         ],
         "descripciones": [
-            ""
+            "Las arenas movedizas son Terreno Difícil y debe superarse una Tirada de Habilidad de Supervivencia o Percepción con CD 15 para detectarse antes de pisarlas. Una Criatura que termina su turno tocándolas, o que las pisa fuera de Iniciativa sin saber que están ahí, debe hacer una Tirada de Salvación de Fuerza con CD 14 (puedes cambiar esta Dificultad, la cual es la Dificultad de las Arenas) y, si la falla empieza a hundirse, ganando 1 Nivel de Enterrado en las Arenas Movedizas. Una criatura que tiene Niveles de Enterrado en las Arenas Movedizas está Apresada. ",
+            "Para liberarse de las Arenas Movedizas deben reducirse estos Niveles de Enterrado en las Arenas Movedizas a 0. El máximo de Niveles que Enterrado que puede tener una criatura es de 4, a no ser que tu definas que es más alto. Una criatura con 3 Niveles de Enterrado o más está completamente cubierta y empieza a sofocarse, ganando 1 Nivel de Fatiga al final de cada uno de sus turnos. ",
+            "Una criatura puede usar su Acción para intentar liberarse de las Arenas Movedizas, repitiendo la Tirada de Salvación. Si la pasa, reduce en 1 sus Niveles de Enterrado. ",
+            "Además, una criatura puede ayudar a reducir sus Niveles de Enterrado a otra. Para ello, usa su Acción y hace una Tirada de Salvación con CD la Dificultad de las Arenas. Si la pasa, reduce en 1 los Niveles de Enterrado de otra criatura y, si la falla por 10 o más, ella cae a las arenas y gana 1 Nivel de Enterrado. Además, si de alguna forma una criatura se teleporta fuera de las arenas, obviamente queda libre de cualquier Nivel de Enterrado que sufriera. "
         ]
     },
     {
-        "nombre": "",
+        "nombre": "Zonas repletas de Niebla",
         "tipos": [
-            "Regla de DJ",
+            "Efecto ambiental",
             "Regla",
             "Capítulo 11"
         ],
         "descripciones": [
-            ""
+            "Una zona repleta de Niebla puede obstaculizar la visión en cierto grado en función de lo espesa que sea la Niebla. Puedes elegir que ciertas regiones de la Niebla sean más espesas que otras. Los distintos grados de espesor son los siguientes: ",
+            {
+                "tipo": "listaU",
+                "contenido": [
+                    "<b>Bruma leve</b>: Las Tiradas de Percepción para ver a más de 10 metros se hacen en Desventaja y no se puede ver a más de 20 metros. ",
+                    "<b>Niebla normal</b>: Las Tiradas de Percepción para ver a más de una distancia en metros superior a 1 e inferior a 9 metros se hacen en Desventaja y no se puede ver a más del doble de esa distancia en metros. ",
+                    "<b>Niebla espesa</b>: Las criaturas no ven a más de 1 metro de sí mismas cuando están inmersas en esta niebla. Niebla total: Las criaturas no ven dentro de esta niebla. ",
+                    "<b>Niebla total</b>: Las criaturas no ven dentro de esta niebla. "
+                ]
+            }
         ]
     },
     {
-        "nombre": "",
+        "nombre": "Zonas repletas de Gas Venenoso",
         "tipos": [
-            "Regla de DJ",
+            "Efecto ambiental",
             "Regla",
             "Capítulo 11"
         ],
         "descripciones": [
-            ""
+            "Algunas zonas estarán llenas de gas venenoso. Decides si este gas venenoso además cuenta como una zona de Niebla y, si decides que si, eliges el espesor de esta. ",
+            "Además, una criatura que no es Tipo Veneno ni Tipo Acero hace una Tirada de Salvación de Resistencia contra un CD que tu eliges, el CD del Gas Venenoso. Si la fallan, ganan 1 Nivel de Envenenado. ",
+            "Por último, una criatura que termina su turno dentro del Gas Venenoso no reduce sus Niveles de Envenenado al final de su turno "
         ]
     },
     {
-        "nombre": "",
+        "nombre": "Zonas tenebrosas o malditas",
         "tipos": [
-            "Regla de DJ",
+            "Efecto ambiental",
             "Regla",
             "Capítulo 11"
         ],
         "descripciones": [
-            ""
+            "Estas regiones poseen un aura terrorífica. Todas las Tiradas de Salvación de Espíritu hechas por criaturas que no tienen Sentido Espectral dentro de estas regiones se hacen en Desventaja. Además, las criaturas que no tienen Sentido Espectral no reducen sus Niveles de Asustado al final de sus turnos. ",
+            "Una criatura que tiene 3 o más Niveles de Asustado dentro de esta zona empieza a sufrir visiones tenebrosas. Si tiene de 3 a 5 Niveles, estas visiones sólo se superponen con sus sentidos, por lo que la criatura tiene Desventaja en todas las Tiradas de 20 que realiza. Si tiene 6 o más Niveles de Asustado, queda completamente paralizada por las visiones. La criatura no puede tomar acciones ni reacciones y sólo murmura. "
         ]
     },
     {
-        "nombre": "",
+        "nombre": "Región de Espacio raro",
         "tipos": [
-            "Regla de DJ",
+            "Efecto ambiental",
             "Regla",
             "Capítulo 11"
         ],
         "descripciones": [
-            ""
+            "La región está bajo uno o varios de los efectos del Movimiento Espacio raro, con un CD a tu elección."
         ]
     },
     {
-        "nombre": "",
+        "nombre": "Región de Zona extraña",
         "tipos": [
-            "Regla de DJ",
+            "Efecto ambiental",
             "Regla",
             "Capítulo 11"
         ],
         "descripciones": [
-            ""
+            "La región está bajo uno o varios de los efectos del Movimiento Zona extraña. "
         ]
     },
     {
-        "nombre": "",
+        "nombre": "Región de Zona mágica",
         "tipos": [
-            "Regla de DJ",
+            "Efecto ambiental",
             "Regla",
             "Capítulo 11"
         ],
         "descripciones": [
-            ""
+            "La región está bajo uno o varios de los efectos del Movimiento Zona mágica. "
         ]
     },
     {
-        "nombre": "",
+        "nombre": "Mundo distorsión",
         "tipos": [
-            "Regla de DJ",
+            "Efecto ambiental",
             "Regla",
             "Capítulo 11"
         ],
         "descripciones": [
-            ""
+            "Esta región está hecha de islotes, cada uno con su gravedad propia que sólo toma efecto cuando se está muy cerca de ellos. Saltar de un Islote a otro requiere de Tiradas de Acrobacias o Atletismo con CD dependiente de la distancia entre estas, el cual defines tu. Una criatura que falla estas tiradas cae al vacío infinito tiene que buscar acercarse a otro islote para que su gravedad lo atraiga. Es usual que esta región además esté afectada también por los efectos de una Región de Espacio raro. "
         ]
     },
     {
-        "nombre": "",
+        "nombre": "Puntos de Superioridad",
         "tipos": [
             "Regla de DJ",
             "Regla",
             "Capítulo 11"
         ],
         "descripciones": [
-            ""
+            "Puntos de Superioridad En ciertas ocasiones, como por ejemplo cuando hay un Entrenador o Pokémon muy superior al grupo de los PJs o cuando los PJs enfrenten a una criatura bajo un efecto que la potencia tanto que la hace perder el control, querrás que dicho Entrenador o Pokémon se sienta mucho más poderoso que los jugadores. Podrías recurrir a darles más nivel, pero esto produciría una situación en la que los jugadores serían arrasados, siendo incapaces de afectar a los Pokémon rivales y estos, a su vez, haciendo muchísimo daño a los jugadores. En lugar de esto, cuando quieras crear Entrenadores o Pokémon que se sientan mucho más poderosos sin ser injustos, deberías hacer uso de las reglas de Puntos de Superioridad. ",
+            "Los Puntos de Superioridad son un recurso que pueden tener las criaturas que controla el Director de Juego y que tienen varios usos y efectos sobre estas: ",
+            "<b>Mejora de Resiliencia.</b> Una criatura que empieza un combate con Puntos de Superioridad multiplica sus PV y sus PP máximos por su cantidad de Puntos de Superioridad más 1 ",
+            "<b>Acciones de Superioridad.</b> Una criatura con Puntos de Superioridad puede tomar un Turno de Superioridad al final de cada uno de los turnos de otras Criaturas rivales en la Iniciativa. La cantidad máxima de Turnos de Superioridad que puede tomar una Criatura por ronda es igual a la cantidad de Puntos de Superioridad que tiene. ",
+            "Los <b>Turnos de Superioridad</b> son turnos en los que sólo pueden tomarse una Acción o Acción compartida y en los que la criatura puede moverse una cantidad de metros igual a la mitad de su Velocidad. ",
+            "<b>Evitar Efectos.</b> Una criatura puede gastar un Punto de Superioridad para liberarse de un Estado o ignorar el efecto de un Movimiento, Rasgo o Habilidad. Una vez un Punto de Superioridad se gasta de esta forma, este no se recupera hasta que la criatura Descanse y, por lo tanto, la criatura pierde una de sus Acciones de Superioridad. ",
+            "<b>Movimientos Extra.</b> La criatura puede conocer varios Movimientos Enseñables, los cuales podría no olvidar si pierde los Puntos de Superioridad (tu elección como DJ cuando le das dichos Movimientos). ",
+            "<b>Efectos Extra.</b> Si quieres hacer que un Pokémon con Puntos de Superioridad se sienta de una forma determinada, como, por ejemplo, que es muy resistente, muy ágil o poderoso puedes darle uno o varios de los siguientes efectos: ",
+            {
+                "tipo": "listaU",
+                "contenido": [
+                    "La criatura gana Puntos de Escudo igual a su cantidad de Puntos de Superioridad multiplicada por la Mitad de su Nivel al principio de cada uno de sus turnos.",
+                    "La criatura puede usar una Acción de Superioridad para moverse toda su velocidad, provocando o no ataques de oportunidad (tu elección cuando le otorgas esta capacidad).",
+                    "La criatura añade un dado al daño al Daño Base de todos sus Movimientos.",
+                    "Por cada Efecto Extra que le otorgas a un Pokémon, este puede tomar una Acción de Superioridad menos en cada ronda, a no ser que el efecto ya consuma una."
+                ]
+            },
+            "Por cada Efecto Extra que le otorgas a un Pokémon, este puede tomar una Acción de Superioridad menos en cada ronda, a no ser que el efecto ya consuma una. ",
+            "<b>Poder de Puntos de Superioridad.</b> Una criatura con Puntos de Superioridad cuenta como una cantidad de criaturas equivalentes iguales a sus Puntos de Superioridad más 1. Por lo tanto, si quieres que una criatura pueda rivalizar con 1 Pokémon de cada uno de tus jugadores deberás darle una cantidad de Puntos de Superioridad igual a tu cantidad de jugadores menos 1 y, si quieres que equivalga a dos Pokémon de estos, deberás de darle el doble de esos Puntos de Superioridad. ",
+            "<b>Capturar Pokémon con Puntos de Superioridad.</b> En muchas ocasiones, capturar un Pokémon que posee Puntos de Superioridad será imposible, al menos, hasta que se quede sin estos Puntos de Superioridad. Si, por algún motivo, un Entrenador consigue capturar un Pokémon con Puntos de Superioridad, este los pierde automáticamente, junto a todos los efectos que tenerlos le otorgasen. ",
+            "<b>De uno en uno.</b> La mayor parte de las veces que un grupo enfrente a una criatura con Puntos de Superioridad lo harán en solitario, puesto que estas ya son lo suficientemente poderosas como para plantar cara al grupo y, en general, no deberías utilizar múltiples entrenadores y Pokémon que no son de Entrenadores que tengan Puntos de Superioridad en un mismo combate, puesto que esto haría el combate imposible de ganar y muy lento. "
         ]
     },
     {
-        "nombre": "",
+        "nombre": "Pokémon esbirro",
         "tipos": [
             "Regla de DJ",
             "Regla",
             "Capítulo 11"
         ],
         "descripciones": [
-            ""
+            "En ocasiones querrás presentar a un gran grupo de Pokémon de la misma especie mucho más débiles que los personajes que acompañarán a otro enemigo en un conflicto. Cuando esto ocurra, no añadas una docena de estos enemigos normales, cada uno con su propia iniciativa y con niveles muy inferiores, pues eso va a hacer que el combate se vuelva muy tedioso. En estos casos deberías usar Pokémon Esbirros.",
+            "Un Pokémon esbirro es un Pokémon que, independientemente de su Vitalidad o Nivel, siempre tiene 10 PV. El objetivo de estos Pokémon es presentar enemigos que hay que enfrentar antes de acabar con el villano principal porque presentan un peligro y que, a su vez, son fáciles de despachar. ",
+            "Para crear un Pokémon esbirro prepara el Pokémon al nivel que desees usarlo (lo recomendable es que sea unos 2 niveles inferior a los de los PJs) y, a la hora de calcular sus PV, simplemente anota que tiene 10 PV. De esta forma sólo aguantará uno o dos golpes como mucho. Un Pokémon esbirro cuenta, a la hora de calcular la dificultad de un encuentro, como ⅓ de un Pokémon normal, así que por cada 3 esbirros que añadas cuéntalos como un Pokémon de su misma especie y Nivel. Considera, además, usar la misma Iniciativa para estos grupitos de 3 esbirros y que actúen todos de forma similar, usando los mismos Movimientos y atacando a los mismos objetivos para que la Iniciativa no se vuelva muy larga. "
         ]
     },
     {
-        "nombre": "",
+        "nombre": "Pokémon especiales",
         "tipos": [
             "Regla de DJ",
             "Regla",
             "Capítulo 11"
         ],
         "descripciones": [
-            ""
+            "Para ciertos encuentros temáticos querrás usar Pokémon Especiales. Los Pokémon Especiales son Pokémon que tienen alguna condición especial sobre los mismos. Por ejemplo, que son Pokémon Alfa o Pokémon Oscuros."
         ]
     },
     {
-        "nombre": "",
+        "nombre": "Transformaciones Pokémon",
         "tipos": [
+            "Pokémon especiales",
             "Regla de DJ",
             "Regla",
             "Capítulo 11"
         ],
         "descripciones": [
-            ""
+            "En ciertas ocasiones, querrás que el grupo se enfrente a una criatura Megaevolucionada, en su forma primigenia o Dinamaxeada. Estas ocasiones son buenos momentos para hacer uso de la regla de Puntos de Superioridad antes comentada, pero también debes considerar el efecto que estas transformaciones podrían tener sobre el combate. En general, cuando una criatura megaevoluciona o está en su forma primigenia, considérala como si fuese 2 niveles superior a la hora de calcular la dificultad que representa. Si ha sido dinamaxeada, considérala 4 niveles superior. "
         ]
     },
     {
-        "nombre": "",
+        "nombre": "Pokémon Oscuros",
         "tipos": [
+            "Pokémon especiales",
             "Regla de DJ",
             "Regla",
             "Capítulo 11"
         ],
         "descripciones": [
-            ""
+            "En ciertas iteraciones del mundo Pokémon existen los Pokémon Oscuros. Estos son Pokémon que, fruto del maltrato sufrido por sus entrenadores, han absorbido una energía maléfica y dañina. Los Pokémon Oscuros exuden un aura maléfica y tenebrosa y sus ojos son de color rojo. ",
+            "Los Pokémon oscuros tienen un beneficio y una desventaja. El daño de todos los Movimientos que usan aumenta en 1 dado (o en 2 dados si son de Nivel 14 o más) y, cuando reciben daño del un Movimiento, el daño base de dicho Movimiento aumenta en un dado (o en 2 dados si son de Nivel 14 o más) contra ellos. ",
+            "Los Pokémon Oscuros tienen las Habilidades de Intimidación o Presión además de sus Habilidades usuales. ",
+            "Los Pokémon Oscuros aumentan su rango de Captura en 5 y, a discreción del DJ, pueden incluso no ser capturables en este estado. ",
+            "Un Pokémon deja de ser Oscuro con el tiempo y el buen trato de un Entrenador y un Pokémon puede volverse un Pokémon oscuro cuando es abusado por el mismo. Ambas transformaciones están a discreción del DJ, pero una buena guía es que un Pokémon deja de ser Oscuro al alcanzar el Nivel 2 de Amistad con su entrenador (empieza en 0 al ser capturado) y se vuelve Oscuro cuando alcanza el Nivel 0 y no puede escapar. ",
+            "Además, estos Pokémon pueden entrar en un frenesí destructivo que les otorga poder extra, por lo que son grandes candidatos para ser enemigos con Puntos de Superioridad. "
         ]
     },
     {
-        "nombre": "",
+        "nombre": "Pokemon infundidos",
         "tipos": [
+            "Pokémon especiales",
             "Regla de DJ",
             "Regla",
             "Capítulo 11"
         ],
         "descripciones": [
-            ""
+            "En el mundo Pokémon, en ocasiones, pueden encontrarse Pokémon Dominantes o Pokémon Alfa, entre otros. Estos Pokémon, a los que llamaremos de forma genérica Pokémon Infundidos, son especímenes particularmente poderosos dentro de su especie y que, usualmente, juegan un papel fundamental dentro de su ecosistema o dentro de su grupo o que, por el contrario, han absorbido tanto poder que se han vuelto locos y son un peligro para estos. ",
+            "El poder que poseen los Pokémon Infundidos puede provenir de algún tipo de energía que los potencia, como la energía de Alola, la energía Terastal o Dinamax o el poder de un Pokémon muchísimo más poderoso como Giratina, el efecto de unas ondas de radio particulares o cualquier otro motivo que se te ocurra. Por cualquiera de estos motivos, el Pokémon ha absorbido poder, lo cual suele representarse no por un Nivel elevado sino por tener Puntos de Superioridad. Usualmente, una múltiplo de tu cantidad de jugadores menos uno. Además, muchos Pokémon Infundidos son de un tamaño mayor al de sus congéneres debido a la exposición al poder que los potencia. ",
+            "El Ratio de Captura de los Pokémon Infundidos no se pueden capturar hasta que el poder con el que están infundidos desaparece. Un Pokémon Infundido puede o no perder su tamaño aumentado al perder este poder (el DJ elige en función de la fuente del poder y el tiempo con el que lo infundió) y, si este se conserva y el Pokémon fuera a evolucionar, su forma e volucionada también es de un tamaño mayor al usual. "
         ]
     },
     {
-        "nombre": "",
+        "nombre": "Pokémon espectrales",
         "tipos": [
+            "Pokémon especiales",
             "Regla de DJ",
             "Regla",
             "Capítulo 11"
         ],
         "descripciones": [
-            ""
+            "Cuando un Pokémon fallece en circunstancias especiales, como cuando está retenido por un poder extraño, cuando aun tiene algo por hacer o cuando lo hace de una forma atroz, su espíritu no va al más allá y vuelve en forma de espectro. A estos Pokémon se los conoce como Pokémon Espectrales. ",
+            "Los Pokémon Espectrales se ven translúcidos y pueden o no tener un aura que los identifica como tales. Estos Pokémon no pueden ser capturados y son candidatos a poseer Puntos de Superioridad. Todos los Pokémon Espectrales poseen una forma para poder marchar al más allá, ya sea simplemente ser derrotados en combate, alejarse de una influencia concreta o que algo ocurra. Por ejemplo, un Pokémon Espectral podría ser el espíritu de una madre marowak que busca desesperadamente que su cría esté a salvo. Por lo tanto, no todos los Pokémon Espectrales son malvados, aunque es común que, cuando un Espíritu de un Pokémon pasa mucho tiempo del lado de los vivos empiece a enloquecer. ",
+            "Por último, además de poder poseer Puntos de Superioridad, los Pokémon Espectrales poseen las siguientes características: ",
+            {
+                "tipo": "listaU",
+                "contenido": [
+                    "Son Pokémon de Tipo Fantasma, además de sus otros Tipos Elementales. ",
+                    "Poseen una Velocidad de Levitado igual a su mayor velocidad. ",
+                    "Pueden atravesar objetos sólidos como si fuese Terreno Difícil. ",
+                    "Pueden poseer Movimientos de Tipo Fantasma y tener Habilidades usualmente asociadas al Tipo Fantasma, como Cuerpo maldito. ",
+                    "Al caer a 0 PV, si eso no hace que vayan al más allá, se esfuman dejando un rastro de ectoplasma y reaparecen en el lugar donde se volvieron un Pokémon Espectral pasado un tiempo a definir por el DJ (un día, una Escena, en la siguiente luna llena, dentro de 1000 años, …). "
+                ]
+            }
         ]
     },
     {
-        "nombre": "",
+        "nombre": "Pokéconstructos",
         "tipos": [
+            "Pokémon especiales",
             "Regla de DJ",
             "Regla",
             "Capítulo 11"
         ],
         "descripciones": [
-            ""
+            "Los Pokéconstructos no son Pokémon sino que son réplicas enteramente artificiales de un Pokémon. Por ejemplo, un mecha tyranitar robótico, una estatua de bronce de Arcanine o un golem de cristal de Steelix. Usualmente, estos Pokémon son controlados por alguien, ya sea que esté dentro de ellos o que lo controla remotamente, por voz o usando algún tipo de señal, pero también pueden ser controlados por una IA o unas órdenes que recibieron de su creador en el pasado. ",
+            "Los Pokéconstructos usan de base la entrada de la Pokédex del Pokémon que replican y, además, tienen los siguientes cambios: ",
+            {
+                "tipo": "listaU",
+                "contenido": [
+                    "Son de Tipo Acero, Roca o Tierra según el material del que están hechos o, si ya tiene dos, sustituyen uno de ambos por este Tipo Fundamental. ",
+                    "No necesitan comer o dormir, pero necesitan recargarse de alguna forma. ",
+                    "Opcionalmente, pueden tener la Habilidad Golem.",
+                    "Opcionalmente, aprenden Movimientos extra que no aprenden de forma usual, usualmente del Tipo Elemental que han ganado con Coste en PP menor o igual a los Movimientos que podrían aprender de su lista de Movimientos por Nivel en su Nivel actual. ",
+                    "Opcionalmente, su tamaño aumenta entre 1 y 5 tamaños.",
+                    "Los Pokéconstructos pueden tener Dotes y tienen Mejoras de Estadísticas como los tendría un Pokémon usual. "
+                ]
+            }
+        ]
+    },
+    {
+        "nombre": "Pokémon quimera",
+        "tipos": [
+            "Pokémon especiales",
+            "Regla de DJ",
+            "Regla",
+            "Capítulo 11"
+        ],
+        "descripciones": [
+            " Algunos inventores son capaces de crear Quimeras. Estas quimeras son mezclas de una Especie base pokémon y una o varias especies añadidas. Para quimerizar un pokémon, sigue los siguientes pasos: ",
+            {
+                "tipo": "listaO",
+                "contenido": [
+                    "El Pokémon base cambia uno de sus Tipos por un Tipo del Pokémon de cada especie añadida. ",
+                    "El Pokémon base gana una Velocidad igual a la del Pokémon de cada especie añadida y pierde otra o reduce la mayor de sus velocidades a la mitad por cada velocidad ganada de esta forma, a tu elección.",
+                    "El Pokémon base cambia una de sus Habilidades por una Habilidad o Habilidad Oculta del Pokémon por la del Pokémon añadido. Repite este proceso tantas veces como especies añadas. ",
+                    "Por cada Nivel en el que el Pokémon base gana un Movimiento, sustituyes uno de los Movimientos de su Lista de Movimientos por Nivel que aprende a ese Nivel por otro Movimiento que aprende el Pokémon añadido. Repite el proceso por cada Pokémon añadido. ",
+                    "El Pokémon base gana un Sentido que tiene el Pokémon de la Librería y pierde un Sentido. Luego, pierde un Sentido, la vista, el oído o el olfato, a tu elección. Repite este proceso por cada Pokémon añadido. "
+                ]
+            },
+            "Ten en cuenta que un Pokémon puede ser Quimerizado más de una vez pero este proceso no es reversible. Además, los Pokémon Quimera son estériles, salvo en contadas ocasiones. Además, la CD para capturar a estos Pokémon aumenta en 5. "
+        ]
+    },
+    {
+        "nombre": "Pokémon robotizados",
+        "tipos": [
+            "Pokémon especiales",
+            "Regla de DJ",
+            "Regla",
+            "Capítulo 11"
+        ],
+        "descripciones": [
+            "Los Pokémon robotizados son criaturas que eran Pokémon normales sobre las que hicieron experimentos que los han vuelto máquina en gran medida. Los Pokémon robotizados tienen las siguientes características: ",
+            {
+                "tipo": "listaU",
+                "contenido": [
+                    "El Pokémon puede considerarse de Tipo Acero (tú decides).",
+                    "El Pokémon no tiene emociones y no puede quedar Confuso, Asustado, Enfurecido o Infatuado ni afectado por efectos similares. ",
+                    "El Pokémon no necesita comer, beber o dormir. ",
+                    "El Pokémon no gana Niveles de Fatiga, sino que su cuerpo se rompe, perdiendo PV Máximos iguales a 10 PV por cada nivel de Fatiga que fuese a ganar. Puedes tomar una Acción Extendida para reparar el Pokémon, consumiendo materiales por valor de 500 Pokedólares por cada 10 PV que haces que recupere el Pokémon. Si los PV máximos llegan a 0 de esta forma, el Pokémon muere y no puede ser reparado. ",
+                    "El daño de Tipo Eléctrico se vuelve súper efectivo contra el Pokémon. "
+                ]
+            },
+            "El proceso de Robotización es irreversible. Además, la CD para capturar a estos Pokémon aumenta en 5. "
+        ]
+    },
+    {
+        "nombre": "Experiencia para subir de nivel ",
+        "tipos": [
+            "Regla variante",
+            "Regla de DJ",
+            "Regla",
+            "Capítulo 11"
+        ],
+        "descripciones": [
+            "Quizás quieras que en tu campaña las subidas de nivel no vengan dadas por los logros de tus jugadores, sino por la experiencia que van acumulando poco a poco. Para estos casos existe esta regla.",
+            "<b>Los puntos de experiencia.</b> Como DJ darás puntos de experiencia cada vez que consigan algo. Por ejemplo, cuando una interacción con un PNJs vaya bien, los PJs alcancen uno de sus objetivos o lleguen a una nueva localización. La cantidad de experiencia que otorgues en estas ocasiones está en tu mano y, en general, dependerá de la relevancia del hito y el nivel de los PJs. ",
+            "<b>Subir de nivel.</b> Al hacer un Descanso o al finalizar una sesión, los PJs y sus Pokémon podrán gastar sus Puntos de Experiencia para subir de Nivel si tienen los puntos necesarios para hacerlo, los cuales vienen expresados por la siguiente tabla. ",
+            "<b>Experiencia por combatir.</b> Cuando el grupo derrote a una Criatura, ganará una cantidad de Experiencia total equivalente a la Vitalidad de la criatura que es derrotada multiplicada por su Nivel y, luego, esta experiencia se divide equitativamente entre todos los miembros del grupo. Por ejemplo, si en un encuentro un grupo de 3 PJs se enfrenta a 5 Oddish de Nivel 2, el encuentro otorgará 5 × 6 × 2 = 60 puntos de experiencia, es decir, que cada uno recibirá un 20 Puntos de Experiencia. ",
+            "Los Pokémon de entrenador otorgan una cantidad de experiencia extra equivalente al 50% de la misma y los Pokémon con Puntos de Superioridad otorgan multiplican la experiencia que otorgan por el doble de sus Puntos de Superioridad. ",
+            "<b>Experiencia de los Pokémon.</b> Cada vez que un entrenador gana puntos de experiencia, los Pokémon que lleva consigo ganan esa misma cantidad de Puntos de Experiencia. ",
+            "<b>Límite a la experiencia de un Pokémon.</b> Un Pokémon no puede subir de Nivel a un Nivel superior que el de su entrenador y, si ya es de Nivel superior a este, no puede ganar Puntos de ni subir de Nivel. ",
+            "<b>Entrenar a tus Pokémon.</b> Un PJ puede tomar una Acción Extendida para entrenar a los Pokémon que lleva consigo, la cual sólo puede tomar una vez al día y sólo puede usarse con Pokémon que no tienen niveles de Fatiga. Un Pokémon entrenado de esta forma gana un 10% de la experiencia necesaria para subir a su siguiente nivel o un 20% si su entrenador es de la clase Entenador. ",
+            "Puedes encontrar la tabla <RouterLink to='/capitulos/dirigir/#apartado11'>aquí</RouterLink>."
+        ]
+    },
+    {
+        "nombre": "Idiomas",
+        "tipos": [
+            "Regla variante",
+            "Regla de DJ",
+            "Regla",
+            "Capítulo 11"
+        ],
+        "descripciones": [
+            "En la mayoría de las aventuras Pokémon se asume que todo el mundo habla el mismo Idioma. Sin embargo, podrías querer que en tu aventura haya otros Idiomas. Si decides esto, haz una lista con todos los idiomas que existen en tu mundo. Por ejemplo, podrías crear Idiomas por regiones o Idiomas antiguos que sólo hablen ciertas tribus o clanes. ",
+            "Los PJs conocen 1 Idioma al iniciar su aventura que deberá ser común a todo el grupo y, si lo permites, hasta 1 Idioma extra relacionado a su Trasfondo. Además, un PJ puede sacrificar una Mejora de Habilidades cuando los gana al subir de Nivel para aprender un Idioma. "
+        ]
+    },
+    {
+        "nombre": "Daño a objetos",
+        "tipos": [
+            "Regla variante",
+            "Regla de DJ",
+            "Regla",
+            "Capítulo 11"
+        ],
+        "descripciones": [
+            "En ciertas ocasiones un jugador o uno de sus Pokémon querrá romper un objeto como una puerta o una pared. En general, puedes definir primero si esto es posible y, si lo es, cuánto se tardaría en hacerlo. Por el contrario, quizás quieras que los jugadores rompan el objeto haciéndole daño. En estos casos, puedes definir una Clase de Armadura para el objeto y unos Puntos de Vida para este, así como su Tipo Elemental, del que dependerán los dos primeros. Si un Movimiento fuerza a hacer una Tirada de Salvación, tu defines si tiene sentido que funcione (por ejemplo, probablemente Confusión no pueda funcionar sobre un objeto) y, si lo hace, se considera que el objeto falla la Tirada de Salvación. ",
+            "Principalmente, encontrarás los siguientes 4 tipos de objetos. Si surge otro caso, básate en estos para definir su CA, su Tipo y sus PV. ",
+            "Madera: Los objetos de madera se consideran de Tipo Planta, tienen una CA de 15 y tiene una cantidad de PV igual a su grosor en centímetros por 30. ",
+            "Piedra: Los objetos de piedra se consideran de Tipo Roca, tienen una CA de 18 y tiene una cantidad de PV igual a su grosor en centímetros por 50. ",
+            "Metal: Los objetos de piedra se consideran de Tipo Acero, tienen una CA de 20 a 30, según tu criterio y tiene una cantidad de PV igual a su grosor en centímetros por un valor igual a 10 veces su CA. ",
+            "Cristal: Los objetos de cristal se consideran de Tipo Roca, tienen una CA de 10 y tiene una cantidad de PV igual a su grosor en centímetros por 10. "
+        ]
+    },
+    {
+        "nombre": "Personajes simplificados",
+        "tipos": [
+            "Regla variante",
+            "Regla de DJ",
+            "Regla",
+            "Capítulo 11"
+        ],
+        "descripciones": [
+            "Las Clases de entrenador permiten distinguir entre los distintos arquetipos y habilidades de los PJs pero, si quieres una campaña más sencilla, en la que tus jugadores sólo se centren en sus Pokémon, puedes usar esta regla.",
+            "Cuando usas esta regla, los personajes no ganan Clases al ser creados pero pueden seguir ganando Niveles. Cuando los Personajes suben de Nivel recalculan su Bono de Habilidad. Además, a los Niveles 6, 12 y 18 pueden aumentar su Grado de Habilidad en 2 tipos de Tiradas de Habilidad hasta un máximo de Experto y de Maestro a partir de Nivel 18. ",
+            "Además, puedes decidir que los personajes ganen Dotes al usar esta regla. Si así lo haces, ganan Dotes en los Niveles 3, 6, 9, 12 y 18. "
+        ]
+    },
+    {
+        "nombre": "Daño doblemente efectivo",
+        "tipos": [
+            "Regla variante",
+            "Regla de DJ",
+            "Regla",
+            "Capítulo 11"
+        ],
+        "descripciones": [
+            "Si quieres que la tabla de tipos posea un rol incluso mayor, pudiendo causar que los daño se multipliquen y dividan por cantidades mayores, usa esta regla. ",
+            "Cuando usas esta regla y una criatura recibe daño este lo multiplica por 2 por cada vez que dicho daño es de un tipo súper efectivo contra cada uno de sus tipos y lo divide entre 2 por cada vez que es poco efectivo contra estos. Por ejemplo, si lanzallamas hace 40 puntos de daño contra Scizor, que es Tipo Bicho y Acero, el daño se cuadriplica, volviéndose 160. Si, por el contrario, si Rayo hielo hace 40 puntos de daño contra Lapras, que es de Tipos Agua e Hielo, el daño se divide por cuatro, volviéndose 10. "
         ]
     }
 ]

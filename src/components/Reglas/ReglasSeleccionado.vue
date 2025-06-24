@@ -1,12 +1,9 @@
 <template>
-    <div v-if="datosCargados && dote" class="seleccionado">
-        <h2>{{ dote.Nombre }}</h2>
-        <p><strong>Tipo:</strong> {{ dote.Tipo }} </p>
-        <p v-if="dote.Prerrequisitos"><strong>Prerrequisitos:</strong> {{ dote.Prerrequisitos }}</p>
-        <p v-if="dote.Nivel"><strong>Nivel:</strong> {{ dote.Nivel }}</p>
-        <p v-if="dote.Repetible"><strong>Repetible</strong></p>
+    <div v-if="datosCargados && regla" class="seleccionado">
+        <h2>{{ regla.nombre }}</h2>
+        <p><strong>Tipo:</strong> {{ mostrarTipos(regla.tipos) }}. </p>
         <p><strong>Descripción:</strong></p>
-        <p class="descripcion">{{ dote.Descripcion }}</p>
+        <p class="descripcion">{{ regla.descripcion }}</p>
     </div>
     <div v-else class="seleccionado">
         <p>Cargando...</p>
@@ -16,8 +13,15 @@
 <script setup>
 defineProps([
     'datosCargados',
-    'dote'
+    'regla'
 ]);
+
+function mostrarTipos(tipos) {
+    if (!Array.isArray(tipos)) return '';
+    if (tipos.length === 0) return '';
+    if (tipos.length === 1) return tipos[0];
+    return tipos.slice(0, -1).join(', ') + ' y ' + tipos[tipos.length - 1];
+}
 </script>
 
 
