@@ -352,11 +352,9 @@
                         tipos de tiradas de Conocimiento son:
                     </p>
                     <ul>
-                        <p>
-                            <li>
-                                <p>Conocimiento Pokémon</p>
-                            </li>
-                        </p>
+                        <li>
+                            <p>Conocimiento Pokémon</p>
+                        </li>
                         <li>
                             <p>Conocimiento de Historia</p>
                         </li>

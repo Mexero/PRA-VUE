@@ -232,38 +232,40 @@
 
             <div class="tablaAdaptable">
                 <table class="tablaCapitulos">
-                    <tr>
-                        <th>Naturaleza</th>
-                        <td>Activa</td>
-                        <td>Fuerte</td>
-                        <td>Agitada</td>
-                        <td>Tímida</td>
-                        <td>Pícara</td>
-                        <td>Cauta</td>
-                        <td>Amable</td>
-                        <td>Serena</td>
-                        <td>Audaz</td>
-                        <td>Alocada</td>
-                        <td>Oblicua</td>
-                        <td>Firme</td>
-                        <td>Alegre</td>
-                    </tr>
-                    <tr>
-                        <th>Habilidad</th>
-                        <td>Atletismo</td>
-                        <td>Combate</td>
-                        <td>Acrobacias</td>
-                        <td>Sigilo</td>
-                        <td class="noSeparar">J. de manos</td>
-                        <td>Investigación</td>
-                        <td>Empatía</td>
-                        <td>Percepción</td>
-                        <td>Actuación</td>
-                        <td>Actuación</td>
-                        <td>Engaño</td>
-                        <td>Intimidación</td>
-                        <td>Persuasión</td>
-                    </tr>
+                    <tbody>
+                        <tr>
+                            <th>Naturaleza</th>
+                            <td>Activa</td>
+                            <td>Fuerte</td>
+                            <td>Agitada</td>
+                            <td>Tímida</td>
+                            <td>Pícara</td>
+                            <td>Cauta</td>
+                            <td>Amable</td>
+                            <td>Serena</td>
+                            <td>Audaz</td>
+                            <td>Alocada</td>
+                            <td>Oblicua</td>
+                            <td>Firme</td>
+                            <td>Alegre</td>
+                        </tr>
+                        <tr>
+                            <th>Habilidad</th>
+                            <td>Atletismo</td>
+                            <td>Combate</td>
+                            <td>Acrobacias</td>
+                            <td>Sigilo</td>
+                            <td class="noSeparar">J. de manos</td>
+                            <td>Investigación</td>
+                            <td>Empatía</td>
+                            <td>Percepción</td>
+                            <td>Actuación</td>
+                            <td>Actuación</td>
+                            <td>Engaño</td>
+                            <td>Intimidación</td>
+                            <td>Persuasión</td>
+                        </tr>
+                    </tbody>
                 </table>
             </div>
         </div>
@@ -300,174 +302,180 @@
             </p>
             <div class="tablaAdaptable">
                 <table class="tablaCapitulos">
-                    <th>NIV</th>
-                    <th>Movimientos</th>
-                    <th>BH</th>
-                    <th>ME</th>
-                    <th>Dotes</th>
-                    <th>AGH</th>
-                    <tr>
-                        <td>1</td>
-                        <td>Movimientos</td>
-                        <td>1</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Movimientos</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>0</td>
-                        <td>0</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>-</td>
-                        <td>2</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>0</td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td>Movimientos</td>
-                        <td>2</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>0</td>
-                    </tr>
-                    <tr>
-                        <td>5</td>
-                        <td>-</td>
-                        <td>3</td>
-                        <td>2</td>
-                        <td>1</td>
-                        <td>0</td>
-                    </tr>
-                    <tr>
-                        <td>6</td>
-                        <td>Movimientos</td>
-                        <td>3</td>
-                        <td>2</td>
-                        <td>1</td>
-                        <td>1</td>
-                    </tr>
-                    <tr>
-                        <td>7</td>
-                        <td>-</td>
-                        <td>4</td>
-                        <td>2</td>
-                        <td>2</td>
-                        <td>1</td>
-                    </tr>
-                    <tr>
-                        <td>8</td>
-                        <td>Movimientos, reducción de costes en 1 PP</td>
-                        <td>4</td>
-                        <td>3</td>
-                        <td>2</td>
-                        <td>1</td>
-                    </tr>
-                    <tr>
-                        <td>9</td>
-                        <td>-</td>
-                        <td>5</td>
-                        <td>3</td>
-                        <td>2</td>
-                        <td>1</td>
-                    </tr>
-                    <tr>
-                        <td>10</td>
-                        <td>Movimientos</td>
-                        <td>5</td>
-                        <td>3</td>
-                        <td>2</td>
-                        <td>1</td>
-                    </tr>
-                    <tr>
-                        <td>11</td>
-                        <td>-</td>
-                        <td>6</td>
-                        <td>4</td>
-                        <td>3</td>
-                        <td>1</td>
-                    </tr>
-                    <tr>
-                        <td>12</td>
-                        <td>Movimientos, Aumento de daño</td>
-                        <td>6</td>
-                        <td>4</td>
-                        <td>3</td>
-                        <td>2</td>
-                    </tr>
-                    <tr>
-                        <td>13</td>
-                        <td>-</td>
-                        <td>7</td>
-                        <td>4</td>
-                        <td>3</td>
-                        <td>2</td>
-                    </tr>
-                    <tr>
-                        <td>14</td>
-                        <td>Movimientos</td>
-                        <td>7</td>
-                        <td>5</td>
-                        <td>3</td>
-                        <td>2</td>
-                    </tr>
-                    <tr>
-                        <td>15</td>
-                        <td>-</td>
-                        <td>8</td>
-                        <td>5</td>
-                        <td>4</td>
-                        <td>2</td>
-                    </tr>
+                    <thead>
+                        <tr>
+                            <th>NIV</th>
+                            <th>Movimientos</th>
+                            <th>BH</th>
+                            <th>ME</th>
+                            <th>Dotes</th>
+                            <th>AGH</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Movimientos</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Movimientos</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>-</td>
+                            <td>2</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Movimientos</td>
+                            <td>2</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>-</td>
+                            <td>3</td>
+                            <td>2</td>
+                            <td>1</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>Movimientos</td>
+                            <td>3</td>
+                            <td>2</td>
+                            <td>1</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>-</td>
+                            <td>4</td>
+                            <td>2</td>
+                            <td>2</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>Movimientos, reducción de costes en 1 PP</td>
+                            <td>4</td>
+                            <td>3</td>
+                            <td>2</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>9</td>
+                            <td>-</td>
+                            <td>5</td>
+                            <td>3</td>
+                            <td>2</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td>Movimientos</td>
+                            <td>5</td>
+                            <td>3</td>
+                            <td>2</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>11</td>
+                            <td>-</td>
+                            <td>6</td>
+                            <td>4</td>
+                            <td>3</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>12</td>
+                            <td>Movimientos, Aumento de daño</td>
+                            <td>6</td>
+                            <td>4</td>
+                            <td>3</td>
+                            <td>2</td>
+                        </tr>
+                        <tr>
+                            <td>13</td>
+                            <td>-</td>
+                            <td>7</td>
+                            <td>4</td>
+                            <td>3</td>
+                            <td>2</td>
+                        </tr>
+                        <tr>
+                            <td>14</td>
+                            <td>Movimientos</td>
+                            <td>7</td>
+                            <td>5</td>
+                            <td>3</td>
+                            <td>2</td>
+                        </tr>
+                        <tr>
+                            <td>15</td>
+                            <td>-</td>
+                            <td>8</td>
+                            <td>5</td>
+                            <td>4</td>
+                            <td>2</td>
+                        </tr>
 
-                    <tr>
-                        <td>16</td>
-                        <td>Movimientos, reducción de costes en 1 PP</td>
-                        <td>8</td>
-                        <td>5</td>
-                        <td>4</td>
-                        <td>2</td>
-                    </tr>
-                    <tr>
-                        <td>17</td>
-                        <td>-</td>
-                        <td>9</td>
-                        <td>6</td>
-                        <td>4</td>
-                        <td>2</td>
-                    </tr>
+                        <tr>
+                            <td>16</td>
+                            <td>Movimientos, reducción de costes en 1 PP</td>
+                            <td>8</td>
+                            <td>5</td>
+                            <td>4</td>
+                            <td>2</td>
+                        </tr>
+                        <tr>
+                            <td>17</td>
+                            <td>-</td>
+                            <td>9</td>
+                            <td>6</td>
+                            <td>4</td>
+                            <td>2</td>
+                        </tr>
 
-                    <tr>
-                        <td>18</td>
-                        <td>Movimientos, Aumento de daño</td>
-                        <td>9</td>
-                        <td>6</td>
-                        <td>4</td>
-                        <td>3</td>
-                    </tr>
-                    <tr>
-                        <td>19</td>
-                        <td>-</td>
-                        <td>10</td>
-                        <td>6</td>
-                        <td>5</td>
-                        <td>3</td>
-                    </tr>
-                    <tr>
-                        <td>20</td>
-                        <td>Movimientos</td>
-                        <td>10</td>
-                        <td>7</td>
-                        <td>5</td>
-                        <td>3</td>
-                    </tr>
+                        <tr>
+                            <td>18</td>
+                            <td>Movimientos, Aumento de daño</td>
+                            <td>9</td>
+                            <td>6</td>
+                            <td>4</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+                            <td>19</td>
+                            <td>-</td>
+                            <td>10</td>
+                            <td>6</td>
+                            <td>5</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+                            <td>20</td>
+                            <td>Movimientos</td>
+                            <td>10</td>
+                            <td>7</td>
+                            <td>5</td>
+                            <td>3</td>
+                        </tr>
+                    </tbody>
                 </table>
             </div>
         </div>
@@ -634,108 +642,110 @@
 
             <div class="tablaAdaptable">
                 <table class="tablaCapitulos">
-                    <tr>
-                        <th>Nivel 0: Odio</th>
-                        <td>
-                            <ul>
-                                <li>El Pokémon se muestra hostil hacia su entrenador.</li>
-                                <li>
-                                    Puede desobedecer órdenes, atacar al entrenador o intentar huir.
-                                </li>
-                                <li>
-                                    Se necesita trabajar mucho en la relación para cambiar esta
-                                    actitud.
-                                </li>
-                            </ul>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>Nivel 1: Desconfianza</th>
-                        <td>
-                            <ul>
-                                <li>
-                                    El Pokémon muestra poco interés en seguir las órdenes y es
-                                    difícil de entrenar.
-                                </li>
-                                <li>Aunque no ataca al entrenador, evita el contacto cercano.</li>
-                            </ul>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>Nivel 2: Aceptación</th>
-                        <td>
-                            <ul>
-                                <li>
-                                    El Pokémon sigue las órdenes, pero de manera un tanto mecánica.
-                                </li>
-                                <li>
-                                    Muestra una actitud neutral hacia su entrenador, sin mucha
-                                    interacción más allá del entrenamiento.
-                                </li>
-                            </ul>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>Nivel 3: Amistad</th>
-                        <td>
-                            <ul>
-                                <li>
-                                    El Pokémon responde de manera más entusiasta a las órdenes del
-                                    entrenador.
-                                </li>
-                                <li>
-                                    Muestra signos de apego y cuidado, aunque aún hay espacio para
-                                    mejorar la relación.
-                                </li>
-                            </ul>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>Nivel 4: Conexión</th>
-                        <td>
-                            <ul>
-                                <li>
-                                    El Pokémon ve al entrenador como su autoridad y compañero más
-                                    cercano.
-                                </li>
-                                <li>
-                                    Existe una relación cercana con el Pokémon buscando activamente
-                                    la interacción y apoyo del entrenador.
-                                </li>
-                            </ul>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>Nivel 5: Lealtad</th>
-                        <td>
-                            <ul>
-                                <li>
-                                    El Pokémon y el entrenador se entienden y confían el uno en el
-                                    otro.
-                                </li>
-                                <li>
-                                    El Pokémon está dispuesto a hacer cualquier cosa por el
-                                    entrenador.
-                                </li>
-                            </ul>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>Nivel 6: Inseparables</th>
-                        <td>
-                            <ul>
-                                <li>El Pokémon y el entrenador son inseparables.</li>
-                                <li>
-                                    Se comunican tan bien que el Pokémon puede recibir Órdenes con
-                                    meros gestos.
-                                </li>
-                                <li>
-                                    El Pokémon se preocupa más por el bienestar de su entrenador que
-                                    por el suyo.
-                                </li>
-                            </ul>
-                        </td>
-                    </tr>
+                    <tbody>
+                        <tr>
+                            <th>Nivel 0: Odio</th>
+                            <td>
+                                <ul>
+                                    <li>El Pokémon se muestra hostil hacia su entrenador.</li>
+                                    <li>
+                                        Puede desobedecer órdenes, atacar al entrenador o intentar huir.
+                                    </li>
+                                    <li>
+                                        Se necesita trabajar mucho en la relación para cambiar esta
+                                        actitud.
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Nivel 1: Desconfianza</th>
+                            <td>
+                                <ul>
+                                    <li>
+                                        El Pokémon muestra poco interés en seguir las órdenes y es
+                                        difícil de entrenar.
+                                    </li>
+                                    <li>Aunque no ataca al entrenador, evita el contacto cercano.</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Nivel 2: Aceptación</th>
+                            <td>
+                                <ul>
+                                    <li>
+                                        El Pokémon sigue las órdenes, pero de manera un tanto mecánica.
+                                    </li>
+                                    <li>
+                                        Muestra una actitud neutral hacia su entrenador, sin mucha
+                                        interacción más allá del entrenamiento.
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Nivel 3: Amistad</th>
+                            <td>
+                                <ul>
+                                    <li>
+                                        El Pokémon responde de manera más entusiasta a las órdenes del
+                                        entrenador.
+                                    </li>
+                                    <li>
+                                        Muestra signos de apego y cuidado, aunque aún hay espacio para
+                                        mejorar la relación.
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Nivel 4: Conexión</th>
+                            <td>
+                                <ul>
+                                    <li>
+                                        El Pokémon ve al entrenador como su autoridad y compañero más
+                                        cercano.
+                                    </li>
+                                    <li>
+                                        Existe una relación cercana con el Pokémon buscando activamente
+                                        la interacción y apoyo del entrenador.
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Nivel 5: Lealtad</th>
+                            <td>
+                                <ul>
+                                    <li>
+                                        El Pokémon y el entrenador se entienden y confían el uno en el
+                                        otro.
+                                    </li>
+                                    <li>
+                                        El Pokémon está dispuesto a hacer cualquier cosa por el
+                                        entrenador.
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Nivel 6: Inseparables</th>
+                            <td>
+                                <ul>
+                                    <li>El Pokémon y el entrenador son inseparables.</li>
+                                    <li>
+                                        Se comunican tan bien que el Pokémon puede recibir Órdenes con
+                                        meros gestos.
+                                    </li>
+                                    <li>
+                                        El Pokémon se preocupa más por el bienestar de su entrenador que
+                                        por el suyo.
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </tbody>
                 </table>
             </div>
             <p>

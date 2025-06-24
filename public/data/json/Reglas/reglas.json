@@ -2589,7 +2589,38 @@
         "descripciones": [
             "Todas las especies Pokémon tienen sus particularidades. Para representar estas capacidades únicas y especiales todas las especies Pokémon tienen dos <b>Habilidades</b> y una o dos <b>Habilidades Ocultas</b>.",
             "Las Habilidades son las capacidades que tienen todos los miembros de su especie y la Habilidades Ocultas capacidades que sólo unos pocos de esta poseen y la cual puede obtenerse de diferentes formas a medida en que los entrenadores y Pokémon suben de nivel. ",
-            "Algunas Habilidades hacen uso de la notación EST de la misma forma que los Movimientos para referirse a las Estadísticas Asocidas a las mismas."
+            "Algunas Habilidades hacen uso de la notación EST de la misma forma que los Movimientos para referirse a las Estadísticas Asocidas a las mismas.",
+            "Existen 3 tipos de Habilidades: Habilidades Comunes, Habilidades legendarias y Habilidades de Transformación."
+        ]
+    },
+    {
+        "nombre": "Habilidades Comunes",
+        "tipos": [
+            "Regla",
+            "Capítulo 5"
+        ],
+        "descripciones": [
+            "Las Habilidades Comunes son propias de Especies de Pokémon normales y, usualmente, compartidas por varias Especies."
+        ]
+    },
+    {
+        "nombre": "Habilidades Legendarias",
+        "tipos": [
+            "Regla",
+            "Capítulo 5"
+        ],
+        "descripciones": [
+            "Las Habilidades Legendarias son propias de Pokémon de estatus Legendario o similar, como pueden ser las Paradojas o los Ultraentes. La mayoría de estas son Habilidades complejas, pensadas para crear tramas a su alrededor, dar capacidades de combate únicas a esos Pokémon o explicar su naturaleza. Estas Habilidades no pueden copiarse ni anularse."
+        ]
+    },
+    {
+        "nombre": "Habilidades de Transformación",
+        "tipos": [
+            "Regla",
+            "Capítulo 5"
+        ],
+        "descripciones": [
+            "Las Habilidades de Transformación son propias de Pokémon que se transforman y, en algunos casos, también son Habilidades Legendarias. Estas Habilidades suelen ser largas porque explican los métodos de transformación de un Pokémon y sus nuevas Estadísticas. Cuando usas un Pokémon con estas Habilidades que requiere de cambiar muchas cosas en su ficha es mejor que tengas una ficha preparada para cada una de las formas que puede tomar. Estas Habilidades no pueden copiarse ni anularse."
         ]
     },
     {
@@ -3336,10 +3367,465 @@
         ]
     },
     {
-        "nombre": "",
+        "nombre": "Fatiga",
         "tipos": [
             "Regla",
             "Capítulo 10"
+        ],
+        "descripciones": [
+            " Cuando una criatura se esfuerza por demasiado rato o un combate es demasiado exigente, es normal que se canse y no pueda luchar más, incluso si sana mediante medicinas. Para representar esto existen los Niveles de Fatiga. Se pueden tener de 0 a 10 Niveles de Fatiga y, por cada Nivel de Fatiga, se tiene un -1 a todas las Tiradas de d20 y daño, a la CA, a la CD de los efectos que provocas a otras criaturas y a la cantidad de PP que tienes. Al llegar a 10 Niveles de Fatiga, caes a 0 PV y quedas Inconsciente y, si los superas, mueres. ",
+            "Recibes Niveles de Fatiga en las siguientes situaciones:",
+            {
+                "tipo": "listaU",
+                "contenido": [
+                    "Cuando acabas un combate en el que has perdido al menos la mitad de tus PV o PP máximos recibes un Nivel de Fatiga.",
+                    "Cuando caes a 0 PV recibes 1 Nivel de Fatiga.",
+                    " Cuando haces actividad extenuante por más de 1 hora seguida recibes 1 Nivel de Fatiga.",
+                    "Cuando pasas una noche sin dormir recibes 4 Niveles de Fatiga."
+                ]
+            },
+            " Cada vez que Descansas, reduces tus Niveles de Fatiga a 0 a no ser que tengas 5 o más, en cuyo caso sólo pierdes 1 Nivel de Fatiga. "
+        ]
+    },
+    {
+        "nombre": "Cargar Peso",
+        "tipos": [
+            "Regla",
+            "Capítulo 10"
+        ],
+        "descripciones": [
+            "Una criatura puede cargar una cierta cantidad de peso en función de su Fuerza y de su Tamaño y, usualmente, la <b>Carga</b> que representa un objeto viene determinado por su Tamaño, aunque tu DJ puede establecer pesos específicos para objetos en concreto. En general, un objeto Enano o menor representa una Carga de 1. Un objeto pequeño representa una Carga de 10, uno mediano una Carga de 100 y los objetos de Tamaño Grande o mayor tienen cada uno una Carga específica ",
+            "Una criatura tiene una <b>Capacidad de Carga Máxima igual</b> a 3 más su Fuerza multiplicado por un valor dependiente de su tamaño. Si la criatura es Enana, este valor es 1, si es Pequeña es 10, si es Mediana, 50, si es grande, 100, si es Enorme 500 y si es Colosal, 1000. Una criatura se considera Levemente Sobrecargada cuando la Carga Total, la suma de la Carga de todo lo que lleva encima, es superior a la mitad de su Capacidad de Carga Máxima, está Sobrecargada si su Carga Total supera las tres cuartas partes de su Capacidad de Carga Máxima. ",
+            "Una criatura que está Levemente Sobrecargada ve todas sus Velocidades reducidas a 0 y no puede usar su Velocidad de Vuelo o Levitado. Una criatura Sobrecargada además Tiene Desventaja en todas las Tiradas de d20 que involucren Fuerza y Agilidad y su CA se reduce en 2 y, por último, una criatura cuya Carga Total supera su Capacidad de Carga Máxima no puede moverse y falla todas las Tiradas de Salvación de Agilidad automáticamente. "
+        ]
+    },
+    {
+        "nombre": "Velocidades",
+        "tipos": [
+            "Regla",
+            "Capítulo 10"
+        ],
+        "descripciones": [
+            "Algunos pokémon poseen diferentes formas de movimiento más allá de caminar. Es por esto que, por ejemplo, en las entradas de la Pokédex de algunos pokémon, en el apartado de velocidad tienen más de un valor. Si hay un valor sin aclaraciones, este representa la velocidad de caminado, es decir, la cantidad de metros que puede moverse en un turno. Todas las personas tienen una velocidad de movimiento base de 5 metros. ",
+            "Además de la Velocidad de Caminado, existen la de Excavado, Trepado, Nado, Vuelo y Levitado."
+        ]
+    },
+    {
+        "nombre": "Excavado",
+        "tipos": [
+            "Velocidad",
+            "Regla",
+            "Capítulo 10"
+        ],
+        "descripciones": [
+            "La velocidad de excavado determina cuánto puede desplazarse un Pokémon excavando justo bajo una superficie de arena, nieve, barro o una sustancia similar. Una criatura que se mueve justo bajo tierra debe salir de la tierra para realizar Tiradas de Ataque y lanzar movimientos contra criaturas que no estén excavando a menos de 1 metro de ella y provoca Ataques de Oportunidad al hacerlo.",
+            "Cuando una criatura excava sólo tiene cobertura media, incluso si está completamente cubierta."
+        ]
+    },
+    {
+        "nombre": "Vuelo",
+        "tipos": [
+            "Velocidad",
+            "Regla",
+            "Capítulo 10"
+        ],
+        "descripciones": [
+            "La velocidad de vuelo determina cuántos metros puede desplazarse una criatura en el aire.",
+            "Una criatura que está haciendo uso de su velocidad de vuelo es inmune a los Movimientos con la etiqueta de Por Tierra y el daño de Tipo Eléctrico contra este se vuelve super efectivo si no lo es ya.",
+            "Además, Todas las Tiradas de Ataque a rango realizadas por una criatura que está volando a más de 5 metros de distancia de su objetivo se hacen en Desventaja. "
+        ]
+    },
+    {
+        "nombre": "Nado",
+        "tipos": [
+            "Velocidad",
+            "Regla",
+            "Capítulo 10"
+        ],
+        "descripciones": [
+            "La velocidad de nado define cuán rápido puede moverse el Pokémon bajo el agua."
+        ]
+    },
+    {
+        "nombre": "Levitado",
+        "tipos": [
+            "Velocidad",
+            "Regla",
+            "Capítulo 10"
+        ],
+        "descripciones": [
+            "La velocidad de levitado define cuán rápido se mueve el Pokémon mientras flota o levita. Cuando se utiliza la velocidad de levitado, la altura máxima sobre el suelo que puede alcanzar el Pokémon es de 1 metro, a no ser que se también tenga una Velocidad de vuelo, en cuyo caso no se ve afectada por las penalizaciones asociadas a volar.",
+            "Un Pokémon que está haciendo uso de su velocidad de levitado es inmune a los Movimientos Por Tierra y, si cae desde una altura, desciende a una velocidad constante que puede controlar. Además, por cada metro que se mueve horizontalmente mientras cae, cae un metro si no está a 1 metro de altura del suelo y, como mínimo, cae 5 metros cada ronda."
+        ]
+    },
+    {
+        "nombre": "Terreno difícil",
+        "tipos": [
+            "Regla",
+            "Capítulo 10"
+        ],
+        "descripciones": [
+            "En ocasiones, pasar caminando por un espacio será especialmente complejo, ya sea porque la zona esté cubierta de agua, haya muchas cosas en el suelo que dificulten desplazarse o por algún otro motivo. En esas ocasiones, este terreno se considera Terreno Difícil. Moverse caminando por <b>Terreno Difícil</b> cuesta el doble de Velocidad de movimiento."
+        ]
+    },
+    {
+        "nombre": "Correr",
+        "tipos": [
+            "Regla",
+            "Capítulo 10"
+        ],
+        "descripciones": [
+            "En tu turno, puedes tomar la Acción de Correr para duplicar tus velocidades de movimiento por el turno."
+        ]
+    },
+    {
+        "nombre": "Salto",
+        "tipos": [
+            "Regla",
+            "Capítulo 10"
+        ],
+        "descripciones": [
+            "Una criatura puede <b>Saltar</b> como Acción si su Velocidad de Caminado no es 0 y, cuando lo hace, si ha tomado carrerilla puede <b>Saltar Horizontalmente</b> una cantidad de metros igual a su Fuerza (mínimo 1 m) y, si ha corrido por 2 metros o más antes, la distancia de salto aumenta en 2 metros (mínimo 2 m). ",
+            "Una criatura puede <b>Saltar Verticalmente</b> una cantidad de metros igual a su Fuerza entre 3 (mínimo medio metro). ",
+            "Saltar no puede provocar que una criatura se desplaza más distancia que su Velocidad de Caminado."
+        ]
+    },
+    {
+        "nombre": "Oscuridad e Iluminación",
+        "tipos": [
+            "Regla",
+            "Capítulo 10"
+        ],
+        "descripciones": [
+            "En ciertas ocasiones, habrá localizaciones o puntos en las que reine la <b>Oscuridad</b>. Una criatura o un objeto que está en una localización con Oscuridad no puede ser vista por medios tradicionales y trata a todas las demás criaturas que no la ven como si estuvieran ciegas. ",
+            "Una localización o punto está <b>Mal iluminado</b> cuando sólo hay luz tenue en este. Cuando una criatura intenta discernir un objeto o criatura Mal iluminada, esta tiene Desventaja en Tiradas de <b>Percepción</b> e <b>Investigación</b> para detectarla. "
+        ]
+    },
+    {
+        "nombre": "Visibilidad",
+        "tipos": [
+            "Regla",
+            "Capítulo 10"
+        ],
+        "descripciones": [
+            " Cuando una criatura no ve a otra, bien porque la segunda está escondida o bien porque está en oscuridad o es invisible, la primera criatura tiene Desventaja en Tiradas de Ataque y Combate contra la criatura que no ve y la criatura que no es vista tiene Ventaja en Tiradas de Ataque y Combate contra la primera. "
+        ]
+    },
+    {
+        "nombre": "Agarrar",
+        "tipos": [
+            "Regla",
+            "Capítulo 10"
+        ],
+        "descripciones": [
+            "Cuando quieres <b>Agarrar</b> a una criatura, puedes utilizar una Acción para intentarlo. El objetivo de tu agarre debe ser como máximo un tamaño mayor que tú y debe estar dentro de tu alcance. ",
+            "Usando al menos una extremidad libre, intentas agarrar el objetivo realizando una Tirada Contestada de tu Combate (Fuerza) contra su Salvación de Fuerza o Agilidad. ",
+            "Cuando te mueves, puedes arrastrar o llevar a la criatura sujeta contigo, pero tus velocidades se reducen a la mitad, a menos que la criatura sea al menos dos tamaños más pequeña que tú. ",
+            "<b>Terminar un agarre</b>. Una criatura agarrada puede utilizar su Acción para intentar escapar. Para hacerlo, debe tener éxito en la Tirada Contestada de su Salvación de Fuerza o Agilidad contra tu Combate (Fuerza). "
+        ]
+    },
+    {
+        "nombre": "Empujar",
+        "tipos": [
+            "Regla",
+            "Capítulo 10"
+        ],
+        "descripciones": [
+            " Como Acción, puedes intentar empujar 1 metro o tumbar a una criatura a 1 metro de ti. Haz una Tirada enfrentada de Combate (Fuerza) contra una Tirada de Salvación de Fuerza o Agilidad de la criatura a la que intentas afectar. Como máximo, la criatura que elijas puede ser un tamaño más grande que tu. "
+        ]
+    },
+    {
+        "nombre": "Daño por caída",
+        "tipos": [
+            "Regla",
+            "Capítulo 10"
+        ],
+        "descripciones": [
+            "Caer desde una gran altura es especialmente peligroso. Cada ronda se cae 100 metros y, al final de una caída, recibes 1d6 de daño sin tipo por cada metro que has caído si caes 2 metros o más. Si recibes daño de esta forma, quedas tumbado al caer. ",
+            "Si una criatura tiene velocidad de levitado, esta lo frena durante el final de la caída hasta quedar a la altura a la que puede levitar y no recibe daño alguno. "
+        ]
+    },
+    {
+        "nombre": "Mantener la respiración",
+        "tipos": [
+            "Regla",
+            "Capítulo 10"
+        ],
+        "descripciones": [
+            "En ciertas ocasiones, puede ocurrir que no pueda respirarse en una localización, bien porque esté inundada de agua u otro líquido o porque el aire no tenga oxígeno. Las criaturas de Tipo Fantasma pueden respirar, pero no necesitan hacerlo para sobrevivir y las criaturas de Tipo Agua o con la Habilidad Nado rápido pueden respirar bajo el agua (y también fuera de esta, a no ser que el DJ dictamine lo contrario). ",
+            "Una criatura puede mantener su respiración una cantidad de minutos igual a su Resistencia. Si una criatura que está manteniendo la respiración habla, por ejemplo, para dar una Orden, o usa un Movimiento con la Etiqueta de Sonido, deja de aguantar la respiración. Una criatura que deja de mantener la respiración y no puede respirar, empieza a <b>Ahogarse</b>. Al final de cada uno de los turnos en los que una criatura está ahogándose, esta gana 1 Nivel de Fatiga y, si llega a 11 Niveles de Fatiga, fallece ahogada. "
+        ]
+    },
+    {
+        "nombre": "Pokémon que no hacen caso",
+        "tipos": [
+            "Regla",
+            "Capítulo 10"
+        ],
+        "descripciones": [
+            "En algunas situaciones, un Pokémon no seguirá las órdenes de su entrenador por no respetarlo o incluso odiarlo. ",
+            "Si el Nivel de Amistad entre un Pokémon y su entrenador es de 0 o 1 o el Pokémon es de mayor Nivel que el de su entrenador y el Nivel de Amistad entre ambos es de 2 o inferior, cada vez que el entrenador le da una Órden, debe hacer una Tirada de Trato Pokémon con CD igual al Ratio de Captura del Pokémon más el BH del mismo. Si el entrenador falla, el Pokémon no hace caso, no haciendo nada o tomando otra Acción distinta (a discreción del DJ). "
+        ]
+    },
+    {
+        "nombre": "Reconocer un Huevo",
+        "tipos": [
+            "Regla",
+            "Capítulo 10"
+        ],
+        "descripciones": [
+            "Cuando un Personaje encuentra un Huevo Pokémon puede intentar reconocer su Especie. Para hacerlo debe realizar una Tirada de Conocimiento Pokémon con CD igual a 10 más el Ratio de Captura del Pokémon que sale del huevo.",
+            "Además, como Acción Extendida, un Personaje que conoce a qué Especie se corresponde el huevo puede realizar una Tirada de Conocimiento Pokémon CD 20. Si la pasa, sabe la cantidad de semanas que le quedan al huevo para eclosionar y, si la pasa por 5 o más, sabe la cantidad de días exactos. Un Personaje puede tomar esta Acción Extendida 1 vez cada Día para cada huevo. "
+        ]
+    },
+    {
+        "nombre": "Recordar indormación sobre un Pokémon",
+        "tipos": [
+            "Regla",
+            "Capítulo 10"
+        ],
+        "descripciones": [
+            " Cuando un Personaje ve a un Pokémon puede pedir al DJ información sobre su Especie. Alguna información será obvia debido al aspecto o contexto en el que se encuentre a un Pokémon, en cuyo caso simplemente da esa información. Debido a esto, hay 3 opciones que pueden darse:",
+            {
+                "tipo": "listaU",
+                "contenido": [
+                    "La información es obvia o ya se estableció que la conocía y simplemente se la da al PJ.",
+                    "Podría conocer la información, en cuyo caso el Personaje debe hacer una Tirada de Conocimiento Pokémon (Mente) para recibirla. ",
+                    "La información es imposible de conocer, en cuyo caso el DJ se lo comunica al Jugador. "
+                ]
+            },
+            "<b>Clase de Dificultad.</b> La CD de una de estas Tiradas de Conocimiento Pokémon es igual al Ratio de Captura del Pokémon más la mitad de su Nivel Mínimo (o de 25 a 35 si es un Pokémon Legendario o Mítico, a discreción del DJ). Además, la CD se reduce en 5 para saber los Tipos Elementales del Pokémon y también puede aumentar hasta en 5 si la información que se pide es particularmente específica (a discreción del DJ).",
+            "<b>Ejemplo</b>: Un Sunkern es fácilmente reconocible como Tipo Planta, así que simplemente le da esa información si la pide; no es obvio cuales son sus Habilidades, por lo tanto, el Personaje debe pasar Tirada de Conocimiento Pokémon CD 10 para decírselo; si el personaje no está familiarizado con esta región, es imposible que sepa con certeza si los Sunkern usualmente la habitan y así que le comunica que no podría saberlo. "
+        ]
+    },
+    {
+        "nombre": "Regla variante: Hacer Cuidadosamente",
+        "tipos": [
+            "Regla variante",
+            "Regla",
+            "Capítulo 10"
+        ],
+        "descripciones": [
+            " Tu DJ decide si usáis esta regla. Si decide que puede usarse, cuando hay una Acción que requiere una Acción para utilizarse, puedes pedir a tu DJ extenderla a una Acción Extendida, con una duración a determinar por tu DJ. Si tomas esta Acción por como Acción Extendida y esta involucra realizar una Tirada de d20 y sacas 10- en la Tirada Natural de dicha Tirada de d20, la Tirada Natural se vuelve 10. "
+        ]
+    },
+    {
+        "nombre": "Regla variante: Multiclase",
+        "tipos": [
+            "Regla variante",
+            "Regla",
+            "Capítulo 10"
+        ],
+        "descripciones": [
+            "Al inicio de la campaña, tu DJ puede definir que La Regla de Multiclase puede utilizarse. La Multiclase tiene por objetivo permitir a los personajes obtener los rasgos de más de una Clase para poder crear personajes que no están completamente representados por sólo una.",
+            "Cada vez que subas de Nivel, puedes elegir tomar un Nivel en alguna de tus Clases o en una nueva Clase.",
+            "<b>Tomar una Nueva Clase</b>: Cuando tomas un Nivel en una nueva Clase, ganas todos los Rasgos que esta te otorga a Nivel 1, pero aumentas tus Grados de Habilidad en ciertas Tiradas de Salvación como acurre al crear tu personaje. "
+        ]
+    },
+    {
+        "nombre": "",
+        "tipos": [
+            "Regla de DJ",
+            "Regla",
+            "Capítulo 11"
+        ],
+        "descripciones": [
+            ""
+        ]
+    },
+    {
+        "nombre": "",
+        "tipos": [
+            "Regla de DJ",
+            "Regla",
+            "Capítulo 11"
+        ],
+        "descripciones": [
+            ""
+        ]
+    },
+    {
+        "nombre": "",
+        "tipos": [
+            "Regla de DJ",
+            "Regla",
+            "Capítulo 11"
+        ],
+        "descripciones": [
+            ""
+        ]
+    },
+    {
+        "nombre": "",
+        "tipos": [
+            "Regla de DJ",
+            "Regla",
+            "Capítulo 11"
+        ],
+        "descripciones": [
+            ""
+        ]
+    },
+    {
+        "nombre": "",
+        "tipos": [
+            "Regla de DJ",
+            "Regla",
+            "Capítulo 11"
+        ],
+        "descripciones": [
+            ""
+        ]
+    },
+    {
+        "nombre": "",
+        "tipos": [
+            "Regla de DJ",
+            "Regla",
+            "Capítulo 11"
+        ],
+        "descripciones": [
+            ""
+        ]
+    },
+    {
+        "nombre": "",
+        "tipos": [
+            "Regla de DJ",
+            "Regla",
+            "Capítulo 11"
+        ],
+        "descripciones": [
+            ""
+        ]
+    },
+    {
+        "nombre": "",
+        "tipos": [
+            "Regla de DJ",
+            "Regla",
+            "Capítulo 11"
+        ],
+        "descripciones": [
+            ""
+        ]
+    },
+    {
+        "nombre": "",
+        "tipos": [
+            "Regla de DJ",
+            "Regla",
+            "Capítulo 11"
+        ],
+        "descripciones": [
+            ""
+        ]
+    },
+    {
+        "nombre": "",
+        "tipos": [
+            "Regla de DJ",
+            "Regla",
+            "Capítulo 11"
+        ],
+        "descripciones": [
+            ""
+        ]
+    },
+    {
+        "nombre": "",
+        "tipos": [
+            "Regla de DJ",
+            "Regla",
+            "Capítulo 11"
+        ],
+        "descripciones": [
+            ""
+        ]
+    },
+    {
+        "nombre": "",
+        "tipos": [
+            "Regla de DJ",
+            "Regla",
+            "Capítulo 11"
+        ],
+        "descripciones": [
+            ""
+        ]
+    },
+    {
+        "nombre": "",
+        "tipos": [
+            "Regla de DJ",
+            "Regla",
+            "Capítulo 11"
+        ],
+        "descripciones": [
+            ""
+        ]
+    },
+    {
+        "nombre": "",
+        "tipos": [
+            "Regla de DJ",
+            "Regla",
+            "Capítulo 11"
+        ],
+        "descripciones": [
+            ""
+        ]
+    },
+    {
+        "nombre": "",
+        "tipos": [
+            "Regla de DJ",
+            "Regla",
+            "Capítulo 11"
+        ],
+        "descripciones": [
+            ""
+        ]
+    },
+    {
+        "nombre": "",
+        "tipos": [
+            "Regla de DJ",
+            "Regla",
+            "Capítulo 11"
+        ],
+        "descripciones": [
+            ""
+        ]
+    },
+    {
+        "nombre": "",
+        "tipos": [
+            "Regla de DJ",
+            "Regla",
+            "Capítulo 11"
+        ],
+        "descripciones": [
+            ""
+        ]
+    },
+    {
+        "nombre": "",
+        "tipos": [
+            "Regla de DJ",
+            "Regla",
+            "Capítulo 11"
+        ],
+        "descripciones": [
+            ""
+        ]
+    },
+    {
+        "nombre": "",
+        "tipos": [
+            "Regla de DJ",
+            "Regla",
+            "Capítulo 11"
         ],
         "descripciones": [
             ""

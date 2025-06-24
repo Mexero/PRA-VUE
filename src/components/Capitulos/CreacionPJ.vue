@@ -203,24 +203,30 @@
             </p>
             <div class="tablaAdaptable">
                 <table class="tablaCapitulos">
-                    <th>Valor</th>
-                    <th>Cáluclo</th>
-                    <tr>
-                        <td>CA</td>
-                        <td>8 + BH + AGI</td>
-                    </tr>
-                    <tr>
-                        <td>PV</td>
-                        <td>10 + Nivel x (VIT + RES)</td>
-                    </tr>
-                    <tr>
-                        <td>PP</td>
-                        <td>NIV + ESP</td>
-                    </tr>
-                    <tr>
-                        <td>Tiradas de Salvación</td>
-                        <td>BH + Estadística asociada + 2</td>
-                    </tr>
+                    <thead>
+                        <tr>
+                            <th>Valor</th>
+                            <th>Cáluclo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>CA</td>
+                            <td>8 + BH + AGI</td>
+                        </tr>
+                        <tr>
+                            <td>PV</td>
+                            <td>10 + Nivel x (VIT + RES)</td>
+                        </tr>
+                        <tr>
+                            <td>PP</td>
+                            <td>NIV + ESP</td>
+                        </tr>
+                        <tr>
+                            <td>Tiradas de Salvación</td>
+                            <td>BH + Estadística asociada + 2</td>
+                        </tr>
+                    </tbody>
                 </table>
             </div>
             <p>
