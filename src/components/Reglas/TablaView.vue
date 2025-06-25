@@ -30,7 +30,7 @@ function descripcionAcortado(dato) {
         <table class="tabla">
             <thead>
                 <tr>
-                    <th v-for="columna of columnas" @click="emit('ordenar', columna)">
+                    <th v-for="(columna, i) of columnas" @click="emit('ordenar', clavesColumnas[i])">
                         {{ columna }}
                         <img src="/assets/icons/filtroFelcha.svg" alt="icono filtro" />
                     </th>
@@ -40,7 +40,7 @@ function descripcionAcortado(dato) {
                 <tr v-for="(fila, index) in datos" :key="index" @click="emit('seleccionar', fila)" :class="{
                     activo:
                         seleccionado &&
-                        seleccionado.nombre === fila[columnas[0]],
+                        seleccionado.nombre === fila[clavesColumnas[0]],
                 }">
                     <td v-for="columna of clavesColumnas" v-html="mostrarDato(fila[columna], columna)"></td>
                 </tr>

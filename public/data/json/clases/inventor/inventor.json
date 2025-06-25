@@ -18,7 +18,10 @@
             "Rasgos",
             "BH",
             "ME",
-            "Invenciones diseñadas"
+            [
+                "Invenciones diseñadas",
+                "/reglas?tipo=Invenci%C3%B3n&seleccionado=Abrojos+met%C3%A1licos"
+            ]
         ],
         "filas": [
             [
@@ -253,7 +256,17 @@
             "claseNombre": "Inventor",
             "nivel": 1,
             "descripcion": [
-                "Desde nivel 1, te vuelves capaz de diseñar invenciones que te ayudarán durante tus aventuras. Elige 4 Invenciones para las que cumplas los prerrequisitos de la sección de Invenciones que encontrarás más adelante. <strong>Diseñas</strong> dichas Invenciones, por lo que aprendes a fabricarlas. Puedes dar tus Invenciones a tus Pokémon o a otras personas.",
+                {
+                    "tipo": "pLink",
+                    "partes": [
+                        {
+                            "previo": "Desde nivel 1, te vuelves capaz de diseñar invenciones que te ayudarán durante tus aventuras. Elige 4 ",
+                            "ancla": "/reglas?tipo=Invenci%C3%B3n&seleccionado=Abrojos+met%C3%A1licos",
+                            "anclaContenido": "Invenciones",
+                            "final": " para las que cumplas los prerrequisitos. <strong>Diseñas</strong> dichas Invenciones, por lo que aprendes a fabricarlas. Puedes dar tus Invenciones a tus Pokémon o a otras personas."
+                        }
+                    ]
+                },
                 "A medida en que subas de Nivel podrás diseñar más Invenciones, tal y como puedes ver en la tabla resumen de la Clase. Además, cada vez que subes de Nivel, puedes olvidar el diseño de una Invención para diseñar otra.",
                 "En todo momento, puedes tener una <strong>cantidad máxima de Invenciones</strong> en funcionamiento igual al bono que tienes a tus Tiradas de Conocimiento Tecnológico. Puedes tener varias copias de una misma Invención. Además, si empiezas la aventura siendo de esta Clase, la empiezas con tantas Invenciones como puedes tener.",
                 "Para crear una copia de una Invención que has diseñado, tomas una Acción Extendida que dura 1 hora durante la cual usas tus Herramientas de Inventor. Crear una Invención tiene un coste en materiales por valor de 2.000 Poké dólares.",
@@ -356,7 +369,6 @@
             "descripcion": [
                 "A partir de nivel 10, la rareza de los objetos que puedes crear gracias a tu rasgo de Hábil con las Herramientas se vuelve Rara. La dificultad de la Tirada para estos objetos adecuadamente es 20.",
                 "Además, los objetos que creas con tus Herramientas mejoran de las siguientes formas:"
-
             ],
             "lista": [
                 "Si elegiste Fabricar Poké Balls, las Poké Ball que fabricas tienen un bono extra a las tiradas que haces con ellas para capturar igual a la mitad de tu Mente, que se suma a cualquier otro bono que pudieran tener.",

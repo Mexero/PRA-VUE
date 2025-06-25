@@ -44,7 +44,7 @@ const ordenAscendente = ref(route.query.ordenAscendente !== "false");
 
 //Tipos de filtrosTipos
 const tipoComunes = ['Regla', 'Regla variante', 'Término', 'Clase', 'Subclase', 'Estado', 'Tirada de Habilidad']
-const tiposMenores = ['Entrenador', 'Orden de Entrenador', 'Entrenamiento', 'Inventor', 'Invención', 'Sentido', 'Pokémon especiales', 'Clima', 'Campo', 'Efecto ambiental']
+const tiposMenores = ['Entrenador', 'Orden de Entrenador', 'Entrenamiento', 'Inventor', 'Invención', 'Velocidad', 'Sentido', 'Clima', 'Campo', 'Regla de DJ', 'Pokémon especiales', 'Efecto ambiental']
 
 
 // =================== CARGAR DATOS AL ABRIR ==================
@@ -159,7 +159,6 @@ function ordenarPor(columna) {
 // ========================= APLICAR FILTROS A TABLA Y ORDENAR ===========================
 const filtrados = computed(() => {
     let resultado = datos.value.filter((dato) => {
-        const nivel = dato.Nivel ?? null;
         const nombre = dato.nombre.toLowerCase();
 
         return (

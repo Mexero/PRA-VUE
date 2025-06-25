@@ -3613,5 +3613,1580 @@
         "nombre": "Movimiento de Tipo Elemental",
         "ruta": "/movz?especie=de+tipo+elemental",
         "tipo": "Tipo de Movimiento Z"
+    },
+    {
+        "nombre": "Regla",
+        "ruta": "/reglas?tipo=Regla",
+        "tipo": "Tipo de Regla"
+    },
+    {
+        "nombre": "Regla variante",
+        "ruta": "/reglas?tipo=Regla+variante",
+        "tipo": "Tipo de Regla"
+    },
+    {
+        "nombre": "Término",
+        "ruta": "/reglas?tipo=Término",
+        "tipo": "Tipo de Regla"
+    },
+    {
+        "nombre": "Clase",
+        "ruta": "/reglas?tipo=Clase",
+        "tipo": "Tipo de Regla"
+    },
+    {
+        "nombre": "Subclase",
+        "ruta": "/reglas?tipo=Subclase",
+        "tipo": "Tipo de Regla"
+    },
+    {
+        "nombre": "Estado",
+        "ruta": "/reglas?tipo=Estado",
+        "tipo": "Tipo de Regla"
+    },
+    {
+        "nombre": "Tirada de Habilidad",
+        "ruta": "/reglas?tipo=Tirada+de+Habilidad",
+        "tipo": "Tipo de Regla"
+    },
+    {
+        "nombre": "Entrenador",
+        "ruta": "/reglas?tipo=Entrenador",
+        "tipo": "Tipo de Regla"
+    },
+    {
+        "nombre": "Orden de Entrenador",
+        "ruta": "/reglas?tipo=Orden+de+Entrenador",
+        "tipo": "Tipo de Regla"
+    },
+    {
+        "nombre": "Entrenamiento",
+        "ruta": "/reglas?tipo=Entrenamiento",
+        "tipo": "Tipo de Regla"
+    },
+    {
+        "nombre": "Inventor",
+        "ruta": "/reglas?tipo=Inventor",
+        "tipo": "Tipo de Regla"
+    },
+    {
+        "nombre": "Invención",
+        "ruta": "/reglas?tipo=Invención",
+        "tipo": "Tipo de Regla"
+    },
+    {
+        "nombre": "Velocidad",
+        "ruta": "/reglas?tipo=Velocidad",
+        "tipo": "Tipo de Regla"
+    },
+    {
+        "nombre": "Sentido",
+        "ruta": "/reglas?tipo=Sentido",
+        "tipo": "Tipo de Regla"
+    },
+    {
+        "nombre": "Clima",
+        "ruta": "/reglas?tipo=Clima",
+        "tipo": "Tipo de Regla"
+    },
+    {
+        "nombre": "Campo",
+        "ruta": "/reglas?tipo=Campo",
+        "tipo": "Tipo de Regla"
+    },
+    {
+        "nombre": "Regla de DJ",
+        "ruta": "/reglas?tipo=Regla+de+DJ",
+        "tipo": "Tipo de Regla"
+    },
+    {
+        "nombre": "Pokémon especiales",
+        "ruta": "/reglas?tipo=Pokémon+especiales",
+        "tipo": "Tipo de Regla"
+    },
+    {
+        "nombre": "Efecto ambiental",
+        "ruta": "/reglas?tipo=Efecto+ambiental",
+        "tipo": "Tipo de Regla"
+    },
+    {
+        "nombre": "“¡Ve allí!”",
+        "ruta": "/reglas?seleccionado=“¡Ve+allí!”",
+        "tipo": "Orden de Entrenador"
+    },
+    {
+        "nombre": "“¡Muévete con cuidado!”",
+        "ruta": "/reglas?seleccionado=“¡Muévete+con+cuidado!”",
+        "tipo": "Orden de Entrenador"
+    },
+    {
+        "nombre": "“¡Atento a sus movimientos!”",
+        "ruta": "/reglas?seleccionado=“¡Atento+a+sus+movimientos!”",
+        "tipo": "Orden de Entrenador"
+    },
+    {
+        "nombre": "“¡En el punto débil!”",
+        "ruta": "/reglas?seleccionado=“¡En+el+punto+débil!”",
+        "tipo": "Orden de Entrenador"
+    },
+    {
+        "nombre": "“¡No permitas que te afecte!”",
+        "ruta": "/reglas?seleccionado=“¡No+permitas+que+te+afecte!”",
+        "tipo": "Orden de Entrenador"
+    },
+    {
+        "nombre": "“¡Mándalo a volar!”",
+        "ruta": "/reglas?seleccionado=“¡Mándalo+a+volar!”",
+        "tipo": "Orden de Entrenador"
+    },
+    {
+        "nombre": "“¡Distráelo!”",
+        "ruta": "/reglas?seleccionado=“¡Distráelo!”",
+        "tipo": "Orden de Entrenador"
+    },
+    {
+        "nombre": "“¡No dejes que ataque a tus compañeros!”",
+        "ruta": "/reglas?seleccionado=“¡No+dejes+que+ataque+a+tus+compañeros!”",
+        "tipo": "Orden de Entrenador"
+    },
+    {
+        "nombre": "“¡Agárralo!”",
+        "ruta": "/reglas?seleccionado=“¡Agárralo!”",
+        "tipo": "Orden de Entrenador"
+    },
+    {
+        "nombre": "“¡Desde atrás!”",
+        "ruta": "/reglas?seleccionado=“¡Desde+atrás!”",
+        "tipo": "Orden de Entrenador"
+    },
+    {
+        "nombre": "“¡Derríbalo!”",
+        "ruta": "/reglas?seleccionado=“¡Derríbalo!”",
+        "tipo": "Orden de Entrenador"
+    },
+    {
+        "nombre": "“¡Créales una apertura!”",
+        "ruta": "/reglas?seleccionado=“¡Créales+una+apertura!”",
+        "tipo": "Orden de Entrenador"
+    },
+    {
+        "nombre": "¡Puedes con esto y más!”",
+        "ruta": "/reglas?seleccionado=¡Puedes+con+esto+y+más!”",
+        "tipo": "Orden de Entrenador"
+    },
+    {
+        "nombre": "“¡Haz un barrido!”",
+        "ruta": "/reglas?seleccionado=“¡Haz+un+barrido!”",
+        "tipo": "Orden de Entrenador"
+    },
+    {
+        "nombre": "“¡Ralentízalo!”",
+        "ruta": "/reglas?seleccionado=“¡Ralentízalo!”",
+        "tipo": "Orden de Entrenador"
+    },
+    {
+        "nombre": "“¡Bloquea su vista”",
+        "ruta": "/reglas?seleccionado=“¡Bloquea+su+vista”",
+        "tipo": "Orden de Entrenador"
+    },
+    {
+        "nombre": "¡Nada puede dañarte!",
+        "ruta": "/reglas?seleccionado=¡Nada+puede+dañarte!",
+        "tipo": "Orden de Entrenador"
+    },
+    {
+        "nombre": "¡Deja los problemas fluir!",
+        "ruta": "/reglas?seleccionado=¡Deja+los+problemas+fluir!",
+        "tipo": "Orden de Entrenador"
+    },
+    {
+        "nombre": "“Déjalos pegados”",
+        "ruta": "/reglas?seleccionado=“Déjalos+pegados”",
+        "tipo": "Orden de Entrenador"
+    },
+    {
+        "nombre": "“¡Destrúyelos!”",
+        "ruta": "/reglas?seleccionado=“¡Destrúyelos!”",
+        "tipo": "Orden de Entrenador"
+    },
+    {
+        "nombre": "¡Aumenta tu voltaje!",
+        "ruta": "/reglas?seleccionado=¡Aumenta+tu+voltaje!",
+        "tipo": "Orden de Entrenador"
+    },
+    {
+        "nombre": "¡Agota su espíritu!",
+        "ruta": "/reglas?seleccionado=¡Agota+su+espíritu!",
+        "tipo": "Orden de Entrenador"
+    },
+    {
+        "nombre": "¡Arde como tu espíritu!",
+        "ruta": "/reglas?seleccionado=¡Arde+como+tu+espíritu!",
+        "tipo": "Orden de Entrenador"
+    },
+    {
+        "nombre": "¡Demuéstrales tu belleza!",
+        "ruta": "/reglas?seleccionado=¡Demuéstrales+tu+belleza!",
+        "tipo": "Orden de Entrenador"
+    },
+    {
+        "nombre": "¡Congélalo todo!",
+        "ruta": "/reglas?seleccionado=¡Congélalo+todo!",
+        "tipo": "Orden de Entrenador"
+    },
+    {
+        "nombre": "¡Golpéalo en cadena!",
+        "ruta": "/reglas?seleccionado=¡Golpéalo+en+cadena!",
+        "tipo": "Orden de Entrenador"
+    },
+    {
+        "nombre": "¡Eres puro potencial!",
+        "ruta": "/reglas?seleccionado=¡Eres+puro+potencial!",
+        "tipo": "Orden de Entrenador"
+    },
+    {
+        "nombre": "¡Drena sus energías",
+        "ruta": "/reglas?seleccionado=¡Drena+sus+energías",
+        "tipo": "Orden de Entrenador"
+    },
+    {
+        "nombre": "¡Usa el poder de tu psique!",
+        "ruta": "/reglas?seleccionado=¡Usa+el+poder+de+tu+psique!",
+        "tipo": "Orden de Entrenador"
+    },
+    {
+        "nombre": "¡Invoca rocas!",
+        "ruta": "/reglas?seleccionado=¡Invoca+rocas!",
+        "tipo": "Orden de Entrenador"
+    },
+    {
+        "nombre": "¡Enséñales el verdadero terror!",
+        "ruta": "/reglas?seleccionado=¡Enséñales+el+verdadero+terror!",
+        "tipo": "Orden de Entrenador"
+    },
+    {
+        "nombre": "¡Entiérralos!",
+        "ruta": "/reglas?seleccionado=¡Entiérralos!",
+        "tipo": "Orden de Entrenador"
+    },
+    {
+        "nombre": "¡Hazlos enfermar!",
+        "ruta": "/reglas?seleccionado=¡Hazlos+enfermar!",
+        "tipo": "Orden de Entrenador"
+    },
+    {
+        "nombre": "¡Sal volando!",
+        "ruta": "/reglas?seleccionado=¡Sal+volando!",
+        "tipo": "Orden de Entrenador"
+    },
+    {
+        "nombre": "“¡Impúlsate!”",
+        "ruta": "/reglas?seleccionado=“¡Impúlsate!”",
+        "tipo": "Orden de Entrenador"
+    },
+    {
+        "nombre": "A tope!",
+        "ruta": "/reglas?seleccionado=A+tope!",
+        "tipo": "Entrenamiento"
+    },
+    {
+        "nombre": "¡Aguante sin par!",
+        "ruta": "/reglas?seleccionado=¡Aguante+sin+par!",
+        "tipo": "Entrenamiento"
+    },
+    {
+        "nombre": "¡Potencia devastadora!",
+        "ruta": "/reglas?seleccionado=¡Potencia+devastadora!",
+        "tipo": "Entrenamiento"
+    },
+    {
+        "nombre": "¡Aprovecha tu talento!",
+        "ruta": "/reglas?seleccionado=¡Aprovecha+tu+talento!",
+        "tipo": "Entrenamiento"
+    },
+    {
+        "nombre": "¡Sigue el ritmo!",
+        "ruta": "/reglas?seleccionado=¡Sigue+el+ritmo!",
+        "tipo": "Entrenamiento"
+    },
+    {
+        "nombre": "¡Se intocable!",
+        "ruta": "/reglas?seleccionado=¡Se+intocable!",
+        "tipo": "Entrenamiento"
+    },
+    {
+        "nombre": "¡Movimientos peligrosos!",
+        "ruta": "/reglas?seleccionado=¡Movimientos+peligrosos!",
+        "tipo": "Entrenamiento"
+    },
+    {
+        "nombre": "¡Movimientos ineludibles!",
+        "ruta": "/reglas?seleccionado=¡Movimientos+ineludibles!",
+        "tipo": "Entrenamiento"
+    },
+    {
+        "nombre": "¡Calibra tu precisión!",
+        "ruta": "/reglas?seleccionado=¡Calibra+tu+precisión!",
+        "tipo": "Entrenamiento"
+    },
+    {
+        "nombre": "¡Sed imparables!",
+        "ruta": "/reglas?seleccionado=¡Sed+imparables!",
+        "tipo": "Entrenamiento"
+    },
+    {
+        "nombre": "¡Sed ingeniosos!",
+        "ruta": "/reglas?seleccionado=¡Sed+ingeniosos!",
+        "tipo": "Entrenamiento"
+    },
+    {
+        "nombre": "Sol abrasador",
+        "ruta": "/reglas?seleccionado=Sol+abrasador",
+        "tipo": "Clima"
+    },
+    {
+        "nombre": "Tormenta de arena",
+        "ruta": "/reglas?seleccionado=Tormenta+de+arena",
+        "tipo": "Clima"
+    },
+    {
+        "nombre": "Lluvia",
+        "ruta": "/reglas?seleccionado=Lluvia",
+        "tipo": "Clima"
+    },
+    {
+        "nombre": "Nevada",
+        "ruta": "/reglas?seleccionado=Nevada",
+        "tipo": "Clima"
+    },
+    {
+        "nombre": "Clima",
+        "ruta": "/reglas?seleccionado=Clima",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Campo Eléctrico",
+        "ruta": "/reglas?seleccionado=Campo+Eléctrico",
+        "tipo": "Campo"
+    },
+    {
+        "nombre": "Campo de Hierba",
+        "ruta": "/reglas?seleccionado=Campo+de+Hierba",
+        "tipo": "Campo"
+    },
+    {
+        "nombre": "Campo de Nieba",
+        "ruta": "/reglas?seleccionado=Campo+de+Nieba",
+        "tipo": "Campo"
+    },
+    {
+        "nombre": "Campo Psíquico",
+        "ruta": "/reglas?seleccionado=Campo+Psíquico",
+        "tipo": "Campo"
+    },
+    {
+        "nombre": "Campos",
+        "ruta": "/reglas?seleccionado=Campos",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Visión en la oscuridad",
+        "ruta": "/reglas?seleccionado=Visión+en+la+oscuridad",
+        "tipo": "Sentido"
+    },
+    {
+        "nombre": "Electrorrecepción",
+        "ruta": "/reglas?seleccionado=Electrorrecepción",
+        "tipo": "Sentido"
+    },
+    {
+        "nombre": "Sentido de la vibración",
+        "ruta": "/reglas?seleccionado=Sentido+de+la+vibración",
+        "tipo": "Sentido"
+    },
+    {
+        "nombre": "Ecolocalización",
+        "ruta": "/reglas?seleccionado=Ecolocalización",
+        "tipo": "Sentido"
+    },
+    {
+        "nombre": "Sentido espectral",
+        "ruta": "/reglas?seleccionado=Sentido+espectral",
+        "tipo": "Sentido"
+    },
+    {
+        "nombre": "Sentido del aura",
+        "ruta": "/reglas?seleccionado=Sentido+del+aura",
+        "tipo": "Sentido"
+    },
+    {
+        "nombre": "Sentidos",
+        "ruta": "/reglas?seleccionado=Sentidos",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Sentidos",
+        "ruta": "/reglas?seleccionado=Sentidos",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Estado",
+        "ruta": "/reglas?seleccionado=Estado",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Estado nivelado",
+        "ruta": "/reglas?seleccionado=Estado+nivelado",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Helado",
+        "ruta": "/reglas?seleccionado=Helado",
+        "tipo": "Estado"
+    },
+    {
+        "nombre": "Quemado",
+        "ruta": "/reglas?seleccionado=Quemado",
+        "tipo": "Estado"
+    },
+    {
+        "nombre": "Paralizado",
+        "ruta": "/reglas?seleccionado=Paralizado",
+        "tipo": "Estado"
+    },
+    {
+        "nombre": "Envenenado",
+        "ruta": "/reglas?seleccionado=Envenenado",
+        "tipo": "Estado"
+    },
+    {
+        "nombre": "Dormido",
+        "ruta": "/reglas?seleccionado=Dormido",
+        "tipo": "Estado"
+    },
+    {
+        "nombre": "Confuso",
+        "ruta": "/reglas?seleccionado=Confuso",
+        "tipo": "Estado"
+    },
+    {
+        "nombre": "Infatuado",
+        "ruta": "/reglas?seleccionado=Infatuado",
+        "tipo": "Estado"
+    },
+    {
+        "nombre": "Asustado",
+        "ruta": "/reglas?seleccionado=Asustado",
+        "tipo": "Estado"
+    },
+    {
+        "nombre": "Enfurecido",
+        "ruta": "/reglas?seleccionado=Enfurecido",
+        "tipo": "Estado"
+    },
+    {
+        "nombre": "Acalorado",
+        "ruta": "/reglas?seleccionado=Acalorado",
+        "tipo": "Estado"
+    },
+    {
+        "nombre": "Empapado",
+        "ruta": "/reglas?seleccionado=Empapado",
+        "tipo": "Estado"
+    },
+    {
+        "nombre": "Cegado",
+        "ruta": "/reglas?seleccionado=Cegado",
+        "tipo": "Estado"
+    },
+    {
+        "nombre": "Agarrado",
+        "ruta": "/reglas?seleccionado=Agarrado",
+        "tipo": "Estado"
+    },
+    {
+        "nombre": "Apresado",
+        "ruta": "/reglas?seleccionado=Apresado",
+        "tipo": "Estado"
+    },
+    {
+        "nombre": "Ensordecido",
+        "ruta": "/reglas?seleccionado=Ensordecido",
+        "tipo": "Estado"
+    },
+    {
+        "nombre": "Inconsciente",
+        "ruta": "/reglas?seleccionado=Inconsciente",
+        "tipo": "Estado"
+    },
+    {
+        "nombre": "Sorprendido",
+        "ruta": "/reglas?seleccionado=Sorprendido",
+        "tipo": "Estado"
+    },
+    {
+        "nombre": "Tumbado",
+        "ruta": "/reglas?seleccionado=Tumbado",
+        "tipo": "Estado"
+    },
+    {
+        "nombre": "Atletismo",
+        "ruta": "/reglas?seleccionado=Atletismo",
+        "tipo": "Tirada de Habilidad"
+    },
+    {
+        "nombre": "Combate",
+        "ruta": "/reglas?seleccionado=Combate",
+        "tipo": "Tirada de Habilidad"
+    },
+    {
+        "nombre": "Acrobacias",
+        "ruta": "/reglas?seleccionado=Acrobacias",
+        "tipo": "Tirada de Habilidad"
+    },
+    {
+        "nombre": "Juego de Manos",
+        "ruta": "/reglas?seleccionado=Juego+de+Manos",
+        "tipo": "Tirada de Habilidad"
+    },
+    {
+        "nombre": "Sigilo",
+        "ruta": "/reglas?seleccionado=Sigilo",
+        "tipo": "Tirada de Habilidad"
+    },
+    {
+        "nombre": "Iniciativa",
+        "ruta": "/reglas?seleccionado=Iniciativa",
+        "tipo": "Tirada de Habilidad"
+    },
+    {
+        "nombre": "Investigación",
+        "ruta": "/reglas?seleccionado=Investigación",
+        "tipo": "Tirada de Habilidad"
+    },
+    {
+        "nombre": "Conocimiento",
+        "ruta": "/reglas?seleccionado=Conocimiento",
+        "tipo": "Tirada de Habilidad"
+    },
+    {
+        "nombre": "Empatía",
+        "ruta": "/reglas?seleccionado=Empatía",
+        "tipo": "Tirada de Habilidad"
+    },
+    {
+        "nombre": "Percepción",
+        "ruta": "/reglas?seleccionado=Percepción",
+        "tipo": "Tirada de Habilidad"
+    },
+    {
+        "nombre": "Supervivencia",
+        "ruta": "/reglas?seleccionado=Supervivencia",
+        "tipo": "Tirada de Habilidad"
+    },
+    {
+        "nombre": "Actuación",
+        "ruta": "/reglas?seleccionado=Actuación",
+        "tipo": "Tirada de Habilidad"
+    },
+    {
+        "nombre": "Engaño",
+        "ruta": "/reglas?seleccionado=Engaño",
+        "tipo": "Tirada de Habilidad"
+    },
+    {
+        "nombre": "Intimidación",
+        "ruta": "/reglas?seleccionado=Intimidación",
+        "tipo": "Tirada de Habilidad"
+    },
+    {
+        "nombre": "Persuasión",
+        "ruta": "/reglas?seleccionado=Persuasión",
+        "tipo": "Tirada de Habilidad"
+    },
+    {
+        "nombre": "Trato Pokémon",
+        "ruta": "/reglas?seleccionado=Trato+Pokémon",
+        "tipo": "Tirada de Habilidad"
+    },
+    {
+        "nombre": "Abrojos metálicos",
+        "ruta": "/reglas?seleccionado=Abrojos+metálicos",
+        "tipo": "Invención"
+    },
+    {
+        "nombre": "Bolas de humo",
+        "ruta": "/reglas?seleccionado=Bolas+de+humo",
+        "tipo": "Invención"
+    },
+    {
+        "nombre": "Bolas de humo blanco",
+        "ruta": "/reglas?seleccionado=Bolas+de+humo+blanco",
+        "tipo": "Invención"
+    },
+    {
+        "nombre": "Bolas malas",
+        "ruta": "/reglas?seleccionado=Bolas+malas",
+        "tipo": "Invención"
+    },
+    {
+        "nombre": "Bolas pegajosas",
+        "ruta": "/reglas?seleccionado=Bolas+pegajosas",
+        "tipo": "Invención"
+    },
+    {
+        "nombre": "Bolas ruidosas",
+        "ruta": "/reglas?seleccionado=Bolas+ruidosas",
+        "tipo": "Invención"
+    },
+    {
+        "nombre": "Bombas luminiscentes",
+        "ruta": "/reglas?seleccionado=Bombas+luminiscentes",
+        "tipo": "Invención"
+    },
+    {
+        "nombre": "Calmaesferas",
+        "ruta": "/reglas?seleccionado=Calmaesferas",
+        "tipo": "Invención"
+    },
+    {
+        "nombre": "Toxiestrellas",
+        "ruta": "/reglas?seleccionado=Toxiestrellas",
+        "tipo": "Invención"
+    },
+    {
+        "nombre": "Cápsulas atronadoras",
+        "ruta": "/reglas?seleccionado=Cápsulas+atronadoras",
+        "tipo": "Invención"
+    },
+    {
+        "nombre": "Cápsulas de Potenciación Elemental",
+        "ruta": "/reglas?seleccionado=Cápsulas+de+Potenciación+Elemental",
+        "tipo": "Invención"
+    },
+    {
+        "nombre": "Cápsulas de Protección",
+        "ruta": "/reglas?seleccionado=Cápsulas+de+Protección",
+        "tipo": "Invención"
+    },
+    {
+        "nombre": "Cápsulas de salud",
+        "ruta": "/reglas?seleccionado=Cápsulas+de+salud",
+        "tipo": "Invención"
+    },
+    {
+        "nombre": "Cápsulas de último impulso",
+        "ruta": "/reglas?seleccionado=Cápsulas+de+último+impulso",
+        "tipo": "Invención"
+    },
+    {
+        "nombre": "Cápsulas destellantes",
+        "ruta": "/reglas?seleccionado=Cápsulas+destellantes",
+        "tipo": "Invención"
+    },
+    {
+        "nombre": "Cápsulas Inerciales",
+        "ruta": "/reglas?seleccionado=Cápsulas+Inerciales",
+        "tipo": "Invención"
+    },
+    {
+        "nombre": "Cápsulas Sensoriales",
+        "ruta": "/reglas?seleccionado=Cápsulas+Sensoriales",
+        "tipo": "Invención"
+    },
+    {
+        "nombre": "Aerosol sigilo",
+        "ruta": "/reglas?seleccionado=Aerosol+sigilo",
+        "tipo": "Invención"
+    },
+    {
+        "nombre": "Electrificador",
+        "ruta": "/reglas?seleccionado=Electrificador",
+        "tipo": "Invención"
+    },
+    {
+        "nombre": "Espray bucal",
+        "ruta": "/reglas?seleccionado=Espray+bucal",
+        "tipo": "Invención"
+    },
+    {
+        "nombre": "Flauta Amarilla",
+        "ruta": "/reglas?seleccionado=Flauta+Amarilla",
+        "tipo": "Invención"
+    },
+    {
+        "nombre": "Flauta Blanca",
+        "ruta": "/reglas?seleccionado=Flauta+Blanca",
+        "tipo": "Invención"
+    },
+    {
+        "nombre": "Flauta Negra",
+        "ruta": "/reglas?seleccionado=Flauta+Negra",
+        "tipo": "Invención"
+    },
+    {
+        "nombre": "Flauta Violeta",
+        "ruta": "/reglas?seleccionado=Flauta+Violeta",
+        "tipo": "Invención"
+    },
+    {
+        "nombre": "Lanzabolas",
+        "ruta": "/reglas?seleccionado=Lanzabolas",
+        "tipo": "Invención"
+    },
+    {
+        "nombre": "Pokerádar",
+        "ruta": "/reglas?seleccionado=Pokerádar",
+        "tipo": "Invención"
+    },
+    {
+        "nombre": "Sincromisor",
+        "ruta": "/reglas?seleccionado=Sincromisor",
+        "tipo": "Invención"
+    },
+    {
+        "nombre": "Termopulsor",
+        "ruta": "/reglas?seleccionado=Termopulsor",
+        "tipo": "Invención"
+    },
+    {
+        "nombre": "Vaporizador",
+        "ruta": "/reglas?seleccionado=Vaporizador",
+        "tipo": "Invención"
+    },
+    {
+        "nombre": "Armadura de Batalla",
+        "ruta": "/reglas?seleccionado=Armadura+de+Batalla",
+        "tipo": "Invención"
+    },
+    {
+        "nombre": "Botas de Carreras",
+        "ruta": "/reglas?seleccionado=Botas+de+Carreras",
+        "tipo": "Invención"
+    },
+    {
+        "nombre": "Botas de Movilidad",
+        "ruta": "/reglas?seleccionado=Botas+de+Movilidad",
+        "tipo": "Invención"
+    },
+    {
+        "nombre": "Botas Gruesas",
+        "ruta": "/reglas?seleccionado=Botas+Gruesas",
+        "tipo": "Invención"
+    },
+    {
+        "nombre": "Capa protectora",
+        "ruta": "/reglas?seleccionado=Capa+protectora",
+        "tipo": "Invención"
+    },
+    {
+        "nombre": "Casco dentado",
+        "ruta": "/reglas?seleccionado=Casco+dentado",
+        "tipo": "Invención"
+    },
+    {
+        "nombre": "Chaleco antibalas",
+        "ruta": "/reglas?seleccionado=Chaleco+antibalas",
+        "tipo": "Invención"
+    },
+    {
+        "nombre": "Chaleco asalto",
+        "ruta": "/reglas?seleccionado=Chaleco+asalto",
+        "tipo": "Invención"
+    },
+    {
+        "nombre": "Colector de energía",
+        "ruta": "/reglas?seleccionado=Colector+de+energía",
+        "tipo": "Invención"
+    },
+    {
+        "nombre": "Cubrefauces",
+        "ruta": "/reglas?seleccionado=Cubrefauces",
+        "tipo": "Invención"
+    },
+    {
+        "nombre": "Cubregarras",
+        "ruta": "/reglas?seleccionado=Cubregarras",
+        "tipo": "Invención"
+    },
+    {
+        "nombre": "Cubrepatas",
+        "ruta": "/reglas?seleccionado=Cubrepatas",
+        "tipo": "Invención"
+    },
+    {
+        "nombre": "Cubrepuños",
+        "ruta": "/reglas?seleccionado=Cubrepuños",
+        "tipo": "Invención"
+    },
+    {
+        "nombre": "Cubresuelos",
+        "ruta": "/reglas?seleccionado=Cubresuelos",
+        "tipo": "Invención"
+    },
+    {
+        "nombre": "Gafa protectora",
+        "ruta": "/reglas?seleccionado=Gafa+protectora",
+        "tipo": "Invención"
+    },
+    {
+        "nombre": "Gafas de Visión de Sableye",
+        "ruta": "/reglas?seleccionado=Gafas+de+Visión+de+Sableye",
+        "tipo": "Invención"
+    },
+    {
+        "nombre": "Guantes de boxeo",
+        "ruta": "/reglas?seleccionado=Guantes+de+boxeo",
+        "tipo": "Invención"
+    },
+    {
+        "nombre": "Pieza de armadura ligera",
+        "ruta": "/reglas?seleccionado=Pieza+de+armadura+ligera",
+        "tipo": "Invención"
+    },
+    {
+        "nombre": "Pieza de armadura pesada",
+        "ruta": "/reglas?seleccionado=Pieza+de+armadura+pesada",
+        "tipo": "Invención"
+    },
+    {
+        "nombre": "Replicar amuleto",
+        "ruta": "/reglas?seleccionado=Replicar+amuleto",
+        "tipo": "Invención"
+    },
+    {
+        "nombre": "Ropas térmicas",
+        "ruta": "/reglas?seleccionado=Ropas+térmicas",
+        "tipo": "Invención"
+    },
+    {
+        "nombre": "Supertapones",
+        "ruta": "/reglas?seleccionado=Supertapones",
+        "tipo": "Invención"
+    },
+    {
+        "nombre": "Traje de Alas de Noivern",
+        "ruta": "/reglas?seleccionado=Traje+de+Alas+de+Noivern",
+        "tipo": "Invención"
+    },
+    {
+        "nombre": "Traje de buzo",
+        "ruta": "/reglas?seleccionado=Traje+de+buzo",
+        "tipo": "Invención"
+    },
+    {
+        "nombre": "Paquetes",
+        "ruta": "/reglas?seleccionado=Paquetes",
+        "tipo": "Tipo de Invención"
+    },
+    {
+        "nombre": "Cápsulas",
+        "ruta": "/reglas?seleccionado=Cápsulas",
+        "tipo": "Tipo de Invención"
+    },
+    {
+        "nombre": "Herramientas",
+        "ruta": "/reglas?seleccionado=Herramientas",
+        "tipo": "Tipo de Invención"
+    },
+    {
+        "nombre": "Equipo",
+        "ruta": "/reglas?seleccionado=Equipo",
+        "tipo": "Tipo de Invención"
+    },
+    {
+        "nombre": "Invenciones",
+        "ruta": "/reglas?seleccionado=Invenciones",
+        "tipo": "Invención"
+    },
+    {
+        "nombre": "Redondeo",
+        "ruta": "/reglas?seleccionado=Redondeo",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Las Escenas",
+        "ruta": "/reglas?seleccionado=Las+Escenas",
+        "tipo": "Término"
+    },
+    {
+        "nombre": "Las Acciones",
+        "ruta": "/reglas?seleccionado=Las+Acciones",
+        "tipo": "Término"
+    },
+    {
+        "nombre": "Las Estadísticas",
+        "ruta": "/reglas?seleccionado=Las+Estadísticas",
+        "tipo": "Término"
+    },
+    {
+        "nombre": "Criatura",
+        "ruta": "/reglas?seleccionado=Criatura",
+        "tipo": "Término"
+    },
+    {
+        "nombre": "Tiradas Naturales",
+        "ruta": "/reglas?seleccionado=Tiradas+Naturales",
+        "tipo": "Término"
+    },
+    {
+        "nombre": "Pruebas de d20",
+        "ruta": "/reglas?seleccionado=Pruebas+de+d20",
+        "tipo": "Término"
+    },
+    {
+        "nombre": "Dificultad de una Tirada (CD)",
+        "ruta": "/reglas?seleccionado=Dificultad+de+una+Tirada+(CD)",
+        "tipo": "Término"
+    },
+    {
+        "nombre": "Tipos de Pruebas de d20",
+        "ruta": "/reglas?seleccionado=Tipos+de+Pruebas+de+d20",
+        "tipo": "Término"
+    },
+    {
+        "nombre": "Nivel",
+        "ruta": "/reglas?seleccionado=Nivel",
+        "tipo": "Término"
+    },
+    {
+        "nombre": "Bono de Habilidad",
+        "ruta": "/reglas?seleccionado=Bono+de+Habilidad",
+        "tipo": "Término"
+    },
+    {
+        "nombre": "Grado de Habilidad",
+        "ruta": "/reglas?seleccionado=Grado+de+Habilidad",
+        "tipo": "Término"
+    },
+    {
+        "nombre": "Tiradas de Habilidad Habituales",
+        "ruta": "/reglas?seleccionado=Tiradas+de+Habilidad+Habituales",
+        "tipo": "Término"
+    },
+    {
+        "nombre": "Ventaja y Desventaja",
+        "ruta": "/reglas?seleccionado=Ventaja+y+Desventaja",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Tiradas Enfrentadas",
+        "ruta": "/reglas?seleccionado=Tiradas+Enfrentadas",
+        "tipo": "Término"
+    },
+    {
+        "nombre": "Tiradas en Grupo",
+        "ruta": "/reglas?seleccionado=Tiradas+en+Grupo",
+        "tipo": "Término"
+    },
+    {
+        "nombre": "Trasfondo",
+        "ruta": "/reglas?seleccionado=Trasfondo",
+        "tipo": "Término"
+    },
+    {
+        "nombre": "Clase",
+        "ruta": "/reglas?seleccionado=Clase",
+        "tipo": "Término"
+    },
+    {
+        "nombre": "Puntos de Vida",
+        "ruta": "/reglas?seleccionado=Puntos+de+Vida",
+        "tipo": "Término"
+    },
+    {
+        "nombre": "Vitalidad",
+        "ruta": "/reglas?seleccionado=Vitalidad",
+        "tipo": "Término"
+    },
+    {
+        "nombre": "Puntos de Poder (PP)",
+        "ruta": "/reglas?seleccionado=Puntos+de+Poder+(PP)",
+        "tipo": "Término"
+    },
+    {
+        "nombre": "Clase de Armadura (CA)",
+        "ruta": "/reglas?seleccionado=Clase+de+Armadura+(CA)",
+        "tipo": "Término"
+    },
+    {
+        "nombre": "Reentrenar (Personaje)",
+        "ruta": "/reglas?seleccionado=Reentrenar+(Personaje)",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Movimientos",
+        "ruta": "/reglas?seleccionado=Movimientos",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Mejorar el Daño Base",
+        "ruta": "/reglas?seleccionado=Mejorar+el+Daño+Base",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Los Golpes Críticos",
+        "ruta": "/reglas?seleccionado=Los+Golpes+Críticos",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Bonus de Ataque por Mismo Tipo (STAB)",
+        "ruta": "/reglas?seleccionado=Bonus+de+Ataque+por+Mismo+Tipo+(STAB)",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Movimientos Fuera de Combate",
+        "ruta": "/reglas?seleccionado=Movimientos+Fuera+de+Combate",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Etiquetas",
+        "ruta": "/reglas?seleccionado=Etiquetas",
+        "tipo": "Término"
+    },
+    {
+        "nombre": "Habilidades",
+        "ruta": "/reglas?seleccionado=Habilidades",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Habilidades Comunes",
+        "ruta": "/reglas?seleccionado=Habilidades+Comunes",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Habilidades Legendarias",
+        "ruta": "/reglas?seleccionado=Habilidades+Legendarias",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Habilidades de Transformación",
+        "ruta": "/reglas?seleccionado=Habilidades+de+Transformación",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Dotes",
+        "ruta": "/reglas?seleccionado=Dotes",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Naturalmente Bueno",
+        "ruta": "/reglas?seleccionado=Naturalmente+Bueno",
+        "tipo": "Término"
+    },
+    {
+        "nombre": "Nivel mínimo de aparición",
+        "ruta": "/reglas?seleccionado=Nivel+mínimo+de+aparición",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Movimientos por nivel",
+        "ruta": "/reglas?seleccionado=Movimientos+por+nivel",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Movimientos Enseñables",
+        "ruta": "/reglas?seleccionado=Movimientos+Enseñables",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Naturaleza",
+        "ruta": "/reglas?seleccionado=Naturaleza",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Progresión Pokémon",
+        "ruta": "/reglas?seleccionado=Progresión+Pokémon",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Aprender Movimientos",
+        "ruta": "/reglas?seleccionado=Aprender+Movimientos",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Mejoras de Daño (Pokémon)",
+        "ruta": "/reglas?seleccionado=Mejoras+de+Daño+(Pokémon)",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Mejoras de Estadísticas (Pokémon)",
+        "ruta": "/reglas?seleccionado=Mejoras+de+Estadísticas+(Pokémon)",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Reentrenar (Pokémon)",
+        "ruta": "/reglas?seleccionado=Reentrenar+(Pokémon)",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Evolución",
+        "ruta": "/reglas?seleccionado=Evolución",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Amistad",
+        "ruta": "/reglas?seleccionado=Amistad",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Capturar",
+        "ruta": "/reglas?seleccionado=Capturar",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Restaurar fósiles",
+        "ruta": "/reglas?seleccionado=Restaurar+fósiles",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Reproducción Pokémon. Eclosión de huevos",
+        "ruta": "/reglas?seleccionado=Reproducción+Pokémon.+Eclosión+de+huevos",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Pokémon Variocolor",
+        "ruta": "/reglas?seleccionado=Pokémon+Variocolor",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Poké-Monturas",
+        "ruta": "/reglas?seleccionado=Poké-Monturas",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Megaevolución",
+        "ruta": "/reglas?seleccionado=Megaevolución",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Regresiones Primigenias",
+        "ruta": "/reglas?seleccionado=Regresiones+Primigenias",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Movimientos Z",
+        "ruta": "/reglas?seleccionado=Movimientos+Z",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Dinamax y Gigamax",
+        "ruta": "/reglas?seleccionado=Dinamax+y+Gigamax",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Teracristalización",
+        "ruta": "/reglas?seleccionado=Teracristalización",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "La Iniciativa",
+        "ruta": "/reglas?seleccionado=La+Iniciativa",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Turnos en el combate",
+        "ruta": "/reglas?seleccionado=Turnos+en+el+combate",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Preparar Acción",
+        "ruta": "/reglas?seleccionado=Preparar+Acción",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Dar órdenes",
+        "ruta": "/reglas?seleccionado=Dar+órdenes",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Cambiar de Pokémon",
+        "ruta": "/reglas?seleccionado=Cambiar+de+Pokémon",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Retirar a un Pokémon",
+        "ruta": "/reglas?seleccionado=Retirar+a+un+Pokémon",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Sacar a un Pokémon",
+        "ruta": "/reglas?seleccionado=Sacar+a+un+Pokémon",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Tipos de Ataques",
+        "ruta": "/reglas?seleccionado=Tipos+de+Ataques",
+        "tipo": "Término"
+    },
+    {
+        "nombre": "Usar una cuadrícula",
+        "ruta": "/reglas?seleccionado=Usar+una+cuadrícula",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Recibir daño",
+        "ruta": "/reglas?seleccionado=Recibir+daño",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "La Tabla de Tipos",
+        "ruta": "/reglas?seleccionado=La+Tabla+de+Tipos",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Muerte",
+        "ruta": "/reglas?seleccionado=Muerte",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Cobertura",
+        "ruta": "/reglas?seleccionado=Cobertura",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Escudo y Puntos de Escudo",
+        "ruta": "/reglas?seleccionado=Escudo+y+Puntos+de+Escudo",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Concursos Pokémon",
+        "ruta": "/reglas?seleccionado=Concursos+Pokémon",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Tipos de Concursos",
+        "ruta": "/reglas?seleccionado=Tipos+de+Concursos",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Orden en los Concursos",
+        "ruta": "/reglas?seleccionado=Orden+en+los+Concursos",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Ganar Puntos de Exhibición",
+        "ruta": "/reglas?seleccionado=Ganar+Puntos+de+Exhibición",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Centro de Atención",
+        "ruta": "/reglas?seleccionado=Centro+de+Atención",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Bonos y Penalizadores en Concursos",
+        "ruta": "/reglas?seleccionado=Bonos+y+Penalizadores+en+Concursos",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Bonos en Concursos",
+        "ruta": "/reglas?seleccionado=Bonos+en+Concursos",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Penalizadores en Concursos",
+        "ruta": "/reglas?seleccionado=Penalizadores+en+Concursos",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Poké Balls",
+        "ruta": "/reglas?seleccionado=Poké+Balls",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Medicinas",
+        "ruta": "/reglas?seleccionado=Medicinas",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Plantas y Bayas",
+        "ruta": "/reglas?seleccionado=Plantas+y+Bayas",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Potenciadores",
+        "ruta": "/reglas?seleccionado=Potenciadores",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Comida",
+        "ruta": "/reglas?seleccionado=Comida",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Objetos Evolutivos",
+        "ruta": "/reglas?seleccionado=Objetos+Evolutivos",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Máquinas Técnicas",
+        "ruta": "/reglas?seleccionado=Máquinas+Técnicas",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Amuletos",
+        "ruta": "/reglas?seleccionado=Amuletos",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Equipo",
+        "ruta": "/reglas?seleccionado=Equipo",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Objetos de Entrenador",
+        "ruta": "/reglas?seleccionado=Objetos+de+Entrenador",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Armas",
+        "ruta": "/reglas?seleccionado=Armas",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Fósiles",
+        "ruta": "/reglas?seleccionado=Fósiles",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Objetos Míticos",
+        "ruta": "/reglas?seleccionado=Objetos+Míticos",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Fatiga",
+        "ruta": "/reglas?seleccionado=Fatiga",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Cargar Peso",
+        "ruta": "/reglas?seleccionado=Cargar+Peso",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Velocidades",
+        "ruta": "/reglas?seleccionado=Velocidades",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Excavado",
+        "ruta": "/reglas?seleccionado=Excavado",
+        "tipo": "Velocidad"
+    },
+    {
+        "nombre": "Vuelo",
+        "ruta": "/reglas?seleccionado=Vuelo",
+        "tipo": "Velocidad"
+    },
+    {
+        "nombre": "Nado",
+        "ruta": "/reglas?seleccionado=Nado",
+        "tipo": "Velocidad"
+    },
+    {
+        "nombre": "Levitado",
+        "ruta": "/reglas?seleccionado=Levitado",
+        "tipo": "Velocidad"
+    },
+    {
+        "nombre": "Terreno difícil",
+        "ruta": "/reglas?seleccionado=Terreno+difícil",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Correr",
+        "ruta": "/reglas?seleccionado=Correr",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Salto",
+        "ruta": "/reglas?seleccionado=Salto",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Oscuridad e Iluminación",
+        "ruta": "/reglas?seleccionado=Oscuridad+e+Iluminación",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Visibilidad",
+        "ruta": "/reglas?seleccionado=Visibilidad",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Agarrar",
+        "ruta": "/reglas?seleccionado=Agarrar",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Empujar",
+        "ruta": "/reglas?seleccionado=Empujar",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Daño por caída",
+        "ruta": "/reglas?seleccionado=Daño+por+caída",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Mantener la respiración",
+        "ruta": "/reglas?seleccionado=Mantener+la+respiración",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Pokémon que no hacen caso",
+        "ruta": "/reglas?seleccionado=Pokémon+que+no+hacen+caso",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Reconocer un Huevo",
+        "ruta": "/reglas?seleccionado=Reconocer+un+Huevo",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Recordar indormación sobre un Pokémon",
+        "ruta": "/reglas?seleccionado=Recordar+indormación+sobre+un+Pokémon",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Regla variante: Hacer Cuidadosamente",
+        "ruta": "/reglas?seleccionado=Regla+variante:+Hacer+Cuidadosamente",
+        "tipo": "Regla variante"
+    },
+    {
+        "nombre": "Regla variante: Multiclase",
+        "ruta": "/reglas?seleccionado=Regla+variante:+Multiclase",
+        "tipo": "Regla variante"
+    },
+    {
+        "nombre": "Daño provocado por el ambiente",
+        "ruta": "/reglas?seleccionado=Daño+provocado+por+el+ambiente",
+        "tipo": "Regla de DJ"
+    },
+    {
+        "nombre": "Efectos ambientales",
+        "ruta": "/reglas?seleccionado=Efectos+ambientales",
+        "tipo": "Regla de DJ"
+    },
+    {
+        "nombre": "Lagos de Magma y volcanes",
+        "ruta": "/reglas?seleccionado=Lagos+de+Magma+y+volcanes",
+        "tipo": "Efecto ambiental"
+    },
+    {
+        "nombre": "Arenas movedizas",
+        "ruta": "/reglas?seleccionado=Arenas+movedizas",
+        "tipo": "Efecto ambiental"
+    },
+    {
+        "nombre": "Zonas repletas de Niebla",
+        "ruta": "/reglas?seleccionado=Zonas+repletas+de+Niebla",
+        "tipo": "Efecto ambiental"
+    },
+    {
+        "nombre": "Zonas repletas de Gas Venenoso",
+        "ruta": "/reglas?seleccionado=Zonas+repletas+de+Gas+Venenoso",
+        "tipo": "Efecto ambiental"
+    },
+    {
+        "nombre": "Zonas tenebrosas o malditas",
+        "ruta": "/reglas?seleccionado=Zonas+tenebrosas+o+malditas",
+        "tipo": "Efecto ambiental"
+    },
+    {
+        "nombre": "Región de Espacio raro",
+        "ruta": "/reglas?seleccionado=Región+de+Espacio+raro",
+        "tipo": "Efecto ambiental"
+    },
+    {
+        "nombre": "Región de Zona extraña",
+        "ruta": "/reglas?seleccionado=Región+de+Zona+extraña",
+        "tipo": "Efecto ambiental"
+    },
+    {
+        "nombre": "Región de Zona mágica",
+        "ruta": "/reglas?seleccionado=Región+de+Zona+mágica",
+        "tipo": "Efecto ambiental"
+    },
+    {
+        "nombre": "Mundo distorsión",
+        "ruta": "/reglas?seleccionado=Mundo+distorsión",
+        "tipo": "Efecto ambiental"
+    },
+    {
+        "nombre": "Puntos de Superioridad",
+        "ruta": "/reglas?seleccionado=Puntos+de+Superioridad",
+        "tipo": "Regla de DJ"
+    },
+    {
+        "nombre": "Pokémon esbirro",
+        "ruta": "/reglas?seleccionado=Pokémon+esbirro",
+        "tipo": "Regla de DJ"
+    },
+    {
+        "nombre": "Pokémon especiales",
+        "ruta": "/reglas?seleccionado=Pokémon+especiales",
+        "tipo": "Regla de DJ"
+    },
+    {
+        "nombre": "Transformaciones Pokémon",
+        "ruta": "/reglas?seleccionado=Transformaciones+Pokémon",
+        "tipo": "Pokémon especiales"
+    },
+    {
+        "nombre": "Pokémon Oscuros",
+        "ruta": "/reglas?seleccionado=Pokémon+Oscuros",
+        "tipo": "Pokémon especiales"
+    },
+    {
+        "nombre": "Pokemon infundidos",
+        "ruta": "/reglas?seleccionado=Pokemon+infundidos",
+        "tipo": "Pokémon especiales"
+    },
+    {
+        "nombre": "Pokémon espectrales",
+        "ruta": "/reglas?seleccionado=Pokémon+espectrales",
+        "tipo": "Pokémon especiales"
+    },
+    {
+        "nombre": "Pokéconstructos",
+        "ruta": "/reglas?seleccionado=Pokéconstructos",
+        "tipo": "Pokémon especiales"
+    },
+    {
+        "nombre": "Pokémon quimera",
+        "ruta": "/reglas?seleccionado=Pokémon+quimera",
+        "tipo": "Pokémon especiales"
+    },
+    {
+        "nombre": "Pokémon robotizados",
+        "ruta": "/reglas?seleccionado=Pokémon+robotizados",
+        "tipo": "Pokémon especiales"
+    },
+    {
+        "nombre": "Experiencia para subir de nivel ",
+        "ruta": "/reglas?seleccionado=Experiencia+para+subir+de+nivel+",
+        "tipo": "Regla variante"
+    },
+    {
+        "nombre": "Idiomas",
+        "ruta": "/reglas?seleccionado=Idiomas",
+        "tipo": "Regla variante"
+    },
+    {
+        "nombre": "Daño a objetos",
+        "ruta": "/reglas?seleccionado=Daño+a+objetos",
+        "tipo": "Regla variante"
+    },
+    {
+        "nombre": "Personajes simplificados",
+        "ruta": "/reglas?seleccionado=Personajes+simplificados",
+        "tipo": "Regla variante"
+    },
+    {
+        "nombre": "Daño doblemente efectivo",
+        "ruta": "/reglas?seleccionado=Daño+doblemente+efectivo",
+        "tipo": "Regla variante"
     }
 ]
