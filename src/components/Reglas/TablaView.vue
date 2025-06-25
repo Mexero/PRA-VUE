@@ -40,7 +40,7 @@ function descripcionAcortado(dato) {
                 <tr v-for="(fila, index) in datos" :key="index" @click="emit('seleccionar', fila)" :class="{
                     activo:
                         seleccionado &&
-                        seleccionado.Nombre === fila[clavesColumnas[0]],
+                        seleccionado.nombre === fila[clavesColumnas[0]],
                 }">
                     <td v-for="columna of clavesColumnas" v-html="mostrarDato(fila[columna], columna)"></td>
                 </tr>
@@ -84,30 +84,39 @@ thead {
     width: 100%;
     font-size: 14px;
     color: var(--color-texto);
+    table-layout: fixed;
 }
 
 .tabla th,
 .tabla td {
-    font-size: 18px;
-    padding: 6px 0px 6px 10px;
+    padding: 6px 10px;
     text-align: left;
     border-bottom: 1px solid #e5e7eb;
+    font-size: 14px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 .tabla th {
-    min-width: 120px;
-    padding: 10px 5px;
+    font-weight: bold;
 }
 
 .tabla th:nth-child(1),
-.tabla th:nth-child(2) {
-    width: 30%;
+.tabla td:nth-child(1) {
+    width: 25%;
+}
+
+.tabla th:nth-child(2),
+.tabla td:nth-child(2) {
+    width: 15%;
 }
 
 .tabla th:nth-child(3),
-.tabla th:nth-child(4) {
-    width: 25%;
+.tabla td:nth-child(3) {
+    width: 50%;
 }
+
 
 th img {
     transform: translateY(2px);

@@ -3,16 +3,11 @@
 import { debounce } from 'lodash';
 import { ref, watch } from 'vue';
 
-import Slider from '@/components/sliderView.vue'
-
 const props = defineProps([
     'datosCargados',
-    'tipos',
-    'filtroTipos',
-    'filtroPrerrequisitos',
-    'filtroNivelMin',
-    'filtroNivelMax',
-    'filtroNombre'
+    'tiposComunes',
+    'tiposMenores',
+    'filtroTipo'
 ]);
 
 const emit = defineEmits(['actualizarFiltros', 'limpiarFiltros']);
@@ -48,7 +43,7 @@ const emitirNombreDebounced = debounce((valor) => {
 
 //Tipos
 function toggleTipo(event, tipo) {
-    const seleccionadas = new Set(props.filtroTipos);
+    const seleccionadas = new Set(props.filtroTipo);
     if (event.target.checked) {
         seleccionadas.add(tipo);
     } else {
@@ -56,36 +51,6 @@ function toggleTipo(event, tipo) {
     }
     emit('actualizarFiltros', { clave: 'tipos', valor: Array.from(seleccionadas) });
 }
-
-//Precios
-function emitirPrecios(valorMin, valorMax) {
-    nivelMin.value = valorMin;
-    nivelMax.value = valorMax;
-    actualizarFiltros('nivelMin', nivelMin.value);
-    actualizarFiltros('nivelMax', nivelMax.value);
-}
-
-// =============== DATOS SLIDER ================
-const allowedValues = [
-    0, 6, 9, 11, 12, 18
-];
-
-const nivelMin = ref(allowedValues[0]);
-const nivelMax = ref(allowedValues[allowedValues.length - 1]);
-
-// =============== HABLAR SLIDER ================
-let limpiarSliderFlag = ref(false);
-
-watch(
-    () => [props.filtroNivelMin, props.filtroNivelMax],
-    ([min, max]) => {
-        if (typeof max !== "number" && !min && !max) {
-            limpiarSliderFlag.value = !limpiarSliderFlag.value;
-        }
-    }
-);
-
-
 </script>
 
 <template>
@@ -106,32 +71,26 @@ watch(
 
                     <button @click="limpiarFiltros">Limpiar filtros</button>
 
-                    <div id="filtroPrerrequisitos">
-                        <h3>Prerrequisitos</h3>
-                        <div>
-                            <label v-for="opcion in ['Si', 'No', 'Todos']" :key="opcion">
-                                <input type="radio" name="tienePrerrequisitos" :value="opcion"
-                                    :checked="filtroPrerrequisitos === opcion"
-                                    @change="actualizarFiltros('prerrequisitos', opcion)" />
-                                {{ opcion }}
-                            </label>
-                        </div>
-                    </div>
                     <div id="filtroTipos">
-                        <h3>Tipos</h3>
+                        <h3>Filtros comunes</h3>
                         <div>
-                            <label v-for="tipo in tipos" :key="tipo">
-                                <input type="checkbox" :value="tipo" :checked="filtroTipos.includes(tipo)"
+                            <label v-for="tipo in tiposComunes" :key="tipo">
+                                <input type="checkbox" :value="tipo" :checked="filtroTipo.includes(tipo)"
                                     @change="event => toggleTipo(event, tipo)" />
                                 {{ tipo }}
                             </label>
                         </div>
                     </div>
-
-                    <h3>Nivel</h3>
-
-                    <Slider :allowedValues="allowedValues" :limpiar="limpiarSliderFlag"
-                        @actualizarMinMax="emitirPrecios" />
+                    <div id="filtroTipos">
+                        <h3>Filtros poco comunes</h3>
+                        <div>
+                            <label v-for="tipo in tiposMenores" :key="tipo">
+                                <input type="checkbox" :value="tipo" :checked="filtroTipo.includes(tipo)"
+                                    @change="event => toggleTipo(event, tipo)" />
+                                {{ tipo }}
+                            </label>
+                        </div>
+                    </div>
                 </div>
             </div>
         </transition>
@@ -149,15 +108,10 @@ watch(
     flex-direction: column;
 }
 
-#filtroPrerrequisitos div {
-    gap: 8px;
-    flex-wrap: wrap;
-}
-
 #filtroTipos div {
     margin: 10px 5px;
     display: flex;
-    gap: 40px;
+    gap: 20px;
     flex-wrap: wrap;
 }
 
@@ -172,12 +126,6 @@ input[type="text"] {
 input[type="text"]:focus {
     border-color: #007bff;
     box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.2);
-}
-
-#filtroPrerrequisitos div {
-    padding: 8px 0;
-    display: flex;
-    gap: 20px;
 }
 
 .filtros button {
@@ -262,8 +210,7 @@ input[type="text"]:focus {
         margin: 10px 0 0 0;
     }
 
-    #filtroTipos div,
-    #filtroPrerrequisitos div {
+    #filtroTipos div {
         grid-template-columns: repeat(2, auto) !important;
         gap: 8px;
         flex-wrap: wrap;

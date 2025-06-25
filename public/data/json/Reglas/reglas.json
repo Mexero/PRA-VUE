@@ -2,11 +2,9 @@
     {
         "nombre": "“¡Ve allí!”",
         "tipos": [
-            "Entrenador",
-            "Clase"
-        ],
-        "subtipos": [
-            "Orden de Entrenador"
+            "Orden de Entrenador",
+            "Clase",
+            "Entrenador"
         ],
         "descripciones": [
             "Cuando usas esta orden sobre un Pokémon, este puede moverse una cantidad de metros igual a la mitad de tu Bono de Entrenador automáticamente.",
@@ -16,11 +14,9 @@
     {
         "nombre": "“¡Muévete con cuidado!”",
         "tipos": [
-            "Entrenador",
-            "Clase"
-        ],
-        "subtipos": [
-            "Orden de Entrenador"
+            "Orden de Entrenador",
+            "Clase",
+            "Entrenador"
         ],
         "descripciones": [
             "Cuando usas esta orden sobre un Pokémon, esta no provoca Ataques de Oportunidad y puede moverse por espacio ocupado por criaturas rivales como Terreno Difícil siempre que no acabe su turno en este.",
@@ -30,11 +26,9 @@
     {
         "nombre": "“¡Atento a sus movimientos!”",
         "tipos": [
-            "Entrenador",
-            "Clase"
-        ],
-        "subtipos": [
-            "Orden de Entrenador"
+            "Orden de Entrenador",
+            "Clase",
+            "Entrenador"
         ],
         "descripciones": [
             "Avisas al Pokémon sobre el que usas la orden de los ataques que podrían hacerle. La próxima vez que el Pokémon haga una tirada de Salvación de Fuerza, Agilidad o Resistencia, tira un Dado de Orden y añádelo al resultado.",
@@ -44,11 +38,9 @@
     {
         "nombre": "“¡En el punto débil!”",
         "tipos": [
-            "Entrenador",
-            "Clase"
-        ],
-        "subtipos": [
-            "Orden de Entrenador"
+            "Orden de Entrenador",
+            "Clase",
+            "Entrenador"
         ],
         "descripciones": [
             "Señalas en lugar donde el Pokémon sobre el que aplicas la orden debe golpear a una criatura. El Rango de Crítico de tu Pokémon contra dicha criatura se vuelve la mitad de tu Bono de Entrenador hasta el final de este turno, independientemente del que fuese.",
@@ -58,11 +50,9 @@
     {
         "nombre": "“¡No permitas que te afecte!”",
         "tipos": [
-            "Entrenador",
-            "Clase"
-        ],
-        "subtipos": [
-            "Orden de Entrenador"
+            "Orden de Entrenador",
+            "Clase",
+            "Entrenador"
         ],
         "descripciones": [
             "Recuerdas al Pokémon sobre el que usas de orden que juntos podéis soportar cualquier cosa. La próxima vez que el Pokémon haga una tirada de Salvación de Espíritu, tira un Dado de Orden y añádelo al resultado.",
@@ -72,11 +62,9 @@
     {
         "nombre": "“¡Mándalo a volar!”",
         "tipos": [
-            "Entrenador",
-            "Clase"
-        ],
-        "subtipos": [
-            "Orden de Entrenador"
+            "Orden de Entrenador",
+            "Clase",
+            "Entrenador"
         ],
         "descripciones": [
             "Indicas a tu Pokémon que empuje a una criatura con todas sus fuerzas. La próxima vez antes del final de este turno que el Pokémon golpee con una Tirada de Ataque cuerpo a cuerpo a dicha criatura, si la Tirada Natural alcanza tu Rango de Orden, la criatura es empujada 1 metro.",
@@ -86,11 +74,9 @@
     {
         "nombre": "“¡Distráelo!”",
         "tipos": [
-            "Entrenador",
-            "Clase"
-        ],
-        "subtipos": [
-            "Orden de Entrenador"
+            "Orden de Entrenador",
+            "Clase",
+            "Entrenador"
         ],
         "descripciones": [
             "Indicas a tu Pokémon como distraer a una criatura. Hasta el principio de tu próximo turno y mientras tu Pokémon esté a 1 metro de la criatura, la próxima tirada de Ataque que otra criatura haga contra la primera se hace en Ventaja.",
@@ -100,11 +86,9 @@
     {
         "nombre": "“¡No dejes que ataque a tus compañeros!”",
         "tipos": [
-            "Entrenador",
-            "Clase"
-        ],
-        "subtipos": [
-            "Orden de Entrenador"
+            "Orden de Entrenador",
+            "Clase",
+            "Entrenador"
         ],
         "descripciones": [
             "Indicas a tu Pokémon que debe molestar a una criatura para que no pueda atacar a los demás. Hasta el principio de tu próximo turno, mientras tu Pokémon esté a 1 metro de la Criatura, esta tiene Desventaja en Tiradas de Ataque contra todas las demás criaturas que no sean tu Pokémon.",
@@ -114,11 +98,9 @@
     {
         "nombre": "“¡Agárralo!”",
         "tipos": [
-            "Entrenador",
-            "Clase"
-        ],
-        "subtipos": [
-            "Orden de Entrenador"
+            "Orden de Entrenador",
+            "Clase",
+            "Entrenador"
         ],
         "descripciones": [
             "Indicas a tu Pokémon que realice un agarre contra la criatura contra la que va a usar un Movimiento. La próxima vez que tu Pokémon golpee con una Tirada de Ataque cuerpo a cuerpo a la criatura, si la Tirada Natural alcanza tu Rango de Orden y tu Pokémon tiene una forma de hacerlo, la agarra.",
@@ -128,11 +110,9 @@
     {
         "nombre": "“¡Desde atrás!”",
         "tipos": [
-            "Entrenador",
-            "Clase"
-        ],
-        "subtipos": [
-            "Orden de Entrenador"
+            "Orden de Entrenador",
+            "Clase",
+            "Entrenador"
         ],
         "descripciones": [
             "Indicas a tu Pokémon como golpear a una criatura sin acercarse demasiado. El rango de los Movimientos cuyo rango tiene una cantidad de metros estos aumentan en una cantidad igual a tu Bono de Entrenador.",
@@ -142,11 +122,9 @@
     {
         "nombre": "“¡Derríbalo!”",
         "tipos": [
-            "Entrenador",
-            "Clase"
-        ],
-        "subtipos": [
-            "Orden de Entrenador"
+            "Orden de Entrenador",
+            "Clase",
+            "Entrenador"
         ],
         "descripciones": [
             "Indicas a tu Pokémon como golpear a una criatura de forma que esta caiga al suelo. La próxima vez antes del final de este turno que el Pokémon golpee con una Tirada de Ataque cuerpo a cuerpo a dicha criatura, si la Tirada Natural alcanza tu Rango de Orden, la criatura cae tumbada.",
@@ -156,11 +134,9 @@
     {
         "nombre": "“¡Créales una apertura!”",
         "tipos": [
-            "Entrenador",
-            "Clase"
-        ],
-        "subtipos": [
-            "Orden de Entrenador"
+            "Orden de Entrenador",
+            "Clase",
+            "Entrenador"
         ],
         "descripciones": [
             "Indicas a tu Pokémon que use un proyectil para molestar a una criatura. La próxima vez antes del final de este turno que el Pokémon golpee con una Tirada de Ataque a rango a dicha criatura, si la Tirada Natural alcanza tu Rango de Orden, la próxima Tirada de Ataque que se haga contra esa criatura antes del principio de tu próximo turno se hace en Ventaja.",
@@ -170,11 +146,9 @@
     {
         "nombre": "¡Puedes con esto y más!”",
         "tipos": [
-            "Entrenador",
-            "Clase"
-        ],
-        "subtipos": [
-            "Orden de Entrenador"
+            "Orden de Entrenador",
+            "Clase",
+            "Entrenador"
         ],
         "descripciones": [
             "Animas a tu Pokémon a seguir luchando y aguantar un poco más. Este gana una cantidad de Puntos de Escudo igual a tu Bono de Entrenador más una tirada de tu Dado de Orden.",
@@ -184,11 +158,9 @@
     {
         "nombre": "“¡Haz un barrido!”",
         "tipos": [
-            "Entrenador",
-            "Clase"
-        ],
-        "subtipos": [
-            "Orden de Entrenador"
+            "Orden de Entrenador",
+            "Clase",
+            "Entrenador"
         ],
         "descripciones": [
             "Indicas a tu Pokémon que golpee haciendo un barrido. La próxima vez en este turno que tu Pokémon haga daño con un Movimiento que hace una Tirada de Ataque y deja inconsciente a una criatura, puedes hacer que redirija el daño sobrante a una criatura a menos de 1 metro de la que ha caído debilitada si la Tirada de Ataque la hubiera golpeado.",
@@ -198,11 +170,9 @@
     {
         "nombre": "“¡Ralentízalo!”",
         "tipos": [
-            "Entrenador",
-            "Clase"
-        ],
-        "subtipos": [
-            "Orden de Entrenador"
+            "Orden de Entrenador",
+            "Clase",
+            "Entrenador"
         ],
         "descripciones": [
             "Indicas a tu Pokémon que ralentice a una criatura para que no se le escape. La próxima vez antes del final de este turno que el Pokémon golpee con una Tirada de Ataque a dicha criatura, si la Tirada Natural alcanza tu Rango de Orden, la criatura reduce todas sus velocidades en una cantidad igual a la mitad de tu Bono de Entrenador.",
@@ -212,11 +182,9 @@
     {
         "nombre": "“¡Bloquea su vista”",
         "tipos": [
-            "Entrenador",
-            "Clase"
-        ],
-        "subtipos": [
-            "Orden de Entrenador"
+            "Orden de Entrenador",
+            "Clase",
+            "Entrenador"
         ],
         "descripciones": [
             "Indicas a tu Pokémon que bloquee la visibilidad de una criatura con uno de sus Movimientos. La próxima vez antes del final de este turno que el Pokémon golpee con una Tirada de Ataque a dicha criatura, si la Tirada Natural alcanza tu Rango de Orden, esta gana 1 Nivel de Cegado.",
@@ -226,12 +194,10 @@
     {
         "nombre": "¡Nada puede dañarte!",
         "tipos": [
-            "Entrenador",
+            "Orden de Entrenador",
             "Clase",
-            "Subclase"
-        ],
-        "subtipos": [
-            "Orden de Entrenador"
+            "Subclase",
+            "Entrenador"
         ],
         "origen": "Especialista de tipo: Acero",
         "descripciones": [
@@ -242,12 +208,10 @@
     {
         "nombre": "¡Deja los problemas fluir!",
         "tipos": [
-            "Entrenador",
+            "Orden de Entrenador",
             "Clase",
-            "Subclase"
-        ],
-        "subtipos": [
-            "Orden de Entrenador"
+            "Subclase",
+            "Entrenador"
         ],
         "origen": "Especialista de tipo: Agua",
         "descripciones": [
@@ -258,12 +222,10 @@
     {
         "nombre": "“Déjalos pegados”",
         "tipos": [
-            "Entrenador",
+            "Orden de Entrenador",
             "Clase",
-            "Subclase"
-        ],
-        "subtipos": [
-            "Orden de Entrenador"
+            "Subclase",
+            "Entrenador"
         ],
         "origen": "Especialista de tipo: Bicho",
         "descripciones": [
@@ -274,12 +236,10 @@
     {
         "nombre": "“¡Destrúyelos!”",
         "tipos": [
-            "Entrenador",
+            "Orden de Entrenador",
             "Clase",
-            "Subclase"
-        ],
-        "subtipos": [
-            "Orden de Entrenador"
+            "Subclase",
+            "Entrenador"
         ],
         "origen": "Especialista de tipo: Dragón",
         "descripciones": [
@@ -290,12 +250,10 @@
     {
         "nombre": "¡Aumenta tu voltaje!",
         "tipos": [
-            "Entrenador",
+            "Orden de Entrenador",
             "Clase",
-            "Subclase"
-        ],
-        "subtipos": [
-            "Orden de Entrenador"
+            "Subclase",
+            "Entrenador"
         ],
         "origen": "Especialista de tipo: Eléctrico",
         "descripciones": [
@@ -306,12 +264,10 @@
     {
         "nombre": "¡Agota su espíritu!",
         "tipos": [
-            "Entrenador",
+            "Orden de Entrenador",
             "Clase",
-            "Subclase"
-        ],
-        "subtipos": [
-            "Orden de Entrenador"
+            "Subclase",
+            "Entrenador"
         ],
         "origen": "Especialista de tipo: Fantasma",
         "descripciones": [
@@ -322,12 +278,10 @@
     {
         "nombre": "¡Arde como tu espíritu!",
         "tipos": [
-            "Entrenador",
+            "Orden de Entrenador",
             "Clase",
-            "Subclase"
-        ],
-        "subtipos": [
-            "Orden de Entrenador"
+            "Subclase",
+            "Entrenador"
         ],
         "origen": "Especialista de tipo: Fuego",
         "descripciones": [
@@ -338,12 +292,10 @@
     {
         "nombre": "¡Demuéstrales tu belleza!",
         "tipos": [
-            "Entrenador",
+            "Orden de Entrenador",
             "Clase",
-            "Subclase"
-        ],
-        "subtipos": [
-            "Orden de Entrenador"
+            "Subclase",
+            "Entrenador"
         ],
         "origen": "Especialista de tipo: Hada",
         "descripciones": [
@@ -354,12 +306,10 @@
     {
         "nombre": "¡Congélalo todo!",
         "tipos": [
-            "Entrenador",
+            "Orden de Entrenador",
             "Clase",
-            "Subclase"
-        ],
-        "subtipos": [
-            "Orden de Entrenador"
+            "Subclase",
+            "Entrenador"
         ],
         "origen": "Especialista de tipo: Hielo",
         "descripciones": [
@@ -370,12 +320,10 @@
     {
         "nombre": "¡Golpéalo en cadena!",
         "tipos": [
-            "Entrenador",
+            "Orden de Entrenador",
             "Clase",
-            "Subclase"
-        ],
-        "subtipos": [
-            "Orden de Entrenador"
+            "Subclase",
+            "Entrenador"
         ],
         "origen": "Especialista de tipo: Lucha",
         "descripciones": [
@@ -386,12 +334,10 @@
     {
         "nombre": "¡Eres puro potencial!",
         "tipos": [
-            "Entrenador",
+            "Orden de Entrenador",
             "Clase",
-            "Subclase"
-        ],
-        "subtipos": [
-            "Orden de Entrenador"
+            "Subclase",
+            "Entrenador"
         ],
         "origen": "Especialista de tipo: Normal",
         "descripciones": [
@@ -402,12 +348,10 @@
     {
         "nombre": "¡Drena sus energías",
         "tipos": [
-            "Entrenador",
+            "Orden de Entrenador",
             "Clase",
-            "Subclase"
-        ],
-        "subtipos": [
-            "Orden de Entrenador"
+            "Subclase",
+            "Entrenador"
         ],
         "origen": "Especialista de tipo: Planta",
         "descripciones": [
@@ -418,12 +362,10 @@
     {
         "nombre": "¡Usa el poder de tu psique!",
         "tipos": [
-            "Entrenador",
+            "Orden de Entrenador",
             "Clase",
-            "Subclase"
-        ],
-        "subtipos": [
-            "Orden de Entrenador"
+            "Subclase",
+            "Entrenador"
         ],
         "origen": "Especialista de tipo: Psíquico",
         "descripciones": [
@@ -434,12 +376,10 @@
     {
         "nombre": "¡Invoca rocas!",
         "tipos": [
-            "Entrenador",
+            "Orden de Entrenador",
             "Clase",
-            "Subclase"
-        ],
-        "subtipos": [
-            "Orden de Entrenador"
+            "Subclase",
+            "Entrenador"
         ],
         "origen": "Especialista de tipo: Roca",
         "descripciones": [
@@ -450,12 +390,10 @@
     {
         "nombre": "¡Enséñales el verdadero terror!",
         "tipos": [
-            "Entrenador",
+            "Orden de Entrenador",
             "Clase",
-            "Subclase"
-        ],
-        "subtipos": [
-            "Orden de Entrenador"
+            "Subclase",
+            "Entrenador"
         ],
         "origen": "Especialista de tipo: Siniestro",
         "descripciones": [
@@ -466,12 +404,10 @@
     {
         "nombre": "¡Entiérralos!",
         "tipos": [
-            "Entrenador",
+            "Orden de Entrenador",
             "Clase",
-            "Subclase"
-        ],
-        "subtipos": [
-            "Orden de Entrenador"
+            "Subclase",
+            "Entrenador"
         ],
         "origen": "Especialista de tipo: Tierra",
         "descripciones": [
@@ -482,12 +418,10 @@
     {
         "nombre": "¡Hazlos enfermar!",
         "tipos": [
-            "Entrenador",
+            "Orden de Entrenador",
             "Clase",
-            "Subclase"
-        ],
-        "subtipos": [
-            "Orden de Entrenador"
+            "Subclase",
+            "Entrenador"
         ],
         "origen": "Especialista de tipo: Veneno",
         "descripciones": [
@@ -498,12 +432,10 @@
     {
         "nombre": "¡Sal volando!",
         "tipos": [
-            "Entrenador",
+            "Orden de Entrenador",
             "Clase",
-            "Subclase"
-        ],
-        "subtipos": [
-            "Orden de Entrenador"
+            "Subclase",
+            "Entrenador"
         ],
         "origen": "Especialista de tipo: Volador",
         "descripciones": [
@@ -514,12 +446,10 @@
     {
         "nombre": "“¡Impúlsate!”",
         "tipos": [
-            "Entrenador",
+            "Orden de Entrenador",
             "Clase",
-            "Subclase"
-        ],
-        "subtipos": [
-            "Orden de Entrenador"
+            "Subclase",
+            "Entrenador"
         ],
         "origen": "Manipulador de la inercia",
         "descripciones": [
@@ -530,11 +460,9 @@
     {
         "nombre": "A tope!",
         "tipos": [
-            "Entrenador",
-            "Clase"
-        ],
-        "subtipos": [
-            "Entrenamiento"
+            "Entrenamiento",
+            "Clase",
+            "Entrenador"
         ],
         "descripciones": [
             "Mientras uno de tus Pokémon tenga una de sus velocidades aumentadas gracias a uno de sus Movimientos o Habilidades, deja de provocar Ataques de Oportunidad y, cuando aumenta una de sus velocidades con un Movimiento o se mueve como parte de un Movimiento que usa, el daño base de sus Movimientos aumenta en una cantidad de dados igual a un tercio de tu Bono de Habilidad hasta el final de su próximo turno o hasta que inflijan daño con uno de estos."
@@ -543,11 +471,9 @@
     {
         "nombre": "¡Aguante sin par!",
         "tipos": [
-            "Entrenador",
-            "Clase"
-        ],
-        "subtipos": [
-            "Entrenamiento"
+            "Entrenamiento",
+            "Clase",
+            "Entrenador"
         ],
         "descripciones": [
             "Preparas a tus Pokémon mentalmente para resistir más. Cuando uno de tus Pokémon pasa una Tirada de Salvación provocada por un rival, este gana Puntos de Escudo iguales a tu Bono de Habilidad más tu Bono de Entrenador."
@@ -556,11 +482,9 @@
     {
         "nombre": "¡Potencia devastadora!",
         "tipos": [
-            "Entrenador",
-            "Clase"
-        ],
-        "subtipos": [
-            "Entrenamiento"
+            "Entrenamiento",
+            "Clase",
+            "Entrenador"
         ],
         "descripciones": [
             "Preparas a tus Pokémon para aprovechar sus ventajas para acabar con sus rivales. Cuando tus Pokémon hacen daño Súper efectivo con uno de sus Movimientos, añaden una cantidad de dados a este daño iguales a un tercio de tu Bono de Habilidad."
@@ -569,11 +493,9 @@
     {
         "nombre": "¡Aprovecha tu talento!",
         "tipos": [
-            "Entrenador",
-            "Clase"
-        ],
-        "subtipos": [
-            "Entrenamiento"
+            "Entrenamiento",
+            "Clase",
+            "Entrenador"
         ],
         "descripciones": [
             "Preparas a tus Pokémon para que puedan usar su talento. Cuando uno de tus Pokémon pasa una Tirada de Habilidad, gana Ventaja en la próxima Tirada de Habilidad que usa la misma Estadística que la Tirada de Habilidad que pasó hasta el final de la Escena."
@@ -582,11 +504,9 @@
     {
         "nombre": "¡Sigue el ritmo!",
         "tipos": [
-            "Entrenador",
-            "Clase"
-        ],
-        "subtipos": [
-            "Entrenamiento"
+            "Entrenamiento",
+            "Clase",
+            "Entrenador"
         ],
         "descripciones": [
             "Haces que tus Pokémon practiquen como no dar descanso a sus rivales. Por cada dos Movimientos usados por tus Pokémon cuyas Tiradas de Ataque hayan golpeado a Criaturas rivales desde el principio de la Escena o desde que salieron de la Poké Ball, estos añaden un dado al daño base de sus Movimientos, hasta un máximo de dados igual a la mitad de tu Bono de Habilidad."
@@ -595,11 +515,9 @@
     {
         "nombre": "¡Se intocable!",
         "tipos": [
-            "Entrenador",
-            "Clase"
-        ],
-        "subtipos": [
-            "Entrenamiento"
+            "Entrenamiento",
+            "Clase",
+            "Entrenador"
         ],
         "descripciones": [
             "Preparar a tus Pokémon para evadir y bloquear todos los golpes que les lanzan. Cuando una Tirada de Ataque realizada por una criatura rival a tus Pokémon falla contra estos, la CA de tu Pokémon aumenta en 1 hasta el final de su próximo turno."
@@ -608,11 +526,9 @@
     {
         "nombre": "¡Movimientos peligrosos!",
         "tipos": [
-            "Entrenador",
-            "Clase"
-        ],
-        "subtipos": [
-            "Entrenamiento"
+            "Entrenamiento",
+            "Clase",
+            "Entrenador"
         ],
         "descripciones": [
             "Haces que tus Pokémon practiquen como causar daño explosivo. Tus Pokémon añaden una cantidad de dados al daño base de sus golpes críticos iguales a un tercio de tu Bono de Entrenador."
@@ -621,11 +537,9 @@
     {
         "nombre": "¡Movimientos ineludibles!",
         "tipos": [
-            "Entrenador",
-            "Clase"
-        ],
-        "subtipos": [
-            "Entrenamiento"
+            "Entrenamiento",
+            "Clase",
+            "Entrenador"
         ],
         "descripciones": [
             "Indicas a tus Pokémon cómo hacer que no se puedan evadir sus Movimientos. Cuando una criatura pasa una Tirada de Salvación contra uno de los Movimientos que hace daño de tus Pokémon, esta recibe un cuarto del daño si no fuera a recibir daño por pasarla."
@@ -634,11 +548,9 @@
     {
         "nombre": "¡Calibra tu precisión!",
         "tipos": [
-            "Entrenador",
-            "Clase"
-        ],
-        "subtipos": [
-            "Entrenamiento"
+            "Entrenamiento",
+            "Clase",
+            "Entrenador"
         ],
         "descripciones": [
             "Ayudas a tus Pokémon a prepararse para calibrar sus Movimientos durante el combate. Cuando una Criatura pasa una Tirada de Salvación contra el Movimiento de uno de tus Pokémon que sólo hace objetivo a una criatura, esta criatura tiene un penalizador igual a la mitad de tu Bono de Entrenador hasta el final del próximo turno de tu Pokémon en Tiradas de Salvación provocadas por dicho Movimiento si lo usa tu Pokémon."
@@ -647,12 +559,10 @@
     {
         "nombre": "¡Sed imparables!",
         "tipos": [
+            "Entrenamiento",
             "Entrenador",
             "Clase",
             "Subclase"
-        ],
-        "subtipos": [
-            "Entrenamiento"
         ],
         "origen": "Mente maestra",
         "descripciones": [
@@ -662,12 +572,10 @@
     {
         "nombre": "¡Sed ingeniosos!",
         "tipos": [
+            "Entrenamiento",
             "Entrenador",
             "Clase",
             "Subclase"
-        ],
-        "subtipos": [
-            "Entrenamiento"
         ],
         "origen": "Manipulador de la inercia",
         "descripciones": [
@@ -727,8 +635,8 @@
     {
         "nombre": "Campo Eléctrico",
         "tipos": [
-            "Regla",
-            "Campo"
+            "Campo",
+            "Regla"
         ],
         "descripciones": [
             "Chispas eléctricas surgen del suelo. Todas las criaturas que inician su turno pisando un campo eléctrico quedan aceleradas. Cuando una criatura está acelerada de esta forma, sus velocidades aumentan en 2 metros y tiene una segunda Reacción por cada turno que toma. Además, los Movimientos de tipo Eléctrico lanzados desde un campo Eléctrico aumentan su daño en una cantidad igual al Bono de Habilidad de su usuario."
@@ -737,8 +645,8 @@
     {
         "nombre": "Campo de Hierba",
         "tipos": [
-            "Regla",
-            "Campo"
+            "Campo",
+            "Regla"
         ],
         "descripciones": [
             "Cubren la superficie afectada de hierba llena de vitalidad. Todas las criaturas que inician su turno pisando un campo de hierba reciben una Cantidad de Puntos de Escudo igual a su Vitalidad. Además, los Movimientos de tipo Planta lanzados desde un campo de hierba aumentan su daño en una cantidad igual al Bono de Habilidad su usuario."
@@ -747,8 +655,8 @@
     {
         "nombre": "Campo de Nieba",
         "tipos": [
-            "Regla",
-            "Campo"
+            "Campo",
+            "Regla"
         ],
         "descripciones": [
             "El suelo emite niebla que cubre hasta los 2 metros de altura y que se disipa si sale del área. Dentro de la niebla, las criaturas no pueden ver más allá de 1 metro dentro de esta y no pueden quedar quemadas, dormidas, envenenadas, paralizadas, heladas, confundidas o asustadas y dejan de estarlo si lo están cuando entran a este campo. Además, los Movimientos de tipo Hada lanzados desde un campo de Niebla aumentan su daño en una cantidad igual al Bono de Habilidad de su usuario."
@@ -757,8 +665,8 @@
     {
         "nombre": "Campo Psíquico",
         "tipos": [
-            "Regla",
-            "Campo"
+            "Campo",
+            "Regla"
         ],
         "descripciones": [
             "El suelo y el ambiente se llena de un color rosado que manipula la mente de las criaturas dentro de este, ralentizando su toma de acciones. Las criaturas que no son de tipo Psíquico que pisan un campo Psíquico pierden su Reacción y sólo pueden elegir entre usar su Movimiento o usar una Acción en su turno (las Acciones Compartidas pueden tomarse normalmente). Además, los Movimientos de tipo Psíquico lanzados desde un campo de Psíquico aumentan su daño en una cantidad igual al Bono de Habilidad de su usuario."
@@ -1264,15 +1172,13 @@
         "tipos": [
             "Invención",
             "Inventor",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Paquetes"
         ],
         "descripciones": [
-            "<b>Prerrequisitos:</b> Nivel 7.",
             "Creas un Paquete con saquitos de abrojos. Una criatura que tiene uno de estos saquitos puede lanzarla a un punto a una distancia de 5 metros y, cuando tocan una superficie se rompen, liberando los abrojos por el suelo en un radio de 1 metro. Este área es considerada Terreno Difícil y, por cada metro que una criatura avance dentro de los abrojos, recibe daño 2d4 de daño de tipo Acero.",
-            "A partir de Nivel 7, el Inventor que creó los abrojos aprende a lanzarlos mejor que los demás. Por 1 PP más puede hacer que el daño de estos se vuelva 2d6 y que el radio donde caen se vuelva de 2 metros. A partir de Nivel 14, este puede usar 2 PP extra para que el radio sea de hasta 3 metros y el daño de 2d8."
+            "A partir de Nivel 7, el Inventor que creó los abrojos aprende a lanzarlos mejor que los demás. Por 1 PP más puede hacer que el daño de estos se vuelva 2d6 y que el radio donde caen se vuelva de 2 metros. A partir de Nivel 14, este puede usar 2 PP extra para que el radio sea de hasta 3 metros y el daño de 2d8.",
+            "<b>Prerrequisitos:</b> Nivel 7."
         ]
     },
     {
@@ -1280,15 +1186,13 @@
         "tipos": [
             "Invención",
             "Inventor",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Paquetes"
         ],
         "descripciones": [
-            "<b>Prerrequisitos:</b> Ninguno.",
             "Creas un Paquete con bolas que liberan humo al estallar. Una criatura que tiene una de estas bombas puede lanzarla a un punto a una distancia de 5 metros y, cuando tocan una superficie, explotan liberando humo en un radio de 2 metros que se mantiene en ese lugar hasta el final de la Escena o hasta que un Movimiento con la etiqueta de Viento afecte el área. Este humo bloquea completamente la visión más allá de 1 metro.",
-            "A partir de Nivel 7, el Inventor que creó las bolas de humo aprende a lanzarlas mejor que los demás. Por 1 PP más puede hacer que el que el radio donde caen se vuelva de 3 metros. A partir de Nivel 14, este puede usar 2 PP extra para que el radio sea de hasta 4 metros y para no verse afectado por los efectos esta bola de humo en el turno en el que la lanza."
+            "A partir de Nivel 7, el Inventor que creó las bolas de humo aprende a lanzarlas mejor que los demás. Por 1 PP más puede hacer que el que el radio donde caen se vuelva de 3 metros. A partir de Nivel 14, este puede usar 2 PP extra para que el radio sea de hasta 4 metros y para no verse afectado por los efectos esta bola de humo en el turno en el que la lanza.",
+            "<b>Prerrequisitos:</b> Ninguno."
         ]
     },
     {
@@ -1296,15 +1200,13 @@
         "tipos": [
             "Invención",
             "Inventor",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Paquetes"
         ],
         "descripciones": [
-            "<b>Prerrequisitos:</b> Ninguno.",
             "Creas un Paquete con bombas que liberan humo al estallar. Una criatura que tiene una de estas bombas puede lanzarla a un punto a una distancia de 5 metros y, cuando tocan una superficie, explotan liberando vapor calmante en un radio de 1 metro que se mantiene en ese lugar hasta el final de la Escena o hasta que un Movimiento con la etiqueta de Viento afecte el área. Este humo no bloquea la visión. Una criatura que está en el radio de explosión cuando la bola estalla deja de estar infatuada, asustada o confusa y una criatura que está en el humo tiene Ventaja en Tiradas de Salvación para no quedar infatuado, Asustado, Enfurecido o Confuso.",
-            "A partir de Nivel 7, el Inventor que creó las bolas de humo aprende a lanzarlas mejor que los demás. Por 1 PP más puede hacer que el que el radio donde caen se vuelva de 2 metros. A partir de Nivel 14, este puede usar 2 PP extra para que el radio sea de hasta 3 metros y que el humo no persista."
+            "A partir de Nivel 7, el Inventor que creó las bolas de humo aprende a lanzarlas mejor que los demás. Por 1 PP más puede hacer que el que el radio donde caen se vuelva de 2 metros. A partir de Nivel 14, este puede usar 2 PP extra para que el radio sea de hasta 3 metros y que el humo no persista.",
+            "<b>Prerrequisitos:</b> Ninguno."
         ]
     },
     {
@@ -1312,15 +1214,13 @@
         "tipos": [
             "Invención",
             "Inventor",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Paquetes"
         ],
         "descripciones": [
-            "<b>Prerrequisitos:</b> Ninguno.",
             "Creas un Paquete con bolas que liberan humo al estallar. Una criatura que tiene una de estas bombas puede lanzarla a un punto a una distancia de 5 metros y, cuando tocan una superficie, explotan liberando vapor venenoso en un radio de 1 metro que se mantiene en ese lugar hasta el final de la Escena o hasta que un Movimiento con la etiqueta de Viento afecte el área. Este humo no bloquea la visión. Una criatura que entra o que empieza su turno en el humo hace una Salvación de Resistencia. Si la falla, gana 1 Nivel de Envenenado.",
-            "A partir de Nivel 7, el Inventor que creó las bolas aprende a lanzarlas mejor que los demás. Por 1 PP más puede hacer que el que el radio donde caen se vuelva de 2 metros. A partir de Nivel 14, este puede usar 2 PP extra para que el radio sea de hasta 3 metros y que la cantididad de Niveles que gana una criatura al fallar la Tirada de Salvación se vuelva 2."
+            "A partir de Nivel 7, el Inventor que creó las bolas aprende a lanzarlas mejor que los demás. Por 1 PP más puede hacer que el que el radio donde caen se vuelva de 2 metros. A partir de Nivel 14, este puede usar 2 PP extra para que el radio sea de hasta 3 metros y que la cantididad de Niveles que gana una criatura al fallar la Tirada de Salvación se vuelva 2.",
+            "<b>Prerrequisitos:</b> Ninguno."
         ]
     },
     {
@@ -1328,16 +1228,14 @@
         "tipos": [
             "Invención",
             "Inventor",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Paquetes"
         ],
         "descripciones": [
-            "<b>Prerrequisitos:</b> Nivel 7",
             "Creas un Paquete con bombas llenas de un líquido pegajoso que sólo tú puedes llevar. Una criatura que tiene una de estas bombas puede lanzarla a una distancia de 5 metros y, cuando tocan una superficie, explotan en un radio de 2 metros, esparciendo un líquido sobre el suelo.",
             "El suelo manchado por el líquido se considera Terreno Difícil hasta el final de la Escena y las criaturas que inician su turno en este área o que entran en esta hacen una Tirada de Salvación de Agilidad. Si la fallan, quedan pegadas al suelo y se consideran Apresadas. Como Acción, una criatura se despega de la red.",
-            "A partir de Nivel 7, el Inventor que creó las bolas de humo aprende a lanzarlas mejor que los demás. Por 1 PP más puede hacer que el que el radio donde caen se vuelva de 3 metros. A partir de Nivel 14, este puede usar 2 PP extra para que el radio sea de hasta 3 metros y para que si una criatura intenta despegarse con su Acción deba superar una Tirada de Salvación de Fuerza para poder hacerlo."
+            "A partir de Nivel 7, el Inventor que creó las bolas de humo aprende a lanzarlas mejor que los demás. Por 1 PP más puede hacer que el que el radio donde caen se vuelva de 3 metros. A partir de Nivel 14, este puede usar 2 PP extra para que el radio sea de hasta 3 metros y para que si una criatura intenta despegarse con su Acción deba superar una Tirada de Salvación de Fuerza para poder hacerlo.",
+            "<b>Prerrequisitos:</b> Nivel 7"
         ]
     },
     {
@@ -1345,15 +1243,13 @@
         "tipos": [
             "Invención",
             "Inventor",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Paquetes"
         ],
         "descripciones": [
-            "<b>Prerrequisitos:</b> Ninguno.",
             "Creas un Paquete con bolas que estallan liberando mucho ruido. Una criatura que tiene una de estas bombas puede lanzarla a un punto a una distancia de 5 metros y, cuando tocan una superficie, explotan en un radio de 1 metro, con un ruido estridente. Las criaturas en el radio de explosión deben hacer una Tirada de Salvación de Espíritu. Si la fallan, gana 1 Nivel de Asustado del lanzador.",
-            "A partir de Nivel 7, el Inventor que creó las bolas aprende a lanzarlas mejor que los demás. Por 1 PP más puede hacer que el que el radio que afectan se vuelva de 2 metros. A partir de Nivel 14, este puede usar 2 PP extra para que el radio sea de hasta 3 metros y que la cantidad de Niveles que gana una criatura al fallar la Tirada de Salvación se vuelva 2."
+            "A partir de Nivel 7, el Inventor que creó las bolas aprende a lanzarlas mejor que los demás. Por 1 PP más puede hacer que el que el radio que afectan se vuelva de 2 metros. A partir de Nivel 14, este puede usar 2 PP extra para que el radio sea de hasta 3 metros y que la cantidad de Niveles que gana una criatura al fallar la Tirada de Salvación se vuelva 2.",
+            "<b>Prerrequisitos:</b> Ninguno."
         ]
     },
     {
@@ -1361,16 +1257,14 @@
         "tipos": [
             "Invención",
             "Inventor",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Paquetes"
         ],
         "descripciones": [
-            "<b>Prerrequisitos:</b> Ninguno.",
             "Creas un Paquete con bombas de fluido luminiscente que sólo tú puedes llevar. Una criatura que tiene una de estas bombas puede lanzarla a un punto a una distancia de 5 metros y, cuando tocan una superficie, explotan en un radio de 1 metro, esparciendo un líquido sobre el suelo que brilla hasta el final de la Escena.",
             "Si una criatura está en el radio de explosión, debe hacer una Tirada de Salvación de Agilidad. Si la falla, esta también queda empapada y empieza a brillar tanto que se deslumbra haciendo que la criatura tenga Desventaja Tiradas de Percepción y las Tiradas de Ataque hechas contra esta se hagan en Ventaja. Una criatura empapada de este líquido puede usar su Acción o todo su Movimiento para dejar de estar empapada.",
-            "A partir de Nivel 7, el Inventor que creó las bolas aprende a lanzarlas mejor que los demás. Por 1 PP más puede hacer que el que el radio donde caen se vuelva de 2 metros. A partir de Nivel 14, este puede usar 2 PP extra para que el radio sea de hasta 3 metros y que una criatura deba usar su Acción y todo su Movimiento para dejar de estar empapada si supera una Tirada de Salvación de Fuerza o Agilidad."
+            "A partir de Nivel 7, el Inventor que creó las bolas aprende a lanzarlas mejor que los demás. Por 1 PP más puede hacer que el que el radio donde caen se vuelva de 2 metros. A partir de Nivel 14, este puede usar 2 PP extra para que el radio sea de hasta 3 metros y que una criatura deba usar su Acción y todo su Movimiento para dejar de estar empapada si supera una Tirada de Salvación de Fuerza o Agilidad.",
+            "<b>Prerrequisitos:</b> Ninguno."
         ]
     },
     {
@@ -1378,15 +1272,13 @@
         "tipos": [
             "Invención",
             "Inventor",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Paquetes"
         ],
         "descripciones": [
-            "<b>Prerrequisitos:</b> Ninguno.",
             "Creas un Paquete con bolas que liberan gas infatuante. Una criatura que tiene una de estas bombas puede lanzarla a un punto a una distancia de 5 metros y, cuando tocan una superficie, explotan liberando gas en un radio de 1 metro que rápidamente se disipa. Una criatura que está en el radio de la explosión cuando esta ocurre hace una Salvación de Espíritu. Si falla, gana 1 Nivel de Infatuado del lanzador.",
-            "A partir de Nivel 7, el Inventor que creó las bolas aprende a lanzarlas mejor que los demás. Por 1 PP más puede hacer que el que el radio que afectan se vuelva de 2 metros. A partir de Nivel 14, este puede usar 2 PP extra para que el radio sea de hasta 3 metros y que la cantidad de Niveles que gana una criatura al fallar la Tirada de Salvación se vuelva 2."
+            "A partir de Nivel 7, el Inventor que creó las bolas aprende a lanzarlas mejor que los demás. Por 1 PP más puede hacer que el que el radio que afectan se vuelva de 2 metros. A partir de Nivel 14, este puede usar 2 PP extra para que el radio sea de hasta 3 metros y que la cantidad de Niveles que gana una criatura al fallar la Tirada de Salvación se vuelva 2.",
+            "<b>Prerrequisitos:</b> Ninguno."
         ]
     },
     {
@@ -1394,17 +1286,15 @@
         "tipos": [
             "Invención",
             "Inventor",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Paquetes"
         ],
         "descripciones": [
-            "<b>Prerrequisitos:</b> Nivel 7.",
             "Creas un Paquete con saquitos de estrellas tóxicas. Una criatura que tiene uno de estos saquitos puede lanzarla a un punto a una distancia de 5 metros y, cuando tocan una superficie se rompen, liberando las estrellas por el suelo en un radio de 1 metro. Este área es considerada Terreno Difícil y, cuando una criatura se mueve 1 metro entrando, saliendo o moviéndose a través del área hace una Tirada de Salvación de Resistencia. Si la falla, gana 1 Nivel de Envenenado.",
             "A partir de Nivel 7, el Inventor que creó las estrellas aprende a lanzarlas mejor que los demás. Por 1 PP más puede hacer que el que el radio donde caen se vuelva de 2 metros. A partir de Nivel 14, este puede usar 2 PP extra para moverse 1 metro entrando, saliendo o moviéndose a través de las estrellas siempre genere 1 Nivel de Envenenado.",
             "Las cápsulas son un tipo de Invención que se usa para cubrir una Poké Ball y que otorgan efectos especiales que se activan cuando un Pokémon entra, sale o está en su Poké Ball o cambian el cómo o cuándo los Pokémon pueden entrar o salir de su Poké Ball. Una sola Invención de Cápsulas cuenta con una cantidad de estas igual a tu Mente.",
-            "Poner o quitar una Cápsula a una Poké Ball cuenta como una Acción Extendida y, aunque una Poké Ball puede llevar varias cápsulas puestas a la vez, si lleva varias cápsulas del mismo tipo sólo una de ellas surte efecto."
+            "Poner o quitar una Cápsula a una Poké Ball cuenta como una Acción Extendida y, aunque una Poké Ball puede llevar varias cápsulas puestas a la vez, si lleva varias cápsulas del mismo tipo sólo una de ellas surte efecto.",
+            "<b>Prerrequisitos:</b> Nivel 7."
         ]
     },
     {
@@ -1412,14 +1302,12 @@
         "tipos": [
             "Invención",
             "Inventor",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Cápsulas"
         ],
         "descripciones": [
-            "<b>Prerrequisitos:</b> Ninguno.",
-            "Cuando un Pokémon sale de una Poké Ball con esta cápsula puesta, su entrenador puede usar 1 PP (sin coste de acción) para que el Pokémon libere un sonido atronador. Las criaturas a 2 metros o menos del punto donde aparece el Pokémon hacen una Tirada de Salvación de Espíritu, ganando 1 Nivel de Asustado."
+            "Cuando un Pokémon sale de una Poké Ball con esta cápsula puesta, su entrenador puede usar 1 PP (sin coste de acción) para que el Pokémon libere un sonido atronador. Las criaturas a 2 metros o menos del punto donde aparece el Pokémon hacen una Tirada de Salvación de Espíritu, ganando 1 Nivel de Asustado.",
+            "<b>Prerrequisitos:</b> Ninguno."
         ]
     },
     {
@@ -1427,14 +1315,12 @@
         "tipos": [
             "Invención",
             "Inventor",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Cápsulas"
         ],
         "descripciones": [
-            "<b>Prerrequisitos:</b> Nivel 7.",
-            "Cuando una Poké Ball tiene esta cápsula puesta potencia el daño de los Movimientos de un Tipo Elemental para el que la criatura no tiene STAB, el cual se elige al colocar la cápsula en la Poké Ball. El bono al daño es igual a la mitad del Nivel del Pokémon asociado a la Poké Ball."
+            "Cuando una Poké Ball tiene esta cápsula puesta potencia el daño de los Movimientos de un Tipo Elemental para el que la criatura no tiene STAB, el cual se elige al colocar la cápsula en la Poké Ball. El bono al daño es igual a la mitad del Nivel del Pokémon asociado a la Poké Ball.",
+            "<b>Prerrequisitos:</b> Nivel 7."
         ]
     },
     {
@@ -1442,15 +1328,13 @@
         "tipos": [
             "Invención",
             "Inventor",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Cápsulas"
         ],
         "descripciones": [
-            "<b>Prerrequisitos:</b> Ninguno.",
             "Cuando un Pokémon sale de una Poké ball con una de estas Cápsulas, ganan Puntos de Escudo igual a su Vitalidad más tu Mente que dura hasta el final de la Escena o hasta que vuelva a su Poké Ball. Este efecto puede usarse una vez por Escena.",
-            "A partir de nivel 7, este efecto puede usarse dos veces por Escena y, a partir de nivel 14, puede usarse cada vez que se usa la Poké Ball."
+            "A partir de nivel 7, este efecto puede usarse dos veces por Escena y, a partir de nivel 14, puede usarse cada vez que se usa la Poké Ball.",
+            "<b>Prerrequisitos:</b> Ninguno."
         ]
     },
     {
@@ -1458,14 +1342,12 @@
         "tipos": [
             "Invención",
             "Inventor",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Cápsulas"
         ],
         "descripciones": [
-            "<b>Prerrequisitos:</b> Ninguno.",
-            "Cuando un Pokémon entra a su Poké Ball y esta tiene puesta esta cápsula todos los Estados que la afligen desaparecen."
+            "Cuando un Pokémon entra a su Poké Ball y esta tiene puesta esta cápsula todos los Estados que la afligen desaparecen.",
+            "<b>Prerrequisitos:</b> Ninguno."
         ]
     },
     {
@@ -1473,14 +1355,12 @@
         "tipos": [
             "Invención",
             "Inventor",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Cápsulas"
         ],
         "descripciones": [
-            "<b>Prerrequisitos:</b> Nivel 7.",
-            "Cuando un Pokémon cuya Poké Ball lleva esta cápsula puesta fuese a caer a 0 PV, la Poké Ball le da una descarga de energía que lo hace mantenerse consciente, por lo que cae a 1 PV en su lugar. Este efecto puede usarse una vez al Día por Pokémon y genera 1 Nivel de Fatiga."
+            "Cuando un Pokémon cuya Poké Ball lleva esta cápsula puesta fuese a caer a 0 PV, la Poké Ball le da una descarga de energía que lo hace mantenerse consciente, por lo que cae a 1 PV en su lugar. Este efecto puede usarse una vez al Día por Pokémon y genera 1 Nivel de Fatiga.",
+            "<b>Prerrequisitos:</b> Nivel 7."
         ]
     },
     {
@@ -1488,14 +1368,12 @@
         "tipos": [
             "Invención",
             "Inventor",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Cápsulas"
         ],
         "descripciones": [
-            "<b>Prerrequisitos:</b> Ninguno.",
-            "Cuando un Pokémon sale de una Poké Ball con esta cápsula puesta, su entrenador puede usar 1 PP (sin coste de acción) para usar parte de su poder en su salida y hacer que el brillo que genera al hacerlo sea mucho más fuerte. Las criaturas a 1 metro o menos del punto donde aparece el Pokémon hacen una Tirada de Salvación de Resistencia, ganan 1 Nivel de Cegado."
+            "Cuando un Pokémon sale de una Poké Ball con esta cápsula puesta, su entrenador puede usar 1 PP (sin coste de acción) para usar parte de su poder en su salida y hacer que el brillo que genera al hacerlo sea mucho más fuerte. Las criaturas a 1 metro o menos del punto donde aparece el Pokémon hacen una Tirada de Salvación de Resistencia, ganan 1 Nivel de Cegado.",
+            "<b>Prerrequisitos:</b> Ninguno."
         ]
     },
     {
@@ -1503,14 +1381,12 @@
         "tipos": [
             "Invención",
             "Inventor",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Cápsulas"
         ],
         "descripciones": [
-            "<b>Prerrequisitos:</b> Ninguno.",
-            "Cuando un Pokémon sale de una Poké Ball con esta cápsula puesta puede utilizar el impulso que genera al salir de esta para arremeter con más fuerza. En el primer turno que el Pokémon tome tras salir de la Poké Ball, este gana un bono a su primera Tirada de Ataque del turno y a sus Velocidades igual a la mitad de tu Mente."
+            "Cuando un Pokémon sale de una Poké Ball con esta cápsula puesta puede utilizar el impulso que genera al salir de esta para arremeter con más fuerza. En el primer turno que el Pokémon tome tras salir de la Poké Ball, este gana un bono a su primera Tirada de Ataque del turno y a sus Velocidades igual a la mitad de tu Mente.",
+            "<b>Prerrequisitos:</b> Ninguno."
         ]
     },
     {
@@ -1518,16 +1394,14 @@
         "tipos": [
             "Invención",
             "Inventor",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Cápsulas"
         ],
         "descripciones": [
-            "<b>Prerrequisitos:</b> Nivel 7.",
             "Cuando una Poké Ball tiene esta cápsula puesta siente cuando el Pokémon que tiene asociado se encuentra mal para devolverlo a esta. Si el Pokémon asociado a la Poké Ball queda asustado o confuso, puede volver a la Poké Ball como Reacción por 2 PP. Si lo hace, su Entrenador puede sacar un Pokémon gratuitamente y darle una Orden normalmente en su turno. Este efecto puede usarse una vez por Escena.",
             "A partir de nivel 14, el Pokémon también puede volver a la Poké Ball cuando recibe daño súper efectivo si el entrenador es el inventor que creó las cápsulas y este usa 2 PP.",
-            "Las Herramientas son piezas de equipo tecnológico muy avanzado que has diseñado y que, en ocasiones, sólo tú sabes hacer funcionar. Algunas Herramientas tienen una forma de realizar daño mediante una Tirada de Ataque o de Salvación. Estas Herramientas cuentan como Armas, a efectos de Rasgos que afecten el funcionamiento de Armas."
+            "Las Herramientas son piezas de equipo tecnológico muy avanzado que has diseñado y que, en ocasiones, sólo tú sabes hacer funcionar. Algunas Herramientas tienen una forma de realizar daño mediante una Tirada de Ataque o de Salvación. Estas Herramientas cuentan como Armas, a efectos de Rasgos que afecten el funcionamiento de Armas.",
+            "<b>Prerrequisitos:</b> Nivel 7."
         ]
     },
     {
@@ -1535,14 +1409,12 @@
         "tipos": [
             "Invención",
             "Inventor",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Herramientas"
         ],
         "descripciones": [
-            "<b>Prerrequisitos:</b> Nivel 14.",
-            "Un frasco lleno de un líquido que te vuelve más sigiloso. Cuando lo usas como Acción Extendida gastas 2 PP que no recuperas hasta que decidas que el efecto que este aerosol otorga acabe o hasta el final del día. Puedes afectar hasta a 5 criaturas con cada uso del Aerosol y estas obtienen bono igual a tu Mente a las Tiradas de Sigilo."
+            "Un frasco lleno de un líquido que te vuelve más sigiloso. Cuando lo usas como Acción Extendida gastas 2 PP que no recuperas hasta que decidas que el efecto que este aerosol otorga acabe o hasta el final del día. Puedes afectar hasta a 5 criaturas con cada uso del Aerosol y estas obtienen bono igual a tu Mente a las Tiradas de Sigilo.",
+            "<b>Prerrequisitos:</b> Nivel 14."
         ]
     },
     {
@@ -1550,16 +1422,14 @@
         "tipos": [
             "Invención",
             "Inventor",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Herramientas"
         ],
         "descripciones": [
-            "<b>Prerrequisitos:</b> Ninguno.",
             "Creas un electrificador que sólo tú sabes cómo utilizar correctamente. Este electrificador puede usarse como un kit de primeros auxilios por 1 PP. Cuando lo haces, la criatura añade su Vitalidad a la cantidad de PV que recupera.",
             "Además, puedes usar este electrificador para electrocutar a una criatura como Acción. Al hacerlo, Realizas una Tirada de Ataque Cuerpo a cuerpo en la que eres Bueno usando tu Mente. Si golpea, la criatura recibe daño eléctrico igual a 1d6 y no puede usar Reacciones hasta el principio de su próximo turno.",
-            "A partir de nivel 7, si el Inventor usa 1 PP realizar una Tirada de Ataque con este, la criatura gana 1 Nivel de paralizado y el daño del electrificador aumenta en un dado. Además, a partir de Nivel 14, el inventor también puede usar 3 PP en lugar de 1 PP para que el daño aumente en 2 dados y que la criatura gane 2 Niveles de paralizado."
+            "A partir de nivel 7, si el Inventor usa 1 PP realizar una Tirada de Ataque con este, la criatura gana 1 Nivel de paralizado y el daño del electrificador aumenta en un dado. Además, a partir de Nivel 14, el inventor también puede usar 3 PP en lugar de 1 PP para que el daño aumente en 2 dados y que la criatura gane 2 Niveles de paralizado.",
+            "<b>Prerrequisitos:</b> Ninguno."
         ]
     },
     {
@@ -1567,14 +1437,12 @@
         "tipos": [
             "Invención",
             "Inventor",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Herramientas"
         ],
         "descripciones": [
-            "<b>Prerrequisitos:</b> Nivel 7.",
-            "Una criatura puede usar este espray una vez por Escena como una Acción y por 2 PP. Cuando lo hace, puede usar un Movimiento con la Etiqueta de Sonido que cuesta una Acción sin usar PP y todos los Movimientos, Habilidades y Rasgos que hacen uso de su voz, como los Movimientos con la etiqueta de Sonido o las Órdenes, ven su rango aumentado en una cantidad de metros igual a tu Mente si sólo hacen objetivo a una criatura o la mitad de tu mente si afectan un área."
+            "Una criatura puede usar este espray una vez por Escena como una Acción y por 2 PP. Cuando lo hace, puede usar un Movimiento con la Etiqueta de Sonido que cuesta una Acción sin usar PP y todos los Movimientos, Habilidades y Rasgos que hacen uso de su voz, como los Movimientos con la etiqueta de Sonido o las Órdenes, ven su rango aumentado en una cantidad de metros igual a tu Mente si sólo hacen objetivo a una criatura o la mitad de tu mente si afectan un área.",
+            "<b>Prerrequisitos:</b> Nivel 7."
         ]
     },
     {
@@ -1582,14 +1450,12 @@
         "tipos": [
             "Invención",
             "Inventor",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Herramientas"
         ],
         "descripciones": [
-            "<b>Prerrequisitos:</b> Nivel 7.",
-            "Una flauta de color violeta que cualquiera puede tocar como Acción y gastar 2 PP para sanar de estar envenenado, quemado, helado, paralizado a las criaturas a 5 metros de ella."
+            "Una flauta de color violeta que cualquiera puede tocar como Acción y gastar 2 PP para sanar de estar envenenado, quemado, helado, paralizado a las criaturas a 5 metros de ella.",
+            "<b>Prerrequisitos:</b> Nivel 7."
         ]
     },
     {
@@ -1597,14 +1463,12 @@
         "tipos": [
             "Invención",
             "Inventor",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Herramientas"
         ],
         "descripciones": [
-            "<b>Prerrequisitos:</b> Nivel 7.",
-            "Una flauta de color blanco que cualquiera puede tocar como Acción, gastando 2 PP. Cuando lo hace, las criaturas a menos de 2 metros de la criatura hacen una Tirada de Salvación de Espíritu. Si la fallan, quedan infatuadas por ella hasta el final de la Escena."
+            "Una flauta de color blanco que cualquiera puede tocar como Acción, gastando 2 PP. Cuando lo hace, las criaturas a menos de 2 metros de la criatura hacen una Tirada de Salvación de Espíritu. Si la fallan, quedan infatuadas por ella hasta el final de la Escena.",
+            "<b>Prerrequisitos:</b> Nivel 7."
         ]
     },
     {
@@ -1612,14 +1476,12 @@
         "tipos": [
             "Invención",
             "Inventor",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Herramientas"
         ],
         "descripciones": [
-            "<b>Prerrequisitos:</b> Nivel 7.",
-            "Una flauta de color negro que cualquiera puede tocar como Acción, gastando 2 PP. Cuando lo hace, las criaturas a menos de 2 metros de la criatura hacen una Tirada de Salvación de Espíritu. Si la fallan, quedan asustadas de ella hasta el final de la Escena."
+            "Una flauta de color negro que cualquiera puede tocar como Acción, gastando 2 PP. Cuando lo hace, las criaturas a menos de 2 metros de la criatura hacen una Tirada de Salvación de Espíritu. Si la fallan, quedan asustadas de ella hasta el final de la Escena.",
+            "<b>Prerrequisitos:</b> Nivel 7."
         ]
     },
     {
@@ -1627,14 +1489,12 @@
         "tipos": [
             "Invención",
             "Inventor",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Herramientas"
         ],
         "descripciones": [
-            "<b>Prerrequisitos:</b> Nivel 7.",
-            "Una flauta de color violeta que cualquiera puede tocar como Acción y gastar 2 PP para sanar de estar dormido, infatuado, confuso o asustado a las criaturas a 5 metros de ella."
+            "Una flauta de color violeta que cualquiera puede tocar como Acción y gastar 2 PP para sanar de estar dormido, infatuado, confuso o asustado a las criaturas a 5 metros de ella.",
+            "<b>Prerrequisitos:</b> Nivel 7."
         ]
     },
     {
@@ -1642,15 +1502,13 @@
         "tipos": [
             "Invención",
             "Inventor",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Herramientas"
         ],
         "descripciones": [
-            "<b>Prerrequisitos:</b> Ninguno.",
             "Un aparato que sirve para lanzar bolas a mayor distancia. Cuando una criatura lanza una bola creada por uno de tus Paquetes, un objeto similar o una Poké Ball, el rango al que puede lanzarlo se duplica.",
-            "A partir de nivel 7, cuando una persona lanza una Poké Ball para capturar a un Pokémon con esta Invención, añade tu Mente en lugar de su Presencia a la Tirada de Trato Pokémon que hace para capturar al Pokémon."
+            "A partir de nivel 7, cuando una persona lanza una Poké Ball para capturar a un Pokémon con esta Invención, añade tu Mente en lugar de su Presencia a la Tirada de Trato Pokémon que hace para capturar al Pokémon.",
+            "<b>Prerrequisitos:</b> Ninguno."
         ]
     },
     {
@@ -1658,14 +1516,12 @@
         "tipos": [
             "Invención",
             "Inventor",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Herramientas"
         ],
         "descripciones": [
-            "<b>Prerrequisitos:</b> Nivel 14.",
-            "Un aparato electrónico con una antenita y una pantalla. Como Acción, puede usarse para escanear un Pokémon a menos de 10 metros del usuario y su información queda almacenada en este. Posteriormente un usuario puede usar su Acción para localizar los Pokémon de una especie que has escaneado en un rango en Kilómetros a tu alrededor igual a la mitad de tu Mente."
+            "Un aparato electrónico con una antenita y una pantalla. Como Acción, puede usarse para escanear un Pokémon a menos de 10 metros del usuario y su información queda almacenada en este. Posteriormente un usuario puede usar su Acción para localizar los Pokémon de una especie que has escaneado en un rango en Kilómetros a tu alrededor igual a la mitad de tu Mente.",
+            "<b>Prerrequisitos:</b> Nivel 14."
         ]
     },
     {
@@ -1673,14 +1529,12 @@
         "tipos": [
             "Invención",
             "Inventor",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Herramientas"
         ],
         "descripciones": [
-            "<b>Prerrequisitos:</b> Nivel 14.",
-            "Un aparato electrónico con una antenita y una pantalla. Cualquier persona puede usar su Acción para el control de uno de sus Pokémon si este te lo permite mediante ondas psíquicas que tienen un rango en kilómetros igual a la mitad de tu Mente. Puedes controlarlo como si fueras el Pokémon y puedes ver lo que ve en la pantalla."
+            "Un aparato electrónico con una antenita y una pantalla. Cualquier persona puede usar su Acción para el control de uno de sus Pokémon si este te lo permite mediante ondas psíquicas que tienen un rango en kilómetros igual a la mitad de tu Mente. Puedes controlarlo como si fueras el Pokémon y puedes ver lo que ve en la pantalla.",
+            "<b>Prerrequisitos:</b> Nivel 14."
         ]
     },
     {
@@ -1688,15 +1542,13 @@
         "tipos": [
             "Invención",
             "Inventor",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Herramientas"
         ],
         "descripciones": [
-            "<b>Prerrequisitos:</b> Ninguno.",
             "Creas un aparato que expulsa aire frío o caliente que sólo tú sabes cómo utilizar correctamente. Puedes usar el termopulsor para lanzar este aire, ya sea frío o cálido, en un cono de 2 metros como Acción. Al hacerlo, las criaturas en el cono hacen una Tirada de Salvación de Resistencia. Si la fallan, reciben daño de Tipo Hielo o Fuego (a tu elección) igual a 1d6. Usar este aparato cuenta cómo usar un Movimiento con la Etiqueta de Viento.",
-            "A partir de nivel 7, si el Inventor puede usar el termopulsor por 1 PP, aumentando el daño base de este en un dado y haciendo que el cono se vuelva de 3 metros. Además, a partir de Nivel 14, puede usarlo por 3 PP que el daño aumente en 2 dados, el cono sea de hasta 4 metros y que las criaturas que fallen la Tirada de Salvación ganen 1 Nivel de Quemado (si se eligió aire caliente) o Helado (si se eligió aire frío)."
+            "A partir de nivel 7, si el Inventor puede usar el termopulsor por 1 PP, aumentando el daño base de este en un dado y haciendo que el cono se vuelva de 3 metros. Además, a partir de Nivel 14, puede usarlo por 3 PP que el daño aumente en 2 dados, el cono sea de hasta 4 metros y que las criaturas que fallen la Tirada de Salvación ganen 1 Nivel de Quemado (si se eligió aire caliente) o Helado (si se eligió aire frío).",
+            "<b>Prerrequisitos:</b> Ninguno."
         ]
     },
     {
@@ -1704,17 +1556,15 @@
         "tipos": [
             "Invención",
             "Inventor",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Herramientas"
         ],
         "descripciones": [
-            "<b>Prerrequisitos:</b> Ninguno.",
             "Creas un vaporizador que expulsa sustancias tóxicas que sólo tú sabes cómo utilizar correctamente. Puedes usar este vaporizador para lanzar veneno sobre una criatura a menos de 3 metros de ti como Acción. Al hacerlo, la criatura hace una Tirada de Salvación de Resistencia. Si la falla, la criatura recibe daño de Tipo Veneno igual a 1d8. Si, además, la Tirada Natural de la criatura es de 2-, gana 1 Nivel de Envenenado.",
             "A partir de nivel 7, si el Inventor puede usar el Vaporizador por 1 PP, aumentando el daño base de este en un dado y que la criatura gane 1 Nivel de Envenenado si la Tirada Natural es de 4- Además, a partir de Nivel 14, puede usarlo por 3 PP, haciendo que el daño aumente en 2 dados y que la criatura gane 1 Nivel de Envenenado si falla la Tirada de Salvación.",
             "Los Equipos son invenciones que fueron creadas para llevarse encima del cuerpo y, por lo tanto, una vez creadas sólo puede usarlas una criatura con una fisionomía similar a la de la especie de la criatura para la que se creó en primer lugar. Cambiar quién puede usar estas piezas de equipo requiere una Acción Extendida y 300$ en materiales.",
-            "Una criatura puede llevar tantas Invenciones de Equipo como quiera, pero si lleva varias con el mismo nombre sólo se beneficia una vez del efecto que estas le dan. También es importante resaltar que, por ejemplo, si dos invenciones son gafas, no pueden usarse a la vez, puesto que se llevan puestas en el mismo lugar."
+            "Una criatura puede llevar tantas Invenciones de Equipo como quiera, pero si lleva varias con el mismo nombre sólo se beneficia una vez del efecto que estas le dan. También es importante resaltar que, por ejemplo, si dos invenciones son gafas, no pueden usarse a la vez, puesto que se llevan puestas en el mismo lugar.",
+            "<b>Prerrequisitos:</b> Ninguno."
         ]
     },
     {
@@ -1722,14 +1572,12 @@
         "tipos": [
             "Invención",
             "Inventor",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Equipo"
         ],
         "descripciones": [
-            "<b>Prerrequisitos:</b> Nivel 14.",
-            "Esta pieza de armadura se lleva en el pecho y cuenta como una pieza de Armadura ligera o pesada, a elección del Inventor al crearla. Una criatura que lleva esta pieza de armadura se vuelve inmune al daño extra de los movimientos críticos."
+            "Esta pieza de armadura se lleva en el pecho y cuenta como una pieza de Armadura ligera o pesada, a elección del Inventor al crearla. Una criatura que lleva esta pieza de armadura se vuelve inmune al daño extra de los movimientos críticos.",
+            "<b>Prerrequisitos:</b> Nivel 14."
         ]
     },
     {
@@ -1737,15 +1585,13 @@
         "tipos": [
             "Invención",
             "Inventor",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Equipo"
         ],
         "descripciones": [
-            "<b>Prerrequisitos:</b> Ninguno.",
             "Estas botas están hechas para correr a toda velocidad y llevarlas puestas te vuelve más ágil. Cuando una criatura lleva las botas puestas, su velocidad de caminado aumenta en 2 metros.",
-            "A partir de nivel 7, las Tiradas de los Ataques de Oportunidad generados por una criatura que lleva estas botas se hacen en Desventaja y, a partir de nivel 14, las criatura que lleva estas botas no provoca Ataques de Oportunidad."
+            "A partir de nivel 7, las Tiradas de los Ataques de Oportunidad generados por una criatura que lleva estas botas se hacen en Desventaja y, a partir de nivel 14, las criatura que lleva estas botas no provoca Ataques de Oportunidad.",
+            "<b>Prerrequisitos:</b> Ninguno."
         ]
     },
     {
@@ -1753,15 +1599,13 @@
         "tipos": [
             "Invención",
             "Inventor",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Equipo"
         ],
         "descripciones": [
-            "<b>Prerrequisitos:</b> Nivel 7.",
             "Estas botas tienen dos modalidades que pueden activarse como una Acción. El Modo Escalado, que hace que salgan pinchos de la parte frontal que dan al usuario una Velocidad de Escalado igual a su Velocidad de Caminado y el Modo Aletas, que hace que las botas se vuelvan aletas de nado que dan al usuario una Velocidad de Nado igual a su Velocidad de Caminado.",
-            "A partir del nivel 14, una criatura que lleva estas botas no se ve afectada por el Terreno Difícil."
+            "A partir del nivel 14, una criatura que lleva estas botas no se ve afectada por el Terreno Difícil.",
+            "<b>Prerrequisitos:</b> Nivel 7."
         ]
     },
     {
@@ -1769,14 +1613,12 @@
         "tipos": [
             "Invención",
             "Inventor",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Equipo"
         ],
         "descripciones": [
-            "<b>Prerrequisitos:</b> Nivel 7.",
-            "Estas botas tienen una suela dura y resistente que protegen a quien las lleve puestas del daño provocado por púas, rocas afiladas y objetos similares en el suelo."
+            "Estas botas tienen una suela dura y resistente que protegen a quien las lleve puestas del daño provocado por púas, rocas afiladas y objetos similares en el suelo.",
+            "<b>Prerrequisitos:</b> Nivel 7."
         ]
     },
     {
@@ -1784,15 +1626,13 @@
         "tipos": [
             "Invención",
             "Inventor",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Equipo"
         ],
         "descripciones": [
-            "<b>Prerrequisitos:</b> Nivel 7.",
             "Esta capa está hecha de una tela especial que te protege de los efectos secundarios de los Movimientos provocados por obtener una cierta Tirada Natural.",
-            "A partir de nivel 14, cuando una criatura que lleva esta capa es forzada a hacer una Tirada de Salvación por un efecto que fuese a dejarla envenenada, paralizada, quemada o helada, puede usar 1 PP y su Reacción para protegerse con la capa y ganar Ventaja en dicha Tirada."
+            "A partir de nivel 14, cuando una criatura que lleva esta capa es forzada a hacer una Tirada de Salvación por un efecto que fuese a dejarla envenenada, paralizada, quemada o helada, puede usar 1 PP y su Reacción para protegerse con la capa y ganar Ventaja en dicha Tirada.",
+            "<b>Prerrequisitos:</b> Nivel 7."
         ]
     },
     {
@@ -1800,15 +1640,13 @@
         "tipos": [
             "Invención",
             "Inventor",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Equipo"
         ],
         "descripciones": [
-            "<b>Prerrequisitos:</b> Nivel 7.",
             "Cuando llevas este casco puesto y te asestan un golpe crítico con una Tirada de Ataque Cuerpo a cuerpo, la criatura que realizó la Tirada de Ataque recibe la misma cantidad de daño Tipo Roca o Acero (se elige cuando se crea la invención).",
-            "A partir de nivel 14, cuando una criatura que lleva este casco recibe daño de una Tirada de Ataque cuerpo a cuerpo, el atacante recibe una cantidad de puntos de daño del tipo elegido al crear la Invención igual a tu Mente."
+            "A partir de nivel 14, cuando una criatura que lleva este casco recibe daño de una Tirada de Ataque cuerpo a cuerpo, el atacante recibe una cantidad de puntos de daño del tipo elegido al crear la Invención igual a tu Mente.",
+            "<b>Prerrequisitos:</b> Nivel 7."
         ]
     },
     {
@@ -1816,15 +1654,13 @@
         "tipos": [
             "Invención",
             "Inventor",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Equipo"
         ],
         "descripciones": [
-            "<b>Prerrequisitos:</b> Nivel 7.",
             "Cuando una criatura lleva puesto este chaleco, recibe la mitad de daño de los Movimientos con la etiqueta de Bala.",
-            "A partir de nivel 14, además reduce el daño de los Movimientos con la etiqueta de Bala tu Mente del daño de los movimientos de bala en una cantidad igual a tu Mente."
+            "A partir de nivel 14, además reduce el daño de los Movimientos con la etiqueta de Bala tu Mente del daño de los movimientos de bala en una cantidad igual a tu Mente.",
+            "<b>Prerrequisitos:</b> Nivel 7."
         ]
     },
     {
@@ -1832,14 +1668,12 @@
         "tipos": [
             "Invención",
             "Inventor",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Equipo"
         ],
         "descripciones": [
-            "<b>Prerrequisitos:</b> Nivel 7.",
-            "Cuando una criatura lleva este chaleco puesto y recibe daño provocado por una Tirada de Ataque a rango, reduce este daño en una cantidad igual a tu Mente."
+            "Cuando una criatura lleva este chaleco puesto y recibe daño provocado por una Tirada de Ataque a rango, reduce este daño en una cantidad igual a tu Mente.",
+            "<b>Prerrequisitos:</b> Nivel 7."
         ]
     },
     {
@@ -1847,14 +1681,12 @@
         "tipos": [
             "Invención",
             "Inventor",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Equipo"
         ],
         "descripciones": [
-            "<b>Prerrequisitos:</b> Nivel 7.",
-            "Este collar puede contener energía eléctrica por un tiempo. Cuando una criatura que lo lleva recibe daño de Tipo Eléctrico, puede usar su Reacción y 2 PP para que el colector recoja la energía, haciendo que la criatura no reciba daño ni otros efectos asociados al efecto que lo causaba. Cuando el colector está cargado de energía eléctrica no puede usarse de nuevo hasta que se descargue al final de la Escena o cuando la criatura que lo lleva toque o infrinja daño a otra criatura, que recibe una cantidad de d4 de daño de Tipo Eléctrico igual a tu Mente."
+            "Este collar puede contener energía eléctrica por un tiempo. Cuando una criatura que lo lleva recibe daño de Tipo Eléctrico, puede usar su Reacción y 2 PP para que el colector recoja la energía, haciendo que la criatura no reciba daño ni otros efectos asociados al efecto que lo causaba. Cuando el colector está cargado de energía eléctrica no puede usarse de nuevo hasta que se descargue al final de la Escena o cuando la criatura que lo lleva toque o infrinja daño a otra criatura, que recibe una cantidad de d4 de daño de Tipo Eléctrico igual a tu Mente.",
+            "<b>Prerrequisitos:</b> Nivel 7."
         ]
     },
     {
@@ -1862,14 +1694,12 @@
         "tipos": [
             "Invención",
             "Inventor",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Equipo"
         ],
         "descripciones": [
-            "<b>Prerrequisitos:</b> Nivel 7.",
-            "Este cubrefauces se diseña para una especie Pokémon específica. En un Descanso se puede modificar el usuario. Si el usuario no tiene la habilidad Mandíbula fuerte, la gana."
+            "Este cubrefauces se diseña para una especie Pokémon específica. En un Descanso se puede modificar el usuario. Si el usuario no tiene la habilidad Mandíbula fuerte, la gana.",
+            "<b>Prerrequisitos:</b> Nivel 7."
         ]
     },
     {
@@ -1877,14 +1707,12 @@
         "tipos": [
             "Invención",
             "Inventor",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Equipo"
         ],
         "descripciones": [
-            "<b>Prerrequisitos:</b> Nivel 7.",
-            "Este cubregarras se diseña para una especie Pokémon específica. En un Descanso se puede modificar el usuario. Si el usuario no tiene la habilidad Garra dura, la gana."
+            "Este cubregarras se diseña para una especie Pokémon específica. En un Descanso se puede modificar el usuario. Si el usuario no tiene la habilidad Garra dura, la gana.",
+            "<b>Prerrequisitos:</b> Nivel 7."
         ]
     },
     {
@@ -1892,14 +1720,12 @@
         "tipos": [
             "Invención",
             "Inventor",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Equipo"
         ],
         "descripciones": [
-            "<b>Prerrequisitos:</b> Nivel 7.",
-            "Este cubrepatas se diseña para una especie Pokémon específica. En un Descanso se puede modificar el usuario. Si el usuario no tiene la habilidad Patada férrea, la gana."
+            "Este cubrepatas se diseña para una especie Pokémon específica. En un Descanso se puede modificar el usuario. Si el usuario no tiene la habilidad Patada férrea, la gana.",
+            "<b>Prerrequisitos:</b> Nivel 7."
         ]
     },
     {
@@ -1907,14 +1733,12 @@
         "tipos": [
             "Invención",
             "Inventor",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Equipo"
         ],
         "descripciones": [
-            "<b>Prerrequisitos:</b> Nivel 7.",
-            "Este cubrepuños se diseña para una especie Pokémon específica. En un Descanso se puede modificar el usuario. Si el usuario no tiene la habilidad Puño férreo, la gana."
+            "Este cubrepuños se diseña para una especie Pokémon específica. En un Descanso se puede modificar el usuario. Si el usuario no tiene la habilidad Puño férreo, la gana.",
+            "<b>Prerrequisitos:</b> Nivel 7."
         ]
     },
     {
@@ -1922,14 +1746,12 @@
         "tipos": [
             "Invención",
             "Inventor",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Equipo"
         ],
         "descripciones": [
-            "<b>Prerrequisitos:</b> Nivel 14.",
-            "Este pequeño tanque de gas puede contener un Movimiento de Campo. Una criatura puede usar un Movimiento con la Etiqueta de Campo en este tanque y este queda contenido en su interior hasta que una criatura lo libere como Acción y sin gastar PP."
+            "Este pequeño tanque de gas puede contener un Movimiento de Campo. Una criatura puede usar un Movimiento con la Etiqueta de Campo en este tanque y este queda contenido en su interior hasta que una criatura lo libere como Acción y sin gastar PP.",
+            "<b>Prerrequisitos:</b> Nivel 14."
         ]
     },
     {
@@ -1937,14 +1759,12 @@
         "tipos": [
             "Invención",
             "Inventor",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Equipo"
         ],
         "descripciones": [
-            "<b>Prerrequisitos:</b> Nivel 7.",
-            "Cuando una criatura lleva estas gafas puestas, es inmune a los Movimientos con la etiqueta de Polvo, la Habilidad Efecto espora y su visión no puede verse afectada por el polvo, barro o sustancias similares."
+            "Cuando una criatura lleva estas gafas puestas, es inmune a los Movimientos con la etiqueta de Polvo, la Habilidad Efecto espora y su visión no puede verse afectada por el polvo, barro o sustancias similares.",
+            "<b>Prerrequisitos:</b> Nivel 7."
         ]
     },
     {
@@ -1952,15 +1772,13 @@
         "tipos": [
             "Invención",
             "Inventor",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Equipo"
         ],
         "descripciones": [
-            "<b>Prerrequisitos:</b> Ninguno.",
             "Estas gafas imitan los ojos de un Sableye y permiten ver como si se fuese uno. Cuando una criatura lleva puestas estas gafas, gana un bono a las Tiradas de Habilidad de Percepción e Investigación igual a tu Mente.",
-            "A partir de nivel 7, mejoras las gafas. Por 1 PP y como interacción, su usuario puede tocar los dos cristales de las gafas a la vez y hacer que las gafas brillen con una tenue luz roja hasta que las apague como interacción o hasta el final de la Escena. Mientras las gafas brillan, la criatura gana Visión en la Oscuridad de 10 metros. A partir de nivel 14, el radio de esta visión aumenta a 20 metros"
+            "A partir de nivel 7, mejoras las gafas. Por 1 PP y como interacción, su usuario puede tocar los dos cristales de las gafas a la vez y hacer que las gafas brillen con una tenue luz roja hasta que las apague como interacción o hasta el final de la Escena. Mientras las gafas brillan, la criatura gana Visión en la Oscuridad de 10 metros. A partir de nivel 14, el radio de esta visión aumenta a 20 metros",
+            "<b>Prerrequisitos:</b> Ninguno."
         ]
     },
     {
@@ -1968,14 +1786,12 @@
         "tipos": [
             "Invención",
             "Inventor",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Equipo"
         ],
         "descripciones": [
-            "<b>Prerrequisitos:</b> Nivel 7.",
-            "Cuando una criatura que lleva estos guantes puestos usa un Movimiento con la etiqueta de Puño, añade la mitad de tu Mente al daño base de dicho Movimiento. Además, no puede recibir daño por golpear con los Movimientos que hace con sus puños a una criatura."
+            "Cuando una criatura que lleva estos guantes puestos usa un Movimiento con la etiqueta de Puño, añade la mitad de tu Mente al daño base de dicho Movimiento. Además, no puede recibir daño por golpear con los Movimientos que hace con sus puños a una criatura.",
+            "<b>Prerrequisitos:</b> Nivel 7."
         ]
     },
     {
@@ -1983,14 +1799,12 @@
         "tipos": [
             "Invención",
             "Inventor",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Equipo"
         ],
         "descripciones": [
-            "<b>Prerrequisitos:</b> Nivel 7.",
-            "Una pieza de armadura que protege del daño levemente. Las partes que cubren una pieza de la armadura son pecho, brazos (si se tienen), piernas o cabeza. Por cada dos piezas de armadura ligera que una criatura lleva, su CA aumenta en 1."
+            "Una pieza de armadura que protege del daño levemente. Las partes que cubren una pieza de la armadura son pecho, brazos (si se tienen), piernas o cabeza. Por cada dos piezas de armadura ligera que una criatura lleva, su CA aumenta en 1.",
+            "<b>Prerrequisitos:</b> Nivel 7."
         ]
     },
     {
@@ -1998,14 +1812,12 @@
         "tipos": [
             "Invención",
             "Inventor",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Equipo"
         ],
         "descripciones": [
-            "<b>Prerrequisitos:</b> Nivel 7.",
-            "Una pieza de armadura que protege del daño a costa de movilidad. Las partes que cubren una pieza de la armadura son pecho, brazos (si se tienen), piernas o cabeza. Por cada pieza de armadura pesada que una criatura lleva, su CA aumenta en 1 y sus Velocidades se reducen en 1."
+            "Una pieza de armadura que protege del daño a costa de movilidad. Las partes que cubren una pieza de la armadura son pecho, brazos (si se tienen), piernas o cabeza. Por cada pieza de armadura pesada que una criatura lleva, su CA aumenta en 1 y sus Velocidades se reducen en 1.",
+            "<b>Prerrequisitos:</b> Nivel 7."
         ]
     },
     {
@@ -2013,16 +1825,14 @@
         "tipos": [
             "Invención",
             "Inventor",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Equipo"
         ],
         "descripciones": [
-            "<b>Prerrequisitos:</b> Nivel 7.",
             "Replicas uno de los amuletos que puedes encontrar en Capítulo 9: Equipo y Objetos. Cuando aprendes esta invención elige uno de los amuletos de la tabla de Amuletos elementales o de la Tabla de Amuletos no elementales. Puedes crear ese amuleto. Puedes cambiar el amuleto que eliges cuando aprendes esta Invención cada vez que subes de nivel y, si lo haces, el amuleto creado cambia al nuevo.",
             "Puedes aprender a crear esta Invención tantas veces como quieras, eligiendo amuletos nuevos cada vez que la aprendes.",
-            "A partir de nivel 14, por cada vez que aprendes a crear esta Invención aprendes a crear dos amuletos en lugar de uno."
+            "A partir de nivel 14, por cada vez que aprendes a crear esta Invención aprendes a crear dos amuletos en lugar de uno.",
+            "<b>Prerrequisitos:</b> Nivel 7."
         ]
     },
     {
@@ -2030,15 +1840,13 @@
         "tipos": [
             "Invención",
             "Inventor",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Equipo"
         ],
         "descripciones": [
-            "<b>Prerrequisitos:</b> Ninguno.",
             "Estas ropas pueden ser diseñadas para personas o para una especie pokémon específica. Una criatura que lleva estas ropas puestas no se ve afectada por el calor o frío extremos causados por el clima.",
-            "A partir de nivel 7, la criatura que las lleva puestas no puede quedar helada o acalorada y, a partir de Nivel 14, resiste el daño de Tipo Fuego y Hielo."
+            "A partir de nivel 7, la criatura que las lleva puestas no puede quedar helada o acalorada y, a partir de Nivel 14, resiste el daño de Tipo Fuego y Hielo.",
+            "<b>Prerrequisitos:</b> Ninguno."
         ]
     },
     {
@@ -2046,15 +1854,13 @@
         "tipos": [
             "Invención",
             "Inventor",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Equipo"
         ],
         "descripciones": [
-            "<b>Prerrequisitos:</b> Ninguno.",
             "Este par de tapones para los oídos bloquea los ruidos demasiado fuertes. Ponerse o quitarse los tapones cuenta como una Acción y, cuando una criatura los lleva puestos, recibe la mitad de daño de los Movimientos con la Etiqueta de Sonido.",
-            "A partir de nivel 7, los tapones también pueden amplificar los sonidos más débiles del entorno. Por 1 PP, una criatura puede activar este efecto de los tapones con su Acción, haciendo que gane un bono a las Tiradas de Percepción e investigación asociadas a oír."
+            "A partir de nivel 7, los tapones también pueden amplificar los sonidos más débiles del entorno. Por 1 PP, una criatura puede activar este efecto de los tapones con su Acción, haciendo que gane un bono a las Tiradas de Percepción e investigación asociadas a oír.",
+            "<b>Prerrequisitos:</b> Ninguno."
         ]
     },
     {
@@ -2062,16 +1868,14 @@
         "tipos": [
             "Invención",
             "Inventor",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Equipo"
         ],
         "descripciones": [
-            "<b>Prerrequisitos:</b> Nivel 7.",
             "Este traje imita las alas de un Noivern y puede colocarse en la espalda de cualquier pieza de ropa o usarse como ropa. Sólo una criatura con forma humanoide puede usar este traje.",
             "Cuando una criatura que lleva este traje cae puede abrir las alas del traje, que se ven como membranas que unen sus brazos a su torso y le permiten planear, de forma que por cada metro que cae puede avanzar 2 metros de forma horizontal y no recibe daño de caída cuando toca el suelo. En combate, una criatura que planea con el traje cae un mínimo de 5 metros por ronda.",
-            "Además, a partir de nivel 14, una criatura que lleva el traje puede batir las alas como Acción por 1 PP. Cuando lo hace, se dispara en el aire una cantidad de metros menor o igual al doble de tu Mente y sin provocar ataques de oportunidad."
+            "Además, a partir de nivel 14, una criatura que lleva el traje puede batir las alas como Acción por 1 PP. Cuando lo hace, se dispara en el aire una cantidad de metros menor o igual al doble de tu Mente y sin provocar ataques de oportunidad.",
+            "<b>Prerrequisitos:</b> Nivel 7."
         ]
     },
     {
@@ -2079,14 +1883,12 @@
         "tipos": [
             "Invención",
             "Inventor",
-            "Clase"
-        ],
-        "subtipos": [
+            "Clase",
             "Equipo"
         ],
         "descripciones": [
-            "<b>Prerrequisitos:</b> Ninguno.",
-            "Este traje de buzo puede ser diseñado para personas o para una especie pokémon específica. Una criatura que lo lleva puesto puede respirar bajo el agua y gana una velocidad de nado igual a su velocidad de caminado."
+            "Este traje de buzo puede ser diseñado para personas o para una especie pokémon específica. Una criatura que lo lleva puesto puede respirar bajo el agua y gana una velocidad de nado igual a su velocidad de caminado.",
+            "<b>Prerrequisitos:</b> Ninguno"
         ]
     },
     {
@@ -2095,9 +1897,7 @@
             "Tipo de Invención",
             "Clase",
             "Inventor",
-            "Invención"
-        ],
-        "subtipos": [
+            "Invención",
             "Paquetes"
         ],
         "descripciones": [
@@ -2112,9 +1912,7 @@
             "Tipo de Invención",
             "Clase",
             "Inventor",
-            "Invención"
-        ],
-        "subtipos": [
+            "Invención",
             "Cápsulas"
         ],
         "descripciones": [
@@ -2128,9 +1926,7 @@
             "Tipo de Invención",
             "Clase",
             "Inventor",
-            "Invención"
-        ],
-        "subtipos": [
+            "Invención",
             "Herramientas"
         ],
         "descripciones": [
@@ -2143,9 +1939,7 @@
             "Tipo de Invención",
             "Clase",
             "Inventor",
-            "Invención"
-        ],
-        "subtipos": [
+            "Invención",
             "Equipo"
         ],
         "descripciones": [
@@ -2684,7 +2478,17 @@
         ],
         "descripciones": [
             "La <b>Naturaleza</b> de un Pokémon representa su personalidad, ya sea la que tiene de forma natural, la que las circunstancias de su entorno le han dado o, más usualmente, una mezcla de ambas. Cuando capturas un Pokémon, tu DJ te dice cual es su Naturaleza o te permite elegir de las que hay en la tabla inferior o inventar una propia. Cada naturaleza vuelve Naturalmente Bueno a un Pokémon en una Tirada de Habilidad si no lo era ya.",
-            "Puedes ver las Naturalezas disponibles y sus Tiradas de Habilidad asociadas en el <RouterLink to='/capitulos/pokemon/#apartado4'>Capítulo 6. Pokémon.</RouterLink>"
+            {
+                "tipo": "pLink",
+                "partes": [
+                    {
+                        "previo": "Puedes ver las Naturalezas disponibles y sus Tiradas de Habilidad asociadas en el ",
+                        "ancla": "/capitulos/pokemon/#apartado4",
+                        "anclaContenido": "Pokémon",
+                        "final": "."
+                    }
+                ]
+            }
         ]
     },
     {
@@ -2697,7 +2501,17 @@
             "De la misma forma que sus entrenadores, los Pokémon pueden progresar durante la aventura de diferentes formas. Cuando tu personaje sube de Nivel, puedes subir de Nivel a todos los Pokémon que lleve consigo si son de un Nivel inferior al que acabas de alcanzar. Además, cuando un Pokémon es varios niveles inferior a ti, este gana 1 Nivel extra por cada sesión que juegues en la que participe activamente (a discreción del DJ).",
             "Cuando un Pokémon sube de Nivel, gana PV de acuerdo con la fórmula, gana 1 PP extra y se recalculan todos los valores que dependen de su BH si este aumenta. También puede aprender Movimientos de acuerdo con su entrada de la Pokédex y, en ciertas ocasiones, reducir el coste en PP de sus Movimientos en 1 o mejorar su daño, conseguir Mejoras de Estadísticas y aumentar su Grado de Habilidad en 1 en una Habilidad. Además, si estáis usando las reglas de Dotes, también puede ganarlas en ciertos niveles.",
             "La siguiente tabla resume la cantidad de Dotes, Mejoras de Estadísticas (ME) y Aumentos de su Grado de Habilidad (AGH) que tiene un Pokémon según su Nivel e indica si aprende nuevos Movimientos.",
-            "Puedes ver la Tabla de Progresión Pokémon en el Capítulo 6. Pokémon, en la sección <RouterLink to='/capitulos/pokemon/#apartado5'>Progresión Pokémon.</RouterLink>"
+            {
+                "tipo": "pLink",
+                "partes": [
+                    {
+                        "previo": "Puedes ver la Tabla de Progresión Pokémon en el Capítulo 6. Pokémon, en la sección ",
+                        "ancla": "/capitulos/pokemon/#apartado5",
+                        "anclaContenido": "Progresión Pokémon",
+                        "final": "."
+                    }
+                ]
+            }
         ]
     },
     {
@@ -2769,7 +2583,17 @@
         "descripciones": [
             "En el Mundo Pokémon, los entrenadores crean vínculos con sus Pokémon. Estos vínculos son ampliamente diversos y complejos, por lo que no siempre tienen que tener un aspecto similar entre sí y pueden cambiar con el paso del tiempo. La Amistad que un Pokémon siente hacia su entrenador representa lo cercanos que son y está clasificada en niveles que no son estrictos. Estos niveles van de 0 a 6 y los Pokémon recién capturados en suelen encontrarse en el nivel 2, aunque esto puede variar en función de lo que ocurriese antes de la captura.",
             "Los niveles de amistad pueden aumentar gracias al buen trato, el tiempo de calidad pasado juntos o la lucha contra la adversidad como un equipo, pero también puede perderse si el Pokémon se ve dejado de lado, es maltratado o si se le fuerza a hacer muchas cosas que no desea hacer.",
-            "Puedes ver los distintos niveles de Habilidad <RouterLink to='/capitulos/pokemon/#apartado11'>aquí.</RouterLink>"
+            {
+                "tipo": "pLink",
+                "partes": [
+                    {
+                        "previo": "Puedes ver los distintos niveles de Habilidad ",
+                        "ancla": "/capitulos/pokemon/#apartado11",
+                        "anclaContenido": "aquí",
+                        "final": "."
+                    }
+                ]
+            }
         ]
     },
     {
@@ -3213,7 +3037,17 @@
             "Las Poké Balls vienen en diversas variedades, algunas son simplemente mejores que otras pero la mayoría son más o menos útiles según el contexto. Puedes encontrar las reglas de cómo usar las Poké Balls en más detalle en el Capítulo 6: Pokémon, en la sección titulada Capturar. En resumen, capturar con una Poké Ball se reduce a hacer una Tirada de Trato Pokémon al lanzarla contra una dificultad que depende del nivel del Pokémon, su estado actual y su Especie. Si pasas la Tirada, el Pokémon queda capturado y, si la fallas, el Pokémon escapará, rompiendo la Poké Ball en el proceso. ",
             "Las Poké Balls pueden ser fabricadas por algunos personajes con ciertas Clases o con ciertas Dotes haciendo uso de sus Herramientas de Poké Balls. Cuando un personaje fabrica Poké Balls, debe tomar una Acción Extendida que dura 30 minutos por cada 1000$ que estas Poké Balls cuestan y consume materiales por valor de tres cuartas partes del coste de dichas Poké Balls a no ser que el Rasgo o Dote que les permite fabricarlas especifique otros costes. Al final de la Acción Extendida, el personaje hace una Tirada de Habilidad de Conocimiento de Poké Ball (Mente) por cada Poké Ball que ha preparado. Si la falla, la Poké Ball no funciona. La dificultad de dichas Tiradas varía en función de la rareza de la Poké Ball. Si es Común, la dificultad es 10, si es Poco Común, 15, si es Rara, 20 y, si es Muy Rara, 25. ",
             "Una Poké Ball rota debido a fallar en la captura de un Pokémon puede usarse como materiales para fabricar Poké Balls por valor igual a un cuarto de su coste. ",
-            "Puedes ver todas las Poké Balls <RouterLink to='/objetos?tipos=Pok%C3%A9+ball&seleccionado=Pok%C3%A9+Ball'>aquí</RouterLink>."
+            {
+                "tipo": "pLink",
+                "partes": [
+                    {
+                        "previo": "Puedes ver todas las Poké Balls ",
+                        "ancla": "/objetos?tipos=Pok%C3%A9+ball&seleccionado=Pok%C3%A9+Ball",
+                        "anclaContenido": "aquí",
+                        "final": "."
+                    }
+                ]
+            }
         ]
     },
     {
@@ -3226,7 +3060,17 @@
             "Durante sus aventuras, tanto entrenadores como Pokémon perderán PV e irán fatigándose hasta no poder seguir más o, incluso, quedar heridos. Para evitar esto es que existen las Medicinas. Las Medicinas son objetos Enanos y, aunque algunas están diseñadas para poder usarse durante la acción del combate, como las Pociones, otras, como los Remedios, sólo pueden usarse en los tiempos de descanso, lo cual compensan con su precio reducido y mayor efectividad.",
             "Estas Medicinas pueden ser preparadas por algunos personajes con ciertas Clases o con ciertas Dotes haciendo uso de sus Herramientas de Medicinas. Cuando un personaje prepara Medicinas, debe tomar una Acción Extendida que dura 30 minutos por cada 1000$ que estas Medicinas cuestan y consume materiales por valor de tres cuartas partes del coste de dichas Medicinas a no ser que el Rasgo o Dote que les permite prepararlas especifique otros costes. Al final de la Acción Extendida, el personaje hace una Tirada de Habilidad de Conocimiento Médico (Mente) por cada Medicina que ha preparado. Si la falla, la Medicina no sirve de nada. La dificultad de dichas Tiradas varía en función de la rareza de la Medicina. Si es Común, la dificultad es 10, si es Poco Común, 15, si es Rara, 20 y, si es Muy Rara, 25. ",
             "Las Bayas que poseen un efecto similar al de una Medicina equivalen a materiales para el preparado de dichas Medicinas por valor igual al de su coste de compra. Además, algunos químicos y Plantas también podrían servir como materiales para preparar Medicinas. ",
-            "Puedes ver todas las Medicinas <RouterLink to='/objetos?tipos=Medicina&seleccionado=Poci%C3%B3n'>aquí</RouterLink>."
+            {
+                "tipo": "pLink",
+                "partes": [
+                    {
+                        "previo": "Puedes ver todas las Medicinas ",
+                        "ancla": "/objetos?tipos=Medicina&seleccionado=Poci%C3%B3n",
+                        "anclaContenido": "aquí",
+                        "final": "."
+                    }
+                ]
+            }
         ]
     },
     {
@@ -3239,7 +3083,17 @@
             "Cuando estéis en la naturaleza quizás los entrenadores o vuestros Pokémon podréis encontrar ciertas plantas que poder utilizar. Estas plantas pasan por hierbas y raíces que podrían ser de utilidad para fabricar Medicina, Potenciadores o Comidas para crear o reparar Poké Balls o Bayas con utilidad de por sí. Las Plantas recolectables son, en general, objetos Enanos.",
             "Cuando acampáis o mientras viajáis por la naturaleza a cambio de viajar a la mitad de Velocidad, podéis intentar recolectar plantas y frutos como Acción Extendida. Para hacerlo, los que busquen recursos hacen una Tirada de Habilidad grupal de Supervivencia (Espíritu). En función del resultado, del entorno y de las criaturas que busquen, el DJ dice que encontráis. Además, también es posible obtener copias de una Planta usando un Kit de Botánica. ",
             "Las Bayas usualmente se utilizan para hacer comidas y medicinas, que potencian sus efectos. Aun así, estas tienen también valor por sí mismas. Todas las bayas pueden ser consumidas como Acción, lo que otorga un beneficio que dura hasta el final del día o hasta que se utilice por primera vez. Este beneficio cuenta como un beneficio otorgado por una comida. En la siguiente tabla están enlistadas las bayas en base a su rareza, junto a sus descripciones y el tipo de comidas y medicinas que pueden producirse con estas. ",
-            "Puedes ver todas las Plantas y Bayas <RouterLink to='/objetos?tipos=Baya,Planta&seleccionado=Hierba+blanca'>aquí</RouterLink>."
+            {
+                "tipo": "pLink",
+                "partes": [
+                    {
+                        "previo": "Puedes ver todas las Plantas y Bayas ",
+                        "ancla": "/objetos?tipos=Baya,Planta&seleccionado=Hierba+blanca",
+                        "anclaContenido": "aquí",
+                        "final": "."
+                    }
+                ]
+            }
         ]
     },
     {
@@ -3252,7 +3106,17 @@
             "Tal y como su nombre indica, los Potenciadores son objetos Enanos que mejoran características tanto de entrenadores como de Pokémon. Los hay de tres tipos principales: Objetos X, Grageas y Vitaminas. ",
             "Las grageas y objetos X tienen una duración corta, pero son considerablemente más baratas que las proteínas, que poseen efectos algo más limitados pero duran por todo el día. Todos los Potenciadores pueden consumirse con una Acción y otorgan su efecto inmediatamente. Además, una criatura no puede estar bajo los efectos de dos o más Potenciadores a la vez. Si una criatura consume un Potenciador estando bajo los efectos de otro, se beneficia sólo del consumido más recientemente. ",
             "Estos Potenciadores pueden ser preparados por algunos personajes con ciertas Clases o con ciertas Dotes haciendo uso de sus Herramientas de Química. Cuando un personaje prepara Potenciadores, debe tomar una Acción Extendida que dura 30 minutos por cada 1000$ que estos Potenciadores cuestan y consume materiales por valor de tres cuartas partes del coste de dichos Potenciadores a no ser que el Rasgo o Dote que les permite prepararlos especifique otros costes. Al final de la Acción Extendida, el personaje hace una Tirada de Habilidad de Conocimiento de Química (Mente) por cada Potenciador que ha preparado. Si la falla, el Potenciador no sirve de nada. La dificultad de dichas Tiradas varía en función de la rareza del Potenciador. Si es Común, la dificultad es 10, si es Poco Común, 15, si es Raro, 20 y, si es Muy Raro, 25. ",
-            "Puedes ver todos los Potenciadores <RouterLink to='/objetos?tipos=Potenciador&seleccionado=Ataque+X'>aquí</RouterLink>."
+            {
+                "tipo": "pLink",
+                "partes": [
+                    {
+                        "previo": "Puedes ver todos los Potenciadores ",
+                        "ancla": "/objetos?tipos=Potenciador&seleccionado=Ataque+X",
+                        "anclaContenido": "aquí",
+                        "final": "."
+                    }
+                ]
+            }
         ]
     },
     {
@@ -3265,7 +3129,17 @@
             "Algunos de los alimentos del mundo Pokémon, como las Bayas, tienen propiedades restauradoras y potenciadoras. Usualmente, estos alimentos son utilizados para crear Medicinas y Potenciadores, pero también hay formas de usarlos para crear Comida especialmente nutritiva, la cual posee efectos extra. La Comida es un objeto de tamaño Enano. ",
             "Estas Comidas pueden comprarse ya preparadas o pueden ser hechas por algunos entrenadores con ciertas Clases o con ciertas Dotes haciendo uso de sus Utensilios de cocina. Cuando un personaje cocina Comidas, debe tomar una Acción Extendida que dura 30 minutos por cada 1000$ que estas Comidas cuestan y consume materiales por valor de tres cuartas partes del coste de dichas Comidas a no ser que el Rasgo o Dote que les permite prepararlos especifique otros costes. Al final de la Acción Extendida, el personaje hace una Tirada de Habilidad de Conocimiento de Cocina (Espíritu) por cada Comida que ha preparado. Si la falla, la Comida no otorga beneficio alguno, pero puede comerse. La dificultad de dichas Tiradas varía en función de la rareza de la Comida. Si es Común, la dificultad es 10, si es Poco Común, 15, si es Raro, 20, y, si es Muy Raro, 25. ",
             "Algunas comidas otorgan un beneficio temporal cuando se comen como una Acción Extendida de mínimo 5 minutos, el cual desaparece si no se ha usado al final del día, tiene un sólo uso y no puede acumularse con los efectos de otras Comidas. Si consumes una Comida que da un beneficio temporal cuando se está bajo los efectos de otra, debes elegir con cual beneficio quedarte. La siguiente tabla contiene todas las comidas que otorgan uno de estos beneficios temporales. Los nombres son recomendaciones, puedes darle los que desees para adaptarse a la comida que cocines. ",
-            "Puedes ver todas las Comidas <RouterLink to='/objetos?tipos=Comida&seleccionado=Tapa+estado'>aquí</RouterLink>."
+            {
+                "tipo": "pLink",
+                "partes": [
+                    {
+                        "previo": "Puedes ver todas las Comidas ",
+                        "ancla": "/objetos?tipos=Comida&seleccionado=Tapa+estado",
+                        "anclaContenido": "aquí",
+                        "final": "."
+                    }
+                ]
+            }
         ]
     },
     {
@@ -3278,7 +3152,17 @@
             "Algunos Pokémon requieren de objetos para poder evolucionar. Estos objetos suelen ser raros de encontrar, por lo que es probable que los Pokémon que los requieren tarden algo más en poder evolucionar que los que no necesitan de dichos objetos. ",
             "Cuando un Pokémon requiere de un Objeto Evolutivo no es mala idea ir buscando lugares donde poder encontrarlo, como tiendas especializadas o entornos naturales en los que podrían aparecer. Si el plan es comprar el objeto, es bueno ir planificando el ahorro, puesto que el precio recomendado de estos objetos oscila alrededor de los 10.000$ si son piedras evolutivas o 15.000$ si son otro tipo de objeto. Usualmente, los objetos evolutivos son objetos de tamaño Enano. ",
             "Por otro lado, algunos Pokémon que requieren de objetos evolutivos, principalmente los que requieren de piedras evolutivas, podrían no requerir de éstas en ciertos entornos. Por ejemplo, quizás Eevee no necesite de una piedra hoja para evolucionar si visitas una selva especialmente frondosa. Por otro lado, algunos objetos que claramente podrían ser fabricados, como los Confites, el Magmatizador o el Disco Extraño, podrían ser creados por personajes que sean hábiles en unas herramientas adecuadas para producirlos y puedan fabricar objetos raros. ",
-            "Puedes ver todos los Objetos Evolutivos <RouterLink to='/objetos?tipos=Objeto+evolutivo&seleccionado=Piedra+agua'>aquí</RouterLink>."
+            {
+                "tipo": "pLink",
+                "partes": [
+                    {
+                        "previo": "Puedes ver todos los Objetos Evolutivos ",
+                        "ancla": "/objetos?tipos=Objeto+evolutivo&seleccionado=Piedra+agua",
+                        "anclaContenido": "aquí",
+                        "final": "."
+                    }
+                ]
+            }
         ]
     },
     {
@@ -3303,7 +3187,17 @@
             "Los Amuletos son colgantes, abalorios o complementos de tamaño Enano que están imbuidos con energía de los Pokémon de alguna forma. Una criatura puede llevar múltiples Amuletos encima pero sólo puede ligarse a uno. Al ligarse a un amuleto, una criatura gana un beneficio. ",
             "Para ligarse a un Amuleto debes llevarlo puesto mientras tomas una Acción Extendida que dura 1 hora. Cuando te quitas un Amuleto, te desligas de él. En las siguientes tablas encontrarás los amuletos existentes, junto a un precio recomendado para estos, aunque este podría variar. ",
             "Todos los amuletos se consideran objetos raros de encontrar y, de hecho, en contadas ocasiones encontrarás muchos amuletos a la venta. En su lugar, lo más probable es que los recibas como recompensa por ayudar a alguien o que los encuentres extraviados en algún lugar que investigues. Eso sí, no será muy complicado encontrar compradores, ya sea entre coleccionistas u otros entrenadores, puesto que el uso de amuletos está permitido en los combates reglados generalmente y ofrecen un aumento de poder considerable si se compaginan con las Habilidades y Movimientos adecuados. ",
-            "Puedes ver todos los Amuletos <RouterLink to='/objetos?tipos=Amuleto&seleccionado=Agua+m%C3%ADstica'>aquí</RouterLink>."
+            {
+                "tipo": "pLink",
+                "partes": [
+                    {
+                        "previo": "Puedes ver todos los Amuletos ",
+                        "ancla": "/objetos?tipos=Amuleto&seleccionado=Agua+m%C3%ADstica",
+                        "anclaContenido": "aquí",
+                        "final": "."
+                    }
+                ]
+            }
         ]
     },
     {
@@ -3315,7 +3209,17 @@
         "descripciones": [
             "Similares a los Amuletos pero distintos en su naturaleza, no hay un límite a la cantidad de Piezas de Equipo que una criatura puede usar, más allá de que es complicado que se use, por ejemplo, una capucha y un casco a la vez. La mayoría de Piezas de Equipo equipos son Enanos ",
             "Las Piezas de Equipo pueden equiparse y desequiparse como Acción y sólo pueden equiparse si fueron diseñados para una criatura de la misma especie. Los equipos suelen comprarse en tiendas especializadas que, usualmente, sólo se encuentran en grandes ciudades o en localizaciones particulares. ",
-            "Puedes ver todas las Piezas de Equipo <RouterLink to='/objetos?tipos=Equipo&seleccionado=Botas+gruesas'>aquí</RouterLink>."
+            {
+                "tipo": "pLink",
+                "partes": [
+                    {
+                        "previo": "Puedes ver todas las Piezas de Equipo ",
+                        "ancla": "/objetos?tipos=Equipo&seleccionado=Botas+gruesas",
+                        "anclaContenido": "aquí",
+                        "final": "."
+                    }
+                ]
+            }
         ]
     },
     {
@@ -3328,7 +3232,17 @@
             "No es extraño que los entrenadores viajen por el mundo en busca de aventuras y nuevos desafíos con los que poder superarse. En estos viajes, todos los entrenadores necesitarán de equipaje. Es natural dar por hecho que todos los entrenadores llevan consigo al menos una mochila con unos cuantos cambios de ropa y materiales de aseo básicos. Sin embargo, se presentarán múltiples situaciones en las que los entrenadores requieran objetos especializados.",
             "Además existen objetos menos comunes, que los entrenadores podrían llegar a obtener y, en algunos casos comprar. Todos estos son objetos Enanos. ",
             "Por ultimo, también existen objetos consumibles. Estos tienen un único uso y usualmente pueden comprarse en tiendas o fabricarse con Herramientas de Inventor si se conocen las invenciones adecuadas. Los objetos consumibles son elementos esenciales en el arsenal de cualquier Entrenador, ya que pueden marcar la diferencia entre la victoria y la derrota en un enfrentamiento. Su disponibilidad en las tiendas puede ser limitada, así que no tengas miedo de gastar el dinero en estas cuando las veas. ",
-            "Puedes ver todos los Objetos de Entrenador <RouterLink to='/objetos?tipos=Objetos+de+entrenador,Objetos+de+entrenador+(Consumible)&seleccionado=Kit+de+bot%C3%A1nica'>aquí</RouterLink>."
+            {
+                "tipo": "pLink",
+                "partes": [
+                    {
+                        "previo": "Puedes ver todos los Objetos de Entrenador ",
+                        "ancla": "/objetos?tipos=Objetos+de+entrenador,Objetos+de+entrenador+(Consumible)&seleccionado=Kit+de+bot%C3%A1nica",
+                        "anclaContenido": "aquí",
+                        "final": "."
+                    }
+                ]
+            }
         ]
     },
     {
@@ -3339,7 +3253,17 @@
         ],
         "descripciones": [
             "Puede que en la versión del Mundo Pokémon de tu campaña existan las armas. Esto no significa que necesariamente tengas que apuñalar o disparar con una pistola a tus Pokémon. Quizás las armas que se usen sean un poco anacrónicas para nuestro mundo porque estas sean las únicas que se sabe cómo potenciar con el poder de los Pokémon, por dar algún argumento. Además, las armas podrían ser caricaturescas, como por ejemplo un martillo que sea como el de Tinkaton o estrellas ninja que sean como estrellas del Movimiento Meteoros.",
-            "Puedes encontrar más información sobre las armas <RouterLink to='/capitulos/objetos/#apartado11'>aquí</RouterLink>"
+            {
+                "tipo": "pLink",
+                "partes": [
+                    {
+                        "previo": "Puedes encontrar más información sobre las armas ",
+                        "ancla": "/capitulos/objetos/#apartado11",
+                        "anclaContenido": "aquí",
+                        "final": "."
+                    }
+                ]
+            }
         ]
     },
     {
@@ -3352,7 +3276,17 @@
             "Los Fósiles son rocas que conservan el ADN o algún rastro de estructuras biológicas de una especie Pokémon del pasado. Estos fósiles pueden restaurarse en facilidades adecuadas, usualmente como un favor o pagando un precio alto.",
             "Tu DJ decide cuánto tardan en traer a la vida y el nivel de los Pokémon creados con un fósil, pero lo normal es que vuelvan siendo nivel 4 y que tarden uno o dos días en restaurarlos.",
             "Si en tus campañas tu DJ decide que hay Pokémon que vienen del pasado que usualmente no provienen de este, como los Pokémon paradoja del pasado, puede elegir crear fósiles para estos, así que, cuando entres a una cueva, presta atención, quizás te encuentres con alguna sorpresa.",
-            "Puedes encontrar todos los Fósiles <RouterLink to='/objetos?tipos=F%C3%B3sil&seleccionado=%C3%81mbar+Viejo'>aquí</RouterLink>"
+            {
+                "tipo": "pLink",
+                "partes": [
+                    {
+                        "previo": "Puedes encontrar todos los Fósiles ",
+                        "ancla": "/objetos?tipos=F%C3%B3sil&seleccionado=%C3%81mbar+Viejo",
+                        "anclaContenido": "aquí",
+                        "final": "."
+                    }
+                ]
+            }
         ]
     },
     {
@@ -3363,7 +3297,17 @@
         ],
         "descripciones": [
             "Los objetos míticos son objetos únicos o inusitadamente raros. En muchas ocasiones, serán el centro de alguna trama de una campaña. Tu DJ puede inventar otros o modificar los de la tabla inferior, pero estos son una guía de algunos objetos que podrían aparecer a lo largo de las aventuras de tu campaña. ",
-            "Puedes encontrar todos los Objetos Míticos <RouterLink to='/objetos?tipos=Objetos+m%C3%ADticos&seleccionado=Arca+de+Zygarde'>aquí</RouterLink>"
+            {
+                "tipo": "pLink",
+                "partes": [
+                    {
+                        "previo": "Puedes encontrar todos los Objetos Míticos ",
+                        "ancla": "/objetos?tipos=Objetos+m%C3%ADticos&seleccionado=Arca+de+Zygarde",
+                        "anclaContenido": "aquí",
+                        "final": "."
+                    }
+                ]
+            }
         ]
     },
     {
@@ -3623,212 +3567,425 @@
         ]
     },
     {
-        "nombre": "",
+        "nombre": "Daño provocado por el ambiente",
         "tipos": [
             "Regla de DJ",
             "Regla",
             "Capítulo 11"
         ],
         "descripciones": [
-            ""
+            "<b>Fuego</b>: Una criatura que entra en contacto con el fuego o que termina su turno sobre este recibe daño de Tipo Fuego. Este daño depende del origen de esta, pudiendo hacer 1 Punto de daño si es una pequeña ascua o una cantidad de d10 de daño que oscila entre 1 y 5 y puede hacer ganar 1 o 2 Niveles de Quemado.",
+            "Una criatura que recibe daño de Lava estando Inconsciente gana 3 Niveles de Fatiga o 6 si el Tipo Fuego es súper efectiva contra ella, en lugar de los Niveles de Fatiga usuales. ",
+            "<b>Lava</b>: Una criatura que entra en contacto con la Lava o que termina su turno sobre esta recibe 10d10 de daño de Tipo Fuego y gana 2 Niveles de Quemado. Una criatura que recibe daño de Lava estando Inconsciente gana 2 Niveles de Fatiga o 3 si el Tipo Fuego es súper efectivo contra ella, en lugar de los Niveles de Fatiga usuales. ",
+            "<b>Descarga eléctrica</b>: Algunos aparatos eléctricos o algunas rocas cargadas eléctricamente pueden provocar daño de Tipo Eléctrico y hacerle ganar de 1 a 2 Niveles de Paralizado. Este daño depende del origen de esta, pudiendo hacer 1 Punto de daño si es una chispa leve o una cantidad de d10 de daño que oscila entre 1 y 10. ",
+            "<b>Espinas</b>: Las espinas de una planta pueden hacer daño a una criatura que cae sobre ellas o que se raspa contra ellas cuando va a la carrera. Si se cae sobre espinas, estas duplican el daño de caída y, si te arañas contra estas, recibes 1d10 de daño de Tipo Normal o Planta (a tu elección) por cada vez que te rozas contra estas. ",
+            "Una criatura que no se mueve cuando tiene espinas de plantas clavadas no recibe más daño de estas. "
         ]
     },
     {
-        "nombre": "",
+        "nombre": "Efectos ambientales",
         "tipos": [
             "Regla de DJ",
             "Regla",
             "Capítulo 11"
         ],
         "descripciones": [
-            ""
+            "Ciertas regiones, por ejemplo, las afectadas por poderosos Pokémon podrían estar siempre bajo los efectos de un Campo. Por ejemplo, podrías elegir que una cueva cargada electromagnéticamente tuviera rocas y focos de electricidad alrededor de los cuales hay un Campo Eléctrico. También podrías definir que una pradera asociada a un pokémon Legendario asociado a la vida se considera siempre un Campo de Hierba o que una región mágica y encantada está bajo los efectos de un Campo Psíquico o un Campo de Niebla constante.",
+            "Además del Clima o los Campos, también podrías inventar otros efectos que den carácter propio a ciertos encuentros o localizaciones. Algunos ejemplos de esto son: Lagos de magma y volcanes, arenas movedizas, zonas repletas de niebla, zonas repletas de gas venenoso, zonas tenebrosas o malditas, región de Espacio raro, región de Zona extraña, región de Zona mágica y el Mundo distorsión."
         ]
     },
     {
-        "nombre": "",
+        "nombre": "Lagos de Magma y volcanes",
         "tipos": [
-            "Regla de DJ",
+            "Efecto ambiental",
             "Regla",
             "Capítulo 11"
         ],
         "descripciones": [
-            ""
+            "Los volcanes activos y los lagos de magma son el hogar natural para muchos Pokémon de Tipo Fuego, pero son hostiles casi todas las otras criaturas. Cualquier criatura a menos de una cierta distancia del magma podría quedar siempre acalorada. Tu, como DJ, decides la distancia, pero un par de ejemplos son estar a menos de 10 metros de un lago de Magma te deja acalorado o estar a menos de 100 metros de la lava de la boca de un volcán también te deja acalorado. ",
+            "Una criatura inmune al daño de Tipo Fuego o con la Habilidad Escudo Magma puede nadar por el Magma a razón de 1 metro por cada 4 metros de Velocidad de Caminado que consuma para desplazarse. "
         ]
     },
     {
-        "nombre": "",
+        "nombre": "Arenas movedizas",
         "tipos": [
-            "Regla de DJ",
+            "Efecto ambiental",
             "Regla",
             "Capítulo 11"
         ],
         "descripciones": [
-            ""
+            "Las arenas movedizas son Terreno Difícil y debe superarse una Tirada de Habilidad de Supervivencia o Percepción con CD 15 para detectarse antes de pisarlas. Una Criatura que termina su turno tocándolas, o que las pisa fuera de Iniciativa sin saber que están ahí, debe hacer una Tirada de Salvación de Fuerza con CD 14 (puedes cambiar esta Dificultad, la cual es la Dificultad de las Arenas) y, si la falla empieza a hundirse, ganando 1 Nivel de Enterrado en las Arenas Movedizas. Una criatura que tiene Niveles de Enterrado en las Arenas Movedizas está Apresada. ",
+            "Para liberarse de las Arenas Movedizas deben reducirse estos Niveles de Enterrado en las Arenas Movedizas a 0. El máximo de Niveles que Enterrado que puede tener una criatura es de 4, a no ser que tu definas que es más alto. Una criatura con 3 Niveles de Enterrado o más está completamente cubierta y empieza a sofocarse, ganando 1 Nivel de Fatiga al final de cada uno de sus turnos. ",
+            "Una criatura puede usar su Acción para intentar liberarse de las Arenas Movedizas, repitiendo la Tirada de Salvación. Si la pasa, reduce en 1 sus Niveles de Enterrado. ",
+            "Además, una criatura puede ayudar a reducir sus Niveles de Enterrado a otra. Para ello, usa su Acción y hace una Tirada de Salvación con CD la Dificultad de las Arenas. Si la pasa, reduce en 1 los Niveles de Enterrado de otra criatura y, si la falla por 10 o más, ella cae a las arenas y gana 1 Nivel de Enterrado. Además, si de alguna forma una criatura se teleporta fuera de las arenas, obviamente queda libre de cualquier Nivel de Enterrado que sufriera. "
         ]
     },
     {
-        "nombre": "",
+        "nombre": "Zonas repletas de Niebla",
         "tipos": [
-            "Regla de DJ",
+            "Efecto ambiental",
             "Regla",
             "Capítulo 11"
         ],
         "descripciones": [
-            ""
+            "Una zona repleta de Niebla puede obstaculizar la visión en cierto grado en función de lo espesa que sea la Niebla. Puedes elegir que ciertas regiones de la Niebla sean más espesas que otras. Los distintos grados de espesor son los siguientes: ",
+            {
+                "tipo": "listaU",
+                "contenido": [
+                    "<b>Bruma leve</b>: Las Tiradas de Percepción para ver a más de 10 metros se hacen en Desventaja y no se puede ver a más de 20 metros. ",
+                    "<b>Niebla normal</b>: Las Tiradas de Percepción para ver a más de una distancia en metros superior a 1 e inferior a 9 metros se hacen en Desventaja y no se puede ver a más del doble de esa distancia en metros. ",
+                    "<b>Niebla espesa</b>: Las criaturas no ven a más de 1 metro de sí mismas cuando están inmersas en esta niebla. Niebla total: Las criaturas no ven dentro de esta niebla. ",
+                    "<b>Niebla total</b>: Las criaturas no ven dentro de esta niebla. "
+                ]
+            }
         ]
     },
     {
-        "nombre": "",
+        "nombre": "Zonas repletas de Gas Venenoso",
         "tipos": [
-            "Regla de DJ",
+            "Efecto ambiental",
             "Regla",
             "Capítulo 11"
         ],
         "descripciones": [
-            ""
+            "Algunas zonas estarán llenas de gas venenoso. Decides si este gas venenoso además cuenta como una zona de Niebla y, si decides que si, eliges el espesor de esta. ",
+            "Además, una criatura que no es Tipo Veneno ni Tipo Acero hace una Tirada de Salvación de Resistencia contra un CD que tu eliges, el CD del Gas Venenoso. Si la fallan, ganan 1 Nivel de Envenenado. ",
+            "Por último, una criatura que termina su turno dentro del Gas Venenoso no reduce sus Niveles de Envenenado al final de su turno "
         ]
     },
     {
-        "nombre": "",
+        "nombre": "Zonas tenebrosas o malditas",
         "tipos": [
-            "Regla de DJ",
+            "Efecto ambiental",
             "Regla",
             "Capítulo 11"
         ],
         "descripciones": [
-            ""
+            "Estas regiones poseen un aura terrorífica. Todas las Tiradas de Salvación de Espíritu hechas por criaturas que no tienen Sentido Espectral dentro de estas regiones se hacen en Desventaja. Además, las criaturas que no tienen Sentido Espectral no reducen sus Niveles de Asustado al final de sus turnos. ",
+            "Una criatura que tiene 3 o más Niveles de Asustado dentro de esta zona empieza a sufrir visiones tenebrosas. Si tiene de 3 a 5 Niveles, estas visiones sólo se superponen con sus sentidos, por lo que la criatura tiene Desventaja en todas las Tiradas de 20 que realiza. Si tiene 6 o más Niveles de Asustado, queda completamente paralizada por las visiones. La criatura no puede tomar acciones ni reacciones y sólo murmura. "
         ]
     },
     {
-        "nombre": "",
+        "nombre": "Región de Espacio raro",
         "tipos": [
-            "Regla de DJ",
+            "Efecto ambiental",
             "Regla",
             "Capítulo 11"
         ],
         "descripciones": [
-            ""
+            "La región está bajo uno o varios de los efectos del Movimiento Espacio raro, con un CD a tu elección."
         ]
     },
     {
-        "nombre": "",
+        "nombre": "Región de Zona extraña",
         "tipos": [
-            "Regla de DJ",
+            "Efecto ambiental",
             "Regla",
             "Capítulo 11"
         ],
         "descripciones": [
-            ""
+            "La región está bajo uno o varios de los efectos del Movimiento Zona extraña. "
         ]
     },
     {
-        "nombre": "",
+        "nombre": "Región de Zona mágica",
         "tipos": [
-            "Regla de DJ",
+            "Efecto ambiental",
             "Regla",
             "Capítulo 11"
         ],
         "descripciones": [
-            ""
+            "La región está bajo uno o varios de los efectos del Movimiento Zona mágica. "
         ]
     },
     {
-        "nombre": "",
+        "nombre": "Mundo distorsión",
         "tipos": [
-            "Regla de DJ",
+            "Efecto ambiental",
             "Regla",
             "Capítulo 11"
         ],
         "descripciones": [
-            ""
+            "Esta región está hecha de islotes, cada uno con su gravedad propia que sólo toma efecto cuando se está muy cerca de ellos. Saltar de un Islote a otro requiere de Tiradas de Acrobacias o Atletismo con CD dependiente de la distancia entre estas, el cual defines tu. Una criatura que falla estas tiradas cae al vacío infinito tiene que buscar acercarse a otro islote para que su gravedad lo atraiga. Es usual que esta región además esté afectada también por los efectos de una Región de Espacio raro. "
         ]
     },
     {
-        "nombre": "",
+        "nombre": "Puntos de Superioridad",
         "tipos": [
             "Regla de DJ",
             "Regla",
             "Capítulo 11"
         ],
         "descripciones": [
-            ""
+            "Puntos de Superioridad En ciertas ocasiones, como por ejemplo cuando hay un Entrenador o Pokémon muy superior al grupo de los PJs o cuando los PJs enfrenten a una criatura bajo un efecto que la potencia tanto que la hace perder el control, querrás que dicho Entrenador o Pokémon se sienta mucho más poderoso que los jugadores. Podrías recurrir a darles más nivel, pero esto produciría una situación en la que los jugadores serían arrasados, siendo incapaces de afectar a los Pokémon rivales y estos, a su vez, haciendo muchísimo daño a los jugadores. En lugar de esto, cuando quieras crear Entrenadores o Pokémon que se sientan mucho más poderosos sin ser injustos, deberías hacer uso de las reglas de Puntos de Superioridad. ",
+            "Los Puntos de Superioridad son un recurso que pueden tener las criaturas que controla el Director de Juego y que tienen varios usos y efectos sobre estas: ",
+            "<b>Mejora de Resiliencia.</b> Una criatura que empieza un combate con Puntos de Superioridad multiplica sus PV y sus PP máximos por su cantidad de Puntos de Superioridad más 1 ",
+            "<b>Acciones de Superioridad.</b> Una criatura con Puntos de Superioridad puede tomar un Turno de Superioridad al final de cada uno de los turnos de otras Criaturas rivales en la Iniciativa. La cantidad máxima de Turnos de Superioridad que puede tomar una Criatura por ronda es igual a la cantidad de Puntos de Superioridad que tiene. ",
+            "Los <b>Turnos de Superioridad</b> son turnos en los que sólo pueden tomarse una Acción o Acción compartida y en los que la criatura puede moverse una cantidad de metros igual a la mitad de su Velocidad. ",
+            "<b>Evitar Efectos.</b> Una criatura puede gastar un Punto de Superioridad para liberarse de un Estado o ignorar el efecto de un Movimiento, Rasgo o Habilidad. Una vez un Punto de Superioridad se gasta de esta forma, este no se recupera hasta que la criatura Descanse y, por lo tanto, la criatura pierde una de sus Acciones de Superioridad. ",
+            "<b>Movimientos Extra.</b> La criatura puede conocer varios Movimientos Enseñables, los cuales podría no olvidar si pierde los Puntos de Superioridad (tu elección como DJ cuando le das dichos Movimientos). ",
+            "<b>Efectos Extra.</b> Si quieres hacer que un Pokémon con Puntos de Superioridad se sienta de una forma determinada, como, por ejemplo, que es muy resistente, muy ágil o poderoso puedes darle uno o varios de los siguientes efectos: ",
+            {
+                "tipo": "listaU",
+                "contenido": [
+                    "La criatura gana Puntos de Escudo igual a su cantidad de Puntos de Superioridad multiplicada por la Mitad de su Nivel al principio de cada uno de sus turnos.",
+                    "La criatura puede usar una Acción de Superioridad para moverse toda su velocidad, provocando o no ataques de oportunidad (tu elección cuando le otorgas esta capacidad).",
+                    "La criatura añade un dado al daño al Daño Base de todos sus Movimientos.",
+                    "Por cada Efecto Extra que le otorgas a un Pokémon, este puede tomar una Acción de Superioridad menos en cada ronda, a no ser que el efecto ya consuma una."
+                ]
+            },
+            "Por cada Efecto Extra que le otorgas a un Pokémon, este puede tomar una Acción de Superioridad menos en cada ronda, a no ser que el efecto ya consuma una. ",
+            "<b>Poder de Puntos de Superioridad.</b> Una criatura con Puntos de Superioridad cuenta como una cantidad de criaturas equivalentes iguales a sus Puntos de Superioridad más 1. Por lo tanto, si quieres que una criatura pueda rivalizar con 1 Pokémon de cada uno de tus jugadores deberás darle una cantidad de Puntos de Superioridad igual a tu cantidad de jugadores menos 1 y, si quieres que equivalga a dos Pokémon de estos, deberás de darle el doble de esos Puntos de Superioridad. ",
+            "<b>Capturar Pokémon con Puntos de Superioridad.</b> En muchas ocasiones, capturar un Pokémon que posee Puntos de Superioridad será imposible, al menos, hasta que se quede sin estos Puntos de Superioridad. Si, por algún motivo, un Entrenador consigue capturar un Pokémon con Puntos de Superioridad, este los pierde automáticamente, junto a todos los efectos que tenerlos le otorgasen. ",
+            "<b>De uno en uno.</b> La mayor parte de las veces que un grupo enfrente a una criatura con Puntos de Superioridad lo harán en solitario, puesto que estas ya son lo suficientemente poderosas como para plantar cara al grupo y, en general, no deberías utilizar múltiples entrenadores y Pokémon que no son de Entrenadores que tengan Puntos de Superioridad en un mismo combate, puesto que esto haría el combate imposible de ganar y muy lento. "
         ]
     },
     {
-        "nombre": "",
+        "nombre": "Pokémon esbirro",
         "tipos": [
             "Regla de DJ",
             "Regla",
             "Capítulo 11"
         ],
         "descripciones": [
-            ""
+            "En ocasiones querrás presentar a un gran grupo de Pokémon de la misma especie mucho más débiles que los personajes que acompañarán a otro enemigo en un conflicto. Cuando esto ocurra, no añadas una docena de estos enemigos normales, cada uno con su propia iniciativa y con niveles muy inferiores, pues eso va a hacer que el combate se vuelva muy tedioso. En estos casos deberías usar Pokémon Esbirros.",
+            "Un Pokémon esbirro es un Pokémon que, independientemente de su Vitalidad o Nivel, siempre tiene 10 PV. El objetivo de estos Pokémon es presentar enemigos que hay que enfrentar antes de acabar con el villano principal porque presentan un peligro y que, a su vez, son fáciles de despachar. ",
+            "Para crear un Pokémon esbirro prepara el Pokémon al nivel que desees usarlo (lo recomendable es que sea unos 2 niveles inferior a los de los PJs) y, a la hora de calcular sus PV, simplemente anota que tiene 10 PV. De esta forma sólo aguantará uno o dos golpes como mucho. Un Pokémon esbirro cuenta, a la hora de calcular la dificultad de un encuentro, como ⅓ de un Pokémon normal, así que por cada 3 esbirros que añadas cuéntalos como un Pokémon de su misma especie y Nivel. Considera, además, usar la misma Iniciativa para estos grupitos de 3 esbirros y que actúen todos de forma similar, usando los mismos Movimientos y atacando a los mismos objetivos para que la Iniciativa no se vuelva muy larga. "
         ]
     },
     {
-        "nombre": "",
+        "nombre": "Pokémon especiales",
         "tipos": [
             "Regla de DJ",
             "Regla",
             "Capítulo 11"
         ],
         "descripciones": [
-            ""
+            "Para ciertos encuentros temáticos querrás usar Pokémon Especiales. Los Pokémon Especiales son Pokémon que tienen alguna condición especial sobre los mismos. Por ejemplo, que son Pokémon Alfa o Pokémon Oscuros."
         ]
     },
     {
-        "nombre": "",
+        "nombre": "Transformaciones Pokémon",
         "tipos": [
+            "Pokémon especiales",
             "Regla de DJ",
             "Regla",
             "Capítulo 11"
         ],
         "descripciones": [
-            ""
+            "En ciertas ocasiones, querrás que el grupo se enfrente a una criatura Megaevolucionada, en su forma primigenia o Dinamaxeada. Estas ocasiones son buenos momentos para hacer uso de la regla de Puntos de Superioridad antes comentada, pero también debes considerar el efecto que estas transformaciones podrían tener sobre el combate. En general, cuando una criatura megaevoluciona o está en su forma primigenia, considérala como si fuese 2 niveles superior a la hora de calcular la dificultad que representa. Si ha sido dinamaxeada, considérala 4 niveles superior. "
         ]
     },
     {
-        "nombre": "",
+        "nombre": "Pokémon Oscuros",
         "tipos": [
+            "Pokémon especiales",
             "Regla de DJ",
             "Regla",
             "Capítulo 11"
         ],
         "descripciones": [
-            ""
+            "En ciertas iteraciones del mundo Pokémon existen los Pokémon Oscuros. Estos son Pokémon que, fruto del maltrato sufrido por sus entrenadores, han absorbido una energía maléfica y dañina. Los Pokémon Oscuros exuden un aura maléfica y tenebrosa y sus ojos son de color rojo. ",
+            "Los Pokémon oscuros tienen un beneficio y una desventaja. El daño de todos los Movimientos que usan aumenta en 1 dado (o en 2 dados si son de Nivel 14 o más) y, cuando reciben daño del un Movimiento, el daño base de dicho Movimiento aumenta en un dado (o en 2 dados si son de Nivel 14 o más) contra ellos. ",
+            "Los Pokémon Oscuros tienen las Habilidades de Intimidación o Presión además de sus Habilidades usuales. ",
+            "Los Pokémon Oscuros aumentan su rango de Captura en 5 y, a discreción del DJ, pueden incluso no ser capturables en este estado. ",
+            "Un Pokémon deja de ser Oscuro con el tiempo y el buen trato de un Entrenador y un Pokémon puede volverse un Pokémon oscuro cuando es abusado por el mismo. Ambas transformaciones están a discreción del DJ, pero una buena guía es que un Pokémon deja de ser Oscuro al alcanzar el Nivel 2 de Amistad con su entrenador (empieza en 0 al ser capturado) y se vuelve Oscuro cuando alcanza el Nivel 0 y no puede escapar. ",
+            "Además, estos Pokémon pueden entrar en un frenesí destructivo que les otorga poder extra, por lo que son grandes candidatos para ser enemigos con Puntos de Superioridad. "
         ]
     },
     {
-        "nombre": "",
+        "nombre": "Pokemon infundidos",
         "tipos": [
+            "Pokémon especiales",
             "Regla de DJ",
             "Regla",
             "Capítulo 11"
         ],
         "descripciones": [
-            ""
+            "En el mundo Pokémon, en ocasiones, pueden encontrarse Pokémon Dominantes o Pokémon Alfa, entre otros. Estos Pokémon, a los que llamaremos de forma genérica Pokémon Infundidos, son especímenes particularmente poderosos dentro de su especie y que, usualmente, juegan un papel fundamental dentro de su ecosistema o dentro de su grupo o que, por el contrario, han absorbido tanto poder que se han vuelto locos y son un peligro para estos. ",
+            "El poder que poseen los Pokémon Infundidos puede provenir de algún tipo de energía que los potencia, como la energía de Alola, la energía Terastal o Dinamax o el poder de un Pokémon muchísimo más poderoso como Giratina, el efecto de unas ondas de radio particulares o cualquier otro motivo que se te ocurra. Por cualquiera de estos motivos, el Pokémon ha absorbido poder, lo cual suele representarse no por un Nivel elevado sino por tener Puntos de Superioridad. Usualmente, una múltiplo de tu cantidad de jugadores menos uno. Además, muchos Pokémon Infundidos son de un tamaño mayor al de sus congéneres debido a la exposición al poder que los potencia. ",
+            "El Ratio de Captura de los Pokémon Infundidos no se pueden capturar hasta que el poder con el que están infundidos desaparece. Un Pokémon Infundido puede o no perder su tamaño aumentado al perder este poder (el DJ elige en función de la fuente del poder y el tiempo con el que lo infundió) y, si este se conserva y el Pokémon fuera a evolucionar, su forma e volucionada también es de un tamaño mayor al usual. "
         ]
     },
     {
-        "nombre": "",
+        "nombre": "Pokémon espectrales",
         "tipos": [
+            "Pokémon especiales",
             "Regla de DJ",
             "Regla",
             "Capítulo 11"
         ],
         "descripciones": [
-            ""
+            "Cuando un Pokémon fallece en circunstancias especiales, como cuando está retenido por un poder extraño, cuando aun tiene algo por hacer o cuando lo hace de una forma atroz, su espíritu no va al más allá y vuelve en forma de espectro. A estos Pokémon se los conoce como Pokémon Espectrales. ",
+            "Los Pokémon Espectrales se ven translúcidos y pueden o no tener un aura que los identifica como tales. Estos Pokémon no pueden ser capturados y son candidatos a poseer Puntos de Superioridad. Todos los Pokémon Espectrales poseen una forma para poder marchar al más allá, ya sea simplemente ser derrotados en combate, alejarse de una influencia concreta o que algo ocurra. Por ejemplo, un Pokémon Espectral podría ser el espíritu de una madre marowak que busca desesperadamente que su cría esté a salvo. Por lo tanto, no todos los Pokémon Espectrales son malvados, aunque es común que, cuando un Espíritu de un Pokémon pasa mucho tiempo del lado de los vivos empiece a enloquecer. ",
+            "Por último, además de poder poseer Puntos de Superioridad, los Pokémon Espectrales poseen las siguientes características: ",
+            {
+                "tipo": "listaU",
+                "contenido": [
+                    "Son Pokémon de Tipo Fantasma, además de sus otros Tipos Elementales. ",
+                    "Poseen una Velocidad de Levitado igual a su mayor velocidad. ",
+                    "Pueden atravesar objetos sólidos como si fuese Terreno Difícil. ",
+                    "Pueden poseer Movimientos de Tipo Fantasma y tener Habilidades usualmente asociadas al Tipo Fantasma, como Cuerpo maldito. ",
+                    "Al caer a 0 PV, si eso no hace que vayan al más allá, se esfuman dejando un rastro de ectoplasma y reaparecen en el lugar donde se volvieron un Pokémon Espectral pasado un tiempo a definir por el DJ (un día, una Escena, en la siguiente luna llena, dentro de 1000 años, …). "
+                ]
+            }
         ]
     },
     {
-        "nombre": "",
+        "nombre": "Pokéconstructos",
         "tipos": [
+            "Pokémon especiales",
             "Regla de DJ",
             "Regla",
             "Capítulo 11"
         ],
         "descripciones": [
-            ""
+            "Los Pokéconstructos no son Pokémon sino que son réplicas enteramente artificiales de un Pokémon. Por ejemplo, un mecha tyranitar robótico, una estatua de bronce de Arcanine o un golem de cristal de Steelix. Usualmente, estos Pokémon son controlados por alguien, ya sea que esté dentro de ellos o que lo controla remotamente, por voz o usando algún tipo de señal, pero también pueden ser controlados por una IA o unas órdenes que recibieron de su creador en el pasado. ",
+            "Los Pokéconstructos usan de base la entrada de la Pokédex del Pokémon que replican y, además, tienen los siguientes cambios: ",
+            {
+                "tipo": "listaU",
+                "contenido": [
+                    "Son de Tipo Acero, Roca o Tierra según el material del que están hechos o, si ya tiene dos, sustituyen uno de ambos por este Tipo Fundamental. ",
+                    "No necesitan comer o dormir, pero necesitan recargarse de alguna forma. ",
+                    "Opcionalmente, pueden tener la Habilidad Golem.",
+                    "Opcionalmente, aprenden Movimientos extra que no aprenden de forma usual, usualmente del Tipo Elemental que han ganado con Coste en PP menor o igual a los Movimientos que podrían aprender de su lista de Movimientos por Nivel en su Nivel actual. ",
+                    "Opcionalmente, su tamaño aumenta entre 1 y 5 tamaños.",
+                    "Los Pokéconstructos pueden tener Dotes y tienen Mejoras de Estadísticas como los tendría un Pokémon usual. "
+                ]
+            }
+        ]
+    },
+    {
+        "nombre": "Pokémon quimera",
+        "tipos": [
+            "Pokémon especiales",
+            "Regla de DJ",
+            "Regla",
+            "Capítulo 11"
+        ],
+        "descripciones": [
+            " Algunos inventores son capaces de crear Quimeras. Estas quimeras son mezclas de una Especie base pokémon y una o varias especies añadidas. Para quimerizar un pokémon, sigue los siguientes pasos: ",
+            {
+                "tipo": "listaO",
+                "contenido": [
+                    "El Pokémon base cambia uno de sus Tipos por un Tipo del Pokémon de cada especie añadida. ",
+                    "El Pokémon base gana una Velocidad igual a la del Pokémon de cada especie añadida y pierde otra o reduce la mayor de sus velocidades a la mitad por cada velocidad ganada de esta forma, a tu elección.",
+                    "El Pokémon base cambia una de sus Habilidades por una Habilidad o Habilidad Oculta del Pokémon por la del Pokémon añadido. Repite este proceso tantas veces como especies añadas. ",
+                    "Por cada Nivel en el que el Pokémon base gana un Movimiento, sustituyes uno de los Movimientos de su Lista de Movimientos por Nivel que aprende a ese Nivel por otro Movimiento que aprende el Pokémon añadido. Repite el proceso por cada Pokémon añadido. ",
+                    "El Pokémon base gana un Sentido que tiene el Pokémon de la Librería y pierde un Sentido. Luego, pierde un Sentido, la vista, el oído o el olfato, a tu elección. Repite este proceso por cada Pokémon añadido. "
+                ]
+            },
+            "Ten en cuenta que un Pokémon puede ser Quimerizado más de una vez pero este proceso no es reversible. Además, los Pokémon Quimera son estériles, salvo en contadas ocasiones. Además, la CD para capturar a estos Pokémon aumenta en 5. "
+        ]
+    },
+    {
+        "nombre": "Pokémon robotizados",
+        "tipos": [
+            "Pokémon especiales",
+            "Regla de DJ",
+            "Regla",
+            "Capítulo 11"
+        ],
+        "descripciones": [
+            "Los Pokémon robotizados son criaturas que eran Pokémon normales sobre las que hicieron experimentos que los han vuelto máquina en gran medida. Los Pokémon robotizados tienen las siguientes características: ",
+            {
+                "tipo": "listaU",
+                "contenido": [
+                    "El Pokémon puede considerarse de Tipo Acero (tú decides).",
+                    "El Pokémon no tiene emociones y no puede quedar Confuso, Asustado, Enfurecido o Infatuado ni afectado por efectos similares. ",
+                    "El Pokémon no necesita comer, beber o dormir. ",
+                    "El Pokémon no gana Niveles de Fatiga, sino que su cuerpo se rompe, perdiendo PV Máximos iguales a 10 PV por cada nivel de Fatiga que fuese a ganar. Puedes tomar una Acción Extendida para reparar el Pokémon, consumiendo materiales por valor de 500 Pokedólares por cada 10 PV que haces que recupere el Pokémon. Si los PV máximos llegan a 0 de esta forma, el Pokémon muere y no puede ser reparado. ",
+                    "El daño de Tipo Eléctrico se vuelve súper efectivo contra el Pokémon. "
+                ]
+            },
+            "El proceso de Robotización es irreversible. Además, la CD para capturar a estos Pokémon aumenta en 5. "
+        ]
+    },
+    {
+        "nombre": "Experiencia para subir de nivel ",
+        "tipos": [
+            "Regla variante",
+            "Regla de DJ",
+            "Regla",
+            "Capítulo 11"
+        ],
+        "descripciones": [
+            "Quizás quieras que en tu campaña las subidas de nivel no vengan dadas por los logros de tus jugadores, sino por la experiencia que van acumulando poco a poco. Para estos casos existe esta regla.",
+            "<b>Los puntos de experiencia.</b> Como DJ darás puntos de experiencia cada vez que consigan algo. Por ejemplo, cuando una interacción con un PNJs vaya bien, los PJs alcancen uno de sus objetivos o lleguen a una nueva localización. La cantidad de experiencia que otorgues en estas ocasiones está en tu mano y, en general, dependerá de la relevancia del hito y el nivel de los PJs. ",
+            "<b>Subir de nivel.</b> Al hacer un Descanso o al finalizar una sesión, los PJs y sus Pokémon podrán gastar sus Puntos de Experiencia para subir de Nivel si tienen los puntos necesarios para hacerlo, los cuales vienen expresados por la siguiente tabla. ",
+            "<b>Experiencia por combatir.</b> Cuando el grupo derrote a una Criatura, ganará una cantidad de Experiencia total equivalente a la Vitalidad de la criatura que es derrotada multiplicada por su Nivel y, luego, esta experiencia se divide equitativamente entre todos los miembros del grupo. Por ejemplo, si en un encuentro un grupo de 3 PJs se enfrenta a 5 Oddish de Nivel 2, el encuentro otorgará 5 × 6 × 2 = 60 puntos de experiencia, es decir, que cada uno recibirá un 20 Puntos de Experiencia. ",
+            "Los Pokémon de entrenador otorgan una cantidad de experiencia extra equivalente al 50% de la misma y los Pokémon con Puntos de Superioridad otorgan multiplican la experiencia que otorgan por el doble de sus Puntos de Superioridad. ",
+            "<b>Experiencia de los Pokémon.</b> Cada vez que un entrenador gana puntos de experiencia, los Pokémon que lleva consigo ganan esa misma cantidad de Puntos de Experiencia. ",
+            "<b>Límite a la experiencia de un Pokémon.</b> Un Pokémon no puede subir de Nivel a un Nivel superior que el de su entrenador y, si ya es de Nivel superior a este, no puede ganar Puntos de ni subir de Nivel. ",
+            "<b>Entrenar a tus Pokémon.</b> Un PJ puede tomar una Acción Extendida para entrenar a los Pokémon que lleva consigo, la cual sólo puede tomar una vez al día y sólo puede usarse con Pokémon que no tienen niveles de Fatiga. Un Pokémon entrenado de esta forma gana un 10% de la experiencia necesaria para subir a su siguiente nivel o un 20% si su entrenador es de la clase Entenador. ",
+            {
+                "tipo": "pLink",
+                "partes": [
+                    {
+                        "previo": "Puedes encontrar la tabla ",
+                        "ancla": "/capitulos/dirigir/#apartado11",
+                        "anclaContenido": "aquí",
+                        "final": "."
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "nombre": "Idiomas",
+        "tipos": [
+            "Regla variante",
+            "Regla de DJ",
+            "Regla",
+            "Capítulo 11"
+        ],
+        "descripciones": [
+            "En la mayoría de las aventuras Pokémon se asume que todo el mundo habla el mismo Idioma. Sin embargo, podrías querer que en tu aventura haya otros Idiomas. Si decides esto, haz una lista con todos los idiomas que existen en tu mundo. Por ejemplo, podrías crear Idiomas por regiones o Idiomas antiguos que sólo hablen ciertas tribus o clanes. ",
+            "Los PJs conocen 1 Idioma al iniciar su aventura que deberá ser común a todo el grupo y, si lo permites, hasta 1 Idioma extra relacionado a su Trasfondo. Además, un PJ puede sacrificar una Mejora de Habilidades cuando los gana al subir de Nivel para aprender un Idioma. "
+        ]
+    },
+    {
+        "nombre": "Daño a objetos",
+        "tipos": [
+            "Regla variante",
+            "Regla de DJ",
+            "Regla",
+            "Capítulo 11"
+        ],
+        "descripciones": [
+            "En ciertas ocasiones un jugador o uno de sus Pokémon querrá romper un objeto como una puerta o una pared. En general, puedes definir primero si esto es posible y, si lo es, cuánto se tardaría en hacerlo. Por el contrario, quizás quieras que los jugadores rompan el objeto haciéndole daño. En estos casos, puedes definir una Clase de Armadura para el objeto y unos Puntos de Vida para este, así como su Tipo Elemental, del que dependerán los dos primeros. Si un Movimiento fuerza a hacer una Tirada de Salvación, tu defines si tiene sentido que funcione (por ejemplo, probablemente Confusión no pueda funcionar sobre un objeto) y, si lo hace, se considera que el objeto falla la Tirada de Salvación. ",
+            "Principalmente, encontrarás los siguientes 4 tipos de objetos. Si surge otro caso, básate en estos para definir su CA, su Tipo y sus PV. ",
+            "Madera: Los objetos de madera se consideran de Tipo Planta, tienen una CA de 15 y tiene una cantidad de PV igual a su grosor en centímetros por 30. ",
+            "Piedra: Los objetos de piedra se consideran de Tipo Roca, tienen una CA de 18 y tiene una cantidad de PV igual a su grosor en centímetros por 50. ",
+            "Metal: Los objetos de piedra se consideran de Tipo Acero, tienen una CA de 20 a 30, según tu criterio y tiene una cantidad de PV igual a su grosor en centímetros por un valor igual a 10 veces su CA. ",
+            "Cristal: Los objetos de cristal se consideran de Tipo Roca, tienen una CA de 10 y tiene una cantidad de PV igual a su grosor en centímetros por 10. "
+        ]
+    },
+    {
+        "nombre": "Personajes simplificados",
+        "tipos": [
+            "Regla variante",
+            "Regla de DJ",
+            "Regla",
+            "Capítulo 11"
+        ],
+        "descripciones": [
+            "Las Clases de entrenador permiten distinguir entre los distintos arquetipos y habilidades de los PJs pero, si quieres una campaña más sencilla, en la que tus jugadores sólo se centren en sus Pokémon, puedes usar esta regla.",
+            "Cuando usas esta regla, los personajes no ganan Clases al ser creados pero pueden seguir ganando Niveles. Cuando los Personajes suben de Nivel recalculan su Bono de Habilidad. Además, a los Niveles 6, 12 y 18 pueden aumentar su Grado de Habilidad en 2 tipos de Tiradas de Habilidad hasta un máximo de Experto y de Maestro a partir de Nivel 18. ",
+            "Además, puedes decidir que los personajes ganen Dotes al usar esta regla. Si así lo haces, ganan Dotes en los Niveles 3, 6, 9, 12 y 18. "
+        ]
+    },
+    {
+        "nombre": "Daño doblemente efectivo",
+        "tipos": [
+            "Regla variante",
+            "Regla de DJ",
+            "Regla",
+            "Capítulo 11"
+        ],
+        "descripciones": [
+            "Si quieres que la tabla de tipos posea un rol incluso mayor, pudiendo causar que los daño se multipliquen y dividan por cantidades mayores, usa esta regla. ",
+            "Cuando usas esta regla y una criatura recibe daño este lo multiplica por 2 por cada vez que dicho daño es de un tipo súper efectivo contra cada uno de sus tipos y lo divide entre 2 por cada vez que es poco efectivo contra estos. Por ejemplo, si lanzallamas hace 40 puntos de daño contra Scizor, que es Tipo Bicho y Acero, el daño se cuadriplica, volviéndose 160. Si, por el contrario, si Rayo hielo hace 40 puntos de daño contra Lapras, que es de Tipos Agua e Hielo, el daño se divide por cuatro, volviéndose 10. "
         ]
     }
 ]

@@ -2,15 +2,13 @@
     <h1 class="titulo">Reglas</h1>
     <main class="cuerpo">
         <div id="filtroTabla">
-            <Filtros :datosCargados="datosCargados" :tipos="tiposUnicos" :filtroTipos="filtroTipos"
-                :filtroPrerrequisitos="filtroPrerrequisitos" :filtroNivelMin="filtroNivelMin"
-                :filtroNivelMax="filtroNivelMax" :filtroNombre="filtroNombre" @limpiarFiltros="limpiarFiltros"
-                @actualizarFiltros="manejarFiltros" />
+            <Filtros :datosCargados="datosCargados" :filtroTipo="filtroTipo" :tiposComunes="tipoComunes"
+                :tiposMenores="tiposMenores" @limpiarFiltros="limpiarFiltros" @actualizarFiltros="manejarFiltros" />
 
             <Tabla :datos="filtrados" :datosCargados="datosCargados" :seleccionado="seleccionado" :columnas="columnas"
                 :clavesColumnas="clavesColumnas" @seleccionar="seleccionarRegla" @ordenar="ordenarPor" />
         </div>
-        <Seleccionado :datosCargados="datosCargados" :dote="seleccionado" />
+        <Seleccionado :datosCargados="datosCargados" :regla="seleccionado" />
     </main>
 </template>
 
@@ -18,7 +16,7 @@
 import { ref, onMounted, computed, watch } from "vue";
 import { useRoute, useRouter } from "vue-router";
 
-import Tabla from "@/components/TablaView.vue"
+import Tabla from "@/components/Reglas/TablaView.vue"
 import Seleccionado from "@/components/Reglas/ReglasSeleccionado.vue"
 import Filtros from "@/components/Reglas/ReglasFiltrosView.vue"
 
@@ -37,15 +35,17 @@ const datosCargados = ref(false);
 const seleccionado = ref(route.query.seleccionado ?? undefined);
 
 //Filtros
-const filtroTipos = ref(route.query.tipos ? route.query.tipos.split(",") : []);
-const filtroPrerrequisitos = ref(route.query.prerrequisitos ?? null);
-const filtroNivelMin = ref(route.query.nivelMin ? Number(route.query.nivelMin) : null);
-const filtroNivelMax = ref(route.query.nivelMax ? Number(route.query.nivelMax) : null);
+const filtroTipo = ref(route.query.tipos ? route.query.tipos.split(",") : []);
 const filtroNombre = ref(route.query.nombre ?? null);
 
 //Orden de tabla
 const ordenColumna = ref(route.query.ordenColumna ?? null);
 const ordenAscendente = ref(route.query.ordenAscendente !== "false");
+
+//Tipos de filtrosTipos
+const tipoComunes = ['Regla', 'Regla variante', 'Término', 'Clase', 'Subclase', 'Estado', 'Tirada de Habilidad']
+const tiposMenores = ['Entrenador', 'Orden de Entrenador', 'Entrenamiento', 'Inventor', 'Invención', 'Velocidad', 'Sentido', 'Clima', 'Campo', 'Regla de DJ', 'Pokémon especiales', 'Efecto ambiental']
+
 
 // =================== CARGAR DATOS AL ABRIR ==================
 
@@ -78,11 +78,6 @@ function seleccionarRegla(objeto) {
     seleccionado.value = objeto;
 }
 
-// ================ CREA EL FILTRO DE TIPOS MIRANDO LOS DE LA TABLA DIRECTAMENTE ===================
-const tiposUnicos = computed(() => [
-    ...new Set(datos.value.map((o) => o.Tipo).filter(Boolean)),
-]);
-
 // ========== FILTROS Y ORDENAMIENTOS EN RUTA. CAMBIAR
 
 //Modifica filtros
@@ -91,27 +86,15 @@ function manejarFiltros({ clave, valor }) {
         case 'nombre':
             filtroNombre.value = valor;
             break;
-        case 'nivelMin':
-            filtroNivelMin.value = valor;
-            break;
-        case 'nivelMax':
-            filtroNivelMax.value = valor;
-            break;
         case 'tipos':
-            filtroTipos.value = valor;
-            break;
-        case 'prerrequisitos':
-            filtroPrerrequisitos.value = valor;
+            filtroTipo.value = valor;
             break;
     }
 }
 
 // Limpia filtros
 function limpiarFiltros() {
-    filtroTipos.value = [];
-    filtroPrerrequisitos.value = null;
-    filtroNivelMin.value = null;
-    filtroNivelMax.value = null;
+    filtroTipo.value = [];
     filtroNombre.value = null;
     ordenColumna.value = null;
     ordenAscendente.value = true;
@@ -121,10 +104,7 @@ function limpiarFiltros() {
 watch(
     [
         seleccionado,
-        filtroTipos,
-        filtroPrerrequisitos,
-        filtroNivelMin,
-        filtroNivelMax,
+        filtroTipo,
         filtroNombre,
         ordenColumna,
         ordenAscendente,
@@ -146,10 +126,7 @@ watch(
 
 function construirQuery() {
     return {
-        tipos: filtroTipos.value.length ? filtroTipos.value.join(",") : undefined,
-        prerrequisitos: filtroPrerrequisitos.value ?? undefined,
-        nivelMin: filtroNivelMin.value ?? undefined,
-        nivelMax: filtroNivelMax.value ?? undefined,
+        tipo: filtroTipo.value.length ? filtroTipo.value.join(",") : undefined,
         nombre: filtroNombre.value ?? undefined,
         ordenColumna: ordenColumna.value ?? undefined,
         ordenAscendente: ordenColumna.value ? ordenAscendente.value : undefined,
@@ -158,10 +135,7 @@ function construirQuery() {
 }
 
 function aplicarQuery(query) {
-    filtroTipos.value = query.tipos?.split(",") ?? [];
-    filtroPrerrequisitos.value = query.prerrequisitos ?? null;
-    filtroNivelMin.value = query.nivelMin ? Number(query.nivelMin) : null;
-    filtroNivelMax.value = query.nivelMax ? Number(query.nivelMax) : null;
+    filtroTipo.value = query.tipo?.split(",") ?? [];
     filtroNombre.value = query.nombre ?? null;
 
     ordenColumna.value = query.ordenColumna ?? null;
@@ -185,23 +159,10 @@ function ordenarPor(columna) {
 // ========================= APLICAR FILTROS A TABLA Y ORDENAR ===========================
 const filtrados = computed(() => {
     let resultado = datos.value.filter((dato) => {
-        const nivel = dato.Nivel ?? null;
         const nombre = dato.nombre.toLowerCase();
 
-        // Filtro de prerrequisitos por radio
-        let pasaFiltroPrerrequisitos = true;
-        if (filtroPrerrequisitos.value === "Si") {
-            pasaFiltroPrerrequisitos = !!dato.Prerrequisitos && dato.Prerrequisitos.trim() !== "";
-        } else if (filtroPrerrequisitos.value === "No") {
-            pasaFiltroPrerrequisitos = !dato.Prerrequisitos || dato.Prerrequisitos.trim() === "";
-        }
-        // "Todos" deja pasaFiltroPrerrequisitos en true
-
         return (
-            (!filtroTipos.value.length || filtroTipos.value.includes(dato.Tipo)) &&
-            pasaFiltroPrerrequisitos &&
-            (filtroNivelMin.value === null || nivel >= filtroNivelMin.value) &&
-            (filtroNivelMax.value === null || nivel <= filtroNivelMax.value) &&
+            (!filtroTipo.value.length || dato.tipos.some(tipo => filtroTipo.value.includes(tipo))) &&
             (!filtroNombre.value || nombre.includes(filtroNombre.value.toLowerCase()))
         );
     });
