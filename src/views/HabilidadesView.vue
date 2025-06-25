@@ -2,13 +2,14 @@
     <h1 class="titulo">Habilidades</h1>
     <main class="cuerpo">
         <div id="filtroTabla">
-            <Filtros :datosCargados="datosCargados" :filtroTipo="filtroTipo" :tiposComunes="tipoComunes"
-                :tiposMenores="tiposMenores" @limpiarFiltros="limpiarFiltros" @actualizarFiltros="manejarFiltros" />
+            <Filtros :datosCargados="datosCargados" :filtroTransformacion="filtroTransformacion"
+                :filtroLegendaria="filtroLegendaria" @limpiarFiltros="limpiarFiltros"
+                @actualizarFiltros="manejarFiltros" />
 
             <Tabla :datos="filtrados" :datosCargados="datosCargados" :seleccionado="seleccionado" :columnas="columnas"
                 :clavesColumnas="clavesColumnas" @seleccionar="seleccionarRegla" @ordenar="ordenarPor" />
         </div>
-        <Seleccionado :datosCargados="datosCargados" :regla="seleccionado" />
+        <Seleccionado :datosCargados="datosCargados" :habilidad="seleccionado" />
     </main>
 </template>
 
@@ -16,9 +17,12 @@
 import { ref, onMounted, computed, watch } from "vue";
 import { useRoute, useRouter } from "vue-router";
 
+import worker from '../sqlWorker.js';
+
 import Tabla from "@/components/Habilidades/TablaView.vue"
 import Seleccionado from "@/components/Habilidades/HabilidadesSeleccionado.vue"
 import Filtros from "@/components/Habilidades/HabilidadesFiltrosView.vue"
+
 
 const route = useRoute();
 const router = useRouter();
@@ -26,8 +30,8 @@ const router = useRouter();
 // ======================== DATOS ========================
 
 //Datos para la tabla
-const columnas = ['Nombre', 'Tipos', 'Descripción']
-const clavesColumnas = ['nombre', 'tipos', 'descripciones']
+const columnas = ['Nombre', 'Descripción', 'Legen.', 'Transf.']
+const clavesColumnas = ['nombre', 'descripcion', 'legendaria', 'transformacion']
 
 //Datos principales
 const datos = ref([]);
@@ -35,42 +39,60 @@ const datosCargados = ref(false);
 const seleccionado = ref(route.query.seleccionado ?? undefined);
 
 //Filtros
-const filtroTipo = ref(route.query.tipos ? route.query.tipos.split(",") : []);
+const filtroLegendaria = ref(route.query.legendaria ?? null);
+const filtroTransformacion = ref(route.query.transformacion ?? null);
 const filtroNombre = ref(route.query.nombre ?? null);
 
 //Orden de tabla
-const ordenColumna = ref(route.query.ordenColumna ?? null);
+const ordenColumna = ref(route.query.ordenColumna ?? "nombre");
 const ordenAscendente = ref(route.query.ordenAscendente !== "false");
 
-//Tipos de filtrosTipos
-const tipoComunes = ['Regla', 'Regla variante', 'Término', 'Clase', 'Subclase', 'Estado', 'Tirada de Habilidad']
-const tiposMenores = ['Entrenador', 'Orden de Entrenador', 'Entrenamiento', 'Inventor', 'Invención', 'Velocidad', 'Sentido', 'Clima', 'Campo', 'Regla de DJ', 'Pokémon especiales', 'Efecto ambiental']
-
-
 // =================== CARGAR DATOS AL ABRIR ==================
+function cargarDatos() {
+    worker.postMessage({
+        type: 'query',
+        query: 'SELECT * FROM Pokemexe_Habilidades',
+        params: []
+    });
+}
 
 onMounted(async () => {
-    try {
-        const res = await fetch("/data/json/Reglas/reglas.json");
+    worker.postMessage({ type: 'init' });
 
-        if (!res.ok) throw new Error(`Error HTTP: ${res.status}`);
-
-        datos.value = await res.json();
-        if (datos.value.length > 0) {
-            if (seleccionado.value) {
-                seleccionarRegla(
-                    datos.value.find((dato) => dato.nombre === seleccionado.value)
-                );
-            } else {
-                seleccionarRegla(filtrados.value[0]);
-            }
-            datosCargados.value = true;
-        } else {
-            console.warn("El archivo JSON está vacío.");
+    worker.onmessage = (e) => {
+        if (e.data.type === 'ready') {
+            cargarDatos();
         }
-    } catch (error) {
-        console.error("Error al cargar las habilidades:", error);
-    }
+        if (e.data.type === 'result') {
+            datos.value = (e.data.result?.[0]?.values || []).map((row) => {
+                return {
+                    id: row[0],
+                    nombre: row[1],
+                    descripcion: row[2],
+                    EST: row[3],
+                    coste: row[4],
+                    legendaria: row[5] === "Legendaria" ? true : false,
+                    transformacion: row[6] === "Transformación" ? true : false
+                };
+            });
+            console.log(datos.value)
+
+            if (datos.value.length > 0) {
+                if (seleccionado.value) {
+                    seleccionarRegla(
+                        datos.value.find((dato) => dato.nombre === seleccionado.value)
+                    );
+                } else {
+                    seleccionarRegla(filtrados.value[0]);
+                }
+                datosCargados.value = true;
+            }
+        }
+
+        if (e.data.type === 'error') {
+            console.error("Error en SQLite:", e.data.error);
+        }
+    };
 });
 
 // ===================== SELECCIONAR HABILIDADES PARA EL CUADRO ===================
@@ -86,17 +108,21 @@ function manejarFiltros({ clave, valor }) {
         case 'nombre':
             filtroNombre.value = valor;
             break;
-        case 'tipos':
-            filtroTipo.value = valor;
+        case 'legendaria':
+            filtroLegendaria.value = valor;
+            break;
+        case 'transformacion':
+            filtroTransformacion.value = valor;
             break;
     }
 }
 
 // Limpia filtros
 function limpiarFiltros() {
-    filtroTipo.value = [];
+    filtroLegendaria.value = null;
+    filtroTransformacion.value = null;
     filtroNombre.value = null;
-    ordenColumna.value = null;
+    ordenColumna.value = "nombre";
     ordenAscendente.value = true;
 }
 
@@ -104,7 +130,8 @@ function limpiarFiltros() {
 watch(
     [
         seleccionado,
-        filtroTipo,
+        filtroLegendaria,
+        filtroTransformacion,
         filtroNombre,
         ordenColumna,
         ordenAscendente,
@@ -126,7 +153,8 @@ watch(
 
 function construirQuery() {
     return {
-        tipo: filtroTipo.value.length ? filtroTipo.value.join(",") : undefined,
+        legendaria: filtroLegendaria.value ?? undefined,
+        transformacion: filtroTransformacion.value ?? undefined,
         nombre: filtroNombre.value ?? undefined,
         ordenColumna: ordenColumna.value ?? undefined,
         ordenAscendente: ordenColumna.value ? ordenAscendente.value : undefined,
@@ -135,7 +163,8 @@ function construirQuery() {
 }
 
 function aplicarQuery(query) {
-    filtroTipo.value = query.tipo?.split(",") ?? [];
+    filtroLegendaria.value = query.legendaria ?? null;
+    filtroTransformacion.value = query.transformacion ?? null;
     filtroNombre.value = query.nombre ?? null;
 
     ordenColumna.value = query.ordenColumna ?? null;
@@ -162,7 +191,8 @@ const filtrados = computed(() => {
         const nombre = dato.nombre.toLowerCase();
 
         return (
-            (!filtroTipo.value.length || dato.tipos.some(tipo => filtroTipo.value.includes(tipo))) &&
+            (!filtroLegendaria.value || ["Todas", null].includes(filtroLegendaria.value) || (filtroLegendaria.value === "Legendaria" && dato.legendaria) || (filtroLegendaria.value === "No Legendaria" && !dato.legendaria)) &&
+            (!filtroTransformacion.value || ["Todas", null].includes(filtroTransformacion.value) || (filtroTransformacion.value === "Transformación" && dato.transformacion) || (filtroTransformacion.value === "No transformación" && !dato.transformacion)) &&
             (!filtroNombre.value || nombre.includes(filtroNombre.value.toLowerCase()))
         );
     });

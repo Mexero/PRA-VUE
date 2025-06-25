@@ -1,12 +1,12 @@
 <template>
-    <div v-if="datosCargados && regla" class="seleccionado">
-        <h2>{{ regla.nombre }}</h2>
-        <p><strong>Tipo:</strong> {{ mostrarTipos(regla.tipos) }}. </p>
+    <div v-if="datosCargados && habilidad" class="seleccionado">
+        <h2>{{ habilidad.nombre }}</h2>
+        <p v-if="habilidad.transformacion"><strong>Habilidad de Transformación</strong></p>
+        <p v-if="habilidad.legendaria"><strong>Habilidad Legendaria</strong></p>
         <p><strong>Descripción:</strong></p>
         <div class="descripcion">
-            <BloqueTextoComplejo :dato="regla.descripciones"></BloqueTextoComplejo>
+            <BloqueTextoComplejo :dato="habilidad.descripcion"></BloqueTextoComplejo>
         </div>
-        <p v-if="regla.origen"><strong>Origen: </strong>{{ regla.origen }}</p>
     </div>
 
     <div v-else class="seleccionado">
@@ -15,19 +15,13 @@
 </template>
 
 <script setup>
-defineProps([
-    'datosCargados',
-    'regla'
-]);
-
 import BloqueTextoComplejo from '../BloqueTextoComplejo.vue';
 
-function mostrarTipos(tipos) {
-    if (!Array.isArray(tipos)) return '';
-    if (tipos.length === 0) return '';
-    if (tipos.length === 1) return tipos[0];
-    return tipos.slice(0, -1).join(', ') + ' y ' + tipos[tipos.length - 1];
-}
+defineProps([
+    'datosCargados',
+    'habilidad'
+]);
+
 </script>
 
 

@@ -9,6 +9,8 @@ defineProps([
 const emit = defineEmits(['seleccionar', 'ordenar']);
 
 function mostrarDato(dato, columna) {
+    if (dato === true) return "✔"
+    if (dato === false) return "✖"
     if (!dato) return "—"
     if (["descripción", "descripciones", "tipos"].includes(columna.toLowerCase())) return descripcionAcortado(dato)
     if (!Array.isArray(dato)) return dato
@@ -104,17 +106,20 @@ thead {
 
 .tabla th:nth-child(1),
 .tabla td:nth-child(1) {
-    width: 25%;
+    width: 20%;
 }
 
 .tabla th:nth-child(2),
 .tabla td:nth-child(2) {
-    width: 15%;
+    width: 58%;
 }
 
 .tabla th:nth-child(3),
-.tabla td:nth-child(3) {
-    width: 50%;
+.tabla td:nth-child(3),
+.tabla th:nth-child(4),
+.tabla td:nth-child(4) {
+    width: 11%;
+    text-align: center;
 }
 
 

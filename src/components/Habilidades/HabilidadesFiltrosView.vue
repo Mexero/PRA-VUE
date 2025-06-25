@@ -7,7 +7,8 @@ const props = defineProps([
     'datosCargados',
     'tiposComunes',
     'tiposMenores',
-    'filtroTipo'
+    'filtroTransformacion',
+    'filtroLegendaria'
 ]);
 
 const emit = defineEmits(['actualizarFiltros', 'limpiarFiltros']);
@@ -40,17 +41,6 @@ const emitirNombreDebounced = debounce((valor) => {
     emit('actualizarFiltros', { clave: 'nombre', valor });
 }, 100);
 
-
-//Tipos
-function toggleTipo(event, tipo) {
-    const seleccionadas = new Set(props.filtroTipo);
-    if (event.target.checked) {
-        seleccionadas.add(tipo);
-    } else {
-        seleccionadas.delete(tipo);
-    }
-    emit('actualizarFiltros', { clave: 'tipos', valor: Array.from(seleccionadas) });
-}
 </script>
 
 <template>
@@ -70,25 +60,28 @@ function toggleTipo(event, tipo) {
                         @input="actualizarFiltros('nombre', nombre)" />
 
                     <button @click="limpiarFiltros">Limpiar filtros</button>
-
-                    <div id="filtroTipos">
-                        <h3>Filtros comunes</h3>
-                        <div>
-                            <label v-for="tipo in tiposComunes" :key="tipo">
-                                <input type="checkbox" :value="tipo" :checked="filtroTipo.includes(tipo)"
-                                    @change="event => toggleTipo(event, tipo)" />
-                                {{ tipo }}
-                            </label>
+                    <div id="parFiltros">
+                        <div id="filtroTipos">
+                            <h3>Filtros Legendaria</h3>
+                            <div>
+                                <label v-for="opcion in ['Legendaria', 'No Legendaria', 'Todas']" :key="opcion">
+                                    <input type="radio" name="legend" :value="opcion"
+                                        :checked="filtroLegendaria === opcion"
+                                        @change="actualizarFiltros('legendaria', opcion)" />
+                                    {{ opcion }}
+                                </label>
+                            </div>
                         </div>
-                    </div>
-                    <div id="filtroTipos">
-                        <h3>Filtros poco comunes</h3>
-                        <div>
-                            <label v-for="tipo in tiposMenores" :key="tipo">
-                                <input type="checkbox" :value="tipo" :checked="filtroTipo.includes(tipo)"
-                                    @change="event => toggleTipo(event, tipo)" />
-                                {{ tipo }}
-                            </label>
+                        <div id="filtroTipos">
+                            <h3>Filtros de Transformación</h3>
+                            <div>
+                                <label v-for="opcion in ['Transformación', 'No transformación', 'Todas']" :key="opcion">
+                                    <input type="radio" name="transform" :value="opcion"
+                                        :checked="filtroTransformacion === opcion"
+                                        @change="actualizarFiltros('transformacion', opcion)" />
+                                    {{ opcion }}
+                                </label>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -98,6 +91,17 @@ function toggleTipo(event, tipo) {
 </template>
 
 <style scoped>
+h3 {
+    width: fit-content;
+}
+
+#parFiltros {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
 .paddingBloque {
     padding: 15px;
 }
@@ -113,6 +117,15 @@ function toggleTipo(event, tipo) {
     display: flex;
     gap: 20px;
     flex-wrap: wrap;
+    width: fit-content;
+}
+
+#filtroTipos {
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 input[type="text"] {
