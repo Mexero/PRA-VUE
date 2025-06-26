@@ -181,8 +181,6 @@ function limpiarFiltros() {
     filtroAccion.value = null;
     filtroPPMin.value = null;
     filtroPPMax.value = null;
-    ordenColumna.value = "nombre";
-    ordenAscendente.value = true;
 }
 
 //Cambia la ruta
