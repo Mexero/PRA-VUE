@@ -7,7 +7,7 @@ import NavView from './components/NavView.vue'
 import sqlite from './components/sqlite.vue'
 
 
-const mostarSqlite = true;
+const mostarSqlite = false;
 
 //MODO OSCURO. TAMBIEN HAY UNA PARTE EN HEADER VIEW Y LOS COLORES ESTÁN ALLÍ DUPLICADOS
 function aplicarModo() {

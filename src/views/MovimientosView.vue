@@ -2,8 +2,9 @@
     <h1 class="titulo">Movimientos</h1>
     <main class="cuerpo">
         <div id="filtroTabla">
-            <Filtros :datosCargados="datosCargados" :filtroTransformacion="filtroTransformacion"
-                :filtroLegendaria="filtroLegendaria" @limpiarFiltros="limpiarFiltros"
+            <Filtros :datosCargados="datosCargados" :filtroTipos="filtroTipos" :filtroEtiquetas="filtroEtiquetas"
+                :filtroAccion="filtroAccion" :filtroNombre="filtroNombre" :tipos="tipos" :etiquetas="etiquetas"
+                :filtroPPMin="filtroPPMin" :filtroPPMax="filtroPPMax" @limpiarFiltros="limpiarFiltros"
                 @actualizarFiltros="manejarFiltros" />
 
             <Tabla :datos="filtrados" :datosCargados="datosCargados" :seleccionado="seleccionado" :columnas="columnas"
@@ -33,6 +34,9 @@ const router = useRouter();
 const columnas = ['Nombre', 'Tipo', 'Acción', 'Coste', 'Daño', 'Rango', 'Etiquetas']
 const clavesColumnas = ['nombre', 'tipo', 'accion', 'coste', 'danno', 'rango', 'etiquetas']
 
+const tipos = ["Acero", "Agua", "Bicho", "Dragón", "Eléctrico", "Fantasma", "Fuego", "Hada", "Hielo", "Lucha", "Normal", "Planta", "Psíquico", "Roca", "Siniestro", "Tierra", "Veneno", "Volador"];
+const etiquetas = ["Escudo", "Por Tierra", "Potenciación", "Sonido", "Restauración", "Terreno", "Polvo", "Puño", "Mordisco", "Patada", "Explosión", "Retroceso", "Bala", "Campo", "Clima", "Danza", "Golpea varias veces", "Golpea 2 veces", "Golpea 3 veces"]
+
 //Datos principales
 const datos = ref([]);
 const datosCargados = ref(false);
@@ -40,8 +44,11 @@ const seleccionadoNombre = ref(route.query.seleccionado ?? undefined);
 const seleccionado = ref(seleccionarMovimiento(seleccionadoNombre.value ?? undefined));
 
 //Filtros
-const filtroLegendaria = ref(route.query.legendaria ?? null);
-const filtroTransformacion = ref(route.query.transformacion ?? null);
+const filtroTipos = ref(route.query.tipos ? route.query.tipos.split(",") : []);
+const filtroEtiquetas = ref(route.query.etiquetas ? route.query.etiquetas.split(",") : []);
+const filtroAccion = ref(route.query.accion ?? null);
+const filtroPPMin = ref(route.query.PPMin ? Number(route.query.PPMin) : null);
+const filtroPPMax = ref(route.query.PPMax ? Number(route.query.PPMax) : null);
 const filtroNombre = ref(route.query.nombre ?? null);
 
 //Orden de tabla
@@ -78,14 +85,18 @@ onMounted(async () => {
             });
 
             if (datos.value.length > 0) {
-                if (seleccionadoNombre.value) {
-                    seleccionarMovimiento(
-                        datos.value.find((dato) => dato.nombre === seleccionadoNombre.value)
-                    );
-                } else {
-                    seleccionarMovimiento(filtrados.value[0]);
-                }
                 datosCargados.value = true;
+                if (seleccionadoNombre.value) {
+                    const movimientoEncontrado = datos.value.find((dato) => dato.nombre === seleccionadoNombre.value);
+                    if (movimientoEncontrado) seleccionarMovimiento(movimientoEncontrado.nombre);
+                    else {
+                        seleccionadoNombre.value = datos.value[0].nombre;
+                        seleccionarMovimiento(seleccionadoNombre.value);
+                    }
+                } else {
+                    seleccionadoNombre.value = datos.value[0].nombre;
+                    seleccionarMovimiento(seleccionadoNombre.value);
+                }
             }
         }
 
@@ -97,7 +108,8 @@ onMounted(async () => {
 
 // ===================== SELECCIONAR Movimientos PARA EL CUADRO ===================
 function seleccionarMovimiento(movimiento) {
-    if (!movimiento?.nombre) return;
+    if (!movimiento) return;
+    if (!datosCargados.value) return;
 
     worker.postMessage({
         type: 'query',
@@ -107,7 +119,7 @@ function seleccionarMovimiento(movimiento) {
             FROM pokemexe_movimientos
             WHERE Nombre = ?
         `,
-        params: [movimiento.nombre]
+        params: [movimiento]
     });
 
     worker.onmessage = (e) => {
@@ -125,6 +137,7 @@ function seleccionarMovimiento(movimiento) {
                     descripcion: row[7].split('\n'),
                     statsAso: [row[8], row[9], row[10], row[11]].filter(stat => stat !== "")
                 };
+                seleccionadoNombre.value = seleccionado.value.nombre;
             }
         }
 
@@ -142,20 +155,32 @@ function manejarFiltros({ clave, valor }) {
         case 'nombre':
             filtroNombre.value = valor;
             break;
-        case 'legendaria':
-            filtroLegendaria.value = valor;
+        case 'tipos':
+            filtroTipos.value = valor;
             break;
-        case 'transformacion':
-            filtroTransformacion.value = valor;
+        case 'etiquetas':
+            filtroEtiquetas.value = valor;
+            break;
+        case 'accion':
+            filtroAccion.value = valor;
+            break;
+        case 'PPMin':
+            filtroPPMin.value = valor;
+            break;
+        case 'PPMax':
+            filtroPPMax.value = valor;
             break;
     }
 }
 
 // Limpia filtros
 function limpiarFiltros() {
-    filtroLegendaria.value = null;
-    filtroTransformacion.value = null;
     filtroNombre.value = null;
+    filtroTipos.value = [];
+    filtroEtiquetas.value = [];
+    filtroAccion.value = null;
+    filtroPPMin.value = null;
+    filtroPPMax.value = null;
     ordenColumna.value = "nombre";
     ordenAscendente.value = true;
 }
@@ -164,8 +189,11 @@ function limpiarFiltros() {
 watch(
     [
         seleccionadoNombre,
-        filtroLegendaria,
-        filtroTransformacion,
+        filtroTipos,
+        filtroEtiquetas,
+        filtroAccion,
+        filtroPPMin,
+        filtroPPMax,
         filtroNombre,
         ordenColumna,
         ordenAscendente,
@@ -187,27 +215,34 @@ watch(
 
 function construirQuery() {
     return {
-        legendaria: filtroLegendaria.value ?? undefined,
-        transformacion: filtroTransformacion.value ?? undefined,
+        tipos: filtroTipos.value.length ? filtroTipos.value.join(",") : undefined,
+        etiquetas: filtroEtiquetas.value.length ? filtroEtiquetas.value.join(",") : undefined,
+        accion: filtroAccion.value ?? undefined,
         nombre: filtroNombre.value ?? undefined,
+        PPMin: filtroPPMin.value ?? undefined,
+        PPMax: filtroPPMax.value ?? undefined,
         ordenColumna: ordenColumna.value ?? undefined,
         ordenAscendente: ordenColumna.value ? ordenAscendente.value : undefined,
-        seleccionado: seleccionadoNombre.value?.nombre || undefined,
+        seleccionado: seleccionadoNombre.value ?? undefined,
     };
 }
 
 function aplicarQuery(query) {
-    filtroLegendaria.value = query.legendaria ?? null;
-    filtroTransformacion.value = query.transformacion ?? null;
+    filtroTipos.value = query.tipos?.split(",") ?? [];
+    filtroEtiquetas.value = query.etiquetas?.split(",") ?? [];
+    filtroAccion.value = query.accion ?? null;
+    filtroPPMin.value = query.PPMin ? Number(query.PPMin) : null;
+    filtroPPMax.value = query.PPMax ? Number(query.PPMax) : null;
     filtroNombre.value = query.nombre ?? null;
 
     ordenColumna.value = query.ordenColumna ?? null;
     ordenAscendente.value = query.ordenAscendente !== "false";
 
-    if (datosCargados.value)
-        if (query.seleccionado) seleccionadoNombre.value = datos.value.find((o) => o.nombre === query.seleccionado);
-        else seleccionadoNombre.value = filtrados.value[0].nombre;
-    console.log(seleccionadoNombre)
+    if (datosCargados.value) {
+        if (query.seleccionado) seleccionadoNombre.value = datos.value.find((o) => o.nombre === query.seleccionado).nombre;
+        else if (filtrados.value.length) filtrados.value[0].nombre;
+        else seleccionadoNombre.value = datos.value[0].nombre;
+    }
 }
 
 // =============== CAMBIAR ORDENACIÓN ==================
@@ -221,13 +256,32 @@ function ordenarPor(columna) {
 }
 
 // ========================= APLICAR FILTROS A TABLA Y ORDENAR ===========================
+function parsePP(coste) {
+    if (!coste) return null;
+    if (typeof coste === 'string' && coste.toLowerCase().includes('variable')) {
+        return 'Variable';
+    }
+    if (typeof coste === 'string' && coste.toLowerCase().includes('a voluntad')) {
+        return 'A voluntad';
+    }
+    const match = coste.match(/\d+/);
+    return match ? parseInt(match[0]) : null;
+}
+
 const filtrados = computed(() => {
     let resultado = datos.value.filter((dato) => {
         const nombre = dato.nombre.toLowerCase();
+        const coste = parsePP(dato.coste);
 
         return (
-            (!filtroLegendaria.value || ["Todas", null].includes(filtroLegendaria.value) || (filtroLegendaria.value === "Legendaria" && dato.legendaria) || (filtroLegendaria.value === "No Legendaria" && !dato.legendaria)) &&
-            (!filtroTransformacion.value || ["Todas", null].includes(filtroTransformacion.value) || (filtroTransformacion.value === "Transformación" && dato.transformacion) || (filtroTransformacion.value === "No transformación" && !dato.transformacion)) &&
+            (!filtroTipos.value.length || filtroTipos.value.some(tipo => dato.tipo.includes(tipo))) &&
+            (!filtroEtiquetas.value.length || filtroEtiquetas.value.some(etiqueta => dato.etiquetas.toLowerCase().includes(etiqueta.toLowerCase()))) &&
+            (!filtroAccion.value || filtroAccion.value === 'ambos' || dato.accion.toLowerCase() === filtroAccion.value) &&
+            (filtroPPMin.value === null || coste >= filtroPPMin.value) &&
+            (filtroPPMax.value === null || coste <= filtroPPMax.value) &&
+            (filtroPPMin.value === null || coste >= filtroPPMin.value) &&
+            (filtroPPMax.value === null || coste <= filtroPPMax.value) &&
+
             (!filtroNombre.value || nombre.includes(filtroNombre.value.toLowerCase()))
         );
     });

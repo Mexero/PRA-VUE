@@ -39,7 +39,7 @@ function descripcionAcortado(dato) {
                 </tr>
             </thead>
             <tbody v-if="datosCargados && datos.length !== 0">
-                <tr v-for="(fila, index) in datos" :key="index" @click="emit('seleccionar', fila)" :class="{
+                <tr v-for="(fila, index) in datos" :key="index" @click="emit('seleccionar', fila.nombre)" :class="{
                     activo:
                         seleccionado &&
                         seleccionado.nombre === fila[clavesColumnas[0]],

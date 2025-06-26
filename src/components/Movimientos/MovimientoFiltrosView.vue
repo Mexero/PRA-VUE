@@ -3,12 +3,18 @@
 import { debounce } from 'lodash';
 import { ref, watch } from 'vue';
 
+import Slider from '@/components/sliderView.vue'
+
 const props = defineProps([
     'datosCargados',
-    'tiposComunes',
-    'tiposMenores',
-    'filtroTransformacion',
-    'filtroLegendaria'
+    'etiquetas',
+    'tipos',
+    'filtroTipos',
+    'filtroAccion',
+    'filtroEtiquetas',
+    'filtroPPMin',
+    'filtroPPMax',
+    'filtroNombre'
 ]);
 
 const emit = defineEmits(['actualizarFiltros', 'limpiarFiltros']);
@@ -41,6 +47,53 @@ const emitirNombreDebounced = debounce((valor) => {
     emit('actualizarFiltros', { clave: 'nombre', valor });
 }, 100);
 
+//Tipos
+function toggleTipo(event, tipo) {
+    const seleccionadas = new Set(props.filtroTipos);
+    if (event.target.checked) {
+        seleccionadas.add(tipo);
+    } else {
+        seleccionadas.delete(tipo);
+    }
+    emit('actualizarFiltros', { clave: 'tipos', valor: Array.from(seleccionadas) });
+}
+
+//Etiquetas
+function toggleEtiqueta(event, etiqueta) {
+    const seleccionadas = new Set(props.filtroEtiquetas);
+    if (event.target.checked) {
+        seleccionadas.add(etiqueta);
+    } else {
+        seleccionadas.delete(etiqueta);
+    }
+    emit('actualizarFiltros', { clave: 'etiquetas', valor: Array.from(seleccionadas) });
+}
+
+//Coste en PP
+function emitirPP(valorMin, valorMax) {
+    PPMin.value = valorMin;
+    PPMax.value = valorMax;
+    actualizarFiltros('PPMin', PPMin.value);
+    actualizarFiltros('PPMax', PPMax.value);
+}
+
+// =============== DATOS SLIDER ================
+const allowedValues = [0, 1, 2, 3, 4, 5, 6];
+
+const PPMin = ref(allowedValues[0]);
+const PPMax = ref(allowedValues[allowedValues.length - 1]);
+
+// =============== HABLAR SLIDER ================
+let limpiarSliderFlag = ref(false);
+
+watch(
+    () => [props.filtroPPMin, props.filtroPPMax],
+    ([min, max]) => {
+        if (typeof max !== "number" && !min && !max) {
+            limpiarSliderFlag.value = !limpiarSliderFlag.value;
+        }
+    }
+);
 </script>
 
 <template>
@@ -60,30 +113,41 @@ const emitirNombreDebounced = debounce((valor) => {
                         @input="actualizarFiltros('nombre', nombre)" />
 
                     <button @click="limpiarFiltros">Limpiar filtros</button>
-                    <div id="parFiltros">
+                    <div id="filtroAccion">
+                        <h3>Acción</h3>
                         <div>
-                            <h3>Filtros Legendaria</h3>
                             <div>
-                                <label v-for="opcion in ['Legendaria', 'No Legendaria', 'Todas']" :key="opcion">
-                                    <input type="radio" name="legend" :value="opcion"
-                                        :checked="filtroLegendaria === opcion"
-                                        @change="actualizarFiltros('legendaria', opcion)" />
-                                    {{ opcion }}
-                                </label>
-                            </div>
-                        </div>
-                        <div>
-                            <h3>Filtros de Transformación</h3>
-                            <div>
-                                <label v-for="opcion in ['Transformación', 'No transformación', 'Todas']" :key="opcion">
-                                    <input type="radio" name="transform" :value="opcion"
-                                        :checked="filtroTransformacion === opcion"
-                                        @change="actualizarFiltros('transformacion', opcion)" />
+                                <label v-for="opcion in ['Acción', 'Reacción', 'Ambos']" :key="opcion">
+                                    <input type="radio" name="tieneAccion" :value="opcion"
+                                        :checked="filtroAccion === opcion.toLocaleLowerCase()"
+                                        @change="actualizarFiltros('accion', opcion.toLowerCase())" />
                                     {{ opcion }}
                                 </label>
                             </div>
                         </div>
                     </div>
+                    <details>
+                        <summary>Tipos</summary>
+                        <div id="filtroTipos">
+                            <label v-for="tipo in tipos" :key="tipo">
+                                <input type="checkbox" :value="tipo" :checked="filtroTipos.includes(tipo)"
+                                    @change="event => toggleTipo(event, tipo)" />
+                                {{ tipo }}
+                            </label>
+                        </div>
+                    </details>
+                    <details>
+                        <summary>Etiquetas</summary>
+                        <div id="filtroEtiquetas">
+                            <label v-for="etiqueta in etiquetas" :key="etiqueta">
+                                <input type="checkbox" :value="etiqueta" :checked="filtroEtiquetas.includes(etiqueta)"
+                                    @change="event => toggleEtiqueta(event, etiqueta)" />
+                                {{ etiqueta }}
+                            </label>
+                        </div>
+                    </details>
+                    <h3>Coste en PP</h3>
+                    <Slider :allowedValues="allowedValues" :limpiar="limpiarSliderFlag" @actualizarMinMax="emitirPP" />
                 </div>
             </div>
         </transition>
@@ -112,12 +176,30 @@ h3 {
     flex-direction: column;
 }
 
-#parFiltros div div {
+#filtroTipos,
+#filtroEtiquetas {
     margin: 10px 5px;
     display: flex;
     gap: 20px;
     flex-wrap: wrap;
     width: fit-content;
+}
+
+
+details summary {
+    background-color: var(--color-principal1);
+    text-align: left;
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--color-texto);
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 10px 10px 0 0;
+}
+
+details {
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 input[type="text"] {

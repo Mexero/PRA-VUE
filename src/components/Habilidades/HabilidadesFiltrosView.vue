@@ -5,8 +5,6 @@ import { ref, watch } from 'vue';
 
 const props = defineProps([
     'datosCargados',
-    'tiposComunes',
-    'tiposMenores',
     'filtroTransformacion',
     'filtroLegendaria'
 ]);
