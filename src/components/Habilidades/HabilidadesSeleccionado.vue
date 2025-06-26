@@ -5,7 +5,7 @@
         <p v-if="habilidad.legendaria"><strong>Habilidad Legendaria</strong></p>
         <p><strong>Descripción:</strong></p>
         <div class="descripcion">
-            <BloqueTextoComplejo :dato="habilidad.descripcion"></BloqueTextoComplejo>
+            <BloqueTextoComplejo :dato="habilidad.descripcion.split('\n')"></BloqueTextoComplejo>
         </div>
     </div>
 
@@ -16,7 +16,6 @@
 
 <script setup>
 import BloqueTextoComplejo from '../BloqueTextoComplejo.vue';
-
 defineProps([
     'datosCargados',
     'habilidad'
