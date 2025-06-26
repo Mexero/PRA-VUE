@@ -5188,5 +5188,1840 @@
         "nombre": "Daño doblemente efectivo",
         "ruta": "/reglas?seleccionado=Daño+doblemente+efectivo",
         "tipo": "Regla variante"
+    },
+    {
+        "nombre": "Absorbe agua",
+        "ruta": "/habilidades?seleccionado=Absorbe agua",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Absorbe electricidad",
+        "ruta": "/habilidades?seleccionado=Absorbe electricidad",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Absorbe fuego",
+        "ruta": "/habilidades?seleccionado=Absorbe fuego",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Acero templado",
+        "ruta": "/habilidades?seleccionado=Acero templado",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Acérrimo",
+        "ruta": "/habilidades?seleccionado=Acérrimo",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Aclimatación",
+        "ruta": "/habilidades?seleccionado=Aclimatación",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Adaptable",
+        "ruta": "/habilidades?seleccionado=Adaptable",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Afortunado",
+        "ruta": "/habilidades?seleccionado=Afortunado",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Agallas",
+        "ruta": "/habilidades?seleccionado=Agallas",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Ala delta",
+        "ruta": "/habilidades?seleccionado=Ala delta",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Alas vendaval",
+        "ruta": "/habilidades?seleccionado=Alas vendaval",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Alerta",
+        "ruta": "/habilidades?seleccionado=Alerta",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Allanamiento",
+        "ruta": "/habilidades?seleccionado=Allanamiento",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Alma acerada",
+        "ruta": "/habilidades?seleccionado=Alma acerada",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Alma cura",
+        "ruta": "/habilidades?seleccionado=Alma cura",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Alma errante",
+        "ruta": "/habilidades?seleccionado=Alma errante",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Amplificador",
+        "ruta": "/habilidades?seleccionado=Amplificador",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Antibalas",
+        "ruta": "/habilidades?seleccionado=Antibalas",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Antibarrera",
+        "ruta": "/habilidades?seleccionado=Antibarrera",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Anticipación",
+        "ruta": "/habilidades?seleccionado=Anticipación",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Antídoto",
+        "ruta": "/habilidades?seleccionado=Antídoto",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Armadura batalla",
+        "ruta": "/habilidades?seleccionado=Armadura batalla",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Armadura frágil",
+        "ruta": "/habilidades?seleccionado=Armadura frágil",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Audaz",
+        "ruta": "/habilidades?seleccionado=Audaz",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Autoestima",
+        "ruta": "/habilidades?seleccionado=Autoestima",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Baba",
+        "ruta": "/habilidades?seleccionado=Baba",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Batería",
+        "ruta": "/habilidades?seleccionado=Batería",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Bromista",
+        "ruta": "/habilidades?seleccionado=Bromista",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Caballero puerril",
+        "ruta": "/habilidades?seleccionado=Caballero puerril",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Cabeza roca",
+        "ruta": "/habilidades?seleccionado=Cabeza roca",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Cacheo",
+        "ruta": "/habilidades?seleccionado=Cacheo",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Calco",
+        "ruta": "/habilidades?seleccionado=Calco",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Cálculo final",
+        "ruta": "/habilidades?seleccionado=Cálculo final",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Cambio color",
+        "ruta": "/habilidades?seleccionado=Cambio color",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Capa tóxica",
+        "ruta": "/habilidades?seleccionado=Capa tóxica",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Caparazón",
+        "ruta": "/habilidades?seleccionado=Caparazón",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Cara de hielo",
+        "ruta": "/habilidades?seleccionado=Cara de hielo",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Carrillo",
+        "ruta": "/habilidades?seleccionado=Carrillo",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Chorro arena",
+        "ruta": "/habilidades?seleccionado=Chorro arena",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Clorofila",
+        "ruta": "/habilidades?seleccionado=Clorofila",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Cobardía",
+        "ruta": "/habilidades?seleccionado=Cobardía",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Cola armadura",
+        "ruta": "/habilidades?seleccionado=Cola armadura",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Cola surf",
+        "ruta": "/habilidades?seleccionado=Cola surf",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Colector",
+        "ruta": "/habilidades?seleccionado=Colector",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Cólera",
+        "ruta": "/habilidades?seleccionado=Cólera",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Comandar",
+        "ruta": "/habilidades?seleccionado=Comandar",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Máquina de vapor",
+        "ruta": "/habilidades?seleccionado=Máquina de vapor",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Competitivo",
+        "ruta": "/habilidades?seleccionado=Competitivo",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Compiescolta",
+        "ruta": "/habilidades?seleccionado=Compiescolta",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Coraza ira",
+        "ruta": "/habilidades?seleccionado=Coraza ira",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Coraza reflejo",
+        "ruta": "/habilidades?seleccionado=Coraza reflejo",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Corrosión",
+        "ruta": "/habilidades?seleccionado=Corrosión",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Cortante",
+        "ruta": "/habilidades?seleccionado=Cortante",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Corte fuerte",
+        "ruta": "/habilidades?seleccionado=Corte fuerte",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Cosecha",
+        "ruta": "/habilidades?seleccionado=Cosecha",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Cromolente",
+        "ruta": "/habilidades?seleccionado=Cromolente",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Cuerpo áureo",
+        "ruta": "/habilidades?seleccionado=Cuerpo áureo",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Cuerpo horneado",
+        "ruta": "/habilidades?seleccionado=Cuerpo horneado",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Cuerpo llama",
+        "ruta": "/habilidades?seleccionado=Cuerpo llama",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Cuerpo maldito",
+        "ruta": "/habilidades?seleccionado=Cuerpo maldito",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Cuerpo mortal",
+        "ruta": "/habilidades?seleccionado=Cuerpo mortal",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Cuerpo puro",
+        "ruta": "/habilidades?seleccionado=Cuerpo puro",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Cuerpo vívido",
+        "ruta": "/habilidades?seleccionado=Cuerpo vívido",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Cura lluvia",
+        "ruta": "/habilidades?seleccionado=Cura lluvia",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Cura natural",
+        "ruta": "/habilidades?seleccionado=Cura natural",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Defensa hoja",
+        "ruta": "/habilidades?seleccionado=Defensa hoja",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Descarga",
+        "ruta": "/habilidades?seleccionado=Descarga",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Despiste",
+        "ruta": "/habilidades?seleccionado=Despiste",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Detonación",
+        "ruta": "/habilidades?seleccionado=Detonación",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Dicha",
+        "ruta": "/habilidades?seleccionado=Dicha",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Dinamo",
+        "ruta": "/habilidades?seleccionado=Dinamo",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Disemillar",
+        "ruta": "/habilidades?seleccionado=Disemillar",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Disfraz",
+        "ruta": "/habilidades?seleccionado=Disfraz",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Don floral",
+        "ruta": "/habilidades?seleccionado=Don floral",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Efecto espora",
+        "ruta": "/habilidades?seleccionado=Efecto espora",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Electricidad estática",
+        "ruta": "/habilidades?seleccionado=Electricidad estática",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Electrogénesis",
+        "ruta": "/habilidades?seleccionado=Electrogénesis",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Electromotor",
+        "ruta": "/habilidades?seleccionado=Electromotor",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Encadenado",
+        "ruta": "/habilidades?seleccionado=Encadenado",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Energía eólica",
+        "ruta": "/habilidades?seleccionado=Energía eólica",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Energía pura",
+        "ruta": "/habilidades?seleccionado=Energía pura",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Enjambre",
+        "ruta": "/habilidades?seleccionado=Enjambre",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Ensañamiento",
+        "ruta": "/habilidades?seleccionado=Ensañamiento",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Entusiasmo",
+        "ruta": "/habilidades?seleccionado=Entusiasmo",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Escama de hielo",
+        "ruta": "/habilidades?seleccionado=Escama de hielo",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Escama especial",
+        "ruta": "/habilidades?seleccionado=Escama especial",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Esclusa de aire",
+        "ruta": "/habilidades?seleccionado=Esclusa de aire",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Escudo magma",
+        "ruta": "/habilidades?seleccionado=Escudo magma",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Espejo mágico",
+        "ruta": "/habilidades?seleccionado=Espejo mágico",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Espesura",
+        "ruta": "/habilidades?seleccionado=Espesura",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Espíritu vital",
+        "ruta": "/habilidades?seleccionado=Espíritu vital",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Experto",
+        "ruta": "/habilidades?seleccionado=Experto",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Expulsarena",
+        "ruta": "/habilidades?seleccionado=Expulsarena",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Fauces furtivas",
+        "ruta": "/habilidades?seleccionado=Fauces furtivas",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Filtro",
+        "ruta": "/habilidades?seleccionado=Filtro",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Firmeza",
+        "ruta": "/habilidades?seleccionado=Firmeza",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Flaqueza",
+        "ruta": "/habilidades?seleccionado=Flaqueza",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Flexibilidad",
+        "ruta": "/habilidades?seleccionado=Flexibilidad",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Francotirador",
+        "ruta": "/habilidades?seleccionado=Francotirador",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Fuente energía",
+        "ruta": "/habilidades?seleccionado=Fuente energía",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Fuerte afecto",
+        "ruta": "/habilidades?seleccionado=Fuerte afecto",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Fuerza mental",
+        "ruta": "/habilidades?seleccionado=Fuerza mental",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Fuga",
+        "ruta": "/habilidades?seleccionado=Fuga",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Funda",
+        "ruta": "/habilidades?seleccionado=Funda",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Garra dura",
+        "ruta": "/habilidades?seleccionado=Garra dura",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Gas reactivo",
+        "ruta": "/habilidades?seleccionado=Gas reactivo",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Gélido",
+        "ruta": "/habilidades?seleccionado=Gélido",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "General supremo",
+        "ruta": "/habilidades?seleccionado=General supremo",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Geofagia",
+        "ruta": "/habilidades?seleccionado=Geofagia",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Glifo",
+        "ruta": "/habilidades?seleccionado=Glifo",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Gran encanto",
+        "ruta": "/habilidades?seleccionado=Gran encanto",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Gula",
+        "ruta": "/habilidades?seleccionado=Gula",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Hedor",
+        "ruta": "/habilidades?seleccionado=Hedor",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Hélice caudal",
+        "ruta": "/habilidades?seleccionado=Hélice caudal",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Herbívoro",
+        "ruta": "/habilidades?seleccionado=Herbívoro",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Herbogénesis",
+        "ruta": "/habilidades?seleccionado=Herbogénesis",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Herrero",
+        "ruta": "/habilidades?seleccionado=Herrero",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Hidratación",
+        "ruta": "/habilidades?seleccionado=Hidratación",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Hidrorrefuerzo",
+        "ruta": "/habilidades?seleccionado=Hidrorrefuerzo",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Hipnotismo",
+        "ruta": "/habilidades?seleccionado=Hipnotismo",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Hospitalidad",
+        "ruta": "/habilidades?seleccionado=Hospitalidad",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Huida",
+        "ruta": "/habilidades?seleccionado=Huida",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Humedad",
+        "ruta": "/habilidades?seleccionado=Humedad",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Humo blanco",
+        "ruta": "/habilidades?seleccionado=Humo blanco",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Hurto",
+        "ruta": "/habilidades?seleccionado=Hurto",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Ignífugo",
+        "ruta": "/habilidades?seleccionado=Ignífugo",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Ignorante",
+        "ruta": "/habilidades?seleccionado=Ignorante",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Iluminación",
+        "ruta": "/habilidades?seleccionado=Iluminación",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Ilusión",
+        "ruta": "/habilidades?seleccionado=Ilusión",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Imán",
+        "ruta": "/habilidades?seleccionado=Imán",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Impasible",
+        "ruta": "/habilidades?seleccionado=Impasible",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Ímpetu ardiente",
+        "ruta": "/habilidades?seleccionado=Ímpetu ardiente",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Ímpetu arena",
+        "ruta": "/habilidades?seleccionado=Ímpetu arena",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Ímpetu tóxico",
+        "ruta": "/habilidades?seleccionado=Ímpetu tóxico",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Impostor",
+        "ruta": "/habilidades?seleccionado=Impostor",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Impulso",
+        "ruta": "/habilidades?seleccionado=Impulso",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Indefenso",
+        "ruta": "/habilidades?seleccionado=Indefenso",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Inmunidad",
+        "ruta": "/habilidades?seleccionado=Inmunidad",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Insomnio",
+        "ruta": "/habilidades?seleccionado=Insomnio",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Insonorizar",
+        "ruta": "/habilidades?seleccionado=Insonorizar",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Intimidación",
+        "ruta": "/habilidades?seleccionado=Intimidación",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Intrépido",
+        "ruta": "/habilidades?seleccionado=Intrépido",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Irascible",
+        "ruta": "/habilidades?seleccionado=Irascible",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Justiciero",
+        "ruta": "/habilidades?seleccionado=Justiciero",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Lechera",
+        "ruta": "/habilidades?seleccionado=Lechera",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Letargo perenne",
+        "ruta": "/habilidades?seleccionado=Letargo perenne",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Líbero",
+        "ruta": "/habilidades?seleccionado=Líbero",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Liviano",
+        "ruta": "/habilidades?seleccionado=Liviano",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Llovizna",
+        "ruta": "/habilidades?seleccionado=Llovizna",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Madrugar",
+        "ruta": "/habilidades?seleccionado=Madrugar",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Maduración",
+        "ruta": "/habilidades?seleccionado=Maduración",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Mandíbula fuerte",
+        "ruta": "/habilidades?seleccionado=Mandíbula fuerte",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Mano rápida",
+        "ruta": "/habilidades?seleccionado=Mano rápida",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Manto frondoso",
+        "ruta": "/habilidades?seleccionado=Manto frondoso",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Manto níveo",
+        "ruta": "/habilidades?seleccionado=Manto níveo",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Mar llamas",
+        "ruta": "/habilidades?seleccionado=Mar llamas",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Más",
+        "ruta": "/habilidades?seleccionado=Más",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Medicina extraña",
+        "ruta": "/habilidades?seleccionado=Medicina extraña",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Megadisparador",
+        "ruta": "/habilidades?seleccionado=Megadisparador",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Menos",
+        "ruta": "/habilidades?seleccionado=Menos",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Metal liviano",
+        "ruta": "/habilidades?seleccionado=Metal liviano",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Metal pesado",
+        "ruta": "/habilidades?seleccionado=Metal pesado",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Mimetismo",
+        "ruta": "/habilidades?seleccionado=Mimetismo",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Momia",
+        "ruta": "/habilidades?seleccionado=Momia",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Monotema",
+        "ruta": "/habilidades?seleccionado=Monotema",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Mudar",
+        "ruta": "/habilidades?seleccionado=Mudar",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Multiescamas",
+        "ruta": "/habilidades?seleccionado=Multiescamas",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Multitipo",
+        "ruta": "/habilidades?seleccionado=Multitipo",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Muro mágico",
+        "ruta": "/habilidades?seleccionado=Muro mágico",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Mutapetito",
+        "ruta": "/habilidades?seleccionado=Mutapetito",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Mutatipo",
+        "ruta": "/habilidades?seleccionado=Mutatipo",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Nado rápido",
+        "ruta": "/habilidades?seleccionado=Nado rápido",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Nebulogénesis",
+        "ruta": "/habilidades?seleccionado=Nebulogénesis",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Néctar dulce",
+        "ruta": "/habilidades?seleccionado=Néctar dulce",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Nerviosismo",
+        "ruta": "/habilidades?seleccionado=Nerviosismo",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Neuralizador",
+        "ruta": "/habilidades?seleccionado=Neuralizador",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Nevada",
+        "ruta": "/habilidades?seleccionado=Nevada",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Normalidad",
+        "ruta": "/habilidades?seleccionado=Normalidad",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Ojo compuesto",
+        "ruta": "/habilidades?seleccionado=Ojo compuesto",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Ojo mental",
+        "ruta": "/habilidades?seleccionado=Ojo mental",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Olor persistente",
+        "ruta": "/habilidades?seleccionado=Olor persistente",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Oportunista",
+        "ruta": "/habilidades?seleccionado=Oportunista",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Pararrayos",
+        "ruta": "/habilidades?seleccionado=Pararrayos",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Pareja de baile",
+        "ruta": "/habilidades?seleccionado=Pareja de baile",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Patada recia",
+        "ruta": "/habilidades?seleccionado=Patada recia",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Pelaje recio",
+        "ruta": "/habilidades?seleccionado=Pelaje recio",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Peluche",
+        "ruta": "/habilidades?seleccionado=Peluche",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Pelusa",
+        "ruta": "/habilidades?seleccionado=Pelusa",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Pereza",
+        "ruta": "/habilidades?seleccionado=Pereza",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Perro guardián",
+        "ruta": "/habilidades?seleccionado=Perro guardián",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Pez pistola",
+        "ruta": "/habilidades?seleccionado=Pez pistola",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Piel celeste",
+        "ruta": "/habilidades?seleccionado=Piel celeste",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Piel eléctrica",
+        "ruta": "/habilidades?seleccionado=Piel eléctrica",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Piel feérica",
+        "ruta": "/habilidades?seleccionado=Piel feérica",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Piel helada",
+        "ruta": "/habilidades?seleccionado=Piel helada",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Piel milagro",
+        "ruta": "/habilidades?seleccionado=Piel milagro",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Piel seca",
+        "ruta": "/habilidades?seleccionado=Piel seca",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Piel tosca",
+        "ruta": "/habilidades?seleccionado=Piel tosca",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Pies rápidos",
+        "ruta": "/habilidades?seleccionado=Pies rápidos",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Poder arena",
+        "ruta": "/habilidades?seleccionado=Poder arena",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Poder fúngico",
+        "ruta": "/habilidades?seleccionado=Poder fúngico",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Poder solar",
+        "ruta": "/habilidades?seleccionado=Poder solar",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Polvo escudo",
+        "ruta": "/habilidades?seleccionado=Polvo escudo",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Pompa",
+        "ruta": "/habilidades?seleccionado=Pompa",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Potencia",
+        "ruta": "/habilidades?seleccionado=Potencia",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Fuerza bruta",
+        "ruta": "/habilidades?seleccionado=Fuerza bruta",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Predicción",
+        "ruta": "/habilidades?seleccionado=Predicción",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Presión",
+        "ruta": "/habilidades?seleccionado=Presión",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Prestidigitador",
+        "ruta": "/habilidades?seleccionado=Prestidigitador",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Primer auxilio",
+        "ruta": "/habilidades?seleccionado=Primer auxilio",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Producedulce",
+        "ruta": "/habilidades?seleccionado=Producedulce",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Psicogénesis",
+        "ruta": "/habilidades?seleccionado=Psicogénesis",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Punk rock",
+        "ruta": "/habilidades?seleccionado=Punk rock",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Punta acero",
+        "ruta": "/habilidades?seleccionado=Punta acero",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Punto tóxico",
+        "ruta": "/habilidades?seleccionado=Punto tóxico",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Puño férreo",
+        "ruta": "/habilidades?seleccionado=Puño férreo",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Quitanieves",
+        "ruta": "/habilidades?seleccionado=Quitanieves",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Reacción química",
+        "ruta": "/habilidades?seleccionado=Reacción química",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Receptor",
+        "ruta": "/habilidades?seleccionado=Receptor",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Recogemiel",
+        "ruta": "/habilidades?seleccionado=Recogemiel",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Regeneración",
+        "ruta": "/habilidades?seleccionado=Regeneración",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Regia presencia",
+        "ruta": "/habilidades?seleccionado=Regia presencia",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Reina abeja",
+        "ruta": "/habilidades?seleccionado=Reina abeja",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Remoto",
+        "ruta": "/habilidades?seleccionado=Remoto",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Resonancia",
+        "ruta": "/habilidades?seleccionado=Resonancia",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Respondón",
+        "ruta": "/habilidades?seleccionado=Respondón",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Retirada",
+        "ruta": "/habilidades?seleccionado=Retirada",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Revés",
+        "ruta": "/habilidades?seleccionado=Revés",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Rezagado",
+        "ruta": "/habilidades?seleccionado=Rezagado",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Ritmo propio",
+        "ruta": "/habilidades?seleccionado=Ritmo propio",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Rivalidad",
+        "ruta": "/habilidades?seleccionado=Rivalidad",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Rizos rebeldes",
+        "ruta": "/habilidades?seleccionado=Rizos rebeldes",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Robustez",
+        "ruta": "/habilidades?seleccionado=Robustez",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Roca sólida",
+        "ruta": "/habilidades?seleccionado=Roca sólida",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Rompemoldes",
+        "ruta": "/habilidades?seleccionado=Rompemoldes",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Rumia",
+        "ruta": "/habilidades?seleccionado=Rumia",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Sacapecho",
+        "ruta": "/habilidades?seleccionado=Sacapecho",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Saco de boxeo",
+        "ruta": "/habilidades?seleccionado=Saco de boxeo",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Sal purificadora",
+        "ruta": "/habilidades?seleccionado=Sal purificadora",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Sebo",
+        "ruta": "/habilidades?seleccionado=Sebo",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Sequía",
+        "ruta": "/habilidades?seleccionado=Sequía",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Simbiosis",
+        "ruta": "/habilidades?seleccionado=Simbiosis",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Simple",
+        "ruta": "/habilidades?seleccionado=Simple",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Sincronía",
+        "ruta": "/habilidades?seleccionado=Sincronía",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Sombra trampa",
+        "ruta": "/habilidades?seleccionado=Sombra trampa",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Superguarda",
+        "ruta": "/habilidades?seleccionado=Superguarda",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Surcavientos",
+        "ruta": "/habilidades?seleccionado=Surcavientos",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Telepatía",
+        "ruta": "/habilidades?seleccionado=Telepatía",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Tenacidad",
+        "ruta": "/habilidades?seleccionado=Tenacidad",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Termoconversión",
+        "ruta": "/habilidades?seleccionado=Termoconversión",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Toque tóxico",
+        "ruta": "/habilidades?seleccionado=Toque tóxico",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Torrente",
+        "ruta": "/habilidades?seleccionado=Torrente",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Tragamisil",
+        "ruta": "/habilidades?seleccionado=Tragamisil",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Trampa arena",
+        "ruta": "/habilidades?seleccionado=Trampa arena",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Transportarrocas",
+        "ruta": "/habilidades?seleccionado=Transportarrocas",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Tumbos",
+        "ruta": "/habilidades?seleccionado=Tumbos",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Unísono",
+        "ruta": "/habilidades?seleccionado=Unísono",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Velo agua",
+        "ruta": "/habilidades?seleccionado=Velo agua",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Velo arena",
+        "ruta": "/habilidades?seleccionado=Velo arena",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Velo aroma",
+        "ruta": "/habilidades?seleccionado=Velo aroma",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Velo dulce",
+        "ruta": "/habilidades?seleccionado=Velo dulce",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Velo flor",
+        "ruta": "/habilidades?seleccionado=Velo flor",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Velo pastel",
+        "ruta": "/habilidades?seleccionado=Velo pastel",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Ventosas",
+        "ruta": "/habilidades?seleccionado=Ventosas",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Vigilante",
+        "ruta": "/habilidades?seleccionado=Vigilante",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Viscosecreción",
+        "ruta": "/habilidades?seleccionado=Viscosecreción",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Viscosidad",
+        "ruta": "/habilidades?seleccionado=Viscosidad",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Vista lince",
+        "ruta": "/habilidades?seleccionado=Vista lince",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Voz fluida",
+        "ruta": "/habilidades?seleccionado=Voz fluida",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Amor filial",
+        "ruta": "/habilidades?seleccionado=Amor filial",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Banco",
+        "ruta": "/habilidades?seleccionado=Banco",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Bebedor de néctar",
+        "ruta": "/habilidades?seleccionado=Bebedor de néctar",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Cambio estación",
+        "ruta": "/habilidades?seleccionado=Cambio estación",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Cambio heroico",
+        "ruta": "/habilidades?seleccionado=Cambio heroico",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Electroinvasor",
+        "ruta": "/habilidades?seleccionado=Electroinvasor",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Escudo limitado",
+        "ruta": "/habilidades?seleccionado=Escudo limitado",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Espada maldita",
+        "ruta": "/habilidades?seleccionado=Espada maldita",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Modo Daruma",
+        "ruta": "/habilidades?seleccionado=Modo Daruma",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Modo Daruma (Galar)",
+        "ruta": "/habilidades?seleccionado=Modo Daruma (Galar)",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Paleosíntesis",
+        "ruta": "/habilidades?seleccionado=Paleosíntesis",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Transistor",
+        "ruta": "/habilidades?seleccionado=Transistor",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Abalorio debacle",
+        "ruta": "/habilidades?seleccionado=Abalorio debacle",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Aro portales",
+        "ruta": "/habilidades?seleccionado=Aro portales",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Aura feérica",
+        "ruta": "/habilidades?seleccionado=Aura feérica",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Aura oscura",
+        "ruta": "/habilidades?seleccionado=Aura oscura",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Cadena tóxica",
+        "ruta": "/habilidades?seleccionado=Cadena tóxica",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Caldero debacle",
+        "ruta": "/habilidades?seleccionado=Caldero debacle",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Carga cuark",
+        "ruta": "/habilidades?seleccionado=Carga cuark",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Coloso",
+        "ruta": "/habilidades?seleccionado=Coloso",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Controlar volcán",
+        "ruta": "/habilidades?seleccionado=Controlar volcán",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Coránima",
+        "ruta": "/habilidades?seleccionado=Coránima",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Creador de continentes",
+        "ruta": "/habilidades?seleccionado=Creador de continentes",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Defensor de los ideales",
+        "ruta": "/habilidades?seleccionado=Defensor de los ideales",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Dios supremo",
+        "ruta": "/habilidades?seleccionado=Dios supremo",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Drenado vital",
+        "ruta": "/habilidades?seleccionado=Drenado vital",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Dulces sueños",
+        "ruta": "/habilidades?seleccionado=Dulces sueños",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Emperador del cielo",
+        "ruta": "/habilidades?seleccionado=Emperador del cielo",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Espada de la justicia",
+        "ruta": "/habilidades?seleccionado=Espada de la justicia",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Espada debacle",
+        "ruta": "/habilidades?seleccionado=Espada debacle",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Espíritu guardián",
+        "ruta": "/habilidades?seleccionado=Espíritu guardián",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Estrella fugaz",
+        "ruta": "/habilidades?seleccionado=Estrella fugaz",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Fuerza cerebral",
+        "ruta": "/habilidades?seleccionado=Fuerza cerebral",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Golem",
+        "ruta": "/habilidades?seleccionado=Golem",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Guardia espectro",
+        "ruta": "/habilidades?seleccionado=Guardia espectro",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Guardia metálica",
+        "ruta": "/habilidades?seleccionado=Guardia metálica",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Guardián de los mares",
+        "ruta": "/habilidades?seleccionado=Guardián de los mares",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Instinto combativo",
+        "ruta": "/habilidades?seleccionado=Instinto combativo",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Invisibilidad",
+        "ruta": "/habilidades?seleccionado=Invisibilidad",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Latido oricalco",
+        "ruta": "/habilidades?seleccionado=Latido oricalco",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Llama eterna",
+        "ruta": "/habilidades?seleccionado=Llama eterna",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Lianas",
+        "ruta": "/habilidades?seleccionado=Lianas",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Mal sueño",
+        "ruta": "/habilidades?seleccionado=Mal sueño",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Mandíbula dragón",
+        "ruta": "/habilidades?seleccionado=Mandíbula dragón",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Mar del albor",
+        "ruta": "/habilidades?seleccionado=Mar del albor",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Morasombra",
+        "ruta": "/habilidades?seleccionado=Morasombra",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Motor hadrónico",
+        "ruta": "/habilidades?seleccionado=Motor hadrónico",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Neurosimbiosis",
+        "ruta": "/habilidades?seleccionado=Neurosimbiosis",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Nómada del tiempo",
+        "ruta": "/habilidades?seleccionado=Nómada del tiempo",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Paladín de la verdad",
+        "ruta": "/habilidades?seleccionado=Paladín de la verdad",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Paso purificador",
+        "ruta": "/habilidades?seleccionado=Paso purificador",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Primer eslabón",
+        "ruta": "/habilidades?seleccionado=Primer eslabón",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Puño invisible",
+        "ruta": "/habilidades?seleccionado=Puño invisible",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Ráfaga delta",
+        "ruta": "/habilidades?seleccionado=Ráfaga delta",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Reina carbink",
+        "ruta": "/habilidades?seleccionado=Reina carbink",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Relincho blanco",
+        "ruta": "/habilidades?seleccionado=Relincho blanco",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Relincho negro",
+        "ruta": "/habilidades?seleccionado=Relincho negro",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Rey de los mares",
+        "ruta": "/habilidades?seleccionado=Rey de los mares",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Rompeaura",
+        "ruta": "/habilidades?seleccionado=Rompeaura",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Señor de la distorsión",
+        "ruta": "/habilidades?seleccionado=Señor de la distorsión",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Señor del espacio",
+        "ruta": "/habilidades?seleccionado=Señor del espacio",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Señor del tiempo",
+        "ruta": "/habilidades?seleccionado=Señor del tiempo",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Ser de la emoción",
+        "ruta": "/habilidades?seleccionado=Ser de la emoción",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Ser de la sabiduría",
+        "ruta": "/habilidades?seleccionado=Ser de la sabiduría",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Ser de la voluntad",
+        "ruta": "/habilidades?seleccionado=Ser de la voluntad",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Sistema alfa",
+        "ruta": "/habilidades?seleccionado=Sistema alfa",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Tablilla debacle",
+        "ruta": "/habilidades?seleccionado=Tablilla debacle",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Teraformación",
+        "ruta": "/habilidades?seleccionado=Teraformación",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Terravoltaje",
+        "ruta": "/habilidades?seleccionado=Terravoltaje",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Tiempo primal",
+        "ruta": "/habilidades?seleccionado=Tiempo primal",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Tierra del ocaso",
+        "ruta": "/habilidades?seleccionado=Tierra del ocaso",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Tinovictoria",
+        "ruta": "/habilidades?seleccionado=Tinovictoria",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Títere tóxico",
+        "ruta": "/habilidades?seleccionado=Títere tóxico",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Turbollama",
+        "ruta": "/habilidades?seleccionado=Turbollama",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Ultraimpulso",
+        "ruta": "/habilidades?seleccionado=Ultraimpulso",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Unidad ecuestre",
+        "ruta": "/habilidades?seleccionado=Unidad ecuestre",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Velocidad rayo",
+        "ruta": "/habilidades?seleccionado=Velocidad rayo",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Vida eterna",
+        "ruta": "/habilidades?seleccionado=Vida eterna",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Evocarrecuerdos",
+        "ruta": "/habilidades?seleccionado=Evocarrecuerdos",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Espacio primal",
+        "ruta": "/habilidades?seleccionado=Espacio primal",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Agrupamiento",
+        "ruta": "/habilidades?seleccionado=Agrupamiento",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Escudo recio",
+        "ruta": "/habilidades?seleccionado=Escudo recio",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Espada indómita",
+        "ruta": "/habilidades?seleccionado=Espada indómita",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Armadura prisma",
+        "ruta": "/habilidades?seleccionado=Armadura prisma",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Cascarón",
+        "ruta": "/habilidades?seleccionado=Cascarón",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Contención",
+        "ruta": "/habilidades?seleccionado=Contención",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Cristal eón",
+        "ruta": "/habilidades?seleccionado=Cristal eón",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Distorsión primal",
+        "ruta": "/habilidades?seleccionado=Distorsión primal",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Eternamax",
+        "ruta": "/habilidades?seleccionado=Eternamax",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Forma brío",
+        "ruta": "/habilidades?seleccionado=Forma brío",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Fuerza de la naturaleza",
+        "ruta": "/habilidades?seleccionado=Fuerza de la naturaleza",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Fuerza de la naturaleza (Enamorus)",
+        "ruta": "/habilidades?seleccionado=Fuerza de la naturaleza (Enamorus)",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Gracídea",
+        "ruta": "/habilidades?seleccionado=Gracídea",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Mochis cadena",
+        "ruta": "/habilidades?seleccionado=Mochis cadena",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Musa",
+        "ruta": "/habilidades?seleccionado=Musa",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Muta-ADN",
+        "ruta": "/habilidades?seleccionado=Muta-ADN",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Teracambio",
+        "ruta": "/habilidades?seleccionado=Teracambio",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Patada férrea",
+        "ruta": "/habilidades?seleccionado=Patada férrea",
+        "tipo": "Habilidad"
     }
 ]
