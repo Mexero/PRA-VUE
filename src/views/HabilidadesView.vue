@@ -72,7 +72,6 @@ onMounted(async () => {
                     transformacion: row[3] === "Transformación",
                 };
             });
-            console.log(datos.value)
 
             if (datos.value.length > 0) {
                 if (seleccionado.value) {
