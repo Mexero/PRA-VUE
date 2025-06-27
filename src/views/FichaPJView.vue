@@ -6,7 +6,8 @@
             @crear="crearFicha" @borrar="borrarFicha" @exportar="exportarFicha" @importar="importarFicha"
             @moverFicha="moverFicha" />
 
-        <FichaInfoBasica :ficha="ficha" @cambiarNombre="cambiarNombreFicha" />
+        <FichaInfoBasica :ficha="ficha" :especiesPokes="especiesPokes" :especiesPokesCargadas="especiesPokesCargadas"
+            @cambiarNombre="cambiarNombreFicha" @cambiarDatosEspecie="cambiarDatosEspecie" />
 
         <div class="info-principal">
             <FichaStats :ficha="ficha" />
@@ -38,9 +39,13 @@ import FichaOtros from '@/components/fichaPJ/Otros.vue'
 
 import { crearFichaBase } from '@/utils/TemplateFicha.js'
 
+import worker from '../sqlWorker.js';
+
 import { guardarFichaIndexedDB, borrarFichaIndexedDB, obtenerTodasLasFichas, obtenerFicha, guardarOrdenFichas, cargarOrdenFichas } from '@/utils/FichasDB.js'
 
 const dotes = ref([])
+const especiesPokes = ref([])
+const especiesPokesCargadas = ref(false)
 
 const ficha = reactive(crearFichaBase());
 
@@ -49,12 +54,95 @@ const nuevaFichaNombre = ref('')
 const fichasGuardadas = reactive({})
 const ordenFichas = ref([])
 
-
 const ChecksBase = [
     'Acrobacias', 'Actuación', 'Atletismo', 'Combate', 'Empatía', 'Engaño',
     'Intimidación', 'Investigación', 'Juego de Manos', 'Percepción',
     'Persuasión', 'Supervivencia', 'Trato Pokémon'
 ]
+
+// <========= CAMBIAR DATOS ESPECIE =============>
+function cambiarDatosEspecie(especie) {
+    worker.postMessage({
+        type: 'query',
+        query: `
+                SELECT Especie, Tipo_primario, Tipo_secundario, 
+                FUE, AGI, RES, MEN, ESP, PRE, 
+                S_FUE, S_AGI, S_RES, S_ESP,
+                Vitalidad,
+                V_Caminado, V_Trepado, V_Excavado, V_Nado, V_Vuelo, V_Levitado,
+                Nat_Habil_1, Nat_Habil_2,
+                Habilidad_1, Habilidad_2, Habilidad_3, Hab_oculta_1, Hab_oculta_2,
+                AC1, AC2, 
+                Dieta, Tamano, Sexo, Sentidos, Evoluciona_en_todo
+                FROM pokemexe_pokedex
+            WHERE Especie = ?
+        `,
+        params: [especie]
+    })
+
+    worker.onmessage = (e) => {
+        if (e.data.type === 'result') {
+            const row = e.data.result?.[0]?.values?.[0]
+            if (row) {
+                ficha.pokedex.especie = row[0]
+                //Tipos
+                ficha.pokedex.tipos[0] = row[1]
+                ficha.pokedex.tipos[1] = row[2] ?? ""
+                //stats base
+                ficha.pokedex.statsBase.fue = parseInt(row[3])
+                ficha.pokedex.statsBase.agi = parseInt(row[4])
+                ficha.pokedex.statsBase.res = parseInt(row[5])
+                ficha.pokedex.statsBase.men = parseInt(row[6])
+                ficha.pokedex.statsBase.esp = parseInt(row[7])
+                ficha.pokedex.statsBase.pre = parseInt(row[8])
+                //saves
+                ficha.pokedex.salvaciones.fue = parseInt(row[9])
+                ficha.pokedex.salvaciones.agi = parseInt(row[10])
+                ficha.pokedex.salvaciones.res = parseInt(row[11])
+                ficha.pokedex.salvaciones.esp = parseInt(row[12])
+                //VIT
+                ficha.pokedex.vit = parseInt(row[13])
+                //velocidades
+                ficha.pokedex.velocidades.Caminado = parseInt(row[14]) || 0
+                ficha.pokedex.velocidades.Trepado = parseInt(row[15]) || 0
+                ficha.pokedex.velocidades.Excavado = parseInt(row[16]) || 0
+                ficha.pokedex.velocidades.Nado = parseInt(row[17]) || 0
+                ficha.pokedex.velocidades.Vuelo = parseInt(row[18]) || 0
+                ficha.pokedex.velocidades.Levitado = parseInt(row[19]) || 0
+                //Naturalmente Habil
+                ficha.pokedex.natHabil = []
+                if (row[20] && row[20] !== "") ficha.pokedex.natHabil.push(row[20])
+                if (row[21] && row[21] !== "") ficha.pokedex.natHabil.push(row[21])
+                //Habilidades
+                ficha.pokedex.habilidades = []
+                if (row[22] && row[22] !== "") ficha.pokedex.habilidades.push(row[22])
+                if (row[23] && row[23] !== "") ficha.pokedex.habilidades.push(row[23])
+                if (row[24] && row[24] !== "") ficha.pokedex.habilidades.push(row[24])
+                ficha.pokedex.habilidadesOcultas = []
+                if (row[25] && row[25] !== "") ficha.pokedex.habilidadesOcultas.push(row[25])
+                if (row[26] && row[26] !== "") ficha.pokedex.habilidadesOcultas.push(row[26])
+                //Clase Armadura
+                ficha.pokedex.calculosCA = []
+                ficha.pokedex.calculosCA.push(row[27])
+                if (row[28] && row[28] !== "") ficha.pokedex.calculosCA.push(row[28])
+                //Otros
+                ficha.pokedex.otros.dieta = row[29]
+                ficha.pokedex.otros.tamano = row[30]
+                ficha.pokedex.otros.sexo = row[31]
+                ficha.pokedex.otros.sentidos = row[32]
+                ficha.pokedex.otros.evolucion = row[33]
+
+                console.log("Especie seleccionada:", row)
+            }
+        } else if (e.data.type === 'error') {
+            console.error("Error al seleccionar especie:", e.data.error)
+        }
+    }
+}
+
+
+
+//<========= ACTUALIZAR DATOS =============>
 const grados = {
     no: 0,
     bueno: () => ficha.derivados.bh,
@@ -71,16 +159,20 @@ function updateCheck(check) {
     check.modificado = false
 }
 
+function calcularSentidos() {
 
+    if (ficha.pokedex.otros.sentidos && ficha.pokedex.otros.sentidos !== '') {
+        return ficha.pokedex.otros.sentidos + (ficha.personaliz.sentidos !== "" ? (", " + ficha.personaliz.sentidos) : "")
+    }
+    else return ficha.personaliz.sentidos
+}
 
-//Actualizar datos
 watch(ficha, () => {
     actualizar()
     guardarFicha()
 }, { deep: true })
 
 function actualizar() {
-
     // Valores derivados automáticos si no están definidos manualmente
     if (!ficha.manual.bh) {
         ficha.derivados.bh = Math.ceil(ficha.nivel / 2)
@@ -92,6 +184,10 @@ function actualizar() {
 
     if (!ficha.manual.cantidadMejorasEST) {
         ficha.derivados.cantidadMejorasEST = 1 + Math.floor((ficha.nivel - 2) / 3)
+    }
+
+    if (!ficha.manual.vit) {
+        ficha.derivados.vit = ficha.pokedex.vit + ficha.personaliz.bonoVit
     }
 
     if (!ficha.manual.pvMax) {
@@ -115,6 +211,9 @@ function actualizar() {
         const bonoGrado = typeof grados[ficha.personaliz.initGrado] === 'function' ? grados[ficha.personaliz.initGrado]() : grados[ficha.personaliz.initGrado]
         ficha.derivados.init = Math.max(ficha.derivados.stats.agi, ficha.derivados.stats.esp) + bonoGrado - Math.max(ficha.derivados.fatiga, 0)
     }
+
+    //Sentidos
+    ficha.derivados.sentidos = calcularSentidos()
 
     // Recalcular checks personalizados
     ficha.derivados.checks.forEach(updateCheck)
@@ -140,13 +239,19 @@ function actualizar() {
     // Actualizar salvaciones con bonificaciones personalizadas
     for (const stat in ficha.derivados.salvaciones) {
         const statTotal = ficha.derivados.stats[stat] || 0
-        const bono = ficha.personaliz.salvaciones[stat] || 0
-        ficha.derivados.salvaciones[stat] = statTotal + bono - Math.max(ficha.derivados.fatiga, 0)
+        ficha.derivados.salvaciones[stat] = statTotal
+            + ficha.pokedex.salvaciones[stat] + ficha.personaliz.salvaciones[stat]
+            - Math.max(ficha.derivados.fatiga, 0)
+    }
+
+    // Actualizar velocidades
+    for (const vel in ficha.derivados.velocidades) {
+        ficha.derivados.velocidades[vel] = ficha.pokedex.velocidades[vel] + ficha.personaliz.mejorasVelocidades[vel]
     }
 }
 
 
-//Manipular fichas
+// <============== MANIPULAR FICHAS ===============>
 
 watch(fichaSeleccionada, (nuevoNombre) => {
     if (nuevoNombre && fichasGuardadas[nuevoNombre]) {
@@ -310,7 +415,14 @@ watch(ordenFichas, async (nuevoOrden) => {
 }, { deep: true })
 
 
-// Inicicio
+// <============== INICIO ===============>
+function cargarPokes() {
+    worker.postMessage({
+        type: 'query',
+        query: 'SELECT Especie FROM pokemexe_pokedex',
+        params: []
+    });
+}
 
 onMounted(async () => {
 
@@ -351,6 +463,24 @@ onMounted(async () => {
     } catch (error) {
         console.error("Error al cargar las dotes:", error)
     }
+
+    // Especies
+    worker.postMessage({ type: 'init' });
+
+    worker.onmessage = (e) => {
+        if (e.data.type === 'ready') {
+            cargarPokes();
+        }
+        if (e.data.type === 'result') {
+            especiesPokes.value = (e.data.result?.[0]?.values || []).map((row) => row[0]);
+            if (especiesPokes.value.length > 0) {
+                especiesPokesCargadas.value = true;
+            }
+        }
+        if (e.data.type === 'error') {
+            console.error("Error en SQLite:", e.data.error);
+        }
+    };
 })
 
 </script>

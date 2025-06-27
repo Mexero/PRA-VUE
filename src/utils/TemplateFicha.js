@@ -7,15 +7,15 @@ export function crearFichaBase(nombre = '') {
             tipos: ['', ''],
             statsBase: { fue: 0, agi: 0, res: 0, men: 0, esp: 0, pre: 0 },
             salvaciones: { fue: 0, agi: 0, res: 0, esp: 0 },
-            natHabil: [''],
+            natHabil: [],
             vit: 0,
             velocidades: { Caminado: 0, Trepado: 0, Excavado: 0, Nado: 0, Vuelo: 0, Levitado: 0 },
             movimientosNivel: [],
             movimientosEnseñables: [],
-            historyabilidades: [],
+            habilidades: [],
             habilidadesOcultas: [],
-            calculosCA: ['', ''],
-            otros: { dieta: '', tamano: '', sexo: '', sentidos: '', evolución: [] },
+            calculosCA: [],
+            otros: { dieta: '', tamano: '', sexo: '', sentidos: '', evolucion: '' },
         },
         personaliz: {
             mejorasEst: [],
@@ -26,7 +26,7 @@ export function crearFichaBase(nombre = '') {
             checksActivos: [],
             checksNuevos: [], //TDA personalizadas
             mejorasHab: [],
-            caDisponibles: ['', ''],
+            caDisponibles: [],
             bonosExtraEst: { fue: 0, agi: 0, res: 0, men: 0, esp: 0, pre: 0 },
             mejorasVelocidades: { Caminado: 0, Trepado: 0, Excavado: 0, Nado: 0, Vuelo: 0, Levitado: 0 },
             salvaciones: { fue: 0, agi: 0, res: 0, esp: 0 },
@@ -35,7 +35,8 @@ export function crearFichaBase(nombre = '') {
             initGrado: 'bueno',
             bonoCa: 0,
             teratipo: '',
-            sentidos: ''
+            sentidos: '',
+            naturaleza: ''
         },
         derivados: {
             bh: 0,
@@ -56,6 +57,7 @@ export function crearFichaBase(nombre = '') {
             fatiga: 0,
             carga: 0,
             vit: 0,
+            sentidos: ''
         },
         manual: {
             bh: false,

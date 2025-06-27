@@ -13,6 +13,42 @@
 
 <script setup>
 defineProps(['ficha'])
+
+import { onMounted, ref } from 'vue';
+
+import worker from '../../sqlWorker.js';
+
+const movs = ref([]);
+
+const movsCargados = ref(false);
+
+function cargarDatos() {
+    worker.postMessage({
+        type: 'query',
+        query: 'SELECT Nombre FROM pokemexe_movimientos',
+        params: []
+    });
+}
+
+onMounted(async () => {
+    worker.postMessage({ type: 'init' });
+
+    worker.onmessage = (e) => {
+        if (e.data.type === 'ready') {
+            cargarDatos();
+        }
+        if (e.data.type === 'result') {
+            movs.value = (e.data.result?.[0]?.values || []).map((row) => row[0]);
+            if (movs.value.length > 0) {
+                movsCargados.value = true;
+            }
+        }
+
+        if (e.data.type === 'error') {
+            console.error("Error en SQLite:", e.data.error);
+        }
+    };
+});
 </script>
 
 <style scoped>
