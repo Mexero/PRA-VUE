@@ -17,8 +17,10 @@
         </div>
 
         <FichaMovimientos :ficha="ficha" />
-        <FichaHabilidades :ficha="ficha" />
-        <FichaDotes :ficha="ficha" :dotes="dotes" />
+        <div class="HabsYDotes">
+            <FichaHabilidades :ficha="ficha" :habilidades="habilidades" :habilidadesCargadas="habilidadesCargadas" />
+            <FichaDotes :ficha="ficha" :dotes="dotes" />
+        </div>
         <FichaOtros :ficha="ficha" />
     </div>
 </template>
@@ -43,10 +45,14 @@ import worker from '../sqlWorker.js';
 
 import { guardarFichaIndexedDB, borrarFichaIndexedDB, obtenerTodasLasFichas, obtenerFicha, guardarOrdenFichas, cargarOrdenFichas } from '@/utils/FichasDB.js'
 
+//Datos
 const dotes = ref([])
 const especiesPokes = ref([])
 const especiesPokesCargadas = ref(false)
+const habilidades = ref([]);
+const habilidadesCargadas = ref(false);
 
+//Ficha
 const ficha = reactive(crearFichaBase());
 
 const fichaSeleccionada = ref('')
@@ -77,68 +83,73 @@ function cambiarDatosEspecie(especie) {
                 FROM pokemexe_pokedex
             WHERE Especie = ?
         `,
-        params: [especie]
+        params: [especie],
+        origin: "CambiarDatosEspecie"
     })
-
-    worker.onmessage = (e) => {
-        if (e.data.type === 'result') {
-            const row = e.data.result?.[0]?.values?.[0]
-            if (row) {
-                ficha.pokedex.especie = row[0]
-                //Tipos
-                ficha.pokedex.tipos[0] = row[1]
-                ficha.pokedex.tipos[1] = row[2] ?? ""
-                //stats base
-                ficha.pokedex.statsBase.fue = parseInt(row[3])
-                ficha.pokedex.statsBase.agi = parseInt(row[4])
-                ficha.pokedex.statsBase.res = parseInt(row[5])
-                ficha.pokedex.statsBase.men = parseInt(row[6])
-                ficha.pokedex.statsBase.esp = parseInt(row[7])
-                ficha.pokedex.statsBase.pre = parseInt(row[8])
-                //saves
-                ficha.pokedex.salvaciones.fue = parseInt(row[9])
-                ficha.pokedex.salvaciones.agi = parseInt(row[10])
-                ficha.pokedex.salvaciones.res = parseInt(row[11])
-                ficha.pokedex.salvaciones.esp = parseInt(row[12])
-                //VIT
-                ficha.pokedex.vit = parseInt(row[13])
-                //velocidades
-                ficha.pokedex.velocidades.Caminado = parseInt(row[14]) || 0
-                ficha.pokedex.velocidades.Trepado = parseInt(row[15]) || 0
-                ficha.pokedex.velocidades.Excavado = parseInt(row[16]) || 0
-                ficha.pokedex.velocidades.Nado = parseInt(row[17]) || 0
-                ficha.pokedex.velocidades.Vuelo = parseInt(row[18]) || 0
-                ficha.pokedex.velocidades.Levitado = parseInt(row[19]) || 0
-                //Naturalmente Habil
-                ficha.pokedex.natHabil = []
-                if (row[20] && row[20] !== "") ficha.pokedex.natHabil.push(row[20])
-                if (row[21] && row[21] !== "") ficha.pokedex.natHabil.push(row[21])
-                //Habilidades
-                ficha.pokedex.habilidades = []
-                if (row[22] && row[22] !== "") ficha.pokedex.habilidades.push(row[22])
-                if (row[23] && row[23] !== "") ficha.pokedex.habilidades.push(row[23])
-                if (row[24] && row[24] !== "") ficha.pokedex.habilidades.push(row[24])
-                ficha.pokedex.habilidadesOcultas = []
-                if (row[25] && row[25] !== "") ficha.pokedex.habilidadesOcultas.push(row[25])
-                if (row[26] && row[26] !== "") ficha.pokedex.habilidadesOcultas.push(row[26])
-                //Clase Armadura
-                ficha.pokedex.calculosCA = []
-                ficha.pokedex.calculosCA.push(row[27])
-                if (row[28] && row[28] !== "") ficha.pokedex.calculosCA.push(row[28])
-                //Otros
-                ficha.pokedex.otros.dieta = row[29]
-                ficha.pokedex.otros.tamano = row[30]
-                ficha.pokedex.otros.sexo = row[31]
-                ficha.pokedex.otros.sentidos = row[32]
-                ficha.pokedex.otros.evolucion = row[33]
-
-                console.log("Especie seleccionada:", row)
-            }
-        } else if (e.data.type === 'error') {
-            console.error("Error al seleccionar especie:", e.data.error)
-        }
-    }
 }
+
+worker.addEventListener('message', (e) => {
+    if (e.data.type === 'result' && e.data.origin === 'CambiarDatosEspecie') {
+        const row = e.data.result?.[0]?.values?.[0]
+        if (row) {
+            ficha.pokedex.especie = row[0]
+            //Tipos
+            ficha.pokedex.tipos[0] = row[1]
+            ficha.pokedex.tipos[1] = row[2] ?? ""
+            //stats base
+            ficha.pokedex.statsBase.fue = parseInt(row[3])
+            ficha.pokedex.statsBase.agi = parseInt(row[4])
+            ficha.pokedex.statsBase.res = parseInt(row[5])
+            ficha.pokedex.statsBase.men = parseInt(row[6])
+            ficha.pokedex.statsBase.esp = parseInt(row[7])
+            ficha.pokedex.statsBase.pre = parseInt(row[8])
+            //saves
+            ficha.pokedex.salvaciones.fue = parseInt(row[9])
+            ficha.pokedex.salvaciones.agi = parseInt(row[10])
+            ficha.pokedex.salvaciones.res = parseInt(row[11])
+            ficha.pokedex.salvaciones.esp = parseInt(row[12])
+            //VIT
+            ficha.pokedex.vit = parseInt(row[13])
+            //velocidades
+            ficha.pokedex.velocidades.Caminado = parseInt(row[14]) || 0
+            ficha.pokedex.velocidades.Trepado = parseInt(row[15]) || 0
+            ficha.pokedex.velocidades.Excavado = parseInt(row[16]) || 0
+            ficha.pokedex.velocidades.Nado = parseInt(row[17]) || 0
+            ficha.pokedex.velocidades.Vuelo = parseInt(row[18]) || 0
+            ficha.pokedex.velocidades.Levitado = parseInt(row[19]) || 0
+            //Naturalmente Habil
+            ficha.pokedex.natHabil = []
+            if (row[20] && row[20] !== "") ficha.pokedex.natHabil.push(row[20])
+            if (row[21] && row[21] !== "") ficha.pokedex.natHabil.push(row[21])
+            //Habilidades
+            ficha.pokedex.habilidades = []
+            if (row[22] && row[22] !== "") ficha.pokedex.habilidades.push(row[22])
+            if (row[23] && row[23] !== "") ficha.pokedex.habilidades.push(row[23])
+            if (row[24] && row[24] !== "") ficha.pokedex.habilidades.push(row[24])
+            ficha.pokedex.habilidadesOcultas = []
+            if (row[25] && row[25] !== "") ficha.pokedex.habilidadesOcultas.push(row[25])
+            if (row[26] && row[26] !== "") ficha.pokedex.habilidadesOcultas.push(row[26])
+            //Clase Armadura
+            ficha.pokedex.calculosCA = []
+            ficha.pokedex.calculosCA.push(row[27])
+            if (row[28] && row[28] !== "") ficha.pokedex.calculosCA.push(row[28])
+            //Otros
+            ficha.pokedex.otros.dieta = row[29]
+            ficha.pokedex.otros.tamano = row[30]
+            ficha.pokedex.otros.sexo = row[31]
+            ficha.pokedex.otros.sentidos = row[32]
+            ficha.pokedex.otros.evolucion = row[33]
+
+            //Resets necesarios
+            ficha.personaliz.habilidadesOcultasDesbloqueadas = []
+
+            console.log("Datos cargados: " + row)
+        }
+
+    } else if (e.data.type === 'error') {
+        console.error("Error al seleccionar especie:", e.data.error)
+    }
+});
 
 
 
@@ -420,12 +431,21 @@ function cargarPokes() {
     worker.postMessage({
         type: 'query',
         query: 'SELECT Especie FROM pokemexe_pokedex',
-        params: []
+        params: [],
+        origin: 'cargarPokes'
     });
 }
 
-onMounted(async () => {
+function cargarHabilidades() {
+    worker.postMessage({
+        type: 'query',
+        query: 'SELECT Nombre, Descripcion FROM Pokemexe_Habilidades',
+        params: [],
+        origin: 'cargarHabilidades'
+    });
+}
 
+async function cargarFichasInicio() {
     //Cargar fichas
     const todas = await obtenerTodasLasFichas()
     todas.forEach(f => {
@@ -448,33 +468,65 @@ onMounted(async () => {
     if (ordenFichas.value.length > 0) {
         fichaSeleccionada.value = ordenFichas.value[0]
         await cargarFicha(fichaSeleccionada.value)
+        console.log("Fichas cargadas...")
     }
+}
 
-    //Importar dotes
+async function cargarDotes() {
     try {
         const res = await fetch("/data/json/dotes/dotes.json")
 
         if (!res.ok) throw new Error(`Error HTTP: ${res.status}`)
 
         dotes.value = await res.json()
-        if (!dotes.value.length) {
+        if (dotes.value.length) {
+            console.log("Dotes cargadas...")
+        }
+        else {
             console.warn("El archivo JSON de dotes está vacío.")
         }
     } catch (error) {
         console.error("Error al cargar las dotes:", error)
     }
+}
 
-    // Especies
+onMounted(async () => {
+
+    cargarFichasInicio()
+
+    cargarDotes()
+
     worker.postMessage({ type: 'init' });
 
     worker.onmessage = (e) => {
         if (e.data.type === 'ready') {
-            cargarPokes();
+            //Peticiones a base de datos
+            if (!especiesPokesCargadas.value) {
+                cargarPokes();
+            }
+            if (!habilidadesCargadas.value) {
+                cargarHabilidades();
+            }
         }
         if (e.data.type === 'result') {
-            especiesPokes.value = (e.data.result?.[0]?.values || []).map((row) => row[0]);
-            if (especiesPokes.value.length > 0) {
-                especiesPokesCargadas.value = true;
+            //Especies Pokes
+            if (e.data.origin === 'cargarPokes') {
+                especiesPokes.value = (e.data.result?.[0]?.values || []).map((row) => row[0]);
+                if (especiesPokes.value.length > 0) {
+                    console.log("Especies Pokémon cargadas...")
+                    especiesPokesCargadas.value = true;
+                }
+            }
+            //Habs
+            if (e.data.origin === 'cargarHabilidades') {
+                habilidades.value = (e.data.result?.[0]?.values || []).map((row) => ({
+                    nombre: row[0],
+                    descripcion: row[1].split('\n')
+                }));
+                if (habilidades.value.length > 0) {
+                    console.log("Habilidades cargadas...")
+                    habilidadesCargadas.value = true;
+                }
             }
         }
         if (e.data.type === 'error') {
@@ -609,6 +661,10 @@ section h3 {
 }
 
 /* Habilidades y Feats */
+.HabsYDotes {
+    display: flex;
+    justify-content: space-around;
+}
 
 .habilidades,
 .feats {

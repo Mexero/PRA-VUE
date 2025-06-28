@@ -20,7 +20,8 @@ export function crearFichaBase(nombre = '') {
         personaliz: {
             mejorasEst: [],
             movimientosAprendidos: [],
-            habilidadesDisponibles: [],
+            habilidadesOcultasDesbloqueadas: [],
+            habilidadesExtra: [],
             dotes: [],
             dotesExtra: [],
             checksActivos: [],
@@ -36,7 +37,8 @@ export function crearFichaBase(nombre = '') {
             bonoCa: 0,
             teratipo: '',
             sentidos: '',
-            naturaleza: ''
+            naturaleza: '',
+            amuleto: ''
         },
         derivados: {
             bh: 0,

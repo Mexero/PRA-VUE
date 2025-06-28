@@ -9,6 +9,7 @@
             <div class="item">Naturaleza: <input v-model="ficha.personaliz.naturaleza" /></div>
             <div class="item">Teratipo: <input v-model="ficha.personaliz.teratipo" /></div>
             <div class="item">Carga: <input type="number" :value="ficha.derivados.carga" readonly /></div>
+            <div class="item">Amuleto: <input type="number" :value="ficha.personaliz.amuleto" /></div>
             <div class="item">Evolucion: <textarea v-model="ficha.pokedex.otros.evolucion" readonly></textarea></div>
 
         </div>
