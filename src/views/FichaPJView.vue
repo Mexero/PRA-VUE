@@ -1,5 +1,5 @@
 <template>
-    <div class="character-sheet container">
+    <div class="character-sheet">
         <FichaToolbar :fichaSeleccionada="fichaSeleccionada" :nuevaFichaNombre="nuevaFichaNombre"
             :ordenFichas="ordenFichas" :fichasGuardadas="fichasGuardadas"
             @update:fichaSeleccionada="fichaSeleccionada = $event" @update:nuevaFichaNombre="nuevaFichaNombre = $event"
@@ -16,7 +16,7 @@
             <FichaChecks :ficha="ficha" :ChecksBase="ChecksBase" />
         </div>
 
-        <FichaMovimientos :ficha="ficha" />
+        <FichaMovimientos :ficha="ficha" :movimientos="movimientos" :movimientosCargados="movimientosCargados" />
         <div class="HabsYDotes">
             <FichaHabilidades :ficha="ficha" :habilidades="habilidades" :habilidadesCargadas="habilidadesCargadas" />
             <FichaDotes :ficha="ficha" :dotes="dotes" />
@@ -51,6 +51,8 @@ const especiesPokes = ref([])
 const especiesPokesCargadas = ref(false)
 const habilidades = ref([]);
 const habilidadesCargadas = ref(false);
+const movimientos = ref([]);
+const movimientosCargados = ref(false);
 
 //Ficha
 const ficha = reactive(crearFichaBase());
@@ -445,6 +447,16 @@ function cargarHabilidades() {
     });
 }
 
+function cargarMovimientos() {
+    worker.postMessage({
+        type: 'query',
+        query: 'SELECT Nombre FROM Pokemexe_Movimientos',
+        params: [],
+        origin: 'cargarMovimientos'
+    });
+}
+
+
 async function cargarFichasInicio() {
     //Cargar fichas
     const todas = await obtenerTodasLasFichas()
@@ -507,6 +519,9 @@ onMounted(async () => {
             if (!habilidadesCargadas.value) {
                 cargarHabilidades();
             }
+            if (!movimientosCargados.value) {
+                cargarMovimientos();
+            }
         }
         if (e.data.type === 'result') {
             //Especies Pokes
@@ -526,6 +541,14 @@ onMounted(async () => {
                 if (habilidades.value.length > 0) {
                     console.log("Habilidades cargadas...")
                     habilidadesCargadas.value = true;
+                }
+            }
+            //Movs
+            if (e.data.origin === 'cargarMovimientos') {
+                movimientos.value = (e.data.result?.[0]?.values || []).map((row) => row[0]);
+                if (movimientos.value.length > 0) {
+                    console.log("Movimientos cargados...")
+                    movimientosCargados.value = true;
                 }
             }
         }
@@ -596,7 +619,7 @@ input[type=number] {
 
 
 /* Básicos */
-.container {
+.character-sheet {
     max-width: 1200px;
     margin: 0 auto;
     padding: 16px;
@@ -652,7 +675,7 @@ input {
 
 /* Secciones con títulos */
 
-section h3 {
+.character-sheet section h3 {
     font-size: 1.2rem;
     color: #34495e;
     margin-bottom: 10px;

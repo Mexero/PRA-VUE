@@ -105,6 +105,21 @@ function ocultarLista() {
     margin-bottom: 20px;
 }
 
+.sugerencias {
+    border: 1px solid #ccc;
+    max-height: 150px;
+    overflow-y: auto;
+    background: white;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    z-index: 10;
+    top: 30px;
+    left: 0;
+    width: 250px;
+}
+
 .label {
     font-weight: 600;
     color: #34495e;

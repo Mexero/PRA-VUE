@@ -1,6 +1,6 @@
 <template>
     <div style="position: relative;">
-        <input v-model="valor" placeholder="Buscar dote..." @focus="mostrar = true" @blur="ocultar"
+        <input v-model="valor" placeholder="Buscar habilidad..." @focus="mostrar = true" @blur="ocultar"
             @keydown.enter.prevent="seleccionar()" />
         <ul v-if="mostrar && sugerencias.length" class="sugerencias">
             <li v-for="h in sugerencias" :key="h.nombre" @mousedown.prevent="seleccionar(h.nombre)">

@@ -102,7 +102,7 @@ const openMobileCap = ref(false)
 }
 
 /* === Menu principal escritorio ===*/
-section {
+#mainCaps section {
     overflow: hidden;
 }
 

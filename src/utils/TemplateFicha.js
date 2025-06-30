@@ -20,6 +20,7 @@ export function crearFichaBase(nombre = '') {
         personaliz: {
             mejorasEst: [],
             movimientosAprendidos: [],
+            movimientosExtra: [],
             habilidadesOcultasDesbloqueadas: [],
             habilidadesExtra: [],
             dotes: [],
