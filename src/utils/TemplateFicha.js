@@ -70,9 +70,7 @@ export function crearFichaBase(nombre = '') {
             vit: false,
             init: false,
             tiradasHab: false,
-            cantidadMejorasEST: false,
-            dotesExtra: false,
-            movimientosExtra: false
+            cantidadMejorasEST: false
         },
     }
 }

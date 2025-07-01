@@ -1,16 +1,13 @@
 <template>
     <section class="feats">
         <h3>
-            Dotes (
-            <input type="number" v-model.number="ficha.derivados.cantidadDotes"
-                :readonly="!ficha.manual.cantidadDotes" />)
-            Dotes Extra:
-            <input type="checkbox" v-model="ficha.manual.dotesExtra" />
+            Dotes ({{ dotesUsados }} / {{ ficha.derivados.cantidadDotes }})
+            <DotesPopUp :dotes="dotes" :ficha="ficha" :extra="true" :posicion="0" />
         </h3>
 
         <!-- Dotes normales -->
         <div class="feats-list">
-            <div class="item" v-for="(dote, i) in slotsDote" :key="'normal-' + i">
+            <div class="item" v-if="dotesCargadas" v-for="(dote, i) in slotsDote" :key="'normal-' + i">
                 <template v-if="dote">
                     <template v-if="doteData(ficha.personaliz.dotes[i])">
                         <DoteDetails :dote="doteData(ficha.personaliz.dotes[i])" @eliminaDote="eliminarDote(i)" />
@@ -18,14 +15,14 @@
                     </template>
                 </template>
                 <template v-else>
-                    <BusquedaDote :usados="usados" :dotes="dotes" @select="ficha.personaliz.dotes[i] = $event" />
+                    <DotesPopUp :dotes="dotes" :ficha="ficha" :extra="false" :posicion="i" />
                 </template>
 
             </div>
         </div>
 
         <!-- Dotes extra -->
-        <div class="feats-list" v-if="ficha.manual.dotesExtra">
+        <div class="feats-list" v-if="ficha.personaliz.dotesExtra.length">
             <h4>Dotes Extra</h4>
 
             <div class="item" v-for="(dote, i) in ficha.personaliz.dotesExtra" :key="'extra-' + i">
@@ -34,23 +31,25 @@
                     <button @click="ficha.personaliz.dotesExtra.splice(i, 1)" class="borrar-btn">X</button>
                 </template>
                 <template v-else>
-                    <input v-model="ficha.personaliz.dotesExtra[i]" />
+                    No se han encontrado datos de la Dote {{ dote }}. Se recomienda borrarla.
+                    <button @click="ficha.personaliz.dotesExtra.splice(i, 1)" class="borrar-btn">X</button>
                 </template>
             </div>
-
-            <!-- Añadir nueva dote extra -->
-            <BusquedaDote v-model="nuevaDoteExtra" :dotes="dotes" :usados="usados" @select="addDoteExtra" />
         </div>
 
     </section>
 </template>
 
 <script setup>
-import { computed, ref } from 'vue'
-import BusquedaDote from './busquedaDote.vue'
+import { ref, watch, computed } from 'vue'
+import DotesPopUp from './DotesPopUp.vue'
 import DoteDetails from './detailsDote.vue'
 
-const { ficha, dotes } = defineProps(['ficha', 'dotes'])
+const { ficha, dotes, dotesCargadas } = defineProps([
+    'ficha',
+    'dotes',
+    'dotesCargadas'
+])
 
 const doteData = (nombre) => dotes.find(d => d.Nombre === nombre) || null
 
@@ -60,28 +59,26 @@ const slotsDote = computed(() => {
     return [...usados, ...Array(total - usados.length).fill("")]
 })
 
-const usados = computed(() => [
-    ...ficha.personaliz.dotes,
-    ...(ficha.personaliz.dotesExtra || [])
-])
+//Contar dotes
+const dotesUsados = ref(0)
 
+watch(
+    () => [dotesCargadas, ficha.personaliz.dotes],
+    () => {
+        if (dotesCargadas) {
+            let cont = 0;
+            for (let dote of ficha.personaliz.dotes) {
+                console.log(dote)
+                if (!dote || !doteData(dote)) {
+                    cont++;
+                }
+            }
+            dotesUsados.value = ficha.personaliz.dotes.length - cont;
+        }
+    },
+    { deep: true }
+);
 
-// Dotes extra
-const nuevaDoteExtra = ref('')
-
-// Añadir una dote extra desde el buscador
-function addDoteExtra(nombre) {
-    if (!nombre) return
-    if (!ficha.personaliz.dotesExtra.includes(nombre)) {
-        ficha.personaliz.dotesExtra.push(nombre)
-    }
-    nuevaDoteExtra.value = ''
-}
-
-// Eliminar una dote extra por índice
-function eliminarDoteExtra(index) {
-    ficha.personaliz.dotesExtra.splice(index, 1)
-}
 </script>
 
 <style scoped>

@@ -19,7 +19,7 @@
         <FichaMovimientos :ficha="ficha" :movimientos="movimientos" :movimientosCargados="movimientosCargados" />
         <div class="HabsYDotes">
             <FichaHabilidades :ficha="ficha" :habilidades="habilidades" :habilidadesCargadas="habilidadesCargadas" />
-            <FichaDotes :ficha="ficha" :dotes="dotes" />
+            <FichaDotes :ficha="ficha" :dotes="dotes" :dotesCargadas="dotesCargadas" />
         </div>
         <FichaOtros :ficha="ficha" />
     </div>
@@ -47,6 +47,7 @@ import { guardarFichaIndexedDB, borrarFichaIndexedDB, obtenerTodasLasFichas, obt
 
 //Datos
 const dotes = ref([])
+const dotesCargadas = ref(false)
 const especiesPokes = ref([])
 const especiesPokesCargadas = ref(false)
 const habilidades = ref([]);
@@ -258,7 +259,7 @@ function actualizar() {
     }
 
     //Actualizar cantidad de Movimientos aprendidos
-    ficha.derivados.cantidadMovs = 2 + ficha.derivados.bh + Math.max(Math.floor(ficha.derivados.stats.men / 4), 0)
+    ficha.derivados.cantidadMovs = Math.min(2 + ficha.derivados.bh, 8) + Math.max(Math.floor(ficha.derivados.stats.men / 4), 0)
     while (ficha.derivados.bh > 0 && ficha.derivados.cantidadMovs < ficha.personaliz.movimientosAprendidos.length) {
         ficha.personaliz.movimientosAprendidos.pop()
     }
@@ -496,8 +497,11 @@ async function cargarDotes() {
 
         if (!res.ok) throw new Error(`Error HTTP: ${res.status}`)
 
-        dotes.value = await res.json()
+        const data = await res.json()
+
+        dotes.value = data.filter(d => d.Tipo === "Elemental" || d.Tipo === "General")
         if (dotes.value.length) {
+            dotesCargadas.value = true;
             console.log("Dotes cargadas...")
         }
         else {
@@ -546,7 +550,6 @@ onMounted(async () => {
                 }));
                 if (habilidades.value.length > 0) {
                     console.log("Habilidades cargadas...")
-                    console.log(habilidades.value)
                     habilidadesCargadas.value = true;
                 }
             }
