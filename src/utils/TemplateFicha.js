@@ -50,6 +50,7 @@ export function crearFichaBase(nombre = '') {
             velocidades: { Caminado: 0, Trepado: 0, Excavado: 0, Nado: 0, Vuelo: 0, Levitado: 0 },
             cantidadMejorasEST: 0,
             cantidadDotes: 0,
+            cantidadMovs: 0,
             init: 0,
             ca: 0,
             pp: 0,

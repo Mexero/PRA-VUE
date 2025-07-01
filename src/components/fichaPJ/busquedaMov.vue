@@ -1,32 +1,44 @@
 <template>
     <div class="buscador">
         <input v-model="valor" placeholder="Buscar movimiento..."
-            @keydown.enter.prevent="emitirSeleccion(sugerencias[0])" />
-        <ul v-if="sugerencias.length" class="sugerencias">
-            <li v-for="m in sugerencias" :key="m" @mousedown.prevent="emitirSeleccion(m)">
-                {{ m }}
-            </li>
-        </ul>
+            @keydown.enter.prevent="emitirSeleccion(sugerencias[0].nombre)" />
+        <div v-if="sugerencias.length" class="sugerencias-wrapper">
+            <table class="sugerencias">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Tipo</th>
+                        <th>Coste</th>
+                        <th>Etiquetas</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="m in sugerencias" :key="m" @mousedown.prevent="emitirSeleccion(m.nombre)">
+                        <td>{{ m.nombre }}</td>
+                        <td>{{ m.tipo }}</td>
+                        <td>{{ m.coste }}</td>
+                        <td>{{ m.etiquetas ?? "—" }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 </template>
 
+
 <script setup>
-import { ref, computed, watch } from 'vue'
+import { ref, computed } from 'vue'
 
 const props = defineProps(['movimientos'])
-const emit = defineEmits(['seleccion', 'sugerencias'])
+const emit = defineEmits(['seleccion'])
 
 const valor = ref('')
 
 const sugerencias = computed(() =>
     props.movimientos.filter(m =>
-        m.toLowerCase().includes(valor.value.toLowerCase())
+        m.nombre.toLowerCase().includes(valor.value.toLowerCase())
     )
 )
-
-watch(sugerencias, (nuevas) => {
-    emit('sugerencias', nuevas)
-})
 
 function emitirSeleccion(nombre) {
     emit('seleccion', nombre)
@@ -35,40 +47,32 @@ function emitirSeleccion(nombre) {
 </script>
 
 <style scoped>
-.buscador {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
+.sugerencias-wrapper {
     flex: 1;
-    border: 1px solid #eee;
-    border-radius: 6px;
-    overflow: hidden;
-}
-
-.buscador input {
-    padding: 10px;
-    border: none;
-    border-bottom: 1px solid #ccc;
-    font-size: 14px;
-    outline: none;
+    overflow-y: auto;
+    max-height: 300px;
+    /* Ajusta según lo que necesites */
+    border-top: 1px solid #ccc;
 }
 
 .sugerencias {
-    flex: 1;
-    overflow-y: auto;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    background: #fafafa;
+    font-size: 14px;
+    width: 100%;
+    border-collapse: collapse;
 }
 
-.sugerencias li {
+.sugerencias th,
+.sugerencias td {
     padding: 8px 12px;
+    text-align: left;
+}
+
+.sugerencias td {
     cursor: pointer;
     transition: background 0.2s;
 }
 
-.sugerencias li:hover {
+.sugerencias tr:hover {
     background-color: #e6e6e6;
 }
 </style>

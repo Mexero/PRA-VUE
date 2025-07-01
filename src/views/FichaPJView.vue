@@ -257,6 +257,12 @@ function actualizar() {
             - Math.max(ficha.derivados.fatiga, 0)
     }
 
+    //Actualizar cantidad de Movimientos aprendidos
+    ficha.derivados.cantidadMovs = 2 + ficha.derivados.bh + Math.max(Math.floor(ficha.derivados.stats.men / 4), 0)
+    while (ficha.derivados.bh > 0 && ficha.derivados.cantidadMovs < ficha.personaliz.movimientosAprendidos.length) {
+        ficha.personaliz.movimientosAprendidos.pop()
+    }
+
     // Actualizar velocidades
     for (const vel in ficha.derivados.velocidades) {
         ficha.derivados.velocidades[vel] = ficha.pokedex.velocidades[vel] + ficha.personaliz.mejorasVelocidades[vel]
@@ -450,7 +456,7 @@ function cargarHabilidades() {
 function cargarMovimientos() {
     worker.postMessage({
         type: 'query',
-        query: 'SELECT Nombre FROM Pokemexe_Movimientos',
+        query: 'SELECT Nombre, Tipo, Coste, Etiquetas FROM Pokemexe_Movimientos',
         params: [],
         origin: 'cargarMovimientos'
     });
@@ -545,7 +551,12 @@ onMounted(async () => {
             }
             //Movs
             if (e.data.origin === 'cargarMovimientos') {
-                movimientos.value = (e.data.result?.[0]?.values || []).map((row) => row[0]);
+                movimientos.value = (e.data.result?.[0]?.values || []).map((row) => ({
+                    nombre: row[0],
+                    tipo: row[1],
+                    coste: row[2],
+                    etiquetas: row[3] !== "" ? row[3] : null
+                }));
                 if (movimientos.value.length > 0) {
                     console.log("Movimientos cargados...")
                     movimientosCargados.value = true;

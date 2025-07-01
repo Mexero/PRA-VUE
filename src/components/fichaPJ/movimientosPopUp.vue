@@ -1,11 +1,14 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, watch } from 'vue'
 import busquedaMov from './busquedaMov.vue'
+
+import worker from '../../sqlWorker.js';
 
 const props = defineProps([
     'ficha',
     'movimientos',
-    'movimientosCompletos'
+    'movimientosCompletos',
+    'movimientosCargados'
 ])
 
 const isOpen = ref(false)
@@ -21,28 +24,99 @@ function closePopup() {
     movimientoSeleccionado.value = null
 }
 
-function manejarSeleccion(nombre) {
-    movimientoSeleccionado.value = nombre
+
+const formatearStats = (stats) => {
+    if (!stats || stats.length === 0) return '';
+    if (stats.length === 1) return stats[0];
+    if (stats.length === 2) return `${stats[0]} y ${stats[1]}`;
+    return `${stats.slice(0, -1).join(', ')} y ${stats[stats.length - 1]}`;
+};
+
+//Al abrir, se carga todo
+watch(() => props.movimientosCargados,
+    async () => {
+        if (props.movimientosCargados) {
+            for (const mov of props.ficha.personaliz.movimientosAprendidos) {
+                cargarMovimiento(mov, 'directo')
+            }
+            for (const mov of props.ficha.personaliz.movimientosExtra) {
+                cargarMovimiento(mov, 'directo')
+            }
+        }
+    })
+
+
+//Cargar movimiento
+function cargarMovimiento(movimiento, directo) {
+    if (!props.movimientosCargados || !movimiento || !props.movimientos.find(mov => mov.nombre === movimiento)) return;
+
+    if (!directo && props.movimientosCompletos.find(mov => mov.nombre === movimiento)) {
+        movimientoSeleccionado.value = props.movimientosCompletos.find(mov => mov.nombre === movimiento);
+        return;
+    }
+
+    worker.postMessage({
+        type: 'query',
+        query: `
+            SELECT 
+                Nombre, Tipo, Tiempo_de_uso, Coste, Dano, Rango, Etiquetas, Descripcion, 
+                Stat_Asociado_1, Stat_Asociado_2, Stat_Asociado_3, Stat_Asociado_4,
+                At, Salvacion, DC
+            FROM pokemexe_movimientos
+            WHERE Nombre = ?
+        `,
+        params: [movimiento],
+        origin: "cargarMovimiento" + (directo ? 'Directo' : '')
+    });
 }
 
-function manejarSugerencias(lista) {
-    if (lista.length > 0) {
-        movimientoSeleccionado.value = lista[0]
-    } else {
-        movimientoSeleccionado.value = null
+worker.addEventListener("message", (event) => {
+    if (event.data.type === 'result' && event.data.origin === 'cargarMovimiento' ||
+        (event.data.origin === 'cargarMovimientoDirecto')) {
+        const row = event.data.result?.[0]?.values?.[0];
+        let resultado;
+        if (row) {
+            resultado = {
+                nombre: row[0],
+                tipo: row[1],
+                accion: row[2],
+                coste: row[3],
+                danno: row[4] !== "" ? row[4] : null,
+                rango: row[5] !== "" ? row[5] : null,
+                etiquetas: row[6] !== "" ? row[6] : null,
+                descripcion: row[7].split('\n'),
+                statsAso: [row[8], row[9], row[10], row[11]].filter(stat => stat !== ""),
+                ataque: (!row[12] || row[12] === 'False') ? false : true,
+                salvacion: row[13],
+                dc: row[14]
+            };
+            if (event.data.origin === 'cargarMovimiento') {
+                movimientoSeleccionado.value = resultado;
+            }
+            else if (event.data.origin === 'cargarMovimientoDirecto' && !props.movimientosCompletos.find(mov => mov.nombre === resultado.nombre)) {
+                props.movimientosCompletos.push(resultado);
+            }
+        }
     }
-}
+    if (event.data.type === 'error') {
+        console.error("Error al seleccionar movimiento:", event.data.error);
+    }
+})
 
 function añadirMovimiento() {
     const final = movimientoSeleccionado.value
-    if (!final) return
+    if (!final || !props.movimientosCargados) return
 
-    if (!props.ficha.personaliz.movimientosAprendidos.includes(final)) {
-        props.ficha.personaliz.movimientosAprendidos.push(final)
+    if (!props.movimientosCompletos.find(mov => mov.nombre === final.nombre)) {
+        props.movimientosCompletos.push(final)
     }
 
-    if (añadirExtra.value && !props.ficha.personaliz.movimientosExtra.includes(final)) {
-        props.ficha.personaliz.movimientosExtra.push(final)
+    if (!añadirExtra.value && !props.ficha.personaliz.movimientosAprendidos.includes(final.nombre)) {
+        props.ficha.personaliz.movimientosAprendidos.push(final.nombre)
+    }
+
+    else if (añadirExtra.value && !props.ficha.personaliz.movimientosExtra.includes(final.nombre)) {
+        props.ficha.personaliz.movimientosExtra.push(final.nombre)
     }
 
     movimientoSeleccionado.value = null
@@ -63,13 +137,29 @@ function añadirMovimiento() {
 
                 <div class="ventana">
                     <div class="cuerpo">
-                        <busquedaMov :movimientos="movimientos" @seleccion="manejarSeleccion"
-                            @sugerencias="manejarSugerencias" />
+                        <busquedaMov :movimientos="movimientos" @seleccion="cargarMovimiento" />
 
                         <div class="preview">
                             <template v-if="movimientoSeleccionado">
-                                <span>{{ movimientoSeleccionado }}</span>
-                                <button @click="añadirMovimiento">Añadir</button>
+                                <div class="tarjetaMov">
+                                    <p><strong>Tipo: </strong>{{ movimientoSeleccionado.tipo }}</p>
+                                    <p><strong>Acción: </strong>{{ movimientoSeleccionado.accion }}</p>
+                                    <p><strong>Coste: </strong>{{ movimientoSeleccionado.coste }}</p>
+                                    <p><strong>Rango: </strong>{{ movimientoSeleccionado.rango }}</p>
+                                    <p v-if="movimientoSeleccionado.danno"><strong>Daño: </strong>{{
+                                        movimientoSeleccionado.danno }}</p>
+                                    <p v-if="movimientoSeleccionado.etiquetas"><strong>Etiquetas: </strong>{{
+                                        movimientoSeleccionado.etiquetas }}</p>
+                                    <div class="descripcion">
+                                        <p class="tituloDesc"><strong>Descripción:</strong></p>
+                                        <p v-for="parrafo in movimientoSeleccionado.descripcion" v-html="parrafo"></p>
+                                    </div>
+                                    <div v-if="movimientoSeleccionado.statsAso"><strong>Estadísticas asociadas:
+                                        </strong> {{ formatearStats(movimientoSeleccionado.statsAso) }}.
+                                    </div>
+                                </div>
+                                <button @click="añadirMovimiento"
+                                    :disabled="!añadirExtra && ficha.derivados.cantidadMovs <= ficha.personaliz.movimientosAprendidos.length">Añadir</button>
                             </template>
                             <template v-else>
                                 <span>Selecciona un movimiento</span>
@@ -92,6 +182,10 @@ function añadirMovimiento() {
     border: none;
     border-radius: 6px;
     cursor: pointer;
+}
+
+.tarjetaMov {
+    font-size: 10px;
 }
 
 .modal-overlay {

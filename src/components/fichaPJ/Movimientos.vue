@@ -1,58 +1,76 @@
 <template>
     <section class="moves">
-        <h3>Movimientos
-            <movimientosPopUp :movimientos="movimientos" :ficha="ficha" :movimientosCompletos="movimientosCompletos" />
+        <h3>Movimientos ( {{ ficha.personaliz.movimientosAprendidos.length
+        }} / {{ ficha.derivados.cantidadMovs }})
+            <movimientosPopUp :movimientos="movimientos" :ficha="ficha" :movimientosCompletos="movimientosCompletos"
+                :movimientosCargados="movimientosCargados" />
         </h3>
-        <div class="moves-grid">
+        <div class="moves-list">
             <!--Movimientos Aprendidos-->
             <template v-for="(mov, i) in movimientosCompletos" :key="i">
-                <div v-if="ficha.personaliz.movimientosAprendidos.includes(mov.nombre)" class="movimiento">
-                    <h4>
+                <details v-if="ficha.personaliz.movimientosAprendidos.includes(mov.nombre)" class="movimiento">
+                    <summary>
                         {{ mov.nombre }}
                         <button @click="eliminarMov(mov.nombre, 'aprendidos')" class="borrar-btn">X</button>
-                    </h4>
-                    <div class="mov-data">
-                        <p><strong>Tipo: </strong>{{ mov.tipo }}</p>
-                        <p><strong>Acción: </strong>{{ mov.accion }}</p>
-                        <p><strong>Coste: </strong>{{ mov.coste }}</p>
-                        <p><strong>Rango: </strong>{{ mov.rango }}</p>
-                        <p v-if="mov.danno"><strong>Daño: </strong>{{ mov.danno }}</p>
-                        <p v-if="mov.etiquetas"><strong>Etiquetas: </strong>{{ mov.etiquetas }}</p>
-                        <p v-if="mov.ataque"><strong>Bono Tirada: </strong> +{{ ficha.derivados.bh }}</p>
-                        <p v-if="mov.salvacion"><strong>Salvación: </strong>
-                            {{ mov.dc }} CD {{ 10 + ficha.derivados.bh }} </p>
+                    </summary>
+                    <div class="mov-content">
+                        <div class="mov-data">
+                            <p><strong>Tipo: </strong>{{ mov.tipo }}</p>
+                            <p><strong>Acción: </strong>{{ mov.accion }}</p>
+                            <p><strong>Coste: </strong>{{ computarCoste(mov.coste) }}</p>
+                            <p><strong>Rango: </strong>{{ mov.rango }}</p>
+                            <p v-if="mov.danno"><strong>Daño: </strong>
+                                {{ computarDanno(mov.danno, mayorStat(mov.statsAso)) }}
+                            </p>
+                            <p v-if="mov.etiquetas"><strong>Etiquetas: </strong>{{ mov.etiquetas }}</p>
+                            <p v-if="mov.ataque"><strong>Bono Tirada: </strong> {{ ComputarTdA(mayorStat(mov.statsAso))
+                                }}
+                            </p>
+                            <p v-if="mov.salvacion"><strong>Salvación: </strong>
+                                CD {{ computarCD(mayorStat(mov.statsAso)) }} </p>
+                        </div>
+                        <div class="descripcion">
+                            <p class="tituloDesc"><strong>Descripción:</strong></p>
+                            <p v-for="parrafo in mov.descripcion" v-html="parrafo"></p>
+                        </div>
+                        <div v-if="mov.statsAso.length"><strong>Estadísticas asociadas: </strong> {{
+                            formatearStats(mov.statsAso)
+                            }}.</div>
                     </div>
-                    <div class="descripcion">
-                        <p class="tituloDesc"><strong>Descripción:</strong></p>
-                        <p v-for="parrafo in mov.descripcion" v-html="parrafo"></p>
-                    </div>
-                    <div v-if="mov.statsAso"><strong>Estadísticas asociadas: </strong> {{ mov.statsAso }}</div>
-                </div>
+                </details>
             </template>
             <!--Movimientos Extra-->
             <template v-for="(mov, i) in movimientosCompletos" :key="i">
-                <div v-if="ficha.personaliz.movimientosExtra.includes(mov.nombre)" class="movimiento">
-                    <h4>
+                <details v-if="ficha.personaliz.movimientosExtra.includes(mov.nombre)" class="movimiento">
+                    <summary>
                         {{ mov.nombre }} (Extra)
-                        <button @click="eliminarMov(mov.nombre, 'extra')" class="borrar-btn">X</button>
-                    </h4>
-                    <div class="mov-data">
-                        <p><strong>Tipo: </strong>{{ mov.tipo }}</p>
-                        <p><strong>Acción: </strong>{{ mov.accion }}</p>
-                        <p><strong>Coste: </strong>{{ mov.coste }}</p>
-                        <p><strong>Rango: </strong>{{ mov.rango }}</p>
-                        <p v-if="mov.danno"><strong>Daño: </strong>{{ mov.danno }}</p>
-                        <p v-if="mov.etiquetas"><strong>Etiquetas: </strong>{{ mov.etiquetas }}</p>
-                        <p v-if="mov.ataque"><strong>Bono Tirada: </strong> +{{ ficha.derivados.bh }}</p>
-                        <p v-if="mov.salvacion"><strong>Salvación: </strong>
-                            {{ mov.dc }} CD {{ 10 + ficha.derivados.bh }} </p>
+                        <button @click="eliminarMov(mov.nombre, 'aprendidos')" class="borrar-btn">X</button>
+                    </summary>
+                    <div class="mov-content">
+                        <div class="mov-data">
+                            <p><strong>Tipo: </strong>{{ mov.tipo }}</p>
+                            <p><strong>Acción: </strong>{{ mov.accion }}</p>
+                            <p><strong>Coste: </strong>{{ computarCoste(mov.coste) }}</p>
+                            <p><strong>Rango: </strong>{{ mov.rango }}</p>
+                            <p v-if="mov.danno"><strong>Daño: </strong>
+                                {{ computarDanno(mov.danno, mayorStat(mov.statsAso)) }}
+                            </p>
+                            <p v-if="mov.etiquetas"><strong>Etiquetas: </strong>{{ mov.etiquetas }}</p>
+                            <p v-if="mov.ataque"><strong>Bono Tirada: </strong> {{ ComputarTdA(mayorStat(mov.statsAso))
+                                }}
+                            </p>
+                            <p v-if="mov.salvacion"><strong>Salvación: </strong>
+                                CD {{ computarCD(mayorStat(mov.statsAso)) }} </p>
+                        </div>
+                        <div class="descripcion">
+                            <p class="tituloDesc"><strong>Descripción:</strong></p>
+                            <p v-for="parrafo in mov.descripcion" v-html="parrafo"></p>
+                        </div>
+                        <div v-if="mov.statsAso.length"><strong>Estadísticas asociadas: </strong> {{
+                            formatearStats(mov.statsAso)
+                            }}.</div>
                     </div>
-                    <div class="descripcion">
-                        <p class="tituloDesc"><strong>Descripción:</strong></p>
-                        <p v-for="parrafo in mov.descripcion" v-html="parrafo"></p>
-                    </div>
-                    <div v-if="mov.statsAso"><strong>Estadísticas asociadas: </strong> {{ mov.statsAso }}</div>
-                </div>
+                </details>
             </template>
         </div>
     </section>
@@ -67,62 +85,10 @@ const props = defineProps([
 
 import { ref, watch } from 'vue';
 
-import worker from '../../sqlWorker.js';
 import movimientosPopUp from './movimientosPopUp.vue';
 
 const movimientosCompletos = ref([]);
-const movimientosAprendidos = ref([]);
-const movimientosExtra = ref([]);
 const modificandoMovimientosCompletos = ref(false)
-
-
-//Cargar movimiento
-function cargarMovimiento(movimiento) {
-    if (!props.movimientosCargados) return;
-    if (!movimiento || !props.movimientos.includes(movimiento)
-        || movimientosCompletos.value.find(mov => mov.nombre === movimiento)) return;
-
-    worker.postMessage({
-        type: 'query',
-        query: `
-            SELECT 
-                Nombre, Tipo, Tiempo_de_uso, Coste, Dano, Rango, Etiquetas, Descripcion, 
-                Stat_Asociado_1, Stat_Asociado_2, Stat_Asociado_3, Stat_Asociado_4,
-                At, Salvacion, DC
-            FROM pokemexe_movimientos
-            WHERE Nombre = ?
-        `,
-        params: [movimiento],
-        origin: "cargarMovimiento"
-    });
-
-}
-
-worker.addEventListener("message", (event) => {
-    if (event.data.type === 'result' && event.data.origin === 'cargarMovimiento') {
-        const row = event.data.result?.[0]?.values?.[0];
-        if (row) {
-            movimientosCompletos.value.push({
-                nombre: row[0],
-                tipo: row[1],
-                accion: row[2],
-                coste: row[3],
-                danno: row[4] !== "" ? row[4] : null,
-                rango: row[5] !== "" ? row[5] : null,
-                etiquetas: row[6] !== "" ? row[6] : null,
-                descripcion: row[7].split('\n'),
-                statsAso: [row[8], row[9], row[10], row[11]].filter(stat => stat !== ""),
-                ataque: row[12],
-                salvacion: row[13],
-                dc: row[14]
-            });
-        }
-    }
-
-    if (event.data.type === 'error') {
-        console.error("Error al seleccionar movimiento:", event.data.error);
-    }
-})
 
 
 //Cargar todo al abrir y al cambiar los movimientos
@@ -133,16 +99,16 @@ watch(
         props.ficha.personaliz.movimientosExtra
     ],
     () => {
-        //Cargar todos los movimientos
+        //Purgar los movimientos que no se usan
         if (props.movimientosCargados) {
             modificandoMovimientosCompletos.value = true;
             const movimientos = [...new Set([
                 ...props.ficha.personaliz.movimientosAprendidos,
                 ...props.ficha.personaliz.movimientosExtra
             ])];
-            for (const movimiento of movimientos) {
-                cargarMovimiento(movimiento);
-            }
+            movimientosCompletos.value = movimientosCompletos.value.filter(
+                mov => movimientos.includes(mov.nombre)
+            )
             modificandoMovimientosCompletos.value = false;
 
         }
@@ -150,29 +116,8 @@ watch(
     { deep: true, immediate: true }
 );
 
-//Cuando cambian los movs cargados, se modifican los a mostrar
-watch(() => movimientosCompletos.value,
-    (movimientos) => {
-        if (props.movimientosCargados && !modificandoMovimientosCompletos.value) {
-            console.log('completos', movimientosCompletos.value)
-            movimientosAprendidos.value = props.ficha.personaliz.movimientosAprendidos
-                .map(nombre => movimientos.find(mov => mov.nombre === nombre))
-                .filter(Boolean);
-            movimientosExtra.value = props.ficha.personaliz.movimientosExtra
-                .map(nombre => movimientos.find(mov => mov.nombre === nombre))
-                .filter(Boolean);
-        }
-    },
-    { deep: true, immediate: true }
-);
-
-
 // Eliminar un movimiento
 function eliminarMov(movimiento, lista) {
-    //Eliminarlo de los cargados
-
-
-    //Eliminarlo de la lista
     if (lista === 'aprendidos') {
         const index = props.ficha.personaliz.movimientosAprendidos.indexOf(movimiento);
         if (index !== -1) {
@@ -186,14 +131,70 @@ function eliminarMov(movimiento, lista) {
             props.ficha.personaliz.movimientosExtra.splice(index, 1);
         }
     }
+}
 
+const formatearStats = (stats) => {
+    if (!stats || stats.length === 0) return '';
+    if (stats.length === 1) return stats[0];
+    if (stats.length === 2) return `${stats[0]} y ${stats[1]}`;
+    return `${stats.slice(0, -1).join(', ')} y ${stats[stats.length - 1]}`;
+};
+
+function mayorStat(stats) {
+    if (!Array.isArray(stats) || stats.length === 0) return null;
+    if (!props.ficha?.derivados?.stats) return null;
+
+    let maxValor = -10;
+    for (const nombre of stats) {
+        const clave = nombre.toLowerCase();
+        const valor = props.ficha.derivados.stats[clave];
+        if (valor !== undefined && valor > maxValor) {
+            maxValor = valor;
+        }
+    }
+
+    return maxValor;
+}
+
+function computarDanno(cadena, stat) {
+    let final = cadena.replace(/EST/g, stat)
+    if (props.ficha.derivados.fatiga)
+        final += " - " + props.ficha.derivados.fatiga
+    return final;
+}
+
+function computarCoste(cadena) {
+    const nivel = props.ficha?.nivel ?? 0;
+    const descuento = nivel >= 16 ? 2 : nivel >= 8 ? 1 : 0;
+
+    return cadena.replace(/(\d+)\s*PP\b/g, (numStr, fullString) => {
+        const original = parseInt(numStr);
+        const reducido = Math.max(0, original - descuento);
+
+        if (reducido > 0) {
+            return `${reducido} PP`;
+        }
+
+        const soloPP = fullString.trim().match(/^(\d+)\s*PP$/i);
+        return soloPP ? "A voluntad" : "AV";
+    });
+}
+
+function ComputarTdA(stat) {
+    const final = props.ficha.derivados.bh + stat - props.ficha.derivados.fatiga
+    return (final < 0 ? " - " : " + ") + Math.abs(final);
+}
+
+function computarCD(stat) {
+    const final = 10 + props.ficha.derivados.bh + stat - props.ficha.derivados.fatiga
+    return Math.max(final, 0);
 }
 </script>
 
 <style scoped>
-.moves-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+.moves-list {
+    display: flex;
+    flex-direction: column;
     gap: 8px;
     background: #d5f5e3;
     border-radius: 8px;
@@ -206,7 +207,6 @@ function eliminarMov(movimiento, lista) {
 .movimiento {
     background: #4eb67b;
     border-radius: 8px;
-    min-height: 100px;
     text-align: justify;
     padding: 10px;
 }
