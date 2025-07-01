@@ -1,23 +1,33 @@
 <template>
-    <div style="position: relative;">
-        <input v-model="valor" placeholder="Buscar habilidad..." @focus="mostrar = true" @blur="ocultar"
-            @keydown.enter.prevent="seleccionar()" />
-        <ul v-if="mostrar && sugerencias.length" class="sugerencias">
-            <li v-for="h in sugerencias" :key="h.nombre" @mousedown.prevent="seleccionar(h.nombre)">
-                {{ h.nombre }}
-            </li>
-        </ul>
+    <div class="buscador">
+        <input v-model="valor" placeholder="Buscar Habilidad..."
+            @keydown.enter.prevent="emitirSeleccion(sugerencias[0].nombre)" />
+        <div v-if="sugerencias.length" class="sugerencias-wrapper">
+            <table class="sugerencias">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="h in sugerencias" :key="h" @mousedown.prevent="emitirSeleccion(h.nombre)">
+                        <td>{{ h.nombre }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 </template>
+
 
 <script setup>
 import { ref, computed } from 'vue'
 
-const props = defineProps(['habilidades'])
-const emit = defineEmits(['select'])
+const props = defineProps([
+    'habilidades'])
+const emit = defineEmits(['seleccion'])
 
 const valor = ref('')
-const mostrar = ref(false)
 
 const sugerencias = computed(() =>
     props.habilidades.filter(h =>
@@ -25,42 +35,38 @@ const sugerencias = computed(() =>
     )
 )
 
-function seleccionar(nombre = null) {
-    const final = nombre || sugerencias.value[0]?.nombre
-    if (!final) return
-    emit('select', final)
+function emitirSeleccion(nombre) {
+    emit('seleccion', nombre)
     valor.value = ''
-    mostrar.value = false
-    document.activeElement.blur() // Aquí se quita el focus del input sin usar ref
-}
-
-function ocultar() {
-    setTimeout(() => (mostrar.value = false), 200)
 }
 </script>
 
 <style scoped>
-.sugerencias {
-    border: 1px solid #ccc;
-    max-height: 150px;
+.sugerencias-wrapper {
+    flex: 1;
     overflow-y: auto;
-    background: white;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    position: absolute;
-    z-index: 10;
-    top: 30px;
-    left: 0;
-    width: 250px;
+    max-height: 300px;
+    border-top: 1px solid #ccc;
 }
 
-.sugerencias li {
-    padding: 5px 10px;
+.sugerencias {
+    font-size: 14px;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.sugerencias th,
+.sugerencias td {
+    padding: 8px 12px;
+    text-align: left;
+}
+
+.sugerencias td {
     cursor: pointer;
+    transition: background 0.2s;
 }
 
-.sugerencias li:hover {
-    background-color: #eee;
+.sugerencias tr:hover {
+    background-color: #e6e6e6;
 }
 </style>

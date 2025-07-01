@@ -142,6 +142,7 @@ function añadirMovimiento() {
                         <div class="preview">
                             <template v-if="movimientoSeleccionado">
                                 <div class="tarjetaMov">
+                                    <p><strong>{{ movimientoSeleccionado.nombre }}</strong></p>
                                     <p><strong>Tipo: </strong>{{ movimientoSeleccionado.tipo }}</p>
                                     <p><strong>Acción: </strong>{{ movimientoSeleccionado.accion }}</p>
                                     <p><strong>Coste: </strong>{{ movimientoSeleccionado.coste }}</p>
@@ -256,6 +257,10 @@ function añadirMovimiento() {
 
 .preview button:hover {
     background-color: #3e9442;
+}
+
+.preview button[disabled] {
+    background-color: red !important;
 }
 
 .close-btn {

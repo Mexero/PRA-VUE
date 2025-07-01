@@ -51,7 +51,6 @@ function emitirSeleccion(nombre) {
     flex: 1;
     overflow-y: auto;
     max-height: 300px;
-    /* Ajusta según lo que necesites */
     border-top: 1px solid #ccc;
 }
 

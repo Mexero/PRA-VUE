@@ -72,8 +72,7 @@ export function crearFichaBase(nombre = '') {
             tiradasHab: false,
             cantidadMejorasEST: false,
             dotesExtra: false,
-            movimientosExtra: false,
-            habilidadesExtra: false
+            movimientosExtra: false
         },
     }
 }

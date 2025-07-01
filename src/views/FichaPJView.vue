@@ -546,6 +546,7 @@ onMounted(async () => {
                 }));
                 if (habilidades.value.length > 0) {
                     console.log("Habilidades cargadas...")
+                    console.log(habilidades.value)
                     habilidadesCargadas.value = true;
                 }
             }

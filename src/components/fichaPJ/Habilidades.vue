@@ -1,7 +1,7 @@
 <template>
     <section class="habilidades">
-        <h3>Habilidades. Habs Extra:
-            <input type="checkbox" v-model="ficha.manual.habilidadesExtra" />
+        <h3>Habilidades
+            <HabsPopUp :habilidades="habilidades" :ficha="ficha" :habilidadesCargadas="habilidadesCargadas" />
         </h3>
         <div class="habilidades-list">
             <!-- Habilidades base -->
@@ -23,7 +23,7 @@
                 </div>
             </details>
             <!-- Habilidades extra -->
-            <template v-if="ficha.manual.habilidadesExtra">
+            <template v-if="ficha.personaliz.habilidadesExtra.length">
                 <div>Habilidades extra</div>
                 <details class="item" v-for="(hab, i) in habsExtra" :key="'extra-' + i">
                     <summary>{{ hab.nombre }} <button @click="eliminarHabExtra(i)" class="borrar-btn">X</button>
@@ -32,8 +32,6 @@
                         <p v-for="parrafo in hab.descripcion" v-html="parrafo"></p>
                     </div>
                 </details>
-                <!-- Añadir nueva dote extra -->
-                <BusquedaHab v-model="nuevaHabExtra" :habilidades="habilidades" @select="addHabExtra" />
             </template>
         </div>
     </section>
@@ -47,7 +45,7 @@ const props = defineProps([
 ])
 
 import { ref, watch } from 'vue';
-import BusquedaHab from './busquedaHab.vue'
+import HabsPopUp from './HabsPopUp.vue';
 
 
 const habsBase = ref(actualizarHabilidades(props.ficha?.pokedex.habilidades));
