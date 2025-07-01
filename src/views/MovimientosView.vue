@@ -277,8 +277,6 @@ const filtrados = computed(() => {
             (!filtroAccion.value || filtroAccion.value === 'ambos' || dato.accion.toLowerCase() === filtroAccion.value) &&
             (filtroPPMin.value === null || coste >= filtroPPMin.value) &&
             (filtroPPMax.value === null || coste <= filtroPPMax.value) &&
-            (filtroPPMin.value === null || coste >= filtroPPMin.value) &&
-            (filtroPPMax.value === null || coste <= filtroPPMax.value) &&
 
             (!filtroNombre.value || nombre.includes(filtroNombre.value.toLowerCase()))
         );

@@ -82,7 +82,10 @@ function cambiarDatosEspecie(especie) {
                 Nat_Habil_1, Nat_Habil_2,
                 Habilidad_1, Habilidad_2, Habilidad_3, Hab_oculta_1, Hab_oculta_2,
                 AC1, AC2, 
-                Dieta, Tamano, Sexo, Sentidos, Evoluciona_en_todo
+                Dieta, Tamano, Sexo, Sentidos, Evoluciona_en_todo,
+                Mov_Nivel_1, Mov_Nivel_2, Mov_Nivel_4, Mov_Nivel_6, Mov_Nivel_8, Mov_Nivel_10,
+                Mov_Nivel_12, Mov_Nivel_14, Mov_Nivel_16, Mov_Nivel_18, Mov_Nivel_20,
+                Mov_ensenables
                 FROM pokemexe_pokedex
             WHERE Especie = ?
         `,
@@ -142,6 +145,12 @@ worker.addEventListener('message', (e) => {
             ficha.pokedex.otros.sexo = row[31]
             ficha.pokedex.otros.sentidos = row[32]
             ficha.pokedex.otros.evolucion = row[33]
+            //Movs nivel
+            ficha.pokedex.movimientosNivel = [row[34], row[35], row[36], row[37], row[38], row[39], row[40], row[41], row[42], row[43], row[44]]
+            //Movs enseñables
+            let temporal = row[45]
+            if (temporal[temporal.length - 1] === ".") temporal = temporal.slice(0, -1);
+            ficha.pokedex.movimientosEnseñables = temporal.split(', ')
 
             //Resets necesarios
             ficha.personaliz.habilidadesOcultasDesbloqueadas = []

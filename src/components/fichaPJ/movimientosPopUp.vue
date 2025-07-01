@@ -1,5 +1,5 @@
 <script setup>
-import { ref, watch } from 'vue'
+import { ref, watch, computed } from 'vue'
 import busquedaMov from './busquedaMov.vue'
 
 import worker from '../../sqlWorker.js';
@@ -14,6 +14,7 @@ const props = defineProps([
 const isOpen = ref(false)
 const añadirExtra = ref(false)
 const movimientoSeleccionado = ref(null)
+const tipoLista = ref('Nivel')
 
 function togglePopup() {
     isOpen.value = !isOpen.value
@@ -127,6 +128,77 @@ function añadirMovimiento() {
 
     movimientoSeleccionado.value = null
 }
+
+
+//Filtrar
+const filtroNombre = ref('')
+const filtroTipo = ref('')
+const filtroEtiqueta = ref('')
+const filtroCoste = ref('')
+
+const tipos = ["Acero", "Agua", "Bicho", "Dragón", "Eléctrico", "Fantasma", "Fuego", "Hada", "Hielo", "Lucha", "Normal", "Planta", "Psíquico", "Roca", "Siniestro", "Tierra", "Veneno", "Volador"];
+const etiquetas = ["Escudo", "Por Tierra", "Potenciación", "Sonido", "Restauración", "Terreno", "Polvo", "Puño", "Mordisco", "Patada", "Explosión", "Retroceso", "Bala", "Campo", "Clima", "Danza", "Golpea varias veces", "Golpea 2 veces", "Golpea 3 veces"]
+
+
+function parsePP(coste) {
+    if (!coste) return null;
+    if (typeof coste === 'string' && coste.toLowerCase().includes('variable')) {
+        return 'Variable';
+    }
+    if (typeof coste === 'string' && coste.toLowerCase().includes('a voluntad')) {
+        return 'A voluntad';
+    }
+    const match = coste.match(/\d+/);
+    return match ? match[0] : null;
+}
+
+const filtrados = computed(() => {
+    if (tipoLista.value === 'Nivel') return []
+    return props.movimientos.filter((mov) => filtrar(mov));
+})
+
+function filtrar(mov) {
+    if (!mov) return
+    const coste = parsePP(mov.coste);
+    const etiquetas = mov.etiquetas ? mov.etiquetas.toLowerCase() : ''
+
+    return (
+        (['Todos', 'Nivel'].includes(tipoLista.value) || props.ficha.pokedex.movimientosEnseñables.find(movE => movE.toLowerCase() === mov.nombre.toLowerCase())) &&
+        (!filtroTipo.value || filtroTipo.value.toLowerCase() === mov.tipo.toLowerCase()) &&
+        (!filtroEtiqueta.value || etiquetas.toLowerCase().includes(filtroEtiqueta.value.toLowerCase())) &&
+        (!filtroCoste.value || coste == filtroCoste.value || coste === "Variable") &&
+        (!filtroNombre.value || mov.nombre.toLowerCase().includes(filtroNombre.value.toLowerCase()))
+    );
+}
+
+// Limpia filtros
+function limpiarFiltros() {
+    filtroNombre.value = '';
+    filtroTipo.value = '';
+    filtroEtiqueta.value = '';
+    filtroCoste.value = '';
+}
+
+//Apoyo lista por nivel
+function buscarNivel(mov) {
+    return 2 * props.ficha.pokedex.movimientosNivel.findIndex(entry => {
+        const movs = entry.split(',').map(m => m.trim());
+        return movs.includes(mov);
+    });
+}
+
+function UnMovFiltrado(movs) {
+    const MOVS = movs.map(mov => mov.trim())
+    const movsCompletos = props.movimientos.filter(m =>
+        MOVS.find(nom => nom.trim() === m.nombre)
+    );
+    return movsCompletos.some(filtrar);
+}
+
+function comprobar(mov) {
+    return filtrar(props.movimientos.find(movimiento => movimiento.nombre.toLowerCase() === mov.trim().toLowerCase()))
+}
+
 </script>
 
 <template>
@@ -140,10 +212,71 @@ function añadirMovimiento() {
                 <label>
                     ¿Extra? <input type="checkbox" v-model="añadirExtra" />
                 </label>
+                <div>
+                    <input v-model="filtroNombre" placeholder="Buscar movimiento..."
+                        @keydown.enter.prevent="cargarMovimiento(filtrados[0].nombre)" />
+                    <label>
+                        <strong>Tipo: </strong>
+                        <select v-model="filtroTipo">
+                            <option value="">Todos los Tipos</option>
+                            <option v-for="tipo of tipos" :value="tipo">{{ tipo }}</option>
+                        </select>
+                    </label>
+                    <label>
+                        <strong>Etiqueta: </strong>
+                        <select v-model="filtroEtiqueta">
+                            <option value="">Todas las Etiquetas</option>
+                            <option v-for="et of etiquetas" :value="et">{{ et }}</option>
+                        </select>
+                    </label>
+                    <label>
+                        <strong>Coste: </strong>
+                        <select v-model="filtroCoste">
+                            <option value="">Cualquier coste</option>
+                            <option value="A voluntad">A voluntad</option>
+                            <option value="1">1 PP</option>
+                            <option value="2">2 PP</option>
+                            <option value="3">3 PP</option>
+                            <option value="4">4 PP</option>
+                            <option value="6">6 PP</option>
+                        </select>
+                    </label>
+
+                    <button class="resetFiltros" @click="limpiarFiltros"> Limpiar filtros</button>
+                </div>
+                <div>
+                    <div>
+                        <label> <strong>Por nivel</strong> <input type="radio" v-model="tipoLista" name="lista"
+                                value="Nivel"></label>
+                        <label> <strong>Enseñables</strong> <input type="radio" v-model="tipoLista" name="lista"
+                                value="Ensennables"></label>
+                        <label> <strong>Todos</strong> <input type="radio" v-model="tipoLista" name="lista"
+                                value="Todos"></label>
+                    </div>
+                </div>
 
                 <div class="ventana">
                     <div class="cuerpo">
-                        <busquedaMov :movimientos="movimientos" @seleccion="cargarMovimiento" />
+
+                        <template v-if="tipoLista === 'Nivel'">
+                            <ul>
+                                <template v-for="(movs, i) of ficha.pokedex.movimientosNivel">
+                                    <li v-if="UnMovFiltrado(movs.split(', '))"
+                                        :class="2 * i > ficha.nivel ? 'demasiado' : ''">
+                                        <!--v-if="UnMovFiltrado(movs.split(', '))-->
+
+                                        <h5>Nivel {{ i === 0 ? 1 : 2 * i }}</h5>
+                                        <ul>
+                                            <template v-for="mov of movs.split(', ')">
+                                                <li v-if="comprobar(mov)" @click="cargarMovimiento(mov)">
+                                                    {{ mov.trim() }}</li>
+                                            </template>
+                                        </ul>
+                                    </li>
+                                </template>
+                            </ul>
+                        </template>
+                        <busquedaMov v-else :movimientos="filtrados" @seleccion="cargarMovimiento" />
 
                         <div class="preview">
                             <template v-if="movimientoSeleccionado">
@@ -165,8 +298,10 @@ function añadirMovimiento() {
                                         </strong> {{ formatearStats(movimientoSeleccionado.statsAso) }}.
                                     </div>
                                 </div>
-                                <button @click="añadirMovimiento"
-                                    :disabled="!añadirExtra && ficha.derivados.cantidadMovs <= ficha.personaliz.movimientosAprendidos.length">Añadir</button>
+                                <button @click="añadirMovimiento" :disabled="(!añadirExtra && ficha.derivados.cantidadMovs <= ficha.personaliz.movimientosAprendidos.length) ||
+                                    (tipoLista === 'Nivel' && buscarNivel(movimientoSeleccionado.nombre) !== -1 && buscarNivel(movimientoSeleccionado.nombre) > ficha.nivel)
+
+                                    ">Añadir</button>
                             </template>
                             <template v-else>
                                 <span>Selecciona un movimiento</span>
@@ -277,5 +412,9 @@ function añadirMovimiento() {
     border: none;
     border-radius: 4px;
     cursor: pointer;
+}
+
+.demasiado {
+    background-color: lightblue;
 }
 </style>

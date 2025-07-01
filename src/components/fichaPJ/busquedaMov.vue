@@ -1,8 +1,6 @@
 <template>
     <div class="buscador">
-        <input v-model="valor" placeholder="Buscar movimiento..."
-            @keydown.enter.prevent="emitirSeleccion(sugerencias[0].nombre)" />
-        <div v-if="sugerencias.length" class="sugerencias-wrapper">
+        <div v-if="movimientos.length" class="sugerencias-wrapper">
             <table class="sugerencias">
                 <thead>
                     <tr>
@@ -13,7 +11,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr v-for="m in sugerencias" :key="m" @mousedown.prevent="emitirSeleccion(m.nombre)">
+                    <tr v-for="m in movimientos" :key="m" @mousedown.prevent="emitirSeleccion(m.nombre)">
                         <td>{{ m.nombre }}</td>
                         <td>{{ m.tipo }}</td>
                         <td>{{ m.coste }}</td>
@@ -27,18 +25,12 @@
 
 
 <script setup>
-import { ref, computed } from 'vue'
+import { ref } from 'vue'
 
 const props = defineProps(['movimientos'])
 const emit = defineEmits(['seleccion'])
 
 const valor = ref('')
-
-const sugerencias = computed(() =>
-    props.movimientos.filter(m =>
-        m.nombre.toLowerCase().includes(valor.value.toLowerCase())
-    )
-)
 
 function emitirSeleccion(nombre) {
     emit('seleccion', nombre)
