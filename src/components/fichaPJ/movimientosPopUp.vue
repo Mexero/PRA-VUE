@@ -33,7 +33,11 @@ const formatearStats = (stats) => {
 };
 
 //Al abrir, se carga todo
-watch(() => props.movimientosCargados,
+watch(() => [
+    props.movimientosCargados,
+    props.ficha.personaliz.movimientosAprendidos,
+    props.ficha.personaliz.movimientosExtra
+],
     async () => {
         if (props.movimientosCargados) {
             for (const mov of props.ficha.personaliz.movimientosAprendidos) {
@@ -43,7 +47,9 @@ watch(() => props.movimientosCargados,
                 cargarMovimiento(mov, 'directo')
             }
         }
-    })
+    },
+    { deep: true }
+)
 
 
 //Cargar movimiento

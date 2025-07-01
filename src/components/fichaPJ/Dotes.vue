@@ -68,7 +68,6 @@ watch(
         if (dotesCargadas) {
             let cont = 0;
             for (let dote of ficha.personaliz.dotes) {
-                console.log(dote)
                 if (!dote || !doteData(dote)) {
                     cont++;
                 }

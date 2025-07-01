@@ -621,14 +621,14 @@ onMounted(async () => {
 }
 
 /* Quitar flechitas de input number*/
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button {
+.character-sheet input[type=number]::-webkit-inner-spin-button,
+.character-sheet input[type=number]::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
 
 /* Firefox */
-input[type=number] {
+.character-sheet input[type=number] {
     -moz-appearance: textfield;
 }
 
@@ -645,7 +645,7 @@ input[type=number] {
     color: #333;
 }
 
-input {
+.character-sheet input {
     width: 50px;
 }
 
