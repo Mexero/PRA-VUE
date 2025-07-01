@@ -331,450 +331,457 @@
                 tipos de Pokémon, indicando las ventajas y desventajas que cada tipo
                 tiene sobre otros:
             </p>
+            <div class="scrollTabla">
+                <table id="tablaTipos">
+                    <thead>
+                        <tr>
+                            <th>Tipo</th>
+                            <th>Efectivo contra</th>
+                            <th>No efectivo contra</th>
+                            <th>Débil contra</th>
+                            <th>Inmune a</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- 1. Acero -->
+                        <tr>
+                            <td class="tipo-nombre steel">
+                                <div>
+                                    <img class="icono-tipo steel" src="/assets/icons/steel.svg" />Acero
+                                </div>
+                            </td>
+                            <td class="grupo-iconos">
+                                <img class="ice" src="/assets/icons/ice.svg" />
+                                <img class="rock" src="/assets/icons/rock.svg" />
+                                <img class="fairy" src="/assets/icons/fairy.svg" />
+                            </td>
+                            <td class="grupo-iconos">
+                                <img class="fire" src="/assets/icons/fire.svg" />
+                                <img class="water" src="/assets/icons/water.svg" />
+                                <img class="electric" src="/assets/icons/electric.svg" />
+                                <img class="steel" src="/assets/icons/steel.svg" />
+                            </td>
+                            <td class="grupo-iconos">
+                                <img class="fire" src="/assets/icons/fire.svg" /><img class="fighting"
+                                    src="/assets/icons/fighting.svg" /><img class="ground"
+                                    src="/assets/icons/ground.svg" />
+                            </td>
+                            <td class="grupo-iconos">
+                                <img class="poison" src="/assets/icons/poison.svg" />
+                            </td>
+                        </tr>
 
-            <table id="tablaTipos">
-                <thead>
-                    <tr>
-                        <th>Tipo</th>
-                        <th>Efectivo contra</th>
-                        <th>No efectivo contra</th>
-                        <th>Débil contra</th>
-                        <th>Inmune a</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- 1. Acero -->
-                    <tr>
-                        <td class="tipo-nombre steel">
-                            <img class="icono-tipo steel" src="../../../public/assets/icons/steel.svg" />Acero
-                        </td>
-                        <td class="grupo-iconos">
-                            <img class="ice" src="../../../public/assets/icons/ice.svg" /><img class="rock"
-                                src="../../../public/assets/icons/rock.svg" /><img class="fairy"
-                                src="../../../public/assets/icons/fairy.svg" />
-                        </td>
-                        <td class="grupo-iconos">
-                            <img class="fire" src="../../../public/assets/icons/fire.svg" /><img class="water"
-                                src="../../../public/assets/icons/water.svg" /><img class="electric"
-                                src="../../../public/assets/icons/electric.svg" /><img class="steel"
-                                src="../../../public/assets/icons/steel.svg" />
-                        </td>
-                        <td class="grupo-iconos">
-                            <img class="fire" src="../../../public/assets/icons/fire.svg" /><img class="fighting"
-                                src="../../../public/assets/icons/fighting.svg" /><img class="ground"
-                                src="../../../public/assets/icons/ground.svg" />
-                        </td>
-                        <td class="grupo-iconos">
-                            <img class="poison" src="../../../public/assets/icons/poison.svg" />
-                        </td>
-                    </tr>
+                        <!-- 2. Volador -->
+                        <tr>
+                            <td class="tipo-nombre flying">
+                                <div>
+                                    <img class="icono-tipo flying" src="/assets/icons/flying.svg" />Volador
+                                </div>
+                            </td>
+                            <td class="grupo-iconos">
+                                <img class="grass" src="/assets/icons/grass.svg" /><img class="bug"
+                                    src="/assets/icons/bug.svg" /><img class="fighting"
+                                    src="/assets/icons/fighting.svg" />
+                            </td>
+                            <td class="grupo-iconos">
+                                <img class="electric" src="/assets/icons/electric.svg" /><img class="rock"
+                                    src="/assets/icons/rock.svg" /><img class="steel" src="/assets/icons/steel.svg" />
+                            </td>
+                            <td class="grupo-iconos">
+                                <img class="rock" src="/assets/icons/rock.svg" /><img class="ice"
+                                    src="/assets/icons/ice.svg" /><img class="electric"
+                                    src="/assets/icons/electric.svg" />
+                            </td>
+                            <td class="grupo-iconos">
+                                <img class="ground" src="/assets/icons/ground.svg" />
+                            </td>
+                        </tr>
 
-                    <!-- 2. Volador -->
-                    <tr>
-                        <td class="tipo-nombre flying">
-                            <img class="icono-tipo flying" src="../../../public/assets/icons/flying.svg" />Volador
-                        </td>
-                        <td class="grupo-iconos">
-                            <img class="grass" src="../../../public/assets/icons/grass.svg" /><img class="bug"
-                                src="../../../public/assets/icons/bug.svg" /><img class="fighting"
-                                src="../../../public/assets/icons/fighting.svg" />
-                        </td>
-                        <td class="grupo-iconos">
-                            <img class="electric" src="../../../public/assets/icons/electric.svg" /><img class="rock"
-                                src="../../../public/assets/icons/rock.svg" /><img class="steel"
-                                src="../../../public/assets/icons/steel.svg" />
-                        </td>
-                        <td class="grupo-iconos">
-                            <img class="rock" src="../../../public/assets/icons/rock.svg" /><img class="ice"
-                                src="../../../public/assets/icons/ice.svg" /><img class="electric"
-                                src="../../../public/assets/icons/electric.svg" />
-                        </td>
-                        <td class="grupo-iconos">
-                            <img class="ground" src="../../../public/assets/icons/ground.svg" />
-                        </td>
-                    </tr>
+                        <!-- 3. Agua -->
+                        <tr>
+                            <td class="tipo-nombre water">
+                                <div>
+                                    <img class="icono-tipo water" src="/assets/icons/water.svg" />Agua
+                                </div>
+                            </td>
+                            <td class="grupo-iconos">
+                                <img class="fire" src="/assets/icons/fire.svg" /><img class="rock"
+                                    src="/assets/icons/rock.svg" /><img class="ground" src="/assets/icons/ground.svg" />
+                            </td>
+                            <td class="grupo-iconos">
+                                <img class="water" src="/assets/icons/water.svg" /><img class="grass"
+                                    src="/assets/icons/grass.svg" /><img class="dragon"
+                                    src="/assets/icons/dragon.svg" />
+                            </td>
+                            <td class="grupo-iconos">
+                                <img class="grass" src="/assets/icons/grass.svg" /><img class="electric"
+                                    src="/assets/icons/electric.svg" />
+                            </td>
+                            <td class="grupo-iconos"></td>
+                        </tr>
 
-                    <!-- 3. Agua -->
-                    <tr>
-                        <td class="tipo-nombre water">
-                            <img class="icono-tipo water" src="../../../public/assets/icons/water.svg" />Agua
-                        </td>
-                        <td class="grupo-iconos">
-                            <img class="fire" src="../../../public/assets/icons/fire.svg" /><img class="rock"
-                                src="../../../public/assets/icons/rock.svg" /><img class="ground"
-                                src="../../../public/assets/icons/ground.svg" />
-                        </td>
-                        <td class="grupo-iconos">
-                            <img class="water" src="../../../public/assets/icons/water.svg" /><img class="grass"
-                                src="../../../public/assets/icons/grass.svg" /><img class="dragon"
-                                src="../../../public/assets/icons/dragon.svg" />
-                        </td>
-                        <td class="grupo-iconos">
-                            <img class="grass" src="../../../public/assets/icons/grass.svg" /><img class="electric"
-                                src="../../../public/assets/icons/electric.svg" />
-                        </td>
-                        <td class="grupo-iconos"></td>
-                    </tr>
+                        <!-- 4. Hielo -->
+                        <tr>
+                            <td class="tipo-nombre ice">
+                                <div>
+                                    <img class="icono-tipo ice" src="/assets/icons/ice.svg" />Hielo
+                                </div>
+                            </td>
+                            <td class="grupo-iconos">
+                                <img class="grass" src="/assets/icons/grass.svg" /><img class="ground"
+                                    src="/assets/icons/ground.svg" /><img class="flying"
+                                    src="/assets/icons/flying.svg" /><img class="dragon"
+                                    src="/assets/icons/dragon.svg" />
+                            </td>
+                            <td class="grupo-iconos">
+                                <img class="fire" src="/assets/icons/fire.svg" /><img class="water"
+                                    src="/assets/icons/water.svg" /><img class="ice" src="/assets/icons/ice.svg" /><img
+                                    class="steel" src="/assets/icons/steel.svg" />
+                            </td>
+                            <td class="grupo-iconos">
+                                <img class="fire" src="/assets/icons/fire.svg" /><img class="fighting"
+                                    src="/assets/icons/fighting.svg" /><img class="rock"
+                                    src="/assets/icons/rock.svg" /><img class="steel" src="/assets/icons/steel.svg" />
+                            </td>
+                            <td class="grupo-iconos"></td>
+                        </tr>
 
-                    <!-- 4. Hielo -->
-                    <tr>
-                        <td class="tipo-nombre ice">
-                            <img class="icono-tipo ice" src="../../../public/assets/icons/ice.svg" />Hielo
-                        </td>
-                        <td class="grupo-iconos">
-                            <img class="grass" src="../../../public/assets/icons/grass.svg" /><img class="ground"
-                                src="../../../public/assets/icons/ground.svg" /><img class="flying"
-                                src="../../../public/assets/icons/flying.svg" /><img class="dragon"
-                                src="../../../public/assets/icons/dragon.svg" />
-                        </td>
-                        <td class="grupo-iconos">
-                            <img class="fire" src="../../../public/assets/icons/fire.svg" /><img class="water"
-                                src="../../../public/assets/icons/water.svg" /><img class="ice"
-                                src="../../../public/assets/icons/ice.svg" /><img class="steel"
-                                src="../../../public/assets/icons/steel.svg" />
-                        </td>
-                        <td class="grupo-iconos">
-                            <img class="fire" src="../../../public/assets/icons/fire.svg" /><img class="fighting"
-                                src="../../../public/assets/icons/fighting.svg" /><img class="rock"
-                                src="../../../public/assets/icons/rock.svg" /><img class="steel"
-                                src="../../../public/assets/icons/steel.svg" />
-                        </td>
-                        <td class="grupo-iconos"></td>
-                    </tr>
+                        <!-- 5. Planta -->
+                        <tr>
+                            <td class="tipo-nombre grass">
+                                <div>
+                                    <img class="icono-tipo grass" src="/assets/icons/grass.svg" />Planta
+                                </div>
+                            </td>
+                            <td class="grupo-iconos">
+                                <img class="water" src="/assets/icons/water.svg" /><img class="rock"
+                                    src="/assets/icons/rock.svg" /><img class="ground" src="/assets/icons/ground.svg" />
+                            </td>
+                            <td class="grupo-iconos">
+                                <img class="fire" src="/assets/icons/fire.svg" /><img class="grass"
+                                    src="/assets/icons/grass.svg" /><img class="dragon"
+                                    src="/assets/icons/dragon.svg" /><img class="bug" src="/assets/icons/bug.svg" /><img
+                                    class="poison" src="/assets/icons/poison.svg" /><img class="flying"
+                                    src="/assets/icons/flying.svg" /><img class="steel" src="/assets/icons/steel.svg" />
+                            </td>
+                            <td class="grupo-iconos">
+                                <img class="ice" src="/assets/icons/ice.svg" />
+                                <img class="poison" src="/assets/icons/poison.svg" />
+                                <img class="flying" src="/assets/icons/flying.svg" />
+                                <img class="bug" src="/assets/icons/bug.svg" />
+                            </td>
+                            <td class="grupo-iconos"></td>
+                        </tr>
 
-                    <!-- 5. Planta -->
-                    <tr>
-                        <td class="tipo-nombre grass">
-                            <img class="icono-tipo grass" src="../../../public/assets/icons/grass.svg" />Planta
-                        </td>
-                        <td class="grupo-iconos">
-                            <img class="water" src="../../../public/assets/icons/water.svg" /><img class="rock"
-                                src="../../../public/assets/icons/rock.svg" /><img class="ground"
-                                src="../../../public/assets/icons/ground.svg" />
-                        </td>
-                        <td class="grupo-iconos">
-                            <img class="fire" src="../../../public/assets/icons/fire.svg" /><img class="grass"
-                                src="../../../public/assets/icons/grass.svg" /><img class="dragon"
-                                src="../../../public/assets/icons/dragon.svg" /><img class="bug"
-                                src="../../../public/assets/icons/bug.svg" /><img class="poison"
-                                src="../../../public/assets/icons/poison.svg" /><img class="flying"
-                                src="../../../public/assets/icons/flying.svg" /><img class="steel"
-                                src="../../../public/assets/icons/steel.svg" />
-                        </td>
-                        <td class="grupo-iconos">
-                            <img class="fire" src="../../../public/assets/icons/fire.svg" /><img class="ice"
-                                src="../../../public/assets/icons/ice.svg" /><img class="poison"
-                                src="../../../public/assets/icons/poison.svg" /><img class="flying"
-                                src="../../../public/assets/icons/flying.svg" /><img class="bug"
-                                src="../../../public/assets/icons/bug.svg" />
-                        </td>
-                        <td class="grupo-iconos"></td>
-                    </tr>
+                        <!-- 6. Bicho -->
+                        <tr>
+                            <td class="tipo-nombre bug">
+                                <div>
+                                    <img class="icono-tipo bug" src="/assets/icons/bug.svg" />Bicho
+                                </div>
+                            </td>
+                            <td class="grupo-iconos">
+                                <img class="grass" src="/assets/icons/grass.svg" /><img class="psychic"
+                                    src="/assets/icons/psychic.svg" /><img class="dark" src="/assets/icons/dark.svg" />
+                            </td>
+                            <td class="grupo-iconos">
+                                <img class="fire" src="/assets/icons/fire.svg" /><img class="fighting"
+                                    src="/assets/icons/fighting.svg" /><img class="flying"
+                                    src="/assets/icons/flying.svg" /><img class="ghost"
+                                    src="/assets/icons/ghost.svg" /><img class="fairy"
+                                    src="/assets/icons/fairy.svg" /><img class="steel" src="/assets/icons/steel.svg" />
+                            </td>
+                            <td class="grupo-iconos">
+                                <img class="fire" src="/assets/icons/fire.svg" /><img class="flying"
+                                    src="/assets/icons/flying.svg" /><img class="rock" src="/assets/icons/rock.svg" />
+                            </td>
+                            <td class="grupo-iconos"></td>
+                        </tr>
 
-                    <!-- 6. Bicho -->
-                    <tr>
-                        <td class="tipo-nombre bug">
-                            <img class="icono-tipo bug" src="../../../public/assets/icons/bug.svg" />Bicho
-                        </td>
-                        <td class="grupo-iconos">
-                            <img class="grass" src="../../../public/assets/icons/grass.svg" /><img class="psychic"
-                                src="../../../public/assets/icons/psychic.svg" /><img class="dark"
-                                src="../../../public/assets/icons/dark.svg" />
-                        </td>
-                        <td class="grupo-iconos">
-                            <img class="fire" src="../../../public/assets/icons/fire.svg" /><img class="fighting"
-                                src="../../../public/assets/icons/fighting.svg" /><img class="flying"
-                                src="../../../public/assets/icons/flying.svg" /><img class="ghost"
-                                src="../../../public/assets/icons/ghost.svg" /><img class="fairy"
-                                src="../../../public/assets/icons/fairy.svg" /><img class="steel"
-                                src="../../../public/assets/icons/steel.svg" />
-                        </td>
-                        <td class="grupo-iconos">
-                            <img class="fire" src="../../../public/assets/icons/fire.svg" /><img class="flying"
-                                src="../../../public/assets/icons/flying.svg" /><img class="rock"
-                                src="../../../public/assets/icons/rock.svg" />
-                        </td>
-                        <td class="grupo-iconos"></td>
-                    </tr>
+                        <!-- 7. Eléctrico -->
+                        <tr>
+                            <td class="tipo-nombre electric">
+                                <div>
+                                    <img class="icono-tipo electric" src="/assets/icons/electric.svg" />Eléctrico
+                                </div>
+                            </td>
+                            <td class="grupo-iconos">
+                                <img class="water" src="/assets/icons/water.svg" /><img class="flying"
+                                    src="/assets/icons/flying.svg" />
+                            </td>
+                            <td class="grupo-iconos">
+                                <img class="electric" src="/assets/icons/electric.svg" /><img class="grass"
+                                    src="/assets/icons/grass.svg" /><img class="dragon"
+                                    src="/assets/icons/dragon.svg" />
+                            </td>
+                            <td class="grupo-iconos">
+                                <img class="ground" src="/assets/icons/ground.svg" />
+                            </td>
+                            <td class="grupo-iconos"></td>
+                        </tr>
 
-                    <!-- 7. Eléctrico -->
-                    <tr>
-                        <td class="tipo-nombre electric">
-                            <img class="icono-tipo electric" src="../../../public/assets/icons/electric.svg" />Eléctrico
-                        </td>
-                        <td class="grupo-iconos">
-                            <img class="water" src="../../../public/assets/icons/water.svg" /><img class="flying"
-                                src="../../../public/assets/icons/flying.svg" />
-                        </td>
-                        <td class="grupo-iconos">
-                            <img class="electric" src="../../../public/assets/icons/electric.svg" /><img class="grass"
-                                src="../../../public/assets/icons/grass.svg" /><img class="dragon"
-                                src="../../../public/assets/icons/dragon.svg" />
-                        </td>
-                        <td class="grupo-iconos">
-                            <img class="ground" src="../../../public/assets/icons/ground.svg" />
-                        </td>
-                        <td class="grupo-iconos"></td>
-                    </tr>
+                        <!-- 8. Normal -->
+                        <tr>
+                            <td class="tipo-nombre normal">
+                                <div>
+                                    <img class="icono-tipo normal" src="/assets/icons/normal.svg" />Normal
+                                </div>
+                            </td>
+                            <td class="grupo-iconos"></td>
+                            <td class="grupo-iconos">
+                                <img class="rock" src="/assets/icons/rock.svg" />
+                                <img class="steel" src="/assets/icons/steel.svg" />
+                            </td>
+                            <td class="grupo-iconos">
+                                <img class="fighting" src="/assets/icons/fighting.svg" />
+                            </td>
+                            <td class="grupo-iconos">
+                                <img class="ghost" src="/assets/icons/ghost.svg" />
+                            </td>
+                        </tr>
 
-                    <!-- 8. Normal -->
-                    <tr>
-                        <td class="tipo-nombre normal">
-                            <img class="icono-tipo normal" src="../../../public/assets/icons/normal.svg" />Normal
-                        </td>
-                        <td class="grupo-iconos"></td>
-                        <td class="grupo-iconos">
-                            <img class="rock" src="../../../public/assets/icons/rock.svg" /><img class="steel"
-                                src="../../../public/assets/icons/steel.svg" /><img class="ghost"
-                                src="../../../public/assets/icons/ghost.svg" />
-                        </td>
-                        <td class="grupo-iconos">
-                            <img class="fighting" src="../../../public/assets/icons/fighting.svg" />
-                        </td>
-                        <td class="grupo-iconos">
-                            <img class="ghost" src="../../../public/assets/icons/ghost.svg" />
-                        </td>
-                    </tr>
+                        <!-- 9. Roca -->
+                        <tr>
+                            <td class="tipo-nombre rock">
+                                <div>
+                                    <img class="icono-tipo rock" src="/assets/icons/rock.svg" />Roca
+                                </div>
+                            </td>
+                            <td class="grupo-iconos">
+                                <img class="fire" src="/assets/icons/fire.svg" /><img class="ice"
+                                    src="/assets/icons/ice.svg" /><img class="flying"
+                                    src="/assets/icons/flying.svg" /><img class="bug" src="/assets/icons/bug.svg" />
+                            </td>
+                            <td class="grupo-iconos">
+                                <img class="fighting" src="/assets/icons/fighting.svg" /><img class="ground"
+                                    src="/assets/icons/ground.svg" /><img class="steel" src="/assets/icons/steel.svg" />
+                            </td>
+                            <td class="grupo-iconos">
+                                <img class="water" src="/assets/icons/water.svg" /><img class="grass"
+                                    src="/assets/icons/grass.svg" /><img class="fighting"
+                                    src="/assets/icons/fighting.svg" /><img class="ground"
+                                    src="/assets/icons/ground.svg" /><img class="steel" src="/assets/icons/steel.svg" />
+                            </td>
+                            <td class="grupo-iconos"></td>
+                        </tr>
 
-                    <!-- 9. Roca -->
-                    <tr>
-                        <td class="tipo-nombre rock">
-                            <img class="icono-tipo rock" src="../../../public/assets/icons/rock.svg" />Roca
-                        </td>
-                        <td class="grupo-iconos">
-                            <img class="fire" src="../../../public/assets/icons/fire.svg" /><img class="ice"
-                                src="../../../public/assets/icons/ice.svg" /><img class="flying"
-                                src="../../../public/assets/icons/flying.svg" /><img class="bug"
-                                src="../../../public/assets/icons/bug.svg" />
-                        </td>
-                        <td class="grupo-iconos">
-                            <img class="fighting" src="../../../public/assets/icons/fighting.svg" /><img class="ground"
-                                src="../../../public/assets/icons/ground.svg" /><img class="steel"
-                                src="../../../public/assets/icons/steel.svg" />
-                        </td>
-                        <td class="grupo-iconos">
-                            <img class="water" src="../../../public/assets/icons/water.svg" /><img class="grass"
-                                src="../../../public/assets/icons/grass.svg" /><img class="fighting"
-                                src="../../../public/assets/icons/fighting.svg" /><img class="ground"
-                                src="../../../public/assets/icons/ground.svg" /><img class="steel"
-                                src="../../../public/assets/icons/steel.svg" />
-                        </td>
-                        <td class="grupo-iconos"></td>
-                    </tr>
+                        <!-- 10. Tierra -->
+                        <tr>
+                            <td class="tipo-nombre ground">
+                                <div>
+                                    <img class="icono-tipo ground" src="/assets/icons/ground.svg" />Tierra
+                                </div>
+                            </td>
+                            <td class="grupo-iconos">
+                                <img class="fire" src="/assets/icons/fire.svg" /><img class="electric"
+                                    src="/assets/icons/electric.svg" /><img class="poison"
+                                    src="/assets/icons/poison.svg" /><img class="rock"
+                                    src="/assets/icons/rock.svg" /><img class="steel" src="/assets/icons/steel.svg" />
+                            </td>
+                            <td class="grupo-iconos">
+                                <img class="grass" src="/assets/icons/grass.svg" /><img class="bug"
+                                    src="/assets/icons/bug.svg" />
+                            </td>
+                            <td class="grupo-iconos">
+                                <img class="water" src="/assets/icons/water.svg" /><img class="grass"
+                                    src="/assets/icons/grass.svg" /><img class="ice" src="/assets/icons/ice.svg" />
+                            </td>
+                            <td class="grupo-iconos">
+                                <img class="electric" src="/assets/icons/electric.svg" />
+                            </td>
+                        </tr>
 
-                    <!-- 10. Tierra -->
-                    <tr>
-                        <td class="tipo-nombre ground">
-                            <img class="icono-tipo ground" src="../../../public/assets/icons/ground.svg" />Tierra
-                        </td>
-                        <td class="grupo-iconos">
-                            <img class="fire" src="../../../public/assets/icons/fire.svg" /><img class="electric"
-                                src="../../../public/assets/icons/electric.svg" /><img class="poison"
-                                src="../../../public/assets/icons/poison.svg" /><img class="rock"
-                                src="../../../public/assets/icons/rock.svg" /><img class="steel"
-                                src="../../../public/assets/icons/steel.svg" />
-                        </td>
-                        <td class="grupo-iconos">
-                            <img class="grass" src="../../../public/assets/icons/grass.svg" /><img class="bug"
-                                src="../../../public/assets/icons/bug.svg" />
-                        </td>
-                        <td class="grupo-iconos">
-                            <img class="water" src="../../../public/assets/icons/water.svg" /><img class="grass"
-                                src="../../../public/assets/icons/grass.svg" /><img class="ice"
-                                src="../../../public/assets/icons/ice.svg" />
-                        </td>
-                        <td class="grupo-iconos">
-                            <img class="electric" src="../../../public/assets/icons/electric.svg" />
-                        </td>
-                    </tr>
+                        <!-- 11. Fuego -->
+                        <tr>
+                            <td class="tipo-nombre fire">
+                                <div>
+                                    <img class="icono-tipo fire" src="/assets/icons/fire.svg" />Fuego
+                                </div>
+                            </td>
+                            <td class="grupo-iconos">
+                                <img class="grass" src="/assets/icons/grass.svg" /><img class="ice"
+                                    src="/assets/icons/ice.svg" /><img class="bug" src="/assets/icons/bug.svg" /><img
+                                    class="steel" src="/assets/icons/steel.svg" />
+                            </td>
+                            <td class="grupo-iconos">
+                                <img class="fire" src="/assets/icons/fire.svg" /><img class="water"
+                                    src="/assets/icons/water.svg" /><img class="rock"
+                                    src="/assets/icons/rock.svg" /><img class="dragon" src="/assets/icons/dragon.svg" />
+                            </td>
+                            <td class="grupo-iconos">
+                                <img class="water" src="/assets/icons/water.svg" /><img class="ground"
+                                    src="/assets/icons/ground.svg" /><img class="rock" src="/assets/icons/rock.svg" />
+                            </td>
+                            <td class="grupo-iconos"></td>
+                        </tr>
 
-                    <!-- 11. Fuego -->
-                    <tr>
-                        <td class="tipo-nombre fire">
-                            <img class="icono-tipo fire" src="../../../public/assets/icons/fire.svg" />Fuego
-                        </td>
-                        <td class="grupo-iconos">
-                            <img class="grass" src="../../../public/assets/icons/grass.svg" /><img class="ice"
-                                src="../../../public/assets/icons/ice.svg" /><img class="bug"
-                                src="../../../public/assets/icons/bug.svg" /><img class="steel"
-                                src="../../../public/assets/icons/steel.svg" />
-                        </td>
-                        <td class="grupo-iconos">
-                            <img class="fire" src="../../../public/assets/icons/fire.svg" /><img class="water"
-                                src="../../../public/assets/icons/water.svg" /><img class="rock"
-                                src="../../../public/assets/icons/rock.svg" /><img class="dragon"
-                                src="../../../public/assets/icons/dragon.svg" />
-                        </td>
-                        <td class="grupo-iconos">
-                            <img class="water" src="../../../public/assets/icons/water.svg" /><img class="ground"
-                                src="../../../public/assets/icons/ground.svg" /><img class="rock"
-                                src="../../../public/assets/icons/rock.svg" />
-                        </td>
-                        <td class="grupo-iconos"></td>
-                    </tr>
+                        <!-- 12. Lucha -->
+                        <tr>
+                            <td class="tipo-nombre fighting">
+                                <div>
+                                    <img class="icono-tipo fighting" src="/assets/icons/fighting.svg" />Lucha
+                                </div>
+                            </td>
+                            <td class="grupo-iconos">
+                                <img class="normal" src="/assets/icons/normal.svg" /><img class="rock"
+                                    src="/assets/icons/rock.svg" /><img class="ice" src="/assets/icons/ice.svg" /><img
+                                    class="dark" src="/assets/icons/dark.svg" /><img class="steel"
+                                    src="/assets/icons/steel.svg" />
+                            </td>
+                            <td class="grupo-iconos">
+                                <img class="flying" src="/assets/icons/flying.svg" /><img class="poison"
+                                    src="/assets/icons/poison.svg" /><img class="bug" src="/assets/icons/bug.svg" /><img
+                                    class="fairy" src="/assets/icons/fairy.svg" /><img class="psychic"
+                                    src="/assets/icons/psychic.svg" />
+                            </td>
+                            <td class="grupo-iconos">
+                                <img class="flying" src="/assets/icons/flying.svg" /><img class="psychic"
+                                    src="/assets/icons/psychic.svg" /><img class="fairy"
+                                    src="/assets/icons/fairy.svg" />
+                            </td>
+                            <td class="grupo-iconos"></td>
+                        </tr>
 
-                    <!-- 12. Lucha -->
-                    <tr>
-                        <td class="tipo-nombre fighting">
-                            <img class="icono-tipo fighting" src="../../../public/assets/icons/fighting.svg" />Lucha
-                        </td>
-                        <td class="grupo-iconos">
-                            <img class="normal" src="../../../public/assets/icons/normal.svg" /><img class="rock"
-                                src="../../../public/assets/icons/rock.svg" /><img class="ice"
-                                src="../../../public/assets/icons/ice.svg" /><img class="dark"
-                                src="../../../public/assets/icons/dark.svg" /><img class="steel"
-                                src="../../../public/assets/icons/steel.svg" />
-                        </td>
-                        <td class="grupo-iconos">
-                            <img class="flying" src="../../../public/assets/icons/flying.svg" /><img class="poison"
-                                src="../../../public/assets/icons/poison.svg" /><img class="bug"
-                                src="../../../public/assets/icons/bug.svg" /><img class="fairy"
-                                src="../../../public/assets/icons/fairy.svg" /><img class="psychic"
-                                src="../../../public/assets/icons/psychic.svg" />
-                        </td>
-                        <td class="grupo-iconos">
-                            <img class="flying" src="../../../public/assets/icons/flying.svg" /><img class="psychic"
-                                src="../../../public/assets/icons/psychic.svg" /><img class="fairy"
-                                src="../../../public/assets/icons/fairy.svg" />
-                        </td>
-                        <td class="grupo-iconos"></td>
-                    </tr>
+                        <!-- 13. Hada -->
+                        <tr>
+                            <td class="tipo-nombre fairy">
+                                <div>
+                                    <img class="icono-tipo fairy" src="/assets/icons/fairy.svg" />Hada
+                                </div>
+                            </td>
+                            <td class="grupo-iconos">
+                                <img class="fighting" src="/assets/icons/fighting.svg" /><img class="dragon"
+                                    src="/assets/icons/dragon.svg" /><img class="dark" src="/assets/icons/dark.svg" />
+                            </td>
+                            <td class="grupo-iconos">
+                                <img class="fire" src="/assets/icons/fire.svg" /><img class="poison"
+                                    src="/assets/icons/poison.svg" /><img class="steel" src="/assets/icons/steel.svg" />
+                            </td>
+                            <td class="grupo-iconos">
+                                <img class="steel" src="/assets/icons/steel.svg" /><img class="poison"
+                                    src="/assets/icons/poison.svg" />
+                            </td>
+                            <td class="grupo-iconos">
+                                <img class="dragon" src="/assets/icons/dragon.svg" />
+                            </td>
+                        </tr>
 
-                    <!-- 13. Hada -->
-                    <tr>
-                        <td class="tipo-nombre fairy">
-                            <img class="icono-tipo fairy" src="../../../public/assets/icons/fairy.svg" />Hada
-                        </td>
-                        <td class="grupo-iconos">
-                            <img class="fighting" src="../../../public/assets/icons/fighting.svg" /><img class="dragon"
-                                src="../../../public/assets/icons/dragon.svg" /><img class="dark"
-                                src="../../../public/assets/icons/dark.svg" />
-                        </td>
-                        <td class="grupo-iconos">
-                            <img class="fire" src="../../../public/assets/icons/fire.svg" /><img class="poison"
-                                src="../../../public/assets/icons/poison.svg" /><img class="steel"
-                                src="../../../public/assets/icons/steel.svg" />
-                        </td>
-                        <td class="grupo-iconos">
-                            <img class="steel" src="../../../public/assets/icons/steel.svg" /><img class="poison"
-                                src="../../../public/assets/icons/poison.svg" />
-                        </td>
-                        <td class="grupo-iconos">
-                            <img class="dragon" src="../../../public/assets/icons/dragon.svg" />
-                        </td>
-                    </tr>
+                        <!-- 14. Psíquico -->
+                        <tr>
+                            <td class="tipo-nombre psychic">
+                                <div>
+                                    <img class="icono-tipo psychic" src="/assets/icons/psychic.svg" />Psíquico
+                                </div>
+                            </td>
+                            <td class="grupo-iconos">
+                                <img class="fighting" src="/assets/icons/fighting.svg" /><img class="poison"
+                                    src="/assets/icons/poison.svg" />
+                            </td>
+                            <td class="grupo-iconos">
+                                <img class="psychic" src="/assets/icons/psychic.svg" /><img class="steel"
+                                    src="/assets/icons/steel.svg" />
+                            </td>
+                            <td class="grupo-iconos">
+                                <img class="bug" src="/assets/icons/bug.svg" /><img class="ghost"
+                                    src="/assets/icons/ghost.svg" /><img class="dark" src="/assets/icons/dark.svg" />
+                            </td>
+                            <td class="grupo-iconos"></td>
+                        </tr>
 
-                    <!-- 14. Psíquico -->
-                    <tr>
-                        <td class="tipo-nombre psychic">
-                            <img class="icono-tipo psychic" src="../../../public/assets/icons/psychic.svg" />Psíquico
-                        </td>
-                        <td class="grupo-iconos">
-                            <img class="fighting" src="../../../public/assets/icons/fighting.svg" /><img class="poison"
-                                src="../../../public/assets/icons/poison.svg" />
-                        </td>
-                        <td class="grupo-iconos">
-                            <img class="psychic" src="../../../public/assets/icons/psychic.svg" /><img class="steel"
-                                src="../../../public/assets/icons/steel.svg" />
-                        </td>
-                        <td class="grupo-iconos">
-                            <img class="bug" src="../../../public/assets/icons/bug.svg" /><img class="ghost"
-                                src="../../../public/assets/icons/ghost.svg" /><img class="dark"
-                                src="../../../public/assets/icons/dark.svg" />
-                        </td>
-                        <td class="grupo-iconos"></td>
-                    </tr>
+                        <!-- 15. Veneno -->
+                        <tr>
+                            <td class="tipo-nombre poison">
+                                <div>
+                                    <img class="icono-tipo poison" src="/assets/icons/poison.svg" />Veneno
+                                </div>
+                            </td>
+                            <td class="grupo-iconos">
+                                <img class="grass" src="/assets/icons/grass.svg" /><img class="fairy"
+                                    src="/assets/icons/fairy.svg" />
+                            </td>
+                            <td class="grupo-iconos">
+                                <img class="poison" src="/assets/icons/poison.svg" /><img class="ground"
+                                    src="/assets/icons/ground.svg" /><img class="rock"
+                                    src="/assets/icons/rock.svg" /><img class="ghost" src="/assets/icons/ghost.svg" />
+                            </td>
+                            <td class="grupo-iconos">
+                                <img class="ground" src="/assets/icons/ground.svg" /><img class="psychic"
+                                    src="/assets/icons/psychic.svg" />
+                            </td>
+                            <td class="grupo-iconos"></td>
+                        </tr>
 
-                    <!-- 15. Veneno -->
-                    <tr>
-                        <td class="tipo-nombre poison">
-                            <img class="icono-tipo poison" src="../../../public/assets/icons/poison.svg" />Veneno
-                        </td>
-                        <td class="grupo-iconos">
-                            <img class="grass" src="../../../public/assets/icons/grass.svg" /><img class="fairy"
-                                src="../../../public/assets/icons/fairy.svg" />
-                        </td>
-                        <td class="grupo-iconos">
-                            <img class="poison" src="../../../public/assets/icons/poison.svg" /><img class="ground"
-                                src="../../../public/assets/icons/ground.svg" /><img class="rock"
-                                src="../../../public/assets/icons/rock.svg" /><img class="ghost"
-                                src="../../../public/assets/icons/ghost.svg" />
-                        </td>
-                        <td class="grupo-iconos">
-                            <img class="ground" src="../../../public/assets/icons/ground.svg" /><img class="psychic"
-                                src="../../../public/assets/icons/psychic.svg" />
-                        </td>
-                        <td class="grupo-iconos"></td>
-                    </tr>
+                        <!-- 16. Dragón -->
+                        <tr>
+                            <td class="tipo-nombre dragon">
+                                <div>
+                                    <img class="icono-tipo dragon" src="/assets/icons/dragon.svg" />Dragón
+                                </div>
+                            </td>
+                            <td class="grupo-iconos">
+                                <img class="dragon" src="/assets/icons/dragon.svg" />
+                            </td>
+                            <td class="grupo-iconos">
+                                <img class="steel" src="/assets/icons/steel.svg" />
+                            </td>
+                            <td class="grupo-iconos">
+                                <img class="ice" src="/assets/icons/ice.svg" /><img class="dragon"
+                                    src="/assets/icons/dragon.svg" /><img class="fairy" src="/assets/icons/fairy.svg" />
+                            </td>
+                            <td class="grupo-iconos"></td>
+                        </tr>
 
-                    <!-- 16. Dragón -->
-                    <tr>
-                        <td class="tipo-nombre dragon">
-                            <img class="icono-tipo dragon" src="../../../public/assets/icons/dragon.svg" />Dragón
-                        </td>
-                        <td class="grupo-iconos">
-                            <img class="dragon" src="../../../public/assets/icons/dragon.svg" />
-                        </td>
-                        <td class="grupo-iconos">
-                            <img class="steel" src="../../../public/assets/icons/steel.svg" />
-                        </td>
-                        <td class="grupo-iconos">
-                            <img class="ice" src="../../../public/assets/icons/ice.svg" /><img class="dragon"
-                                src="../../../public/assets/icons/dragon.svg" /><img class="fairy"
-                                src="../../../public/assets/icons/fairy.svg" />
-                        </td>
-                        <td class="grupo-iconos"></td>
-                    </tr>
+                        <!-- 17. Fantasma -->
+                        <tr>
+                            <td class="tipo-nombre ghost">
+                                <div>
+                                    <img class="icono-tipo ghost" src="/assets/icons/ghost.svg" />Fantasma
+                                </div>
+                            </td>
+                            <td class="grupo-iconos">
+                                <img class="psychic" src="/assets/icons/psychic.svg" /><img class="ghost"
+                                    src="/assets/icons/ghost.svg" />
+                            </td>
+                            <td class="grupo-iconos">
+                                <img class="dark" src="/assets/icons/dark.svg" />
+                            </td>
+                            <td class="grupo-iconos">
+                                <img class="ghost" src="/assets/icons/ghost.svg" /><img class="dark"
+                                    src="/assets/icons/dark.svg" />
+                            </td>
+                            <td class="grupo-iconos">
+                                <img class="normal" src="/assets/icons/normal.svg" /><img class="fighting"
+                                    src="/assets/icons/fighting.svg" />
+                            </td>
+                        </tr>
 
-                    <!-- 17. Fantasma -->
-                    <tr>
-                        <td class="tipo-nombre ghost">
-                            <img class="icono-tipo ghost" src="../../../public/assets/icons/ghost.svg" />Fantasma
-                        </td>
-                        <td class="grupo-iconos">
-                            <img class="psychic" src="../../../public/assets/icons/psychic.svg" /><img class="ghost"
-                                src="../../../public/assets/icons/ghost.svg" />
-                        </td>
-                        <td class="grupo-iconos">
-                            <img class="dark" src="../../../public/assets/icons/dark.svg" />
-                        </td>
-                        <td class="grupo-iconos">
-                            <img class="ghost" src="../../../public/assets/icons/ghost.svg" /><img class="dark"
-                                src="../../../public/assets/icons/dark.svg" />
-                        </td>
-                        <td class="grupo-iconos">
-                            <img class="normal" src="../../../public/assets/icons/normal.svg" /><img class="fighting"
-                                src="../../../public/assets/icons/fighting.svg" />
-                        </td>
-                    </tr>
-
-                    <!-- 18. Siniestro -->
-                    <tr>
-                        <td class="tipo-nombre dark">
-                            <img class="icono-tipo dark" src="../../../public/assets/icons/dark.svg" />Siniestro
-                        </td>
-                        <td class="grupo-iconos">
-                            <img class="psychic" src="../../../public/assets/icons/psychic.svg" /><img class="ghost"
-                                src="../../../public/assets/icons/ghost.svg" />
-                        </td>
-                        <td class="grupo-iconos">
-                            <img class="fighting" src="../../../public/assets/icons/fighting.svg" /><img class="dark"
-                                src="../../../public/assets/icons/dark.svg" /><img class="fairy"
-                                src="../../../public/assets/icons/fairy.svg" />
-                        </td>
-                        <td class="grupo-iconos">
-                            <img class="bug" src="../../../public/assets/icons/bug.svg" /><img class="fairy"
-                                src="../../../public/assets/icons/fairy.svg" /><img class="fighting"
-                                src="../../../public/assets/icons/fighting.svg" />
-                        </td>
-                        <td class="grupo-iconos">
-                            <img class="psychic" src="../../../public/assets/icons/psychic.svg" />
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <img src="/assets/img/tablaDeTipos.webp" alt="Tabla de tipos" />
+                        <!-- 18. Siniestro -->
+                        <tr>
+                            <td class="tipo-nombre dark">
+                                <div>
+                                    <img class="icono-tipo dark" src="/assets/icons/dark.svg" />Siniestro
+                                </div>
+                            </td>
+                            <td class="grupo-iconos">
+                                <img class="psychic" src="/assets/icons/psychic.svg" /><img class="ghost"
+                                    src="/assets/icons/ghost.svg" />
+                            </td>
+                            <td class="grupo-iconos">
+                                <img class="fighting" src="/assets/icons/fighting.svg" /><img class="dark"
+                                    src="/assets/icons/dark.svg" /><img class="fairy" src="/assets/icons/fairy.svg" />
+                            </td>
+                            <td class="grupo-iconos">
+                                <img class="bug" src="/assets/icons/bug.svg" /><img class="fairy"
+                                    src="/assets/icons/fairy.svg" /><img class="fighting"
+                                    src="/assets/icons/fighting.svg" />
+                            </td>
+                            <td class="grupo-iconos">
+                                <img class="psychic" src="/assets/icons/psychic.svg" />
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
 
             <p>
                 La única diferencia con la de los juegos es que el Tipo Tierra hace daño
@@ -917,53 +924,67 @@
     </details>
 </template>
 <style scoped>
+
 #tablaTipos {
-    width: 95%;
     text-align: center;
     margin: 0 auto;
     border-collapse: collapse;
     color: var(--color-texto);
     background-color: rgba(255, 255, 255, 0);
+    overflow-y: scroll;
+    min-width: 1000px;
+    border: 1px solid var(--color-texto);
+}
+
+.scrollTabla {
+    overflow-x: auto;
+    overflow-y: hidden;
 }
 
 .tipo-nombre {
-    height: 50px;
+    width: 120px;
+}
+
+.tipo-nombre div {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    width: 100%;
+    margin-left: 15px;
+    gap: 5px;
 }
 
 .icono-tipo {
-    width: 25px;
-    height: 25px;
+    width: 20px;
+    height: 20px;
 }
 
 .grupo-iconos {
-    height: 50px;
-    flex-wrap: wrap;
+    padding-top: 5px;
+    background-color: rgba(136, 151, 192, 0.5);
 }
 
 .grupo-iconos:first-child {
-
     height: 50px;
 }
 
 .grupo-iconos:last-child {
-    width: 10%;
+    width: 95px;
 }
 
 .grupo-iconos img {
-    padding: 5px;
-    border-radius: 50%;
-    width: 35px;
-    height: 35px;
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
     margin: 0 2px;
+    padding: 8px;
+    border-radius: 50%;
+    overflow: visible;
+    user-drag: none;
+    -webkit-user-drag: none;
 }
 
 #tablaTipos th {
     height: 40px;
+    border: 1px solid var(--color-texto);
+
 }
 
 #tablaTipos tr {
@@ -973,6 +994,22 @@
 #tablaTipos td {
     border-right: 1px solid var(--color-texto);
 
+}
+
+@media screen and (max-width: 1000px) {
+   #tablaTipos {
+
+    min-width: 700px;
+}
+.grupo-iconos img {
+    width: 25px;
+    height: 25px;
+    padding: 4px;
+}
+.grupo-iconos:last-child {
+    width: 70px;
+}
+    
 }
 
 .bug {
