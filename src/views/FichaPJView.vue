@@ -11,7 +11,7 @@
 
         <div class="info-principal">
             <FichaStats :ficha="ficha" />
-            <FichaDestacados :ficha="ficha" />
+            <FichaDestacados :ficha="ficha" :grados="grados" />
             <FichaVelocidades :ficha="ficha" />
             <FichaChecks :ficha="ficha" :ChecksBase="ChecksBase" />
         </div>
@@ -21,7 +21,7 @@
             <FichaHabilidades :ficha="ficha" :habilidades="habilidades" :habilidadesCargadas="habilidadesCargadas" />
             <FichaDotes :ficha="ficha" :dotes="dotes" :dotesCargadas="dotesCargadas" />
         </div>
-        <FichaOtros :ficha="ficha" />
+        <FichaOtros :ficha="ficha" :naturalezas="naturalezas" />
     </div>
 </template>
 
@@ -63,11 +63,40 @@ const nuevaFichaNombre = ref('')
 const fichasGuardadas = reactive({})
 const ordenFichas = ref([])
 
+
+// <========= DATOS CHECKS =============>
 const ChecksBase = [
-    'Acrobacias', 'Actuación', 'Atletismo', 'Combate', 'Empatía', 'Engaño',
-    'Intimidación', 'Investigación', 'Juego de Manos', 'Percepción',
-    'Persuasión', 'Supervivencia', 'Trato Pokémon'
+    { check: 'Acrobacias', stat: 'agi' },
+    { check: 'Actuación', stat: 'pre' },
+    { check: 'Atletismo', stat: 'fue' },
+    { check: 'Combate', stat: 'fue' },
+    { check: 'Empatía', stat: 'esp' },
+    { check: 'Engaño', stat: 'pre' },
+    { check: 'Intimidación', stat: 'pre' },
+    { check: 'Investigación', stat: 'men' },
+    { check: 'Juego de Manos', stat: 'agi' },
+    { check: 'Percepción', stat: 'esp' },
+    { check: 'Persuasión', stat: 'pre' },
+    { check: 'Supervivencia', stat: 'esp' },
+    { check: 'Trato Pokémon', stat: 'pre' },
 ]
+
+const naturalezas = [
+    { naturaleza: "Activa", check: "Atletismo" },
+    { naturaleza: "Fuerte", check: "Combate" },
+    { naturaleza: "Agitada", check: "Acrobacias" },
+    { naturaleza: "Tímida", check: "Sigilo" },
+    { naturaleza: "Pícara", check: "J. de manos" },
+    { naturaleza: "Cauta", check: "Investigación" },
+    { naturaleza: "Amable", check: "Empatía" },
+    { naturaleza: "Serena", check: "Percepción" },
+    { naturaleza: "Audaz", check: "Actuación" },
+    { naturaleza: "Alocada", check: "Actuación" },
+    { naturaleza: "Oblicua", check: "Engaño" },
+    { naturaleza: "Firme", check: "Intimidación" },
+    { naturaleza: "Alegre", check: "Persuasión" }
+]
+
 
 // <========= CAMBIAR DATOS ESPECIE =============>
 function cambiarDatosEspecie(especie) {
@@ -166,18 +195,40 @@ worker.addEventListener('message', (e) => {
 
 
 //<========= ACTUALIZAR DATOS =============>
-const grados = {
-    no: 0,
-    bueno: () => ficha.derivados.bh,
-    experto: () => ficha.derivados.bh + 2,
-    maestro: () => ficha.derivados.bh + 4,
-    legendario: () => ficha.derivados.bh + 6
+
+const grados = ['no', 'bueno', 'experto', 'maestro', 'legendario']
+
+function subirGrado(grado) {
+    const index = grados.indexOf(grado)
+    if (index === -1 || index >= grados.length - 1) return grado
+    return grados[index + 1]
+}
+
+function gradoValor(grado) {
+    const orden = ['no', 'bueno', 'experto', 'maestro', 'legendario']
+    return orden.indexOf(grado)
+}
+
+function calcularBonoGrado(grado) {
+    switch (grado) {
+        case ('no'):
+            return 0
+        case ('bueno'):
+            return ficha.derivados.bh
+        case ('experto'):
+            return ficha.derivados.bh + 2
+        case ('maestro'):
+            return ficha.derivados.bh + 4
+        case ('legendario'):
+            return ficha.derivados.bh + 6
+        default:
+            return -10
+    }
 }
 
 function updateCheck(check) {
     const statVal = ficha.derivados.stats[check.stat] || 0
-    const bonoGrado = typeof grados[check.grado] === 'function' ? grados[check.grado]() : grados[check.grado]
-    const nuevoTotal = statVal + bonoGrado - Math.max(ficha.derivados.fatiga, 0)
+    const nuevoTotal = statVal + calcularBonoGrado(check.grado) - Math.max(ficha.derivados.fatiga, 0)
     check.total = nuevoTotal
     check.modificado = false
 }
@@ -188,6 +239,53 @@ function calcularSentidos() {
         return ficha.pokedex.otros.sentidos + (ficha.personaliz.sentidos !== "" ? (", " + ficha.personaliz.sentidos) : "")
     }
     else return ficha.personaliz.sentidos
+}
+
+function checksBaseIguales(a, b) {
+    if (a.length !== b.length) return false
+    return a.every((item, i) => item.check === b[i].check && item.grado === b[i].grado)
+}
+
+function construirChecksBase() {
+    const checksBaseNuevo = [{ check: 'Percepción', grado: 'bueno' }, { check: 'Init', grado: 'bueno' }]
+
+    ficha.pokedex.natHabil.forEach(natCheck => {
+        const index = checksBaseNuevo.findIndex(c => c.check === natCheck)
+        if (index !== -1) {
+            checksBaseNuevo[index].grado = subirGrado(checksBaseNuevo[index].grado)
+        } else {
+            checksBaseNuevo.push({ check: natCheck, grado: 'bueno' })
+        }
+    })
+    const index = checksBaseNuevo.findIndex(c => c.check === ficha.personaliz.naturaleza.check)
+    if (index !== -1) {
+        checksBaseNuevo[index].grado = subirGrado(checksBaseNuevo[index].grado)
+    } else {
+        checksBaseNuevo.push({ check: ficha.personaliz.naturaleza.check, grado: 'bueno' })
+    }
+
+    if (!checksBaseIguales(ficha.derivados.checksBase, checksBaseNuevo)) {
+        ficha.derivados.checksBase = checksBaseNuevo
+    }
+}
+
+function validarChecks() {
+    ficha.derivados.checksBase.forEach(checkBase => {
+        const index = ficha.personaliz.checks.findIndex(c => c.check === checkBase.check)
+        if (index === -1) {
+            ficha.personaliz.checks.push({
+                check: checkBase.check,
+                stat: 'fue',
+                grado: checkBase.grado,
+                total: 0
+            })
+        } else {
+            const checkPers = ficha.personaliz.checks[index]
+            if (gradoValor(checkPers.grado) < gradoValor(checkBase.grado)) {
+                checkPers.grado = checkBase.grado
+            }
+        }
+    })
 }
 
 watch(ficha, () => {
@@ -221,6 +319,9 @@ function actualizar() {
         ficha.derivados.cantidadDotes = Math.floor((ficha.nivel + 1) / 4)
     }
 
+    if (!ficha.manual.cantidadMejorasHab)
+        ficha.derivados.cantidadMejorasHab = Math.max(Math.floor(ficha.nivel / 6), 0)
+
     //Para tiradas de Habilidad
     const mejoraToValor = (mejoras) => {
         if (mejoras < 0) return 0
@@ -231,15 +332,21 @@ function actualizar() {
 
     //Iniciativa
     if (!ficha.manual.init) {
-        const bonoGrado = typeof grados[ficha.personaliz.initGrado] === 'function' ? grados[ficha.personaliz.initGrado]() : grados[ficha.personaliz.initGrado]
-        ficha.derivados.init = Math.max(ficha.derivados.stats.agi, ficha.derivados.stats.esp) + bonoGrado - Math.max(ficha.derivados.fatiga, 0)
+        const initCheck = ficha.personaliz.checks.find(ch => ch.check === "Init")
+        ficha.derivados.init = (initCheck ? initCheck.total : 0)
     }
 
     //Sentidos
     ficha.derivados.sentidos = calcularSentidos()
 
+    //checks Base
+    construirChecksBase()
+
+    //comprobar checks validos
+    validarChecks()
+
     // Recalcular checks personalizados
-    ficha.derivados.checks.forEach(updateCheck)
+    ficha.personaliz.checks.forEach(updateCheck)
 
 
     // Chequear mejoras de estadísticas no se pasan. Si lo hacen, quitar las últimas aplicadas
@@ -247,9 +354,14 @@ function actualizar() {
         ficha.personaliz.mejorasEst.pop()
     }
 
-    // Chequear mejoras de estadísticas no se pasan. Si lo hacen, quitar las últimas aplicadas
+    // Chequear cantidad dotes
     while (ficha.nivel > 0 && ficha.derivados.cantidadDotes < ficha.personaliz.dotes.length) {
         ficha.personaliz.dotes.pop()
+    }
+
+    // Chequear mejoras de habilidades
+    while (ficha.nivel > 0 && ficha.derivados.cantidadMejorasHab < ficha.personaliz.mejorasHab.length) {
+        ficha.personaliz.mejorasHab.pop()
     }
 
     // Actualizar estadísticas con mejoras de estadísticas

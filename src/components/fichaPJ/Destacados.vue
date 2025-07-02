@@ -7,19 +7,27 @@
             </div>
             <div class="item">CA: <input v-model.number="ficha.derivados.ca" /></div>
             <div class="item"><label>INIT: <input type="checkbox" v-model="ficha.manual.init" /></label>
+                <button @click="bajarGrado('Init')" :disabled="gradoActual('Init') <= 1" title="Disminuir grado">
+                    -
+                </button>
                 <input v-model.number="ficha.derivados.init" :readonly="!ficha.manual.init" />
-                <select v-model="ficha.personaliz.initGrado">
-                    <option value="no">N</option>
-                    <option value="bueno">E</option>
-                    <option value="experto">B</option>
-                    <option value="maestro">M</option>
-                    <option value="legendario">L</option>
-                </select>
+                <span>{{ grados[gradoActual('Init')] }}</span>
+                <button @click="subirGrado('Init')" :disabled="gradoActual('Init') >= grados.length - 1 ||
+                    mejorasUsadas >= ficha.derivados.cantidadMejorasHab
+                    " :title="gradoActual('Init') >= grados.length - 1
+                        ? 'Ya está en el grado máximo'
+                        : mejorasUsadas >= ficha.derivados.cantidadMejorasHab
+                            ? 'No quedan mejoras disponibles'
+                            : 'Aumentar grado'
+                        ">
+                    +
+                </button>
             </div>
             <div class="item"> <label>VIT: <input type="checkbox" v-model="ficha.manual.vit" /></label>
                 <input v-model.number="ficha.derivados.vit" :readonly="!ficha.manual.vit" />
 
             </div>
+
         </section>
 
         <section class="info-dinamica">
@@ -28,7 +36,7 @@
                     <input v-model.number="ficha.derivados.pvMax" :readonly="!ficha.manual.pvMax" />
                 </div>
             </div>
-            <div class="item">Escudo: <div><input v-model.number="ficha.escudo" /></div>
+            <div class="item">Escudo: <div><input v-model.number="ficha.derivados.escudo" /></div>
             </div>
             <div class="item"> <label>PP: <input type="checkbox" v-model="ficha.manual.ppMax" /></label>
                 <div><input v-model.number="ficha.derivados.pp" /> /
@@ -42,7 +50,41 @@
 </template>
 
 <script setup>
-defineProps(['ficha'])
+import { computed } from 'vue'
+
+const props = defineProps(['ficha', 'grados'])
+
+const mejorasUsadas = computed(() => props.ficha.personaliz.mejorasHab.length)
+
+
+
+function gradoActual(checkName) {
+    const mejoras = props.ficha.personaliz.mejorasHab.filter(m => m === checkName).length
+    const totalGrado = Math.min(1 + mejoras, props.grados.length - 1)
+
+    const check = props.ficha.personaliz.checks.find(ch => ch.check === checkName)
+    if (check) {
+        check.grado = props.grados[totalGrado]
+    }
+    return totalGrado
+}
+
+function subirGrado(checkName) {
+    const actualGrado = gradoActual(checkName)
+
+    if (actualGrado >= props.grados.length - 1) return
+
+    if (mejorasUsadas.value < props.ficha.derivados.cantidadMejorasHab) {
+        props.ficha.personaliz.mejorasHab.push(checkName)
+    }
+}
+
+function bajarGrado(checkName) {
+    const idx = props.ficha.personaliz.mejorasHab.lastIndexOf(checkName)
+    if (idx !== -1) {
+        props.ficha.personaliz.mejorasHab.splice(idx, 1)
+    }
+}
 
 </script>
 
