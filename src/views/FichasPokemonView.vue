@@ -28,16 +28,16 @@
 <script setup>
 import { ref, reactive, onMounted, watch } from 'vue'
 
-import FichaToolbar from '@/components/fichaPJ/Toolbar.vue'
-import FichaInfoBasica from '@/components/fichaPJ/InfoBasica.vue'
-import FichaStats from '@/components/fichaPJ/Stats.vue'
-import FichaChecks from '@/components/fichaPJ/Checks.vue'
-import FichaDestacados from '@/components/fichaPJ/Destacados.vue'
-import FichaVelocidades from '@/components/fichaPJ/Velocidades.vue'
-import FichaMovimientos from '@/components/fichaPJ/Movimientos.vue'
-import FichaHabilidades from '@/components/fichaPJ/Habilidades.vue'
-import FichaDotes from '@/components/fichaPJ/Dotes.vue'
-import FichaOtros from '@/components/fichaPJ/Otros.vue'
+import FichaToolbar from '@/components/fichasPokemon/Toolbar.vue'
+import FichaInfoBasica from '@/components/fichasPokemon/InfoBasica.vue'
+import FichaStats from '@/components/fichasPokemon/Stats.vue'
+import FichaChecks from '@/components/fichasPokemon/Checks.vue'
+import FichaDestacados from '@/components/fichasPokemon/Destacados.vue'
+import FichaVelocidades from '@/components/fichasPokemon/Velocidades.vue'
+import FichaMovimientos from '@/components/fichasPokemon/Movimientos.vue'
+import FichaHabilidades from '@/components/fichasPokemon/Habilidades.vue'
+import FichaDotes from '@/components/fichasPokemon/Dotes.vue'
+import FichaOtros from '@/components/fichasPokemon/Otros.vue'
 
 import { crearFichaBase } from '@/utils/TemplateFicha.js'
 
@@ -288,6 +288,45 @@ function validarChecks() {
     })
 }
 
+function calcularCA() {
+    const calculos = ficha.pokedex.calculosCA
+    const stats = ficha.derivados.stats
+
+    if (!Array.isArray(calculos) || calculos.length === 0) return;
+
+    if (ficha.derivados.caElegida >= ficha.pokedex.calculosCA.length) {
+        ficha.derivados.caElegida = 0
+    }
+
+    const calcularValor = (formula) => {
+        return formula.split('+').reduce((acc, partRaw) => {
+            const part = partRaw.trim()
+            if (!isNaN(part)) return acc + parseInt(part)
+            const statKey = part.toLowerCase()
+            const statValor = stats[statKey] ?? 0
+            return acc + statValor
+        }, 0)
+    }
+
+    const resultados = calculos.map((formula) => ({
+        formula,
+        valor: calcularValor(formula)
+    }));
+
+    const casIguales = JSON.stringify(ficha.derivados.cas) === JSON.stringify(resultados)
+    if (!casIguales) {
+        ficha.derivados.cas = resultados
+    }
+
+    const idx = ficha.derivados.caElegida ?? 0
+    const result = (resultados[idx]?.valor ?? 0) + ficha.derivados.bh - ficha.derivados.fatiga
+
+    if (ficha.derivados.ca !== result) {
+        ficha.derivados.ca = result
+    }
+}
+
+
 watch(ficha, () => {
     actualizar()
     guardarFicha()
@@ -388,6 +427,11 @@ function actualizar() {
     // Actualizar velocidades
     for (const vel in ficha.derivados.velocidades) {
         ficha.derivados.velocidades[vel] = ficha.pokedex.velocidades[vel] + ficha.personaliz.mejorasVelocidades[vel]
+    }
+
+    //Actualizar CA
+    if (!ficha.manual.ca) {
+        calcularCA()
     }
 }
 

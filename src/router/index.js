@@ -118,9 +118,9 @@ const router = createRouter({
       component: () => import('../views/ReglasView.vue'),
     },
     {
-      path: '/utilidades/fichapj',
-      name: 'fichapj',
-      component: () => import('../views/FichaPJView.vue'),
+      path: '/utilidades/fichasPokemon',
+      name: 'fichasPokemon',
+      component: () => import('../views/fichasPokemonView.vue'),
     },
 
     {

@@ -100,6 +100,18 @@
             {
                 "name": "Todas las reglas",
                 "route": "/reglas"
+            },
+            {
+                "name": "Reglas de DJ",
+                "route": "/reglas?tipo=Regla+de+DJ"
+            },
+            {
+                "name": "Estados",
+                "route": "/reglas?tipo=Estado"
+            },
+            {
+                "name": "Reglas Variantes",
+                "route": "/reglas?tipo=Regla+variante"
             }
         ]
     },
@@ -107,16 +119,12 @@
         "title": "Utilidades",
         "submenu": [
             {
-                "name": "Generar Pokémon",
-                "route": "/utilidades/generarpoke"
+                "name": "Fichas de Pokémon",
+                "route": "/utilidades/fichasPokemon"
             },
             {
-                "name": "Movimientos",
+                "name": "Dados (WIP)",
                 "route": "/utilidades/dados"
-            },
-            {
-                "name": "Ficha de PJ",
-                "route": "/utilidades/fichapj"
             }
         ]
     }

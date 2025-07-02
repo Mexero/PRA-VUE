@@ -5,7 +5,15 @@
                 <label>bh: <input type="checkbox" v-model="ficha.manual.bh" /></label>
                 <input type="number" v-model.number="ficha.derivados.bh" :readonly="!ficha.manual.bh" />
             </div>
-            <div class="item">CA: <input v-model.number="ficha.derivados.ca" /></div>
+            <div class="item">CA: <input type="checkbox" v-model="ficha.manual.ca">
+                <input v-model.number="ficha.derivados.ca" :readonly="!ficha.manual.ca" />
+                <select v-if="ficha.pokedex.calculosCA.length > 1" v-model="ficha.derivados.caElegida">
+                    <option v-for="(calculo, i) in ficha.pokedex.calculosCA" :value="i">{{ calculo }}</option>
+                </select>
+                <p v-else>
+                    {{ ficha.pokedex.calculosCA[0] }}
+                </p>
+            </div>
             <div class="item"><label>INIT: <input type="checkbox" v-model="ficha.manual.init" /></label>
                 <button @click="bajarGrado('Init')" :disabled="gradoActual('Init') <= 1" title="Disminuir grado">
                     -

@@ -52,7 +52,7 @@ import { RouterLink } from 'vue-router'
 
                         </div>
                     </RouterLink>
-                    <RouterLink to="/reglas">
+                    <RouterLink to="/reglas?tipo=Estado">
                         <div class="bloque">
                             <img src="/assets/icons/EstadosIcon.webp" alt="Icono Estados">
                             <span class="textoBloque"> Estados</span>

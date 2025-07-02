@@ -50,6 +50,8 @@ export function crearFichaBase(nombre = '') {
             cantidadDotes: 0,
             cantidadMovs: 0,
             init: 0,
+            caElegida: 0,
+            cas: [0],
             ca: 0,
             pp: 0,
             ppMax: 0,
@@ -67,6 +69,7 @@ export function crearFichaBase(nombre = '') {
             pvMax: false,
             vit: false,
             init: false,
+            ca: false,
             tiradasHab: false,
             cantidadMejorasEST: false,
             cantidadMejorasHab: false

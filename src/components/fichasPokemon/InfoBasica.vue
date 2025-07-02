@@ -7,11 +7,11 @@
 
         <div>
             <span class="label">Especie:</span>
-            <div style="position: relative;">
+            <div style="position: relative;" v-click-outside="ocultarLista">
                 <input v-model="especieElegida" placeholder="Buscar especie..." @focus="mostrarLista = true"
                     @keydown.enter.prevent="seleccionarEspecie()" />
                 <button @click="CambiarEspecie(especieElegida)">Cambiar</button>
-                <ul v-if="mostrarLista && especiesFiltradas.length" @mouseleave="ocultarLista">
+                <ul v-if="mostrarLista && especiesFiltradas.length">
                     <li v-for="especie in especiesFiltradas" :key="especie"
                         @mousedown.prevent="seleccionarEspecie(especie)">
                         {{ especie }}
@@ -38,6 +38,8 @@
 
 <script setup>
 import { ref, watch, computed } from 'vue'
+
+import vClickOutside from '@/directives/clickOutside.js'
 
 const props = defineProps([
     'ficha',
@@ -77,7 +79,7 @@ function CambiarEspecie(especie) {
         especieElegida.value = props.ficha.pokedex.especie
         return;
     }
-
+    mostrarLista.value = false
     emit('cambiarDatosEspecie', especieElegida.value)
 }
 
