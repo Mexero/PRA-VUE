@@ -120,7 +120,7 @@ const router = createRouter({
     {
       path: '/utilidades/fichasPokemon',
       name: 'fichasPokemon',
-      component: () => import('../views/fichasPokemonView.vue'),
+      component: () => import('../views/FichasPokemonView.vue'),
     },
 
     {
