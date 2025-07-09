@@ -2,6 +2,9 @@
 import { ref, watch } from 'vue';
 import { useRouter, useRoute } from 'vue-router';
 
+import BloqueTextoComplejo from '@/components/BloqueTextoComplejo.vue';
+
+
 // Router y estado
 const router = useRouter();
 const route = useRoute();
@@ -195,7 +198,7 @@ function isSubclaseActiva(ruta) {
                         <tr>
                             <th v-for="(titulo, i) in tabla.titulos" :key="i">
                                 <template v-if="Array.isArray(titulo)">
-                                    <a :href="titulo[1]" target="_blank">{{ titulo[0] }}</a>
+                                    <RouterLink :to="titulo[1]">{{ titulo[0] }}</RouterLink>
                                 </template>
                                 <template v-else>
                                     {{ titulo }}
@@ -258,10 +261,9 @@ function isSubclaseActiva(ruta) {
                 </summary>
                 <div class="detailsBlock">
                     <p class="feature-origin">{{ rasgo.claseNombre }} - Nivel {{ rasgo.nivel }}</p>
-                    <div>
-                        <p v-for="(parrafo, j) in Array.isArray(rasgo.descripcion) ? rasgo.descripcion : [rasgo.descripcion]"
-                            :key="j" v-html="parrafo">
-                        </p>
+                    <div class="textoRasgo">
+                        <BloqueTextoComplejo :dato="rasgo.descripcion">
+                        </BloqueTextoComplejo>
                     </div>
                     <!-- subclase -->
                     <div v-if="rasgo.esSubclase" :id="'subclase' + rasgo.nivel">
@@ -283,39 +285,18 @@ function isSubclaseActiva(ruta) {
                                                 <div v-for="(subrasgo, idx) in rasgoSub.contenido" :key="idx">
                                                     <details class="featureSubSub" open>
                                                         <summary>{{ subrasgo.nombre }}</summary>
-                                                        <template
-                                                            v-for="bloque in Array.isArray(subrasgo.descripcion) ? subrasgo.descripcion : [subrasgo.descripcion]">
-                                                            <p v-if="!bloque.tipo" v-html="bloque"></p>
-                                                            <ul v-else-if="bloque.tipo === 'listaU'" class="list">
-                                                                <li v-for="(item, j) in bloque.contenido" :key="j"
-                                                                    v-html="item">
-                                                                </li>
-                                                            </ul>
-                                                            <ol v-else-if="bloque.tipo === 'listaO'" class="list">
-                                                                <li v-for="(item, j) in bloque.contenido" :key="j"
-                                                                    v-html="item"></li>
-                                                            </ol>
-                                                        </template>
-
+                                                        <div class="textoSubrasgo">
+                                                            <BloqueTextoComplejo :dato="subrasgo.descripcion">
+                                                            </BloqueTextoComplejo>
+                                                        </div>
                                                     </details>
                                                 </div>
                                             </template>
                                             <!-- tiene sólo 1 rasgo al nivel -->
-                                            <template v-else>
-                                                <template
-                                                    v-for="bloque in Array.isArray(rasgoSub.contenido) ? rasgoSub.contenido : [rasgoSub.contenido]">
-                                                    <p v-if="!bloque.tipo" v-html="bloque"></p>
-                                                    <ul v-else-if="bloque.tipo === 'listaU'" class="list">
-                                                        <li v-for="(item, j) in bloque.contenido" :key="j"
-                                                            v-html="item">
-                                                        </li>
-                                                    </ul>
-                                                    <ol v-else-if="bloque.tipo === 'listaO'" class="list">
-                                                        <li v-for="(item, j) in bloque.contenido" :key="j"
-                                                            v-html="item"></li>
-                                                    </ol>
-                                                </template>
-                                            </template>
+                                            <div class="textoSubrasgo" v-else>
+                                                <BloqueTextoComplejo :dato="rasgoSub.contenido">
+                                                </BloqueTextoComplejo>
+                                            </div>
                                         </details>
                                     </div>
                                 </template>
@@ -572,6 +553,10 @@ td:nth-child(2) {
     margin: 10px 35px 20px 35px;
 }
 
+.textoSubrasgo,
+.textoRasgo {
+    padding: 0 15px 0 15px;
+}
 
 /* ===========LISTA DE MOVIMIENTOS============= */
 

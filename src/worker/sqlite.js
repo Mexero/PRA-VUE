@@ -3,7 +3,7 @@ import initSqlJs from 'sql.js';
 let db;
 
 onmessage = async (e) => {
-    const { type, query, params } = e.data;
+    const { type, query, params, origin } = e.data;
 
     if (type === 'init') {
         const SQL = await initSqlJs({
@@ -24,7 +24,7 @@ onmessage = async (e) => {
         db.exec("VACUUM;"); //no borrar esto. Hace que si la consulta modifica datos estos no generen datos fantasma
         //por ejemplo: si cambio Absorbe agua de habilidades con Update y no hago VACUUM, al exportar tendré 2 resultados, en nuevo y el viejo
         //En despliegue, no será necesario pq no queremos poder modificar.
-        postMessage({ type: 'result', result });
+        postMessage({ type: 'result', origin: origin, result });
     }
 
     //exportar base de datos. Importante pq esta no se modifica, sino que solo hace los cambios en memoria en principio.

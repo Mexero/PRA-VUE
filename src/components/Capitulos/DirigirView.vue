@@ -1388,7 +1388,7 @@
                     <p>
                         <strong>Región de Espacio raro</strong>. La región está bajo uno o
                         varios de los efectos del Movimiento Espacio raro, con un CD a tu
-                        elección
+                        elección.
                     </p>
 
                     <p>
@@ -2266,7 +2266,7 @@
             </details>
 
             <details class="subDetails">
-                <summary class="subSummary">Prepara las fichas</summary>
+                <summary class="subSummary">Pokémon Quimera</summary>
                 <div class="detailsBloque">
                     <p>
                         Algunos inventores son capaces de crear Quimeras. Estas quimeras son

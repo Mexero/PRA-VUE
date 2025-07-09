@@ -1,13 +1,14 @@
 <template>
-    <div v-if="datosCargados && dote" class="seleccionado">
-        <h2>{{ dote.Nombre }}</h2>
-        <p><strong>Tipo:</strong> {{ dote.Tipo }} </p>
-        <p v-if="dote.Prerrequisitos"><strong>Prerrequisitos:</strong> {{ dote.Prerrequisitos }}</p>
-        <p v-if="dote.Nivel"><strong>Nivel:</strong> {{ dote.Nivel }}</p>
-        <p v-if="dote.Repetible"><strong>Repetible</strong></p>
+    <div v-if="datosCargados && regla" class="seleccionado">
+        <h2>{{ regla.nombre }}</h2>
+        <p><strong>Tipo:</strong> {{ mostrarTipos(regla.tipos) }}. </p>
         <p><strong>Descripción:</strong></p>
-        <p class="descripcion">{{ dote.Descripcion }}</p>
+        <div class="descripcion">
+            <BloqueTextoComplejo :dato="regla.descripciones"></BloqueTextoComplejo>
+        </div>
+        <p v-if="regla.origen"><strong>Origen: </strong>{{ regla.origen }}</p>
     </div>
+
     <div v-else class="seleccionado">
         <p>Cargando...</p>
     </div>
@@ -16,8 +17,17 @@
 <script setup>
 defineProps([
     'datosCargados',
-    'dote'
+    'regla'
 ]);
+
+import BloqueTextoComplejo from '../BloqueTextoComplejo.vue';
+
+function mostrarTipos(tipos) {
+    if (!Array.isArray(tipos)) return '';
+    if (tipos.length === 0) return '';
+    if (tipos.length === 1) return tipos[0];
+    return tipos.slice(0, -1).join(', ') + ' y ' + tipos[tipos.length - 1];
+}
 </script>
 
 
@@ -26,6 +36,7 @@ defineProps([
     margin-top: 40px;
     width: 40%;
     height: fit-content;
+    max-height: 70vh;
     background-color: white;
     border: 1px solid #e5e7eb;
     border-radius: 0.75rem;
@@ -35,6 +46,8 @@ defineProps([
         2px 2px 10px rgba(0, 0, 0, 0.1),
         -2px -2px 10px rgba(0, 0, 0, 0.1);
     padding: 1.5rem;
+    overflow-y: scroll;
+    scrollbar-width: thin;
 }
 
 .descripcion {
