@@ -1,0 +1,256 @@
+/* CSS Compacto para AdminPokemonAbilities.vue */
+
+.admin-pokemon-abilities {
+  background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 24px;
+  margin: 20px 0;
+  border: 1px solid #e9ecef;
+}
+
+.compact-heading {
+  margin: 0 0 15px;
+  font-size: 1.1rem;
+  color: #e3350d;
+  border-bottom: 2px solid #e3350d;
+  padding-bottom: 5px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.loading-abilities, .error-message {
+  padding: 10px;
+  border-radius: 4px;
+  text-align: center;
+  margin: 10px 0;
+}
+
+.loading-abilities {
+  background: #f0f8ff;
+  color: #0066cc;
+}
+
+.error-message {
+  background: #ffe6e6;
+  color: #cc0000;
+}
+
+.abilities-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.ability-section {
+  background: #f8f9fa;
+  border-radius: 6px;
+  padding: 15px;
+  border: 1px solid #e9ecef;
+}
+
+.ability-section h4 {
+  margin: 0 0 12px;
+  color: #e3350d;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.form-group {
+  margin-bottom: 12px;
+}
+
+.form-group:last-child {
+  margin-bottom: 0;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  color: #2c3e50;
+  font-size: 0.85rem;
+  margin-bottom: 5px;
+}
+
+.search-select {
+  position: relative;
+  width: 100%;
+}
+
+.search-input {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  box-sizing: border-box;
+  transition: border-color 0.2s;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #e3350d;
+  box-shadow: 0 0 0 3px rgba(227, 53, 13, 0.15);
+  transform: translateY(-1px);
+}
+
+.dropdown-wrapper {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  margin-top: 2px;
+}
+
+.dropdown-container {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+  max-height: 220px;
+  overflow-y: auto;
+  backdrop-filter: blur(10px);
+}
+
+.dropdown-item {
+  padding: 8px 12px;
+  cursor: pointer;
+  border-bottom: 1px solid #f0f0f0;
+  transition: background-color 0.2s;
+}
+
+.dropdown-item:hover {
+  background: #f8f9fa;
+}
+
+.dropdown-item.selected {
+  background: #e9ecef;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.dropdown-item:last-child {
+  border-bottom: none;
+}
+
+.ability-name {
+  font-weight: 600;
+  color: #2c3e50;
+  font-size: 0.9rem;
+}
+
+.ability-description {
+  font-size: 0.8rem;
+  color: #666;
+  margin-top: 2px;
+  line-height: 1.3;
+}
+
+.no-results {
+  padding: 12px;
+  text-align: center;
+  color: #666;
+  font-style: italic;
+  font-size: 0.85rem;
+}
+
+.selected-ability {
+  margin-top: 10px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  border: 1px solid #dee2e6;
+  border-radius: 6px;
+  padding: 12px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  transition: all 0.2s ease;
+}
+
+.ability-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.ability-header .ability-name {
+  font-weight: 600;
+  color: #e3350d;
+  font-size: 0.9rem;
+}
+
+.clear-button {
+  background: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  width: 22px;
+  height: 22px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+.clear-button:hover {
+  background: #c82333;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+.ability-details {
+  font-size: 0.85rem;
+}
+
+.ability-table {
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+.ability-table td {
+  padding: 2px 8px 2px 0;
+  vertical-align: top;
+}
+
+.ability-label {
+  font-weight: 600;
+  color: #495057;
+  min-width: 80px;
+}
+
+.ability-info .ability-description {
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid #e9ecef;
+}
+
+.ability-info .ability-description p {
+  margin: 0;
+  line-height: 1.4;
+  color: #495057;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .admin-pokemon-abilities {
+    padding: 15px;
+    margin: 10px 0;
+  }
+  
+  .ability-section {
+    padding: 12px;
+  }
+  
+  .compact-heading {
+    font-size: 1rem;
+  }
+  
+  .ability-section h4 {
+    font-size: 0.9rem;
+  }
+}
