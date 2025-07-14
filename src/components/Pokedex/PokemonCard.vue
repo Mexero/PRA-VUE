@@ -1,41 +1,32 @@
 <template>
-  <div 
-    class="pokemon-card"
-    :class="[`type-${normalizeType(pokemon.Tipo_primario)}`]"
-    @click="$emit('show-details', pokemon)"
-  >
-    <div class="pokemon-number">#{{ pokemon.Numero_pokedex.substring(1) }}</div>
-    <h4>{{ pokemon.Especie }}</h4>
-    <img 
-      :src="`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${parseInt(pokemon.Numero_pokedex.substring(1))}.png`"
-      :alt="pokemon.Especie"
-      class="pokemon-image"
-      @error="$emit('image-error')"
-    />
+  <div class="pokemon-card" @click="$emit('show-details', pokemon.especie)">
+    <div class="pokemon-number">#{{ pokemon.numPokedex.substring(1) }}</div>
+    <h4>{{ pokemon.especie }}</h4>
+    <img
+      :src="`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${parseInt(pokemon.numPokedex.substring(1))}.png`"
+      :alt="pokemon.especie" class="pokemon-image" @error="$emit('image-error')" />
     <div class="pokemon-info">
       <div class="types">
-        <span class="type-badge" :class="`type-${normalizeType(pokemon.Tipo_primario)}`">{{ pokemon.Tipo_primario }}</span>
-        <span v-if="pokemon.Tipo_secundario && pokemon.Tipo_secundario !== 'Ninguno'" class="type-badge" :class="`type-${normalizeType(pokemon.Tipo_secundario)}`">{{ pokemon.Tipo_secundario }}</span>
+        <span class="type-badge" :class="`type-${normalizeType(pokemon.tipos[0])}`">{{ pokemon.tipos[0] }}</span>
+        <span v-if="pokemon.tipos.length > 1" class="type-badge" :class="`type-${normalizeType(pokemon.tipos[1])}`">{{
+          pokemon.tipos[1] }}</span>
       </div>
     </div>
   </div>
 </template>
 
-<script>
-export default {
-  name: 'PokemonCard',
-  props: {
-    pokemon: {
-      type: Object,
-      required: true
-    }
-  },
-  methods: {
-    normalizeType(type) {
-      return type.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
-    }
-  },
-  emits: ['show-details', 'image-error']
+<script setup>
+const props = defineProps({
+  pokemon: {
+    type: Object,
+    required: true
+  }
+});
+
+const emit = defineEmits(['show-details', 'image-error']);
+
+const normalizeType = (type) => {
+  return type.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
 };
 </script>
 
@@ -152,25 +143,81 @@ export default {
 }
 
 /* Type-based colors */
-.type-fuego { background-color: #ff7b00; }
-.type-agua { background-color: #6890f0; }
-.type-planta { background-color: #78c850; }
-.type-electrico { background-color: #f8d030; }
-.type-hielo { background-color: #98d8d8; }
-.type-lucha { background-color: #c03028; }
-.type-veneno { background-color: #a040a0; }
-.type-tierra { background-color: #e0c068; }
-.type-volador { background-color: #a890f0; }
-.type-psiquico { background-color: #f85888; }
-.type-bicho { background-color: #a8b820; }
-.type-roca { background-color: #b8a038; }
-.type-fantasma { background-color: #705898; }
-.type-dragon { background-color: #7038f8; }
-.type-acero { background-color: #b8b8d0; }
-.type-hada { background-color: #ee99ac; }
-.type-normal { background-color: #a8a878; }
-.type-siniestro { background-color: #705746; }
-.type-variable { background-color: #9370DB; }
+.type-fuego {
+  background-color: #ff7b00;
+}
+
+.type-agua {
+  background-color: #6890f0;
+}
+
+.type-planta {
+  background-color: #78c850 !important;
+}
+
+.type-electrico {
+  background-color: #f8d030;
+}
+
+.type-hielo {
+  background-color: #98d8d8;
+}
+
+.type-lucha {
+  background-color: #c03028;
+}
+
+.type-veneno {
+  background-color: #a040a0;
+}
+
+.type-tierra {
+  background-color: #e0c068;
+}
+
+.type-volador {
+  background-color: #a890f0;
+}
+
+.type-psiquico {
+  background-color: #f85888;
+}
+
+.type-bicho {
+  background-color: #a8b820;
+}
+
+.type-roca {
+  background-color: #b8a038;
+}
+
+.type-fantasma {
+  background-color: #705898;
+}
+
+.type-dragon {
+  background-color: #7038f8;
+}
+
+.type-acero {
+  background-color: #b8b8d0;
+}
+
+.type-hada {
+  background-color: #ee99ac;
+}
+
+.type-normal {
+  background-color: #a8a878;
+}
+
+.type-siniestro {
+  background-color: #705746;
+}
+
+.type-variable {
+  background-color: #9370DB;
+}
 
 /* Estilos para el nombre del Pokémon */
 .pokemon-card h4 {

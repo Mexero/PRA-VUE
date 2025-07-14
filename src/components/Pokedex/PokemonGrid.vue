@@ -1,259 +1,136 @@
 <template>
   <div class="pokemon-container">
     <div class="filters-container">
-      <SearchFilter v-model="searchTerm" />
-      <TypeFilter 
-        :types="availableTypes"
-        :selected-types="selectedTypes"
-        @toggle-type="toggleTypeFilter"
-      />
+      <SearchFilter @manejar-filtros="manejarFiltros" :searchTerm="searchTerm" />
+      <TypeFilter :types="tipos" :selected-types="selectedTypes" @manejar-filtros="manejarFiltros" />
     </div>
-    <div v-if="error" class="error-message">
-      {{ error }}
-    </div>
-    <div v-else-if="loading" class="loading-message">
+    <div v-if="!pokedexCargada" class="loading-message">
       Cargando Pokémon...
     </div>
     <div v-else class="pokemon-grid">
-      <div v-if="filteredPokemons.length === 0" class="no-pokemon-message">
+      <div v-if="filteredPokedex.length === 0" class="no-pokemon-message">
         No se encontraron Pokémon con ese nombre
       </div>
-      <PokemonCard
-        v-for="pokemon in filteredPokemons"
-        :key="pokemon.numero_pokedex"
-        :pokemon="pokemon"
-        @show-details="showPokemonDetails"
-        @show-ability="showAbilityInfo"
-        @image-error="handleImageError"
-      />
-      <div v-if="pokemons.length === 0" class="no-pokemon-message">
+      <PokemonCard v-for="pokemon in filteredPokedex" :pokemon="pokemon" @show-details="showPokemonDetails"
+        @image-error="handleImageError" />
+      <div v-if="pokedex.length === 0" class="no-pokemon-message">
         No se encontraron Pokémon
       </div>
-    </div>
-    
-    <!-- Controles de paginación -->
-    <div class="pagination-controls" v-if="totalPages > 1">
-      <button 
-        @click="currentPage = 1" 
-        :disabled="currentPage === 1"
-        class="pagination-button"
-      >
-        &laquo;
-      </button>
-      <button 
-        @click="currentPage--" 
-        :disabled="currentPage === 1"
-        class="pagination-button"
-      >
-        &lsaquo;
-      </button>
-      <span class="pagination-info">Página {{ currentPage }} de {{ totalPages }}</span>
-      <button 
-        @click="currentPage++" 
-        :disabled="currentPage === totalPages"
-        class="pagination-button"
-      >
-        &rsaquo;
-      </button>
-      <button 
-        @click="currentPage = totalPages" 
-        :disabled="currentPage === totalPages"
-        class="pagination-button"
-      >
-        &raquo;
-      </button>
     </div>
   </div>
 </template>
 
-<script>
-import axios from 'axios';
-import SearchFilter from './SearchFilter.vue';
-import TypeFilter from './TypeFilter.vue';
-import PokemonCard from './PokemonCard.vue';
+<script setup>
+import { ref, computed, watch } from 'vue';
+import { useRoute, useRouter } from "vue-router";
 
-export default {
-  name: 'PokemonGrid',
-  components: {
-    SearchFilter,
-    TypeFilter,
-    PokemonCard
-  },
-  data() {
-    return {
-      pokemons: [],
-      loading: true,
-      error: null,
-      showModal: false,
-      selectedAbility: '',
-      abilityInfo: null,
-      searchTerm: '',
-      selectedTypes: [],
-      currentPage: 1,
-      itemsPerPage: 12
-    };
-  },
-  created() {
-    this.fetchPokemons();
-  },
-  watch: {
-    searchTerm() {
-      // Reiniciar a la primera página cuando cambia el término de búsqueda
-      this.currentPage = 1;
-    },
-    selectedTypes: {
-      handler() {
-        // Reiniciar a la primera página cuando cambian los tipos seleccionados
-        this.currentPage = 1;
-      },
-      deep: true
-    }
-  },
-  computed: {
-    filteredPokemons() {
-      if (!Array.isArray(this.pokemons)) {
-        return [];
-      }
-      
-      // Filtrar por nombre y tipos
-      const filtered = this.pokemons.filter(pokemon => {
-        const matchesName = !this.searchTerm || 
-          pokemon.Especie.toLowerCase().includes(this.searchTerm.toLowerCase().trim());
+import SearchFilter from '@/components/Pokedex/SearchFilter.vue';
+import TypeFilter from '@/components/Pokedex/TypeFilter.vue';
+import PokemonCard from '@/components/Pokedex/PokemonCard.vue';
 
-        if (this.selectedTypes.length === 0) {
-          return matchesName;
-        }
+const route = useRoute();
+const router = useRouter();
 
-        const pokemonTypes = [
-          pokemon.Tipo_primario,
-          pokemon.Tipo_secundario
-        ].filter(type => type && type !== 'Ninguno');
+const props = defineProps([
+  'pokedex',
+  'pokedexCargada',
+  'selectedPokemon'
+])
 
-        const matchesTypes = this.selectedTypes.every(type => pokemonTypes.includes(type));
+const emit = defineEmits(['show-details'])
 
-        return matchesName && matchesTypes;
-      });
-      
-      // Aplicar paginación
-      const startIndex = (this.currentPage - 1) * this.itemsPerPage;
-      const endIndex = startIndex + this.itemsPerPage;
-      return filtered.slice(startIndex, endIndex);
-    },
-    totalPages() {
-      if (!Array.isArray(this.pokemons)) {
-        return 0;
-      }
-      
-      // Calcular el total de páginas basado en los Pokémon filtrados
-      const filtered = this.pokemons.filter(pokemon => {
-        const matchesName = !this.searchTerm || 
-          pokemon.Especie.toLowerCase().includes(this.searchTerm.toLowerCase().trim());
+//Datos
+const tipos = ["Acero", "Agua", "Bicho", "Dragón", "Eléctrico", "Fantasma", "Fuego", "Hada", "Hielo", "Lucha", "Normal", "Planta", "Psíquico", "Roca", "Siniestro", "Tierra", "Veneno", "Volador"]
 
-        if (this.selectedTypes.length === 0) {
-          return matchesName;
-        }
+// Filtros
+const searchTerm = ref(route.query.busqueda ?? null)
+const selectedTypes = ref(route.query.tipos ?? [])
 
-        const pokemonTypes = [
-          pokemon.Tipo_primario,
-          pokemon.Tipo_secundario
-        ].filter(type => type && type !== 'Ninguno');
-
-        const matchesTypes = this.selectedTypes.every(type => pokemonTypes.includes(type));
-
-        return matchesName && matchesTypes;
-      });
-      
-      return Math.ceil(filtered.length / this.itemsPerPage);
-    },
-    availableTypes() {
-      const types = new Set();
-      if (Array.isArray(this.pokemons)) {
-        this.pokemons.forEach(pokemon => {
-          types.add(pokemon.Tipo_primario);
-          if (pokemon.Tipo_secundario && pokemon.Tipo_secundario !== 'Ninguno') {
-            types.add(pokemon.Tipo_secundario);
-          }
-        });
-      }
-      return Array.from(types).sort();
-    }
-  },
-  methods: {
-    async fetchPokemons() {
-      try {
-        const response = await axios.get('/api/pokemon');
-        if (Array.isArray(response.data)) {
-          this.pokemons = response.data;
-        } else {
-          console.error('API response is not an array:', response.data);
-          this.pokemons = [];
-          this.error = 'Error: La respuesta de la API no es válida';
-        }
-        this.loading = false;
-      } catch (error) {
-        this.pokemons = [];
-        this.error = 'Error al cargar los Pokémon';
-        this.loading = false;
-        console.error('Error fetching pokemon:', error);
-        if (error.response) {
-          console.error('Error response:', error.response.data);
-        }
-      }
-    },
-    async showAbilityInfo(abilityName) {
-      this.selectedAbility = abilityName;
-      this.showModal = true;
-      this.abilityInfo = null;
-      this.error = null;
-      
-      try {
-        const response = await axios.get('/api/abilities');
-        if (Array.isArray(response.data)) {
-          const ability = response.data.find(a => a.Nombre === abilityName);
-          this.abilityInfo = ability;
-          if (!ability) {
-            this.error = 'No se encontró información para esta habilidad';
-          }
-        } else {
-          console.error('API response is not an array:', response.data);
-          this.error = 'Error: La respuesta de la API no es válida';
-        }
-      } catch (error) {
-        console.error('Error fetching ability info:', error);
-        this.error = 'Error al cargar la información de la habilidad';
-        if (error.response) {
-          console.error('Error response:', error.response.data);
-        }
-      }
-    },
-    closeModal() {
-      this.showModal = false;
-      this.selectedAbility = '';
-      this.abilityInfo = null;
-    },
-    showPokemonDetails(pokemon) {
-      this.$emit('show-details', pokemon);
-    },
-    toggleTypeFilter(type) {
-      const normalizedType = type.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-      const index = this.selectedTypes.findIndex(t => 
-        t.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '') === normalizedType
-      );
-      
-      if (index !== -1) {
-        this.selectedTypes = this.selectedTypes.filter((_, i) => i !== index);
-      } else if (this.selectedTypes.length < 2) {
-        if (!this.selectedTypes.includes(type)) {
-          this.selectedTypes = [...this.selectedTypes, type];
-        }
-      }
-    },
-    handleImageError() {
-      console.error('Error loading Pokemon image');
-    }
+//Modifica filtros
+function manejarFiltros(clave, valor) {
+  switch (clave) {
+    case 'tipos':
+      selectedTypes.value = valor
+      break
+    case 'busqueda':
+      searchTerm.value = valor
+      break
   }
+}
+
+// Limpia filtros
+function limpiarFiltros() {
+  searchTerm.value = null
+  selectedTypes.value = []
+}
+
+//Cambia la ruta
+watch(
+  [
+    () => props.selectedPokemon,
+    searchTerm,
+    selectedTypes,
+  ],
+  () => {
+    router.replace({ query: construirQuery() });
+  },
+  { deep: true }
+);
+
+//Aplica filtros desde la ruta
+watch(
+  () => route.query,
+  (query) => {
+    aplicarQuery(query);
+  },
+  { immediate: true }
+);
+
+function construirQuery() {
+  return {
+    busqueda: searchTerm.value !== '' ? searchTerm.value : undefined,
+    tipos: selectedTypes.value.length ? selectedTypes.value.join(',') : undefined,
+    seleccionado: props.selectedPokemon ?? undefined,
+  };
+}
+
+function aplicarQuery(query) {
+  searchTerm.value = query.busqueda ?? null
+  selectedTypes.value = query.tipos ? query.tipos.split(',').slice(0, 2) : []
+  props.selectedPokemon = query.seleccionado ?? null
+}
+
+function filtroTipo(poke) {
+  let filtrado = true
+  for (const tipo of selectedTypes.value) {
+    if (!poke.tipos.find(t => t === tipo)) filtrado = false
+  }
+  return filtrado
+}
+
+// ========================= APLICAR FILTROS ===========================
+const filteredPokedex = computed(() => {
+  return props.pokedex.filter((poke) => {
+    const especie = poke.especie.toLowerCase();
+
+    return (
+      filtroTipo(poke) &&
+      (!searchTerm.value || searchTerm.value === '' || especie.includes(searchTerm.value.toLowerCase()))
+    );
+  });
+});
+
+
+const showPokemonDetails = (pokemon) => {
+  emit('show-details', pokemon)
 };
+
+const handleImageError = () => {
+  console.error('Error loading Pokémon image')
+}
+
 </script>
+
 
 <style scoped>
 .pokemon-container {

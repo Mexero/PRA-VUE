@@ -1,21 +1,26 @@
 <script setup>
 import PokemonGrid from '@/components/Pokedex/PokemonGrid.vue'
 import PokemonDetails from '@/components/Pokedex/PokemonDetails.vue'
-import AdminIndex from '@/components/EditorDB/AdminIndex.vue'
-import AdminPokemonEdit from '@/components/EditorDB/AdminPokemonEdit.vue'
-import { ref, computed, onMounted } from 'vue'
+
+import { ref, onMounted } from 'vue'
+
+import worker from '../sqlWorker.js';
 
 const selectedPokemon = ref(null)
+const pokedexCargada = ref(null)
+const pokedex = ref(null)
+
 
 function handlePokemonSelect(pokemon) {
   selectedPokemon.value = pokemon
+  console.log(selectedPokemon)
 }
 
 function findPokemonByName(name) {
   // Buscar el Pokémon por nombre en la lista de Pokémon cargados
   const pokemonGridComponent = document.querySelector('.pokedex-section').__vue__
   if (pokemonGridComponent && pokemonGridComponent.pokemons) {
-    const foundPokemon = pokemonGridComponent.pokemons.find(p => p.Especie === name)
+    const foundPokemon = pokemonGridComponent.pokemons.find(p => p.especie === name)
     if (foundPokemon) {
       handlePokemonSelect(foundPokemon)
     } else {
@@ -32,63 +37,78 @@ function handleAbilityInfo(abilityName) {
   }
 }
 
-// Create a reactive reference to track the current hash
-const currentHash = ref(window.location.hash)
 
-// Computed property to determine the current view based on URL hash
-const currentView = computed(() => {
-  const hash = currentHash.value.toLowerCase()
-  if (hash.startsWith('#/admin/edit/')) {
-    return 'admin-edit'
-  } else if (hash.startsWith('#/admin')) {
-    return 'admin'
-  } else {
-    return 'pokedex'
-  }
-})
+// <================= CARGA INICIAL ==================>
 
-// Add event listener for hash changes to ensure the view updates
-onMounted(() => {
-  window.addEventListener('hashchange', () => {
-    // Update the reactive reference when hash changes
-    currentHash.value = window.location.hash
-    console.log('Hash changed to:', window.location.hash)
+function cargarPokedex() {
+  worker.postMessage({
+    type: 'query',
+    query: 'SELECT Especie, Tipo_primario, Tipo_secundario, Numero_pokedex FROM pokemexe_pokedex',
+    params: [],
+    origin: 'cargarPokedex'
   })
+}
+
+onMounted(async () => {
+  worker.postMessage({ type: 'init' })
+
+  worker.onmessage = (e) => {
+    if (e.data.type === 'ready') {
+      if (!pokedexCargada.value) {
+        cargarPokedex()
+      }
+    }
+    if (e.data.type === 'result') {
+      if (e.data.origin === 'cargarPokedex') {
+        pokedex.value = (e.data.result?.[0]?.values || []).map((row) => ({
+          especie: row[0],
+          tipos: [row[1], row[2]],
+          numPokedex: row[3]
+        }))
+        if (pokedex.value.length > 0) {
+          pokedexCargada.value = true
+        }
+      }
+    }
+    if (e.data.type === 'error') {
+      console.error("Error en SQLite:", e.data.error)
+    }
+  };
 })
+
 </script>
 
 <template>
+  <h1 class="titulo">Pokédex</h1>
   <div class="app">
-    <header>
-      <h1>{{ currentView === 'admin' ? 'Admin Panel' : 'Pokédex' }}</h1>
-      <nav class="main-nav">
-        <a href="#/" :class="{ active: currentView === 'pokedex' }">Pokédex</a>
-        <a href="#/admin" :class="{ active: currentView === 'admin' }">Admin</a>
-      </nav>
-    </header>
     <main>
       <!-- Pokédex View -->
-      <div v-if="currentView === 'pokedex'" class="main-content">
+      <div class="main-content">
         <div class="pokedex-section">
-          <PokemonGrid @show-details="handlePokemonSelect" />
+          <PokemonGrid @show-details="handlePokemonSelect" :pokedex="pokedex" :pokedexCargada="pokedexCargada"
+            :selectedPokemon="selectedPokemon" />
         </div>
         <div class="details-section">
-          <PokemonDetails
+          <!-- <PokemonDetails
             :pokemon="selectedPokemon"
             @show-ability="handleAbilityInfo"
             @show-pokemon-by-name="findPokemonByName"
-          />
+          />-->
         </div>
       </div>
-      
-      <!-- Admin Views -->
-      <AdminIndex v-if="currentView === 'admin'" />
-      <AdminPokemonEdit v-if="currentView === 'admin-edit'" />
     </main>
   </div>
 </template>
 
-<style>
+<style scoped>
+.titulo {
+  letter-spacing: 5px;
+  font-family: "Staatliches", sans-serif;
+  color: var(--color-texto);
+  font-size: 50px;
+  padding: 10px 0 0px 2%;
+}
+
 .app {
   max-width: 100%;
   margin: 0 auto;
@@ -103,10 +123,10 @@ onMounted(() => {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('../public/fondo.svg');
+  /*background-image: url('../public/fondo.svg');
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat;*/
   filter: invert(100%);
   opacity: 0.8;
   z-index: -999;
@@ -191,7 +211,7 @@ main {
   .main-content {
     flex-direction: column;
   }
-  
+
   .pokedex-section,
   .details-section {
     flex: none;
@@ -203,7 +223,7 @@ main {
   .main-content {
     flex-direction: column;
   }
-  
+
   .pokedex-section,
   .details-section {
     flex: auto;
