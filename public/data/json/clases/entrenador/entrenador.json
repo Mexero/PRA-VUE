@@ -21,11 +21,11 @@
             "Dado de Orden",
             [
                 "Entrenamientos",
-                "RUTAENTRENAMIENTOS"
+                "/reglas?tipo=Entrenamiento&seleccionado=A+tope!"
             ],
             [
                 "Órdenes",
-                "RUTAORDENES"
+                "/reglas?tipo=Orden+de+Entrenador&seleccionado=%E2%80%9C%C2%A1Ve+all%C3%AD!%E2%80%9D"
             ]
         ],
         "filas": [
@@ -364,7 +364,17 @@
             "claseNombre": "Entrenador",
             "nivel": 1,
             "descripcion": [
-                "A partir de nivel 1, tienes un entendimiento superior al de la media del combate. Cada vez que das una Orden a un Pokémon a menos de 10 metros de ti, puedes gastar 1 PP y tu Acción para dar una <strong>Orden de Entrenador</strong>, que hacen que la orden que le has dado tenga efectos especiales. Conoces 3 Órdenes de Entrenador de la Lista de Órdenes de Entrenador que puedes encontrar más adelante y a niveles superiores aprendes más Órdenes de Entrenador.",
+                {
+                    "tipo": "pLink",
+                    "partes": [
+                        {
+                            "previo": "A partir de nivel 1, tienes un entendimiento superior al de la media del combate. Cada vez que das una Orden a un Pokémon a menos de 10 metros de ti, puedes gastar 1 PP y tu Acción para dar una <strong>Orden de Entrenador</strong>, que hacen que la orden que le has dado tenga efectos especiales. Conoces 3 Órdenes de Entrenador de la Lista de ",
+                            "ancla": "/reglas?tipo=Orden+de+Entrenador&seleccionado=%E2%80%9C%C2%A1Ve+all%C3%AD!%E2%80%9D",
+                            "anclaContenido": "Órdenes de Entrenador",
+                            "final": " y a niveles superiores aprendes más Órdenes de Entrenador."
+                        }
+                    ]
+                },
                 "La primera vez en el turno en el que un Pokémon al que has dado una Orden de Entrenador hace daño a otra criatura con Movimiento, lanzas un dado que se añade al daño del Movimiento. Este dado es tu Dado de Orden, que es un d6 y aumenta tal y como puedes ver en la tabla resumen de la Clase.",
                 "Además, algunas órdenes dicen que tiras un Dado de Orden en ciertas situaciones y otras hablan de que las Tiradas de Ataque Naturales deben alcanzar tu <strong>Rango de Orden</strong>. Esto significa que la Tirada Natural debe ser mayor o igual a 21 menos tu Bono de Entrenador."
             ]
@@ -383,7 +393,17 @@
             "claseNombre": "Entrenador",
             "nivel": 2,
             "descripcion": [
-                "A Nivel 2, sabes cómo preparar a tus Pokémon para los desafíos que os deparan para el día. Una vez al día y como Acción Extendida, puedes entrenar a una a los Pokémon que llevas contigo igual para potenciarlos hasta que los Pokémon Descansen. Aprendes 2 Entrenamientos (puedes encontrarlos al final de la clase en la Lista de Entrenamientos). Puedes cambiar uno de tus Entrenamientos cada vez que subes de Nivel."
+                {
+                    "tipo": "pLink",
+                    "partes": [
+                        {
+                            "previo": "A Nivel 2, sabes cómo preparar a tus Pokémon para los desafíos que os deparan para el día. Una vez al día y como Acción Extendida, puedes entrenar a una a los Pokémon que llevas contigo igual para potenciarlos hasta que los Pokémon Descansen. Aprendes 2 ",
+                            "ancla": "/reglas?tipo=Entrenamiento&seleccionado=A+tope!",
+                            "anclaContenido": "Entrenamientos",
+                            "final": ". Puedes cambiar uno de tus Entrenamientos cada vez que subes de Nivel."
+                        }
+                    ]
+                }
             ]
         },
         {

@@ -3613,5 +3613,7140 @@
         "nombre": "Movimiento de Tipo Elemental",
         "ruta": "/movz?especie=de+tipo+elemental",
         "tipo": "Tipo de Movimiento Z"
+    },
+    {
+        "nombre": "Regla",
+        "ruta": "/reglas?tipo=Regla",
+        "tipo": "Tipo de Regla"
+    },
+    {
+        "nombre": "Regla variante",
+        "ruta": "/reglas?tipo=Regla+variante",
+        "tipo": "Tipo de Regla"
+    },
+    {
+        "nombre": "Término",
+        "ruta": "/reglas?tipo=Término",
+        "tipo": "Tipo de Regla"
+    },
+    {
+        "nombre": "Clase",
+        "ruta": "/reglas?tipo=Clase",
+        "tipo": "Tipo de Regla"
+    },
+    {
+        "nombre": "Subclase",
+        "ruta": "/reglas?tipo=Subclase",
+        "tipo": "Tipo de Regla"
+    },
+    {
+        "nombre": "Estado",
+        "ruta": "/reglas?tipo=Estado",
+        "tipo": "Tipo de Regla"
+    },
+    {
+        "nombre": "Tirada de Habilidad",
+        "ruta": "/reglas?tipo=Tirada+de+Habilidad",
+        "tipo": "Tipo de Regla"
+    },
+    {
+        "nombre": "Entrenador",
+        "ruta": "/reglas?tipo=Entrenador",
+        "tipo": "Tipo de Regla"
+    },
+    {
+        "nombre": "Orden de Entrenador",
+        "ruta": "/reglas?tipo=Orden+de+Entrenador",
+        "tipo": "Tipo de Regla"
+    },
+    {
+        "nombre": "Entrenamiento",
+        "ruta": "/reglas?tipo=Entrenamiento",
+        "tipo": "Tipo de Regla"
+    },
+    {
+        "nombre": "Inventor",
+        "ruta": "/reglas?tipo=Inventor",
+        "tipo": "Tipo de Regla"
+    },
+    {
+        "nombre": "Invención",
+        "ruta": "/reglas?tipo=Invención",
+        "tipo": "Tipo de Regla"
+    },
+    {
+        "nombre": "Velocidad",
+        "ruta": "/reglas?tipo=Velocidad",
+        "tipo": "Tipo de Regla"
+    },
+    {
+        "nombre": "Sentido",
+        "ruta": "/reglas?tipo=Sentido",
+        "tipo": "Tipo de Regla"
+    },
+    {
+        "nombre": "Clima",
+        "ruta": "/reglas?tipo=Clima",
+        "tipo": "Tipo de Regla"
+    },
+    {
+        "nombre": "Campo",
+        "ruta": "/reglas?tipo=Campo",
+        "tipo": "Tipo de Regla"
+    },
+    {
+        "nombre": "Regla de DJ",
+        "ruta": "/reglas?tipo=Regla+de+DJ",
+        "tipo": "Tipo de Regla"
+    },
+    {
+        "nombre": "Pokémon especiales",
+        "ruta": "/reglas?tipo=Pokémon+especiales",
+        "tipo": "Tipo de Regla"
+    },
+    {
+        "nombre": "Efecto ambiental",
+        "ruta": "/reglas?tipo=Efecto+ambiental",
+        "tipo": "Tipo de Regla"
+    },
+    {
+        "nombre": "“¡Ve allí!”",
+        "ruta": "/reglas?seleccionado=“¡Ve+allí!”",
+        "tipo": "Orden de Entrenador"
+    },
+    {
+        "nombre": "“¡Muévete con cuidado!”",
+        "ruta": "/reglas?seleccionado=“¡Muévete+con+cuidado!”",
+        "tipo": "Orden de Entrenador"
+    },
+    {
+        "nombre": "“¡Atento a sus movimientos!”",
+        "ruta": "/reglas?seleccionado=“¡Atento+a+sus+movimientos!”",
+        "tipo": "Orden de Entrenador"
+    },
+    {
+        "nombre": "“¡En el punto débil!”",
+        "ruta": "/reglas?seleccionado=“¡En+el+punto+débil!”",
+        "tipo": "Orden de Entrenador"
+    },
+    {
+        "nombre": "“¡No permitas que te afecte!”",
+        "ruta": "/reglas?seleccionado=“¡No+permitas+que+te+afecte!”",
+        "tipo": "Orden de Entrenador"
+    },
+    {
+        "nombre": "“¡Mándalo a volar!”",
+        "ruta": "/reglas?seleccionado=“¡Mándalo+a+volar!”",
+        "tipo": "Orden de Entrenador"
+    },
+    {
+        "nombre": "“¡Distráelo!”",
+        "ruta": "/reglas?seleccionado=“¡Distráelo!”",
+        "tipo": "Orden de Entrenador"
+    },
+    {
+        "nombre": "“¡No dejes que ataque a tus compañeros!”",
+        "ruta": "/reglas?seleccionado=“¡No+dejes+que+ataque+a+tus+compañeros!”",
+        "tipo": "Orden de Entrenador"
+    },
+    {
+        "nombre": "“¡Agárralo!”",
+        "ruta": "/reglas?seleccionado=“¡Agárralo!”",
+        "tipo": "Orden de Entrenador"
+    },
+    {
+        "nombre": "“¡Desde atrás!”",
+        "ruta": "/reglas?seleccionado=“¡Desde+atrás!”",
+        "tipo": "Orden de Entrenador"
+    },
+    {
+        "nombre": "“¡Derríbalo!”",
+        "ruta": "/reglas?seleccionado=“¡Derríbalo!”",
+        "tipo": "Orden de Entrenador"
+    },
+    {
+        "nombre": "“¡Créales una apertura!”",
+        "ruta": "/reglas?seleccionado=“¡Créales+una+apertura!”",
+        "tipo": "Orden de Entrenador"
+    },
+    {
+        "nombre": "¡Puedes con esto y más!”",
+        "ruta": "/reglas?seleccionado=¡Puedes+con+esto+y+más!”",
+        "tipo": "Orden de Entrenador"
+    },
+    {
+        "nombre": "“¡Haz un barrido!”",
+        "ruta": "/reglas?seleccionado=“¡Haz+un+barrido!”",
+        "tipo": "Orden de Entrenador"
+    },
+    {
+        "nombre": "“¡Ralentízalo!”",
+        "ruta": "/reglas?seleccionado=“¡Ralentízalo!”",
+        "tipo": "Orden de Entrenador"
+    },
+    {
+        "nombre": "“¡Bloquea su vista”",
+        "ruta": "/reglas?seleccionado=“¡Bloquea+su+vista”",
+        "tipo": "Orden de Entrenador"
+    },
+    {
+        "nombre": "¡Nada puede dañarte!",
+        "ruta": "/reglas?seleccionado=¡Nada+puede+dañarte!",
+        "tipo": "Orden de Entrenador"
+    },
+    {
+        "nombre": "¡Deja los problemas fluir!",
+        "ruta": "/reglas?seleccionado=¡Deja+los+problemas+fluir!",
+        "tipo": "Orden de Entrenador"
+    },
+    {
+        "nombre": "“Déjalos pegados”",
+        "ruta": "/reglas?seleccionado=“Déjalos+pegados”",
+        "tipo": "Orden de Entrenador"
+    },
+    {
+        "nombre": "“¡Destrúyelos!”",
+        "ruta": "/reglas?seleccionado=“¡Destrúyelos!”",
+        "tipo": "Orden de Entrenador"
+    },
+    {
+        "nombre": "¡Aumenta tu voltaje!",
+        "ruta": "/reglas?seleccionado=¡Aumenta+tu+voltaje!",
+        "tipo": "Orden de Entrenador"
+    },
+    {
+        "nombre": "¡Agota su espíritu!",
+        "ruta": "/reglas?seleccionado=¡Agota+su+espíritu!",
+        "tipo": "Orden de Entrenador"
+    },
+    {
+        "nombre": "¡Arde como tu espíritu!",
+        "ruta": "/reglas?seleccionado=¡Arde+como+tu+espíritu!",
+        "tipo": "Orden de Entrenador"
+    },
+    {
+        "nombre": "¡Demuéstrales tu belleza!",
+        "ruta": "/reglas?seleccionado=¡Demuéstrales+tu+belleza!",
+        "tipo": "Orden de Entrenador"
+    },
+    {
+        "nombre": "¡Congélalo todo!",
+        "ruta": "/reglas?seleccionado=¡Congélalo+todo!",
+        "tipo": "Orden de Entrenador"
+    },
+    {
+        "nombre": "¡Golpéalo en cadena!",
+        "ruta": "/reglas?seleccionado=¡Golpéalo+en+cadena!",
+        "tipo": "Orden de Entrenador"
+    },
+    {
+        "nombre": "¡Eres puro potencial!",
+        "ruta": "/reglas?seleccionado=¡Eres+puro+potencial!",
+        "tipo": "Orden de Entrenador"
+    },
+    {
+        "nombre": "¡Drena sus energías",
+        "ruta": "/reglas?seleccionado=¡Drena+sus+energías",
+        "tipo": "Orden de Entrenador"
+    },
+    {
+        "nombre": "¡Usa el poder de tu psique!",
+        "ruta": "/reglas?seleccionado=¡Usa+el+poder+de+tu+psique!",
+        "tipo": "Orden de Entrenador"
+    },
+    {
+        "nombre": "¡Invoca rocas!",
+        "ruta": "/reglas?seleccionado=¡Invoca+rocas!",
+        "tipo": "Orden de Entrenador"
+    },
+    {
+        "nombre": "¡Enséñales el verdadero terror!",
+        "ruta": "/reglas?seleccionado=¡Enséñales+el+verdadero+terror!",
+        "tipo": "Orden de Entrenador"
+    },
+    {
+        "nombre": "¡Entiérralos!",
+        "ruta": "/reglas?seleccionado=¡Entiérralos!",
+        "tipo": "Orden de Entrenador"
+    },
+    {
+        "nombre": "¡Hazlos enfermar!",
+        "ruta": "/reglas?seleccionado=¡Hazlos+enfermar!",
+        "tipo": "Orden de Entrenador"
+    },
+    {
+        "nombre": "¡Sal volando!",
+        "ruta": "/reglas?seleccionado=¡Sal+volando!",
+        "tipo": "Orden de Entrenador"
+    },
+    {
+        "nombre": "“¡Impúlsate!”",
+        "ruta": "/reglas?seleccionado=“¡Impúlsate!”",
+        "tipo": "Orden de Entrenador"
+    },
+    {
+        "nombre": "A tope!",
+        "ruta": "/reglas?seleccionado=A+tope!",
+        "tipo": "Entrenamiento"
+    },
+    {
+        "nombre": "¡Aguante sin par!",
+        "ruta": "/reglas?seleccionado=¡Aguante+sin+par!",
+        "tipo": "Entrenamiento"
+    },
+    {
+        "nombre": "¡Potencia devastadora!",
+        "ruta": "/reglas?seleccionado=¡Potencia+devastadora!",
+        "tipo": "Entrenamiento"
+    },
+    {
+        "nombre": "¡Aprovecha tu talento!",
+        "ruta": "/reglas?seleccionado=¡Aprovecha+tu+talento!",
+        "tipo": "Entrenamiento"
+    },
+    {
+        "nombre": "¡Sigue el ritmo!",
+        "ruta": "/reglas?seleccionado=¡Sigue+el+ritmo!",
+        "tipo": "Entrenamiento"
+    },
+    {
+        "nombre": "¡Se intocable!",
+        "ruta": "/reglas?seleccionado=¡Se+intocable!",
+        "tipo": "Entrenamiento"
+    },
+    {
+        "nombre": "¡Movimientos peligrosos!",
+        "ruta": "/reglas?seleccionado=¡Movimientos+peligrosos!",
+        "tipo": "Entrenamiento"
+    },
+    {
+        "nombre": "¡Movimientos ineludibles!",
+        "ruta": "/reglas?seleccionado=¡Movimientos+ineludibles!",
+        "tipo": "Entrenamiento"
+    },
+    {
+        "nombre": "¡Calibra tu precisión!",
+        "ruta": "/reglas?seleccionado=¡Calibra+tu+precisión!",
+        "tipo": "Entrenamiento"
+    },
+    {
+        "nombre": "¡Sed imparables!",
+        "ruta": "/reglas?seleccionado=¡Sed+imparables!",
+        "tipo": "Entrenamiento"
+    },
+    {
+        "nombre": "¡Sed ingeniosos!",
+        "ruta": "/reglas?seleccionado=¡Sed+ingeniosos!",
+        "tipo": "Entrenamiento"
+    },
+    {
+        "nombre": "Sol abrasador",
+        "ruta": "/reglas?seleccionado=Sol+abrasador",
+        "tipo": "Clima"
+    },
+    {
+        "nombre": "Tormenta de arena",
+        "ruta": "/reglas?seleccionado=Tormenta+de+arena",
+        "tipo": "Clima"
+    },
+    {
+        "nombre": "Lluvia",
+        "ruta": "/reglas?seleccionado=Lluvia",
+        "tipo": "Clima"
+    },
+    {
+        "nombre": "Nevada",
+        "ruta": "/reglas?seleccionado=Nevada",
+        "tipo": "Clima"
+    },
+    {
+        "nombre": "Clima",
+        "ruta": "/reglas?seleccionado=Clima",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Campo Eléctrico",
+        "ruta": "/reglas?seleccionado=Campo+Eléctrico",
+        "tipo": "Campo"
+    },
+    {
+        "nombre": "Campo de Hierba",
+        "ruta": "/reglas?seleccionado=Campo+de+Hierba",
+        "tipo": "Campo"
+    },
+    {
+        "nombre": "Campo de Nieba",
+        "ruta": "/reglas?seleccionado=Campo+de+Nieba",
+        "tipo": "Campo"
+    },
+    {
+        "nombre": "Campo Psíquico",
+        "ruta": "/reglas?seleccionado=Campo+Psíquico",
+        "tipo": "Campo"
+    },
+    {
+        "nombre": "Campos",
+        "ruta": "/reglas?seleccionado=Campos",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Visión en la oscuridad",
+        "ruta": "/reglas?seleccionado=Visión+en+la+oscuridad",
+        "tipo": "Sentido"
+    },
+    {
+        "nombre": "Electrorrecepción",
+        "ruta": "/reglas?seleccionado=Electrorrecepción",
+        "tipo": "Sentido"
+    },
+    {
+        "nombre": "Sentido de la vibración",
+        "ruta": "/reglas?seleccionado=Sentido+de+la+vibración",
+        "tipo": "Sentido"
+    },
+    {
+        "nombre": "Ecolocalización",
+        "ruta": "/reglas?seleccionado=Ecolocalización",
+        "tipo": "Sentido"
+    },
+    {
+        "nombre": "Sentido espectral",
+        "ruta": "/reglas?seleccionado=Sentido+espectral",
+        "tipo": "Sentido"
+    },
+    {
+        "nombre": "Sentido del aura",
+        "ruta": "/reglas?seleccionado=Sentido+del+aura",
+        "tipo": "Sentido"
+    },
+    {
+        "nombre": "Sentidos",
+        "ruta": "/reglas?seleccionado=Sentidos",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Sentidos",
+        "ruta": "/reglas?seleccionado=Sentidos",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Estado",
+        "ruta": "/reglas?seleccionado=Estado",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Estado nivelado",
+        "ruta": "/reglas?seleccionado=Estado+nivelado",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Helado",
+        "ruta": "/reglas?seleccionado=Helado",
+        "tipo": "Estado"
+    },
+    {
+        "nombre": "Quemado",
+        "ruta": "/reglas?seleccionado=Quemado",
+        "tipo": "Estado"
+    },
+    {
+        "nombre": "Paralizado",
+        "ruta": "/reglas?seleccionado=Paralizado",
+        "tipo": "Estado"
+    },
+    {
+        "nombre": "Envenenado",
+        "ruta": "/reglas?seleccionado=Envenenado",
+        "tipo": "Estado"
+    },
+    {
+        "nombre": "Dormido",
+        "ruta": "/reglas?seleccionado=Dormido",
+        "tipo": "Estado"
+    },
+    {
+        "nombre": "Confuso",
+        "ruta": "/reglas?seleccionado=Confuso",
+        "tipo": "Estado"
+    },
+    {
+        "nombre": "Infatuado",
+        "ruta": "/reglas?seleccionado=Infatuado",
+        "tipo": "Estado"
+    },
+    {
+        "nombre": "Asustado",
+        "ruta": "/reglas?seleccionado=Asustado",
+        "tipo": "Estado"
+    },
+    {
+        "nombre": "Enfurecido",
+        "ruta": "/reglas?seleccionado=Enfurecido",
+        "tipo": "Estado"
+    },
+    {
+        "nombre": "Acalorado",
+        "ruta": "/reglas?seleccionado=Acalorado",
+        "tipo": "Estado"
+    },
+    {
+        "nombre": "Empapado",
+        "ruta": "/reglas?seleccionado=Empapado",
+        "tipo": "Estado"
+    },
+    {
+        "nombre": "Cegado",
+        "ruta": "/reglas?seleccionado=Cegado",
+        "tipo": "Estado"
+    },
+    {
+        "nombre": "Agarrado",
+        "ruta": "/reglas?seleccionado=Agarrado",
+        "tipo": "Estado"
+    },
+    {
+        "nombre": "Apresado",
+        "ruta": "/reglas?seleccionado=Apresado",
+        "tipo": "Estado"
+    },
+    {
+        "nombre": "Ensordecido",
+        "ruta": "/reglas?seleccionado=Ensordecido",
+        "tipo": "Estado"
+    },
+    {
+        "nombre": "Inconsciente",
+        "ruta": "/reglas?seleccionado=Inconsciente",
+        "tipo": "Estado"
+    },
+    {
+        "nombre": "Sorprendido",
+        "ruta": "/reglas?seleccionado=Sorprendido",
+        "tipo": "Estado"
+    },
+    {
+        "nombre": "Tumbado",
+        "ruta": "/reglas?seleccionado=Tumbado",
+        "tipo": "Estado"
+    },
+    {
+        "nombre": "Atletismo",
+        "ruta": "/reglas?seleccionado=Atletismo",
+        "tipo": "Tirada de Habilidad"
+    },
+    {
+        "nombre": "Combate",
+        "ruta": "/reglas?seleccionado=Combate",
+        "tipo": "Tirada de Habilidad"
+    },
+    {
+        "nombre": "Acrobacias",
+        "ruta": "/reglas?seleccionado=Acrobacias",
+        "tipo": "Tirada de Habilidad"
+    },
+    {
+        "nombre": "Juego de Manos",
+        "ruta": "/reglas?seleccionado=Juego+de+Manos",
+        "tipo": "Tirada de Habilidad"
+    },
+    {
+        "nombre": "Sigilo",
+        "ruta": "/reglas?seleccionado=Sigilo",
+        "tipo": "Tirada de Habilidad"
+    },
+    {
+        "nombre": "Iniciativa",
+        "ruta": "/reglas?seleccionado=Iniciativa",
+        "tipo": "Tirada de Habilidad"
+    },
+    {
+        "nombre": "Investigación",
+        "ruta": "/reglas?seleccionado=Investigación",
+        "tipo": "Tirada de Habilidad"
+    },
+    {
+        "nombre": "Conocimiento",
+        "ruta": "/reglas?seleccionado=Conocimiento",
+        "tipo": "Tirada de Habilidad"
+    },
+    {
+        "nombre": "Empatía",
+        "ruta": "/reglas?seleccionado=Empatía",
+        "tipo": "Tirada de Habilidad"
+    },
+    {
+        "nombre": "Percepción",
+        "ruta": "/reglas?seleccionado=Percepción",
+        "tipo": "Tirada de Habilidad"
+    },
+    {
+        "nombre": "Supervivencia",
+        "ruta": "/reglas?seleccionado=Supervivencia",
+        "tipo": "Tirada de Habilidad"
+    },
+    {
+        "nombre": "Actuación",
+        "ruta": "/reglas?seleccionado=Actuación",
+        "tipo": "Tirada de Habilidad"
+    },
+    {
+        "nombre": "Engaño",
+        "ruta": "/reglas?seleccionado=Engaño",
+        "tipo": "Tirada de Habilidad"
+    },
+    {
+        "nombre": "Intimidación",
+        "ruta": "/reglas?seleccionado=Intimidación",
+        "tipo": "Tirada de Habilidad"
+    },
+    {
+        "nombre": "Persuasión",
+        "ruta": "/reglas?seleccionado=Persuasión",
+        "tipo": "Tirada de Habilidad"
+    },
+    {
+        "nombre": "Trato Pokémon",
+        "ruta": "/reglas?seleccionado=Trato+Pokémon",
+        "tipo": "Tirada de Habilidad"
+    },
+    {
+        "nombre": "Abrojos metálicos",
+        "ruta": "/reglas?seleccionado=Abrojos+metálicos",
+        "tipo": "Invención"
+    },
+    {
+        "nombre": "Bolas de humo",
+        "ruta": "/reglas?seleccionado=Bolas+de+humo",
+        "tipo": "Invención"
+    },
+    {
+        "nombre": "Bolas de humo blanco",
+        "ruta": "/reglas?seleccionado=Bolas+de+humo+blanco",
+        "tipo": "Invención"
+    },
+    {
+        "nombre": "Bolas malas",
+        "ruta": "/reglas?seleccionado=Bolas+malas",
+        "tipo": "Invención"
+    },
+    {
+        "nombre": "Bolas pegajosas",
+        "ruta": "/reglas?seleccionado=Bolas+pegajosas",
+        "tipo": "Invención"
+    },
+    {
+        "nombre": "Bolas ruidosas",
+        "ruta": "/reglas?seleccionado=Bolas+ruidosas",
+        "tipo": "Invención"
+    },
+    {
+        "nombre": "Bombas luminiscentes",
+        "ruta": "/reglas?seleccionado=Bombas+luminiscentes",
+        "tipo": "Invención"
+    },
+    {
+        "nombre": "Calmaesferas",
+        "ruta": "/reglas?seleccionado=Calmaesferas",
+        "tipo": "Invención"
+    },
+    {
+        "nombre": "Toxiestrellas",
+        "ruta": "/reglas?seleccionado=Toxiestrellas",
+        "tipo": "Invención"
+    },
+    {
+        "nombre": "Cápsulas atronadoras",
+        "ruta": "/reglas?seleccionado=Cápsulas+atronadoras",
+        "tipo": "Invención"
+    },
+    {
+        "nombre": "Cápsulas de Potenciación Elemental",
+        "ruta": "/reglas?seleccionado=Cápsulas+de+Potenciación+Elemental",
+        "tipo": "Invención"
+    },
+    {
+        "nombre": "Cápsulas de Protección",
+        "ruta": "/reglas?seleccionado=Cápsulas+de+Protección",
+        "tipo": "Invención"
+    },
+    {
+        "nombre": "Cápsulas de salud",
+        "ruta": "/reglas?seleccionado=Cápsulas+de+salud",
+        "tipo": "Invención"
+    },
+    {
+        "nombre": "Cápsulas de último impulso",
+        "ruta": "/reglas?seleccionado=Cápsulas+de+último+impulso",
+        "tipo": "Invención"
+    },
+    {
+        "nombre": "Cápsulas destellantes",
+        "ruta": "/reglas?seleccionado=Cápsulas+destellantes",
+        "tipo": "Invención"
+    },
+    {
+        "nombre": "Cápsulas Inerciales",
+        "ruta": "/reglas?seleccionado=Cápsulas+Inerciales",
+        "tipo": "Invención"
+    },
+    {
+        "nombre": "Cápsulas Sensoriales",
+        "ruta": "/reglas?seleccionado=Cápsulas+Sensoriales",
+        "tipo": "Invención"
+    },
+    {
+        "nombre": "Aerosol sigilo",
+        "ruta": "/reglas?seleccionado=Aerosol+sigilo",
+        "tipo": "Invención"
+    },
+    {
+        "nombre": "Electrificador",
+        "ruta": "/reglas?seleccionado=Electrificador",
+        "tipo": "Invención"
+    },
+    {
+        "nombre": "Espray bucal",
+        "ruta": "/reglas?seleccionado=Espray+bucal",
+        "tipo": "Invención"
+    },
+    {
+        "nombre": "Flauta Amarilla",
+        "ruta": "/reglas?seleccionado=Flauta+Amarilla",
+        "tipo": "Invención"
+    },
+    {
+        "nombre": "Flauta Blanca",
+        "ruta": "/reglas?seleccionado=Flauta+Blanca",
+        "tipo": "Invención"
+    },
+    {
+        "nombre": "Flauta Negra",
+        "ruta": "/reglas?seleccionado=Flauta+Negra",
+        "tipo": "Invención"
+    },
+    {
+        "nombre": "Flauta Violeta",
+        "ruta": "/reglas?seleccionado=Flauta+Violeta",
+        "tipo": "Invención"
+    },
+    {
+        "nombre": "Lanzabolas",
+        "ruta": "/reglas?seleccionado=Lanzabolas",
+        "tipo": "Invención"
+    },
+    {
+        "nombre": "Pokerádar",
+        "ruta": "/reglas?seleccionado=Pokerádar",
+        "tipo": "Invención"
+    },
+    {
+        "nombre": "Sincromisor",
+        "ruta": "/reglas?seleccionado=Sincromisor",
+        "tipo": "Invención"
+    },
+    {
+        "nombre": "Termopulsor",
+        "ruta": "/reglas?seleccionado=Termopulsor",
+        "tipo": "Invención"
+    },
+    {
+        "nombre": "Vaporizador",
+        "ruta": "/reglas?seleccionado=Vaporizador",
+        "tipo": "Invención"
+    },
+    {
+        "nombre": "Armadura de Batalla",
+        "ruta": "/reglas?seleccionado=Armadura+de+Batalla",
+        "tipo": "Invención"
+    },
+    {
+        "nombre": "Botas de Carreras",
+        "ruta": "/reglas?seleccionado=Botas+de+Carreras",
+        "tipo": "Invención"
+    },
+    {
+        "nombre": "Botas de Movilidad",
+        "ruta": "/reglas?seleccionado=Botas+de+Movilidad",
+        "tipo": "Invención"
+    },
+    {
+        "nombre": "Botas Gruesas",
+        "ruta": "/reglas?seleccionado=Botas+Gruesas",
+        "tipo": "Invención"
+    },
+    {
+        "nombre": "Capa protectora",
+        "ruta": "/reglas?seleccionado=Capa+protectora",
+        "tipo": "Invención"
+    },
+    {
+        "nombre": "Casco dentado",
+        "ruta": "/reglas?seleccionado=Casco+dentado",
+        "tipo": "Invención"
+    },
+    {
+        "nombre": "Chaleco antibalas",
+        "ruta": "/reglas?seleccionado=Chaleco+antibalas",
+        "tipo": "Invención"
+    },
+    {
+        "nombre": "Chaleco asalto",
+        "ruta": "/reglas?seleccionado=Chaleco+asalto",
+        "tipo": "Invención"
+    },
+    {
+        "nombre": "Colector de energía",
+        "ruta": "/reglas?seleccionado=Colector+de+energía",
+        "tipo": "Invención"
+    },
+    {
+        "nombre": "Cubrefauces",
+        "ruta": "/reglas?seleccionado=Cubrefauces",
+        "tipo": "Invención"
+    },
+    {
+        "nombre": "Cubregarras",
+        "ruta": "/reglas?seleccionado=Cubregarras",
+        "tipo": "Invención"
+    },
+    {
+        "nombre": "Cubrepatas",
+        "ruta": "/reglas?seleccionado=Cubrepatas",
+        "tipo": "Invención"
+    },
+    {
+        "nombre": "Cubrepuños",
+        "ruta": "/reglas?seleccionado=Cubrepuños",
+        "tipo": "Invención"
+    },
+    {
+        "nombre": "Cubresuelos",
+        "ruta": "/reglas?seleccionado=Cubresuelos",
+        "tipo": "Invención"
+    },
+    {
+        "nombre": "Gafa protectora",
+        "ruta": "/reglas?seleccionado=Gafa+protectora",
+        "tipo": "Invención"
+    },
+    {
+        "nombre": "Gafas de Visión de Sableye",
+        "ruta": "/reglas?seleccionado=Gafas+de+Visión+de+Sableye",
+        "tipo": "Invención"
+    },
+    {
+        "nombre": "Guantes de boxeo",
+        "ruta": "/reglas?seleccionado=Guantes+de+boxeo",
+        "tipo": "Invención"
+    },
+    {
+        "nombre": "Pieza de armadura ligera",
+        "ruta": "/reglas?seleccionado=Pieza+de+armadura+ligera",
+        "tipo": "Invención"
+    },
+    {
+        "nombre": "Pieza de armadura pesada",
+        "ruta": "/reglas?seleccionado=Pieza+de+armadura+pesada",
+        "tipo": "Invención"
+    },
+    {
+        "nombre": "Replicar amuleto",
+        "ruta": "/reglas?seleccionado=Replicar+amuleto",
+        "tipo": "Invención"
+    },
+    {
+        "nombre": "Ropas térmicas",
+        "ruta": "/reglas?seleccionado=Ropas+térmicas",
+        "tipo": "Invención"
+    },
+    {
+        "nombre": "Supertapones",
+        "ruta": "/reglas?seleccionado=Supertapones",
+        "tipo": "Invención"
+    },
+    {
+        "nombre": "Traje de Alas de Noivern",
+        "ruta": "/reglas?seleccionado=Traje+de+Alas+de+Noivern",
+        "tipo": "Invención"
+    },
+    {
+        "nombre": "Traje de buzo",
+        "ruta": "/reglas?seleccionado=Traje+de+buzo",
+        "tipo": "Invención"
+    },
+    {
+        "nombre": "Paquetes",
+        "ruta": "/reglas?seleccionado=Paquetes",
+        "tipo": "Tipo de Invención"
+    },
+    {
+        "nombre": "Cápsulas",
+        "ruta": "/reglas?seleccionado=Cápsulas",
+        "tipo": "Tipo de Invención"
+    },
+    {
+        "nombre": "Herramientas",
+        "ruta": "/reglas?seleccionado=Herramientas",
+        "tipo": "Tipo de Invención"
+    },
+    {
+        "nombre": "Equipo",
+        "ruta": "/reglas?seleccionado=Equipo",
+        "tipo": "Tipo de Invención"
+    },
+    {
+        "nombre": "Invenciones",
+        "ruta": "/reglas?seleccionado=Invenciones",
+        "tipo": "Invención"
+    },
+    {
+        "nombre": "Redondeo",
+        "ruta": "/reglas?seleccionado=Redondeo",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Las Escenas",
+        "ruta": "/reglas?seleccionado=Las+Escenas",
+        "tipo": "Término"
+    },
+    {
+        "nombre": "Las Acciones",
+        "ruta": "/reglas?seleccionado=Las+Acciones",
+        "tipo": "Término"
+    },
+    {
+        "nombre": "Las Estadísticas",
+        "ruta": "/reglas?seleccionado=Las+Estadísticas",
+        "tipo": "Término"
+    },
+    {
+        "nombre": "Criatura",
+        "ruta": "/reglas?seleccionado=Criatura",
+        "tipo": "Término"
+    },
+    {
+        "nombre": "Tiradas Naturales",
+        "ruta": "/reglas?seleccionado=Tiradas+Naturales",
+        "tipo": "Término"
+    },
+    {
+        "nombre": "Pruebas de d20",
+        "ruta": "/reglas?seleccionado=Pruebas+de+d20",
+        "tipo": "Término"
+    },
+    {
+        "nombre": "Dificultad de una Tirada (CD)",
+        "ruta": "/reglas?seleccionado=Dificultad+de+una+Tirada+(CD)",
+        "tipo": "Término"
+    },
+    {
+        "nombre": "Tipos de Pruebas de d20",
+        "ruta": "/reglas?seleccionado=Tipos+de+Pruebas+de+d20",
+        "tipo": "Término"
+    },
+    {
+        "nombre": "Nivel",
+        "ruta": "/reglas?seleccionado=Nivel",
+        "tipo": "Término"
+    },
+    {
+        "nombre": "Bono de Habilidad",
+        "ruta": "/reglas?seleccionado=Bono+de+Habilidad",
+        "tipo": "Término"
+    },
+    {
+        "nombre": "Grado de Habilidad",
+        "ruta": "/reglas?seleccionado=Grado+de+Habilidad",
+        "tipo": "Término"
+    },
+    {
+        "nombre": "Tiradas de Habilidad Habituales",
+        "ruta": "/reglas?seleccionado=Tiradas+de+Habilidad+Habituales",
+        "tipo": "Término"
+    },
+    {
+        "nombre": "Ventaja y Desventaja",
+        "ruta": "/reglas?seleccionado=Ventaja+y+Desventaja",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Tiradas Enfrentadas",
+        "ruta": "/reglas?seleccionado=Tiradas+Enfrentadas",
+        "tipo": "Término"
+    },
+    {
+        "nombre": "Tiradas en Grupo",
+        "ruta": "/reglas?seleccionado=Tiradas+en+Grupo",
+        "tipo": "Término"
+    },
+    {
+        "nombre": "Trasfondo",
+        "ruta": "/reglas?seleccionado=Trasfondo",
+        "tipo": "Término"
+    },
+    {
+        "nombre": "Clase",
+        "ruta": "/reglas?seleccionado=Clase",
+        "tipo": "Término"
+    },
+    {
+        "nombre": "Puntos de Vida",
+        "ruta": "/reglas?seleccionado=Puntos+de+Vida",
+        "tipo": "Término"
+    },
+    {
+        "nombre": "Vitalidad",
+        "ruta": "/reglas?seleccionado=Vitalidad",
+        "tipo": "Término"
+    },
+    {
+        "nombre": "Puntos de Poder (PP)",
+        "ruta": "/reglas?seleccionado=Puntos+de+Poder+(PP)",
+        "tipo": "Término"
+    },
+    {
+        "nombre": "Clase de Armadura (CA)",
+        "ruta": "/reglas?seleccionado=Clase+de+Armadura+(CA)",
+        "tipo": "Término"
+    },
+    {
+        "nombre": "Reentrenar (Personaje)",
+        "ruta": "/reglas?seleccionado=Reentrenar+(Personaje)",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Movimientos",
+        "ruta": "/reglas?seleccionado=Movimientos",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Mejorar el Daño Base",
+        "ruta": "/reglas?seleccionado=Mejorar+el+Daño+Base",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Los Golpes Críticos",
+        "ruta": "/reglas?seleccionado=Los+Golpes+Críticos",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Bonus de Ataque por Mismo Tipo (STAB)",
+        "ruta": "/reglas?seleccionado=Bonus+de+Ataque+por+Mismo+Tipo+(STAB)",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Movimientos Fuera de Combate",
+        "ruta": "/reglas?seleccionado=Movimientos+Fuera+de+Combate",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Etiquetas",
+        "ruta": "/reglas?seleccionado=Etiquetas",
+        "tipo": "Término"
+    },
+    {
+        "nombre": "Habilidades",
+        "ruta": "/reglas?seleccionado=Habilidades",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Habilidades Comunes",
+        "ruta": "/reglas?seleccionado=Habilidades+Comunes",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Habilidades Legendarias",
+        "ruta": "/reglas?seleccionado=Habilidades+Legendarias",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Habilidades de Transformación",
+        "ruta": "/reglas?seleccionado=Habilidades+de+Transformación",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Dotes",
+        "ruta": "/reglas?seleccionado=Dotes",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Naturalmente Bueno",
+        "ruta": "/reglas?seleccionado=Naturalmente+Bueno",
+        "tipo": "Término"
+    },
+    {
+        "nombre": "Nivel mínimo de aparición",
+        "ruta": "/reglas?seleccionado=Nivel+mínimo+de+aparición",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Movimientos por nivel",
+        "ruta": "/reglas?seleccionado=Movimientos+por+nivel",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Movimientos Enseñables",
+        "ruta": "/reglas?seleccionado=Movimientos+Enseñables",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Naturaleza",
+        "ruta": "/reglas?seleccionado=Naturaleza",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Progresión Pokémon",
+        "ruta": "/reglas?seleccionado=Progresión+Pokémon",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Aprender Movimientos",
+        "ruta": "/reglas?seleccionado=Aprender+Movimientos",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Mejoras de Daño (Pokémon)",
+        "ruta": "/reglas?seleccionado=Mejoras+de+Daño+(Pokémon)",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Mejoras de Estadísticas (Pokémon)",
+        "ruta": "/reglas?seleccionado=Mejoras+de+Estadísticas+(Pokémon)",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Reentrenar (Pokémon)",
+        "ruta": "/reglas?seleccionado=Reentrenar+(Pokémon)",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Evolución",
+        "ruta": "/reglas?seleccionado=Evolución",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Amistad",
+        "ruta": "/reglas?seleccionado=Amistad",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Capturar",
+        "ruta": "/reglas?seleccionado=Capturar",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Restaurar fósiles",
+        "ruta": "/reglas?seleccionado=Restaurar+fósiles",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Reproducción Pokémon. Eclosión de huevos",
+        "ruta": "/reglas?seleccionado=Reproducción+Pokémon.+Eclosión+de+huevos",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Pokémon Variocolor",
+        "ruta": "/reglas?seleccionado=Pokémon+Variocolor",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Poké-Monturas",
+        "ruta": "/reglas?seleccionado=Poké-Monturas",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Megaevolución",
+        "ruta": "/reglas?seleccionado=Megaevolución",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Regresiones Primigenias",
+        "ruta": "/reglas?seleccionado=Regresiones+Primigenias",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Movimientos Z",
+        "ruta": "/reglas?seleccionado=Movimientos+Z",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Dinamax y Gigamax",
+        "ruta": "/reglas?seleccionado=Dinamax+y+Gigamax",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Teracristalización",
+        "ruta": "/reglas?seleccionado=Teracristalización",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "La Iniciativa",
+        "ruta": "/reglas?seleccionado=La+Iniciativa",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Turnos en el combate",
+        "ruta": "/reglas?seleccionado=Turnos+en+el+combate",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Preparar Acción",
+        "ruta": "/reglas?seleccionado=Preparar+Acción",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Dar órdenes",
+        "ruta": "/reglas?seleccionado=Dar+órdenes",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Cambiar de Pokémon",
+        "ruta": "/reglas?seleccionado=Cambiar+de+Pokémon",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Retirar a un Pokémon",
+        "ruta": "/reglas?seleccionado=Retirar+a+un+Pokémon",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Sacar a un Pokémon",
+        "ruta": "/reglas?seleccionado=Sacar+a+un+Pokémon",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Tipos de Ataques",
+        "ruta": "/reglas?seleccionado=Tipos+de+Ataques",
+        "tipo": "Término"
+    },
+    {
+        "nombre": "Usar una cuadrícula",
+        "ruta": "/reglas?seleccionado=Usar+una+cuadrícula",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Recibir daño",
+        "ruta": "/reglas?seleccionado=Recibir+daño",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "La Tabla de Tipos",
+        "ruta": "/reglas?seleccionado=La+Tabla+de+Tipos",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Muerte",
+        "ruta": "/reglas?seleccionado=Muerte",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Cobertura",
+        "ruta": "/reglas?seleccionado=Cobertura",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Escudo y Puntos de Escudo",
+        "ruta": "/reglas?seleccionado=Escudo+y+Puntos+de+Escudo",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Concursos Pokémon",
+        "ruta": "/reglas?seleccionado=Concursos+Pokémon",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Tipos de Concursos",
+        "ruta": "/reglas?seleccionado=Tipos+de+Concursos",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Orden en los Concursos",
+        "ruta": "/reglas?seleccionado=Orden+en+los+Concursos",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Ganar Puntos de Exhibición",
+        "ruta": "/reglas?seleccionado=Ganar+Puntos+de+Exhibición",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Centro de Atención",
+        "ruta": "/reglas?seleccionado=Centro+de+Atención",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Bonos y Penalizadores en Concursos",
+        "ruta": "/reglas?seleccionado=Bonos+y+Penalizadores+en+Concursos",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Bonos en Concursos",
+        "ruta": "/reglas?seleccionado=Bonos+en+Concursos",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Penalizadores en Concursos",
+        "ruta": "/reglas?seleccionado=Penalizadores+en+Concursos",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Poké Balls",
+        "ruta": "/reglas?seleccionado=Poké+Balls",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Medicinas",
+        "ruta": "/reglas?seleccionado=Medicinas",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Plantas y Bayas",
+        "ruta": "/reglas?seleccionado=Plantas+y+Bayas",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Potenciadores",
+        "ruta": "/reglas?seleccionado=Potenciadores",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Comida",
+        "ruta": "/reglas?seleccionado=Comida",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Objetos Evolutivos",
+        "ruta": "/reglas?seleccionado=Objetos+Evolutivos",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Máquinas Técnicas",
+        "ruta": "/reglas?seleccionado=Máquinas+Técnicas",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Amuletos",
+        "ruta": "/reglas?seleccionado=Amuletos",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Equipo",
+        "ruta": "/reglas?seleccionado=Equipo",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Objetos de Entrenador",
+        "ruta": "/reglas?seleccionado=Objetos+de+Entrenador",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Armas",
+        "ruta": "/reglas?seleccionado=Armas",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Fósiles",
+        "ruta": "/reglas?seleccionado=Fósiles",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Objetos Míticos",
+        "ruta": "/reglas?seleccionado=Objetos+Míticos",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Fatiga",
+        "ruta": "/reglas?seleccionado=Fatiga",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Cargar Peso",
+        "ruta": "/reglas?seleccionado=Cargar+Peso",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Velocidades",
+        "ruta": "/reglas?seleccionado=Velocidades",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Excavado",
+        "ruta": "/reglas?seleccionado=Excavado",
+        "tipo": "Velocidad"
+    },
+    {
+        "nombre": "Vuelo",
+        "ruta": "/reglas?seleccionado=Vuelo",
+        "tipo": "Velocidad"
+    },
+    {
+        "nombre": "Nado",
+        "ruta": "/reglas?seleccionado=Nado",
+        "tipo": "Velocidad"
+    },
+    {
+        "nombre": "Levitado",
+        "ruta": "/reglas?seleccionado=Levitado",
+        "tipo": "Velocidad"
+    },
+    {
+        "nombre": "Terreno difícil",
+        "ruta": "/reglas?seleccionado=Terreno+difícil",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Correr",
+        "ruta": "/reglas?seleccionado=Correr",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Salto",
+        "ruta": "/reglas?seleccionado=Salto",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Oscuridad e Iluminación",
+        "ruta": "/reglas?seleccionado=Oscuridad+e+Iluminación",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Visibilidad",
+        "ruta": "/reglas?seleccionado=Visibilidad",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Agarrar",
+        "ruta": "/reglas?seleccionado=Agarrar",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Empujar",
+        "ruta": "/reglas?seleccionado=Empujar",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Daño por caída",
+        "ruta": "/reglas?seleccionado=Daño+por+caída",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Mantener la respiración",
+        "ruta": "/reglas?seleccionado=Mantener+la+respiración",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Pokémon que no hacen caso",
+        "ruta": "/reglas?seleccionado=Pokémon+que+no+hacen+caso",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Reconocer un Huevo",
+        "ruta": "/reglas?seleccionado=Reconocer+un+Huevo",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Recordar indormación sobre un Pokémon",
+        "ruta": "/reglas?seleccionado=Recordar+indormación+sobre+un+Pokémon",
+        "tipo": "Regla"
+    },
+    {
+        "nombre": "Regla variante: Hacer Cuidadosamente",
+        "ruta": "/reglas?seleccionado=Regla+variante:+Hacer+Cuidadosamente",
+        "tipo": "Regla variante"
+    },
+    {
+        "nombre": "Regla variante: Multiclase",
+        "ruta": "/reglas?seleccionado=Regla+variante:+Multiclase",
+        "tipo": "Regla variante"
+    },
+    {
+        "nombre": "Daño provocado por el ambiente",
+        "ruta": "/reglas?seleccionado=Daño+provocado+por+el+ambiente",
+        "tipo": "Regla de DJ"
+    },
+    {
+        "nombre": "Efectos ambientales",
+        "ruta": "/reglas?seleccionado=Efectos+ambientales",
+        "tipo": "Regla de DJ"
+    },
+    {
+        "nombre": "Lagos de Magma y volcanes",
+        "ruta": "/reglas?seleccionado=Lagos+de+Magma+y+volcanes",
+        "tipo": "Efecto ambiental"
+    },
+    {
+        "nombre": "Arenas movedizas",
+        "ruta": "/reglas?seleccionado=Arenas+movedizas",
+        "tipo": "Efecto ambiental"
+    },
+    {
+        "nombre": "Zonas repletas de Niebla",
+        "ruta": "/reglas?seleccionado=Zonas+repletas+de+Niebla",
+        "tipo": "Efecto ambiental"
+    },
+    {
+        "nombre": "Zonas repletas de Gas Venenoso",
+        "ruta": "/reglas?seleccionado=Zonas+repletas+de+Gas+Venenoso",
+        "tipo": "Efecto ambiental"
+    },
+    {
+        "nombre": "Zonas tenebrosas o malditas",
+        "ruta": "/reglas?seleccionado=Zonas+tenebrosas+o+malditas",
+        "tipo": "Efecto ambiental"
+    },
+    {
+        "nombre": "Región de Espacio raro",
+        "ruta": "/reglas?seleccionado=Región+de+Espacio+raro",
+        "tipo": "Efecto ambiental"
+    },
+    {
+        "nombre": "Región de Zona extraña",
+        "ruta": "/reglas?seleccionado=Región+de+Zona+extraña",
+        "tipo": "Efecto ambiental"
+    },
+    {
+        "nombre": "Región de Zona mágica",
+        "ruta": "/reglas?seleccionado=Región+de+Zona+mágica",
+        "tipo": "Efecto ambiental"
+    },
+    {
+        "nombre": "Mundo distorsión",
+        "ruta": "/reglas?seleccionado=Mundo+distorsión",
+        "tipo": "Efecto ambiental"
+    },
+    {
+        "nombre": "Puntos de Superioridad",
+        "ruta": "/reglas?seleccionado=Puntos+de+Superioridad",
+        "tipo": "Regla de DJ"
+    },
+    {
+        "nombre": "Pokémon esbirro",
+        "ruta": "/reglas?seleccionado=Pokémon+esbirro",
+        "tipo": "Regla de DJ"
+    },
+    {
+        "nombre": "Pokémon especiales",
+        "ruta": "/reglas?seleccionado=Pokémon+especiales",
+        "tipo": "Regla de DJ"
+    },
+    {
+        "nombre": "Transformaciones Pokémon",
+        "ruta": "/reglas?seleccionado=Transformaciones+Pokémon",
+        "tipo": "Pokémon especiales"
+    },
+    {
+        "nombre": "Pokémon Oscuros",
+        "ruta": "/reglas?seleccionado=Pokémon+Oscuros",
+        "tipo": "Pokémon especiales"
+    },
+    {
+        "nombre": "Pokemon infundidos",
+        "ruta": "/reglas?seleccionado=Pokemon+infundidos",
+        "tipo": "Pokémon especiales"
+    },
+    {
+        "nombre": "Pokémon espectrales",
+        "ruta": "/reglas?seleccionado=Pokémon+espectrales",
+        "tipo": "Pokémon especiales"
+    },
+    {
+        "nombre": "Pokéconstructos",
+        "ruta": "/reglas?seleccionado=Pokéconstructos",
+        "tipo": "Pokémon especiales"
+    },
+    {
+        "nombre": "Pokémon quimera",
+        "ruta": "/reglas?seleccionado=Pokémon+quimera",
+        "tipo": "Pokémon especiales"
+    },
+    {
+        "nombre": "Pokémon robotizados",
+        "ruta": "/reglas?seleccionado=Pokémon+robotizados",
+        "tipo": "Pokémon especiales"
+    },
+    {
+        "nombre": "Experiencia para subir de nivel ",
+        "ruta": "/reglas?seleccionado=Experiencia+para+subir+de+nivel+",
+        "tipo": "Regla variante"
+    },
+    {
+        "nombre": "Idiomas",
+        "ruta": "/reglas?seleccionado=Idiomas",
+        "tipo": "Regla variante"
+    },
+    {
+        "nombre": "Daño a objetos",
+        "ruta": "/reglas?seleccionado=Daño+a+objetos",
+        "tipo": "Regla variante"
+    },
+    {
+        "nombre": "Personajes simplificados",
+        "ruta": "/reglas?seleccionado=Personajes+simplificados",
+        "tipo": "Regla variante"
+    },
+    {
+        "nombre": "Daño doblemente efectivo",
+        "ruta": "/reglas?seleccionado=Daño+doblemente+efectivo",
+        "tipo": "Regla variante"
+    },
+    {
+        "nombre": "Absorbe agua",
+        "ruta": "/habilidades?seleccionado=Absorbe agua",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Absorbe electricidad",
+        "ruta": "/habilidades?seleccionado=Absorbe electricidad",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Absorbe fuego",
+        "ruta": "/habilidades?seleccionado=Absorbe fuego",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Acero templado",
+        "ruta": "/habilidades?seleccionado=Acero templado",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Acérrimo",
+        "ruta": "/habilidades?seleccionado=Acérrimo",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Aclimatación",
+        "ruta": "/habilidades?seleccionado=Aclimatación",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Adaptable",
+        "ruta": "/habilidades?seleccionado=Adaptable",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Afortunado",
+        "ruta": "/habilidades?seleccionado=Afortunado",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Agallas",
+        "ruta": "/habilidades?seleccionado=Agallas",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Ala delta",
+        "ruta": "/habilidades?seleccionado=Ala delta",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Alas vendaval",
+        "ruta": "/habilidades?seleccionado=Alas vendaval",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Alerta",
+        "ruta": "/habilidades?seleccionado=Alerta",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Allanamiento",
+        "ruta": "/habilidades?seleccionado=Allanamiento",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Alma acerada",
+        "ruta": "/habilidades?seleccionado=Alma acerada",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Alma cura",
+        "ruta": "/habilidades?seleccionado=Alma cura",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Alma errante",
+        "ruta": "/habilidades?seleccionado=Alma errante",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Amplificador",
+        "ruta": "/habilidades?seleccionado=Amplificador",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Antibalas",
+        "ruta": "/habilidades?seleccionado=Antibalas",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Antibarrera",
+        "ruta": "/habilidades?seleccionado=Antibarrera",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Anticipación",
+        "ruta": "/habilidades?seleccionado=Anticipación",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Antídoto",
+        "ruta": "/habilidades?seleccionado=Antídoto",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Armadura batalla",
+        "ruta": "/habilidades?seleccionado=Armadura batalla",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Armadura frágil",
+        "ruta": "/habilidades?seleccionado=Armadura frágil",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Audaz",
+        "ruta": "/habilidades?seleccionado=Audaz",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Autoestima",
+        "ruta": "/habilidades?seleccionado=Autoestima",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Baba",
+        "ruta": "/habilidades?seleccionado=Baba",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Batería",
+        "ruta": "/habilidades?seleccionado=Batería",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Bromista",
+        "ruta": "/habilidades?seleccionado=Bromista",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Caballero puerril",
+        "ruta": "/habilidades?seleccionado=Caballero puerril",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Cabeza roca",
+        "ruta": "/habilidades?seleccionado=Cabeza roca",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Cacheo",
+        "ruta": "/habilidades?seleccionado=Cacheo",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Calco",
+        "ruta": "/habilidades?seleccionado=Calco",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Cálculo final",
+        "ruta": "/habilidades?seleccionado=Cálculo final",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Cambio color",
+        "ruta": "/habilidades?seleccionado=Cambio color",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Capa tóxica",
+        "ruta": "/habilidades?seleccionado=Capa tóxica",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Caparazón",
+        "ruta": "/habilidades?seleccionado=Caparazón",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Cara de hielo",
+        "ruta": "/habilidades?seleccionado=Cara de hielo",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Carrillo",
+        "ruta": "/habilidades?seleccionado=Carrillo",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Chorro arena",
+        "ruta": "/habilidades?seleccionado=Chorro arena",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Clorofila",
+        "ruta": "/habilidades?seleccionado=Clorofila",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Cobardía",
+        "ruta": "/habilidades?seleccionado=Cobardía",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Cola armadura",
+        "ruta": "/habilidades?seleccionado=Cola armadura",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Cola surf",
+        "ruta": "/habilidades?seleccionado=Cola surf",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Colector",
+        "ruta": "/habilidades?seleccionado=Colector",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Cólera",
+        "ruta": "/habilidades?seleccionado=Cólera",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Comandar",
+        "ruta": "/habilidades?seleccionado=Comandar",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Máquina de vapor",
+        "ruta": "/habilidades?seleccionado=Máquina de vapor",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Competitivo",
+        "ruta": "/habilidades?seleccionado=Competitivo",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Compiescolta",
+        "ruta": "/habilidades?seleccionado=Compiescolta",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Coraza ira",
+        "ruta": "/habilidades?seleccionado=Coraza ira",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Coraza reflejo",
+        "ruta": "/habilidades?seleccionado=Coraza reflejo",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Corrosión",
+        "ruta": "/habilidades?seleccionado=Corrosión",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Cortante",
+        "ruta": "/habilidades?seleccionado=Cortante",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Corte fuerte",
+        "ruta": "/habilidades?seleccionado=Corte fuerte",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Cosecha",
+        "ruta": "/habilidades?seleccionado=Cosecha",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Cromolente",
+        "ruta": "/habilidades?seleccionado=Cromolente",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Cuerpo áureo",
+        "ruta": "/habilidades?seleccionado=Cuerpo áureo",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Cuerpo horneado",
+        "ruta": "/habilidades?seleccionado=Cuerpo horneado",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Cuerpo llama",
+        "ruta": "/habilidades?seleccionado=Cuerpo llama",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Cuerpo maldito",
+        "ruta": "/habilidades?seleccionado=Cuerpo maldito",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Cuerpo mortal",
+        "ruta": "/habilidades?seleccionado=Cuerpo mortal",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Cuerpo puro",
+        "ruta": "/habilidades?seleccionado=Cuerpo puro",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Cuerpo vívido",
+        "ruta": "/habilidades?seleccionado=Cuerpo vívido",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Cura lluvia",
+        "ruta": "/habilidades?seleccionado=Cura lluvia",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Cura natural",
+        "ruta": "/habilidades?seleccionado=Cura natural",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Defensa hoja",
+        "ruta": "/habilidades?seleccionado=Defensa hoja",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Descarga",
+        "ruta": "/habilidades?seleccionado=Descarga",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Despiste",
+        "ruta": "/habilidades?seleccionado=Despiste",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Detonación",
+        "ruta": "/habilidades?seleccionado=Detonación",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Dicha",
+        "ruta": "/habilidades?seleccionado=Dicha",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Dinamo",
+        "ruta": "/habilidades?seleccionado=Dinamo",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Disemillar",
+        "ruta": "/habilidades?seleccionado=Disemillar",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Disfraz",
+        "ruta": "/habilidades?seleccionado=Disfraz",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Don floral",
+        "ruta": "/habilidades?seleccionado=Don floral",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Efecto espora",
+        "ruta": "/habilidades?seleccionado=Efecto espora",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Electricidad estática",
+        "ruta": "/habilidades?seleccionado=Electricidad estática",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Electrogénesis",
+        "ruta": "/habilidades?seleccionado=Electrogénesis",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Electromotor",
+        "ruta": "/habilidades?seleccionado=Electromotor",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Encadenado",
+        "ruta": "/habilidades?seleccionado=Encadenado",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Energía eólica",
+        "ruta": "/habilidades?seleccionado=Energía eólica",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Energía pura",
+        "ruta": "/habilidades?seleccionado=Energía pura",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Enjambre",
+        "ruta": "/habilidades?seleccionado=Enjambre",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Ensañamiento",
+        "ruta": "/habilidades?seleccionado=Ensañamiento",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Entusiasmo",
+        "ruta": "/habilidades?seleccionado=Entusiasmo",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Escama de hielo",
+        "ruta": "/habilidades?seleccionado=Escama de hielo",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Escama especial",
+        "ruta": "/habilidades?seleccionado=Escama especial",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Esclusa de aire",
+        "ruta": "/habilidades?seleccionado=Esclusa de aire",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Escudo magma",
+        "ruta": "/habilidades?seleccionado=Escudo magma",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Espejo mágico",
+        "ruta": "/habilidades?seleccionado=Espejo mágico",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Espesura",
+        "ruta": "/habilidades?seleccionado=Espesura",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Espíritu vital",
+        "ruta": "/habilidades?seleccionado=Espíritu vital",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Experto",
+        "ruta": "/habilidades?seleccionado=Experto",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Expulsarena",
+        "ruta": "/habilidades?seleccionado=Expulsarena",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Fauces furtivas",
+        "ruta": "/habilidades?seleccionado=Fauces furtivas",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Filtro",
+        "ruta": "/habilidades?seleccionado=Filtro",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Firmeza",
+        "ruta": "/habilidades?seleccionado=Firmeza",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Flaqueza",
+        "ruta": "/habilidades?seleccionado=Flaqueza",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Flexibilidad",
+        "ruta": "/habilidades?seleccionado=Flexibilidad",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Francotirador",
+        "ruta": "/habilidades?seleccionado=Francotirador",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Fuente energía",
+        "ruta": "/habilidades?seleccionado=Fuente energía",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Fuerte afecto",
+        "ruta": "/habilidades?seleccionado=Fuerte afecto",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Fuerza mental",
+        "ruta": "/habilidades?seleccionado=Fuerza mental",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Fuga",
+        "ruta": "/habilidades?seleccionado=Fuga",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Funda",
+        "ruta": "/habilidades?seleccionado=Funda",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Garra dura",
+        "ruta": "/habilidades?seleccionado=Garra dura",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Gas reactivo",
+        "ruta": "/habilidades?seleccionado=Gas reactivo",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Gélido",
+        "ruta": "/habilidades?seleccionado=Gélido",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "General supremo",
+        "ruta": "/habilidades?seleccionado=General supremo",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Geofagia",
+        "ruta": "/habilidades?seleccionado=Geofagia",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Glifo",
+        "ruta": "/habilidades?seleccionado=Glifo",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Gran encanto",
+        "ruta": "/habilidades?seleccionado=Gran encanto",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Gula",
+        "ruta": "/habilidades?seleccionado=Gula",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Hedor",
+        "ruta": "/habilidades?seleccionado=Hedor",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Hélice caudal",
+        "ruta": "/habilidades?seleccionado=Hélice caudal",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Herbívoro",
+        "ruta": "/habilidades?seleccionado=Herbívoro",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Herbogénesis",
+        "ruta": "/habilidades?seleccionado=Herbogénesis",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Herrero",
+        "ruta": "/habilidades?seleccionado=Herrero",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Hidratación",
+        "ruta": "/habilidades?seleccionado=Hidratación",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Hidrorrefuerzo",
+        "ruta": "/habilidades?seleccionado=Hidrorrefuerzo",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Hipnotismo",
+        "ruta": "/habilidades?seleccionado=Hipnotismo",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Hospitalidad",
+        "ruta": "/habilidades?seleccionado=Hospitalidad",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Huida",
+        "ruta": "/habilidades?seleccionado=Huida",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Humedad",
+        "ruta": "/habilidades?seleccionado=Humedad",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Humo blanco",
+        "ruta": "/habilidades?seleccionado=Humo blanco",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Hurto",
+        "ruta": "/habilidades?seleccionado=Hurto",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Ignífugo",
+        "ruta": "/habilidades?seleccionado=Ignífugo",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Ignorante",
+        "ruta": "/habilidades?seleccionado=Ignorante",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Iluminación",
+        "ruta": "/habilidades?seleccionado=Iluminación",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Ilusión",
+        "ruta": "/habilidades?seleccionado=Ilusión",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Imán",
+        "ruta": "/habilidades?seleccionado=Imán",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Impasible",
+        "ruta": "/habilidades?seleccionado=Impasible",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Ímpetu ardiente",
+        "ruta": "/habilidades?seleccionado=Ímpetu ardiente",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Ímpetu arena",
+        "ruta": "/habilidades?seleccionado=Ímpetu arena",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Ímpetu tóxico",
+        "ruta": "/habilidades?seleccionado=Ímpetu tóxico",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Impostor",
+        "ruta": "/habilidades?seleccionado=Impostor",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Impulso",
+        "ruta": "/habilidades?seleccionado=Impulso",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Indefenso",
+        "ruta": "/habilidades?seleccionado=Indefenso",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Inmunidad",
+        "ruta": "/habilidades?seleccionado=Inmunidad",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Insomnio",
+        "ruta": "/habilidades?seleccionado=Insomnio",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Insonorizar",
+        "ruta": "/habilidades?seleccionado=Insonorizar",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Intimidación",
+        "ruta": "/habilidades?seleccionado=Intimidación",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Intrépido",
+        "ruta": "/habilidades?seleccionado=Intrépido",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Irascible",
+        "ruta": "/habilidades?seleccionado=Irascible",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Justiciero",
+        "ruta": "/habilidades?seleccionado=Justiciero",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Lechera",
+        "ruta": "/habilidades?seleccionado=Lechera",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Letargo perenne",
+        "ruta": "/habilidades?seleccionado=Letargo perenne",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Líbero",
+        "ruta": "/habilidades?seleccionado=Líbero",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Liviano",
+        "ruta": "/habilidades?seleccionado=Liviano",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Llovizna",
+        "ruta": "/habilidades?seleccionado=Llovizna",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Madrugar",
+        "ruta": "/habilidades?seleccionado=Madrugar",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Maduración",
+        "ruta": "/habilidades?seleccionado=Maduración",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Mandíbula fuerte",
+        "ruta": "/habilidades?seleccionado=Mandíbula fuerte",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Mano rápida",
+        "ruta": "/habilidades?seleccionado=Mano rápida",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Manto frondoso",
+        "ruta": "/habilidades?seleccionado=Manto frondoso",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Manto níveo",
+        "ruta": "/habilidades?seleccionado=Manto níveo",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Mar llamas",
+        "ruta": "/habilidades?seleccionado=Mar llamas",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Más",
+        "ruta": "/habilidades?seleccionado=Más",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Medicina extraña",
+        "ruta": "/habilidades?seleccionado=Medicina extraña",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Megadisparador",
+        "ruta": "/habilidades?seleccionado=Megadisparador",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Menos",
+        "ruta": "/habilidades?seleccionado=Menos",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Metal liviano",
+        "ruta": "/habilidades?seleccionado=Metal liviano",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Metal pesado",
+        "ruta": "/habilidades?seleccionado=Metal pesado",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Mimetismo",
+        "ruta": "/habilidades?seleccionado=Mimetismo",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Momia",
+        "ruta": "/habilidades?seleccionado=Momia",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Monotema",
+        "ruta": "/habilidades?seleccionado=Monotema",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Mudar",
+        "ruta": "/habilidades?seleccionado=Mudar",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Multiescamas",
+        "ruta": "/habilidades?seleccionado=Multiescamas",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Multitipo",
+        "ruta": "/habilidades?seleccionado=Multitipo",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Muro mágico",
+        "ruta": "/habilidades?seleccionado=Muro mágico",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Mutapetito",
+        "ruta": "/habilidades?seleccionado=Mutapetito",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Mutatipo",
+        "ruta": "/habilidades?seleccionado=Mutatipo",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Nado rápido",
+        "ruta": "/habilidades?seleccionado=Nado rápido",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Nebulogénesis",
+        "ruta": "/habilidades?seleccionado=Nebulogénesis",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Néctar dulce",
+        "ruta": "/habilidades?seleccionado=Néctar dulce",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Nerviosismo",
+        "ruta": "/habilidades?seleccionado=Nerviosismo",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Neuralizador",
+        "ruta": "/habilidades?seleccionado=Neuralizador",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Nevada",
+        "ruta": "/habilidades?seleccionado=Nevada",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Normalidad",
+        "ruta": "/habilidades?seleccionado=Normalidad",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Ojo compuesto",
+        "ruta": "/habilidades?seleccionado=Ojo compuesto",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Ojo mental",
+        "ruta": "/habilidades?seleccionado=Ojo mental",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Olor persistente",
+        "ruta": "/habilidades?seleccionado=Olor persistente",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Oportunista",
+        "ruta": "/habilidades?seleccionado=Oportunista",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Pararrayos",
+        "ruta": "/habilidades?seleccionado=Pararrayos",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Pareja de baile",
+        "ruta": "/habilidades?seleccionado=Pareja de baile",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Patada recia",
+        "ruta": "/habilidades?seleccionado=Patada recia",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Pelaje recio",
+        "ruta": "/habilidades?seleccionado=Pelaje recio",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Peluche",
+        "ruta": "/habilidades?seleccionado=Peluche",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Pelusa",
+        "ruta": "/habilidades?seleccionado=Pelusa",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Pereza",
+        "ruta": "/habilidades?seleccionado=Pereza",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Perro guardián",
+        "ruta": "/habilidades?seleccionado=Perro guardián",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Pez pistola",
+        "ruta": "/habilidades?seleccionado=Pez pistola",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Piel celeste",
+        "ruta": "/habilidades?seleccionado=Piel celeste",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Piel eléctrica",
+        "ruta": "/habilidades?seleccionado=Piel eléctrica",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Piel feérica",
+        "ruta": "/habilidades?seleccionado=Piel feérica",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Piel helada",
+        "ruta": "/habilidades?seleccionado=Piel helada",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Piel milagro",
+        "ruta": "/habilidades?seleccionado=Piel milagro",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Piel seca",
+        "ruta": "/habilidades?seleccionado=Piel seca",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Piel tosca",
+        "ruta": "/habilidades?seleccionado=Piel tosca",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Pies rápidos",
+        "ruta": "/habilidades?seleccionado=Pies rápidos",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Poder arena",
+        "ruta": "/habilidades?seleccionado=Poder arena",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Poder fúngico",
+        "ruta": "/habilidades?seleccionado=Poder fúngico",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Poder solar",
+        "ruta": "/habilidades?seleccionado=Poder solar",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Polvo escudo",
+        "ruta": "/habilidades?seleccionado=Polvo escudo",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Pompa",
+        "ruta": "/habilidades?seleccionado=Pompa",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Potencia",
+        "ruta": "/habilidades?seleccionado=Potencia",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Fuerza bruta",
+        "ruta": "/habilidades?seleccionado=Fuerza bruta",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Predicción",
+        "ruta": "/habilidades?seleccionado=Predicción",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Presión",
+        "ruta": "/habilidades?seleccionado=Presión",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Prestidigitador",
+        "ruta": "/habilidades?seleccionado=Prestidigitador",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Primer auxilio",
+        "ruta": "/habilidades?seleccionado=Primer auxilio",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Producedulce",
+        "ruta": "/habilidades?seleccionado=Producedulce",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Psicogénesis",
+        "ruta": "/habilidades?seleccionado=Psicogénesis",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Punk rock",
+        "ruta": "/habilidades?seleccionado=Punk rock",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Punta acero",
+        "ruta": "/habilidades?seleccionado=Punta acero",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Punto tóxico",
+        "ruta": "/habilidades?seleccionado=Punto tóxico",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Puño férreo",
+        "ruta": "/habilidades?seleccionado=Puño férreo",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Quitanieves",
+        "ruta": "/habilidades?seleccionado=Quitanieves",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Reacción química",
+        "ruta": "/habilidades?seleccionado=Reacción química",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Receptor",
+        "ruta": "/habilidades?seleccionado=Receptor",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Recogemiel",
+        "ruta": "/habilidades?seleccionado=Recogemiel",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Regeneración",
+        "ruta": "/habilidades?seleccionado=Regeneración",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Regia presencia",
+        "ruta": "/habilidades?seleccionado=Regia presencia",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Reina abeja",
+        "ruta": "/habilidades?seleccionado=Reina abeja",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Remoto",
+        "ruta": "/habilidades?seleccionado=Remoto",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Resonancia",
+        "ruta": "/habilidades?seleccionado=Resonancia",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Respondón",
+        "ruta": "/habilidades?seleccionado=Respondón",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Retirada",
+        "ruta": "/habilidades?seleccionado=Retirada",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Revés",
+        "ruta": "/habilidades?seleccionado=Revés",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Rezagado",
+        "ruta": "/habilidades?seleccionado=Rezagado",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Ritmo propio",
+        "ruta": "/habilidades?seleccionado=Ritmo propio",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Rivalidad",
+        "ruta": "/habilidades?seleccionado=Rivalidad",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Rizos rebeldes",
+        "ruta": "/habilidades?seleccionado=Rizos rebeldes",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Robustez",
+        "ruta": "/habilidades?seleccionado=Robustez",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Roca sólida",
+        "ruta": "/habilidades?seleccionado=Roca sólida",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Rompemoldes",
+        "ruta": "/habilidades?seleccionado=Rompemoldes",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Rumia",
+        "ruta": "/habilidades?seleccionado=Rumia",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Sacapecho",
+        "ruta": "/habilidades?seleccionado=Sacapecho",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Saco de boxeo",
+        "ruta": "/habilidades?seleccionado=Saco de boxeo",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Sal purificadora",
+        "ruta": "/habilidades?seleccionado=Sal purificadora",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Sebo",
+        "ruta": "/habilidades?seleccionado=Sebo",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Sequía",
+        "ruta": "/habilidades?seleccionado=Sequía",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Simbiosis",
+        "ruta": "/habilidades?seleccionado=Simbiosis",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Simple",
+        "ruta": "/habilidades?seleccionado=Simple",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Sincronía",
+        "ruta": "/habilidades?seleccionado=Sincronía",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Sombra trampa",
+        "ruta": "/habilidades?seleccionado=Sombra trampa",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Superguarda",
+        "ruta": "/habilidades?seleccionado=Superguarda",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Surcavientos",
+        "ruta": "/habilidades?seleccionado=Surcavientos",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Telepatía",
+        "ruta": "/habilidades?seleccionado=Telepatía",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Tenacidad",
+        "ruta": "/habilidades?seleccionado=Tenacidad",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Termoconversión",
+        "ruta": "/habilidades?seleccionado=Termoconversión",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Toque tóxico",
+        "ruta": "/habilidades?seleccionado=Toque tóxico",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Torrente",
+        "ruta": "/habilidades?seleccionado=Torrente",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Tragamisil",
+        "ruta": "/habilidades?seleccionado=Tragamisil",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Trampa arena",
+        "ruta": "/habilidades?seleccionado=Trampa arena",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Transportarrocas",
+        "ruta": "/habilidades?seleccionado=Transportarrocas",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Tumbos",
+        "ruta": "/habilidades?seleccionado=Tumbos",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Unísono",
+        "ruta": "/habilidades?seleccionado=Unísono",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Velo agua",
+        "ruta": "/habilidades?seleccionado=Velo agua",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Velo arena",
+        "ruta": "/habilidades?seleccionado=Velo arena",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Velo aroma",
+        "ruta": "/habilidades?seleccionado=Velo aroma",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Velo dulce",
+        "ruta": "/habilidades?seleccionado=Velo dulce",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Velo flor",
+        "ruta": "/habilidades?seleccionado=Velo flor",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Velo pastel",
+        "ruta": "/habilidades?seleccionado=Velo pastel",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Ventosas",
+        "ruta": "/habilidades?seleccionado=Ventosas",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Vigilante",
+        "ruta": "/habilidades?seleccionado=Vigilante",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Viscosecreción",
+        "ruta": "/habilidades?seleccionado=Viscosecreción",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Viscosidad",
+        "ruta": "/habilidades?seleccionado=Viscosidad",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Vista lince",
+        "ruta": "/habilidades?seleccionado=Vista lince",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Voz fluida",
+        "ruta": "/habilidades?seleccionado=Voz fluida",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Amor filial",
+        "ruta": "/habilidades?seleccionado=Amor filial",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Banco",
+        "ruta": "/habilidades?seleccionado=Banco",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Bebedor de néctar",
+        "ruta": "/habilidades?seleccionado=Bebedor de néctar",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Cambio estación",
+        "ruta": "/habilidades?seleccionado=Cambio estación",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Cambio heroico",
+        "ruta": "/habilidades?seleccionado=Cambio heroico",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Electroinvasor",
+        "ruta": "/habilidades?seleccionado=Electroinvasor",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Escudo limitado",
+        "ruta": "/habilidades?seleccionado=Escudo limitado",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Espada maldita",
+        "ruta": "/habilidades?seleccionado=Espada maldita",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Modo Daruma",
+        "ruta": "/habilidades?seleccionado=Modo Daruma",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Modo Daruma (Galar)",
+        "ruta": "/habilidades?seleccionado=Modo Daruma (Galar)",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Paleosíntesis",
+        "ruta": "/habilidades?seleccionado=Paleosíntesis",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Transistor",
+        "ruta": "/habilidades?seleccionado=Transistor",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Abalorio debacle",
+        "ruta": "/habilidades?seleccionado=Abalorio debacle",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Aro portales",
+        "ruta": "/habilidades?seleccionado=Aro portales",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Aura feérica",
+        "ruta": "/habilidades?seleccionado=Aura feérica",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Aura oscura",
+        "ruta": "/habilidades?seleccionado=Aura oscura",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Cadena tóxica",
+        "ruta": "/habilidades?seleccionado=Cadena tóxica",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Caldero debacle",
+        "ruta": "/habilidades?seleccionado=Caldero debacle",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Carga cuark",
+        "ruta": "/habilidades?seleccionado=Carga cuark",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Coloso",
+        "ruta": "/habilidades?seleccionado=Coloso",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Controlar volcán",
+        "ruta": "/habilidades?seleccionado=Controlar volcán",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Coránima",
+        "ruta": "/habilidades?seleccionado=Coránima",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Creador de continentes",
+        "ruta": "/habilidades?seleccionado=Creador de continentes",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Defensor de los ideales",
+        "ruta": "/habilidades?seleccionado=Defensor de los ideales",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Dios supremo",
+        "ruta": "/habilidades?seleccionado=Dios supremo",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Drenado vital",
+        "ruta": "/habilidades?seleccionado=Drenado vital",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Dulces sueños",
+        "ruta": "/habilidades?seleccionado=Dulces sueños",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Emperador del cielo",
+        "ruta": "/habilidades?seleccionado=Emperador del cielo",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Espada de la justicia",
+        "ruta": "/habilidades?seleccionado=Espada de la justicia",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Espada debacle",
+        "ruta": "/habilidades?seleccionado=Espada debacle",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Espíritu guardián",
+        "ruta": "/habilidades?seleccionado=Espíritu guardián",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Estrella fugaz",
+        "ruta": "/habilidades?seleccionado=Estrella fugaz",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Fuerza cerebral",
+        "ruta": "/habilidades?seleccionado=Fuerza cerebral",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Golem",
+        "ruta": "/habilidades?seleccionado=Golem",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Guardia espectro",
+        "ruta": "/habilidades?seleccionado=Guardia espectro",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Guardia metálica",
+        "ruta": "/habilidades?seleccionado=Guardia metálica",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Guardián de los mares",
+        "ruta": "/habilidades?seleccionado=Guardián de los mares",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Instinto combativo",
+        "ruta": "/habilidades?seleccionado=Instinto combativo",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Invisibilidad",
+        "ruta": "/habilidades?seleccionado=Invisibilidad",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Latido oricalco",
+        "ruta": "/habilidades?seleccionado=Latido oricalco",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Llama eterna",
+        "ruta": "/habilidades?seleccionado=Llama eterna",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Lianas",
+        "ruta": "/habilidades?seleccionado=Lianas",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Mal sueño",
+        "ruta": "/habilidades?seleccionado=Mal sueño",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Mandíbula dragón",
+        "ruta": "/habilidades?seleccionado=Mandíbula dragón",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Mar del albor",
+        "ruta": "/habilidades?seleccionado=Mar del albor",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Morasombra",
+        "ruta": "/habilidades?seleccionado=Morasombra",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Motor hadrónico",
+        "ruta": "/habilidades?seleccionado=Motor hadrónico",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Neurosimbiosis",
+        "ruta": "/habilidades?seleccionado=Neurosimbiosis",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Nómada del tiempo",
+        "ruta": "/habilidades?seleccionado=Nómada del tiempo",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Paladín de la verdad",
+        "ruta": "/habilidades?seleccionado=Paladín de la verdad",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Paso purificador",
+        "ruta": "/habilidades?seleccionado=Paso purificador",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Primer eslabón",
+        "ruta": "/habilidades?seleccionado=Primer eslabón",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Puño invisible",
+        "ruta": "/habilidades?seleccionado=Puño invisible",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Ráfaga delta",
+        "ruta": "/habilidades?seleccionado=Ráfaga delta",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Reina carbink",
+        "ruta": "/habilidades?seleccionado=Reina carbink",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Relincho blanco",
+        "ruta": "/habilidades?seleccionado=Relincho blanco",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Relincho negro",
+        "ruta": "/habilidades?seleccionado=Relincho negro",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Rey de los mares",
+        "ruta": "/habilidades?seleccionado=Rey de los mares",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Rompeaura",
+        "ruta": "/habilidades?seleccionado=Rompeaura",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Señor de la distorsión",
+        "ruta": "/habilidades?seleccionado=Señor de la distorsión",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Señor del espacio",
+        "ruta": "/habilidades?seleccionado=Señor del espacio",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Señor del tiempo",
+        "ruta": "/habilidades?seleccionado=Señor del tiempo",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Ser de la emoción",
+        "ruta": "/habilidades?seleccionado=Ser de la emoción",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Ser de la sabiduría",
+        "ruta": "/habilidades?seleccionado=Ser de la sabiduría",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Ser de la voluntad",
+        "ruta": "/habilidades?seleccionado=Ser de la voluntad",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Sistema alfa",
+        "ruta": "/habilidades?seleccionado=Sistema alfa",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Tablilla debacle",
+        "ruta": "/habilidades?seleccionado=Tablilla debacle",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Teraformación",
+        "ruta": "/habilidades?seleccionado=Teraformación",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Terravoltaje",
+        "ruta": "/habilidades?seleccionado=Terravoltaje",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Tiempo primal",
+        "ruta": "/habilidades?seleccionado=Tiempo primal",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Tierra del ocaso",
+        "ruta": "/habilidades?seleccionado=Tierra del ocaso",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Tinovictoria",
+        "ruta": "/habilidades?seleccionado=Tinovictoria",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Títere tóxico",
+        "ruta": "/habilidades?seleccionado=Títere tóxico",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Turbollama",
+        "ruta": "/habilidades?seleccionado=Turbollama",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Ultraimpulso",
+        "ruta": "/habilidades?seleccionado=Ultraimpulso",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Unidad ecuestre",
+        "ruta": "/habilidades?seleccionado=Unidad ecuestre",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Velocidad rayo",
+        "ruta": "/habilidades?seleccionado=Velocidad rayo",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Vida eterna",
+        "ruta": "/habilidades?seleccionado=Vida eterna",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Evocarrecuerdos",
+        "ruta": "/habilidades?seleccionado=Evocarrecuerdos",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Espacio primal",
+        "ruta": "/habilidades?seleccionado=Espacio primal",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Agrupamiento",
+        "ruta": "/habilidades?seleccionado=Agrupamiento",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Escudo recio",
+        "ruta": "/habilidades?seleccionado=Escudo recio",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Espada indómita",
+        "ruta": "/habilidades?seleccionado=Espada indómita",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Armadura prisma",
+        "ruta": "/habilidades?seleccionado=Armadura prisma",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Cascarón",
+        "ruta": "/habilidades?seleccionado=Cascarón",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Contención",
+        "ruta": "/habilidades?seleccionado=Contención",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Cristal eón",
+        "ruta": "/habilidades?seleccionado=Cristal eón",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Distorsión primal",
+        "ruta": "/habilidades?seleccionado=Distorsión primal",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Eternamax",
+        "ruta": "/habilidades?seleccionado=Eternamax",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Forma brío",
+        "ruta": "/habilidades?seleccionado=Forma brío",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Fuerza de la naturaleza",
+        "ruta": "/habilidades?seleccionado=Fuerza de la naturaleza",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Fuerza de la naturaleza (Enamorus)",
+        "ruta": "/habilidades?seleccionado=Fuerza de la naturaleza (Enamorus)",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Gracídea",
+        "ruta": "/habilidades?seleccionado=Gracídea",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Mochis cadena",
+        "ruta": "/habilidades?seleccionado=Mochis cadena",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Musa",
+        "ruta": "/habilidades?seleccionado=Musa",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Muta-ADN",
+        "ruta": "/habilidades?seleccionado=Muta-ADN",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Teracambio",
+        "ruta": "/habilidades?seleccionado=Teracambio",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "Patada férrea",
+        "ruta": "/habilidades?seleccionado=Patada férrea",
+        "tipo": "Habilidad"
+    },
+    {
+        "nombre": "A bocajarro",
+        "ruta": "/movimientos?seleccionado=A%20bocajarro",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "A defender",
+        "ruta": "/movimientos?seleccionado=A%20defender",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Abatidoras",
+        "ruta": "/movimientos?seleccionado=Abatidoras",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Abrecaminos",
+        "ruta": "/movimientos?seleccionado=Abrecaminos",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Absorbefuerza",
+        "ruta": "/movimientos?seleccionado=Absorbefuerza",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Absorber",
+        "ruta": "/movimientos?seleccionado=Absorber",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Ácido",
+        "ruta": "/movimientos?seleccionado=%C3%81cido",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Ácido málico",
+        "ruta": "/movimientos?seleccionado=%C3%81cido%20m%C3%A1lico",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Acoso",
+        "ruta": "/movimientos?seleccionado=Acoso",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Acróbata",
+        "ruta": "/movimientos?seleccionado=Acr%C3%B3bata",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Acua aro",
+        "ruta": "/movimientos?seleccionado=Acua%20aro",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Acua cola",
+        "ruta": "/movimientos?seleccionado=Acua%20cola",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Acua jet",
+        "ruta": "/movimientos?seleccionado=Acua%20jet",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Aerochorro",
+        "ruta": "/movimientos?seleccionado=Aerochorro",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Afilagarras",
+        "ruta": "/movimientos?seleccionado=Afilagarras",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Afilar",
+        "ruta": "/movimientos?seleccionado=Afilar",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Agarre",
+        "ruta": "/movimientos?seleccionado=Agarre",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Agarrón",
+        "ruta": "/movimientos?seleccionado=Agarr%C3%B3n",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Agilidad",
+        "ruta": "/movimientos?seleccionado=Agilidad",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Agua fría",
+        "ruta": "/movimientos?seleccionado=Agua%20fr%C3%ADa",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Asta drenaje",
+        "ruta": "/movimientos?seleccionado=Asta%20drenaje",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Atadura",
+        "ruta": "/movimientos?seleccionado=Atadura",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Ataque aéreo",
+        "ruta": "/movimientos?seleccionado=Ataque%20a%C3%A9reo",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Ataque ala",
+        "ruta": "/movimientos?seleccionado=Ataque%20ala",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Ataque arena",
+        "ruta": "/movimientos?seleccionado=Ataque%20arena",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Ataque enjambre",
+        "ruta": "/movimientos?seleccionado=Ataque%20enjambre",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Ataque fulgor",
+        "ruta": "/movimientos?seleccionado=Ataque%20fulgor",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Ataque furia",
+        "ruta": "/movimientos?seleccionado=Ataque%20furia",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Ataque óseo",
+        "ruta": "/movimientos?seleccionado=Ataque%20%C3%B3seo",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Ataque rápido",
+        "ruta": "/movimientos?seleccionado=Ataque%20r%C3%A1pido",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Atiborramiento",
+        "ruta": "/movimientos?seleccionado=Atiborramiento",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Atizar",
+        "ruta": "/movimientos?seleccionado=Atizar",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Atracción",
+        "ruta": "/movimientos?seleccionado=Atracci%C3%B3n",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Aullido",
+        "ruta": "/movimientos?seleccionado=Aullido",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Aura magnética",
+        "ruta": "/movimientos?seleccionado=Aura%20magn%C3%A9tica",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Autodestrucción",
+        "ruta": "/movimientos?seleccionado=Autodestrucci%C3%B3n",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Autosugestión",
+        "ruta": "/movimientos?seleccionado=Autosugesti%C3%B3n",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Autotomía",
+        "ruta": "/movimientos?seleccionado=Autotom%C3%ADa",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Auxilio",
+        "ruta": "/movimientos?seleccionado=Auxilio",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Avalancha",
+        "ruta": "/movimientos?seleccionado=Avalancha",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Avivar",
+        "ruta": "/movimientos?seleccionado=Avivar",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Azote",
+        "ruta": "/movimientos?seleccionado=Azote",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Azote torrencial",
+        "ruta": "/movimientos?seleccionado=Azote%20torrencial",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Balón ígneo",
+        "ruta": "/movimientos?seleccionado=Bal%C3%B3n%20%C3%ADgneo",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Bálsamo osado",
+        "ruta": "/movimientos?seleccionado=B%C3%A1lsamo%20osado",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Barrera espinosa",
+        "ruta": "/movimientos?seleccionado=Barrera%20espinosa",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Bastión final",
+        "ruta": "/movimientos?seleccionado=Basti%C3%B3n%20final",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Batería asalto",
+        "ruta": "/movimientos?seleccionado=Bater%C3%ADa%20asalto",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Batido",
+        "ruta": "/movimientos?seleccionado=Batido",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Beso amoroso",
+        "ruta": "/movimientos?seleccionado=Beso%20amoroso",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Beso drenaje",
+        "ruta": "/movimientos?seleccionado=Beso%20drenaje",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Beso dulce",
+        "ruta": "/movimientos?seleccionado=Beso%20dulce",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Bloqueo",
+        "ruta": "/movimientos?seleccionado=Bloqueo",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Bofetón lodo",
+        "ruta": "/movimientos?seleccionado=Bofet%C3%B3n%20lodo",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Bola de polen",
+        "ruta": "/movimientos?seleccionado=Bola%20de%20polen",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Bola neblina",
+        "ruta": "/movimientos?seleccionado=Bola%20neblina",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Bola sombra",
+        "ruta": "/movimientos?seleccionado=Bola%20sombra",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Bola voltio",
+        "ruta": "/movimientos?seleccionado=Bola%20voltio",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Bomba ácida",
+        "ruta": "/movimientos?seleccionado=Bomba%20%C3%A1cida",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Bomba caramelo",
+        "ruta": "/movimientos?seleccionado=Bomba%20caramelo",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Bomba fango",
+        "ruta": "/movimientos?seleccionado=Bomba%20fango",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Bomba germen",
+        "ruta": "/movimientos?seleccionado=Bomba%20germen",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Bomba ígnea",
+        "ruta": "/movimientos?seleccionado=Bomba%20%C3%ADgnea",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Bomba lodo",
+        "ruta": "/movimientos?seleccionado=Bomba%20lodo",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Bostezo",
+        "ruta": "/movimientos?seleccionado=Bostezo",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Bote",
+        "ruta": "/movimientos?seleccionado=Bote",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Bramido Dragón",
+        "ruta": "/movimientos?seleccionado=Bramido%20Drag%C3%B3n",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Branquibocado",
+        "ruta": "/movimientos?seleccionado=Branquibocado",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Brazo pincho",
+        "ruta": "/movimientos?seleccionado=Brazo%20pincho",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Brecha negra",
+        "ruta": "/movimientos?seleccionado=Brecha%20negra",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Brillo mágico",
+        "ruta": "/movimientos?seleccionado=Brillo%20m%C3%A1gico",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Brinco",
+        "ruta": "/movimientos?seleccionado=Brinco",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Bruma explosiva",
+        "ruta": "/movimientos?seleccionado=Bruma%20explosiva",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Buceo",
+        "ruta": "/movimientos?seleccionado=Buceo",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Bucle arena",
+        "ruta": "/movimientos?seleccionado=Bucle%20arena",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Buena baza",
+        "ruta": "/movimientos?seleccionado=Buena%20baza",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Bunker",
+        "ruta": "/movimientos?seleccionado=Bunker",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Burbuja",
+        "ruta": "/movimientos?seleccionado=Burbuja",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Cabeza de hierro",
+        "ruta": "/movimientos?seleccionado=Cabeza%20de%20hierro",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Cabeza sorpresa",
+        "ruta": "/movimientos?seleccionado=Cabeza%20sorpresa",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Cabezazo",
+        "ruta": "/movimientos?seleccionado=Cabezazo",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Cabezazo zen",
+        "ruta": "/movimientos?seleccionado=Cabezazo%20zen",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Cadena Virulenta",
+        "ruta": "/movimientos?seleccionado=Cadena%20Virulenta",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Calamidad",
+        "ruta": "/movimientos?seleccionado=Calamidad",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Calcinación",
+        "ruta": "/movimientos?seleccionado=Calcinaci%C3%B3n",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Camaradería",
+        "ruta": "/movimientos?seleccionado=Camarader%C3%ADa",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Cambiaalmas",
+        "ruta": "/movimientos?seleccionado=Cambiaalmas",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Cambiadefensa",
+        "ruta": "/movimientos?seleccionado=Cambiadefensa",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Cambiafuerza",
+        "ruta": "/movimientos?seleccionado=Cambiafuerza",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Cambiapoder",
+        "ruta": "/movimientos?seleccionado=Cambiapoder",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Cambiavelocidad",
+        "ruta": "/movimientos?seleccionado=Cambiavelocidad",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Cambio de banda",
+        "ruta": "/movimientos?seleccionado=Cambio%20de%20banda",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Cambio de marcha",
+        "ruta": "/movimientos?seleccionado=Cambio%20de%20marcha",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Camelo",
+        "ruta": "/movimientos?seleccionado=Camelo",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Campo de hierba",
+        "ruta": "/movimientos?seleccionado=Campo%20de%20hierba",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Campo de niebla",
+        "ruta": "/movimientos?seleccionado=Campo%20de%20niebla",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Campo eléctrico",
+        "ruta": "/movimientos?seleccionado=Campo%20el%C3%A9ctrico",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Campo psíquico",
+        "ruta": "/movimientos?seleccionado=Campo%20ps%C3%ADquico",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Canon",
+        "ruta": "/movimientos?seleccionado=Canon",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Canto",
+        "ruta": "/movimientos?seleccionado=Canto",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Canto arcaico",
+        "ruta": "/movimientos?seleccionado=Canto%20arcaico",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Canto ardiente",
+        "ruta": "/movimientos?seleccionado=Canto%20ardiente",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Canto Encantador",
+        "ruta": "/movimientos?seleccionado=Canto%20Encantador",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Canto mortal",
+        "ruta": "/movimientos?seleccionado=Canto%20mortal",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Cañón armadura",
+        "ruta": "/movimientos?seleccionado=Ca%C3%B1%C3%B3n%20armadura",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Cañón batidor",
+        "ruta": "/movimientos?seleccionado=Ca%C3%B1%C3%B3n%20batidor",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Cañón Dinamax",
+        "ruta": "/movimientos?seleccionado=Ca%C3%B1%C3%B3n%20Dinamax",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Cañón floral",
+        "ruta": "/movimientos?seleccionado=Ca%C3%B1%C3%B3n%20floral",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Capa mágica",
+        "ruta": "/movimientos?seleccionado=Capa%20m%C3%A1gica",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Cara susto",
+        "ruta": "/movimientos?seleccionado=Cara%20susto",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Carámbano",
+        "ruta": "/movimientos?seleccionado=Car%C3%A1mbano",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Carantoña",
+        "ruta": "/movimientos?seleccionado=Caranto%C3%B1a",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Carga",
+        "ruta": "/movimientos?seleccionado=Carga",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Carga dragón",
+        "ruta": "/movimientos?seleccionado=Carga%20drag%C3%B3n",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Carga parábola",
+        "ruta": "/movimientos?seleccionado=Carga%20par%C3%A1bola",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Carga tóxica",
+        "ruta": "/movimientos?seleccionado=Carga%20t%C3%B3xica",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Cariñitos",
+        "ruta": "/movimientos?seleccionado=Cari%C3%B1itos",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Cascabel cura",
+        "ruta": "/movimientos?seleccionado=Cascabel%20cura",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Cascada",
+        "ruta": "/movimientos?seleccionado=Cascada",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Cautivapor",
+        "ruta": "/movimientos?seleccionado=Cautivapor",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Cede paso",
+        "ruta": "/movimientos?seleccionado=Cede%20paso",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Cepo",
+        "ruta": "/movimientos?seleccionado=Cepo",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Cerco dimensión",
+        "ruta": "/movimientos?seleccionado=Cerco%20dimensi%C3%B3n",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Cerrojo feérico",
+        "ruta": "/movimientos?seleccionado=Cerrojo%20fe%C3%A9rico",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Cháchara",
+        "ruta": "/movimientos?seleccionado=Ch%C3%A1chara",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Chapoteo lodo",
+        "ruta": "/movimientos?seleccionado=Chapoteo%20lodo",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Chirrido",
+        "ruta": "/movimientos?seleccionado=Chirrido",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Chispa",
+        "ruta": "/movimientos?seleccionado=Chispa",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Chispazo",
+        "ruta": "/movimientos?seleccionado=Chispazo",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Choque anímico",
+        "ruta": "/movimientos?seleccionado=Choque%20an%C3%ADmico",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Chorro de vapor",
+        "ruta": "/movimientos?seleccionado=Chorro%20de%20vapor",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Chulería",
+        "ruta": "/movimientos?seleccionado=Chuler%C3%ADa",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Chupavidas",
+        "ruta": "/movimientos?seleccionado=Chupavidas",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Chuzos",
+        "ruta": "/movimientos?seleccionado=Chuzos",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Ciclón",
+        "ruta": "/movimientos?seleccionado=Cicl%C3%B3n",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Ciclón de hojas",
+        "ruta": "/movimientos?seleccionado=Cicl%C3%B3n%20de%20hojas",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Ciclón primavera",
+        "ruta": "/movimientos?seleccionado=Cicl%C3%B3n%20primavera",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Clavo Cañón",
+        "ruta": "/movimientos?seleccionado=Clavo%20Ca%C3%B1%C3%B3n",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Clemencia",
+        "ruta": "/movimientos?seleccionado=Clemencia",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Clonatipo",
+        "ruta": "/movimientos?seleccionado=Clonatipo",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Clorofiláser",
+        "ruta": "/movimientos?seleccionado=Clorofil%C3%A1ser",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Cola dragón",
+        "ruta": "/movimientos?seleccionado=Cola%20drag%C3%B3n",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Cola férrea",
+        "ruta": "/movimientos?seleccionado=Cola%20f%C3%A9rrea",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Cola veneno",
+        "ruta": "/movimientos?seleccionado=Cola%20veneno",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Cólera Ardiente",
+        "ruta": "/movimientos?seleccionado=C%C3%B3lera%20Ardiente",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Colmillo hielo",
+        "ruta": "/movimientos?seleccionado=Colmillo%20hielo",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Colmillo ígneo",
+        "ruta": "/movimientos?seleccionado=Colmillo%20%C3%ADgneo",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Colmillo rayo",
+        "ruta": "/movimientos?seleccionado=Colmillo%20rayo",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Colmillo veneno",
+        "ruta": "/movimientos?seleccionado=Colmillo%20veneno",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Comesueños",
+        "ruta": "/movimientos?seleccionado=Comesue%C3%B1os",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Cometa draco",
+        "ruta": "/movimientos?seleccionado=Cometa%20draco",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Concha filo",
+        "ruta": "/movimientos?seleccionado=Concha%20filo",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Agua lodosa",
+        "ruta": "/movimientos?seleccionado=Agua%20lodosa",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Condena silvana",
+        "ruta": "/movimientos?seleccionado=Condena%20silvana",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Confidencia",
+        "ruta": "/movimientos?seleccionado=Confidencia",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Confusión",
+        "ruta": "/movimientos?seleccionado=Confusi%C3%B3n",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Conjuro",
+        "ruta": "/movimientos?seleccionado=Conjuro",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Aguante",
+        "ruta": "/movimientos?seleccionado=Aguante",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Conjuro funesto",
+        "ruta": "/movimientos?seleccionado=Conjuro%20funesto",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Aguijón letal",
+        "ruta": "/movimientos?seleccionado=Aguij%C3%B3n%20letal",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Constricción",
+        "ruta": "/movimientos?seleccionado=Constricci%C3%B3n",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Contoneo",
+        "ruta": "/movimientos?seleccionado=Contoneo",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Aire afilado",
+        "ruta": "/movimientos?seleccionado=Aire%20afilado",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Contraataque",
+        "ruta": "/movimientos?seleccionado=Contraataque",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Al ataque",
+        "ruta": "/movimientos?seleccionado=Al%20ataque",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Conversión",
+        "ruta": "/movimientos?seleccionado=Conversi%C3%B3n",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Ala aural",
+        "ruta": "/movimientos?seleccionado=Ala%20aural",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Conversión2",
+        "ruta": "/movimientos?seleccionado=Conversi%C3%B3n2",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Ala bis",
+        "ruta": "/movimientos?seleccionado=Ala%20bis",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Coraza trampa",
+        "ruta": "/movimientos?seleccionado=Coraza%20trampa",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Ala de acero",
+        "ruta": "/movimientos?seleccionado=Ala%20de%20acero",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Cornada",
+        "ruta": "/movimientos?seleccionado=Cornada",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Corpulencia",
+        "ruta": "/movimientos?seleccionado=Corpulencia",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Corte",
+        "ruta": "/movimientos?seleccionado=Corte",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Corte furia",
+        "ruta": "/movimientos?seleccionado=Corte%20furia",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Corte vacío",
+        "ruta": "/movimientos?seleccionado=Corte%20vac%C3%ADo",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Ala mortífera",
+        "ruta": "/movimientos?seleccionado=Ala%20mort%C3%ADfera",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Cosquillas",
+        "ruta": "/movimientos?seleccionado=Cosquillas",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Alarido",
+        "ruta": "/movimientos?seleccionado=Alarido",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Cuchilla Perdición",
+        "ruta": "/movimientos?seleccionado=Cuchilla%20Perdici%C3%B3n",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Alboroto",
+        "ruta": "/movimientos?seleccionado=Alboroto",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Cuchilla solar",
+        "ruta": "/movimientos?seleccionado=Cuchilla%20solar",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Aligerar",
+        "ruta": "/movimientos?seleccionado=Aligerar",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Alivio",
+        "ruta": "/movimientos?seleccionado=Alivio",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Allanador férreo",
+        "ruta": "/movimientos?seleccionado=Allanador%20f%C3%A9rreo",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Cuchillada",
+        "ruta": "/movimientos?seleccionado=Cuchillada",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Alquitranazo",
+        "ruta": "/movimientos?seleccionado=Alquitranazo",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Cuerno certero",
+        "ruta": "/movimientos?seleccionado=Cuerno%20certero",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Alto voltaje",
+        "ruta": "/movimientos?seleccionado=Alto%20voltaje",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Cuerpo pesado",
+        "ruta": "/movimientos?seleccionado=Cuerpo%20pesado",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Alud",
+        "ruta": "/movimientos?seleccionado=Alud",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Amago",
+        "ruta": "/movimientos?seleccionado=Amago",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Cura floral",
+        "ruta": "/movimientos?seleccionado=Cura%20floral",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Amnesia",
+        "ruta": "/movimientos?seleccionado=Amnesia",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Amplificador",
+        "ruta": "/movimientos?seleccionado=Amplificador",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Cura selvática",
+        "ruta": "/movimientos?seleccionado=Cura%20selv%C3%A1tica",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Danza acuática",
+        "ruta": "/movimientos?seleccionado=Danza%20acu%C3%A1tica",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Danza aleteo",
+        "ruta": "/movimientos?seleccionado=Danza%20aleteo",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Danza amiga",
+        "ruta": "/movimientos?seleccionado=Danza%20amiga",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Danza caos",
+        "ruta": "/movimientos?seleccionado=Danza%20caos",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Anclaje",
+        "ruta": "/movimientos?seleccionado=Anclaje",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Anillo ígneo",
+        "ruta": "/movimientos?seleccionado=Anillo%20%C3%ADgneo",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Antiaéreo",
+        "ruta": "/movimientos?seleccionado=Antia%C3%A9reo",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Danza despertar",
+        "ruta": "/movimientos?seleccionado=Danza%20despertar",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Anticipo",
+        "ruta": "/movimientos?seleccionado=Anticipo",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Danza dragón",
+        "ruta": "/movimientos?seleccionado=Danza%20drag%C3%B3n",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Danza espada",
+        "ruta": "/movimientos?seleccionado=Danza%20espada",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Anticura",
+        "ruta": "/movimientos?seleccionado=Anticura",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Antojo",
+        "ruta": "/movimientos?seleccionado=Antojo",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Anulación",
+        "ruta": "/movimientos?seleccionado=Anulaci%C3%B3n",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Arañazo",
+        "ruta": "/movimientos?seleccionado=Ara%C3%B1azo",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Arenas ardientes",
+        "ruta": "/movimientos?seleccionado=Arenas%20ardientes",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Aria burbuja",
+        "ruta": "/movimientos?seleccionado=Aria%20burbuja",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Ariete",
+        "ruta": "/movimientos?seleccionado=Ariete",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Danza llama",
+        "ruta": "/movimientos?seleccionado=Danza%20llama",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Armadura ácida",
+        "ruta": "/movimientos?seleccionado=Armadura%20%C3%A1cida",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Danza lluvia",
+        "ruta": "/movimientos?seleccionado=Danza%20lluvia",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Aromaterapia",
+        "ruta": "/movimientos?seleccionado=Aromaterapia",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Danza lunar",
+        "ruta": "/movimientos?seleccionado=Danza%20lunar",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Danza pétalo",
+        "ruta": "/movimientos?seleccionado=Danza%20p%C3%A9talo",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Arraigo",
+        "ruta": "/movimientos?seleccionado=Arraigo",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Arremetida",
+        "ruta": "/movimientos?seleccionado=Arremetida",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Asalto barrera",
+        "ruta": "/movimientos?seleccionado=Asalto%20barrera",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Danza pluma",
+        "ruta": "/movimientos?seleccionado=Danza%20pluma",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Asalto espadón",
+        "ruta": "/movimientos?seleccionado=Asalto%20espad%C3%B3n",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Asalto estelar",
+        "ruta": "/movimientos?seleccionado=Asalto%20estelar",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Ascenso draco",
+        "ruta": "/movimientos?seleccionado=Ascenso%20draco",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Ascuas",
+        "ruta": "/movimientos?seleccionado=Ascuas",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Danza triunfal",
+        "ruta": "/movimientos?seleccionado=Danza%20triunfal",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Decalcomanía",
+        "ruta": "/movimientos?seleccionado=Decalcoman%C3%ADa",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Decoración",
+        "ruta": "/movimientos?seleccionado=Decoraci%C3%B3n",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Defensa férrea",
+        "ruta": "/movimientos?seleccionado=Defensa%20f%C3%A9rrea",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Defensa floral",
+        "ruta": "/movimientos?seleccionado=Defensa%20floral",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Electroderrape",
+        "ruta": "/movimientos?seleccionado=Electroderrape",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Demolición",
+        "ruta": "/movimientos?seleccionado=Demolici%C3%B3n",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Electrojaula",
+        "ruta": "/movimientos?seleccionado=Electrojaula",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Derribo",
+        "ruta": "/movimientos?seleccionado=Derribo",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Electropalmas",
+        "ruta": "/movimientos?seleccionado=Electropalmas",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Desahogo",
+        "ruta": "/movimientos?seleccionado=Desahogo",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Electropico",
+        "ruta": "/movimientos?seleccionado=Electropico",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Desarme",
+        "ruta": "/movimientos?seleccionado=Desarme",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Electropunzada",
+        "ruta": "/movimientos?seleccionado=Electropunzada",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Desarrollo",
+        "ruta": "/movimientos?seleccionado=Desarrollo",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Electrorrayo",
+        "ruta": "/movimientos?seleccionado=Electrorrayo",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Descanso",
+        "ruta": "/movimientos?seleccionado=Descanso",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Electrotela",
+        "ruta": "/movimientos?seleccionado=Electrotela",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Deseo",
+        "ruta": "/movimientos?seleccionado=Deseo",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Embargo",
+        "ruta": "/movimientos?seleccionado=Embargo",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Deseo cura",
+        "ruta": "/movimientos?seleccionado=Deseo%20cura",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Embate supremo",
+        "ruta": "/movimientos?seleccionado=Embate%20supremo",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Deseo oculto",
+        "ruta": "/movimientos?seleccionado=Deseo%20oculto",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Empapar",
+        "ruta": "/movimientos?seleccionado=Empapar",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Deslome",
+        "ruta": "/movimientos?seleccionado=Deslome",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Empujón",
+        "ruta": "/movimientos?seleccionado=Empuj%C3%B3n",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Deslumbrar",
+        "ruta": "/movimientos?seleccionado=Deslumbrar",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Encanto",
+        "ruta": "/movimientos?seleccionado=Encanto",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Despejar",
+        "ruta": "/movimientos?seleccionado=Despejar",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Energibola",
+        "ruta": "/movimientos?seleccionado=Energibola",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Enfado",
+        "ruta": "/movimientos?seleccionado=Enfado",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Desquite",
+        "ruta": "/movimientos?seleccionado=Desquite",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Enrosque",
+        "ruta": "/movimientos?seleccionado=Enrosque",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Destello",
+        "ruta": "/movimientos?seleccionado=Destello",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Envidia ardiente",
+        "ruta": "/movimientos?seleccionado=Envidia%20ardiente",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Destructor",
+        "ruta": "/movimientos?seleccionado=Destructor",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Envite acuático",
+        "ruta": "/movimientos?seleccionado=Envite%20acu%C3%A1tico",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Detección",
+        "ruta": "/movimientos?seleccionado=Detecci%C3%B3n",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Día soleado",
+        "ruta": "/movimientos?seleccionado=D%C3%ADa%20soleado",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Envite ígneo",
+        "ruta": "/movimientos?seleccionado=Envite%20%C3%ADgneo",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Disparo certero",
+        "ruta": "/movimientos?seleccionado=Disparo%20certero",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Erupción de ira",
+        "ruta": "/movimientos?seleccionado=Erupci%C3%B3n%20de%20ira",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Disparo demora",
+        "ruta": "/movimientos?seleccionado=Disparo%20demora",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Escaldar",
+        "ruta": "/movimientos?seleccionado=Escaldar",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Escalofrío",
+        "ruta": "/movimientos?seleccionado=Escalofr%C3%ADo",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Escaramuza",
+        "ruta": "/movimientos?seleccionado=Escaramuza",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Disparo lodo",
+        "ruta": "/movimientos?seleccionado=Disparo%20lodo",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Escudo real",
+        "ruta": "/movimientos?seleccionado=Escudo%20real",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Disparo metal",
+        "ruta": "/movimientos?seleccionado=Disparo%20metal",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Esfera aural",
+        "ruta": "/movimientos?seleccionado=Esfera%20aural",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Divide dolor",
+        "ruta": "/movimientos?seleccionado=Divide%20dolor",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Esfuerzo",
+        "ruta": "/movimientos?seleccionado=Esfuerzo",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Doble bofetón",
+        "ruta": "/movimientos?seleccionado=Doble%20bofet%C3%B3n",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Espabila",
+        "ruta": "/movimientos?seleccionado=Espabila",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Doble equipo",
+        "ruta": "/movimientos?seleccionado=Doble%20equipo",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Doble filo",
+        "ruta": "/movimientos?seleccionado=Doble%20filo",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Espacio raro",
+        "ruta": "/movimientos?seleccionado=Espacio%20raro",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Doble golpe",
+        "ruta": "/movimientos?seleccionado=Doble%20golpe",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Espada lamento",
+        "ruta": "/movimientos?seleccionado=Espada%20lamento",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Doble patada",
+        "ruta": "/movimientos?seleccionado=Doble%20patada",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Espada santa",
+        "ruta": "/movimientos?seleccionado=Espada%20santa",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Espora",
+        "ruta": "/movimientos?seleccionado=Espora",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Esporagodón",
+        "ruta": "/movimientos?seleccionado=Esporagod%C3%B3n",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Dracoenergía",
+        "ruta": "/movimientos?seleccionado=Dracoenerg%C3%ADa",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Dracoflechas",
+        "ruta": "/movimientos?seleccionado=Dracoflechas",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Dragoaliento",
+        "ruta": "/movimientos?seleccionado=Dragoaliento",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Esquema",
+        "ruta": "/movimientos?seleccionado=Esquema",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Esquirla helada",
+        "ruta": "/movimientos?seleccionado=Esquirla%20helada",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Estallido",
+        "ruta": "/movimientos?seleccionado=Estallido",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Estoicismo",
+        "ruta": "/movimientos?seleccionado=Estoicismo",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Estruendo",
+        "ruta": "/movimientos?seleccionado=Estruendo",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Estruendo escama",
+        "ruta": "/movimientos?seleccionado=Estruendo%20escama",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Excavar",
+        "ruta": "/movimientos?seleccionado=Excavar",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Explosión",
+        "ruta": "/movimientos?seleccionado=Explosi%C3%B3n",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Extracto picante",
+        "ruta": "/movimientos?seleccionado=Extracto%20picante",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Falso tortazo",
+        "ruta": "/movimientos?seleccionado=Falso%20tortazo",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Ferropuño doble",
+        "ruta": "/movimientos?seleccionado=Ferropu%C3%B1o%20doble",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Fiebre dorada",
+        "ruta": "/movimientos?seleccionado=Fiebre%20dorada",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Fijar blanco",
+        "ruta": "/movimientos?seleccionado=Fijar%20blanco",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Filo del abismo",
+        "ruta": "/movimientos?seleccionado=Filo%20del%20abismo",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Filo potente",
+        "ruta": "/movimientos?seleccionado=Filo%20potente",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Drenadoras",
+        "ruta": "/movimientos?seleccionado=Drenadoras",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Finta",
+        "ruta": "/movimientos?seleccionado=Finta",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Fisura",
+        "ruta": "/movimientos?seleccionado=Fisura",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Fitoimpulso",
+        "ruta": "/movimientos?seleccionado=Fitoimpulso",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Dulce aroma",
+        "ruta": "/movimientos?seleccionado=Dulce%20aroma",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Foco energía",
+        "ruta": "/movimientos?seleccionado=Foco%20energ%C3%ADa",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Eco metálico",
+        "ruta": "/movimientos?seleccionado=Eco%20met%C3%A1lico",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Foco resplandor",
+        "ruta": "/movimientos?seleccionado=Foco%20resplandor",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Eco voz",
+        "ruta": "/movimientos?seleccionado=Eco%20voz",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Follaje",
+        "ruta": "/movimientos?seleccionado=Follaje",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Electormenta",
+        "ruta": "/movimientos?seleccionado=Electormenta",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Fortaleza",
+        "ruta": "/movimientos?seleccionado=Fortaleza",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Electrificación",
+        "ruta": "/movimientos?seleccionado=Electrificaci%C3%B3n",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Fotocolisión",
+        "ruta": "/movimientos?seleccionado=Fotocolisi%C3%B3n",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Electrocañón",
+        "ruta": "/movimientos?seleccionado=Electroca%C3%B1%C3%B3n",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Fragor escamas",
+        "ruta": "/movimientos?seleccionado=Fragor%20escamas",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Garra nociva",
+        "ruta": "/movimientos?seleccionado=Garra%20nociva",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Garra umbría",
+        "ruta": "/movimientos?seleccionado=Garra%20umbr%C3%ADa",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Garrote liana",
+        "ruta": "/movimientos?seleccionado=Garrote%20liana",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Gas corrosivo",
+        "ruta": "/movimientos?seleccionado=Gas%20corrosivo",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Gas venenoso",
+        "ruta": "/movimientos?seleccionado=Gas%20venenoso",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Géiser fotónico",
+        "ruta": "/movimientos?seleccionado=G%C3%A9iser%20fot%C3%B3nico",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Genufendiente",
+        "ruta": "/movimientos?seleccionado=Genufendiente",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Geocontrol",
+        "ruta": "/movimientos?seleccionado=Geocontrol",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Gigadrenado",
+        "ruta": "/movimientos?seleccionado=Gigadrenado",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Gigaimpacto",
+        "ruta": "/movimientos?seleccionado=Gigaimpacto",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Giro bola",
+        "ruta": "/movimientos?seleccionado=Giro%20bola",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Giro fuego",
+        "ruta": "/movimientos?seleccionado=Giro%20fuego",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Giro mortífero",
+        "ruta": "/movimientos?seleccionado=Giro%20mort%C3%ADfero",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Giro rápido",
+        "ruta": "/movimientos?seleccionado=Giro%20r%C3%A1pido",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Giro vil",
+        "ruta": "/movimientos?seleccionado=Giro%20vil",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Golpe",
+        "ruta": "/movimientos?seleccionado=Golpe",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Golpe aéreo",
+        "ruta": "/movimientos?seleccionado=Golpe%20a%C3%A9reo",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Golpe bajo",
+        "ruta": "/movimientos?seleccionado=Golpe%20bajo",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Golpe bis",
+        "ruta": "/movimientos?seleccionado=Golpe%20bis",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Golpe cabeza",
+        "ruta": "/movimientos?seleccionado=Golpe%20cabeza",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Golpe calor",
+        "ruta": "/movimientos?seleccionado=Golpe%20calor",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Golpe cuerpo",
+        "ruta": "/movimientos?seleccionado=Golpe%20cuerpo",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Golpe fantasma",
+        "ruta": "/movimientos?seleccionado=Golpe%20fantasma",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Golpe kárate",
+        "ruta": "/movimientos?seleccionado=Golpe%20k%C3%A1rate",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Golpe mordaza",
+        "ruta": "/movimientos?seleccionado=Golpe%20mordaza",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Golpe oscuro",
+        "ruta": "/movimientos?seleccionado=Golpe%20oscuro",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Golpe rastrero",
+        "ruta": "/movimientos?seleccionado=Golpe%20rastrero",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Golpe roca",
+        "ruta": "/movimientos?seleccionado=Golpe%20roca",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Golpe umbrío",
+        "ruta": "/movimientos?seleccionado=Golpe%20umbr%C3%ADo",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Golpes furia",
+        "ruta": "/movimientos?seleccionado=Golpes%20furia",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Gota vital",
+        "ruta": "/movimientos?seleccionado=Gota%20vital",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Gravedad",
+        "ruta": "/movimientos?seleccionado=Gravedad",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Gruñido",
+        "ruta": "/movimientos?seleccionado=Gru%C3%B1ido",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Guillotina",
+        "ruta": "/movimientos?seleccionado=Guillotina",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Hachazo pétreo",
+        "ruta": "/movimientos?seleccionado=Hachazo%20p%C3%A9treo",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Halloween",
+        "ruta": "/movimientos?seleccionado=Halloween",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Hidroariete",
+        "ruta": "/movimientos?seleccionado=Hidroariete",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Hidrobomba",
+        "ruta": "/movimientos?seleccionado=Hidrobomba",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Hidrocañón",
+        "ruta": "/movimientos?seleccionado=Hidroca%C3%B1%C3%B3n",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Hidropulso",
+        "ruta": "/movimientos?seleccionado=Hidropulso",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Hidrovapor",
+        "ruta": "/movimientos?seleccionado=Hidrovapor",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Hierba lazo",
+        "ruta": "/movimientos?seleccionado=Hierba%20lazo",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Hilo venenoso",
+        "ruta": "/movimientos?seleccionado=Hilo%20venenoso",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Hipercolmillo",
+        "ruta": "/movimientos?seleccionado=Hipercolmillo",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Hiperrayo",
+        "ruta": "/movimientos?seleccionado=Hiperrayo",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Hipertaladro",
+        "ruta": "/movimientos?seleccionado=Hipertaladro",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Hipnosis",
+        "ruta": "/movimientos?seleccionado=Hipnosis",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Hoja afilada",
+        "ruta": "/movimientos?seleccionado=Hoja%20afilada",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Hoja aguda",
+        "ruta": "/movimientos?seleccionado=Hoja%20aguda",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Hoja mágica",
+        "ruta": "/movimientos?seleccionado=Hoja%20m%C3%A1gica",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Homenaje póstumo",
+        "ruta": "/movimientos?seleccionado=Homenaje%20p%C3%B3stumo",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Hueso sombrío",
+        "ruta": "/movimientos?seleccionado=Hueso%20sombr%C3%ADo",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Huesomerang",
+        "ruta": "/movimientos?seleccionado=Huesomerang",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Humareda",
+        "ruta": "/movimientos?seleccionado=Humareda",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Ida y vuelta",
+        "ruta": "/movimientos?seleccionado=Ida%20y%20vuelta",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Imagen",
+        "ruta": "/movimientos?seleccionado=Imagen",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Imitación",
+        "ruta": "/movimientos?seleccionado=Imitaci%C3%B3n",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Frío polar",
+        "ruta": "/movimientos?seleccionado=Fr%C3%ADo%20polar",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Fuego fatuo",
+        "ruta": "/movimientos?seleccionado=Fuego%20fatuo",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Impactrueno",
+        "ruta": "/movimientos?seleccionado=Impactrueno",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Fuego sagrado",
+        "ruta": "/movimientos?seleccionado=Fuego%20sagrado",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Impresionar",
+        "ruta": "/movimientos?seleccionado=Impresionar",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Infierno",
+        "ruta": "/movimientos?seleccionado=Infierno",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Fuerza",
+        "ruta": "/movimientos?seleccionado=Fuerza",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Fuerza bruta",
+        "ruta": "/movimientos?seleccionado=Fuerza%20bruta",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Infortunio",
+        "ruta": "/movimientos?seleccionado=Infortunio",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Fuerza equina",
+        "ruta": "/movimientos?seleccionado=Fuerza%20equina",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Inversión",
+        "ruta": "/movimientos?seleccionado=Inversi%C3%B3n",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Fuerza G",
+        "ruta": "/movimientos?seleccionado=Fuerza%20G",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Irreverencia",
+        "ruta": "/movimientos?seleccionado=Irreverencia",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Isofuerza",
+        "ruta": "/movimientos?seleccionado=Isofuerza",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Isoguardia",
+        "ruta": "/movimientos?seleccionado=Isoguardia",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Fuerza lunar",
+        "ruta": "/movimientos?seleccionado=Fuerza%20lunar",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Joya de luz",
+        "ruta": "/movimientos?seleccionado=Joya%20de%20luz",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Fuerza telúrica",
+        "ruta": "/movimientos?seleccionado=Fuerza%20tel%C3%BArica",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Juego sucio",
+        "ruta": "/movimientos?seleccionado=Juego%20sucio",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Fulgor semilla",
+        "ruta": "/movimientos?seleccionado=Fulgor%20semilla",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Furia candente",
+        "ruta": "/movimientos?seleccionado=Furia%20candente",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Jugueteo",
+        "ruta": "/movimientos?seleccionado=Jugueteo",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Furia dragón",
+        "ruta": "/movimientos?seleccionado=Furia%20drag%C3%B3n",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Furia natural",
+        "ruta": "/movimientos?seleccionado=Furia%20natural",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Kinético",
+        "ruta": "/movimientos?seleccionado=Kin%C3%A9tico",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Furia taurina",
+        "ruta": "/movimientos?seleccionado=Furia%20taurina",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Ladrón",
+        "ruta": "/movimientos?seleccionado=Ladr%C3%B3n",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Lanza glacial",
+        "ruta": "/movimientos?seleccionado=Lanza%20glacial",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Gancho alto",
+        "ruta": "/movimientos?seleccionado=Gancho%20alto",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Garra brutal",
+        "ruta": "/movimientos?seleccionado=Garra%20brutal",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Garra dragón",
+        "ruta": "/movimientos?seleccionado=Garra%20drag%C3%B3n",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Garra metal",
+        "ruta": "/movimientos?seleccionado=Garra%20metal",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Lariat oscuro",
+        "ruta": "/movimientos?seleccionado=Lariat%20oscuro",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Láser doble",
+        "ruta": "/movimientos?seleccionado=L%C3%A1ser%20doble",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Láser Veleidoso",
+        "ruta": "/movimientos?seleccionado=L%C3%A1ser%20Veleidoso",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Latigazo",
+        "ruta": "/movimientos?seleccionado=Latigazo",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Látigo",
+        "ruta": "/movimientos?seleccionado=L%C3%A1tigo",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Látigo cepa",
+        "ruta": "/movimientos?seleccionado=L%C3%A1tigo%20cepa",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Látigo ígneo",
+        "ruta": "/movimientos?seleccionado=L%C3%A1tigo%20%C3%ADgneo",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Legado",
+        "ruta": "/movimientos?seleccionado=Legado",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Lengüetazo",
+        "ruta": "/movimientos?seleccionado=Leng%C3%BCetazo",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Lanzallamas",
+        "ruta": "/movimientos?seleccionado=Lanzallamas",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Lanzamiento",
+        "ruta": "/movimientos?seleccionado=Lanzamiento",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Lanzamugre",
+        "ruta": "/movimientos?seleccionado=Lanzamugre",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Lanzarrocas",
+        "ruta": "/movimientos?seleccionado=Lanzarrocas",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Mazazo",
+        "ruta": "/movimientos?seleccionado=Mazazo",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Megaagotar",
+        "ruta": "/movimientos?seleccionado=Megaagotar",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Megacuerno",
+        "ruta": "/movimientos?seleccionado=Megacuerno",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Megapatada",
+        "ruta": "/movimientos?seleccionado=Megapatada",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Megapuño",
+        "ruta": "/movimientos?seleccionado=Megapu%C3%B1o",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Metaláser",
+        "ruta": "/movimientos?seleccionado=Metal%C3%A1ser",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Meteoimpacto",
+        "ruta": "/movimientos?seleccionado=Meteoimpacto",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Meteorobola",
+        "ruta": "/movimientos?seleccionado=Meteorobola",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Meteoros",
+        "ruta": "/movimientos?seleccionado=Meteoros",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Mil flechas",
+        "ruta": "/movimientos?seleccionado=Mil%20flechas",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Mil púas tóxicas",
+        "ruta": "/movimientos?seleccionado=Mil%20p%C3%BAas%20t%C3%B3xicas",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Mil temblores",
+        "ruta": "/movimientos?seleccionado=Mil%20temblores",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Mirada heladora",
+        "ruta": "/movimientos?seleccionado=Mirada%20heladora",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Mismo destino",
+        "ruta": "/movimientos?seleccionado=Mismo%20destino",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Mofa",
+        "ruta": "/movimientos?seleccionado=Mofa",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Moflete estático",
+        "ruta": "/movimientos?seleccionado=Moflete%20est%C3%A1tico",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Moluscañón",
+        "ruta": "/movimientos?seleccionado=Molusca%C3%B1%C3%B3n",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Mordisco",
+        "ruta": "/movimientos?seleccionado=Mordisco",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Motivación",
+        "ruta": "/movimientos?seleccionado=Motivaci%C3%B3n",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Multiataque",
+        "ruta": "/movimientos?seleccionado=Multiataque",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Mundo gélido",
+        "ruta": "/movimientos?seleccionado=Mundo%20g%C3%A9lido",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Neblina",
+        "ruta": "/movimientos?seleccionado=Neblina",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Niebla",
+        "ruta": "/movimientos?seleccionado=Niebla",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Niebla aromática",
+        "ruta": "/movimientos?seleccionado=Niebla%20arom%C3%A1tica",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Niebla clara",
+        "ruta": "/movimientos?seleccionado=Niebla%20clara",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Nieve polvo",
+        "ruta": "/movimientos?seleccionado=Nieve%20polvo",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Nitrocarga",
+        "ruta": "/movimientos?seleccionado=Nitrocarga",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Nitrochoque",
+        "ruta": "/movimientos?seleccionado=Nitrochoque",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Núcleo castigo",
+        "ruta": "/movimientos?seleccionado=N%C3%BAcleo%20castigo",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Obstrucción",
+        "ruta": "/movimientos?seleccionado=Obstrucci%C3%B3n",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Octopresa",
+        "ruta": "/movimientos?seleccionado=Octopresa",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Oído cocina",
+        "ruta": "/movimientos?seleccionado=O%C3%ADdo%20cocina",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Ojitos tiernos",
+        "ruta": "/movimientos?seleccionado=Ojitos%20tiernos",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Ojos llorosos",
+        "ruta": "/movimientos?seleccionado=Ojos%20llorosos",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Onda anómala",
+        "ruta": "/movimientos?seleccionado=Onda%20an%C3%B3mala",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Onda certera",
+        "ruta": "/movimientos?seleccionado=Onda%20certera",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Onda ígnea",
+        "ruta": "/movimientos?seleccionado=Onda%20%C3%ADgnea",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Onda mental",
+        "ruta": "/movimientos?seleccionado=Onda%20mental",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Onda simple",
+        "ruta": "/movimientos?seleccionado=Onda%20simple",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Onda tóxica",
+        "ruta": "/movimientos?seleccionado=Onda%20t%C3%B3xica",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Onda trueno",
+        "ruta": "/movimientos?seleccionado=Onda%20trueno",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Onda vacío",
+        "ruta": "/movimientos?seleccionado=Onda%20vac%C3%ADo",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Onda voltio",
+        "ruta": "/movimientos?seleccionado=Onda%20voltio",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Orbes espectro",
+        "ruta": "/movimientos?seleccionado=Orbes%20espectro",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Otra vez",
+        "ruta": "/movimientos?seleccionado=Otra%20vez",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Ovocuración",
+        "ruta": "/movimientos?seleccionado=Ovocuraci%C3%B3n",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Paisaje nevado",
+        "ruta": "/movimientos?seleccionado=Paisaje%20nevado",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Pájaro osado",
+        "ruta": "/movimientos?seleccionado=P%C3%A1jaro%20osado",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Paliza",
+        "ruta": "/movimientos?seleccionado=Paliza",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Palma rauda",
+        "ruta": "/movimientos?seleccionado=Palma%20rauda",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Palmeo",
+        "ruta": "/movimientos?seleccionado=Palmeo",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Pantalla de humo",
+        "ruta": "/movimientos?seleccionado=Pantalla%20de%20humo",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Pantalla de luz",
+        "ruta": "/movimientos?seleccionado=Pantalla%20de%20luz",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Paralizador",
+        "ruta": "/movimientos?seleccionado=Paralizador",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Paranormal",
+        "ruta": "/movimientos?seleccionado=Paranormal",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Paso dimensional",
+        "ruta": "/movimientos?seleccionado=Paso%20dimensional",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Patada baja",
+        "ruta": "/movimientos?seleccionado=Patada%20baja",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Patada hacha",
+        "ruta": "/movimientos?seleccionado=Patada%20hacha",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Patada ígnea",
+        "ruta": "/movimientos?seleccionado=Patada%20%C3%ADgnea",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Patada relámpago",
+        "ruta": "/movimientos?seleccionado=Patada%20rel%C3%A1mpago",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Patada salto alta",
+        "ruta": "/movimientos?seleccionado=Patada%20salto%20alta",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Patada tropical",
+        "ruta": "/movimientos?seleccionado=Patada%20tropical",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Pataleta",
+        "ruta": "/movimientos?seleccionado=Pataleta",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Paz mental",
+        "ruta": "/movimientos?seleccionado=Paz%20mental",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Pedrada",
+        "ruta": "/movimientos?seleccionado=Pedrada",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Persecución",
+        "ruta": "/movimientos?seleccionado=Persecuci%C3%B3n",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Picadura",
+        "ruta": "/movimientos?seleccionado=Picadura",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Pico cañón",
+        "ruta": "/movimientos?seleccionado=Pico%20ca%C3%B1%C3%B3n",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Pico taladro",
+        "ruta": "/movimientos?seleccionado=Pico%20taladro",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Picotazo",
+        "ruta": "/movimientos?seleccionado=Picotazo",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Picotazo veneno",
+        "ruta": "/movimientos?seleccionado=Picotazo%20veneno",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Picoteo",
+        "ruta": "/movimientos?seleccionado=Picoteo",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Pin misil",
+        "ruta": "/movimientos?seleccionado=Pin%20misil",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Piñón auxiliar",
+        "ruta": "/movimientos?seleccionado=Pi%C3%B1%C3%B3n%20auxiliar",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Pirueta helada",
+        "ruta": "/movimientos?seleccionado=Pirueta%20helada",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Pisotón",
+        "ruta": "/movimientos?seleccionado=Pisot%C3%B3n",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Pistola agua",
+        "ruta": "/movimientos?seleccionado=Pistola%20agua",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Placaje",
+        "ruta": "/movimientos?seleccionado=Placaje",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Placaje eléctrico",
+        "ruta": "/movimientos?seleccionado=Placaje%20el%C3%A9ctrico",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Plancha",
+        "ruta": "/movimientos?seleccionado=Plancha",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Plancha corporal",
+        "ruta": "/movimientos?seleccionado=Plancha%20corporal",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Plancha voladora",
+        "ruta": "/movimientos?seleccionado=Plancha%20voladora",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Plancha Voltaica",
+        "ruta": "/movimientos?seleccionado=Plancha%20Voltaica",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Planta feroz",
+        "ruta": "/movimientos?seleccionado=Planta%20feroz",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Plegaria lunar",
+        "ruta": "/movimientos?seleccionado=Plegaria%20lunar",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Plegaria vital",
+        "ruta": "/movimientos?seleccionado=Plegaria%20vital",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Plumerazo",
+        "ruta": "/movimientos?seleccionado=Plumerazo",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Poder Místico",
+        "ruta": "/movimientos?seleccionado=Poder%20M%C3%ADstico",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Poder pasado",
+        "ruta": "/movimientos?seleccionado=Poder%20pasado",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Poder reserva",
+        "ruta": "/movimientos?seleccionado=Poder%20reserva",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Poltergeist",
+        "ruta": "/movimientos?seleccionado=Poltergeist",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Polución",
+        "ruta": "/movimientos?seleccionado=Poluci%C3%B3n",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Polvo ira",
+        "ruta": "/movimientos?seleccionado=Polvo%20ira",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Polvo mágico",
+        "ruta": "/movimientos?seleccionado=Polvo%20m%C3%A1gico",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Polvo veneno",
+        "ruta": "/movimientos?seleccionado=Polvo%20veneno",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Premonición",
+        "ruta": "/movimientos?seleccionado=Premonici%C3%B3n",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Prensa metálica",
+        "ruta": "/movimientos?seleccionado=Prensa%20met%C3%A1lica",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Presa maxilar",
+        "ruta": "/movimientos?seleccionado=Presa%20maxilar",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Presente",
+        "ruta": "/movimientos?seleccionado=Presente",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Profecía",
+        "ruta": "/movimientos?seleccionado=Profec%C3%ADa",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Proliferación",
+        "ruta": "/movimientos?seleccionado=Proliferaci%C3%B3n",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Protección",
+        "ruta": "/movimientos?seleccionado=Protecci%C3%B3n",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Psicoataque",
+        "ruta": "/movimientos?seleccionado=Psicoataque",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Psicocambio",
+        "ruta": "/movimientos?seleccionado=Psicocambio",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Psicocarga",
+        "ruta": "/movimientos?seleccionado=Psicocarga",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Psicocolmillo",
+        "ruta": "/movimientos?seleccionado=Psicocolmillo",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Psicocorte",
+        "ruta": "/movimientos?seleccionado=Psicocorte",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Psicohojas",
+        "ruta": "/movimientos?seleccionado=Psicohojas",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Psicoonda",
+        "ruta": "/movimientos?seleccionado=Psicoonda",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Psicorrayo",
+        "ruta": "/movimientos?seleccionado=Psicorrayo",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Psicorruido",
+        "ruta": "/movimientos?seleccionado=Psicorruido",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Psíquico",
+        "ruta": "/movimientos?seleccionado=Ps%C3%ADquico",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Púas",
+        "ruta": "/movimientos?seleccionado=P%C3%BAas",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Púas tóxicas",
+        "ruta": "/movimientos?seleccionado=P%C3%BAas%20t%C3%B3xicas",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Pulimento",
+        "ruta": "/movimientos?seleccionado=Pulimento",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Pulpocañón",
+        "ruta": "/movimientos?seleccionado=Pulpoca%C3%B1%C3%B3n",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Pulso cura",
+        "ruta": "/movimientos?seleccionado=Pulso%20cura",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Pulso de campo",
+        "ruta": "/movimientos?seleccionado=Pulso%20de%20campo",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Pulso dragón",
+        "ruta": "/movimientos?seleccionado=Pulso%20drag%C3%B3n",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Pulso noche",
+        "ruta": "/movimientos?seleccionado=Pulso%20noche",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Pulso primigenio",
+        "ruta": "/movimientos?seleccionado=Pulso%20primigenio",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Pulso umbrío",
+        "ruta": "/movimientos?seleccionado=Pulso%20umbr%C3%ADo",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Puntada sombría",
+        "ruta": "/movimientos?seleccionado=Puntada%20sombr%C3%ADa",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Puntapié",
+        "ruta": "/movimientos?seleccionado=Puntapi%C3%A9",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Punzada rama",
+        "ruta": "/movimientos?seleccionado=Punzada%20rama",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Puño bala",
+        "ruta": "/movimientos?seleccionado=Pu%C3%B1o%20bala",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Puño certero",
+        "ruta": "/movimientos?seleccionado=Pu%C3%B1o%20certero",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Puño dinámico",
+        "ruta": "/movimientos?seleccionado=Pu%C3%B1o%20din%C3%A1mico",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Puño drenaje",
+        "ruta": "/movimientos?seleccionado=Pu%C3%B1o%20drenaje",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Puño fuego",
+        "ruta": "/movimientos?seleccionado=Pu%C3%B1o%20fuego",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Puño furia",
+        "ruta": "/movimientos?seleccionado=Pu%C3%B1o%20furia",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Puño hielo",
+        "ruta": "/movimientos?seleccionado=Pu%C3%B1o%20hielo",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Puño incremento",
+        "ruta": "/movimientos?seleccionado=Pu%C3%B1o%20incremento",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Puño jet",
+        "ruta": "/movimientos?seleccionado=Pu%C3%B1o%20jet",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Puño meteoro",
+        "ruta": "/movimientos?seleccionado=Pu%C3%B1o%20meteoro",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Puño sombra",
+        "ruta": "/movimientos?seleccionado=Pu%C3%B1o%20sombra",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Puño trueno",
+        "ruta": "/movimientos?seleccionado=Pu%C3%B1o%20trueno",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Puños plasma",
+        "ruta": "/movimientos?seleccionado=Pu%C3%B1os%20plasma",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Purificación",
+        "ruta": "/movimientos?seleccionado=Purificaci%C3%B3n",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Puya nociva",
+        "ruta": "/movimientos?seleccionado=Puya%20nociva",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Quemarrueda",
+        "ruta": "/movimientos?seleccionado=Quemarrueda",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Levitón",
+        "ruta": "/movimientos?seleccionado=Levit%C3%B3n",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Limpieza general",
+        "ruta": "/movimientos?seleccionado=Limpieza%20general",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Liofilización",
+        "ruta": "/movimientos?seleccionado=Liofilizaci%C3%B3n",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Llama azul",
+        "ruta": "/movimientos?seleccionado=Llama%20azul",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Llama embrujada",
+        "ruta": "/movimientos?seleccionado=Llama%20embrujada",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Llama final",
+        "ruta": "/movimientos?seleccionado=Llama%20final",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Llama fusión",
+        "ruta": "/movimientos?seleccionado=Llama%20fusi%C3%B3n",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Llama gélida",
+        "ruta": "/movimientos?seleccionado=Llama%20g%C3%A9lida",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Llama protectora",
+        "ruta": "/movimientos?seleccionado=Llama%20protectora",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Llamarada",
+        "ruta": "/movimientos?seleccionado=Llamarada",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Llanto falso",
+        "ruta": "/movimientos?seleccionado=Llanto%20falso",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Llave giro",
+        "ruta": "/movimientos?seleccionado=Llave%20giro",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Lluevehojas",
+        "ruta": "/movimientos?seleccionado=Lluevehojas",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Lluvia ígnea",
+        "ruta": "/movimientos?seleccionado=Lluvia%20%C3%ADgnea",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Luminicola",
+        "ruta": "/movimientos?seleccionado=Luminicola",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Luna roja",
+        "ruta": "/movimientos?seleccionado=Luna%20roja",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Luz aniquiladora",
+        "ruta": "/movimientos?seleccionado=Luz%20aniquiladora",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Luz lunar",
+        "ruta": "/movimientos?seleccionado=Luz%20lunar",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Machada",
+        "ruta": "/movimientos?seleccionado=Machada",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Mal de ojo",
+        "ruta": "/movimientos?seleccionado=Mal%20de%20ojo",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Maldición",
+        "ruta": "/movimientos?seleccionado=Maldici%C3%B3n",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Ráfaga escamas",
+        "ruta": "/movimientos?seleccionado=R%C3%A1faga%20escamas",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Rayo",
+        "ruta": "/movimientos?seleccionado=Rayo",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Rayo aurora",
+        "ruta": "/movimientos?seleccionado=Rayo%20aurora",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Rayo burbuja",
+        "ruta": "/movimientos?seleccionado=Rayo%20burbuja",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Rayo carga",
+        "ruta": "/movimientos?seleccionado=Rayo%20carga",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Rayo confuso",
+        "ruta": "/movimientos?seleccionado=Rayo%20confuso",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Rayo fusión",
+        "ruta": "/movimientos?seleccionado=Rayo%20fusi%C3%B3n",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Rayo gélido",
+        "ruta": "/movimientos?seleccionado=Rayo%20g%C3%A9lido",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Rayo hielo",
+        "ruta": "/movimientos?seleccionado=Rayo%20hielo",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Rayo meteórico",
+        "ruta": "/movimientos?seleccionado=Rayo%20mete%C3%B3rico",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Rayo señal",
+        "ruta": "/movimientos?seleccionado=Rayo%20se%C3%B1al",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Malicioso",
+        "ruta": "/movimientos?seleccionado=Malicioso",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Mandato",
+        "ruta": "/movimientos?seleccionado=Mandato",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Manto espejo",
+        "ruta": "/movimientos?seleccionado=Manto%20espejo",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Maquinación",
+        "ruta": "/movimientos?seleccionado=Maquinaci%C3%B3n",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Marcha espectral",
+        "ruta": "/movimientos?seleccionado=Marcha%20espectral",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Martillazo",
+        "ruta": "/movimientos?seleccionado=Martillazo",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Martillo colosal",
+        "ruta": "/movimientos?seleccionado=Martillo%20colosal",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Martillo dragón",
+        "ruta": "/movimientos?seleccionado=Martillo%20drag%C3%B3n",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Martillo hielo",
+        "ruta": "/movimientos?seleccionado=Martillo%20hielo",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Masa cósmica",
+        "ruta": "/movimientos?seleccionado=Masa%20c%C3%B3smica",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Rayo umbrío",
+        "ruta": "/movimientos?seleccionado=Rayo%20umbr%C3%ADo",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Rayo solar",
+        "ruta": "/movimientos?seleccionado=Rayo%20solar",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Recogearena",
+        "ruta": "/movimientos?seleccionado=Recogearena",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Recuperación",
+        "ruta": "/movimientos?seleccionado=Recuperaci%C3%B3n",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Red viscosa",
+        "ruta": "/movimientos?seleccionado=Red%20viscosa",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Reducción",
+        "ruta": "/movimientos?seleccionado=Reducci%C3%B3n",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Reflejo",
+        "ruta": "/movimientos?seleccionado=Reflejo",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Refuerzo",
+        "ruta": "/movimientos?seleccionado=Refuerzo",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Refugio",
+        "ruta": "/movimientos?seleccionado=Refugio",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Sacrificio",
+        "ruta": "/movimientos?seleccionado=Sacrificio",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Relajo",
+        "ruta": "/movimientos?seleccionado=Relajo",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Salazón",
+        "ruta": "/movimientos?seleccionado=Salaz%C3%B3n",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Relámpago Súbito",
+        "ruta": "/movimientos?seleccionado=Rel%C3%A1mpago%20S%C3%BAbito",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Salmuera",
+        "ruta": "/movimientos?seleccionado=Salmuera",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Remolino",
+        "ruta": "/movimientos?seleccionado=Remolino",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Salpicadura",
+        "ruta": "/movimientos?seleccionado=Salpicadura",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Rencor",
+        "ruta": "/movimientos?seleccionado=Rencor",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Rencor reprimido",
+        "ruta": "/movimientos?seleccionado=Rencor%20reprimido",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Salpicar",
+        "ruta": "/movimientos?seleccionado=Salpicar",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Represalia",
+        "ruta": "/movimientos?seleccionado=Represalia",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Saña",
+        "ruta": "/movimientos?seleccionado=Sa%C3%B1a",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Represión metal",
+        "ruta": "/movimientos?seleccionado=Represi%C3%B3n%20metal",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Semilladora",
+        "ruta": "/movimientos?seleccionado=Semilladora",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Resarcimiento",
+        "ruta": "/movimientos?seleccionado=Resarcimiento",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Sentencia",
+        "ruta": "/movimientos?seleccionado=Sentencia",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Residuos",
+        "ruta": "/movimientos?seleccionado=Residuos",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Respiro",
+        "ruta": "/movimientos?seleccionado=Respiro",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Señuelo",
+        "ruta": "/movimientos?seleccionado=Se%C3%B1uelo",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Resplandor",
+        "ruta": "/movimientos?seleccionado=Resplandor",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Shuriken de agua",
+        "ruta": "/movimientos?seleccionado=Shuriken%20de%20agua",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Restricción",
+        "ruta": "/movimientos?seleccionado=Restricci%C3%B3n",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Silbato",
+        "ruta": "/movimientos?seleccionado=Silbato",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Retracción",
+        "ruta": "/movimientos?seleccionado=Retracci%C3%B3n",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Reversión",
+        "ruta": "/movimientos?seleccionado=Reversi%C3%B3n",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Simún de arena",
+        "ruta": "/movimientos?seleccionado=Sim%C3%BAn%20de%20arena",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Síntesis",
+        "ruta": "/movimientos?seleccionado=S%C3%ADntesis",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Sísmico",
+        "ruta": "/movimientos?seleccionado=S%C3%ADsmico",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Sofoco",
+        "ruta": "/movimientos?seleccionado=Sofoco",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Rizo algodón",
+        "ruta": "/movimientos?seleccionado=Rizo%20algod%C3%B3n",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Rizo defensa",
+        "ruta": "/movimientos?seleccionado=Rizo%20defensa",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Sol matinal",
+        "ruta": "/movimientos?seleccionado=Sol%20matinal",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Robasombra",
+        "ruta": "/movimientos?seleccionado=Robasombra",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Sombra vil",
+        "ruta": "/movimientos?seleccionado=Sombra%20vil",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Robo",
+        "ruta": "/movimientos?seleccionado=Robo",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Somnífero",
+        "ruta": "/movimientos?seleccionado=Somn%C3%ADfero",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Sorpresa",
+        "ruta": "/movimientos?seleccionado=Sorpresa",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Sumisión",
+        "ruta": "/movimientos?seleccionado=Sumisi%C3%B3n",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Superdiente",
+        "ruta": "/movimientos?seleccionado=Superdiente",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Supersónico",
+        "ruta": "/movimientos?seleccionado=Supers%C3%B3nico",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Roca afilada",
+        "ruta": "/movimientos?seleccionado=Roca%20afilada",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Surf",
+        "ruta": "/movimientos?seleccionado=Surf",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Tajo acuático",
+        "ruta": "/movimientos?seleccionado=Tajo%20acu%C3%A1tico",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Roca veloz",
+        "ruta": "/movimientos?seleccionado=Roca%20veloz",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Tajo aéreo",
+        "ruta": "/movimientos?seleccionado=Tajo%20a%C3%A9reo",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Rodar",
+        "ruta": "/movimientos?seleccionado=Rodar",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Tajo cruzado",
+        "ruta": "/movimientos?seleccionado=Tajo%20cruzado",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Rompecoraza",
+        "ruta": "/movimientos?seleccionado=Rompecoraza",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Tajo metralla",
+        "ruta": "/movimientos?seleccionado=Tajo%20metralla",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Tajo supremo",
+        "ruta": "/movimientos?seleccionado=Tajo%20supremo",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Tajo taquión",
+        "ruta": "/movimientos?seleccionado=Tajo%20taqui%C3%B3n",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Tajo umbrío",
+        "ruta": "/movimientos?seleccionado=Tajo%20umbr%C3%ADo",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Romperrocas",
+        "ruta": "/movimientos?seleccionado=Romperrocas",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Rueda aural",
+        "ruta": "/movimientos?seleccionado=Rueda%20aural",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Rueda doble",
+        "ruta": "/movimientos?seleccionado=Rueda%20doble",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Rueda fuego",
+        "ruta": "/movimientos?seleccionado=Rueda%20fuego",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Rugido",
+        "ruta": "/movimientos?seleccionado=Rugido",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Rugido de guerra",
+        "ruta": "/movimientos?seleccionado=Rugido%20de%20guerra",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Rugido del tiempo",
+        "ruta": "/movimientos?seleccionado=Rugido%20del%20tiempo",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Sable místico",
+        "ruta": "/movimientos?seleccionado=Sable%20m%C3%ADstico",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Tijera X",
+        "ruta": "/movimientos?seleccionado=Tijera%20X",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Tinieblas",
+        "ruta": "/movimientos?seleccionado=Tinieblas",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Torbellino",
+        "ruta": "/movimientos?seleccionado=Torbellino",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Tormenta de arena",
+        "ruta": "/movimientos?seleccionado=Tormenta%20de%20arena",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Tormenta de diamantes",
+        "ruta": "/movimientos?seleccionado=Tormenta%20de%20diamantes",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Tormenta floral",
+        "ruta": "/movimientos?seleccionado=Tormenta%20floral",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Tormento",
+        "ruta": "/movimientos?seleccionado=Tormento",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Tornado",
+        "ruta": "/movimientos?seleccionado=Tornado",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Tóxico",
+        "ruta": "/movimientos?seleccionado=T%C3%B3xico",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Trampa rocas",
+        "ruta": "/movimientos?seleccionado=Trampa%20rocas",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Transformación",
+        "ruta": "/movimientos?seleccionado=Transformaci%C3%B3n",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Trapicheo",
+        "ruta": "/movimientos?seleccionado=Trapicheo",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Triataque",
+        "ruta": "/movimientos?seleccionado=Triataque",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Triple axel",
+        "ruta": "/movimientos?seleccionado=Triple%20axel",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Triple flecha",
+        "ruta": "/movimientos?seleccionado=Triple%20flecha",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Triple inmersión",
+        "ruta": "/movimientos?seleccionado=Triple%20inmersi%C3%B3n",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Triple patada",
+        "ruta": "/movimientos?seleccionado=Triple%20patada",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Triturar",
+        "ruta": "/movimientos?seleccionado=Triturar",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Truco",
+        "ruta": "/movimientos?seleccionado=Truco",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Truco defensa",
+        "ruta": "/movimientos?seleccionado=Truco%20defensa",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Truco floral",
+        "ruta": "/movimientos?seleccionado=Truco%20floral",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Trueno",
+        "ruta": "/movimientos?seleccionado=Trueno",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Tumba rocas",
+        "ruta": "/movimientos?seleccionado=Tumba%20rocas",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Última palabra",
+        "ruta": "/movimientos?seleccionado=%C3%9Altima%20palabra",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Ultrapuño",
+        "ruta": "/movimientos?seleccionado=Ultrapu%C3%B1o",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "V de fuego",
+        "ruta": "/movimientos?seleccionado=V%20de%20fuego",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Vaho gélido",
+        "ruta": "/movimientos?seleccionado=Vaho%20g%C3%A9lido",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Vasta fuerza",
+        "ruta": "/movimientos?seleccionado=Vasta%20fuerza",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Vasta guardia",
+        "ruta": "/movimientos?seleccionado=Vasta%20guardia",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Vasto impacto",
+        "ruta": "/movimientos?seleccionado=Vasto%20impacto",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Velo aurora",
+        "ruta": "/movimientos?seleccionado=Velo%20aurora",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Velo sagrado",
+        "ruta": "/movimientos?seleccionado=Velo%20sagrado",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Velocidad extrema",
+        "ruta": "/movimientos?seleccionado=Velocidad%20extrema",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Vendaval",
+        "ruta": "/movimientos?seleccionado=Vendaval",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Vendaval gélido",
+        "ruta": "/movimientos?seleccionado=Vendaval%20g%C3%A9lido",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Vendetta",
+        "ruta": "/movimientos?seleccionado=Vendetta",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Veneno X",
+        "ruta": "/movimientos?seleccionado=Veneno%20X",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Ventisca",
+        "ruta": "/movimientos?seleccionado=Ventisca",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Viento afín",
+        "ruta": "/movimientos?seleccionado=Viento%20af%C3%ADn",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Viento carámbano",
+        "ruta": "/movimientos?seleccionado=Viento%20car%C3%A1mbano",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Viento feérico",
+        "ruta": "/movimientos?seleccionado=Viento%20fe%C3%A9rico",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Viento hielo",
+        "ruta": "/movimientos?seleccionado=Viento%20hielo",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Viraje",
+        "ruta": "/movimientos?seleccionado=Viraje",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Voltio cruel",
+        "ruta": "/movimientos?seleccionado=Voltio%20cruel",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Voltiocambio",
+        "ruta": "/movimientos?seleccionado=Voltiocambio",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Voto agua",
+        "ruta": "/movimientos?seleccionado=Voto%20agua",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Voto fuego",
+        "ruta": "/movimientos?seleccionado=Voto%20fuego",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Voto planta",
+        "ruta": "/movimientos?seleccionado=Voto%20planta",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Voz cautivadora",
+        "ruta": "/movimientos?seleccionado=Voz%20cautivadora",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Vozarrón",
+        "ruta": "/movimientos?seleccionado=Vozarr%C3%B3n",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Vuelo",
+        "ruta": "/movimientos?seleccionado=Vuelo",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Zona extraña",
+        "ruta": "/movimientos?seleccionado=Zona%20extra%C3%B1a",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Zona mágica",
+        "ruta": "/movimientos?seleccionado=Zona%20m%C3%A1gica",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Zumbido",
+        "ruta": "/movimientos?seleccionado=Zumbido",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Taladradora",
+        "ruta": "/movimientos?seleccionado=Taladradora",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Tambor",
+        "ruta": "/movimientos?seleccionado=Tambor",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Tecno shock",
+        "ruta": "/movimientos?seleccionado=Tecno%20shock",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Telatrampa",
+        "ruta": "/movimientos?seleccionado=Telatrampa",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Telépata",
+        "ruta": "/movimientos?seleccionado=Tel%C3%A9pata",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Teletransporte",
+        "ruta": "/movimientos?seleccionado=Teletransporte",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Teraclúster",
+        "ruta": "/movimientos?seleccionado=Teracl%C3%BAster",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Teraexplosión",
+        "ruta": "/movimientos?seleccionado=Teraexplosi%C3%B3n",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Terratemblor",
+        "ruta": "/movimientos?seleccionado=Terratemblor",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Terremoto",
+        "ruta": "/movimientos?seleccionado=Terremoto",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Testarazo",
+        "ruta": "/movimientos?seleccionado=Testarazo",
+        "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Tierra viva",
+        "ruta": "/movimientos?seleccionado=Tierra%20viva",
+        "tipo": "Movimiento"
     }
 ]
