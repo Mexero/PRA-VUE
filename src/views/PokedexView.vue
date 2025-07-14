@@ -1,8 +1,27 @@
+<template>
+  <div class="app">
+    <main>
+      <!-- Pokédex View -->
+      <div class="main-content">
+        <div class="pokedex-section">
+          <PokemonGrid @show-details="handlePokemonSelect" @manejar-filtros="manejarFiltros" :pokedex="pokedex"
+            :filteredPokedex="filteredPokedex" :pokedexCargada="pokedexCargada" :selectedPokemon="selectedPokemon"
+            :searchTerm="searchTerm" :selectedTypes="selectedTypes" />
+        </div>
+        <div class="details-section">
+          <!-- Pokemon cargado-->
+          <PokemonDetails :pokemon="selectedPokemonData" />
+        </div>
+      </div>
+    </main>
+  </div>
+</template>
+
 <script setup>
 import PokemonGrid from '@/components/Pokedex/PokemonGrid.vue'
 import PokemonDetails from '@/components/Pokedex/PokemonDetails.vue'
 
-import { ref, computed, watch, onMounted } from 'vue';
+import { ref, computed, watch, onMounted, onUnmounted } from 'vue';
 import { useRoute, useRouter } from "vue-router";
 
 import worker from '../sqlWorker.js';
@@ -189,14 +208,16 @@ function cambiarPokeSeleccionado(especie) {
   })
 }
 
-worker.addEventListener('message', (e) => {
+worker.addEventListener('message', handlePokemonFetch);
+
+function handlePokemonFetch(e) {
   if (e.data.type === 'result' && e.data.origin === 'CambiarSeleccionado') {
     const row = e.data.result?.[0]?.values?.[0]
     if (row) {
       selectedPokemonData.value = {
         numPokedex: row[0],
         especie: row[1],
-        tipos: [row[2], row[3] ?? null],
+        tipos: [row[2], row[3]],
         stats: { fue: row[4], agi: row[5], res: row[6], men: row[7], esp: row[8], pre: row[9] },
         saves: { fue: row[10], agi: row[11], res: row[12], esp: row[13] },
         vit: row[14],
@@ -219,7 +240,7 @@ worker.addEventListener('message', (e) => {
     console.error("Error al seleccionar especie:", e.data.error)
   }
   cargandoPokemon.value = false
-});
+}
 
 function tratarEnsenables(array) {
   let temporal = array
@@ -251,40 +272,12 @@ function generarEvoluciones(evoEn, nivelEvo, tipoRequisito, requisitosEvo, evoOt
   return evoluciones
 }
 
+onUnmounted(() => {
+  worker.removeEventListener('message', handlePokemonFetch)
+})
 </script>
 
-<template>
-  <h1 class="titulo">Pokédex</h1>
-  <div class="app">
-    <main>
-      <!-- Pokédex View -->
-      <div class="main-content">
-        <div class="pokedex-section">
-          <PokemonGrid @show-details="handlePokemonSelect" @manejar-filtros="manejarFiltros" :pokedex="pokedex"
-            :filteredPokedex="filteredPokedex" :pokedexCargada="pokedexCargada" :selectedPokemon="selectedPokemon"
-            :searchTerm="searchTerm" :selectedTypes="selectedTypes" />
-        </div>
-        <div class="details-section">
-          <!-- <PokemonDetails
-            :pokemon="selectedPokemon"
-            @show-ability="handleAbilityInfo"
-            @show-pokemon-by-name="findPokemonByName"
-          />-->
-        </div>
-      </div>
-    </main>
-  </div>
-</template>
-
 <style scoped>
-.titulo {
-  letter-spacing: 5px;
-  font-family: "Staatliches", sans-serif;
-  color: var(--color-texto);
-  font-size: 50px;
-  padding: 10px 0 0px 2%;
-}
-
 .app {
   max-width: 100%;
   margin: 0 auto;

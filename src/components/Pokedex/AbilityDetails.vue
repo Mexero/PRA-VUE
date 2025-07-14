@@ -1,53 +1,36 @@
 <template>
-  <div v-if="ability && abilityDetails" class="ability-details">
+  <div v-if="ability && ability" class="ability-details">
     <div class="ability-info">
-      <table class="ability-table">
-        <tr v-if="abilityDetails.EST">
-          <td class="ability-label">EST:</td>
-          <td>{{ abilityDetails?.EST }}</td>
-        </tr>
-        <tr v-if="abilityDetails.Coste">
-          <td class="ability-label">Coste:</td>
-          <td>{{ abilityDetails?.Coste }}</td>
-        </tr>
-        <tr v-if="abilityDetails.Transformacion && abilityDetails.Transformacion !== 'No'">
-          <td class="ability-label">Transformación:</td>
-          <td>{{ abilityDetails.Transformacion }}</td>
-        </tr>
+      <table class="ability-table" v-if="ability.transformacion || ability.legendaria">
+        <tbody>
+          <tr>
+            <td v-if="ability.transformacion" class="ability-label">Habilidad de Transformación </td>
+            <td v-if="ability.legendaria" class="ability-label">Habilidad Legendaria </td>
+          </tr>
+        </tbody>
       </table>
-      <div class="ability-description">
-        <p>{{ abilityDetails?.Descripcion || 'Descripción no disponible' }}</p>
-      </div>
-    </div>
-  </div>
-  <div v-else-if="ability && !abilityDetails" class="ability-details">
-    <div class="ability-info">
-      <p class="loading-message">Cargando detalles de la habilidad...</p>
+      <bloque-texto-complejo class="ability-description"
+        :dato="ability.descripcion?.split('\n') || 'Descripción no disponible'" />
     </div>
   </div>
 </template>
 
-<script>
-export default {
-  name: 'AbilityDetails',
-  props: {
-    ability: {
-      type: String,
-      required: true
-    },
-    abilityDetails: {
-      type: Object,
-      required: true
-    }
-  },
-  mounted() {
-    console.log('AbilityDetails mounted with:', {
-      ability: this.ability,
-      details: this.abilityDetails
-    });
-  }
-};
+<script setup>
+import { onMounted } from 'vue'
+
+import BloqueTextoComplejo from '../BloqueTextoComplejo.vue'
+
+const { ability } = defineProps(['ability'])
+
+
+onMounted(() => {
+  console.log('AbilityDetails mounted with:', {
+    ability: ability.nombre,
+    details: ability.descripcion
+  })
+})
 </script>
+
 
 <style scoped>
 .ability-details {
