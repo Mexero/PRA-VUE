@@ -101,12 +101,12 @@ import { RouterLink } from 'vue-router'
                     Aquí puedes ver un resumen rápido del sistema.
                 </p>
                 <div class="PDFlinks">
-                    <RouterLink to="" target="_blank">
+                    <a href="https://mega.nz/folder/urxBnD7B#AbxPvD0OoOcp-RF7mt_hJQ/file/W6ZkwZCL" target="_blank">
                         <div>PDF Resumen del sistema</div>
-                    </RouterLink>
-                    <RouterLink to="" target="_blank">
+                    </a>
+                    <a href="https://mega.nz/folder/urxBnD7B#AbxPvD0OoOcp-RF7mt_hJQ/file/v75TETyY" target="_blank">
                         <div>PDF Combate rápido</div>
-                    </RouterLink>
+                    </a>
                 </div>
             </article>
 
@@ -115,15 +115,15 @@ import { RouterLink } from 'vue-router'
             <article class="descargaPDF" id="descargaLibro">
                 <h2>Descarga las últimas versiones</h2>
                 <div class="PDFlinks">
-                    <RouterLink to="" target="_blank">
+                    <a href="https://mega.nz/folder/urxBnD7B#AbxPvD0OoOcp-RF7mt_hJQ/folder/HnRAjDBD" target="_blank">
                         <div>PDF Base</div>
-                    </RouterLink>
-                    <RouterLink to="" target="_blank">
+                    </a>
+                    <a href="https://mega.nz/folder/urxBnD7B#AbxPvD0OoOcp-RF7mt_hJQ/folder/HnRAjDBD" target="_blank">
                         <div>PDF Pokédex</div>
-                    </RouterLink>
-                    <RouterLink to="" target="_blank">
+                    </a>
+                    <a href="https://mega.nz/folder/urxBnD7B#AbxPvD0OoOcp-RF7mt_hJQ/folder/HnRAjDBD" target="_blank">
                         <div>PDF Pokedex DM</div>
-                    </RouterLink>
+                    </a>
                 </div>
             </article>
         </section>
