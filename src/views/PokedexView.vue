@@ -2,18 +2,21 @@
 import PokemonGrid from '@/components/Pokedex/PokemonGrid.vue'
 import PokemonDetails from '@/components/Pokedex/PokemonDetails.vue'
 
-import { ref, onMounted } from 'vue'
+import { ref, computed, watch, onMounted } from 'vue';
+import { useRoute, useRouter } from "vue-router";
 
 import worker from '../sqlWorker.js';
 
 const selectedPokemon = ref(null)
 const pokedexCargada = ref(null)
-const pokedex = ref(null)
+const pokedex = ref([])
+
+const route = useRoute()
+const router = useRouter()
 
 
 function handlePokemonSelect(pokemon) {
   selectedPokemon.value = pokemon
-  console.log(selectedPokemon)
 }
 
 function findPokemonByName(name) {
@@ -37,6 +40,83 @@ function handleAbilityInfo(abilityName) {
   }
 }
 
+// ========================= FILTROS ===========================
+const searchTerm = ref(route.query.busqueda ?? null)
+const selectedTypes = ref(route.query.tipos ?? [])
+
+//Modifica filtros
+function manejarFiltros(clave, valor) {
+  switch (clave) {
+    case 'tipos':
+      selectedTypes.value = valor
+      break
+    case 'busqueda':
+      searchTerm.value = valor
+      break
+  }
+}
+
+// Limpia filtros
+function limpiarFiltros() {
+  searchTerm.value = null
+  selectedTypes.value = []
+}
+
+//Cambia la ruta
+watch(
+  [
+    selectedPokemon,
+    searchTerm,
+    selectedTypes,
+  ],
+  () => {
+    router.replace({ query: construirQuery() });
+  },
+  { deep: true }
+);
+
+//Aplica filtros desde la ruta
+watch(
+  () => route.query,
+  (query) => {
+    aplicarQuery(query);
+  },
+  { immediate: true }
+);
+
+function construirQuery() {
+  return {
+    busqueda: searchTerm.value !== '' ? searchTerm.value : undefined,
+    tipos: selectedTypes.value.length ? selectedTypes.value.join(',') : undefined,
+    seleccionado: selectedPokemon.value ?? undefined,
+  };
+}
+
+function aplicarQuery(query) {
+  searchTerm.value = query.busqueda ?? null
+  selectedTypes.value = query.tipos ? query.tipos.split(',').slice(0, 2) : []
+  selectedPokemon.value = query.seleccionado ?? null
+}
+
+function filtroTipo(poke) {
+  let filtrado = true
+  for (const tipo of selectedTypes.value) {
+    if (!poke.tipos.find(t => t === tipo)) filtrado = false
+  }
+  return filtrado
+}
+
+// Aplicar filtros
+const filteredPokedex = computed(() => {
+  return pokedex.value.filter((poke) => {
+    const especie = poke.especie.toLowerCase();
+
+    return (
+      filtroTipo(poke) &&
+      (!searchTerm.value || searchTerm.value === '' || especie.includes(searchTerm.value.toLowerCase()))
+    );
+  });
+});
 
 // <================= CARGA INICIAL ==================>
 
@@ -85,8 +165,9 @@ onMounted(async () => {
       <!-- Pokédex View -->
       <div class="main-content">
         <div class="pokedex-section">
-          <PokemonGrid @show-details="handlePokemonSelect" :pokedex="pokedex" :pokedexCargada="pokedexCargada"
-            :selectedPokemon="selectedPokemon" />
+          <PokemonGrid @show-details="handlePokemonSelect" @manejar-filtros="manejarFiltros" :pokedex="pokedex"
+            :filteredPokedex="filteredPokedex" :pokedexCargada="pokedexCargada" :selectedPokemon="selectedPokemon"
+            :searchTerm="searchTerm" :selectedTypes="selectedTypes" />
         </div>
         <div class="details-section">
           <!-- <PokemonDetails

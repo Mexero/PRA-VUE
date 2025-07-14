@@ -2,7 +2,7 @@
   <div class="pokemon-card" @click="$emit('show-details', pokemon.especie)">
     <div class="pokemon-number">#{{ pokemon.numPokedex.substring(1) }}</div>
     <h4>{{ pokemon.especie }}</h4>
-    <img
+    <img loading="lazy"
       :src="`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${parseInt(pokemon.numPokedex.substring(1))}.png`"
       :alt="pokemon.especie" class="pokemon-image" @error="$emit('image-error')" />
     <div class="pokemon-info">
