@@ -7,37 +7,21 @@ import { useRoute, useRouter } from "vue-router";
 
 import worker from '../sqlWorker.js';
 
-const selectedPokemon = ref(null)
-const pokedexCargada = ref(null)
-const pokedex = ref([])
-
 const route = useRoute()
 const router = useRouter()
 
+//Datos
+const pokedex = ref([])
+const selectedPokemon = ref(route.query.seleccionado ?? null)
+const selectedPokemonData = ref(null)
+
+//Flags
+const pokedexCargada = ref(false)
+const cargandoPokemon = ref(false)
+const errorCargaPokemon = ref(false)
 
 function handlePokemonSelect(pokemon) {
   selectedPokemon.value = pokemon
-}
-
-function findPokemonByName(name) {
-  // Buscar el Pokémon por nombre en la lista de Pokémon cargados
-  const pokemonGridComponent = document.querySelector('.pokedex-section').__vue__
-  if (pokemonGridComponent && pokemonGridComponent.pokemons) {
-    const foundPokemon = pokemonGridComponent.pokemons.find(p => p.especie === name)
-    if (foundPokemon) {
-      handlePokemonSelect(foundPokemon)
-    } else {
-      console.warn(`No se encontró el Pokémon con nombre: ${name}`)
-    }
-  }
-}
-
-function handleAbilityInfo(abilityName) {
-  // Pasar la información de la habilidad al componente PokemonGrid
-  const pokemonGridComponent = document.querySelector('.pokedex-section').__vue__
-  if (pokemonGridComponent) {
-    pokemonGridComponent.showAbilityInfo(abilityName)
-  }
 }
 
 // ========================= FILTROS ===========================
@@ -146,6 +130,9 @@ onMounted(async () => {
           numPokedex: row[3]
         }))
         if (pokedex.value.length > 0) {
+          if (!selectedPokemon.value) {
+            selectedPokemon.value = pokedex.value[0].especie
+          }
           pokedexCargada.value = true
         }
       }
@@ -155,6 +142,114 @@ onMounted(async () => {
     }
   };
 })
+
+// <========= CAMBIAR SELECCIONADO =============>
+watch([
+  selectedPokemon,
+  pokedexCargada
+],
+  () => {
+    if (pokedexCargada.value) {
+      errorCargaPokemon.value = false
+      if (pokedex.value.find(p => p.especie === selectedPokemon.value)) {
+        cargandoPokemon.value = true
+        cambiarPokeSeleccionado(selectedPokemon.value)
+      }
+      else {
+        errorCargaPokemon.value = true
+        console.warn('No existe ' + selectedPokemon.value)
+      }
+    }
+  },
+  { deep: true, immediate: true }
+)
+
+function cambiarPokeSeleccionado(especie) {
+  worker.postMessage({
+    type: 'query',
+    query: `
+                SELECT Numero_pokedex, Especie, Tipo_primario, Tipo_secundario, 
+                FUE, AGI, RES, MEN, ESP, PRE, 
+                S_FUE, S_AGI, S_RES, S_ESP,
+                Vitalidad,
+                V_Caminado, V_Trepado, V_Excavado, V_Nado, V_Vuelo, V_Levitado,
+                Nat_Habil_1, Nat_Habil_2,
+                Habilidad_1, Habilidad_2, Habilidad_3, Hab_oculta_1, Hab_oculta_2,
+                AC1, AC2, 
+                Dieta, Tamano, Sexo, Sentidos, Niv_Minimo, Habitat, Ratio_de_captura,
+                Evoluciona_de, EvoEn,	Nivel_Evo, Tipo_requisito, Requisitos_Evo, Evo_otros,
+                Mov_Nivel_1, Mov_Nivel_2, Mov_Nivel_4, Mov_Nivel_6, Mov_Nivel_8, Mov_Nivel_10,
+                Mov_Nivel_12, Mov_Nivel_14, Mov_Nivel_16, Mov_Nivel_18, Mov_Nivel_20,
+                Mov_ensenables
+                FROM pokemexe_pokedex
+            WHERE Especie = ?
+        `,
+    params: [especie],
+    origin: "CambiarSeleccionado"
+  })
+}
+
+worker.addEventListener('message', (e) => {
+  if (e.data.type === 'result' && e.data.origin === 'CambiarSeleccionado') {
+    const row = e.data.result?.[0]?.values?.[0]
+    if (row) {
+      selectedPokemonData.value = {
+        numPokedex: row[0],
+        especie: row[1],
+        tipos: [row[2], row[3] ?? null],
+        stats: { fue: row[4], agi: row[5], res: row[6], men: row[7], esp: row[8], pre: row[9] },
+        saves: { fue: row[10], agi: row[11], res: row[12], esp: row[13] },
+        vit: row[14],
+        velocidades: { caminado: row[15], trepado: row[16], excavado: row[17], nado: row[18], vuelo: row[19], levitado: row[20] },
+        natHabil: [row[21], row[22]],
+        habilidades: [row[23], row[24], row[25]],
+        habilidadesOcultas: [row[26], row[27]],
+        calculosCa: [row[28], row[29]],
+        otros: { dieta: row[30], tamano: row[31], sexo: row[32], sentidos: row[33], nivMinimo: row[34], habitat: row[35], ratioCaptura: row[36] },
+        evoDe: row[37],
+        evolucion: generarEvoluciones(row[38], row[39], row[40], row[41], row[42]),
+        movimientosNivel: [row[43], row[44], row[45], row[46], row[47], row[48], row[49], row[50], row[51], row[52], row[53]],
+        movimientosEnsenables: tratarEnsenables(row[54])
+      }
+    }
+    console.log("Datos cargados: ", selectedPokemonData.value)
+  }
+  else if (e.data.type === 'error') {
+    errorCargaPokemon.value = true
+    console.error("Error al seleccionar especie:", e.data.error)
+  }
+  cargandoPokemon.value = false
+});
+
+function tratarEnsenables(array) {
+  let temporal = array
+  if (temporal[temporal.length - 1] === ".") temporal = temporal.slice(0, -1);
+  return temporal.split(', ')
+}
+
+function generarEvoluciones(evoEn, nivelEvo, tipoRequisito, requisitosEvo, evoOtros) {
+  if (evoEn === '') {
+    if (evoOtros === '') return null
+    return { mensajeExtra: evoOtros }
+  }
+  let evoEnArray = evoEn.split(';')
+  let nivelEvoArray = nivelEvo.split(';')
+  let tipoRequisitoArray = tipoRequisito.split(';')
+  let requisitosEvoArray = requisitosEvo.split(';')
+  let evoOtrosArray = evoOtros.split(';')
+
+  let evoluciones = []
+  for (let i = 0; i < evoEnArray.length; i++) {
+    evoluciones.push({
+      nombre: evoEnArray[i],
+      nivel: nivelEvoArray[i],
+      tipoRequisito: tipoRequisitoArray[i],
+      requisitos: requisitosEvoArray[i],
+      otros: evoOtrosArray[i] ?? null
+    })
+  }
+  return evoluciones
+}
 
 </script>
 
