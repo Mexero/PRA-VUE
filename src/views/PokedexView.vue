@@ -208,7 +208,7 @@ worker.addEventListener('message', (e) => {
         otros: { dieta: row[30], tamano: row[31], sexo: row[32], sentidos: row[33], nivMinimo: row[34], habitat: row[35], ratioCaptura: row[36] },
         evoDe: row[37],
         evolucion: generarEvoluciones(row[38], row[39], row[40], row[41], row[42]),
-        movimientosNivel: [row[43], row[44], row[45], row[46], row[47], row[48], row[49], row[50], row[51], row[52], row[53]],
+        movimientosNivel: [row[43].split(', '), row[44].split(', '), row[45].split(', '), row[46].split(', '), row[47].split(', '), row[48].split(', '), row[49].split(', '), row[50].split(', '), row[51].split(', '), row[52].split(', '), row[53].split(', ')],
         movimientosEnsenables: tratarEnsenables(row[54])
       }
     }
