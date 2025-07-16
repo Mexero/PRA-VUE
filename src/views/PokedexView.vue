@@ -251,9 +251,6 @@ function tratarEnsenables(array) {
 }
 
 function generarEvoluciones(evoEn, nivelEvo, tipoRequisito, requisitosEvo, evoOtros) {
-
-  console.log(evoEn, nivelEvo, tipoRequisito, requisitosEvo, evoOtros)
-
   if (evoEn === '') {
     if (evoOtros === '') return null
     return { mensajeExtra: evoOtros }

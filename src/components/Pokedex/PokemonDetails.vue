@@ -165,10 +165,7 @@
 
 
     <!-- Sección de Movimientos -->
-    <PokemonMoves :pokemon="pokemon" />
-    <div class="no-pokemon-selected">
-      <p>Selecciona un Pokémon para ver sus detalles</p>
-    </div>
+    <PokemonMoves :pokeID="pokemon.id" />
   </div>
 </template>
 

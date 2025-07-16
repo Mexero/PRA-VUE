@@ -22,12 +22,12 @@
               <tr v-for="level in uniqueLevels" :key="level">
                 <td class="level-cell">{{ level }}</td>
                 <td v-for="(moves, index) in groupedMovesByLevel" :key="index" class="move-cell"
-                  @mouseenter="moves[level] && handleMouseEnter($event, moves[level].Nombre)"
-                  @mouseleave="handleMouseLeave" @click="moves[level] && copyMoveDescription(moves[level].Nombre)">
+                  @mouseenter="moves[level] && handleMouseEnter($event, moves[level].nombre)"
+                  @mouseleave="handleMouseLeave" @click="moves[level] && copyMoveDescription(moves[level].nombre)">
                   <div v-if="moves[level]" class="move-content">
-                    <span class="move-name">{{ moves[level].Nombre }}</span>
-                    <span class="move-type" :class="`type-${normalizeType(moves[level].Tipo)}`">{{ moves[level].Tipo
-                      }}</span>
+                    <span class="move-name">{{ moves[level].nombre }}</span>
+                    <span class="move-type" :class="`type-${normalizeType(moves[level].tipo)}`">{{ moves[level].tipo
+                    }}</span>
                   </div>
                 </td>
               </tr>
@@ -48,13 +48,14 @@
             <tbody>
               <tr v-for="i in Math.ceil(teachableMoves.length / 3)" :key="i">
                 <td v-for="j in 3" :key="j" class="move-cell"
-                  @mouseenter="teachableMoves[(i - 1) * 3 + (j - 1)] && handleMouseEnter($event, teachableMoves[(i - 1) * 3 + (j - 1)].Nombre)"
+                  @mouseenter="teachableMoves[(i - 1) * 3 + (j - 1)] && handleMouseEnter($event, teachableMoves[(i - 1) * 3 + (j - 1)].nombre)"
                   @mouseleave="handleMouseLeave"
-                  @click="teachableMoves[(i - 1) * 3 + (j - 1)] && copyMoveDescription(teachableMoves[(i - 1) * 3 + (j - 1)].Nombre)">
+                  @click="teachableMoves[(i - 1) * 3 + (j - 1)] && copyMoveDescription(teachableMoves[(i - 1) * 3 + (j - 1)].nombre)">
                   <div v-if="teachableMoves[(i - 1) * 3 + (j - 1)]" class="move-content">
-                    <span class="move-name">{{ teachableMoves[(i - 1) * 3 + (j - 1)].Nombre }}</span>
-                    <span class="move-type" :class="`type-${normalizeType(teachableMoves[(i - 1) * 3 + (j - 1)].Tipo)}`">
-                      {{ teachableMoves[(i - 1) * 3 + (j - 1)].Tipo }}
+                    <span class="move-name">{{ teachableMoves[(i - 1) * 3 + (j - 1)].nombre }}</span>
+                    <span class="move-type"
+                      :class="`type-${normalizeType(teachableMoves[(i - 1) * 3 + (j - 1)].tipo)}`">
+                      {{ teachableMoves[(i - 1) * 3 + (j - 1)].tipo }}
                     </span>
                   </div>
                 </td>
@@ -76,10 +77,12 @@
 </template>
 
 <script setup>
-import { ref, watch } from 'vue';
+import { ref, watch, onUnmounted } from 'vue';
+import worker from '@/sqlWorker.js'
+
 import MoveTooltip from './MoveTooltip.vue';
 
-const props = defineProps(['pokemon']);
+const props = defineProps(['pokeID']);
 
 const levelMoves = ref([]);
 const teachableMoves = ref([]);
@@ -97,50 +100,84 @@ function normalizeType(type) {
   return type.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
 }
 
-async function loadPokemonMoves() {
-  if (!props.pokemon) return;
+async function loadPokemonMoves(pokeID) {
+  if (!props.pokeID) return;
 
   loading.value = true;
   error.value = null;
 
-  try {
-    const response = await fetch(`/api/pokemon/${props.pokemon.ID}/moves`);
-    const moves = await response.json();
+  worker.postMessage({
+    type: 'query',
+    query: `SELECT m.Nombre, m.Tipo, pm.MetodoAprendizaje, pm.NivelAprendizaje
+            FROM pokemexe_pokemon_movimientos pm
+            JOIN pokemexe_movimientos m ON pm.MovimientoID = m.ID
+            WHERE pm.PokemonID = ?`,
+    params: [pokeID],
+    origin: "cargarMovimientos"
+  })
+}
 
-    levelMoves.value = moves
-      .filter(move => move.MetodoAprendizaje === 'Nivel')
-      .sort((a, b) => a.NivelAprendizaje - b.NivelAprendizaje);
+worker.addEventListener('message', handleMovs);
 
-    teachableMoves.value = moves
-      .filter(move => move.MetodoAprendizaje === 'Aprendible')
-      .sort((a, b) => a.Nombre.localeCompare(b.Nombre));
+onUnmounted(() => {
+  worker.removeEventListener('message', handleMovs)
+})
 
-    const movesPerLevel = {};
-    levelMoves.value.forEach(move => {
-      if (!movesPerLevel[move.NivelAprendizaje]) {
-        movesPerLevel[move.NivelAprendizaje] = [];
-      }
-      movesPerLevel[move.NivelAprendizaje].push(move);
-    });
 
-    uniqueLevels.value = [...new Set(levelMoves.value.map(m => m.NivelAprendizaje))].sort((a, b) => a - b);
+function handleMovs(e) {
+  if (e.data.type !== 'result' || e.data.origin !== 'cargarMovimientos') return
 
-    const maxMoves = Math.max(...Object.values(movesPerLevel).map(m => m.length));
-    groupedMovesByLevel.value = Array.from({ length: maxMoves }, (_, i) => {
-      const column = {};
-      uniqueLevels.value.forEach(level => {
-        if (movesPerLevel[level] && movesPerLevel[level][i]) {
-          column[level] = movesPerLevel[level][i];
-        }
-      });
-      return column;
-    });
-  } catch (err) {
-    console.error('Error fetching Pokemon moves:', err);
-    error.value = 'Error al cargar los movimientos del Pokémon';
-  } finally {
-    loading.value = false;
+  const rows = e.data.result?.[0]?.values
+  if (!rows || rows.length === 0) {
+    error.value = 'Movimientos no encontrados. ' + e.data.error
+    loading.value = false
+    console.warn("Error al cargar los movimientos:", e.data.error)
+    return
   }
+
+  let moves = []
+  for (const row of rows) {
+    moves.push({
+      nombre: row[0],
+      tipo: row[1],
+      metodo: row[2],
+      nivel: parseInt(row[3])
+    })
+  }
+
+  //Clasificar los movimientos y dejarlos ordenados
+  levelMoves.value = moves
+    .filter(move => move.metodo === 'Nivel')
+    .sort((a, b) => a.nivel - b.nivel)
+
+  teachableMoves.value = moves
+    .filter(move => move.metodo === 'Aprendible')
+    .sort((a, b) => a.nombre.localeCompare(b.nombre))
+
+  //Crear lista por nivel
+  const movesPerLevel = {}
+  levelMoves.value.forEach(move => {
+    if (!movesPerLevel[move.nivel]) {
+      movesPerLevel[move.nivel] = []
+    }
+    movesPerLevel[move.nivel].push(move)
+  })
+
+  uniqueLevels.value = [...new Set(levelMoves.value.map(m => m.nivel))].sort((a, b) => a - b)
+
+  const maxMoves = Math.max(...Object.values(movesPerLevel).map(m => m.length))
+
+  groupedMovesByLevel.value = Array.from({ length: maxMoves }, (_, i) => {
+    const column = {}
+    uniqueLevels.value.forEach(level => {
+      if (movesPerLevel[level] && movesPerLevel[level][i]) {
+        column[level] = movesPerLevel[level][i]
+      }
+    })
+    return column
+  })
+
+  loading.value = false
 }
 
 async function handleMouseEnter(event, moveName) {
@@ -235,36 +272,12 @@ async function copyMoveDescription(moveName) {
   }
 }
 
-async function handleMoveDetails(moveName) {
-  hoveredMoveDetails.value = null;
-
-  const allMoves = [...levelMoves.value, ...teachableMoves.value];
-  const moveInfo = allMoves.find(m => m.Nombre === moveName);
-
-  if (moveInfo && moveInfo.Descripcion) {
-    hoveredMoveDetails.value = moveInfo;
-  } else {
-    loading.value = true;
-    try {
-      const response = await fetch(`/api/moves/move/${encodeURIComponent(moveName)}`);
-      const moveDetails = await response.json();
-      hoveredMoveDetails.value = moveDetails || null;
-      if (!moveDetails) error.value = 'No se encontró información para este movimiento';
-    } catch (err) {
-      console.error('Error fetching move details:', err);
-      error.value = 'Error al cargar la información del movimiento';
-    } finally {
-      loading.value = false;
-    }
-  }
-}
-
 // Watch for Pokémon prop changes
-watch(() => props.pokemon, (newPokemon) => {
-  if (newPokemon) {
+watch(() => props.pokeID, (newID) => {
+  if (newID) {
     hoveredMove.value = null;
     hoveredMoveDetails.value = null;
-    loadPokemonMoves();
+    loadPokemonMoves(newID);
   } else {
     levelMoves.value = [];
     teachableMoves.value = [];
