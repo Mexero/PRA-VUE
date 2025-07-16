@@ -9,26 +9,18 @@
           </tr>
         </tbody>
       </table>
-      <bloque-texto-complejo class="ability-description"
-        :dato="ability.descripcion?.split('\n') || 'Descripción no disponible'" />
+      <div class="ability-description">
+        <bloque-texto-complejo :dato="ability.descripcion?.split('\n') || 'Descripción no disponible'" />
+      </div>
     </div>
   </div>
 </template>
 
 <script setup>
-import { onMounted } from 'vue'
-
 import BloqueTextoComplejo from '../BloqueTextoComplejo.vue'
 
 const { ability } = defineProps(['ability'])
 
-
-onMounted(() => {
-  console.log('AbilityDetails mounted with:', {
-    ability: ability.nombre,
-    details: ability.descripcion
-  })
-})
 </script>
 
 
@@ -62,13 +54,13 @@ onMounted(() => {
   width: 120px;
 }
 
-.ability-description {
+.ability-description div {
   margin-top: 8px;
   color: #333;
   line-height: 1.4;
 }
 
-.ability-description p {
+.ability-description div p {
   margin: 0;
 }
 

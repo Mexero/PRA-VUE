@@ -21,14 +21,13 @@
             <tbody>
               <tr v-for="level in uniqueLevels" :key="level">
                 <td class="level-cell">{{ level }}</td>
-                <td v-for="(moves, index) in groupedMovesByLevel" :key="index" 
-                    class="move-cell" 
-                    @mouseenter="moves[level] && handleMouseEnter($event, moves[level].Nombre)"
-                    @mouseleave="handleMouseLeave"
-                    @click="moves[level] && copyMoveDescription(moves[level].Nombre)">
+                <td v-for="(moves, index) in groupedMovesByLevel" :key="index" class="move-cell"
+                  @mouseenter="moves[level] && handleMouseEnter($event, moves[level].Nombre)"
+                  @mouseleave="handleMouseLeave" @click="moves[level] && copyMoveDescription(moves[level].Nombre)">
                   <div v-if="moves[level]" class="move-content">
                     <span class="move-name">{{ moves[level].Nombre }}</span>
-                    <span class="move-type" :class="`type-${normalizeType(moves[level].Tipo)}`">{{ moves[level].Tipo }}</span>
+                    <span class="move-type" :class="`type-${normalizeType(moves[level].Tipo)}`">{{ moves[level].Tipo
+                      }}</span>
                   </div>
                 </td>
               </tr>
@@ -39,7 +38,8 @@
 
       <!-- Movimientos enseñables -->
       <div v-if="teachableMoves.length > 0" class="moves-group">
-        <h4 class="moves-group-title" @click="showTeachableMoves = !showTeachableMoves" :class="{ 'expanded': showTeachableMoves }">
+        <h4 class="moves-group-title" @click="showTeachableMoves = !showTeachableMoves"
+          :class="{ 'expanded': showTeachableMoves }">
           <span>Movimientos enseñables</span>
           <span class="toggle-icon">{{ showTeachableMoves ? '▼' : '▶' }}</span>
         </h4>
@@ -47,15 +47,14 @@
           <table class="moves-table">
             <tbody>
               <tr v-for="i in Math.ceil(teachableMoves.length / 3)" :key="i">
-                <td v-for="j in 3" :key="j" 
-                    class="move-cell" 
-                    @mouseenter="teachableMoves[(i-1)*3 + (j-1)] && handleMouseEnter($event, teachableMoves[(i-1)*3 + (j-1)].Nombre)"
-                    @mouseleave="handleMouseLeave"
-                    @click="teachableMoves[(i-1)*3 + (j-1)] && copyMoveDescription(teachableMoves[(i-1)*3 + (j-1)].Nombre)">
-                  <div v-if="teachableMoves[(i-1)*3 + (j-1)]" class="move-content">
-                    <span class="move-name">{{ teachableMoves[(i-1)*3 + (j-1)].Nombre }}</span>
-                    <span class="move-type" :class="`type-${normalizeType(teachableMoves[(i-1)*3 + (j-1)].Tipo)}`">
-                      {{ teachableMoves[(i-1)*3 + (j-1)].Tipo }}
+                <td v-for="j in 3" :key="j" class="move-cell"
+                  @mouseenter="teachableMoves[(i - 1) * 3 + (j - 1)] && handleMouseEnter($event, teachableMoves[(i - 1) * 3 + (j - 1)].Nombre)"
+                  @mouseleave="handleMouseLeave"
+                  @click="teachableMoves[(i - 1) * 3 + (j - 1)] && copyMoveDescription(teachableMoves[(i - 1) * 3 + (j - 1)].Nombre)">
+                  <div v-if="teachableMoves[(i - 1) * 3 + (j - 1)]" class="move-content">
+                    <span class="move-name">{{ teachableMoves[(i - 1) * 3 + (j - 1)].Nombre }}</span>
+                    <span class="move-type" :class="`type-${normalizeType(teachableMoves[(i - 1) * 3 + (j - 1)].Tipo)}`">
+                      {{ teachableMoves[(i - 1) * 3 + (j - 1)].Tipo }}
                     </span>
                   </div>
                 </td>
@@ -66,12 +65,8 @@
       </div>
 
       <!-- Tooltip del movimiento -->
-      <MoveTooltip
-        v-if="hoveredMove && hoveredMoveDetails"
-        :move-name="hoveredMove"
-        :move-details="hoveredMoveDetails"
-        :position="tooltipPosition"
-      />
+      <MoveTooltip v-if="hoveredMove && hoveredMoveDetails" :move-name="hoveredMove" :move-details="hoveredMoveDetails"
+        :position="tooltipPosition" />
 
       <div v-if="levelMoves.length === 0 && teachableMoves.length === 0" class="no-moves">
         No se encontraron movimientos para este Pokémon
@@ -80,238 +75,201 @@
   </div>
 </template>
 
-<script>
+<script setup>
+import { ref, watch } from 'vue';
 import MoveTooltip from './MoveTooltip.vue';
 
-export default {
-  name: 'PokemonMoves',
-  components: {
-    MoveTooltip
-  },
-  props: {
-    pokemon: {
-      type: Object,
-      default: null
-    }
-  },
-  data() {
-    return {
-      levelMoves: [],
-      teachableMoves: [],
-      hoveredMove: null,
-      hoveredMoveDetails: null,
-      tooltipPosition: { x: 0, y: 0 },
-      loading: false,
-      error: null,
-      groupedMovesByLevel: {},
-      uniqueLevels: [],
-      showLevelMoves: false,
-      showTeachableMoves: false
-    };
-  },
-  methods: {
-    normalizeType(type) {
-      return type.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-    },
-    async loadPokemonMoves() {
-      if (!this.pokemon) return;
-      
-      this.loading = true;
-      this.error = null;
-      try {
-        const response = await fetch(`/api/pokemon/${this.pokemon.ID}/moves`);
-        const moves = await response.json();
-        
-        // Separar movimientos por nivel y enseñables
-        this.levelMoves = moves.filter(move => move.MetodoAprendizaje === 'Nivel')
-          .sort((a, b) => a.NivelAprendizaje - b.NivelAprendizaje);
-        this.teachableMoves = moves.filter(move => move.MetodoAprendizaje === 'Aprendible')
-          .sort((a, b) => a.Nombre.localeCompare(b.Nombre)); // Ordenar alfabéticamente por nombre
+const props = defineProps(['pokemon']);
 
-        // Agrupar movimientos por nivel
-        const movesPerLevel = {};
-        this.levelMoves.forEach(move => {
-          if (!movesPerLevel[move.NivelAprendizaje]) {
-            movesPerLevel[move.NivelAprendizaje] = [];
-          }
-          movesPerLevel[move.NivelAprendizaje].push(move);
-        });
+const levelMoves = ref([]);
+const teachableMoves = ref([]);
+const hoveredMove = ref(null);
+const hoveredMoveDetails = ref(null);
+const tooltipPosition = ref({ x: 0, y: 0 });
+const loading = ref(false);
+const error = ref(null);
+const groupedMovesByLevel = ref([]);
+const uniqueLevels = ref([]);
+const showLevelMoves = ref(false);
+const showTeachableMoves = ref(false);
 
-        // Obtener niveles únicos ordenados
-        this.uniqueLevels = [...new Set(this.levelMoves.map(move => move.NivelAprendizaje))].sort((a, b) => a - b);
+function normalizeType(type) {
+  return type.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+}
 
-        // Reorganizar movimientos en columnas
-        const maxMovesPerLevel = Math.max(...Object.values(movesPerLevel).map(moves => moves.length));
-        this.groupedMovesByLevel = Array.from({ length: maxMovesPerLevel }, (_, columnIndex) => {
-          const columnMoves = {};
-          this.uniqueLevels.forEach(level => {
-            if (movesPerLevel[level] && movesPerLevel[level][columnIndex]) {
-              columnMoves[level] = movesPerLevel[level][columnIndex];
-            }
-          });
-          return columnMoves;
-        });
-        
-        console.log('Loaded moves for Pokemon:', moves);
-      } catch (error) {
-        console.error('Error fetching Pokemon moves:', error);
-        this.error = 'Error al cargar los movimientos del Pokémon';
-      } finally {
-        this.loading = false;
+async function loadPokemonMoves() {
+  if (!props.pokemon) return;
+
+  loading.value = true;
+  error.value = null;
+
+  try {
+    const response = await fetch(`/api/pokemon/${props.pokemon.ID}/moves`);
+    const moves = await response.json();
+
+    levelMoves.value = moves
+      .filter(move => move.MetodoAprendizaje === 'Nivel')
+      .sort((a, b) => a.NivelAprendizaje - b.NivelAprendizaje);
+
+    teachableMoves.value = moves
+      .filter(move => move.MetodoAprendizaje === 'Aprendible')
+      .sort((a, b) => a.Nombre.localeCompare(b.Nombre));
+
+    const movesPerLevel = {};
+    levelMoves.value.forEach(move => {
+      if (!movesPerLevel[move.NivelAprendizaje]) {
+        movesPerLevel[move.NivelAprendizaje] = [];
       }
-    },
-    async handleMouseEnter(event, moveName) {
-      if (!moveName) return;
-      
-      // Calcular la posición del tooltip relativa al elemento
-      const rect = event.target.getBoundingClientRect();
-      const tooltipWidth = 300; // Ancho estimado del tooltip
-      const windowWidth = window.innerWidth;
-      
-      // Calcular espacio disponible a la derecha y a la izquierda
-      const spaceRight = windowWidth - rect.right;
-      const spaceLeft = rect.left;
-      
-      // Determinar la posición X basada en el espacio disponible
-      let xPosition;
-      if (spaceRight >= tooltipWidth) {
-        // Si hay suficiente espacio a la derecha
-        xPosition = rect.right + 10;
-      } else if (spaceLeft >= tooltipWidth) {
-        // Si hay suficiente espacio a la izquierda
-        xPosition = rect.left - tooltipWidth - 10;
-      } else {
-        // Si no hay suficiente espacio en ningún lado, mostrar donde haya más espacio
-        xPosition = spaceRight > spaceLeft ? rect.right + 10 : rect.left - tooltipWidth - 10;
-      }
-      
-      // Calcular la posición Y y asegurarse de que esté dentro de la ventana
-      const tooltipHeight = 200; // Altura estimada del tooltip
-      const windowHeight = window.innerHeight;
-      let yPosition = rect.top + (rect.height / 2);
-      
-      // Ajustar la posición Y si el tooltip se sale de la ventana
-      if (yPosition + tooltipHeight/2 > windowHeight) {
-        yPosition = windowHeight - tooltipHeight/2;
-      } else if (yPosition - tooltipHeight/2 < 0) {
-        yPosition = tooltipHeight/2;
-      }
-      
-      this.tooltipPosition = {
-        x: xPosition,
-        y: yPosition
-      };
-      
-      this.hoveredMove = moveName;
-      
-      // Buscar el movimiento en los ya cargados
-      const allMoves = [...this.levelMoves, ...this.teachableMoves];
-      const moveInfo = allMoves.find(m => m.Nombre === moveName);
-      
-      if (moveInfo) {
-        this.hoveredMoveDetails = moveInfo;
-      } else {
-        try {
-          const response = await fetch(`/api/moves/move/${encodeURIComponent(moveName)}`);
-          if (!response.ok) throw new Error('Error al cargar los detalles del movimiento');
-          const moveDetails = await response.json();
-          this.hoveredMoveDetails = moveDetails;
-        } catch (error) {
-          console.error('Error fetching move details:', error);
-          this.hoveredMoveDetails = null;
+      movesPerLevel[move.NivelAprendizaje].push(move);
+    });
+
+    uniqueLevels.value = [...new Set(levelMoves.value.map(m => m.NivelAprendizaje))].sort((a, b) => a - b);
+
+    const maxMoves = Math.max(...Object.values(movesPerLevel).map(m => m.length));
+    groupedMovesByLevel.value = Array.from({ length: maxMoves }, (_, i) => {
+      const column = {};
+      uniqueLevels.value.forEach(level => {
+        if (movesPerLevel[level] && movesPerLevel[level][i]) {
+          column[level] = movesPerLevel[level][i];
         }
-      }
-    },
-    
-    handleMouseLeave() {
-      this.hoveredMove = null;
-      this.hoveredMoveDetails = null;
-      this.tooltipPosition = { x: 0, y: 0 };
-    },
+      });
+      return column;
+    });
+  } catch (err) {
+    console.error('Error fetching Pokemon moves:', err);
+    error.value = 'Error al cargar los movimientos del Pokémon';
+  } finally {
+    loading.value = false;
+  }
+}
 
-    async copyMoveDescription(moveName) {
-      try {
-        const allMoves = [...this.levelMoves, ...this.teachableMoves];
-        let moveInfo = allMoves.find(m => m.Nombre === moveName);
+async function handleMouseEnter(event, moveName) {
+  if (!moveName) return;
 
-        if (!moveInfo || !moveInfo.Descripcion) {
-          const response = await fetch(`/api/moves/move/${encodeURIComponent(moveName)}`);
-          if (!response.ok) throw new Error('Error al cargar los detalles del movimiento');
-          moveInfo = await response.json();
-        }
+  const rect = event.target.getBoundingClientRect();
+  const tooltipWidth = 300;
+  const tooltipHeight = 200;
+  const { innerWidth: windowWidth, innerHeight: windowHeight } = window;
 
-        if (moveInfo && moveInfo.Descripcion) {
-          await navigator.clipboard.writeText(moveInfo.Descripcion);
-          // Mostrar notificación temporal
-          const notification = document.createElement('div');
-          notification.textContent = '¡Descripción copiada al portapapeles!';
-          notification.style.cssText = `
-            position: fixed;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 5px;
-            z-index: 1000;
-            transition: opacity 0.3s;
-          `;
-          document.body.appendChild(notification);
-          setTimeout(() => {
-            notification.style.opacity = '0';
-            setTimeout(() => document.body.removeChild(notification), 300);
-          }, 2000);
-        }
-      } catch (error) {
-        console.error('Error al copiar la descripción:', error);
-      }
-    },
-    async handleMoveDetails(moveName) {
-      this.hoveredMoveDetails = null;
-      
-      // Buscar el movimiento en los ya cargados
-      const allMoves = [...this.levelMoves, ...this.teachableMoves];
-      const moveInfo = allMoves.find(m => m.Nombre === moveName);
-      
-      if (moveInfo && moveInfo.Descripcion) {
-        this.selectedMoveDetails = moveInfo;
-      } else {
-        // Si no tenemos todos los detalles, cargarlos
-        this.loading = true;
-        try {
-          const response = await fetch(`/api/moves/move/${encodeURIComponent(moveName)}`);
-          const moveDetails = await response.json();
-          if (moveDetails) {
-            this.hoveredMoveDetails = moveDetails;
-          } else {
-            this.error = 'No se encontró información para este movimiento';
-          }
-        } catch (error) {
-          console.error('Error fetching move details:', error);
-          this.error = 'Error al cargar la información del movimiento';
-        } finally {
-          this.loading = false;
-        }
-      }
-    },
-  },
-  watch: {
-    pokemon: {
-      immediate: true,
-      handler(newPokemon) {
-        if (newPokemon) {
-          this.selectedMove = null;
-          this.selectedMoveDetails = null;
-          this.loadPokemonMoves();
-        } else {
-          this.levelMoves = [];
-          this.teachableMoves = [];
-        }
-      }
+  let x;
+  const spaceRight = windowWidth - rect.right;
+  const spaceLeft = rect.left;
+
+  if (spaceRight >= tooltipWidth) {
+    x = rect.right + 10;
+  } else if (spaceLeft >= tooltipWidth) {
+    x = rect.left - tooltipWidth - 10;
+  } else {
+    x = spaceRight > spaceLeft ? rect.right + 10 : rect.left - tooltipWidth - 10;
+  }
+
+  let y = rect.top + rect.height / 2;
+  if (y + tooltipHeight / 2 > windowHeight) {
+    y = windowHeight - tooltipHeight / 2;
+  } else if (y - tooltipHeight / 2 < 0) {
+    y = tooltipHeight / 2;
+  }
+
+  tooltipPosition.value = { x, y };
+  hoveredMove.value = moveName;
+
+  const allMoves = [...levelMoves.value, ...teachableMoves.value];
+  const moveInfo = allMoves.find(m => m.Nombre === moveName);
+
+  if (moveInfo) {
+    hoveredMoveDetails.value = moveInfo;
+  } else {
+    try {
+      const response = await fetch(`/api/moves/move/${encodeURIComponent(moveName)}`);
+      if (!response.ok) throw new Error('Error al cargar los detalles del movimiento');
+      hoveredMoveDetails.value = await response.json();
+    } catch (err) {
+      console.error('Error fetching move details:', err);
+      hoveredMoveDetails.value = null;
     }
   }
-};
+}
+
+function handleMouseLeave() {
+  hoveredMove.value = null;
+  hoveredMoveDetails.value = null;
+  tooltipPosition.value = { x: 0, y: 0 };
+}
+
+async function copyMoveDescription(moveName) {
+  try {
+    const allMoves = [...levelMoves.value, ...teachableMoves.value];
+    let moveInfo = allMoves.find(m => m.Nombre === moveName);
+
+    if (!moveInfo || !moveInfo.Descripcion) {
+      const response = await fetch(`/api/moves/move/${encodeURIComponent(moveName)}`);
+      if (!response.ok) throw new Error();
+      moveInfo = await response.json();
+    }
+
+    if (moveInfo && moveInfo.Descripcion) {
+      await navigator.clipboard.writeText(moveInfo.Descripcion);
+
+      const notification = document.createElement('div');
+      notification.textContent = '¡Descripción copiada al portapapeles!';
+      notification.style.cssText = `
+        position: fixed;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        z-index: 1000;
+        transition: opacity 0.3s;
+      `;
+      document.body.appendChild(notification);
+      setTimeout(() => {
+        notification.style.opacity = '0';
+        setTimeout(() => document.body.removeChild(notification), 300);
+      }, 2000);
+    }
+  } catch (err) {
+    console.error('Error al copiar la descripción:', err);
+  }
+}
+
+async function handleMoveDetails(moveName) {
+  hoveredMoveDetails.value = null;
+
+  const allMoves = [...levelMoves.value, ...teachableMoves.value];
+  const moveInfo = allMoves.find(m => m.Nombre === moveName);
+
+  if (moveInfo && moveInfo.Descripcion) {
+    hoveredMoveDetails.value = moveInfo;
+  } else {
+    loading.value = true;
+    try {
+      const response = await fetch(`/api/moves/move/${encodeURIComponent(moveName)}`);
+      const moveDetails = await response.json();
+      hoveredMoveDetails.value = moveDetails || null;
+      if (!moveDetails) error.value = 'No se encontró información para este movimiento';
+    } catch (err) {
+      console.error('Error fetching move details:', err);
+      error.value = 'Error al cargar la información del movimiento';
+    } finally {
+      loading.value = false;
+    }
+  }
+}
+
+// Watch for Pokémon prop changes
+watch(() => props.pokemon, (newPokemon) => {
+  if (newPokemon) {
+    hoveredMove.value = null;
+    hoveredMoveDetails.value = null;
+    loadPokemonMoves();
+  } else {
+    levelMoves.value = [];
+    teachableMoves.value = [];
+  }
+}, { immediate: true });
 </script>
 
 <style scoped>
@@ -410,7 +368,8 @@ export default {
   min-width: 60px;
   text-align: center;
   flex-shrink: 0;
-  border: 1px solid #000; /* Añadido: borde negro para todos los tipos */
+  border: 1px solid #000;
+  /* Añadido: borde negro para todos los tipos */
 }
 
 .moves-group {
@@ -421,6 +380,7 @@ export default {
   font-size: 1.1em;
   margin-bottom: 5px;
 }
+
 .moves-table th {
   background-color: #f8f8f8;
   font-weight: 600;
@@ -510,23 +470,79 @@ export default {
 }
 
 /* Estilos para los tipos de Pokémon */
-.type-normal { background-color: #A8A878; }
-.type-fuego { background-color: #F08030; }
-.type-agua { background-color: #6890F0; }
-.type-electrico { background-color: #F8D030; }
-.type-planta { background-color: #78C850; }
-.type-hielo { background-color: #98D8D8; }
-.type-lucha { background-color: #C03028; }
-.type-veneno { background-color: #A040A0; }
-.type-tierra { background-color: #E0C068; }
-.type-volador { background-color: #A890F0; }
-.type-psiquico { background-color: #F85888; }
-.type-bicho { background-color: #A8B820; }
-.type-roca { background-color: #B8A038; }
-.type-fantasma { background-color: #705898; }
-.type-dragon { background-color: #7038F8; }
-.type-siniestro { background-color: #705848; }
-.type-acero { background-color: #B8B8D0; }
-.type-hada { background-color: #EE99AC; }
-.type-situacional { color: black;}
+.type-normal {
+  background-color: #A8A878;
+}
+
+.type-fuego {
+  background-color: #F08030;
+}
+
+.type-agua {
+  background-color: #6890F0;
+}
+
+.type-electrico {
+  background-color: #F8D030;
+}
+
+.type-planta {
+  background-color: #78C850;
+}
+
+.type-hielo {
+  background-color: #98D8D8;
+}
+
+.type-lucha {
+  background-color: #C03028;
+}
+
+.type-veneno {
+  background-color: #A040A0;
+}
+
+.type-tierra {
+  background-color: #E0C068;
+}
+
+.type-volador {
+  background-color: #A890F0;
+}
+
+.type-psiquico {
+  background-color: #F85888;
+}
+
+.type-bicho {
+  background-color: #A8B820;
+}
+
+.type-roca {
+  background-color: #B8A038;
+}
+
+.type-fantasma {
+  background-color: #705898;
+}
+
+.type-dragon {
+  background-color: #7038F8;
+}
+
+.type-siniestro {
+  background-color: #705848;
+}
+
+.type-acero {
+  background-color: #B8B8D0;
+}
+
+.type-hada {
+  background-color: #EE99AC;
+}
+
+.type-situacional {
+  color: black;
+}
 </style>

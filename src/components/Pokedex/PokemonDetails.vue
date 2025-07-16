@@ -68,49 +68,54 @@
         <div class="stats-section">
           <div class="stats-table">
             <table>
-              <tr>
-                <td>FUE</td>
-                <td>{{ pokemon.stats.fue }}{{ pokemon.saves.fue === '2' ? ' ☆' : pokemon.saves.fue === '4' ? ' ★' : ''
-                }}</td>
-              </tr>
-              <tr>
-                <td>AGI</td>
-                <td>{{ pokemon.stats.agi }}{{ pokemon.saves.agi === '2' ? ' ☆' : pokemon.saves.agi === '4' ? ' ★' : ''
-                }}</td>
-              </tr>
+              <tbody>
+                <tr>
+                  <td>FUE</td>
+                  <td>{{ pokemon.stats.fue }}{{ pokemon.saves.fue === '2' ? ' ☆' : pokemon.saves.fue === '4' ? ' ★' : ''
+                  }}</td>
+                </tr>
+                <tr>
+                  <td>AGI</td>
+                  <td>{{ pokemon.stats.agi }}{{ pokemon.saves.agi === '2' ? ' ☆' : pokemon.saves.agi === '4' ? ' ★' : ''
+                  }}</td>
+                </tr>
+              </tbody>
             </table>
           </div>
           <div class="stats-table">
             <table>
-              <tr>
-                <td>RES</td>
-                <td>{{ pokemon.stats.res }}{{ pokemon.saves.res === '2' ? ' ☆' : pokemon.saves.res === '4' ? ' ★' : ''
-                }}
-                </td>
-              </tr>
-              <tr>
-                <td>MEN</td>
-                <td>{{ pokemon.stats.men }}</td>
-              </tr>
+              <tbody>
+                <tr>
+                  <td>RES</td>
+                  <td>{{ pokemon.stats.res }}{{ pokemon.saves.res === '2' ? ' ☆' : pokemon.saves.res === '4' ? ' ★' : ''
+                  }}
+                  </td>
+                </tr>
+                <tr>
+                  <td>MEN</td>
+                  <td>{{ pokemon.stats.men }}</td>
+                </tr>
+              </tbody>
             </table>
           </div>
           <div class="stats-table">
             <table>
-              <tr>
-                <td>ESP</td>
-                <td>{{ pokemon.stats.esp }}{{ pokemon.saves.esp === '2' ? ' ☆' : pokemon.saves.esp === '4' ? ' ★' : ''
-                }}
-                </td>
-              </tr>
-              <tr>
-                <td>PRE</td>
-                <td>{{ pokemon.stats.pre }}</td>
-              </tr>
+              <tbody>
+                <tr>
+                  <td>ESP</td>
+                  <td>{{ pokemon.stats.esp }}{{ pokemon.saves.esp === '2' ? ' ☆' : pokemon.saves.esp === '4' ? ' ★' : ''
+                  }}
+                  </td>
+                </tr>
+                <tr>
+                  <td>PRE</td>
+                  <td>{{ pokemon.stats.pre }}</td>
+                </tr>
+              </tbody>
             </table>
           </div>
         </div>
       </div>
-
 
       <div class="abilities-section">
         <div class="section-title">Habilidades</div>
@@ -134,52 +139,37 @@
   </div>
 
 
-  <!--
-    <div class="pokemon-evolution detail-section">
-      <h3>Línea Evolutiva</h3>
-      <div v-if="evolutionLoading" class="loading-evolution">Cargando datos de evolución...</div>
-      <div v-else-if="evolutionError" class="error-message">{{ evolutionError }}</div>
-      <div v-else class="evolution-container">
-        <div v-if="evolutionData && evolutionData.Evoluciona_de" class="evolution-group">
-          <span class="evolution-label">Evoluciona de:</span>
-          <div class="evolution-cards">
-            <EvolutionCard :pokemon-name="evolutionData.Evoluciona_de"
-              :pokemon-number="getPokemonNumberFromName(evolutionData.Evoluciona_de)"
-              @show-details="showPokemonByName" />
-          </div>
-        </div>
-        <div
-          v-if="evolutionData && (evolutionData.Evoluciona_a || (evolutionData.evoluciones && evolutionData.evoluciones.length > 0))"
-          class="evolution-group">
-          <span class="evolution-label">Evoluciona a:</span>
-          <div class="evolution-cards">-->
-  <!-- Si tenemos el array de evoluciones, mostramos una card por cada evolución 
-            <template v-if="evolutionData.evoluciones && evolutionData.evoluciones.length > 0">
-              <EvolutionCard v-for="(evolucion, index) in evolutionData.evoluciones" :key="index"
-                :pokemon-name="evolucion.Evoluciona_a"
-                :pokemon-number="getPokemonNumberFromName(evolucion.Evoluciona_a)" @show-details="showPokemonByName" />
-            </template>-->
-  <!-- Compatibilidad con el formato anterior 
-            <template v-else>
-              <EvolutionCard :pokemon-name="evolutionData.Evoluciona_a"
-                :pokemon-number="getPokemonNumberFromName(evolutionData.Evoluciona_a)"
-                @show-details="showPokemonByName" />
-            </template>
-          </div>
-        </div>
-        <div v-if="(!evolutionData || (!evolutionData.Evoluciona_de && !evolutionData.Evoluciona_a))"
-          class="evolution-item">
-          <span class="evolution-value">No tiene evoluciones</span>
+
+  <div v-if="pokemon && (pokemon.evoDe !== '' || pokemon.evolucion)" class="pokemon-evolution detail-section">
+    <h3>Línea Evolutiva</h3>
+    <div class="evolution-container">
+      <div v-if="pokemon.evoDe !== ''" class="evolution-group">
+        <span class="evolution-label">Evoluciona de:</span>
+        <div class="evolution-cards">
+          <EvolutionCard :nombre="pokemon.evoDe" :numero="getPokemonNumberByName(pokemon.evoDe)" :nivel="null"
+            :requisitos="null" :otros="null" @show-details="emitirEspecie" />
         </div>
       </div>
-    </div>-->
+      <div v-if="pokemon.evolucion && pokemon.evolucion.mensajeExtra" class="evolution-item">
+        <span class="evolution-value">{{ pokemon.evolucion.mensajeExtra }}</span>
+      </div>
+      <div v-else-if="pokemon.evolucion" class="evolution-group">
+        <span class="evolution-label">Evoluciona a:</span>
+        <div class="evolution-cards">
+          <EvolutionCard v-for="(evolucion, index) in pokemon.evolucion" :key="index" :nombre="evolucion.nombre"
+            :numero="getPokemonNumberByName(evolucion.nombre)" :nivel="evolucion.nivel"
+            :requisitos="evolucion.requisitos" :otros="evolucion.otros" @show-details="emitirEspecie" />
+        </div>
+      </div>
+    </div>
 
-  <!-- Sección de Movimientos
+
+    <!-- Sección de Movimientos -->
     <PokemonMoves :pokemon="pokemon" />
+    <div class="no-pokemon-selected">
+      <p>Selecciona un Pokémon para ver sus detalles</p>
+    </div>
   </div>
-  <div v-else class="no-pokemon-selected">
-    <p>Selecciona un Pokémon para ver sus detalles</p>
-  </div> -->
 </template>
 
 <script setup>
@@ -187,17 +177,24 @@ import { ref, watch, computed, onUnmounted } from 'vue'
 import worker from '@/sqlWorker.js'
 
 import abilityDetails from '../Pokedex/AbilityDetails.vue'
-//import PokemonMoves from '@components/Pokedex/PokemonMoves.vue'
-//import EvolutionCard from '@components/Pokedex/EvolutionCard.vue'
+import PokemonMoves from '../Pokedex/PokemonMoves.vue'
+import EvolutionCard from '../Pokedex/EvolutionCard.vue'
 
-const { pokemon } = defineProps(['pokemon'])
+const { pokemon, pokedex } = defineProps(['pokemon', 'pokedex'])
+
+const emit = defineEmits(['show-details']);
+
+function emitirEspecie(e) {
+  console.log('Emitido: ', e)
+  emit('show-details', e)
+
+
+}
 
 const selectedAbility = ref(null)
 
 const normalAbilities = ref(null)
 const hiddenAbilities = ref(null)
-
-const loading = ref(false)
 
 const habilidadesLoading = ref(false)
 const habilidadesError = ref(null)
@@ -267,7 +264,6 @@ function handleHabs(e) {
       if (e.data.origin.includes('Ocultas'))
         hiddenAbilities.value = habilidades
     }
-    console.log("Habilidades: ", abilitiesDetails.value)
   }
   else if (e.data.type === 'error') {
     habilidadesError.value = true
@@ -285,7 +281,17 @@ onUnmounted(() => {
 function toggleAbility(nombre) {
   selectedAbility.value = selectedAbility.value === nombre ? null : nombre
 }
+
+function getPokemonNumberByName(especie) {
+  if ((typeof especie) !== 'string') {
+    console.warn('No es una especie: ' + especie)
+    return '#0001'
+  }
+  const resultado = pokedex.find(p => p.especie === especie)
+  return resultado ? resultado.numPokedex : '#0001'
+}
 </script>
+
 
 <style scoped>
 .pokemon-details {

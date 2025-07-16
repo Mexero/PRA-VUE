@@ -1,42 +1,38 @@
 <template>
   <div class="evolution-card" @click="handleClick">
-    <img 
-      v-if="pokemonNumber"
-      :src="`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemonNumber}.png`"
-      :alt="pokemonName"
-      class="pokemon-image"
-    />
+    <img v-if="numero"
+      :src="`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${parseInt(numero.substring(1))}.png`"
+      :alt="nombre" class="pokemon-image" />
     <div v-else class="pokemon-image-placeholder">
       <span>?</span>
     </div>
     <div class="pokemon-info">
-      <h4 class="pokemon-name">{{ pokemonName }}</h4>
+      <h4 class="pokemon-name">{{ nombre }}</h4>
     </div>
+    <div v-if="nivel !== null">Nivel {{ nivel }}<span v-if="requisitos">, {{ requisitos }}</span> <span v-if="otros">({{
+      otros }})</span></div>
   </div>
 </template>
 
-<script>
-export default {
-  name: 'EvolutionCard',
-  props: {
-    pokemonName: {
-      type: String,
-      required: true
-    },
-    pokemonNumber: {
-      type: Number,
-      default: null
-    }
-  },
-  methods: {
-    handleClick() {
-      console.log('Clic en tarjeta de evolución:', this.pokemonName);
-      this.$emit('show-details', this.pokemonName);
-    }
-  },
-  emits: ['show-details']
-};
+<script setup>
+import { defineEmits, defineProps } from 'vue'
+
+const props = defineProps([
+  'nombre',
+  'numero',
+  'nivel',
+  'requisitos',
+  'otros'
+])
+
+const emit = defineEmits(['show-details']);
+
+function handleClick() {
+  console.log('Clic en tarjeta de evolución:', props.nombre)
+  emit('show-details', props.nombre)
+}
 </script>
+
 
 <style scoped>
 .evolution-card {
