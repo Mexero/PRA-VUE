@@ -197,13 +197,13 @@ function cambiarPokeSeleccionado(especie) {
                 AC1, AC2, 
                 Dieta, Tamano, Sexo, Sentidos, Niv_Minimo, Habitat, Ratio_de_captura,
                 Evoluciona_de, EvoEn,	Nivel_Evo, Tipo_requisito, Requisitos_Evo, Evo_otros,
-                Mov_Nivel_1, Mov_Nivel_2, Mov_Nivel_4, Mov_Nivel_6, Mov_Nivel_8, Mov_Nivel_10,
-                Mov_Nivel_12, Mov_Nivel_14, Mov_Nivel_16, Mov_Nivel_18, Mov_Nivel_20,
-                Mov_ensenables,
                 ID
                 FROM pokemexe_pokedex
             WHERE Especie = ?
         `,
+    //Mov_Nivel_1, Mov_Nivel_2, Mov_Nivel_4, Mov_Nivel_6, Mov_Nivel_8, Mov_Nivel_10,
+    //Mov_Nivel_12, Mov_Nivel_14, Mov_Nivel_16, Mov_Nivel_18, Mov_Nivel_20,
+    //Mov_ensenables,
     params: [especie],
     origin: "CambiarSeleccionado"
   })
@@ -230,9 +230,9 @@ function handlePokemonFetch(e) {
         otros: { dieta: row[30], tamano: row[31], sexo: row[32], sentidos: row[33], nivMinimo: row[34], habitat: row[35], ratioCaptura: row[36] },
         evoDe: row[37].split(' (')[0],
         evolucion: generarEvoluciones(row[38], row[39], row[40], row[41], row[42]),
-        movimientosNivel: [row[43].split(', '), row[44].split(', '), row[45].split(', '), row[46].split(', '), row[47].split(', '), row[48].split(', '), row[49].split(', '), row[50].split(', '), row[51].split(', '), row[52].split(', '), row[53].split(', ')],
-        movimientosEnsenables: tratarEnsenables(row[54]),
-        id: row[55]
+        //movimientosNivel: [row[43].split(', '), row[44].split(', '), row[45].split(', '), row[46].split(', '), row[47].split(', '), row[48].split(', '), row[49].split(', '), row[50].split(', '), row[51].split(', '), row[52].split(', '), row[53].split(', ')],
+        //movimientosEnsenables: tratarEnsenables(row[54]),
+        id: row[43]
       }
     }
     console.log("Datos cargados: ", selectedPokemonData.value)
