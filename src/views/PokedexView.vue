@@ -149,6 +149,7 @@ onMounted(async () => {
           numPokedex: row[3]
         }))
         if (pokedex.value.length > 0) {
+          OrderPokedex()
           if (!selectedPokemon.value) {
             selectedPokemon.value = pokedex.value[0].especie
           }
@@ -161,6 +162,15 @@ onMounted(async () => {
     }
   };
 })
+
+function OrderPokedex() {
+  if (pokedex.value.length === 0) {
+    console.warn('La Pokédex está vacía')
+    return
+  }
+  pokedex.value = pokedex.value.sort((a, b) => a.numPokedex.localeCompare(b.numPokedex));
+
+}
 
 // <========= CAMBIAR SELECCIONADO =============>
 watch([
