@@ -77,34 +77,34 @@
 </template>
 
 <script setup>
-import { ref, watch, onUnmounted } from 'vue';
+import { ref, watch, onUnmounted } from 'vue'
 import worker from '@/sqlWorker.js'
 
-import MoveTooltip from './MoveTooltip.vue';
+import MoveTooltip from './MoveTooltip.vue'
 
 const props = defineProps(['pokeID']);
 
-const levelMoves = ref([]);
-const teachableMoves = ref([]);
-const hoveredMove = ref(null);
-const hoveredMoveDetails = ref(null);
-const tooltipPosition = ref({ x: 0, y: 0 });
-const loading = ref(false);
-const error = ref(null);
-const groupedMovesByLevel = ref([]);
-const uniqueLevels = ref([]);
-const showLevelMoves = ref(false);
-const showTeachableMoves = ref(false);
+const levelMoves = ref([])
+const teachableMoves = ref([])
+const hoveredMove = ref(null)
+const hoveredMoveDetails = ref(null)
+const tooltipPosition = ref({ x: 0, y: 0 })
+const loading = ref(false)
+const error = ref(null)
+const groupedMovesByLevel = ref([])
+const uniqueLevels = ref([])
+const showLevelMoves = ref(false)
+const showTeachableMoves = ref(false)
 
 function normalizeType(type) {
-  return type.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  return type.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '')
 }
 
 async function loadPokemonMoves(pokeID) {
-  if (!props.pokeID) return;
+  if (!props.pokeID) return
 
-  loading.value = true;
-  error.value = null;
+  loading.value = true
+  error.value = null
 
   worker.postMessage({
     type: 'query',
@@ -181,75 +181,111 @@ function handleMovs(e) {
 }
 
 async function handleMouseEnter(event, moveName) {
-  if (!moveName) return;
+  if (!moveName) return
 
-  const rect = event.target.getBoundingClientRect();
-  const tooltipWidth = 300;
-  const tooltipHeight = 200;
-  const { innerWidth: windowWidth, innerHeight: windowHeight } = window;
+  const rect = event.target.getBoundingClientRect()
+  const tooltipWidth = 300
+  const tooltipHeight = 200
+  const { innerWidth: windowWidth, innerHeight: windowHeight } = window
 
-  let x;
-  const spaceRight = windowWidth - rect.right;
-  const spaceLeft = rect.left;
+  let x
+  const spaceRight = windowWidth - rect.right
+  const spaceLeft = rect.left
 
   if (spaceRight >= tooltipWidth) {
-    x = rect.right + 10;
+    x = rect.right + 10
   } else if (spaceLeft >= tooltipWidth) {
-    x = rect.left - tooltipWidth - 10;
+    x = rect.left - tooltipWidth - 10
   } else {
-    x = spaceRight > spaceLeft ? rect.right + 10 : rect.left - tooltipWidth - 10;
+    x = spaceRight > spaceLeft ? rect.right + 10 : rect.left - tooltipWidth - 10
   }
 
-  let y = rect.top + rect.height / 2;
+  let y = rect.top + rect.height / 2
   if (y + tooltipHeight / 2 > windowHeight) {
-    y = windowHeight - tooltipHeight / 2;
+    y = windowHeight - tooltipHeight / 2
   } else if (y - tooltipHeight / 2 < 0) {
-    y = tooltipHeight / 2;
+    y = tooltipHeight / 2
   }
 
-  tooltipPosition.value = { x, y };
-  hoveredMove.value = moveName;
+  tooltipPosition.value = { x, y }
 
-  const allMoves = [...levelMoves.value, ...teachableMoves.value];
-  const moveInfo = allMoves.find(m => m.Nombre === moveName);
-
-  if (moveInfo) {
-    hoveredMoveDetails.value = moveInfo;
-  } else {
-    try {
-      const response = await fetch(`/api/moves/move/${encodeURIComponent(moveName)}`);
-      if (!response.ok) throw new Error('Error al cargar los detalles del movimiento');
-      hoveredMoveDetails.value = await response.json();
-    } catch (err) {
-      console.error('Error fetching move details:', err);
-      hoveredMoveDetails.value = null;
-    }
+  if (moveName && hoveredMove.value !== moveName) {
+    hoveredMove.value = moveName
+    cargarMovimiento(moveName)
+  }
+  else {
+    console.error('Movimiento no encontrado: ', moveName)
+    hoveredMoveDetails.value = null
+    hoveredMove.value = null
   }
 }
 
+function cargarMovimiento(movimiento) {
+  worker.postMessage({
+    type: 'query',
+    query: `
+            SELECT 
+                Nombre, Tipo, Tiempo_de_uso, Coste, Dano, Rango, Etiquetas, Descripcion, 
+                Stat_Asociado_1, Stat_Asociado_2, Stat_Asociado_3, Stat_Asociado_4,
+                At, Salvacion, DC
+            FROM pokemexe_movimientos
+            WHERE Nombre = ?
+        `,
+    params: [movimiento],
+    origin: "cargarMovimientoMostrado"
+  });
+}
+
+worker.addEventListener("message", (event) => {
+  if (event.data.type === 'error' && event.data.origin === 'cargarMovimientoMostrado') {
+    console.error("Error al seleccionar movimiento:", event.data.error)
+    hoveredMoveDetails.value = null
+    hoveredMove.value = null
+  }
+  else if (event.data.type === 'result' && event.data.origin === 'cargarMovimientoMostrado') {
+    const row = event.data.result?.[0]?.values?.[0]
+    if (row) {
+      hoveredMoveDetails.value = {
+        nombre: row[0],
+        tipo: row[1],
+        accion: row[2],
+        coste: row[3],
+        danno: row[4] !== "" ? row[4] : null,
+        rango: row[5] !== "" ? row[5] : null,
+        etiquetas: row[6] !== "" ? row[6] : null,
+        descripcion: row[7].split('\n'),
+        statsAso: [row[8], row[9], row[10], row[11]].filter(stat => stat !== ""),
+        ataque: (!row[12] || row[12] === 'False') ? false : true,
+        salvacion: row[13],
+        dc: row[14]
+      }
+    }
+    else {
+      console.warn('Movimiento no encontrado: ' + hoveredMove.value)
+      hoveredMoveDetails.value = null
+      hoveredMove.value = null
+    }
+  }
+})
+
+
 function handleMouseLeave() {
-  hoveredMove.value = null;
-  hoveredMoveDetails.value = null;
-  tooltipPosition.value = { x: 0, y: 0 };
+  hoveredMove.value = null
+  hoveredMoveDetails.value = null
+  tooltipPosition.value = { x: 0, y: 0 }
 }
 
 async function copyMoveDescription(moveName) {
-  try {
-    const allMoves = [...levelMoves.value, ...teachableMoves.value];
-    let moveInfo = allMoves.find(m => m.Nombre === moveName);
+  if (!moveName || moveName !== hoveredMove.value) {
+    return
+  }
 
-    if (!moveInfo || !moveInfo.Descripcion) {
-      const response = await fetch(`/api/moves/move/${encodeURIComponent(moveName)}`);
-      if (!response.ok) throw new Error();
-      moveInfo = await response.json();
-    }
+  if (hoveredMoveDetails.value && hoveredMoveDetails.value.descripcion) {
+    await navigator.clipboard.writeText(hoveredMoveDetails.value.descripcion)
 
-    if (moveInfo && moveInfo.Descripcion) {
-      await navigator.clipboard.writeText(moveInfo.Descripcion);
-
-      const notification = document.createElement('div');
-      notification.textContent = '¡Descripción copiada al portapapeles!';
-      notification.style.cssText = `
+    const notification = document.createElement('div')
+    notification.textContent = '¡Descripción copiada al portapapeles!'
+    notification.style.cssText = `
         position: fixed;
         bottom: 20px;
         left: 50%;
@@ -261,18 +297,15 @@ async function copyMoveDescription(moveName) {
         z-index: 1000;
         transition: opacity 0.3s;
       `;
-      document.body.appendChild(notification);
-      setTimeout(() => {
-        notification.style.opacity = '0';
-        setTimeout(() => document.body.removeChild(notification), 300);
-      }, 2000);
-    }
-  } catch (err) {
-    console.error('Error al copiar la descripción:', err);
+    document.body.appendChild(notification)
+    setTimeout(() => {
+      notification.style.opacity = '0'
+      setTimeout(() => document.body.removeChild(notification), 300)
+    }, 2000)
   }
 }
 
-// Watch for Pokémon prop changes
+//Rehacer cuando cambia el PokeID
 watch(() => props.pokeID, (newID) => {
   if (newID) {
     hoveredMove.value = null;
