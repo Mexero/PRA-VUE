@@ -235,7 +235,7 @@ function handlePokemonFetch(e) {
         id: row[43]
       }
     }
-    console.log("Datos cargados: ", selectedPokemonData.value)
+    console.log("Datos cargados: ", selectedPokemonData.value.especie, selectedPokemonData.value)
   }
   else if (e.data.type === 'error') {
     errorCargaPokemon.value = true

@@ -182,7 +182,6 @@ const { pokemon, pokedex } = defineProps(['pokemon', 'pokedex'])
 const emit = defineEmits(['show-details']);
 
 function emitirEspecie(e) {
-  console.log('Emitido: ', e)
   emit('show-details', e)
 
 

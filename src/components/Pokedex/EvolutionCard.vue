@@ -28,7 +28,6 @@ const props = defineProps([
 const emit = defineEmits(['show-details']);
 
 function handleClick() {
-  console.log('Clic en tarjeta de evolución:', props.nombre)
   emit('show-details', props.nombre)
 }
 </script>

@@ -66,8 +66,8 @@
       </div>
 
       <!-- Tooltip del movimiento -->
-      <MoveTooltip v-if="hoveredMove && hoveredMoveDetails" :move-name="hoveredMove" :move-details="hoveredMoveDetails"
-        :position="tooltipPosition" />
+      <MoveTooltip v-if="hoveredMove && hoveredMoveDetails && hoveredMove === hoveredMoveDetails.nombre"
+        :move-name="hoveredMove" :move-details="hoveredMoveDetails" :position="tooltipPosition" />
 
       <div v-if="levelMoves.length === 0 && teachableMoves.length === 0" class="no-moves">
         No se encontraron movimientos para este Pokémon
@@ -308,7 +308,6 @@ async function copyMoveDescription(moveName) {
 //Rehacer cuando cambia el PokeID
 watch(() => props.pokeID, (newID) => {
   if (newID) {
-    hoveredMove.value = null;
     hoveredMoveDetails.value = null;
     loadPokemonMoves(newID);
   } else {
