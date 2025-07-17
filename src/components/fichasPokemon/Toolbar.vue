@@ -40,9 +40,14 @@ defineEmits([
 
 <style scoped>
 .toolbar {
+    background-color: var(--color-fondoTexto);
     display: flex;
+    flex-direction: column;
     gap: 8px;
     margin-bottom: 16px;
     align-items: center;
+    width: 200px;
+    border-radius: 5px;
+    padding: 10px;
 }
 </style>

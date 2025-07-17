@@ -41,6 +41,7 @@ function cambiarMejoraEST(stat, delta) {
 </script>
 
 <style scoped>
+/*
 .stats {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
@@ -53,4 +54,5 @@ function cambiarMejoraEST(stat, delta) {
 .stats .item {
     height: 65px;
 }
+    */
 </style>

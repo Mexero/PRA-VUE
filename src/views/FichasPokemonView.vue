@@ -1,30 +1,3 @@
-<template>
-    <div class="character-sheet">
-        <FichaToolbar :fichaSeleccionada="fichaSeleccionada" :nuevaFichaNombre="nuevaFichaNombre"
-            :ordenFichas="ordenFichas" :fichasGuardadas="fichasGuardadas"
-            @update:fichaSeleccionada="fichaSeleccionada = $event" @update:nuevaFichaNombre="nuevaFichaNombre = $event"
-            @crear="crearFicha" @borrar="borrarFicha" @exportar="exportarFicha" @importar="importarFicha"
-            @moverFicha="moverFicha" />
-
-        <FichaInfoBasica :ficha="ficha" :especiesPokes="especiesPokes" :especiesPokesCargadas="especiesPokesCargadas"
-            @cambiarNombre="cambiarNombreFicha" @cambiarDatosEspecie="cambiarDatosEspecie" />
-
-        <div class="info-principal">
-            <FichaStats :ficha="ficha" />
-            <FichaDestacados :ficha="ficha" :grados="grados" />
-            <FichaVelocidades :ficha="ficha" />
-            <FichaChecks :ficha="ficha" :ChecksBase="ChecksBase" />
-        </div>
-
-        <FichaMovimientos :ficha="ficha" :movimientos="movimientos" :movimientosCargados="movimientosCargados" />
-        <div class="HabsYDotes">
-            <FichaHabilidades :ficha="ficha" :habilidades="habilidades" :habilidadesCargadas="habilidadesCargadas" />
-            <FichaDotes :ficha="ficha" :dotes="dotes" :dotesCargadas="dotesCargadas" />
-        </div>
-        <FichaOtros :ficha="ficha" :naturalezas="naturalezas" />
-    </div>
-</template>
-
 <script setup>
 import { ref, reactive, onMounted, watch } from 'vue'
 
@@ -741,9 +714,57 @@ onMounted(async () => {
 </script>
 
 
-<style>
-/* inputs */
+<template>
 
+    <div class="fichaPokemon">
+        <!-- 
+        <FichaToolbar :fichaSeleccionada="fichaSeleccionada" :nuevaFichaNombre="nuevaFichaNombre"
+            :ordenFichas="ordenFichas" :fichasGuardadas="fichasGuardadas"
+            @update:fichaSeleccionada="fichaSeleccionada = $event" @update:nuevaFichaNombre="nuevaFichaNombre = $event"
+            @crear="crearFicha" @borrar="borrarFicha" @exportar="exportarFicha" @importar="importarFicha"
+            @moverFicha="moverFicha" />
+-->
+        <div class="character-sheet">
+            <FichaInfoBasica :ficha="ficha" :especiesPokes="especiesPokes"
+                :especiesPokesCargadas="especiesPokesCargadas" @cambiarNombre="cambiarNombreFicha"
+                @cambiarDatosEspecie="cambiarDatosEspecie" />
+<!-- 
+            <div class="info-principal">
+                <FichaStats :ficha="ficha" />
+                <FichaDestacados :ficha="ficha" :grados="grados" />
+                <FichaVelocidades :ficha="ficha" />
+                <FichaChecks :ficha="ficha" :ChecksBase="ChecksBase" />
+            </div>
+
+            <FichaMovimientos :ficha="ficha" :movimientos="movimientos" :movimientosCargados="movimientosCargados" />
+            <div class="HabsYDotes">
+                <FichaHabilidades :ficha="ficha" :habilidades="habilidades"
+                    :habilidadesCargadas="habilidadesCargadas" />
+                <FichaDotes :ficha="ficha" :dotes="dotes" :dotesCargadas="dotesCargadas" />
+            </div>
+            <FichaOtros :ficha="ficha" :naturalezas="naturalezas" />
+            -->
+        </div>
+    </div>
+</template>
+
+
+
+<style scoped>
+.fichaPokemon {
+    display: flex;
+    margin: 50px auto;
+}
+
+.character-sheet {
+    width: 90%;
+    margin: 50px auto;
+    background-color: var(--color-fondoTexto);
+    border-radius: 10px;
+    padding: 15px;
+}
+
+/* inputs 
 .item {
     display: flex;
     align-items: center;
@@ -785,29 +806,26 @@ onMounted(async () => {
     color: #888;
 }
 
-/* Quitar flechitas de input number*/
+/* Quitar flechitas de input number
 .character-sheet input[type=number]::-webkit-inner-spin-button,
 .character-sheet input[type=number]::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
 
-/* Firefox */
+/* Firefox 
 .character-sheet input[type=number] {
     -moz-appearance: textfield;
 }
 
 
-/* Básicos */
+/* Básicos 
 .character-sheet {
-    max-width: 1200px;
-    margin: 0 auto;
     padding: 16px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #f9f9f9;
+    background: #ffffff;
     border-radius: 10px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    color: #333;
 }
 
 .character-sheet input {
@@ -824,7 +842,7 @@ onMounted(async () => {
     color: #555;
 }
 
-/* PRICIPAL GRID */
+/* PRICIPAL GRID 
 .info-principal {
     width: 100%;
     display: grid;
@@ -836,7 +854,7 @@ onMounted(async () => {
     ;
 }
 
-/* Grid areas */
+/* Grid areas 
 .central {
     grid-area: central;
 }
@@ -853,7 +871,7 @@ onMounted(async () => {
     grid-area: vels;
 }
 
-/* Secciones con títulos */
+/* Secciones con títulos
 
 .character-sheet section h3 {
     font-size: 1.2rem;
@@ -863,7 +881,7 @@ onMounted(async () => {
     padding-bottom: 4px;
 }
 
-/* Habilidades y Feats */
+/* Habilidades y Feats 
 .HabsYDotes {
     display: flex;
     justify-content: space-around;
@@ -874,7 +892,7 @@ onMounted(async () => {
     width: 48%;
 }
 
-/* Ítems */
+/* Ítems 
 .item {
     background: #ecf0f1;
     border-radius: 6px;
@@ -883,4 +901,5 @@ onMounted(async () => {
     color: #2c3e50;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
+    */
 </style>

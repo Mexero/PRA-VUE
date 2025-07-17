@@ -1,41 +1,3 @@
-<template>
-    <section class="info-basica">
-        <div>
-            <span class="label">Nombre:</span>
-            <input v-model="ficha.nombre" @keyup.enter="emit('cambiarNombre', ficha.nombre)" />
-        </div>
-
-        <div>
-            <span class="label">Especie:</span>
-            <div style="position: relative;" v-click-outside="ocultarLista">
-                <input v-model="especieElegida" placeholder="Buscar especie..." @focus="mostrarLista = true"
-                    @keydown.enter.prevent="seleccionarEspecie()" />
-                <button @click="CambiarEspecie(especieElegida)">Cambiar</button>
-                <ul v-if="mostrarLista && especiesFiltradas.length">
-                    <li v-for="especie in especiesFiltradas" :key="especie"
-                        @mousedown.prevent="seleccionarEspecie(especie)">
-                        {{ especie }}
-                    </li>
-                </ul>
-            </div>
-        </div>
-
-        <div>
-            <span class="label">Nivel:</span>
-            <input type="number" v-model.number="nivelTemp" min="0" />
-            <button @click="cambiarNivel">Cambiar</button>
-        </div>
-
-        <div>
-            <span class="label">Tipos:</span>
-            <input v-model="ficha.pokedex.tipos[0]" readonly />
-            <template v-if="ficha.pokedex.tipos[1]">/
-                <input v-model="ficha.pokedex.tipos[1]" readonly />
-            </template>
-        </div>
-    </section>
-</template>
-
 <script setup>
 import { ref, watch, computed } from 'vue'
 
@@ -99,7 +61,61 @@ function ocultarLista() {
 }
 </script>
 
+<template>
+    <section class="info-basica">
+        <div class="nombreYNivel">
+            <label for="Nombre">Nombre: </label>
+            <input name="Nombre" v-model="ficha.nombre" @keyup.enter="emit('cambiarNombre', ficha.nombre)" />
+            <label for="Nivel">Nivel</label>
+            
+            <input type="number" name="Nivel" v-model.number="nivelTemp" min="0" />
+            <button @click="cambiarNivel">Cambiar</button>
+        </div>
+
+        <div>
+            <span class="label">Especie:</span>
+            <div style="position: relative;" v-click-outside="ocultarLista">
+                <input v-model="especieElegida" placeholder="Buscar especie..." @focus="mostrarLista = true"
+                    @keydown.enter.prevent="seleccionarEspecie()" />
+                <button @click="CambiarEspecie(especieElegida)">Cambiar</button>
+                <ul v-if="mostrarLista && especiesFiltradas.length">
+                    <li v-for="especie in especiesFiltradas" :key="especie"
+                        @mousedown.prevent="seleccionarEspecie(especie)">
+                        {{ especie }}
+                    </li>
+                </ul>
+            </div>
+
+            <span class="label">Tipos:</span>
+            <input v-model="ficha.pokedex.tipos[0]" readonly />
+            <template v-if="ficha.pokedex.tipos[1]">/
+                <input v-model="ficha.pokedex.tipos[1]" readonly />
+            </template>
+        </div>
+    </section>
+</template>
+
 <style scoped>
+
+.info-basica input{
+    font-size: large;
+    background-color: transparent;
+    padding: 4px;
+    border: none;
+    border-bottom: 1px solid;
+    
+}
+.label{
+    font-weight: bold;
+}
+.info-basica input:focus {
+    outline: none;
+}
+
+.nombre{
+    
+}
+/*
 .info-basica {
     display: flex;
     gap: 24px;
@@ -154,4 +170,5 @@ li {
 li:hover {
     background-color: #f0f0f0;
 }
+    */
 </style>
