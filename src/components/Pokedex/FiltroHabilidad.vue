@@ -4,7 +4,7 @@
         <input type="text" v-model="query" @input="filtrarHabilidades" @keydown.enter="seleccionarPrimera"
             @focus="entrarInput" placeholder="Busca una habilidad..."
             :class="habilidadSeleccionada ? 'hayElegida' : ''" />
-        <ul v-if="mostrarDropdown && habilidadesFiltradas.length" class="dropdown">
+        <ul v-if="mostrarDropdown && habilidadesFiltradas.length" class="dropdown" @click.stop>
             <li v-for="(habilidad, index) in habilidadesFiltradas" :key="index" @click="seleccionar(habilidad)">
                 {{ habilidad }}
             </li>

@@ -10,7 +10,7 @@
       </div>
     </div>
     <main>
-      <label>Ver Filtros <input type="checkbox" v-model="verFiltros"> </label>
+      <button @click="verFiltros = true">Filtros</button>
       <!-- Pokédex View -->
       <div class="main-content">
         <div class="pokedex-section">
@@ -436,7 +436,6 @@ function generarEvoluciones(evoEn, nivelEvo, tipoRequisito, requisitosEvo, evoOt
   height: 90vh;
   overflow-y: auto;
   border-radius: 10px;
-  padding: 20px;
   position: relative;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 }

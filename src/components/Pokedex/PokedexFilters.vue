@@ -6,9 +6,11 @@
         <FiltroTamano v-model="tamano" />
         <FiltroSentidos v-model="sentido" />
         <FiltroNatHab v-model="natHab" />
+        <div>
+            <button @click="enviarFiltros">Filtrar</button>
+            <button @click="limpiarFiltros">Limpiar Filtros</button>
+        </div>
     </div>
-    <button @click="enviarFiltros">Filtrar</button>
-    <button @click="limpiarFiltros">Limpiar Filtros</button>
 </template>
 
 <script setup>
@@ -86,7 +88,12 @@ function cambiarHabilidad(hab) {
 
 
 // Cerrar dropdown al hacer clic fuera
+let ignoreNextClick = true
 const handleClickOutside = (event) => {
+    if (ignoreNextClick) {
+        ignoreNextClick = false
+        return
+    }
     if (container.value && !container.value.contains(event.target)) {
         emit('cerrar-filtros')
     }
@@ -103,6 +110,7 @@ onBeforeUnmount(() => {
 
 <style scoped>
 .filters-container {
+    padding: 30px;
     margin-bottom: 20px;
 }
 </style>
