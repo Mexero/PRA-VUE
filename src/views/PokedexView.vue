@@ -1,12 +1,14 @@
 <template>
   <div class="app">
     <main>
+      <label>Ver Filtros <input type="checkbox" v-model="verFiltros"> </label>
+      <PokedexFilters v-if="verFiltros" @manejar-filtros="manejarFiltros" :searchTerm="searchTerm"
+        :selectedTypes="selectedTypes" />
       <!-- Pokédex View -->
       <div class="main-content">
         <div class="pokedex-section">
-          <PokemonGrid @show-details="handlePokemonSelect" @manejar-filtros="manejarFiltros" :pokedex="pokedex"
-            :filteredPokedex="filteredPokedex" :pokedexCargada="pokedexCargada" :selectedPokemon="selectedPokemon"
-            :searchTerm="searchTerm" :selectedTypes="selectedTypes" />
+          <PokemonGrid @show-details="handlePokemonSelect" :pokedex="pokedex" :pokedexCargada="pokedexCargada"
+            :selectedPokemon="selectedPokemon" />
         </div>
         <div class="details-section">
           <!-- Pokemon cargado-->
@@ -20,6 +22,7 @@
 <script setup>
 import PokemonGrid from '@/components/Pokedex/PokemonGrid.vue'
 import PokemonDetails from '@/components/Pokedex/PokemonDetails.vue'
+import PokedexFilters from '@/components/Pokedex/PokedexFilters.vue';
 
 import { ref, computed, watch, onMounted, onUnmounted } from 'vue';
 import { useRoute, useRouter } from "vue-router";
@@ -38,6 +41,7 @@ const selectedPokemonData = ref(null)
 const pokedexCargada = ref(false)
 const cargandoPokemon = ref(false)
 const errorCargaPokemon = ref(false)
+const verFiltros = ref(false)
 
 function handlePokemonSelect(pokemon) {
   selectedPokemon.value = pokemon
@@ -48,21 +52,10 @@ const searchTerm = ref(route.query.busqueda ?? null)
 const selectedTypes = ref(route.query.tipos ?? [])
 
 //Modifica filtros
-function manejarFiltros(clave, valor) {
-  switch (clave) {
-    case 'tipos':
-      selectedTypes.value = valor
-      break
-    case 'busqueda':
-      searchTerm.value = valor
-      break
-  }
-}
+function manejarFiltros(busqueda, tipos) {
+  searchTerm.value = busqueda
+  selectedTypes.value = tipos
 
-// Limpia filtros
-function limpiarFiltros() {
-  searchTerm.value = null
-  selectedTypes.value = []
 }
 
 //Cambia la ruta
@@ -73,7 +66,11 @@ watch(
     selectedTypes,
   ],
   () => {
-    router.replace({ query: construirQuery() });
+    router.replace({ query: construirQuery() })
+    cargarTodosPokes({
+      searchTerm: searchTerm.value,
+      selectedTypes: selectedTypes.value
+    })
   },
   { deep: true }
 );
@@ -101,36 +98,130 @@ function aplicarQuery(query) {
   selectedPokemon.value = query.seleccionado ?? null
 }
 
-function filtroTipo(poke) {
-  let filtrado = true
-  for (const tipo of selectedTypes.value) {
-    if (!poke.tipos.find(t => t === tipo)) filtrado = false
+// <================= CARGAR DATOS ==================>
+
+function cargarTodosPokes({
+  searchTerm = '',
+  selectedTypes = [],
+  filtroHabilidad = '',
+  filtroTamanno = '',
+  filtroSentidos = '',
+  filtroRatioCaptura = null,
+  filtroVitalidad = null,
+  filtroNivelMin = null,
+  filtroNatHabil = '',
+  filtroVelocidades = [],
+  filtroMovimientos = []
+}) {
+  const condiciones = []
+  const params = []
+
+  // Nombre/Especie
+  if (searchTerm) {
+    condiciones.push(`Especie LIKE ?`)
+    params.push(`%${searchTerm}%`)
   }
-  return filtrado
-}
 
-// Aplicar filtros
-const filteredPokedex = computed(() => {
-  return pokedex.value.filter((poke) => {
-    const especie = poke.especie.toLowerCase();
+  // Tipos (ambos deben estar presentes, en primario o secundario)
+  if (selectedTypes.length > 0) {
+    const tipoCondiciones = selectedTypes.map(() => `(Tipo_primario = ? OR Tipo_secundario = ?)`)
+    condiciones.push(`(${tipoCondiciones.join(' AND ')})`)
+    selectedTypes.forEach(tipo => {
+      params.push(tipo, tipo)
+    })
+  }
 
-    return (
-      filtroTipo(poke) &&
-      (!searchTerm.value || searchTerm.value === '' || especie.includes(searchTerm.value.toLowerCase()))
-    );
-  });
-});
+  // Habilidad en múltiples columnas
+  if (filtroHabilidad) {
+    condiciones.push(`(
+      Habilidad_1 = ? OR
+      Habilidad_2 = ? OR
+      Habilidad_3 = ? OR
+      Hab_oculta_1 = ? OR
+      Hab_oculta_2 = ?
+    )`)
+    for (let i = 0; i < 5; i++) params.push(filtroHabilidad)
+  }
 
-// <================= CARGA INICIAL ==================>
+  // Tamano
+  if (filtroTamanno) {
+    condiciones.push(`Tamano LIKE ?`)
+    params.push(`%${filtroTamanno}%`)
+  }
 
-function cargarPokedex() {
+  // Sentidos
+  if (filtroSentidos) {
+    condiciones.push(`Sentidos LIKE ?`)
+    params.push(`%${filtroSentidos}%`)
+  }
+
+  // Ratio de Captura
+  if (filtroRatioCaptura !== null) {
+    condiciones.push(`Ratio_de_Captura = ?`)
+    params.push(filtroRatioCaptura)
+  }
+
+  // Vitalidad
+  if (filtroVitalidad !== null) {
+    condiciones.push(`Vitalidad = ?`)
+    params.push(filtroVitalidad)
+  }
+
+  // Nivel mínimo
+  if (filtroNivelMin !== null) {
+    condiciones.push(`Niv_Minimo <= ?`)
+    params.push(filtroNivelMin)
+  }
+
+  // Naturaleza/Habilidad
+  if (filtroNatHabil) {
+    condiciones.push(`(Nat_Habil_1 LIKE ? OR Nat_Habil_2 LIKE ?)`)
+    params.push(`%${filtroNatHabil}%`, `%${filtroNatHabil}%`)
+  }
+
+  // Velocidades
+  const velocidadMap = {
+    caminando: 'V_Caminado',
+    excavado: 'V_Excavado',
+    levitado: 'V_Levitado',
+    nado: 'V_Nado',
+    trepado: 'V_Trepado',
+    vuelo: 'V_Vuelo'
+  }
+
+  filtroVelocidades.forEach(tipo => {
+    const col = velocidadMap[tipo.toLowerCase()]
+    if (col) {
+      condiciones.push(`${col} > 0`)
+    }
+  })
+
+  // Movimientos
+  if (filtroMovimientos.length > 0) {
+    filtroMovimientos.forEach(mov => {
+      condiciones.push(`Mov_ensenables LIKE ?`)
+      params.push(`%${mov}%`)
+    })
+  }
+
+  // WHERE final
+  const where = condiciones.length ? `WHERE ${condiciones.join(' AND ')}` : ''
+
+  const query = `
+    SELECT Especie, Tipo_primario, Tipo_secundario, Numero_pokedex
+    FROM pokemexe_pokedex
+    ${where}
+  `
+
   worker.postMessage({
     type: 'query',
-    query: 'SELECT Especie, Tipo_primario, Tipo_secundario, Numero_pokedex FROM pokemexe_pokedex',
-    params: [],
-    origin: 'cargarPokedex'
+    query,
+    params,
+    origin: 'cargarTodosPokes'
   })
 }
+
+
 
 onMounted(async () => {
   worker.postMessage({ type: 'init' })
@@ -138,11 +229,11 @@ onMounted(async () => {
   worker.onmessage = (e) => {
     if (e.data.type === 'ready') {
       if (!pokedexCargada.value) {
-        cargarPokedex()
+        cargarTodosPokes()
       }
     }
     if (e.data.type === 'result') {
-      if (e.data.origin === 'cargarPokedex') {
+      if (e.data.origin === 'cargarTodosPokes') {
         pokedex.value = (e.data.result?.[0]?.values || []).map((row) => ({
           especie: row[0],
           tipos: [row[1], row[2]],

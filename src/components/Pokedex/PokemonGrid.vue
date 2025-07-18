@@ -1,17 +1,10 @@
 <template>
   <div class="pokemon-container">
-    <div class="filters-container">
-      <SearchFilter @manejar-filtros="manejarFiltros" :searchTerm="searchTerm" />
-      <TypeFilter :types="tipos" :selected-types="selectedTypes" @manejar-filtros="manejarFiltros" />
-    </div>
     <div v-if="!pokedexCargada" class="loading-message">
       Cargando Pokémon...
     </div>
     <div v-else class="pokemon-grid">
-      <div v-if="filteredPokedex.length === 0" class="no-pokemon-message">
-        No se encontraron Pokémon con ese nombre
-      </div>
-      <PokemonCard v-for="pokemon in filteredPokedex" :pokemon="pokemon" @show-details="showPokemonDetails"
+      <PokemonCard v-for="pokemon in pokedex" :pokemon="pokemon" @show-details="showPokemonDetails"
         @image-error="handleImageError" />
       <div v-if="pokedex.length === 0" class="no-pokemon-message">
         No se encontraron Pokémon
@@ -21,36 +14,21 @@
 </template>
 
 <script setup>
-import SearchFilter from '@/components/Pokedex/SearchFilter.vue';
-import TypeFilter from '@/components/Pokedex/TypeFilter.vue';
 import PokemonCard from '@/components/Pokedex/PokemonCard.vue';
 
 const props = defineProps([
   'pokedex',
-  'filteredPokedex',
-  'pokedexCargada',
-  'selectedPokemon',
-  'searchTerm',
-  'selectedTypes'
+  'pokedexCargada'
 ])
 
-const emit = defineEmits(['show-details', 'manejar-filtros'])
-
-//Datos
-const tipos = ["Acero", "Agua", "Bicho", "Dragón", "Eléctrico", "Fantasma", "Fuego", "Hada", "Hielo", "Lucha", "Normal", "Planta", "Psíquico", "Roca", "Siniestro", "Tierra", "Veneno", "Volador"]
-
-
-function manejarFiltros(clave, valor) {
-  emit('manejar-filtros', clave, valor)
-}
-
+const emit = defineEmits(['show-details'])
 
 const showPokemonDetails = (pokemon) => {
   emit('show-details', pokemon)
 };
 
 const handleImageError = () => {
-  console.error('Error loading Pokémon image')
+  console.error('Error al cargar la imagen del Pokémon')
 }
 
 </script>
@@ -59,10 +37,6 @@ const handleImageError = () => {
 <style scoped>
 .pokemon-container {
   padding: 20px;
-}
-
-.filters-container {
-  margin-bottom: 20px;
 }
 
 .error-message,

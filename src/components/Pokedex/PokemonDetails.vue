@@ -183,8 +183,6 @@ const emit = defineEmits(['show-details']);
 
 function emitirEspecie(e) {
   emit('show-details', e)
-
-
 }
 
 const selectedAbility = ref(null)

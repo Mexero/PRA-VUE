@@ -1,24 +1,19 @@
 <template>
   <div class="search-container">
-    <input type="text" placeholder="Buscar Pokémon por nombre..." v-model="busqueda"
-      @input="emitirNombreDebounced(busqueda)" class="search-input" />
+    <input type="text" :value="modelValue" @input="$emit('update:modelValue', $event.target.value)"
+      placeholder="Buscar Pokémon por nombre..." class="search-input" />
   </div>
 </template>
 
 <script setup>
-import { debounce } from 'lodash';
-import { ref } from 'vue';
+defineProps({
+  modelValue: {
+    type: [String, null],
+    required: true
+  }
+})
 
-const props = defineProps(['searchTerm']);
-const emit = defineEmits(['manejarFiltros'])
-
-const busqueda = ref(props.searchTerm ?? '')
-
-const emitirNombreDebounced = debounce((valor) => {
-  const limpio = valor.trim();
-  emit('manejarFiltros', 'busqueda', limpio);
-}, 100);
-
+defineEmits(['update:modelValue'])
 </script>
 
 

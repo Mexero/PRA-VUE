@@ -9,16 +9,24 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, watch } from 'vue'
 
-const props = defineProps([
-  'types',
-  'selectedTypes'
-])
+const props = defineProps(['selectedTypes'])
+
+const types = ["Acero", "Agua", "Bicho", "Dragón", "Eléctrico", "Fantasma", "Fuego", "Hada", "Hielo", "Lucha", "Normal", "Planta", "Psíquico", "Roca", "Siniestro", "Tierra", "Veneno", "Volador"]
+
 
 const tipos = ref(props.selectedTypes ?? [])
 
-const emit = defineEmits(['manejarFiltros'])
+const emit = defineEmits(['cambiarTipos'])
+
+watch(() => [props.selectedTypes
+],
+  () => {
+    tipos.value = props.selectedTypes
+  },
+  { deep: true, immediate: true }
+)
 
 const normalizeType = (type) => {
   return type.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '')
@@ -32,7 +40,7 @@ function toggleType(type) {
     tipos.value.push(type)
   }
 
-  emit('manejarFiltros', 'tipos', tipos.value)
+  emit('cambiarTipos', tipos.value)
 }
 
 const isDisabled = (type) => {
