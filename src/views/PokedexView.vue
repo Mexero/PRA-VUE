@@ -1,9 +1,16 @@
 <template>
   <div class="app">
+    <div v-if="verFiltros" class="modal-overlay">
+      <div class="modal-content">
+        <button class="cerrar-filtros" @click="verFiltros = false">✖</button>
+        <PokedexFilters v-if="verFiltros" @manejar-filtros="manejarFiltros" @cerrar-filtros="verFiltros = false"
+          :searchTerm="searchTerm" :filtroHabilidad="filtroHabilidad" :selectedTypes="selectedTypes"
+          :filtro-tamano="filtroTamano" :filtroNatHabil="filtroNatHabil" :filtroSentido="filtroSentido"
+          :dbCargada="dbCargada" />
+      </div>
+    </div>
     <main>
       <label>Ver Filtros <input type="checkbox" v-model="verFiltros"> </label>
-      <PokedexFilters v-if="verFiltros" @manejar-filtros="manejarFiltros" :searchTerm="searchTerm"
-        :selectedTypes="selectedTypes" />
       <!-- Pokédex View -->
       <div class="main-content">
         <div class="pokedex-section">
@@ -24,7 +31,7 @@ import PokemonGrid from '@/components/Pokedex/PokemonGrid.vue'
 import PokemonDetails from '@/components/Pokedex/PokemonDetails.vue'
 import PokedexFilters from '@/components/Pokedex/PokedexFilters.vue';
 
-import { ref, computed, watch, onMounted, onUnmounted } from 'vue';
+import { ref, watch, onMounted, onUnmounted } from 'vue';
 import { useRoute, useRouter } from "vue-router";
 
 import worker from '../sqlWorker.js';
@@ -38,39 +45,93 @@ const selectedPokemon = ref(route.query.seleccionado ?? null)
 const selectedPokemonData = ref(null)
 
 //Flags
+const dbCargada = ref(false)
 const pokedexCargada = ref(false)
 const cargandoPokemon = ref(false)
 const errorCargaPokemon = ref(false)
 const verFiltros = ref(false)
 
-function handlePokemonSelect(pokemon) {
-  selectedPokemon.value = pokemon
-}
+
+// ========================= INICIO ===========================
+onMounted(async () => {
+  aplicarQuery(route.query)
+  worker.postMessage({ type: 'init' })
+
+  worker.onmessage = (e) => {
+    if (e.data.type === 'ready') {
+      dbCargada.value = true //Esto activa el watch que hace que se carguen los pokes y el watch que carga nombres de habs y de movs
+    }
+    else if (e.data.type === 'error') {
+      console.error("Error en SQLite:", e.data.error)
+    }
+    else if (e.data.type === 'result')
+      if (e.data.origin === 'cargarTodosPokes') {
+        pokedex.value = (e.data.result?.[0]?.values || []).map((row) => ({
+          especie: row[0],
+          tipos: [row[1], row[2]],
+          numPokedex: row[3]
+        }))
+        if (pokedex.value.length > 0) {
+          OrderPokedex()
+          const encontrado = pokedex.value.find(p => p.especie === selectedPokemon.value)
+          if (!selectedPokemon.value || !encontrado) {
+            selectedPokemon.value = pokedex.value[0]?.especie
+          }
+          pokedexCargada.value = true
+        }
+      }
+  }
+})
 
 // ========================= FILTROS ===========================
-const searchTerm = ref(route.query.busqueda ?? null)
-const selectedTypes = ref(route.query.tipos ?? [])
+const searchTerm = ref(route.query.busqueda || null)
+const selectedTypes = ref(route.query.tipos || [])
+const filtroHabilidad = ref(route.query.habilidad || null)
+const filtroTamano = ref(route.query.tamano || null)
+const filtroSentido = ref(route.query.sentido || null)
+const filtroNatHabil = ref(route.query.nathab || null)
+const filtroVitalidad = ref(null)
+const filtroNivelMin = ref(null)
+const filtroVelocidades = ref([])
+const filtroMovimientos = ref([])
 
 //Modifica filtros
-function manejarFiltros(busqueda, tipos) {
+function manejarFiltros(busqueda, tipos, habilidad, tamano, sentido, natHab) {
   searchTerm.value = busqueda
   selectedTypes.value = tipos
+  filtroHabilidad.value = habilidad
+  filtroTamano.value = tamano
+  filtroSentido.value = sentido
+  filtroNatHabil.value = natHab
 
+
+  verFiltros.value = false
 }
 
-//Cambia la ruta
+//Cambia la ruta y aplicar filtros si hay datos cargados
 watch(
   [
     selectedPokemon,
     searchTerm,
     selectedTypes,
+    filtroHabilidad,
+    filtroTamano,
+    filtroSentido,
+    filtroNatHabil,
+    dbCargada
   ],
   () => {
     router.replace({ query: construirQuery() })
-    cargarTodosPokes({
-      searchTerm: searchTerm.value,
-      selectedTypes: selectedTypes.value
-    })
+    if (dbCargada.value) {
+      cargarTodosPokes({
+        searchTerm: searchTerm.value,
+        selectedTypes: selectedTypes.value,
+        filtroHabilidad: filtroHabilidad.value,
+        filtroTamano: filtroTamano.value,
+        filtroSentido: filtroSentido.value,
+        filtroNatHabil: filtroNatHabil.value
+      })
+    }
   },
   { deep: true }
 );
@@ -79,9 +140,8 @@ watch(
 watch(
   () => route.query,
   (query) => {
-    aplicarQuery(query);
-  },
-  { immediate: true }
+    aplicarQuery(query)
+  }
 );
 
 function construirQuery() {
@@ -89,6 +149,10 @@ function construirQuery() {
     busqueda: searchTerm.value !== '' ? searchTerm.value : undefined,
     tipos: selectedTypes.value.length ? selectedTypes.value.join(',') : undefined,
     seleccionado: selectedPokemon.value ?? undefined,
+    habilidad: filtroHabilidad.value ?? undefined,
+    tamano: filtroTamano.value ?? undefined,
+    sentido: filtroSentido.value ?? undefined,
+    nathab: filtroNatHabil.value ?? undefined
   };
 }
 
@@ -96,27 +160,35 @@ function aplicarQuery(query) {
   searchTerm.value = query.busqueda ?? null
   selectedTypes.value = query.tipos ? query.tipos.split(',').slice(0, 2) : []
   selectedPokemon.value = query.seleccionado ?? null
+  filtroHabilidad.value = query.habilidad ?? null
+  filtroTamano.value = query.tamano ?? null
+  filtroSentido.value = query.sentido ?? null
+  filtroNatHabil.value = query.nathab ?? null
 }
+
+// <================= ESTÉTICA FILTROS ==================>
+
+watch(() => verFiltros.value, (nuevoValor) => {
+  document.body.style.overflow = nuevoValor ? 'hidden' : 'auto'
+})
 
 // <================= CARGAR DATOS ==================>
 
 function cargarTodosPokes({
   searchTerm = '',
   selectedTypes = [],
-  filtroHabilidad = '',
-  filtroTamanno = '',
-  filtroSentidos = '',
-  filtroRatioCaptura = null,
-  filtroVitalidad = null,
+  filtroHabilidad = null,
+  filtroTamano = null,
+  filtroSentido = null,
+  filtroNatHabil = null,
   filtroNivelMin = null,
-  filtroNatHabil = '',
+  filtroVitalidad = null,
   filtroVelocidades = [],
   filtroMovimientos = []
 }) {
   const condiciones = []
   const params = []
 
-  // Nombre/Especie
   if (searchTerm) {
     condiciones.push(`Especie LIKE ?`)
     params.push(`%${searchTerm}%`)
@@ -131,7 +203,6 @@ function cargarTodosPokes({
     })
   }
 
-  // Habilidad en múltiples columnas
   if (filtroHabilidad) {
     condiciones.push(`(
       Habilidad_1 = ? OR
@@ -143,37 +214,27 @@ function cargarTodosPokes({
     for (let i = 0; i < 5; i++) params.push(filtroHabilidad)
   }
 
-  // Tamano
-  if (filtroTamanno) {
+  if (filtroTamano) {
     condiciones.push(`Tamano LIKE ?`)
-    params.push(`%${filtroTamanno}%`)
+    params.push(`%${filtroTamano}%`)
   }
 
-  // Sentidos
-  if (filtroSentidos) {
+  if (filtroSentido) {
     condiciones.push(`Sentidos LIKE ?`)
-    params.push(`%${filtroSentidos}%`)
+    params.push(`%${filtroSentido}%`)
   }
 
-  // Ratio de Captura
-  if (filtroRatioCaptura !== null) {
-    condiciones.push(`Ratio_de_Captura = ?`)
-    params.push(filtroRatioCaptura)
-  }
-
-  // Vitalidad
   if (filtroVitalidad !== null) {
     condiciones.push(`Vitalidad = ?`)
     params.push(filtroVitalidad)
   }
 
-  // Nivel mínimo
   if (filtroNivelMin !== null) {
     condiciones.push(`Niv_Minimo <= ?`)
     params.push(filtroNivelMin)
   }
 
-  // Naturaleza/Habilidad
+  // Naturalmente Hábil en uno de los 2
   if (filtroNatHabil) {
     condiciones.push(`(Nat_Habil_1 LIKE ? OR Nat_Habil_2 LIKE ?)`)
     params.push(`%${filtroNatHabil}%`, `%${filtroNatHabil}%`)
@@ -196,7 +257,6 @@ function cargarTodosPokes({
     }
   })
 
-  // Movimientos
   if (filtroMovimientos.length > 0) {
     filtroMovimientos.forEach(mov => {
       condiciones.push(`Mov_ensenables LIKE ?`)
@@ -221,48 +281,6 @@ function cargarTodosPokes({
   })
 }
 
-
-
-onMounted(async () => {
-  worker.postMessage({ type: 'init' })
-
-  worker.onmessage = (e) => {
-    if (e.data.type === 'ready') {
-      if (!pokedexCargada.value) {
-        cargarTodosPokes()
-      }
-    }
-    if (e.data.type === 'result') {
-      if (e.data.origin === 'cargarTodosPokes') {
-        pokedex.value = (e.data.result?.[0]?.values || []).map((row) => ({
-          especie: row[0],
-          tipos: [row[1], row[2]],
-          numPokedex: row[3]
-        }))
-        if (pokedex.value.length > 0) {
-          OrderPokedex()
-          if (!selectedPokemon.value) {
-            selectedPokemon.value = pokedex.value[0].especie
-          }
-          pokedexCargada.value = true
-        }
-      }
-    }
-    if (e.data.type === 'error') {
-      console.error("Error en SQLite:", e.data.error)
-    }
-  };
-})
-
-function OrderPokedex() {
-  if (pokedex.value.length === 0) {
-    console.warn('La Pokédex está vacía')
-    return
-  }
-  pokedex.value = pokedex.value.sort((a, b) => a.numPokedex.localeCompare(b.numPokedex));
-
-}
-
 // <========= CAMBIAR SELECCIONADO =============>
 watch([
   selectedPokemon,
@@ -281,10 +299,11 @@ watch([
       }
     }
   },
-  { deep: true, immediate: true }
+  { deep: true }
 )
 
 function cambiarPokeSeleccionado(especie) {
+  if (!pokedexCargada.value) return
   worker.postMessage({
     type: 'query',
     query: `
@@ -311,6 +330,11 @@ function cambiarPokeSeleccionado(especie) {
 }
 
 worker.addEventListener('message', handlePokemonFetch);
+
+//Quitar el listener de arriba al desmontar para no generar duplicados
+onUnmounted(() => {
+  worker.removeEventListener('message', handlePokemonFetch)
+})
 
 function handlePokemonFetch(e) {
   if (e.data.type === 'result' && e.data.origin === 'CambiarSeleccionado') {
@@ -345,6 +369,21 @@ function handlePokemonFetch(e) {
   cargandoPokemon.value = false
 }
 
+// ==================== UTILIDAD =======================
+
+function handlePokemonSelect(pokemon) {
+  selectedPokemon.value = pokemon
+}
+
+function OrderPokedex() {
+  if (pokedex.value.length === 0) {
+    console.warn('La Pokédex está vacía')
+    return
+  }
+  pokedex.value = pokedex.value.sort((a, b) => a.numPokedex.localeCompare(b.numPokedex));
+
+}
+
 function tratarEnsenables(array) {
   let temporal = array
   if (temporal[temporal.length - 1] === ".") temporal = temporal.slice(0, -1);
@@ -374,13 +413,50 @@ function generarEvoluciones(evoEn, nivelEvo, tipoRequisito, requisitosEvo, evoOt
   }
   return evoluciones
 }
-
-onUnmounted(() => {
-  worker.removeEventListener('message', handlePokemonFetch)
-})
 </script>
 
 <style scoped>
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  /* Fondo oscuro */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal-content {
+  background-color: white;
+  width: 90vw;
+  height: 90vh;
+  overflow-y: auto;
+  border-radius: 10px;
+  padding: 20px;
+  position: relative;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Botón de cerrar */
+.cerrar-filtros {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+
+
+
+
+
 .app {
   max-width: 100%;
   margin: 0 auto;
@@ -395,10 +471,6 @@ onUnmounted(() => {
   left: 0;
   width: 100%;
   height: 100%;
-  /*background-image: url('../public/fondo.svg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;*/
   filter: invert(100%);
   opacity: 0.8;
   z-index: -999;

@@ -71,12 +71,12 @@
               <tbody>
                 <tr>
                   <td>FUE</td>
-                  <td>{{ pokemon.stats.fue }}{{ pokemon.saves.fue === '2' ? ' ☆' : pokemon.saves.fue === '4' ? ' ★' : ''
+                  <td>{{ pokemon.stats.fue }}{{ pokemon.saves.fue === 2 ? ' ☆' : pokemon.saves.fue === 4 ? ' ★' : ''
                   }}</td>
                 </tr>
                 <tr>
                   <td>AGI</td>
-                  <td>{{ pokemon.stats.agi }}{{ pokemon.saves.agi === '2' ? ' ☆' : pokemon.saves.agi === '4' ? ' ★' : ''
+                  <td>{{ pokemon.stats.agi }}{{ pokemon.saves.agi === 2 ? ' ☆' : pokemon.saves.agi === 4 ? ' ★' : ''
                   }}</td>
                 </tr>
               </tbody>
@@ -87,7 +87,7 @@
               <tbody>
                 <tr>
                   <td>RES</td>
-                  <td>{{ pokemon.stats.res }}{{ pokemon.saves.res === '2' ? ' ☆' : pokemon.saves.res === '4' ? ' ★' : ''
+                  <td>{{ pokemon.stats.res }}{{ pokemon.saves.res === 2 ? ' ☆' : pokemon.saves.res === 4 ? ' ★' : ''
                   }}
                   </td>
                 </tr>
@@ -103,7 +103,7 @@
               <tbody>
                 <tr>
                   <td>ESP</td>
-                  <td>{{ pokemon.stats.esp }}{{ pokemon.saves.esp === '2' ? ' ☆' : pokemon.saves.esp === '4' ? ' ★' : ''
+                  <td>{{ pokemon.stats.esp }}{{ pokemon.saves.esp === 2 ? ' ☆' : pokemon.saves.esp === 4 ? ' ★' : ''
                   }}
                   </td>
                 </tr>
