@@ -30,8 +30,11 @@
         <div class="detailsBloque">
             <p>
                 En la mayoría de los mundos Pokémon, los Entrenadores pueden llevar
-                consigo un <strong>máximo de 6 Pokémon</strong> mientras viajan. La
-                razón de esta restricción puede variar según el mundo en el que juegues
+                consigo un <strong>máximo de entre 3 y 6 Pokémon</strong> mientras viajan. La cantidad máxima exacta la
+                elige el DJ. La recomendada es de 4 Pokémon.
+            </p>
+            <p>
+                La razón de esta restricción puede variar según el mundo en el que juegues
                 y las consecuencias de no cumplirla también dependen de esto, si es que
                 es tan siquiera posible. Además, tu DJ puede decidir también limitar o
                 ampliar esta limitación en función de su campaña, aunque se recomienda
@@ -921,13 +924,10 @@
             </p>
 
             <p>
-                Al igual que la evolución, como parte de la Acción Compartida que toman
-                Entrenador y Pokémon para dar y recibir una Orden, un Pokémon puede
-                Megaevolucionar a su Pokémon, el cual automáticamente toma su nueva
-                forma, adoptando nuevas Estadísticas, pudiendo cambiar sus Tipos, y
-                ganar una Habilidad, una nueva forma de calcular su CA, nuevas
-                Velocidades y Sentidos. Esta información se encuentra detallada en las
-                entradas de la Pokédex de las especies que pueden Megaevolucionar.
+                Cuando uno de tus Pokémon cumple los prerrequisitos para evolucionar, puedes elegir que evolucione sin
+                coste de Acción. Cuando un Pokémon evoluciona automáticamente toma su nueva forma, adoptando sus nuevas
+                Estadísticas, cambiando sus Tipos, Habilidades y otros rasgos que posea a los de su forma evolucionada y
+                recuperando la mitad de sus PV y PP.
             </p>
 
             <p>
