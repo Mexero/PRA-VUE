@@ -1,15 +1,17 @@
 <template>
     <div ref="container" class="contenedor">
-        <span>Habilidad: </span>
-        <input type="text" v-model="query" @input="filtrarHabilidades" @keydown.enter="seleccionarPrimera"
-            @focus="entrarInput" placeholder="Busca una habilidad..."
-            :class="habilidadSeleccionada ? 'hayElegida' : ''" />
+        <label>Habilidad:
+            <input type="text" v-model="query" @input="filtrarHabilidades" @keydown.enter="seleccionarPrimera"
+                @focus="entrarInput" placeholder="Busca una habilidad..."
+                :class="habilidadSeleccionada ? 'hayElegida' : ''" />
+        </label>
         <ul v-if="mostrarDropdown && habilidadesFiltradas.length" class="dropdown" @click.stop>
             <li v-for="(habilidad, index) in habilidadesFiltradas" :key="index" @click="seleccionar(habilidad)">
                 {{ habilidad }}
             </li>
         </ul>
     </div>
+
 </template>
 
 <script setup>
@@ -23,12 +25,14 @@ const props = defineProps([
 
 const emit = defineEmits(['cambiarHabilidad'])
 
+
 const habilidades = ref([])
-const query = ref('')
 const habilidadesFiltradas = ref([])
+const query = ref(props.habilidad ?? null)
 const habilidadSeleccionada = ref(props.habilidad ?? null)
 const mostrarDropdown = ref(false)
 const container = ref(null)
+
 
 watch(() => props.habilidad,
     () => {

@@ -1,15 +1,16 @@
 <template>
     <div class="search-container">
-        <span>Sentido: </span>
-        <select :value="modelValue" @input="$emit('update:modelValue', $event.target.value)">
-            <option value="">Elige un sentido</option>
-            <option value="scuridad">Visión en la Oscuridad</option>
-            <option value="lectrorrecep">Electrorrecepción</option>
-            <option value="ibración">Sentido de la vibración</option>
-            <option value="colocaliza">Ecolocalización</option>
-            <option value="spectral">Sentido espectral</option>
-            <option value="lma">Sentido del alma</option>
-        </select>
+        <label>Sentido:
+            <select :value="modelValue" @input="$emit('update:modelValue', $event.target.value)">
+                <option value="">Elige un sentido</option>
+                <option value="scuridad">Visión en la Oscuridad</option>
+                <option value="lectrorrecep">Electrorrecepción</option>
+                <option value="ibración">Sentido de la vibración</option>
+                <option value="colocaliza">Ecolocalización</option>
+                <option value="spectral">Sentido espectral</option>
+                <option value="lma">Sentido del alma</option>
+            </select>
+        </label>
     </div>
 </template>
 

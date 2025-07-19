@@ -1,15 +1,16 @@
 <template>
     <div class="search-container">
-        <span>Tamaño: </span>
-        <select :value="modelValue" @input="$emit('update:modelValue', $event.target.value)">
-            <option value="">Elige un tamaño</option>
-            <option value="Enano">Enano</option>
-            <option value="Pequeño">Pequeño</option>
-            <option value="Mediano">Mediano</option>
-            <option value="Grande">Grande</option>
-            <option value="Enorme">Enorme</option>
-            <option value="Colosal">Colosal</option>
-        </select>
+        <label>Tamaño:
+            <select :value="modelValue" @input="$emit('update:modelValue', $event.target.value)">
+                <option value="">Elige un tamaño</option>
+                <option value="Enano">Enano</option>
+                <option value="Pequeño">Pequeño</option>
+                <option value="Mediano">Mediano</option>
+                <option value="Grande">Grande</option>
+                <option value="Enorme">Enorme</option>
+                <option value="Colosal">Colosal</option>
+            </select>
+        </label>
     </div>
 </template>
 

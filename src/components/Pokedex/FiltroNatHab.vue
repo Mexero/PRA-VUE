@@ -1,10 +1,11 @@
 <template>
     <div class="search-container">
-        <span>Naturalmente hábil: </span>
-        <select :value="modelValue" @input="$emit('update:modelValue', $event.target.value)">
-            <option value="">Elige una Habilidad</option>
-            <option v-for="check in ChecksBase" :value="check">{{ check }}</option>
-        </select>
+        <label>Naturalmente hábil:
+            <select :value="modelValue" @input="$emit('update:modelValue', $event.target.value)">
+                <option value="">Elige una Habilidad</option>
+                <option v-for="check in ChecksBase" :value="check">{{ check }}</option>
+            </select>
+        </label>
     </div>
 </template>
 

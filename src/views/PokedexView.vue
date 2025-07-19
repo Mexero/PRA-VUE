@@ -6,7 +6,8 @@
         <PokedexFilters v-if="verFiltros" @manejar-filtros="manejarFiltros" @cerrar-filtros="verFiltros = false"
           :searchTerm="searchTerm" :filtroHabilidad="filtroHabilidad" :selectedTypes="selectedTypes"
           :filtro-tamano="filtroTamano" :filtroNatHabil="filtroNatHabil" :filtroSentido="filtroSentido"
-          :dbCargada="dbCargada" />
+          :filtroNivelMin="filtroNivelMin" :filtroVitalidad="filtroVitalidad" :filtroVelocidades="filtroVelocidades"
+          :filtroMovimientos=filtroMovimientos :dbCargada="dbCargada" />
       </div>
     </div>
     <main>
@@ -90,20 +91,23 @@ const filtroHabilidad = ref(route.query.habilidad || null)
 const filtroTamano = ref(route.query.tamano || null)
 const filtroSentido = ref(route.query.sentido || null)
 const filtroNatHabil = ref(route.query.nathab || null)
-const filtroVitalidad = ref(null)
-const filtroNivelMin = ref(null)
-const filtroVelocidades = ref([])
-const filtroMovimientos = ref([])
+const filtroVitalidad = ref(route.query.vit ? parseInt(route.query.vit) : null)
+const filtroNivelMin = ref(route.query.nivmin ? parseInt(route.query.nivmin) : null)
+const filtroVelocidades = ref(route.query.vels ? route.query.vels.split(',') : [])
+const filtroMovimientos = ref(route.query.movs ? route.query.movs.split(',') : [])
 
 //Modifica filtros
-function manejarFiltros(busqueda, tipos, habilidad, tamano, sentido, natHab) {
+function manejarFiltros(busqueda, tipos, habilidad, tamano, sentido, natHab, vit, nivMin, vels, movs) {
   searchTerm.value = busqueda
   selectedTypes.value = tipos
   filtroHabilidad.value = habilidad
   filtroTamano.value = tamano
   filtroSentido.value = sentido
   filtroNatHabil.value = natHab
-
+  filtroVitalidad.value = vit
+  filtroNivelMin.value = nivMin
+  filtroVelocidades.value = vels
+  filtroMovimientos.value = movs
 
   verFiltros.value = false
 }
@@ -118,6 +122,10 @@ watch(
     filtroTamano,
     filtroSentido,
     filtroNatHabil,
+    filtroVitalidad,
+    filtroNivelMin,
+    filtroVelocidades,
+    filtroMovimientos,
     dbCargada
   ],
   () => {
@@ -129,7 +137,11 @@ watch(
         filtroHabilidad: filtroHabilidad.value,
         filtroTamano: filtroTamano.value,
         filtroSentido: filtroSentido.value,
-        filtroNatHabil: filtroNatHabil.value
+        filtroNatHabil: filtroNatHabil.value,
+        filtroVitalidad: filtroVitalidad.value,
+        filtroNivelMin: filtroNivelMin.value,
+        filtroVelocidades: filtroVelocidades.value,
+        filtroMovimientos: filtroMovimientos.value
       })
     }
   },
@@ -152,7 +164,12 @@ function construirQuery() {
     habilidad: filtroHabilidad.value ?? undefined,
     tamano: filtroTamano.value ?? undefined,
     sentido: filtroSentido.value ?? undefined,
-    nathab: filtroNatHabil.value ?? undefined
+    nathab: filtroNatHabil.value ?? undefined,
+    vit: filtroVitalidad.value ?? undefined,
+    nivmin: filtroNivelMin.value ?? undefined,
+    vels: filtroVelocidades.value.length ? filtroVelocidades.value.join(',') : undefined,
+    movs: filtroMovimientos.value.length ? filtroMovimientos.value.join(',') : undefined
+
   };
 }
 
@@ -164,6 +181,11 @@ function aplicarQuery(query) {
   filtroTamano.value = query.tamano ?? null
   filtroSentido.value = query.sentido ?? null
   filtroNatHabil.value = query.nathab ?? null
+  filtroVitalidad.value = query.vit ? parseInt(query.vit) : null
+  filtroNivelMin.value = query.nivmin ? parseInt(query.nivmin) : null
+  filtroVelocidades.value = query.vels ? query.vels.split(',') : []
+  filtroMovimientos.value = query.movs ? query.movs.split(',') : []
+
 }
 
 // <================= ESTÉTICA FILTROS ==================>
@@ -230,7 +252,7 @@ function cargarTodosPokes({
   }
 
   if (filtroNivelMin !== null) {
-    condiciones.push(`Niv_Minimo <= ?`)
+    condiciones.push(`Niv_Minimo >= ?`)
     params.push(filtroNivelMin)
   }
 
@@ -242,7 +264,7 @@ function cargarTodosPokes({
 
   // Velocidades
   const velocidadMap = {
-    caminando: 'V_Caminado',
+    caminado: 'V_Caminado',
     excavado: 'V_Excavado',
     levitado: 'V_Levitado',
     nado: 'V_Nado',
