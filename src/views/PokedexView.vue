@@ -74,6 +74,10 @@ onMounted(async () => {
         }))
         if (pokedex.value.length > 0) {
           OrderPokedex()
+
+          //  const nombresStr = pokedex.value.map(p => p.especie).join(', ')
+          //  console.log('Pokémon encontrados:', nombresStr)
+
           const encontrado = pokedex.value.find(p => p.especie === selectedPokemon.value)
           if (!selectedPokemon.value || !encontrado) {
             selectedPokemon.value = pokedex.value[0]?.especie

@@ -19,7 +19,9 @@
 
       <div class="stat-block-body">
         <div class="unified-stats-section">
-          <div class="pokemon-size">Pokemon {{ pokemon.otros.tamano }}</div>
+          <div class="pokemon-size">Pokemon {{ pokemon.otros.tamano }}
+            {{ pokemon.natHabil[0] ? (', Naturalmente hábil en ' + pokemon.natHabil[0]) : '' }}
+            {{ pokemon.natHabil[1] ? (' y ' + pokemon.natHabil[1]) : '' }}</div>
           <div class="vital-stat-row">
             <span class="vital-stat-label">{{ pokemon.calculosCa[1] !== '' ? 'AC 1' : 'AC' }}: </span>
             <span class="vital-stat-value">{{ pokemon.calculosCa[0] }}</span>
@@ -118,7 +120,7 @@
       </div>
 
       <div class="abilities-section">
-        <div class="section-title">Habilidades</div>
+        <h3 class="section-title">Habilidades</h3>
         <div v-if="habilidadesLoading" class="loading-abilities">Cargando habilidades...</div>
         <div v-else-if="habilidadesError" class="error-message">Ha ocurrido un error. Recarga la página.</div>
         <div v-else class="abilities-container">
@@ -138,10 +140,8 @@
     </div>
   </div>
 
-
-
   <div v-if="pokemon && (pokemon.evoDe !== '' || pokemon.evolucion)" class="pokemon-evolution detail-section">
-    <h3>Línea Evolutiva</h3>
+    <h3 class="section-title">Línea Evolutiva</h3>
     <div class="evolution-container">
       <div v-if="pokemon.evoDe !== ''" class="evolution-group">
         <span class="evolution-label">Evoluciona de:</span>
@@ -163,6 +163,37 @@
       </div>
     </div>
 
+    <div class="detail-section otros">
+      <h3 class="section-title">Información Secundaria</h3>
+      <table class="otros-table">
+        <tbody>
+          <tr>
+            <th>Nivel mínimo</th>
+            <td>{{ pokemon.otros.nivMinimo }}</td>
+          </tr>
+          <tr>
+            <th>Ratio de Captura</th>
+            <td>{{ pokemon.otros.ratioCaptura }}</td>
+          </tr>
+          <tr>
+            <th>Dieta</th>
+            <td>{{ pokemon.otros.dieta }}</td>
+          </tr>
+          <tr>
+            <th>Sexo</th>
+            <td>{{ pokemon.otros.sexo }}</td>
+          </tr>
+          <tr>
+            <th>Hábitat</th>
+            <td>{{ pokemon.otros.habitat.split('\n').join(', ') }}</td>
+          </tr>
+          <tr v-if="pokemon.otros.sentidos">
+            <th>Sentidos</th>
+            <td>{{ pokemon.otros.sentidos.split('\n').join(', ') }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 
     <!-- Sección de Movimientos -->
     <PokemonMoves :pokeID="pokemon.id" />
@@ -370,17 +401,6 @@ function getPokemonNumberByName(especie) {
   font-size: 0.9em;
 }
 
-.ability-table {
-  width: 100%;
-  margin-bottom: 10px;
-  border-collapse: collapse;
-}
-
-.ability-table td {
-  padding: 4px 8px;
-  border-bottom: 1px solid #e0e0e0;
-}
-
 .ability-label {
   font-weight: bold;
   color: #666;
@@ -518,6 +538,23 @@ function getPokemonNumberByName(especie) {
   animation: slideDown 0.5s ease-in-out;
 }
 
+.otros-table {
+  padding: 20px;
+  margin: auto;
+}
+
+.otros-table th,
+.otros-table td {
+  padding: 8px;
+  text-align: right;
+  color: #333;
+}
+
+.otros-table td {
+  text-align: left;
+}
+
+
 @keyframes slideDown {
   from {
     opacity: 0;
@@ -533,17 +570,6 @@ function getPokemonNumberByName(especie) {
 .ability-info {
   color: #333;
   font-size: 0.9em;
-}
-
-.ability-table {
-  width: 100%;
-  margin-bottom: 10px;
-  border-collapse: collapse;
-}
-
-.ability-table td {
-  padding: 4px 8px;
-  border-bottom: 1px solid #e0e0e0;
 }
 
 .ability-label {
