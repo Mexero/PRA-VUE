@@ -15,18 +15,22 @@
 </template>
 
 <script setup>
-import { ref, onMounted, computed, watch } from "vue";
-import { useRoute, useRouter } from "vue-router";
-
-import worker from '../sqlWorker.js';
+import { ref, onMounted, computed, watch } from "vue"
+import { useRoute, useRouter } from "vue-router"
+import { initDB, queryDB } from '@/services/dbWorkerService'
 
 import Tabla from "@/components/Movimientos/TablaMovimientosView.vue"
 import Seleccionado from "@/components/Movimientos/MovimientoSeleccionado.vue"
 import Filtros from "@/components/Movimientos/MovimientoFiltrosView.vue"
 
 
-const route = useRoute();
-const router = useRouter();
+const route = useRoute()
+const router = useRouter()
+
+//flags
+const isReady = ref(false)
+const error = ref(null)
+const loading = ref(false)
 
 // ======================== DATOS ========================
 
@@ -34,117 +38,119 @@ const router = useRouter();
 const columnas = ['Nombre', 'Tipo', 'Acción', 'Coste', 'Daño', 'Rango', 'Etiquetas']
 const clavesColumnas = ['nombre', 'tipo', 'accion', 'coste', 'danno', 'rango', 'etiquetas']
 
-const tipos = ["Acero", "Agua", "Bicho", "Dragón", "Eléctrico", "Fantasma", "Fuego", "Hada", "Hielo", "Lucha", "Normal", "Planta", "Psíquico", "Roca", "Siniestro", "Tierra", "Veneno", "Volador"];
+const tipos = ["Acero", "Agua", "Bicho", "Dragón", "Eléctrico", "Fantasma", "Fuego", "Hada", "Hielo", "Lucha", "Normal", "Planta", "Psíquico", "Roca", "Siniestro", "Tierra", "Veneno", "Volador"]
 const etiquetas = ["Escudo", "Por Tierra", "Potenciación", "Sonido", "Restauración", "Terreno", "Polvo", "Puño", "Mordisco", "Patada", "Explosión", "Retroceso", "Bala", "Campo", "Clima", "Danza", "Golpea varias veces", "Golpea 2 veces", "Golpea 3 veces"]
 
 //Datos principales
-const datos = ref([]);
-const datosCargados = ref(false);
-const seleccionadoNombre = ref(route.query.seleccionado ?? undefined);
-const seleccionado = ref(seleccionarMovimiento(seleccionadoNombre.value ?? undefined));
+const datos = ref([])
+const datosCargados = ref(false)
+const seleccionadoNombre = ref(route.query.seleccionado ?? null)
+const seleccionado = ref(null)
 
 //Filtros
-const filtroTipos = ref(route.query.tipos ? route.query.tipos.split(",") : []);
-const filtroEtiquetas = ref(route.query.etiquetas ? route.query.etiquetas.split(",") : []);
+const filtroTipos = ref(route.query.tipos ? route.query.tipos.split(",") : [])
+const filtroEtiquetas = ref(route.query.etiquetas ? route.query.etiquetas.split(",") : [])
 const filtroAccion = ref(route.query.accion ?? null);
-const filtroPPMin = ref(route.query.PPMin ? Number(route.query.PPMin) : null);
-const filtroPPMax = ref(route.query.PPMax ? Number(route.query.PPMax) : null);
-const filtroNombre = ref(route.query.nombre ?? null);
+const filtroPPMin = ref(route.query.PPMin ? Number(route.query.PPMin) : null)
+const filtroPPMax = ref(route.query.PPMax ? Number(route.query.PPMax) : null)
+const filtroNombre = ref(route.query.nombre ?? null)
 
 //Orden de tabla
-const ordenColumna = ref(route.query.ordenColumna ?? "nombre");
-const ordenAscendente = ref(route.query.ordenAscendente !== "false");
+const ordenColumna = ref(route.query.ordenColumna ?? "nombre")
+const ordenAscendente = ref(route.query.ordenAscendente !== "false")
 
 // =================== CARGAR DATOS AL ABRIR ==================
-function cargarDatos() {
-    worker.postMessage({
-        type: 'query',
-        query: 'SELECT Nombre, Tipo, Tiempo_de_uso, Coste, Dano, Rango, Etiquetas FROM pokemexe_movimientos',
-        params: []
-    });
+async function cargarDatos() {
+    if (!isReady.value) return
+    loading.value = true
+    error.value = null
+
+    let data = []
+    try {
+        const res = await queryDB('SELECT Nombre, Tipo, Tiempo_de_uso, Coste, Dano, Rango, Etiquetas FROM movimientos',
+            []
+        )
+        data = (res?.[0]?.values || []).map((row) => {
+            return {
+                nombre: row[0],
+                tipo: row[1],
+                accion: row[2],
+                coste: row[3],
+                danno: row[4],
+                rango: row[5],
+                etiquetas: row[6]
+            }
+        })
+    } catch (err) {
+        error.value = err.message || 'Error cargando habilidades'
+    } finally {
+        loading.value = false
+        return data
+    }
 }
 
 onMounted(async () => {
-    worker.postMessage({ type: 'init' });
+    try {
+        await initDB()
+        isReady.value = true
+    } catch (err) {
+        error.value = err.message || 'Error inicializando DB'
+        console.warn(error.value)
+    }
 
-    worker.onmessage = (e) => {
-        if (e.data.type === 'ready') {
-            cargarDatos();
+    datos.value = await cargarDatos()
+
+    //Cargar un seleccionado si hay datos
+    if (datos.value.length > 0) {
+        if (!seleccionadoNombre.value || !datos.value.find((dato) => dato.nombre === seleccionadoNombre.value)) {
+            seleccionadoNombre.value = datos.value[0].nombre
+            seleccionarMovimiento(seleccionadoNombre.value)
         }
-        if (e.data.type === 'result') {
-            datos.value = (e.data.result?.[0]?.values || []).map((row) => {
-                return {
-                    nombre: row[0],
-                    tipo: row[1],
-                    accion: row[2],
-                    coste: row[3],
-                    danno: row[4],
-                    rango: row[5],
-                    etiquetas: row[6]
-                };
-            });
-
-            if (datos.value.length > 0) {
-                datosCargados.value = true;
-                if (seleccionadoNombre.value) {
-                    const movimientoEncontrado = datos.value.find((dato) => dato.nombre === seleccionadoNombre.value);
-                    if (movimientoEncontrado) seleccionarMovimiento(movimientoEncontrado.nombre);
-                    else {
-                        seleccionadoNombre.value = datos.value[0].nombre;
-                        seleccionarMovimiento(seleccionadoNombre.value);
-                    }
-                } else {
-                    seleccionadoNombre.value = datos.value[0].nombre;
-                    seleccionarMovimiento(seleccionadoNombre.value);
-                }
-            }
+        else {
+            seleccionarMovimiento(seleccionadoNombre.value)
         }
+        datosCargados.value = true
+    }
+})
 
-        if (e.data.type === 'error') {
-            console.error("Error en SQLite:", e.data.error);
-        }
-    };
-});
 
-// ===================== SELECCIONAR Movimientos PARA EL CUADRO ===================
-function seleccionarMovimiento(movimiento) {
-    if (!movimiento) return;
-    if (!datosCargados.value) return;
+// ===================== SELECCIONAR MOVIMIENTO PARA EL CUADRO ===================
+async function seleccionarMovimiento(movimiento) {
+    if (!movimiento) return
 
-    worker.postMessage({
-        type: 'query',
-        query: `
-            SELECT 
+    loading.value = true
+    error.value = null
+
+    try {
+        const res = await queryDB(
+            `SELECT 
                 Nombre, Tipo, Tiempo_de_uso, Coste, Dano, Rango, Etiquetas, Descripcion, Stat_Asociado_1, Stat_Asociado_2, Stat_Asociado_3, Stat_Asociado_4
             FROM movimientos
             WHERE Nombre = ?
-        `,
-        params: [movimiento]
-    });
+            `,
+            [movimiento]
+        )
 
-    worker.onmessage = (e) => {
-        if (e.data.type === 'result') {
-            const row = e.data.result?.[0]?.values?.[0];
-            if (row) {
-                seleccionado.value = {
-                    nombre: row[0],
-                    tipo: row[1],
-                    accion: row[2],
-                    coste: row[3],
-                    danno: row[4] !== "" ? row[4] : null,
-                    rango: row[5] !== "" ? row[5] : null,
-                    etiquetas: row[6] !== "" ? row[6] : null,
-                    descripcion: row[7].split('\n'),
-                    statsAso: [row[8], row[9], row[10], row[11]].filter(stat => stat !== "")
-                };
-                seleccionadoNombre.value = seleccionado.value.nombre;
+        if (res?.[0]?.values?.[0]) {
+            const row = res[0].values[0]
+            seleccionado.value = {
+                nombre: row[0],
+                tipo: row[1],
+                accion: row[2],
+                coste: row[3],
+                danno: row[4] !== "" ? row[4] : null,
+                rango: row[5] !== "" ? row[5] : null,
+                etiquetas: row[6] !== "" ? row[6] : null,
+                descripcion: row[7].split('\n'),
+                statsAso: [row[8], row[9], row[10], row[11]].filter(stat => stat !== "")
             }
+            seleccionadoNombre.value = seleccionado.value.nombre
         }
-
-        if (e.data.type === 'error') {
-            console.error("Error al seleccionar movimiento:", e.data.error);
-        }
-    };
+    } catch (err) {
+        error.value = err.message || 'Error cargando habilidades'
+    } finally {
+        loading.value = false
+    }
 }
 
 // ========== FILTROS Y ORDENAMIENTOS EN RUTA. CAMBIAR
@@ -153,34 +159,34 @@ function seleccionarMovimiento(movimiento) {
 function manejarFiltros({ clave, valor }) {
     switch (clave) {
         case 'nombre':
-            filtroNombre.value = valor;
-            break;
+            filtroNombre.value = valor
+            break
         case 'tipos':
-            filtroTipos.value = valor;
-            break;
+            filtroTipos.value = valor
+            break
         case 'etiquetas':
-            filtroEtiquetas.value = valor;
-            break;
+            filtroEtiquetas.value = valor
+            break
         case 'accion':
-            filtroAccion.value = valor;
-            break;
+            filtroAccion.value = valor
+            break
         case 'PPMin':
-            filtroPPMin.value = valor;
+            filtroPPMin.value = valor
             break;
         case 'PPMax':
-            filtroPPMax.value = valor;
-            break;
+            filtroPPMax.value = valor
+            break
     }
 }
 
 // Limpia filtros
 function limpiarFiltros() {
-    filtroNombre.value = null;
-    filtroTipos.value = [];
-    filtroEtiquetas.value = [];
-    filtroAccion.value = null;
-    filtroPPMin.value = null;
-    filtroPPMax.value = null;
+    filtroNombre.value = null
+    filtroTipos.value = []
+    filtroEtiquetas.value = []
+    filtroAccion.value = null
+    filtroPPMin.value = null
+    filtroPPMax.value = null
 }
 
 //Cambia la ruta
@@ -197,7 +203,7 @@ watch(
         ordenAscendente,
     ],
     () => {
-        router.replace({ query: construirQuery() });
+        router.replace({ query: construirQuery() })
     },
     { deep: true }
 );
@@ -206,7 +212,7 @@ watch(
 watch(
     () => route.query,
     (query) => {
-        aplicarQuery(query);
+        aplicarQuery(query)
     },
     { immediate: true }
 );
@@ -226,30 +232,30 @@ function construirQuery() {
 }
 
 function aplicarQuery(query) {
-    filtroTipos.value = query.tipos?.split(",") ?? [];
-    filtroEtiquetas.value = query.etiquetas?.split(",") ?? [];
-    filtroAccion.value = query.accion ?? null;
-    filtroPPMin.value = query.PPMin ? Number(query.PPMin) : null;
-    filtroPPMax.value = query.PPMax ? Number(query.PPMax) : null;
-    filtroNombre.value = query.nombre ?? null;
+    filtroTipos.value = query.tipos?.split(",") ?? []
+    filtroEtiquetas.value = query.etiquetas?.split(",") ?? []
+    filtroAccion.value = query.accion ?? null
+    filtroPPMin.value = query.PPMin ? Number(query.PPMin) : null
+    filtroPPMax.value = query.PPMax ? Number(query.PPMax) : null
+    filtroNombre.value = query.nombre ?? null
 
-    ordenColumna.value = query.ordenColumna ?? null;
-    ordenAscendente.value = query.ordenAscendente !== "false";
+    ordenColumna.value = query.ordenColumna ?? null
+    ordenAscendente.value = query.ordenAscendente !== "false"
 
     if (datosCargados.value) {
-        if (query.seleccionado) seleccionadoNombre.value = datos.value.find((o) => o.nombre === query.seleccionado).nombre;
-        else if (filtrados.value.length) filtrados.value[0].nombre;
-        else seleccionadoNombre.value = datos.value[0].nombre;
+        if (query.seleccionado) seleccionadoNombre.value = datos.value.find((o) => o.nombre === query.seleccionado).nombre
+        else if (filtrados.value.length) filtrados.value[0].nombre
+        else seleccionadoNombre.value = datos.value[0].nombre
     }
 }
 
 // =============== CAMBIAR ORDENACIÓN ==================
 function ordenarPor(columna) {
     if (ordenColumna.value === columna) {
-        ordenAscendente.value = !ordenAscendente.value;
+        ordenAscendente.value = !ordenAscendente.value
     } else {
-        ordenColumna.value = columna;
-        ordenAscendente.value = true;
+        ordenColumna.value = columna
+        ordenAscendente.value = true
     }
 }
 
@@ -257,19 +263,19 @@ function ordenarPor(columna) {
 function parsePP(coste) {
     if (!coste) return null;
     if (typeof coste === 'string' && coste.toLowerCase().includes('variable')) {
-        return 'Variable';
+        return 'Variable'
     }
     if (typeof coste === 'string' && coste.toLowerCase().includes('a voluntad')) {
-        return 'A voluntad';
+        return 'A voluntad'
     }
-    const match = coste.match(/\d+/);
-    return match ? parseInt(match[0]) : null;
+    const match = coste.match(/\d+/)
+    return match ? parseInt(match[0]) : null
 }
 
 const filtrados = computed(() => {
     let resultado = datos.value.filter((dato) => {
-        const nombre = dato.nombre.toLowerCase();
-        const coste = parsePP(dato.coste);
+        const nombre = dato.nombre.toLowerCase()
+        const coste = parsePP(dato.coste)
 
         return (
             (!filtroTipos.value.length || filtroTipos.value.some(tipo => dato.tipo.includes(tipo))) &&
@@ -285,23 +291,23 @@ const filtrados = computed(() => {
     //ordenar
     if (ordenColumna.value) {
         resultado.sort((a, b) => {
-            const aVal = a[ordenColumna.value];
-            const bVal = b[ordenColumna.value];
+            const aVal = a[ordenColumna.value]
+            const bVal = b[ordenColumna.value]
 
-            if (aVal === undefined || aVal === null) return 1;
-            if (bVal === undefined || bVal === null) return -1;
+            if (aVal === undefined || aVal === null) return 1
+            if (bVal === undefined || bVal === null) return -1
 
             if (typeof aVal === "number" && typeof bVal === "number") {
-                return ordenAscendente.value ? aVal - bVal : bVal - aVal;
+                return ordenAscendente.value ? aVal - bVal : bVal - aVal
             }
 
             return ordenAscendente.value
                 ? String(aVal).localeCompare(String(bVal))
-                : String(bVal).localeCompare(String(aVal));
+                : String(bVal).localeCompare(String(aVal))
         });
     }
 
-    return resultado;
+    return resultado
 });
 </script>
 
