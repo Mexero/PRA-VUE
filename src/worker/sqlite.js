@@ -1,40 +1,56 @@
 import initSqlJs from 'sql.js';
 
 let db;
+let isReady = false;
 
 onmessage = async (e) => {
     const { type, query, params, origin } = e.data;
 
-    if (type === 'init') {
-        const SQL = await initSqlJs({
-            locateFile: (file) => `/sqljs/${file}`
-        });
+    try {
+        if (type === 'init') {
+            if (isReady) {
+                postMessage({ type: 'ready' });
+                return;
+            }
 
-        // Fetch .sqlite3 file
-        const response = await fetch('/data/mydata.sqlite3');
-        const buffer = await response.arrayBuffer();
+            const SQL = await initSqlJs({
+                locateFile: (file) => `/sqljs/${file}`
+            });
 
-        db = new SQL.Database(new Uint8Array(buffer));
+            const response = await fetch('/data/mydata.sqlite3');
+            const buffer = await response.arrayBuffer();
 
-        postMessage({ type: 'ready' });
-    }
+            db = new SQL.Database(new Uint8Array(buffer));
+            isReady = true;
 
-    if (type === 'query') {
-        const result = db.exec(query, params);
-        db.exec("VACUUM;"); //no borrar esto. Hace que si la consulta modifica datos estos no generen datos fantasma
-        //por ejemplo: si cambio Absorbe agua de habilidades con Update y no hago VACUUM, al exportar tendré 2 resultados, en nuevo y el viejo
-        //En despliegue, no será necesario pq no queremos poder modificar.
-        postMessage({ type: 'result', origin: origin, result });
-    }
-
-    //exportar base de datos. Importante pq esta no se modifica, sino que solo hace los cambios en memoria en principio.
-    if (type === 'export') {
-        try {
-            const data = db.export();
-
-            postMessage({ type: 'exported', buffer: data.buffer }, [data.buffer]);
-        } catch (err) {
-            postMessage({ type: 'error', error: err.message });
+            postMessage({ type: 'ready' });
         }
+
+        else if (type === 'query') {
+            if (!isReady || !db) {
+                throw new Error('Database not initialized');
+            }
+
+            const result = db.exec(query, params);
+            db.exec("VACUUM;");
+
+            postMessage({ type: 'result', origin, result });
+        }
+
+        else if (type === 'export') {
+            if (!isReady || !db) {
+                throw new Error('Database not initialized');
+            }
+
+            const data = db.export();
+            postMessage({ type: 'exported', buffer: data.buffer }, [data.buffer]);
+        }
+
+        else {
+            throw new Error(`Unknown message type: ${type}`);
+        }
+
+    } catch (err) {
+        postMessage({ type: 'error', error: err.message });
     }
 };
