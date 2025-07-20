@@ -51,7 +51,7 @@ const ordenAscendente = ref(route.query.ordenAscendente !== "false");
 function cargarDatos() {
     worker.postMessage({
         type: 'query',
-        query: 'SELECT Nombre, Descripcion, Comun_o_Legendaria, Transformacion FROM Pokemexe_Habilidades',
+        query: 'SELECT Nombre, Descripcion, Legendaria, Transformacion FROM habilidades',
         params: []
     });
 }
@@ -68,8 +68,8 @@ onMounted(async () => {
                 return {
                     nombre: row[0],
                     descripcion: row[1],
-                    legendaria: row[2] === "Legendaria",
-                    transformacion: row[3] === "Transformación",
+                    legendaria: row[2],
+                    transformacion: row[3],
                 };
             });
 

@@ -9,8 +9,8 @@ defineProps([
 const emit = defineEmits(['seleccionar', 'ordenar']);
 
 function mostrarDato(dato, columna) {
-    if (dato === true) return "✔"
-    if (dato === false) return "✖"
+    if (dato === 1) return "✔"
+    if (dato === 0) return "✖"
     if (!dato) return "—"
     if (["descripción", "descripciones", "tipos"].includes(columna.toLowerCase())) return descripcionAcortado(dato)
     if (!Array.isArray(dato)) return dato

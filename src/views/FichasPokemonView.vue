@@ -115,7 +115,7 @@ function cambiarDatosEspecie(especie) {
                 Mov_Nivel_1, Mov_Nivel_2, Mov_Nivel_4, Mov_Nivel_6, Mov_Nivel_8, Mov_Nivel_10,
                 Mov_Nivel_12, Mov_Nivel_14, Mov_Nivel_16, Mov_Nivel_18, Mov_Nivel_20,
                 Mov_ensenables
-                FROM pokemexe_pokedex
+                FROM pokedex
             WHERE Especie = ?
         `,
         params: [especie],
@@ -132,26 +132,26 @@ worker.addEventListener('message', (e) => {
             ficha.pokedex.tipos[0] = row[1]
             ficha.pokedex.tipos[1] = row[2] ?? ""
             //stats base
-            ficha.pokedex.statsBase.fue = parseInt(row[3])
-            ficha.pokedex.statsBase.agi = parseInt(row[4])
-            ficha.pokedex.statsBase.res = parseInt(row[5])
-            ficha.pokedex.statsBase.men = parseInt(row[6])
-            ficha.pokedex.statsBase.esp = parseInt(row[7])
-            ficha.pokedex.statsBase.pre = parseInt(row[8])
+            ficha.pokedex.statsBase.fue = row[3]
+            ficha.pokedex.statsBase.agi = row[4]
+            ficha.pokedex.statsBase.res = row[5]
+            ficha.pokedex.statsBase.men = row[6]
+            ficha.pokedex.statsBase.esp = row[7]
+            ficha.pokedex.statsBase.pre = row[8]
             //saves
-            ficha.pokedex.salvaciones.fue = parseInt(row[9])
-            ficha.pokedex.salvaciones.agi = parseInt(row[10])
-            ficha.pokedex.salvaciones.res = parseInt(row[11])
-            ficha.pokedex.salvaciones.esp = parseInt(row[12])
+            ficha.pokedex.salvaciones.fue = row[9]
+            ficha.pokedex.salvaciones.agi = row[10]
+            ficha.pokedex.salvaciones.res = row[11]
+            ficha.pokedex.salvaciones.esp = row[12]
             //VIT
-            ficha.pokedex.vit = parseInt(row[13])
+            ficha.pokedex.vit = row[13]
             //velocidades
-            ficha.pokedex.velocidades.Caminado = parseInt(row[14]) || 0
-            ficha.pokedex.velocidades.Trepado = parseInt(row[15]) || 0
-            ficha.pokedex.velocidades.Excavado = parseInt(row[16]) || 0
-            ficha.pokedex.velocidades.Nado = parseInt(row[17]) || 0
-            ficha.pokedex.velocidades.Vuelo = parseInt(row[18]) || 0
-            ficha.pokedex.velocidades.Levitado = parseInt(row[19]) || 0
+            ficha.pokedex.velocidades.Caminado = row[14]
+            ficha.pokedex.velocidades.Trepado = row[15]
+            ficha.pokedex.velocidades.Excavado = row[16]
+            ficha.pokedex.velocidades.Nado = row[17]
+            ficha.pokedex.velocidades.Vuelo = row[18]
+            ficha.pokedex.velocidades.Levitado = row[19]
             //Naturalmente Habil
             ficha.pokedex.natHabil = []
             if (row[20] && row[20] !== "") ficha.pokedex.natHabil.push(row[20])
@@ -604,7 +604,7 @@ watch(ordenFichas, async (nuevoOrden) => {
 function cargarPokes() {
     worker.postMessage({
         type: 'query',
-        query: 'SELECT Especie FROM pokemexe_pokedex',
+        query: 'SELECT Especie FROM pokedex',
         params: [],
         origin: 'cargarPokes'
     });
@@ -613,7 +613,7 @@ function cargarPokes() {
 function cargarHabilidades() {
     worker.postMessage({
         type: 'query',
-        query: 'SELECT Nombre, Descripcion FROM Pokemexe_Habilidades',
+        query: 'SELECT Nombre, Descripcion FROM Habilidades',
         params: [],
         origin: 'cargarHabilidades'
     });
@@ -622,7 +622,7 @@ function cargarHabilidades() {
 function cargarMovimientos() {
     worker.postMessage({
         type: 'query',
-        query: 'SELECT Nombre, Tipo, Coste, Etiquetas FROM Pokemexe_Movimientos',
+        query: 'SELECT Nombre, Tipo, Coste, Etiquetas FROM Movimientos',
         params: [],
         origin: 'cargarMovimientos'
     });

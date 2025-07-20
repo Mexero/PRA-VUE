@@ -260,8 +260,8 @@ function cargarHabilidades(habs, type) {
   const placeholders = habilidades.map(() => '?').join(', ')
   worker.postMessage({
     type: 'query',
-    query: `SELECT Nombre, Descripcion, Comun_o_Legendaria, Transformacion
-          FROM pokemexe_habilidades
+    query: `SELECT Nombre, Descripcion, Legendaria, Transformacion
+          FROM habilidades
           WHERE Nombre IN (${placeholders})`,
     params: habilidades,
     origin: "CambiarHabilidades" + type
@@ -279,8 +279,8 @@ function handleHabs(e) {
         habilidades.push({
           nombre: row[0],
           descripcion: row[1],
-          legendaria: row[2] === "Legendaria",
-          transformacion: row[3] === "Transformación",
+          legendaria: row[2],
+          transformacion: row[3],
           oculta: e.data.origin.includes('Ocultas')
         })
       }

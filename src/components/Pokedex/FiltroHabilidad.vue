@@ -90,7 +90,7 @@ watch(() => props.dbCargada,
         if (props.dbCargada) {
             worker.postMessage({
                 type: 'query',
-                query: 'SELECT Nombre FROM Pokemexe_Habilidades',
+                query: 'SELECT Nombre FROM Habilidades',
                 params: [],
                 origin: 'cargarHabilidades'
             })

@@ -109,8 +109,8 @@ async function loadPokemonMoves(pokeID) {
   worker.postMessage({
     type: 'query',
     query: `SELECT m.Nombre, m.Tipo, pm.MetodoAprendizaje, pm.NivelAprendizaje
-            FROM pokemexe_pokemon_movimientos pm
-            JOIN pokemexe_movimientos m ON pm.MovimientoID = m.ID
+            FROM pokemon_movimientos pm
+            JOIN movimientos m ON pm.MovimientoID = m.ID
             WHERE pm.PokemonID = ?`,
     params: [pokeID],
     origin: "cargarMovimientos"
@@ -228,7 +228,7 @@ function cargarMovimiento(movimiento) {
                 Nombre, Tipo, Tiempo_de_uso, Coste, Dano, Rango, Etiquetas, Descripcion, 
                 Stat_Asociado_1, Stat_Asociado_2, Stat_Asociado_3, Stat_Asociado_4,
                 At, Salvacion, DC
-            FROM pokemexe_movimientos
+            FROM movimientos
             WHERE Nombre = ?
         `,
     params: [movimiento],

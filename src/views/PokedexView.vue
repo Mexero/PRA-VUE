@@ -295,7 +295,7 @@ function cargarTodosPokes({
 
   const query = `
     SELECT Especie, Tipo_primario, Tipo_secundario, Numero_pokedex
-    FROM pokemexe_pokedex
+    FROM pokedex
     ${where}
   `
 
@@ -344,7 +344,7 @@ function cambiarPokeSeleccionado(especie) {
                 Dieta, Tamano, Sexo, Sentidos, Niv_Minimo, Habitat, Ratio_de_captura,
                 Evoluciona_de, EvoEn,	Nivel_Evo, Tipo_requisito, Requisitos_Evo, Evo_otros,
                 ID
-                FROM pokemexe_pokedex
+                FROM pokedex
             WHERE Especie = ?
         `,
     //Mov_Nivel_1, Mov_Nivel_2, Mov_Nivel_4, Mov_Nivel_6, Mov_Nivel_8, Mov_Nivel_10,

@@ -116,7 +116,7 @@ function seleccionarMovimiento(movimiento) {
         query: `
             SELECT 
                 Nombre, Tipo, Tiempo_de_uso, Coste, Dano, Rango, Etiquetas, Descripcion, Stat_Asociado_1, Stat_Asociado_2, Stat_Asociado_3, Stat_Asociado_4
-            FROM pokemexe_movimientos
+            FROM movimientos
             WHERE Nombre = ?
         `,
         params: [movimiento]
