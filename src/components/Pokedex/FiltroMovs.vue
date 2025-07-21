@@ -20,7 +20,12 @@
 <script setup>
 import { ref, watch, onMounted, onBeforeUnmount } from 'vue'
 
-import worker from '@/sqlWorker'
+import { initDB, queryDB } from '@/services/dbWorkerService'
+
+//flags DB
+const isReady = ref(false)
+const error = ref(null)
+const loading = ref(false)
 
 const props = defineProps(['movs', 'dbCargada'])
 
@@ -91,37 +96,42 @@ const handleClickOutside = (event) => {
 }
 
 //Fetch de movimientos
-watch(() => props.dbCargada,
-  () => {
-    if (props.dbCargada) {
-      worker.postMessage({
-        type: 'query',
-        query: 'SELECT Nombre FROM Movimientos',
-        params: [],
-        origin: 'cargarMovsFiltros'
-      })
-    }
-  }, { immediate: true })
+watch(() => [props.dbCargada, isReady],
+  async () => {
+    if (props.dbCargada && isReady.value) todosMovs.value = await handleMovs()
+  }, { immediate: true, deep: true })
 
-onMounted(() => {
+onMounted(async () => {
   document.addEventListener('click', handleClickOutside)
-  worker.addEventListener('message', handleMovs)
+
+  try {
+    await initDB()
+    isReady.value = true
+  } catch (err) {
+    errorCargaPokemon.value = err.message || 'Error inicializando DB'
+    console.warn(errorCargaPokemon.value)
+  }
 })
 
 onBeforeUnmount(() => {
   document.removeEventListener('click', handleClickOutside)
-  worker.removeEventListener('message', handleMovs)
 })
 
-function handleMovs(e) {
-  if (e.data.type === 'error') {
-    console.warn('Error al cargar nombres de los Movimientos')
-  }
-  else if (e.data.type === 'result' && e.data.origin === 'cargarMovsFiltros') {
-    todosMovs.value = (e.data.result?.[0]?.values || []).map(m => m[0])
-    if (todosMovs.value.length === 0) {
-      console.warn('Error al cargar nombres de Movimientos')
-    }
+async function handleMovs() {
+  loading.value = true
+  error.value = null
+
+  let data = []
+  try {
+    const res = await queryDB(`SELECT Nombre FROM movimientos`, [])
+
+    data = (res?.[0]?.values || []).map((row) => row[0]);
+  } catch (err) {
+    error.value = err.message || 'Error cargando los movimientos'
+    console.warn(error.value)
+  } finally {
+    loading.value = false
+    return data
   }
 }
 </script>

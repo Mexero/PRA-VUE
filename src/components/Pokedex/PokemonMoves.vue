@@ -77,8 +77,8 @@
 </template>
 
 <script setup>
-import { ref, watch, onUnmounted } from 'vue'
-import worker from '@/sqlWorker.js'
+import { onMounted, ref, watch } from 'vue'
+import { initDB, queryDB } from '@/services/dbWorkerService'
 
 import MoveTooltip from './MoveTooltip.vue'
 
@@ -89,96 +89,94 @@ const teachableMoves = ref([])
 const hoveredMove = ref(null)
 const hoveredMoveDetails = ref(null)
 const tooltipPosition = ref({ x: 0, y: 0 })
-const loading = ref(false)
-const error = ref(null)
 const groupedMovesByLevel = ref([])
 const uniqueLevels = ref([])
 const showLevelMoves = ref(false)
 const showTeachableMoves = ref(false)
+
+const isReady = ref(false)
+const loading = ref(false)
+const error = ref(null)
+
+onMounted(async () => {
+  try {
+    await initDB()
+    isReady.value = true
+  } catch (err) {
+    error.value = err.message || 'Error inicializando DB'
+    console.warn(error.value)
+  }
+})
 
 function normalizeType(type) {
   return type.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '')
 }
 
 async function loadPokemonMoves(pokeID) {
-  if (!props.pokeID) return
+  if (!props.pokeID || !isReady.value) return
 
   loading.value = true
   error.value = null
 
-  worker.postMessage({
-    type: 'query',
-    query: `SELECT m.Nombre, m.Tipo, pm.MetodoAprendizaje, pm.NivelAprendizaje
+  let moves = []
+  try {
+    const res = await queryDB(`
+            SELECT m.Nombre, m.Tipo, pm.MetodoAprendizaje, pm.NivelAprendizaje
             FROM pokemon_movimientos pm
             JOIN movimientos m ON pm.MovimientoID = m.ID
             WHERE pm.PokemonID = ?`,
-    params: [pokeID],
-    origin: "cargarMovimientos"
-  })
-}
-
-worker.addEventListener('message', handleMovs);
-
-onUnmounted(() => {
-  worker.removeEventListener('message', handleMovs)
-})
-
-
-function handleMovs(e) {
-  if (e.data.type !== 'result' || e.data.origin !== 'cargarMovimientos') return
-
-  const rows = e.data.result?.[0]?.values
-  if (!rows || rows.length === 0) {
-    error.value = 'Movimientos no encontrados. ' + e.data.error
-    loading.value = false
-    console.warn("Error al cargar los movimientos:", e.data.error)
-    return
-  }
-
-  let moves = []
-  for (const row of rows) {
-    moves.push({
-      nombre: row[0],
-      tipo: row[1],
-      metodo: row[2],
-      nivel: parseInt(row[3])
-    })
-  }
-
-  //Clasificar los movimientos y dejarlos ordenados
-  levelMoves.value = moves
-    .filter(move => move.metodo === 'Nivel')
-    .sort((a, b) => a.nivel - b.nivel)
-
-  teachableMoves.value = moves
-    .filter(move => move.metodo === 'Aprendible')
-    .sort((a, b) => a.nombre.localeCompare(b.nombre))
-
-  //Crear lista por nivel
-  const movesPerLevel = {}
-  levelMoves.value.forEach(move => {
-    if (!movesPerLevel[move.nivel]) {
-      movesPerLevel[move.nivel] = []
-    }
-    movesPerLevel[move.nivel].push(move)
-  })
-
-  uniqueLevels.value = [...new Set(levelMoves.value.map(m => m.nivel))].sort((a, b) => a - b)
-
-  const maxMoves = Math.max(...Object.values(movesPerLevel).map(m => m.length))
-
-  groupedMovesByLevel.value = Array.from({ length: maxMoves }, (_, i) => {
-    const column = {}
-    uniqueLevels.value.forEach(level => {
-      if (movesPerLevel[level] && movesPerLevel[level][i]) {
-        column[level] = movesPerLevel[level][i]
+      [pokeID]
+    )
+    const rows = res?.[0]?.values
+    if (rows.length > 0) {
+      for (const row of rows) {
+        moves.push({
+          nombre: row[0],
+          tipo: row[1],
+          metodo: row[2],
+          nivel: row[3]
+        })
       }
-    })
-    return column
-  })
+    }
+    //Clasificar los movimientos y dejarlos ordenados
+    levelMoves.value = moves
+      .filter(move => move.metodo === 'Nivel')
+      .sort((a, b) => a.nivel - b.nivel)
 
-  loading.value = false
+    teachableMoves.value = moves
+      .filter(move => move.metodo === 'Aprendible')
+      .sort((a, b) => a.nombre.localeCompare(b.nombre))
+
+    //Crear lista por nivel
+    const movesPerLevel = {}
+    levelMoves.value.forEach(move => {
+      if (!movesPerLevel[move.nivel]) {
+        movesPerLevel[move.nivel] = []
+      }
+      movesPerLevel[move.nivel].push(move)
+    })
+
+    uniqueLevels.value = [...new Set(levelMoves.value.map(m => m.nivel))].sort((a, b) => a - b)
+
+    const maxMoves = Math.max(...Object.values(movesPerLevel).map(m => m.length))
+
+    groupedMovesByLevel.value = Array.from({ length: maxMoves }, (_, i) => {
+      const column = {}
+      uniqueLevels.value.forEach(level => {
+        if (movesPerLevel[level] && movesPerLevel[level][i]) {
+          column[level] = movesPerLevel[level][i]
+        }
+      })
+      return column
+    })
+  } catch (err) {
+    error.value = err.message || 'Error cargando movimientos '
+    console.warn(error.value)
+  } finally {
+    loading.value = false
+  }
 }
+
 
 async function handleMouseEnter(event, moveName) {
   if (!moveName) return
@@ -211,7 +209,7 @@ async function handleMouseEnter(event, moveName) {
 
   if (moveName && hoveredMove.value !== moveName) {
     hoveredMove.value = moveName
-    cargarMovimiento(moveName)
+    await cargarMovimiento(moveName)
   }
   else {
     console.error('Movimiento no encontrado: ', moveName)
@@ -220,30 +218,21 @@ async function handleMouseEnter(event, moveName) {
   }
 }
 
-function cargarMovimiento(movimiento) {
-  worker.postMessage({
-    type: 'query',
-    query: `
-            SELECT 
-                Nombre, Tipo, Tiempo_de_uso, Coste, Dano, Rango, Etiquetas, Descripcion, 
-                Stat_Asociado_1, Stat_Asociado_2, Stat_Asociado_3, Stat_Asociado_4,
-                At, Salvacion, DC
-            FROM movimientos
-            WHERE Nombre = ?
-        `,
-    params: [movimiento],
-    origin: "cargarMovimientoMostrado"
-  });
-}
+async function cargarMovimiento(movimiento) {
+  error.value = null
 
-worker.addEventListener("message", (event) => {
-  if (event.data.type === 'error' && event.data.origin === 'cargarMovimientoMostrado') {
-    console.error("Error al seleccionar movimiento:", event.data.error)
-    hoveredMoveDetails.value = null
-    hoveredMove.value = null
-  }
-  else if (event.data.type === 'result' && event.data.origin === 'cargarMovimientoMostrado') {
-    const row = event.data.result?.[0]?.values?.[0]
+  try {
+    const res = await queryDB(`
+      SELECT 
+      Nombre, Tipo, Tiempo_de_uso, Coste, Dano, Rango, Etiquetas, Descripcion, 
+      Stat_Asociado_1, Stat_Asociado_2, Stat_Asociado_3, Stat_Asociado_4,
+      At, Salvacion, DC
+      FROM movimientos
+      WHERE Nombre = ?
+      `,
+      [movimiento]
+    )
+    const row = res?.[0]?.values?.[0]
     if (row) {
       hoveredMoveDetails.value = {
         nombre: row[0],
@@ -260,14 +249,15 @@ worker.addEventListener("message", (event) => {
         dc: row[14]
       }
     }
-    else {
-      console.warn('Movimiento no encontrado: ' + hoveredMove.value)
-      hoveredMoveDetails.value = null
-      hoveredMove.value = null
-    }
+  } catch (err) {
+    hoveredMoveDetails.value = null
+    hoveredMove.value = null
+    error.value = err.message || 'Error cargando movimiento ' + movimiento
+    console.warn(error.value)
+  } finally {
+    loading.value = false
   }
-})
-
+}
 
 function handleMouseLeave() {
   hoveredMove.value = null
@@ -306,15 +296,19 @@ async function copyMoveDescription(moveName) {
 }
 
 //Rehacer cuando cambia el PokeID
-watch(() => props.pokeID, (newID) => {
-  if (newID) {
-    hoveredMoveDetails.value = null;
-    loadPokemonMoves(newID);
-  } else {
-    levelMoves.value = [];
-    teachableMoves.value = [];
-  }
-}, { immediate: true });
+watch(() => [
+  props.pokeID,
+  isReady
+],
+  async () => {
+    if (props.pokeID && isReady.value) {
+      hoveredMoveDetails.value = null;
+      await loadPokemonMoves(props.pokeID);
+    } else {
+      levelMoves.value = [];
+      teachableMoves.value = [];
+    }
+  }, { immediate: true, deep: true });
 </script>
 
 <style scoped>

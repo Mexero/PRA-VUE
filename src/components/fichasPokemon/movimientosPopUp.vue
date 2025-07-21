@@ -1,8 +1,7 @@
 <script setup>
-import { ref, watch, computed } from 'vue'
+import { ref, watch, computed, onMounted } from 'vue'
 import busquedaMov from './busquedaMov.vue'
-
-import worker from '../../sqlWorker.js';
+import { initDB, queryDB } from '@/services/dbWorkerService'
 
 const props = defineProps([
     'ficha',
@@ -16,6 +15,24 @@ const añadirExtra = ref(false)
 const movimientoSeleccionado = ref(null)
 const tipoLista = ref('Nivel')
 
+//flags DB
+const isReady = ref(false)
+const error = ref(null)
+const loading = ref(false)
+
+
+//check DB abierta al entrar
+onMounted(async () => {
+    try {
+        await initDB()
+        isReady.value = true
+    } catch (err) {
+        error.value = err.message || 'Error inicializando DB'
+        console.warn(error.value)
+    }
+})
+
+//Abrir y cerrar pop up
 function togglePopup() {
     isOpen.value = !isOpen.value
 }
@@ -54,36 +71,31 @@ watch(() => [
 
 
 //Cargar movimiento
-function cargarMovimiento(movimiento, directo) {
-    if (!props.movimientosCargados || !movimiento || !props.movimientos.find(mov => mov.nombre === movimiento)) return;
+async function cargarMovimiento(movimiento, directo) {
+    if (!props.movimientosCargados || !movimiento || !props.movimientos.find(mov => mov.nombre === movimiento) || !isReady.value) return;
 
     if (!directo && props.movimientosCompletos.find(mov => mov.nombre === movimiento)) {
         movimientoSeleccionado.value = props.movimientosCompletos.find(mov => mov.nombre === movimiento);
         return;
     }
 
-    worker.postMessage({
-        type: 'query',
-        query: `
-            SELECT 
+    loading.value = true
+    error.value = null
+
+    let data = []
+    try {
+        const res = await queryDB(`SELECT 
                 Nombre, Tipo, Tiempo_de_uso, Coste, Dano, Rango, Etiquetas, Descripcion, 
                 Stat_Asociado_1, Stat_Asociado_2, Stat_Asociado_3, Stat_Asociado_4,
                 At, Salvacion, DC
             FROM movimientos
             WHERE Nombre = ?
         `,
-        params: [movimiento],
-        origin: "cargarMovimiento" + (directo ? 'Directo' : '')
-    });
-}
-
-worker.addEventListener("message", (event) => {
-    if (event.data.type === 'result' && event.data.origin === 'cargarMovimiento' ||
-        (event.data.origin === 'cargarMovimientoDirecto')) {
-        const row = event.data.result?.[0]?.values?.[0];
-        let resultado;
+            [movimiento]
+        )
+        const row = res?.[0]?.values?.[0]
         if (row) {
-            resultado = {
+            data = {
                 nombre: row[0],
                 tipo: row[1],
                 accion: row[2],
@@ -96,19 +108,21 @@ worker.addEventListener("message", (event) => {
                 ataque: (!row[12] || row[12] === 'False') ? false : true,
                 salvacion: row[13],
                 dc: row[14]
-            };
-            if (event.data.origin === 'cargarMovimiento') {
-                movimientoSeleccionado.value = resultado;
             }
-            else if (event.data.origin === 'cargarMovimientoDirecto' && !props.movimientosCompletos.find(mov => mov.nombre === resultado.nombre)) {
-                props.movimientosCompletos.push(resultado);
+            if (!directo) {
+                movimientoSeleccionado.value = data;
+            }
+            else if (directo && !props.movimientosCompletos.find(mov => mov.nombre === data.nombre)) {
+                props.movimientosCompletos.push(data);
             }
         }
+    } catch (err) {
+        error.value = err.message || 'Error cargando el Movimiento ' + movimiento
+        console.warn(error.value)
+    } finally {
+        loading.value = false
     }
-    if (event.data.type === 'error') {
-        console.error("Error al seleccionar movimiento:", event.data.error);
-    }
-})
+}
 
 function añadirMovimiento() {
     const final = movimientoSeleccionado.value

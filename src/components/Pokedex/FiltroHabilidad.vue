@@ -17,7 +17,12 @@
 <script setup>
 import { ref, onMounted, onBeforeUnmount, watch } from 'vue'
 
-import worker from '../../sqlWorker.js';
+import { initDB, queryDB } from '@/services/dbWorkerService'
+
+//flags DB
+const isReady = ref(false)
+const error = ref(null)
+const loading = ref(false)
 
 const props = defineProps([
     'dbCargada',
@@ -85,37 +90,42 @@ const handleClickOutside = (event) => {
     }
 }
 
-watch(() => props.dbCargada,
-    () => {
-        if (props.dbCargada) {
-            worker.postMessage({
-                type: 'query',
-                query: 'SELECT Nombre FROM Habilidades',
-                params: [],
-                origin: 'cargarHabilidades'
-            })
-        }
-    }, { immediate: true })
+watch(() => [props.dbCargada, isReady],
+    async () => {
+        if (props.dbCargada && isReady.value) habilidades.value = await handleHabs()
+    }, { immediate: true, deep: true })
 
-onMounted(() => {
+onMounted(async () => {
     document.addEventListener('click', handleClickOutside)
-    worker.addEventListener('message', handleHabs)
+    //abrirDB
+    try {
+        await initDB()
+        isReady.value = true
+    } catch (err) {
+        error.value = err.message || 'Error inicializando DB'
+        console.warn(error.value)
+    }
 })
 
 onBeforeUnmount(() => {
     document.removeEventListener('click', handleClickOutside)
-    worker.removeEventListener('message', handleHabs)
 })
 
-function handleHabs(e) {
-    if (e.data.type === 'error') {
-        console.warn('Error al cargar nombres de Habilidades')
-    }
-    else if (e.data.type === 'result' && e.data.origin === 'cargarHabilidades') {
-        habilidades.value = (e.data.result?.[0]?.values || []).map(h => h[0])
-        if (habilidades.value.length === 0) {
-            console.warn('Error al cargar nombres de Habilidades')
-        }
+async function handleHabs() {
+    loading.value = true
+    error.value = null
+
+    let data = []
+    try {
+        const res = await queryDB(`SELECT Nombre FROM habilidades`, [])
+
+        data = (res?.[0]?.values || []).map((row) => row[0]);
+    } catch (err) {
+        error.value = err.message || 'Error cargando las habilidades'
+        console.warn(error.value)
+    } finally {
+        loading.value = false
+        return data
     }
 }
 

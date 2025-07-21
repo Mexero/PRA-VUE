@@ -32,10 +32,10 @@ import PokemonGrid from '@/components/Pokedex/PokemonGrid.vue'
 import PokemonDetails from '@/components/Pokedex/PokemonDetails.vue'
 import PokedexFilters from '@/components/Pokedex/PokedexFilters.vue';
 
-import { ref, watch, onMounted, onUnmounted } from 'vue';
+import { ref, watch, onMounted } from 'vue';
 import { useRoute, useRouter } from "vue-router";
 
-import worker from '../sqlWorker.js';
+import { initDB, queryDB } from '@/services/dbWorkerService'
 
 const route = useRoute()
 const router = useRouter()
@@ -56,35 +56,14 @@ const verFiltros = ref(false)
 // ========================= INICIO ===========================
 onMounted(async () => {
   aplicarQuery(route.query)
-  worker.postMessage({ type: 'init' })
 
-  worker.onmessage = (e) => {
-    if (e.data.type === 'ready') {
-      dbCargada.value = true //Esto activa el watch que hace que se carguen los pokes y el watch que carga nombres de habs y de movs
-    }
-    else if (e.data.type === 'error') {
-      console.error("Error en SQLite:", e.data.error)
-    }
-    else if (e.data.type === 'result')
-      if (e.data.origin === 'cargarTodosPokes') {
-        pokedex.value = (e.data.result?.[0]?.values || []).map((row) => ({
-          especie: row[0],
-          tipos: [row[1], row[2]],
-          numPokedex: row[3]
-        }))
-        if (pokedex.value.length > 0) {
-          OrderPokedex()
-
-          //  const nombresStr = pokedex.value.map(p => p.especie).join(', ')
-          //  console.log('Pokémon encontrados:', nombresStr)
-
-          const encontrado = pokedex.value.find(p => p.especie === selectedPokemon.value)
-          if (!selectedPokemon.value || !encontrado) {
-            selectedPokemon.value = pokedex.value[0]?.especie
-          }
-          pokedexCargada.value = true
-        }
-      }
+  //abrirDB
+  try {
+    await initDB()
+    dbCargada.value = true //Esto dispara el watch que hace que se carguen los pokes y el watch que carga nombres de habs y de movs
+  } catch (err) {
+    errorCargaPokemon.value = err.message || 'Error inicializando DB'
+    console.warn(errorCargaPokemon.value)
   }
 })
 
@@ -132,10 +111,10 @@ watch(
     filtroMovimientos,
     dbCargada
   ],
-  () => {
+  async () => {
     router.replace({ query: construirQuery() })
     if (dbCargada.value) {
-      cargarTodosPokes({
+      const { lista, especie } = await cargarTodosPokes({
         searchTerm: searchTerm.value,
         selectedTypes: selectedTypes.value,
         filtroHabilidad: filtroHabilidad.value,
@@ -146,7 +125,12 @@ watch(
         filtroNivelMin: filtroNivelMin.value,
         filtroVelocidades: filtroVelocidades.value,
         filtroMovimientos: filtroMovimientos.value
-      })
+      },
+        selectedPokemon.value)
+
+      pokedex.value = lista
+      pokedexCargada.value = true
+      if (selectedPokemon.value !== especie) selectedPokemon.value = especie
     }
   },
   { deep: true }
@@ -200,7 +184,7 @@ watch(() => verFiltros.value, (nuevoValor) => {
 
 // <================= CARGAR DATOS ==================>
 
-function cargarTodosPokes({
+async function cargarTodosPokes({
   searchTerm = '',
   selectedTypes = [],
   filtroHabilidad = null,
@@ -211,7 +195,8 @@ function cargarTodosPokes({
   filtroVitalidad = null,
   filtroVelocidades = [],
   filtroMovimientos = []
-}) {
+},
+  selected) {
   const condiciones = []
   const params = []
 
@@ -298,13 +283,40 @@ function cargarTodosPokes({
     FROM pokedex
     ${where}
   `
+  let data = []
+  let elegido = selected
+  try {
+    const res = await queryDB(query, params)
+    const rows = res?.[0]?.values || []
 
-  worker.postMessage({
-    type: 'query',
-    query,
-    params,
-    origin: 'cargarTodosPokes'
-  })
+    if (rows) {
+      data = rows.map((row) => ({
+        especie: row[0],
+        tipos: [row[1], row[2]],
+        numPokedex: row[3]
+      }))
+      if (data.length > 0) {
+
+        data = OrderPokedex(data)
+
+        //  const nombresStr = pokedex.value.map(p => p.especie).join(', ')
+        //  console.log('Pokémon encontrados:', nombresStr)
+
+        const encontrado = data.find(p => p.especie === selected)
+        if (!selected || !encontrado) {
+          elegido = data[0]?.especie
+        }
+      }
+    }
+  } catch (err) {
+    errorCargaPokemon.value = err.message || 'Error cargando especies Pokémon'
+    console.warn(errorCargaPokemon.value)
+  } finally {
+    return {
+      lista: data,
+      especie: elegido
+    }
+  }
 }
 
 // <========= CAMBIAR SELECCIONADO =============>
@@ -328,11 +340,17 @@ watch([
   { deep: true }
 )
 
-function cambiarPokeSeleccionado(especie) {
+async function cambiarPokeSeleccionado(especie) {
   if (!pokedexCargada.value) return
-  worker.postMessage({
-    type: 'query',
-    query: `
+
+  cargandoPokemon.value = true
+  errorCargaPokemon.value = null
+
+  try {
+    //Mov_Nivel_1, Mov_Nivel_2, Mov_Nivel_4, Mov_Nivel_6, Mov_Nivel_8, Mov_Nivel_10,
+    //Mov_Nivel_12, Mov_Nivel_14, Mov_Nivel_16, Mov_Nivel_18, Mov_Nivel_20,
+    //Mov_ensenables,
+    const res = await queryDB(`
                 SELECT Numero_pokedex, Especie, Tipo_primario, Tipo_secundario, 
                 FUE, AGI, RES, MEN, ESP, PRE, 
                 S_FUE, S_AGI, S_RES, S_ESP,
@@ -347,20 +365,44 @@ function cambiarPokeSeleccionado(especie) {
                 FROM pokedex
             WHERE Especie = ?
         `,
-    //Mov_Nivel_1, Mov_Nivel_2, Mov_Nivel_4, Mov_Nivel_6, Mov_Nivel_8, Mov_Nivel_10,
-    //Mov_Nivel_12, Mov_Nivel_14, Mov_Nivel_16, Mov_Nivel_18, Mov_Nivel_20,
-    //Mov_ensenables,
-    params: [especie],
-    origin: "CambiarSeleccionado"
-  })
+      [especie])
+    const row = res?.[0]?.values?.[0]
+    if (row) {
+      if (row) {
+        selectedPokemonData.value = {
+          numPokedex: row[0],
+          especie: row[1],
+          tipos: [row[2], row[3]],
+          stats: { fue: row[4], agi: row[5], res: row[6], men: row[7], esp: row[8], pre: row[9] },
+          saves: { fue: row[10], agi: row[11], res: row[12], esp: row[13] },
+          vit: row[14],
+          velocidades: { caminado: row[15], trepado: row[16], excavado: row[17], nado: row[18], vuelo: row[19], levitado: row[20] },
+          natHabil: [row[21], row[22]],
+          habilidades: [row[23], row[24], row[25]],
+          habilidadesOcultas: [row[26], row[27]],
+          calculosCa: [row[28], row[29]],
+          otros: { dieta: row[30], tamano: row[31], sexo: row[32], sentidos: row[33], nivMinimo: row[34], habitat: row[35], ratioCaptura: row[36] },
+          evoDe: row[37].split(' (')[0],
+          evolucion: generarEvoluciones(row[38], row[39], row[40], row[41], row[42]),
+          //movimientosNivel: [row[43].split(', '), row[44].split(', '), row[45].split(', '), row[46].split(', '), row[47].split(', '), row[48].split(', '), row[49].split(', '), row[50].split(', '), row[51].split(', '), row[52].split(', '), row[53].split(', ')],
+          //movimientosEnsenables: tratarEnsenables(row[54]),
+          id: row[43]
+        }
+        console.log("Datos cargados: ", selectedPokemonData.value.especie, selectedPokemonData.value)
+      }
+
+    }
+  } catch (err) {
+    errorCargaPokemon.value = err.message || 'Error cargando la especie Pokémon ' + especie
+    console.warn(errorCargaPokemon.value)
+  } finally {
+    cargandoPokemon.value = false
+  }
+
+
+
 }
 
-worker.addEventListener('message', handlePokemonFetch);
-
-//Quitar el listener de arriba al desmontar para no generar duplicados
-onUnmounted(() => {
-  worker.removeEventListener('message', handlePokemonFetch)
-})
 
 function handlePokemonFetch(e) {
   if (e.data.type === 'result' && e.data.origin === 'CambiarSeleccionado') {
@@ -401,12 +443,12 @@ function handlePokemonSelect(pokemon) {
   selectedPokemon.value = pokemon
 }
 
-function OrderPokedex() {
-  if (pokedex.value.length === 0) {
+function OrderPokedex(data) {
+  if (data.length === 0) {
     console.warn('La Pokédex está vacía')
-    return
+    return data
   }
-  pokedex.value = pokedex.value.sort((a, b) => a.numPokedex.localeCompare(b.numPokedex));
+  return data.sort((a, b) => a.numPokedex.localeCompare(b.numPokedex));
 
 }
 

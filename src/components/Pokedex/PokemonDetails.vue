@@ -162,7 +162,8 @@
         </div>
       </div>
     </div>
-
+  </div>
+  <div v-if="pokemon && pokemon.otros" class="detail-section">
     <div class="detail-section otros">
       <h3 class="section-title">Información Secundaria</h3>
       <table class="otros-table">
@@ -194,15 +195,16 @@
         </tbody>
       </table>
     </div>
-
-    <!-- Sección de Movimientos -->
+  </div>
+  <!-- Sección de Movimientos -->
+  <div class="detail-section" v-if="pokemon && pokemon.id">
     <PokemonMoves :pokeID="pokemon.id" />
   </div>
 </template>
 
 <script setup>
-import { ref, watch, computed, onUnmounted } from 'vue'
-import worker from '@/sqlWorker.js'
+import { ref, watch, computed } from 'vue'
+import { initDB, queryDB } from '@/services/dbWorkerService'
 
 import abilityDetails from '../Pokedex/AbilityDetails.vue'
 import PokemonMoves from '../Pokedex/PokemonMoves.vue'
@@ -216,13 +218,17 @@ function emitirEspecie(e) {
   emit('show-details', e)
 }
 
+//flags DB
+const isReady = ref(false)
+const habilidadesLoading = ref(false)
+const habilidadesError = ref(null)
+
 const selectedAbility = ref(null)
 
 const normalAbilities = ref(null)
 const hiddenAbilities = ref(null)
 
-const habilidadesLoading = ref(false)
-const habilidadesError = ref(null)
+
 
 function normalizeType(type) {
   return type.toLowerCase().normalize('NFD').replace(/\u0300-\u036f/g, '')
@@ -244,64 +250,60 @@ const abilitiesDetails = computed(() => {
 watch([
   () => pokemon
 ],
-  () => {
+  async () => {
+    if (!isReady.value) {
+      try {
+        await initDB()
+        isReady.value = true
+      } catch (err) {
+        habilidadesError.value = err.message || 'Error inicializando DB'
+        console.warn(habilidadesError.value)
+      }
+    }
     if (pokemon) {
       habilidadesError.value = false
       habilidadesLoading.value = true
-      cargarHabilidades(pokemon.habilidades, 'Normales')
-      cargarHabilidades(pokemon.habilidadesOcultas, 'Ocultas')
+
+      normalAbilities.value = await cargarHabilidades(pokemon.habilidades, 'Normales')
+      hiddenAbilities.value = await cargarHabilidades(pokemon.habilidadesOcultas, 'Ocultas')
+
+      habilidadesLoading.value = false
     }
   },
   { deep: true, immediate: true }
 )
 
-function cargarHabilidades(habs, type) {
+async function cargarHabilidades(habs, type) {
   const habilidades = habs.filter(Boolean)
   const placeholders = habilidades.map(() => '?').join(', ')
-  worker.postMessage({
-    type: 'query',
-    query: `SELECT Nombre, Descripcion, Legendaria, Transformacion
-          FROM habilidades
-          WHERE Nombre IN (${placeholders})`,
-    params: habilidades,
-    origin: "CambiarHabilidades" + type
-  })
-}
 
-worker.addEventListener('message', handleHabs);
+  let data = []
+  try {
+    const res = await queryDB(
+      `SELECT Nombre, Descripcion, Legendaria, Transformacion
+      FROM habilidades
+      WHERE Nombre IN (${placeholders})`,
+      habilidades)
 
-function handleHabs(e) {
-  if (e.data.type === 'result' && e.data.origin.includes('CambiarHabilidades')) {
-    const rows = e.data.result?.[0]?.values
+    const rows = (res?.[0]?.values || [])
     if (rows.length > 0) {
-      let habilidades = []
       for (const row of rows) {
-        habilidades.push({
+        data.push({
           nombre: row[0],
           descripcion: row[1],
           legendaria: row[2],
           transformacion: row[3],
-          oculta: e.data.origin.includes('Ocultas')
+          oculta: type === 'Ocultas'
         })
       }
-      if (e.data.origin.includes('Normales'))
-        normalAbilities.value = habilidades
-      if (e.data.origin.includes('Ocultas'))
-        hiddenAbilities.value = habilidades
     }
+  } catch (err) {
+    habilidadesError.value = err.message || 'Error cargando habilidades'
+    console.warn(habilidadesError.value)
+  } finally {
+    return data
   }
-  else if (e.data.type === 'error') {
-    habilidadesError.value = true
-    console.error("Error al cargar las habilidades:", e.data.error)
-  }
-  habilidadesLoading.value = false
-
 }
-
-onUnmounted(() => {
-  worker.removeEventListener('message', handleHabs)
-})
-
 
 function toggleAbility(nombre) {
   selectedAbility.value = selectedAbility.value === nombre ? null : nombre

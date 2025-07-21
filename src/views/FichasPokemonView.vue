@@ -40,8 +40,7 @@ import FichaDotes from '@/components/fichasPokemon/Dotes.vue'
 import FichaOtros from '@/components/fichasPokemon/Otros.vue'
 
 import { crearFichaBase } from '@/utils/TemplateFicha.js'
-
-import worker from '../sqlWorker.js';
+import { initDB, queryDB } from '@/services/dbWorkerService'
 
 import { guardarFichaIndexedDB, borrarFichaIndexedDB, obtenerTodasLasFichas, obtenerFicha, guardarOrdenFichas, cargarOrdenFichas } from '@/utils/FichasDB.js'
 
@@ -63,6 +62,10 @@ const nuevaFichaNombre = ref('')
 const fichasGuardadas = reactive({})
 const ordenFichas = ref([])
 
+//flags DB
+const isReady = ref(false)
+const error = ref(null)
+const loading = ref(false)
 
 // <========= DATOS CHECKS =============>
 const ChecksBase = [
@@ -99,10 +102,14 @@ const naturalezas = [
 
 
 // <========= CAMBIAR DATOS ESPECIE =============>
-function cambiarDatosEspecie(especie) {
-    worker.postMessage({
-        type: 'query',
-        query: `
+async function cambiarDatosEspecie(especie) {
+    if (!isReady.value) return
+
+    loading.value = true
+    error.value = null
+
+    try {
+        const res = await queryDB(`
                 SELECT Especie, Tipo_primario, Tipo_secundario, 
                 FUE, AGI, RES, MEN, ESP, PRE, 
                 S_FUE, S_AGI, S_RES, S_ESP,
@@ -118,14 +125,9 @@ function cambiarDatosEspecie(especie) {
                 FROM pokedex
             WHERE Especie = ?
         `,
-        params: [especie],
-        origin: "CambiarDatosEspecie"
-    })
-}
-
-worker.addEventListener('message', (e) => {
-    if (e.data.type === 'result' && e.data.origin === 'CambiarDatosEspecie') {
-        const row = e.data.result?.[0]?.values?.[0]
+            [especie]
+        )
+        const row = res?.[0]?.values?.[0]
         if (row) {
             ficha.pokedex.especie = row[0]
             //Tipos
@@ -184,15 +186,15 @@ worker.addEventListener('message', (e) => {
             //Resets necesarios
             ficha.personaliz.habilidadesOcultasDesbloqueadas = []
 
-            console.log("Datos cargados: " + row)
+            console.log(`Datos de ${especie} cargados:`, ficha.pokedex)
         }
-
-    } else if (e.data.type === 'error') {
-        console.error("Error al seleccionar especie:", e.data.error)
+    } catch (err) {
+        error.value = err.message || 'Error cargando la especie Pokémon ' + especie
+        console.warn(error.value)
+    } finally {
+        loading.value = false
     }
-});
-
-
+}
 
 //<========= ACTUALIZAR DATOS =============>
 
@@ -601,31 +603,79 @@ watch(ordenFichas, async (nuevoOrden) => {
 
 
 // <============== INICIO ===============>
-function cargarPokes() {
-    worker.postMessage({
-        type: 'query',
-        query: 'SELECT Especie FROM pokedex',
-        params: [],
-        origin: 'cargarPokes'
-    });
+async function cargarPokes() {
+    loading.value = true
+    error.value = null
+
+    let data = []
+    try {
+        const res = await queryDB(`SELECT Especie FROM pokedex`, [])
+
+        data = (res?.[0]?.values || []).map((row) => row[0]);
+        if (data.length > 0) {
+            console.log("Especies Pokémon cargadas...")
+            especiesPokesCargadas.value = true;
+        }
+    } catch (err) {
+        error.value = err.message || 'Error cargando las especies Pokémon'
+        console.warn(error.value)
+    } finally {
+        loading.value = false
+        return data
+    }
 }
 
-function cargarHabilidades() {
-    worker.postMessage({
-        type: 'query',
-        query: 'SELECT Nombre, Descripcion FROM Habilidades',
-        params: [],
-        origin: 'cargarHabilidades'
-    });
+async function cargarHabilidades() {
+    loading.value = true
+    error.value = null
+
+    let data = []
+    try {
+        const res = await queryDB(`SELECT Nombre, Descripcion FROM habilidades`, [])
+
+        data = (res?.[0]?.values || []).map((row) => ({
+            nombre: row[0],
+            descripcion: row[1].split('\n')
+        }));
+
+        if (data.length > 0) {
+            console.log("Habilidades cargadas...")
+            habilidadesCargadas.value = true;
+        }
+    } catch (err) {
+        error.value = err.message || 'Error cargando las habilidades'
+        console.warn(error.value)
+    } finally {
+        loading.value = false
+        return data
+    }
 }
 
-function cargarMovimientos() {
-    worker.postMessage({
-        type: 'query',
-        query: 'SELECT Nombre, Tipo, Coste, Etiquetas FROM Movimientos',
-        params: [],
-        origin: 'cargarMovimientos'
-    });
+async function cargarMovimientos() {
+    loading.value = true
+    error.value = null
+
+    let data = []
+    try {
+        const res = await queryDB(`SELECT Nombre, Tipo, Coste, Etiquetas FROM movimientos`, [])
+
+        data = (res?.[0]?.values || []).map((row) => ({
+            nombre: row[0],
+            tipo: row[1],
+            coste: row[2],
+            etiquetas: row[3] !== "" ? row[3] : null
+        }));
+        if (data.length > 0) {
+            console.log("Movimientos cargados...")
+            movimientosCargados.value = true;
+        }
+    } catch (err) {
+        error.value = err.message || 'Error cargando los movimientos'
+        console.warn(error.value)
+    } finally {
+        loading.value = false
+        return data
+    }
 }
 
 
@@ -683,59 +733,19 @@ onMounted(async () => {
 
     cargarDotes()
 
-    worker.postMessage({ type: 'init' });
+    //abrirDB
+    try {
+        await initDB()
+        isReady.value = true
+    } catch (err) {
+        error.value = err.message || 'Error inicializando DB'
+        console.warn(error.value)
+    }
 
-    worker.onmessage = (e) => {
-        if (e.data.type === 'ready') {
-            //Peticiones a base de datos
-            if (!especiesPokesCargadas.value) {
-                cargarPokes();
-            }
-            if (!habilidadesCargadas.value) {
-                cargarHabilidades();
-            }
-            if (!movimientosCargados.value) {
-                cargarMovimientos();
-            }
-        }
-        if (e.data.type === 'result') {
-            //Especies Pokes
-            if (e.data.origin === 'cargarPokes') {
-                especiesPokes.value = (e.data.result?.[0]?.values || []).map((row) => row[0]);
-                if (especiesPokes.value.length > 0) {
-                    console.log("Especies Pokémon cargadas...")
-                    especiesPokesCargadas.value = true;
-                }
-            }
-            //Habs
-            if (e.data.origin === 'cargarHabilidades') {
-                habilidades.value = (e.data.result?.[0]?.values || []).map((row) => ({
-                    nombre: row[0],
-                    descripcion: row[1].split('\n')
-                }));
-                if (habilidades.value.length > 0) {
-                    console.log("Habilidades cargadas...")
-                    habilidadesCargadas.value = true;
-                }
-            }
-            //Movs
-            if (e.data.origin === 'cargarMovimientos') {
-                movimientos.value = (e.data.result?.[0]?.values || []).map((row) => ({
-                    nombre: row[0],
-                    tipo: row[1],
-                    coste: row[2],
-                    etiquetas: row[3] !== "" ? row[3] : null
-                }));
-                if (movimientos.value.length > 0) {
-                    console.log("Movimientos cargados...")
-                    movimientosCargados.value = true;
-                }
-            }
-        }
-        if (e.data.type === 'error') {
-            console.error("Error en SQLite:", e.data.error);
-        }
-    };
+    //Cargar datos
+    especiesPokes.value = await cargarPokes()
+    habilidades.value = await cargarHabilidades()
+    movimientos.value = await cargarMovimientos()
 })
 
 </script>
