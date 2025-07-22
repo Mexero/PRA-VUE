@@ -146,8 +146,8 @@
       <div v-if="pokemon.evoDe !== ''" class="evolution-group">
         <span class="evolution-label">Evoluciona de:</span>
         <div class="evolution-cards">
-          <EvolutionCard :nombre="pokemon.evoDe" :numero="getPokemonNumberByName(pokemon.evoDe)" :nivel="null"
-            :requisitos="null" :otros="null" @show-details="emitirEspecie" />
+          <EvolutionCard v-if="pokemon.evoDe" :nombre="pokemon.evoDe" :numero="getPokemonNumberByName(pokemon.evoDe)"
+            :nivel="null" :requisitos="null" :otros="null" @show-details="emitirEspecie" />
         </div>
       </div>
       <div v-if="pokemon.evolucion && pokemon.evolucion.mensajeExtra" class="evolution-item">

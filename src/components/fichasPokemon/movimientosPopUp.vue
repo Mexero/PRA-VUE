@@ -167,7 +167,13 @@ function parsePP(coste) {
 }
 
 const filtrados = computed(() => {
-    if (tipoLista.value === 'Nivel') return []
+    if (tipoLista.value === 'Nivel') {
+        return props.movimientos.filter(mov =>
+            props.ficha.pokedex.movimientosNivel.some(entry =>
+                entry.nombre === mov.nombre && filtrar(mov)
+            )
+        );
+    }
     return props.movimientos.filter((mov) => filtrar(mov));
 })
 
@@ -194,19 +200,31 @@ function limpiarFiltros() {
 }
 
 //Apoyo lista por nivel
+const nivelesConMovs = computed(() => {
+    const encontrados = props.ficha.pokedex.movimientosNivel.filter(mov =>
+        filtrados.value.some(f => f.nombre === mov.nombre))
+    const niveles = encontrados
+        .map(mov => mov.nivel)
+        .filter(nivel => nivel !== undefined && nivel !== null)
+        .filter(nivel => nivel === 1 || (nivel >= 2 && nivel <= 20 && nivel % 2 === 0))
+
+    const nivelesUnicos = [...new Set(niveles)]
+    nivelesUnicos.sort((a, b) => a - b)
+
+    return nivelesUnicos
+})
+
+
 function buscarNivel(mov) {
-    return 2 * props.ficha.pokedex.movimientosNivel.findIndex(entry => {
-        const movs = entry.split(',').map(m => m.trim());
-        return movs.includes(mov);
-    });
+    const encontrado = props.ficha.pokedex.movimientosNivel.find(m => m.nombre === mov)
+    if (!encontrado) return -1
+    return encontrado.nivel;
 }
 
-function UnMovFiltrado(movs) {
-    const MOVS = movs.map(mov => mov.trim())
-    const movsCompletos = props.movimientos.filter(m =>
-        MOVS.find(nom => nom.trim() === m.nombre)
-    );
-    return movsCompletos.some(filtrar);
+function filtradosNivel(nivel) {
+    const encontrados = props.ficha.pokedex.movimientosNivel.filter(mov =>
+        filtrados.value.some(f => f.nombre === mov.nombre))
+    return encontrados.filter(mov => mov.nivel === nivel)
 }
 
 function comprobar(mov) {
@@ -271,19 +289,15 @@ function comprobar(mov) {
 
                 <div class="ventana">
                     <div class="cuerpo">
-
                         <template v-if="tipoLista === 'Nivel'">
                             <ul>
-                                <template v-for="(movs, i) of ficha.pokedex.movimientosNivel">
-                                    <li v-if="UnMovFiltrado(movs.split(', '))"
-                                        :class="2 * i > ficha.nivel ? 'demasiado' : ''">
-                                        <!--v-if="UnMovFiltrado(movs.split(', '))-->
-
-                                        <h5>Nivel {{ i === 0 ? 1 : 2 * i }}</h5>
+                                <template v-for="nivel of nivelesConMovs">
+                                    <li :class="nivel > ficha.nivel ? 'demasiado' : ''">
+                                        <h5>Nivel {{ nivel }}</h5>
                                         <ul>
-                                            <template v-for="mov of movs.split(', ')">
-                                                <li v-if="comprobar(mov)" @click="cargarMovimiento(mov)">
-                                                    {{ mov.trim() }}</li>
+                                            <template v-for="mov of filtradosNivel(nivel)">
+                                                <li v-if="comprobar(mov.nombre)" @click="cargarMovimiento(mov.nombre)">
+                                                    {{ mov.nombre.trim() }}</li>
                                             </template>
                                         </ul>
                                     </li>
@@ -312,9 +326,8 @@ function comprobar(mov) {
                                         </strong> {{ formatearStats(movimientoSeleccionado.statsAso) }}.
                                     </div>
                                 </div>
-                                <button @click="añadirMovimiento" :disabled="(!añadirExtra && ficha.derivados.cantidadMovs <= ficha.personaliz.movimientosAprendidos.length) ||
-                                    (tipoLista === 'Nivel' && buscarNivel(movimientoSeleccionado.nombre) !== -1 && buscarNivel(movimientoSeleccionado.nombre) > ficha.nivel)
-
+                                <button @click="añadirMovimiento" :disabled="(!añadirExtra && ficha.derivados.cantidadMovs <= ficha.personaliz.movimientosAprendidos.length) &&
+                                    (tipoLista !== 'Nivel' || (buscarNivel(movimientoSeleccionado.nombre) !== -1 && buscarNivel(movimientoSeleccionado.nombre) < ficha.nivel))
                                     ">Añadir</button>
                             </template>
                             <template v-else>

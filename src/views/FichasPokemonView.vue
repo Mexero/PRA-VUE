@@ -109,85 +109,106 @@ async function cambiarDatosEspecie(especie) {
     error.value = null
 
     try {
+        // Datos base de pokedex
         const res = await queryDB(`
-                SELECT Especie, Tipo_primario, Tipo_secundario, 
-                FUE, AGI, RES, MEN, ESP, PRE, 
-                S_FUE, S_AGI, S_RES, S_ESP,
-                Vitalidad,
-                V_Caminado, V_Trepado, V_Excavado, V_Nado, V_Vuelo, V_Levitado,
-                Nat_Habil_1, Nat_Habil_2,
-                Habilidad_1, Habilidad_2, Habilidad_3, Hab_oculta_1, Hab_oculta_2,
-                AC1, AC2, 
-                Dieta, Tamano, Sexo, Sentidos, Evoluciona_en_todo,
-                Mov_Nivel_1, Mov_Nivel_2, Mov_Nivel_4, Mov_Nivel_6, Mov_Nivel_8, Mov_Nivel_10,
-                Mov_Nivel_12, Mov_Nivel_14, Mov_Nivel_16, Mov_Nivel_18, Mov_Nivel_20,
-                Mov_ensenables
-                FROM pokedex
-            WHERE Especie = ?
-        `,
-            [especie]
-        )
+      SELECT 
+        pokedex.ID, Especie, Tipo_primario, Tipo_secundario, 
+        FUE, AGI, RES, MEN, ESP, PRE, 
+        S_FUE, S_AGI, S_RES, S_ESP,
+        Vitalidad,
+        V_Caminado, V_Trepado, V_Excavado, V_Nado, V_Vuelo, V_Levitado,
+        Nat_Habil_1, Nat_Habil_2,
+        AC1, AC2, 
+        Dieta, Tamano, Sexo, Sentidos, Evoluciona_en_todo
+      FROM pokedex
+      WHERE Especie = ?
+    `, [especie])
+
         const row = res?.[0]?.values?.[0]
-        if (row) {
-            ficha.pokedex.especie = row[0]
-            //Tipos
-            ficha.pokedex.tipos[0] = row[1]
-            ficha.pokedex.tipos[1] = row[2] ?? ""
-            //stats base
-            ficha.pokedex.statsBase.fue = row[3]
-            ficha.pokedex.statsBase.agi = row[4]
-            ficha.pokedex.statsBase.res = row[5]
-            ficha.pokedex.statsBase.men = row[6]
-            ficha.pokedex.statsBase.esp = row[7]
-            ficha.pokedex.statsBase.pre = row[8]
-            //saves
-            ficha.pokedex.salvaciones.fue = row[9]
-            ficha.pokedex.salvaciones.agi = row[10]
-            ficha.pokedex.salvaciones.res = row[11]
-            ficha.pokedex.salvaciones.esp = row[12]
-            //VIT
-            ficha.pokedex.vit = row[13]
-            //velocidades
-            ficha.pokedex.velocidades.Caminado = row[14]
-            ficha.pokedex.velocidades.Trepado = row[15]
-            ficha.pokedex.velocidades.Excavado = row[16]
-            ficha.pokedex.velocidades.Nado = row[17]
-            ficha.pokedex.velocidades.Vuelo = row[18]
-            ficha.pokedex.velocidades.Levitado = row[19]
-            //Naturalmente Habil
-            ficha.pokedex.natHabil = []
-            if (row[20] && row[20] !== "") ficha.pokedex.natHabil.push(row[20])
-            if (row[21] && row[21] !== "") ficha.pokedex.natHabil.push(row[21])
-            //Habilidades
-            ficha.pokedex.habilidades = []
-            if (row[22] && row[22] !== "") ficha.pokedex.habilidades.push(row[22])
-            if (row[23] && row[23] !== "") ficha.pokedex.habilidades.push(row[23])
-            if (row[24] && row[24] !== "") ficha.pokedex.habilidades.push(row[24])
-            ficha.pokedex.habilidadesOcultas = []
-            if (row[25] && row[25] !== "") ficha.pokedex.habilidadesOcultas.push(row[25])
-            if (row[26] && row[26] !== "") ficha.pokedex.habilidadesOcultas.push(row[26])
-            //Clase Armadura
-            ficha.pokedex.calculosCA = []
-            ficha.pokedex.calculosCA.push(row[27])
-            if (row[28] && row[28] !== "") ficha.pokedex.calculosCA.push(row[28])
-            //Otros
-            ficha.pokedex.otros.dieta = row[29]
-            ficha.pokedex.otros.tamano = row[30]
-            ficha.pokedex.otros.sexo = row[31]
-            ficha.pokedex.otros.sentidos = row[32]
-            ficha.pokedex.otros.evolucion = row[33]
-            //Movs nivel
-            ficha.pokedex.movimientosNivel = [row[34], row[35], row[36], row[37], row[38], row[39], row[40], row[41], row[42], row[43], row[44]]
-            //Movs enseñables
-            let temporal = row[45]
-            if (temporal[temporal.length - 1] === ".") temporal = temporal.slice(0, -1);
-            ficha.pokedex.movimientosEnseñables = temporal.split(', ')
+        if (!row) return
 
-            //Resets necesarios
-            ficha.personaliz.habilidadesOcultasDesbloqueadas = []
+        const id = row[0] // pokedex.ID
 
-            console.log(`Datos de ${especie} cargados:`, ficha.pokedex)
+        // Asignación de datos
+        ficha.pokedex.especie = row[1]
+        ficha.pokedex.tipos = [row[2], row[3] ?? ""]
+        ficha.pokedex.statsBase = {
+            fue: row[4], agi: row[5], res: row[6],
+            men: row[7], esp: row[8], pre: row[9]
         }
+        ficha.pokedex.salvaciones = {
+            fue: row[10], agi: row[11],
+            res: row[12], esp: row[13]
+        }
+        ficha.pokedex.vit = row[14]
+        ficha.pokedex.velocidades = {
+            Caminado: row[15], Trepado: row[16], Excavado: row[17],
+            Nado: row[18], Vuelo: row[19], Levitado: row[20]
+        }
+
+        ficha.pokedex.natHabil = []
+        if (row[21]) ficha.pokedex.natHabil.push(row[21])
+        if (row[22]) ficha.pokedex.natHabil.push(row[22])
+
+        // Habilidades (relacional)
+        const habilidadesRes = await queryDB(`
+      SELECT h.Nombre, ph.Es_Oculta
+      FROM pokemon_habilidades ph
+      JOIN habilidades h ON h.ID = ph.Habilidad_ID
+      WHERE ph.Pokemon_ID = ?
+    `, [id])
+
+        ficha.pokedex.habilidades = []
+        ficha.pokedex.habilidadesOcultas = []
+
+        habilidadesRes?.[0]?.values?.forEach(([nombre, esOculta]) => {
+            if (esOculta) ficha.pokedex.habilidadesOcultas.push(nombre)
+            else ficha.pokedex.habilidades.push(nombre)
+        })
+
+        // CA
+        ficha.pokedex.calculosCA = []
+        if (row[23]) ficha.pokedex.calculosCA.push(row[23])
+        if (row[24]) ficha.pokedex.calculosCA.push(row[24])
+
+        // Otros
+        ficha.pokedex.otros = {
+            dieta: row[25],
+            tamano: row[26],
+            sexo: row[27],
+            sentidos: row[28],
+            evolucion: row[29]
+        }
+
+        // Movimientos (relacional)
+        const movimientosRes = await queryDB(`
+      SELECT m.Nombre, pm.MetodoAprendizaje, pm.NivelAprendizaje
+      FROM pokemon_movimientos pm
+      JOIN movimientos m ON m.ID = pm.MovimientoID
+      WHERE pm.PokemonID = ?
+    `, [id])
+
+        const movimientosNivel = []
+        const movimientosEnseñables = []
+
+        movimientosRes?.[0]?.values?.forEach(([nombre, metodo, nivel]) => {
+            if (metodo === 'Nivel') {
+                movimientosNivel.push({ nivel, nombre })
+            } else if (metodo === 'Aprendible') {
+                movimientosEnseñables.push(nombre)
+            }
+        })
+
+        ficha.pokedex.movimientosNivel = movimientosNivel
+            .sort((a, b) => a.nivel - b.nivel)
+
+        ficha.pokedex.movimientosEnseñables = movimientosEnseñables
+
+        // Reset
+        ficha.personaliz.habilidadesOcultasDesbloqueadas = []
+
+        console.log(`Datos de ${especie} cargados:`, ficha.pokedex)
+
     } catch (err) {
         error.value = err.message || 'Error cargando la especie Pokémon ' + especie
         console.warn(error.value)

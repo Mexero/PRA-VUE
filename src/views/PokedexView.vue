@@ -197,6 +197,7 @@ async function cargarTodosPokes({
   filtroMovimientos = []
 },
   selected) {
+
   const condiciones = []
   const params = []
 
@@ -205,7 +206,7 @@ async function cargarTodosPokes({
     params.push(`%${searchTerm}%`)
   }
 
-  // Tipos (ambos deben estar presentes, en primario o secundario)
+  // Tipos
   if (selectedTypes.length > 0) {
     const tipoCondiciones = selectedTypes.map(() => `(Tipo_primario = ? OR Tipo_secundario = ?)`)
     condiciones.push(`(${tipoCondiciones.join(' AND ')})`)
@@ -214,15 +215,17 @@ async function cargarTodosPokes({
     })
   }
 
+  // Habilidad (usando tabla relacional)
   if (filtroHabilidad) {
-    condiciones.push(`(
-      Habilidad_1 = ? OR
-      Habilidad_2 = ? OR
-      Habilidad_3 = ? OR
-      Hab_oculta_1 = ? OR
-      Hab_oculta_2 = ?
-    )`)
-    for (let i = 0; i < 5; i++) params.push(filtroHabilidad)
+    condiciones.push(`
+      EXISTS (
+        SELECT 1 FROM pokemon_habilidades ph
+        JOIN habilidades h ON h.ID = ph.Habilidad_ID
+        WHERE ph.Pokemon_ID = pokedex.ID
+          AND h.Nombre = ?
+      )
+    `)
+    params.push(filtroHabilidad)
   }
 
   if (filtroTamano) {
@@ -245,13 +248,11 @@ async function cargarTodosPokes({
     params.push(filtroNivelMin)
   }
 
-  // Naturalmente Hábil en uno de los 2
   if (filtroNatHabil) {
     condiciones.push(`(Nat_Habil_1 LIKE ? OR Nat_Habil_2 LIKE ?)`)
     params.push(`%${filtroNatHabil}%`, `%${filtroNatHabil}%`)
   }
 
-  // Velocidades
   const velocidadMap = {
     caminado: 'V_Caminado',
     excavado: 'V_Excavado',
@@ -275,7 +276,6 @@ async function cargarTodosPokes({
     })
   }
 
-  // WHERE final
   const where = condiciones.length ? `WHERE ${condiciones.join(' AND ')}` : ''
 
   const query = `
@@ -283,8 +283,10 @@ async function cargarTodosPokes({
     FROM pokedex
     ${where}
   `
+
   let data = []
   let elegido = selected
+
   try {
     const res = await queryDB(query, params)
     const rows = res?.[0]?.values || []
@@ -296,12 +298,7 @@ async function cargarTodosPokes({
         numPokedex: row[3]
       }))
       if (data.length > 0) {
-
         data = OrderPokedex(data)
-
-        //  const nombresStr = pokedex.value.map(p => p.especie).join(', ')
-        //  console.log('Pokémon encontrados:', nombresStr)
-
         const encontrado = data.find(p => p.especie === selected)
         if (!selected || !encontrado) {
           elegido = data[0]?.especie
@@ -318,6 +315,7 @@ async function cargarTodosPokes({
     }
   }
 }
+
 
 // <========= CAMBIAR SELECCIONADO =============>
 watch([
@@ -347,50 +345,68 @@ async function cambiarPokeSeleccionado(especie) {
   errorCargaPokemon.value = null
 
   try {
-    //Mov_Nivel_1, Mov_Nivel_2, Mov_Nivel_4, Mov_Nivel_6, Mov_Nivel_8, Mov_Nivel_10,
-    //Mov_Nivel_12, Mov_Nivel_14, Mov_Nivel_16, Mov_Nivel_18, Mov_Nivel_20,
-    //Mov_ensenables,
     const res = await queryDB(`
-                SELECT Numero_pokedex, Especie, Tipo_primario, Tipo_secundario, 
-                FUE, AGI, RES, MEN, ESP, PRE, 
-                S_FUE, S_AGI, S_RES, S_ESP,
-                Vitalidad,
-                V_Caminado, V_Trepado, V_Excavado, V_Nado, V_Vuelo, V_Levitado,
-                Nat_Habil_1, Nat_Habil_2,
-                Habilidad_1, Habilidad_2, Habilidad_3, Hab_oculta_1, Hab_oculta_2,
-                AC1, AC2, 
-                Dieta, Tamano, Sexo, Sentidos, Niv_Minimo, Habitat, Ratio_de_captura,
-                Evoluciona_de, EvoEn,	Nivel_Evo, Tipo_requisito, Requisitos_Evo, Evo_otros,
-                ID
-                FROM pokedex
-            WHERE Especie = ?
-        `,
-      [especie])
+      SELECT 
+        pokedex.Numero_pokedex, pokedex.Especie, pokedex.Tipo_primario, pokedex.Tipo_secundario, 
+        pokedex.FUE, pokedex.AGI, pokedex.RES, pokedex.MEN, pokedex.ESP, pokedex.PRE, 
+        pokedex.S_FUE, pokedex.S_AGI, pokedex.S_RES, pokedex.S_ESP,
+        pokedex.Vitalidad,
+        pokedex.V_Caminado, pokedex.V_Trepado, pokedex.V_Excavado, pokedex.V_Nado, pokedex.V_Vuelo, pokedex.V_Levitado,
+        pokedex.Nat_Habil_1, pokedex.Nat_Habil_2,
+        (
+          SELECT GROUP_CONCAT(h.Nombre)
+          FROM pokemon_habilidades ph
+          JOIN habilidades h ON h.ID = ph.Habilidad_ID
+          WHERE ph.Pokemon_ID = pokedex.ID AND ph.Es_Oculta = 0
+        ) AS Habilidades,
+        (
+          SELECT GROUP_CONCAT(h.Nombre)
+          FROM pokemon_habilidades ph
+          JOIN habilidades h ON h.ID = ph.Habilidad_ID
+          WHERE ph.Pokemon_ID = pokedex.ID AND ph.Es_Oculta = 1
+        ) AS Habilidades_Ocultas,
+        pokedex.AC1, pokedex.AC2, 
+        pokedex.Dieta, pokedex.Tamano, pokedex.Sexo, pokedex.Sentidos, pokedex.Niv_Minimo, pokedex.Habitat, pokedex.Ratio_de_captura,
+        pokedex.Evoluciona_de, pokedex.EvoEn, pokedex.Nivel_Evo, pokedex.Tipo_requisito, pokedex.Requisitos_Evo, pokedex.Evo_otros,
+        pokedex.ID
+      FROM pokedex
+      WHERE pokedex.Especie = ?
+    `, [especie])
+
     const row = res?.[0]?.values?.[0]
     if (row) {
-      if (row) {
-        selectedPokemonData.value = {
-          numPokedex: row[0],
-          especie: row[1],
-          tipos: [row[2], row[3]],
-          stats: { fue: row[4], agi: row[5], res: row[6], men: row[7], esp: row[8], pre: row[9] },
-          saves: { fue: row[10], agi: row[11], res: row[12], esp: row[13] },
-          vit: row[14],
-          velocidades: { caminado: row[15], trepado: row[16], excavado: row[17], nado: row[18], vuelo: row[19], levitado: row[20] },
-          natHabil: [row[21], row[22]],
-          habilidades: [row[23], row[24], row[25]],
-          habilidadesOcultas: [row[26], row[27]],
-          calculosCa: [row[28], row[29]],
-          otros: { dieta: row[30], tamano: row[31], sexo: row[32], sentidos: row[33], nivMinimo: row[34], habitat: row[35], ratioCaptura: row[36] },
-          evoDe: row[37].split(' (')[0],
-          evolucion: generarEvoluciones(row[38], row[39], row[40], row[41], row[42]),
-          //movimientosNivel: [row[43].split(', '), row[44].split(', '), row[45].split(', '), row[46].split(', '), row[47].split(', '), row[48].split(', '), row[49].split(', '), row[50].split(', '), row[51].split(', '), row[52].split(', '), row[53].split(', ')],
-          //movimientosEnsenables: tratarEnsenables(row[54]),
-          id: row[43]
-        }
-        console.log("Datos cargados: ", selectedPokemonData.value.especie, selectedPokemonData.value)
+      selectedPokemonData.value = {
+        numPokedex: row[0],
+        especie: row[1],
+        tipos: [row[2], row[3]],
+        stats: {
+          fue: row[4], agi: row[5], res: row[6],
+          men: row[7], esp: row[8], pre: row[9]
+        },
+        saves: {
+          fue: row[10], agi: row[11],
+          res: row[12], esp: row[13]
+        },
+        vit: row[14],
+        velocidades: {
+          caminado: row[15], trepado: row[16], excavado: row[17],
+          nado: row[18], vuelo: row[19], levitado: row[20]
+        },
+        natHabil: [row[21], row[22]],
+        habilidades: row[23]?.split(',') || [],
+        habilidadesOcultas: row[24]?.split(',') || [],
+        calculosCa: [row[25], row[26]],
+        otros: {
+          dieta: row[27], tamano: row[28], sexo: row[29],
+          sentidos: row[30], nivMinimo: row[31],
+          habitat: row[32], ratioCaptura: row[33]
+        },
+        evoDe: row[34]?.split(' (')[0] || null,
+        evolucion: generarEvoluciones(row[35], row[36], row[37], row[38], row[39]),
+        id: row[40]
       }
 
+      console.log("Datos cargados: ", selectedPokemonData.value.especie, selectedPokemonData.value)
     }
   } catch (err) {
     errorCargaPokemon.value = err.message || 'Error cargando la especie Pokémon ' + especie
@@ -398,43 +414,6 @@ async function cambiarPokeSeleccionado(especie) {
   } finally {
     cargandoPokemon.value = false
   }
-
-
-
-}
-
-
-function handlePokemonFetch(e) {
-  if (e.data.type === 'result' && e.data.origin === 'CambiarSeleccionado') {
-    const row = e.data.result?.[0]?.values?.[0]
-    if (row) {
-      selectedPokemonData.value = {
-        numPokedex: row[0],
-        especie: row[1],
-        tipos: [row[2], row[3]],
-        stats: { fue: row[4], agi: row[5], res: row[6], men: row[7], esp: row[8], pre: row[9] },
-        saves: { fue: row[10], agi: row[11], res: row[12], esp: row[13] },
-        vit: row[14],
-        velocidades: { caminado: row[15], trepado: row[16], excavado: row[17], nado: row[18], vuelo: row[19], levitado: row[20] },
-        natHabil: [row[21], row[22]],
-        habilidades: [row[23], row[24], row[25]],
-        habilidadesOcultas: [row[26], row[27]],
-        calculosCa: [row[28], row[29]],
-        otros: { dieta: row[30], tamano: row[31], sexo: row[32], sentidos: row[33], nivMinimo: row[34], habitat: row[35], ratioCaptura: row[36] },
-        evoDe: row[37].split(' (')[0],
-        evolucion: generarEvoluciones(row[38], row[39], row[40], row[41], row[42]),
-        //movimientosNivel: [row[43].split(', '), row[44].split(', '), row[45].split(', '), row[46].split(', '), row[47].split(', '), row[48].split(', '), row[49].split(', '), row[50].split(', '), row[51].split(', '), row[52].split(', '), row[53].split(', ')],
-        //movimientosEnsenables: tratarEnsenables(row[54]),
-        id: row[43]
-      }
-    }
-    console.log("Datos cargados: ", selectedPokemonData.value.especie, selectedPokemonData.value)
-  }
-  else if (e.data.type === 'error') {
-    errorCargaPokemon.value = true
-    console.error("Error al seleccionar especie:", e.data.error)
-  }
-  cargandoPokemon.value = false
 }
 
 // ==================== UTILIDAD =======================
@@ -450,12 +429,6 @@ function OrderPokedex(data) {
   }
   return data.sort((a, b) => a.numPokedex.localeCompare(b.numPokedex));
 
-}
-
-function tratarEnsenables(array) {
-  let temporal = array
-  if (temporal[temporal.length - 1] === ".") temporal = temporal.slice(0, -1);
-  return temporal.split(', ')
 }
 
 function generarEvoluciones(evoEn, nivelEvo, tipoRequisito, requisitosEvo, evoOtros) {
@@ -518,11 +491,6 @@ function generarEvoluciones(evoEn, nivelEvo, tipoRequisito, requisitosEvo, evoOt
   font-size: 24px;
   cursor: pointer;
 }
-
-
-
-
-
 
 .app {
   max-width: 100%;
