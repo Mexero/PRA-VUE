@@ -231,6 +231,12 @@ function comprobar(mov) {
     return filtrar(props.movimientos.find(movimiento => movimiento.nombre.toLowerCase() === mov.trim().toLowerCase()))
 }
 
+function checkDisabled() {
+    return (!añadirExtra.value && props.ficha.derivados.cantidadMovs <= props.ficha.personaliz.movimientosAprendidos.length) ||
+        (tipoLista.value === 'Nivel' && (buscarNivel(movimientoSeleccionado.value.nombre) === -1 || buscarNivel(movimientoSeleccionado.value.nombre) > props.ficha.nivel))
+
+}
+
 </script>
 
 <template>
@@ -326,9 +332,8 @@ function comprobar(mov) {
                                         </strong> {{ formatearStats(movimientoSeleccionado.statsAso) }}.
                                     </div>
                                 </div>
-                                <button @click="añadirMovimiento" :disabled="(!añadirExtra && ficha.derivados.cantidadMovs <= ficha.personaliz.movimientosAprendidos.length) &&
-                                    (tipoLista !== 'Nivel' || (buscarNivel(movimientoSeleccionado.nombre) !== -1 && buscarNivel(movimientoSeleccionado.nombre) < ficha.nivel))
-                                    ">Añadir</button>
+                                <button @click="añadirMovimiento" :disabled="checkDisabled()">
+                                    Añadir</button>
                             </template>
                             <template v-else>
                                 <span>Selecciona un movimiento</span>
