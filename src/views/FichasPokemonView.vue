@@ -196,15 +196,6 @@ async function cambiarDatosEspecie(especie) {
 
         const movimientosEnseñables = movimientosRes?.[0]?.values?.sort((a, b) => a[0] - b[0]).map(m => m[0])
 
-
-        // movimientosRes?.[0]?.values?.forEach(([nombre, nivel]) => {
-        //     if (nivel > 0) {
-        //         movimientosNivel.push({ nivel, nombre })
-        //     } else if (metodo === 'Aprendible') {
-        //         movimientosEnseñables.push(nombre)
-        //     }
-        // })
-
         ficha.pokedex.movimientosNivel = movimientosNivel
             .sort((a, b) => a.nivel - b.nivel)
 

@@ -12,9 +12,7 @@
             </span>
           </div>
         </div>
-        <img
-          :src="`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${parseInt(pokemon.numPokedex.substring(1))}.png`"
-          :alt="pokemon.especie" class="pokemon-detail-image" />
+        <img :src="src" :alt="pokemon.especie" class="pokemon-detail-image" />
       </div>
 
       <div class="stat-block-body">
@@ -205,6 +203,7 @@
 <script setup>
 import { ref, watch, computed } from 'vue'
 import { initDB, queryDB } from '@/services/dbWorkerService'
+import { updateSprite } from '@/utils/updateSprite'
 
 import abilityDetails from '../Pokedex/AbilityDetails.vue'
 import PokemonMoves from '../Pokedex/PokemonMoves.vue'
@@ -228,7 +227,7 @@ const selectedAbility = ref(null)
 const normalAbilities = ref(null)
 const hiddenAbilities = ref(null)
 
-
+const src = ref(null)
 
 function normalizeType(type) {
   return type.toLowerCase().normalize('NFD').replace(/\u0300-\u036f/g, '')
@@ -266,6 +265,8 @@ watch([
 
       normalAbilities.value = await cargarHabilidades(pokemon.habilidades, 'Normales')
       hiddenAbilities.value = await cargarHabilidades(pokemon.habilidadesOcultas, 'Ocultas')
+
+      src.value = await updateSprite(pokemon.especie, pokemon.esAlternativo, pokemon.numPokedex)
 
       habilidadesLoading.value = false
     }

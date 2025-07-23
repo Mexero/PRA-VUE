@@ -279,7 +279,7 @@ async function cargarTodosPokes({
   const where = condiciones.length ? `WHERE ${condiciones.join(' AND ')}` : ''
 
   const query = `
-    SELECT Especie, Tipo_primario, Tipo_secundario, Numero_pokedex
+    SELECT Especie, Tipo_primario, Tipo_secundario, Numero_pokedex, Es_Alternativo
     FROM pokedex
     ${where}
   `
@@ -295,7 +295,8 @@ async function cargarTodosPokes({
       data = rows.map((row) => ({
         especie: row[0],
         tipos: [row[1], row[2]],
-        numPokedex: row[3]
+        numPokedex: row[3],
+        esAlternativo: row[4]
       }))
       if (data.length > 0) {
         data = OrderPokedex(data)
@@ -368,7 +369,7 @@ async function cambiarPokeSeleccionado(especie) {
         pokedex.AC1, pokedex.AC2, 
         pokedex.Dieta, pokedex.Tamano, pokedex.Sexo, pokedex.Sentidos, pokedex.Niv_Minimo, pokedex.Habitat, pokedex.Ratio_de_captura,
         pokedex.Evoluciona_de, pokedex.EvoEn, pokedex.Nivel_Evo, pokedex.Tipo_requisito, pokedex.Requisitos_Evo, pokedex.Evo_otros,
-        pokedex.ID
+        pokedex.ID, pokedex.Es_alternativo
       FROM pokedex
       WHERE pokedex.Especie = ?
     `, [especie])
@@ -403,7 +404,8 @@ async function cambiarPokeSeleccionado(especie) {
         },
         evoDe: row[34]?.split(' (')[0] || null,
         evolucion: generarEvoluciones(row[35], row[36], row[37], row[38], row[39]),
-        id: row[40]
+        id: row[40],
+        esAlternativo: row[41]
       }
 
       console.log("Datos cargados: ", selectedPokemonData.value.especie, selectedPokemonData.value)
