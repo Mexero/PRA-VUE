@@ -121,7 +121,7 @@ async function loadPokemonMoves(pokeID) {
   let moves = []
   try {
     const res = await queryDB(`
-            SELECT m.Nombre, m.Tipo, pm.MetodoAprendizaje, pm.NivelAprendizaje
+            SELECT m.Nombre, m.Tipo, pm.NivelAprendizaje
             FROM pokemon_movimientos pm
             JOIN movimientos m ON pm.MovimientoID = m.ID
             WHERE pm.PokemonID = ?`,
@@ -133,19 +133,16 @@ async function loadPokemonMoves(pokeID) {
         moves.push({
           nombre: row[0],
           tipo: row[1],
-          metodo: row[2],
-          nivel: row[3]
+          nivel: row[2]
         })
       }
     }
     //Clasificar los movimientos y dejarlos ordenados
     levelMoves.value = moves
-      .filter(move => move.metodo === 'Nivel')
+      .filter(move => move.nivel > 0)
       .sort((a, b) => a.nivel - b.nivel)
 
-    teachableMoves.value = moves
-      .filter(move => move.metodo === 'Aprendible')
-      .sort((a, b) => a.nombre.localeCompare(b.nombre))
+    teachableMoves.value = moves.sort((a, b) => a.nombre.localeCompare(b.nombre))
 
     //Crear lista por nivel
     const movesPerLevel = {}

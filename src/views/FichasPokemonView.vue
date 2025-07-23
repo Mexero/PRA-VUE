@@ -182,22 +182,28 @@ async function cambiarDatosEspecie(especie) {
 
         // Movimientos (relacional)
         const movimientosRes = await queryDB(`
-      SELECT m.Nombre, pm.MetodoAprendizaje, pm.NivelAprendizaje
+      SELECT m.Nombre, pm.NivelAprendizaje
       FROM pokemon_movimientos pm
       JOIN movimientos m ON m.ID = pm.MovimientoID
       WHERE pm.PokemonID = ?
     `, [id])
 
-        const movimientosNivel = []
-        const movimientosEnseñables = []
+        const movimientosNivel = movimientosRes?.[0]?.values?.filter(move => move[1] > 0)
+            .sort((a, b) => a[0] - b[0]).map(m => ({
+                nombre: m[0],
+                nivel: m[1]
+            }))
 
-        movimientosRes?.[0]?.values?.forEach(([nombre, metodo, nivel]) => {
-            if (metodo === 'Nivel') {
-                movimientosNivel.push({ nivel, nombre })
-            } else if (metodo === 'Aprendible') {
-                movimientosEnseñables.push(nombre)
-            }
-        })
+        const movimientosEnseñables = movimientosRes?.[0]?.values?.sort((a, b) => a[0] - b[0]).map(m => m[0])
+
+
+        // movimientosRes?.[0]?.values?.forEach(([nombre, nivel]) => {
+        //     if (nivel > 0) {
+        //         movimientosNivel.push({ nivel, nombre })
+        //     } else if (metodo === 'Aprendible') {
+        //         movimientosEnseñables.push(nombre)
+        //     }
+        // })
 
         ficha.pokedex.movimientosNivel = movimientosNivel
             .sort((a, b) => a.nivel - b.nivel)
