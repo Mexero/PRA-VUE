@@ -728,14 +728,15 @@ onMounted(async () => {
             <FichaInfoBasica :ficha="ficha" :especiesPokes="especiesPokes"
                 :especiesPokesCargadas="especiesPokesCargadas" @cambiarNombre="cambiarNombreFicha"
                 @cambiarDatosEspecie="cambiarDatosEspecie" />
-<!-- 
+
             <div class="info-principal">
                 <FichaStats :ficha="ficha" />
-                <FichaDestacados :ficha="ficha" :grados="grados" />
+              <!--  <FichaDestacados :ficha="ficha" :grados="grados" />
                 <FichaVelocidades :ficha="ficha" />
                 <FichaChecks :ficha="ficha" :ChecksBase="ChecksBase" />
+                -->
             </div>
-
+<!-- 
             <FichaMovimientos :ficha="ficha" :movimientos="movimientos" :movimientosCargados="movimientosCargados" />
             <div class="HabsYDotes">
                 <FichaHabilidades :ficha="ficha" :habilidades="habilidades"
@@ -754,6 +755,7 @@ onMounted(async () => {
 .fichaPokemon {
     display: flex;
     margin: 50px auto;
+    color: var(--color-texto);
 }
 
 .character-sheet {
