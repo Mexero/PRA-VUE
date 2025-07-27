@@ -1,10 +1,10 @@
-// src/services/dbWorkerService.js
 import SqlWorker from '../worker/sqlite.js?worker';
 
 let dbWorker = null;
 let callbacks = {};
 let messageId = 0;
-let dbInitialized = false;
+let dbReady = false;
+let dbInitPromise = null;
 
 function initWorker() {
     if (dbWorker) return dbWorker;
@@ -14,27 +14,39 @@ function initWorker() {
     dbWorker.onmessage = (event) => {
         const { type, origin, result, buffer, error } = event.data;
 
-        if (type === 'ready') {
-            dbInitialized = true;
-            if (callbacks['init']) {
-                callbacks['init'].resolve('DB ready');
-                delete callbacks['init'];
-            }
-        } else if (type === 'result') {
+        if (error) {
             if (origin && callbacks[origin]) {
-                callbacks[origin].resolve(result);
+                callbacks[origin].reject(error);
                 delete callbacks[origin];
             }
-        } else if (type === 'exported') {
-            if (callbacks['export']) {
-                callbacks['export'].resolve(buffer);
-                delete callbacks['export'];
-            }
-        } else if (type === 'error') {
-            Object.keys(callbacks).forEach(key => {
-                callbacks[key].reject(error);
-                delete callbacks[key];
-            });
+            return;
+        }
+
+        switch (type) {
+            case 'ready':
+                dbReady = true;
+                if (origin && callbacks[origin]) {
+                    callbacks[origin].resolve('DB ready');
+                    delete callbacks[origin];
+                }
+                break;
+
+            case 'result':
+                if (origin && callbacks[origin]) {
+                    callbacks[origin].resolve(result);
+                    delete callbacks[origin];
+                }
+                break;
+
+            case 'exported':
+                if (origin && callbacks[origin]) {
+                    callbacks[origin].resolve(buffer);
+                    delete callbacks[origin];
+                }
+                break;
+
+            default:
+                console.warn(`Unknown message type from worker: ${type}`);
         }
     };
 
@@ -42,18 +54,24 @@ function initWorker() {
 }
 
 export function initDB() {
-    if (dbInitialized) return Promise.resolve('DB already initialized');
+    if (dbReady) return Promise.resolve('DB already initialized');
+    if (dbInitPromise) return dbInitPromise;
 
     const worker = initWorker();
-    return new Promise((resolve, reject) => {
-        callbacks['init'] = { resolve, reject };
-        worker.postMessage({ type: 'init' });
+    const origin = `init_${messageId++}`;
+
+    dbInitPromise = new Promise((resolve, reject) => {
+        callbacks[origin] = { resolve, reject };
+        worker.postMessage({ type: 'init', origin });
     });
+
+    return dbInitPromise;
 }
 
-export function queryDB(query, params = []) {
+export async function queryDB(query, params = []) {
+    await initDB();
     const worker = initWorker();
-    const origin = `msg_${messageId++}`;
+    const origin = `query_${messageId++}`;
 
     return new Promise((resolve, reject) => {
         callbacks[origin] = { resolve, reject };
@@ -61,11 +79,13 @@ export function queryDB(query, params = []) {
     });
 }
 
-export function exportDB() {
+export async function exportDB() {
+    await initDB();
     const worker = initWorker();
+    const origin = `export_${messageId++}`;
 
     return new Promise((resolve, reject) => {
-        callbacks['export'] = { resolve, reject };
-        worker.postMessage({ type: 'export' });
+        callbacks[origin] = { resolve, reject };
+        worker.postMessage({ type: 'export', origin });
     });
 }

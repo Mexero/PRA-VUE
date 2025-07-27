@@ -9,7 +9,7 @@ onmessage = async (e) => {
     try {
         if (type === 'init') {
             if (isReady) {
-                postMessage({ type: 'ready' });
+                postMessage({ type: 'ready', origin });
                 return;
             }
 
@@ -23,7 +23,7 @@ onmessage = async (e) => {
             db = new SQL.Database(new Uint8Array(buffer));
             isReady = true;
 
-            postMessage({ type: 'ready' });
+            postMessage({ type: 'ready', origin });
         }
 
         else if (type === 'query') {
