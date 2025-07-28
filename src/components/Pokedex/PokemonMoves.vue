@@ -10,6 +10,8 @@
           <span>Movimientos por nivel</span>
           <span class="toggle-icon">{{ showLevelMoves ? '▼' : '▶' }}</span>
         </h4>
+        <div v-if="[203].includes(pokeID)">A partir de nivel 12, Mew puede aprender 2 de sus Movimientos Enseñables al
+          subir de Nivel.</div>
         <div v-show="showLevelMoves" class="moves-table-container">
           <table class="moves-table">
             <thead>
@@ -44,7 +46,9 @@
           <span class="toggle-icon">{{ showTeachableMoves ? '▼' : '▶' }}</span>
         </h4>
         <div v-show="showTeachableMoves" class="moves-table-container">
-          <table class="moves-table">
+          <div v-if="[203].includes(pokeID)">Mew puede aprender cualquier Movimiento que no tenga la Etiqueta de
+            Legendario.</div>
+          <table v-else class="moves-table">
             <tbody>
               <tr v-for="i in Math.ceil(teachableMoves.length / 3)" :key="i">
                 <td v-for="j in 3" :key="j" class="move-cell"

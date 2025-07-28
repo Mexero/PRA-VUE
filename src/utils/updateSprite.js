@@ -43,13 +43,16 @@ export async function updateSprite(propEspecie, propEsAlternativo, numPokedex) {
                 nombre = 'farfetchd galar'
                 break;
             case especie.includes('darmanitan'):
-                src = 'https://pokeapi.co/api/v2/pokemon-form/10336/'
+                src = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10177.png'
+                break;
+            case especie.includes('wooper'):
+                src = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10253.png'
                 break;
             case especie.includes(' de '):
                 nombre = especie.replace(' de ', ' ')
                 break;
             case especie.includes('mega'):
-                nombre = especie.split(' ')[0] + ' mega' + (especie.includes(' x') ? ' x' : '') + (especie.includes(' y') ? ' y' : '')
+                nombre = especie.split(' ')[1] + ' mega' + (especie.includes(' x') ? ' x' : '') + (especie.includes(' y') ? ' y' : '')
                 break;
             case especie.includes('primigenio'):
                 nombre = especie.split(' ')[0] + ' primal'

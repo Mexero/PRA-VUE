@@ -10748,5 +10748,5870 @@
         "nombre": "Tierra viva",
         "ruta": "/movimientos?seleccionado=Tierra%20viva",
         "tipo": "Movimiento"
+    },
+    {
+        "nombre": "Bulbasaur",
+        "ruta": "/pokedex?seleccionado=Bulbasaur",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Ivysaur",
+        "ruta": "/pokedex?seleccionado=Ivysaur",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Venusaur",
+        "ruta": "/pokedex?seleccionado=Venusaur",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Mega Venusaur",
+        "ruta": "/pokedex?seleccionado=Mega Venusaur",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Charmander",
+        "ruta": "/pokedex?seleccionado=Charmander",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Charmeleon",
+        "ruta": "/pokedex?seleccionado=Charmeleon",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Charizard",
+        "ruta": "/pokedex?seleccionado=Charizard",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Mega Charizard Y",
+        "ruta": "/pokedex?seleccionado=Mega Charizard Y",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Mega Charizard X",
+        "ruta": "/pokedex?seleccionado=Mega Charizard X",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Squirtle",
+        "ruta": "/pokedex?seleccionado=Squirtle",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Wartortle",
+        "ruta": "/pokedex?seleccionado=Wartortle",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Blastoise",
+        "ruta": "/pokedex?seleccionado=Blastoise",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Mega Blastoise",
+        "ruta": "/pokedex?seleccionado=Mega Blastoise",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Caterpie",
+        "ruta": "/pokedex?seleccionado=Caterpie",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Metapod",
+        "ruta": "/pokedex?seleccionado=Metapod",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Butterfree",
+        "ruta": "/pokedex?seleccionado=Butterfree",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Weedle",
+        "ruta": "/pokedex?seleccionado=Weedle",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Kakuna",
+        "ruta": "/pokedex?seleccionado=Kakuna",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Beedrill",
+        "ruta": "/pokedex?seleccionado=Beedrill",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Mega Beedrill",
+        "ruta": "/pokedex?seleccionado=Mega Beedrill",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Pidgey",
+        "ruta": "/pokedex?seleccionado=Pidgey",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Pidgeotto",
+        "ruta": "/pokedex?seleccionado=Pidgeotto",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Pidgeot",
+        "ruta": "/pokedex?seleccionado=Pidgeot",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Mega Pidgeot",
+        "ruta": "/pokedex?seleccionado=Mega Pidgeot",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Rattata",
+        "ruta": "/pokedex?seleccionado=Rattata",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Rattata de Alola",
+        "ruta": "/pokedex?seleccionado=Rattata de Alola",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Raticate",
+        "ruta": "/pokedex?seleccionado=Raticate",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Raticate de Alola",
+        "ruta": "/pokedex?seleccionado=Raticate de Alola",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Spearow",
+        "ruta": "/pokedex?seleccionado=Spearow",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Fearow",
+        "ruta": "/pokedex?seleccionado=Fearow",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Ekans",
+        "ruta": "/pokedex?seleccionado=Ekans",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Arbok",
+        "ruta": "/pokedex?seleccionado=Arbok",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Pikachu",
+        "ruta": "/pokedex?seleccionado=Pikachu",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Raichu",
+        "ruta": "/pokedex?seleccionado=Raichu",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Raichu de Alola",
+        "ruta": "/pokedex?seleccionado=Raichu de Alola",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Sandshrew",
+        "ruta": "/pokedex?seleccionado=Sandshrew",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Sandshrew de Alola",
+        "ruta": "/pokedex?seleccionado=Sandshrew de Alola",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Sandslash",
+        "ruta": "/pokedex?seleccionado=Sandslash",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Sandslash de Alola",
+        "ruta": "/pokedex?seleccionado=Sandslash de Alola",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Nidoran hembra",
+        "ruta": "/pokedex?seleccionado=Nidoran hembra",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Nidorina",
+        "ruta": "/pokedex?seleccionado=Nidorina",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Nidoqueen",
+        "ruta": "/pokedex?seleccionado=Nidoqueen",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Nidoran macho",
+        "ruta": "/pokedex?seleccionado=Nidoran macho",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Nidorino",
+        "ruta": "/pokedex?seleccionado=Nidorino",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Nidoking",
+        "ruta": "/pokedex?seleccionado=Nidoking",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Clefairy",
+        "ruta": "/pokedex?seleccionado=Clefairy",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Clefable",
+        "ruta": "/pokedex?seleccionado=Clefable",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Vulpix",
+        "ruta": "/pokedex?seleccionado=Vulpix",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Vulpix de Alola",
+        "ruta": "/pokedex?seleccionado=Vulpix de Alola",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Ninetales",
+        "ruta": "/pokedex?seleccionado=Ninetales",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Ninetales de Alola",
+        "ruta": "/pokedex?seleccionado=Ninetales de Alola",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Jigglypuff",
+        "ruta": "/pokedex?seleccionado=Jigglypuff",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Wigglytuff",
+        "ruta": "/pokedex?seleccionado=Wigglytuff",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Zubat",
+        "ruta": "/pokedex?seleccionado=Zubat",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Golbat",
+        "ruta": "/pokedex?seleccionado=Golbat",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Oddish",
+        "ruta": "/pokedex?seleccionado=Oddish",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Gloom",
+        "ruta": "/pokedex?seleccionado=Gloom",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Vileplume",
+        "ruta": "/pokedex?seleccionado=Vileplume",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Paras",
+        "ruta": "/pokedex?seleccionado=Paras",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Parasect",
+        "ruta": "/pokedex?seleccionado=Parasect",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Venonat",
+        "ruta": "/pokedex?seleccionado=Venonat",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Venomoth",
+        "ruta": "/pokedex?seleccionado=Venomoth",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Diglett",
+        "ruta": "/pokedex?seleccionado=Diglett",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Diglett de Alola",
+        "ruta": "/pokedex?seleccionado=Diglett de Alola",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Dugtrio",
+        "ruta": "/pokedex?seleccionado=Dugtrio",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Dugtrio de Alola",
+        "ruta": "/pokedex?seleccionado=Dugtrio de Alola",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Meowth",
+        "ruta": "/pokedex?seleccionado=Meowth",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Meowth de Alola",
+        "ruta": "/pokedex?seleccionado=Meowth de Alola",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Meowth de Galar",
+        "ruta": "/pokedex?seleccionado=Meowth de Galar",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Persian",
+        "ruta": "/pokedex?seleccionado=Persian",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Persian de Alola",
+        "ruta": "/pokedex?seleccionado=Persian de Alola",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Psyduck",
+        "ruta": "/pokedex?seleccionado=Psyduck",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Golduck",
+        "ruta": "/pokedex?seleccionado=Golduck",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Mankey",
+        "ruta": "/pokedex?seleccionado=Mankey",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Primeape",
+        "ruta": "/pokedex?seleccionado=Primeape",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Growlithe",
+        "ruta": "/pokedex?seleccionado=Growlithe",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Growlithe de Hisui",
+        "ruta": "/pokedex?seleccionado=Growlithe de Hisui",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Arcanine",
+        "ruta": "/pokedex?seleccionado=Arcanine",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Arcanine de Hisui",
+        "ruta": "/pokedex?seleccionado=Arcanine de Hisui",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Poliwag",
+        "ruta": "/pokedex?seleccionado=Poliwag",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Poliwhirl",
+        "ruta": "/pokedex?seleccionado=Poliwhirl",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Poliwrath",
+        "ruta": "/pokedex?seleccionado=Poliwrath",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Abra",
+        "ruta": "/pokedex?seleccionado=Abra",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Kadabra",
+        "ruta": "/pokedex?seleccionado=Kadabra",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Alakazam",
+        "ruta": "/pokedex?seleccionado=Alakazam",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Mega Alakazam",
+        "ruta": "/pokedex?seleccionado=Mega Alakazam",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Machop",
+        "ruta": "/pokedex?seleccionado=Machop",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Machoke",
+        "ruta": "/pokedex?seleccionado=Machoke",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Machamp",
+        "ruta": "/pokedex?seleccionado=Machamp",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Bellsprout",
+        "ruta": "/pokedex?seleccionado=Bellsprout",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Weepinbell",
+        "ruta": "/pokedex?seleccionado=Weepinbell",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Victreebel",
+        "ruta": "/pokedex?seleccionado=Victreebel",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Tentacool",
+        "ruta": "/pokedex?seleccionado=Tentacool",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Tentacruel",
+        "ruta": "/pokedex?seleccionado=Tentacruel",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Geodude",
+        "ruta": "/pokedex?seleccionado=Geodude",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Geodude de Alola",
+        "ruta": "/pokedex?seleccionado=Geodude de Alola",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Graveler",
+        "ruta": "/pokedex?seleccionado=Graveler",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Graveler de Alola",
+        "ruta": "/pokedex?seleccionado=Graveler de Alola",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Golem",
+        "ruta": "/pokedex?seleccionado=Golem",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Golem de Alola",
+        "ruta": "/pokedex?seleccionado=Golem de Alola",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Ponyta",
+        "ruta": "/pokedex?seleccionado=Ponyta",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Ponyta de Galar",
+        "ruta": "/pokedex?seleccionado=Ponyta de Galar",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Rapidash",
+        "ruta": "/pokedex?seleccionado=Rapidash",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Rapidash de Galar",
+        "ruta": "/pokedex?seleccionado=Rapidash de Galar",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Slowpoke",
+        "ruta": "/pokedex?seleccionado=Slowpoke",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Slowpoke de Galar",
+        "ruta": "/pokedex?seleccionado=Slowpoke de Galar",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Slowbro",
+        "ruta": "/pokedex?seleccionado=Slowbro",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Mega Slowbro",
+        "ruta": "/pokedex?seleccionado=Mega Slowbro",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Slowbro de Galar",
+        "ruta": "/pokedex?seleccionado=Slowbro de Galar",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Magnemite",
+        "ruta": "/pokedex?seleccionado=Magnemite",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Magneton",
+        "ruta": "/pokedex?seleccionado=Magneton",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Farfetch'd",
+        "ruta": "/pokedex?seleccionado=Farfetch'd",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Farfetch'd de Galar",
+        "ruta": "/pokedex?seleccionado=Farfetch'd de Galar",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Doduo",
+        "ruta": "/pokedex?seleccionado=Doduo",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Dodrio",
+        "ruta": "/pokedex?seleccionado=Dodrio",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Seel",
+        "ruta": "/pokedex?seleccionado=Seel",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Dewgong",
+        "ruta": "/pokedex?seleccionado=Dewgong",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Grimer",
+        "ruta": "/pokedex?seleccionado=Grimer",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Grimer de Alola",
+        "ruta": "/pokedex?seleccionado=Grimer de Alola",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Muk",
+        "ruta": "/pokedex?seleccionado=Muk",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Muk de Alola",
+        "ruta": "/pokedex?seleccionado=Muk de Alola",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Shellder",
+        "ruta": "/pokedex?seleccionado=Shellder",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Cloyster",
+        "ruta": "/pokedex?seleccionado=Cloyster",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Gastly",
+        "ruta": "/pokedex?seleccionado=Gastly",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Haunter",
+        "ruta": "/pokedex?seleccionado=Haunter",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Gengar",
+        "ruta": "/pokedex?seleccionado=Gengar",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Mega Gengar",
+        "ruta": "/pokedex?seleccionado=Mega Gengar",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Onix",
+        "ruta": "/pokedex?seleccionado=Onix",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Drowzee",
+        "ruta": "/pokedex?seleccionado=Drowzee",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Hypno",
+        "ruta": "/pokedex?seleccionado=Hypno",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Krabby",
+        "ruta": "/pokedex?seleccionado=Krabby",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Kingler",
+        "ruta": "/pokedex?seleccionado=Kingler",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Voltorb",
+        "ruta": "/pokedex?seleccionado=Voltorb",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Voltorb de Hisui",
+        "ruta": "/pokedex?seleccionado=Voltorb de Hisui",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Electrode",
+        "ruta": "/pokedex?seleccionado=Electrode",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Electrode de Hisui",
+        "ruta": "/pokedex?seleccionado=Electrode de Hisui",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Exeggcute",
+        "ruta": "/pokedex?seleccionado=Exeggcute",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Exeggutor",
+        "ruta": "/pokedex?seleccionado=Exeggutor",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Exeggutor de Alola",
+        "ruta": "/pokedex?seleccionado=Exeggutor de Alola",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Cubone",
+        "ruta": "/pokedex?seleccionado=Cubone",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Marowak",
+        "ruta": "/pokedex?seleccionado=Marowak",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Marowak de Alola",
+        "ruta": "/pokedex?seleccionado=Marowak de Alola",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Hitmonlee",
+        "ruta": "/pokedex?seleccionado=Hitmonlee",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Hitmonchan",
+        "ruta": "/pokedex?seleccionado=Hitmonchan",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Lickitung",
+        "ruta": "/pokedex?seleccionado=Lickitung",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Koffing",
+        "ruta": "/pokedex?seleccionado=Koffing",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Weezing",
+        "ruta": "/pokedex?seleccionado=Weezing",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Weezing de Galar",
+        "ruta": "/pokedex?seleccionado=Weezing de Galar",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Rhyhorn",
+        "ruta": "/pokedex?seleccionado=Rhyhorn",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Rhydon",
+        "ruta": "/pokedex?seleccionado=Rhydon",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Chansey",
+        "ruta": "/pokedex?seleccionado=Chansey",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Tangela",
+        "ruta": "/pokedex?seleccionado=Tangela",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Kangaskhan",
+        "ruta": "/pokedex?seleccionado=Kangaskhan",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Mega Kangaskhan",
+        "ruta": "/pokedex?seleccionado=Mega Kangaskhan",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Horsea",
+        "ruta": "/pokedex?seleccionado=Horsea",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Seadra",
+        "ruta": "/pokedex?seleccionado=Seadra",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Goldeen",
+        "ruta": "/pokedex?seleccionado=Goldeen",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Seaking",
+        "ruta": "/pokedex?seleccionado=Seaking",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Staryu",
+        "ruta": "/pokedex?seleccionado=Staryu",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Starmie",
+        "ruta": "/pokedex?seleccionado=Starmie",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Mr. Mime",
+        "ruta": "/pokedex?seleccionado=Mr. Mime",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Mr. Mime de Galar",
+        "ruta": "/pokedex?seleccionado=Mr. Mime de Galar",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Scyther",
+        "ruta": "/pokedex?seleccionado=Scyther",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Jynx",
+        "ruta": "/pokedex?seleccionado=Jynx",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Electabuzz",
+        "ruta": "/pokedex?seleccionado=Electabuzz",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Magmar",
+        "ruta": "/pokedex?seleccionado=Magmar",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Pinsir",
+        "ruta": "/pokedex?seleccionado=Pinsir",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Mega Pinsir",
+        "ruta": "/pokedex?seleccionado=Mega Pinsir",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Tauros",
+        "ruta": "/pokedex?seleccionado=Tauros",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Tauros de Paldea Variedad Acuática",
+        "ruta": "/pokedex?seleccionado=Tauros de Paldea Variedad Acuática",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Tauros de Paldea Variedad Ardiente",
+        "ruta": "/pokedex?seleccionado=Tauros de Paldea Variedad Ardiente",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Tauros de Paldea Variedad Combatiente",
+        "ruta": "/pokedex?seleccionado=Tauros de Paldea Variedad Combatiente",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Magikarp",
+        "ruta": "/pokedex?seleccionado=Magikarp",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Gyarados",
+        "ruta": "/pokedex?seleccionado=Gyarados",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Mega Gyarados",
+        "ruta": "/pokedex?seleccionado=Mega Gyarados",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Lapras",
+        "ruta": "/pokedex?seleccionado=Lapras",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Ditto",
+        "ruta": "/pokedex?seleccionado=Ditto",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Eevee",
+        "ruta": "/pokedex?seleccionado=Eevee",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Vaporeon",
+        "ruta": "/pokedex?seleccionado=Vaporeon",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Jolteon",
+        "ruta": "/pokedex?seleccionado=Jolteon",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Flareon",
+        "ruta": "/pokedex?seleccionado=Flareon",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Porygon",
+        "ruta": "/pokedex?seleccionado=Porygon",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Omanyte",
+        "ruta": "/pokedex?seleccionado=Omanyte",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Omastar",
+        "ruta": "/pokedex?seleccionado=Omastar",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Kabuto",
+        "ruta": "/pokedex?seleccionado=Kabuto",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Kabutops",
+        "ruta": "/pokedex?seleccionado=Kabutops",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Aerodactyl",
+        "ruta": "/pokedex?seleccionado=Aerodactyl",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Mega Aerodactyl",
+        "ruta": "/pokedex?seleccionado=Mega Aerodactyl",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Snorlax",
+        "ruta": "/pokedex?seleccionado=Snorlax",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Articuno",
+        "ruta": "/pokedex?seleccionado=Articuno",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Articuno de Galar",
+        "ruta": "/pokedex?seleccionado=Articuno de Galar",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Zapdos",
+        "ruta": "/pokedex?seleccionado=Zapdos",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Zapdos de Galar",
+        "ruta": "/pokedex?seleccionado=Zapdos de Galar",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Moltres",
+        "ruta": "/pokedex?seleccionado=Moltres",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Moltres de Galar",
+        "ruta": "/pokedex?seleccionado=Moltres de Galar",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Dratini",
+        "ruta": "/pokedex?seleccionado=Dratini",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Dragonair",
+        "ruta": "/pokedex?seleccionado=Dragonair",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Dragonite",
+        "ruta": "/pokedex?seleccionado=Dragonite",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Mewtwo",
+        "ruta": "/pokedex?seleccionado=Mewtwo",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Mega Mewtwo X",
+        "ruta": "/pokedex?seleccionado=Mega Mewtwo X",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Mega Mewtwo Y",
+        "ruta": "/pokedex?seleccionado=Mega Mewtwo Y",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Mew",
+        "ruta": "/pokedex?seleccionado=Mew",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Chikorita",
+        "ruta": "/pokedex?seleccionado=Chikorita",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Bayleef",
+        "ruta": "/pokedex?seleccionado=Bayleef",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Meganium",
+        "ruta": "/pokedex?seleccionado=Meganium",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Cyndaquil",
+        "ruta": "/pokedex?seleccionado=Cyndaquil",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Quilava",
+        "ruta": "/pokedex?seleccionado=Quilava",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Typhlosion",
+        "ruta": "/pokedex?seleccionado=Typhlosion",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Typhlosion de Hisui",
+        "ruta": "/pokedex?seleccionado=Typhlosion de Hisui",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Totodile",
+        "ruta": "/pokedex?seleccionado=Totodile",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Croconaw",
+        "ruta": "/pokedex?seleccionado=Croconaw",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Feraligatr",
+        "ruta": "/pokedex?seleccionado=Feraligatr",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Sentret",
+        "ruta": "/pokedex?seleccionado=Sentret",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Furret",
+        "ruta": "/pokedex?seleccionado=Furret",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Hoothoot",
+        "ruta": "/pokedex?seleccionado=Hoothoot",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Noctowl",
+        "ruta": "/pokedex?seleccionado=Noctowl",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Ledyba",
+        "ruta": "/pokedex?seleccionado=Ledyba",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Ledian",
+        "ruta": "/pokedex?seleccionado=Ledian",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Spinarak",
+        "ruta": "/pokedex?seleccionado=Spinarak",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Ariados",
+        "ruta": "/pokedex?seleccionado=Ariados",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Crobat",
+        "ruta": "/pokedex?seleccionado=Crobat",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Chinchou",
+        "ruta": "/pokedex?seleccionado=Chinchou",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Lanturn",
+        "ruta": "/pokedex?seleccionado=Lanturn",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Pichu",
+        "ruta": "/pokedex?seleccionado=Pichu",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Cleffa",
+        "ruta": "/pokedex?seleccionado=Cleffa",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Igglybuff",
+        "ruta": "/pokedex?seleccionado=Igglybuff",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Togepi",
+        "ruta": "/pokedex?seleccionado=Togepi",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Togetic",
+        "ruta": "/pokedex?seleccionado=Togetic",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Natu",
+        "ruta": "/pokedex?seleccionado=Natu",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Xatu",
+        "ruta": "/pokedex?seleccionado=Xatu",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Mareep",
+        "ruta": "/pokedex?seleccionado=Mareep",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Flaaffy",
+        "ruta": "/pokedex?seleccionado=Flaaffy",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Ampharos",
+        "ruta": "/pokedex?seleccionado=Ampharos",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Mega Ampharos",
+        "ruta": "/pokedex?seleccionado=Mega Ampharos",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Bellossom",
+        "ruta": "/pokedex?seleccionado=Bellossom",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Marill",
+        "ruta": "/pokedex?seleccionado=Marill",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Azumarill",
+        "ruta": "/pokedex?seleccionado=Azumarill",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Sudowoodo",
+        "ruta": "/pokedex?seleccionado=Sudowoodo",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Politoed",
+        "ruta": "/pokedex?seleccionado=Politoed",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Hoppip",
+        "ruta": "/pokedex?seleccionado=Hoppip",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Skiploom",
+        "ruta": "/pokedex?seleccionado=Skiploom",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Jumpluff",
+        "ruta": "/pokedex?seleccionado=Jumpluff",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Aipom",
+        "ruta": "/pokedex?seleccionado=Aipom",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Sunkern",
+        "ruta": "/pokedex?seleccionado=Sunkern",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Sunflora",
+        "ruta": "/pokedex?seleccionado=Sunflora",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Yanma",
+        "ruta": "/pokedex?seleccionado=Yanma",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Wooper",
+        "ruta": "/pokedex?seleccionado=Wooper",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Wooper de Paldea",
+        "ruta": "/pokedex?seleccionado=Wooper de Paldea",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Quagsire",
+        "ruta": "/pokedex?seleccionado=Quagsire",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Espeon",
+        "ruta": "/pokedex?seleccionado=Espeon",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Umbreon",
+        "ruta": "/pokedex?seleccionado=Umbreon",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Murkrow",
+        "ruta": "/pokedex?seleccionado=Murkrow",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Slowking",
+        "ruta": "/pokedex?seleccionado=Slowking",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Slowking de Galar",
+        "ruta": "/pokedex?seleccionado=Slowking de Galar",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Misdreavus",
+        "ruta": "/pokedex?seleccionado=Misdreavus",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Unown",
+        "ruta": "/pokedex?seleccionado=Unown",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Wobbuffet",
+        "ruta": "/pokedex?seleccionado=Wobbuffet",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Girafarig",
+        "ruta": "/pokedex?seleccionado=Girafarig",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Pineco",
+        "ruta": "/pokedex?seleccionado=Pineco",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Forretress",
+        "ruta": "/pokedex?seleccionado=Forretress",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Dunsparce",
+        "ruta": "/pokedex?seleccionado=Dunsparce",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Gligar",
+        "ruta": "/pokedex?seleccionado=Gligar",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Steelix",
+        "ruta": "/pokedex?seleccionado=Steelix",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Mega Steelix",
+        "ruta": "/pokedex?seleccionado=Mega Steelix",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Snubbull",
+        "ruta": "/pokedex?seleccionado=Snubbull",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Granbull",
+        "ruta": "/pokedex?seleccionado=Granbull",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Qwilfish",
+        "ruta": "/pokedex?seleccionado=Qwilfish",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Qwilfish de Hisui",
+        "ruta": "/pokedex?seleccionado=Qwilfish de Hisui",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Scizor",
+        "ruta": "/pokedex?seleccionado=Scizor",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Mega Scizor",
+        "ruta": "/pokedex?seleccionado=Mega Scizor",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Shuckle",
+        "ruta": "/pokedex?seleccionado=Shuckle",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Heracross",
+        "ruta": "/pokedex?seleccionado=Heracross",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Mega Heracross",
+        "ruta": "/pokedex?seleccionado=Mega Heracross",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Sneasel",
+        "ruta": "/pokedex?seleccionado=Sneasel",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Sneasel de Hisui",
+        "ruta": "/pokedex?seleccionado=Sneasel de Hisui",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Teddiursa",
+        "ruta": "/pokedex?seleccionado=Teddiursa",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Ursaring",
+        "ruta": "/pokedex?seleccionado=Ursaring",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Slugma",
+        "ruta": "/pokedex?seleccionado=Slugma",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Magcargo",
+        "ruta": "/pokedex?seleccionado=Magcargo",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Swinub",
+        "ruta": "/pokedex?seleccionado=Swinub",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Piloswine",
+        "ruta": "/pokedex?seleccionado=Piloswine",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Corsola",
+        "ruta": "/pokedex?seleccionado=Corsola",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Corsola de Galar",
+        "ruta": "/pokedex?seleccionado=Corsola de Galar",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Remoraid",
+        "ruta": "/pokedex?seleccionado=Remoraid",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Octillery",
+        "ruta": "/pokedex?seleccionado=Octillery",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Delibird",
+        "ruta": "/pokedex?seleccionado=Delibird",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Mantine",
+        "ruta": "/pokedex?seleccionado=Mantine",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Skarmory",
+        "ruta": "/pokedex?seleccionado=Skarmory",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Houndour",
+        "ruta": "/pokedex?seleccionado=Houndour",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Houndoom",
+        "ruta": "/pokedex?seleccionado=Houndoom",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Mega Houndoom",
+        "ruta": "/pokedex?seleccionado=Mega Houndoom",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Kingdra",
+        "ruta": "/pokedex?seleccionado=Kingdra",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Phanpy",
+        "ruta": "/pokedex?seleccionado=Phanpy",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Donphan",
+        "ruta": "/pokedex?seleccionado=Donphan",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Porygon 2",
+        "ruta": "/pokedex?seleccionado=Porygon 2",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Stantler",
+        "ruta": "/pokedex?seleccionado=Stantler",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Smeargle",
+        "ruta": "/pokedex?seleccionado=Smeargle",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Tyrogue",
+        "ruta": "/pokedex?seleccionado=Tyrogue",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Hitmontop",
+        "ruta": "/pokedex?seleccionado=Hitmontop",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Smoochum",
+        "ruta": "/pokedex?seleccionado=Smoochum",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Elekid",
+        "ruta": "/pokedex?seleccionado=Elekid",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Magby",
+        "ruta": "/pokedex?seleccionado=Magby",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Miltank",
+        "ruta": "/pokedex?seleccionado=Miltank",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Blissey",
+        "ruta": "/pokedex?seleccionado=Blissey",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Raikou",
+        "ruta": "/pokedex?seleccionado=Raikou",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Entei",
+        "ruta": "/pokedex?seleccionado=Entei",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Suicune",
+        "ruta": "/pokedex?seleccionado=Suicune",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Larvitar",
+        "ruta": "/pokedex?seleccionado=Larvitar",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Pupitar",
+        "ruta": "/pokedex?seleccionado=Pupitar",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Tyranitar",
+        "ruta": "/pokedex?seleccionado=Tyranitar",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Mega Tyranitar",
+        "ruta": "/pokedex?seleccionado=Mega Tyranitar",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Lugia",
+        "ruta": "/pokedex?seleccionado=Lugia",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Ho-Oh",
+        "ruta": "/pokedex?seleccionado=Ho-Oh",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Celebi",
+        "ruta": "/pokedex?seleccionado=Celebi",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Treecko",
+        "ruta": "/pokedex?seleccionado=Treecko",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Grovyle",
+        "ruta": "/pokedex?seleccionado=Grovyle",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Sceptile",
+        "ruta": "/pokedex?seleccionado=Sceptile",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Mega Sceptile",
+        "ruta": "/pokedex?seleccionado=Mega Sceptile",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Torchic",
+        "ruta": "/pokedex?seleccionado=Torchic",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Combusken",
+        "ruta": "/pokedex?seleccionado=Combusken",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Blaziken",
+        "ruta": "/pokedex?seleccionado=Blaziken",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Mega Blaziken",
+        "ruta": "/pokedex?seleccionado=Mega Blaziken",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Mudkip",
+        "ruta": "/pokedex?seleccionado=Mudkip",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Marshtomp",
+        "ruta": "/pokedex?seleccionado=Marshtomp",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Swampert",
+        "ruta": "/pokedex?seleccionado=Swampert",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Mega Swampert",
+        "ruta": "/pokedex?seleccionado=Mega Swampert",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Poochyena",
+        "ruta": "/pokedex?seleccionado=Poochyena",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Mightyena",
+        "ruta": "/pokedex?seleccionado=Mightyena",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Zigzagoon",
+        "ruta": "/pokedex?seleccionado=Zigzagoon",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Zigzagoon de Galar",
+        "ruta": "/pokedex?seleccionado=Zigzagoon de Galar",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Linoone",
+        "ruta": "/pokedex?seleccionado=Linoone",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Linoone de Galar",
+        "ruta": "/pokedex?seleccionado=Linoone de Galar",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Wurmple",
+        "ruta": "/pokedex?seleccionado=Wurmple",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Silcoon",
+        "ruta": "/pokedex?seleccionado=Silcoon",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Beautifly",
+        "ruta": "/pokedex?seleccionado=Beautifly",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Cascoon",
+        "ruta": "/pokedex?seleccionado=Cascoon",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Dustox",
+        "ruta": "/pokedex?seleccionado=Dustox",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Lotad",
+        "ruta": "/pokedex?seleccionado=Lotad",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Lombre",
+        "ruta": "/pokedex?seleccionado=Lombre",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Ludicolo",
+        "ruta": "/pokedex?seleccionado=Ludicolo",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Seedot",
+        "ruta": "/pokedex?seleccionado=Seedot",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Nuzleaf",
+        "ruta": "/pokedex?seleccionado=Nuzleaf",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Shiftry",
+        "ruta": "/pokedex?seleccionado=Shiftry",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Taillow",
+        "ruta": "/pokedex?seleccionado=Taillow",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Swellow",
+        "ruta": "/pokedex?seleccionado=Swellow",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Wingull",
+        "ruta": "/pokedex?seleccionado=Wingull",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Pelipper",
+        "ruta": "/pokedex?seleccionado=Pelipper",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Ralts",
+        "ruta": "/pokedex?seleccionado=Ralts",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Kirlia",
+        "ruta": "/pokedex?seleccionado=Kirlia",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Gardevoir",
+        "ruta": "/pokedex?seleccionado=Gardevoir",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Mega Gardevoir",
+        "ruta": "/pokedex?seleccionado=Mega Gardevoir",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Surskit",
+        "ruta": "/pokedex?seleccionado=Surskit",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Masquerain",
+        "ruta": "/pokedex?seleccionado=Masquerain",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Shroomish",
+        "ruta": "/pokedex?seleccionado=Shroomish",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Breloom",
+        "ruta": "/pokedex?seleccionado=Breloom",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Slakoth",
+        "ruta": "/pokedex?seleccionado=Slakoth",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Vigoroth",
+        "ruta": "/pokedex?seleccionado=Vigoroth",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Slaking",
+        "ruta": "/pokedex?seleccionado=Slaking",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Nincada",
+        "ruta": "/pokedex?seleccionado=Nincada",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Ninjask",
+        "ruta": "/pokedex?seleccionado=Ninjask",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Shedinja",
+        "ruta": "/pokedex?seleccionado=Shedinja",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Whismur",
+        "ruta": "/pokedex?seleccionado=Whismur",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Loudred",
+        "ruta": "/pokedex?seleccionado=Loudred",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Exploud",
+        "ruta": "/pokedex?seleccionado=Exploud",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Makuhita",
+        "ruta": "/pokedex?seleccionado=Makuhita",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Hariyama",
+        "ruta": "/pokedex?seleccionado=Hariyama",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Azurill",
+        "ruta": "/pokedex?seleccionado=Azurill",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Nosepass",
+        "ruta": "/pokedex?seleccionado=Nosepass",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Skitty",
+        "ruta": "/pokedex?seleccionado=Skitty",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Delcatty",
+        "ruta": "/pokedex?seleccionado=Delcatty",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Sableye",
+        "ruta": "/pokedex?seleccionado=Sableye",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Mega Sableye",
+        "ruta": "/pokedex?seleccionado=Mega Sableye",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Mawile",
+        "ruta": "/pokedex?seleccionado=Mawile",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Mega Mawile",
+        "ruta": "/pokedex?seleccionado=Mega Mawile",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Aron",
+        "ruta": "/pokedex?seleccionado=Aron",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Lairon",
+        "ruta": "/pokedex?seleccionado=Lairon",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Aggron",
+        "ruta": "/pokedex?seleccionado=Aggron",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Mega Aggron",
+        "ruta": "/pokedex?seleccionado=Mega Aggron",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Meditite",
+        "ruta": "/pokedex?seleccionado=Meditite",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Medicham",
+        "ruta": "/pokedex?seleccionado=Medicham",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Mega Medicham",
+        "ruta": "/pokedex?seleccionado=Mega Medicham",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Electrike",
+        "ruta": "/pokedex?seleccionado=Electrike",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Manectric",
+        "ruta": "/pokedex?seleccionado=Manectric",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Mega Manectric",
+        "ruta": "/pokedex?seleccionado=Mega Manectric",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Plusle",
+        "ruta": "/pokedex?seleccionado=Plusle",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Minun",
+        "ruta": "/pokedex?seleccionado=Minun",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Volbeat",
+        "ruta": "/pokedex?seleccionado=Volbeat",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Illumise",
+        "ruta": "/pokedex?seleccionado=Illumise",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Roselia",
+        "ruta": "/pokedex?seleccionado=Roselia",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Gulpin",
+        "ruta": "/pokedex?seleccionado=Gulpin",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Swalot",
+        "ruta": "/pokedex?seleccionado=Swalot",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Carvanha",
+        "ruta": "/pokedex?seleccionado=Carvanha",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Sharpedo",
+        "ruta": "/pokedex?seleccionado=Sharpedo",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Mega Sharpedo",
+        "ruta": "/pokedex?seleccionado=Mega Sharpedo",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Wailmer",
+        "ruta": "/pokedex?seleccionado=Wailmer",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Wailord",
+        "ruta": "/pokedex?seleccionado=Wailord",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Numel",
+        "ruta": "/pokedex?seleccionado=Numel",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Camerupt",
+        "ruta": "/pokedex?seleccionado=Camerupt",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Mega Camerupt",
+        "ruta": "/pokedex?seleccionado=Mega Camerupt",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Torkoal",
+        "ruta": "/pokedex?seleccionado=Torkoal",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Spoink",
+        "ruta": "/pokedex?seleccionado=Spoink",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Grumpig",
+        "ruta": "/pokedex?seleccionado=Grumpig",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Spinda",
+        "ruta": "/pokedex?seleccionado=Spinda",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Trapinch",
+        "ruta": "/pokedex?seleccionado=Trapinch",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Vibrava",
+        "ruta": "/pokedex?seleccionado=Vibrava",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Flygon",
+        "ruta": "/pokedex?seleccionado=Flygon",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Cacnea",
+        "ruta": "/pokedex?seleccionado=Cacnea",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Cacturne",
+        "ruta": "/pokedex?seleccionado=Cacturne",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Swablu",
+        "ruta": "/pokedex?seleccionado=Swablu",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Altaria",
+        "ruta": "/pokedex?seleccionado=Altaria",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Mega Altaria",
+        "ruta": "/pokedex?seleccionado=Mega Altaria",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Zangoose",
+        "ruta": "/pokedex?seleccionado=Zangoose",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Seviper",
+        "ruta": "/pokedex?seleccionado=Seviper",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Lunatone",
+        "ruta": "/pokedex?seleccionado=Lunatone",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Solrock",
+        "ruta": "/pokedex?seleccionado=Solrock",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Barboach",
+        "ruta": "/pokedex?seleccionado=Barboach",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Whiscash",
+        "ruta": "/pokedex?seleccionado=Whiscash",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Corphish",
+        "ruta": "/pokedex?seleccionado=Corphish",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Crawdaunt",
+        "ruta": "/pokedex?seleccionado=Crawdaunt",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Baltoy",
+        "ruta": "/pokedex?seleccionado=Baltoy",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Claydol",
+        "ruta": "/pokedex?seleccionado=Claydol",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Lileep",
+        "ruta": "/pokedex?seleccionado=Lileep",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Cradily",
+        "ruta": "/pokedex?seleccionado=Cradily",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Anorith",
+        "ruta": "/pokedex?seleccionado=Anorith",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Armaldo",
+        "ruta": "/pokedex?seleccionado=Armaldo",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Feebas",
+        "ruta": "/pokedex?seleccionado=Feebas",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Milotic",
+        "ruta": "/pokedex?seleccionado=Milotic",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Castform",
+        "ruta": "/pokedex?seleccionado=Castform",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Kecleon",
+        "ruta": "/pokedex?seleccionado=Kecleon",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Shuppet",
+        "ruta": "/pokedex?seleccionado=Shuppet",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Banette",
+        "ruta": "/pokedex?seleccionado=Banette",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Mega Banette",
+        "ruta": "/pokedex?seleccionado=Mega Banette",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Duskull",
+        "ruta": "/pokedex?seleccionado=Duskull",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Dusclops",
+        "ruta": "/pokedex?seleccionado=Dusclops",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Tropius",
+        "ruta": "/pokedex?seleccionado=Tropius",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Chimecho",
+        "ruta": "/pokedex?seleccionado=Chimecho",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Absol",
+        "ruta": "/pokedex?seleccionado=Absol",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Mega Absol",
+        "ruta": "/pokedex?seleccionado=Mega Absol",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Wynaut",
+        "ruta": "/pokedex?seleccionado=Wynaut",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Snorunt",
+        "ruta": "/pokedex?seleccionado=Snorunt",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Glalie",
+        "ruta": "/pokedex?seleccionado=Glalie",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Mega Glalie",
+        "ruta": "/pokedex?seleccionado=Mega Glalie",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Spheal",
+        "ruta": "/pokedex?seleccionado=Spheal",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Sealeo",
+        "ruta": "/pokedex?seleccionado=Sealeo",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Walrein",
+        "ruta": "/pokedex?seleccionado=Walrein",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Clamperl",
+        "ruta": "/pokedex?seleccionado=Clamperl",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Huntail",
+        "ruta": "/pokedex?seleccionado=Huntail",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Gorebyss",
+        "ruta": "/pokedex?seleccionado=Gorebyss",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Relicanth",
+        "ruta": "/pokedex?seleccionado=Relicanth",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Luvdisc",
+        "ruta": "/pokedex?seleccionado=Luvdisc",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Bagon",
+        "ruta": "/pokedex?seleccionado=Bagon",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Shelgon",
+        "ruta": "/pokedex?seleccionado=Shelgon",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Salamence",
+        "ruta": "/pokedex?seleccionado=Salamence",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Mega Salamence",
+        "ruta": "/pokedex?seleccionado=Mega Salamence",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Beldum",
+        "ruta": "/pokedex?seleccionado=Beldum",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Metang",
+        "ruta": "/pokedex?seleccionado=Metang",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Metagross",
+        "ruta": "/pokedex?seleccionado=Metagross",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Mega Metagross",
+        "ruta": "/pokedex?seleccionado=Mega Metagross",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Regirock",
+        "ruta": "/pokedex?seleccionado=Regirock",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Regice",
+        "ruta": "/pokedex?seleccionado=Regice",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Registeel",
+        "ruta": "/pokedex?seleccionado=Registeel",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Latias",
+        "ruta": "/pokedex?seleccionado=Latias",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Mega Latias",
+        "ruta": "/pokedex?seleccionado=Mega Latias",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Latios",
+        "ruta": "/pokedex?seleccionado=Latios",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Mega Latios",
+        "ruta": "/pokedex?seleccionado=Mega Latios",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Kyogre",
+        "ruta": "/pokedex?seleccionado=Kyogre",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Kyogre primigenio",
+        "ruta": "/pokedex?seleccionado=Kyogre primigenio",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Groudon",
+        "ruta": "/pokedex?seleccionado=Groudon",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Groudon primigenio",
+        "ruta": "/pokedex?seleccionado=Groudon primigenio",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Rayquaza",
+        "ruta": "/pokedex?seleccionado=Rayquaza",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Mega Rayquaza",
+        "ruta": "/pokedex?seleccionado=Mega Rayquaza",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Jirachi",
+        "ruta": "/pokedex?seleccionado=Jirachi",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Deoxys",
+        "ruta": "/pokedex?seleccionado=Deoxys",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Turtwig",
+        "ruta": "/pokedex?seleccionado=Turtwig",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Grotle",
+        "ruta": "/pokedex?seleccionado=Grotle",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Torterra",
+        "ruta": "/pokedex?seleccionado=Torterra",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Chimchar",
+        "ruta": "/pokedex?seleccionado=Chimchar",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Monferno",
+        "ruta": "/pokedex?seleccionado=Monferno",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Infernape",
+        "ruta": "/pokedex?seleccionado=Infernape",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Piplup",
+        "ruta": "/pokedex?seleccionado=Piplup",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Prinplup",
+        "ruta": "/pokedex?seleccionado=Prinplup",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Empoleon",
+        "ruta": "/pokedex?seleccionado=Empoleon",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Starly",
+        "ruta": "/pokedex?seleccionado=Starly",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Staravia",
+        "ruta": "/pokedex?seleccionado=Staravia",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Staraptor",
+        "ruta": "/pokedex?seleccionado=Staraptor",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Bidoof",
+        "ruta": "/pokedex?seleccionado=Bidoof",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Bibarel",
+        "ruta": "/pokedex?seleccionado=Bibarel",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Kricketot",
+        "ruta": "/pokedex?seleccionado=Kricketot",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Kricketune",
+        "ruta": "/pokedex?seleccionado=Kricketune",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Shinx",
+        "ruta": "/pokedex?seleccionado=Shinx",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Luxio",
+        "ruta": "/pokedex?seleccionado=Luxio",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Luxray",
+        "ruta": "/pokedex?seleccionado=Luxray",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Budew",
+        "ruta": "/pokedex?seleccionado=Budew",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Roserade",
+        "ruta": "/pokedex?seleccionado=Roserade",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Cranidos",
+        "ruta": "/pokedex?seleccionado=Cranidos",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Rampardos",
+        "ruta": "/pokedex?seleccionado=Rampardos",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Shieldon",
+        "ruta": "/pokedex?seleccionado=Shieldon",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Bastiodon",
+        "ruta": "/pokedex?seleccionado=Bastiodon",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Burmy",
+        "ruta": "/pokedex?seleccionado=Burmy",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Wormadam Tronco planta",
+        "ruta": "/pokedex?seleccionado=Wormadam Tronco planta",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Wormadam Tronco arena",
+        "ruta": "/pokedex?seleccionado=Wormadam Tronco arena",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Wormadam Tronco basura",
+        "ruta": "/pokedex?seleccionado=Wormadam Tronco basura",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Mothim",
+        "ruta": "/pokedex?seleccionado=Mothim",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Combee",
+        "ruta": "/pokedex?seleccionado=Combee",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Vespiquen",
+        "ruta": "/pokedex?seleccionado=Vespiquen",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Pachirisu",
+        "ruta": "/pokedex?seleccionado=Pachirisu",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Buizel",
+        "ruta": "/pokedex?seleccionado=Buizel",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Floatzel",
+        "ruta": "/pokedex?seleccionado=Floatzel",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Cherubi",
+        "ruta": "/pokedex?seleccionado=Cherubi",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Cherrim",
+        "ruta": "/pokedex?seleccionado=Cherrim",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Shellos",
+        "ruta": "/pokedex?seleccionado=Shellos",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Gastrodon",
+        "ruta": "/pokedex?seleccionado=Gastrodon",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Ambipom",
+        "ruta": "/pokedex?seleccionado=Ambipom",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Drifloon",
+        "ruta": "/pokedex?seleccionado=Drifloon",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Drifblim",
+        "ruta": "/pokedex?seleccionado=Drifblim",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Buneary",
+        "ruta": "/pokedex?seleccionado=Buneary",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Lopunny",
+        "ruta": "/pokedex?seleccionado=Lopunny",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Mega Lopunny",
+        "ruta": "/pokedex?seleccionado=Mega Lopunny",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Mismagius",
+        "ruta": "/pokedex?seleccionado=Mismagius",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Honchkrow",
+        "ruta": "/pokedex?seleccionado=Honchkrow",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Glameow",
+        "ruta": "/pokedex?seleccionado=Glameow",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Purugly",
+        "ruta": "/pokedex?seleccionado=Purugly",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Chingling",
+        "ruta": "/pokedex?seleccionado=Chingling",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Stunky",
+        "ruta": "/pokedex?seleccionado=Stunky",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Skuntank",
+        "ruta": "/pokedex?seleccionado=Skuntank",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Bronzor",
+        "ruta": "/pokedex?seleccionado=Bronzor",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Bronzong",
+        "ruta": "/pokedex?seleccionado=Bronzong",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Bonsly",
+        "ruta": "/pokedex?seleccionado=Bonsly",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Mime Jr.",
+        "ruta": "/pokedex?seleccionado=Mime Jr.",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Happiny",
+        "ruta": "/pokedex?seleccionado=Happiny",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Chatot",
+        "ruta": "/pokedex?seleccionado=Chatot",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Spiritomb",
+        "ruta": "/pokedex?seleccionado=Spiritomb",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Gible",
+        "ruta": "/pokedex?seleccionado=Gible",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Gabite",
+        "ruta": "/pokedex?seleccionado=Gabite",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Garchomp",
+        "ruta": "/pokedex?seleccionado=Garchomp",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Mega Garchomp",
+        "ruta": "/pokedex?seleccionado=Mega Garchomp",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Munchlax",
+        "ruta": "/pokedex?seleccionado=Munchlax",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Riolu",
+        "ruta": "/pokedex?seleccionado=Riolu",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Lucario",
+        "ruta": "/pokedex?seleccionado=Lucario",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Mega Lucario",
+        "ruta": "/pokedex?seleccionado=Mega Lucario",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Hippopotas",
+        "ruta": "/pokedex?seleccionado=Hippopotas",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Hippowdon",
+        "ruta": "/pokedex?seleccionado=Hippowdon",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Skorupi",
+        "ruta": "/pokedex?seleccionado=Skorupi",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Drapion",
+        "ruta": "/pokedex?seleccionado=Drapion",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Croagunk",
+        "ruta": "/pokedex?seleccionado=Croagunk",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Toxicroak",
+        "ruta": "/pokedex?seleccionado=Toxicroak",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Carnivine",
+        "ruta": "/pokedex?seleccionado=Carnivine",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Finneon",
+        "ruta": "/pokedex?seleccionado=Finneon",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Lumineon",
+        "ruta": "/pokedex?seleccionado=Lumineon",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Mantyke",
+        "ruta": "/pokedex?seleccionado=Mantyke",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Snover",
+        "ruta": "/pokedex?seleccionado=Snover",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Abomasnow",
+        "ruta": "/pokedex?seleccionado=Abomasnow",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Mega Abomasnow",
+        "ruta": "/pokedex?seleccionado=Mega Abomasnow",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Weavile",
+        "ruta": "/pokedex?seleccionado=Weavile",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Magnezone",
+        "ruta": "/pokedex?seleccionado=Magnezone",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Lickilicky",
+        "ruta": "/pokedex?seleccionado=Lickilicky",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Rhyperior",
+        "ruta": "/pokedex?seleccionado=Rhyperior",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Tangrowth",
+        "ruta": "/pokedex?seleccionado=Tangrowth",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Electivire",
+        "ruta": "/pokedex?seleccionado=Electivire",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Magmortar",
+        "ruta": "/pokedex?seleccionado=Magmortar",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Togekiss",
+        "ruta": "/pokedex?seleccionado=Togekiss",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Yanmega",
+        "ruta": "/pokedex?seleccionado=Yanmega",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Leafeon",
+        "ruta": "/pokedex?seleccionado=Leafeon",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Glaceon",
+        "ruta": "/pokedex?seleccionado=Glaceon",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Gliscor",
+        "ruta": "/pokedex?seleccionado=Gliscor",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Mamoswine",
+        "ruta": "/pokedex?seleccionado=Mamoswine",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Porygon-Z",
+        "ruta": "/pokedex?seleccionado=Porygon-Z",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Gallade",
+        "ruta": "/pokedex?seleccionado=Gallade",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Mega Gallade",
+        "ruta": "/pokedex?seleccionado=Mega Gallade",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Probopass",
+        "ruta": "/pokedex?seleccionado=Probopass",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Dusknoir",
+        "ruta": "/pokedex?seleccionado=Dusknoir",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Froslass",
+        "ruta": "/pokedex?seleccionado=Froslass",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Rotom",
+        "ruta": "/pokedex?seleccionado=Rotom",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Uxie",
+        "ruta": "/pokedex?seleccionado=Uxie",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Mesprit",
+        "ruta": "/pokedex?seleccionado=Mesprit",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Azelf",
+        "ruta": "/pokedex?seleccionado=Azelf",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Dialga",
+        "ruta": "/pokedex?seleccionado=Dialga",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Dialga Forma Origen",
+        "ruta": "/pokedex?seleccionado=Dialga Forma Origen",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Palkia",
+        "ruta": "/pokedex?seleccionado=Palkia",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Palkia Forma Origen",
+        "ruta": "/pokedex?seleccionado=Palkia Forma Origen",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Heatran",
+        "ruta": "/pokedex?seleccionado=Heatran",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Regigigas",
+        "ruta": "/pokedex?seleccionado=Regigigas",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Giratina",
+        "ruta": "/pokedex?seleccionado=Giratina",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Giratina Forma Origen",
+        "ruta": "/pokedex?seleccionado=Giratina Forma Origen",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Cresselia",
+        "ruta": "/pokedex?seleccionado=Cresselia",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Phione",
+        "ruta": "/pokedex?seleccionado=Phione",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Manaphy",
+        "ruta": "/pokedex?seleccionado=Manaphy",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Darkrai",
+        "ruta": "/pokedex?seleccionado=Darkrai",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Shaymin",
+        "ruta": "/pokedex?seleccionado=Shaymin",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Shaymin Forma Cielo",
+        "ruta": "/pokedex?seleccionado=Shaymin Forma Cielo",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Arceus",
+        "ruta": "/pokedex?seleccionado=Arceus",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Victini",
+        "ruta": "/pokedex?seleccionado=Victini",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Snivy",
+        "ruta": "/pokedex?seleccionado=Snivy",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Servine",
+        "ruta": "/pokedex?seleccionado=Servine",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Serperior",
+        "ruta": "/pokedex?seleccionado=Serperior",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Tepig",
+        "ruta": "/pokedex?seleccionado=Tepig",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Pignite",
+        "ruta": "/pokedex?seleccionado=Pignite",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Emboar",
+        "ruta": "/pokedex?seleccionado=Emboar",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Oshawott",
+        "ruta": "/pokedex?seleccionado=Oshawott",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Dewott",
+        "ruta": "/pokedex?seleccionado=Dewott",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Samurott",
+        "ruta": "/pokedex?seleccionado=Samurott",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Samurott de Hisui",
+        "ruta": "/pokedex?seleccionado=Samurott de Hisui",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Patrat",
+        "ruta": "/pokedex?seleccionado=Patrat",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Watchog",
+        "ruta": "/pokedex?seleccionado=Watchog",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Lillipup",
+        "ruta": "/pokedex?seleccionado=Lillipup",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Herdier",
+        "ruta": "/pokedex?seleccionado=Herdier",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Stoutland",
+        "ruta": "/pokedex?seleccionado=Stoutland",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Purrloin",
+        "ruta": "/pokedex?seleccionado=Purrloin",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Liepard",
+        "ruta": "/pokedex?seleccionado=Liepard",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Pansage",
+        "ruta": "/pokedex?seleccionado=Pansage",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Simisage",
+        "ruta": "/pokedex?seleccionado=Simisage",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Pansear",
+        "ruta": "/pokedex?seleccionado=Pansear",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Simisear",
+        "ruta": "/pokedex?seleccionado=Simisear",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Panpour",
+        "ruta": "/pokedex?seleccionado=Panpour",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Simipour",
+        "ruta": "/pokedex?seleccionado=Simipour",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Munna",
+        "ruta": "/pokedex?seleccionado=Munna",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Musharna",
+        "ruta": "/pokedex?seleccionado=Musharna",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Pidove",
+        "ruta": "/pokedex?seleccionado=Pidove",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Tranquill",
+        "ruta": "/pokedex?seleccionado=Tranquill",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Unfezant",
+        "ruta": "/pokedex?seleccionado=Unfezant",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Blitzle",
+        "ruta": "/pokedex?seleccionado=Blitzle",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Zebstrika",
+        "ruta": "/pokedex?seleccionado=Zebstrika",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Roggenrola",
+        "ruta": "/pokedex?seleccionado=Roggenrola",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Boldore",
+        "ruta": "/pokedex?seleccionado=Boldore",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Gigalith",
+        "ruta": "/pokedex?seleccionado=Gigalith",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Woobat",
+        "ruta": "/pokedex?seleccionado=Woobat",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Swoobat",
+        "ruta": "/pokedex?seleccionado=Swoobat",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Drilbur",
+        "ruta": "/pokedex?seleccionado=Drilbur",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Excadrill",
+        "ruta": "/pokedex?seleccionado=Excadrill",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Audino",
+        "ruta": "/pokedex?seleccionado=Audino",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Mega Audino",
+        "ruta": "/pokedex?seleccionado=Mega Audino",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Timburr",
+        "ruta": "/pokedex?seleccionado=Timburr",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Gurdurr",
+        "ruta": "/pokedex?seleccionado=Gurdurr",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Conkeldurr",
+        "ruta": "/pokedex?seleccionado=Conkeldurr",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Tympole",
+        "ruta": "/pokedex?seleccionado=Tympole",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Palpitoad",
+        "ruta": "/pokedex?seleccionado=Palpitoad",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Seismitoad",
+        "ruta": "/pokedex?seleccionado=Seismitoad",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Throh",
+        "ruta": "/pokedex?seleccionado=Throh",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Sawk",
+        "ruta": "/pokedex?seleccionado=Sawk",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Sewaddle",
+        "ruta": "/pokedex?seleccionado=Sewaddle",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Swadloon",
+        "ruta": "/pokedex?seleccionado=Swadloon",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Leavanny",
+        "ruta": "/pokedex?seleccionado=Leavanny",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Venipede",
+        "ruta": "/pokedex?seleccionado=Venipede",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Whirlipede",
+        "ruta": "/pokedex?seleccionado=Whirlipede",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Scolipede",
+        "ruta": "/pokedex?seleccionado=Scolipede",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Cottonee",
+        "ruta": "/pokedex?seleccionado=Cottonee",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Whimsicott",
+        "ruta": "/pokedex?seleccionado=Whimsicott",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Petilil",
+        "ruta": "/pokedex?seleccionado=Petilil",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Lilligant",
+        "ruta": "/pokedex?seleccionado=Lilligant",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Lilligant de Hisui",
+        "ruta": "/pokedex?seleccionado=Lilligant de Hisui",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Basculin",
+        "ruta": "/pokedex?seleccionado=Basculin",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Sandile",
+        "ruta": "/pokedex?seleccionado=Sandile",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Krokorok",
+        "ruta": "/pokedex?seleccionado=Krokorok",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Krookodile",
+        "ruta": "/pokedex?seleccionado=Krookodile",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Darumaka",
+        "ruta": "/pokedex?seleccionado=Darumaka",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Darumaka de Galar",
+        "ruta": "/pokedex?seleccionado=Darumaka de Galar",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Darmanitan",
+        "ruta": "/pokedex?seleccionado=Darmanitan",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Darmanitan de Galar",
+        "ruta": "/pokedex?seleccionado=Darmanitan de Galar",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Maractus",
+        "ruta": "/pokedex?seleccionado=Maractus",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Dwebble",
+        "ruta": "/pokedex?seleccionado=Dwebble",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Crustle",
+        "ruta": "/pokedex?seleccionado=Crustle",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Scraggy",
+        "ruta": "/pokedex?seleccionado=Scraggy",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Scrafty",
+        "ruta": "/pokedex?seleccionado=Scrafty",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Sigilyph",
+        "ruta": "/pokedex?seleccionado=Sigilyph",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Yamask",
+        "ruta": "/pokedex?seleccionado=Yamask",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Yamask de Galar",
+        "ruta": "/pokedex?seleccionado=Yamask de Galar",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Cofagrigus",
+        "ruta": "/pokedex?seleccionado=Cofagrigus",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Tirtouga",
+        "ruta": "/pokedex?seleccionado=Tirtouga",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Carracosta",
+        "ruta": "/pokedex?seleccionado=Carracosta",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Archen",
+        "ruta": "/pokedex?seleccionado=Archen",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Archeops",
+        "ruta": "/pokedex?seleccionado=Archeops",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Trubbish",
+        "ruta": "/pokedex?seleccionado=Trubbish",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Garbodor",
+        "ruta": "/pokedex?seleccionado=Garbodor",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Zorua",
+        "ruta": "/pokedex?seleccionado=Zorua",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Zorua de Hisui",
+        "ruta": "/pokedex?seleccionado=Zorua de Hisui",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Zoroark",
+        "ruta": "/pokedex?seleccionado=Zoroark",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Zoroark de Hisui",
+        "ruta": "/pokedex?seleccionado=Zoroark de Hisui",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Minccino",
+        "ruta": "/pokedex?seleccionado=Minccino",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Cinccino",
+        "ruta": "/pokedex?seleccionado=Cinccino",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Gothita",
+        "ruta": "/pokedex?seleccionado=Gothita",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Gothorita",
+        "ruta": "/pokedex?seleccionado=Gothorita",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Gothitelle",
+        "ruta": "/pokedex?seleccionado=Gothitelle",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Solosis",
+        "ruta": "/pokedex?seleccionado=Solosis",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Duosion",
+        "ruta": "/pokedex?seleccionado=Duosion",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Reuniclus",
+        "ruta": "/pokedex?seleccionado=Reuniclus",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Ducklett",
+        "ruta": "/pokedex?seleccionado=Ducklett",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Swanna",
+        "ruta": "/pokedex?seleccionado=Swanna",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Vanillite",
+        "ruta": "/pokedex?seleccionado=Vanillite",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Vanillish",
+        "ruta": "/pokedex?seleccionado=Vanillish",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Vanilluxe",
+        "ruta": "/pokedex?seleccionado=Vanilluxe",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Deerling",
+        "ruta": "/pokedex?seleccionado=Deerling",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Sawsbuck",
+        "ruta": "/pokedex?seleccionado=Sawsbuck",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Emolga",
+        "ruta": "/pokedex?seleccionado=Emolga",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Karrablast",
+        "ruta": "/pokedex?seleccionado=Karrablast",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Escavalier",
+        "ruta": "/pokedex?seleccionado=Escavalier",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Foongus",
+        "ruta": "/pokedex?seleccionado=Foongus",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Amoonguss",
+        "ruta": "/pokedex?seleccionado=Amoonguss",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Frillish",
+        "ruta": "/pokedex?seleccionado=Frillish",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Jellicent",
+        "ruta": "/pokedex?seleccionado=Jellicent",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Alomomola",
+        "ruta": "/pokedex?seleccionado=Alomomola",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Joltik",
+        "ruta": "/pokedex?seleccionado=Joltik",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Galvantula",
+        "ruta": "/pokedex?seleccionado=Galvantula",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Ferroseed",
+        "ruta": "/pokedex?seleccionado=Ferroseed",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Ferrothorn",
+        "ruta": "/pokedex?seleccionado=Ferrothorn",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Klink",
+        "ruta": "/pokedex?seleccionado=Klink",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Klang",
+        "ruta": "/pokedex?seleccionado=Klang",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Klinklang",
+        "ruta": "/pokedex?seleccionado=Klinklang",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Tynamo",
+        "ruta": "/pokedex?seleccionado=Tynamo",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Eelektrik",
+        "ruta": "/pokedex?seleccionado=Eelektrik",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Eelektross",
+        "ruta": "/pokedex?seleccionado=Eelektross",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Elgyem",
+        "ruta": "/pokedex?seleccionado=Elgyem",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Beheeyem",
+        "ruta": "/pokedex?seleccionado=Beheeyem",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Litwick",
+        "ruta": "/pokedex?seleccionado=Litwick",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Lampent",
+        "ruta": "/pokedex?seleccionado=Lampent",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Chandelure",
+        "ruta": "/pokedex?seleccionado=Chandelure",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Axew",
+        "ruta": "/pokedex?seleccionado=Axew",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Fraxure",
+        "ruta": "/pokedex?seleccionado=Fraxure",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Haxorus",
+        "ruta": "/pokedex?seleccionado=Haxorus",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Cubchoo",
+        "ruta": "/pokedex?seleccionado=Cubchoo",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Beartic",
+        "ruta": "/pokedex?seleccionado=Beartic",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Cryogonal",
+        "ruta": "/pokedex?seleccionado=Cryogonal",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Shelmet",
+        "ruta": "/pokedex?seleccionado=Shelmet",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Accelgor",
+        "ruta": "/pokedex?seleccionado=Accelgor",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Stunfisk",
+        "ruta": "/pokedex?seleccionado=Stunfisk",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Stunfisk de Galar",
+        "ruta": "/pokedex?seleccionado=Stunfisk de Galar",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Mienfoo",
+        "ruta": "/pokedex?seleccionado=Mienfoo",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Mienshao",
+        "ruta": "/pokedex?seleccionado=Mienshao",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Druddigon",
+        "ruta": "/pokedex?seleccionado=Druddigon",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Golett",
+        "ruta": "/pokedex?seleccionado=Golett",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Golurk",
+        "ruta": "/pokedex?seleccionado=Golurk",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Pawniard",
+        "ruta": "/pokedex?seleccionado=Pawniard",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Bisharp",
+        "ruta": "/pokedex?seleccionado=Bisharp",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Bouffalant",
+        "ruta": "/pokedex?seleccionado=Bouffalant",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Rufflet",
+        "ruta": "/pokedex?seleccionado=Rufflet",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Braviary",
+        "ruta": "/pokedex?seleccionado=Braviary",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Braviary de Hisui",
+        "ruta": "/pokedex?seleccionado=Braviary de Hisui",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Vullaby",
+        "ruta": "/pokedex?seleccionado=Vullaby",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Mandibuzz",
+        "ruta": "/pokedex?seleccionado=Mandibuzz",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Heatmor",
+        "ruta": "/pokedex?seleccionado=Heatmor",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Durant",
+        "ruta": "/pokedex?seleccionado=Durant",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Deino",
+        "ruta": "/pokedex?seleccionado=Deino",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Zweilous",
+        "ruta": "/pokedex?seleccionado=Zweilous",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Hydreigon",
+        "ruta": "/pokedex?seleccionado=Hydreigon",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Larvesta",
+        "ruta": "/pokedex?seleccionado=Larvesta",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Volcarona",
+        "ruta": "/pokedex?seleccionado=Volcarona",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Cobalion",
+        "ruta": "/pokedex?seleccionado=Cobalion",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Terrakion",
+        "ruta": "/pokedex?seleccionado=Terrakion",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Virizion",
+        "ruta": "/pokedex?seleccionado=Virizion",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Tornadus",
+        "ruta": "/pokedex?seleccionado=Tornadus",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Tornadus Forma Tótem",
+        "ruta": "/pokedex?seleccionado=Tornadus Forma Tótem",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Thundurus",
+        "ruta": "/pokedex?seleccionado=Thundurus",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Thundurus Forma Tótem",
+        "ruta": "/pokedex?seleccionado=Thundurus Forma Tótem",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Reshiram",
+        "ruta": "/pokedex?seleccionado=Reshiram",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Zekrom",
+        "ruta": "/pokedex?seleccionado=Zekrom",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Landorus",
+        "ruta": "/pokedex?seleccionado=Landorus",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Landorus Forma Tótem",
+        "ruta": "/pokedex?seleccionado=Landorus Forma Tótem",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Kyurem",
+        "ruta": "/pokedex?seleccionado=Kyurem",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Kyurem Blanco",
+        "ruta": "/pokedex?seleccionado=Kyurem Blanco",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Kyurem Negro",
+        "ruta": "/pokedex?seleccionado=Kyurem Negro",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Keldeo",
+        "ruta": "/pokedex?seleccionado=Keldeo",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Keldeo Forma brío",
+        "ruta": "/pokedex?seleccionado=Keldeo Forma brío",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Meloetta",
+        "ruta": "/pokedex?seleccionado=Meloetta",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Meloetta Forma Danza",
+        "ruta": "/pokedex?seleccionado=Meloetta Forma Danza",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Genesect",
+        "ruta": "/pokedex?seleccionado=Genesect",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Chespin",
+        "ruta": "/pokedex?seleccionado=Chespin",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Quilladin",
+        "ruta": "/pokedex?seleccionado=Quilladin",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Chesnaught",
+        "ruta": "/pokedex?seleccionado=Chesnaught",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Fennekin",
+        "ruta": "/pokedex?seleccionado=Fennekin",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Braixen",
+        "ruta": "/pokedex?seleccionado=Braixen",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Delphox",
+        "ruta": "/pokedex?seleccionado=Delphox",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Froakie",
+        "ruta": "/pokedex?seleccionado=Froakie",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Frogadier",
+        "ruta": "/pokedex?seleccionado=Frogadier",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Greninja",
+        "ruta": "/pokedex?seleccionado=Greninja",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Bunnelby",
+        "ruta": "/pokedex?seleccionado=Bunnelby",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Diggersby",
+        "ruta": "/pokedex?seleccionado=Diggersby",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Fletchling",
+        "ruta": "/pokedex?seleccionado=Fletchling",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Fletchinder",
+        "ruta": "/pokedex?seleccionado=Fletchinder",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Talonflame",
+        "ruta": "/pokedex?seleccionado=Talonflame",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Scatterbug",
+        "ruta": "/pokedex?seleccionado=Scatterbug",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Spewpa",
+        "ruta": "/pokedex?seleccionado=Spewpa",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Vivillon",
+        "ruta": "/pokedex?seleccionado=Vivillon",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Litleo",
+        "ruta": "/pokedex?seleccionado=Litleo",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Pyroar",
+        "ruta": "/pokedex?seleccionado=Pyroar",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Flabébé",
+        "ruta": "/pokedex?seleccionado=Flabébé",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Floette",
+        "ruta": "/pokedex?seleccionado=Floette",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Florges",
+        "ruta": "/pokedex?seleccionado=Florges",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Skiddo",
+        "ruta": "/pokedex?seleccionado=Skiddo",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Gogoat",
+        "ruta": "/pokedex?seleccionado=Gogoat",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Pancham",
+        "ruta": "/pokedex?seleccionado=Pancham",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Pangoro",
+        "ruta": "/pokedex?seleccionado=Pangoro",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Furfrou",
+        "ruta": "/pokedex?seleccionado=Furfrou",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Espurr",
+        "ruta": "/pokedex?seleccionado=Espurr",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Meowstic Macho",
+        "ruta": "/pokedex?seleccionado=Meowstic Macho",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Meowstic Hembra",
+        "ruta": "/pokedex?seleccionado=Meowstic Hembra",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Honedge",
+        "ruta": "/pokedex?seleccionado=Honedge",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Doublade",
+        "ruta": "/pokedex?seleccionado=Doublade",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Aegislash",
+        "ruta": "/pokedex?seleccionado=Aegislash",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Spritzee",
+        "ruta": "/pokedex?seleccionado=Spritzee",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Aromatisse",
+        "ruta": "/pokedex?seleccionado=Aromatisse",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Swirlix",
+        "ruta": "/pokedex?seleccionado=Swirlix",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Slurpuff",
+        "ruta": "/pokedex?seleccionado=Slurpuff",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Inkay",
+        "ruta": "/pokedex?seleccionado=Inkay",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Malamar",
+        "ruta": "/pokedex?seleccionado=Malamar",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Binacle",
+        "ruta": "/pokedex?seleccionado=Binacle",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Barbaracle",
+        "ruta": "/pokedex?seleccionado=Barbaracle",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Skrelp",
+        "ruta": "/pokedex?seleccionado=Skrelp",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Dragalge",
+        "ruta": "/pokedex?seleccionado=Dragalge",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Clauncher",
+        "ruta": "/pokedex?seleccionado=Clauncher",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Clawitzer",
+        "ruta": "/pokedex?seleccionado=Clawitzer",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Heliolisk",
+        "ruta": "/pokedex?seleccionado=Heliolisk",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Helioptile",
+        "ruta": "/pokedex?seleccionado=Helioptile",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Tyrunt",
+        "ruta": "/pokedex?seleccionado=Tyrunt",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Tyrantrum",
+        "ruta": "/pokedex?seleccionado=Tyrantrum",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Amaura",
+        "ruta": "/pokedex?seleccionado=Amaura",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Aurorus",
+        "ruta": "/pokedex?seleccionado=Aurorus",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Sylveon",
+        "ruta": "/pokedex?seleccionado=Sylveon",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Hawlucha",
+        "ruta": "/pokedex?seleccionado=Hawlucha",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Dedenne",
+        "ruta": "/pokedex?seleccionado=Dedenne",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Carbink",
+        "ruta": "/pokedex?seleccionado=Carbink",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Goomy",
+        "ruta": "/pokedex?seleccionado=Goomy",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Sliggoo",
+        "ruta": "/pokedex?seleccionado=Sliggoo",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Sliggoo de Hisui",
+        "ruta": "/pokedex?seleccionado=Sliggoo de Hisui",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Goodra",
+        "ruta": "/pokedex?seleccionado=Goodra",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Goodra de Hisui",
+        "ruta": "/pokedex?seleccionado=Goodra de Hisui",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Klefki",
+        "ruta": "/pokedex?seleccionado=Klefki",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Phantump",
+        "ruta": "/pokedex?seleccionado=Phantump",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Trevenant",
+        "ruta": "/pokedex?seleccionado=Trevenant",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Pumpkaboo",
+        "ruta": "/pokedex?seleccionado=Pumpkaboo",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Gourgeist",
+        "ruta": "/pokedex?seleccionado=Gourgeist",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Bergmite",
+        "ruta": "/pokedex?seleccionado=Bergmite",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Avalugg",
+        "ruta": "/pokedex?seleccionado=Avalugg",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Avalugg de Hisui",
+        "ruta": "/pokedex?seleccionado=Avalugg de Hisui",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Noibat",
+        "ruta": "/pokedex?seleccionado=Noibat",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Noivern",
+        "ruta": "/pokedex?seleccionado=Noivern",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Xerneas",
+        "ruta": "/pokedex?seleccionado=Xerneas",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Yveltal",
+        "ruta": "/pokedex?seleccionado=Yveltal",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Zygarde",
+        "ruta": "/pokedex?seleccionado=Zygarde",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Núcleo de Zygarde",
+        "ruta": "/pokedex?seleccionado=Núcleo de Zygarde",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Zygarde completo",
+        "ruta": "/pokedex?seleccionado=Zygarde completo",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Zygarde Forma 10%",
+        "ruta": "/pokedex?seleccionado=Zygarde Forma 10%",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Diancie",
+        "ruta": "/pokedex?seleccionado=Diancie",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Mega Diancie",
+        "ruta": "/pokedex?seleccionado=Mega Diancie",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Hoopa",
+        "ruta": "/pokedex?seleccionado=Hoopa",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Hoopa desatado",
+        "ruta": "/pokedex?seleccionado=Hoopa desatado",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Volcanion",
+        "ruta": "/pokedex?seleccionado=Volcanion",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Rowlet",
+        "ruta": "/pokedex?seleccionado=Rowlet",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Dartrix",
+        "ruta": "/pokedex?seleccionado=Dartrix",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Decidueye",
+        "ruta": "/pokedex?seleccionado=Decidueye",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Decidueye de Hisui",
+        "ruta": "/pokedex?seleccionado=Decidueye de Hisui",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Litten",
+        "ruta": "/pokedex?seleccionado=Litten",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Torracat",
+        "ruta": "/pokedex?seleccionado=Torracat",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Incineroar",
+        "ruta": "/pokedex?seleccionado=Incineroar",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Popplio",
+        "ruta": "/pokedex?seleccionado=Popplio",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Brionne",
+        "ruta": "/pokedex?seleccionado=Brionne",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Primarina",
+        "ruta": "/pokedex?seleccionado=Primarina",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Pikipek",
+        "ruta": "/pokedex?seleccionado=Pikipek",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Trumbeak",
+        "ruta": "/pokedex?seleccionado=Trumbeak",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Toucannon",
+        "ruta": "/pokedex?seleccionado=Toucannon",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Yungoos",
+        "ruta": "/pokedex?seleccionado=Yungoos",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Gumshoos",
+        "ruta": "/pokedex?seleccionado=Gumshoos",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Grubbin",
+        "ruta": "/pokedex?seleccionado=Grubbin",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Charjabug",
+        "ruta": "/pokedex?seleccionado=Charjabug",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Vikavolt",
+        "ruta": "/pokedex?seleccionado=Vikavolt",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Crabrawler",
+        "ruta": "/pokedex?seleccionado=Crabrawler",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Crabominable",
+        "ruta": "/pokedex?seleccionado=Crabominable",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Oricorio",
+        "ruta": "/pokedex?seleccionado=Oricorio",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Cutiefly",
+        "ruta": "/pokedex?seleccionado=Cutiefly",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Ribombee",
+        "ruta": "/pokedex?seleccionado=Ribombee",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Rockruff",
+        "ruta": "/pokedex?seleccionado=Rockruff",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Lycanroc diurno",
+        "ruta": "/pokedex?seleccionado=Lycanroc diurno",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Lycanroc crepuscular",
+        "ruta": "/pokedex?seleccionado=Lycanroc crepuscular",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Lycanroc nocturno",
+        "ruta": "/pokedex?seleccionado=Lycanroc nocturno",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Wishiwashi",
+        "ruta": "/pokedex?seleccionado=Wishiwashi",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Banco de Wishiwashi",
+        "ruta": "/pokedex?seleccionado=Banco de Wishiwashi",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Mareanie",
+        "ruta": "/pokedex?seleccionado=Mareanie",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Toxapex",
+        "ruta": "/pokedex?seleccionado=Toxapex",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Mudbray",
+        "ruta": "/pokedex?seleccionado=Mudbray",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Mudsdale",
+        "ruta": "/pokedex?seleccionado=Mudsdale",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Dewpider",
+        "ruta": "/pokedex?seleccionado=Dewpider",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Araquanid",
+        "ruta": "/pokedex?seleccionado=Araquanid",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Fomantis",
+        "ruta": "/pokedex?seleccionado=Fomantis",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Lurantis",
+        "ruta": "/pokedex?seleccionado=Lurantis",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Morelull",
+        "ruta": "/pokedex?seleccionado=Morelull",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Shiinotic",
+        "ruta": "/pokedex?seleccionado=Shiinotic",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Salandit",
+        "ruta": "/pokedex?seleccionado=Salandit",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Salazzle",
+        "ruta": "/pokedex?seleccionado=Salazzle",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Stufful",
+        "ruta": "/pokedex?seleccionado=Stufful",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Bewear",
+        "ruta": "/pokedex?seleccionado=Bewear",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Bounsweet",
+        "ruta": "/pokedex?seleccionado=Bounsweet",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Steenee",
+        "ruta": "/pokedex?seleccionado=Steenee",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Tsareena",
+        "ruta": "/pokedex?seleccionado=Tsareena",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Comfey",
+        "ruta": "/pokedex?seleccionado=Comfey",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Oranguru",
+        "ruta": "/pokedex?seleccionado=Oranguru",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Passimian",
+        "ruta": "/pokedex?seleccionado=Passimian",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Wimpod",
+        "ruta": "/pokedex?seleccionado=Wimpod",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Golisopod",
+        "ruta": "/pokedex?seleccionado=Golisopod",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Sandygast",
+        "ruta": "/pokedex?seleccionado=Sandygast",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Palossand",
+        "ruta": "/pokedex?seleccionado=Palossand",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Pyukumuku",
+        "ruta": "/pokedex?seleccionado=Pyukumuku",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Código Cero",
+        "ruta": "/pokedex?seleccionado=Código Cero",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Silvally",
+        "ruta": "/pokedex?seleccionado=Silvally",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Minior",
+        "ruta": "/pokedex?seleccionado=Minior",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Komala",
+        "ruta": "/pokedex?seleccionado=Komala",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Turtonator",
+        "ruta": "/pokedex?seleccionado=Turtonator",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Togedemaru",
+        "ruta": "/pokedex?seleccionado=Togedemaru",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Mimikyu",
+        "ruta": "/pokedex?seleccionado=Mimikyu",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Bruxish",
+        "ruta": "/pokedex?seleccionado=Bruxish",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Drampa",
+        "ruta": "/pokedex?seleccionado=Drampa",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Dhelmise",
+        "ruta": "/pokedex?seleccionado=Dhelmise",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Jangmo-o",
+        "ruta": "/pokedex?seleccionado=Jangmo-o",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Hakamo-o",
+        "ruta": "/pokedex?seleccionado=Hakamo-o",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Kommo-o",
+        "ruta": "/pokedex?seleccionado=Kommo-o",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Tapu Koko",
+        "ruta": "/pokedex?seleccionado=Tapu Koko",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Tapu Lele",
+        "ruta": "/pokedex?seleccionado=Tapu Lele",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Tapu Bulu",
+        "ruta": "/pokedex?seleccionado=Tapu Bulu",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Tapu Fini",
+        "ruta": "/pokedex?seleccionado=Tapu Fini",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Cosmog",
+        "ruta": "/pokedex?seleccionado=Cosmog",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Cosmoem",
+        "ruta": "/pokedex?seleccionado=Cosmoem",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Solgaleo",
+        "ruta": "/pokedex?seleccionado=Solgaleo",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Lunala",
+        "ruta": "/pokedex?seleccionado=Lunala",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Nihilego",
+        "ruta": "/pokedex?seleccionado=Nihilego",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Buzzwole",
+        "ruta": "/pokedex?seleccionado=Buzzwole",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Pheromosa",
+        "ruta": "/pokedex?seleccionado=Pheromosa",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Xurkitree",
+        "ruta": "/pokedex?seleccionado=Xurkitree",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Celesteela",
+        "ruta": "/pokedex?seleccionado=Celesteela",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Kartana",
+        "ruta": "/pokedex?seleccionado=Kartana",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Guzzlord",
+        "ruta": "/pokedex?seleccionado=Guzzlord",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Necrozma",
+        "ruta": "/pokedex?seleccionado=Necrozma",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Necrozma alas del alba",
+        "ruta": "/pokedex?seleccionado=Necrozma alas del alba",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Necrozma melena crepuscular",
+        "ruta": "/pokedex?seleccionado=Necrozma melena crepuscular",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "UltraNecrozma",
+        "ruta": "/pokedex?seleccionado=UltraNecrozma",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Magearna",
+        "ruta": "/pokedex?seleccionado=Magearna",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Marshadow",
+        "ruta": "/pokedex?seleccionado=Marshadow",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Poipole",
+        "ruta": "/pokedex?seleccionado=Poipole",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Naganadel",
+        "ruta": "/pokedex?seleccionado=Naganadel",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Stakataka",
+        "ruta": "/pokedex?seleccionado=Stakataka",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Blacephalon",
+        "ruta": "/pokedex?seleccionado=Blacephalon",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Zeraora",
+        "ruta": "/pokedex?seleccionado=Zeraora",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Meltan",
+        "ruta": "/pokedex?seleccionado=Meltan",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Melmetal",
+        "ruta": "/pokedex?seleccionado=Melmetal",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Grookey",
+        "ruta": "/pokedex?seleccionado=Grookey",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Thwackey",
+        "ruta": "/pokedex?seleccionado=Thwackey",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Rillaboom",
+        "ruta": "/pokedex?seleccionado=Rillaboom",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Scorbunny",
+        "ruta": "/pokedex?seleccionado=Scorbunny",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Raboot",
+        "ruta": "/pokedex?seleccionado=Raboot",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Cinderace",
+        "ruta": "/pokedex?seleccionado=Cinderace",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Sobble",
+        "ruta": "/pokedex?seleccionado=Sobble",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Inteleon",
+        "ruta": "/pokedex?seleccionado=Inteleon",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Drizzile",
+        "ruta": "/pokedex?seleccionado=Drizzile",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Skwovet",
+        "ruta": "/pokedex?seleccionado=Skwovet",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Greedent",
+        "ruta": "/pokedex?seleccionado=Greedent",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Rookidee",
+        "ruta": "/pokedex?seleccionado=Rookidee",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Corvisquire",
+        "ruta": "/pokedex?seleccionado=Corvisquire",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Corviknight",
+        "ruta": "/pokedex?seleccionado=Corviknight",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Blipbug",
+        "ruta": "/pokedex?seleccionado=Blipbug",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Dottler",
+        "ruta": "/pokedex?seleccionado=Dottler",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Orbeetle",
+        "ruta": "/pokedex?seleccionado=Orbeetle",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Nickit",
+        "ruta": "/pokedex?seleccionado=Nickit",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Thievul",
+        "ruta": "/pokedex?seleccionado=Thievul",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Gossifleur",
+        "ruta": "/pokedex?seleccionado=Gossifleur",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Eldegoss",
+        "ruta": "/pokedex?seleccionado=Eldegoss",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Wooloo",
+        "ruta": "/pokedex?seleccionado=Wooloo",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Dubwool",
+        "ruta": "/pokedex?seleccionado=Dubwool",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Chewtle",
+        "ruta": "/pokedex?seleccionado=Chewtle",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Drednaw",
+        "ruta": "/pokedex?seleccionado=Drednaw",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Yamper",
+        "ruta": "/pokedex?seleccionado=Yamper",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Boltund",
+        "ruta": "/pokedex?seleccionado=Boltund",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Rolycoly",
+        "ruta": "/pokedex?seleccionado=Rolycoly",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Carkol",
+        "ruta": "/pokedex?seleccionado=Carkol",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Coalossal",
+        "ruta": "/pokedex?seleccionado=Coalossal",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Applin",
+        "ruta": "/pokedex?seleccionado=Applin",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Flapple",
+        "ruta": "/pokedex?seleccionado=Flapple",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Appletun",
+        "ruta": "/pokedex?seleccionado=Appletun",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Silicobra",
+        "ruta": "/pokedex?seleccionado=Silicobra",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Sandaconda",
+        "ruta": "/pokedex?seleccionado=Sandaconda",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Cramorant",
+        "ruta": "/pokedex?seleccionado=Cramorant",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Arrokuda",
+        "ruta": "/pokedex?seleccionado=Arrokuda",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Barraskewda",
+        "ruta": "/pokedex?seleccionado=Barraskewda",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Toxel",
+        "ruta": "/pokedex?seleccionado=Toxel",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Toxtricity Forma aguda",
+        "ruta": "/pokedex?seleccionado=Toxtricity Forma aguda",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Toxtricity Forma grave",
+        "ruta": "/pokedex?seleccionado=Toxtricity Forma grave",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Sizzlipede",
+        "ruta": "/pokedex?seleccionado=Sizzlipede",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Centiskorch",
+        "ruta": "/pokedex?seleccionado=Centiskorch",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Clobbopus",
+        "ruta": "/pokedex?seleccionado=Clobbopus",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Grapploct",
+        "ruta": "/pokedex?seleccionado=Grapploct",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Sinistea",
+        "ruta": "/pokedex?seleccionado=Sinistea",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Polteageist",
+        "ruta": "/pokedex?seleccionado=Polteageist",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Hatenna",
+        "ruta": "/pokedex?seleccionado=Hatenna",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Hattrem",
+        "ruta": "/pokedex?seleccionado=Hattrem",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Hatterene",
+        "ruta": "/pokedex?seleccionado=Hatterene",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Impidimp",
+        "ruta": "/pokedex?seleccionado=Impidimp",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Morgrem",
+        "ruta": "/pokedex?seleccionado=Morgrem",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Grimmsnarl",
+        "ruta": "/pokedex?seleccionado=Grimmsnarl",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Obstagoon",
+        "ruta": "/pokedex?seleccionado=Obstagoon",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Perrserker",
+        "ruta": "/pokedex?seleccionado=Perrserker",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Cursola",
+        "ruta": "/pokedex?seleccionado=Cursola",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Sirfetch'd",
+        "ruta": "/pokedex?seleccionado=Sirfetch'd",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Mr. Rime",
+        "ruta": "/pokedex?seleccionado=Mr. Rime",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Runerigus",
+        "ruta": "/pokedex?seleccionado=Runerigus",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Milcery",
+        "ruta": "/pokedex?seleccionado=Milcery",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Alcremie",
+        "ruta": "/pokedex?seleccionado=Alcremie",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Falinks",
+        "ruta": "/pokedex?seleccionado=Falinks",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Pincurchin",
+        "ruta": "/pokedex?seleccionado=Pincurchin",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Snom",
+        "ruta": "/pokedex?seleccionado=Snom",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Frosmoth",
+        "ruta": "/pokedex?seleccionado=Frosmoth",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Stonjourner",
+        "ruta": "/pokedex?seleccionado=Stonjourner",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Eiscue",
+        "ruta": "/pokedex?seleccionado=Eiscue",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Indeedee macho",
+        "ruta": "/pokedex?seleccionado=Indeedee macho",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Indeedee hembra",
+        "ruta": "/pokedex?seleccionado=Indeedee hembra",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Morpeko Forma saciada",
+        "ruta": "/pokedex?seleccionado=Morpeko Forma saciada",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Morpeko Forma voraz",
+        "ruta": "/pokedex?seleccionado=Morpeko Forma voraz",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Cufant",
+        "ruta": "/pokedex?seleccionado=Cufant",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Copperajah",
+        "ruta": "/pokedex?seleccionado=Copperajah",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Dracozolt",
+        "ruta": "/pokedex?seleccionado=Dracozolt",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Arctozolt",
+        "ruta": "/pokedex?seleccionado=Arctozolt",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Dracovish",
+        "ruta": "/pokedex?seleccionado=Dracovish",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Arctovish",
+        "ruta": "/pokedex?seleccionado=Arctovish",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Duraludon",
+        "ruta": "/pokedex?seleccionado=Duraludon",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Dreepy",
+        "ruta": "/pokedex?seleccionado=Dreepy",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Drakloak",
+        "ruta": "/pokedex?seleccionado=Drakloak",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Dragapult",
+        "ruta": "/pokedex?seleccionado=Dragapult",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Zacian",
+        "ruta": "/pokedex?seleccionado=Zacian",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Zacian espada suprema",
+        "ruta": "/pokedex?seleccionado=Zacian espada suprema",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Zamazenta",
+        "ruta": "/pokedex?seleccionado=Zamazenta",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Zamazenta escudo supremo",
+        "ruta": "/pokedex?seleccionado=Zamazenta escudo supremo",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Eternatus",
+        "ruta": "/pokedex?seleccionado=Eternatus",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Eternatus dinamax infinito",
+        "ruta": "/pokedex?seleccionado=Eternatus dinamax infinito",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Kubfu",
+        "ruta": "/pokedex?seleccionado=Kubfu",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Urshifu estilo brusco",
+        "ruta": "/pokedex?seleccionado=Urshifu estilo brusco",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Urshifu estilo fluido",
+        "ruta": "/pokedex?seleccionado=Urshifu estilo fluido",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Zarude",
+        "ruta": "/pokedex?seleccionado=Zarude",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Regieleki",
+        "ruta": "/pokedex?seleccionado=Regieleki",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Regidrago",
+        "ruta": "/pokedex?seleccionado=Regidrago",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Glastrier",
+        "ruta": "/pokedex?seleccionado=Glastrier",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Spectrier",
+        "ruta": "/pokedex?seleccionado=Spectrier",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Calyrex",
+        "ruta": "/pokedex?seleccionado=Calyrex",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Wyrdeer",
+        "ruta": "/pokedex?seleccionado=Wyrdeer",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Kleavor",
+        "ruta": "/pokedex?seleccionado=Kleavor",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Ursaluna",
+        "ruta": "/pokedex?seleccionado=Ursaluna",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Ursaluna luna carmesí",
+        "ruta": "/pokedex?seleccionado=Ursaluna luna carmesí",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Basculegion",
+        "ruta": "/pokedex?seleccionado=Basculegion",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Sneasler",
+        "ruta": "/pokedex?seleccionado=Sneasler",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Overqwill",
+        "ruta": "/pokedex?seleccionado=Overqwill",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Enamorus",
+        "ruta": "/pokedex?seleccionado=Enamorus",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Enamorus Forma tótem",
+        "ruta": "/pokedex?seleccionado=Enamorus Forma tótem",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Sprigatito",
+        "ruta": "/pokedex?seleccionado=Sprigatito",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Floragato",
+        "ruta": "/pokedex?seleccionado=Floragato",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Meowscarada",
+        "ruta": "/pokedex?seleccionado=Meowscarada",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Fuecoco",
+        "ruta": "/pokedex?seleccionado=Fuecoco",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Crocalor",
+        "ruta": "/pokedex?seleccionado=Crocalor",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Skeledirge",
+        "ruta": "/pokedex?seleccionado=Skeledirge",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Quaxly",
+        "ruta": "/pokedex?seleccionado=Quaxly",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Quaxwell",
+        "ruta": "/pokedex?seleccionado=Quaxwell",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Quaquaval",
+        "ruta": "/pokedex?seleccionado=Quaquaval",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Lechonk",
+        "ruta": "/pokedex?seleccionado=Lechonk",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Oinkologne macho",
+        "ruta": "/pokedex?seleccionado=Oinkologne macho",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Oinkologne hembra",
+        "ruta": "/pokedex?seleccionado=Oinkologne hembra",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Tarountula",
+        "ruta": "/pokedex?seleccionado=Tarountula",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Spidops",
+        "ruta": "/pokedex?seleccionado=Spidops",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Nymble",
+        "ruta": "/pokedex?seleccionado=Nymble",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Lokix",
+        "ruta": "/pokedex?seleccionado=Lokix",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Pawmi",
+        "ruta": "/pokedex?seleccionado=Pawmi",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Pawmo",
+        "ruta": "/pokedex?seleccionado=Pawmo",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Pawmot",
+        "ruta": "/pokedex?seleccionado=Pawmot",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Tandemaus",
+        "ruta": "/pokedex?seleccionado=Tandemaus",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Maushold",
+        "ruta": "/pokedex?seleccionado=Maushold",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Fidough",
+        "ruta": "/pokedex?seleccionado=Fidough",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Dachsbun",
+        "ruta": "/pokedex?seleccionado=Dachsbun",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Smoliv",
+        "ruta": "/pokedex?seleccionado=Smoliv",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Dolliv",
+        "ruta": "/pokedex?seleccionado=Dolliv",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Arboliva",
+        "ruta": "/pokedex?seleccionado=Arboliva",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Squawkabilly",
+        "ruta": "/pokedex?seleccionado=Squawkabilly",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Nacli",
+        "ruta": "/pokedex?seleccionado=Nacli",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Naclstack",
+        "ruta": "/pokedex?seleccionado=Naclstack",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Garganacl",
+        "ruta": "/pokedex?seleccionado=Garganacl",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Charcadet",
+        "ruta": "/pokedex?seleccionado=Charcadet",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Armarouge",
+        "ruta": "/pokedex?seleccionado=Armarouge",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Ceruledge",
+        "ruta": "/pokedex?seleccionado=Ceruledge",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Tadbulb",
+        "ruta": "/pokedex?seleccionado=Tadbulb",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Bellibolt",
+        "ruta": "/pokedex?seleccionado=Bellibolt",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Wattrel",
+        "ruta": "/pokedex?seleccionado=Wattrel",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Kilowattrel",
+        "ruta": "/pokedex?seleccionado=Kilowattrel",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Maschiff",
+        "ruta": "/pokedex?seleccionado=Maschiff",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Mabosstiff",
+        "ruta": "/pokedex?seleccionado=Mabosstiff",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Shroodle",
+        "ruta": "/pokedex?seleccionado=Shroodle",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Grafaiai",
+        "ruta": "/pokedex?seleccionado=Grafaiai",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Bramblin",
+        "ruta": "/pokedex?seleccionado=Bramblin",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Brambleghast",
+        "ruta": "/pokedex?seleccionado=Brambleghast",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Toedscool",
+        "ruta": "/pokedex?seleccionado=Toedscool",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Toedscruel",
+        "ruta": "/pokedex?seleccionado=Toedscruel",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Klawf",
+        "ruta": "/pokedex?seleccionado=Klawf",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Capsakid",
+        "ruta": "/pokedex?seleccionado=Capsakid",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Scovillain",
+        "ruta": "/pokedex?seleccionado=Scovillain",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Rellor",
+        "ruta": "/pokedex?seleccionado=Rellor",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Rabsca",
+        "ruta": "/pokedex?seleccionado=Rabsca",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Flittle",
+        "ruta": "/pokedex?seleccionado=Flittle",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Espathra",
+        "ruta": "/pokedex?seleccionado=Espathra",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Tinkatink",
+        "ruta": "/pokedex?seleccionado=Tinkatink",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Tinkatuff",
+        "ruta": "/pokedex?seleccionado=Tinkatuff",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Tinkaton",
+        "ruta": "/pokedex?seleccionado=Tinkaton",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Wiglett",
+        "ruta": "/pokedex?seleccionado=Wiglett",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Wugtrio",
+        "ruta": "/pokedex?seleccionado=Wugtrio",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Bombirdier",
+        "ruta": "/pokedex?seleccionado=Bombirdier",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Finizen",
+        "ruta": "/pokedex?seleccionado=Finizen",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Palafin",
+        "ruta": "/pokedex?seleccionado=Palafin",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Palafin forma heróica",
+        "ruta": "/pokedex?seleccionado=Palafin forma heróica",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Varoom",
+        "ruta": "/pokedex?seleccionado=Varoom",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Revavroom",
+        "ruta": "/pokedex?seleccionado=Revavroom",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Cyclizar",
+        "ruta": "/pokedex?seleccionado=Cyclizar",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Orthworm",
+        "ruta": "/pokedex?seleccionado=Orthworm",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Glimmet",
+        "ruta": "/pokedex?seleccionado=Glimmet",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Glimmora",
+        "ruta": "/pokedex?seleccionado=Glimmora",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Greavard",
+        "ruta": "/pokedex?seleccionado=Greavard",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Houndstone",
+        "ruta": "/pokedex?seleccionado=Houndstone",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Flamigo",
+        "ruta": "/pokedex?seleccionado=Flamigo",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Cetoddle",
+        "ruta": "/pokedex?seleccionado=Cetoddle",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Cetitan",
+        "ruta": "/pokedex?seleccionado=Cetitan",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Veluza",
+        "ruta": "/pokedex?seleccionado=Veluza",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Dondozo",
+        "ruta": "/pokedex?seleccionado=Dondozo",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Tatsugiri",
+        "ruta": "/pokedex?seleccionado=Tatsugiri",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Annihilape",
+        "ruta": "/pokedex?seleccionado=Annihilape",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Clodsire",
+        "ruta": "/pokedex?seleccionado=Clodsire",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Farigiraf",
+        "ruta": "/pokedex?seleccionado=Farigiraf",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Dudunsparce",
+        "ruta": "/pokedex?seleccionado=Dudunsparce",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Kingambit",
+        "ruta": "/pokedex?seleccionado=Kingambit",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Colmilargo",
+        "ruta": "/pokedex?seleccionado=Colmilargo",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Colagrito",
+        "ruta": "/pokedex?seleccionado=Colagrito",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Furioseta",
+        "ruta": "/pokedex?seleccionado=Furioseta",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Melenaleteo",
+        "ruta": "/pokedex?seleccionado=Melenaleteo",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Reptalada",
+        "ruta": "/pokedex?seleccionado=Reptalada",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Pelarena",
+        "ruta": "/pokedex?seleccionado=Pelarena",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Ferrodada",
+        "ruta": "/pokedex?seleccionado=Ferrodada",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Ferrosaco",
+        "ruta": "/pokedex?seleccionado=Ferrosaco",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Ferropalmas",
+        "ruta": "/pokedex?seleccionado=Ferropalmas",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Ferrocuello",
+        "ruta": "/pokedex?seleccionado=Ferrocuello",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Ferropolilla",
+        "ruta": "/pokedex?seleccionado=Ferropolilla",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Ferropúas",
+        "ruta": "/pokedex?seleccionado=Ferropúas",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Frigibax",
+        "ruta": "/pokedex?seleccionado=Frigibax",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Arctibax",
+        "ruta": "/pokedex?seleccionado=Arctibax",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Baxcalibur",
+        "ruta": "/pokedex?seleccionado=Baxcalibur",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Gimmighoul",
+        "ruta": "/pokedex?seleccionado=Gimmighoul",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Gholdengo",
+        "ruta": "/pokedex?seleccionado=Gholdengo",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Wo-Chien",
+        "ruta": "/pokedex?seleccionado=Wo-Chien",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Chien-Pao",
+        "ruta": "/pokedex?seleccionado=Chien-Pao",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Ting-Lu",
+        "ruta": "/pokedex?seleccionado=Ting-Lu",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Chi-Yu",
+        "ruta": "/pokedex?seleccionado=Chi-Yu",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Bramaluna",
+        "ruta": "/pokedex?seleccionado=Bramaluna",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Ferropaladín",
+        "ruta": "/pokedex?seleccionado=Ferropaladín",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Koraidon",
+        "ruta": "/pokedex?seleccionado=Koraidon",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Miraidon",
+        "ruta": "/pokedex?seleccionado=Miraidon",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Ondulagua",
+        "ruta": "/pokedex?seleccionado=Ondulagua",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Ferroverdor",
+        "ruta": "/pokedex?seleccionado=Ferroverdor",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Dipplin",
+        "ruta": "/pokedex?seleccionado=Dipplin",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Poltchageist",
+        "ruta": "/pokedex?seleccionado=Poltchageist",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Sinistcha",
+        "ruta": "/pokedex?seleccionado=Sinistcha",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Okidogi",
+        "ruta": "/pokedex?seleccionado=Okidogi",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Munkidori",
+        "ruta": "/pokedex?seleccionado=Munkidori",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Fezandipiti",
+        "ruta": "/pokedex?seleccionado=Fezandipiti",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Ogerpon",
+        "ruta": "/pokedex?seleccionado=Ogerpon",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Ogerpon Forma Máscara cimiento",
+        "ruta": "/pokedex?seleccionado=Ogerpon Forma Máscara cimiento",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Ogerpon Forma Máscara fuente",
+        "ruta": "/pokedex?seleccionado=Ogerpon Forma Máscara fuente",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Ogerpon Forma Máscara horno",
+        "ruta": "/pokedex?seleccionado=Ogerpon Forma Máscara horno",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Ogerpon Forma Máscara turquesa",
+        "ruta": "/pokedex?seleccionado=Ogerpon Forma Máscara turquesa",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Archaludon",
+        "ruta": "/pokedex?seleccionado=Archaludon",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Hydrapple",
+        "ruta": "/pokedex?seleccionado=Hydrapple",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Flamariete",
+        "ruta": "/pokedex?seleccionado=Flamariete",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Electrofuria",
+        "ruta": "/pokedex?seleccionado=Electrofuria",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Ferromole",
+        "ruta": "/pokedex?seleccionado=Ferromole",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Ferrotesta",
+        "ruta": "/pokedex?seleccionado=Ferrotesta",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Terapagos",
+        "ruta": "/pokedex?seleccionado=Terapagos",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Terapagos Forma astral",
+        "ruta": "/pokedex?seleccionado=Terapagos Forma astral",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Terapagos Forma teracristal",
+        "ruta": "/pokedex?seleccionado=Terapagos Forma teracristal",
+        "tipo": "Pokémon"
+    },
+    {
+        "nombre": "Pecharunt",
+        "ruta": "/pokedex?seleccionado=Pecharunt",
+        "tipo": "Pokémon"
     }
 ]

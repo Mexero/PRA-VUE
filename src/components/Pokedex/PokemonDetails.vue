@@ -119,6 +119,7 @@
 
       <div class="abilities-section">
         <h3 class="section-title">Habilidades</h3>
+        <p v-if="pokemon.especie === 'Arceus'"> Arceus tiene todas las Habilidades como Habilidades Ocultas.</p>
         <div v-if="habilidadesLoading" class="loading-abilities">Cargando habilidades...</div>
         <div v-else-if="habilidadesError" class="error-message">Ha ocurrido un error. Recarga la página.</div>
         <div v-else class="abilities-container">
@@ -138,14 +139,15 @@
     </div>
   </div>
 
-  <div v-if="pokemon && (pokemon.evoDe !== '' || pokemon.evolucion)" class="pokemon-evolution detail-section">
+  <div v-if="pokemon && (pokemon.evoDe || pokemon.evolucion)" class="pokemon-evolution detail-section">
     <h3 class="section-title">Línea Evolutiva</h3>
     <div class="evolution-container">
-      <div v-if="pokemon.evoDe !== ''" class="evolution-group">
+      <div v-if="pokemon.evoDe" class="evolution-group">
         <span class="evolution-label">Evoluciona de:</span>
         <div class="evolution-cards">
           <EvolutionCard v-if="pokemon.evoDe" :nombre="pokemon.evoDe" :numero="getPokemonNumberByName(pokemon.evoDe)"
-            :nivel="null" :requisitos="null" :otros="null" @show-details="emitirEspecie" />
+            :nivel="null" :requisitos="null" :otros="null" :esAlternativo="IsAltByName(pokemon.evoDe)"
+            @show-details="emitirEspecie" />
         </div>
       </div>
       <div v-if="pokemon.evolucion && pokemon.evolucion.mensajeExtra" class="evolution-item">
@@ -156,7 +158,8 @@
         <div class="evolution-cards">
           <EvolutionCard v-for="(evolucion, index) in pokemon.evolucion" :key="index" :nombre="evolucion.nombre"
             :numero="getPokemonNumberByName(evolucion.nombre)" :nivel="evolucion.nivel"
-            :requisitos="evolucion.requisitos" :otros="evolucion.otros" @show-details="emitirEspecie" />
+            :requisitos="evolucion.requisitos" :otros="evolucion.otros" :esAlternativo="IsAltByName(evolucion.nombre)"
+            @show-details="emitirEspecie" />
         </div>
       </div>
     </div>
@@ -317,6 +320,15 @@ function getPokemonNumberByName(especie) {
   }
   const resultado = pokedex.find(p => p.especie === especie)
   return resultado ? resultado.numPokedex : '#0001'
+}
+
+function IsAltByName(especie) {
+  if ((typeof especie) !== 'string') {
+    console.warn('No es una especie: ' + especie)
+    return 0
+  }
+  const resultado = pokedex.find(p => p.especie === especie)
+  return resultado ? resultado.esAlternativo : 0
 }
 </script>
 

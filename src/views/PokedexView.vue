@@ -434,8 +434,8 @@ function OrderPokedex(data) {
 }
 
 function generarEvoluciones(evoEn, nivelEvo, tipoRequisito, requisitosEvo, evoOtros) {
-  if (evoEn === '') {
-    if (evoOtros === '') return null
+  if (evoEn === '' || evoEn === null) {
+    if (evoOtros === '' || evoOtros === null) return null
     return { mensajeExtra: evoOtros }
   }
   let evoEnArray = evoEn.split(';')
@@ -466,7 +466,6 @@ function generarEvoluciones(evoEn, nivelEvo, tipoRequisito, requisitosEvo, evoOt
   width: 100vw;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.6);
-  /* Fondo oscuro */
   display: flex;
   justify-content: center;
   align-items: center;

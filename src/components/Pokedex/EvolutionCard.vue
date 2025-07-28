@@ -1,8 +1,6 @@
 <template>
   <div class="evolution-card" @click="handleClick">
-    <img v-if="numero"
-      :src="`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${parseInt(numero.substring(1))}.png`"
-      :alt="nombre" class="pokemon-image" />
+    <img v-if="numero" :src="src" :alt="nombre" class="pokemon-image" />
     <div v-else class="pokemon-image-placeholder">
       <span>?</span>
     </div>
@@ -15,14 +13,19 @@
 </template>
 
 <script setup>
-import { defineEmits, defineProps } from 'vue'
+import { ref, watch } from 'vue'
+
+import { updateSprite } from '@/utils/updateSprite'
+
+const src = ref(null)
 
 const props = defineProps([
   'nombre',
   'numero',
   'nivel',
   'requisitos',
-  'otros'
+  'otros',
+  'esAlternativo'
 ])
 
 const emit = defineEmits(['show-details']);
@@ -30,6 +33,11 @@ const emit = defineEmits(['show-details']);
 function handleClick() {
   emit('show-details', props.nombre)
 }
+
+watch(() => props, async () => {
+  src.value = await updateSprite(props.nombre, props.esAlternativo, props.numero)
+}
+  , { deep: true, immediate: true })
 </script>
 
 
