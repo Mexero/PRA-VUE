@@ -2720,6 +2720,11 @@
         "tipo": "Dote"
     },
     {
+        "nombre": "Movimientos insignia",
+        "ruta": "/dotes?seleccionado=Movimientos+insignia",
+        "tipo": "Dote"
+    },
+    {
         "nombre": "Movimientos amplios",
         "ruta": "/dotes?seleccionado=Movimientos+amplios",
         "tipo": "Dote"
@@ -3215,6 +3220,11 @@
         "tipo": "Dote"
     },
     {
+        "nombre": "Granizo",
+        "ruta": "/dotes?seleccionado=Granizo",
+        "tipo": "Dote"
+    },
+    {
         "nombre": "Lucha en tándem",
         "ruta": "/dotes?seleccionado=Lucha+en+t%C3%A1ndem",
         "tipo": "Dote"
@@ -3282,6 +3292,11 @@
     {
         "nombre": "Efecto sísmico",
         "ruta": "/dotes?seleccionado=Efecto+s%C3%ADsmico",
+        "tipo": "Dote"
+    },
+    {
+        "nombre": "Torbellino de arena",
+        "ruta": "/dotes?seleccionado=Torbellino+de+arena",
         "tipo": "Dote"
     },
     {

@@ -489,6 +489,29 @@
     ]
   },
   {
+    "Nombre": "Movimientos insignia",
+    "Tipo": "General",
+    "Nivel": 7,
+    "Prerrequisitos": "Ser un Pokémon",
+    "PrerreqComputable": {
+      "Pokemon": true
+    },
+    "Descripcion": [
+      "Te concentras en usar unos pocos movimientos, volviéndote un experto en estos. Sólo puedes conocer 3 Movimientos y ganas los siguientes beneficios:",
+      {
+        "tipo": "listaU",
+        "contenido": [
+          "Adelantado: Te consideras de 2 Niveles más a la hora de elegir Movimientos enseñables de tu lista de Por Nivel.",
+          "Mejor CD: Si el Movimiento tiene un CD, este aumenta en 2",
+          "Mejores Tiradas de Ataque: Si el Movimiento hace una Tirada de Ataque, tu Grado de Habilidad en esta Tirada de Ataque aumenta en 1 (usualmente, pasa de Bueno a Experto).",
+          "Mejor daño: Si el Movimiento hace daño, añades tu BH al daño y, si es Movimiento solo afecta a una Criatura, puedes añadir 2 veces tu BH al daño en lugar de sólo 1 vez.",
+          "Menor coste: Si el Movimiento no tiene CD ni hace Tiradas de Ataque, su coste se reduce en 1 PP."
+        ]
+      },
+      "No puedes reentrenar esta Dote."
+    ]
+  },
+  {
     "Nombre": "Movimientos amplios",
     "Tipo": "General",
     "Nivel": null,
@@ -1379,8 +1402,8 @@
       {
         "tipo": "listaU",
         "contenido": [
-          "Aprendes el movimiento Protección.",
-          "Cuando usas Protección puedes ordenar a uno de tus Pokémon que use 1 PP para usar un Movimiento con su Reacción contra la criatura que realizó el ataque contra el que te protegiste. El Movimiento debe hacer una Tirada de Ataque, tener un Coste de Acción de Acción y no costar PP al Pokémon."
+          "Aprendes el movimiento Detección.",
+          "Cuando usas Detección puedes ordenar a uno de tus Pokémon que use 1 PP para usar un Movimiento con su Reacción contra la criatura que realizó el ataque contra el que te protegiste. El Movimiento debe hacer una Tirada de Ataque, tener un Coste de Acción de Acción y no costar PP al Pokémon."
         ]
       }
     ]
@@ -2240,6 +2263,30 @@
     ]
   },
   {
+    "Nombre": "Granizo",
+    "Tipo": "Elemental",
+    "Nivel": 11,
+    "Prerrequisitos": "Conocer Paisaje nevado, Ser Tipo Hielo",
+    "PrerreqComputable": {
+      "Tipo": [
+        "Hielo"
+      ],
+      "Movimiento": [
+        "Paisaje nevado"
+      ]
+    },
+    "Descripcion": [
+      "Puedes crear nubes de granizo y aumentar el tamaño de las zonas sobre las que nieva.",
+      {
+        "tipo": "listaU",
+        "contenido": [
+          "Cuando usas Paisaje Nevado puedes aumentar el radio de la nube en hasta 5 metros extra.",
+          "Cuando usas Paisaje Nevado, puedes decidir que granice en el centro de la nube. Si lo haces, las Criaturas que terminan su turno o entran por primera vez en un turno en un radio de 3 metros alrededor del centro de la nube reciben una cantidad de daño de Tipo Hielo igual a tu BH. Las criaturas que son de Tipo Hielo o tienen Habilidades que las potencian en una Nevada son inmunes a este efecto."
+        ]
+      }
+    ]
+  },
+  {
     "Nombre": "Lucha en tándem",
     "Tipo": "Elemental",
     "Nivel": null,
@@ -2483,17 +2530,28 @@
     ]
   },
   {
-    "Nombre": "Choque tóxico",
+    "Nombre": "Torbellino de arena",
     "Tipo": "Elemental",
     "Nivel": 11,
-    "Prerrequisitos": "Ser Tipo Veneno",
+    "Prerrequisitos": "Conocer Tormenta de arena, Ser Tipo Tierra o Roca",
     "PrerreqComputable": {
       "Tipo": [
-        "Veneno"
+        "Tierra",
+        "Roca"
+      ],
+      "Movimiento": [
+        "Tormenta de arena"
       ]
     },
     "Descripcion": [
-      "Tu veneno enferma de gravedad a las criaturas a las que afecta y las vuelve más vulnerables a tus toxinas. Cuando haces daño de Tipo Veneno a una criatura envenenada con uno de tus Movimientos, añades 2 dados al daño contra esa criatura."
+      "Las Tormentas de Arena que creas se potencian.",
+      {
+        "tipo": "listaU",
+        "contenido": [
+          "Cuando usas Tormenta de Arena, puedes aumentar el radio de la tormenta en hasta 5 metros extra.",
+          "Cuando creas una tormenta de arena puedes decidir que las otras criaturas que terminan su turno o entran por primera vez en un turno en un radio de 3 metros alrededor del centro de esta reciban una cantidad de daño igual a tu BH. El daño del Tipo es Tierra si eres Tipo Tierra o Roca si eres tipo Roca; si eres de ambos tipos, tú lo eliges al usar Tormenta de Arena. Las criaturas que son de Tipo Tierra, Roca, Acero o tienen Habilidades que las potencian en una Tormenta de Arena son inmunes a este efecto."
+        ]
+      }
     ]
   },
   {
