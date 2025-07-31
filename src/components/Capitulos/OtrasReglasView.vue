@@ -741,9 +741,9 @@
             </p>
 
             <p>
-                Saltar no puede provocar que una criatura se desplaza más distancia que
-                su Velocidad de
-                <strong>Caminado.</strong>
+                Saltar no puede provocar que una criatura se desplace más distancia que
+                su Velocidad de <strong>Caminado.</strong> Además, las distancias de salto de las criaturas de tamaño
+                Grande o mayor se reduce a la mitad de la usual.
             </p>
         </div>
     </details>

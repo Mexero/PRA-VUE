@@ -3440,7 +3440,7 @@
         "descripciones": [
             "Una criatura puede <b>Saltar</b> como Acción si su Velocidad de Caminado no es 0 y, cuando lo hace, si ha tomado carrerilla puede <b>Saltar Horizontalmente</b> una cantidad de metros igual a su Fuerza (mínimo 1 m) y, si ha corrido por 2 metros o más antes, la distancia de salto aumenta en 2 metros (mínimo 2 m). ",
             "Una criatura puede <b>Saltar Verticalmente</b> una cantidad de metros igual a su Fuerza entre 3 (mínimo medio metro). ",
-            "Saltar no puede provocar que una criatura se desplaza más distancia que su Velocidad de Caminado."
+            "Saltar no puede provocar que una criatura se desplace más distancia que su Velocidad de Caminado. Además, las distancias de salto de las criaturas de tamaño Grande o mayor se reduce a la mitad de la usual."
         ]
     },
     {
