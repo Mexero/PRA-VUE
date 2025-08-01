@@ -123,6 +123,10 @@
                 "route": "/utilidades/fichasPokemon"
             },
             {
+                "name": "Tabla de Tipos",
+                "route": "/tablatipos"
+            },
+            {
                 "name": "Dados (WIP)",
                 "route": "/utilidades/dados"
             }
