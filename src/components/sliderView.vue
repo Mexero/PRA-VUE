@@ -4,6 +4,7 @@ import { ref, computed, watch } from 'vue';
 
 const props = defineProps([
     'allowedValues',
+    'min', 'max',
     'limpiar'
 ]);
 
@@ -17,11 +18,11 @@ watch(() => props.limpiar, () => {
     maxIndex.value = props.allowedValues.length - 1;
 });
 
-const minIndex = ref(0);
-const maxIndex = ref(allowedValues.length - 1);
+const valorMin = ref(closestAllowed(props.min));
+const valorMax = ref(closestAllowed(props.max));
 
-const valorMin = ref(allowedValues[minIndex.value]);
-const valorMax = ref(allowedValues[maxIndex.value]);
+const minIndex = ref(valueToIndex(valorMin.value));
+const maxIndex = ref(valueToIndex(valorMax.value));
 
 const sliderStyle = computed(() => {
     const total = allowedValues.length - 1;

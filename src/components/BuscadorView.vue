@@ -91,6 +91,7 @@ const resetSearch = () => {
 }
 
 </script>
+
 <template>
 
     <form method="get" class="buscar" name="buscador" @submit.prevent="handleSubmit">

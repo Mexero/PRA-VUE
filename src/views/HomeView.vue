@@ -101,12 +101,12 @@ import { RouterLink } from 'vue-router'
                     Aquí puedes ver un resumen rápido del sistema.
                 </p>
                 <div class="PDFlinks">
-                    <RouterLink to="" target="_blank">
+                    <a href="https://mega.nz/file/zrZllYDS#WAAOa49v1Sgwcikk3KUBhCmOqYxi0KWMyw3mgMxICzY" target="_blank">
                         <div>PDF Resumen del sistema</div>
-                    </RouterLink>
-                    <RouterLink to="" target="_blank">
+                    </a>
+                    <a href="https://mega.nz/file/X3pXQSTC#0IdzJJkiJBDGHEjIVFP6vFOsITsjXauo4HvFqqkJ8TY" target="_blank">
                         <div>PDF Combate rápido</div>
-                    </RouterLink>
+                    </a>
                 </div>
             </article>
 
@@ -115,14 +115,14 @@ import { RouterLink } from 'vue-router'
             <article class="descargaPDF" id="descargaLibro">
                 <h2>Descarga las últimas versiones</h2>
                 <div class="PDFlinks">
-                    <RouterLink to="" target="_blank">
+                    <a href="https://mega.nz/file/6mACjaxT#qFzwanQCyEXhsR4KYVBskqbNfEvj1cZVR_9Nv20jr50" target="_blank">
                         <div>PDF Base</div>
-                    </RouterLink>
-                    <RouterLink to="" target="_blank">
+                    </a>
+                    <a href="https://mega.nz/file/HvRG1KYK#lofRp_J6U4WBdM7Uv4M5eYF4fIbREcIb0IvV4tjte-U" target="_blank">
                         <div>PDF Pokédex</div>
-                    </RouterLink>
+                    </a>
                     <RouterLink to="" target="_blank">
-                        <div>PDF Pokedex DM</div>
+                        <div>PDF Entrenadex (WIP)</div>
                     </RouterLink>
                 </div>
             </article>
@@ -134,6 +134,9 @@ import { RouterLink } from 'vue-router'
 
             <div id="imgInfoNosotros">
                 <img src="/assets/img/literalmentenosotros.webp" alt="Imagen Nosotros">
+                <div id="creditos">
+                    <a href="https://www.instagram.com/oliver_hamlin/" target="_blank">@Oliver hamlin</a>
+                </div>
             </div>
             <div class="textoInfo">
                 <h2>¿Quiénes somos?</h2>
@@ -348,7 +351,6 @@ solo cambia el tamaños de los bloques y el margen con el header*/
 
 }
 
-
 /* ======================= SECCIÓN INFO NOSOTROS Y BLOQUES ======================= */
 
 #infoNosotros,
@@ -357,7 +359,6 @@ solo cambia el tamaños de los bloques y el margen con el header*/
     background-color: var(--color-fondoTexto);
     border: 1px solid var(--color-principal1);
     color: var(--color-texto);
-
 }
 
 #infoNosotros {
@@ -397,7 +398,6 @@ solo cambia el tamaños de los bloques y el margen con el header*/
     padding: 24px 20px;
     font-size: 22px;
     box-shadow: 2px 2px 5px rgba(32, 32, 32, 0.511);
-
 }
 
 #infoContacto h2 {
@@ -486,13 +486,32 @@ solo cambia el tamaños de los bloques y el margen con el header*/
 /* Imagen info */
 #imgInfoNosotros {
     width: 60%;
-
+    position: relative;
 }
 
 #imgInfoNosotros img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+#creditos {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 8px 0 0 0;
+}
+
+#creditos a {
+    padding: 4px 10px;
+    display: flex;
+    width: 100%;
+    color: white !important;
+}
+
+#creditos:hover {
+    text-decoration: underline;
 }
 
 /* ======================= SECCIÓN INFO MOVIL =======================  */

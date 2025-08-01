@@ -741,9 +741,9 @@
             </p>
 
             <p>
-                Saltar no puede provocar que una criatura se desplaza más distancia que
-                su Velocidad de
-                <strong>Caminado.</strong>
+                Saltar no puede provocar que una criatura se desplace más distancia que
+                su Velocidad de <strong>Caminado.</strong> Además, las distancias de salto de las criaturas de tamaño
+                Grande o mayor se reduce a la mitad de la usual.
             </p>
         </div>
     </details>
@@ -950,18 +950,26 @@
             </p>
 
             <p>
-                <strong>Nevada</strong>: El frío de la nevada hace que las criaturas que
-                no son de Tipo Hielo que no llevan ropas adecuadas reciban un nivel de
-                fatiga por cada hora que pasan en la nieve sin calentarse de alguna
-                forma. Además, si la nevada es muy intensa (discreción del DJ), las
-                Tiradas de Percepción se hacen en Desventaja e incluso puede que no haya
-                visibilidad a partir de cierta distancia.
+                <strong>Nevada</strong>: Cuando nieva, la temperatura baja considerablemente y volar se vuelve difícil.
             </p>
-
+            <ul>
+                <li> Moverse 1 metro volando o levitando cuesta 1 metro de Velocidad más de lo normal. </li>
+                <li> Los Pokémon pierden 1 nivel de Helado menos de lo normal al final de sus turnos. </li>
+                <li> Las Tiradas de Habilidad de Percepción se hacen en Desventaja. </li>
+                <li> Una Criatura que pasa 1 hora bajo la nieve sin ropas adecuadas gana 1 Nivel de Fatiga. </li>
+                <li>Los Pokémon de Tipo Hielo, los que se potencian cuando nieva o son inmunes a ser Helados ignoran los
+                    efectos negativos de Nevada.</li>
+            </ul>
             <p>
-                <strong>Tormenta de arena</strong>: La tormenta de arena bloquea la
-                visibilidad y molesta a las criaturas que no se protegen del polvo. Más
-                allá de 10 metros, la visibilidad queda siempre bloqueada.
+                <strong>Tormenta de arena</strong>: La tormenta de arena es molesta y hace que volar sea incómodo.
+            <ul>
+                <li>Moverse 1 metro volando o levitando cuesta 1 metro de Velocidad más de lo normal.</li>
+                <li>El Rango de los Movimientos se reduce a 5 m si es superior y las Tiradas de Ataque a rango se hacen
+                    en Desventaja.</li>
+                <li>Las Tiradas de Habilidad de Percepción se hacen en Desventaja.</li>
+                <li>Los Pokémon Tierra, Roca y Acero o los que se potencian cuando están en una Tormenta de Arena
+                    ignoran los efectos negativos de Tormenta de Arena.</li>
+            </ul>
             </p>
         </div>
     </details>

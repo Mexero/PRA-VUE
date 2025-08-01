@@ -132,11 +132,36 @@ function ignoreUpdate() {
     position: fixed;
     top: 0;
     width: 100%;
-    background: #ffd700;
-    padding: 1em;
+    background-color: #ffeb3b;
+    color: #333;
+    padding: 1rem 1.5rem;
     z-index: 10000;
     text-align: center;
+    font-size: 1rem;
+    font-weight: 500;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
 }
+
+.update-banner button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    margin-left: 0.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.update-banner button:hover {
+    background-color: #555;
+}
+
 
 /* ======================= HEADER ======================= */
 header {

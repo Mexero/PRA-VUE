@@ -33,7 +33,8 @@
             "nombreClase": "Entrenador",
             "nombreSubclase": "Maestro de las Crías",
             "contenido": [
-                "A partir de nivel 8, tus Pokémon aprenden a canalizar el poder potencial de la evolución para aumentar sus cuerpos. La Vitalidad de tus Pokémon que no han evolucionado y pueden evolucionar aumenta en 3, hasta un máximo de 10, todas sus Velocidades aumentan en 2 metros, su Cantidad Máxima de Movimientos Conocidos aumenta en 2, y todas sus Estadísticas aumentan en 1. Estos beneficios desaparecen si estos Pokémon cambian de dueño, pues dejan de realizar el entrenamiento especial que hacen contigo."
+                "A partir de nivel 8, tus Pokémon aprenden a canalizar el poder potencial de la evolución para aumentar sus cuerpos. La Vitalidad de tus Pokémon que no han evolucionado y pueden evolucionar aumenta en 3, hasta un máximo de 10, todas sus Velocidades aumentan en 2 metros, su Cantidad Máxima de Movimientos Conocidos aumenta en 2, todas sus Estadísticas aumentan en 1 y su Grado de Habilidad en todas las Tiradas de Salvación se vuelve Experto si era inferior. Por último, todos tus Pokémon cuentan como Pokémon que no pueden evolucionar a efectos de Habilidades, Dotes o Rasgos que ellos pudieran tener.",
+                "Estos beneficios desaparecen si estos Pokémon cambian de dueño, pues dejan de realizar el entrenamiento especial que hacen contigo."
             ]
         },
         {
@@ -54,16 +55,15 @@
             "contenido": [
                 "A partir del nivel 17, enseñas a tus Pokémon a liberar todo el Potencial que contienen. Cuando das una Orden a uno de tus Pokémon, puedes usar una Acción para comandar que se abra a todo su poder. Cuando tu Pokémon lo hace, entra en un trance especial que le permite liberar una forma espectral y translúcida de una de sus evoluciones o las evoluciones de estas a tu elección  que aparece rodeándolo y replicando sus Movimientos.",
                 "Este estado dura hasta el final de la Escena, hasta que el Pokémon vuelva a su Pokéball o hasta que sus PV caigan a 0. Un Pokémon que está en este trance gana los siguientes beneficios:",
-
                 {
                     "tipo": "listaU",
                     "contenido": [
-                "El Pokémon gana las Habilidades y Habilidades Ocultas de la evolución que manifiesta si no las tenía ya.",
-                "El Pokémon cambia sus Tipos Elementales por los de la evolución que manifiesta.",
-                "El Pokémon gana todas las Velocidades de la evolución que manifiesta.",
-                "El Pokémon gana 40 Puntos de Escudo.",
-                "El daño base de los Movimientos del Pokémon aumenta en dos dados.",
-                "Puedes usar este Rasgo una vez por Escena y, cuando el trance acaba, el Pokémon gana 2 Niveles de Fatiga."
+                        "El Pokémon gana las Habilidades y Habilidades Ocultas de la evolución que manifiesta si no las tenía ya.",
+                        "El Pokémon cambia sus Tipos Elementales por los de la evolución que manifiesta.",
+                        "El Pokémon gana todas las Velocidades de la evolución que manifiesta.",
+                        "El Pokémon gana 40 Puntos de Escudo.",
+                        "El daño base de los Movimientos del Pokémon aumenta en dos dados.",
+                        "Puedes usar este Rasgo una vez por Escena y, cuando el trance acaba, el Pokémon gana 2 Niveles de Fatiga."
                     ]
                 }
             ]

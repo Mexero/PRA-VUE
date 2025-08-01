@@ -1,6 +1,6 @@
 <script setup>
 import { ref, onMounted } from 'vue';
-import worker from '../sqlWorker.js';
+import { initDB, queryDB, exportDB } from '@/services/dbWorkerService';
 
 const isReady = ref(false);
 const results = ref([]);
@@ -9,60 +9,53 @@ const loading = ref(false);
 
 const query = ref('SELECT * FROM my_table LIMIT 10');
 
-onMounted(() => {
-    worker.postMessage({ type: 'init' });
-
-    worker.onmessage = (e) => {
-        if (e.data.type === 'ready') {
-            isReady.value = true;
-        }
-
-        if (e.data.type === 'result') {
-            loading.value = false;
-            results.value = e.data.result?.[0]?.values || [];
-        }
-
-        if (e.data.type === 'error') {
-            loading.value = false;
-            error.value = e.data.error;
-        }
-
-        if (e.data.type === 'exported') {
-            loading.value = false;
-            error.value = null;
-            const blob = new Blob([new Uint8Array(e.data.buffer)], {
-                type: 'application/x-sqlite3'
-            });
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = 'exported_db.sqlite3';
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-            URL.revokeObjectURL(url);
-        }
-    };
+onMounted(async () => {
+    try {
+        await initDB();
+        isReady.value = true;
+    } catch (err) {
+        error.value = err.message || 'Error inicializando DB';
+    }
 });
 
-
-function runQuery() {
+async function runQuery() {
     if (!isReady.value) return;
     loading.value = true;
     error.value = null;
 
-    worker.postMessage({
-        type: 'query',
-        query: query.value,
-        params: []
-    });
+    try {
+        const res = await queryDB(query.value);
+        results.value = res?.[0]?.values || [];
+    } catch (err) {
+        error.value = err.message || 'Error realizando query';
+    } finally {
+        loading.value = false;
+    }
 }
 
-function exportDatabase() {
+async function exportDatabase() {
     if (!isReady.value) return;
     loading.value = true;
     error.value = null;
-    worker.postMessage({ type: 'export' });
+
+    try {
+        const buffer = await exportDB();
+        const blob = new Blob([new Uint8Array(buffer)], {
+            type: 'application/x-sqlite3'
+        });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'exported_db.sqlite3';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+    } catch (err) {
+        error.value = err.message || 'Error exportando DB';
+    } finally {
+        loading.value = false;
+    }
 }
 </script>
 
@@ -78,8 +71,9 @@ function exportDatabase() {
         <button @click="exportDatabase" :disabled="!isReady || loading">
             Exportar Base de Datos
         </button>
+
         <p v-if="loading">Cargando...</p>
-        <p v-if="error">{{ error }}</p>
+        <p v-if="error" style="color: red;">{{ error }}</p>
 
         <table v-if="results.length">
             <tbody>

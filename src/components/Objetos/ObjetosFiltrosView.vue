@@ -143,8 +143,8 @@ watch(
 
                     <h3>Coste</h3>
 
-                    <Slider :allowedValues="allowedValues" :limpiar="limpiarSliderFlag"
-                        @actualizarMinMax="emitirPrecios" />
+                    <Slider :allowedValues="allowedValues" :limpiar="limpiarSliderFlag" :min="precioMin"
+                        :max="precioMax" @actualizarMinMax="emitirPrecios" />
                 </div>
             </div>
         </transition>

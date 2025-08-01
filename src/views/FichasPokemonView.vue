@@ -13,8 +13,7 @@ import FichaDotes from '@/components/fichasPokemon/Dotes.vue'
 import FichaOtros from '@/components/fichasPokemon/Otros.vue'
 
 import { crearFichaBase } from '@/utils/TemplateFicha.js'
-
-import worker from '../sqlWorker.js';
+import { initDB, queryDB } from '@/services/dbWorkerService'
 
 import { guardarFichaIndexedDB, borrarFichaIndexedDB, obtenerTodasLasFichas, obtenerFicha, guardarOrdenFichas, cargarOrdenFichas } from '@/utils/FichasDB.js'
 
@@ -36,6 +35,10 @@ const nuevaFichaNombre = ref('')
 const fichasGuardadas = reactive({})
 const ordenFichas = ref([])
 
+//flags DB
+const isReady = ref(false)
+const error = ref(null)
+const loading = ref(false)
 
 // <========= DATOS CHECKS =============>
 const ChecksBase = [
@@ -72,100 +75,117 @@ const naturalezas = [
 
 
 // <========= CAMBIAR DATOS ESPECIE =============>
-function cambiarDatosEspecie(especie) {
-    worker.postMessage({
-        type: 'query',
-        query: `
-                SELECT Especie, Tipo_primario, Tipo_secundario, 
-                FUE, AGI, RES, MEN, ESP, PRE, 
-                S_FUE, S_AGI, S_RES, S_ESP,
-                Vitalidad,
-                V_Caminado, V_Trepado, V_Excavado, V_Nado, V_Vuelo, V_Levitado,
-                Nat_Habil_1, Nat_Habil_2,
-                Habilidad_1, Habilidad_2, Habilidad_3, Hab_oculta_1, Hab_oculta_2,
-                AC1, AC2, 
-                Dieta, Tamano, Sexo, Sentidos, Evoluciona_en_todo,
-                Mov_Nivel_1, Mov_Nivel_2, Mov_Nivel_4, Mov_Nivel_6, Mov_Nivel_8, Mov_Nivel_10,
-                Mov_Nivel_12, Mov_Nivel_14, Mov_Nivel_16, Mov_Nivel_18, Mov_Nivel_20,
-                Mov_ensenables
-                FROM pokemexe_pokedex
-            WHERE Especie = ?
-        `,
-        params: [especie],
-        origin: "CambiarDatosEspecie"
-    })
-}
+async function cambiarDatosEspecie(especie) {
+    if (!isReady.value) return
 
-worker.addEventListener('message', (e) => {
-    if (e.data.type === 'result' && e.data.origin === 'CambiarDatosEspecie') {
-        const row = e.data.result?.[0]?.values?.[0]
-        if (row) {
-            ficha.pokedex.especie = row[0]
-            //Tipos
-            ficha.pokedex.tipos[0] = row[1]
-            ficha.pokedex.tipos[1] = row[2] ?? ""
-            //stats base
-            ficha.pokedex.statsBase.fue = parseInt(row[3])
-            ficha.pokedex.statsBase.agi = parseInt(row[4])
-            ficha.pokedex.statsBase.res = parseInt(row[5])
-            ficha.pokedex.statsBase.men = parseInt(row[6])
-            ficha.pokedex.statsBase.esp = parseInt(row[7])
-            ficha.pokedex.statsBase.pre = parseInt(row[8])
-            //saves
-            ficha.pokedex.salvaciones.fue = parseInt(row[9])
-            ficha.pokedex.salvaciones.agi = parseInt(row[10])
-            ficha.pokedex.salvaciones.res = parseInt(row[11])
-            ficha.pokedex.salvaciones.esp = parseInt(row[12])
-            //VIT
-            ficha.pokedex.vit = parseInt(row[13])
-            //velocidades
-            ficha.pokedex.velocidades.Caminado = parseInt(row[14]) || 0
-            ficha.pokedex.velocidades.Trepado = parseInt(row[15]) || 0
-            ficha.pokedex.velocidades.Excavado = parseInt(row[16]) || 0
-            ficha.pokedex.velocidades.Nado = parseInt(row[17]) || 0
-            ficha.pokedex.velocidades.Vuelo = parseInt(row[18]) || 0
-            ficha.pokedex.velocidades.Levitado = parseInt(row[19]) || 0
-            //Naturalmente Habil
-            ficha.pokedex.natHabil = []
-            if (row[20] && row[20] !== "") ficha.pokedex.natHabil.push(row[20])
-            if (row[21] && row[21] !== "") ficha.pokedex.natHabil.push(row[21])
-            //Habilidades
-            ficha.pokedex.habilidades = []
-            if (row[22] && row[22] !== "") ficha.pokedex.habilidades.push(row[22])
-            if (row[23] && row[23] !== "") ficha.pokedex.habilidades.push(row[23])
-            if (row[24] && row[24] !== "") ficha.pokedex.habilidades.push(row[24])
-            ficha.pokedex.habilidadesOcultas = []
-            if (row[25] && row[25] !== "") ficha.pokedex.habilidadesOcultas.push(row[25])
-            if (row[26] && row[26] !== "") ficha.pokedex.habilidadesOcultas.push(row[26])
-            //Clase Armadura
-            ficha.pokedex.calculosCA = []
-            ficha.pokedex.calculosCA.push(row[27])
-            if (row[28] && row[28] !== "") ficha.pokedex.calculosCA.push(row[28])
-            //Otros
-            ficha.pokedex.otros.dieta = row[29]
-            ficha.pokedex.otros.tamano = row[30]
-            ficha.pokedex.otros.sexo = row[31]
-            ficha.pokedex.otros.sentidos = row[32]
-            ficha.pokedex.otros.evolucion = row[33]
-            //Movs nivel
-            ficha.pokedex.movimientosNivel = [row[34], row[35], row[36], row[37], row[38], row[39], row[40], row[41], row[42], row[43], row[44]]
-            //Movs enseñables
-            let temporal = row[45]
-            if (temporal[temporal.length - 1] === ".") temporal = temporal.slice(0, -1);
-            ficha.pokedex.movimientosEnseñables = temporal.split(', ')
+    loading.value = true
+    error.value = null
 
-            //Resets necesarios
-            ficha.personaliz.habilidadesOcultasDesbloqueadas = []
+    try {
+        // Datos base de pokedex
+        const res = await queryDB(`
+      SELECT 
+        pokedex.ID, Especie, Tipo_primario, Tipo_secundario, 
+        FUE, AGI, RES, MEN, ESP, PRE, 
+        S_FUE, S_AGI, S_RES, S_ESP,
+        Vitalidad,
+        V_Caminado, V_Trepado, V_Excavado, V_Nado, V_Vuelo, V_Levitado,
+        Nat_Habil_1, Nat_Habil_2,
+        AC1, AC2, 
+        Dieta, Tamano, Sexo, Sentidos, Evoluciona_en_todo
+      FROM pokedex
+      WHERE Especie = ?
+    `, [especie])
 
-            console.log("Datos cargados: " + row)
+        const row = res?.[0]?.values?.[0]
+        if (!row) return
+
+        const id = row[0] // pokedex.ID
+
+        // Asignación de datos
+        ficha.pokedex.especie = row[1]
+        ficha.pokedex.tipos = [row[2], row[3] ?? ""]
+        ficha.pokedex.statsBase = {
+            fue: row[4], agi: row[5], res: row[6],
+            men: row[7], esp: row[8], pre: row[9]
+        }
+        ficha.pokedex.salvaciones = {
+            fue: row[10], agi: row[11],
+            res: row[12], esp: row[13]
+        }
+        ficha.pokedex.vit = row[14]
+        ficha.pokedex.velocidades = {
+            Caminado: row[15], Trepado: row[16], Excavado: row[17],
+            Nado: row[18], Vuelo: row[19], Levitado: row[20]
         }
 
-    } else if (e.data.type === 'error') {
-        console.error("Error al seleccionar especie:", e.data.error)
+        ficha.pokedex.natHabil = []
+        if (row[21]) ficha.pokedex.natHabil.push(row[21])
+        if (row[22]) ficha.pokedex.natHabil.push(row[22])
+
+        // Habilidades (relacional)
+        const habilidadesRes = await queryDB(`
+      SELECT h.Nombre, ph.Es_Oculta
+      FROM pokemon_habilidades ph
+      JOIN habilidades h ON h.ID = ph.Habilidad_ID
+      WHERE ph.Pokemon_ID = ?
+    `, [id])
+
+        ficha.pokedex.habilidades = []
+        ficha.pokedex.habilidadesOcultas = []
+
+        habilidadesRes?.[0]?.values?.forEach(([nombre, esOculta]) => {
+            if (esOculta) ficha.pokedex.habilidadesOcultas.push(nombre)
+            else ficha.pokedex.habilidades.push(nombre)
+        })
+
+        // CA
+        ficha.pokedex.calculosCA = []
+        if (row[23]) ficha.pokedex.calculosCA.push(row[23])
+        if (row[24]) ficha.pokedex.calculosCA.push(row[24])
+
+        // Otros
+        ficha.pokedex.otros = {
+            dieta: row[25],
+            tamano: row[26],
+            sexo: row[27],
+            sentidos: row[28],
+            evolucion: row[29]
+        }
+
+        // Movimientos (relacional)
+        const movimientosRes = await queryDB(`
+      SELECT m.Nombre, pm.NivelAprendizaje
+      FROM pokemon_movimientos pm
+      JOIN movimientos m ON m.ID = pm.MovimientoID
+      WHERE pm.PokemonID = ?
+    `, [id])
+
+        const movimientosNivel = movimientosRes?.[0]?.values?.filter(move => move[1] > 0)
+            .sort((a, b) => a[0] - b[0]).map(m => ({
+                nombre: m[0],
+                nivel: m[1]
+            }))
+
+        const movimientosEnseñables = movimientosRes?.[0]?.values?.sort((a, b) => a[0] - b[0]).map(m => m[0])
+
+        ficha.pokedex.movimientosNivel = movimientosNivel
+            .sort((a, b) => a.nivel - b.nivel)
+
+        ficha.pokedex.movimientosEnseñables = movimientosEnseñables
+
+        // Reset
+        ficha.personaliz.habilidadesOcultasDesbloqueadas = []
+
+        console.log(`Datos de ${especie} cargados:`, ficha.pokedex)
+
+    } catch (err) {
+        error.value = err.message || 'Error cargando la especie Pokémon ' + especie
+        console.warn(error.value)
+    } finally {
+        loading.value = false
     }
-});
-
-
+}
 
 //<========= ACTUALIZAR DATOS =============>
 
@@ -574,31 +594,79 @@ watch(ordenFichas, async (nuevoOrden) => {
 
 
 // <============== INICIO ===============>
-function cargarPokes() {
-    worker.postMessage({
-        type: 'query',
-        query: 'SELECT Especie FROM pokemexe_pokedex',
-        params: [],
-        origin: 'cargarPokes'
-    });
+async function cargarPokes() {
+    loading.value = true
+    error.value = null
+
+    let data = []
+    try {
+        const res = await queryDB(`SELECT Especie FROM pokedex`, [])
+
+        data = (res?.[0]?.values || []).map((row) => row[0]);
+        if (data.length > 0) {
+            console.log("Especies Pokémon cargadas...")
+            especiesPokesCargadas.value = true;
+        }
+    } catch (err) {
+        error.value = err.message || 'Error cargando las especies Pokémon'
+        console.warn(error.value)
+    } finally {
+        loading.value = false
+        return data
+    }
 }
 
-function cargarHabilidades() {
-    worker.postMessage({
-        type: 'query',
-        query: 'SELECT Nombre, Descripcion FROM Pokemexe_Habilidades',
-        params: [],
-        origin: 'cargarHabilidades'
-    });
+async function cargarHabilidades() {
+    loading.value = true
+    error.value = null
+
+    let data = []
+    try {
+        const res = await queryDB(`SELECT Nombre, Descripcion FROM habilidades`, [])
+
+        data = (res?.[0]?.values || []).map((row) => ({
+            nombre: row[0],
+            descripcion: row[1].split('\n')
+        }));
+
+        if (data.length > 0) {
+            console.log("Habilidades cargadas...")
+            habilidadesCargadas.value = true;
+        }
+    } catch (err) {
+        error.value = err.message || 'Error cargando las habilidades'
+        console.warn(error.value)
+    } finally {
+        loading.value = false
+        return data
+    }
 }
 
-function cargarMovimientos() {
-    worker.postMessage({
-        type: 'query',
-        query: 'SELECT Nombre, Tipo, Coste, Etiquetas FROM Pokemexe_Movimientos',
-        params: [],
-        origin: 'cargarMovimientos'
-    });
+async function cargarMovimientos() {
+    loading.value = true
+    error.value = null
+
+    let data = []
+    try {
+        const res = await queryDB(`SELECT Nombre, Tipo, Coste, Etiquetas FROM movimientos`, [])
+
+        data = (res?.[0]?.values || []).map((row) => ({
+            nombre: row[0],
+            tipo: row[1],
+            coste: row[2],
+            etiquetas: row[3] !== "" ? row[3] : null
+        }));
+        if (data.length > 0) {
+            console.log("Movimientos cargados...")
+            movimientosCargados.value = true;
+        }
+    } catch (err) {
+        error.value = err.message || 'Error cargando los movimientos'
+        console.warn(error.value)
+    } finally {
+        loading.value = false
+        return data
+    }
 }
 
 
@@ -656,59 +724,19 @@ onMounted(async () => {
 
     cargarDotes()
 
-    worker.postMessage({ type: 'init' });
+    //abrirDB
+    try {
+        await initDB()
+        isReady.value = true
+    } catch (err) {
+        error.value = err.message || 'Error inicializando DB'
+        console.warn(error.value)
+    }
 
-    worker.onmessage = (e) => {
-        if (e.data.type === 'ready') {
-            //Peticiones a base de datos
-            if (!especiesPokesCargadas.value) {
-                cargarPokes();
-            }
-            if (!habilidadesCargadas.value) {
-                cargarHabilidades();
-            }
-            if (!movimientosCargados.value) {
-                cargarMovimientos();
-            }
-        }
-        if (e.data.type === 'result') {
-            //Especies Pokes
-            if (e.data.origin === 'cargarPokes') {
-                especiesPokes.value = (e.data.result?.[0]?.values || []).map((row) => row[0]);
-                if (especiesPokes.value.length > 0) {
-                    console.log("Especies Pokémon cargadas...")
-                    especiesPokesCargadas.value = true;
-                }
-            }
-            //Habs
-            if (e.data.origin === 'cargarHabilidades') {
-                habilidades.value = (e.data.result?.[0]?.values || []).map((row) => ({
-                    nombre: row[0],
-                    descripcion: row[1].split('\n')
-                }));
-                if (habilidades.value.length > 0) {
-                    console.log("Habilidades cargadas...")
-                    habilidadesCargadas.value = true;
-                }
-            }
-            //Movs
-            if (e.data.origin === 'cargarMovimientos') {
-                movimientos.value = (e.data.result?.[0]?.values || []).map((row) => ({
-                    nombre: row[0],
-                    tipo: row[1],
-                    coste: row[2],
-                    etiquetas: row[3] !== "" ? row[3] : null
-                }));
-                if (movimientos.value.length > 0) {
-                    console.log("Movimientos cargados...")
-                    movimientosCargados.value = true;
-                }
-            }
-        }
-        if (e.data.type === 'error') {
-            console.error("Error en SQLite:", e.data.error);
-        }
-    };
+    //Cargar datos
+    especiesPokes.value = await cargarPokes()
+    habilidades.value = await cargarHabilidades()
+    movimientos.value = await cargarMovimientos()
 })
 
 </script>

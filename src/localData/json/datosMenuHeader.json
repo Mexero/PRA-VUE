@@ -90,7 +90,7 @@
             },
             {
                 "name": "Tabla de Tipos",
-                "route": "/recursos/tablatipos"
+                "route": "/tablatipos"
             }
         ]
     },
@@ -121,6 +121,10 @@
             {
                 "name": "Fichas de Pokémon",
                 "route": "/utilidades/fichasPokemon"
+            },
+            {
+                "name": "Tabla de Tipos",
+                "route": "/tablatipos"
             },
             {
                 "name": "Dados (WIP)",

@@ -57,8 +57,8 @@ function toggleTipo(event, tipo) {
     emit('actualizarFiltros', { clave: 'tipos', valor: Array.from(seleccionadas) });
 }
 
-//Precios
-function emitirPrecios(valorMin, valorMax) {
+//Nivel
+function emitirNivel(valorMin, valorMax) {
     nivelMin.value = valorMin;
     nivelMax.value = valorMax;
     actualizarFiltros('nivelMin', nivelMin.value);
@@ -130,8 +130,8 @@ watch(
 
                     <h3>Nivel</h3>
 
-                    <Slider :allowedValues="allowedValues" :limpiar="limpiarSliderFlag"
-                        @actualizarMinMax="emitirPrecios" />
+                    <Slider :allowedValues="allowedValues" :limpiar="limpiarSliderFlag" :min="nivelMin" :max="nivelMax"
+                        @actualizarMinMax="emitirNivel" />
                 </div>
             </div>
         </transition>

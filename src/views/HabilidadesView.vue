@@ -14,18 +14,20 @@
 </template>
 
 <script setup>
-import { ref, onMounted, computed, watch } from "vue";
-import { useRoute, useRouter } from "vue-router";
-
-import worker from '../sqlWorker.js';
+import { ref, onMounted, computed, watch } from "vue"
+import { useRoute, useRouter } from "vue-router"
+import { initDB, queryDB } from '@/services/dbWorkerService'
 
 import Tabla from "@/components/Habilidades/TablaView.vue"
 import Seleccionado from "@/components/Habilidades/HabilidadesSeleccionado.vue"
 import Filtros from "@/components/Habilidades/HabilidadesFiltrosView.vue"
 
+const route = useRoute()
+const router = useRouter()
 
-const route = useRoute();
-const router = useRouter();
+const isReady = ref(false)
+const error = ref(null)
+const loading = ref(false)
 
 // ======================== DATOS ========================
 
@@ -35,61 +37,67 @@ const clavesColumnas = ['nombre', 'descripcion', 'legendaria', 'transformacion']
 
 //Datos principales
 const datos = ref([]);
-const datosCargados = ref(false);
-const seleccionado = ref(route.query.seleccionado ?? undefined);
+const datosCargados = ref(false)
+const seleccionado = ref(route.query.seleccionado ?? undefined)
 
 //Filtros
-const filtroLegendaria = ref(route.query.legendaria ?? null);
-const filtroTransformacion = ref(route.query.transformacion ?? null);
-const filtroNombre = ref(route.query.nombre ?? null);
+const filtroLegendaria = ref(route.query.legendaria ?? null)
+const filtroTransformacion = ref(route.query.transformacion ?? null)
+const filtroNombre = ref(route.query.nombre ?? null)
 
 //Orden de tabla
-const ordenColumna = ref(route.query.ordenColumna ?? "nombre");
-const ordenAscendente = ref(route.query.ordenAscendente !== "false");
+const ordenColumna = ref(route.query.ordenColumna ?? "nombre")
+const ordenAscendente = ref(route.query.ordenAscendente !== "false")
 
 // =================== CARGAR DATOS AL ABRIR ==================
-function cargarDatos() {
-    worker.postMessage({
-        type: 'query',
-        query: 'SELECT Nombre, Descripcion, Comun_o_Legendaria, Transformacion FROM Pokemexe_Habilidades',
-        params: []
-    });
+async function cargarDatos() {
+    if (!isReady.value) return
+    loading.value = true
+    error.value = null
+
+    let data = []
+    try {
+        const res = await queryDB('SELECT Nombre, Descripcion, Legendaria, Transformacion FROM habilidades',
+            []
+        )
+        data = (res?.[0]?.values || []).map((row) => {
+            return {
+                nombre: row[0],
+                descripcion: row[1],
+                legendaria: row[2],
+                transformacion: row[3]
+            };
+        });
+    } catch (err) {
+        error.value = err.message || 'Error cargando habilidades'
+    } finally {
+        loading.value = false
+        return data
+    }
 }
 
 onMounted(async () => {
-    worker.postMessage({ type: 'init' });
+    try {
+        await initDB()
+        isReady.value = true
+    } catch (err) {
+        error.value = err.message || 'Error inicializando DB'
+    }
 
-    worker.onmessage = (e) => {
-        if (e.data.type === 'ready') {
-            cargarDatos();
-        }
-        if (e.data.type === 'result') {
-            datos.value = (e.data.result?.[0]?.values || []).map((row) => {
-                return {
-                    nombre: row[0],
-                    descripcion: row[1],
-                    legendaria: row[2] === "Legendaria",
-                    transformacion: row[3] === "Transformación",
-                };
-            });
+    datos.value = await cargarDatos()
 
-            if (datos.value.length > 0) {
-                if (seleccionado.value) {
-                    seleccionarRegla(
-                        datos.value.find((dato) => dato.nombre === seleccionado.value)
-                    );
-                } else {
-                    seleccionarRegla(filtrados.value[0]);
-                }
-                datosCargados.value = true;
-            }
+    //Cargar un seleccionado si hay datos
+    if (datos.value.length > 0) {
+        if (seleccionado.value && datos.value.find((dato) => dato.nombre === seleccionado.value)) {
+            seleccionarRegla(
+                datos.value.find((dato) => dato.nombre === seleccionado.value)
+            );
+        } else {
+            seleccionarRegla(filtrados.value[0]);
         }
-
-        if (e.data.type === 'error') {
-            console.error("Error en SQLite:", e.data.error);
-        }
-    };
-});
+        datosCargados.value = true;
+    }
+})
 
 // ===================== SELECCIONAR HABILIDADES PARA EL CUADRO ===================
 function seleccionarRegla(objeto) {
