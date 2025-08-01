@@ -718,25 +718,28 @@ onMounted(async () => {
 
     <div class="fichaPokemon">
         <!-- 
-        <FichaToolbar :fichaSeleccionada="fichaSeleccionada" :nuevaFichaNombre="nuevaFichaNombre"
-            :ordenFichas="ordenFichas" :fichasGuardadas="fichasGuardadas"
-            @update:fichaSeleccionada="fichaSeleccionada = $event" @update:nuevaFichaNombre="nuevaFichaNombre = $event"
-            @crear="crearFicha" @borrar="borrarFicha" @exportar="exportarFicha" @importar="importarFicha"
-            @moverFicha="moverFicha" />
--->
+        <FichaToolbar ... />
+        -->
         <div class="character-sheet">
             <FichaInfoBasica :ficha="ficha" :especiesPokes="especiesPokes"
                 :especiesPokesCargadas="especiesPokesCargadas" @cambiarNombre="cambiarNombreFicha"
                 @cambiarDatosEspecie="cambiarDatosEspecie" />
 
             <div class="info-principal">
-                <FichaStats :ficha="ficha" />
-              <!--  <FichaDestacados :ficha="ficha" :grados="grados" />
-                <FichaVelocidades :ficha="ficha" />
-                <FichaChecks :ficha="ficha" :ChecksBase="ChecksBase" />
-                -->
+                <div class="stats-area">
+                    <FichaStats :ficha="ficha" />
+                </div>
+                <div class="destacados-area">
+                    <FichaDestacados :ficha="ficha" :grados="grados" />
+                </div>
+                <div class="checks-area">
+                    <FichaChecks :ficha="ficha" :ChecksBase="ChecksBase" />
+                </div>
+                <div class="velocidades-area">
+                    <FichaVelocidades :ficha="ficha" />
+                </div>
             </div>
-<!-- 
+
             <FichaMovimientos :ficha="ficha" :movimientos="movimientos" :movimientosCargados="movimientosCargados" />
             <div class="HabsYDotes">
                 <FichaHabilidades :ficha="ficha" :habilidades="habilidades"
@@ -744,7 +747,7 @@ onMounted(async () => {
                 <FichaDotes :ficha="ficha" :dotes="dotes" :dotesCargadas="dotesCargadas" />
             </div>
             <FichaOtros :ficha="ficha" :naturalezas="naturalezas" />
-            -->
+
         </div>
     </div>
 </template>
@@ -759,11 +762,36 @@ onMounted(async () => {
 }
 
 .character-sheet {
-    width: 90%;
+    width: 1515px;
     margin: 50px auto;
     background-color: var(--color-fondoTexto);
     border-radius: 10px;
-    padding: 15px;
+    padding: 20px;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2), -3px 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+.info-principal {
+    width: 100%;
+    display: grid;
+    grid-template-areas:
+        "stats destacados velocidades"
+        "stats checks velocidades";
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 110px auto;
+    gap: 0px 20px;
+}
+
+.stats-area {
+    grid-area: stats;
+}
+.destacados-area {
+    grid-area: destacados;
+}
+.checks-area {
+    grid-area: checks;
+}
+.velocidades-area {
+    grid-area: velocidades;
 }
 
 /* inputs 
@@ -845,16 +873,7 @@ onMounted(async () => {
 }
 
 /* PRICIPAL GRID 
-.info-principal {
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1fr repeat(2, 2fr);
-    grid-template-rows: 200px 240px;
-    grid-template-areas:
-        "stats central vels"
-        "stats checks checks"
-    ;
-}
+
 
 /* Grid areas 
 .central {

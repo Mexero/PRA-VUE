@@ -140,10 +140,7 @@ function ocultarLista() {
     flex-wrap: nowrap;
 }
 
-
-
-
-.info-basica-grid input {
+input {
     font-size: large;
     background-color: transparent;
     padding: 4px;
@@ -237,6 +234,7 @@ ul {
     max-height: 200px;
     overflow-y: auto;
     width: 100%;
+    top: 40px;
 }
 
 li {
@@ -247,41 +245,4 @@ li {
 li:hover {
     background-color: #f0f0f0;
 }
-
-/*
-.info-basica {
-    display: flex;
-    gap: 24px;
-    justify-content: space-between;
-    margin-bottom: 20px;
-}
-
-.sugerencias {
-    border: 1px solid #ccc;
-    max-height: 150px;
-    overflow-y: auto;
-    background: white;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    position: absolute;
-    z-index: 10;
-    top: 30px;
-    left: 0;
-    width: 250px;
-}
-
-.label {
-    font-weight: 600;
-    color: #34495e;
-}
-
-button {
-    margin-left: 8px;
-    padding: 4px 10px;
-    font-size: 0.9em;
-}
-
-
-    */
 </style>

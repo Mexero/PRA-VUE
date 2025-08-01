@@ -1,21 +1,38 @@
 <template>
-    <section class="stats">
-        <div class="item" v-for="stat in ['fue', 'agi', 'res', 'men', 'esp', 'pre']" :key="stat">
-            {{ stat.toUpperCase() + " " }}:
-            <span>{{ ficha.derivados.stats[stat] }}</span>
-            <!-- 
-            <span v-if="['fue', 'agi', 'res', 'esp'].includes(stat)">({{ ficha.derivados.salvaciones[stat] || 0
-                }})</span> 
-                
-                -->
-            <span> Mejora: {{Array.isArray(ficha.personaliz.mejorasEst) ? ficha.personaliz.mejorasEst.filter(s => s ===
-                stat).length : 0}}
-                </span>
-            <div class="botonMaxMenos">
-                <button @click="cambiarMejoraEST(stat, 1)">+</button>
-                <button @click="cambiarMejoraEST(stat, -1)">−</button>
+    <section>
+        <div class="puntosDisponibles">
+            Puntos disponibles:
+            <strong>{{ ficha.derivados.cantidadMejorasEST - ficha.personaliz.mejorasEst.length }}</strong>
+        </div>
+        <div style="display: flex; gap: 20px;">
+            <div class="stats">
+                <h3>Estadisticas</h3>
+                <div class="item" v-for="stat in ['fue', 'agi', 'res', 'men', 'esp', 'pre']" :key="stat">
+                    {{ stat.toUpperCase() + " " }}
+                    <div class="statsContenido">
+                        <span
+                          class="bonoStat"
+                          v-if="ficha.derivados.stats[stat] > ficha.pokedex.statsBase[stat]"
+                        >
+                          +{{ ficha.derivados.stats[stat] - ficha.pokedex.statsBase[stat] }}
+                        </span>
+                        <span class="numStat">{{ ficha.derivados.stats[stat] }}</span>
+                        <div class="botonMaxMenos">
+                            <button class="btn-mas" @click="cambiarMejoraEST(stat, 1)"></button>
+                            <button class="btn-menos" @click="cambiarMejoraEST(stat, -1)"></button>
+                        </div>
+                    </div>
+                    <span v-if="['fue', 'agi', 'res', 'esp'].includes(stat)"></span>
+                </div>
             </div>
 
+            <section class="salvaciones">
+                <h3>Salvaciones</h3>
+                <div class="bonosSalvacion" v-for="stat in ['fue', 'agi', 'res', 'esp']" :key="stat">
+                    {{ stat.toUpperCase() + " " }}
+                    <span class="numero">{{ ficha.derivados.salvaciones[stat] || 0 }}</span>
+                </div>
+            </section>
         </div>
     </section>
 </template>
@@ -49,33 +66,99 @@ function cambiarMejoraEST(stat, delta) {
 <style scoped>
 .stats {
     margin: 10px 0;
-    padding: 10px;
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    grid-template-rows: repeat(6, 1fr);
-    grid-auto-flow: column;
-    gap: 20px;
-    border: 1px solid rgba(150, 150, 150, 0.798);
-    border-radius: 5px;
-    width: fit-content;
-}
-
-.item{
-    display: flex;
-    align-items: center;
-}
-.botonMaxMenos {
+    padding: 5px;
     display: flex;
     flex-direction: column;
-gap: 3px;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid rgba(150, 150, 150, 0.798);
+    border-radius: 5px;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid rgba(150, 150, 150, 0.798);
+    border-radius: 5px;
+    padding: 5px;
+    width: 100px;
+}
+
+.bonoStat {
+    grid-column: 1;
+}
+
+.numStat {
+    grid-column: 2;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.statsContenido {
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 15px 20px 20px;
+    gap: 5px;
+}
+
+.botonMaxMenos {
+    grid-column: 3;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+
 }
 
 .botonMaxMenos button {
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    background: var(--color-principal1);
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
     border: none;
-    
+}
 
+.btn-menos {
+    grid-row: 2;
+    grid-column: 2;
+    cursor: pointer;
+    transform: rotate(180deg);
+}
+
+.btn-mas {
+    grid-row: 1;
+    grid-column: 2;
+    cursor: pointer;
+}
+
+.salvaciones {
+    margin: 10px 0;
+    border: 1px solid rgba(150, 150, 150, 0.798);
+    border-radius: 5px;
+    padding: 5px;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.bonosSalvacion {
+    border: 1px solid rgba(150, 150, 150, 0.798);
+    border-radius: 5px;
+    padding: 5px;
+    align-items: center;
+    display: flex;
+    gap: 10px
+}
+
+.mejoras {
+    display: flex;
+    align-items: center;
+}
+
+.puntosDisponibles {
+    margin-top: 10px;
 }
 </style>
