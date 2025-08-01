@@ -1,31 +1,39 @@
-# PRA-VUE
+# PRA Web
 
-This template should help get you started developing with Vue 3 in Vite.
+Este proyecto se corresponde con la página web del sistema de rol de **PRA (Pokémon Roleplaying Adventures)**.  
+El proyecto usa las siguientes tecnologías: **node.js**, **Vue.js**, **Vite** y **sql.js**.
 
-## Recommended IDE Setup
+## Instalación
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+Clona el repositorio y luego instala las dependencias con npm:
 
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
-
-## Project Setup
-
-```sh
+```bash
+git clone https://github.com/Mexero/PRA-VUE.git
+cd pra-web
 npm install
 ```
 
-### Compile and Hot-Reload for Development
-
-```sh
+## Abrir el proyecto
+```bash
 npm run dev
 ```
 
-### Compile and Minify for Production
-
-```sh
-npm run build
-
-IMPORTANTE: CADA VEZ QUE SE DESPLIEGA UNA NUEVA VERSIÓN SE DEBE MODIFICAR LA VERSIÓN DE /src/sw.js ASOCIADA A LOS CAMBIOS. Si no lo haces, no se materializa el cambio de versión.
+## Build del proyecto
+```bash
+npm run dev
 ```
+
+## Build del proyecto
+```bash
+npm install -g serve
+serve -s dist
+```
+
+## Contribuir
+
+Si quieres colaborar con el proyecto, únete primero al servidor de Discord de PRA.
+
+## Licencia
+
+Este proyecto está licenciado bajo la GNU General Public License v3.0.
+Consulta el archivo LICENSE para más información.

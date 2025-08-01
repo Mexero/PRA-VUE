@@ -101,10 +101,12 @@ import { RouterLink } from 'vue-router'
                     Aquí puedes ver un resumen rápido del sistema.
                 </p>
                 <div class="PDFlinks">
-                    <RouterLink to="" target="_blank">
+                    <RouterLink to="https://mega.nz/file/zrZllYDS#WAAOa49v1Sgwcikk3KUBhCmOqYxi0KWMyw3mgMxICzY"
+                        target="_blank">
                         <div>PDF Resumen del sistema</div>
                     </RouterLink>
-                    <RouterLink to="" target="_blank">
+                    <RouterLink to="https://mega.nz/file/X3pXQSTC#0IdzJJkiJBDGHEjIVFP6vFOsITsjXauo4HvFqqkJ8TY"
+                        target="_blank">
                         <div>PDF Combate rápido</div>
                     </RouterLink>
                 </div>
@@ -115,14 +117,16 @@ import { RouterLink } from 'vue-router'
             <article class="descargaPDF" id="descargaLibro">
                 <h2>Descarga las últimas versiones</h2>
                 <div class="PDFlinks">
-                    <RouterLink to="" target="_blank">
+                    <RouterLink to="https://mega.nz/file/6mACjaxT#qFzwanQCyEXhsR4KYVBskqbNfEvj1cZVR_9Nv20jr50"
+                        target="_blank">
                         <div>PDF Base</div>
                     </RouterLink>
-                    <RouterLink to="" target="_blank">
+                    <RouterLink to="https://mega.nz/file/HvRG1KYK#lofRp_J6U4WBdM7Uv4M5eYF4fIbREcIb0IvV4tjte-U"
+                        target="_blank">
                         <div>PDF Pokédex</div>
                     </RouterLink>
                     <RouterLink to="" target="_blank">
-                        <div>PDF Pokedex DM</div>
+                        <div>PDF Entrenadex (WIP)</div>
                     </RouterLink>
                 </div>
             </article>
