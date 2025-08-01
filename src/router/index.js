@@ -138,6 +138,11 @@ const router = createRouter({
       name: 'reglas',
       component: () => import('../views/ReglasView.vue'),
     },
+    {
+      path: "/tablatipos",
+      name: 'tablatipos',
+      component: () => import('../views/TablaTiposView.vue'),
+    },
 
 
     { //Este redirige si no hay una regla definida
