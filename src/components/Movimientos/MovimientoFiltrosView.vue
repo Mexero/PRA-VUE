@@ -147,7 +147,8 @@ watch(
                         </div>
                     </details>
                     <h3>Coste en PP</h3>
-                    <Slider :allowedValues="allowedValues" :limpiar="limpiarSliderFlag" @actualizarMinMax="emitirPP" />
+                    <Slider :allowedValues="allowedValues" :limpiar="limpiarSliderFlag" @actualizarMinMax="emitirPP"
+                        :min="PPMin" :max="PPMax" />
                 </div>
             </div>
         </transition>
