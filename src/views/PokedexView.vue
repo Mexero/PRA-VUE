@@ -15,7 +15,7 @@
       <!-- Pokédex View -->
       <div class="main-content">
         <div class="pokedex-section">
-          <PokemonGrid @show-details="handlePokemonSelect" :pokedex="pokedex" :pokedexCargada="pokedexCargada"
+          <PokemonGrid @show-details="handlePokemonSelect" :pokedex="pokedexFiltrada" :pokedexCargada="pokedexCargada"
             :selectedPokemon="selectedPokemon" />
         </div>
         <div class="details-section">
@@ -41,6 +41,7 @@ const route = useRoute()
 const router = useRouter()
 
 //Datos
+const pokedexFiltrada = ref([])
 const pokedex = ref([])
 const selectedPokemon = ref(route.query.seleccionado ?? null)
 const selectedPokemonData = ref(null)
@@ -48,6 +49,7 @@ const selectedPokemonData = ref(null)
 //Flags
 const dbCargada = ref(false)
 const pokedexCargada = ref(false)
+const pokedexCompletaCargada = ref(false)
 const cargandoPokemon = ref(false)
 const errorCargaPokemon = ref(false)
 const verFiltros = ref(false)
@@ -61,6 +63,11 @@ onMounted(async () => {
   try {
     await initDB()
     dbCargada.value = true //Esto dispara el watch que hace que se carguen los pokes y el watch que carga nombres de habs y de movs
+
+    //Cargar pokedex entera
+    const lista = await cargarTodosPokes({})
+    pokedex.value = lista
+    pokedexCompletaCargada.value = true
   } catch (err) {
     errorCargaPokemon.value = err.message || 'Error inicializando DB'
     console.warn(errorCargaPokemon.value)
@@ -98,7 +105,6 @@ function manejarFiltros(busqueda, tipos, habilidad, tamano, sentido, natHab, vit
 //Cambia la ruta y aplicar filtros si hay datos cargados
 watch(
   [
-    selectedPokemon,
     searchTerm,
     selectedTypes,
     filtroHabilidad,
@@ -114,7 +120,7 @@ watch(
   async () => {
     router.replace({ query: construirQuery() })
     if (dbCargada.value) {
-      const { lista, especie } = await cargarTodosPokes({
+      const lista = await cargarTodosPokes({
         searchTerm: searchTerm.value,
         selectedTypes: selectedTypes.value,
         filtroHabilidad: filtroHabilidad.value,
@@ -125,12 +131,9 @@ watch(
         filtroNivelMin: filtroNivelMin.value,
         filtroVelocidades: filtroVelocidades.value,
         filtroMovimientos: filtroMovimientos.value
-      },
-        selectedPokemon.value)
-
-      pokedex.value = lista
+      })
+      pokedexFiltrada.value = lista
       pokedexCargada.value = true
-      if (selectedPokemon.value !== especie) selectedPokemon.value = especie
     }
   },
   { deep: true }
@@ -162,19 +165,56 @@ function construirQuery() {
 }
 
 function aplicarQuery(query) {
-  searchTerm.value = query.busqueda ?? null
-  selectedTypes.value = query.tipos ? query.tipos.split(',').slice(0, 2) : []
-  selectedPokemon.value = query.seleccionado ?? null
-  filtroHabilidad.value = query.habilidad ?? null
-  filtroTamano.value = query.tamano ?? null
-  filtroSentido.value = query.sentido ?? null
-  filtroNatHabil.value = query.nathab ?? null
-  filtroVitalidad.value = query.vit ? parseInt(query.vit) : null
-  filtroNivelMin.value = query.nivmin ? parseInt(query.nivmin) : null
-  filtroVelocidades.value = query.vels ? query.vels.split(',') : []
-  filtroMovimientos.value = query.movs ? query.movs.split(',') : []
+  if (searchTerm.value !== (query.busqueda ?? null)) {
+    searchTerm.value = query.busqueda ?? null
+  }
 
+  const tipos = query.tipos ? query.tipos.split(',').slice(0, 2) : []
+  if (JSON.stringify(selectedTypes.value) !== JSON.stringify(tipos)) {
+    selectedTypes.value = tipos
+  }
+
+  if (selectedPokemon.value !== (query.seleccionado ?? null)) {
+    selectedPokemon.value = query.seleccionado ?? null
+  }
+
+  if (filtroHabilidad.value !== (query.habilidad ?? null)) {
+    filtroHabilidad.value = query.habilidad ?? null
+  }
+
+  if (filtroTamano.value !== (query.tamano ?? null)) {
+    filtroTamano.value = query.tamano ?? null
+  }
+
+  if (filtroSentido.value !== (query.sentido ?? null)) {
+    filtroSentido.value = query.sentido ?? null
+  }
+
+  if (filtroNatHabil.value !== (query.nathab ?? null)) {
+    filtroNatHabil.value = query.nathab ?? null
+  }
+
+  const vit = query.vit ? parseInt(query.vit) : null
+  if (filtroVitalidad.value !== vit) {
+    filtroVitalidad.value = vit
+  }
+
+  const nivmin = query.nivmin ? parseInt(query.nivmin) : null
+  if (filtroNivelMin.value !== nivmin) {
+    filtroNivelMin.value = nivmin
+  }
+
+  const vels = query.vels ? query.vels.split(',') : []
+  if (JSON.stringify(filtroVelocidades.value) !== JSON.stringify(vels)) {
+    filtroVelocidades.value = vels
+  }
+
+  const movs = query.movs ? query.movs.split(',') : []
+  if (JSON.stringify(filtroMovimientos.value) !== JSON.stringify(movs)) {
+    filtroMovimientos.value = movs
+  }
 }
+
 
 // <================= ESTÉTICA FILTROS ==================>
 
@@ -195,8 +235,7 @@ async function cargarTodosPokes({
   filtroVitalidad = null,
   filtroVelocidades = [],
   filtroMovimientos = []
-},
-  selected) {
+}) {
 
   const condiciones = []
   const params = []
@@ -285,7 +324,6 @@ async function cargarTodosPokes({
   `
 
   let data = []
-  let elegido = selected
 
   try {
     const res = await queryDB(query, params)
@@ -300,20 +338,13 @@ async function cargarTodosPokes({
       }))
       if (data.length > 0) {
         data = OrderPokedex(data)
-        const encontrado = data.find(p => p.especie === selected)
-        if (!selected || !encontrado) {
-          elegido = data[0]?.especie
-        }
       }
     }
   } catch (err) {
     errorCargaPokemon.value = err.message || 'Error cargando especies Pokémon'
     console.warn(errorCargaPokemon.value)
   } finally {
-    return {
-      lista: data,
-      especie: elegido
-    }
+    return data
   }
 }
 
@@ -321,12 +352,16 @@ async function cargarTodosPokes({
 // <========= CAMBIAR SELECCIONADO =============>
 watch([
   selectedPokemon,
-  pokedexCargada
+  pokedexCompletaCargada
 ],
   () => {
-    if (pokedexCargada.value) {
+    router.replace({ query: construirQuery() })
+    if (pokedexCompletaCargada.value) {
       errorCargaPokemon.value = false
-      if (pokedex.value.find(p => p.especie === selectedPokemon.value)) {
+      if (!selectedPokemon.value) {
+        selectedPokemon.value = pokedex.value[0].especie
+      }
+      else if (pokedex.value.find(p => p.especie === selectedPokemon.value)) {
         cargandoPokemon.value = true
         cambiarPokeSeleccionado(selectedPokemon.value)
       }
@@ -340,7 +375,7 @@ watch([
 )
 
 async function cambiarPokeSeleccionado(especie) {
-  if (!pokedexCargada.value) return
+  if (!pokedexCompletaCargada.value) return
 
   cargandoPokemon.value = true
   errorCargaPokemon.value = null
