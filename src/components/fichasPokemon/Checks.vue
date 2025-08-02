@@ -1,3 +1,4 @@
+
 <script setup>
 import { ref, computed } from 'vue'
 
@@ -6,6 +7,7 @@ const emit = defineEmits(['gradoChange'])
 
 const nuevoCheck = ref('')
 const filteredChecks = ref([])
+const mostrarPopup = ref(false)
 const mostrarSugerencias = ref(false)
 const selectedSuggestionIndex = ref(-1)
 
@@ -31,20 +33,16 @@ function gradoActual(checkName) {
 
 const mejorasUsadas = computed(() => props.ficha.personaliz.mejorasHab.length)
 
-function subirGrado(index) {
-    const check = props.ficha.personaliz.checks[index]
-    const actualGrado = gradoActual(check.check)
-
+function subirGrado(checkName) {
+    const actualGrado = gradoActual(checkName)
     if (actualGrado >= grados.length - 1) return
-
-    if (mejorasUsadas.value < props.ficha.derivados.cantidadMejorasHab) {
-        props.ficha.personaliz.mejorasHab.push(check.check)
+    if (props.ficha.manual.cantidadMejorasHab === true || mejorasUsadas.value < props.ficha.derivados.cantidadMejorasHab) {
+        props.ficha.personaliz.mejorasHab.push(checkName)
     }
 }
 
-function bajarGrado(index) {
-    const check = props.ficha.personaliz.checks[index]
-    const idx = props.ficha.personaliz.mejorasHab.lastIndexOf(check.check)
+function bajarGrado(checkName) {
+    const idx = props.ficha.personaliz.mejorasHab.lastIndexOf(checkName)
     if (idx !== -1) {
         props.ficha.personaliz.mejorasHab.splice(idx, 1)
     }
@@ -55,21 +53,18 @@ function filterChecks() {
     filteredChecks.value = props.ChecksBase.map(ch => ch.check)
         .filter(c => c.toLowerCase().includes(input))
         .filter(c => !props.ficha.personaliz.checks.some(ch => ch.check === c))
-
     selectedSuggestionIndex.value = -1
     mostrarSugerencias.value = true
 }
 
 function addCheck() {
     if (!nuevoCheck.value.trim()) return
-
     const existe = props.ficha.personaliz.checks.some(c => c.check === nuevoCheck.value)
     if (existe) {
         nuevoCheck.value = ''
         mostrarSugerencias.value = false
         return
     }
-
     let esBase = props.ChecksBase.find(ch => ch.check === nuevoCheck.value)
     props.ficha.personaliz.checks.push({
         check: nuevoCheck.value,
@@ -79,6 +74,7 @@ function addCheck() {
     })
     nuevoCheck.value = ''
     mostrarSugerencias.value = false
+    mostrarPopup.value = false
     document.activeElement?.blur()
 }
 
@@ -125,76 +121,84 @@ function onEnter() {
         addCheck()
     }
 }
+
+function getCheck(checkName) {
+    let check = props.ficha.personaliz.checks.find(ch => ch.check === checkName)
+    if (!check) {
+        return {
+            check: checkName,
+            stat: props.ChecksBase.find(ch => ch.check === checkName)?.stat || 'fue',
+            grado: 'no',
+            total: 0,
+        }
+    }
+    return check
+}
+
+// Computed para mostrar solo las habilidades base con grado > 'no'
+const habilidadesBaseMostradas = computed(() => {
+    return props.ChecksBase.filter(checkBase => {
+        const grado = grados[gradoActual(checkBase.check)]
+        return grado !== 'no' && props.ficha.derivados.checksBase.some(cb => cb.check === checkBase.check)
+    })
+})
 </script>
+
 
 <template>
     <section class="checks">
-        <h3>
-            Tiradas de habilidad ({{ ficha.personaliz.mejorasHab.length }} / <input type="number"
-                v-model="props.ficha.derivados.cantidadMejorasHab" :readonly="!ficha.manual.cantidadMejorasHab" />)
-            <input type="checkbox" v-model="ficha.manual.cantidadMejorasHab" />
-        </h3>
+        <div style="display: flex; width: 100%; justify-content: space-between; align-items: center;">
+            <h3>
+                Tiradas de habilidad ({{ ficha.personaliz.mejorasHab.length }} /
+                <input type="number" v-model="props.ficha.derivados.cantidadMejorasHab"
+                    :readonly="!ficha.manual.cantidadMejorasHab" />)
+                <input type="checkbox" v-model="ficha.manual.cantidadMejorasHab" true-value="true" false-value="false" />
+                <span style="font-size:small;">Quitar límite</span>
+            </h3>
+            <button @click="mostrarPopup.value = true" style="margin-right: 10px;">Añadir habilidad</button>
+        </div>
 
         <div class="checks-list">
-            <template v-for="(check, i) in ficha.personaliz.checks">
-                <div v-if="check.check !== 'Init'" class="item" :key="i">
-                    <p>{{ check.check }}</p>
-
-                    <select v-model="check.stat">
+            <template v-for="checkBase in habilidadesBaseMostradas" :key="checkBase.check">
+                <div class="item">
+                    <p>{{ checkBase.check }}</p>
+                    <select v-model="getCheck(checkBase.check).stat">
                         <option v-for="stat in Object.keys(ficha.derivados.stats)" :key="stat" :value="stat">
                             {{ stat.toUpperCase() }}
                         </option>
                     </select>
-
                     <div class="grado-control">
-                        <button @click="bajarGrado(i)" :disabled="gradoActual(check.check) <= gradoMinimo(check.check)"
-                            title="Disminuir grado">
-                            -
-                        </button>
-
-                        <span>{{ grados[gradoActual(check.check)] }}</span>
-
-                        <button @click="subirGrado(i)" :disabled="gradoActual(check.check) >= grados.length - 1 ||
-                            mejorasUsadas >= ficha.derivados.cantidadMejorasHab
-                            " :title="gradoActual(check.check) >= grados.length - 1
-                                ? 'Ya está en el grado máximo'
-                                : mejorasUsadas >= ficha.derivados.cantidadMejorasHab
-                                    ? 'No quedan mejoras disponibles'
-                                    : 'Aumentar grado'
-                                ">
-                            +
-                        </button>
+                        <div class="botonMaxMenos">
+                            <button class="btn-mas" @click="subirGrado(checkBase.check)"></button>
+                            <button class="btn-menos" @click="bajarGrado(checkBase.check)"></button>
+                        </div>
+                        <span>{{ grados[gradoActual(checkBase.check)] }}</span>
                     </div>
-
-                    <label>Total:</label>
-                    <input type="number" v-model.number="check.total" />
-
-                    <button v-if="!ficha.derivados.checksBase.find((ch) => ch.check === check.check)"
-                        @click="removeCheck(i)" title="Eliminar check">
-                        ✕
-                    </button>
+                    <div>
+                        <label>Total:</label>
+                        <input type="number" v-model.number="getCheck(checkBase.check).total" />
+                    </div>
                 </div>
             </template>
+        </div>
 
-            <div class="item nuevo-check-container">
-                <input type="text" v-model="nuevoCheck" placeholder="Añadir nueva habilidad"
-                    @keydown.enter.prevent="onEnter" @keydown.down.prevent="onArrowDown" @keydown.up.prevent="onArrowUp"
-                    @input="filterChecks" @blur="hideSuggestionsWithDelay" @focus="showSuggestions" />
-                <button @click="addCheck">Añadir</button>
-
-                <ul v-if="mostrarSugerencias && filteredChecks.length" class="suggestions-list">
-                    <li v-for="(op, idx) in filteredChecks" :key="op" @mousedown.prevent="selectSuggestion(op)"
-                        :class="{ selected: idx === selectedSuggestionIndex }">
-                        {{ op }}
+        <!-- Popup para añadir habilidades -->
+        <div v-if="mostrarPopup.value" class="popup-overlay">
+            <div class="popup-content">
+                <h4>Añadir habilidad</h4>
+                <input type="text" v-model="nuevoCheck.value" @input="filterChecks" @keydown.down.prevent="onArrowDown" @keydown.up.prevent="onArrowUp" @keydown.enter.prevent="onEnter" placeholder="Buscar habilidad..." />
+                <ul v-if="filteredChecks.value.length">
+                    <li v-for="(suggestion, idx) in filteredChecks.value" :key="suggestion" :class="{selected: idx === selectedSuggestionIndex.value}" @mousedown.prevent="selectSuggestion(suggestion)">
+                        {{ suggestion }}
                     </li>
                 </ul>
+                <button @click="mostrarPopup.value = false">Cerrar</button>
             </div>
         </div>
     </section>
 </template>
 
 <style scoped>
-
 
 .checks {
     display: flex;
@@ -204,12 +208,12 @@ function onEnter() {
     border-radius: 5px;
     padding: 5px;
     width: fit-content;
+
 }
 
 .checks-list {
     display: flex;
     flex-wrap: wrap;
-    
     gap: 10px;
 }
 
@@ -233,7 +237,6 @@ input {
     text-align: center;
 }
 
-/* Botones de subir/bajar rango, igual que en Stats.vue */
 .botonMaxMenos {
     display: flex;
     flex-direction: column;
@@ -258,14 +261,12 @@ input {
     cursor: pointer;
 }
 
-/* Quitar flechas en input[type="number"] para Chrome, Safari, Edge */
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
 
-/* Quitar flechas en input[type="number"] para Firefox y estándar */
 input[type="number"] {
     -moz-appearance: textfield;
     appearance: textfield;
@@ -274,68 +275,43 @@ input[type="number"] {
 .grado-control {
     display: flex;
 }
-/*
-.checks-list {
-    display: grid;
-    grid-template: repeat(4, auto) / repeat(2, 1fr);
-    gap: 10px;
-}
 
-.item {
-    display: flex;
-    flex-direction: row;
-    gap: 4px;
-    align-items: center;
-}
-
-.nuevo-check-container {
-    position: relative;
-    flex-direction: column;
-    width: 200px;
-}
-
-.suggestions-list {
-    position: absolute;
-    top: 100%;
+/* Estilos para el popup */
+.popup-overlay {
+    position: fixed;
+    top: 0;
     left: 0;
-    right: 0;
-    background: white;
-    border: 1px solid #ccc;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+.popup-content {
+    background: var(--color-fondo, #fff);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    min-width: 300px;
+}
+.popup-content h4 {
+    margin-top: 0;
+}
+.popup-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
     max-height: 150px;
     overflow-y: auto;
-    z-index: 10;
-    margin: 0;
-    padding: 0;
-    list-style: none;
 }
-
-.suggestions-list li {
+.popup-content li {
     padding: 5px 10px;
     cursor: pointer;
 }
-
-.suggestions-list li.selected,
-.suggestions-list li:hover {
-    background-color: #bde4ff;
-}
-
-.grado-control {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-}
-
-.grado-control button {
-    width: 24px;
-    height: 24px;
+.popup-content li.selected {
+    background: var(--color-principal1, #eee);
     font-weight: bold;
-    cursor: pointer;
 }
-
-.grado-control button:disabled {
-    cursor: not-allowed;
-    opacity: 0.4;
-}
-
-*/
 </style>

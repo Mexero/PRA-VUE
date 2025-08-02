@@ -93,13 +93,13 @@ function bajarGrado(checkName) {
 
         </section>
 
-       
+
         <section class="info-dinamica">
 
-            <div class="item"> <label>PV: 
-                 <!-- <input type="checkbox" v-model="ficha.manual.pvMax" /> -->
-            
-            </label>
+            <div class="item"> <label>PV:
+                    <!-- <input type="checkbox" v-model="ficha.manual.pvMax" /> -->
+
+                </label>
                 <input v-model.number="ficha.derivados.pv" /> /
                 <input v-model.number="ficha.derivados.pvMax" :readonly="!ficha.manual.pvMax" />
             </div>
@@ -108,9 +108,9 @@ function bajarGrado(checkName) {
                 <input v-model.number="ficha.derivados.escudo" />
             </div>
 
-            <div class="item"> <label>PP: 
-               <!-- <input type="checkbox" v-model="ficha.manual.ppMax" /> -->
-            </label>
+            <div class="item"> <label>PP:
+                    <!-- <input type="checkbox" v-model="ficha.manual.ppMax" /> -->
+                </label>
 
                 <input v-model.number="ficha.derivados.pp" /> /
                 <input v-model.number="ficha.derivados.ppMax" :readonly="!ficha.manual.ppMax" />
@@ -134,7 +134,10 @@ function bajarGrado(checkName) {
     height: fit-content;
     margin: 40px 0px;
     display: flex;
-    gap: 50px;
+    gap: 30px;
+    position: relative;
+    right: 140px;
+    
 }
 
 input {
@@ -145,20 +148,21 @@ input {
     border-bottom: 1px solid;
     color: var(--color-texto);
     width: 40px;
-        text-align: center;
+    text-align: center;
 
 }
 
-.destacados, .info-dinamica {
+.destacados,
+.info-dinamica {
     display: flex;
-    gap: 40px;
+    gap: 30px;
 }
 
 .item {
     display: flex;
     align-items: center;
     justify-content: space-around;
-      min-width: fit-content;
+    min-width: fit-content;
 }
 
 

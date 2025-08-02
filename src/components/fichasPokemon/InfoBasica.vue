@@ -100,37 +100,33 @@ function ocultarLista() {
 .info-basica-grid {
     border-bottom: 1px solid rgba(150, 150, 150, 0.798);
     padding-bottom: 20px;
-    display: grid;
-    grid-template-columns: auto;
-    grid-template-rows: auto;
-    grid-template-areas:
-        "nombre especie nivel tipos ";
+    display: flex;
+    justify-content: space-between;
     gap: 10px;
 }
 
-.info-basica-grid .nombre {
-    grid-area: nombre;
+ .nombre {
     display: flex;
     align-items: center;
     gap: 5px;
 }
 
-.info-basica-grid .nivel {
-    grid-area: nivel;
+ .nivel {
+
     display: flex;
     align-items: center;
     gap: 5px;
 }
 
-.info-basica-grid .especie {
-    grid-area: especie;
+.especie {
+
     display: flex;
     align-items: center;
     gap: 5px;
 }
 
-.info-basica-grid .tipos {
-    grid-area: tipos;
+ .tipos {
+
     display: flex;
     align-items: center;
     gap: 5px;

@@ -10,11 +10,8 @@
                 <div class="item" v-for="stat in ['fue', 'agi', 'res', 'men', 'esp', 'pre']" :key="stat">
                     {{ stat.toUpperCase() + " " }}
                     <div class="statsContenido">
-                        <span
-                          class="bonoStat"
-                          v-if="ficha.derivados.stats[stat] > ficha.pokedex.statsBase[stat]"
-                        >
-                          +{{ ficha.derivados.stats[stat] - ficha.pokedex.statsBase[stat] }}
+                        <span class="bonoStat" v-if="ficha.derivados.stats[stat] > ficha.pokedex.statsBase[stat]">
+                            +{{ ficha.derivados.stats[stat] - ficha.pokedex.statsBase[stat] }}
                         </span>
                         <span class="numStat">{{ ficha.derivados.stats[stat] }}</span>
                         <div class="botonMaxMenos">
@@ -67,12 +64,17 @@ function cambiarMejoraEST(stat, delta) {
 .stats {
     margin: 10px 0;
     padding: 5px;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     align-items: center;
     gap: 10px;
     border: 1px solid rgba(150, 150, 150, 0.798);
     border-radius: 5px;
+}
+
+.stats h3 {
+    grid-column: 1 / -1;
+    text-align: center;
 }
 
 .item {
@@ -142,6 +144,8 @@ function cambiarMejoraEST(stat, delta) {
     display: flex;
     flex-direction: column;
     gap: 5px;
+    position: relative;
+    bottom:  -70px;
 }
 
 .bonosSalvacion {

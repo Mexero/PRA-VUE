@@ -749,6 +749,7 @@ onMounted(async () => {
         <FichaToolbar ... />
         -->
         <div class="character-sheet">
+               
             <FichaInfoBasica :ficha="ficha" :especiesPokes="especiesPokes"
                 :especiesPokesCargadas="especiesPokesCargadas" @cambiarNombre="cambiarNombreFicha"
                 @cambiarDatosEspecie="cambiarDatosEspecie" />
@@ -767,15 +768,17 @@ onMounted(async () => {
                     <FichaVelocidades :ficha="ficha" />
                 </div>
             </div>
-
+             <!-- 
             <FichaMovimientos :ficha="ficha" :movimientos="movimientos" :movimientosCargados="movimientosCargados" />
+
             <div class="HabsYDotes">
                 <FichaHabilidades :ficha="ficha" :habilidades="habilidades"
                     :habilidadesCargadas="habilidadesCargadas" />
                 <FichaDotes :ficha="ficha" :dotes="dotes" :dotesCargadas="dotesCargadas" />
             </div>
-            <FichaOtros :ficha="ficha" :naturalezas="naturalezas" />
 
+            <FichaOtros :ficha="ficha" :naturalezas="naturalezas" />
+ -->
         </div>
     </div>
 </template>
@@ -785,12 +788,14 @@ onMounted(async () => {
 <style scoped>
 .fichaPokemon {
     display: flex;
-    margin: 50px auto;
+    justify-content: center;
+    margin: auto;
+    width: fit-content;
     color: var(--color-texto);
 }
 
 .character-sheet {
-    width: 1515px;
+
     margin: 50px auto;
     background-color: var(--color-fondoTexto);
     border-radius: 10px;
@@ -799,12 +804,12 @@ onMounted(async () => {
 }
 
 .info-principal {
-    width: 100%;
+    width: fit-content;
     display: grid;
     grid-template-areas:
         "stats destacados velocidades"
         "stats checks velocidades";
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: auto auto auto;
     grid-template-rows: 110px auto;
     gap: 0px 20px;
 }
@@ -812,12 +817,15 @@ onMounted(async () => {
 .stats-area {
     grid-area: stats;
 }
+
 .destacados-area {
     grid-area: destacados;
 }
+
 .checks-area {
     grid-area: checks;
 }
+
 .velocidades-area {
     grid-area: velocidades;
 }
