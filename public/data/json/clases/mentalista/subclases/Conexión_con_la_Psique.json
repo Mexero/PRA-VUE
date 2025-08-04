@@ -22,7 +22,7 @@
                 {
                     "nombre": "Movimientos de psíquico",
                     "descripcion": [
-                        "A nivel 2, aprendes a utilizar tus poderes psíquicos más tangiblemente. Para ti, los siguientes Movimientos se añaden a la lista de Mentalista:",
+                        "A nivel 2, aprendes a utilizar tus poderes psíquicos más tangiblemente. Para ti, los siguientes Movimientos se añaden a la lista de Mentalista. Además, aprendes 2 de estos Movimientos, que no cuentan para el Máximo de Movimientos de Mentalista que conoces y que puedes cambiar cada vez que subes de nivel.",
                         {
                             "tipo": "listaU",
                             "contenido": [

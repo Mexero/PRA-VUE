@@ -41,8 +41,8 @@
                 ],
                 1,
                 1,
-                2,
-                "1 PP"
+                3,
+                "2 PP"
             ],
             [
                 3,
@@ -61,7 +61,7 @@
                 ],
                 2,
                 1,
-                3,
+                4,
                 "1 PP"
             ],
             [
@@ -82,7 +82,7 @@
                 ],
                 3,
                 2,
-                4,
+                5,
                 "2 PP"
             ],
             [
@@ -102,7 +102,7 @@
                 ],
                 4,
                 3,
-                5,
+                6,
                 "2 PP"
             ],
             [
@@ -122,7 +122,7 @@
                 ],
                 5,
                 3,
-                6,
+                7,
                 "4 PP"
             ],
             [
@@ -145,7 +145,7 @@
                 ],
                 6,
                 4,
-                7,
+                8,
                 "4 PP"
             ],
             [
@@ -165,7 +165,7 @@
                 ],
                 7,
                 5,
-                8,
+                9,
                 "4 PP"
             ],
             [
@@ -186,7 +186,7 @@
                 ],
                 8,
                 5,
-                9,
+                10,
                 "5 PP"
             ],
             [
@@ -207,7 +207,7 @@
                 ],
                 9,
                 6,
-                10,
+                11,
                 "5 PP"
             ],
             [
@@ -227,7 +227,7 @@
                 ],
                 10,
                 7,
-                11,
+                12,
                 "5 PP"
             ]
         ]
@@ -255,7 +255,8 @@
             "claseNombre": "Mentalista",
             "nivel": 1,
             "descripcion": [
-                "Cuando alcanzas nivel 1, has despertado tus habilidades místicas, que crean una barrera mágica que te protege. Tu Vitalidad se vuelve 9, si no era superior y puedes calcular tu CA como 10 + ESP + BH."
+                "Cuando alcanzas nivel 1, has despertado tus habilidades místicas, que crean una barrera mágica que te protege. Tu Vitalidad se vuelve 9, si no era superior y puedes calcular tu CA como 10 + ESP + BH.",
+                "Además, tus PP máximos aumentan en 2."
             ]
         },
         {
