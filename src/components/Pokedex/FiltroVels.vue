@@ -55,7 +55,7 @@ function toggleVel(vel) {
   border-radius: 4px;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: background-color 0.3s ease;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
   font-size: 0.9em;
   width: calc(16.66% - 5px);
@@ -64,7 +64,19 @@ function toggleVel(vel) {
 }
 
 .filter-button.active {
-  background-color: rgb(41, 98, 156);
+  background-color: var(--color-principal2);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width:630px) {
+  .filter {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+  }
+
+  .filter-button {
+    width: 100%;
+  }
 }
 </style>

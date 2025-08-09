@@ -133,41 +133,67 @@ async function handleHabs() {
 
 <style scoped>
 .hayElegida {
-    border: blue solid;
+    border: var(--color-fondoTexto);
 }
 
 .contenedor {
     position: relative;
-    width: 300px;
-    margin: 2rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+label {
+    font-weight: 600;
+    font-size: 0.95em;
 }
 
 input {
     width: 100%;
-    padding: 0.5rem;
-    font-size: 1rem;
+    padding: 10px 14px;
+    border: 1.8px solid #ccc;
+    border-radius: 8px;
+    font-size: 0.95em;
+    background-color: var(--color-fondoTarjeta);
+    transition: all 0.25s ease;
+    outline: none;
+}
+
+input:hover {
+    border-color: #999;
+}
+
+input:focus {
+    border-color: var(--color-secundario2);
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.25);
+}
+
+.hayElegida {
+    border-color: #9999;
 }
 
 .dropdown {
     position: absolute;
-    top: 100%;
+    top: 95%;
     left: 0;
     width: 100%;
     z-index: 1000;
-    background-color: white;
+    background-color: var(--color-fondoTarjeta);
     border: 1px solid #ccc;
     max-height: 200px;
     overflow-y: auto;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-    margin-top: 4px;
+    border-radius: 6px;
 }
 
 .dropdown li {
-    padding: 0.5rem;
+    padding: 8px 12px;
     cursor: pointer;
+    font-size: 0.95em;
 }
 
 .dropdown li:hover {
-    background-color: #f0f0f0;
+    background-color: var(--color-fondoTexto);
 }
 </style>

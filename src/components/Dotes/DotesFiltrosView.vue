@@ -139,78 +139,22 @@ watch(
 </template>
 
 <style scoped>
-.paddingBloque {
-    padding: 15px;
+/* ===== TITULOS ===== */
+h3 {
+    margin-bottom: 8px;
+    font-size: 18px;
+    color: var(--color-texto);
 }
 
+/* ===== CONTENEDORES ===== */
 .filtros {
     width: 100%;
     display: flex;
     flex-direction: column;
 }
 
-#filtroPrerrequisitos div {
-    gap: 8px;
-    flex-wrap: wrap;
-}
-
-#filtroTipos div {
-    margin: 10px 5px;
-    display: flex;
-    gap: 40px;
-    flex-wrap: wrap;
-}
-
-input[type="text"] {
-    padding: 7px;
-    border-radius: 5px;
-    font-size: 17px;
-    outline: none;
-    margin-right: 20px;
-}
-
-input[type="text"]:focus {
-    border-color: #007bff;
-    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.2);
-}
-
-#filtroPrerrequisitos div {
-    padding: 8px 0;
-    display: flex;
-    gap: 20px;
-}
-
-.filtros button {
-    border: none;
-    padding: 10px;
-    width: 150px;
-    cursor: pointer;
-    background-color: var(--color-principal1);
-    color: var(--color-texto);
-    font-size: 17px;
-}
-
-/*Contenedor de los botones*/
-.botones {
-    display: flex;
-    gap: 5px;
-}
-
-.filtros button:hover {
-    background-color: var(--color-secundario);
-}
-
-
-@media screen and (max-width: 1170px) {
-    #filtroTipos div {
-        grid-template-columns: repeat(3, auto);
-    }
-}
-
-@media screen and (max-width: 960px) {
-    #filtroTipos div {
-        grid-template-columns: repeat(2, auto);
-    }
+.paddingBloque {
+    padding: 15px;
 }
 
 #mostrarFiltros {
@@ -218,7 +162,6 @@ input[type="text"]:focus {
     background-color: var(--color-fondoTexto);
     width: 100%;
     border-radius: 0 10px 0 0;
-
     font-size: 15px;
     box-shadow:
         -2px 2px 10px rgba(0, 0, 0, 0.1),
@@ -227,6 +170,76 @@ input[type="text"]:focus {
         -2px -2px 10px rgba(0, 0, 0, 0.1);
 }
 
+/* ===== BOTONES ===== */
+.filtros button {
+    border: none;
+    padding: 10px 14px;
+    cursor: pointer;
+    background-color: var(--color-principal1);
+    color: var(--color-texto);
+    font-size: 15px;
+    border-radius: 0;
+    /* coherencia: sin radios */
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.filtros button:hover {
+    background-color: var(--color-secundario);
+    transform: translateY(-1px);
+}
+
+.botones {
+    display: flex;
+    gap: 8px;
+}
+
+/* ===== INPUTS TEXTO ===== */
+input[type="text"] {
+    padding: 8px 10px;
+    font-size: 15px;
+    outline: none;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 0;
+    /* coherencia: sin radios */
+    background-color: var(--color-fondoTexto);
+    color: var(--color-texto);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input[type="text"]:focus {
+    border-color: var(--color-principal1);
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.15);
+}
+
+/* ===== CHECKBOXES Y RADIOS ===== */
+label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+    color: var(--color-texto);
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+    accent-color: var(--color-principal1);
+    transform: scale(1.1);
+}
+
+/* ===== SECCIONES DE FILTROS ===== */
+#filtroPrerrequisitos div,
+#filtroTipos div {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+#filtroTipos {
+    margin: 10px 0;
+}
+
+/* ===== SLIDE ANIMATION ===== */
 .slideFiltros-enter-active,
 .slideFiltros-leave-active {
     transition: all 0.3s ease-in-out;
@@ -246,8 +259,20 @@ input[type="text"]:focus {
     opacity: 1;
 }
 
-@media screen and (max-width: 890px) {
+/* ===== RESPONSIVE ===== */
+@media screen and (max-width: 1170px) {
+    #filtroTipos div {
+        grid-template-columns: repeat(3, auto);
+    }
+}
 
+@media screen and (max-width: 960px) {
+    #filtroTipos div {
+        grid-template-columns: repeat(2, auto);
+    }
+}
+
+@media screen and (max-width: 890px) {
     .filtros {
         width: 100%;
         padding: 0;
@@ -259,7 +284,7 @@ input[type="text"]:focus {
 
     .paddingBloque button {
         width: fit-content;
-        margin: 10px 0 0 0;
+        margin-top: 10px;
     }
 
     #filtroTipos div,

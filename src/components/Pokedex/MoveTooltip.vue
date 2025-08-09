@@ -68,6 +68,8 @@ function normalizeType(type) {
 
 
 <style scoped>
+@import '../../css/typeColors.css';
+
 .move-tooltip {
   position: fixed;
   z-index: 1000;
@@ -138,78 +140,5 @@ function normalizeType(type) {
   font-size: 0.9em;
   line-height: 1.4;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-/* Estilos para los tipos de Pokémon */
-.type-normal {
-  background-color: #A8A878;
-}
-
-.type-fuego {
-  background-color: #F08030;
-}
-
-.type-agua {
-  background-color: #6890F0;
-}
-
-.type-electrico {
-  background-color: #F8D030;
-}
-
-.type-planta {
-  background-color: #78C850;
-}
-
-.type-hielo {
-  background-color: #98D8D8;
-}
-
-.type-lucha {
-  background-color: #C03028;
-}
-
-.type-veneno {
-  background-color: #A040A0;
-}
-
-.type-tierra {
-  background-color: #E0C068;
-}
-
-.type-volador {
-  background-color: #A890F0;
-}
-
-.type-psiquico {
-  background-color: #F85888;
-}
-
-.type-bicho {
-  background-color: #A8B820;
-}
-
-.type-roca {
-  background-color: #B8A038;
-}
-
-.type-fantasma {
-  background-color: #705898;
-}
-
-.type-dragon {
-  background-color: #7038F8;
-}
-
-.type-siniestro {
-  background-color: #705848;
-}
-
-.type-acero {
-  background-color: #B8B8D0;
-}
-
-.type-hada {
-  background-color: #EE99AC;
 }
 </style>

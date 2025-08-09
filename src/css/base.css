@@ -3,7 +3,7 @@
   src: url("/assets/fonts/Staatliches-Regular.woff2") format("truetype");
   font-weight: normal;
   font-style: normal;
-    font-display: swap;
+  font-display: swap;
 
 }
 
@@ -27,7 +27,6 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Outfit", sans-serif;
-
 }
 
 

@@ -44,6 +44,7 @@ function toggleModo() {
     root.style.setProperty('--color-fondoTexto', oscuro.value ? '#293141' : '#EEF5FF')
     root.style.setProperty('--color-BloqueDescargas', oscuro.value ? '#ff0051' : '#A1E3F9')
     root.style.setProperty('--color-hoverBloqueDescargas', oscuro.value ? '#293141' : '#EEF5FF')
+    root.style.setProperty('--color-fondoTarjeta', oscuro.value ? '#b0b6bd' : '#ffffff')
 }
 
 

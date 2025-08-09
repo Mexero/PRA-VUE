@@ -10,18 +10,18 @@
           :filtroMovimientos=filtroMovimientos :dbCargada="dbCargada" />
       </div>
     </div>
-    <main>
-      <button @click="verFiltros = true">Filtros</button>
+    <main class="main-content">
       <!-- Pokédex View -->
-      <div class="main-content">
+      <div class="pokedex-wrapper">
+        <button class="verFiltros" @click="verFiltros = true">Filtros</button>
         <div class="pokedex-section">
           <PokemonGrid @show-details="handlePokemonSelect" :pokedex="pokedexFiltrada" :pokedexCargada="pokedexCargada"
             :selectedPokemon="selectedPokemon" />
         </div>
-        <div class="details-section">
-          <!-- Pokemon cargado-->
-          <PokemonDetails :pokemon="selectedPokemonData" :pokedex="pokedex" @show-details="handlePokemonSelect" />
-        </div>
+      </div>
+      <div class="details-section">
+        <!-- Pokemon cargado-->
+        <PokemonDetails :pokemon="selectedPokemonData" :pokedex="pokedex" @show-details="handlePokemonSelect" />
       </div>
     </main>
   </div>
@@ -504,11 +504,11 @@ function generarEvoluciones(evoEn, nivelEvo, tipoRequisito, requisitosEvo, evoOt
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 999;
+  z-index: 1000;
 }
 
 .modal-content {
-  background-color: white;
+  background-color: var(--color-fondo);
   width: 90vw;
   height: 90vh;
   overflow-y: auto;
@@ -528,120 +528,83 @@ function generarEvoluciones(evoEn, nivelEvo, tipoRequisito, requisitosEvo, evoOt
   cursor: pointer;
 }
 
-.app {
-  max-width: 100%;
-  margin: 0 auto;
-  padding: 20px;
-  position: relative;
-}
 
-.app::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  filter: invert(100%);
-  opacity: 0.8;
-  z-index: -999;
-  pointer-events: none;
-}
-
-header {
-  text-align: center;
-  margin-bottom: 30px;
-}
-
-h1 {
-  color: #2c3e50;
-  font-size: 2.5em;
-}
-
-.main-nav {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  margin-bottom: 20px;
-}
-
-.main-nav a {
-  text-decoration: none;
-  color: #555;
+/* === Abrir filtro === */
+.verFiltros {
+  position: sticky;
+  width: fit-content;
+  background-color: var(--color-principal1);
+  color: var(--color-texto);
   font-weight: bold;
-  padding: 8px 16px;
-  border-radius: 4px;
-  transition: all 0.3s ease;
+  padding: 10px 20px;
+  margin: 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.main-nav a:hover {
-  background-color: #f0f0f0;
+.verFiltros:hover {
+  background-color: var(--color-secundario);
+  transform: translateY(-2px);
 }
 
-.main-nav a.active {
-  background-color: #4CAF50;
-  color: white;
+.verFiltros:active {
+  background-color: var(--color-secundario);
+  transform: translateY(0);
 }
 
+/* === main === */
 .main-content {
+  margin: 20px;
+  background-color: var(--color-fondoTexto);
+  border-radius: 10px;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 55fr 45fr;
   gap: 20px;
-  height: calc(100vh - 150px);
+  min-height: 75vh;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.pokedex-wrapper {
+  max-height: 75vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .pokedex-section {
-  overflow-y: auto;
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.details-section {
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  overflow-y: auto;
-}
-
-main {
-  background-color: white;
-  border-radius: 15px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.main-content {
-  display: flex;
-  gap: 20px;
-  min-height: 80vh;
-}
-
-.pokedex-section,
-.details-section {
+  min-height: 0;
   flex: 1;
-  overflow: auto;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  border: 1px solid #999;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
-@media (max-width: 768px) {
-  .main-content {
-    flex-direction: column;
-  }
 
-  .pokedex-section,
-  .details-section {
-    flex: none;
-    height: 50vh;
-  }
+
+.details-section {
+  max-height: 75vh;
+  overflow-y: auto;
+  scrollbar-width: thin;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 950px) {
   .main-content {
+    display: flex;
     flex-direction: column;
+    gap: 20px;
   }
 
-  .pokedex-section,
-  .details-section {
-    flex: auto;
+  .pokedex-wrapper {
+    max-height: 50vh;
   }
+
+  .details-section {
+    max-height: 70vh;
+  }
+
 }
 </style>

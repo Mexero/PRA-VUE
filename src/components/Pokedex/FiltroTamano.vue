@@ -28,24 +28,33 @@ defineEmits(['update:modelValue'])
 
 <style scoped>
 .search-container {
-    margin-bottom: 15px;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    gap: 6px;
+}
+
+label {
+    font-weight: 600;
+    font-size: 0.95em;
 }
 
 select {
     width: 100%;
-    max-width: 400px;
-    padding: 12px 20px;
-    border: 2px solid #ddd;
-    border-radius: 25px;
-    font-size: 1em;
-    transition: all 0.3s ease;
-    outline: none;
+    padding: 10px 14px;
+    border: 1.8px solid #ccc;
+    border-radius: 8px;
+    font-size: 0.95em;
+    background-color: var(--color-fondoTarjeta);
+    transition: all 0.25s ease;
+}
+
+select:hover {
+    border-color: #999;
 }
 
 select:focus {
-    border-color: #6890f0;
-    box-shadow: 0 0 5px rgba(104, 144, 240, 0.3);
+    border-color: #444;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.25);
 }
 </style>

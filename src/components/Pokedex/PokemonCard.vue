@@ -8,7 +8,7 @@
         <span class="type-badge" :class="`type-${normalizeType(pokemon.tipos[0])}`">
           {{ pokemon.tipos[0] }}
         </span>
-        <span v-if="pokemon.tipos.length > 1" class="type-badge" :class="`type-${normalizeType(pokemon.tipos[1])}`">
+        <span v-if="pokemon.tipos[1] !== ''" class="type-badge" :class="`type-${normalizeType(pokemon.tipos[1])}`">
           {{ pokemon.tipos[1] }}
         </span>
       </div>
@@ -51,198 +51,85 @@ watch(() => props.pokemon, async () => {
 </script>
 
 <style scoped>
+@import '../../css/typeColors.css';
+
 .pokemon-card {
-  background: linear-gradient(145deg, #ffffff 0%, #f8f9fa 100%);
-  border-radius: 10px;
-  padding: 5px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
+  background-color: var(--color-fondoTarjeta);
+  border-radius: 14px;
+  padding: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
   position: relative;
-  overflow: hidden;
   cursor: pointer;
+  text-align: center;
 }
 
 .pokemon-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
 .pokemon-number {
   position: absolute;
-  top: 5px;
-  right: 5px;
+  top: 8px;
+  right: 10px;
   font-size: 0.8em;
-  color: rgba(0, 0, 0, 0.5);
+  color: rgba(0, 0, 0, 0.4);
   font-weight: bold;
 }
 
-.pokemon-info {
-  margin-top: 5px;
+.pokemon-card h4 {
+  margin: 8px 0 6px;
+  font-size: 1em;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
+/* Imagen del Pokémon */
+.pokemon-image {
+  width: 90px;
+  height: 90px;
+  display: block;
+  margin: 6px auto;
+  image-rendering: pixelated;
+  transition: transform 0.3s ease;
+}
+
+.pokemon-card:hover .pokemon-image {
+  transform: scale(1.08);
+}
+
+.pokemon-info {
+  margin-top: 6px;
+}
+
+/* Tipos de Pokémon */
 .types {
   display: flex;
-  gap: 3px;
+  gap: 6px;
   justify-content: center;
-  align-items: center;
-  flex-direction: row;
   flex-wrap: nowrap;
 }
 
 .type-badge {
-  display: inline-block;
-  padding: 2px 6px;
-  border-radius: 4px;
+  padding: 3px 8px;
+  border-radius: 6px;
   color: white;
   font-size: 0.75em;
-  font-weight: 500;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-  min-width: 50px;
+  font-weight: 600;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+  min-width: 48px;
   text-align: center;
-  height: 18px;
-  line-height: 14px;
+  transition: transform 0.2s ease;
 }
 
-.types:has(span:nth-child(2)) .type-badge {
-  width: 40%;
-  min-width: 40px;
+.type-badge:hover {
+  transform: scale(1.05);
 }
 
-.abilities {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  justify-content: center;
-  margin-top: 10px;
-}
-
-.regular-abilities {
-  display: flex;
-  gap: 8px;
-  justify-content: center;
-  width: 100%;
-}
-
-.ability-text {
-  background-color: #f0f0f0;
-  color: #333;
-  padding: 4px 10px;
-  border-radius: 12px;
-  font-size: 0.85em;
-  border: 1px solid #ddd;
-  flex: 1;
-  text-align: center;
-  max-width: 45%;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.ability-text.hidden {
-  background-color: #e9ecef;
-  border: 1px dashed #adb5bd;
-  font-style: italic;
-  width: 100%;
-  max-width: 90%;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.ability-badge:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.pokemon-image {
-  width: 80px;
-  height: 80px;
-  display: block;
-  margin: 5px auto;
-  image-rendering: pixelated;
-}
-
-/* Type-based colors */
-.type-fuego {
-  background-color: #ff7b00;
-}
-
-.type-agua {
-  background-color: #6890f0;
-}
-
-.type-planta {
-  background-color: #78c850 !important;
-}
-
-.type-electrico {
-  background-color: #f8d030;
-}
-
-.type-hielo {
-  background-color: #98d8d8;
-}
-
-.type-lucha {
-  background-color: #c03028;
-}
-
-.type-veneno {
-  background-color: #a040a0;
-}
-
-.type-tierra {
-  background-color: #e0c068;
-}
-
-.type-volador {
-  background-color: #a890f0;
-}
-
-.type-psiquico {
-  background-color: #f85888;
-}
-
-.type-bicho {
-  background-color: #a8b820;
-}
-
-.type-roca {
-  background-color: #b8a038;
-}
-
-.type-fantasma {
-  background-color: #705898;
-}
-
-.type-dragon {
-  background-color: #7038f8;
-}
-
-.type-acero {
-  background-color: #b8b8d0;
-}
-
-.type-hada {
-  background-color: #ee99ac;
-}
-
-.type-normal {
-  background-color: #a8a878;
-}
-
-.type-siniestro {
-  background-color: #705746;
-}
-
-.type-variable {
-  background-color: #9370DB;
-}
-
-/* Estilos para el nombre del Pokémon */
-.pokemon-card h4 {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+.types .type-badge:first-child:last-child {
+  margin: 0 auto;
 }
 </style>

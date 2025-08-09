@@ -43,7 +43,8 @@ watch(() => props, async () => {
 
 <style scoped>
 .evolution-card {
-  background: linear-gradient(145deg, #ffffff 0%, #f8f9fa 100%);
+  background-color: var(--color-fondoTarjeta);
+  color: black;
   border-radius: 10px;
   padding: 10px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -74,14 +75,13 @@ watch(() => props, async () => {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #f0f0f0;
+  background-color: var(--color-fondoTexto);
   border-radius: 50%;
   margin: 0 auto;
 }
 
 .pokemon-image-placeholder span {
   font-size: 2em;
-  color: #999;
 }
 
 .pokemon-info {

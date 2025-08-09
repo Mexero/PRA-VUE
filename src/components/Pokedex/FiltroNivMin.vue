@@ -22,24 +22,43 @@ defineEmits(['update:modelValue'])
 
 <style scoped>
 .container {
-  margin-bottom: 15px;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
 }
 
-input[type="number"] {
-  width: 100%;
-  max-width: 400px;
-  padding: 12px 20px;
-  border: 2px solid #ddd;
-  border-radius: 25px;
-  font-size: 1em;
-  transition: all 0.3s ease;
+label {
+  font-weight: 600;
+  font-size: 0.95em;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+label input[type="number"] {
+  flex: 1;
+  padding: 10px 14px;
+  border: 1.8px solid #ccc;
+  border-radius: 8px;
+  font-size: 0.95em;
+  background-color: var(--color-fondoTarjeta);
+  transition: all 0.25s ease;
   outline: none;
 }
 
-input[type="number"]:focus {
-  border-color: #6890f0;
-  box-shadow: 0 0 5px rgba(104, 144, 240, 0.3);
+label input[type="number"]:hover {
+  border-color: #999;
+}
+
+label input[type="number"]:focus {
+  border-color: #444;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.25);
+}
+
+.range {
+  width: 100%;
+  accent-color: #007bff;
+  cursor: pointer;
 }
 </style>

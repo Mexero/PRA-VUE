@@ -19,7 +19,6 @@ defineEmits(['update:modelValue'])
 
 <style scoped>
 .search-container {
-  margin-bottom: 15px;
   display: flex;
   justify-content: center;
 }
@@ -36,7 +35,7 @@ defineEmits(['update:modelValue'])
 }
 
 .search-input:focus {
-  border-color: #6890f0;
+  border-color: var(--color-principal2);
   box-shadow: 0 0 5px rgba(104, 144, 240, 0.3);
 }
 </style>

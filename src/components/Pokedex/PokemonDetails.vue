@@ -136,70 +136,58 @@
           </div>
         </div>
       </div>
-    </div>
-  </div>
 
-  <div v-if="pokemon && (pokemon.evoDe || pokemon.evolucion)" class="pokemon-evolution detail-section">
-    <h3 class="section-title">Línea Evolutiva</h3>
-    <div class="evolution-container">
-      <div v-if="pokemon.evoDe" class="evolution-group">
-        <span class="evolution-label">Evoluciona de:</span>
-        <div class="evolution-cards">
-          <EvolutionCard v-if="pokemon.evoDe" :nombre="pokemon.evoDe" :numero="getPokemonNumberByName(pokemon.evoDe)"
-            :nivel="null" :requisitos="null" :otros="null" :esAlternativo="IsAltByName(pokemon.evoDe)"
-            @show-details="emitirEspecie" />
+      <div v-if="pokemon && (pokemon.evoDe || pokemon.evolucion)" class="pokemon-evolution detail-section">
+        <h3 class="section-title">Línea Evolutiva</h3>
+        <div class="evolution-container">
+          <div v-if="pokemon.evoDe" class="evolution-group">
+            <span class="evolution-label">Evoluciona de:</span>
+            <div class="evolution-cards">
+              <EvolutionCard v-if="pokemon.evoDe" :nombre="pokemon.evoDe"
+                :numero="getPokemonNumberByName(pokemon.evoDe)" :nivel="null" :requisitos="null" :otros="null"
+                :esAlternativo="IsAltByName(pokemon.evoDe)" @show-details="emitirEspecie" />
+            </div>
+          </div>
+          <div v-if="pokemon.evolucion && pokemon.evolucion.mensajeExtra" class="evolution-item">
+            <span class="evolution-value">{{ pokemon.evolucion.mensajeExtra }}</span>
+          </div>
+          <div v-else-if="pokemon.evolucion" class="evolution-group">
+            <span class="evolution-label">Evoluciona a:</span>
+            <div class="evolution-cards">
+              <EvolutionCard v-for="(evolucion, index) in pokemon.evolucion" :key="index" :nombre="evolucion.nombre"
+                :numero="getPokemonNumberByName(evolucion.nombre)" :nivel="evolucion.nivel"
+                :requisitos="evolucion.requisitos" :otros="evolucion.otros"
+                :esAlternativo="IsAltByName(evolucion.nombre)" @show-details="emitirEspecie" />
+            </div>
+          </div>
         </div>
       </div>
-      <div v-if="pokemon.evolucion && pokemon.evolucion.mensajeExtra" class="evolution-item">
-        <span class="evolution-value">{{ pokemon.evolucion.mensajeExtra }}</span>
-      </div>
-      <div v-else-if="pokemon.evolucion" class="evolution-group">
-        <span class="evolution-label">Evoluciona a:</span>
-        <div class="evolution-cards">
-          <EvolutionCard v-for="(evolucion, index) in pokemon.evolucion" :key="index" :nombre="evolucion.nombre"
-            :numero="getPokemonNumberByName(evolucion.nombre)" :nivel="evolucion.nivel"
-            :requisitos="evolucion.requisitos" :otros="evolucion.otros" :esAlternativo="IsAltByName(evolucion.nombre)"
-            @show-details="emitirEspecie" />
+      <div v-if="pokemon && pokemon.otros" class="detail-section">
+        <div class="detail-section otros">
+          <h3 class="section-title">Información Secundaria</h3>
+          <div class="otros-table">
+            <span class="th">Nivel mínimo</span>
+            <span class="td">{{ pokemon.otros.nivMinimo }}</span>
+            <span class="th">Ratio de Captura</span>
+            <span class="td">{{ pokemon.otros.ratioCaptura }}</span>
+            <span class="th">Dieta</span>
+            <span class="td">{{ pokemon.otros.dieta }}</span>
+            <span class="th">Sexo</span>
+            <span class="td">{{ pokemon.otros.sexo }}</span>
+            <span class="th">Hábitat</span>
+            <span class="td">{{ pokemon.otros.habitat.split('\n').join(', ') }}</span>
+            <template v-if="pokemon.otros.sentidos">
+              <span class="th">Sentidos</span>
+              <span class="td">{{ pokemon.otros.sentidos.split('\n').join(', ') }}</span>
+            </template>
+          </div>
         </div>
       </div>
+      <!-- Sección de Movimientos -->
+      <div class="detail-section" v-if="pokemon && pokemon.id">
+        <PokemonMoves :pokeID="pokemon.id" />
+      </div>
     </div>
-  </div>
-  <div v-if="pokemon && pokemon.otros" class="detail-section">
-    <div class="detail-section otros">
-      <h3 class="section-title">Información Secundaria</h3>
-      <table class="otros-table">
-        <tbody>
-          <tr>
-            <th>Nivel mínimo</th>
-            <td>{{ pokemon.otros.nivMinimo }}</td>
-          </tr>
-          <tr>
-            <th>Ratio de Captura</th>
-            <td>{{ pokemon.otros.ratioCaptura }}</td>
-          </tr>
-          <tr>
-            <th>Dieta</th>
-            <td>{{ pokemon.otros.dieta }}</td>
-          </tr>
-          <tr>
-            <th>Sexo</th>
-            <td>{{ pokemon.otros.sexo }}</td>
-          </tr>
-          <tr>
-            <th>Hábitat</th>
-            <td>{{ pokemon.otros.habitat.split('\n').join(', ') }}</td>
-          </tr>
-          <tr v-if="pokemon.otros.sentidos">
-            <th>Sentidos</th>
-            <td>{{ pokemon.otros.sentidos.split('\n').join(', ') }}</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-  <!-- Sección de Movimientos -->
-  <div class="detail-section" v-if="pokemon && pokemon.id">
-    <PokemonMoves :pokeID="pokemon.id" />
   </div>
 </template>
 
@@ -233,7 +221,8 @@ const hiddenAbilities = ref(null)
 const src = ref(null)
 
 function normalizeType(type) {
-  return type.toLowerCase().normalize('NFD').replace(/\u0300-\u036f/g, '')
+  if (!type) return '';
+  return type.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
 }
 
 
@@ -334,71 +323,107 @@ function IsAltByName(especie) {
 
 
 <style scoped>
-.pokemon-details {
-  padding: 15px;
-  height: 100%;
-  overflow-y: auto;
-  background-color: #ffffff;
-  border-top: 4px solid #ff6b6b;
-  font-size: 14px;
+@import '../../css/typeColors.css';
+
+* {
+  color: var(--color-texto)
 }
 
+/* === CONTENEDOR PRINCIPAL === */
+.pokemon-details {
+  padding: 25px;
+  background-color: var(--color-hoverBloque);
+  border: 2px solid #999;
+  border-top: 5px solid var(--color-principal1);
+  font-size: 14px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* === TITULO DEL POKEMON === */
 .pokemon-title h2 {
   margin: 0;
-  color: white;
-  font-size: 1.8em;
-  font-weight: bold;
-  padding-bottom: 5px;
+  color: var(--color-texto);
+  font-size: 2em;
+  font-weight: 900;
+  letter-spacing: 1px;
 }
 
+.pokemon-title {
+  flex: 1;
+}
+
+/* === SECCIONES === */
 .section-title {
-  color: #ff6b6b;
+  color: var(--color-secundario);
   font-size: 1.6em;
   font-weight: bold;
-  margin-bottom: 5px;
-  border-bottom: 1px solid #e0e0e0;
-  padding-bottom: 3px;
+  margin-bottom: 8px;
+  border-bottom: 2px solid var(--color-principal2);
+  padding-bottom: 4px;
+}
+
+/* === TIPOS === */
+.types-container {
+  display: flex;
+  gap: 8px;
+  margin-top: 5px;
 }
 
 .type-badge {
-  padding: 3px 8px;
-  border-radius: 4px;
+  padding: 4px 10px;
+  border-radius: 20px;
   color: white;
   font-weight: bold;
   text-transform: capitalize;
+  font-size: 0.9em;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
 }
 
+/* === ABILIDADES === */
 .abilities-container {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
-.ability-group {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-}
-
 .ability-item {
-  background-color: #f8f8f8;
-  padding: 6px 12px;
-  border-radius: 4px;
+  background-color: var(--color-principal2);
+  color: var(--color-texto);
+  padding: 8px 14px;
+  border-radius: 10px;
   cursor: pointer;
-  border: 1px solid #e0e0e0;
+  transition: background 0.3s ease, transform 0.2s ease;
 }
 
+.ability-item:hover {
+  background: var(--color-secundario);
+  color: white;
+  transform: translateY(-2px);
+}
+
+.hidden-ability {
+  border: 2px dashed var(--color-principal1);
+}
+
+.hidden-label {
+  color: #999;
+  margin-left: 4px;
+  font-style: italic;
+}
+
+/* === DETALLES DE HABILIDAD === */
 .ability-details {
-  background-color: #fff;
-  border: 1px solid #e0e0e0;
-  border-radius: 4px;
+  background: var(--color-fondoTexto);
+  border: 1px solid var(--color-principal2);
+  border-radius: 8px;
   padding: 10px;
   margin-left: 20px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: all 0.5s ease-in-out;
-  animation: slideDown 0.5s ease-in-out;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+  animation: slideDown 0.4s ease-in-out;
 }
 
+/* === ANIMACION === */
 @keyframes slideDown {
   from {
     opacity: 0;
@@ -411,66 +436,37 @@ function IsAltByName(especie) {
   }
 }
 
-.ability-info {
-  color: #333;
-  font-size: 0.9em;
-}
-
-.ability-label {
-  font-weight: bold;
-  color: #666;
-  width: 120px;
-}
-
-.ability-description {
-  margin-top: 10px;
-  padding-top: 10px;
-  border-top: 1px solid #e0e0e0;
-}
-
+/* === MENSAJES === */
 .loading-abilities,
-.loading-evolution,
 .error-message,
 .no-abilities {
   padding: 10px;
   text-align: center;
-  background-color: #f8f9fa;
-  border-radius: 4px;
+  background: #fff0f0;
+  border-radius: 6px;
   margin-top: 10px;
-}
-
-.loading-abilities {
-  color: #666;
+  font-weight: 500;
 }
 
 .error-message {
   color: #dc3545;
 }
 
+.loading-abilities {
+  color: #888;
+}
+
 .no-abilities {
-  color: #666;
+  color: #999;
   font-style: italic;
 }
 
-.hidden-label {
-  color: #666;
-  margin-left: 4px;
-}
-
-.pokemon-size {
-  text-align: left;
-  color: #666;
-  margin-bottom: 8px;
-  font-style: italic;
-  border-bottom: 1px solid #e0e0e0;
-  padding-bottom: 8px;
-}
-
+/* === BLOQUE DE STATS === */
 .stat-block {
-  background: #ffffff;
+  background-color: var(--color-fondoTexto);
   padding: 20px;
-  border: 1px solid #e0e0e0;
-  margin: 10px;
+  border-radius: 14px;
+  border: 1px solid #b7b9bd;
 }
 
 .stat-block-header {
@@ -479,165 +475,47 @@ function IsAltByName(especie) {
   justify-content: space-between;
   margin-bottom: 15px;
   padding: 15px;
-  background-color: #ff6b6b;
-  color: white;
-}
-
-.pokemon-title h2 {
-  margin: 0;
-  color: white;
-  font-weight: bold;
-  padding-bottom: 5px;
-}
-
-.pokemon-title {
-  flex: 1;
+  background-color: var(--color-principal1);
+  border-radius: 10px;
 }
 
 .pokemon-detail-image {
   width: 120px;
   height: 120px;
   margin-left: 15px;
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.15));
 }
 
-.section-title {
-  color: #ff6b6b;
-  font-weight: bold;
-  margin-bottom: 5px;
-  border-bottom: 1px solid #e0e0e0;
-  padding-bottom: 3px;
-}
-
-.types-container {
-  display: flex;
-  gap: 8px;
-  margin-top: 5px;
-}
-
-.type-badge {
-  padding: 3px 8px;
-  border-radius: 4px;
-  color: white;
-  font-weight: bold;
-  text-transform: capitalize;
-}
-
-.abilities-container {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.ability-group {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-}
-
-.ability-item {
-  background-color: #f8f8f8;
-  padding: 6px 12px;
-  border-radius: 4px;
-  cursor: pointer;
-  border: 1px solid #e0e0e0;
-}
-
-.ability-details {
-  background-color: #fff;
-  border: 1px solid #e0e0e0;
-  border-radius: 4px;
-  padding: 10px;
-  margin-left: 20px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: all 0.5s ease-in-out;
-  animation: slideDown 0.5s ease-in-out;
-}
-
-.otros-table {
-  padding: 20px;
-  margin: auto;
-}
-
-.otros-table th,
-.otros-table td {
-  padding: 8px;
-  text-align: right;
-  color: #333;
-}
-
-.otros-table td {
+/* === STATS UNIFICADAS === */
+.unified-stats-section {
+  background: var(--color-fondoTexto);
+  border: 1px solid var(--color-tabla1);
+  border-radius: 8px;
+  padding: 12px;
   text-align: left;
 }
 
-
-@keyframes slideDown {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.ability-info {
-  color: #333;
-  font-size: 0.9em;
-}
-
-.ability-label {
-  font-weight: bold;
-  color: #666;
-  width: 120px;
-}
-
-.ability-description {
-  margin-top: 10px;
-  padding-top: 10px;
-  border-top: 1px solid #e0e0e0;
-}
-
-.loading-abilities,
-.loading-evolution,
-.error-message,
-.no-abilities {
-  padding: 10px;
-  text-align: center;
-  background-color: #f8f9fa;
-  border-radius: 4px;
-  margin-top: 10px;
-}
-
-.loading-abilities {
-  color: #666;
-}
-
-.error-message {
-  color: #dc3545;
-}
-
-.no-abilities {
-  color: #666;
+.pokemon-size {
+  color: #aaa5a5;
+  margin-bottom: 8px;
   font-style: italic;
+  border-bottom: 1px solid var(--color-principal2);
+  padding-bottom: 8px;
 }
 
-.ability-item:hover {
-  background-color: #ff6b6b;
-  color: white;
+.vital-stat-row {
+  margin-bottom: 4px;
 }
 
-.hidden-ability {
-  background-color: #f8f8f8;
-  border: 1px dashed #ff6b6b;
+.vital-stat-label {
+  font-weight: bold;
 }
 
-.hidden-label {
-  color: #666;
-  margin-left: 4px;
+.speeds-inline {
+  text-align: left;
 }
 
+/* === TABLA DE STATS === */
 .stats-section {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -645,110 +523,81 @@ function IsAltByName(especie) {
   margin: 15px 0;
 }
 
-.stats-table {
-  width: 100%;
-  margin: 0;
-}
-
 .stats-table table {
   width: 100%;
   border-collapse: collapse;
-  border: 1px solid #e0e0e0;
 }
 
-.stats-table th,
 .stats-table td {
   padding: 8px;
   text-align: center;
-  border: 1px solid #e0e0e0;
-  color: #333;
+  border: 1px solid var(--color-secundario);
 }
 
 .stats-table td:first-child {
   font-weight: bold;
-  color: #666;
 }
 
 .stats-table td:last-child {
   font-family: monospace;
-  color: #ff6b6b;
 }
 
-.save-header {
-  border: none !important;
-  color: #666;
-  text-align: center;
+/* === TABLA OTROS === */
+.otros-table {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 5px;
+  padding: 20px;
+  margin: auto;
 }
 
-.vital-stats-section {
-  margin-bottom: 10px;
-  background: #f8f8f8;
+.otros-table .th,
+.otros-table .td {
   padding: 8px;
-  border: 1px solid #e0e0e0;
-  border-radius: 4px;
+}
+
+.otros-table .td {
   text-align: left;
 }
 
-.vital-stat-label {
-  font-weight: bold;
+.otros-table .th {
+  font-weight: 700;
+  text-align: right;
 }
 
-.speeds-section {
-  margin: 8px 0;
-  padding: 8px;
-  background: #f8f8f8;
-  border: 1px solid #e0e0e0;
-  border-radius: 4px;
-  text-align: left;
+@media (max-width:1050px) and (min-width:950px) {
+  .otros-table {
+    grid-template-columns: repeat(2, 1fr);
+    ;
+  }
 }
 
-.unified-stats-section {
-  background: #f8f8f8;
-  border: 1px solid #e0e0e0;
-  border-radius: 4px;
-  padding: 12px;
-  margin: 0;
-  text-align: left;
+@media (max-width:950px) and (min-width:750px) {
+  .otros-table {
+    grid-template-columns: repeat(6, 1fr);
+    ;
+  }
 }
 
-.pokemon-size {
-  text-align: left;
-  color: #666;
-  margin-bottom: 8px;
-  font-style: italic;
-  border-bottom: 1px solid #e0e0e0;
-  padding-bottom: 8px;
+@media (max-width:750px) and (min-width:550px) {
+  .otros-table {
+    grid-template-columns: repeat(4, 1fr);
+    ;
+  }
 }
 
-.vital-stat-row {
-  margin-bottom: 4px;
-  text-align: left;
+@media (max-width:550px) {
+  .otros-table {
+    grid-template-columns: repeat(2, 1fr);
+    ;
+  }
 }
 
-.speeds-inline {
-  text-align: left;
-}
-
-.speed-key {
-  font-weight: bold;
-  color: #ff6b6b;
-  padding-right: 10px;
-}
-
-.speed-value {
-  font-family: monospace;
-}
-
+/* === EVOLUCIONES === */
 .evolution-container {
   display: flex;
   flex-direction: column;
   gap: 16px;
-}
-
-.evolution-group {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
 }
 
 .evolution-cards {
@@ -762,92 +611,9 @@ function IsAltByName(especie) {
   display: flex;
   align-items: center;
   gap: 8px;
-  background: white;
+  background-color: #fff;
   padding: 6px 10px;
-  border: 1px solid #e0e0e0;
-}
-
-.evolution-label {
-  color: #666;
-  font-weight: bold;
-  margin-bottom: 5px;
-}
-
-.no-pokemon-selected {
-  text-align: center;
-  padding: 20px;
-  color: #666;
-}
-
-.type-badge.type-normal {
-  background-color: #A8A878;
-}
-
-.type-badge.type-fuego {
-  background-color: #F08030;
-}
-
-.type-badge.type-agua {
-  background-color: #6890F0;
-}
-
-.type-badge.type-planta {
-  background-color: #78C850;
-}
-
-.type-badge.type-electrico {
-  background-color: #F8D030;
-}
-
-.type-badge.type-hielo {
-  background-color: #98D8D8;
-}
-
-.type-badge.type-lucha {
-  background-color: #C03028;
-}
-
-.type-badge.type-veneno {
-  background-color: #A040A0;
-}
-
-.type-badge.type-tierra {
-  background-color: #E0C068;
-}
-
-.type-badge.type-volador {
-  background-color: #A890F0;
-}
-
-.type-badge.type-psiquico {
-  background-color: #F85888;
-}
-
-.type-badge.type-bicho {
-  background-color: #A8B820;
-}
-
-.type-badge.type-roca {
-  background-color: #B8A038;
-}
-
-.type-badge.type-fantasma {
-  background-color: #705898;
-}
-
-.type-badge.type-dragon {
-  background-color: #7038F8;
-}
-
-.type-badge.type-siniestro {
-  background-color: #705848;
-}
-
-.type-badge.type-acero {
-  background-color: #B8B8D0;
-}
-
-.type-badge.type-hada {
-  background-color: #EE99AC;
+  border: 1px solid #f0f0f0;
+  border-radius: 8px;
 }
 </style>

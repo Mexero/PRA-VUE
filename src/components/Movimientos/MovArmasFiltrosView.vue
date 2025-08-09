@@ -146,37 +146,31 @@ watch(
     flex-direction: column;
 }
 
-#filtroAccion div {
-    gap: 8px;
-    flex-wrap: wrap;
-}
-
+/* ===== Bloques de opciones ===== */
+#filtroAccion div,
 #filtroTipos div {
-    margin: 10px 5px;
     display: flex;
-    gap: 40px;
     flex-wrap: wrap;
+    gap: 20px;
+    margin: 10px 0;
 }
 
 input[type="text"] {
     padding: 7px;
-    border-radius: 5px;
     font-size: 17px;
     outline: none;
     margin-right: 20px;
+    border: 1px solid var(--color-principal1);
+    background-color: var(--color-fondoTexto);
+    color: var(--color-texto);
 }
 
 input[type="text"]:focus {
-    border-color: #007bff;
+    border-color: var(--color-secundario);
     box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.2);
 }
 
-#filtroAccion div {
-    padding: 8px 0;
-    display: flex;
-    gap: 20px;
-}
-
+/* ===== Botones ===== */
 .filtros button {
     border: none;
     padding: 10px;
@@ -187,35 +181,21 @@ input[type="text"]:focus {
     font-size: 17px;
 }
 
-/*Contenedor de los botones*/
+.filtros button:hover {
+    background-color: var(--color-secundario);
+}
+
+/* Contenedor de los botones */
 .botones {
     display: flex;
     gap: 5px;
 }
 
-.filtros button:hover {
-    background-color: var(--color-secundario);
-}
-
-
-@media screen and (max-width: 1170px) {
-    #filtroTipos div {
-        grid-template-columns: repeat(3, auto);
-    }
-}
-
-@media screen and (max-width: 960px) {
-    #filtroTipos div {
-        grid-template-columns: repeat(2, auto);
-    }
-}
-
+/* ===== Caja de filtros visible ===== */
 #mostrarFiltros {
     color: var(--color-texto);
     background-color: var(--color-fondoTexto);
     width: 100%;
-    border-radius: 0 10px 0 0;
-
     font-size: 15px;
     box-shadow:
         -2px 2px 10px rgba(0, 0, 0, 0.1),
@@ -224,6 +204,7 @@ input[type="text"]:focus {
         -2px -2px 10px rgba(0, 0, 0, 0.1);
 }
 
+/* ===== Transiciones ===== */
 .slideFiltros-enter-active,
 .slideFiltros-leave-active {
     transition: all 0.3s ease-in-out;
@@ -243,8 +224,20 @@ input[type="text"]:focus {
     opacity: 1;
 }
 
-@media screen and (max-width: 890px) {
+/* ===== Responsive ===== */
+@media screen and (max-width: 1170px) {
+    #filtroTipos div {
+        grid-template-columns: repeat(3, auto);
+    }
+}
 
+@media screen and (max-width: 960px) {
+    #filtroTipos div {
+        grid-template-columns: repeat(2, auto);
+    }
+}
+
+@media screen and (max-width: 890px) {
     .filtros {
         width: 100%;
         padding: 0;

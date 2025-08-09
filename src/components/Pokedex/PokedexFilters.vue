@@ -12,7 +12,7 @@
         </div>
         <FiltroVels :vels="vels" @cambiar-vels="cambiarVels" />
         <FiltroMovs :movs="movs" :db-cargada="dbCargada" @cambiar-movs="cambiarMovs" />
-        <div>
+        <div class="btns">
             <button @click="enviarFiltros">Filtrar</button>
             <button @click="limpiarFiltros">Limpiar Filtros</button>
         </div>
@@ -150,12 +150,80 @@ onBeforeUnmount(() => {
 
 <style scoped>
 .filters-container {
-    padding: 30px;
-    margin-bottom: 20px;
+    background: var(--color-fondo);
+    height: calc(100% - 40px);
+    margin: 30px 10px 10px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
+/* Grid de filtros secundarios */
 .grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(6, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+@media (max-width: 1400px) {
+    .grid {
+        grid-template-columns: repeat(3, minmax(200px, 1fr));
+    }
+}
+
+@media (max-width: 750px) {
+    .filters-container {
+        padding-top: 20px;
+    }
+
+    .grid {
+        grid-template-columns: repeat(2, minmax(200px, 1fr));
+    }
+}
+
+@media (max-width: 500px) {
+    .grid {
+        grid-template-columns: auto;
+    }
+
+    .filters-container {
+        height: fit-content;
+    }
+}
+
+/* Botones */
+.filters-container button {
+    padding: 10px 18px;
+    border-radius: 8px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.filters-container button:first-of-type {
+    background: var(--color-principal1);
+    color: var(--color-texto);
+    margin-right: 10px;
+}
+
+.filters-container button:first-of-type:hover {
+    background: var(--color-principal2);
+}
+
+.filters-container button:last-of-type {
+    background: #f5f5f5;
+    color: #333;
+}
+
+.filters-container button:last-of-type:hover {
+    background: #e2e2e2;
+}
+
+.btns {
+    margin-top: auto;
+    display: flex;
+    gap: 10px;
+    padding-bottom: 10px;
 }
 </style>

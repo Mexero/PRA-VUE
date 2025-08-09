@@ -31,6 +31,8 @@ function aplicarModo() {
   root.style.setProperty('--color-fondoTexto', oscuro ? '#293141' : '#EEF5FF')
   root.style.setProperty('--color-BloqueDescargas', oscuro ? '#ff0051' : '#A1E3F9')
   root.style.setProperty('--color-hoverBloqueDescargas', oscuro ? '#293141' : '#EEF5FF')
+  root.style.setProperty('--color-fondoTarjeta', oscuro ? '#b0b6bd' : '#ffffff')
+
 }
 
 function manejarCambioStorage(e) {

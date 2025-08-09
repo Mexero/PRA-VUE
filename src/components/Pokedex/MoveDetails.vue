@@ -13,7 +13,8 @@
         <tr v-if="moveDetails.Tipo">
           <td class="move-label">Tipo:</td>
           <td>
-            <span class="move-type-badge" :class="`type-${normalizeType(moveDetails.Tipo)}`">{{ moveDetails.Tipo }}</span>
+            <span class="move-type-badge" :class="`type-${normalizeType(moveDetails.Tipo)}`">{{ moveDetails.Tipo
+            }}</span>
           </td>
         </tr>
         <tr v-if="moveDetails.Dano">
@@ -93,10 +94,13 @@ export default {
 </script>
 
 <style scoped>
+@import '../../css/typeColors.css';
+
 .move-details {
   margin-top: 15px;
   padding: 12px;
-  background-color: #f8f9fa;
+  background-color: var(--color-fondoTarjeta);
+  color: var(--color-texto);
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   animation: slideDown 0.3s ease-in-out;
@@ -107,6 +111,7 @@ export default {
     opacity: 0;
     transform: translateY(-10px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -181,24 +186,4 @@ export default {
   font-size: 0.9em;
   font-weight: 500;
 }
-
-/* Estilos para los tipos de Pokémon */
-.type-normal { background-color: #A8A878; }
-.type-fuego { background-color: #F08030; }
-.type-agua { background-color: #6890F0; }
-.type-electrico { background-color: #F8D030; }
-.type-planta { background-color: #78C850; }
-.type-hielo { background-color: #98D8D8; }
-.type-lucha { background-color: #C03028; }
-.type-veneno { background-color: #A040A0; }
-.type-tierra { background-color: #E0C068; }
-.type-volador { background-color: #A890F0; }
-.type-psiquico { background-color: #F85888; }
-.type-bicho { background-color: #A8B820; }
-.type-roca { background-color: #B8A038; }
-.type-fantasma { background-color: #705898; }
-.type-dragon { background-color: #7038F8; }
-.type-siniestro { background-color: #705848; }
-.type-acero { background-color: #B8B8D0; }
-.type-hada { background-color: #EE99AC; }
 </style>

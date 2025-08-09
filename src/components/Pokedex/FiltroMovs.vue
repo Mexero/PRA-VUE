@@ -1,5 +1,5 @@
 <template>
-  <div class="filter contenedor" ref="container">
+  <div class="filter" ref="container">
     <label>Añadir movimiento:
       <input type="text" v-model="query" @input="filtrarMovimientos" @keydown.enter="seleccionarPrimero"
         @focus="entrarInput" placeholder="Busca un Movimiento..." />
@@ -9,11 +9,11 @@
         {{ mov }}
       </li>
     </ul>
-    <div>
-      <button v-for="mov in movimientos" :key="mov" class="filter-button" @click.stop="quitarMovimientos(mov)">
-        {{ mov }}
-      </button>
-    </div>
+  </div>
+  <div>
+    <button v-for="mov in movimientos" :key="mov" class="filter-button" @click.stop="quitarMovimientos(mov)">
+      {{ mov }}
+    </button>
   </div>
 </template>
 
@@ -138,54 +138,96 @@ async function handleMovs() {
 
 <style scoped>
 .filter {
+  position: relative;
   display: flex;
   flex-wrap: wrap;
-  gap: 5px;
+  gap: 8px;
   justify-content: center;
-  padding: 0 10px;
-  max-width: 100%;
+  padding: 0 12px;
+  width: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .filter-button {
-  padding: 4px 8px;
+  padding: 6px 12px;
   border: none;
-  border-radius: 4px;
+  margin: 5px;
+  border-radius: 6px;
+  background-color: #1976d2;
+  color: #fff;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.3s ease;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-  font-size: 0.9em;
-  width: calc(16.66% - 5px);
-  min-width: fit-content;
-  margin-bottom: 5px;
+  transition: background-color 0.25s ease, box-shadow 0.25s ease;
+  font-size: 0.95em;
+  flex: 1 1 calc(16.66% - 8px);
+  min-width: 90px;
+  box-shadow: 0 2px 6px rgba(25, 118, 210, 0.4);
 }
 
-.contenedor {
-  position: relative;
-  width: 300px;
-  margin: 2rem;
+.filter-button:hover,
+.filter-button:focus {
+  background-color: #155a9c;
+  outline: none;
+  box-shadow: 0 0 8px rgba(21, 90, 156, 0.7);
+}
+
+label {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 6px;
+  color: #333;
+  user-select: none;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 8px 12px;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+  font-size: 1em;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus {
+  border-color: #1976d2;
+  box-shadow: 0 0 6px rgba(25, 118, 210, 0.5);
+  outline: none;
 }
 
 .dropdown {
   position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-  background-color: white;
-  border: 1px solid #ccc;
+  top: 20px;
+  left: 65%;
+  margin-left: 8px;
+  width: 200px;
   max-height: 200px;
   overflow-y: auto;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-  margin-top: 4px;
+  background-color: #fff;
+  border: 1.5px solid #1976d2;
+  border-radius: 6px;
+  box-shadow: 0 6px 14px rgba(25, 118, 210, 0.3);
+  z-index: 1100;
+  font-size: 0.95em;
 }
 
 .dropdown li {
-  padding: 0.5rem;
+  padding: 10px 14px;
   cursor: pointer;
+  transition: background-color 0.2s ease;
+  user-select: none;
 }
 
-.dropdown li:hover {
-  background-color: #f0f0f0;
+.dropdown li:hover,
+.dropdown li:focus {
+  background-color: var(--color-fondoTarjeta);
+  outline: none;
+}
+
+@media (max-width:750px) {
+  .dropdown {
+    top: -180px;
+    left: 40%;
+  }
+
 }
 </style>

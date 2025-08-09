@@ -1,5 +1,5 @@
 <template>
-  <div v-if="ability && ability" class="ability-details">
+  <div v-if="ability" class="ability-details">
     <div class="ability-info">
       <table class="ability-table" v-if="ability.transformacion || ability.legendaria">
         <tbody>
@@ -28,7 +28,6 @@ const { ability } = defineProps(['ability'])
 .ability-details {
   margin-top: 10px;
   padding: 10px;
-  background-color: #f8f9fa;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -50,13 +49,11 @@ const { ability } = defineProps(['ability'])
 
 .ability-label {
   font-weight: bold;
-  color: #666;
   width: 120px;
 }
 
 .ability-description div {
   margin-top: 8px;
-  color: #333;
   line-height: 1.4;
 }
 
@@ -65,7 +62,6 @@ const { ability } = defineProps(['ability'])
 }
 
 .loading-message {
-  color: #666;
   font-style: italic;
   text-align: center;
 }

@@ -1,0 +1,71 @@
+.type-normal {
+    background: #A8A878;
+}
+
+.type-fuego {
+    background: #F08030;
+}
+
+.type-agua {
+    background: #6890F0;
+}
+
+.type-planta {
+    background: #78C850;
+}
+
+.type-electrico {
+    background: #F8D030;
+}
+
+.type-hielo {
+    background: #98D8D8;
+}
+
+.type-lucha {
+    background: #C03028;
+}
+
+.type-veneno {
+    background: #A040A0;
+}
+
+.type-tierra {
+    background: #E0C068;
+}
+
+.type-volador {
+    background: #A890F0;
+}
+
+.type-psiquico {
+    background: #F85888;
+}
+
+.type-bicho {
+    background: #A8B820;
+}
+
+.type-roca {
+    background: #B8A038;
+}
+
+.type-fantasma {
+    background: #705898;
+}
+
+.type-dragon {
+    background: #7038F8;
+}
+
+.type-siniestro {
+    background: #705848;
+}
+
+.type-acero {
+    background: #B8B8D0;
+}
+
+.type-hada {
+    background: #EE99AC;
+}

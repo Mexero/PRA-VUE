@@ -159,25 +159,10 @@ input[type="text"]:focus {
     background-color: var(--color-secundario);
 }
 
-
-@media screen and (max-width: 1170px) {
-    #filtroTipos div {
-        grid-template-columns: repeat(3, auto);
-    }
-}
-
-@media screen and (max-width: 960px) {
-    #filtroTipos div {
-        grid-template-columns: repeat(2, auto);
-    }
-}
-
 #mostrarFiltros {
     color: var(--color-texto);
     background-color: var(--color-fondoTexto);
     width: 100%;
-    border-radius: 0 10px 0 0;
-
     font-size: 15px;
     box-shadow:
         -2px 2px 10px rgba(0, 0, 0, 0.1),
@@ -203,6 +188,18 @@ input[type="text"]:focus {
 .slideFiltros-leave-from {
     max-height: 450px;
     opacity: 1;
+}
+
+@media screen and (max-width: 1170px) {
+    #filtroTipos div {
+        grid-template-columns: repeat(3, auto);
+    }
+}
+
+@media screen and (max-width: 960px) {
+    #filtroTipos div {
+        grid-template-columns: repeat(2, auto);
+    }
 }
 
 @media screen and (max-width: 890px) {

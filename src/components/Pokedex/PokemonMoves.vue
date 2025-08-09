@@ -17,7 +17,7 @@
             <thead>
               <tr>
                 <th>Nivel</th>
-                <th v-for="(moves, index) in groupedMovesByLevel" :key="index">Movimiento {{ index + 1 }}</th>
+                <th :colspan="groupedMovesByLevel.length" :key="index">Movimientos</th>
               </tr>
             </thead>
             <tbody>
@@ -313,17 +313,19 @@ watch(() => [
 </script>
 
 <style scoped>
+@import '../../css/typeColors.css';
+
 .moves-section {
   margin-top: 20px;
 }
 
 .section-title {
-  color: #ff6b6b;
+  color: var(--color-secundario);
   font-size: 1.6em;
   font-weight: bold;
-  margin-bottom: 5px;
-  border-bottom: 1px solid #e0e0e0;
-  padding-bottom: 3px;
+  margin-bottom: 8px;
+  border-bottom: 2px solid var(--color-principal2);
+  padding-bottom: 4px;
 }
 
 .moves-group {
@@ -332,7 +334,6 @@ watch(() => [
 
 .moves-group-title {
   font-size: 1.2em;
-  color: #333;
   margin-bottom: 8px;
   font-weight: 600;
   cursor: pointer;
@@ -340,13 +341,13 @@ watch(() => [
   justify-content: space-between;
   align-items: center;
   padding: 8px;
-  background-color: #f5f5f5;
+  background-color: var(--color-principal2);
   border-radius: 4px;
   transition: background-color 0.2s;
 }
 
 .moves-group-title:hover {
-  background-color: #e0e0e0;
+  background-color: var(--color-principal1);
 }
 
 .moves-group-title .toggle-icon {
@@ -366,7 +367,7 @@ watch(() => [
 .moves-table {
   width: 100%;
   border-collapse: collapse;
-  background-color: #fff;
+  background-color: var(--color-fondoTexto);
   border: 1px solid #e0e0e0;
 }
 
@@ -375,7 +376,6 @@ watch(() => [
   padding: 2px 4px;
   text-align: center;
   vertical-align: middle;
-  border: 1px solid #e0e0e0;
   font-size: 0.85em;
 }
 
@@ -408,8 +408,6 @@ watch(() => [
   min-width: 60px;
   text-align: center;
   flex-shrink: 0;
-  border: 1px solid #000;
-  /* Añadido: borde negro para todos los tipos */
 }
 
 .moves-group {
@@ -422,14 +420,11 @@ watch(() => [
 }
 
 .moves-table th {
-  background-color: #f8f8f8;
-  font-weight: 600;
-  color: #333;
+  font-weight: 700;
 }
 
 .level-cell {
   font-weight: 600;
-  background-color: #f8f8f8;
   text-align: center;
 }
 
@@ -439,7 +434,7 @@ watch(() => [
 }
 
 .move-cell:hover {
-  background-color: #f0f0f0;
+  background-color: var(--color-oscuro1);
 }
 
 .move-content {
@@ -467,7 +462,6 @@ watch(() => [
 }
 
 .move-level {
-  background-color: #e0e0e0;
   padding: 2px 6px;
   border-radius: 4px;
   font-size: 0.8em;
@@ -507,82 +501,5 @@ watch(() => [
 .no-moves {
   color: #666;
   font-style: italic;
-}
-
-/* Estilos para los tipos de Pokémon */
-.type-normal {
-  background-color: #A8A878;
-}
-
-.type-fuego {
-  background-color: #F08030;
-}
-
-.type-agua {
-  background-color: #6890F0;
-}
-
-.type-electrico {
-  background-color: #F8D030;
-}
-
-.type-planta {
-  background-color: #78C850;
-}
-
-.type-hielo {
-  background-color: #98D8D8;
-}
-
-.type-lucha {
-  background-color: #C03028;
-}
-
-.type-veneno {
-  background-color: #A040A0;
-}
-
-.type-tierra {
-  background-color: #E0C068;
-}
-
-.type-volador {
-  background-color: #A890F0;
-}
-
-.type-psiquico {
-  background-color: #F85888;
-}
-
-.type-bicho {
-  background-color: #A8B820;
-}
-
-.type-roca {
-  background-color: #B8A038;
-}
-
-.type-fantasma {
-  background-color: #705898;
-}
-
-.type-dragon {
-  background-color: #7038F8;
-}
-
-.type-siniestro {
-  background-color: #705848;
-}
-
-.type-acero {
-  background-color: #B8B8D0;
-}
-
-.type-hada {
-  background-color: #EE99AC;
-}
-
-.type-situacional {
-  color: black;
 }
 </style>
