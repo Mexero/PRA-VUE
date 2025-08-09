@@ -44,7 +44,7 @@ function añadirDote() {
 <template>
     <div>
         <button @click="togglePopup" class="btn">
-            Añadir Dote {{ props.extra ? 'Extra' : '' }}
+           + Añadir Dote {{ props.extra ? 'Extra' : '' }}
         </button>
 
         <div v-if="isOpen" class="modal-overlay" @click="closePopup">
@@ -59,8 +59,7 @@ function añadirDote() {
                                     <p>{{ doteSeleccionada.Nombre }}</p>
                                     <BloqueTextoComplejo :dato="doteSeleccionada.Descripcion" />
                                 </div>
-                                <button @click="añadirDote">
-                                    Añadir</button>
+                                <button @click="añadirDote">Añadir</button>
                             </template>
                             <template v-else>
                                 <span>Selecciona una Dote</span>
@@ -77,16 +76,21 @@ function añadirDote() {
 
 <style scoped>
 .btn {
-    padding: 10px 16px;
-    background-color: #2563eb;
-    color: white;
+    margin: 5px 0;
+    padding: 5px;
+    background-color: var(--color-principal1);
+    color: var(--color-texto);
     border: none;
     border-radius: 6px;
     cursor: pointer;
 }
 
-.tarjetaDote {
-    font-size: 10px;
+.tarjetaHab {
+    color: var(--color-texto);
+}
+
+.descripcion {
+    color: var(--color-texto);
 }
 
 .modal-overlay {
@@ -103,7 +107,7 @@ function añadirDote() {
 }
 
 .modal-content {
-    background: white;
+    background-color: var(--color-fondoTexto);
     width: 75vw;
     height: 75vh;
     border-radius: 12px;
@@ -118,7 +122,7 @@ function añadirDote() {
     flex: 1;
     display: flex;
     flex-direction: column;
-    background: white;
+    background-color: var(--color-fondoTexto);
     border: 1px solid #ccc;
     border-radius: 8px;
     padding: 16px;
@@ -132,8 +136,8 @@ function añadirDote() {
 }
 
 .preview {
-    width: 200px;
-    background: #f9f9f9;
+    width: 70%;
+    background-color: var(--color-fondoTexto);
     border: 1px solid #bbb;
     border-radius: 6px;
     padding: 12px;
@@ -166,8 +170,8 @@ function añadirDote() {
 .close-btn {
     margin-top: 20px;
     padding: 8px 12px;
-    background-color: #e11d48;
-    color: white;
+    background-color: var(--color-principal1);
+    color: var(--color-texto);
     border: none;
     border-radius: 4px;
     cursor: pointer;

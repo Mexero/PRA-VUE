@@ -1,4 +1,3 @@
-
 <script setup>
 import { ref, computed } from 'vue'
 
@@ -147,15 +146,15 @@ const habilidadesBaseMostradas = computed(() => {
 
 <template>
     <section class="checks">
-        <div style="display: flex; width: 100%; justify-content: space-between; align-items: center;">
+        <div class="tituloYBoton">
             <h3>
                 Tiradas de habilidad ({{ ficha.personaliz.mejorasHab.length }} /
                 <input type="number" v-model="props.ficha.derivados.cantidadMejorasHab"
                     :readonly="!ficha.manual.cantidadMejorasHab" />)
-                <input type="checkbox" v-model="ficha.manual.cantidadMejorasHab" true-value="true" false-value="false" />
-                <span style="font-size:small;">Quitar límite</span>
+                <input type="checkbox" v-model="ficha.manual.cantidadMejorasHab" true-value="true"
+                    false-value="false" />
             </h3>
-            <button @click="mostrarPopup.value = true" style="margin-right: 10px;">Añadir habilidad</button>
+            <button @click="mostrarPopup.value = true">Añadir habilidad</button>
         </div>
 
         <div class="checks-list">
@@ -186,9 +185,13 @@ const habilidadesBaseMostradas = computed(() => {
         <div v-if="mostrarPopup.value" class="popup-overlay">
             <div class="popup-content">
                 <h4>Añadir habilidad</h4>
-                <input type="text" v-model="nuevoCheck.value" @input="filterChecks" @keydown.down.prevent="onArrowDown" @keydown.up.prevent="onArrowUp" @keydown.enter.prevent="onEnter" placeholder="Buscar habilidad..." />
+                <input type="text" v-model="nuevoCheck.value" @input="filterChecks" @keydown.down.prevent="onArrowDown"
+                    @keydown.up.prevent="onArrowUp" @keydown.enter.prevent="onEnter"
+                    placeholder="Buscar habilidad..." />
                 <ul v-if="filteredChecks.value.length">
-                    <li v-for="(suggestion, idx) in filteredChecks.value" :key="suggestion" :class="{selected: idx === selectedSuggestionIndex.value}" @mousedown.prevent="selectSuggestion(suggestion)">
+                    <li v-for="(suggestion, idx) in filteredChecks.value" :key="suggestion"
+                        :class="{ selected: idx === selectedSuggestionIndex.value }"
+                        @mousedown.prevent="selectSuggestion(suggestion)">
                         {{ suggestion }}
                     </li>
                 </ul>
@@ -199,7 +202,6 @@ const habilidadesBaseMostradas = computed(() => {
 </template>
 
 <style scoped>
-
 .checks {
     display: flex;
     align-items: center;
@@ -207,7 +209,22 @@ const habilidadesBaseMostradas = computed(() => {
     border: 1px solid rgba(150, 150, 150, 0.798);
     border-radius: 5px;
     padding: 5px;
-    width: 86%;
+}
+
+.tituloYBoton {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tituloYBoton button {
+    padding: 5px;
+    background-color: var(--color-principal1);
+    color: var(--color-texto);
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
 }
 
 .checks-list {
@@ -275,7 +292,7 @@ input[type="number"] {
 
 .grado-control {
     display: flex;
-    
+
 }
 
 /* Estilos para el popup */
@@ -285,22 +302,25 @@ input[type="number"] {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: rgba(0,0,0,0.3);
+    background: rgba(0, 0, 0, 0.3);
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 1000;
 }
+
 .popup-content {
     background: var(--color-fondo, #fff);
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
     min-width: 300px;
 }
+
 .popup-content h4 {
     margin-top: 0;
 }
+
 .popup-content ul {
     list-style: none;
     padding: 0;
@@ -308,12 +328,20 @@ input[type="number"] {
     max-height: 150px;
     overflow-y: auto;
 }
+
 .popup-content li {
     padding: 5px 10px;
     cursor: pointer;
 }
+
 .popup-content li.selected {
     background: var(--color-principal1, #eee);
     font-weight: bold;
+}
+
+details {
+    max-height: 150px;
+    /* o el valor que prefieras */
+    overflow-y: auto;
 }
 </style>

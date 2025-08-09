@@ -112,21 +112,18 @@ function ocultarLista() {
 }
 
  .nivel {
-
     display: flex;
     align-items: center;
     gap: 5px;
 }
 
 .especie {
-
     display: flex;
     align-items: center;
     gap: 5px;
 }
 
  .tipos {
-
     display: flex;
     align-items: center;
     gap: 5px;
@@ -206,13 +203,14 @@ label {
 }
 
 button {
-    border: none;
+
+    padding: 5px;
     background-color: var(--color-principal1);
-    padding: 5px 3px;
-    border-radius: 3px;
-    margin-left: 10px;
     color: var(--color-texto);
+    border: none;
+    border-radius: 6px;
     cursor: pointer;
+
 }
 
 .NombreTipos {
@@ -239,6 +237,7 @@ li {
 }
 
 li:hover {
-    background-color: #f0f0f0;
+        background: var(--color-principal2);
+
 }
 </style>

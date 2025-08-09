@@ -296,6 +296,7 @@ function checkDisabled() {
                 <div class="ventana">
                     <div class="cuerpo">
                         <template v-if="tipoLista === 'Nivel'">
+                            <div class="movsList">
                             <ul>
                                 <template v-for="nivel of nivelesConMovs">
                                     <li :class="nivel > ficha.nivel ? 'demasiado' : ''">
@@ -309,6 +310,7 @@ function checkDisabled() {
                                     </li>
                                 </template>
                             </ul>
+                            </div>
                         </template>
                         <busquedaMov v-else :movimientos="filtrados" @seleccion="cargarMovimiento" />
 
@@ -350,16 +352,23 @@ function checkDisabled() {
 
 <style scoped>
 .btn {
-    padding: 10px 16px;
-    background-color: #2563eb;
-    color: white;
+    padding: 5px;
+    background-color: var(--color-principal1);
+    color: var(--color-texto);
     border: none;
     border-radius: 6px;
     cursor: pointer;
-}
 
+}
+.movsList{
+    width: 20%;
+}
+ul{
+    list-style: none;
+
+}
 .tarjetaMov {
-    font-size: 10px;
+
 }
 
 .modal-overlay {
@@ -368,7 +377,7 @@ function checkDisabled() {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.6);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -376,7 +385,7 @@ function checkDisabled() {
 }
 
 .modal-content {
-    background: white;
+    background: var(--color-fondoTexto);
     width: 75vw;
     height: 75vh;
     border-radius: 12px;
@@ -391,7 +400,7 @@ function checkDisabled() {
     flex: 1;
     display: flex;
     flex-direction: column;
-    background: white;
+    background: var(--color-fondoTexto);
     border: 1px solid #ccc;
     border-radius: 8px;
     padding: 16px;
@@ -405,21 +414,21 @@ function checkDisabled() {
 }
 
 .preview {
-    width: 200px;
-    background: #f9f9f9;
+    width: 70%;
+    background: var(--color-fondoTexto);
     border: 1px solid #bbb;
-    border-radius: 6px;
+    border-radius: 5px;
     padding: 12px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     gap: 12px;
-    align-items: flex-start;
+
 }
 
 .preview button {
     background-color: #4caf50;
-    color: white;
+    color: var(--color-texto);
     border: none;
     padding: 8px 12px;
     border-radius: 4px;
@@ -439,14 +448,11 @@ function checkDisabled() {
 .close-btn {
     margin-top: 20px;
     padding: 8px 12px;
-    background-color: #e11d48;
-    color: white;
+    color: var(--color-texto);
     border: none;
     border-radius: 4px;
     cursor: pointer;
 }
 
-.demasiado {
-    background-color: lightblue;
-}
+
 </style>

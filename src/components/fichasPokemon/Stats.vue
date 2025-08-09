@@ -4,7 +4,7 @@
             Puntos disponibles:
             <strong>{{ ficha.derivados.cantidadMejorasEST - ficha.personaliz.mejorasEst.length }}</strong>
         </div>
-        <div style="display: flex; gap: 20px;">
+        <div class="statsYSaves">
             <div class="stats">
                 <h3>Estadisticas</h3>
                 <div class="item" v-for="stat in ['fue', 'agi', 'res', 'men', 'esp', 'pre']" :key="stat">
@@ -23,13 +23,7 @@
                 </div>
             </div>
 
-            <section class="salvaciones">
-                <h3>Salvaciones</h3>
-                <div class="bonosSalvacion" v-for="stat in ['fue', 'agi', 'res', 'esp']" :key="stat">
-                    {{ stat.toUpperCase() + " " }}
-                    <span class="numero">{{ ficha.derivados.salvaciones[stat] || 0 }}</span>
-                </div>
-            </section>
+        
         </div>
     </section>
 </template>
@@ -61,6 +55,9 @@ function cambiarMejoraEST(stat, delta) {
 </script>
 
 <style scoped>
+.statsYSaves{
+    display: flex; gap: 20px;
+}
 .stats {
     margin: 10px 0;
     padding: 5px;
@@ -135,27 +132,6 @@ function cambiarMejoraEST(stat, delta) {
     cursor: pointer;
 }
 
-.salvaciones {
-    margin: 10px 0;
-    border: 1px solid rgba(150, 150, 150, 0.798);
-    border-radius: 5px;
-    padding: 5px;
-    height: fit-content;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    position: relative;
-    bottom:  -70px;
-}
-
-.bonosSalvacion {
-    border: 1px solid rgba(150, 150, 150, 0.798);
-    border-radius: 5px;
-    padding: 5px;
-    align-items: center;
-    display: flex;
-    gap: 10px
-}
 
 .mejoras {
     display: flex;

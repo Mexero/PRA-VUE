@@ -16,26 +16,17 @@ defineProps(['ficha'])
 </script>
 
 <style scoped>
-.speeds {
- 
-    position: relative;
-    right: 140px;
-    width: 0px;
-
-}
-.bloqueSpeeds{
-    width: fit-content;
-        border: 1px solid rgba(150, 150, 150, 0.798);
-           border: 1px solid rgba(150, 150, 150, 0.798);
+.bloqueSpeeds {
+    border: 1px solid rgba(150, 150, 150, 0.798);
     border-radius: 5px;
     padding: 5px;
     width: fit-content;
     height: fit-content;
-    margin: 40px 0px;
+    margin-top: 40px;
     display: flex;
     flex-direction: column;
-
 }
+
 .speeds h3 {
     text-align: center;
 }

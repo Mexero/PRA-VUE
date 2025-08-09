@@ -749,7 +749,7 @@ onMounted(async () => {
         <FichaToolbar ... />
         -->
         <div class="character-sheet">
-               
+
             <FichaInfoBasica :ficha="ficha" :especiesPokes="especiesPokes"
                 :especiesPokesCargadas="especiesPokesCargadas" @cambiarNombre="cambiarNombreFicha"
                 @cambiarDatosEspecie="cambiarDatosEspecie" />
@@ -758,6 +758,15 @@ onMounted(async () => {
                 <div class="stats-area">
                     <FichaStats :ficha="ficha" />
                 </div>
+
+                <div class="salvaciones-area">
+                    <h3>Salvaciones</h3>
+                    <div class="bonosSalvacion" v-for="stat in ['fue', 'agi', 'res', 'esp']" :key="stat">
+                        {{ stat.toUpperCase() }}
+                        <span class="numero">{{ ficha.derivados.salvaciones[stat] || 0 }}</span>
+                    </div>
+                </div>
+
                 <div class="destacados-area">
                     <FichaDestacados :ficha="ficha" :grados="grados" />
                 </div>
@@ -768,17 +777,17 @@ onMounted(async () => {
                     <FichaVelocidades :ficha="ficha" />
                 </div>
             </div>
-             <!-- 
-            <FichaMovimientos :ficha="ficha" :movimientos="movimientos" :movimientosCargados="movimientosCargados" />
+            <FichaOtros :ficha="ficha" :naturalezas="naturalezas" />
 
-            <div class="HabsYDotes">
-                <FichaHabilidades :ficha="ficha" :habilidades="habilidades"
-                    :habilidadesCargadas="habilidadesCargadas" />
-                <FichaDotes :ficha="ficha" :dotes="dotes" :dotesCargadas="dotesCargadas" />
+
+            <div class="HabsDotesMovs">
+                <div class="habs"><FichaHabilidades :ficha="ficha" :habilidades="habilidades" :habilidadesCargadas="habilidadesCargadas" /></div>
+                <div class="dotes"><FichaDotes :ficha="ficha" :dotes="dotes" :dotesCargadas="dotesCargadas" /></div>
+                <div class="movs"><FichaMovimientos :ficha="ficha" :movimientos="movimientos" :movimientosCargados="movimientosCargados" /></div>
             </div>
 
-            <FichaOtros :ficha="ficha" :naturalezas="naturalezas" />
- -->
+
+
         </div>
     </div>
 </template>
@@ -795,7 +804,6 @@ onMounted(async () => {
 }
 
 .character-sheet {
-
     margin: 50px auto;
     background-color: var(--color-fondoTexto);
     border-radius: 10px;
@@ -807,15 +815,19 @@ onMounted(async () => {
     width: fit-content;
     display: grid;
     grid-template-areas:
-        "stats destacados velocidades"
-        "stats checks velocidades";
-    grid-template-columns: auto auto auto;
+        "stats destacados destacados velocidades"
+        "stats saves checks velocidades";
+    grid-template-columns: auto 120px 1fr auto;
     grid-template-rows: 110px auto;
     gap: 0px 20px;
 }
 
 .stats-area {
     grid-area: stats;
+}
+
+.salvaciones-area {
+    grid-area: saves;
 }
 
 .destacados-area {
@@ -830,133 +842,42 @@ onMounted(async () => {
     grid-area: velocidades;
 }
 
-/* inputs 
-.item {
+.salvaciones-area {
+    border: 1px solid rgba(150, 150, 150, 0.798);
+    border-radius: 5px;
+    padding: 5px;
+    height: fit-content;
     display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.bonosSalvacion {
+    border-radius: 5px;
+    padding: 3px;
     align-items: center;
-    gap: 0.5rem;
-    position: relative;
-}
-
-.item label {
-    margin-right: 0.25rem;
-}
-
-.item input {
-    font-size: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 0.25rem;
-    transition: border-color 0.2s ease-in-out;
-}
-
-.item input[type="checkbox"] {
-    appearance: none;
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    border: 1px solid #666;
-    background-color: #fff;
-    margin-left: auto;
-    margin-right: 4px;
-    cursor: pointer;
-    position: relative;
-}
-
-.item input[type="checkbox"]:checked {
-    background-color: #444;
-    box-shadow: inset 0 0 0 2px #fff;
-}
-
-.item span {
-    font-size: 0.8rem;
-    color: #888;
-}
-
-/* Quitar flechitas de input number
-.character-sheet input[type=number]::-webkit-inner-spin-button,
-.character-sheet input[type=number]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-}
-
-/* Firefox 
-.character-sheet input[type=number] {
-    -moz-appearance: textfield;
-}
-
-
-/* Básicos 
-.character-sheet {
-    padding: 16px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-.character-sheet input {
-    width: 50px;
-}
-
-.info-item {
-    flex: 1;
-    font-size: 1rem;
-}
-
-.value {
-    margin-left: 6px;
-    color: #555;
-}
-
-/* PRICIPAL GRID 
-
-
-/* Grid areas 
-.central {
-    grid-area: central;
-}
-
-.stats {
-    grid-area: stats;
-}
-
-.checks {
-    grid-area: checks;
-}
-
-.speeds {
-    grid-area: vels;
-}
-
-/* Secciones con títulos
-
-.character-sheet section h3 {
-    font-size: 1.2rem;
-    color: #34495e;
-    margin-bottom: 10px;
-    border-bottom: 2px solid #3498db;
-    padding-bottom: 4px;
-}
-
-/* Habilidades y Feats 
-.HabsYDotes {
     display: flex;
-    justify-content: space-around;
+    gap: 10px
 }
 
-.habilidades,
-.feats {
-    width: 48%;
+.HabsDotesMovs {
+    padding-top: 25px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr;
+    gap: 20px;
+    grid-template-areas:
+        "habs movs"
+        "dotes movs";
+}
+.habs {
+    grid-area: habs;
+}
+.dotes {
+    grid-area: dotes;
+}
+.movs {
+    grid-area: movs;
 }
 
-/* Ítems 
-.item {
-    background: #ecf0f1;
-    border-radius: 6px;
-    padding: 8px;
-    text-align: center;
-    color: #2c3e50;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-}
-    */
 </style>

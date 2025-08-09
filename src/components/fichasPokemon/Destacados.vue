@@ -135,13 +135,10 @@ function bajarGrado(checkName) {
     margin: 40px 0px;
     display: flex;
     gap: 30px;
-    position: relative;
-    right: 140px;
-    
 }
 
 input {
-    font-size: large;
+    font-size: larger;
     background-color: transparent;
     padding: 4px;
     border: none;
@@ -165,47 +162,4 @@ input {
     min-width: fit-content;
 }
 
-
-/*
-.central {
-    display: flex;
-    gap: 40px;
-
-}
-
-.item {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 4px;
-}
-
-.info-dinamica,
-.destacados {
-    display: grid;
-    grid-template: repeat(2, 1fr) / repeat(2, 1fr);
-    gap: 12px;
-    flex-grow: 1;
-}
-
-.info-dinamica div,
-.destacados div {
-    align-self: center;
-    justify-self: center;
-}
-
-.info-dinamica .item div {
-    display: flex;
-    flex-direction: row;
-}
-
-.info-dinamica .item div input {
-    width: 25px;
-}
-
-.central {
-    display: flex;
-    justify-content: space-evenly;
-}
-*/
 </style>

@@ -1,6 +1,6 @@
 <template>
     <div class="buscador">
-        <input v-model="valor" placeholder="Buscar Habilidad..."
+        <input  v-model="valor" placeholder="Buscar Habilidad..."
             @keydown.enter.prevent="emitirSeleccion(sugerencias[0].nombre)" />
         <div v-if="sugerencias.length" class="sugerencias-wrapper">
             <table class="sugerencias">
@@ -42,11 +42,32 @@ function emitirSeleccion(nombre) {
 </script>
 
 <style scoped>
+.buscador {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    min-height: 0;
+    position: sticky;
+}
+
+.sugerencias thead th {
+    position: sticky;
+    top: 0;
+    background-color: var(--color-principal1);
+    z-index: 1;
+}
+
 .sugerencias-wrapper {
-    flex: 1;
+    flex: 1 1 auto;
     overflow-y: auto;
-    max-height: 300px;
     border-top: 1px solid #ccc;
+    min-height: 0;
+}
+
+.buscador input {
+    flex: 0 0 auto;
+    margin-bottom: 8px;
 }
 
 .sugerencias {
@@ -68,5 +89,13 @@ function emitirSeleccion(nombre) {
 
 .sugerencias tr:hover {
     background-color: #e6e6e6;
+}
+input {
+    
+    background-color: transparent;
+    padding: 4px;
+    border: none;
+    border-bottom: 1px solid;
+    color: var(--color-texto);
 }
 </style>
