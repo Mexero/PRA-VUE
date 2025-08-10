@@ -75,6 +75,40 @@ const naturalezas = [
 
 
 // <========= CAMBIAR DATOS ESPECIE =============>
+function generarEvoluciones(evoEn, nivelEvo, tipoRequisito, requisitosEvo, evoOtros) {
+    if (evoEn === '' || evoEn === null) {
+        if (evoOtros === '' || evoOtros === null) return null
+        return evoOtros
+    }
+    let evoEnArray = evoEn.split(';')
+    let nivelEvoArray = nivelEvo.split(';')
+    let tipoRequisitoArray = tipoRequisito.split(';')
+    let requisitosEvoArray = requisitosEvo.split(';')
+    let evoOtrosArray = evoOtros.split(';')
+
+    let evoluciones = []
+    for (let i = 0; i < evoEnArray.length; i++) {
+        evoluciones.push({
+            nombre: evoEnArray[i],
+            nivel: nivelEvoArray[i],
+            tipoRequisito: tipoRequisitoArray[i],
+            requisitos: requisitosEvoArray[i],
+            otros: evoOtrosArray[i] ?? null
+        })
+    }
+    let stringFinal = evoluciones.map(evo => {
+        let partes = [evo.nivel];
+        if (evo.requisitos && evo.requisitos.trim() !== '') {
+            partes.push(evo.requisitos.trim());
+        }
+        if (evo.otros && evo.otros.trim() !== '') {
+            partes.push(evo.otros.trim());
+        }
+        return `${evo.nombre} (${partes.join(', ')})`;
+    }).join('. ');
+    return stringFinal
+}
+
 async function cambiarDatosEspecie(especie) {
     if (!isReady.value) return
 
@@ -92,7 +126,8 @@ async function cambiarDatosEspecie(especie) {
         V_Caminado, V_Trepado, V_Excavado, V_Nado, V_Vuelo, V_Levitado,
         Nat_Habil_1, Nat_Habil_2,
         AC1, AC2, 
-        Dieta, Tamano, Sexo, Sentidos, Evoluciona_en_todo
+        Dieta, Tamano, Sexo, Sentidos, 
+        EvoEn, Nivel_Evo, Tipo_requisito, Requisitos_Evo, Evo_otros
       FROM pokedex
       WHERE Especie = ?
     `, [especie])
@@ -150,7 +185,7 @@ async function cambiarDatosEspecie(especie) {
             tamano: row[26],
             sexo: row[27],
             sentidos: row[28],
-            evolucion: row[29]
+            evolucion: generarEvoluciones(row[29], row[30], row[31], row[32], row[33])
         }
 
         // Movimientos (relacional)
@@ -312,7 +347,7 @@ function calcularCA() {
     }
 
     const idx = ficha.derivados.caElegida ?? 0
-    const result = (resultados[idx]?.valor ?? 0) + ficha.derivados.bh - ficha.derivados.fatiga
+    const result = (resultados[idx]?.valor ?? 0) + ficha.derivados.bh - Math.max(ficha.derivados.fatiga, 0)
 
     if (ficha.derivados.ca !== result) {
         ficha.derivados.ca = result
@@ -321,8 +356,10 @@ function calcularCA() {
 
 
 watch(ficha, () => {
-    actualizar()
-    guardarFicha()
+    if (ficha.nombre === fichaSeleccionada.value) {
+        actualizar()
+        guardarFicha()
+    }
 }, { deep: true })
 
 function actualizar() {
@@ -353,14 +390,6 @@ function actualizar() {
 
     if (!ficha.manual.cantidadMejorasHab)
         ficha.derivados.cantidadMejorasHab = Math.max(Math.floor(ficha.nivel / 6), 0)
-
-    //Para tiradas de Habilidad
-    const mejoraToValor = (mejoras) => {
-        if (mejoras < 0) return 0
-        if (mejoras <= 3) return mejoras
-        if (mejoras === 4) return 3
-        if (mejoras > 4) return 5
-    }
 
     //Iniciativa
     if (!ficha.manual.init) {
@@ -397,6 +426,13 @@ function actualizar() {
     }
 
     // Actualizar estadísticas con mejoras de estadísticas
+    const mejoraToValor = (mejoras) => {
+        if (mejoras < 0) return 0
+        if (mejoras <= 3) return mejoras
+        if (mejoras === 4) return 3
+        if (mejoras > 4) return 4
+    }
+
     for (const stat in ficha.derivados.stats) {
         const baseStat = ficha.pokedex.statsBase[stat] || 0
         const mejorasAplicadas = ficha.personaliz.mejorasEst.filter(s => s === stat).length
@@ -532,35 +568,37 @@ function nombreUnico(nombreBase) {
     return nombre
 }
 
-function cambiarNombreFicha(nuevoNombre) {
-    if (fichaSeleccionada.value === nuevoNombre.trim()) return
-    if (!nuevoNombre.trim()) {
-        ficha.nombre = ''
+async function cambiarNombreFicha(nuevoNombre) {
+    nuevoNombre = nuevoNombre.trim()
+    if (nuevoNombre === '') {
+        alert("¡No puedes guardar una ficha con nombre vacío!")
         return
     }
+
+    let nombreOriginal = fichaSeleccionada.value
+
+    if (fichaSeleccionada.value === nuevoNombre) return
+
     if (fichasGuardadas[nuevoNombre]) {
         alert(`Ya existe una ficha guardada con el nombre "${nuevoNombre}"`)
         ficha.nombre = ''
         return
     }
-
-    const nombreViejo = fichaSeleccionada.value
-
-    if (!fichasGuardadas[nombreViejo]) {
-        console.warn(`No existe ficha guardada con el nombre "${nombreViejo}"`)
-        return
+    if (fichasGuardadas[nombreOriginal]) {
+        delete fichasGuardadas[nombreOriginal]
+        await borrarFichaIndexedDB(nombreOriginal)
     }
 
-    // Cambiar la key en fichasGuardadas
-    fichasGuardadas[nuevoNombre] = fichasGuardadas[nombreViejo]
-    delete fichasGuardadas[nombreViejo]
+    // Guardar nueva ficha
+    fichasGuardadas[nuevoNombre] = { ...ficha }
 
-    //Cambiar la ficha en OrdenFichas
-    const index = ordenFichas.value.indexOf(nombreViejo)
+    // Cambiar en el orden
+    const index = ordenFichas.value.indexOf(nombreOriginal)
     if (index !== -1) ordenFichas.value[index] = nuevoNombre
 
-    // Actualizar el nombre en la ficha reactiva y el seleccionado
+    // Actualizar reactivos
     fichaSeleccionada.value = nuevoNombre
+    ficha.nombre = nuevoNombre
 
     guardarFicha()
 }
@@ -628,11 +666,6 @@ async function cargarHabilidades() {
             nombre: row[0],
             descripcion: row[1].split('\n')
         }));
-
-        if (data.length > 0) {
-            console.log("Habilidades cargadas...")
-            habilidadesCargadas.value = true;
-        }
     } catch (err) {
         error.value = err.message || 'Error cargando las habilidades'
         console.warn(error.value)
@@ -656,10 +689,6 @@ async function cargarMovimientos() {
             coste: row[2],
             etiquetas: row[3] !== "" ? row[3] : null
         }));
-        if (data.length > 0) {
-            console.log("Movimientos cargados...")
-            movimientosCargados.value = true;
-        }
     } catch (err) {
         error.value = err.message || 'Error cargando los movimientos'
         console.warn(error.value)
@@ -671,16 +700,13 @@ async function cargarMovimientos() {
 
 
 async function cargarFichasInicio() {
-    //Cargar fichas
     const todas = await obtenerTodasLasFichas()
     todas.forEach(f => {
         fichasGuardadas[f.nombre] = f
     })
 
-    //Cargar Orden fichas
     const ordenGuardado = await cargarOrdenFichas()
     if (ordenGuardado) {
-        //Por si ha pasado algo raro con datos
         const nombresDisponibles = todas.map(f => f.nombre)
         ordenFichas.value = ordenGuardado.filter(n => nombresDisponibles.includes(n))
         const nuevos = nombresDisponibles.filter(n => !ordenFichas.value.includes(n))
@@ -694,6 +720,10 @@ async function cargarFichasInicio() {
         fichaSeleccionada.value = ordenFichas.value[0]
         await cargarFicha(fichaSeleccionada.value)
         console.log("Fichas cargadas...")
+    }
+    else {
+        crearFicha()
+        console.warn("No se encontraron fichas, así que se creó una ficha nueva.")
     }
 }
 
@@ -735,8 +765,18 @@ onMounted(async () => {
 
     //Cargar datos
     especiesPokes.value = await cargarPokes()
+
     habilidades.value = await cargarHabilidades()
+    if (habilidades.value.length > 0) {
+        console.log("Habilidades cargadas...")
+        habilidadesCargadas.value = true;
+    }
+
     movimientos.value = await cargarMovimientos()
+    if (movimientos.value > 0) {
+        console.log("Movimientos cargados...")
+        movimientosCargados.value = true;
+    }
 })
 
 </script>
@@ -745,9 +785,12 @@ onMounted(async () => {
 <template>
 
     <div class="fichaPokemon">
-        <!-- 
-        <FichaToolbar ... />
-        -->
+        <FichaToolbar :fichaSeleccionada="fichaSeleccionada" :nuevaFichaNombre="nuevaFichaNombre"
+            :ordenFichas="ordenFichas" :fichasGuardadas="fichasGuardadas"
+            @update:fichaSeleccionada="fichaSeleccionada = $event" @update:nuevaFichaNombre="nuevaFichaNombre = $event"
+            @crear="crearFicha" @borrar="borrarFicha" @exportar="exportarFicha" @importar="importarFicha"
+            @moverFicha="moverFicha" />
+
         <div class="character-sheet">
 
             <FichaInfoBasica :ficha="ficha" :especiesPokes="especiesPokes"
@@ -781,9 +824,17 @@ onMounted(async () => {
 
 
             <div class="HabsDotesMovs">
-                <div class="habs"><FichaHabilidades :ficha="ficha" :habilidades="habilidades" :habilidadesCargadas="habilidadesCargadas" /></div>
-                <div class="dotes"><FichaDotes :ficha="ficha" :dotes="dotes" :dotesCargadas="dotesCargadas" /></div>
-                <div class="movs"><FichaMovimientos :ficha="ficha" :movimientos="movimientos" :movimientosCargados="movimientosCargados" /></div>
+                <div class="habs">
+                    <FichaHabilidades :ficha="ficha" :habilidades="habilidades"
+                        :habilidadesCargadas="habilidadesCargadas" />
+                </div>
+                <div class="dotes">
+                    <FichaDotes :ficha="ficha" :dotes="dotes" :dotesCargadas="dotesCargadas" />
+                </div>
+                <div class="movs">
+                    <FichaMovimientos :ficha="ficha" :movimientos="movimientos"
+                        :movimientosCargados="movimientosCargados" />
+                </div>
             </div>
 
 
@@ -870,14 +921,16 @@ onMounted(async () => {
         "habs movs"
         "dotes movs";
 }
+
 .habs {
     grid-area: habs;
 }
+
 .dotes {
     grid-area: dotes;
 }
+
 .movs {
     grid-area: movs;
 }
-
 </style>

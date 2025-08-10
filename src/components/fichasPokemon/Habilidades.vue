@@ -19,14 +19,15 @@ watch(() => [
     props.ficha.personaliz.habilidadesExtra,
     props.habilidadesCargadas],
     () => {
-        habsBase.value = actualizarHabilidades(props.ficha.pokedex.habilidades);
-        habsOcultas.value = actualizarHabilidades(props.ficha.pokedex.habilidadesOcultas);
-        habsExtra.value = actualizarHabilidades(props.ficha.personaliz.habilidadesExtra);
+        if (props.habilidadesCargadas) {
+            habsBase.value = actualizarHabilidades(props.ficha.pokedex.habilidades);
+            habsOcultas.value = actualizarHabilidades(props.ficha.pokedex.habilidadesOcultas);
+            habsExtra.value = actualizarHabilidades(props.ficha.personaliz.habilidadesExtra);
+        }
     }, { deep: true });
 
 function actualizarHabilidades(habilidades) {
     if (!props.habilidadesCargadas || !habilidades) return []
-
     return habilidades.map(nombreHab => {
         const match = props.habilidades.find(h => h.nombre === nombreHab);
         return {

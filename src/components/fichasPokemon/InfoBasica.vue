@@ -11,6 +11,7 @@ const props = defineProps([
 const emit = defineEmits(['cambiarNombre', 'cambiarDatosEspecie'])
 
 const especieElegida = ref(props.ficha.pokedex.especie)
+const nombreFicha = ref(props.ficha.nombre)
 const mostrarLista = ref(false)
 
 const nivelTemp = ref(props.ficha.nivel)
@@ -18,6 +19,12 @@ const nivelTemp = ref(props.ficha.nivel)
 const especiesFiltradas = computed(() =>
     props.especiesPokes.filter(d =>
         d.toLowerCase().includes(especieElegida.value.toLowerCase()))
+)
+
+watch(() => props.ficha.nombre,
+    (nuevo) => {
+        nombreFicha.value = nuevo
+    }
 )
 
 watch(() => props.ficha.nivel,
@@ -54,7 +61,6 @@ function seleccionarEspecie(nombre = null) {
 }
 
 function ocultarLista() {
-    // Puede usarse en eventos como @blur o @mouseleave
     setTimeout(() => {
         mostrarLista.value = false
     }, 150)
@@ -63,9 +69,10 @@ function ocultarLista() {
 
 <template>
     <section class="info-basica-grid">
-        <div class="nombre">
+        <div class="nombre" style="position: relative;">
             <label for="Nombre">Nombre:</label>
-            <input name="Nombre" v-model="ficha.nombre" @keyup.enter="emit('cambiarNombre', ficha.nombre)" />
+            <input name="Nombre" v-model="nombreFicha" @keydown.enter.prevent="emit('cambiarNombre', nombreFicha)" />
+            <button @click="emit('cambiarNombre', nombreFicha)">Cambiar</button>
         </div>
 
         <div class="especie" style="position: relative;" v-click-outside="ocultarLista">
@@ -105,13 +112,13 @@ function ocultarLista() {
     gap: 10px;
 }
 
- .nombre {
+.nombre {
     display: flex;
     align-items: center;
     gap: 5px;
 }
 
- .nivel {
+.nivel {
     display: flex;
     align-items: center;
     gap: 5px;
@@ -123,7 +130,7 @@ function ocultarLista() {
     gap: 5px;
 }
 
- .tipos {
+.tipos {
     display: flex;
     align-items: center;
     gap: 5px;
@@ -237,7 +244,7 @@ li {
 }
 
 li:hover {
-        background: var(--color-principal2);
+    background: var(--color-principal2);
 
 }
 </style>
