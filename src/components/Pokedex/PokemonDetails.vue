@@ -1,192 +1,190 @@
 <template>
   <div v-if="pokemon" class="pokemon-details">
-    <div class="stat-block">
-      <div class="stat-block-header">
-        <div class="pokemon-title">
-          <h2>#{{ pokemon.numPokedex.substring(1) }} {{ pokemon.especie }}</h2>
-          <div class="types-container">
-            <span class="type-badge" :class="`type-${normalizeType(pokemon.tipos[0])}`">{{ pokemon.tipos[0] }}</span>
-            <span v-if="pokemon.tipos[1] && pokemon.tipos[1] !== ''" class="type-badge"
-              :class="`type-${normalizeType(pokemon.tipos[1])}`">
-              {{ pokemon.tipos[1] }}
-            </span>
-          </div>
+    <div class="stat-block-header" :style="{ background: headerGradient }">
+      <div class="pokemon-title">
+        <h2>#{{ pokemon.numPokedex.substring(1) }} {{ pokemon.especie }}</h2>
+        <div class="types-container">
+          <span class="type-badge" :class="`type-${normalizeType(pokemon.tipos[0])}`">{{ pokemon.tipos[0] }}</span>
+          <span v-if="pokemon.tipos[1] && pokemon.tipos[1] !== ''" class="type-badge"
+            :class="`type-${normalizeType(pokemon.tipos[1])}`">
+            {{ pokemon.tipos[1] }}
+          </span>
         </div>
-        <img :src="src" :alt="pokemon.especie" class="pokemon-detail-image" />
       </div>
+      <img :src="src" :alt="pokemon.especie" class="pokemon-detail-image" />
+    </div>
 
-      <div class="stat-block-body">
-        <div class="unified-stats-section">
-          <div class="pokemon-size">Pokemon {{ pokemon.otros.tamano }}
-            {{ pokemon.natHabil[0] ? (', Naturalmente hábil en ' + pokemon.natHabil[0]) : '' }}
-            {{ pokemon.natHabil[1] ? (' y ' + pokemon.natHabil[1]) : '' }}</div>
-          <div class="vital-stat-row">
-            <span class="vital-stat-label">{{ pokemon.calculosCa[1] !== '' ? 'AC 1' : 'AC' }}: </span>
-            <span class="vital-stat-value">{{ pokemon.calculosCa[0] }}</span>
-          </div>
-          <div class="vital-stat-row" v-if="pokemon.calculosCa[1] !== ''">
-            <span class="vital-stat-label">AC 2: </span>
-            <span class="vital-stat-value">{{ pokemon.calculosCa[1] }}</span>
-          </div>
-          <div class="vital-stat-row">
-            <span class="vital-stat-label">Vitalidad: </span>
-            <span class="vital-stat-value">{{ pokemon.vit }}</span>
-          </div>
-          <div class="speeds-inline">
-            <span class="vital-stat-label">Velocidad: </span>
-            <template v-if="pokemon.velocidades.caminado">{{ pokemon.velocidades.caminado }}m</template>
-            <template v-if="pokemon.velocidades.trepado">
-              <template v-if="pokemon.velocidades.caminado">, </template>
-              Trepar {{ pokemon.velocidades.trepado }}m
-            </template>
-            <template v-if="pokemon.velocidades.excavado">
-              <template v-if="pokemon.velocidades.caminado || pokemon.velocidades.trepado">, </template>
-              Excavar {{ pokemon.velocidades.excavado }}m
-            </template>
-            <template v-if="pokemon.velocidades.nado">
-              <template
-                v-if="pokemon.velocidades.caminado || pokemon.velocidades.trepado || pokemon.velocidades.excavado">,
-              </template>
-              Nadar {{ pokemon.velocidades.nado }}m
-            </template>
-            <template v-if="pokemon.velocidades.vuelo">
-              <template
-                v-if="pokemon.velocidades.caminado || pokemon.velocidades.trepado || pokemon.velocidades.excavado || pokemon.velocidades.nado">,
-              </template>
-              Volar {{ pokemon.velocidades.vuelo }}m
-            </template>
-            <template v-if="pokemon.velocidades.levitado">
-              <template
-                v-if="pokemon.velocidades.caminado || pokemon.velocidades.trepado || pokemon.velocidades.excavado || pokemon.velocidades.nado || pokemon.velocidades.vuelo">,
-              </template>
-              Levitar {{ pokemon.velocidades.levitado }}m
-            </template>
-          </div>
+    <div class="stat-block-body">
+      <div class="unified-stats-section">
+        <div class="pokemon-size">Pokemon {{ pokemon.otros.tamano }}
+          {{ pokemon.natHabil[0] ? (', Naturalmente hábil en ' + pokemon.natHabil[0]) : '' }}
+          {{ pokemon.natHabil[1] ? (' y ' + pokemon.natHabil[1]) : '' }}</div>
+        <div class="vital-stat-row">
+          <span class="vital-stat-label">{{ pokemon.calculosCa[1] !== '' ? 'AC 1' : 'AC' }}: </span>
+          <span class="vital-stat-value">{{ pokemon.calculosCa[0] }}</span>
         </div>
-
-
-        <div class="stats-section">
-          <div class="stats-table">
-            <table>
-              <tbody>
-                <tr>
-                  <td>FUE</td>
-                  <td>{{ pokemon.stats.fue }}{{ pokemon.saves.fue === 2 ? ' ☆' : pokemon.saves.fue === 4 ? ' ★' : ''
-                  }}</td>
-                </tr>
-                <tr>
-                  <td>AGI</td>
-                  <td>{{ pokemon.stats.agi }}{{ pokemon.saves.agi === 2 ? ' ☆' : pokemon.saves.agi === 4 ? ' ★' : ''
-                  }}</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="stats-table">
-            <table>
-              <tbody>
-                <tr>
-                  <td>RES</td>
-                  <td>{{ pokemon.stats.res }}{{ pokemon.saves.res === 2 ? ' ☆' : pokemon.saves.res === 4 ? ' ★' : ''
-                  }}
-                  </td>
-                </tr>
-                <tr>
-                  <td>MEN</td>
-                  <td>{{ pokemon.stats.men }}</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="stats-table">
-            <table>
-              <tbody>
-                <tr>
-                  <td>ESP</td>
-                  <td>{{ pokemon.stats.esp }}{{ pokemon.saves.esp === 2 ? ' ☆' : pokemon.saves.esp === 4 ? ' ★' : ''
-                  }}
-                  </td>
-                </tr>
-                <tr>
-                  <td>PRE</td>
-                  <td>{{ pokemon.stats.pre }}</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+        <div class="vital-stat-row" v-if="pokemon.calculosCa[1] !== ''">
+          <span class="vital-stat-label">AC 2: </span>
+          <span class="vital-stat-value">{{ pokemon.calculosCa[1] }}</span>
+        </div>
+        <div class="vital-stat-row">
+          <span class="vital-stat-label">Vitalidad: </span>
+          <span class="vital-stat-value">{{ pokemon.vit }}</span>
+        </div>
+        <div class="speeds-inline">
+          <span class="vital-stat-label">Velocidad: </span>
+          <template v-if="pokemon.velocidades.caminado">{{ pokemon.velocidades.caminado }}m</template>
+          <template v-if="pokemon.velocidades.trepado">
+            <template v-if="pokemon.velocidades.caminado">, </template>
+            Trepar {{ pokemon.velocidades.trepado }}m
+          </template>
+          <template v-if="pokemon.velocidades.excavado">
+            <template v-if="pokemon.velocidades.caminado || pokemon.velocidades.trepado">, </template>
+            Excavar {{ pokemon.velocidades.excavado }}m
+          </template>
+          <template v-if="pokemon.velocidades.nado">
+            <template
+              v-if="pokemon.velocidades.caminado || pokemon.velocidades.trepado || pokemon.velocidades.excavado">,
+            </template>
+            Nadar {{ pokemon.velocidades.nado }}m
+          </template>
+          <template v-if="pokemon.velocidades.vuelo">
+            <template
+              v-if="pokemon.velocidades.caminado || pokemon.velocidades.trepado || pokemon.velocidades.excavado || pokemon.velocidades.nado">,
+            </template>
+            Volar {{ pokemon.velocidades.vuelo }}m
+          </template>
+          <template v-if="pokemon.velocidades.levitado">
+            <template
+              v-if="pokemon.velocidades.caminado || pokemon.velocidades.trepado || pokemon.velocidades.excavado || pokemon.velocidades.nado || pokemon.velocidades.vuelo">,
+            </template>
+            Levitar {{ pokemon.velocidades.levitado }}m
+          </template>
         </div>
       </div>
 
-      <div class="abilities-section">
-        <h3 class="section-title">Habilidades</h3>
-        <p v-if="pokemon.especie === 'Arceus'"> Arceus tiene todas las Habilidades como Habilidades Ocultas.</p>
-        <div v-if="habilidadesLoading" class="loading-abilities">Cargando habilidades...</div>
-        <div v-else-if="habilidadesError" class="error-message">Ha ocurrido un error. Recarga la página.</div>
-        <div v-else class="abilities-container">
-          <div v-for="ability in abilitiesDetails" class="ability-group">
-            <div class="ability-item" :class="{ 'hidden-ability': ability.oculta }"
-              @click="toggleAbility(ability.nombre)">
-              <span class="ability-name">{{ ability.nombre }}</span>
-              <span v-if="ability.oculta" class="hidden-label">(Oculta)</span>
-            </div>
-            <abilityDetails v-if="selectedAbility === ability.nombre" :ability="ability" />
-          </div>
-          <div v-if="abilitiesDetails.length === 0" class="no-abilities">
-            No se encontraron habilidades para este Pokémon
-          </div>
-        </div>
-      </div>
 
-      <div v-if="pokemon && (pokemon.evoDe || pokemon.evolucion)" class="pokemon-evolution detail-section">
-        <h3 class="section-title">Línea Evolutiva</h3>
-        <div class="evolution-container">
-          <div v-if="pokemon.evoDe" class="evolution-group">
-            <span class="evolution-label">Evoluciona de:</span>
-            <div class="evolution-cards">
-              <EvolutionCard v-if="pokemon.evoDe" :nombre="pokemon.evoDe"
-                :numero="getPokemonNumberByName(pokemon.evoDe)" :nivel="null" :requisitos="null" :otros="null"
-                :esAlternativo="IsAltByName(pokemon.evoDe)" @show-details="emitirEspecie" />
-            </div>
+      <div class="stats-section">
+        <div class="stats-table">
+          <table>
+            <tbody>
+              <tr>
+                <td>FUE</td>
+                <td>{{ pokemon.stats.fue }}{{ pokemon.saves.fue === 2 ? ' ☆' : pokemon.saves.fue === 4 ? ' ★' : ''
+                }}</td>
+              </tr>
+              <tr>
+                <td>AGI</td>
+                <td>{{ pokemon.stats.agi }}{{ pokemon.saves.agi === 2 ? ' ☆' : pokemon.saves.agi === 4 ? ' ★' : ''
+                }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="stats-table">
+          <table>
+            <tbody>
+              <tr>
+                <td>RES</td>
+                <td>{{ pokemon.stats.res }}{{ pokemon.saves.res === 2 ? ' ☆' : pokemon.saves.res === 4 ? ' ★' : ''
+                }}
+                </td>
+              </tr>
+              <tr>
+                <td>MEN</td>
+                <td>{{ pokemon.stats.men }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="stats-table">
+          <table>
+            <tbody>
+              <tr>
+                <td>ESP</td>
+                <td>{{ pokemon.stats.esp }}{{ pokemon.saves.esp === 2 ? ' ☆' : pokemon.saves.esp === 4 ? ' ★' : ''
+                }}
+                </td>
+              </tr>
+              <tr>
+                <td>PRE</td>
+                <td>{{ pokemon.stats.pre }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="abilities-section">
+      <h3 class="section-title">Habilidades</h3>
+      <p v-if="pokemon.especie === 'Arceus'"> Arceus tiene todas las Habilidades como Habilidades Ocultas.</p>
+      <div v-if="habilidadesLoading" class="loading-abilities">Cargando habilidades...</div>
+      <div v-else-if="habilidadesError" class="error-message">Ha ocurrido un error. Recarga la página.</div>
+      <div v-else class="abilities-container">
+        <div v-for="ability in abilitiesDetails" class="ability-group">
+          <div class="ability-item" :class="{ 'hidden-ability': ability.oculta }"
+            @click="toggleAbility(ability.nombre)">
+            <span class="ability-name">{{ ability.nombre }}</span>
+            <span v-if="ability.oculta" class="hidden-label">(Oculta)</span>
           </div>
-          <div v-if="pokemon.evolucion && pokemon.evolucion.mensajeExtra" class="evolution-item">
-            <span class="evolution-value">{{ pokemon.evolucion.mensajeExtra }}</span>
+          <abilityDetails v-if="selectedAbility === ability.nombre" :ability="ability" />
+        </div>
+        <div v-if="abilitiesDetails.length === 0" class="no-abilities">
+          No se encontraron habilidades para este Pokémon
+        </div>
+      </div>
+    </div>
+
+    <div v-if="pokemon && (pokemon.evoDe || pokemon.evolucion)" class="pokemon-evolution detail-section">
+      <h3 class="section-title">Línea Evolutiva</h3>
+      <div class="evolution-container">
+        <div v-if="pokemon.evoDe" class="evolution-group">
+          <span class="evolution-label">Evoluciona de:</span>
+          <div class="evolution-cards">
+            <EvolutionCard v-if="pokemon.evoDe" :nombre="pokemon.evoDe" :numero="getPokemonNumberByName(pokemon.evoDe)"
+              :nivel="null" :requisitos="null" :otros="null" :esAlternativo="IsAltByName(pokemon.evoDe)"
+              @show-details="emitirEspecie" />
           </div>
-          <div v-else-if="pokemon.evolucion" class="evolution-group">
-            <span class="evolution-label">Evoluciona a:</span>
-            <div class="evolution-cards">
-              <EvolutionCard v-for="(evolucion, index) in pokemon.evolucion" :key="index" :nombre="evolucion.nombre"
-                :numero="getPokemonNumberByName(evolucion.nombre)" :nivel="evolucion.nivel"
-                :requisitos="evolucion.requisitos" :otros="evolucion.otros"
-                :esAlternativo="IsAltByName(evolucion.nombre)" @show-details="emitirEspecie" />
-            </div>
+        </div>
+        <div v-if="pokemon.evolucion && pokemon.evolucion.mensajeExtra" class="evolution-item">
+          <span class="evolution-value">{{ pokemon.evolucion.mensajeExtra }}</span>
+        </div>
+        <div v-else-if="pokemon.evolucion" class="evolution-group">
+          <span class="evolution-label">Evoluciona a:</span>
+          <div class="evolution-cards">
+            <EvolutionCard v-for="(evolucion, index) in pokemon.evolucion" :key="index" :nombre="evolucion.nombre"
+              :numero="getPokemonNumberByName(evolucion.nombre)" :nivel="evolucion.nivel"
+              :requisitos="evolucion.requisitos" :otros="evolucion.otros" :esAlternativo="IsAltByName(evolucion.nombre)"
+              @show-details="emitirEspecie" />
           </div>
         </div>
       </div>
-      <div v-if="pokemon && pokemon.otros" class="detail-section">
-        <div class="detail-section otros">
-          <h3 class="section-title">Información Secundaria</h3>
-          <div class="otros-table">
-            <span class="th">Nivel mínimo</span>
-            <span class="td">{{ pokemon.otros.nivMinimo }}</span>
-            <span class="th">Ratio de Captura</span>
-            <span class="td">{{ pokemon.otros.ratioCaptura }}</span>
-            <span class="th">Dieta</span>
-            <span class="td">{{ pokemon.otros.dieta }}</span>
-            <span class="th">Sexo</span>
-            <span class="td">{{ pokemon.otros.sexo }}</span>
-            <span class="th">Hábitat</span>
-            <span class="td">{{ pokemon.otros.habitat.split('\n').join(', ') }}</span>
-            <template v-if="pokemon.otros.sentidos">
-              <span class="th">Sentidos</span>
-              <span class="td">{{ pokemon.otros.sentidos.split('\n').join(', ') }}</span>
-            </template>
-          </div>
+    </div>
+    <div v-if="pokemon && pokemon.otros" class="detail-section">
+      <div class="detail-section otros">
+        <h3 class="section-title">Información Secundaria</h3>
+        <div class="otros-table">
+          <span class="th">Nivel mínimo</span>
+          <span class="td">{{ pokemon.otros.nivMinimo }}</span>
+          <span class="th">Ratio de Captura</span>
+          <span class="td">{{ pokemon.otros.ratioCaptura }}</span>
+          <span class="th">Dieta</span>
+          <span class="td">{{ pokemon.otros.dieta }}</span>
+          <span class="th">Sexo</span>
+          <span class="td">{{ pokemon.otros.sexo }}</span>
+          <span class="th">Hábitat</span>
+          <span class="td">{{ pokemon.otros.habitat.split('\n').join(', ') }}</span>
+          <template v-if="pokemon.otros.sentidos">
+            <span class="th">Sentidos</span>
+            <span class="td">{{ pokemon.otros.sentidos.split('\n').join(', ') }}</span>
+          </template>
         </div>
       </div>
-      <!-- Sección de Movimientos -->
-      <div class="detail-section" v-if="pokemon && pokemon.id">
-        <PokemonMoves :pokeID="pokemon.id" />
-      </div>
+    </div>
+    <!-- Sección de Movimientos -->
+    <div class="detail-section" v-if="pokemon && pokemon.id">
+      <PokemonMoves :pokeID="pokemon.id" />
     </div>
   </div>
 </template>
@@ -220,12 +218,46 @@ const hiddenAbilities = ref(null)
 
 const src = ref(null)
 
+
+//Colores tipos
 function normalizeType(type) {
   if (!type) return '';
   return type.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
 }
 
+const typeColors = {
+  normal: "#A8A878",
+  fuego: "#F08030",
+  agua: "#6890F0",
+  planta: "#78C850",
+  electrico: "#F8D030",
+  hielo: "#98D8D8",
+  lucha: "#C03028",
+  veneno: "#A040A0",
+  tierra: "#E0C068",
+  volador: "#A890F0",
+  psiquico: "#F85888",
+  bicho: "#A8B820",
+  roca: "#B8A038",
+  fantasma: "#705898",
+  dragon: "#7038F8",
+  siniestro: "#705848",
+  acero: "#B8B8D0",
+  hada: "#EE99AC"
+};
 
+const headerGradient = computed(() => {
+  if (!pokemon?.tipos) {
+    return `linear-gradient(90deg, #ccc, #ccc)`;
+  }
+  const tipos = pokemon.tipos.map(t => normalizeType(t));
+  const color1 = typeColors[tipos[0]] || "#ccc";
+  const color2 = tipos[1] ? typeColors[tipos[1]] : color1;
+  console.log("hola")
+  return `linear-gradient(90deg, ${color1}, ${color2})`;
+});
+
+//Habilidades
 const abilitiesDetails = computed(() => {
   if (!normalAbilities.value && !hiddenAbilities.value) {
     return []
@@ -329,21 +361,10 @@ function IsAltByName(especie) {
   color: var(--color-texto)
 }
 
-/* === CONTENEDOR PRINCIPAL === */
-.pokemon-details {
-  padding: 25px;
-  background-color: var(--color-hoverBloque);
-  border: 2px solid #999;
-  border-top: 5px solid var(--color-principal1);
-  font-size: 14px;
-  border-radius: 16px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-}
-
 /* === TITULO DEL POKEMON === */
 .pokemon-title h2 {
   margin: 0;
-  color: var(--color-texto);
+  color: #FFFFFF;
   font-size: 2em;
   font-weight: 900;
   letter-spacing: 1px;
@@ -475,8 +496,8 @@ function IsAltByName(especie) {
   justify-content: space-between;
   margin-bottom: 15px;
   padding: 15px;
-  background-color: var(--color-principal1);
   border-radius: 10px;
+  color: white;
 }
 
 .pokemon-detail-image {

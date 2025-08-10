@@ -132,10 +132,6 @@ async function handleHabs() {
 </script>
 
 <style scoped>
-.hayElegida {
-    border: var(--color-fondoTexto);
-}
-
 .contenedor {
     position: relative;
     width: 100%;
@@ -147,6 +143,7 @@ async function handleHabs() {
 label {
     font-weight: 600;
     font-size: 0.95em;
+    color: var(--color-texto);
 }
 
 input {
@@ -161,16 +158,16 @@ input {
 }
 
 input:hover {
-    border-color: #999;
+    border-color: #444;
 }
 
 input:focus {
-    border-color: var(--color-secundario2);
+    border-color: #444;
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.25);
 }
 
 .hayElegida {
-    border-color: #9999;
+    border-color: #444;
 }
 
 .dropdown {
@@ -194,6 +191,6 @@ input:focus {
 }
 
 .dropdown li:hover {
-    background-color: var(--color-fondoTexto);
+    background-color: #DDD;
 }
 </style>

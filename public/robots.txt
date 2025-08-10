@@ -1,0 +1,23 @@
+User-agent: *
+Disallow: /*?
+
+# Clankers a vuestra casa
+User-agent: GPTBot
+User-agent: ChatGPT
+User-agent: Microsoft BingBot
+User-agent: OpenAI
+User-agent: CCBot
+User-agent: SemrushBot
+User-agent: AhrefsBot
+User-agent: MJ12bot
+User-agent: DotBot
+User-agent: Baiduspider
+User-agent: YandexBot
+User-agent: Sogou Spider
+User-agent: Exabot
+User-agent: SeznamBot
+User-agent: Applebot
+Disallow: /
+
+# Sitemap
+Sitemap: https://pokemonrpa.com/sitemap.xml

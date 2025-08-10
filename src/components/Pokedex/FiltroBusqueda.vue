@@ -32,6 +32,7 @@ defineEmits(['update:modelValue'])
   font-size: 1em;
   transition: all 0.3s ease;
   outline: none;
+  background-color: var(--color-fondoTarjeta);
 }
 
 .search-input:focus {

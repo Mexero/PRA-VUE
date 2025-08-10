@@ -464,6 +464,7 @@ solo cambia el tamaños de los bloques y el margen con el header*/
     font-size: 20px;
     transition: all 0.15s;
     cursor: pointer;
+    box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.25);
 }
 
 .PDFlinks div:hover {

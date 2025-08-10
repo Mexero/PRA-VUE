@@ -17,7 +17,7 @@
             <thead>
               <tr>
                 <th>Nivel</th>
-                <th :colspan="groupedMovesByLevel.length" :key="index">Movimientos</th>
+                <th :colspan="groupedMovesByLevel.length">Movimientos</th>
               </tr>
             </thead>
             <tbody>

@@ -151,10 +151,10 @@ async function handleMovs() {
 .filter-button {
   padding: 6px 12px;
   border: none;
-  margin: 5px;
+  margin: 0 5px;
   border-radius: 6px;
-  background-color: #1976d2;
-  color: #fff;
+  background-color: var(--color-principal1);
+  color: var(--color-texto);
   font-weight: 600;
   cursor: pointer;
   transition: background-color 0.25s ease, box-shadow 0.25s ease;
@@ -166,7 +166,7 @@ async function handleMovs() {
 
 .filter-button:hover,
 .filter-button:focus {
-  background-color: #155a9c;
+  background-color: var(--color-principal2);
   outline: none;
   box-shadow: 0 0 8px rgba(21, 90, 156, 0.7);
 }
@@ -177,6 +177,7 @@ label {
   margin-bottom: 6px;
   color: #333;
   user-select: none;
+  color: var(--color-texto);
 }
 
 input[type="text"] {
@@ -189,7 +190,7 @@ input[type="text"] {
 }
 
 input[type="text"]:focus {
-  border-color: #1976d2;
+  border-color: var(--color-secundario1);
   box-shadow: 0 0 6px rgba(25, 118, 210, 0.5);
   outline: none;
 }
@@ -203,7 +204,6 @@ input[type="text"]:focus {
   max-height: 200px;
   overflow-y: auto;
   background-color: #fff;
-  border: 1.5px solid #1976d2;
   border-radius: 6px;
   box-shadow: 0 6px 14px rgba(25, 118, 210, 0.3);
   z-index: 1100;
@@ -228,6 +228,5 @@ input[type="text"]:focus {
     top: -180px;
     left: 40%;
   }
-
 }
 </style>

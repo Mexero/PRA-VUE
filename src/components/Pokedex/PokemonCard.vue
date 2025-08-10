@@ -114,19 +114,12 @@ watch(() => props.pokemon, async () => {
 }
 
 .type-badge {
-  padding: 3px 8px;
-  border-radius: 6px;
+  padding: 4px 6px;
+  border-radius: 20px;
   color: white;
-  font-size: 0.75em;
-  font-weight: 600;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
-  min-width: 48px;
-  text-align: center;
-  transition: transform 0.2s ease;
-}
-
-.type-badge:hover {
-  transform: scale(1.05);
+  font-weight: bold;
+  font-size: 0.7em;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
 }
 
 .types .type-badge:first-child:last-child {

@@ -49,6 +49,7 @@ const ChecksBase = [
 label {
     font-weight: 600;
     font-size: 0.95em;
+    color: var(--color-texto);
 }
 
 select {

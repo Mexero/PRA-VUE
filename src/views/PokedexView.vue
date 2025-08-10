@@ -583,12 +583,17 @@ function generarEvoluciones(evoEn, nivelEvo, tipoRequisito, requisitosEvo, evoOt
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
-
-
 .details-section {
   max-height: 75vh;
   overflow-y: auto;
   scrollbar-width: thin;
+  padding: 25px;
+  background-color: var(--color-hoverBloque);
+  border: 2px solid #999;
+  border-top: 5px solid var(--color-principal1);
+  font-size: 14px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 }
 
 @media (max-width: 950px) {
