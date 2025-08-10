@@ -1,41 +1,3 @@
-<template>
-    <section class="info-basica">
-        <div>
-            <span class="label">Nombre:</span>
-            <input v-model="ficha.nombre" @keyup.enter="emit('cambiarNombre', ficha.nombre)" />
-        </div>
-
-        <div>
-            <span class="label">Especie:</span>
-            <div style="position: relative;" v-click-outside="ocultarLista">
-                <input v-model="especieElegida" placeholder="Buscar especie..." @focus="mostrarLista = true"
-                    @keydown.enter.prevent="seleccionarEspecie()" />
-                <button @click="CambiarEspecie(especieElegida)">Cambiar</button>
-                <ul v-if="mostrarLista && especiesFiltradas.length">
-                    <li v-for="especie in especiesFiltradas" :key="especie"
-                        @mousedown.prevent="seleccionarEspecie(especie)">
-                        {{ especie }}
-                    </li>
-                </ul>
-            </div>
-        </div>
-
-        <div>
-            <span class="label">Nivel:</span>
-            <input type="number" v-model.number="nivelTemp" min="0" />
-            <button @click="cambiarNivel">Cambiar</button>
-        </div>
-
-        <div>
-            <span class="label">Tipos:</span>
-            <input v-model="ficha.pokedex.tipos[0]" readonly />
-            <template v-if="ficha.pokedex.tipos[1]">/
-                <input v-model="ficha.pokedex.tipos[1]" readonly />
-            </template>
-        </div>
-    </section>
-</template>
-
 <script setup>
 import { ref, watch, computed } from 'vue'
 
@@ -99,44 +61,166 @@ function ocultarLista() {
 }
 </script>
 
+<template>
+    <section class="info-basica-grid">
+        <div class="nombre">
+            <label for="Nombre">Nombre:</label>
+            <input name="Nombre" v-model="ficha.nombre" @keyup.enter="emit('cambiarNombre', ficha.nombre)" />
+        </div>
+
+        <div class="especie" style="position: relative;" v-click-outside="ocultarLista">
+            <label for="Especie">Especie:</label>
+            <input name="Especie" v-model="especieElegida" placeholder="Buscar especie..." @focus="mostrarLista = true"
+                @keydown.enter.prevent="seleccionarEspecie()" />
+            <ul v-if="mostrarLista && especiesFiltradas.length">
+                <li v-for="especie in especiesFiltradas" :key="especie"
+                    @mousedown.prevent="seleccionarEspecie(especie)">
+                    {{ especie }}
+                </li>
+            </ul>
+            <button @click="CambiarEspecie(especieElegida)">Cambiar</button>
+
+        </div>
+        <div class="nivel">
+            <label for="Nivel">Nivel:</label>
+            <input type="number" name="Nivel" v-model.number="nivelTemp" min="0" />
+            <button @click="cambiarNivel">Cambiar</button>
+        </div>
+        <div class="tipos">
+            <label for="Tipos">Tipos:</label>
+            <input name="Tipos" class="NombreTipos" v-model="ficha.pokedex.tipos[0]" readonly />
+            <template v-if="ficha.pokedex.tipos[1]">/
+                <input class="NombreTipos" v-model="ficha.pokedex.tipos[1]" readonly />
+            </template>
+        </div>
+    </section>
+</template>
+
 <style scoped>
-.info-basica {
+.info-basica-grid {
+    border-bottom: 1px solid rgba(150, 150, 150, 0.798);
+    padding-bottom: 20px;
     display: flex;
-    gap: 24px;
     justify-content: space-between;
-    margin-bottom: 20px;
+    gap: 10px;
 }
 
-.sugerencias {
-    border: 1px solid #ccc;
-    max-height: 150px;
-    overflow-y: auto;
-    background: white;
-    list-style: none;
-    padding: 0;
+ .nombre {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+ .nivel {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.especie {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+ .tipos {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.tipos {
+    flex-wrap: nowrap;
+}
+
+input {
+    font-size: large;
+    background-color: transparent;
+    padding: 4px;
+    border: none;
+    border-bottom: 1px solid;
+    color: var(--color-texto);
+}
+
+label {
+    font-weight: bold;
+}
+
+.info-basica-grid input:focus {
+    outline: none;
+}
+
+.info-basica-grid input[name="Nombre"] {
+    width: 50%;
+}
+
+.info-basica-grid input[name="Especie"] {
+    width: 50%;
+}
+
+.info-basica-grid input[name="Nivel"] {
+    width: 30px;
+}
+
+
+@media (max-width: 750px) {
+    .info-basica-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto auto auto;
+        grid-template-areas:
+            "nombre nivel"
+            "especie especie"
+            "tipos tipos";
+        gap: 10px;
+    }
+
+    .info-basica-grid .nivel {
+        justify-content: flex-end;
+    }
+
+    .info-basica-grid input[name="Nombre"] {
+        width: 100%;
+    }
+
+    .info-basica-grid input[name="Especie"] {
+        width: 60%;
+    }
+
+
+}
+
+/* Quitar flechas en input[type="number"] para Chrome, Safari, Edge */
+.info-basica-grid input[type="number"]::-webkit-inner-spin-button,
+.info-basica-grid input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
     margin: 0;
-    position: absolute;
-    z-index: 10;
-    top: 30px;
-    left: 0;
-    width: 250px;
 }
 
-.label {
-    font-weight: 600;
-    color: #34495e;
+/* Quitar flechas en input[type="number"] para Firefox y estándar */
+.info-basica-grid input[type="number"] {
+    -moz-appearance: textfield;
+    appearance: textfield;
 }
 
 button {
-    margin-left: 8px;
-    padding: 4px 10px;
-    font-size: 0.9em;
+
+    padding: 5px;
+    background-color: var(--color-principal1);
+    color: var(--color-texto);
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+
+}
+
+.NombreTipos {
+    width: 100px;
 }
 
 ul {
     position: absolute;
     z-index: 10;
-    background: white;
+    background: var(--color-principal1);
     border: 1px solid #ccc;
     margin: 0;
     padding: 4px;
@@ -144,6 +228,7 @@ ul {
     max-height: 200px;
     overflow-y: auto;
     width: 100%;
+    top: 40px;
 }
 
 li {
@@ -152,6 +237,7 @@ li {
 }
 
 li:hover {
-    background-color: #f0f0f0;
+        background: var(--color-principal2);
+
 }
 </style>

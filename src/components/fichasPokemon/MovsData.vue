@@ -1,31 +1,4 @@
-<template>
-    <div class="mov-content">
-        <div class="mov-data">
-            <p><strong>Tipo: </strong>{{ mov.tipo }}</p>
-            <p><strong>Acción: </strong>{{ mov.accion }}</p>
-            <p><strong>Coste: </strong>{{ computarCoste(mov.coste) }}</p>
-            <p><strong>Rango: </strong>{{ mov.rango }}</p>
-            <p v-if="mov.danno">
-                <strong>Daño: </strong>
-                {{ computarDanno(mov.danno, mayorStat(mov.statsAso)) }}
-            </p>
-            <p v-if="mov.etiquetas"><strong>Etiquetas: </strong>{{ mov.etiquetas }}</p>
-            <p v-if="mov.ataque">
-                <strong>Bono Tirada: </strong> {{ ComputarTdA(mayorStat(mov.statsAso)) }}
-            </p>
-            <p v-if="mov.salvacion">
-                <strong>Salvación: </strong> CD {{ computarCD(mayorStat(mov.statsAso)) }}
-            </p>
-        </div>
-        <div class="descripcion">
-            <p class="tituloDesc"><strong>Descripción:</strong></p>
-            <p v-for="parrafo in mov.descripcion" v-html="parrafo"></p>
-        </div>
-        <div v-if="mov.statsAso.length">
-            <strong>Estadísticas asociadas: </strong> {{ formatearStats(mov.statsAso) }}.
-        </div>
-    </div>
-</template>
+
 <script setup>
 const props = defineProps([
     'ficha',
@@ -90,10 +63,39 @@ function computarCD(stat) {
 }
 </script>
 
-
+<template>
+    <div class="mov-content">
+        <div class="mov-data">
+            <p><strong>Tipo: </strong>{{ mov.tipo }}</p>
+            <p><strong>Acción: </strong>{{ mov.accion }}</p>
+            <p><strong>Coste: </strong>{{ computarCoste(mov.coste) }}</p>
+            <p><strong>Rango: </strong>{{ mov.rango }}</p>
+            <p v-if="mov.danno">
+                <strong>Daño: </strong>
+                {{ computarDanno(mov.danno, mayorStat(mov.statsAso)) }}
+            </p>
+            <p v-if="mov.etiquetas"><strong>Etiquetas: </strong>{{ mov.etiquetas }}</p>
+            <p v-if="mov.ataque">
+                <strong>Bono Tirada: </strong> {{ ComputarTdA(mayorStat(mov.statsAso)) }}
+            </p>
+            <p v-if="mov.salvacion">
+                <strong>Salvación: </strong> CD {{ computarCD(mayorStat(mov.statsAso)) }}
+            </p>
+        </div>
+        <div class="descripcion">
+            <p class="tituloDesc"><strong>Descripción:</strong></p>
+            <p v-for="parrafo in mov.descripcion" v-html="parrafo"></p>
+        </div>
+        <div v-if="mov.statsAso.length">
+            <strong>Estadísticas asociadas: </strong> {{ formatearStats(mov.statsAso) }}.
+        </div>
+    </div>
+</template>
 <style scoped>
+.mov-content{
+    padding: 10px;
+}
 .movimiento {
-    background: #4eb67b;
     border-radius: 8px;
     text-align: justify;
     padding: 10px;

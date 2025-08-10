@@ -42,7 +42,7 @@ function añadirHab() {
 <template>
     <div>
         <button @click="togglePopup" class="btn">
-            Añadir Habilidad
+            Añadir Habilidad Extra
         </button>
 
         <div v-if="isOpen" class="modal-overlay" @click="closePopup">
@@ -56,7 +56,7 @@ function añadirHab() {
                         <div class="preview">
                             <template v-if="habilidadSeleccionada">
                                 <div class="tarjetaHab">
-                                    <p>{{ habilidadSeleccionada.nombre }}</p>
+                                    <h3>{{ habilidadSeleccionada.nombre }}</h3>
                                     <div class="descripcion">
                                         <p class="tituloDesc"><strong>Descripción:</strong></p>
                                         <p v-for="parrafo in habilidadSeleccionada.descripcion" v-html="parrafo"></p>
@@ -83,16 +83,23 @@ function añadirHab() {
 
 <style scoped>
 .btn {
-    padding: 10px 16px;
-    background-color: #2563eb;
-    color: white;
+    padding: 5px;
+    background-color: var(--color-principal1);
+    color: var(--color-texto);
     border: none;
     border-radius: 6px;
     cursor: pointer;
 }
 
 .tarjetaHab {
-    font-size: 10px;
+    color: var(--color-texto);
+}
+.tarjetaHab p{
+    
+}
+.descripcion {
+    color: var(--color-texto);
+
 }
 
 .modal-overlay {
@@ -109,7 +116,7 @@ function añadirHab() {
 }
 
 .modal-content {
-    background: white;
+    background-color: var(--color-fondoTexto);
     width: 75vw;
     height: 75vh;
     border-radius: 12px;
@@ -124,7 +131,7 @@ function añadirHab() {
     flex: 1;
     display: flex;
     flex-direction: column;
-    background: white;
+    background-color: var(--color-fondoTexto);
     border: 1px solid #ccc;
     border-radius: 8px;
     padding: 16px;
@@ -138,8 +145,8 @@ function añadirHab() {
 }
 
 .preview {
-    width: 200px;
-    background: #f9f9f9;
+    width: 70%;
+    background-color: var(--color-fondoTexto);
     border: 1px solid #bbb;
     border-radius: 6px;
     padding: 12px;
@@ -172,8 +179,8 @@ function añadirHab() {
 .close-btn {
     margin-top: 20px;
     padding: 8px 12px;
-    background-color: #e11d48;
-    color: white;
+    background-color: var(--color-principal1);
+    color: var(--color-texto);
     border: none;
     border-radius: 4px;
     cursor: pointer;

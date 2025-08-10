@@ -1,30 +1,3 @@
-<template>
-    <div class="character-sheet">
-        <FichaToolbar :fichaSeleccionada="fichaSeleccionada" :nuevaFichaNombre="nuevaFichaNombre"
-            :ordenFichas="ordenFichas" :fichasGuardadas="fichasGuardadas"
-            @update:fichaSeleccionada="fichaSeleccionada = $event" @update:nuevaFichaNombre="nuevaFichaNombre = $event"
-            @crear="crearFicha" @borrar="borrarFicha" @exportar="exportarFicha" @importar="importarFicha"
-            @moverFicha="moverFicha" />
-
-        <FichaInfoBasica :ficha="ficha" :especiesPokes="especiesPokes" :especiesPokesCargadas="especiesPokesCargadas"
-            @cambiarNombre="cambiarNombreFicha" @cambiarDatosEspecie="cambiarDatosEspecie" />
-
-        <div class="info-principal">
-            <FichaStats :ficha="ficha" />
-            <FichaDestacados :ficha="ficha" :grados="grados" />
-            <FichaVelocidades :ficha="ficha" />
-            <FichaChecks :ficha="ficha" :ChecksBase="ChecksBase" />
-        </div>
-
-        <FichaMovimientos :ficha="ficha" :movimientos="movimientos" :movimientosCargados="movimientosCargados" />
-        <div class="HabsYDotes">
-            <FichaHabilidades :ficha="ficha" :habilidades="habilidades" :habilidadesCargadas="habilidadesCargadas" />
-            <FichaDotes :ficha="ficha" :dotes="dotes" :dotesCargadas="dotesCargadas" />
-        </div>
-        <FichaOtros :ficha="ficha" :naturalezas="naturalezas" />
-    </div>
-</template>
-
 <script setup>
 import { ref, reactive, onMounted, watch } from 'vue'
 
@@ -769,146 +742,142 @@ onMounted(async () => {
 </script>
 
 
-<style>
-/* inputs */
+<template>
 
-.item {
+    <div class="fichaPokemon">
+        <!-- 
+        <FichaToolbar ... />
+        -->
+        <div class="character-sheet">
+
+            <FichaInfoBasica :ficha="ficha" :especiesPokes="especiesPokes"
+                :especiesPokesCargadas="especiesPokesCargadas" @cambiarNombre="cambiarNombreFicha"
+                @cambiarDatosEspecie="cambiarDatosEspecie" />
+
+            <div class="info-principal">
+                <div class="stats-area">
+                    <FichaStats :ficha="ficha" />
+                </div>
+
+                <div class="salvaciones-area">
+                    <h3>Salvaciones</h3>
+                    <div class="bonosSalvacion" v-for="stat in ['fue', 'agi', 'res', 'esp']" :key="stat">
+                        {{ stat.toUpperCase() }}
+                        <span class="numero">{{ ficha.derivados.salvaciones[stat] || 0 }}</span>
+                    </div>
+                </div>
+
+                <div class="destacados-area">
+                    <FichaDestacados :ficha="ficha" :grados="grados" />
+                </div>
+                <div class="checks-area">
+                    <FichaChecks :ficha="ficha" :ChecksBase="ChecksBase" />
+                </div>
+                <div class="velocidades-area">
+                    <FichaVelocidades :ficha="ficha" />
+                </div>
+            </div>
+            <FichaOtros :ficha="ficha" :naturalezas="naturalezas" />
+
+
+            <div class="HabsDotesMovs">
+                <div class="habs"><FichaHabilidades :ficha="ficha" :habilidades="habilidades" :habilidadesCargadas="habilidadesCargadas" /></div>
+                <div class="dotes"><FichaDotes :ficha="ficha" :dotes="dotes" :dotesCargadas="dotesCargadas" /></div>
+                <div class="movs"><FichaMovimientos :ficha="ficha" :movimientos="movimientos" :movimientosCargados="movimientosCargados" /></div>
+            </div>
+
+
+
+        </div>
+    </div>
+</template>
+
+
+
+<style scoped>
+.fichaPokemon {
     display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    position: relative;
+    justify-content: center;
+    margin: auto;
+    width: fit-content;
+    color: var(--color-texto);
 }
 
-.item label {
-    margin-right: 0.25rem;
-}
-
-.item input {
-    font-size: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 0.25rem;
-    transition: border-color 0.2s ease-in-out;
-}
-
-.item input[type="checkbox"] {
-    appearance: none;
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    border: 1px solid #666;
-    background-color: #fff;
-    margin-left: auto;
-    margin-right: 4px;
-    cursor: pointer;
-    position: relative;
-}
-
-.item input[type="checkbox"]:checked {
-    background-color: #444;
-    box-shadow: inset 0 0 0 2px #fff;
-}
-
-.item span {
-    font-size: 0.8rem;
-    color: #888;
-}
-
-/* Quitar flechitas de input number*/
-.character-sheet input[type=number]::-webkit-inner-spin-button,
-.character-sheet input[type=number]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-}
-
-/* Firefox */
-.character-sheet input[type=number] {
-    -moz-appearance: textfield;
-}
-
-
-/* Básicos */
 .character-sheet {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 16px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #f9f9f9;
+    margin: 50px auto;
+    background-color: var(--color-fondoTexto);
     border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    color: #333;
+    padding: 20px;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2), -3px 3px 5px rgba(0, 0, 0, 0.2);
 }
 
-.character-sheet input {
-    width: 50px;
-}
-
-.info-item {
-    flex: 1;
-    font-size: 1rem;
-}
-
-.value {
-    margin-left: 6px;
-    color: #555;
-}
-
-/* PRICIPAL GRID */
 .info-principal {
-    width: 100%;
+    width: fit-content;
     display: grid;
-    grid-template-columns: 1fr repeat(2, 2fr);
-    grid-template-rows: 200px 240px;
     grid-template-areas:
-        "stats central vels"
-        "stats checks checks"
-    ;
+        "stats destacados destacados velocidades"
+        "stats saves checks velocidades";
+    grid-template-columns: auto 120px 1fr auto;
+    grid-template-rows: 110px auto;
+    gap: 0px 20px;
 }
 
-/* Grid areas */
-.central {
-    grid-area: central;
-}
-
-.stats {
+.stats-area {
     grid-area: stats;
 }
 
-.checks {
+.salvaciones-area {
+    grid-area: saves;
+}
+
+.destacados-area {
+    grid-area: destacados;
+}
+
+.checks-area {
     grid-area: checks;
 }
 
-.speeds {
-    grid-area: vels;
+.velocidades-area {
+    grid-area: velocidades;
 }
 
-/* Secciones con títulos */
-
-.character-sheet section h3 {
-    font-size: 1.2rem;
-    color: #34495e;
-    margin-bottom: 10px;
-    border-bottom: 2px solid #3498db;
-    padding-bottom: 4px;
-}
-
-/* Habilidades y Feats */
-.HabsYDotes {
+.salvaciones-area {
+    border: 1px solid rgba(150, 150, 150, 0.798);
+    border-radius: 5px;
+    padding: 5px;
+    height: fit-content;
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
+    gap: 5px;
 }
 
-.habilidades,
-.feats {
-    width: 48%;
+.bonosSalvacion {
+    border-radius: 5px;
+    padding: 3px;
+    align-items: center;
+    display: flex;
+    gap: 10px
 }
 
-/* Ítems */
-.item {
-    background: #ecf0f1;
-    border-radius: 6px;
-    padding: 8px;
-    text-align: center;
-    color: #2c3e50;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+.HabsDotesMovs {
+    padding-top: 25px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr;
+    gap: 20px;
+    grid-template-areas:
+        "habs movs"
+        "dotes movs";
 }
+.habs {
+    grid-area: habs;
+}
+.dotes {
+    grid-area: dotes;
+}
+.movs {
+    grid-area: movs;
+}
+
 </style>

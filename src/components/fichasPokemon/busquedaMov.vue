@@ -39,31 +39,5 @@ function emitirSeleccion(nombre) {
 </script>
 
 <style scoped>
-.sugerencias-wrapper {
-    flex: 1;
-    overflow-y: auto;
-    max-height: 300px;
-    border-top: 1px solid #ccc;
-}
 
-.sugerencias {
-    font-size: 14px;
-    width: 100%;
-    border-collapse: collapse;
-}
-
-.sugerencias th,
-.sugerencias td {
-    padding: 8px 12px;
-    text-align: left;
-}
-
-.sugerencias td {
-    cursor: pointer;
-    transition: background 0.2s;
-}
-
-.sugerencias tr:hover {
-    background-color: #e6e6e6;
-}
 </style>

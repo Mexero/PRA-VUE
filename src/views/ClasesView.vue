@@ -326,7 +326,7 @@ function isSubclaseActiva(ruta) {
         <a href="#modoNoche"><img src="/assets/icons/arrowUpIcon.svg" alt="Icono volver arriba"></a>
     </div>
 </template>
-<style>
+<style scoped>
 html {
     scroll-padding: 60px;
 }

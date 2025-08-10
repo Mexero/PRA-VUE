@@ -1,35 +1,3 @@
-<template>
-    <section class="moves">
-        <h3>Movimientos ( {{ ficha.personaliz.movimientosAprendidos.length
-        }} / {{ ficha.derivados.cantidadMovs }})
-            <movimientosPopUp :movimientos="movimientos" :ficha="ficha" :movimientosCompletos="movimientosCompletos"
-                :movimientosCargados="movimientosCargados" />
-        </h3>
-        <div class="moves-list">
-            <!--Movimientos Aprendidos-->
-            <template v-for="(mov, i) in ficha.personaliz.movimientosAprendidos" :key="i">
-                <details class="movimiento">
-                    <summary>
-                        {{ mov }}
-                        <button @click="eliminarMov(mov, 'aprendidos')" class="borrar-btn">X</button>
-                    </summary>
-                    <MovsData v-if="getMovimientoCompleto(mov)" :ficha="ficha" :mov="getMovimientoCompleto(mov)" />
-                </details>
-            </template>
-            <!--Movimientos Extra-->
-            <template v-for="(mov, i) in ficha.personaliz.movimientosExtra" :key="i">
-                <details class="movimiento">
-                    <summary>
-                        {{ mov }} (Extra)
-                        <button @click="eliminarMov(mov, 'extra')" class="borrar-btn">X</button>
-                    </summary>
-                    <MovsData v-if="getMovimientoCompleto(mov)" :ficha="ficha" :mov="getMovimientoCompleto(mov)" />
-                </details>
-            </template>
-        </div>
-    </section>
-</template>
-
 <script setup>
 const props = defineProps([
     'ficha',
@@ -93,24 +61,95 @@ function eliminarMov(movimiento, lista) {
     }
 }
 </script>
+<template>
+    <section class="moves">
+        <div class="moves-header">
+            <h3>Movimientos ( {{ ficha.personaliz.movimientosAprendidos.length }} / {{ ficha.derivados.cantidadMovs }})</h3>
+            <movimientosPopUp :movimientos="movimientos" :ficha="ficha" :movimientosCompletos="movimientosCompletos"
+                :movimientosCargados="movimientosCargados" />
+        </div>
+        <div class="moves-list">
+            <!--Movimientos Aprendidos-->
+            <template v-for="(mov, i) in ficha.personaliz.movimientosAprendidos" :key="i">
+                <details class="movimiento">
+                    <summary>
+                        {{ mov }}
+                        <button @click="eliminarMov(mov, 'aprendidos')" class="borrar-btn">x</button>
+                    </summary>
+                    <MovsData v-if="getMovimientoCompleto(mov)" :ficha="ficha" :mov="getMovimientoCompleto(mov)" />
+                </details>
+            </template>
+            <!--Movimientos Extra-->
+            <template v-for="(mov, i) in ficha.personaliz.movimientosExtra" :key="i">
+                <details class="movimiento">
+                    <summary>
+                        {{ mov }} (Extra)
+                        <button @click="eliminarMov(mov, 'extra')" class="borrar-btn">x</button>
+                    </summary>
+                    <MovsData v-if="getMovimientoCompleto(mov)" :ficha="ficha" :mov="getMovimientoCompleto(mov)" />
+                </details>
+            </template>
+        </div>
+    </section>
+</template>
 
 <style scoped>
-.moves-list {
+.moves {
+    border: 1px solid rgba(150, 150, 150, 0.798);
+    border-radius: 5px;
+    padding: 5px;
+    width: 100%;
+    height: fit-content;
     display: flex;
     flex-direction: column;
-    gap: 8px;
-    background: #d5f5e3;
-    border-radius: 8px;
-    padding: 12px;
-    font-weight: 600;
-    color: #196f3d;
-    text-align: center;
 }
 
-.movimiento {
-    background: #4eb67b;
-    border-radius: 8px;
-    text-align: justify;
-    padding: 10px;
+
+.moves-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 5px;
 }
+
+
+
+.movimiento {
+    max-width: 675px;
+    border: 1px solid var(--color-principal2);
+        margin: 10px 0;
+
+}
+
+.movimiento summary {
+    background-color: var(--color-principal2);
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 0 0 10px ;
+            cursor: pointer;
+
+}
+
+.borrar-btn {
+    background-color: transparent;
+    border: none;
+    color: var(--color-texto);
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 25px;
+    border-left: 1px solid;
+    width: 40px;
+    height: 30px;
+    padding-bottom: 5px;
+    background-color: var(--color-principal1);
+}
+
+.borrar-btn:hover {
+    background-color: var(--color-principal2);
+}
+
 </style>
