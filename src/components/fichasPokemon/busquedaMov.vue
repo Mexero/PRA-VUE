@@ -11,11 +11,15 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr v-for="m in movimientos" :key="m" @mousedown.prevent="emitirSeleccion(m.nombre)">
+                    <tr v-for="m in movimientos"
+                        :key="m.nombre"
+                        @mousedown.prevent="emitirSeleccion(m.nombre)"
+                        :class="{ seleccionado: m.nombre === seleccionado }"
+                    >
                         <td>{{ m.nombre }}</td>
                         <td>{{ m.tipo }}</td>
                         <td>{{ m.coste }}</td>
-                        <td>{{ m.etiquetas ?? "—" }}</td>
+                        <td>{{ m.etiquetas ?? '—' }}</td>
                     </tr>
                 </tbody>
             </table>
@@ -27,7 +31,7 @@
 <script setup>
 import { ref } from 'vue'
 
-const props = defineProps(['movimientos'])
+const props = defineProps(['movimientos', 'seleccionado'])
 const emit = defineEmits(['seleccion'])
 
 const valor = ref('')
@@ -39,5 +43,37 @@ function emitirSeleccion(nombre) {
 </script>
 
 <style scoped>
+.buscador{
+    width: 60%;
+    overflow: auto;
+}
+.sugerencias{
+    min-width: 100%;
+   border-collapse: collapse;
+
+}
+td{
+    padding: 5px ;
+}
+tr:hover{
+    background-color: var(--color-principal2);
+    cursor: pointer;
+}
+
+.sugerencias thead th {
+    position: sticky;
+    top: 0;
+    background-color: var(--color-principal1);
+    z-index: 1;
+}
+
+.sugerencias th {
+    padding: 8px 12px;
+}
+
+.seleccionado {
+    background-color: var(--color-principal2) !important;
+}
+
 
 </style>

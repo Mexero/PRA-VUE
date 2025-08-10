@@ -91,7 +91,6 @@ function emitirSeleccion(nombre) {
     background-color: var(--color-principal2);
 }
 input {
-    
     background-color: transparent;
     padding: 4px;
     border: none;

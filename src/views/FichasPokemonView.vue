@@ -745,8 +745,8 @@ onMounted(async () => {
 <template>
 
     <div class="fichaPokemon">
-        <!-- 
-        <FichaToolbar ... />
+        
+       <!--  <FichaToolbar  />
         -->
         <div class="character-sheet">
 
@@ -808,7 +808,7 @@ onMounted(async () => {
     background-color: var(--color-fondoTexto);
     border-radius: 10px;
     padding: 20px;
-    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2), -3px 3px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2), -3px 0px 5px rgba(0, 0, 0, 0.2);
 }
 
 .info-principal {
