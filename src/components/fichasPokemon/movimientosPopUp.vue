@@ -250,7 +250,7 @@ function checkDisabled() {
                 <label>
                     ¿Extra? <input type="checkbox" v-model="añadirExtra" />
                 </label>
-                <div>
+                <div class="filtro1">
                     <input v-model="filtroNombre" placeholder="Buscar movimiento..."
                         @keydown.enter.prevent="cargarMovimiento(filtrados[0].nombre)" />
                     <label>
@@ -282,37 +282,39 @@ function checkDisabled() {
 
                     <button class="resetFiltros" @click="limpiarFiltros"> Limpiar filtros</button>
                 </div>
-                <div>
-                    <div>
-                        <label> <strong>Por nivel</strong> <input type="radio" v-model="tipoLista" name="lista"
-                                value="Nivel"></label>
+                <div class="filtro2">
+                    
+                        <label> 
+                            <strong>Por nivel</strong> <input type="radio" v-model="tipoLista" name="lista"
+                                value="Nivel">
+                            </label>
                         <label> <strong>Enseñables</strong> <input type="radio" v-model="tipoLista" name="lista"
                                 value="Ensennables"></label>
                         <label> <strong>Todos</strong> <input type="radio" v-model="tipoLista" name="lista"
                                 value="Todos"></label>
-                    </div>
+                    
                 </div>
 
                 <div class="ventana">
                     <div class="cuerpo">
                         <template v-if="tipoLista === 'Nivel'">
                             <div class="movsList">
-                            <ul>
+
                                 <template v-for="nivel of nivelesConMovs">
-                                    <li :class="nivel > ficha.nivel ? 'demasiado' : ''">
-                                        <h5>Nivel {{ nivel }}</h5>
+                                    <ul :class="nivel > ficha.nivel ? 'demasiado' : ''">
+                                        <h3>Nivel {{ nivel }}</h3>
                                         <ul>
                                             <template v-for="mov of filtradosNivel(nivel)">
                                                 <li v-if="comprobar(mov.nombre)" @click="cargarMovimiento(mov.nombre)">
                                                     {{ mov.nombre.trim() }}</li>
                                             </template>
                                         </ul>
-                                    </li>
+                                    </ul>
                                 </template>
-                            </ul>
+
                             </div>
                         </template>
-                        <busquedaMov v-else :movimientos="filtrados" @seleccion="cargarMovimiento" />
+                        <busquedaMov v-else :movimientos="filtrados" :seleccionado="movimientoSeleccionado?.nombre" @seleccion="cargarMovimiento" />
 
                         <div class="preview">
                             <template v-if="movimientoSeleccionado">
@@ -351,7 +353,17 @@ function checkDisabled() {
 </template>
 
 <style scoped>
-.btn {
+
+.filtro1{
+    display: flex;
+    gap: 30px;
+}
+.filtro2{
+    display: flex;
+    gap: 30px;
+}
+
+.btn, .filtro1 button {
     padding: 5px;
     background-color: var(--color-principal1);
     color: var(--color-texto);
@@ -360,15 +372,27 @@ function checkDisabled() {
     cursor: pointer;
 
 }
-.movsList{
-    width: 20%;
+
+.movsList {
+    width: 30%;
+    overflow: auto;
 }
-ul{
+
+ul {
     list-style: none;
 
 }
-.tarjetaMov {
 
+ul h3 {
+    margin-top: 10px;
+    border-bottom: 1px solid black;
+}
+li{
+    padding: 5px ;
+}
+li:hover {
+    background-color: var(--color-principal2);
+    cursor: pointer;
 }
 
 .modal-overlay {
@@ -414,7 +438,7 @@ ul{
 }
 
 .preview {
-    width: 70%;
+    width: 80%;
     background: var(--color-fondoTexto);
     border: 1px solid #bbb;
     border-radius: 5px;
@@ -449,10 +473,17 @@ ul{
     margin-top: 20px;
     padding: 8px 12px;
     color: var(--color-texto);
+    background-color: var(--color-principal1);
     border: none;
     border-radius: 4px;
     cursor: pointer;
 }
 
-
+input {
+    background-color: transparent;
+    padding: 4px;
+    border: none;
+    border-bottom: 1px solid;
+    color: var(--color-texto);
+}
 </style>
