@@ -1,47 +1,92 @@
-
 <template>
 	<div class="toolbar">
-        <div class="selectPokemon">
-		<select :value="fichaSeleccionada" @change="$emit('update:fichaSeleccionada', $event.target.value)">
-			<option v-for="key in ordenFichas" :key="key" :value="key">{{ key }}</option>
-		</select>
+		<div class="dropdown-container">
+			<button class="dropdown-toggle" @click="toggleDropdown" type="button">
+				Fichas
+				<span :class="['triangle', { open: dropdownOpen }]">▶</span>
+			</button>
+			<div v-if="dropdownOpen" class="dropdown-content">
+				<div class="selectPokemon">
+					<draggable v-model="localOrdenFichas" @end="onReorder" item-key="key" :animation="200"
+						class="draggable-list">
+						<template #item="{ element: ficha }">
+							<button :class="{ selected: ficha === fichaSeleccionada }" @click="selectFicha(ficha)"
+								class="ficha-item" type="button">
+								{{ ficha }}
+							</button>
+						</template>
+					</draggable>
+				</div>
+			</div>
+		</div>
 
-        
-	<!--	<button @click="$emit('moverFicha', 'principio')">▲▲</button> -->
-		<button @click="$emit('moverFicha', -1)">▲</button>
-		<button @click="$emit('moverFicha', 1)">▼</button>
-	<!--	<button @click="$emit('moverFicha', 'final')">▼▼</button>  -->
-
-        </div>
-		<input
-			:value="nuevaFichaNombre"
-			@input="$emit('update:nuevaFichaNombre', $event.target.value)"
-			placeholder="Nombre nueva ficha"
-		/>
-
-		<button @click="$emit('crear')">Crear</button>
-		<button @click="$emit('borrar')">Borrar</button>
-		<button @click="$emit('exportar')">Exportar</button>
-		<input type="file" accept="application/json" @change="$emit('importar', $event)" />
+		<button @click="$emit('crear')">Crear ficha</button>
+		<button @click="$emit('borrar')">Borrar ficha</button>
+		<button @click="$emit('exportar')">Exportar ficha</button>
+		<!-- input file oculto -->
+		<input ref="fileInput" type="file" accept="application/json" @change="$emit('importar', $event)"
+			style="display: none;" />
+		<!-- botón que dispara el input file -->
+		<button @click="triggerFileInput" type="button">Importar ficha</button>
 	</div>
 </template>
 
 <script setup>
-defineProps({
-	fichaSeleccionada: String,
-	nuevaFichaNombre: String,
-	ordenFichas: Array
-})
+import { ref, watch, onMounted, onBeforeUnmount } from 'vue';
+import draggable from 'vuedraggable';
 
-defineEmits([
+const props = defineProps({
+	fichaSeleccionada: String,
+	ordenFichas: Array
+});
+
+const emit = defineEmits([
 	'crear',
 	'borrar',
 	'exportar',
 	'importar',
 	'update:fichaSeleccionada',
-	'update:nuevaFichaNombre',
-	'moverFicha',
-])
+	'update:ordenFichas'
+]);
+
+const localOrdenFichas = ref([...props.ordenFichas]);
+const dropdownOpen = ref(false);
+const fileInput = ref(null);
+
+watch(() => props.ordenFichas, (newVal) => {
+	localOrdenFichas.value = [...newVal];
+}, { deep: true });
+
+function onReorder() {
+	emit('update:ordenFichas', [...localOrdenFichas.value]);
+}
+
+function selectFicha(ficha) {
+	emit('update:fichaSeleccionada', ficha);
+	dropdownOpen.value = false;
+}
+
+function toggleDropdown() {
+	dropdownOpen.value = !dropdownOpen.value;
+}
+
+function onClickOutside(event) {
+	if (!event.target.closest('.dropdown-container')) {
+		dropdownOpen.value = false;
+	}
+}
+
+function triggerFileInput() {
+	fileInput.value.click();
+}
+
+onMounted(() => {
+	document.addEventListener('click', onClickOutside);
+});
+
+onBeforeUnmount(() => {
+	document.removeEventListener('click', onClickOutside);
+});
 </script>
 
 <style scoped>
@@ -56,14 +101,13 @@ defineEmits([
 	height: fit-content;
 	border-radius: 5px;
 	padding: 10px;
-    margin-top: 60px;
-        box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2), -3px 0px 5px rgba(0, 0, 0, 0.2);
-
+	margin-top: 60px;
+	box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2), -3px 0px 5px rgba(0, 0, 0, 0.2);
 }
 
 .toolbar select,
-.toolbar input[type="text"],
-.toolbar input[type="file"] {
+.toolbar input[type='text'],
+.toolbar input[type='file'] {
 	width: 100%;
 	margin-bottom: 4px;
 	border-radius: 3px;
@@ -79,29 +123,79 @@ defineEmits([
 	border: none;
 	border-radius: 3px;
 	background-color: var(--color-principal1);
-color: var(--color-texto);	padding: 6px 0;
+	color: var(--color-texto);
+	padding: 6px 0;
 	margin-bottom: 4px;
 	font-weight: bold;
 	cursor: pointer;
 	transition: background 0.2s;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
+
 .toolbar button:hover {
 	background: var(--color-secundario);
 }
 
-.toolbar input[type="file"] {
+.toolbar input[type='file'] {
 	padding: 0;
 	border: none;
 	background: none;
 	color: var(--color-texto);
 }
 
-.selectPokemon{
-    width: 100%;
-    display: flex;
-    gap: 5px;
+.selectPokemon {
+	width: 100%;
+	display: flex;
+	gap: 5px;
+	flex-wrap: wrap;
 }
-.selectPokemon button{
-    width: fit-content;
+
+.draggable-list {
+	display: flex;
+	flex-direction: column;
+	margin: 0 auto;
+	width: 85%;
+}
+
+.dropdown-container {
+	position: relative;
+	width: 100%;
+}
+
+.dropdown-toggle {
+	width: 100%;
+	border: none;
+	border-radius: 3px;
+	background-color: var(--color-principal1);
+	color: var(--color-texto);
+	padding: 6px 0;
+	font-weight: bold;
+	cursor: pointer;
+	transition: background 0.2s;
+	text-align: left;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.dropdown-toggle:hover {
+	background: var(--color-secundario);
+}
+
+.triangle {
+	display: inline-block;
+	transition: transform 0.3s ease;
+	margin-right: 8px;
+	user-select: none;
+}
+
+.triangle.open {
+	transform: rotate(90deg);
+}
+
+.selected {
+	background-color: var(--color-secundario) !important;
 }
 </style>

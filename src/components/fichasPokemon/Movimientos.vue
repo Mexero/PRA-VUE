@@ -1,11 +1,12 @@
 <script setup>
+import { ref, watch } from 'vue';
+import draggable from 'vuedraggable';
+
 const props = defineProps([
     'ficha',
     'movimientos',
     'movimientosCargados',
 ])
-
-import { ref, watch } from 'vue';
 
 import movimientosPopUp from './movimientosPopUp.vue';
 import MovsData from './MovsData.vue';
@@ -13,13 +14,10 @@ import MovsData from './MovsData.vue';
 const movimientosCompletos = ref([]);
 const modificandoMovimientosCompletos = ref(false)
 
-
-
 function getMovimientoCompleto(nombre) {
     return movimientosCompletos.value.find(mov => mov.nombre === nombre);
 }
 
-//Cargar todo al abrir y al cambiar los movimientos
 watch(
     () => [
         props.movimientosCargados,
@@ -27,7 +25,6 @@ watch(
         props.ficha.personaliz.movimientosExtra
     ],
     () => {
-        //Purgar los movimientos que no se usan
         if (props.movimientosCargados) {
             modificandoMovimientosCompletos.value = true;
             const movimientos = [...new Set([
@@ -38,13 +35,11 @@ watch(
                 mov => movimientos.includes(mov.nombre)
             )
             modificandoMovimientosCompletos.value = false;
-
         }
     },
     { deep: true, immediate: true }
 );
 
-// Eliminar un movimiento
 function eliminarMov(movimiento, lista) {
     if (lista === 'aprendidos') {
         const index = props.ficha.personaliz.movimientosAprendidos.indexOf(movimiento);
@@ -52,7 +47,6 @@ function eliminarMov(movimiento, lista) {
             props.ficha.personaliz.movimientosAprendidos.splice(index, 1);
         }
     }
-
     if (lista === 'extra') {
         const index = props.ficha.personaliz.movimientosExtra.indexOf(movimiento);
         if (index !== -1) {
@@ -61,34 +55,43 @@ function eliminarMov(movimiento, lista) {
     }
 }
 </script>
+
 <template>
     <section class="moves">
         <div class="moves-header">
-            <h3>Movimientos ( {{ ficha.personaliz.movimientosAprendidos.length }} / {{ ficha.derivados.cantidadMovs }})</h3>
+            <h3>Movimientos ( {{ ficha.personaliz.movimientosAprendidos.length }} / {{ ficha.derivados.cantidadMovs }})
+            </h3>
             <movimientosPopUp :movimientos="movimientos" :ficha="ficha" :movimientosCompletos="movimientosCompletos"
                 :movimientosCargados="movimientosCargados" />
         </div>
         <div class="moves-list">
-            <!--Movimientos Aprendidos-->
-            <template v-for="(mov, i) in ficha.personaliz.movimientosAprendidos" :key="i">
-                <details class="movimiento">
-                    <summary>
-                        {{ mov }}
-                        <button @click="eliminarMov(mov, 'aprendidos')" class="borrar-btn">x</button>
-                    </summary>
-                    <MovsData v-if="getMovimientoCompleto(mov)" :ficha="ficha" :mov="getMovimientoCompleto(mov)" />
-                </details>
-            </template>
-            <!--Movimientos Extra-->
-            <template v-for="(mov, i) in ficha.personaliz.movimientosExtra" :key="i">
-                <details class="movimiento">
-                    <summary>
-                        {{ mov }} (Extra)
-                        <button @click="eliminarMov(mov, 'extra')" class="borrar-btn">x</button>
-                    </summary>
-                    <MovsData v-if="getMovimientoCompleto(mov)" :ficha="ficha" :mov="getMovimientoCompleto(mov)" />
-                </details>
-            </template>
+            <!-- Movimientos Aprendidos -->
+            <draggable v-model="ficha.personaliz.movimientosAprendidos" group="movimientos" item-key="nombre"
+                handle=".movimiento-summary" :animation="200">
+                <template #item="{ element: mov, index: i }">
+                    <details class="movimiento">
+                        <summary class="movimiento-summary">
+                            {{ mov }}
+                            <button @click="eliminarMov(mov, 'aprendidos')" class="borrar-btn">x</button>
+                        </summary>
+                        <MovsData v-if="getMovimientoCompleto(mov)" :ficha="ficha" :mov="getMovimientoCompleto(mov)" />
+                    </details>
+                </template>
+            </draggable>
+
+            <!-- Movimientos Extra -->
+            <draggable v-model="ficha.personaliz.movimientosExtra" group="movimientos" item-key="nombre"
+                handle=".movimiento-summary" :animation="200">
+                <template #item="{ element: mov, index: i }">
+                    <details class="movimiento">
+                        <summary class="movimiento-summary">
+                            {{ mov }} (Extra)
+                            <button @click="eliminarMov(mov, 'extra')" class="borrar-btn">x</button>
+                        </summary>
+                        <MovsData v-if="getMovimientoCompleto(mov)" :ficha="ficha" :mov="getMovimientoCompleto(mov)" />
+                    </details>
+                </template>
+            </draggable>
         </div>
     </section>
 </template>
@@ -104,7 +107,6 @@ function eliminarMov(movimiento, lista) {
     flex-direction: column;
 }
 
-
 .moves-header {
     display: flex;
     justify-content: space-between;
@@ -113,13 +115,10 @@ function eliminarMov(movimiento, lista) {
     margin-bottom: 5px;
 }
 
-
-
 .movimiento {
     max-width: 675px;
     border: 1px solid var(--color-principal2);
-        margin: 10px 0;
-
+    margin: 10px 0;
 }
 
 .movimiento summary {
@@ -128,9 +127,12 @@ function eliminarMov(movimiento, lista) {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 0 0 10px ;
-            cursor: pointer;
+    padding: 0 0 0 10px;
+    cursor: pointer;
+}
 
+.movimiento-summary {
+    cursor: grab;
 }
 
 .borrar-btn {
@@ -151,5 +153,4 @@ function eliminarMov(movimiento, lista) {
 .borrar-btn:hover {
     background-color: var(--color-principal2);
 }
-
 </style>

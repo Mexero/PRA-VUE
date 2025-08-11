@@ -31,7 +31,6 @@ const movimientosCargados = ref(false);
 const ficha = reactive(crearFichaBase());
 
 const fichaSeleccionada = ref('')
-const nuevaFichaNombre = ref('')
 const fichasGuardadas = reactive({})
 const ordenFichas = ref([])
 
@@ -253,7 +252,7 @@ function construirChecksBase() {
             checksBaseNuevo.push({ check: natCheck, grado: 1 })
         }
     })
-    if (ficha.personaliz.naturaleza) {
+    if (ficha.personaliz.naturaleza.naturaleza) {
         const index = checksBaseNuevo.findIndex(c => c.check === ficha.personaliz.naturaleza.check)
         if (index !== -1) {
             checksBaseNuevo[index].grado++
@@ -487,14 +486,7 @@ async function cargarFicha(nombre) {
 }
 
 function crearFicha() {
-    let nombreFicha
-    if (nuevaFichaNombre.value.trim()) {
-        nombreFicha = nombreUnico(nuevaFichaNombre.value.trim())
-    }
-    else {
-        nombreFicha = nombreUnico('Nueva Ficha')
-    }
-
+    const nombreFicha = nombreUnico('Nueva Ficha')
     const nueva = crearFichaBase(nombreFicha)
 
     fichaSeleccionada.value = nombreFicha
@@ -505,13 +497,12 @@ function crearFicha() {
     ordenFichas.value.push(ficha.nombre)
 
     guardarFicha()
-    nuevaFichaNombre.value = ''
 }
 
 async function borrarFicha() {
-    if (prompt("¿Estás seguro de que quieres borrar la ficha seleccionada? Si lo haces, no prodras recuperarla.\nEscribe 'BORRAR' para borrar permanentemente la ficha.") !== "BORRAR") return
+    const confirmacion = confirm("¿Estás seguro de que quieres borrar la ficha seleccionada? Si lo haces, no podrás recuperarla.");
+    if (!confirmacion) return
     if (!fichaSeleccionada.value) return
-
 
     await borrarFichaIndexedDB(fichaSeleccionada.value)
     delete fichasGuardadas[fichaSeleccionada.value]
@@ -604,33 +595,18 @@ async function cambiarNombreFicha(nuevoNombre) {
     guardarFicha()
 }
 
-//Mover Fichas de orden
-function moverFicha(desplazamiento) {
-    const index = ordenFichas.value.indexOf(fichaSeleccionada.value)
-    let nuevoIndex
-    switch (desplazamiento) {
-        case 'principio':
-            nuevoIndex = 0
-            break
-        case 'final':
-            nuevoIndex = ordenFichas.value.length - 1
-            break
-        default:
-            nuevoIndex = index + desplazamiento
-    }
-
-    if (index === -1 || nuevoIndex < 0 || nuevoIndex >= ordenFichas.value.length) return
-
-    const temp = ordenFichas.value[nuevoIndex]
-    ordenFichas.value[nuevoIndex] = ordenFichas.value[index]
-    ordenFichas.value[index] = temp
-}
-
 //Guardar movimiento de fichas
 watch(ordenFichas, async (nuevoOrden) => {
     await guardarOrdenFichas(nuevoOrden)
 }, { deep: true })
 
+
+function actualizarOrdenFichas(nuevoOrden) {
+    ordenFichas.value = nuevoOrden;
+    if (!ordenFichas.value.includes(fichaSeleccionada.value)) {
+        fichaSeleccionada.value = ordenFichas.value[0] || null;
+    }
+}
 
 // <============== INICIO ===============>
 async function cargarPokes() {
@@ -774,7 +750,7 @@ onMounted(async () => {
     }
 
     movimientos.value = await cargarMovimientos()
-    if (movimientos.value > 0) {
+    if (movimientos.value.length > 0) {
         console.log("Movimientos cargados...")
         movimientosCargados.value = true;
     }
@@ -786,11 +762,10 @@ onMounted(async () => {
 <template>
 
     <div class="fichaPokemon">
-        <FichaToolbar :fichaSeleccionada="fichaSeleccionada" :nuevaFichaNombre="nuevaFichaNombre"
-            :ordenFichas="ordenFichas" :fichasGuardadas="fichasGuardadas"
-            @update:fichaSeleccionada="fichaSeleccionada = $event" @update:nuevaFichaNombre="nuevaFichaNombre = $event"
+        <FichaToolbar :fichaSeleccionada="fichaSeleccionada" :ordenFichas="ordenFichas"
+            :fichasGuardadas="fichasGuardadas" @update:fichaSeleccionada="fichaSeleccionada = $event"
             @crear="crearFicha" @borrar="borrarFicha" @exportar="exportarFicha" @importar="importarFicha"
-            @moverFicha="moverFicha" />
+            @update:ordenFichas="actualizarOrdenFichas" />
 
         <div class="character-sheet">
             <FichaInfoBasica :ficha="ficha" :especiesPokes="especiesPokes"
