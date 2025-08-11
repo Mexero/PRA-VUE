@@ -1,7 +1,7 @@
 <template>
 	<div class="toolbar">
 		<div class="dropdown-container">
-			<button class="dropdown-toggle" @click="toggleDropdown" type="button">
+			<button :class="['toggle', { open: dropdownOpen }]" @click="toggleDropdown" type="button">
 				Fichas
 				<span :class="['triangle', { open: dropdownOpen }]">▶</span>
 			</button>
@@ -193,6 +193,10 @@ onBeforeUnmount(() => {
 
 .triangle.open {
 	transform: rotate(90deg);
+}
+
+.toggle.open {
+	background-color: var(--color-secundario);
 }
 
 .selected {
