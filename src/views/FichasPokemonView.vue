@@ -226,32 +226,8 @@ async function cambiarDatosEspecie(especie) {
 
 const grados = ['no', 'bueno', 'experto', 'maestro', 'legendario']
 
-function subirGrado(grado) {
-    const index = grados.indexOf(grado)
-    if (index === -1 || index >= grados.length - 1) return grado
-    return grados[index + 1]
-}
-
-function gradoValor(grado) {
-    const orden = ['no', 'bueno', 'experto', 'maestro', 'legendario']
-    return orden.indexOf(grado)
-}
-
 function calcularBonoGrado(grado) {
-    switch (grado) {
-        case ('no'):
-            return 0
-        case ('bueno'):
-            return ficha.derivados.bh
-        case ('experto'):
-            return ficha.derivados.bh + 2
-        case ('maestro'):
-            return ficha.derivados.bh + 4
-        case ('legendario'):
-            return ficha.derivados.bh + 6
-        default:
-            return -10
-    }
+    return grado > 0 ? ficha.derivados.bh + Math.min(Math.max(0, (grado - 1) * 2), 6) : 0
 }
 
 function updateCheck(check) {
@@ -261,35 +237,29 @@ function updateCheck(check) {
     check.modificado = false
 }
 
-function calcularSentidos() {
-
-    if (ficha.pokedex.otros.sentidos && ficha.pokedex.otros.sentidos !== '') {
-        return ficha.pokedex.otros.sentidos + (ficha.personaliz.sentidos !== "" ? (", " + ficha.personaliz.sentidos) : "")
-    }
-    else return ficha.personaliz.sentidos
-}
-
 function checksBaseIguales(a, b) {
     if (a.length !== b.length) return false
     return a.every((item, i) => item.check === b[i].check && item.grado === b[i].grado)
 }
 
 function construirChecksBase() {
-    const checksBaseNuevo = [{ check: 'Percepción', grado: 'bueno' }, { check: 'Init', grado: 'bueno' }]
+    const checksBaseNuevo = [{ check: 'Percepción', grado: 1, stat: 'esp' }, { check: 'Init', grado: 1, stat: 'esp' }]
 
     ficha.pokedex.natHabil.forEach(natCheck => {
         const index = checksBaseNuevo.findIndex(c => c.check === natCheck)
         if (index !== -1) {
-            checksBaseNuevo[index].grado = subirGrado(checksBaseNuevo[index].grado)
+            checksBaseNuevo[index].grado++
         } else {
-            checksBaseNuevo.push({ check: natCheck, grado: 'bueno' })
+            checksBaseNuevo.push({ check: natCheck, grado: 1 })
         }
     })
-    const index = checksBaseNuevo.findIndex(c => c.check === ficha.personaliz.naturaleza.check)
-    if (index !== -1) {
-        checksBaseNuevo[index].grado = subirGrado(checksBaseNuevo[index].grado)
-    } else {
-        checksBaseNuevo.push({ check: ficha.personaliz.naturaleza.check, grado: 'bueno' })
+    if (ficha.personaliz.naturaleza) {
+        const index = checksBaseNuevo.findIndex(c => c.check === ficha.personaliz.naturaleza.check)
+        if (index !== -1) {
+            checksBaseNuevo[index].grado++
+        } else {
+            checksBaseNuevo.push({ check: ficha.personaliz.naturaleza.check, grado: 1, stat: 'fue' })
+        }
     }
 
     if (!checksBaseIguales(ficha.derivados.checksBase, checksBaseNuevo)) {
@@ -297,23 +267,59 @@ function construirChecksBase() {
     }
 }
 
-function validarChecks() {
+function ActualizarChecks() {
+    const checks = [];
+
+    // 1. Meter los base
     ficha.derivados.checksBase.forEach(checkBase => {
-        const index = ficha.personaliz.checks.findIndex(c => c.check === checkBase.check)
-        if (index === -1) {
-            ficha.personaliz.checks.push({
-                check: checkBase.check,
-                stat: 'fue',
-                grado: checkBase.grado,
-                total: 0
-            })
+        checks.push({
+            check: checkBase.check,
+            stat: checkBase.stat || 'fue',
+            grado: checkBase.grado
+        });
+    });
+
+    // 2. Aplicar Mejoras de Habilidad
+    ficha.personaliz.mejorasHab.forEach(checkMejorado => {
+        const index = checks.findIndex(c => c.check === checkMejorado);
+        if (index !== -1) {
+            checks[index].grado++;
         } else {
-            const checkPers = ficha.personaliz.checks[index]
-            if (gradoValor(checkPers.grado) < gradoValor(checkBase.grado)) {
-                checkPers.grado = checkBase.grado
-            }
+            checks.push({
+                check: checkMejorado,
+                stat: 'fue',
+                grado: 1
+            });
         }
-    })
+    });
+
+    // 3. Aplicar cambios
+    checks.forEach(chk => {
+        const index = ficha.personaliz.checks.findIndex(c => c.check === chk.check);
+        if (index !== -1) {
+            // Si ya existe actualiza grado y stat
+            ficha.personaliz.checks[index].grado = chk.grado;
+        } else {
+            // Si no existe lo agrega
+            ficha.personaliz.checks.push({
+                check: chk.check,
+                stat: chk.stat,
+                grado: chk.grado,
+                total: 0
+            });
+        }
+    });
+
+    //4. Recalcular bonos
+    ficha.personaliz.checks.forEach(updateCheck)
+}
+
+function calcularSentidos() {
+
+    if (ficha.pokedex.otros.sentidos && ficha.pokedex.otros.sentidos !== '') {
+        return ficha.pokedex.otros.sentidos + (ficha.personaliz.sentidos !== "" ? (", " + ficha.personaliz.sentidos) : "")
+    }
+    else return ficha.personaliz.sentidos
 }
 
 function calcularCA() {
@@ -353,7 +359,6 @@ function calcularCA() {
         ficha.derivados.ca = result
     }
 }
-
 
 watch(ficha, () => {
     if (ficha.nombre === fichaSeleccionada.value) {
@@ -403,12 +408,8 @@ function actualizar() {
     //checks Base
     construirChecksBase()
 
-    //comprobar checks validos
-    validarChecks()
-
-    // Recalcular checks personalizados
-    ficha.personaliz.checks.forEach(updateCheck)
-
+    //actualizar checks
+    ActualizarChecks()
 
     // Chequear mejoras de estadísticas no se pasan. Si lo hacen, quitar las últimas aplicadas
     while (ficha.nivel > 0 && ficha.derivados.cantidadMejorasEST < ficha.personaliz.mejorasEst.length) {
@@ -792,7 +793,6 @@ onMounted(async () => {
             @moverFicha="moverFicha" />
 
         <div class="character-sheet">
-
             <FichaInfoBasica :ficha="ficha" :especiesPokes="especiesPokes"
                 :especiesPokesCargadas="especiesPokesCargadas" @cambiarNombre="cambiarNombreFicha"
                 @cambiarDatosEspecie="cambiarDatosEspecie" />
@@ -822,7 +822,6 @@ onMounted(async () => {
             </div>
             <FichaOtros :ficha="ficha" :naturalezas="naturalezas" />
 
-
             <div class="HabsDotesMovs">
                 <div class="habs">
                     <FichaHabilidades :ficha="ficha" :habilidades="habilidades"
@@ -836,14 +835,9 @@ onMounted(async () => {
                         :movimientosCargados="movimientosCargados" />
                 </div>
             </div>
-
-
-
         </div>
     </div>
 </template>
-
-
 
 <style scoped>
 .fichaPokemon {
