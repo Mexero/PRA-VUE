@@ -5,7 +5,7 @@ import { CacheableResponsePlugin } from 'workbox-cacheable-response';
 
 // Version caches
 const JSON_CACHE_VERSION = 'v1';
-const SQLITE_CACHE_VERSION = 'v2';
+const SQLITE_CACHE_VERSION = 'v1';
 const VIEW_CACHE_VERSION = 'v1';
 const RESOURCES_CACHE_VERSION = 'v1';
 
