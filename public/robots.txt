@@ -20,4 +20,4 @@ User-agent: Applebot
 Disallow: /
 
 # Sitemap
-Sitemap: https://pokemonrpa.com/sitemap.xml
+Sitemap: https://www.pokemonrpa.net/sitemap.xml
