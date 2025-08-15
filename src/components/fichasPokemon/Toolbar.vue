@@ -1,36 +1,3 @@
-<template>
-	<div class="toolbar">
-		<div class="dropdown-container">
-			<button :class="['toggle', { open: dropdownOpen }]" @click="toggleDropdown" type="button">
-				Fichas
-				<span :class="['triangle', { open: dropdownOpen }]">▶</span>
-			</button>
-			<div v-if="dropdownOpen" class="dropdown-content">
-				<div class="selectPokemon">
-					<draggable v-model="localOrdenFichas" @end="onReorder" item-key="key" :animation="200"
-						class="draggable-list">
-						<template #item="{ element: ficha }">
-							<button :class="{ selected: ficha === fichaSeleccionada }" @click="selectFicha(ficha)"
-								class="ficha-item" type="button">
-								{{ ficha }}
-							</button>
-						</template>
-					</draggable>
-				</div>
-			</div>
-		</div>
-
-		<button @click="$emit('crear')">Crear ficha</button>
-		<button @click="$emit('borrar')">Borrar ficha</button>
-		<button @click="$emit('exportar')">Exportar ficha</button>
-		<!-- input file oculto -->
-		<input ref="fileInput" type="file" accept="application/json" @change="$emit('importar', $event)"
-			style="display: none;" />
-		<!-- botón que dispara el input file -->
-		<button @click="triggerFileInput" type="button">Importar ficha</button>
-	</div>
-</template>
-
 <script setup>
 import { ref, watch, onMounted, onBeforeUnmount } from 'vue';
 import draggable from 'vuedraggable';
@@ -89,20 +56,56 @@ onBeforeUnmount(() => {
 });
 </script>
 
+<template>
+	<div class="toolbar">
+		<div class="dropdown-container">
+			<button :class="['toggle', { open: dropdownOpen }]" @click="toggleDropdown" type="button">
+				Fichas
+				<span :class="['triangle', { open: dropdownOpen }]">▶</span>
+			</button>
+			<div v-if="dropdownOpen" class="dropdown-content">
+				<div class="selectPokemon">
+					<draggable v-model="localOrdenFichas" @end="onReorder" item-key="key" :animation="200"
+						class="draggable-list">
+						<template #item="{ element: ficha }">
+							<button :class="{ selected: ficha === fichaSeleccionada }" @click="selectFicha(ficha)"
+								class="ficha-item" type="button">
+								{{ ficha }}
+							</button>
+						</template>
+					</draggable>
+				</div>
+			</div>
+		</div>
+		<div class="botones">
+			<button @click="$emit('crear')">Crear ficha</button>
+			<button @click="$emit('borrar')">Borrar ficha</button>
+			<button @click="$emit('exportar')">Exportar ficha</button>
+			<!-- input file oculto -->
+			<input ref="fileInput" type="file" accept="application/json" @change="$emit('importar', $event)"
+				style="display: none;" />
+			<!-- botón que dispara el input file -->
+			<button @click="triggerFileInput" type="button">Importar ficha</button>
+		</div>
+	</div>
+</template>
+
 <style scoped>
+.botones{
+	
+}
 .toolbar {
 	background-color: var(--color-fondoTexto);
 	display: flex;
 	flex-direction: column;
 	gap: 8px;
-	margin-bottom: 16px;
 	align-items: center;
 	width: 200px;
 	height: fit-content;
 	border-radius: 5px;
 	padding: 10px;
-	margin-top: 60px;
 	box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2), -3px 0px 5px rgba(0, 0, 0, 0.2);
+
 }
 
 .toolbar select,
@@ -156,8 +159,15 @@ onBeforeUnmount(() => {
 	display: flex;
 	flex-direction: column;
 	margin: 0 auto;
-	width: 85%;
+	width: 95%;
+	max-height: 200px;
+	overflow-y: scroll;
 }
+
+.draggable-list button {
+	min-height: 30px;
+}
+
 
 .dropdown-container {
 	position: relative;

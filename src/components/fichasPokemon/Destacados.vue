@@ -84,19 +84,16 @@ function bajarGrado(checkName) {
                 -->
             </div>
 
-            <div class="item"> <label>VIT:
+            <div class="item"> 
+                <label>VIT:
                     <!-- <input type="checkbox" v-model="ficha.manual.vit" /> -->
                 </label>
 
                 <input v-model.number="ficha.derivados.vit" :readonly="!ficha.manual.vit" />
             </div>
 
-        </section>
-
-
-        <section class="info-dinamica">
-
-            <div class="item"> <label>PV:
+            <div class="item"> 
+                <label>PV:
                     <!-- <input type="checkbox" v-model="ficha.manual.pvMax" /> -->
 
                 </label>
@@ -108,7 +105,8 @@ function bajarGrado(checkName) {
                 <input v-model.number="ficha.derivados.escudo" />
             </div>
 
-            <div class="item"> <label>PP:
+            <div class="item"> 
+                <label>PP:
                     <!-- <input type="checkbox" v-model="ficha.manual.ppMax" /> -->
                 </label>
 
@@ -129,12 +127,12 @@ function bajarGrado(checkName) {
 .central {
     border: 1px solid rgba(150, 150, 150, 0.798);
     border-radius: 5px;
-    padding: 5px;
+    padding: 5px 10px;
     width: fit-content;
     height: fit-content;
-    margin: 40px 0px;
+    margin: 40px 0 0px 0;
     display: flex;
-    gap: 30px;
+    gap: 10px;
 }
 
 input {
@@ -146,20 +144,17 @@ input {
     color: var(--color-texto);
     width: 40px;
     text-align: center;
-
 }
 
-.destacados,
-.info-dinamica {
+.destacados {
     display: flex;
-    gap: 30px;
+    gap: 10px 30px;
+    justify-content: space-between;
 }
 
 .item {
     display: flex;
     align-items: center;
-    justify-content: space-around;
     min-width: fit-content;
 }
-
 </style>

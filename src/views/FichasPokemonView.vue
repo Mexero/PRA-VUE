@@ -756,47 +756,68 @@ onMounted(async () => {
     }
 })
 
+
+const mostrarToolbar = ref(false)
 </script>
 
 
 <template>
+    <div class="center">
+        <div class="fichaPokemon">
 
-    <div class="fichaPokemon">
-        <FichaToolbar :fichaSeleccionada="fichaSeleccionada" :ordenFichas="ordenFichas"
-            :fichasGuardadas="fichasGuardadas" @update:fichaSeleccionada="fichaSeleccionada = $event"
-            @crear="crearFicha" @borrar="borrarFicha" @exportar="exportarFicha" @importar="importarFicha"
-            @update:ordenFichas="actualizarOrdenFichas" />
+            <div class="sheet-managing">
 
-        <div class="character-sheet">
-            <FichaInfoBasica :ficha="ficha" :especiesPokes="especiesPokes"
-                :especiesPokesCargadas="especiesPokesCargadas" @cambiarNombre="cambiarNombreFicha"
-                @cambiarDatosEspecie="cambiarDatosEspecie" />
+                <button class="toolbar-toggle" @click="mostrarToolbar = !mostrarToolbar"
+                    :aria-expanded="mostrarToolbar.toString()">
+                    ☰
+                </button>
 
-            <div class="info-principal">
-                <div class="stats-area">
-                    <FichaStats :ficha="ficha" />
-                </div>
+                <transition name="slide" mode="out-in">
+                    <div v-if="mostrarToolbar" class="toolbar-container" key="toolbar">
+                        <FichaToolbar :fichaSeleccionada="fichaSeleccionada" :ordenFichas="ordenFichas"
+                            :fichasGuardadas="fichasGuardadas" @update:fichaSeleccionada="(v) => fichaSeleccionada = v"
+                            @crear="crearFicha" @borrar="borrarFicha" @exportar="exportarFicha"
+                            @importar="importarFicha" @update:ordenFichas="actualizarOrdenFichas" />
+                    </div>
+                </transition>
+            </div>
+            <div class="character-sheet">
+                <FichaInfoBasica :ficha="ficha" :especiesPokes="especiesPokes"
+                    :especiesPokesCargadas="especiesPokesCargadas" @cambiarNombre="cambiarNombreFicha"
+                    @cambiarDatosEspecie="cambiarDatosEspecie" />
 
-                <div class="salvaciones-area">
-                    <h3>Salvaciones</h3>
-                    <div class="bonosSalvacion" v-for="stat in ['fue', 'agi', 'res', 'esp']" :key="stat">
-                        {{ stat.toUpperCase() }}
-                        <span class="numero">{{ ficha.derivados.salvaciones[stat] || 0 }}</span>
+                <div class="info-principal">
+                    <div class="stats-area">
+                        <FichaStats :ficha="ficha" />
+                    </div>
+
+                    <div class="salvaciones-area">
+                        <h3>Salvaciones</h3>
+                        <div>
+                            <div class="bonosSalvacion" v-for="stat in ['fue', 'agi', 'res', 'esp']" :key="stat">
+                                {{ stat.toUpperCase() }}
+                                <span class="numero">{{ ficha.derivados.salvaciones[stat] || 0 }}</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="destacados-area">
+                        <FichaDestacados :ficha="ficha" :grados="grados" />
+                    </div>
+                    <div class="checks-area">
+                        <FichaChecks :ficha="ficha" :ChecksBase="ChecksBase" />
+                    </div>
+                    <div class="velocidades-area">
+                        <FichaVelocidades :ficha="ficha" />
+                    </div>
+                    <div class="otros-area">
+
+                        <FichaOtros :ficha="ficha" :naturalezas="naturalezas" />
                     </div>
                 </div>
 
-                <div class="destacados-area">
-                    <FichaDestacados :ficha="ficha" :grados="grados" />
-                </div>
-                <div class="checks-area">
-                    <FichaChecks :ficha="ficha" :ChecksBase="ChecksBase" />
-                </div>
-                <div class="velocidades-area">
-                    <FichaVelocidades :ficha="ficha" />
-                </div>
-            </div>
-            <FichaOtros :ficha="ficha" :naturalezas="naturalezas" />
 
+                <!-- 
             <div class="HabsDotesMovs">
                 <div class="habs">
                     <FichaHabilidades :ficha="ficha" :habilidades="habilidades"
@@ -810,15 +831,24 @@ onMounted(async () => {
                         :movimientosCargados="movimientosCargados" />
                 </div>
             </div>
+            -->
+            </div>
         </div>
     </div>
+
 </template>
 
 <style scoped>
+.center {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
 .fichaPokemon {
     display: flex;
+    margin: 0 20px;
     justify-content: center;
-    margin: auto;
     width: fit-content;
     color: var(--color-texto);
 }
@@ -836,10 +866,11 @@ onMounted(async () => {
     display: grid;
     grid-template-areas:
         "stats destacados destacados velocidades"
-        "stats saves checks velocidades";
-    grid-template-columns: auto 120px 1fr auto;
-    grid-template-rows: 110px auto;
-    gap: 0px 20px;
+        "stats saves checks velocidades"
+        "otros otros otros otros";
+    grid-template-columns: auto auto 1fr auto;
+    grid-template-rows: auto auto auto;
+    gap: 0px 10px;
 }
 
 .stats-area {
@@ -860,6 +891,11 @@ onMounted(async () => {
 
 .velocidades-area {
     grid-area: velocidades;
+    margin-top: 40px;
+}
+
+.otros-area {
+    grid-area: otros;
 }
 
 .salvaciones-area {
@@ -870,14 +906,16 @@ onMounted(async () => {
     display: flex;
     flex-direction: column;
     gap: 5px;
+    margin-bottom: 10px;
 }
 
 .bonosSalvacion {
     border-radius: 5px;
     padding: 3px;
     align-items: center;
+    justify-content: center;
     display: flex;
-    gap: 10px
+    gap: 10px;
 }
 
 .HabsDotesMovs {
@@ -901,5 +939,85 @@ onMounted(async () => {
 
 .movs {
     grid-area: movs;
+}
+
+/* transición (name="slide") */
+.slide-enter-active,
+.slide-leave-active {
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.slide-enter-from,
+.slide-leave-to {
+    width: 0;
+
+}
+
+.slide-enter-to,
+.slide-leave-from {
+    width: 200px;
+}
+
+.sheet-managing {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    margin-top: 60px;
+    position: relative;
+    left: 0;
+}
+
+.toolbar-toggle {
+    width: fit-content;
+    height: fit-content;
+    background-color: var(--color-principal1);
+    color: var(--color-texto);
+    border: none;
+    border-radius: 4px;
+    padding: 6px 10px;
+    cursor: pointer;
+    font-size: 20px;
+    z-index: 100;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.toolbar-container {
+    position: absolute;
+    top: auto;
+    left: 38px;
+    z-index: 4;
+    border: 1px solid var(--color-principal1);
+}
+
+
+@media screen and (max-width: 1550px) {
+    .info-principal {
+        width: fit-content;
+        display: grid;
+        grid-template-areas:
+            "stats destacados destacados destacados"
+            "stats checks checks velocidades"
+            "saves otros otros velocidades";
+        grid-template-columns: auto auto auto auto;
+        grid-template-rows: auto auto auto;
+        gap: 10px;
+    }
+
+    .velocidades-area {
+        grid-area: velocidades;
+        margin-top: 0px;
+    }
+
+     .salvaciones-area{
+        text-align: center;
+     }
+    .salvaciones-area div{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: normal;
+        justify-content: normal;
+        gap: 10px;
+    }
 }
 </style>

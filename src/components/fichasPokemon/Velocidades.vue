@@ -22,7 +22,6 @@ defineProps(['ficha'])
     padding: 5px;
     width: fit-content;
     height: fit-content;
-    margin-top: 40px;
     display: flex;
     flex-direction: column;
 }

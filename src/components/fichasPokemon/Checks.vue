@@ -180,6 +180,8 @@ watch(mostrarPopup, (isOpen) => {
     border: 1px solid rgba(150, 150, 150, 0.798);
     border-radius: 5px;
     padding: 5px;
+    margin-bottom: 10px;
+    min-width: 460px;
 }
 
 .tituloYBoton {
@@ -215,8 +217,9 @@ watch(mostrarPopup, (isOpen) => {
     align-items: center;
     border: 1px solid rgba(150, 150, 150, 0.798);
     border-radius: 5px;
-    padding: 5px;
+    padding: 5px 10px;
     gap: 10px;
+    min-width: 390px;
 }
 
 input {
@@ -327,4 +330,15 @@ details {
     background-color: #ccc;
     border: 2px dashed #666;
 }
+
+/*
+@media (max-width: 1400px) {
+    .checks-list>div {
+        display: grid;
+        grid-template-columns: 1fr;
+        width: 100%;
+        gap: 10px;
+    }
+}
+    */
 </style>

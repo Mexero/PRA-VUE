@@ -111,7 +111,7 @@ onBeforeUnmount(() => {
                 <div class="item item-inline">
                     Sentidos:
                     <input v-model="ficha.derivados.sentidos" readonly
-                        :size="Math.max(1,0.84 * String(ficha.derivados.sentidos || '').length)" />
+                        :size="Math.max(1, 0.84 * String(ficha.derivados.sentidos || '').length)" />
                 </div>
                 <div class="item item-inline">
                     Evolución:
@@ -119,6 +119,7 @@ onBeforeUnmount(() => {
                         :size="Math.max(1, 0.80 * String(ficha.pokedex.otros.evolucion || '').length)" />
                 </div>
             </div>
+            
         </div>
     </section>
 </template>
@@ -148,7 +149,7 @@ onBeforeUnmount(() => {
     display: flex;
     gap: 20px;
     max-width: 1350px;
-    
+
 }
 
 .item-inline {
@@ -158,12 +159,6 @@ onBeforeUnmount(() => {
     scrollbar-color: var(--color-principal1);
 }
 
-.fila2 input {
-    overflow-x: auto;
-    font-size: medium;
-    min-width: 100px;
-max-width: 1102px;
-}
 
 .input-container {
     display: inline-block;
@@ -202,4 +197,22 @@ input {
     background-color: var(--color-principal2);
 }
 
+
+
+.fila2 input {
+    overflow-x: auto;
+    font-size: medium;
+    max-width: 1150px;
+}
+
+
+@media screen and (max-width: 1550px) {
+
+.fila2 input {
+    overflow-x: auto;
+    font-size: medium;
+    max-width: 570px;
+}
+
+}
 </style>
