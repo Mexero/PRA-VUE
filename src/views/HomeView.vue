@@ -82,7 +82,8 @@ import { RouterLink } from 'vue-router'
             <article id="infoContacto">
                 <div>
                     <h2>¡Únete a nuestra comunidad!</h2>
-                    <RouterLink to=""><img src="/assets/icons/discord.webp" alt="Icono Discord"></RouterLink>
+                    <a href="https://discord.gg/yT6CtNxP" target="_blank"><img src="/assets/icons/discord.webp"
+                            alt="Icono Discord"></a>
                 </div>
                 <div>
                     <p>

@@ -22,16 +22,29 @@ watch(() => [
         if (props.habilidadesCargadas) {
             habsBase.value = actualizarHabilidades(props.ficha.pokedex.habilidades);
             habsOcultas.value = actualizarHabilidades(props.ficha.pokedex.habilidadesOcultas);
-            habsExtra.value = actualizarHabilidades(props.ficha.personaliz.habilidadesExtra);
+            habsExtra.value = actualizarHabilidadesExtra(props.ficha.personaliz.habilidadesExtra);
         }
     }, { deep: true });
 
 function actualizarHabilidades(habilidades) {
     if (!props.habilidadesCargadas || !habilidades) return []
+    return habilidades.map(hab => {
+        const match = props.habilidades.find(h => h.nombre === hab.nombre);
+        return {
+            nombre: hab.nombre,
+            esOpcional: hab.esOpcional,
+            descripcion: match ? match.descripcion : ['No se ha encontrado descripción para esta habilidad...']
+        };
+    });
+}
+
+function actualizarHabilidadesExtra(habilidades) {
+    if (!props.habilidadesCargadas || !habilidades) return []
     return habilidades.map(nombreHab => {
         const match = props.habilidades.find(h => h.nombre === nombreHab);
         return {
             nombre: nombreHab,
+            esOpcional: false,
             descripcion: match ? match.descripcion : ['No se ha encontrado descripción para esta habilidad...']
         };
     });
@@ -40,18 +53,6 @@ function actualizarHabilidades(habilidades) {
 function ocultaDesbloqueada(nombre) {
     const desbloqueadas = props.ficha.personaliz?.habilidadesOcultasDesbloqueadas || [];
     return !desbloqueadas.includes(nombre);
-}
-
-// Habilidad extra
-const nuevaHabExtra = ref('')
-
-// Añadir una dote extra desde el buscador
-function addHabExtra(nombre) {
-    if (!nombre) return
-    if (!props.ficha.personaliz.habilidadesExtra.includes(nombre)) {
-        props.ficha.personaliz.habilidadesExtra.push(nombre)
-    }
-    nuevaHabExtra.value = ''
 }
 
 // Eliminar una dote extra por índice
@@ -72,7 +73,10 @@ function eliminarHabExtra(index) {
         <div class="habilidades-list">
             <!-- Habilidades base -->
             <details class="item" v-for="(hab, i) in habsBase" :key="i">
-                <summary>{{ hab.nombre }}</summary>
+                <summary>{{ hab.nombre }}
+                    <label v-if="hab.esOpcional" class="habOpcional">Elige una <input type="radio" name="opcional"
+                            :value="hab.nombre" v-model="props.ficha.personaliz.habOpcionalElegida" /></label>
+                </summary>
                 <div class="descripcion">
                     <p v-for="parrafo in hab.descripcion" v-html="parrafo"></p>
                 </div>
@@ -172,5 +176,9 @@ summary {
 
 .descripcion {
     padding: 10px;
+}
+
+.habOpcional {
+    font-style: italic;
 }
 </style>
