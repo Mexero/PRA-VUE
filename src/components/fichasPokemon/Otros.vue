@@ -110,16 +110,15 @@ onBeforeUnmount(() => {
             <div class="fila2">
                 <div class="item item-inline">
                     Sentidos:
-                    <input v-model="ficha.derivados.sentidos" readonly
-                        :size="Math.max(1, 0.84 * String(ficha.derivados.sentidos || '').length)" />
+                    <textarea v-model="ficha.derivados.sentidos" readonly
+                        :size="Math.max(1, 0.80 * String(ficha.derivados.sentidos || '').length)" > </textarea>
                 </div>
                 <div class="item item-inline">
                     Evolución:
-                    <input v-model="ficha.pokedex.otros.evolucion" readonly
-                        :size="Math.max(1, 0.80 * String(ficha.pokedex.otros.evolucion || '').length)" />
+                    <textarea v-model="ficha.pokedex.otros.evolucion" readonly></textarea>
                 </div>
             </div>
-            
+
         </div>
     </section>
 </template>
@@ -145,12 +144,7 @@ onBeforeUnmount(() => {
 }
 
 
-.fila2 {
-    display: flex;
-    gap: 20px;
-    max-width: 1350px;
 
-}
 
 .item-inline {
     display: flex;
@@ -199,20 +193,45 @@ input {
 
 
 
-.fila2 input {
-    overflow-x: auto;
+.fila2 {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 20px;
+    max-width: 1400px;
+}
+
+.item-inline {
+    display: flex;
+    align-items: center;
+    flex: 1 1 300px; 
+    min-width: 250px; 
+}
+
+textarea {
+    width: 90%;              
+    resize: none;             
+    overflow-wrap: break-word;
+    word-break: break-word;
     font-size: medium;
-    max-width: 1150px;
+    background-color: transparent;
+    padding: 4px;
+    border: none;
+    border-bottom: 1px solid;
+    color: var(--color-texto);
 }
 
 
-@media screen and (max-width: 1550px) {
+@media screen and (max-width: 1500px) {
+    .others {
+        display: flex;
+        flex-direction: column;
+    }
 
-.fila2 input {
-    overflow-x: auto;
-    font-size: medium;
-    max-width: 570px;
-}
+    .fila1 {
+        display: flex;
+        padding: 5px 0;
+        justify-content: space-between;
+    }
 
 }
 </style>

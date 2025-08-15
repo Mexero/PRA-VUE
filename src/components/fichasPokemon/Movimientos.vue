@@ -116,7 +116,7 @@ function eliminarMov(movimiento, lista) {
 }
 
 .movimiento {
-    max-width: 675px;
+    max-width: 670px;
     border: 1px solid var(--color-principal2);
     margin: 10px 0;
 }
@@ -152,5 +152,12 @@ function eliminarMov(movimiento, lista) {
 
 .borrar-btn:hover {
     background-color: var(--color-principal2);
+}
+
+@media screen and (max-width: 1460px) {
+    .movimiento {
+        max-width: 760px;
+
+    }
 }
 </style>

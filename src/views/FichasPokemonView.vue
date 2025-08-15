@@ -785,6 +785,7 @@ const mostrarToolbar = ref(false)
                     @cambiarDatosEspecie="cambiarDatosEspecie" />
 
                 <div class="info-principal">
+
                     <div class="stats-area">
                         <FichaStats :ficha="ficha" />
                     </div>
@@ -798,7 +799,21 @@ const mostrarToolbar = ref(false)
                             </div>
                         </div>
                     </div>
+                    <div class="movilStats">
+                        <div class="stats-area">
+                            <FichaStats :ficha="ficha" />
+                        </div>
 
+                        <div class="salvaciones-area">
+                            <h3>Salvaciones</h3>
+                            <div>
+                                <div class="bonosSalvacion" v-for="stat in ['fue', 'agi', 'res', 'esp']" :key="stat">
+                                    {{ stat.toUpperCase() }}
+                                    <span class="numero">{{ ficha.derivados.salvaciones[stat] || 0 }}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <div class="destacados-area">
                         <FichaDestacados :ficha="ficha" :grados="grados" />
                     </div>
@@ -813,23 +828,26 @@ const mostrarToolbar = ref(false)
                         <FichaOtros :ficha="ficha" :naturalezas="naturalezas" />
                     </div>
                 </div>
+               
+                <div class="HabsDotesMovs">
+                    <div class="col-izq">
+                        <div class="habs">
+                            <FichaHabilidades :ficha="ficha" :habilidades="habilidades"
+                                :habilidadesCargadas="habilidadesCargadas" />
+                        </div>
+                        <div class="dotes">
+                            <FichaDotes :ficha="ficha" :dotes="dotes" :dotesCargadas="dotesCargadas" />
+                        </div>
+                    </div>
 
+                    <div class="col-der">
+                        <div class="movs">
+                            <FichaMovimientos :ficha="ficha" :movimientos="movimientos"
+                                :movimientosCargados="movimientosCargados" />
+                        </div>
+                    </div>
+                </div>
 
-                <!-- 
-            <div class="HabsDotesMovs">
-                <div class="habs">
-                    <FichaHabilidades :ficha="ficha" :habilidades="habilidades"
-                        :habilidadesCargadas="habilidadesCargadas" />
-                </div>
-                <div class="dotes">
-                    <FichaDotes :ficha="ficha" :dotes="dotes" :dotesCargadas="dotesCargadas" />
-                </div>
-                <div class="movs">
-                    <FichaMovimientos :ficha="ficha" :movimientos="movimientos"
-                        :movimientosCargados="movimientosCargados" />
-                </div>
-            </div>
-            -->
             </div>
         </div>
     </div>
@@ -868,7 +886,7 @@ const mostrarToolbar = ref(false)
         "otros otros otros otros";
     grid-template-columns: auto auto 1fr auto;
     grid-template-rows: auto auto auto;
-    gap: 0px 10px;
+    gap: 10px;
 }
 
 .stats-area {
@@ -920,23 +938,18 @@ const mostrarToolbar = ref(false)
     padding-top: 25px;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto 1fr;
     gap: 20px;
-    grid-template-areas:
-        "habs movs"
-        "dotes movs";
 }
 
-.habs {
-    grid-area: habs;
+.col-izq {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
-.dotes {
-    grid-area: dotes;
-}
-
-.movs {
-    grid-area: movs;
+.col-der {
+    display: flex;
+    flex-direction: column;
 }
 
 /* transición (name="slide") */
@@ -958,6 +971,7 @@ const mostrarToolbar = ref(false)
 }
 
 .sheet-managing {
+    height: fit-content;
     display: flex;
     flex-direction: column;
     align-items: end;
@@ -976,7 +990,7 @@ const mostrarToolbar = ref(false)
     padding: 6px 10px;
     cursor: pointer;
     font-size: 20px;
-    z-index: 100;
+    z-index: 10;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
@@ -988,18 +1002,21 @@ const mostrarToolbar = ref(false)
     border: 1px solid var(--color-principal1);
 }
 
+.movilStats {
+    display: none;
+}
 
-@media screen and (max-width: 1550px) {
+@media screen and (max-width: 1460px) {
     .info-principal {
         width: fit-content;
         display: grid;
         grid-template-areas:
-            "stats destacados destacados destacados"
-            "stats checks checks velocidades"
-            "saves otros otros velocidades";
-        grid-template-columns: auto auto auto auto;
-        grid-template-rows: auto auto auto;
-        gap: 10px;
+            "stats destacados destacados"
+            "stats velocidades checks"
+            "saves velocidades checks"
+            "otros otros otros";
+        grid-template-columns: auto 1fr auto;
+        grid-template-rows: auto auto 1fr auto;
     }
 
     .velocidades-area {
@@ -1007,15 +1024,45 @@ const mostrarToolbar = ref(false)
         margin-top: 0px;
     }
 
-     .salvaciones-area{
+    .salvaciones-area {
         text-align: center;
-     }
-    .salvaciones-area div{
+    }
+
+    .salvaciones-area div {
         display: grid;
         grid-template-columns: 1fr 1fr;
         align-items: normal;
         justify-content: normal;
         gap: 10px;
+    }
+
+    .HabsDotesMovs {
+        padding-top: 25px;
+        display: grid;
+        grid-template-columns: fit-content;
+        gap: 20px;
+        grid-template-areas:
+            "habs "
+            "dotes"
+            "movs";
+    }
+
+    .HabsDotesMovs {
+        padding-top: 25px;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .col-izq {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .col-der {
+        display: flex;
+        flex-direction: column;
     }
 }
 </style>

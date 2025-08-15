@@ -181,4 +181,11 @@ summary {
 .habOpcional {
     font-style: italic;
 }
+
+@media screen and (max-width: 1460px) {
+    .habilidades-list {
+        width: 760px;
+    }
+
+}
 </style>

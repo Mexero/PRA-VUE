@@ -1,64 +1,3 @@
-<template>
-    <section class="checks">
-        <div class="tituloYBoton">
-            <h3>
-                Tiradas de habilidad ({{ ficha.personaliz.mejorasHab.length }} /
-                <input type="number" v-model="props.ficha.derivados.cantidadMejorasHab"
-                    :readonly="!ficha.manual.cantidadMejorasHab" />)
-                <input type="checkbox" v-model="ficha.manual.cantidadMejorasHab" true-value="true"
-                    false-value="false" />
-            </h3>
-            <button @click="mostrarPopup = true">Añadir habilidad</button>
-        </div>
-
-        <div class="checks-list">
-            <draggable v-model="props.ficha.personaliz.checks" item-key="check" animation="200"
-                ghost-class="drag-ghost">
-                <template #item="{ element, index }">
-                    <div class="item" v-if="element.check !== 'Init'">
-                        <p>{{ element.check }}</p>
-                        <select v-model="element.stat">
-                            <option v-for="stat in Object.keys(ficha.derivados.stats)" :key="stat" :value="stat">
-                                {{ stat.toUpperCase() }}
-                            </option>
-                        </select>
-                        <div class="grado-control">
-                            <div class="botonMaxMenos">
-                                <button class="btn-mas" @click="subirGrado(element.check)"></button>
-                                <button class="btn-menos" @click="bajarGrado(element.check)"></button>
-                            </div>
-                            <span>{{ grados[gradoActual(element.check)] }}</span>
-                        </div>
-                        <div>
-                            <label>Total:</label>
-                            <input type="number" v-model.number="element.total" />
-                        </div>
-                        <button v-if="!ficha.derivados.checksBase.find(c => c.check === element.check)"
-                            @click="removeCheck(index)">X</button>
-                    </div>
-                </template>
-            </draggable>
-        </div>
-    </section>
-
-    <!-- Popup para añadir habilidades -->
-    <div v-if="mostrarPopup" class="popup-overlay" @click="cerrarPopupExterior">
-        <div class="popup-content" @click.stop>
-            <h4>Añadir habilidad</h4>
-            <input type="text" v-model="nuevoCheck" @input="filterChecks" @keydown.down.prevent="onArrowDown"
-                @keydown.up.prevent="onArrowUp" @keydown.enter.prevent="onEnter" placeholder="Buscar check..." />
-            <ul v-if="filteredChecks.length">
-                <li v-for="(suggestion, idx) in filteredChecks" :key="suggestion"
-                    :class="{ selected: idx === selectedSuggestionIndex }"
-                    @mousedown.prevent="selectSuggestion(suggestion)">
-                    {{ suggestion }}
-                </li>
-            </ul>
-            <button @click="cerrarPopup">Cerrar</button>
-        </div>
-    </div>
-</template>
-
 <script setup>
 import { ref, computed, watch } from 'vue'
 import draggable from 'vuedraggable'
@@ -172,16 +111,117 @@ watch(mostrarPopup, (isOpen) => {
 })
 </script>
 
+<template>
+    <section class="checks">
+        <div class="tituloYBoton">
+            <h3>
+                Tiradas de habilidad ({{ ficha.personaliz.mejorasHab.length }} /
+                <input type="number" v-model="props.ficha.derivados.cantidadMejorasHab"
+                    :readonly="!ficha.manual.cantidadMejorasHab" />)
+                <input type="checkbox" v-model="ficha.manual.cantidadMejorasHab" true-value="true"
+                    false-value="false" />
+            </h3>
+            <button @click="mostrarPopup = true">Añadir habilidad</button>
+        </div>
+
+        <div class="checks-list">
+            <draggable v-model="props.ficha.personaliz.checks" item-key="check" animation="200"
+                ghost-class="drag-ghost">
+                <template #item="{ element, index }">
+                    <div class="item" v-if="element.check !== 'Init'">
+                        <div class="alinear">
+                            <p>{{ element.check }}</p>
+                            <select v-model="element.stat">
+                                <option v-for="stat in Object.keys(ficha.derivados.stats)" :key="stat" :value="stat">
+                                    {{ stat.toUpperCase() }}
+                                </option>
+                            </select>
+                            <div class="grado-control">
+                                <div class="botonMaxMenos">
+                                    <button class="btn-mas" @click="subirGrado(element.check)"></button>
+                                    <button class="btn-menos" @click="bajarGrado(element.check)"></button>
+                                </div>
+                                <span>{{ grados[gradoActual(element.check)] }}</span>
+                            </div>
+                            
+                                <label>Total:</label>
+                                <input type="number" v-model.number="element.total" />
+                            
+                        </div>
+
+                        <button class="borrar-btn"
+                            v-if="!ficha.derivados.checksBase.find(c => c.check === element.check)"
+                            @click="removeCheck(index)">X</button>
+                    </div>
+                </template>
+            </draggable>
+        </div>
+    </section>
+
+    <!-- Popup para añadir habilidades -->
+    <div v-if="mostrarPopup" class="popup-overlay" @click="cerrarPopupExterior">
+        <div class="popup-content" @click.stop>
+            <h4>Añadir habilidad</h4>
+            <input type="text" v-model="nuevoCheck" @input="filterChecks" @keydown.down.prevent="onArrowDown"
+                @keydown.up.prevent="onArrowUp" @keydown.enter.prevent="onEnter" placeholder="Buscar check..." />
+            <ul v-if="filteredChecks.length">
+                <li v-for="(suggestion, idx) in filteredChecks" :key="suggestion"
+                    :class="{ selected: idx === selectedSuggestionIndex }"
+                    @mousedown.prevent="selectSuggestion(suggestion)">
+                    {{ suggestion }}
+                </li>
+            </ul>
+            <button @click="cerrarPopup">Cerrar</button>
+        </div>
+    </div>
+</template>
+
 <style scoped>
 .checks {
     display: flex;
-    align-items: center;
     flex-direction: column;
     border: 1px solid rgba(150, 150, 150, 0.798);
     border-radius: 5px;
     padding: 5px;
     margin-bottom: 10px;
-    min-width: 460px;
+    justify-content: space-between;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    border: 1px solid rgba(150, 150, 150, 0.798);
+    border-radius: 5px;
+    justify-content: space-between;
+    height: 40px;
+    padding-left: 10px;
+}
+
+.borrar-btn {
+    background-color: transparent;
+    border: none;
+    color: var(--color-texto);
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 0px;
+    height: 40px;
+    width: 40px;
+    padding-bottom: 5px;
+    background-color: var(--color-principal1);
+    border-radius: 0 5px 5px 0;
+    padding-top: 5px;
+}
+
+.borrar-btn:hover {
+    background-color: var(--color-principal2);
+}
+
+.alinear {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
 }
 
 .tituloYBoton {
@@ -212,15 +252,7 @@ watch(mostrarPopup, (isOpen) => {
     gap: 10px;
 }
 
-.item {
-    display: flex;
-    align-items: center;
-    border: 1px solid rgba(150, 150, 150, 0.798);
-    border-radius: 5px;
-    padding: 5px 10px;
-    gap: 10px;
-    min-width: 390px;
-}
+
 
 input {
     font-size: large;
@@ -260,7 +292,6 @@ input {
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
     -webkit-appearance: none;
-    margin: 0;
 }
 
 input[type="number"] {
@@ -331,8 +362,8 @@ details {
     border: 2px dashed #666;
 }
 
-/*
-@media (max-width: 1400px) {
+
+@media (max-width: 1460px) {
     .checks-list>div {
         display: grid;
         grid-template-columns: 1fr;
@@ -340,5 +371,5 @@ details {
         gap: 10px;
     }
 }
-    */
+    
 </style>
