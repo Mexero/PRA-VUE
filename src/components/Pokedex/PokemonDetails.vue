@@ -126,7 +126,8 @@
           <div class="ability-item" :class="{ 'hidden-ability': ability.oculta }"
             @click="toggleAbility(ability.nombre)">
             <span class="ability-name">{{ ability.nombre }}</span>
-            <span v-if="ability.oculta" class="hidden-label">(Oculta)</span>
+            <span v-if="ability.oculta" class="hidden-label"> (Oculta) </span>
+            <span v-if="ability.esOptativa" class="hidden-label">(Opcional: Tiene una)</span>
           </div>
           <abilityDetails v-if="selectedAbility === ability.nombre" :ability="ability" />
         </div>
@@ -253,7 +254,6 @@ const headerGradient = computed(() => {
   const tipos = pokemon.tipos.map(t => normalizeType(t));
   const color1 = typeColors[tipos[0]] || "#ccc";
   const color2 = tipos[1] ? typeColors[tipos[1]] : color1;
-  console.log("hola")
   return `linear-gradient(90deg, ${color1}, ${color2})`;
 });
 
@@ -299,26 +299,33 @@ watch([
 )
 
 async function cargarHabilidades(habs, type) {
-  const habilidades = habs.filter(Boolean)
+  const habilidades = habs.filter(h => h && h.nombre)
+
+  if (habilidades.length === 0) return []
+
   const placeholders = habilidades.map(() => '?').join(', ')
 
   let data = []
   try {
     const res = await queryDB(
       `SELECT Nombre, Descripcion, Legendaria, Transformacion
-      FROM habilidades
-      WHERE Nombre IN (${placeholders})`,
-      habilidades)
+       FROM habilidades
+       WHERE Nombre IN (${placeholders})`,
+      habilidades.map(h => h.nombre)
+    )
 
-    const rows = (res?.[0]?.values || [])
+    const rows = res?.[0]?.values || []
+
     if (rows.length > 0) {
       for (const row of rows) {
+        const original = habilidades.find(h => h.nombre === row[0])
         data.push({
           nombre: row[0],
           descripcion: row[1],
           legendaria: row[2],
           transformacion: row[3],
-          oculta: type === 'Ocultas'
+          oculta: type === 'Ocultas',
+          esOptativa: original ? original.esOptativa === 1 : false
         })
       }
     }
@@ -329,6 +336,7 @@ async function cargarHabilidades(habs, type) {
     return data
   }
 }
+
 
 function toggleAbility(nombre) {
   selectedAbility.value = selectedAbility.value === nombre ? null : nombre
@@ -463,7 +471,8 @@ function IsAltByName(especie) {
 .no-abilities {
   padding: 10px;
   text-align: center;
-  background: #fff0f0;
+  background: var(--color-principal2);
+  color: var(--color-texto);
   border-radius: 6px;
   margin-top: 10px;
   font-weight: 500;
@@ -632,9 +641,9 @@ function IsAltByName(especie) {
   display: flex;
   align-items: center;
   gap: 8px;
-  background-color: #fff;
+  background-color: var(--color-principal2);
+  color: var(--color-texto);
   padding: 6px 10px;
-  border: 1px solid #f0f0f0;
   border-radius: 8px;
 }
 </style>

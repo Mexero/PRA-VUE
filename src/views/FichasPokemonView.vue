@@ -115,7 +115,6 @@ async function cambiarDatosEspecie(especie) {
     error.value = null
 
     try {
-        // Datos base de pokedex
         const res = await queryDB(`
       SELECT 
         pokedex.ID, Especie, Tipo_primario, Tipo_secundario, 
@@ -134,9 +133,8 @@ async function cambiarDatosEspecie(especie) {
         const row = res?.[0]?.values?.[0]
         if (!row) return
 
-        const id = row[0] // pokedex.ID
+        const id = row[0]
 
-        // Asignación de datos
         ficha.pokedex.especie = row[1]
         ficha.pokedex.tipos = [row[2], row[3] ?? ""]
         ficha.pokedex.statsBase = {
@@ -159,7 +157,7 @@ async function cambiarDatosEspecie(especie) {
 
         // Habilidades (relacional)
         const habilidadesRes = await queryDB(`
-      SELECT h.Nombre, ph.Es_Oculta
+      SELECT h.Nombre, ph.Es_Oculta, ph.Es_Optativa
       FROM pokemon_habilidades ph
       JOIN habilidades h ON h.ID = ph.Habilidad_ID
       WHERE ph.Pokemon_ID = ?
@@ -168,9 +166,9 @@ async function cambiarDatosEspecie(especie) {
         ficha.pokedex.habilidades = []
         ficha.pokedex.habilidadesOcultas = []
 
-        habilidadesRes?.[0]?.values?.forEach(([nombre, esOculta]) => {
-            if (esOculta) ficha.pokedex.habilidadesOcultas.push(nombre)
-            else ficha.pokedex.habilidades.push(nombre)
+        habilidadesRes?.[0]?.values?.forEach(([nombre, esOculta, esOpcional]) => {
+            if (esOculta) ficha.pokedex.habilidadesOcultas.push({ nombre: nombre, esOpcional: esOpcional })
+            else ficha.pokedex.habilidades.push({ nombre: nombre, esOpcional: esOpcional })
         })
 
         // CA
@@ -442,7 +440,7 @@ function actualizar() {
     // Actualizar salvaciones con bonificaciones personalizadas
     for (const stat in ficha.derivados.salvaciones) {
         const statTotal = ficha.derivados.stats[stat] || 0
-        ficha.derivados.salvaciones[stat] = statTotal
+        ficha.derivados.salvaciones[stat] = statTotal + ficha.derivados.bh
             + ficha.pokedex.salvaciones[stat] + ficha.personaliz.salvaciones[stat]
             - Math.max(ficha.derivados.fatiga, 0)
     }

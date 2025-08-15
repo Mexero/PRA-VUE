@@ -2385,14 +2385,14 @@
   {
     "Nombre": "Revitalizar la naturaleza",
     "Tipo": "Elemental",
-    "Nivel": 11,
+    "Nivel": null,
     "Prerrequisitos": "Ser Tipo Planta",
     "Descripcion": [
       "Tu poder te permite multiplicar y sanar la vegetación y criaturas de tu entorno. Ganas los siguientes beneficios:",
       {
         "tipo": "listaU",
         "contenido": [
-          "Puedes multiplicar plantas y bayas. Como Acción extendida, puedes multiplicar una o varias bayas y plantas que tocas que han crecido de forma natural y que aun no han sido recolectadas. La suma de los costes de las bayas y plantas producidas no puede superar en valor una cantidad de Poké dólares igual a 100 por tu Nivel. Puedes usar este beneficio de nuevo hasta que Descanses.",
+          "Puedes multiplicar plantas y bayas. Como Acción extendida, puedes multiplicar una o varias bayas y plantas que tocas que han crecido de forma natural y que aun no han sido recolectadas. La suma de los costes de las bayas y plantas producidas no puede superar en valor una cantidad de Poké dólares igual a 100 por tu Nivel. No puedes usar este beneficio de nuevo hasta que Descanses.",
           "Como una Acción Extendida que dura un minuto, puedes restaurar la salud de las plantas en un radio de 5 metros a tu alrededor, incluso se estaban casi completamente quemadas, deshidratadas o envenenadas.",
           "Como una Acción Extendida que dura un minuto, puedes hacer que una criatura afectada por los efectos nocivos asociados a caer inconsciente por el veneno se libere de estos."
         ]

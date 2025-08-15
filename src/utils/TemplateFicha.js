@@ -22,6 +22,7 @@ export function crearFichaBase(nombre = '') {
             movimientosAprendidos: [],
             movimientosExtra: [],
             habilidadesOcultasDesbloqueadas: [],
+            habOpcionalElegida: null,
             habilidadesExtra: [],
             dotes: [],
             dotesExtra: [],

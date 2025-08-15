@@ -113,11 +113,12 @@ function ignoreUpdate() {
             <div class="icono icono-cargar" title="Cargar toda la web">
                 <img src="/assets/icons/CargarTodoIcon.svg" alt="" @click="cacheAll">
             </div>
-            <RouterLink to="/">
-                <div class="icono icono-discord">
+
+            <div class="icono icono-discord"> <a href="https://discord.gg/yT6CtNxP" target="_blank">
                     <img src="/assets/icons/DiscordIcon.svg" alt="">
-                </div>
-            </RouterLink>
+                </a>
+            </div>
+
             <div id="modoNoche" class="icono icono-modo" @click="toggleModo">
                 <img :src="icono" alt="Icono cambio de modo">
             </div>

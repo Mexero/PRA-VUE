@@ -382,32 +382,40 @@ async function cambiarPokeSeleccionado(especie) {
 
   try {
     const res = await queryDB(`
-      SELECT 
-        pokedex.Numero_pokedex, pokedex.Especie, pokedex.Tipo_primario, pokedex.Tipo_secundario, 
-        pokedex.FUE, pokedex.AGI, pokedex.RES, pokedex.MEN, pokedex.ESP, pokedex.PRE, 
-        pokedex.S_FUE, pokedex.S_AGI, pokedex.S_RES, pokedex.S_ESP,
-        pokedex.Vitalidad,
-        pokedex.V_Caminado, pokedex.V_Trepado, pokedex.V_Excavado, pokedex.V_Nado, pokedex.V_Vuelo, pokedex.V_Levitado,
-        pokedex.Nat_Habil_1, pokedex.Nat_Habil_2,
-        (
-          SELECT GROUP_CONCAT(h.Nombre)
-          FROM pokemon_habilidades ph
-          JOIN habilidades h ON h.ID = ph.Habilidad_ID
-          WHERE ph.Pokemon_ID = pokedex.ID AND ph.Es_Oculta = 0
-        ) AS Habilidades,
-        (
-          SELECT GROUP_CONCAT(h.Nombre)
-          FROM pokemon_habilidades ph
-          JOIN habilidades h ON h.ID = ph.Habilidad_ID
-          WHERE ph.Pokemon_ID = pokedex.ID AND ph.Es_Oculta = 1
-        ) AS Habilidades_Ocultas,
-        pokedex.AC1, pokedex.AC2, 
-        pokedex.Dieta, pokedex.Tamano, pokedex.Sexo, pokedex.Sentidos, pokedex.Niv_Minimo, pokedex.Habitat, pokedex.Ratio_de_captura,
-        pokedex.Evoluciona_de, pokedex.EvoEn, pokedex.Nivel_Evo, pokedex.Tipo_requisito, pokedex.Requisitos_Evo, pokedex.Evo_otros,
-        pokedex.ID, pokedex.Es_alternativo
-      FROM pokedex
-      WHERE pokedex.Especie = ?
-    `, [especie])
+    SELECT 
+      pokedex.Numero_pokedex, pokedex.Especie, pokedex.Tipo_primario, pokedex.Tipo_secundario, 
+      pokedex.FUE, pokedex.AGI, pokedex.RES, pokedex.MEN, pokedex.ESP, pokedex.PRE, 
+      pokedex.S_FUE, pokedex.S_AGI, pokedex.S_RES, pokedex.S_ESP,
+      pokedex.Vitalidad,
+      pokedex.V_Caminado, pokedex.V_Trepado, pokedex.V_Excavado, pokedex.V_Nado, pokedex.V_Vuelo, pokedex.V_Levitado,
+      pokedex.Nat_Habil_1, pokedex.Nat_Habil_2,
+      (
+        SELECT '[' || GROUP_CONCAT(
+                 json_object(
+                   'nombre', h.Nombre,
+                   'esOptativa', ph.Es_Optativa
+                 ), ',') || ']'
+        FROM pokemon_habilidades ph
+        JOIN habilidades h ON h.ID = ph.Habilidad_ID
+        WHERE ph.Pokemon_ID = pokedex.ID AND ph.Es_Oculta = 0
+      ) AS Habilidades,
+      (
+        SELECT '[' || GROUP_CONCAT(
+                 json_object(
+                   'nombre', h.Nombre,
+                   'esOptativa', ph.Es_Optativa
+                 ), ',') || ']'
+        FROM pokemon_habilidades ph
+        JOIN habilidades h ON h.ID = ph.Habilidad_ID
+        WHERE ph.Pokemon_ID = pokedex.ID AND ph.Es_Oculta = 1
+      ) AS Habilidades_Ocultas,
+      pokedex.AC1, pokedex.AC2, 
+      pokedex.Dieta, pokedex.Tamano, pokedex.Sexo, pokedex.Sentidos, pokedex.Niv_Minimo, pokedex.Habitat, pokedex.Ratio_de_captura,
+      pokedex.Evoluciona_de, pokedex.EvoEn, pokedex.Nivel_Evo, pokedex.Tipo_requisito, pokedex.Requisitos_Evo, pokedex.Evo_otros,
+      pokedex.ID, pokedex.Es_alternativo
+    FROM pokedex
+    WHERE pokedex.Especie = ?
+  `, [especie])
 
     const row = res?.[0]?.values?.[0]
     if (row) {
@@ -429,8 +437,8 @@ async function cambiarPokeSeleccionado(especie) {
           nado: row[18], vuelo: row[19], levitado: row[20]
         },
         natHabil: [row[21], row[22]],
-        habilidades: row[23]?.split(',') || [],
-        habilidadesOcultas: row[24]?.split(',') || [],
+        habilidades: JSON.parse(row[23] || '[]'),
+        habilidadesOcultas: JSON.parse(row[24] || '[]'),
         calculosCa: [row[25], row[26]],
         otros: {
           dieta: row[27], tamano: row[28], sexo: row[29],
