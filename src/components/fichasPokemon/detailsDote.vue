@@ -89,10 +89,19 @@ li {
         width: 790px;
     }
 
-    @media screen and (max-width: 920px) {
+   
+}
+ @media screen and (max-width: 920px) {
         .contenidoDote {
             width: 430px;
         }
     }
+
+
+
+@media screen and (max-width: 545px) {
+        .contenidoDote {
+            width: 350px;
+        }
 }
 </style>

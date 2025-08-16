@@ -191,4 +191,9 @@ summary {
     }
 
 }
+@media screen and (max-width: 545px) {
+    .habilidades-list {
+            width: 350px;
+        }
+}
 </style>

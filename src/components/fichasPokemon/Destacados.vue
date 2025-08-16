@@ -214,18 +214,33 @@ input[type="number"] {
 }
 
 @media screen and (max-width: 920px) {
- .destacados {
-        width: 100%;
-        display: flex;
-        justify-content: space-around;
-        gap: 20px;
-    }
+   
+
 
     .fila {
-        width: 100%;
+        width: fit-content;
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 545px) {
+     .central {
+        width: 200px;
+    }
+    .fila {
         display: grid;
-        grid-template-columns:  auto;
+        grid-template-columns: auto ;
         gap: 10px;
     }
+
+     .destacados {
+        width: 200px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    
 }
 </style>

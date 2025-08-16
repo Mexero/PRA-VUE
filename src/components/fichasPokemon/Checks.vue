@@ -321,9 +321,11 @@ input[type="number"] {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
     min-width: 300px;
 }
-.popup-content input{
+
+.popup-content input {
     width: 150px;
 }
+
 .popup-content ul {
     list-style: none;
     padding: 0;
@@ -336,11 +338,12 @@ input[type="number"] {
     padding: 5px 10px;
     cursor: pointer;
 }
+
 .popup-content li:hover {
     background-color: var(--color-principal2);
 }
 
-.popup-content button{
+.popup-content button {
     background-color: var(--color-principal1);
     border: none;
     color: var(--color-texto);
@@ -348,10 +351,12 @@ input[type="number"] {
     border-radius: 5px;
     cursor: pointer;
 }
-.popup-content button:hover{
-        background-color: var(--color-principal2);
+
+.popup-content button:hover {
+    background-color: var(--color-principal2);
 
 }
+
 .drag-ghost {
     opacity: 0.5;
     background: var(--color-principal1, #eee);
@@ -368,9 +373,10 @@ details {
     border: 2px dashed #666;
 }
 
- .checks {
+.checks {
     width: 100%;
 }
+
 @media (max-width: 1460px) {
     .checks-list>div {
         display: grid;
@@ -380,4 +386,15 @@ details {
     }
 }
 
+@media screen and (max-width: 545px) {
+    .checks {
+        width: 330px;
+    }
+
+    .checks-list>div {
+
+        width: 330px;
+
+    }
+}
 </style>

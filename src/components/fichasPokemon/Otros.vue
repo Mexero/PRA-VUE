@@ -249,4 +249,16 @@ textarea {
         flex-direction: column;
     }
 }
+@media screen and (max-width: 545px) {
+    
+    .fila1 {
+        display: grid;
+        grid-template-columns: 1fr ;
+        margin-bottom: 20px;
+    }
+   .others {
+        width: 330px;
+    }
+    
+}
 </style>

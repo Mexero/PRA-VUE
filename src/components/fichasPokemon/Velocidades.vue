@@ -63,14 +63,25 @@ input[type="number"] {
         display: flex;
         flex-direction: column;
         align-items: center;
-
     }
-
 
     .speeds-list {
         display: grid;
         grid-template-columns: auto auto auto;
         gap: 0 20px;
     }
+}
+@media screen and (max-width: 545px) {
+    .speeds {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .speeds-list {
+        display: grid;
+        grid-template-columns: auto ;
+        gap: 0 20px;
+    }
+    
 }
 </style>

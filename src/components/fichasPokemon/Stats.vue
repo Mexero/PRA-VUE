@@ -154,4 +154,26 @@ function cambiarMejoraEST(stat, delta) {
 
     }
 }
+
+@media screen and (max-width: 545px) {
+    .stats {
+        margin: 10px 0;
+        padding: 5px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        gap: 10px;
+
+    }
+
+    .item {
+        margin: 0;
+    }
+
+    section {
+        width: auto;
+    }
+
+    
+}
 </style>

@@ -245,26 +245,51 @@ input[type="number"] {
     }
 
 
-    @media screen and (max-width: 920px) {
-        .info-basica {
-            display: grid;
-            grid-template-areas:
-                "nombre nivel"
-                "especie especie"
-                "tipos tipos";
-            grid-template-columns: 40px;
-                        grid-template-rows: 30px;
 
-        }
+}
 
-        .tipos {
-            margin-left: 0;
-        }
+@media screen and (max-width: 920px) {
+    .info-basica {
+        display: grid;
+        grid-template-areas:
+            "nombre nivel"
+            "especie especie"
+            "tipos tipos";
+        grid-template-columns: 40px;
+        grid-template-rows: 30px;
 
-        .nivel {
-            flex-direction: column;
-        }
+    }
 
+    .tipos {
+        margin-left: 0;
+    }
+
+    .nivel {
+        flex-direction: column;
+    }
+
+}
+
+@media screen and (max-width: 545px) {
+    .info-basica {
+        display: grid;
+        grid-template-areas:
+            "nombre"
+            "especie"
+            "nivel"
+            "tipos";
+        grid-template-columns: 40px;
+        grid-template-rows: 30px;
+
+    }
+
+    .nivel-input {
+        display: flex;
+        align-items: center;
+    }
+
+    .nivel {
+        flex-direction: row;
     }
 }
 </style>
