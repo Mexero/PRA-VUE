@@ -143,10 +143,10 @@ watch(mostrarPopup, (isOpen) => {
                                 </div>
                                 <span>{{ grados[gradoActual(element.check)] }}</span>
                             </div>
-                            
-                                <label>Total:</label>
-                                <input type="number" v-model.number="element.total" />
-                            
+
+                            <label>Total:</label>
+                            <input type="number" v-model.number="element.total" />
+
                         </div>
 
                         <button class="borrar-btn"
@@ -252,8 +252,6 @@ watch(mostrarPopup, (isOpen) => {
     gap: 10px;
 }
 
-
-
 input {
     font-size: large;
     background-color: transparent;
@@ -317,22 +315,20 @@ input[type="number"] {
 }
 
 .popup-content {
-    background: var(--color-fondo, #fff);
+    background: var(--color-fondoTexto);
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
     min-width: 300px;
 }
-
-.popup-content h4 {
-    margin-top: 0;
+.popup-content input{
+    width: 150px;
 }
-
 .popup-content ul {
     list-style: none;
     padding: 0;
     margin: 10px 0;
-    max-height: 150px;
+    max-height: 300px;
     overflow-y: auto;
 }
 
@@ -340,12 +336,22 @@ input[type="number"] {
     padding: 5px 10px;
     cursor: pointer;
 }
-
-.popup-content li.selected {
-    background: var(--color-principal1, #eee);
-    font-weight: bold;
+.popup-content li:hover {
+    background-color: var(--color-principal2);
 }
 
+.popup-content button{
+    background-color: var(--color-principal1);
+    border: none;
+    color: var(--color-texto);
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.popup-content button:hover{
+        background-color: var(--color-principal2);
+
+}
 .drag-ghost {
     opacity: 0.5;
     background: var(--color-principal1, #eee);
@@ -362,7 +368,9 @@ details {
     border: 2px dashed #666;
 }
 
-
+ .checks {
+    width: 100%;
+}
 @media (max-width: 1460px) {
     .checks-list>div {
         display: grid;
@@ -371,5 +379,5 @@ details {
         gap: 10px;
     }
 }
-    
+
 </style>

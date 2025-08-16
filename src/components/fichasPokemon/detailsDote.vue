@@ -39,13 +39,11 @@ const props = defineProps(['dote'])
 .titulo {
     font-weight: bold;
     background-color: var(--color-principal2);
-    padding:  0 0 0 5px;
+    padding: 0 0 0 5px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-            cursor: pointer;
-
-    
+    cursor: pointer;
 }
 
 .descripcion {
@@ -82,13 +80,19 @@ li {
 }
 
 .contenidoDote {
-    width: 650px;
+    width: 630px;
     padding: 10px;
 }
 
 @media screen and (max-width: 1460px) {
     .contenidoDote {
-    width: 760px;
-}
+        width: 790px;
+    }
+
+    @media screen and (max-width: 920px) {
+        .contenidoDote {
+            width: 430px;
+        }
+    }
 }
 </style>

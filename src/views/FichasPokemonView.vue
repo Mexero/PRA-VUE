@@ -792,28 +792,14 @@ const mostrarToolbar = ref(false)
 
                     <div class="salvaciones-area">
                         <h3>Salvaciones</h3>
-                        <div>
+                        <div class="estatSave">
                             <div class="bonosSalvacion" v-for="stat in ['fue', 'agi', 'res', 'esp']" :key="stat">
                                 {{ stat.toUpperCase() }}
                                 <span class="numero">{{ ficha.derivados.salvaciones[stat] || 0 }}</span>
                             </div>
                         </div>
                     </div>
-                    <div class="movilStats">
-                        <div class="stats-area">
-                            <FichaStats :ficha="ficha" />
-                        </div>
 
-                        <div class="salvaciones-area">
-                            <h3>Salvaciones</h3>
-                            <div>
-                                <div class="bonosSalvacion" v-for="stat in ['fue', 'agi', 'res', 'esp']" :key="stat">
-                                    {{ stat.toUpperCase() }}
-                                    <span class="numero">{{ ficha.derivados.salvaciones[stat] || 0 }}</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                     <div class="destacados-area">
                         <FichaDestacados :ficha="ficha" :grados="grados" />
                     </div>
@@ -828,7 +814,7 @@ const mostrarToolbar = ref(false)
                         <FichaOtros :ficha="ficha" :naturalezas="naturalezas" />
                     </div>
                 </div>
-               
+                
                 <div class="HabsDotesMovs">
                     <div class="col-izq">
                         <div class="habs">
@@ -1002,9 +988,7 @@ const mostrarToolbar = ref(false)
     border: 1px solid var(--color-principal1);
 }
 
-.movilStats {
-    display: none;
-}
+
 
 @media screen and (max-width: 1460px) {
     .info-principal {
@@ -1064,5 +1048,37 @@ const mostrarToolbar = ref(false)
         display: flex;
         flex-direction: column;
     }
+}
+
+@media screen and (max-width: 920px) {
+    .info-principal {
+        grid-template-areas:
+            "destacados"
+            "stats"
+            "saves"
+            "velocidades"
+            "checks"
+            "otros ";
+        grid-template-columns: min-content;
+        grid-template-rows: auto;
+        gap: 15px 0;
+    }
+
+    .info-principal div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .salvaciones-area {
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    .bonosSalvacion {
+        border: 1px solid rgba(150, 150, 150, 0.798);
+        width: 100px;
+    }
+
 }
 </style>

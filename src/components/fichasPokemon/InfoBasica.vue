@@ -89,8 +89,10 @@ function ocultarLista() {
 
         </div>
         <div class="nivel">
-            <label for="Nivel">Nivel:</label>
-            <input type="number" name="Nivel" v-model.number="nivelTemp" min="0" />
+            <div class="nivel-input">
+                <label for="Nivel">Nivel:</label>
+                <input type="number" name="Nivel" v-model.number="nivelTemp" min="0" />
+            </div>
             <button @click="cambiarNivel">Cambiar</button>
         </div>
         <div class="tipos">
@@ -107,9 +109,12 @@ function ocultarLista() {
 .info-basica {
     border-bottom: 1px solid rgba(150, 150, 150, 0.798);
     padding-bottom: 20px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 12px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.info-basica div {
+    flex-wrap: nowrap;
 }
 
 .nombre,
@@ -119,8 +124,6 @@ function ocultarLista() {
     display: flex;
     align-items: center;
     gap: 8px;
-    flex-wrap: wrap;
-    min-width: 0; /* evita overflow */
 }
 
 .tipos {
@@ -128,19 +131,20 @@ function ocultarLista() {
 }
 
 input {
-    font-size: 1rem;
+    font-size: large;
     background-color: transparent;
     padding: 4px 6px;
     border: none;
     border-bottom: 1px solid;
     color: var(--color-texto);
-    min-width: 0; /* permite que se reduzca el ancho */
-    flex: 1; /* para que se adapte al espacio disponible */
+    width: 140px;
+    text-align: center;
 }
 
 label {
     font-weight: bold;
-    white-space: nowrap; /* evita que el label se parta */
+    white-space: nowrap;
+    /* evita que el label se parta */
 }
 
 input:focus {
@@ -148,8 +152,14 @@ input:focus {
 }
 
 input[name="Nivel"] {
-    width: 60px;
+    width: 40px;
 }
+
+.NombreTipos {
+    width: 100px;
+}
+
+
 
 /* Botón */
 button {
@@ -159,7 +169,8 @@ button {
     border: none;
     border-radius: 6px;
     cursor: pointer;
-    flex-shrink: 0; /* evita que el botón se aplaste demasiado */
+    flex-shrink: 0;
+    /* evita que el botón se aplaste demasiado */
 }
 
 button:hover {
@@ -196,32 +207,64 @@ input[type="number"]::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
+
 input[type="number"] {
     -moz-appearance: textfield;
     appearance: textfield;
+
 }
 
-/* RESPONSIVE */
-@media (max-width: 750px) {
+
+@media screen and (max-width: 1460px) {
     .info-basica {
-        grid-template-columns: 1fr;
+        display: grid;
+        grid-template-areas:
+            "nombre nivel"
+            "especie tipos ";
+        grid-template-columns: 1fr 1fr;
+        gap: 20px 0;
     }
 
-    input,
-    button {
-        width: 100%;
+    .nombre {
+        grid-area: nombre;
+        width: 200px;
     }
 
-    .nombre,
-    .nivel,
-    .especie,
+    .especie {
+        grid-area: especie;
+    }
+
+    .nivel {
+        grid-area: nivel;
+        margin-left: auto;
+    }
+
     .tipos {
-        flex-direction: column;
-        align-items: flex-start;
+        grid-area: tipos;
+        margin-left: auto;
     }
 
-    label {
-        margin-bottom: 4px;
+
+    @media screen and (max-width: 920px) {
+        .info-basica {
+            display: grid;
+            grid-template-areas:
+                "nombre nivel"
+                "especie especie"
+                "tipos tipos";
+            grid-template-columns: 40px;
+                        grid-template-rows: 30px;
+
+        }
+
+        .tipos {
+            margin-left: 0;
+        }
+
+        .nivel {
+            flex-direction: column;
+        }
+
     }
 }
 </style>

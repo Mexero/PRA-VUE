@@ -212,4 +212,20 @@ input[type="number"] {
         gap: 10px;
     }
 }
+
+@media screen and (max-width: 920px) {
+ .destacados {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        gap: 20px;
+    }
+
+    .fila {
+        width: 100%;
+        display: grid;
+        grid-template-columns:  auto;
+        gap: 10px;
+    }
+}
 </style>

@@ -111,7 +111,7 @@ onBeforeUnmount(() => {
                 <div class="item item-inline">
                     Sentidos:
                     <textarea v-model="ficha.derivados.sentidos" readonly
-                        :size="Math.max(1, 0.80 * String(ficha.derivados.sentidos || '').length)" > </textarea>
+                        :size="Math.max(1, 0.80 * String(ficha.derivados.sentidos || '').length)"> </textarea>
                 </div>
                 <div class="item item-inline">
                     Evolución:
@@ -128,8 +128,6 @@ onBeforeUnmount(() => {
     border: 1px solid rgba(150, 150, 150, 0.798);
     border-radius: 5px;
     padding: 10px;
-    margin-bottom: 30px;
-
 }
 
 .fila1 {
@@ -143,9 +141,6 @@ onBeforeUnmount(() => {
     text-align: center;
 }
 
-
-
-
 .item-inline {
     display: flex;
     align-items: center;
@@ -153,12 +148,10 @@ onBeforeUnmount(() => {
     scrollbar-color: var(--color-principal1);
 }
 
-
 .input-container {
     display: inline-block;
     position: relative;
 }
-
 
 input {
     font-size: large;
@@ -191,11 +184,9 @@ input {
     background-color: var(--color-principal2);
 }
 
-
-
 .fila2 {
     display: flex;
-    flex-wrap: wrap; 
+    flex-wrap: wrap;
     gap: 20px;
     max-width: 1400px;
 }
@@ -203,18 +194,19 @@ input {
 .item-inline {
     display: flex;
     align-items: center;
-    flex: 1 1 300px; 
-    min-width: 250px; 
+    flex: 1 1 300px;
+    min-width: 250px;
 }
 
 textarea {
-    width: 90%;              
-    resize: none;             
+    height: 69px;
+    width: 100%;
+    resize: none;
     overflow-wrap: break-word;
     word-break: break-word;
     font-size: medium;
     background-color: transparent;
-    padding: 4px;
+    padding: 4px 0;
     border: none;
     border-bottom: 1px solid;
     color: var(--color-texto);
@@ -233,5 +225,28 @@ textarea {
         justify-content: space-between;
     }
 
+}
+
+@media screen and (max-width: 920px) {
+    .others {
+        width: 100%;
+    }
+
+    .fila1 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin-bottom: 20px;
+    }
+
+    .item-inline {
+        display: flex;
+        flex: none;
+        flex-direction: column;
+        align-items: start;
+    }
+
+    .fila2 {
+        flex-direction: column;
+    }
 }
 </style>
