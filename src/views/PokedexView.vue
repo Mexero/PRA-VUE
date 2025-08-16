@@ -309,10 +309,19 @@ async function cargarTodosPokes({
   })
 
   if (filtroMovimientos.length > 0) {
-    filtroMovimientos.forEach(mov => {
-      condiciones.push(`Mov_ensenables LIKE ?`)
-      params.push(`%${mov}%`)
-    })
+    const condicionesMovs = filtroMovimientos.map(() => `
+    EXISTS (
+      SELECT 1 
+      FROM pokemon_movimientos pm
+      JOIN movimientos m ON m.ID = pm.MovimientoID
+      WHERE pm.PokemonID = pokedex.ID
+        AND m.Nombre = ?
+    )
+  `)
+
+    condiciones.push(`(${condicionesMovs.join(' AND ')})`)
+
+    filtroMovimientos.forEach(mov => params.push(mov))
   }
 
   const where = condiciones.length ? `WHERE ${condiciones.join(' AND ')}` : ''
