@@ -814,7 +814,7 @@ const mostrarToolbar = ref(false)
                         <FichaOtros :ficha="ficha" :naturalezas="naturalezas" />
                     </div>
                 </div>
-                <!-- 
+
                 <div class="HabsDotesMovs">
                     <div class="col-izq">
                         <div class="habs">
@@ -833,7 +833,7 @@ const mostrarToolbar = ref(false)
                         </div>
                     </div>
                 </div>
--->
+
             </div>
         </div>
     </div>
@@ -1083,17 +1083,14 @@ const mostrarToolbar = ref(false)
 }
 
 @media screen and (max-width: 545px) {
-    .center{
-                width: 380px;
-                margin: 0 auto;
-                
-
+    .center {
+        margin: 0 auto;
     }
+
     .fichaPokemon {
         display: flex;
         flex-direction: column;
-        margin: 40px 10px ;
-
+        margin: 40px 10px;
     }
 
     .character-sheet {
@@ -1102,7 +1099,7 @@ const mostrarToolbar = ref(false)
     }
 
     .info-principal {
-        width: 350px;
+        width: 340px;
     }
 
     .slide-enter-active,
@@ -1114,7 +1111,6 @@ const mostrarToolbar = ref(false)
     .slide-enter-from,
     .slide-leave-to {
         height: 0;
-
     }
 
     .slide-enter-to,
@@ -1124,15 +1120,12 @@ const mostrarToolbar = ref(false)
 
     .sheet-managing {
         margin: 0;
-
         align-items: start;
-
     }
 
     .toolbar-container {
         left: 0;
         top: 40px;
-
     }
 
     .salvaciones-area {

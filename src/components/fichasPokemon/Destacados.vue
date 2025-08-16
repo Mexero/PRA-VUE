@@ -214,8 +214,6 @@ input[type="number"] {
 }
 
 @media screen and (max-width: 920px) {
-   
-
 
     .fila {
         width: fit-content;
@@ -225,22 +223,23 @@ input[type="number"] {
 }
 
 @media screen and (max-width: 545px) {
-     .central {
-        width: 200px;
+    .central {
+        width: 300px;
     }
+
     .fila {
-        display: grid;
-        grid-template-columns: auto ;
+        display: flex;
+        flex-wrap: wrap;
         gap: 10px;
     }
 
-     .destacados {
-        width: 200px;
+    .destacados {
+        width: 300px;
         display: flex;
-        flex-direction: column;
+        flex-wrap: wrap;
         gap: 20px;
     }
-    
-    
+
+
 }
 </style>

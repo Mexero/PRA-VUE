@@ -72,15 +72,12 @@ input[type="number"] {
     }
 }
 @media screen and (max-width: 545px) {
-    .speeds {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
+   
     .speeds-list {
-        display: grid;
-        grid-template-columns: auto ;
-        gap: 0 20px;
+        display: flex;
+        flex-wrap: wrap;
+       
+        justify-content: center;
     }
     
 }

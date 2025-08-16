@@ -144,7 +144,7 @@ watch(mostrarPopup, (isOpen) => {
                                 <span>{{ grados[gradoActual(element.check)] }}</span>
                             </div>
 
-                            <label>Total:</label>
+                            <label class="movilOff">Total:</label>
                             <input type="number" v-model.number="element.total" />
 
                         </div>
@@ -388,13 +388,17 @@ details {
 
 @media screen and (max-width: 545px) {
     .checks {
-        width: 330px;
+        width: 340px;
     }
 
-    .checks-list>div {
+    .movilOff {
+        display: none;
+    }
 
-        width: 330px;
-
+    .tituloYBoton {
+        display: flex;
+        flex-direction: column;
+        
     }
 }
 </style>

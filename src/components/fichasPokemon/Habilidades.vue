@@ -131,7 +131,6 @@ function eliminarHabExtra(index) {
 .tituloYAñadir {
     display: flex;
     justify-content: space-between;
-
 }
 
 .item {
@@ -183,17 +182,17 @@ summary {
     .habilidades-list {
         width: 790px;
     }
-
 }
+
 @media screen and (max-width: 920px) {
     .habilidades-list {
-            width: 430px;
+        width: 430px;
     }
-
 }
+
 @media screen and (max-width: 545px) {
     .habilidades-list {
-            width: 350px;
-        }
+        width: 330px;
+    }
 }
 </style>

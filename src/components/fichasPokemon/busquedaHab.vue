@@ -1,6 +1,6 @@
 <template>
     <div class="buscador">
-        <input  v-model="valor" placeholder="Buscar Habilidad..."
+        <input v-model="valor" placeholder="Buscar Habilidad..."
             @keydown.enter.prevent="emitirSeleccion(sugerencias[0].nombre)" />
         <div v-if="sugerencias.length" class="sugerencias-wrapper">
             <table class="sugerencias">
@@ -88,14 +88,21 @@ function emitirSeleccion(nombre) {
 }
 
 .sugerencias tr:hover {
-    background-color: #e6e6e6;
+    background-color: var(--color-principal2);
 }
+
 input {
-    
     background-color: transparent;
     padding: 4px;
     border: none;
     border-bottom: 1px solid;
     color: var(--color-texto);
+}
+
+@media screen and (max-width: 545px) {
+    .buscador {
+        width: 100%;
+        max-height: 200px;
+    }
 }
 </style>

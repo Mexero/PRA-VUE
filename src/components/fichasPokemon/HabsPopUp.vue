@@ -48,7 +48,6 @@ function añadirHab() {
         <div v-if="isOpen" class="modal-overlay" @click="closePopup">
             <div class="modal-content" @click.stop>
 
-
                 <div class="ventana">
                     <div class="cuerpo">
                         <busquedaHab :habilidades="habilidades" @seleccion="mostrarHab" />
@@ -94,12 +93,9 @@ function añadirHab() {
 .tarjetaHab {
     color: var(--color-texto);
 }
-.tarjetaHab p{
-    
-}
+
 .descripcion {
     color: var(--color-texto);
-
 }
 
 .modal-overlay {
@@ -155,6 +151,7 @@ function añadirHab() {
     justify-content: space-between;
     gap: 12px;
     align-items: flex-start;
+    overflow-y: scroll;
 }
 
 .preview button {
@@ -184,5 +181,22 @@ function añadirHab() {
     border: none;
     border-radius: 4px;
     cursor: pointer;
+}
+
+@media screen and (max-width: 920px) {
+    .modal-content {
+        width: 90vw;
+        height: 600px;
+    }
+}
+
+@media screen and (max-width: 545px) {
+    .cuerpo {
+        display: flex;
+        flex-direction: column;
+    }
+    .preview{
+        width: 100%;
+    }
 }
 </style>

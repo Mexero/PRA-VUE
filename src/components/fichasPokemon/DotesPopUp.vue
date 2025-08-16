@@ -44,7 +44,7 @@ function añadirDote() {
 <template>
     <div>
         <button @click="togglePopup" class="btn">
-           + Añadir Dote {{ props.extra ? 'Extra' : '' }}
+            + Añadir Dote {{ props.extra ? 'Extra' : '' }}
         </button>
 
         <div v-if="isOpen" class="modal-overlay" @click="closePopup">
@@ -175,5 +175,23 @@ function añadirDote() {
     border: none;
     border-radius: 4px;
     cursor: pointer;
+}
+
+@media screen and (max-width: 920px) {
+    .modal-content {
+        width: 90vw;
+        height: 600px;
+    }
+}
+
+@media screen and (max-width: 545px) {
+    .cuerpo {
+        display: flex;
+        flex-direction: column;
+    }
+    .preview{
+        width: 100%;
+        overflow-y: auto;
+    }
 }
 </style>

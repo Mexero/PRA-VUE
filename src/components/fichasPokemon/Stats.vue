@@ -166,13 +166,9 @@ function cambiarMejoraEST(stat, delta) {
 
     }
 
-    .item {
-        margin: 0;
-    }
+  
 
-    section {
-        width: auto;
-    }
+    
 
     
 }
