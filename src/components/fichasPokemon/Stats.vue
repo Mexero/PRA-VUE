@@ -22,8 +22,6 @@
                     <span v-if="['fue', 'agi', 'res', 'esp'].includes(stat)"></span>
                 </div>
             </div>
-
-        
         </div>
     </section>
 </template>
@@ -55,9 +53,6 @@ function cambiarMejoraEST(stat, delta) {
 </script>
 
 <style scoped>
-.statsYSaves{
-    display: flex; gap: 20px;
-}
 .stats {
     margin: 10px 0;
     padding: 5px;
@@ -140,5 +135,41 @@ function cambiarMejoraEST(stat, delta) {
 
 .puntosDisponibles {
     margin-top: 10px;
+}
+
+@media screen and (max-width: 920px) {
+    .stats {
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 10px 0;
+    }
+
+    .item {
+        margin: 0 auto;
+    }
+
+    section {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+
+    }
+}
+
+@media screen and (max-width: 545px) {
+    .stats {
+        margin: 10px 0;
+        padding: 5px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        gap: 10px;
+
+    }
+
+  
+
+    
+
+    
 }
 </style>

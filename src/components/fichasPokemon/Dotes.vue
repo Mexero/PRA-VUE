@@ -57,9 +57,6 @@ watch(
                 <DotesPopUp :dotes="dotes" :ficha="ficha" :extra="true" :posicion="0" />
             </div>
         </div>
-
-
-
         <div class="feats-list">
             <div class="item" v-if="dotesCargadas" v-for="(dote, i) in slotsDote" :key="'normal-' + i">
                 <template v-if="dote">

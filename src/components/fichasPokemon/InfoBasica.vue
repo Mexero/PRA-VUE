@@ -68,7 +68,7 @@ function ocultarLista() {
 </script>
 
 <template>
-    <section class="info-basica-grid">
+    <section class="info-basica">
         <div class="nombre" style="position: relative;">
             <label for="Nombre">Nombre:</label>
             <input name="Nombre" v-model="nombreFicha" @keydown.enter.prevent="emit('cambiarNombre', nombreFicha)" />
@@ -89,8 +89,10 @@ function ocultarLista() {
 
         </div>
         <div class="nivel">
-            <label for="Nivel">Nivel:</label>
-            <input type="number" name="Nivel" v-model.number="nivelTemp" min="0" />
+            <div class="nivel-input">
+                <label for="Nivel">Nivel:</label>
+                <input type="number" name="Nivel" v-model.number="nivelTemp" min="0" />
+            </div>
             <button @click="cambiarNivel">Cambiar</button>
         </div>
         <div class="tipos">
@@ -104,36 +106,24 @@ function ocultarLista() {
 </template>
 
 <style scoped>
-.info-basica-grid {
+.info-basica {
     border-bottom: 1px solid rgba(150, 150, 150, 0.798);
     padding-bottom: 20px;
     display: flex;
     justify-content: space-between;
-    gap: 10px;
 }
 
-.nombre {
-    display: flex;
-    align-items: center;
-    gap: 5px;
+.info-basica div {
+    flex-wrap: nowrap;
 }
 
-.nivel {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-}
-
-.especie {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-}
-
+.nombre,
+.nivel,
+.especie,
 .tipos {
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 8px;
 }
 
 .tipos {
@@ -143,85 +133,48 @@ function ocultarLista() {
 input {
     font-size: large;
     background-color: transparent;
-    padding: 4px;
+    padding: 4px 6px;
     border: none;
     border-bottom: 1px solid;
     color: var(--color-texto);
+    width: 140px;
+    text-align: center;
 }
 
 label {
     font-weight: bold;
+    white-space: nowrap;
+    /* evita que el label se parta */
 }
 
-.info-basica-grid input:focus {
+input:focus {
     outline: none;
 }
 
-.info-basica-grid input[name="Nombre"] {
-    width: 50%;
+input[name="Nivel"] {
+    width: 40px;
 }
 
-.info-basica-grid input[name="Especie"] {
-    width: 50%;
-}
-
-.info-basica-grid input[name="Nivel"] {
-    width: 30px;
+.NombreTipos {
+    width: 100px;
 }
 
 
-@media (max-width: 750px) {
-    .info-basica-grid {
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: auto auto auto auto;
-        grid-template-areas:
-            "nombre nivel"
-            "especie especie"
-            "tipos tipos";
-        gap: 10px;
-    }
 
-    .info-basica-grid .nivel {
-        justify-content: flex-end;
-    }
-
-    .info-basica-grid input[name="Nombre"] {
-        width: 100%;
-    }
-
-    .info-basica-grid input[name="Especie"] {
-        width: 60%;
-    }
-
-
-}
-
-/* Quitar flechas en input[type="number"] para Chrome, Safari, Edge */
-.info-basica-grid input[type="number"]::-webkit-inner-spin-button,
-.info-basica-grid input[type="number"]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-}
-
-/* Quitar flechas en input[type="number"] para Firefox y estándar */
-.info-basica-grid input[type="number"] {
-    -moz-appearance: textfield;
-    appearance: textfield;
-}
-
+/* Botón */
 button {
-
-    padding: 5px;
+    padding: 6px 10px;
     background-color: var(--color-principal1);
     color: var(--color-texto);
     border: none;
     border-radius: 6px;
     cursor: pointer;
-
+    flex-shrink: 0;
+    /* evita que el botón se aplaste demasiado */
 }
 
-.NombreTipos {
-    width: 100px;
+button:hover {
+    background: var(--color-principal2);
 }
 
 ul {
@@ -236,6 +189,7 @@ ul {
     overflow-y: auto;
     width: 100%;
     top: 40px;
+    border-radius: 4px;
 }
 
 li {
@@ -245,6 +199,97 @@ li {
 
 li:hover {
     background: var(--color-principal2);
+}
 
+/* Quitar flechas en number inputs */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+    appearance: textfield;
+
+}
+
+
+@media screen and (max-width: 1460px) {
+    .info-basica {
+        display: grid;
+        grid-template-areas:
+            "nombre nivel"
+            "especie tipos ";
+        grid-template-columns: 1fr 1fr;
+        gap: 20px 0;
+    }
+
+    .nombre {
+        grid-area: nombre;
+        width: 200px;
+    }
+
+    .especie {
+        grid-area: especie;
+    }
+
+    .nivel {
+        grid-area: nivel;
+        margin-left: auto;
+    }
+
+    .tipos {
+        grid-area: tipos;
+        margin-left: auto;
+    }
+
+
+
+}
+
+@media screen and (max-width: 920px) {
+    .info-basica {
+        display: grid;
+        grid-template-areas:
+            "nombre nivel"
+            "especie especie"
+            "tipos tipos";
+        grid-template-columns: 40px;
+        grid-template-rows: 30px;
+
+    }
+
+    .tipos {
+        margin-left: 0;
+    }
+
+    .nivel {
+        flex-direction: column;
+    }
+
+}
+
+@media screen and (max-width: 545px) {
+    .info-basica {
+        display: grid;
+        grid-template-areas:
+            "nombre"
+            "especie"
+            "nivel"
+            "tipos";
+        grid-template-columns: 40px;
+        grid-template-rows: 30px;
+
+    }
+
+    .nivel-input {
+        display: flex;
+        align-items: center;
+    }
+
+    .nivel {
+        flex-direction: row;
+    }
 }
 </style>

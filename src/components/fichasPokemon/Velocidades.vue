@@ -1,7 +1,8 @@
 <template>
     <section class="speeds">
+        <h3>Velocidades</h3>
+
         <div class="bloqueSpeeds">
-            <h3>Velocidades</h3>
             <div class="speeds-list">
                 <div class="item" v-for="(val, tipo) in ficha.derivados.velocidades" :key="tipo">
                     {{ tipo }}: <input type="number" v-model.number="ficha.derivados.velocidades[tipo]" />
@@ -16,18 +17,15 @@ defineProps(['ficha'])
 </script>
 
 <style scoped>
-.bloqueSpeeds {
+.speeds {
     border: 1px solid rgba(150, 150, 150, 0.798);
     border-radius: 5px;
     padding: 5px;
-    width: fit-content;
-    height: fit-content;
-    margin-top: 40px;
-    display: flex;
-    flex-direction: column;
 }
 
-.speeds h3 {
+
+
+h3 {
     text-align: center;
 }
 
@@ -57,5 +55,30 @@ input[type="number"] {
 
 .item {
     min-width: 130px;
+}
+
+@media screen and (max-width: 920px) {
+    .speeds {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .speeds-list {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        gap: 0 20px;
+    }
+}
+@media screen and (max-width: 545px) {
+   
+    .speeds-list {
+        display: flex;
+        flex-wrap: wrap;
+       
+        justify-content: center;
+    }
+    
 }
 </style>

@@ -283,16 +283,15 @@ function checkDisabled() {
                     <button class="resetFiltros" @click="limpiarFiltros"> Limpiar filtros</button>
                 </div>
                 <div class="filtro2">
-                    
-                        <label> 
-                            <strong>Por nivel</strong> <input type="radio" v-model="tipoLista" name="lista"
-                                value="Nivel">
-                            </label>
-                        <label> <strong>Enseñables</strong> <input type="radio" v-model="tipoLista" name="lista"
-                                value="Ensennables"></label>
-                        <label> <strong>Todos</strong> <input type="radio" v-model="tipoLista" name="lista"
-                                value="Todos"></label>
-                    
+
+                    <label>
+                        <strong>Por nivel</strong> <input type="radio" v-model="tipoLista" name="lista" value="Nivel">
+                    </label>
+                    <label> <strong>Enseñables</strong> <input type="radio" v-model="tipoLista" name="lista"
+                            value="Ensennables"></label>
+                    <label> <strong>Todos</strong> <input type="radio" v-model="tipoLista" name="lista"
+                            value="Todos"></label>
+
                 </div>
 
                 <div class="ventana">
@@ -314,7 +313,8 @@ function checkDisabled() {
 
                             </div>
                         </template>
-                        <busquedaMov v-else :movimientos="filtrados" :seleccionado="movimientoSeleccionado?.nombre" @seleccion="cargarMovimiento" />
+                        <busquedaMov v-else :movimientos="filtrados" :seleccionado="movimientoSeleccionado?.nombre"
+                            @seleccion="cargarMovimiento" />
 
                         <div class="preview">
                             <template v-if="movimientoSeleccionado">
@@ -353,17 +353,18 @@ function checkDisabled() {
 </template>
 
 <style scoped>
-
-.filtro1{
-    display: flex;
-    gap: 30px;
-}
-.filtro2{
+.filtro1 {
     display: flex;
     gap: 30px;
 }
 
-.btn, .filtro1 button {
+.filtro2 {
+    display: flex;
+    gap: 30px;
+}
+
+.btn,
+.filtro1 button {
     padding: 5px;
     background-color: var(--color-principal1);
     color: var(--color-texto);
@@ -387,9 +388,11 @@ ul h3 {
     margin-top: 10px;
     border-bottom: 1px solid black;
 }
-li{
-    padding: 5px ;
+
+li {
+    padding: 5px;
 }
+
 li:hover {
     background-color: var(--color-principal2);
     cursor: pointer;
@@ -410,7 +413,7 @@ li:hover {
 
 .modal-content {
     background: var(--color-fondoTexto);
-    width: 75vw;
+    width: 85vw;
     height: 75vh;
     border-radius: 12px;
     padding: 20px;
@@ -427,13 +430,11 @@ li:hover {
     background: var(--color-fondoTexto);
     border: 1px solid #ccc;
     border-radius: 8px;
-    padding: 16px;
     overflow: hidden;
 }
 
 .cuerpo {
     display: flex;
-    gap: 16px;
     height: 100%;
 }
 
@@ -447,7 +448,6 @@ li:hover {
     flex-direction: column;
     justify-content: space-between;
     gap: 12px;
-
 }
 
 .preview button {
@@ -485,5 +485,56 @@ input {
     border: none;
     border-bottom: 1px solid;
     color: var(--color-texto);
+}
+
+
+@media screen and (max-width: 920px) {
+    .cuerpo {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .movsList,
+    .buscador {
+        width: 100%;
+        height: 200px;
+    }
+
+    .preview {
+        width: 100%;
+        height: 200px;
+        overflow-y: scroll;
+    }
+
+    .filtro1 {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+}
+
+@media screen and (max-width: 545px) {
+
+    .filtro1 {
+        display: flex;
+        gap: 5px;
+    }
+
+    .modal-content {
+        width: 95vw;
+        height: 95vh;
+    }
+.movsList,
+    .buscador {
+        width: 100%;
+        height: 300px;
+    }
+
+    .preview {
+        width: 100%;
+        height: 300px;
+        overflow-y: scroll;
+    }
 }
 </style>

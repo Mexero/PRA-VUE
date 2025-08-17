@@ -90,11 +90,20 @@ function emitirSeleccion(nombre) {
 .sugerencias tr:hover {
     background-color: var(--color-principal2);
 }
+
 input {
     background-color: transparent;
     padding: 4px;
     border: none;
     border-bottom: 1px solid;
     color: var(--color-texto);
+}
+
+@media screen and (max-width: 545px) {
+    
+    .buscador {
+        width: 100%;
+        max-height: 200px;
+    }
 }
 </style>

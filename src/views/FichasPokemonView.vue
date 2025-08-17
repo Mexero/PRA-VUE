@@ -754,69 +754,103 @@ onMounted(async () => {
     }
 })
 
+
+const mostrarToolbar = ref(false)
 </script>
 
 
 <template>
+    <div class="center">
+        <div class="fichaPokemon">
 
-    <div class="fichaPokemon">
-        <FichaToolbar :fichaSeleccionada="fichaSeleccionada" :ordenFichas="ordenFichas"
-            :fichasGuardadas="fichasGuardadas" @update:fichaSeleccionada="fichaSeleccionada = $event"
-            @crear="crearFicha" @borrar="borrarFicha" @exportar="exportarFicha" @importar="importarFicha"
-            @update:ordenFichas="actualizarOrdenFichas" />
+            <div class="sheet-managing">
 
-        <div class="character-sheet">
-            <FichaInfoBasica :ficha="ficha" :especiesPokes="especiesPokes"
-                :especiesPokesCargadas="especiesPokesCargadas" @cambiarNombre="cambiarNombreFicha"
-                @cambiarDatosEspecie="cambiarDatosEspecie" />
+                <button class="toolbar-toggle" @click="mostrarToolbar = !mostrarToolbar"
+                    :aria-expanded="mostrarToolbar.toString()">
+                    ☰
+                </button>
 
-            <div class="info-principal">
-                <div class="stats-area">
-                    <FichaStats :ficha="ficha" />
-                </div>
+                <transition name="slide" mode="out-in">
+                    <div v-if="mostrarToolbar" class="toolbar-container" key="toolbar">
+                        <FichaToolbar :fichaSeleccionada="fichaSeleccionada" :ordenFichas="ordenFichas"
+                            :fichasGuardadas="fichasGuardadas" @update:fichaSeleccionada="(v) => fichaSeleccionada = v"
+                            @crear="crearFicha" @borrar="borrarFicha" @exportar="exportarFicha"
+                            @importar="importarFicha" @update:ordenFichas="actualizarOrdenFichas" />
+                    </div>
+                </transition>
+            </div>
+            <div class="character-sheet">
+                <FichaInfoBasica :ficha="ficha" :especiesPokes="especiesPokes"
+                    :especiesPokesCargadas="especiesPokesCargadas" @cambiarNombre="cambiarNombreFicha"
+                    @cambiarDatosEspecie="cambiarDatosEspecie" />
 
-                <div class="salvaciones-area">
-                    <h3>Salvaciones</h3>
-                    <div class="bonosSalvacion" v-for="stat in ['fue', 'agi', 'res', 'esp']" :key="stat">
-                        {{ stat.toUpperCase() }}
-                        <span class="numero">{{ ficha.derivados.salvaciones[stat] || 0 }}</span>
+                <div class="info-principal">
+
+                    <div class="stats-area">
+                        <FichaStats :ficha="ficha" />
+                    </div>
+
+                    <div class="salvaciones-area">
+                        <h3>Salvaciones</h3>
+                        <div class="estatSave">
+                            <div class="bonosSalvacion" v-for="stat in ['fue', 'agi', 'res', 'esp']" :key="stat">
+                                {{ stat.toUpperCase() }}
+                                <span class="numero">{{ ficha.derivados.salvaciones[stat] || 0 }}</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="destacados-area">
+                        <FichaDestacados :ficha="ficha" :grados="grados" />
+                    </div>
+                    <div class="checks-area">
+                        <FichaChecks :ficha="ficha" :ChecksBase="ChecksBase" />
+                    </div>
+                    <div class="velocidades-area">
+                        <FichaVelocidades :ficha="ficha" />
+                    </div>
+                    <div class="otros-area">
+
+                        <FichaOtros :ficha="ficha" :naturalezas="naturalezas" />
                     </div>
                 </div>
 
-                <div class="destacados-area">
-                    <FichaDestacados :ficha="ficha" :grados="grados" />
-                </div>
-                <div class="checks-area">
-                    <FichaChecks :ficha="ficha" :ChecksBase="ChecksBase" />
-                </div>
-                <div class="velocidades-area">
-                    <FichaVelocidades :ficha="ficha" />
-                </div>
-            </div>
-            <FichaOtros :ficha="ficha" :naturalezas="naturalezas" />
+                <div class="HabsDotesMovs">
+                    <div class="col-izq">
+                        <div class="habs">
+                            <FichaHabilidades :ficha="ficha" :habilidades="habilidades"
+                                :habilidadesCargadas="habilidadesCargadas" />
+                        </div>
+                        <div class="dotes">
+                            <FichaDotes :ficha="ficha" :dotes="dotes" :dotesCargadas="dotesCargadas" />
+                        </div>
+                    </div>
 
-            <div class="HabsDotesMovs">
-                <div class="habs">
-                    <FichaHabilidades :ficha="ficha" :habilidades="habilidades"
-                        :habilidadesCargadas="habilidadesCargadas" />
+                    <div class="col-der">
+                        <div class="movs">
+                            <FichaMovimientos :ficha="ficha" :movimientos="movimientos"
+                                :movimientosCargados="movimientosCargados" />
+                        </div>
+                    </div>
                 </div>
-                <div class="dotes">
-                    <FichaDotes :ficha="ficha" :dotes="dotes" :dotesCargadas="dotesCargadas" />
-                </div>
-                <div class="movs">
-                    <FichaMovimientos :ficha="ficha" :movimientos="movimientos"
-                        :movimientosCargados="movimientosCargados" />
-                </div>
+
             </div>
         </div>
     </div>
+
 </template>
 
 <style scoped>
+.center {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
 .fichaPokemon {
     display: flex;
+    margin: 0 20px;
     justify-content: center;
-    margin: auto;
     width: fit-content;
     color: var(--color-texto);
 }
@@ -834,10 +868,11 @@ onMounted(async () => {
     display: grid;
     grid-template-areas:
         "stats destacados destacados velocidades"
-        "stats saves checks velocidades";
-    grid-template-columns: auto 120px 1fr auto;
-    grid-template-rows: 110px auto;
-    gap: 0px 20px;
+        "stats saves checks velocidades"
+        "otros otros otros otros";
+    grid-template-columns: auto auto 1fr auto;
+    grid-template-rows: auto auto auto;
+    gap: 10px;
 }
 
 .stats-area {
@@ -858,6 +893,11 @@ onMounted(async () => {
 
 .velocidades-area {
     grid-area: velocidades;
+    margin-top: 40px;
+}
+
+.otros-area {
+    grid-area: otros;
 }
 
 .salvaciones-area {
@@ -868,36 +908,234 @@ onMounted(async () => {
     display: flex;
     flex-direction: column;
     gap: 5px;
+    margin-bottom: 10px;
 }
 
 .bonosSalvacion {
     border-radius: 5px;
     padding: 3px;
     align-items: center;
+    justify-content: center;
     display: flex;
-    gap: 10px
+    gap: 10px;
 }
 
 .HabsDotesMovs {
     padding-top: 25px;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto 1fr;
     gap: 20px;
-    grid-template-areas:
-        "habs movs"
-        "dotes movs";
 }
 
-.habs {
-    grid-area: habs;
+.col-izq {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
-.dotes {
-    grid-area: dotes;
+.col-der {
+    display: flex;
+    flex-direction: column;
 }
 
-.movs {
-    grid-area: movs;
+/* transición (name="slide") */
+.slide-enter-active,
+.slide-leave-active {
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.slide-enter-from,
+.slide-leave-to {
+    width: 0;
+
+}
+
+.slide-enter-to,
+.slide-leave-from {
+    width: 200px;
+}
+
+.sheet-managing {
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    margin-top: 60px;
+    position: relative;
+    left: 0;
+}
+
+.toolbar-toggle {
+    width: fit-content;
+    height: fit-content;
+    background-color: var(--color-principal1);
+    color: var(--color-texto);
+    border: none;
+    border-radius: 4px;
+    padding: 6px 10px;
+    cursor: pointer;
+    font-size: 20px;
+    z-index: 10;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.toolbar-container {
+    position: absolute;
+    top: auto;
+    left: 38px;
+    z-index: 4;
+    border: 1px solid var(--color-principal1);
+}
+
+
+
+@media screen and (max-width: 1460px) {
+    .info-principal {
+        width: fit-content;
+        display: grid;
+        grid-template-areas:
+            "stats destacados destacados"
+            "stats velocidades checks"
+            "saves velocidades checks"
+            "otros otros otros";
+        grid-template-columns: auto 1fr auto;
+        grid-template-rows: auto auto 1fr auto;
+    }
+
+    .velocidades-area {
+        grid-area: velocidades;
+        margin-top: 0px;
+    }
+
+    .salvaciones-area {
+        text-align: center;
+    }
+
+    .salvaciones-area div {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: normal;
+        justify-content: normal;
+        gap: 10px;
+    }
+
+    .HabsDotesMovs {
+        padding-top: 25px;
+        display: grid;
+        grid-template-columns: fit-content;
+        gap: 20px;
+        grid-template-areas:
+            "habs "
+            "dotes"
+            "movs";
+    }
+
+    .HabsDotesMovs {
+        padding-top: 25px;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .col-izq {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .col-der {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 920px) {
+    .info-principal {
+        grid-template-areas:
+            "destacados"
+            "stats"
+            "saves"
+            "velocidades"
+            "checks"
+            "otros ";
+        grid-template-columns: min-content;
+        grid-template-rows: auto;
+        gap: 15px 0;
+    }
+
+    .info-principal div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .salvaciones-area {
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    .bonosSalvacion {
+        border: 1px solid rgba(150, 150, 150, 0.798);
+        width: 100px;
+    }
+
+}
+
+@media screen and (max-width: 545px) {
+    .center {
+        margin: 0 auto;
+    }
+
+    .fichaPokemon {
+        display: flex;
+        flex-direction: column;
+        margin: 40px 10px;
+    }
+
+    .character-sheet {
+        margin: 0;
+        padding: 10px;
+    }
+
+    .info-principal {
+        width: 340px;
+    }
+
+    .slide-enter-active,
+    .slide-leave-active {
+        transition: all 0.3s ease;
+        overflow: hidden;
+    }
+
+    .slide-enter-from,
+    .slide-leave-to {
+        height: 0;
+    }
+
+    .slide-enter-to,
+    .slide-leave-from {
+        height: 200px;
+    }
+
+    .sheet-managing {
+        margin: 0;
+        align-items: start;
+    }
+
+    .toolbar-container {
+        left: 0;
+        top: 40px;
+    }
+
+    .salvaciones-area {
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    .bonosSalvacion {
+        border: 1px solid rgba(150, 150, 150, 0.798);
+        width: auto;
+    }
 }
 </style>

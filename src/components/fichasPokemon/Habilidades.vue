@@ -121,18 +121,16 @@ function eliminarHabExtra(index) {
     height: fit-content;
     display: flex;
     flex-direction: column;
-
 }
 
 .habilidades-list {
-    width: 670px;
+    width: 640px;
     margin: 0 auto;
 }
 
 .tituloYAñadir {
     display: flex;
     justify-content: space-between;
-
 }
 
 .item {
@@ -160,7 +158,6 @@ function eliminarHabExtra(index) {
 
 details {
     border: 1px solid var(--color-principal2);
-
 }
 
 summary {
@@ -171,7 +168,6 @@ summary {
     align-items: center;
     padding-left: 10px;
     cursor: pointer;
-
 }
 
 .descripcion {
@@ -180,5 +176,23 @@ summary {
 
 .habOpcional {
     font-style: italic;
+}
+
+@media screen and (max-width: 1460px) {
+    .habilidades-list {
+        width: 790px;
+    }
+}
+
+@media screen and (max-width: 920px) {
+    .habilidades-list {
+        width: 430px;
+    }
+}
+
+@media screen and (max-width: 545px) {
+    .habilidades-list {
+        width: 330px;
+    }
 }
 </style>
