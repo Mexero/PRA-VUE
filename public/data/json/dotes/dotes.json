@@ -2557,7 +2557,7 @@
   {
     "Nombre": "Toxinas progresivas",
     "Tipo": "Elemental",
-    "Nivel": 11,
+    "Nivel": null,
     "Prerrequisitos": "Ser Tipo Veneno",
     "PrerreqComputable": {
       "Tipo": [
@@ -2566,6 +2566,20 @@
     },
     "Descripcion": [
       "Tu veneno aumenta en potencia a más tiempo pasa dentro de una criatura. La pérdida de vida que genera el estar envenenado por uno de tus Movimientos o Habilidades aumenta en 1d4 por cada turno que la criatura que pasa envenenada, hasta un máximo de 6d4 extra."
+    ]
+  },
+  {
+    "Nombre": "Choque tóxico",
+    "Tipo": "Elemental",
+    "Nivel": 11,
+    "Prerrequisitos": "Ser Tipo Veneno",
+    "PrerreqComputable": {
+      "Tipo": [
+        "Veneno"
+      ]
+    },
+    "Descripcion": [
+      "Tu veneno enferma de gravedad a las criaturas a las que afecta y las vuelve más vulnerables a tus toxinas. Cuando haces daño de Tipo Veneno a una criatura envenenada con uno de tus Movimientos, añades 2 dados al daño contra esa criatura."
     ]
   },
   {

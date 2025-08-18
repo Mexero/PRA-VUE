@@ -255,7 +255,7 @@ input[type="number"] {
             "nombre nivel"
             "especie especie"
             "tipos tipos";
-        grid-template-columns: 40px;
+        grid-template-columns: auto;
         grid-template-rows: 30px;
 
     }
@@ -278,7 +278,7 @@ input[type="number"] {
             "especie"
             "nivel"
             "tipos";
-        grid-template-columns: 40px;
+        grid-template-columns: 100%;
         grid-template-rows: 30px;
 
     }
@@ -290,6 +290,7 @@ input[type="number"] {
 
     .nivel {
         flex-direction: row;
+        margin-left: 0;
     }
 }
 </style>
