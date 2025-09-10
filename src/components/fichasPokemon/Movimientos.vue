@@ -169,6 +169,6 @@ function eliminarMov(movimiento, lista) {
 @media screen and (max-width: 545px) {
     .movimiento {
         width: 330px;
-        }
+    }
 }
 </style>

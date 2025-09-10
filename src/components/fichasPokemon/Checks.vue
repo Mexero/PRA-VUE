@@ -2,6 +2,8 @@
 import { ref, computed, watch } from 'vue'
 import draggable from 'vuedraggable'
 
+import tiraDado from '../tiraDado.vue'
+
 const props = defineProps(['ficha', 'ChecksBase'])
 const emit = defineEmits(['gradoChange'])
 
@@ -148,6 +150,8 @@ watch(mostrarPopup, (isOpen) => {
                             <input type="number" v-model.number="element.total" />
 
                         </div>
+
+                        <tiraDado :tirada='"1d20+" + (element.total)' :origin='"Tirada de " + element.check' />
 
                         <button class="borrar-btn"
                             v-if="!ficha.derivados.checksBase.find(c => c.check === element.check)"
@@ -398,7 +402,7 @@ details {
     .tituloYBoton {
         display: flex;
         flex-direction: column;
-        
+
     }
 }
 </style>

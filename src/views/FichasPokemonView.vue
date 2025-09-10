@@ -11,6 +11,8 @@ import FichaMovimientos from '@/components/fichasPokemon/Movimientos.vue'
 import FichaHabilidades from '@/components/fichasPokemon/Habilidades.vue'
 import FichaDotes from '@/components/fichasPokemon/Dotes.vue'
 import FichaOtros from '@/components/fichasPokemon/Otros.vue'
+import LanzadorDados from '@/components/LanzadorDados.vue'
+import tiraDado from '@/components/tiraDado.vue'
 
 import { crearFichaBase } from '@/utils/TemplateFicha.js'
 import { initDB, queryDB } from '@/services/dbWorkerService'
@@ -795,7 +797,10 @@ const mostrarToolbar = ref(false)
                         <div class="estatSave">
                             <div class="bonosSalvacion" v-for="stat in ['fue', 'agi', 'res', 'esp']" :key="stat">
                                 {{ stat.toUpperCase() }}
-                                <span class="numero">{{ ficha.derivados.salvaciones[stat] || 0 }}</span>
+                                <span class="numero">{{ ficha.derivados.salvaciones[stat] || 0 }}
+                                    <tiraDado :tirada='"1d20+" + (ficha.derivados.salvaciones[stat] || 0)'
+                                        :origin='"Salvación de " + stat.toLocaleUpperCase()' />
+                                </span>
                             </div>
                         </div>
                     </div>
@@ -837,6 +842,7 @@ const mostrarToolbar = ref(false)
             </div>
         </div>
     </div>
+    <LanzadorDados />
 
 </template>
 

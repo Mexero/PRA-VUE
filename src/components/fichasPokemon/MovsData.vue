@@ -1,4 +1,7 @@
 <script setup>
+
+import tiraDado from '../tiraDado.vue';
+
 const props = defineProps([
     'ficha',
     'mov'
@@ -72,11 +75,16 @@ function computarCD(stat) {
             <p v-if="mov.danno">
                 <strong>Daño: </strong>
                 {{ computarDanno(mov.danno, mayorStat(mov.statsAso)) }}
+                <tiraDado :tirada='computarDanno(mov.danno, mayorStat(mov.statsAso)).split(" ").join("")'
+                    :origin='"Daño de " + mov.nombre' />
             </p>
             <p v-if="mov.etiquetas"><strong>Etiquetas: </strong>{{ mov.etiquetas }}</p>
-            <p v-if="mov.ataque">
-                <strong>Bono Tirada: </strong> {{ ComputarTdA(mayorStat(mov.statsAso)) }}
-            </p>
+            <div v-if="mov.ataque">
+                <span><strong>Bono Tirada: </strong> {{ ComputarTdA(mayorStat(mov.statsAso)) }}</span>
+                <tiraDado :tirada='("1d20" + ComputarTdA(mayorStat(mov.statsAso))).split(" ").join("")' :origin='"TdA de " +
+                    mov.nombre' />
+
+            </div>
             <p v-if="mov.salvacion">
                 <strong>Salvación: </strong> CD {{ computarCD(mayorStat(mov.statsAso)) }}
             </p>
@@ -91,9 +99,10 @@ function computarCD(stat) {
     </div>
 </template>
 <style scoped>
-.mov-content{
+.mov-content {
     padding: 10px;
 }
+
 .movimiento {
     border-radius: 8px;
     text-align: justify;
