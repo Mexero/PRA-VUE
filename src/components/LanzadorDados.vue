@@ -322,7 +322,6 @@ button img {
     margin-top: 0.5rem;
     border-top: 1px solid #ccc;
     padding-right: 4px;
-    scrollbar-width: thin;
 }
 
 .historial-tiradas ul {
