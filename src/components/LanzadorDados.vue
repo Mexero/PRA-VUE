@@ -145,11 +145,6 @@ function manejarMensaje(evento) {
 // Montar y desmontar oyente de eventos
 onMounted(() => {
     window.addEventListener('message', manejarMensaje)
-
-    console.log(interpretarTirada("12d10+11"))
-    console.log(interpretarTirada("12d10+-11"))
-    console.log(interpretarTirada("10d10-11"))
-    console.log(interpretarTirada("10d8+3x2"))
 })
 
 onUnmounted(() => {
@@ -158,7 +153,6 @@ onUnmounted(() => {
 </script>
 
 <style scoped>
-/* Contenedor flotante */
 .lanzador-widget {
     position: fixed;
     bottom: 0;
@@ -174,7 +168,6 @@ onUnmounted(() => {
     transform: translateY(0);
 }
 
-/* Pestañita lateral */
 .abrir-cerrar {
     position: absolute;
     top: -30px;
@@ -188,7 +181,6 @@ onUnmounted(() => {
     user-select: none;
 }
 
-/* Panel */
 .panel {
     background: #fff;
     border: 1px solid #ccc;
@@ -197,7 +189,6 @@ onUnmounted(() => {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Tirador manual */
 .tirador {
     margin-bottom: 1rem;
 }
@@ -207,7 +198,6 @@ onUnmounted(() => {
     margin-right: 0.3rem;
 }
 
-/* Botones */
 button {
     margin-left: 0.3rem;
     padding: 0.2rem 0.5rem;
@@ -218,7 +208,6 @@ button {
     color: white;
 }
 
-/* Historial de tiradas */
 .historial-tiradas {
     max-height: 200px;
     overflow-y: auto;
@@ -227,7 +216,6 @@ button {
     padding-right: 4px;
 }
 
-/* Scroll fino: Chrome/Edge/Safari */
 .historial-tiradas::-webkit-scrollbar {
     width: 6px;
 }
@@ -247,13 +235,11 @@ button {
     background-color: #2980b9;
 }
 
-/* Scroll fino: Firefox */
 .historial-tiradas {
     scrollbar-width: thin;
     scrollbar-color: #3498db #f0f0f0;
 }
 
-/* Lista como tarjetas */
 .historial-tiradas li {
     background: #f9f9f9;
     border: 1px solid #ccc;
@@ -277,7 +263,6 @@ button {
     font-size: 0.85rem;
 }
 
-/* Última tirada arriba */
 .historial-tiradas ul {
     display: flex;
     flex-direction: column;
