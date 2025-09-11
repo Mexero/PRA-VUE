@@ -149,9 +149,8 @@ watch(mostrarPopup, (isOpen) => {
                             <label class="movilOff">Total:</label>
                             <input type="number" v-model.number="element.total" />
 
+                            <tiraDado :tirada='"1d20+" + (element.total)' :origin='"Tirada de " + element.check' />
                         </div>
-
-                        <tiraDado :tirada='"1d20+" + (element.total)' :origin='"Tirada de " + element.check' />
 
                         <button class="borrar-btn"
                             v-if="!ficha.derivados.checksBase.find(c => c.check === element.check)"

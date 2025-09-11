@@ -123,7 +123,6 @@ aside {
     top: 60px;
     overflow-y: auto;
     overflow-x: hidden;
-    scrollbar-width: thin;
     border-radius: 5px;
     background-color: var(--color-principal1);
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
@@ -180,7 +179,6 @@ aside {
     left: 0;
     overflow-y: auto;
     overflow-x: hidden;
-    scrollbar-width: thin;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 
 }

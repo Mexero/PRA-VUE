@@ -1,14 +1,10 @@
 <template>
     <div class="lanzador-widget" :class="{ abierto }">
-        <!-- Pestañita lateral -->
-        <div class="abrir-cerrar" @click="abierto = !abierto">
-            <img src="/assets/icons/d20.svg" alt="d20" widht="15px" height="15px">
+        <div class="abrir-cerrar" @click="abierto = !abierto" role="button" aria-label="Abrir/Cerrar lanzador">
+            <img src="/assets/icons/d20.svg" alt="d20" width="15" height="15">
         </div>
-
-        <!-- Panel -->
         <div class="panel">
             <h3>Lanzador de Dados</h3>
-
             <!-- Tirador manual -->
             <div class="tirador">
                 Lanzar:
@@ -19,8 +15,11 @@
                 </select>
                 +
                 <input type="number" v-model.number="modificador" />
-                <button @click="tirarManual(`${numDados}${tipoDado}${modificador >= 0 ? '+' : ''}${modificador}`)"><img
-                        src="/assets/icons/d20.svg" alt="d20"></button>
+                <button
+                    @click="tirarManual(`${numDados}${tipoDado}${modificador >= 0 ? '+' : ''}${modificador}`, 'Manual', $event, true)"
+                    type="button" aria-label="Lanzar manual">
+                    <img src="/assets/icons/d20.svg" alt="d20">
+                </button>
             </div>
 
             <!-- Historial de tiradas -->
@@ -32,15 +31,19 @@
                             <span>{{ tirada.notation }} →
                                 <span :title="tirada.results.join(' + ')">{{ tirada.total }} </span>
                             </span>
-                            <button @click="tirarManual(tirada.notation, tirada.origin)"><img
-                                    src="/assets/icons/d20.svg" alt="d20"></button>
+                            <button @click="tirarManual(tirada.notation, tirada.origin, $event)" type="button"
+                                aria-label="Repetir tirada">
+                                <img src="/assets/icons/d20.svg" alt="d20">
+                            </button>
                         </template>
                         <div v-else>
                             <div><strong>{{ tirada.origin }}</strong></div>
                             <span>{{ tirada.notation }} →
                                 <span :title="tirada.results.join(' + ')">{{ tirada.total }} </span>
-                                <button @click="tirarManual(tirada.notation, tirada.origin)"><img
-                                        src="/assets/icons/d20.svg" alt="d20"></button>
+                                <button @click="tirarManual(tirada.notation, tirada.origin, $event)" type="button"
+                                    aria-label="Repetir tirada">
+                                    <img src="/assets/icons/d20.svg" alt="d20">
+                                </button>
                             </span>
                         </div>
                     </li>
@@ -122,7 +125,13 @@ function agregarTirada(tirada) {
     })
 }
 
-function tirarManual(notation, origen = null) {
+
+function tirarManual(notation, origen = null, event = null, deLanzador = false) {
+    if (event && event.currentTarget && deLanzador) {
+        const img = event.currentTarget.querySelector('img')
+        spinImage(img, 600)
+    }
+
     const { resultados, total, notation: notacionFinal } = lanzarDados(notation)
     agregarTirada({
         origin: origen || 'Manual',
@@ -130,6 +139,16 @@ function tirarManual(notation, origen = null) {
         results: resultados,
         total
     })
+}
+
+function spinImage(img, duration = 600) {
+    if (!img) return
+    img.classList.remove('spinning')
+    void img.offsetWidth
+    img.classList.add('spinning')
+    setTimeout(() => {
+        img.classList.remove('spinning')
+    }, duration)
 }
 
 function manejarMensaje(evento) {
@@ -150,7 +169,6 @@ function manejarMensaje(evento) {
         console.error("Error al lanzar los dados:", error.message)
     }
 }
-
 
 // Montar y desmontar oyente de eventos
 onMounted(() => {
@@ -188,6 +206,12 @@ onUnmounted(() => {
     cursor: pointer;
     font-weight: bold;
     user-select: none;
+}
+
+.abrir-cerrar img {
+    width: 15px;
+    height: 15px;
+    display: inline-block;
 }
 
 .panel {
@@ -286,6 +310,9 @@ button img {
     width: 1em;
     height: 1em;
     display: inline-block;
+    transform-origin: center center;
+    will-change: transform;
+    filter: var(--color-icon);
 }
 
 .historial-tiradas {
@@ -295,47 +322,7 @@ button img {
     margin-top: 0.5rem;
     border-top: 1px solid #ccc;
     padding-right: 4px;
-}
-
-.historial-tiradas::-webkit-scrollbar {
-    width: 6px;
-}
-
-.historial-tiradas::-webkit-scrollbar-track {
-    background: #f0f0f0;
-    border-radius: 3px;
-}
-
-.historial-tiradas::-webkit-scrollbar-thumb {
-    background-color: #3498db;
-    border-radius: 3px;
-    border: 1px solid #f0f0f0;
-}
-
-.historial-tiradas::-webkit-scrollbar-thumb:hover {
-    background-color: #2980b9;
-}
-
-.historial-tiradas {
     scrollbar-width: thin;
-    scrollbar-color: #3498db #f0f0f0;
-}
-
-.historial-tiradas li {
-    background-color: var(--color-fondo);
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    padding: 0.4rem 0.6rem;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-    transition: transform 0.1s;
-}
-
-.historial-tiradas li * {
-    margin: 5px;
 }
 
 .historial-tiradas ul {
@@ -345,5 +332,36 @@ button img {
     list-style: none;
     padding-left: 0;
     margin: 0;
+}
+
+.historial-tiradas li {
+    background-color: var(--color-fondo);
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 0.4rem 0.6rem;
+    margin: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: transform 0.1s;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes spin {
+    to {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+.spinning {
+    animation: spin 0.6s linear;
+    -webkit-animation: spin 0.6s linear;
 }
 </style>

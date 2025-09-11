@@ -53,7 +53,6 @@ function mostrarLista(dato) {
         -2px -2px 10px rgba(0, 0, 0, 0.1);
     padding: 1.5rem;
     overflow-y: scroll;
-    scrollbar-width: thin;
 }
 
 .datos {

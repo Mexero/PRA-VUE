@@ -145,7 +145,6 @@ onBeforeUnmount(() => {
     display: flex;
     align-items: center;
     gap: 8px;
-    scrollbar-color: var(--color-principal1);
 }
 
 .input-container {
@@ -249,14 +248,15 @@ textarea {
         flex-direction: column;
     }
 }
+
 @media screen and (max-width: 545px) {
-    
+
     .fila1 {
         display: flex;
         flex-wrap: wrap;
         margin-bottom: 20px;
     }
-  
-    
+
+
 }
 </style>

@@ -1,20 +1,18 @@
 <template>
-    <button @click="enviarTirada"><img width="15px" height="15px" src="/assets/icons/d20.svg" alt="d20"></button>
+    <button type="button" @click="handleClick" aria-label="Lanzar d20">
+        <img src="/assets/icons/d20.svg" alt="d20" :class="{ spinning: isSpinning }" width="15" height="15" />
+    </button>
 </template>
 
 <script setup>
-import { defineProps } from 'vue'
+import { ref } from 'vue'
 
 const props = defineProps({
-    tirada: {
-        type: String,
-        required: true
-    },
-    origin: {
-        type: String,
-        default: 'Botón'
-    }
+    tirada: { type: String, required: true },
+    origin: { type: String, default: 'Botón' }
 })
+
+const isSpinning = ref(false)
 
 function enviarTirada() {
     const mensaje = {
@@ -25,26 +23,53 @@ function enviarTirada() {
     window.postMessage(mensaje, '*')
     console.log('Mensaje enviado:', mensaje)
 }
+
+function handleClick() {
+    enviarTirada()
+    isSpinning.value = true
+    setTimeout(() => {
+        isSpinning.value = false
+    }, 600)
+}
 </script>
 
 <style scoped>
 button {
-    border-radius: 6px;
-    height: 15px;
-    width: 15px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
     border: none;
     background: none;
     cursor: pointer;
-    font-size: 1rem;
-    font-weight: bold;
-    transition: background 0.2s;
+    width: 28px;
+    height: 28px;
+    border-radius: 6px;
 }
 
 img {
-    filter: var(--color-icon)
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+    transform-origin: center center;
+    will-change: transform;
+    filter: var(--color-icon);
 }
 
-button:hover {
-    background: lightgray;
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes spin {
+    to {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+.spinning {
+    animation: spin 0.6s linear;
+    -webkit-animation: spin 0.6s linear;
 }
 </style>

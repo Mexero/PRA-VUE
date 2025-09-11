@@ -594,7 +594,6 @@ function generarEvoluciones(evoEn, nivelEvo, tipoRequisito, requisitosEvo, evoOt
   min-height: 0;
   flex: 1;
   overflow-y: auto;
-  scrollbar-width: thin;
   border: 1px solid #999;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
@@ -603,7 +602,6 @@ function generarEvoluciones(evoEn, nivelEvo, tipoRequisito, requisitosEvo, evoOt
 .details-section {
   max-height: 75vh;
   overflow-y: auto;
-  scrollbar-width: thin;
   padding: 25px;
   background-color: var(--color-hoverBloque);
   border: 2px solid #999;
