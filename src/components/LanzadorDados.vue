@@ -54,33 +54,52 @@ const modificador = ref(0)
 // Estado de abrir/cerrar panel
 const abierto = ref(false)
 
-// Referencia al contenedor del historial
 const historialRef = ref(null)
 
+
 function interpretarTirada(notation) {
-    const regex = /^(\d+)d(\d+)([+-]\d+)?$/i
+    const regex = /^(\d+)d(\d+)(.*)$/i
     const match = notation.match(regex)
-    if (!match) throw new Error('Notación de dados inválida')
+    if (!match) throw new Error("Notación de dados inválida")
 
-    const numDados = parseInt(match[1])
-    const carasDados = parseInt(match[2])
-    const modificador = match[3] ? parseInt(match[3]) : 0
+    const numDados = parseInt(match[1], 10)
+    const carasDados = parseInt(match[2], 10)
+    let resto = match[3] || ""
 
-    return { numDados, carasDados, modificador }
+    const termRegex = /([+-]+)\s*(\d+)(?:\s*[xX×*]\s*(\d+))?/gi
+    let totalMod = 0
+
+    resto.replace(termRegex, (_, signos, num, mult) => {
+        const signoNegativo = ((signos.match(/-/g) || []).length % 2) === 1
+        const signo = signoNegativo ? -1 : 1
+        const valor = parseInt(num, 10)
+        const multiplicador = mult ? parseInt(mult, 10) : 1
+        totalMod += signo * valor * multiplicador
+        return ""
+    })
+
+    const notacionFinal =
+        totalMod === 0
+            ? `${numDados}d${carasDados}`
+            : `${numDados}d${carasDados}${totalMod >= 0 ? "+" : ""}${totalMod}`
+
+    return { numDados, carasDados, modificador: totalMod, notacionFinal }
 }
-
 function lanzarDados(notation) {
-    const { numDados, carasDados, modificador } = interpretarTirada(notation)
+    const { numDados, carasDados, modificador, notacionFinal } = interpretarTirada(notation)
     const resultados = []
     let total = 0
+
     for (let i = 0; i < numDados; i++) {
         const tirada = Math.floor(Math.random() * carasDados) + 1
         resultados.push(tirada)
         total += tirada
     }
+
     total += modificador
     if (modificador) resultados.push(modificador)
-    return { resultados, total }
+
+    return { resultados, total, notation: notacionFinal }
 }
 
 function agregarTirada(tirada) {
@@ -94,10 +113,10 @@ function agregarTirada(tirada) {
 }
 
 function tirarManual(notation) {
-    const { resultados, total } = lanzarDados(notation)
+    const { resultados, total, notation: notacionFinal } = lanzarDados(notation)
     agregarTirada({
-        origin: 'Manual',
-        notation,
+        origin: "Manual",
+        notation: notacionFinal,
         results: resultados,
         total
     })
@@ -105,26 +124,32 @@ function tirarManual(notation) {
 
 function manejarMensaje(evento) {
     const mensaje = evento.data
-    if (!mensaje || mensaje.type !== 'lanzarDados') return
+    if (!mensaje || mensaje.type !== "lanzarDados") return
 
     if (!abierto.value) abierto.value = true
     const { origin, dice } = mensaje
     try {
-        const { resultados, total } = lanzarDados(dice)
+        const { resultados, total, notation: notacionFinal } = lanzarDados(dice)
         agregarTirada({
             origin,
-            notation: dice,
+            notation: notacionFinal,
             results: resultados,
             total
         })
     } catch (error) {
-        console.error('Error al lanzar los dados:', error.message)
+        console.error("Error al lanzar los dados:", error.message)
     }
 }
+
 
 // Montar y desmontar oyente de eventos
 onMounted(() => {
     window.addEventListener('message', manejarMensaje)
+
+    console.log(interpretarTirada("12d10+11"))
+    console.log(interpretarTirada("12d10+-11"))
+    console.log(interpretarTirada("10d10-11"))
+    console.log(interpretarTirada("10d8+3x2"))
 })
 
 onUnmounted(() => {
