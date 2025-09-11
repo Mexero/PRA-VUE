@@ -2,37 +2,47 @@
     <div class="lanzador-widget" :class="{ abierto }">
         <!-- Pestañita lateral -->
         <div class="abrir-cerrar" @click="abierto = !abierto">
-            🎲
+            <img src="/assets/icons/d20.svg" alt="d20" widht="15px" height="15px">
         </div>
 
         <!-- Panel -->
         <div class="panel">
-            <h2>Lanzador de Dados</h2>
+            <h3>Lanzador de Dados</h3>
 
             <!-- Tirador manual -->
             <div class="tirador">
-                <h3>Tirador manual</h3>
                 Lanzar:
-                <select v-model.number="numDados">
-                    <option v-for="n in 5" :key="n" :value="n">{{ n }}</option>
-                </select>
+                <input type="number" v-model.number="numDados" min="0" max="100" />
 
                 <select v-model="tipoDado">
                     <option v-for="d in tiposDados" :key="d" :value="d">{{ d }}</option>
                 </select>
                 +
-                <input type="number" v-model.number="modificador" style="width: 50px;" />
-                <button
-                    @click="tirarManual(`${numDados}${tipoDado}${modificador >= 0 ? '+' : ''}${modificador}`)">🎲</button>
+                <input type="number" v-model.number="modificador" />
+                <button @click="tirarManual(`${numDados}${tipoDado}${modificador >= 0 ? '+' : ''}${modificador}`)"><img
+                        src="/assets/icons/d20.svg" alt="d20"></button>
             </div>
 
             <!-- Historial de tiradas -->
             <div class="historial-tiradas" ref="historialRef">
                 <ul>
                     <li v-for="(tirada, index) in historialTiradas" :key="index">
-                        <strong>{{ tirada.origin }}</strong>: <em>{{ tirada.notation }}</em> Total:
-                        <span :title="tirada.results.join(' + ')">{{ tirada.total }}</span>
-                        <button @click="tirarManual(tirada.notation)">🎲</button>
+                        <template v-if="tirada.origin === 'Manual'">
+                            <strong>{{ tirada.origin }}</strong>
+                            <span>{{ tirada.notation }} →
+                                <span :title="tirada.results.join(' + ')">{{ tirada.total }} </span>
+                            </span>
+                            <button @click="tirarManual(tirada.notation, tirada.origin)"><img
+                                    src="/assets/icons/d20.svg" alt="d20"></button>
+                        </template>
+                        <div v-else>
+                            <div><strong>{{ tirada.origin }}</strong></div>
+                            <span>{{ tirada.notation }} →
+                                <span :title="tirada.results.join(' + ')">{{ tirada.total }} </span>
+                                <button @click="tirarManual(tirada.notation, tirada.origin)"><img
+                                        src="/assets/icons/d20.svg" alt="d20"></button>
+                            </span>
+                        </div>
                     </li>
                 </ul>
             </div>
@@ -112,10 +122,10 @@ function agregarTirada(tirada) {
     })
 }
 
-function tirarManual(notation) {
+function tirarManual(notation, origen = null) {
     const { resultados, total, notation: notacionFinal } = lanzarDados(notation)
     agregarTirada({
-        origin: "Manual",
+        origin: origen || 'Manual',
         notation: notacionFinal,
         results: resultados,
         total
@@ -172,8 +182,7 @@ onUnmounted(() => {
     position: absolute;
     top: -30px;
     right: 0;
-    background: #f39c12;
-    color: white;
+    background: var(--color-principal1);
     padding: 5px 10px;
     border-radius: 8px 8px 0 0;
     cursor: pointer;
@@ -182,10 +191,11 @@ onUnmounted(() => {
 }
 
 .panel {
-    background: #fff;
-    border: 1px solid #ccc;
-    border-radius: 8px 8px 0 0;
+    background: var(--color-fondo);
+    border: 1px solid #8c8c8c;
+    border-radius: 8px 0 0 0;
     padding: 1rem;
+    color: var(--color-texto);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
@@ -198,17 +208,88 @@ onUnmounted(() => {
     margin-right: 0.3rem;
 }
 
-button {
-    margin-left: 0.3rem;
-    padding: 0.2rem 0.5rem;
-    border-radius: 4px;
-    border: 1px solid #999;
+input[type="number"] {
+    color: var(--color-texto);
+    width: 3ch;
+    border: none;
+    border-bottom: 1px solid #555;
+    background: transparent;
+    padding: 2px;
+    font-size: 0.9rem;
+    text-align: center;
+    outline: none;
+}
+
+input[type="number"]:focus {
+    border-bottom: 1px solid #000;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+select {
+    color: var(--color-texto);
+    border: none;
+    border-bottom: 1px solid #555;
+    background: transparent;
+    padding: 2px;
+    font-size: 0.9rem;
+    text-align: center;
+    outline: none;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
     cursor: pointer;
-    background: #3498db;
-    color: white;
+}
+
+select option {
+    color: initial;
+}
+
+select option:focus {
+    color: initial;
+}
+
+select:focus {
+    border-bottom: 1px solid #000;
+}
+
+select {
+    background-image: linear-gradient(45deg, transparent 50%, #555 50%),
+        linear-gradient(135deg, #555 50%, transparent 50%);
+    background-position: right 6px top 50%, right 0 top 50%;
+    background-size: 6px 6px, 6px 6px;
+    background-repeat: no-repeat;
+    padding-right: 16px;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+button {
+    width: 1.5em;
+    height: 1.5em;
+    border: none;
+    background: none;
+    padding: 0;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button img {
+    width: 1em;
+    height: 1em;
+    display: inline-block;
 }
 
 .historial-tiradas {
+    color: var(--color-texto);
     max-height: 200px;
     overflow-y: auto;
     margin-top: 0.5rem;
@@ -241,26 +322,20 @@ button {
 }
 
 .historial-tiradas li {
-    background: #f9f9f9;
+    background-color: var(--color-fondo);
     border: 1px solid #ccc;
     border-radius: 6px;
     padding: 0.4rem 0.6rem;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
     transition: transform 0.1s;
 }
 
-.historial-tiradas li:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
-}
-
-.historial-tiradas li button {
-    margin-left: 0.5rem;
-    padding: 0.2rem 0.5rem;
-    font-size: 0.85rem;
+.historial-tiradas li * {
+    margin: 5px;
 }
 
 .historial-tiradas ul {
