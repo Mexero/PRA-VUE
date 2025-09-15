@@ -215,7 +215,7 @@ input[type="number"] {
 }
 
 
-@media screen and (max-width: 1460px) {
+@media screen and (max-width: 1410px) {
     .info-basica {
         display: grid;
         grid-template-areas:

@@ -380,7 +380,7 @@ details {
     width: 100%;
 }
 
-@media (max-width: 1460px) {
+@media (max-width: 1410px) {
     .checks-list>div {
         display: grid;
         grid-template-columns: 1fr;

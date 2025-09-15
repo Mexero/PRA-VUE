@@ -996,7 +996,7 @@ const mostrarToolbar = ref(false)
 
 
 
-@media screen and (max-width: 1460px) {
+@media screen and (max-width: 1410px) {
     .info-principal {
         width: fit-content;
         display: grid;

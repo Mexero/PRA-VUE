@@ -193,7 +193,7 @@ input[type="number"] {
     appearance: textfield;
 }
 
-@media screen and (max-width: 1460px) {
+@media screen and (max-width: 1410px) {
     .central {
         width: 100%;
     }

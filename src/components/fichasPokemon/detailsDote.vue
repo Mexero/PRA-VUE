@@ -84,7 +84,7 @@ li {
     padding: 10px;
 }
 
-@media screen and (max-width: 1460px) {
+@media screen and (max-width: 1410px) {
     .contenidoDote {
         width: 790px;
     }

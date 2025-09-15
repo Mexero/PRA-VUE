@@ -178,7 +178,7 @@ summary {
     font-style: italic;
 }
 
-@media screen and (max-width: 1460px) {
+@media screen and (max-width: 1410px) {
     .habilidades-list {
         width: 790px;
     }

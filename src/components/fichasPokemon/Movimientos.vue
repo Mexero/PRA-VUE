@@ -154,7 +154,7 @@ function eliminarMov(movimiento, lista) {
     background-color: var(--color-principal2);
 }
 
-@media screen and (max-width: 1460px) {
+@media screen and (max-width: 1410px) {
     .movimiento {
         width: 790px;
     }
