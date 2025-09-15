@@ -98,9 +98,11 @@ function ignoreUpdate() {
 <template>
     <!--Mensaje de actualización-->
     <div v-if="showBanner" class="update-banner">
-        Nueva versión disponible.
-        <button @click="acceptUpdate">Actualizar</button>
-        <button @click="ignoreUpdate">Ignorar</button>
+        <p>Nueva versión disponible.</p>
+        <div>
+            <button @click="acceptUpdate">Actualizar</button>
+            <button @click="ignoreUpdate">Ignorar</button>
+        </div>
     </div>
     <!--Header-->
     <header>
