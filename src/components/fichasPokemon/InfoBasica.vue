@@ -1,7 +1,8 @@
 <script setup>
-import { ref, watch, computed } from 'vue'
+import { ref, watch, computed, onMounted, onBeforeUnmount } from 'vue'
 
 import vClickOutside from '@/directives/clickOutside.js'
+import tablaTipos from '@/localData/json/tablaTipos.json'
 
 const props = defineProps([
     'ficha',
@@ -65,6 +66,91 @@ function ocultarLista() {
         mostrarLista.value = false
     }, 150)
 }
+
+function normalizeType(type) {
+    return type
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+}
+
+const tooltipTipos = ref(null);
+const pos = ref({ x: 0, y: 0 });
+const tooltipEl = ref(null);
+
+function mostrarDebilidadesConjuntas(tipos) {
+    const multipliers = {};
+    const tiposDisponibles = Object.keys(tablaTipos);
+
+    tiposDisponibles.forEach(tipo => (multipliers[tipo] = 1));
+
+    tipos.forEach(tipo => {
+        const key = normalizeType(tipo);
+        tiposDisponibles.forEach(tipo => {
+            const mult = tablaTipos[normalizeType(tipo)]?.[key] ?? 1;
+            multipliers[tipo] *= mult;
+        });
+    });
+
+    const debiles = [];
+    const resistentes = [];
+    const inmunes = [];
+
+    Object.entries(multipliers).forEach(([atk, mult]) => {
+        if (mult === 0) inmunes.push(atk);
+        else if (mult > 1) debiles.push(`${atk}`);
+        else if (mult < 1) resistentes.push(`${atk}`);
+    });
+
+    tooltipTipos.value = { debiles, resistentes, inmunes };
+}
+
+function updatePosition(e) {
+    const el = tooltipEl.value;
+    if (!el) return;
+
+    const rect = el.getBoundingClientRect();
+    let x = e.clientX + 15;
+    let y = e.clientY + 15;
+
+    if (x + rect.width > window.innerWidth) {
+        x = window.innerWidth - rect.width - 5;
+    }
+    if (y + rect.height > window.innerHeight) {
+        y = window.innerHeight - rect.height - 5;
+    }
+
+    pos.value = { x, y };
+}
+
+onMounted(() => {
+    window.addEventListener("mousemove", updatePosition);
+});
+
+onBeforeUnmount(() => {
+    window.removeEventListener("mousemove", updatePosition);
+});
+
+const typeMap = {
+    normal: 'normal',
+    fuego: 'fire',
+    agua: 'water',
+    planta: 'grass',
+    electrico: 'electric',
+    hielo: 'ice',
+    lucha: 'fighting',
+    veneno: 'poison',
+    tierra: 'ground',
+    volador: 'flying',
+    psiquico: 'psychic',
+    bicho: 'bug',
+    roca: 'rock',
+    fantasma: 'ghost',
+    dragon: 'dragon',
+    siniestro: 'dark',
+    acero: 'steel',
+    hada: 'fairy'
+}
 </script>
 
 <template>
@@ -95,17 +181,48 @@ function ocultarLista() {
             </div>
             <button @click="cambiarNivel">Cambiar</button>
         </div>
-        <div class="tipos">
+        <div class="tipos" @mouseenter="mostrarDebilidadesConjuntas(ficha.pokedex.tipos)"
+            @click="mostrarDebilidadesConjuntas(ficha.pokedex.tipos)" @mouseleave="tooltipTipos = null">
             <label for="Tipos">Tipos:</label>
-            <input name="Tipos" class="NombreTipos" v-model="ficha.pokedex.tipos[0]" readonly />
-            <template v-if="ficha.pokedex.tipos[1]">/
-                <input class="NombreTipos" v-model="ficha.pokedex.tipos[1]" readonly />
-            </template>
+
+            <p class="NombreTipos" :class="'type-' + normalizeType(ficha.pokedex.tipos[0])"> {{ ficha.pokedex.tipos[0]
+            }}
+            </p>
+
+            <p v-if="ficha.pokedex.tipos[1]" class="NombreTipos"
+                :class="'type-' + normalizeType(ficha.pokedex.tipos[1])"> {{
+                    ficha.pokedex.tipos[1] }}
+            </p>
+        </div>
+        <div v-if="tooltipTipos" class="tooltip" :style="{ top: pos.y + 'px', left: pos.x + 'px' }" ref="tooltipEl">
+            <div v-if="tooltipTipos.debiles.length">
+                <span>Súper efectivo:</span>
+                <div class="container-tipos">
+                    <img v-for="tipo in tooltipTipos.debiles" :src="`/assets/icons/${typeMap[tipo]}.svg`" :alt="tipo"
+                        class="tipo-icon" :class="'type-' + normalizeType(tipo)" />
+                </div>
+            </div>
+            <div v-if="tooltipTipos.resistentes.length">
+                <span>Poco efectivo:</span>
+                <div class="container-tipos">
+                    <img v-for="tipo in tooltipTipos.resistentes" :src="`/assets/icons/${typeMap[tipo]}.svg`"
+                        :alt="tipo" class="tipo-icon" :class="'type-' + normalizeType(tipo)" />
+                </div>
+            </div>
+            <div v-if="tooltipTipos.inmunes.length">
+                <span>Inmune:</span>
+                <div class="container-tipos">
+                    <img v-for="tipo in tooltipTipos.inmunes" :src="`/assets/icons/${typeMap[tipo]}.svg`" :alt="tipo"
+                        class="tipo-icon" :class="'type-' + normalizeType(tipo)" />
+                </div>
+            </div>
         </div>
     </section>
 </template>
 
 <style scoped>
+@import url(../../css/typeColors.css);
+
 .info-basica {
     border-bottom: 1px solid rgba(150, 150, 150, 0.798);
     padding-bottom: 20px;
@@ -128,6 +245,7 @@ function ocultarLista() {
 
 .tipos {
     flex-wrap: nowrap;
+    border-radius: 5px;
 }
 
 input {
@@ -144,7 +262,6 @@ input {
 label {
     font-weight: bold;
     white-space: nowrap;
-    /* evita que el label se parta */
 }
 
 input:focus {
@@ -156,9 +273,16 @@ input[name="Nivel"] {
 }
 
 .NombreTipos {
+    padding: 6px 10px;
+    text-align: center;
     width: 100px;
+    border-radius: 8px;
+    font-weight: bold;
+    color: black;
+    text-transform: capitalize;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
-
 
 
 /* Botón */
@@ -170,7 +294,6 @@ button {
     border-radius: 6px;
     cursor: pointer;
     flex-shrink: 0;
-    /* evita que el botón se aplaste demasiado */
 }
 
 button:hover {
@@ -214,6 +337,45 @@ input[type="number"] {
 
 }
 
+.tooltip {
+    position: fixed;
+    background: var(--color-fondo);
+    color: var(--color-texto);
+    padding: 4px 12px 8px 8px;
+    border-radius: 8px;
+    max-width: 250px;
+    z-index: 10;
+    pointer-events: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+
+}
+
+.tooltip>div {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 6px;
+}
+
+.tooltip span {
+    font-weight: bold;
+    min-width: 110px;
+    text-align: right;
+}
+
+.container-tipos {
+    display: flex;
+    flex-wrap: wrap !important;
+    gap: 4px;
+    max-width: 155px;
+}
+
+.tipo-icon {
+    padding: 5px;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+}
 
 @media screen and (max-width: 1410px) {
     .info-basica {

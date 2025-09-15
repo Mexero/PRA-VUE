@@ -72,7 +72,7 @@ function eliminarMov(movimiento, lista) {
                     <details class="movimiento">
                         <summary class="movimiento-summary">
                             {{ mov }}
-                            <button @click="eliminarMov(mov, 'aprendidos')" class="borrar-btn">x</button>
+                            <button @click="eliminarMov(mov, 'aprendidos')" class="borrar-btn">×</button>
                         </summary>
                         <MovsData v-if="getMovimientoCompleto(mov)" :ficha="ficha" :mov="getMovimientoCompleto(mov)" />
                     </details>

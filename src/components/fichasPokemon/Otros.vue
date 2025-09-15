@@ -102,7 +102,6 @@ onBeforeUnmount(() => {
                             </li>
                         </ul>
                     </div>
-                    <!--  <button @click="confirmarNaturaleza">Cambiar</button> -->
                 </div>
 
                 <div class="item">Teratipo: <input v-model="ficha.personaliz.teratipo" /></div>
@@ -110,12 +109,11 @@ onBeforeUnmount(() => {
             <div class="fila2">
                 <div class="item item-inline">
                     Sentidos:
-                    <textarea v-model="ficha.derivados.sentidos" readonly
-                        :size="Math.max(1, 0.80 * String(ficha.derivados.sentidos || '').length)"> </textarea>
+                    <p class="underline"> {{ ficha.derivados.sentidos }}</p>
                 </div>
                 <div class="item item-inline">
                     Evolución:
-                    <textarea v-model="ficha.pokedex.otros.evolucion" readonly></textarea>
+                    <p class="underline"> {{ ficha.pokedex.otros.evolucion }}</p>
                 </div>
             </div>
 
@@ -197,16 +195,8 @@ input {
     min-width: 250px;
 }
 
-textarea {
-    height: 69px;
+.underline {
     width: 100%;
-    resize: none;
-    overflow-wrap: break-word;
-    word-break: break-word;
-    font-size: medium;
-    background-color: transparent;
-    padding: 4px 0;
-    border: none;
     border-bottom: 1px solid;
     color: var(--color-texto);
 }

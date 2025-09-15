@@ -154,7 +154,7 @@ watch(mostrarPopup, (isOpen) => {
 
                         <button class="borrar-btn"
                             v-if="!ficha.derivados.checksBase.find(c => c.check === element.check)"
-                            @click="removeCheck(index)">X</button>
+                            @click="removeCheck(index)">×</button>
                     </div>
                 </template>
             </draggable>
@@ -206,7 +206,7 @@ watch(mostrarPopup, (isOpen) => {
     color: var(--color-texto);
     cursor: pointer;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 30px;
     line-height: 0px;
     height: 40px;
     width: 40px;

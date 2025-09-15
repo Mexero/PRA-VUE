@@ -2,7 +2,7 @@
     <details class="dote">
         <summary class="titulo">
             <span>{{ dote.Nombre }}</span>
-            <button @mousedown.prevent.stop="$emit('eliminar')" class="borrar-btn" title="Eliminar Dote">x</button>
+            <button @mousedown.prevent.stop="$emit('eliminar')" class="borrar-btn" title="Eliminar Dote">×</button>
         </summary>
         <div class="contenidoDote">
             <p><strong>Tipo:</strong> {{ dote.Tipo }}</p>

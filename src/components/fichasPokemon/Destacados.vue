@@ -44,17 +44,10 @@ function bajarGrado(checkName) {
                 <div class="item">
                     <label>BH: </label>
                     <input type="number" v-model.number="ficha.derivados.bh" :readonly="!ficha.manual.bh" />
-                    <!--  
-                <input type="checkbox" v-model="ficha.manual.bh" />
-                 -->
                 </div>
 
                 <div class="item CA">CA:
                     <input v-model.number="ficha.derivados.ca" :readonly="!ficha.manual.ca" />
-                    <!--  
-   <input type="checkbox" v-model="ficha.manual.ca">
-                  -->
-
                     <select v-if="ficha.pokedex.calculosCA.length > 1" v-model="ficha.derivados.caElegida">
                         <option v-for="(calculo, i) in ficha.pokedex.calculosCA" :value="i">{{ calculo }}</option>
                     </select>
@@ -82,14 +75,11 @@ function bajarGrado(checkName) {
                         ">
                     +
                 </button>
-                
-                <input type="checkbox" v-model="ficha.manual.init" />
-                -->
+                            -->
                 </div>
 
                 <div class="item">
                     <label>VIT:
-                        <!-- <input type="checkbox" v-model="ficha.manual.vit" /> -->
                     </label>
 
                     <input v-model.number="ficha.derivados.vit" :readonly="!ficha.manual.vit" />
@@ -98,8 +88,6 @@ function bajarGrado(checkName) {
             <div class="fila">
                 <div class="item">
                     <label>PV:
-                        <!-- <input type="checkbox" v-model="ficha.manual.pvMax" /> -->
-
                     </label>
                     <input v-model.number="ficha.derivados.pv" /> /
                     <input v-model.number="ficha.derivados.pvMax" :readonly="!ficha.manual.pvMax" />
@@ -111,9 +99,7 @@ function bajarGrado(checkName) {
 
                 <div class="item">
                     <label>PP:
-                        <!-- <input type="checkbox" v-model="ficha.manual.ppMax" /> -->
                     </label>
-
                     <input v-model.number="ficha.derivados.pp" /> /
                     <input v-model.number="ficha.derivados.ppMax" :readonly="!ficha.manual.ppMax" />
 

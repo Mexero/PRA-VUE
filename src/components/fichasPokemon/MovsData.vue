@@ -63,12 +63,45 @@ function computarCD(stat) {
     const final = 10 + props.ficha.derivados.bh + stat - props.ficha.derivados.fatiga
     return Math.max(final, 0);
 }
+
+function normalizeType(type) {
+    if (type === null) return 0
+    return type
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+}
+
+const typeMap = {
+    normal: 'normal',
+    fuego: 'fire',
+    agua: 'water',
+    planta: 'grass',
+    electrico: 'electric',
+    hielo: 'ice',
+    lucha: 'fighting',
+    veneno: 'poison',
+    tierra: 'ground',
+    volador: 'flying',
+    psiquico: 'psychic',
+    bicho: 'bug',
+    roca: 'rock',
+    fantasma: 'ghost',
+    dragon: 'dragon',
+    siniestro: 'dark',
+    acero: 'steel',
+    hada: 'fairy'
+}
 </script>
 
 <template>
     <div class="mov-content">
         <div class="mov-data">
-            <p><strong>Tipo: </strong>{{ mov.tipo }}</p>
+            <p class="tipo">
+                Tipo:
+                <img v-if="mov.tipo" :src="`/assets/icons/${typeMap[normalizeType(mov.tipo)]}.svg`" :alt="mov.tipo"
+                    class="tipo-icon" :class="'type-' + normalizeType(mov.tipo)" />
+            </p>
             <p><strong>Acción: </strong>{{ mov.accion }}</p>
             <p><strong>Coste: </strong>{{ computarCoste(mov.coste) }}</p>
             <p><strong>Rango: </strong>{{ mov.rango }}</p>
@@ -99,6 +132,8 @@ function computarCD(stat) {
     </div>
 </template>
 <style scoped>
+@import url(../../css/typeColors.css);
+
 .mov-content {
     padding: 10px;
 }
@@ -120,5 +155,21 @@ function computarCD(stat) {
 
 p {
     padding-bottom: 10px;
+}
+
+.tipo-icon {
+    display: inline-block;
+    padding: 3.5px;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    box-sizing: border-box;
+}
+
+.tipo {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-weight: 700;
 }
 </style>

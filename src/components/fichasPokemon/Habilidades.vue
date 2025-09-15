@@ -101,7 +101,7 @@ function eliminarHabExtra(index) {
                 <details class="item" v-for="(hab, i) in habsExtra" :key="'extra-' + i">
                     <summary class="tituloHabExtra">
                         <span>{{ hab.nombre }}</span>
-                        <button @mousedown.prevent.stop="eliminarHabExtra(i)" class="borrar-btn">x</button>
+                        <button @mousedown.prevent.stop="eliminarHabExtra(i)" class="borrar-btn">×</button>
                     </summary>
                     <div class="descripcion">
                         <p v-for="parrafo in hab.descripcion" v-html="parrafo"></p>
