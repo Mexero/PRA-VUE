@@ -497,7 +497,7 @@
   {
     "Nombre": "Protección X",
     "Imagen": null,
-    "Descripcion": "Hasta el final de la Escena, cuando hacen una Tirada de Ataque contra ti que te golpea, decides aumentar tu CA en 1, puediendo volverla un fallo. Luego, pierdes este beneficio.",
+    "Descripcion": "Hasta el final de la Escena, cuando hacen una Tirada de Ataque contra ti que te golpea, decides aumentar tu Evasión en 1, puediendo volverla un fallo. Luego, pierdes este beneficio.",
     "Tipo": "Potenciador",
     "Rareza": "Común",
     "Coste": 500,
@@ -533,7 +533,7 @@
   {
     "Nombre": "Gragea evasiva",
     "Imagen": null,
-    "Descripcion": "Hasta el final de la Escena, tu CA aumenta en 1. ",
+    "Descripcion": "Hasta el final de la Escena, tu Evasión aumenta en 1. ",
     "Tipo": "Potenciador",
     "Rareza": "Poco común",
     "Coste": 1000,
@@ -650,7 +650,7 @@
   {
     "Nombre": "Hierba copia",
     "Imagen": null,
-    "Descripcion": "Cuando la llevas encima y como Reacción cuando una criatura a menos de 3 metros aumenta el daño base de sus Movimientos, alguna de sus Velocidades o su CA, copias el efecto. Cuando lo haces, la hoja se vuelve polvo.",
+    "Descripcion": "Cuando la llevas encima y como Reacción cuando una criatura a menos de 3 metros aumenta el daño base de sus Movimientos, alguna de sus Velocidades o su Evasión, copias el efecto. Cuando lo haces, la hoja se vuelve polvo.",
     "Tipo": "Planta",
     "Rareza": "Raro",
     "Coste": 1000,
@@ -686,7 +686,7 @@
   {
     "Nombre": "Semilla hierba",
     "Imagen": null,
-    "Descripcion": "Puedes sacar esta semilla cuando estás en un Campo de Hierba como Acción y esta reacciona con el campo, consumiéndose, y tu CA aumenta en 1 hasta el final de la Escena.",
+    "Descripcion": "Puedes sacar esta semilla cuando estás en un Campo de Hierba como Acción y esta reacciona con el campo, consumiéndose, y tu Evasión aumenta en 1 hasta el final de la Escena.",
     "Tipo": "Planta",
     "Rareza": "Raro",
     "Coste": 1200,
@@ -911,11 +911,11 @@
   {
     "Nombre": "Gonlan",
     "Imagen": null,
-    "Descripcion": "Cuando te golpean con una Tirada de Ataque cuyo resultado es tu CA, este falla.",
+    "Descripcion": "Cuando te golpean con una Tirada de Ataque cuyo resultado es tu Evasión, este falla.",
     "Tipo": "Baya",
     "Rareza": "Poco común",
     "Coste": null,
-    "ValorMaterial": "200$ para objetos que aumentan la CA."
+    "ValorMaterial": "200$ para objetos que aumentan la Evasión."
   },
   {
     "Nombre": "Aslac",
@@ -1802,7 +1802,7 @@
   {
     "Nombre": "Garra garfio",
     "Imagen": null,
-    "Descripcion": "La CD de los Movimientos que Apresan que lanzas aumenta en 1.",
+    "Descripcion": "La Dificultad de los Movimientos que Apresan que lanzas aumenta en 1.",
     "Tipo": "Amuleto",
     "Rareza": "Raro",
     "Coste": 20000,
@@ -1883,7 +1883,7 @@
   {
     "Nombre": "Brazal recio",
     "Imagen": null,
-    "Descripcion": "Tu Fuerza aumenta en 1, pero tu CA se reduce en 1.",
+    "Descripcion": "Tu Fuerza aumenta en 1, pero tu Evasión se reduce en 1.",
     "Tipo": "Amuleto",
     "Rareza": "Raro",
     "Coste": 20000,
@@ -1892,7 +1892,7 @@
   {
     "Nombre": "Lente recia",
     "Imagen": null,
-    "Descripcion": "Tu Mente y tu Presencia aumentan en 1, pero tu CA se reduce en 1.",
+    "Descripcion": "Tu Mente y tu Presencia aumentan en 1, pero tu Evasión se reduce en 1.",
     "Tipo": "Amuleto",
     "Rareza": "Raro",
     "Coste": 20000,
@@ -1901,7 +1901,7 @@
   {
     "Nombre": "Franja recia",
     "Imagen": null,
-    "Descripcion": "Tu Agilidad aumenta en 1, pero tu CA se reduce en 2.",
+    "Descripcion": "Tu Agilidad aumenta en 1, pero tu Evasión se reduce en 2.",
     "Tipo": "Amuleto",
     "Rareza": "Raro",
     "Coste": 20000,
@@ -2162,7 +2162,7 @@
   {
     "Nombre": "Pieza de Armadura Pesada",
     "Imagen": null,
-    "Descripcion": "Una pieza de Armadura que te protege del daño a costa de tu movilidad. Las partes que cubren una pieza de la armadura son pecho, brazos, piernas o cabeza. Por cada pieza de armadura pesada que llevas, tu CA aumenta en 1 y tus Velocidades se reducen en 1. Este Equipo es pequeño pero pesa como uno Mediano.",
+    "Descripcion": "Una pieza de Armadura que te protege del daño a costa de tu movilidad. Las partes que cubren una pieza de la armadura son pecho, brazos, piernas o cabeza. Por cada pieza de armadura pesada que llevas, tu Evasión aumenta en 1 y tus Velocidades se reducen en 1. Este Equipo es pequeño pero pesa como uno Mediano.",
     "Tipo": "Equipo",
     "Rareza": "Raro",
     "Coste": 10000,
@@ -2171,7 +2171,7 @@
   {
     "Nombre": "Pieza de Armadura Ligera",
     "Imagen": null,
-    "Descripcion": "Una pieza de Armadura que te protege del daño levemente. Las partes que cubren una pieza de la armadura son pecho, brazos, piernas o cabeza. Por cada dos piezas de armadura ligera que llevas, tu CA aumenta en 1. Este Equipo es pequeño.",
+    "Descripcion": "Una pieza de Armadura que te protege del daño levemente. Las partes que cubren una pieza de la armadura son pecho, brazos, piernas o cabeza. Por cada dos piezas de armadura ligera que llevas, tu Evasión aumenta en 1. Este Equipo es pequeño.",
     "Tipo": "Equipo",
     "Rareza": "Raro",
     "Coste": 10000,
@@ -2594,7 +2594,7 @@
   {
     "Nombre": "Kit de primeros auxilios",
     "Imagen": null,
-    "Descripcion": "Contiene vendas y productos médicos mundanos que pueden usarse como Acción Extendida sobre una criatura a 0 PV. Para hacerlo, el entrenador realiza una Tirada de Conocimiento Médico (Mente) CD 10. Si la pasa, la criatura recupera 1 PV y deja de estar inconsciente. Este kit tiene 10 usos y un valor total del 500$ y su Carga es de 25.",
+    "Descripcion": "Contiene vendas y productos médicos mundanos que pueden usarse como Acción Extendida sobre una criatura a 0 PV. Para hacerlo, el entrenador realiza una Tirada de Conocimiento Médico (Mente) Dificultad 10. Si la pasa, la criatura recupera 1 PV y deja de estar inconsciente. Este kit tiene 10 usos y un valor total del 500$ y su Carga es de 25.",
     "Tipo": "Objetos de entrenador",
     "Rareza": "Común",
     "Coste": 1000,
@@ -2693,7 +2693,7 @@
   {
     "Nombre": "Flauta blanca",
     "Imagen": null,
-    "Descripcion": "Puedes tocar esta flauta como Acción y gastar 2 PP. Cuando lo haces, las criaturas a menos de 2 metros de ti hacen una Tirada de Salvación de Espíritu CD 15. Si la fallan, quedan infatuados por ti hasta el final de la Escena.",
+    "Descripcion": "Puedes tocar esta flauta como Acción y gastar 2 PP. Cuando lo haces, las criaturas a menos de 2 metros de ti hacen una Tirada de Salvación de Espíritu Dificultad 15. Si la fallan, quedan infatuados por ti hasta el final de la Escena.",
     "Tipo": "Objetos de entrenador",
     "Rareza": "Raro",
     "Coste": 10000,
@@ -2702,7 +2702,7 @@
   {
     "Nombre": "Flauta negra",
     "Imagen": null,
-    "Descripcion": "Puedes tocar esta flauta como Acción y gastar 1 PP. Cuando lo haces, las criaturas a menos de 2 metros de ti hacen una Tirada de Salvación de Espíritu CD 15. Si la fallan, quedan asustados de ti hasta el final de su próximo turno.",
+    "Descripcion": "Puedes tocar esta flauta como Acción y gastar 1 PP. Cuando lo haces, las criaturas a menos de 2 metros de ti hacen una Tirada de Salvación de Espíritu Dificultad 15. Si la fallan, quedan asustados de ti hasta el final de su próximo turno.",
     "Tipo": "Objetos de entrenador",
     "Rareza": "Raro",
     "Coste": 10000,
@@ -2783,7 +2783,7 @@
   {
     "Nombre": "Bola de lodo",
     "Imagen": null,
-    "Descripcion": "Puedes lanzar esta bola como Acción a una distancia de 5 metros. La criatura hace una Tirada de Salvación de Resistencia CD 12, llenándole el rostro de barro si la falla. La criatura está cegada mientras tenga barro en la cara, el cual puede quitarse como Acción.\nPuede ser recolectada en zonas embarradas como Acción Extendida.",
+    "Descripcion": "Puedes lanzar esta bola como Acción a una distancia de 5 metros. La criatura hace una Tirada de Salvación de Resistencia Dificultad 12, llenándole el rostro de barro si la falla. La criatura está cegada mientras tenga barro en la cara, el cual puede quitarse como Acción.\nPuede ser recolectada en zonas embarradas como Acción Extendida.",
     "Tipo": "Objetos de entrenador (Consumible)",
     "Rareza": "Común",
     "Coste": 100,
@@ -2801,7 +2801,7 @@
   {
     "Nombre": "Bola mala",
     "Imagen": null,
-    "Descripcion": "Puedes lanzar esta bola como Acción a una distancia de 5 metros. La bola explota liberando vapor venenoso en un radio de 2 metros que se mantiene en ese lugar hasta el final de la Escena o hasta que un Movimiento con la etiqueta de Viento afecte el área. Este humo no bloquea la visión. Una criatura que entra o que empieza su turno en el humo hace una Salvación de Resistencia CD 14. Si la falla, queda envenenada hasta el final de la Escena.",
+    "Descripcion": "Puedes lanzar esta bola como Acción a una distancia de 5 metros. La bola explota liberando vapor venenoso en un radio de 2 metros que se mantiene en ese lugar hasta el final de la Escena o hasta que un Movimiento con la etiqueta de Viento afecte el área. Este humo no bloquea la visión. Una criatura que entra o que empieza su turno en el humo hace una Salvación de Resistencia Dificultad 14. Si la falla, queda envenenada hasta el final de la Escena.",
     "Tipo": "Objetos de entrenador (Consumible)",
     "Rareza": "Poco común",
     "Coste": 400,
@@ -2810,7 +2810,7 @@
   {
     "Nombre": "Bola luminiscente",
     "Imagen": null,
-    "Descripcion": "Puedes lanzar esta bola como Acción a una distancia de 5 metros. La bola explota, esparciendo un líquido luminiscente sobre el suelo que deja de brillar al final de la Escena. Si una criatura está en el radio de explosión, debe hacer una Tirada de Salvación de Agilidad CD 14. Si la falla, esta también queda empapada y empieza a brillar. \nEste brillo la deslumbra, por lo que tiene Desventaja Tiradas de Habilidad de Percepción y las Tiradas de Ataque hechas contra esta se hacen en Ventaja. Una criatura empapada de este líquido puede usar su Acción o su Movimiento para quitarse el líquido.",
+    "Descripcion": "Puedes lanzar esta bola como Acción a una distancia de 5 metros. La bola explota, esparciendo un líquido luminiscente sobre el suelo que deja de brillar al final de la Escena. Si una criatura está en el radio de explosión, debe hacer una Tirada de Salvación de Agilidad Dificultad 14. Si la falla, esta también queda empapada y empieza a brillar. \nEste brillo la deslumbra, por lo que tiene Desventaja Tiradas de Habilidad de Percepción y las Tiradas de Ataque hechas contra esta se hacen en Ventaja. Una criatura empapada de este líquido puede usar su Acción o su Movimiento para quitarse el líquido.",
     "Tipo": "Objetos de entrenador (Consumible)",
     "Rareza": "Poco común",
     "Coste": 400,
@@ -2819,7 +2819,7 @@
   {
     "Nombre": "Bola pegajosa",
     "Imagen": null,
-    "Descripcion": "Puedes lanzar esta bola como Acción a una distancia de 5 metros. La bola explota en un radio de 2 metros, esparciendo un líquido sobre el suelo. El suelo manchado por el líquido se considera Terreno Difícil hasta el final de la Escena y las criaturas que inician su turno en este área o que entran en esta hacen una Tirada de Salvación de Fuerza CD 14. Si la fallan, quedan pegadas al suelo y se consideran apresadas.\nComo Acción, una criatura puede repetir la Tirada, despegándose de la red y dejando de estar apresadas si la pasan.",
+    "Descripcion": "Puedes lanzar esta bola como Acción a una distancia de 5 metros. La bola explota en un radio de 2 metros, esparciendo un líquido sobre el suelo. El suelo manchado por el líquido se considera Terreno Difícil hasta el final de la Escena y las criaturas que inician su turno en este área o que entran en esta hacen una Tirada de Salvación de Fuerza Dificultad 14. Si la fallan, quedan pegadas al suelo y se consideran apresadas.\nComo Acción, una criatura puede repetir la Tirada, despegándose de la red y dejando de estar apresadas si la pasan.",
     "Tipo": "Objetos de entrenador (Consumible)",
     "Rareza": "Raro",
     "Coste": 600,
@@ -2828,7 +2828,7 @@
   {
     "Nombre": "Bola ruidosa",
     "Imagen": null,
-    "Descripcion": "Puedes lanzar esta bola como Acción a una distancia de 5 metros. La bola explota en un radio de 2 metros, con un ruido estridente. \nSi una criatura está en el radio de explosión, debe hacer una Tirada de Salvación de Espíritu CD 14. Si la falla, queda asustada hasta el final de la Escena.",
+    "Descripcion": "Puedes lanzar esta bola como Acción a una distancia de 5 metros. La bola explota en un radio de 2 metros, con un ruido estridente. \nSi una criatura está en el radio de explosión, debe hacer una Tirada de Salvación de Espíritu Dificultad 14. Si la falla, queda asustada hasta el final de la Escena.",
     "Tipo": "Objetos de entrenador (Consumible)",
     "Rareza": "Poco común",
     "Coste": 400,
@@ -2837,7 +2837,7 @@
   {
     "Nombre": "Calmaesfera",
     "Imagen": null,
-    "Descripcion": "Puedes lanzar esta bola como Acción a una distancia de 5 metros. La bola explota en un radio de 2 metros, liberando un vapor calmante que rápidamente se disipa. \nSi una criatura está en el radio de explosión, debe hacer una Tirada de Salvación de Espíritu CD 14. Si la falla, queda infatuada por ti hasta el final de la Escena.",
+    "Descripcion": "Puedes lanzar esta bola como Acción a una distancia de 5 metros. La bola explota en un radio de 2 metros, liberando un vapor calmante que rápidamente se disipa. \nSi una criatura está en el radio de explosión, debe hacer una Tirada de Salvación de Espíritu Dificultad 14. Si la falla, queda infatuada por ti hasta el final de la Escena.",
     "Tipo": "Objetos de entrenador (Consumible)",
     "Rareza": "Poco común",
     "Coste": 400,
@@ -2855,7 +2855,7 @@
   {
     "Nombre": "Toxiestrellas",
     "Imagen": null,
-    "Descripcion": "Lanzas estrellas tóxicas en un área circular de 1 metro de radio a menos de 5 metros de ti. Este área es considerada Terreno Difícil y, cuando una criatura empieza su turno o entra en el área hace una Tirada de Salvación de Resistencia CD 14. Si la falla, queda envenenada hasta el final de su próximo turno.",
+    "Descripcion": "Lanzas estrellas tóxicas en un área circular de 1 metro de radio a menos de 5 metros de ti. Este área es considerada Terreno Difícil y, cuando una criatura empieza su turno o entra en el área hace una Tirada de Salvación de Resistencia Dificultad 14. Si la falla, queda envenenada hasta el final de su próximo turno.",
     "Tipo": "Objetos de entrenador (Consumible)",
     "Rareza": "Raro",
     "Coste": 600,

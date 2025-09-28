@@ -464,7 +464,7 @@
                 <strong>Kit de primeros auxilios</strong>: Contiene vendas y productos
                 médicos mundanos que pueden usarse como Acción Extendida sobre una
                 criatura a 0 PV. Para hacerlo, el entrenador realiza una Tirada de
-                Conocimiento Médico (Mente) CD 10. Si la pasa, la criatura recupera 1 PV
+                Conocimiento Médico (Mente) Dificultad 10. Si la pasa, la criatura recupera 1 PV
                 y deja de estar inconsciente. Este kit tiene 10 usos y un valor total
                 del 500$ y su Carga es de 25.
             </p>
@@ -767,8 +767,8 @@
                 materiales tienen un coste equivalente al 75% del coste del objeto final
                 y pueden ser llevados a artesanos para que los transformen en sus
                 objetos asociados o, alternativamente, si un Inventor supera una Tirada
-                de Conocimiento Tecnológico CD 35 para los Mega Abalorios y las Pulseras
-                Z ó CD 25 para la Maximuñequera y el Orbe Teracristal, sabe cómo
+                de Conocimiento Tecnológico Dificultad 35 para los Mega Abalorios y las Pulseras
+                Z ó Dificultad 25 para la Maximuñequera y el Orbe Teracristal, sabe cómo
                 convertirlos en sus objetos asociados como una Acción Extendida que
                 requiere materiales comunes extra por valor de un 10% del valor del
                 objeto a fabricar.

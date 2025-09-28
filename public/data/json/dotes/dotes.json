@@ -105,7 +105,7 @@
     },
     "Descripcion": [
       "Cuando un Movimiento hace que una criatura a menos de 5 metros de ti sea objetivo de una Tirada de Ataque a rango, puedes usar tu Reacción para usar un Movimiento que conoces que hace una única Tirada de Ataque a rango por 1 PP más de lo normal.",
-      "Haces una Tirada de Ataque contra la CD del Movimiento que provocó la Reacción y, si la pasas, reduces su daño en una cantidad igual a una tirada de daño de tu Movimiento. Si el daño se reduce a 0 de esta forma, el Movimiento se anula completamente."
+      "Haces una Tirada de Ataque contra la Dificultad del Movimiento que provocó la Reacción y, si la pasas, reduces su daño en una cantidad igual a una tirada de daño de tu Movimiento. Si el daño se reduce a 0 de esta forma, el Movimiento se anula completamente."
     ]
   },
   {
@@ -359,7 +359,7 @@
       ]
     },
     "Descripcion": [
-      "Tus cantos crecen en volumen y poder a medida en que calientas tu voz. Por cada dos Movimientos con la Etiqueta de Sonido que has usado anteriormente desde que empezó la Escena, ganas un bono de +1 a las Tiradas de Ataque y a la CD de tus Movimientos con la Etiqueta de Sonido hasta un máximo de +3."
+      "Tus cantos crecen en volumen y poder a medida en que calientas tu voz. Por cada dos Movimientos con la Etiqueta de Sonido que has usado anteriormente desde que empezó la Escena, ganas un bono de +1 a las Tiradas de Ataque y a la Dificultad de tus Movimientos con la Etiqueta de Sonido hasta un máximo de +3."
     ]
   },
   {
@@ -415,7 +415,7 @@
       ]
     },
     "Descripcion": [
-      "Te vuelves muy bueno usando los Movimientos que te protegen. Puedes beneficiarte de dos Efectos con la Etiqueta de Escudo simultáneamente, pero no de 2 bonos a tu CA gracias a estos."
+      "Te vuelves muy bueno usando los Movimientos que te protegen. Puedes beneficiarte de dos Efectos con la Etiqueta de Escudo simultáneamente, pero no de 2 bonos a tu Evasión gracias a estos."
     ]
   },
   {
@@ -502,10 +502,10 @@
         "tipo": "listaU",
         "contenido": [
           "Adelantado: Te consideras de 2 Niveles más a la hora de elegir Movimientos enseñables de tu lista de Por Nivel.",
-          "Mejor CD: Si el Movimiento tiene un CD, este aumenta en 2",
+          "Mejor Dificultad: Si el Movimiento tiene un Dificultad, este aumenta en 2",
           "Mejores Tiradas de Ataque: Si el Movimiento hace una Tirada de Ataque, tu Grado de Habilidad en esta Tirada de Ataque aumenta en 1 (usualmente, pasa de Bueno a Experto).",
           "Mejor daño: Si el Movimiento hace daño, añades tu BH al daño y, si es Movimiento solo afecta a una Criatura, puedes añadir 2 veces tu BH al daño en lugar de sólo 1 vez.",
-          "Menor coste: Si el Movimiento no tiene CD ni hace Tiradas de Ataque, su coste se reduce en 1 PP."
+          "Menor coste: Si el Movimiento no tiene Dificultad ni hace Tiradas de Ataque, su coste se reduce en 1 PP."
         ]
       },
       "No puedes reentrenar esta Dote."
@@ -849,7 +849,7 @@
       ]
     },
     "Descripcion": [
-      "Aprendes a fragmentar la barrera mágica que te protege y a compartirla con una Criatura. Como Acción Extendida, compartes tu barrera con otra Criatura dispuesta, a la cual que tocas. Tu CA se reduce en 1 y la CA de la Criatura se vuelve igual a la tuya si es inferior a esta. Además, puedes usar tus Movimientos de Mentalista desde la posición de la Criatura con la que compartes tu barrera.",
+      "Aprendes a fragmentar la barrera mágica que te protege y a compartirla con una Criatura. Como Acción Extendida, compartes tu barrera con otra Criatura dispuesta, a la cual que tocas. Tu Evasión se reduce en 1 y la Evasión de la Criatura se vuelve igual a la tuya si es inferior a esta. Además, puedes usar tus Movimientos de Mentalista desde la posición de la Criatura con la que compartes tu barrera.",
       "Como Acción, puedes dejar de compartir tu barrera y, si vuelves a compartir tu barrera con otra Criatura la que habías otorgado a la primera se disipa. "
     ]
   },
@@ -955,7 +955,7 @@
     "Nivel": null,
     "Prerrequisitos": "Ser Bueno en Conocimiento de Cocina",
     "Descripcion": [
-      "Te vuelves un cocinero capaz de crear comidas tan deliciosas que otorgan beneficios a quienes las consumen. Aprendes a cocinar Comidas de rareza Común con tus Utensilios de Cocina. Para cocinarlas, debes tomar una Acción Extendida que dura 30 minutos por cada 1000$ que estas Comidas cuestan y consume materiales por de valor equivalente a tres cuartas partes de su coste. Al final de esta Acción Extendida, haces una Tirada de Conocimiento de Cocina (Espíritu) CD 10 por cada Comida que cocinas. Si la fallas, la comida asociada no otorga beneficios pero puede comerse de todas formas."
+      "Te vuelves un cocinero capaz de crear comidas tan deliciosas que otorgan beneficios a quienes las consumen. Aprendes a cocinar Comidas de rareza Común con tus Utensilios de Cocina. Para cocinarlas, debes tomar una Acción Extendida que dura 30 minutos por cada 1000$ que estas Comidas cuestan y consume materiales por de valor equivalente a tres cuartas partes de su coste. Al final de esta Acción Extendida, haces una Tirada de Conocimiento de Cocina (Espíritu) Dificultad 10 por cada Comida que cocinas. Si la fallas, la comida asociada no otorga beneficios pero puede comerse de todas formas."
     ]
   },
   {
@@ -1179,7 +1179,7 @@
       ]
     },
     "Descripcion": [
-      "Aprendes a fabricar Poké Balls. Ganas los siguientes beneficios. Aprendes a preparar Poké Balls de rareza Común (usualmente, esto quiere decir que sólo puedes crear Poké Balls normales) con tus Herramientas de Poké Balls. Para prepararlas, debes tomar una Acción Extendida que dura 30 minutos por cada 1000$ que estas Poké Balls cuestan y consume materiales por de valor equivalente a tres cuartas partes de su coste. Al final de esta Acción Extendida, haces una Tirada de Habilidad de Conocimiento de Poké Balls (Mente) CD 10 por cada Poké Ball que preparas. Si la fallas, la Poké Ball no funciona."
+      "Aprendes a fabricar Poké Balls. Ganas los siguientes beneficios. Aprendes a preparar Poké Balls de rareza Común (usualmente, esto quiere decir que sólo puedes crear Poké Balls normales) con tus Herramientas de Poké Balls. Para prepararlas, debes tomar una Acción Extendida que dura 30 minutos por cada 1000$ que estas Poké Balls cuestan y consume materiales por de valor equivalente a tres cuartas partes de su coste. Al final de esta Acción Extendida, haces una Tirada de Habilidad de Conocimiento de Poké Balls (Mente) Dificultad 10 por cada Poké Ball que preparas. Si la fallas, la Poké Ball no funciona."
     ]
   },
   {
@@ -1213,7 +1213,7 @@
       ]
     },
     "Descripcion": [
-      "Aprendes a preparar algunos Potenciadores básicos. Aprendes a preparar Medicinas de rareza Común con tus Herramientas de Medicina. Para prepararlas, debes tomar una Acción Extendida que dura 30 minutos por cada 1000$ que estas Medicinas cuestan y consume materiales por de valor equivalente a tres cuartas partes de su coste. Al final de esta Acción Extendida, haces una Tirada de Conocimiento Médico (Mente) CD 10 por cada Medicina que preparas. Si la fallas, la Medicina es defectuosa y no otorga ningún beneficio al consumirse."
+      "Aprendes a preparar algunos Potenciadores básicos. Aprendes a preparar Medicinas de rareza Común con tus Herramientas de Medicina. Para prepararlas, debes tomar una Acción Extendida que dura 30 minutos por cada 1000$ que estas Medicinas cuestan y consume materiales por de valor equivalente a tres cuartas partes de su coste. Al final de esta Acción Extendida, haces una Tirada de Conocimiento Médico (Mente) Dificultad 10 por cada Medicina que preparas. Si la fallas, la Medicina es defectuosa y no otorga ningún beneficio al consumirse."
     ]
   },
   {
@@ -1279,7 +1279,7 @@
     "Nivel": 9,
     "Prerrequisitos": null,
     "Descripcion": [
-      "Eres hábil montando, desmontando y guiando a tus Monturas. Una vez por turno, puedes montar, desmontar u ordenar a una Montura que esta se mueva sin coste de Acciones. Además, cuando montas a un Pokémon y un efecto fuese a hacer que quedaras desmontado, por ejemplo, al empujarte, puedes hacer una Tirada Acrobacias (Agilidad) contra la CD del efecto, manteniéndote en tu montura si la pasas."
+      "Eres hábil montando, desmontando y guiando a tus Monturas. Una vez por turno, puedes montar, desmontar u ordenar a una Montura que esta se mueva sin coste de Acciones. Además, cuando montas a un Pokémon y un efecto fuese a hacer que quedaras desmontado, por ejemplo, al empujarte, puedes hacer una Tirada Acrobacias (Agilidad) contra la Dificultad del efecto, manteniéndote en tu montura si la pasas."
     ]
   },
   {
@@ -1639,7 +1639,7 @@
       ]
     },
     "Descripcion": [
-      "Cuando una criatura a menos de 5 metros de ti que te entiende y puede oírte está Asustada o Infatuada, puedes calmarla con tus palabras. Como Acción, puedes hacer una Tirada de Habilidad de Empatía (Espíritu) o Persuasión (Presencia) contra la CD del efecto que dejó Infatuada o Asustada a la criatura. Si la pasas, la criatura deja de estar Asustada e Infatuada."
+      "Cuando una criatura a menos de 5 metros de ti que te entiende y puede oírte está Asustada o Infatuada, puedes calmarla con tus palabras. Como Acción, puedes hacer una Tirada de Habilidad de Empatía (Espíritu) o Persuasión (Presencia) contra la Dificultad del efecto que dejó Infatuada o Asustada a la criatura. Si la pasas, la criatura deja de estar Asustada e Infatuada."
     ]
   },
   {
@@ -1690,7 +1690,7 @@
       ]
     },
     "Descripcion": [
-      "Aprendes a preparar algunos Potenciadores básicos. Aprendes a preparar Potenciadores de rareza Común con tus Herramientas de Química. Para prepararlos, debes tomar una Acción Extendida que dura 30 minutos por cada 1000$ que estos Potenciadores cuestan y consume materiales por de valor equivalente a tres cuartas partes de su coste. Al final de esta Acción Extendida, haces una Tirada de Conocimiento de Química (Mente) CD 10 por cada Potenciador que preparas. Si la fallas, el Potenciador es defectuoso y no otorga ningún beneficio."
+      "Aprendes a preparar algunos Potenciadores básicos. Aprendes a preparar Potenciadores de rareza Común con tus Herramientas de Química. Para prepararlos, debes tomar una Acción Extendida que dura 30 minutos por cada 1000$ que estos Potenciadores cuestan y consume materiales por de valor equivalente a tres cuartas partes de su coste. Al final de esta Acción Extendida, haces una Tirada de Conocimiento de Química (Mente) Dificultad 10 por cada Potenciador que preparas. Si la fallas, el Potenciador es defectuoso y no otorga ningún beneficio."
     ]
   },
   {
@@ -2065,7 +2065,7 @@
       ]
     },
     "Descripcion": [
-      "Cuando haces que una criatura caiga a 0 PV, todas las criaturas rivales a menos de 4 metros de ti hacen una Tirada de Salvación de Espíritu con CD = 10 + tu BH + tu FUE, AGI, MEN ó PRE. Si la fallan, ganan 1 Nivel de Asustado de ti y, cuando están asustados de ti de esta forma, todas sus velocidades se vuelven 0."
+      "Cuando haces que una criatura caiga a 0 PV, todas las criaturas rivales a menos de 4 metros de ti hacen una Tirada de Salvación de Espíritu con Dificultad = 10 + tu BH + tu FUE, AGI, MEN ó PRE. Si la fallan, ganan 1 Nivel de Asustado de ti y, cuando están asustados de ti de esta forma, todas sus velocidades se vuelven 0."
     ]
   },
   {
@@ -2183,7 +2183,7 @@
         "tipo": "listaU",
         "contenido": [
           "Aprendes el Movimiento Día Soleado.",
-          "Cuando creas sol abrasador con tu Día Soleado, puedes decidir que este sea especialmente potente. Si lo haces, una criatura que no es de Tipo Fuego que acaba su turno bajo este sol estando ya acalorada hace una Tirada de Salvación de Resistencia contra un CD = 10 + tu BH + Tu FUE, AGI, MEN ó PRE. Si la falla, gana 1 Nivel de Quemado."
+          "Cuando creas sol abrasador con tu Día Soleado, puedes decidir que este sea especialmente potente. Si lo haces, una criatura que no es de Tipo Fuego que acaba su turno bajo este sol estando ya acalorada hace una Tirada de Salvación de Resistencia contra un Dificultad = 10 + tu BH + Tu FUE, AGI, MEN ó PRE. Si la falla, gana 1 Nivel de Quemado."
         ]
       }
     ]
@@ -2199,7 +2199,7 @@
       ]
     },
     "Descripcion": [
-      "Cuando fueses a dejar infatuada a una criatura que ya está infatuada, esta queda enamorada de ti hasta que deje de estar infatuada. Una criatura enamorada de ti no toma ninguna acción que pueda ser dañina para ti y, como Acción, puedes pedirle que tome una Acción que no sea perjudicial para ella. Esta hace una Tirada de Salvación de Espíritu de CD = 10 + tu BH + tu PRE y, si la falla, debe seguir el curso de acción que has descrito de la mejor forma posible."
+      "Cuando fueses a dejar infatuada a una criatura que ya está infatuada, esta queda enamorada de ti hasta que deje de estar infatuada. Una criatura enamorada de ti no toma ninguna acción que pueda ser dañina para ti y, como Acción, puedes pedirle que tome una Acción que no sea perjudicial para ella. Esta hace una Tirada de Salvación de Espíritu de Dificultad = 10 + tu BH + tu PRE y, si la falla, debe seguir el curso de acción que has descrito de la mejor forma posible."
     ]
   },
   {
@@ -2219,7 +2219,7 @@
         "contenido": [
           "Aprendes el Movimiento Campo de Niebla, que no cuenta para el máximo de Movimientos que conoces.",
           "Ves a través de la niebla de los Campos de Niebla que creas.",
-          "Cuando usas un Campo de Niebla, puedes decidir que emita magia infatuadora. Una criatura que no es de Tipo Hada que acaba su turno en un campo que emite esta magia debe hacer una Salvación de Espíritu de CD = 10 + tu BH + tu MEN ó PRE. Si la falla, gana 1 Nivel de infatuado de ti."
+          "Cuando usas un Campo de Niebla, puedes decidir que emita magia infatuadora. Una criatura que no es de Tipo Hada que acaba su turno en un campo que emite esta magia debe hacer una Salvación de Espíritu de Dificultad = 10 + tu BH + tu MEN ó PRE. Si la falla, gana 1 Nivel de infatuado de ti."
         ]
       }
     ]
@@ -2338,7 +2338,7 @@
         "tipo": "listaU",
         "contenido": [
           "Puedes redistribuir todas tus Estadísticas, cambiándolas unas por otras.",
-          "Si calculas tu CA con Resistencia, puedes calcularla como el mismo valor fijo menos 2 más tu Agilidad más tu Bono de Habilidad y si la calculas con Agilidad, puedes calcularla como el mismo valor fijo más dos más tu Resistencia más tu Bono de Habilidad.",
+          "Si calculas tu Evasión con Resistencia, puedes calcularla como el mismo valor fijo menos 2 más tu Agilidad más tu Bono de Habilidad y si la calculas con Agilidad, puedes calcularla como el mismo valor fijo más dos más tu Resistencia más tu Bono de Habilidad.",
           "Puedes redistribuir los bonos que ganas en las Tiradas de Salvación.",
           "Puedes cambiar la Tirada de Habilidad en la que eres Naturalmente Hábil, así como tu Naturaleza."
         ]
@@ -2509,7 +2509,7 @@
       ]
     },
     "Descripcion": [
-      "El Terreno Difícil que creas se llena de arenas movedizas. Cuando una criatura termina su turno en Terreno Difícil que tu has creado, hace una Tirada de Salvación de Fuerza con CD = 10 + tu BH  + tu FUE, AGI ó MEN. Si falla, queda apresada por las arenas movedizas. Una criatura puede repetir la Tirada de Salvación como Acción, liberándose si la pasa."
+      "El Terreno Difícil que creas se llena de arenas movedizas. Cuando una criatura termina su turno en Terreno Difícil que tu has creado, hace una Tirada de Salvación de Fuerza con Dificultad = 10 + tu BH  + tu FUE, AGI ó MEN. Si falla, queda apresada por las arenas movedizas. Una criatura puede repetir la Tirada de Salvación como Acción, liberándose si la pasa."
     ]
   },
   {

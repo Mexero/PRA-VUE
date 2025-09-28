@@ -22,7 +22,7 @@
             "nombreClase": "Entrenador",
             "nombreSubclase": "Diseñador del Multiarma",
             "contenido": [
-                "A partir de nivel 5, añades un nuevo modo a tu Multiarma que te protege, ya sea poniendo una barrera de fuerza, generando una armadura holográfica a tu alrededor o como tu decidas. Tu CA se vuelve 10 + MEN + BH y, cuando lanzas Iniciativa con tu Multiarma encima, ganas puntos de Escudo igual al doble de tu Nivel, que duran hasta el final del combate.",
+                "A partir de nivel 5, añades un nuevo modo a tu Multiarma que te protege, ya sea poniendo una barrera de fuerza, generando una armadura holográfica a tu alrededor o como tu decidas. Tu Evasión se vuelve 10 + MEN + BH y, cuando lanzas Iniciativa con tu Multiarma encima, ganas puntos de Escudo igual al doble de tu Nivel, que duran hasta el final del combate.",
                 "Además, puedes usa r los Movimientos Estándar de tu Multiarma por 2 PP."
             ]
         },

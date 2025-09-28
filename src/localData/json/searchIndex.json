@@ -4550,8 +4550,8 @@
         "tipo": "Término"
     },
     {
-        "nombre": "Dificultad de una Tirada (CD)",
-        "ruta": "/reglas?seleccionado=Dificultad+de+una+Tirada+(CD)",
+        "nombre": "Dificultad de una Tirada",
+        "ruta": "/reglas?seleccionado=Dificultad+de+una+Tirada",
         "tipo": "Término"
     },
     {
@@ -4620,8 +4620,8 @@
         "tipo": "Término"
     },
     {
-        "nombre": "Clase de Armadura (CA)",
-        "ruta": "/reglas?seleccionado=Clase+de+Armadura+(CA)",
+        "nombre": "Evasión (EVA)",
+        "ruta": "/reglas?seleccionado=Evasión+(EVA)",
         "tipo": "Término"
     },
     {

@@ -122,7 +122,7 @@
                                     <span class="negrita">Descripción</span>:Endureces tus alas y
                                     golpeas con ellas. Haz una Tirada de Ataque cuerpo a cuerpo contra
                                     una criatura. Si golpea, el objetivo recibe daño. Si la Tirada
-                                    Natural fue de 15+, tu CA aumenta en 2 hasta el inicio de tu
+                                    Natural fue de 15+, tu Evasión aumenta en 2 hasta el inicio de tu
                                     próximo turno.
                                 </td>
                             </tr>
@@ -200,10 +200,10 @@
             </p>
 
             <p>
-                <strong>Todos los Movimientos tienen un CD</strong>, el cual es el valor
+                <strong>Todos los Movimientos tienen un Dificultad</strong>, el cual es el valor
                 que deben igualar o superar las Criaturas al hacer Tiradas de Salvación
                 contra el Movimiento si este requiere que se hagan para evitar su
-                efecto. Este CD se calcula como 10 + BH + EST.
+                efecto. Este Dificultad se calcula como 10 + BH + EST.
             </p>
 
             <p>

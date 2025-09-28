@@ -52,7 +52,7 @@
         "Rango": "10 m",
         "Descripcion": [
             "Rodeas a una criatura con seda super resistente. La criatura hace una Tirada de Salvación de FUE. Si falla, la criatura recibe daño y queda apresada. Una criatura no puede liberarse de esta seda de ninguna forma que no sea rompiendo la seda por si misma. Si la criatura pasa la Tirada de Salvación, recibe la mitad de daño pero también queda apresada.",
-            "Si la criatura falló la Tirada de Salvación, la seda tiene una cantidad de PV iguales a 5 veces tu Nivel, tiene una CA de 15 más tu BH y se considera de Tipo Bicho. Si la criatura pasó la Tirada de Salvación, tiene la mitad de esos PV, redondada hacia abajo."
+            "Si la criatura falló la Tirada de Salvación, la seda tiene una cantidad de PV iguales a 5 veces tu Nivel, tiene una Evasión de 15 más tu BH y se considera de Tipo Bicho. Si la criatura pasó la Tirada de Salvación, tiene la mitad de esos PV, redondada hacia abajo."
         ],
         "StatsAsociados": [
             "FUE",
@@ -268,7 +268,7 @@
         "Rango": "10 m, Radio (2 m)",
         "Descripcion": [
             "Creas y lanzas una pila Colosal en de roca sobre un área en forma de radio de 2 metros alrededor de un punto a menos de 10 metros de ti. Las criaturas hacen una Tirada de Salvación de AGI. Si la fallan, reciben daño y quedan aplastadas por la roca. Una criatura aplastada por la roca debe romperla para escapar. Si la pasa, recibe la mitad de ese daño pero se escapa, tumbada, por el lado de la roca más cercano que tenga.",
-            "La roca posee una CA de 15 más tu BH y una cantidad de PV totales de 10 veces tu Nivel y se considera de Tipo Roca."
+            "La roca posee una Evasión de 15 más tu BH y una cantidad de PV totales de 10 veces tu Nivel y se considera de Tipo Roca."
         ],
         "StatsAsociados": [
             "FUE",
@@ -646,7 +646,7 @@
         "Rango": "Radio (5 m)",
         "Descripcion": [
             "Generas un estruendo en un radio de 5 metros a tu alrededor y te motivas con este. Las criaturas a Rango hacen una Tirada de Salvación de RES. Si la fallan, reciben daño y, si la pasan, reciben la mitad de ese daño.",
-            "Además, tu CA aumenta en 2, la CD de tus Movimientos aumenta en 2, ganas un bono de +2 a tus Tiradas de Ataque y añades 2 dados al daño de todos tus siguientes Movimientos hasta que caigas Inconsciente o acabe la Escena."
+            "Además, tu Evasión aumenta en 2, la Dificultad de tus Movimientos aumenta en 2, ganas un bono de +2 a tus Tiradas de Ataque y añades 2 dados al daño de todos tus siguientes Movimientos hasta que caigas Inconsciente o acabe la Escena."
         ],
         "StatsAsociados": [
             "FUE",

@@ -48,7 +48,7 @@
                         "Cambias la Naturaleza del Pokémon.",
                         "Cambias una Tirada de Habilidad en la que el Pokémon es Naturalmente Bueno.",
                         "Redistribuir sus Estadísticas. Por ejemplo, puedes cambiar su Fuerza por su Mente.",
-                        "Puedes elegir que el Pokémon pase a calcular su CA como 10 + Resistencia + Nivel ó como 8 + Agilidad + Nivel.",
+                        "Puedes elegir que el Pokémon pase a calcular su Evasión como 10 + Resistencia + Nivel ó como 8 + Agilidad + Nivel.",
                         "Puedes reducir una Estadística que no se encuentre entre las 3 más bajas en 1 para aumentar todas sus Velocidades en 1 y viceversa.",
                         "Puedes reducir una Estadística que no se encuentre entre las 3 más bajas en 1 para aumentar su Vitalidad en 1 y viceversa."
                     ]
@@ -72,7 +72,7 @@
                             "tipo": "listaU",
                             "contenido": [
                                 "<strong>Estatus mejorado</strong>: Dos Estadísticas base a tu elección del Pokémon aumentan en 1.",
-                                "<strong>Adaptaciones</strong> innaturales: La CA del Pokémon aumenta en 1 y el bono en la Tirada de Salvación a tu elección del Pokémon aumenta en +2 si aún no es de +4 o superior.",
+                                "<strong>Adaptaciones</strong> innaturales: La Evasión del Pokémon aumenta en 1 y el bono en la Tirada de Salvación a tu elección del Pokémon aumenta en +2 si aún no es de +4 o superior.",
                                 "<strong>Hiperespecialización</strong>: El Pokémon aumenta su Grado de Habilidad en 1 en las Habilidades en las que es Naturalmente Bueno.",
                                 "<strong>Gigantismo</strong>: El Pokémon se vuelve de un tamaño más de lo normal para su Especie.",
                                 "<strong>Enanismo</strong>: El Pokémon se vuelve de un tamaño menor de lo normal para su Especie.",
@@ -88,7 +88,7 @@
                                 "<strong>Atrofia</strong>: Tu Pokémon ve una de sus Estadísticas reducida en 2. Lanza 1d6 para elegir la Estadística. 1 es Fuerza, 2 es Agilidad, 3 es Resistencia, 4 es Mente, 5 es Espíritu y 6 es Presencia. Si elegiste el beneficio Estatus mejorado, no puede atrofiarse la Estadística elegida.",
                                 "<strong>Inhabilidad</strong>: Tu Pokémon reduce el Grado de Habilidad en todas sus Tiradas de Habilidad en 1, hasta un mínimo de No Entrenado.",
                                 "<strong>Debilidad</strong>: La Vitalidad del Pokémon se reduce en 2.",
-                                "<strong>Fragilidad</strong>: La CA del Pokémon y todos los bonos a sus salvaciones se reducen en 1.",
+                                "<strong>Fragilidad</strong>: La Evasión del Pokémon y todos los bonos a sus salvaciones se reducen en 1.",
                                 "<strong>Doble Consecuencia</strong>: Tu Pokémon gana 2 Consecuencias en lugar de sólo una. Esta consecuencia sólo puede ganarse una vez."
                             ]
                         }
@@ -109,19 +109,17 @@
             "nombreSubclase": "Genetista pokémon",
             "contenido": [
                 "A partir de Nivel 13, aprendes a crear Pokémon quiméricos haciendo uso de tus estudios sobre el ADN. Creas una Librería de ADN guardada en tu Pokégenesa y añades entradas propias de cada Pokémon que posees y cada Pokémon del que obtengas alguna muestra, como pelo, escamas, saliva o fósiles, y que introduzcas en tu Pokégenesa.",
-                "Puedes Quimerizar un Pokémon añadiéndoles ADN de una Especie Pokémon que tienes en tu Librería de ADN. Para hacerlo, introduces la Pokéball del Pokémon a modificar en tu Pokégenesa con el Pokémon dentro y eliges una especie de tu Librería de ADN como Acción Extendida y luego esperas 24 horas a que el proceso finalice. Tu eliges el aspecto final del Pokémon que Quimerizas. Al Quimerizar un Pokémon le haces todos los siguientes cambios, sin excepción:",{
-              "tipo": "listaU",
-              "contenido": [
-                "El Pokémon a Quimerizar cambia uno de sus Tipos por un Tipo del Pokémon de la Librería.",
-                "El Pokémon a Quimerizar gana una Velocidad igual a la del Pokémon de la Librería y pierde otra o reduce la mayor de sus velocidades a la mitad, a tu elección.",
-                "El Pokémon a Quimerizar cambia una de sus Habilidades por una Habilidad o Habilidad Oculta del Pokémon de la Librería.",
-                "Por cada Nivel en el que el Pokémon a Quimerizar gana un Movimiento, sustituyes uno de los Movimientos de su Lista de Movimientos por Nivel que aprende a ese Nivel por otro Movimiento que aprende el Pokémon de la Librería de esa misma lista a ese mismo Nivel.",
-                "El Pokémon a Quimerizar gana un Sentido que tiene el Pokémon de la Librería y pierde un Sentido. Luego, pierde un Sentido, la vista, el oído o el olfato, a tu elección."
-              ]
-            },
-
-
-
+                "Puedes Quimerizar un Pokémon añadiéndoles ADN de una Especie Pokémon que tienes en tu Librería de ADN. Para hacerlo, introduces la Pokéball del Pokémon a modificar en tu Pokégenesa con el Pokémon dentro y eliges una especie de tu Librería de ADN como Acción Extendida y luego esperas 24 horas a que el proceso finalice. Tu eliges el aspecto final del Pokémon que Quimerizas. Al Quimerizar un Pokémon le haces todos los siguientes cambios, sin excepción:",
+                {
+                    "tipo": "listaU",
+                    "contenido": [
+                        "El Pokémon a Quimerizar cambia uno de sus Tipos por un Tipo del Pokémon de la Librería.",
+                        "El Pokémon a Quimerizar gana una Velocidad igual a la del Pokémon de la Librería y pierde otra o reduce la mayor de sus velocidades a la mitad, a tu elección.",
+                        "El Pokémon a Quimerizar cambia una de sus Habilidades por una Habilidad o Habilidad Oculta del Pokémon de la Librería.",
+                        "Por cada Nivel en el que el Pokémon a Quimerizar gana un Movimiento, sustituyes uno de los Movimientos de su Lista de Movimientos por Nivel que aprende a ese Nivel por otro Movimiento que aprende el Pokémon de la Librería de esa misma lista a ese mismo Nivel.",
+                        "El Pokémon a Quimerizar gana un Sentido que tiene el Pokémon de la Librería y pierde un Sentido. Luego, pierde un Sentido, la vista, el oído o el olfato, a tu elección."
+                    ]
+                },
                 "Un Pokémon puede ser <strong>Quimerizado</strong> más de una vez pero este proceso no es reversible. Los Pokémon Quimera, es decir, los Pokémon que has Quimerizado, son estériles y causan repulsión a todos los Pokémon de la familia Evolutiva de su Especie tanto original como la Especie con la que lo has Quimerizado.",
                 "Además, puedes revivir a los Pokémon que requieren de dos fósiles para ser revividos y aprendes a crear a Código Cero a Nivel 10 con tu Pokégenesa, el cual te cuesta materiales por valor de 10.000 Pokedólares. Sólo puedes crear un Código Cero a Nivel, pues este está ligado a tu Pokégenesa.",
                 "Por último, a partir de Nivel 17 puedes crear un único Mewtwo si obtienes ADN de Mew de la misma forma que con Código Cero, pero te cuesta 100.000 Pokedólares."

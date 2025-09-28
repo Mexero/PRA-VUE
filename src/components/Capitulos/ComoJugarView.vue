@@ -139,7 +139,7 @@
                 realiza una <strong>Prueba de d20</strong>. Para hacerlo, tira un d20 y
                 añade la Estadística pertinente y los demás bonus que sean y compara el
                 total obtenido contra la
-                <strong>Clase de Dificultad de la prueba (CD)</strong>. Si la tirada es
+                <strong>Dificultad de la prueba</strong>. Si la tirada es
                 superior o igual, el personaje realiza la acción tal y como deseaba, si
                 es inferior, el DJ puede elegir entre que simplemente se falle al
                 realizar la acción o que se acierte pero con una consecuencia.
@@ -156,7 +156,7 @@
             <p>Dentro de las Pruebas de d20 hay tres tipos:</p>
             <p>
                 Las <strong>Tiradas de Habilidad</strong>, que se realizan cuando un
-                personaje quiere hacer algún tipo de acción general, tienen una CD
+                personaje quiere hacer algún tipo de acción general, tienen una Dificultad
                 establecida por el DJ dependiente de la dificultad de la acción a tomar.
                 Cuando el DJ te pida una Tirada de Habilidad, te dirá que Habilidad y
                 que Estadística están involucradas. Para abreviar, usualmente estas se
@@ -165,14 +165,14 @@
 
             <p>
                 Las <strong>Tiradas de Ataque</strong>, que se realizan cuando se
-                intenta atacar a una criatura, y cuya dificultad es la Clase de Armadura
-                (CA) de la misma.
+                intenta atacar a una criatura, y cuya dificultad es la Evasión
+                (EVA) de la misma.
             </p>
 
             <p>
                 Las <strong>Tiradas de Salvación</strong>, que son tiradas que realizan
                 las criaturas para evitar sufrir un efecto provocado por algún tipo de
-                efecto el cual define cuál es su CD. Sólo hay las Tiradas de Salvación
+                efecto el cual define cuál es su Dificultad. Sólo hay las Tiradas de Salvación
                 de Fuerza, Agilidad, Resistencia y Espíritu.
             </p>
         </div>
@@ -483,7 +483,7 @@
         <summary>Tiradas Enfrentadas</summary>
         <div class="detailsBloque">
             <p>
-                No todas las Tiradas de Habilidad se realizan contra un CD. En muchas
+                No todas las Tiradas de Habilidad se realizan contra un Dificultad. En muchas
                 ocasiones, intentarás una acción que está directamente en conflicto con
                 la de otra persona, como pasar desapercibido ante un guardia vigilante o
                 mentirle a alguien. En ese caso, tanto tú como tu oponente realizan una
@@ -521,7 +521,7 @@
                 Pokémon evitan que una roca ruede cuesta abajo o cuando todo el grupo
                 tiene que pasar sigilosamente ante un guardia. En estos casos, cada
                 jugador realiza su tirada por separado y se obtiene el promedio de
-                estas. Si este promedio supera o iguala la CD, la tirada se supera, si
+                estas. Si este promedio supera o iguala la Dificultad, la tirada se supera, si
                 no, se falla.
             </p>
 

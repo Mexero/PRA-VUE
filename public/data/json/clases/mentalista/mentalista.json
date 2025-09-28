@@ -255,7 +255,7 @@
             "claseNombre": "Mentalista",
             "nivel": 1,
             "descripcion": [
-                "Cuando alcanzas nivel 1, has despertado tus habilidades místicas, que crean una barrera mágica que te protege. Tu Vitalidad se vuelve 9, si no era superior y puedes calcular tu CA como 10 + ESP + BH.",
+                "Cuando alcanzas nivel 1, has despertado tus habilidades místicas, que crean una barrera mágica que te protege. Tu Vitalidad se vuelve 9, si no era superior y puedes calcular tu Evasión como 10 + ESP + BH.",
                 "Además, tus PP máximos aumentan en 2."
             ]
         },

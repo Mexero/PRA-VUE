@@ -38,7 +38,7 @@
             "nombreClase": "Entrenador",
             "nombreSubclase": "Domador del Viento",
             "contenido": [
-                "A partir de nivel 8, aprendes a doblegar el viento, que te ayuda a redirigir los ataques a rango que se hacen contra ti. Cuando hacen una Tirada de Ataque a Rango contra ti asociada a un efecto que no sólo lanza energía, puedes usar tu Reacción y 1 PP para sumar tu Agilidad a tu CA para ese ataque. Si gracias a esto la Tirada de Ataque no golpea, puedes redirigir este ataque a una criatura a 3 metros o menos de ti por 2 PP más. Haz una Tirada de Ataque a rango en la que eres Bueno usando tu Agilidad contra la criatura. Si golpea, esta recibe los efectos que fuese a provocar sobre ti la primera Tirada de Ataque."
+                "A partir de nivel 8, aprendes a doblegar el viento, que te ayuda a redirigir los ataques a rango que se hacen contra ti. Cuando hacen una Tirada de Ataque a Rango contra ti asociada a un efecto que no sólo lanza energía, puedes usar tu Reacción y 1 PP para sumar tu Agilidad a tu Evasión para ese ataque. Si gracias a esto la Tirada de Ataque no golpea, puedes redirigir este ataque a una criatura a 3 metros o menos de ti por 2 PP más. Haz una Tirada de Ataque a rango en la que eres Bueno usando tu Agilidad contra la criatura. Si golpea, esta recibe los efectos que fuese a provocar sobre ti la primera Tirada de Ataque."
             ]
         },
         {

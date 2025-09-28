@@ -227,7 +227,7 @@ async function cargarMovimiento(movimiento) {
       SELECT 
       Nombre, Tipo, Tiempo_de_uso, Coste, Dano, Rango, Etiquetas, Descripcion, 
       Stat_Asociado_1, Stat_Asociado_2, Stat_Asociado_3, Stat_Asociado_4,
-      At, Salvacion, DC
+      At, Salvacion, Dificultad
       FROM movimientos
       WHERE Nombre = ?
       `,
@@ -247,7 +247,7 @@ async function cargarMovimiento(movimiento) {
         statsAso: [row[8], row[9], row[10], row[11]].filter(stat => stat !== ""),
         ataque: (!row[12] || row[12] === 'False') ? false : true,
         salvacion: row[13],
-        dc: row[14]
+        Dificultad: row[14]
       }
     }
   } catch (err) {
