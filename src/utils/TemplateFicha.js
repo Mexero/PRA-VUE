@@ -2,6 +2,7 @@ export function crearFichaBase(nombre = '') {
     return {
         nombre,
         nivel: 1,
+        version: 1.0,
         pokedex: {
             especie: '',
             tipos: ['', ''],
@@ -14,7 +15,7 @@ export function crearFichaBase(nombre = '') {
             movimientosEnseñables: [],
             habilidades: [],
             habilidadesOcultas: [],
-            calculosCA: [],
+            calculosEva: [],
             otros: { dieta: '', tamano: '', sexo: '', sentidos: '', evolucion: '' },
         },
         personaliz: {

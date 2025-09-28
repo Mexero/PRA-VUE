@@ -119,7 +119,7 @@ const typeMap = {
 
             </div>
             <p v-if="mov.salvacion">
-                <strong>Salvación: </strong> CD {{ computarCD(mayorStat(mov.statsAso)) }}
+                <strong>Salvación: </strong> Dificultad {{ computarCD(mayorStat(mov.statsAso)) }}
             </p>
         </div>
         <div class="descripcion">

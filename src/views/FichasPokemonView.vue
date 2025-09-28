@@ -125,7 +125,7 @@ async function cambiarDatosEspecie(especie) {
         Vitalidad,
         V_Caminado, V_Trepado, V_Excavado, V_Nado, V_Vuelo, V_Levitado,
         Nat_Habil_1, Nat_Habil_2,
-        AC1, AC2, 
+        EVA1, EVA2, 
         Dieta, Tamano, Sexo, Sentidos, 
         EvoEn, Nivel_Evo, Tipo_requisito, Requisitos_Evo, Evo_otros
       FROM pokedex
@@ -173,10 +173,10 @@ async function cambiarDatosEspecie(especie) {
             else ficha.pokedex.habilidades.push({ nombre: nombre, esOpcional: esOpcional })
         })
 
-        // CA
-        ficha.pokedex.calculosCA = []
-        if (row[23]) ficha.pokedex.calculosCA.push(row[23])
-        if (row[24]) ficha.pokedex.calculosCA.push(row[24])
+        // Evasión
+        ficha.pokedex.calculosEva = []
+        if (row[23]) ficha.pokedex.calculosEva.push(row[23])
+        if (row[24]) ficha.pokedex.calculosEva.push(row[24])
 
         // Otros
         ficha.pokedex.otros = {
@@ -321,13 +321,13 @@ function calcularSentidos() {
     else return ficha.personaliz.sentidos
 }
 
-function calcularCA() {
-    const calculos = ficha.pokedex.calculosCA
+function calcularEVA() {
+    const calculos = ficha.pokedex.calculosEva
     const stats = ficha.derivados.stats
 
     if (!Array.isArray(calculos) || calculos.length === 0) return;
 
-    if (ficha.derivados.caElegida >= ficha.pokedex.calculosCA.length) {
+    if (ficha.derivados.caElegida >= ficha.pokedex.calculosEva.length) {
         ficha.derivados.caElegida = 0
     }
 
@@ -458,9 +458,9 @@ function actualizar() {
         ficha.derivados.velocidades[vel] = ficha.pokedex.velocidades[vel] + ficha.personaliz.mejorasVelocidades[vel]
     }
 
-    //Actualizar CA
+    //Actualizar EVA
     if (!ficha.manual.ca) {
-        calcularCA()
+        calcularEVA()
     }
 }
 

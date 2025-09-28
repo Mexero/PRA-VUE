@@ -20,12 +20,16 @@
           {{ pokemon.natHabil[0] ? (', Naturalmente hábil en ' + pokemon.natHabil[0]) : '' }}
           {{ pokemon.natHabil[1] ? (' y ' + pokemon.natHabil[1]) : '' }}</div>
         <div class="vital-stat-row">
-          <span class="vital-stat-label">{{ pokemon.calculosCa[1] !== '' ? 'AC 1' : 'AC' }}: </span>
-          <span class="vital-stat-value">{{ pokemon.calculosCa[0] }}</span>
+          <span class="vital-stat-label">Evasión: </span>
+          <span class="vital-stat-value">{{ pokemon.calculosEva[0] }} + BH
+            <template v-if="pokemon.calculosEva[1] !== ''">
+              ó {{ pokemon.calculosEva[1] }} + BH
+            </template>
+          </span>
         </div>
-        <div class="vital-stat-row" v-if="pokemon.calculosCa[1] !== ''">
-          <span class="vital-stat-label">AC 2: </span>
-          <span class="vital-stat-value">{{ pokemon.calculosCa[1] }}</span>
+        <div class="vital-stat-row" v-if="pokemon.calculosEva[1] !== ''">
+          <span class="vital-stat-label">Evasión 2: </span>
+          <span class="vital-stat-value">{{ pokemon.calculosEva[1] }}</span>
         </div>
         <div class="vital-stat-row">
           <span class="vital-stat-label">Vitalidad: </span>
