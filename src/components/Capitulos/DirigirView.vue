@@ -1128,7 +1128,7 @@
                         <strong>sólo los Movimientos que planees</strong> usar o usa los
                         Pokémon de la <strong>Lifedex</strong>. A la hora de asignar Mejoras
                         de Estadísticas ponlas en la Estadística principal que use para
-                        mejorar sus Movimientos o en la que usa para mejorar su CA. Pon los
+                        mejorar sus Movimientos o en la que usa para mejorar su Evasión. Pon los
                         Aumentos de Grados de Habilidad en la Habilidad en la que sea
                         Naturalmente hábil o no los asignes. Si en tu campaña usáis las
                         Dotes, no las asignes a los Pokémon salvajes salvo en casos
@@ -1276,10 +1276,10 @@
                     <p>
                         <strong>Arenas movedizas</strong>. Las arenas movedizas son Terreno
                         Difícil y debe superarse una Tirada de Habilidad de Supervivencia o
-                        Percepción con CD 15 para detectarse antes de pisarlas. Una Criatura
+                        Percepción con Dificultad 15 para detectarse antes de pisarlas. Una Criatura
                         que termina su turno tocándolas, o que las pisa fuera de Iniciativa
                         sin saber que están ahí, debe hacer una Tirada de Salvación de
-                        Fuerza con CD 14 (puedes cambiar esta Dificultad, la cual es la
+                        Fuerza con Dificultad 14 (puedes cambiar esta Dificultad, la cual es la
                         Dificultad de las Arenas) y, si la falla empieza a hundirse, ganando
                         1 Nivel de Enterrado en las Arenas Movedizas. Una criatura que tiene
                         Niveles de Enterrado en las Arenas Movedizas está Apresada.
@@ -1303,7 +1303,7 @@
                     <p>
                         Además, una criatura puede ayudar a reducir sus Niveles de Enterrado
                         a otra. Para ello, usa su Acción y hace una Tirada de Salvación con
-                        CD la Dificultad de las Arenas. Si la pasa, reduce en 1 los Niveles
+                        Dificultad la Dificultad de las Arenas. Si la pasa, reduce en 1 los Niveles
                         de Enterrado de otra criatura y, si la falla por 10 o más, ella cae
                         a las arenas y gana 1 Nivel de Enterrado. Además, si de alguna forma
                         una criatura se teleporta fuera de las arenas, obviamente queda
@@ -1357,7 +1357,7 @@
                     </p>
                     <p>
                         Además, una criatura que no es Tipo Veneno ni Tipo Acero hace una
-                        Tirada de Salvación de Resistencia contra un CD que tu eliges, el CD
+                        Tirada de Salvación de Resistencia contra un Dificultad que tu eliges, el Dificultad
                         del Gas Venenoso. Si la fallan, ganan 1 Nivel de Envenenado.
                     </p>
 
@@ -1387,7 +1387,7 @@
 
                     <p>
                         <strong>Región de Espacio raro</strong>. La región está bajo uno o
-                        varios de los efectos del Movimiento Espacio raro, con un CD a tu
+                        varios de los efectos del Movimiento Espacio raro, con un Dificultad a tu
                         elección.
                     </p>
 
@@ -1404,7 +1404,7 @@
                         <strong>Mundo distorsión</strong>. Esta región está hecha de
                         islotes, cada uno con su gravedad propia que sólo toma efecto cuando
                         se está muy cerca de ellos. Saltar de un Islote a otro requiere de
-                        Tiradas de Acrobacias o Atletismo con CD dependiente de la distancia
+                        Tiradas de Acrobacias o Atletismo con Dificultad dependiente de la distancia
                         entre estas, el cual defines tu. Una criatura que falla estas
                         tiradas cae al vacío infinito tiene que buscar acercarse a otro
                         islote para que su gravedad lo atraiga. Es usual que esta región
@@ -2315,7 +2315,7 @@
                     <p>
                         Ten en cuenta que un Pokémon puede ser Quimerizado más de una vez
                         pero este proceso no es reversible. Además, los Pokémon Quimera son
-                        estériles, salvo en contadas ocasiones. Además, la CD para capturar
+                        estériles, salvo en contadas ocasiones. Además, la Dificultad para capturar
                         a estos Pokémon aumenta en 5.
                     </p>
                 </div>
@@ -2363,7 +2363,7 @@
                         </li>
                     </ul>
                     <p>
-                        El proceso de Robotización es irreversible. Además, la CD para
+                        El proceso de Robotización es irreversible. Además, la Dificultad para
                         capturar a estos Pokémon aumenta en 5.
                     </p>
                 </div>
@@ -2649,7 +2649,7 @@
 
                     <p>
                         Si no se hace el descanso del medio día, los jugadores y sus
-                        monturas hacen una Tirada de Salvación de Resistencia CD 20. Si la
+                        monturas hacen una Tirada de Salvación de Resistencia Dificultad 20. Si la
                         fallan, ganan 1 Nivel de Fatiga. No hacer el descanso nocturno
                         siempre otorga 2 Niveles de Fatiga.
                     </p>
@@ -2823,7 +2823,7 @@
                         Para pasar de casilla, los personajes consumen tiempo viajando y
                         luego se mueven a una casilla adyacente. Si existe la posibilidad de
                         que se pierdan, uno de ellos es el guía y hace una Tirada de
-                        Supervivencia con un CD que tu eliges para la zona. Si la fallan, se
+                        Supervivencia con un Dificultad que tu eliges para la zona. Si la fallan, se
                         mueven aleatoriamente a una casilla adyacente (si tu mapa usa
                         casillas cuadradas elígelo con 1d4 y si usa casillas hexagonales
                         elígelo con 1d6).
@@ -2855,7 +2855,7 @@
     </details>
 
     <details open id="apartado9">
-        <summary>Las Clases de Dificultad</summary>
+        <summary>Las Dificultades</summary>
         <div class="detailsBloque">
             <p>
                 A lo largo de las sesiones, en múltiples ocasiones pedirás a tus
@@ -2872,7 +2872,7 @@
                     <thead>
                         <tr>
                             <th>Dificultad</th>
-                            <th>CD</th>
+                            <th>Dificultad</th>
                             <th>Descripción</th>
                         </tr>
                     </thead>
@@ -3285,8 +3285,8 @@
                             </p>
 
                             <p>
-                                Los equipos tienen 2 CD que se van actualizando cada vez que toman
-                                un turno. Su CD de Escondido y su CD de Rastro. Si nadie de un grupo
+                                Los equipos tienen 2 Dificultad que se van actualizando cada vez que toman
+                                un turno. Su Dificultad de Escondido y su Dificultad de Rastro. Si nadie de un grupo
                                 toma ciertas Acciones, estas se vuelven 10 al final del turno del
                                 grupo.
                             </p>
@@ -3308,7 +3308,7 @@
 
                             <p>
                                 <strong>La dificultad</strong>. La búsqueda del Tesoro tiene una
-                                dificultad base, conocida como CD de la Búsqueda.
+                                dificultad base, conocida como Dificultad de la Búsqueda.
                             </p>
 
                             <p>
@@ -3337,9 +3337,9 @@
                                 Buscar el objetivo. Cuando lo hace, hace una Tirada de Supervivencia
                                 (Espíritu) o Investigación (Mente) (dependiendo de si hay formas de
                                 guiarse con el entorno o mediante pistas, respectivamente). La
-                                Dificultad de esta Tirada de Habilidad es igual a la CD de la
+                                Dificultad de esta Tirada de Habilidad es igual a la Dificultad de la
                                 Búsqueda más la cantidad de Puntos que tiene ese equipo. Por
-                                ejemplo, si la CD es 16 y se tienen 4 puntos, la CD es 20.
+                                ejemplo, si la Dificultad es 16 y se tienen 4 puntos, la Dificultad es 20.
                             </p>
 
                             <p>
@@ -3359,11 +3359,11 @@
                             </p>
 
                             <p>
-                                Al final del turno del grupo, la CD de Escondido del grupo se vuelve
+                                Al final del turno del grupo, la Dificultad de Escondido del grupo se vuelve
                                 la mayor entre las Tiradas de Esconder que han hecho los miembros
                                 del grupo, a no ser que uno haya obtenido un 1 en la Tirada Natural
-                                de su Tirada de Esconder. En cuyo caso, la CD es 5. Si nadie ha
-                                hecho una Tirada de Esconder, la CD de Escondido del grupo es de 10
+                                de su Tirada de Esconder. En cuyo caso, la Dificultad es 5. Si nadie ha
+                                hecho una Tirada de Esconder, la Dificultad de Escondido del grupo es de 10
                                 hasta que vuelva a empezar su turno.
                             </p>
 
@@ -3372,14 +3372,14 @@
                                 busca a otras Criaturas o cosas que pudieran ser relevantes en el
                                 entorno cercano del grupo. Una Criatura que intenta Percibir,
                                 realiza una Tirada de Habilidad de Percepción. Si el resultado de la
-                                Tirada supera la CD de la Búsqueda, puede recibir información del
+                                Tirada supera la Dificultad de la Búsqueda, puede recibir información del
                                 entorno, asociada principalmente a eventos que pudieran ocurrir
                                 entre rondas o información no directamente asociada a la Búsqueda.
                             </p>
 
                             <p>
                                 Una Criatura que toma la Acción de Percibir puede llegar a encontrar
-                                a miembros de otros equipos si su Tirada supera la CD de Escondido
+                                a miembros de otros equipos si su Tirada supera la Dificultad de Escondido
                                 si estos están cerca en algún momento antes de que vuelva a empezar
                                 el turno de propio grupo. Un miembro de otro grupo se considera
                                 cercano cuando:
@@ -3407,18 +3407,18 @@
                             </p>
 
                             <p>
-                                Al final del turno del grupo, la CD de Rastreo del grupo se vuelve
+                                Al final del turno del grupo, la Dificultad de Rastreo del grupo se vuelve
                                 la mayor entre las Tiradas de Borrar rastro que han hecho los
                                 miembros del grupo, a no ser que uno haya obtenido un 1 en la Tirada
-                                Natural de su Tirada de Borrar rastro. En este caso, la CD es 5. Si
-                                nadie ha hecho una Tirada de Borrar rastro, la CD de Rastreo del
+                                Natural de su Tirada de Borrar rastro. En este caso, la Dificultad es 5. Si
+                                nadie ha hecho una Tirada de Borrar rastro, la Dificultad de Rastreo del
                                 grupo es de 10 hasta que vuelva a empezar su turno.
                             </p>
 
                             <p>
                                 <strong>Rastrear</strong>. Si un miembro del equipo decide Rastrear,
                                 recolecta pistas para seguirle el rastro a otro grupo. Para hacerlo,
-                                realiza una Tirada de Supervivencia (Espíritu) contra la CD de
+                                realiza una Tirada de Supervivencia (Espíritu) contra la Dificultad de
                                 Rastro del grupo elegido. Si la pasa y el otro equipo tiene más
                                 puntos que el suyo, puede decidir ganar 1 punto. Si la pasa y tiene
                                 menos puntos que el grupo objetivo, pierde 1 punto. Además, si un
@@ -3443,7 +3443,7 @@
                                 Tirada de Supervivencia (Agilidad). La dificultad de la Trampa es
                                 igual al resultado de la Tirada menos 5 y la trampa dura hasta el
                                 principio del próximo turno de su equipo. Además, si uno de tus
-                                Rasgos dice que puedes poner trampas, la CD de tus Trampas es igual
+                                Rasgos dice que puedes poner trampas, la Dificultad de tus Trampas es igual
                                 al resultado de tu Tirada en lugar de restarle 5 a esta.
                             </p>
 
@@ -3453,14 +3453,14 @@
                                 en la trampa, haciendo que, en lugar de ganar puntos, pierda 1 Punto
                                 por cada trampa en la que caiga. Para que un grupo caiga en una
                                 trampa todos los miembros de dicho grupo que deciden Percibir deben
-                                de fallar la Tirada contra la CD de la trampa.
+                                de fallar la Tirada contra la Dificultad de la trampa.
                             </p>
 
                             <p>
                                 <strong>Abrir paso</strong>. Un miembro del equipo se centra en
                                 abrirle paso a otro de los miembros, para que este pueda
                                 concentrarse en la tarea de Buscar o Rastrear. Cuando lo hace, hace
-                                una Tirada de Atletismo (Fuerza) contra la CD de la Búsqueda. Si la
+                                una Tirada de Atletismo (Fuerza) contra la Dificultad de la Búsqueda. Si la
                                 pasa, el compañero que está ayudando tiene Ventaja en su Tirada de
                                 Habilidad asociada a Buscar o Rastrear.
                             </p>
@@ -3832,32 +3832,32 @@
 
                     <p>
                         Principalmente, encontrarás los siguientes 4 tipos de objetos. Si
-                        surge otro caso, básate en estos para definir su CA, su Tipo y sus
+                        surge otro caso, básate en estos para definir su Evasión, su Tipo y sus
                         PV.
                     </p>
 
                     <p>
                         <strong>Madera</strong>: Los objetos de madera se consideran de Tipo
-                        Planta, tienen una CA de 15 y tiene una cantidad de PV igual a su
+                        Planta, tienen una Evasión de 15 y tiene una cantidad de PV igual a su
                         grosor en centímetros por 30.
                     </p>
 
                     <p>
                         <strong>Piedra</strong>: Los objetos de piedra se consideran de Tipo
-                        Roca, tienen una CA de 18 y tiene una cantidad de PV igual a su
+                        Roca, tienen una Evasión de 18 y tiene una cantidad de PV igual a su
                         grosor en centímetros por 50.
                     </p>
 
                     <p>
                         <strong>Metal</strong>: Los objetos de piedra se consideran de Tipo
-                        Acero, tienen una CA de 20 a 30, según tu criterio y tiene una
+                        Acero, tienen una Evasión de 20 a 30, según tu criterio y tiene una
                         cantidad de PV igual a su grosor en centímetros por un valor igual a
-                        10 veces su CA.
+                        10 veces su Evasión.
                     </p>
 
                     <p>
                         <strong>Cristal</strong>: Los objetos de cristal se consideran de
-                        Tipo Roca, tienen una CA de 10 y tiene una cantidad de PV igual a su
+                        Tipo Normal, tienen una Evasión de 10 y tiene una cantidad de PV igual a su
                         grosor en centímetros por 10.
                     </p>
                 </div>
@@ -3988,7 +3988,7 @@
 
                     <p>
                         Si el Movimiento es defensivo, piensa que la mejora que se debe
-                        intuitivamente equivalente a ganar una cantidad de CA o un bono a
+                        intuitivamente equivalente a ganar una cantidad de Evasión o un bono a
                         las Salvaciones igual al coste en PP del Movimiento.
                     </p>
 
@@ -4479,32 +4479,31 @@
             </details>
 
             <details class="subDetails">
-                <summary class="subSummary">Clases de Armadura</summary>
+                <summary class="subSummary">Evasión</summary>
                 <div class="detailsBloque">
                     <p>
                         Las distintas Especies Pokémon se defienden de ataques de distintas
                         formas. Algunas buscarán esquivar los golpes, otras, usarán su
                         físico portentoso para pararlo o los reflejarán usando sus poderes
-                        mentales. Hay 3 formar fundamentales de calcular la Clase de
-                        Armadura de una Especie Pokémon:
+                        mentales. Hay 3 formar fundamentales de calcular la Evasión de una Especie Pokémon:
                     </p>
                     <p>
                         Si usa su cuerpo para parar los golpes o no es especialmente ágil,
-                        un Pokémon calcula su Clase de Armadura como 10 + RES + BH.
+                        un Pokémon calcula su Evasión como 10 + RES + BH.
                     </p>
                     <p>
                         Si usa su gran agilidad para evitar los golpes, un Pokémon calcula
-                        su Clase de Armadura como 8 + RES + BH.
+                        su Evasión como 8 + RES + BH.
                     </p>
                     <p>
                         Si usa su poder mental para evitar los golpes, un Pokémon calcula su
-                        Clase de Armadura como 10 + ESP + BH.
+                        Evasión como 10 + ESP + BH.
                     </p>
                     <p>
                         Por último, los Pokémon de Familias Evolutivas de Pseudo-Legendarios
                         en su última evolución y los Míticos y Legendarios tienen 1 más de
-                        CA, independientemente de como lo calculen. Por ejemplo, Dragonite
-                        tiene una CA = 11 + RES + BH.
+                        EVA, independientemente de como lo calculen. Por ejemplo, Dragonite
+                        tiene una EVA = 11 + RES + BH.
                     </p>
                 </div>
             </details>

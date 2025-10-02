@@ -17,7 +17,7 @@
           "nombre": "Habilidad de Danza",
           "descripcion": [
             "A nivel 2, te vuelves un músico habilidoso. Cuando ganas este rasgo, aumentas en 1 tu Grado de Habilidad en Actuación, hasta un máximo de Experto. Además, puedes dar Órdenes a tus Pokémon sólo bailando y sin usar tu voz.",
-            "Además, puedes usar 1 PP para empezar a Bailar como Acción. Cuando lo haces de esta forma, tu CA aumenta en una cantidad igual a la mitad de tu Bono de Entrenador y añades esta misma cantidad a las Tiradas de Salvación de Agilidad que haces. Puedes dejar de Bailar en cualquier momento de forma gratuita."
+            "Además, puedes usar 1 PP para empezar a Bailar como Acción. Cuando lo haces de esta forma, tu Evasión aumenta en una cantidad igual a la mitad de tu Bono de Entrenador y añades esta misma cantidad a las Tiradas de Salvación de Agilidad que haces. Puedes dejar de Bailar en cualquier momento de forma gratuita."
           ]
         },
         {
@@ -29,7 +29,7 @@
               "tipo": "listaU",
               "contenido": [
                 "Al usar el Movimiento, danzas haciendo movimientos amplios y precisos. En lugar de hacer una Tirada de Ataque cuerpo a cuerpo, haces una Tirada de Ataque a rango y el rango del Movimiento se vuelve 5 metros. Si lo usas pagando 1 PP o más, el rango se vuelve 10 metros en su lugar.",
-                "Al usar el Movimiento, tu danza se vuelve frenética y errática, lo que hace que esquives más fácilmente. Tu CA aumenta en una cantidad igual a la mitad de tu Bono de Entrenador hasta el final de tu próximo turno.",
+                "Al usar el Movimiento, tu danza se vuelve frenética y errática, lo que hace que esquives más fácilmente. Tu Evasión aumenta en una cantidad igual a la mitad de tu Bono de Entrenador hasta el final de tu próximo turno.",
                 "Al usar el Movimiento, tu danza se vuelve grácil y tus velocidades aumentan en 2 metros. Si lo usas pagando 1 PP o más, por el resto del turno los ataques de oportunidad que provocas se hacen en Desventaja."
               ]
             }

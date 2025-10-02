@@ -20,8 +20,8 @@
             {
               "tipo": "listaU",
               "contenido": [
-                "Si diriges a tu Pokémon y pasa la Tirada de Habilidad contra la CD del concurso, ganas Puntos de Exhibición adicionales igual a la mitad de tu BH (redondeado hacia abajo).",
-                "Si actúas junto a tu Pokémon y ambos pasáis la Tirada de Habilidad contra la CD del concurso, ganas Puntos de Exhibición adicionales igual a tu BH."
+                "Si diriges a tu Pokémon y pasa la Tirada de Habilidad contra la Dificultad del concurso, ganas Puntos de Exhibición adicionales igual a la mitad de tu BH (redondeado hacia abajo).",
+                "Si actúas junto a tu Pokémon y ambos pasáis la Tirada de Habilidad contra la Dificultad del concurso, ganas Puntos de Exhibición adicionales igual a tu BH."
               ]
             }
           ]
@@ -66,7 +66,7 @@
         {
           "tipo": "listaU",
           "contenido": [
-            "<strong>Entrada Estelar</strong>: Si tu Pokémon se mueve al menos 3 metros antes del Movimiento, puede deslumbrar a su llegada. Los enemigos a 5 metros hacen una Salvación de Espíritu con CD igual a 10 + el BH de tu Pokémon + su PRE. Si fallan, ganan un nivel de Aterrado o Infatuado (a tu elección) hacia tu Pokémon.",
+            "<strong>Entrada Estelar</strong>: Si tu Pokémon se mueve al menos 3 metros antes del Movimiento, puede deslumbrar a su llegada. Los enemigos a 5 metros hacen una Salvación de Espíritu con Dificultad igual a 10 + el BH de tu Pokémon + su PRE. Si fallan, ganan un nivel de Aterrado o Infatuado (a tu elección) hacia tu Pokémon.",
             "<strong>Ritmo Perfecto</strong>: Si el Movimiento hace una Tirada de Ataque y esta impacta y tiene una de tus Etiquetas del rasgo Tutor de Etiquetas, puedes dar una segunda Orden inmediatamente, usando otro Movimiento con esas etiquetas y coste máximo de 1 PP y que cuesta una Acción usar. Tu Pokémon recupera su acción para ejecutarlo."
           ]
         },

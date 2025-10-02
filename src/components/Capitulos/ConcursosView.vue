@@ -44,10 +44,10 @@
 
             <p>
                 <strong>Dificultad de Concurso</strong>. Todos los Concursos Pokémon
-                tienen una Clase de Dificultad del Concurso, que representa el nivel
+                tienen una Dificultad del Concurso, que representa el nivel
                 esperado de los Coordinadores y la exigencia de los jueces o el público.
                 Usualmente, un Concurso se considera de nivel adecuado para un Personaje
-                cuando la CD del Concurso es igual a 5 más el BH del Personaje.
+                cuando la Dificultad del Concurso es igual a 5 más el BH del Personaje.
             </p>
 
             <p>
@@ -100,12 +100,12 @@
             <p>
                 <strong>Si sólo actúa el Pokémon</strong> el Coordinador ganan Puntos de
                 Exhibición iguales a la diferencia del resultado de la Tirada de
-                Habilidad con la CD del Concurso (mínimo 0).
+                Habilidad con la Dificultad del Concurso (mínimo 0).
             </p>
 
             <p>
                 <strong>Si actúan Coordinador y Pokémon</strong>, ambos calculan la
-                diferencia entre el resultado de la Tirada de Habilidad con la CD del
+                diferencia entre el resultado de la Tirada de Habilidad con la Dificultad del
                 Concurso y se ganan Puntos de Exhibición iguales a la mayor de ambas
                 diferencias (mínimo 0). Sin embargo, sí el Coordinador o su Pokémon
                 obtienen un 1 en la Tirada Natural de su Tirada de Habilidad, la

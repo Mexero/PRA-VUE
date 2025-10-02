@@ -69,7 +69,7 @@
 
                     <p>
                         <strong>Quebradizo (3+)</strong>. Una Criatura que tiene 3 o más
-                        Niveles de Helado la criatura reduce su CA en 1 y no puede ver su CA
+                        Niveles de Helado la criatura reduce su Evasión en 1 y no puede ver su Evasión
                         aumentada por efectos de Movimientos o Habilidades.
                     </p>
 
@@ -166,7 +166,7 @@
 
                     <p>
                         El tratamiento requiere de Equipo Médico o Medicinas a discreción
-                        del DJ y de una Tirada de Conocimiento Médico (Mente) con CD la del
+                        del DJ y de una Tirada de Conocimiento Médico (Mente) con Dificultad la del
                         efecto que envenenó a la criatura.
                     </p>
 
@@ -513,7 +513,7 @@
                 incluso si sana mediante medicinas. Para representar esto existen los
                 Niveles de Fatiga. Se pueden tener de 0 a 10 Niveles de Fatiga y, por
                 cada Nivel de Fatiga, se tiene un -1 a todas las Tiradas de d20 y daño,
-                a la CA, a la CD de los efectos que provocas a otras criaturas y a la
+                a la Evasión, a la Dificultad de los efectos que provocas a otras criaturas y a la
                 cantidad de PP que tienes. Al llegar a 10 Niveles de Fatiga, caes a 0 PV
                 y quedas Inconsciente y, si los superas, mueres.
             </p>
@@ -630,7 +630,7 @@
                 Una criatura que está Levemente Sobrecargada ve todas sus Velocidades
                 reducidas a 0 y no puede usar su Velocidad de Vuelo o Levitado. Una
                 criatura Sobrecargada además Tiene Desventaja en todas las Tiradas de
-                d20 que involucren Fuerza y Agilidad y su CA se reduce en 2 y, por
+                d20 que involucren Fuerza y Agilidad y su Evasión se reduce en 2 y, por
                 último, una criatura cuya Carga Total supera su Capacidad de Carga
                 Máxima no puede moverse y falla todas las Tiradas de Salvación de
                 Agilidad automáticamente.
@@ -1038,7 +1038,7 @@
                 Si el Nivel de Amistad entre un Pokémon y su entrenador es de 0 o 1 o el
                 Pokémon es de mayor Nivel que el de su entrenador y el Nivel de Amistad
                 entre ambos es de 2 o inferior, cada vez que el entrenador le da una
-                Órden, debe hacer una Tirada de Trato Pokémon con CD igual al Ratio de
+                Órden, debe hacer una Tirada de Trato Pokémon con Dificultad igual al Ratio de
                 Captura del Pokémon más el BH del mismo. Si el entrenador falla, el
                 Pokémon no hace caso, no haciendo nada o tomando otra Acción distinta (a
                 discreción del DJ).
@@ -1052,14 +1052,14 @@
             <p>
                 Cuando un Personaje encuentra un Huevo Pokémon puede intentar reconocer
                 su Especie. Para hacerlo debe realizar una Tirada de Conocimiento
-                Pokémon con CD igual a 10 más el Ratio de Captura del Pokémon que sale
+                Pokémon con Dificultad igual a 10 más el Ratio de Captura del Pokémon que sale
                 del huevo.
             </p>
 
             <p>
                 Además, como Acción Extendida, un Personaje que conoce a qué Especie se
                 corresponde el huevo puede realizar una Tirada de Conocimiento Pokémon
-                CD 20. Si la pasa, sabe la cantidad de semanas que le quedan al huevo
+                Dificultad 20. Si la pasa, sabe la cantidad de semanas que le quedan al huevo
                 para eclosionar y, si la pasa por 5 o más, sabe la cantidad de días
                 exactos. Un Personaje puede tomar esta Acción Extendida 1 vez cada Día
                 para cada huevo.
@@ -1098,10 +1098,10 @@
             </ul>
 
             <p>
-                <strong>Clase de Dificultad</strong>. La CD de una de estas Tiradas de
+                <strong>Dificultad</strong>. La Dificultad de una de estas Tiradas de
                 Conocimiento Pokémon es igual al Ratio de Captura del Pokémon más la
                 mitad de su Nivel Mínimo (o de 25 a 35 si es un Pokémon Legendario o
-                Mítico, a discreción del DJ). Además, la CD se reduce en 5 para saber
+                Mítico, a discreción del DJ). Además, la Dificultad se reduce en 5 para saber
                 los Tipos Elementales del Pokémon y también puede aumentar hasta en 5 si
                 la información que se pide es particularmente específica (a discreción
                 del DJ).
@@ -1112,7 +1112,7 @@
                     <strong>Ejemplo</strong>: Un Sunkern es fácilmente reconocible como
                     Tipo Planta, así que simplemente le da esa información si la pide; no
                     es obvio cuales son sus Habilidades, por lo tanto, el Personaje debe
-                    pasar Tirada de Conocimiento Pokémon CD 10 para decírselo; si el
+                    pasar Tirada de Conocimiento Pokémon Dificultad 10 para decírselo; si el
                     personaje no está familiarizado con esta región, es imposible que sepa
                     con certeza si los Sunkern usualmente la habitan y así que le comunica
                     que no podría saberlo.

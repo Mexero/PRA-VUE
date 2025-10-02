@@ -41,7 +41,7 @@
             "nombreClase": "Entrenador",
             "nombreSubclase": "Conexión con la Psique",
             "contenido": [
-                "A nivel 5, aprendes a expandir el poder de tu mente. Ganas la Habilidad de Telepatía y, dentro del área en la que puedes comunicarte telepáticamente, puedes usar tu Acción y 1 PP para mover objetos o criaturas de tamaño pequeño o menor con telequinesis. La distancia máxima en metros que los puedes mover es igual a tu Mente. Una criatura que se opone a este movimiento hace una Tirada de Salvación de Fuerza contra la CD, siendo movida sólo si la falla.",
+                "A nivel 5, aprendes a expandir el poder de tu mente. Ganas la Habilidad de Telepatía y, dentro del área en la que puedes comunicarte telepáticamente, puedes usar tu Acción y 1 PP para mover objetos o criaturas de tamaño pequeño o menor con telequinesis. La distancia máxima en metros que los puedes mover es igual a tu Mente. Una criatura que se opone a este movimiento hace una Tirada de Salvación de Fuerza contra la Dificultad, siendo movida sólo si la falla.",
                 "El tamaño de las criaturas y objetos que puedes afectar con tu telekinesis aumenta a tamaño mediano a nivel 8, a tamaño grande a nivel 13 y a tamaño enorme a nivel 17."
             ]
         },

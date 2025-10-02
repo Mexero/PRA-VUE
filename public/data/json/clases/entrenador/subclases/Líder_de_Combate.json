@@ -16,7 +16,7 @@
                 {
                     "nombre": "Dentro del combate",
                     "descripcion": [
-                        "A nivel 2, has aprendido a comprender los combates al ser partícipe de estos. Puedes calcular tu CA como 10 + RES + BH y tu Vitalidad se vuelve 8 si no es superior.",
+                        "A nivel 2, has aprendido a comprender los combates al ser partícipe de estos. Puedes calcular tu Evasión como 10 + RES + BH y tu Vitalidad se vuelve 8 si no es superior.",
                         "Por último, cuando entrenas a tus Pokémon tú también entrenas con ellos. Tú también te beneficias de uno de los Entrenamientos que hacen tus Pokémon."
                     ]
                 },

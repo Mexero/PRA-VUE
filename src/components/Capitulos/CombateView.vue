@@ -447,7 +447,7 @@ function hideTooltip() {
             </p>
 
             <p>
-                Para realizar un ataque, haces una Tirada de Ataque contra la CA del
+                Para realizar un ataque, haces una Tirada de Ataque contra la Evasión del
                 objetivo. Si la superas o igualas, se considera que el ataque golpea.
             </p>
         </div>
@@ -600,7 +600,7 @@ function hideTooltip() {
 
             <p>
                 Una criatura puede tomar una Acción para hacer una tirada de
-                Conocimiento Médico (Mente) CD 15 para hacer que una criatura
+                Conocimiento Médico (Mente) Dificultad 15 para hacer que una criatura
                 Inconsciente recupere 1 PV. Cuando esto ocurre, la criatura que ha
                 recuperado el PV pierde su próxima Acción. Tomar esta Acción no elimina
                 los Niveles de Fatiga acumulados por recibir daño estando a 0 PV.

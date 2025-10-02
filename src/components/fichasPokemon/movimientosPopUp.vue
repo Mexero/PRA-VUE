@@ -107,7 +107,7 @@ async function cargarMovimiento(movimiento, directo) {
                 statsAso: [row[8], row[9], row[10], row[11]].filter(stat => stat !== ""),
                 ataque: (!row[12] || row[12] === 'False') ? false : true,
                 salvacion: row[13],
-                dc: row[14]
+                dificultad: row[14]
             }
             if (!directo) {
                 movimientoSeleccionado.value = data;
@@ -525,7 +525,8 @@ input {
         width: 95vw;
         height: 95vh;
     }
-.movsList,
+
+    .movsList,
     .buscador {
         width: 100%;
         height: 300px;

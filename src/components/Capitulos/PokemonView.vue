@@ -87,10 +87,10 @@
             </p>
 
             <p>
-                <strong>CA</strong>: La CA, o Clase de Armadura, es el valor que los
+                <strong>Evasión</strong>: La Evasión es el valor que los
                 ataques contra ti tienen que alcanzar para golpearte. Usualmente, se
                 calcula según dice la Pokédex y es la suma de los valores descritos es
-                el cálculo del CA de la Especie.
+                el cálculo del Evasión de la Especie.
             </p>
 
             <p>
@@ -201,7 +201,7 @@
                 su Nivel (redondeado hacia arriba). Este representa lo capaz que es,
                 tanto a la hora de Combatir y como a la hora de enfrentarse a problemas.
                 Este BH afecta a gran cantidad de valores, como a los Bonos de Tiradas
-                de Habilidad, Salvación y Ataque y a la CA del Pokémon
+                de Habilidad, Salvación y Ataque y a la Evasión del Pokémon
             </p>
 
             <p>
@@ -786,7 +786,7 @@
                 Pokémon no pertenece a otro entrenador, entra a la Poké Ball , aunque
                 esto no significa que ya haya sido capturado, pues aún puede escapar.
                 Luego de que el Pokémon entre a la Poké Ball, el entrenador debe hacer
-                una Tirada de <strong>Trato Pokémon (Presencia)</strong> cuya CD se
+                una Tirada de <strong>Trato Pokémon (Presencia)</strong> cuya Dificultad se
                 calcula de la siguiente forma:
             </p>
 
@@ -886,7 +886,7 @@
             <p>
                 Si un efecto mueve al Montador o la Montura queda tumbada, el primero
                 cae de la Montura, quedando tumbado a no ser que supere una tirada de
-                Atletismo (Fuerza) o Acrobacias (Agilidad) CD 10.
+                Atletismo (Fuerza) o Acrobacias (Agilidad) Dificultad 10.
             </p>
 
             <p>

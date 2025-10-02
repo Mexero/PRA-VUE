@@ -418,7 +418,7 @@ async function cambiarPokeSeleccionado(especie) {
         JOIN habilidades h ON h.ID = ph.Habilidad_ID
         WHERE ph.Pokemon_ID = pokedex.ID AND ph.Es_Oculta = 1
       ) AS Habilidades_Ocultas,
-      pokedex.AC1, pokedex.AC2, 
+      pokedex.EVA1, pokedex.EVA2, 
       pokedex.Dieta, pokedex.Tamano, pokedex.Sexo, pokedex.Sentidos, pokedex.Niv_Minimo, pokedex.Habitat, pokedex.Ratio_de_captura,
       pokedex.Evoluciona_de, pokedex.EvoEn, pokedex.Nivel_Evo, pokedex.Tipo_requisito, pokedex.Requisitos_Evo, pokedex.Evo_otros,
       pokedex.ID, pokedex.Es_alternativo
@@ -448,7 +448,7 @@ async function cambiarPokeSeleccionado(especie) {
         natHabil: [row[21], row[22]],
         habilidades: JSON.parse(row[23] || '[]'),
         habilidadesOcultas: JSON.parse(row[24] || '[]'),
-        calculosCa: [row[25], row[26]],
+        calculosEva: [row[25], row[26]],
         otros: {
           dieta: row[27], tamano: row[28], sexo: row[29],
           sentidos: row[30], nivMinimo: row[31],

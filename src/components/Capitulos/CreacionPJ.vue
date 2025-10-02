@@ -160,7 +160,7 @@
             </p>
 
             <p>
-                Tu <strong>Clase de Armadura (CA)</strong> se calcula como 8 más tu BH
+                Tu <strong>Evasión (EVA)</strong> se calcula como 8 más tu BH
                 más tu AGI. Este es el valor contra el que tendrán que lanzar sus
                 ataques tus rivales para poder golpearte.
             </p>
@@ -211,7 +211,7 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>CA</td>
+                            <td>EVA</td>
                             <td>8 + BH + AGI</td>
                         </tr>
                         <tr>

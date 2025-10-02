@@ -39,15 +39,21 @@ function bajarGrado(checkName) {
 
 <template>
     <div class="central">
-        <div class="col-izq">
-            <div class="box ca-box">
-                <div class="ca-label">EVASION</div>
-                <input v-model.number="ficha.derivados.ca" :readonly="!ficha.manual.ca" />
-                <div class="ca-calc">
-                    <select v-if="ficha.pokedex.calculosCA.length > 1" v-model="ficha.derivados.caElegida">
-                        <option v-for="(calculo, i) in ficha.pokedex.calculosCA" :value="i">{{ calculo }}</option>
+        <section class="destacados">
+            <div class="fila">
+                <div class="item">
+                    <label>BH: </label>
+                    <input type="number" v-model.number="ficha.derivados.bh" :readonly="!ficha.manual.bh" />
+                </div>
+
+                <div class="item CA">Evasión:
+                    <input v-model.number="ficha.derivados.ca" :readonly="!ficha.manual.ca" />
+                    <select v-if="ficha.pokedex.calculosEva.length > 1" v-model="ficha.derivados.caElegida">
+                        <option v-for="(calculo, i) in ficha.pokedex.calculosEva" :value="i">{{ calculo }}</option>
                     </select>
-                    <span v-else>{{ ficha.pokedex.calculosCA[0] }}</span>
+                    <p v-else>
+                        {{ ficha.pokedex.calculosEva[0] }}
+                    </p>
                 </div>
             </div>
             <div class="box pp-box">

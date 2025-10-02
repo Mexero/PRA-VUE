@@ -257,7 +257,7 @@
         ],
         "origen": "Especialista de tipo: Eléctrico",
         "descripciones": [
-            "Tipo Eléctrico contienen grandes cantidades de electricidad de interior, que pueden liberar de diferentes formas. Un Pokémon que recibe esta Orden aumenta sus Velocidades en una cantidad igual a la mitad de tu Bono de Entrenador y, mientras usa su velocidad de caminado o nado, deja un rastro de electricidad que dura hasta el principio de tu próximo turno. Una criatura que inicia su turno adyacente al rastro o entra a este hace una Tirada de Salvación de Resistencia contra una CD = 10 + BH del Pokémon + EST, donde EST es la estadística más alta del Pokémon para no quedar paralizada hasta el principio de su próximo turno y recibir una cantidad de d4 de daño de tipo Eléctrico igual a tu Bono de Entrenador.",
+            "Tipo Eléctrico contienen grandes cantidades de electricidad de interior, que pueden liberar de diferentes formas. Un Pokémon que recibe esta Orden aumenta sus Velocidades en una cantidad igual a la mitad de tu Bono de Entrenador y, mientras usa su velocidad de caminado o nado, deja un rastro de electricidad que dura hasta el principio de tu próximo turno. Una criatura que inicia su turno adyacente al rastro o entra a este hace una Tirada de Salvación de Resistencia contra una Dificultad = 10 + BH del Pokémon + EST, donde EST es la estadística más alta del Pokémon para no quedar paralizada hasta el principio de su próximo turno y recibir una cantidad de d4 de daño de tipo Eléctrico igual a tu Bono de Entrenador.",
             "<b>Perfeccionamiento:</b> Los d4 de daño provocados por fallar la Tirada de Salvación se vuelven d6."
         ]
     },
@@ -271,7 +271,7 @@
         ],
         "origen": "Especialista de tipo: Fantasma",
         "descripciones": [
-            "Los Pokémon de Tipo Fantasma contienen la energía del más allá su interior y pueden transmitirla. Cuando un Pokémon de Tipo Fantasma hace daño a una Criatura o le inflige un Estado en el mismo turno en el que recibe esta orden, la Criatura hace una Salvación de Espíritu de CD = 10 + BH del Pokémon + EST, donde EST es la Estadística más alta del Pokémon, ganando 1 Nivel de Fatiga en un fallo. Estos Niveles de Fatiga duran hasta el final de la Escena. Una criatura puede repetir la Tirada de Salvación al final de cada uno de sus turnos para liberarse de los Niveles de Fatiga ganados de esta forma.",
+            "Los Pokémon de Tipo Fantasma contienen la energía del más allá su interior y pueden transmitirla. Cuando un Pokémon de Tipo Fantasma hace daño a una Criatura o le inflige un Estado en el mismo turno en el que recibe esta orden, la Criatura hace una Salvación de Espíritu de Dificultad = 10 + BH del Pokémon + EST, donde EST es la Estadística más alta del Pokémon, ganando 1 Nivel de Fatiga en un fallo. Estos Niveles de Fatiga duran hasta el final de la Escena. Una criatura puede repetir la Tirada de Salvación al final de cada uno de sus turnos para liberarse de los Niveles de Fatiga ganados de esta forma.",
             "<b>Perfeccionamiento:</b> Los Puntos de Fatiga ganados de esta forma no se pierden cuando la Criatura repite la Tirada de Salvación al final de sus turnos."
         ]
     },
@@ -313,7 +313,7 @@
         ],
         "origen": "Especialista de tipo: Hielo",
         "descripciones": [
-            "Si el Movimiento afecta un área, esta se congela y si afecta a una o varias criaturas, el suelo bajo estas se congela. El suelo se descongela al final de la Escena. Una criatura que no es de Tipo Hielo que entra caminando a esta área o se mueve por esta caminando debe hacer una Salvación de Agilidad con CD igual a la del Movimiento que la creó. Si la falla cae tumbada. Una criatura sólo hace esta Tirada de Salvación una vez por ronda.",
+            "Si el Movimiento afecta un área, esta se congela y si afecta a una o varias criaturas, el suelo bajo estas se congela. El suelo se descongela al final de la Escena. Una criatura que no es de Tipo Hielo que entra caminando a esta área o se mueve por esta caminando debe hacer una Salvación de Agilidad con Dificultad igual a la del Movimiento que la creó. Si la falla cae tumbada. Una criatura sólo hace esta Tirada de Salvación una vez por ronda.",
             "<b>Perfeccionamiento:</b> Una Criatura que cae tumbada de esta forma debe usar todo su Movimiento restante para levantarse si aún le queda más de la mitad de este."
         ]
     },
@@ -425,7 +425,7 @@
         ],
         "origen": "Especialista de tipo: Veneno",
         "descripciones": [
-            "Los Pokémon de Tipo Veneno pueden liberar sustancias tóxicas para la vida. Cuando un Pokémon de Tipo Veneno hace daño a una criatura o le inflige un Estado en el mismo turno en el que recibe esta orden, la criatura hace una Salvación de Espíritu contra una CD = 10 + BH del Pokémon + EST, donde EST es la estadística más alta del Pokémon. Si falla, gana 1 Nivel de Envenenado.",
+            "Los Pokémon de Tipo Veneno pueden liberar sustancias tóxicas para la vida. Cuando un Pokémon de Tipo Veneno hace daño a una criatura o le inflige un Estado en el mismo turno en el que recibe esta orden, la criatura hace una Salvación de Espíritu contra una Dificultad = 10 + BH del Pokémon + EST, donde EST es la estadística más alta del Pokémon. Si falla, gana 1 Nivel de Envenenado.",
             "<b>Perfeccionamiento:</b> Si la Criatura objetivo fuese a ganar 1 Nivel de Envenenado y ya está envenenada, gana 1 Nivel de Envenenado más de lo normal."
         ]
     },
@@ -520,7 +520,7 @@
             "Entrenador"
         ],
         "descripciones": [
-            "Preparar a tus Pokémon para evadir y bloquear todos los golpes que les lanzan. Cuando una Tirada de Ataque realizada por una criatura rival a tus Pokémon falla contra estos, la CA de tu Pokémon aumenta en 1 hasta el final de su próximo turno."
+            "Preparar a tus Pokémon para evadir y bloquear todos los golpes que les lanzan. Cuando una Tirada de Ataque realizada por una criatura rival a tus Pokémon falla contra estos, la Evasión de tu Pokémon aumenta en 1 hasta el final de su próximo turno."
         ]
     },
     {
@@ -799,7 +799,7 @@
         "descripciones": [
             "Helado es un Estado Nivelado. Por lo tanto, una criatura se considera Helada mientras tenga <b>Niveles de Helado</b>.",
             "<b>Tiritar. </b>Una Criatura Helada sufre desventaja en sus tiradas d20 de Mente, Espíritu y Presencia.",
-            "<b>Quebradizo (3+).</b> Una Criatura que tenga 3 o más Niveles de Helado la criatura reduce su CA en 1 y no puede ver su CA aumentada por efectos de Movimientos o Habilidades.",
+            "<b>Quebradizo (3+).</b> Una Criatura que tenga 3 o más Niveles de Helado la criatura reduce su Evasión en 1 y no puede ver su Evasión aumentada por efectos de Movimientos o Habilidades.",
             "<b>Inmunidad.</b> Las criaturas Tipo Hielo no pueden estar Heladas."
         ]
     },
@@ -839,7 +839,7 @@
             "Envenenado es un Estado Nivelado. Por lo tanto, una criatura se considera Envenenada mientras tenga <b>Niveles de Envenenado</b>.",
             "<b>Toxinas.</b> Al final de cada uno de sus turnos, una criatura Envenenada pierde una cantidad de d4 de PV igual a su BH.",
             "<b>Letal.</b> Si una criatura cae a 0 PV por estar envenenada, esta deja de estarlo y pasa a requerir de tratamiento médico urgente, ganando 1 Nivel de Fatiga tras cada hora que pasa en este estado. ",
-            "El tratamiento requiere de Equipo Médico o Medicinas a discreción del DJ y de una Tirada de Conocimiento Médico (Mente) con CD la del efecto que envenenó a la criatura.",
+            "El tratamiento requiere de Equipo Médico o Medicinas a discreción del DJ y de una Tirada de Conocimiento Médico (Mente) con Dificultad la del efecto que envenenó a la criatura.",
             "<b>Enfermizo (3+).</b> Una Criatura que tiene 3 o más Niveles de Envenenado tiene Desventaja en Tiradas de Salvación de Resistencia.",
             "<b>Inmunidad.</b> Una Criatura de Tipo Veneno o Acero no puede quedar Envenenada."
         ]
@@ -1812,7 +1812,7 @@
             "Equipo"
         ],
         "descripciones": [
-            "Una pieza de armadura que protege del daño levemente. Las partes que cubren una pieza de la armadura son pecho, brazos (si se tienen), piernas o cabeza. Por cada dos piezas de armadura ligera que una criatura lleva, su CA aumenta en 1.",
+            "Una pieza de armadura que protege del daño levemente. Las partes que cubren una pieza de la armadura son pecho, brazos (si se tienen), piernas o cabeza. Por cada dos piezas de armadura ligera que una criatura lleva, su Evasión aumenta en 1.",
             "<b>Prerrequisitos:</b> Nivel 7."
         ]
     },
@@ -1825,7 +1825,7 @@
             "Equipo"
         ],
         "descripciones": [
-            "Una pieza de armadura que protege del daño a costa de movilidad. Las partes que cubren una pieza de la armadura son pecho, brazos (si se tienen), piernas o cabeza. Por cada pieza de armadura pesada que una criatura lleva, su CA aumenta en 1 y sus Velocidades se reducen en 1.",
+            "Una pieza de armadura que protege del daño a costa de movilidad. Las partes que cubren una pieza de la armadura son pecho, brazos (si se tienen), piernas o cabeza. Por cada pieza de armadura pesada que una criatura lleva, su Evasión aumenta en 1 y sus Velocidades se reducen en 1.",
             "<b>Prerrequisitos:</b> Nivel 7."
         ]
     },
@@ -2041,18 +2041,18 @@
             "Capítulo 2"
         ],
         "descripciones": [
-            "Cuando un personaje o Pokémon intenta realizar una acción cuyo acierto o fallo pudiera tener algún tipo de relevancia, el jugador que lo controla realiza una <b>Prueba de d20</b>. Para hacerlo, tira un d20 y añade la Estadística pertinente y los demás bonus que sean y compara el total obtenido contra la <b>Clase de Dificultad de la prueba (CD)</b>. Si la tirada es superior o igual, el personaje realiza la acción tal y como deseaba, si es inferior, el DJ puede elegir entre que simplemente se falle al realizar la acción o que se acierte pero con una consecuencia. ",
+            "Cuando un personaje o Pokémon intenta realizar una acción cuyo acierto o fallo pudiera tener algún tipo de relevancia, el jugador que lo controla realiza una <b>Prueba de d20</b>. Para hacerlo, tira un d20 y añade la Estadística pertinente y los demás bonus que sean y compara el total obtenido contra la <b>Dificultad de la prueba (Dificultad)</b>. Si la tirada es superior o igual, el personaje realiza la acción tal y como deseaba, si es inferior, el DJ puede elegir entre que simplemente se falle al realizar la acción o que se acierte pero con una consecuencia. ",
             "Es importante considerar que no todos los fallos ni aciertos son iguales, si un personaje intenta saltar de un acantilado a otro y falla por 1 o 2 esto puede representar casi resbalar pero conseguir mantenerse en él a costa de torcerse el tobillo y un fallo por 6 o 7 puede representar un tropiezo estrepitoso y una inevitable caída al vacío."
         ]
     },
     {
-        "nombre": "Dificultad de una Tirada (CD)",
+        "nombre": "Dificultad de una Tirada",
         "tipos": [
             "Término",
             "Capítulo 2"
         ],
         "descripciones": [
-            "Cuando se realiza una Tirada de d20, esta debe alcanzar un valor conocido como su <b>Clase de Dificultad (CD)</b>. Esta CD es establecida por el efecto que provoca la tirada o por el DJ si no lo tiene, en función de que tan difícil es la Tirada."
+            "Cuando se realiza una Tirada de d20, esta debe alcanzar un valor conocido como su <b>Dificultad</b>. Esta Dificultad es establecida por el efecto que provoca la tirada o por el DJ si no lo tiene, en función de que tan difícil es la Tirada."
         ]
     },
     {
@@ -2063,9 +2063,9 @@
         ],
         "descripciones": [
             "Dentro de las Pruebas de d20 hay tres tipos:",
-            "Las <b>Tiradas de Habilidad</b>, que se realizan cuando un personaje quiere hacer algún tipo de acción general, tienen una CD establecida por el DJ dependiente de la dificultad de la acción a tomar. Cuando el DJ te pida una Tirada de Habilidad, te dirá que Habilidad y que Estadística están involucradas. Para abreviar, usualmente estas se describen de la forma “Habilidad (Estadística)”.",
-            "Las <b>Tiradas de Ataque</b>, que se realizan cuando se intenta atacar a una criatura, y cuya dificultad es la Clase de Armadura (CA) de la misma. ",
-            "Las <b>Tiradas de Salvación</b>, que son tiradas que realizan las criaturas para evitar sufrir un efecto provocado por algún tipo de efecto el cual define cuál es su CD. Sólo hay las Tiradas de Salvación de Fuerza, Agilidad, Resistencia y Espíritu."
+            "Las <b>Tiradas de Habilidad</b>, que se realizan cuando un personaje quiere hacer algún tipo de acción general, tienen una Dificultad establecida por el DJ dependiente de la dificultad de la acción a tomar. Cuando el DJ te pida una Tirada de Habilidad, te dirá que Habilidad y que Estadística están involucradas. Para abreviar, usualmente estas se describen de la forma “Habilidad (Estadística)”.",
+            "Las <b>Tiradas de Ataque</b>, que se realizan cuando se intenta atacar a una criatura, y cuya dificultad es la Evasión (EVA) de la misma. ",
+            "Las <b>Tiradas de Salvación</b>, que son tiradas que realizan las criaturas para evitar sufrir un efecto provocado por algún tipo de efecto el cual define cuál es su Dificultad. Sólo hay las Tiradas de Salvación de Fuerza, Agilidad, Resistencia y Espíritu."
         ]
     },
     {
@@ -2182,7 +2182,7 @@
             "Capítulo 2"
         ],
         "descripciones": [
-            " No todas las Tiradas de Habilidad se realizan contra un CD. En muchas ocasiones, intentarás una acción que está directamente en conflicto con la de otra persona, como pasar desapercibido ante un guardia vigilante o mentirle a alguien. En ese caso, tanto tú como tu oponente realizan una Tirada de Habilidad y comparan los resultados. En los ejemplos anteriores, se pondrían a prueba Sigilo contra Percepción y Engaño contra Empatía, respectivamente. Quien saque un resultado más alto gana la Tirada enfrentada.",
+            " No todas las Tiradas de Habilidad se realizan contra un Dificultad. En muchas ocasiones, intentarás una acción que está directamente en conflicto con la de otra persona, como pasar desapercibido ante un guardia vigilante o mentirle a alguien. En ese caso, tanto tú como tu oponente realizan una Tirada de Habilidad y comparan los resultados. En los ejemplos anteriores, se pondrían a prueba Sigilo contra Percepción y Engaño contra Empatía, respectivamente. Quien saque un resultado más alto gana la Tirada enfrentada.",
             " En caso de empate, gana el defensor, es decir, la persona que mantiene el status quo. Por lo tanto, en los ejemplos anteriores, el guardia que está vigilando y la persona que intenta detectar una mentira se consideran los defensores. "
         ]
     },
@@ -2194,7 +2194,7 @@
         ],
         "descripciones": [
             " Las criaturas pueden, y a menudo deben, cooperar en las Tiradas de Habilidad. Hay dos formas de hacerlo.",
-            " La primera forma es a través de las <b>Tiradas de Habilidad en Grupo</b> , que se utilizan para actividades en las que varios participantes pueden contribuir de manera equitativa a una tarea sin un actor principal. A menudo, estas Tiradas de Habilidad son demasiado difíciles para que una sola persona o Pokémon las maneje por sí solo o tratan una tarea que debe realizar todo el grupo. Un buen ejemplo de esto sería cuando varios Entrenadores y Pokémon evitan que una roca ruede cuesta abajo o cuando todo el grupo tiene que pasar sigilosamente ante un guardia. En estos casos, cada jugador realiza su tirada por separado y se obtiene el promedio de estas. Si este promedio supera o iguala la CD, la tirada se supera, si no, se falla. ",
+            " La primera forma es a través de las <b>Tiradas de Habilidad en Grupo</b> , que se utilizan para actividades en las que varios participantes pueden contribuir de manera equitativa a una tarea sin un actor principal. A menudo, estas Tiradas de Habilidad son demasiado difíciles para que una sola persona o Pokémon las maneje por sí solo o tratan una tarea que debe realizar todo el grupo. Un buen ejemplo de esto sería cuando varios Entrenadores y Pokémon evitan que una roca ruede cuesta abajo o cuando todo el grupo tiene que pasar sigilosamente ante un guardia. En estos casos, cada jugador realiza su tirada por separado y se obtiene el promedio de estas. Si este promedio supera o iguala la Dificultad, la tirada se supera, si no, se falla. ",
             " La segunda forma es mediante las <b>Tiradas con Ayuda</b>. En estas hay un actor principal en la tarea y alguien más puede ayudar de manera secundaria. En estos casos, si la persona que ayuda es al menos Buena en la Habilidad del tipo de Tirada a realizar, este puede dar Ventaja al actor principal para hacer su tirada. "
         ]
     },
@@ -2252,14 +2252,14 @@
         ]
     },
     {
-        "nombre": "Clase de Armadura (CA)",
+        "nombre": "Evasión (EVA)",
         "tipos": [
             "Término",
             "Capítulo 3",
             "Capítulo 6"
         ],
         "descripciones": [
-            "La <b>Clase de Armadura (CA)</b> de una Criatura es la Dificultad (DC) de las Tiradas de Ataque que se hacen contra la misma contra el que tendrán que lanzar sus ataques tus rivales para poder golpearte. Una Tirada de Ataque que te golpea suele implicar recibir daño y, en ciertas ocasiones, ser afectado por otros efectos."
+            "La <b>Evasión (EVA)</b> de una Criatura es la Dificultad (Dificultad) de las Tiradas de Ataque que se hacen contra la misma contra el que tendrán que lanzar sus ataques tus rivales para poder golpearte. Una Tirada de Ataque que te golpea suele implicar recibir daño y, en ciertas ocasiones, ser afectado por otros efectos."
         ]
     },
     {
@@ -2293,7 +2293,7 @@
             "Las <b>Etiquetas</b> de un Movimiento son un conjunto de categorías que ayudan a clasificar los Movimientos a la hora de que ciertos efectos los modifiquen. Por ejemplo, la habilidad Mandíbula Fuerte potencia los Movimientos con la Etiqueta de Mordisco. La mayoría de Etiquetas son autoexplicativas pero más abajo hay un apartado que las comenta y da sus reglas especiales, si las tienen.",
             "Las <b>Estadísticas Asociadas</b> a un Movimiento es una Estadística que puede elegir una Criatura para usar un Movimiento de entre la lista ofrecida por el mismo. Si un valor asociado a un Movimiento depende de esta Estadística asociada, esta dice que depende de su EST.",
             "Si un Movimiento requiere realizar una Tirada de Ataque para que este tome efecto, la Criatura que lo usa se considera Buena en la Tirada de Ataque y añade a esta la Estadística Asociada que elige. Es decir, que su bono a la Tirada de Ataque es igual a la EST + BH. ",
-            "<b>Todos los Movimientos tienen un CD</b>, el cual es el valor que deben igualar o superar las Criaturas al hacer Tiradas de Salvación contra el Movimiento si este requiere que se hagan para evitar su efecto. Este CD se calcula como 10 + BH + EST. ",
+            "<b>Todos los Movimientos tienen un Dificultad</b>, el cual es el valor que deben igualar o superar las Criaturas al hacer Tiradas de Salvación contra el Movimiento si este requiere que se hagan para evitar su efecto. Este Dificultad se calcula como 10 + BH + EST. ",
             "La <b>Descripción</b> de un Movimiento explica lo que ocurre al usarlo y las Tiradas de d20 que este requiere hacer y los efectos de estas. Si un Movimiento hace daño y provoca otro efecto, este segundo se denomina su <b>Efecto Secundario</b>. ",
             "Los Movimientos que cuestan una Reacción tienen una condición para poder utilizarse que se detalla al principio de su descripción, la cual siempre empieza con la palabra “Cuando”. "
         ]
@@ -2613,7 +2613,7 @@
         ],
         "descripciones": [
             "A lo largo de tus aventuras, encontrarás diversas situaciones en las que puedas añadir nuevos Pokémon a tu equipo. A este acto de obtener nuevos compañeros Pokémon se le llama Capturar. Hay diferentes formas de Capturar Pokémon.",
-            "El tipo de captura más común es capturar lanzando una Poké Ball. Las Poké Ball son esferas algo más pequeñas que un puño, en parte tecnológicas y en parte mágicas, que pueden contener a un Pokémon en su interior y que crean una conexión entre entrenador y Pokémon que les permite comprenderse con mayor facilidad. Para que una Poké Ball pueda intentar capturar a un Pokémon primero debe tocarlo, lo que usualmente se consigue lanzando la Poké Ball. Los entrenadores pueden Lanzar Poké Balls como una Acción a una distancia en metros igual a 5 más su Fuerza. Si el Pokémon no pertenece a otro entrenador, entra a la Poké Ball , aunque esto no significa que ya haya sido capturado, pues aún puede escapar. Luego de que el Pokémon entre a la Poké Ball, el entrenador debe hacer una Tirada de Trato Pokémon (Presencia) cuya CD se calcula de la siguiente forma: ",
+            "El tipo de captura más común es capturar lanzando una Poké Ball. Las Poké Ball son esferas algo más pequeñas que un puño, en parte tecnológicas y en parte mágicas, que pueden contener a un Pokémon en su interior y que crean una conexión entre entrenador y Pokémon que les permite comprenderse con mayor facilidad. Para que una Poké Ball pueda intentar capturar a un Pokémon primero debe tocarlo, lo que usualmente se consigue lanzando la Poké Ball. Los entrenadores pueden Lanzar Poké Balls como una Acción a una distancia en metros igual a 5 más su Fuerza. Si el Pokémon no pertenece a otro entrenador, entra a la Poké Ball , aunque esto no significa que ya haya sido capturado, pues aún puede escapar. Luego de que el Pokémon entre a la Poké Ball, el entrenador debe hacer una Tirada de Trato Pokémon (Presencia) cuya Dificultad se calcula de la siguiente forma: ",
             "Ratio de Captura + Nivel + PV restantes / 10",
             "Esta dificultad puede aumentar o disminuir en función de la predisposición del Pokémon a ser capturado por el entrenador (a discreción del DJ). Si la tirada supera dicha dificultad, el Pokémon es capturado y queda en la Poké Ball. Si falla, el Pokémon escapa de esta, rompiéndola en el proceso y, en ciertas ocasiones, un Pokémon puede dejarse capturar sin necesidad de realizar una Tirada. "
         ]
@@ -2657,7 +2657,7 @@
         "descripciones": [
             "Si la fisionomía de un Pokémon lo permite y es de un tamaño mayor o igual al de su entrenador, este puede dejarse montar. Cuando esto ocurre, se refiere al Pokémon como <b>Montura</b> y al entrenador como <b>Montador</b>. Una Montura puede quedar Levemente sobrecargada o Sobrecargada al llevar a su Montador encima.",
             "Montarse o desmontarse de un Pokémon es parte de la Acción Compartida que se toma para dar una Orden al Pokémon o una Acción. Además, la Montura sólo puede moverse si el Montador le ha dado una Órden o si usa su Acción para indicarle a donde moverse. ",
-            "Si un efecto mueve al Montador o la Montura queda tumbada, el primero cae de la Montura, quedando tumbado a no ser que supere una tirada de Atletismo (Fuerza) o Acrobacias (Agilidad) CD 10. ",
+            "Si un efecto mueve al Montador o la Montura queda tumbada, el primero cae de la Montura, quedando tumbado a no ser que supere una tirada de Atletismo (Fuerza) o Acrobacias (Agilidad) Dificultad 10. ",
             "Cuando una Montura carga con su entrenador, puede que algunos de sus Movimientos no puedan usarse. Por ejemplo, un Machoke que carga su entrenador en brazos no podría usar Tajo Cruzado porque no tiene las manos libres para hacerlo. ",
             "Si una montura genera un ataque de oportunidad, este puede lanzarse contra el Montador si está a rango de ser atacado por un Movimiento cuerpo a cuerpo "
         ]
@@ -2671,7 +2671,7 @@
         "descripciones": [
             "La <b>Megaevolución</b> es un proceso mediante el cual un Pokémon puede alcanzar temporalmente una forma evolucionada de sí mismo incluso tras haber alcanzado su forma final, extrayendo poder de su conexión con su entrenador, que es canalizada a través de una <b>Megapiedra</b> asociada a su especie que debe llevar el Pokémon encima y un <b>Mega abalorio</b>, que debe llevar el entrenador, aunque en ocasiones extrañas puede ocurrir sin un Mega abalorio a un Pokémon salvaje.",
             "Para poder Megaevolucionar, la Amistad de un Pokémon con su entrenador debe ser de nivel 5 como mínimo. ",
-            "Al igual que la evolución, como parte de la Acción Compartida que toman Entrenador y Pokémon para dar y recibir una Orden, un Pokémon puede Megaevolucionar a su Pokémon, el cual automáticamente toma su nueva forma, adoptando nuevas Estadísticas, pudiendo cambiar sus Tipos, y ganar una Habilidad, una nueva forma de calcular su CA, nuevas Velocidades y Sentidos. Esta información se encuentra detallada en las entradas de la Pokédex de las especies que pueden Megaevolucionar. ",
+            "Al igual que la evolución, como parte de la Acción Compartida que toman Entrenador y Pokémon para dar y recibir una Orden, un Pokémon puede Megaevolucionar a su Pokémon, el cual automáticamente toma su nueva forma, adoptando nuevas Estadísticas, pudiendo cambiar sus Tipos, y ganar una Habilidad, una nueva forma de calcular su Evasión, nuevas Velocidades y Sentidos. Esta información se encuentra detallada en las entradas de la Pokédex de las especies que pueden Megaevolucionar. ",
             "Además, al Megaevolucionar un Pokémon se libera de todos los Estados que lo afligen, se ganan 100 Puntos de Escudo y el daño base de todos su Movimientos aumenta en 2 dados. ",
             "Un Pokémon Megaevolucionado vuelve a su estado natural al final de una Escena, cuando cae a 0 PV o cuando su entrenador use una Acción para que esto ocurra. La Megaevolución es un proceso duro, tanto entrenador como Pokémon, así que, cuando este estado acaba tanto entrenador como Pokémon ganan 2 Niveles de Fatiga y, además, ni el Pokémon puede volver a Megaevolucionar hasta que Descanse ni el entrenador puede hacer Megaevolucionar a otro Pokémon hasta lo haga. ",
             "Una excepción a la regla de requerir una Megapiedra es el caso de Mega Rayquaza, que se transforma cuando va a usar Ascenso Draco pero antes de ejecutar el Movimiento y sin entrenador. ",
@@ -2855,7 +2855,7 @@
         ],
         "descripciones": [
             "Un Rasgo o Movimiento puede describir que haces un ataque de cierto tipo. Los ataques cuerpo a cuerpo sólo pueden realizarse contra criaturas a 1 metro de ti, a no ser que se describa lo contrario. Los ataques a rango siempre tienen una distancia máxima a la que pueden hacerse. ",
-            "Para realizar un ataque, haces una Tirada de Ataque contra la CA del objetivo. Si la superas o igualas, se considera que el ataque golpea. "
+            "Para realizar un ataque, haces una Tirada de Ataque contra la Evasión del objetivo. Si la superas o igualas, se considera que el ataque golpea. "
         ]
     },
     {
@@ -2903,7 +2903,7 @@
         "descripciones": [
             "Cuando una criatura queda inconsciente por caer a 0 PV gana 1 Nivel de Fatiga y queda a merced de los que están a su alrededor. Cualquier otra criatura puede atacar a esta criatura y esto podría llegar a causar su muerte. ",
             "Si una criatura recibe daño estando a 0 PV, gana 2 Niveles de Fatiga y, si este daño fue provocado por una Tirada de Ataque cuerpo a cuerpo, en su lugar gana 3 Niveles de Fatiga. Cuando una criatura llega a 11 Niveles de Fatiga, muere. ",
-            "Una criatura puede tomar una Acción para hacer una tirada de Conocimiento Médico (Mente) CD 15 para hacer que una criatura Inconsciente recupere 1 PV. Cuando esto ocurre, la criatura que ha recuperado el PV pierde su próxima Acción. Tomar esta Acción no elimina los Niveles de Fatiga acumulados por recibir daño estando a 0 PV. "
+            "Una criatura puede tomar una Acción para hacer una tirada de Conocimiento Médico (Mente) Dificultad 15 para hacer que una criatura Inconsciente recupere 1 PV. Cuando esto ocurre, la criatura que ha recuperado el PV pierde su próxima Acción. Tomar esta Acción no elimina los Niveles de Fatiga acumulados por recibir daño estando a 0 PV. "
         ]
     },
     {
@@ -2950,7 +2950,7 @@
         ],
         "descripciones": [
             "En un concurso Pokémon participan entre 2 y 4 Coordinadores y de 1 a 3 de sus Pokémon por coordinador, que actúan de forma simultánea. El objetivo de los concursos es crear un espectáculo que destaque entre los de todos los demás Coordinadores. Para ganar, se deben alcanzar 100 de Puntos de Exhibición antes que los demás a lo largo de un máximo de 10 rondas. Si al final del concurso nadie ha alcanzado el límite de Puntos de Exhibición, gana el Coordinador con más Puntos.",
-            "<b>Dificultad de Concurso.</b> Todos los Concursos Pokémon tienen una Clase de Dificultad del Concurso, que representa el nivel esperado de los Coordinadores y la exigencia de los jueces o el público. Usualmente, un Concurso se considera de nivel adecuado para un Personaje cuando la CD del Concurso es igual a 5 más el BH del Personaje. ",
+            "<b>Dificultad de Concurso.</b> Todos los Concursos Pokémon tienen una Dificultad del Concurso, que representa el nivel esperado de los Coordinadores y la exigencia de los jueces o el público. Usualmente, un Concurso se considera de nivel adecuado para un Personaje cuando la Dificultad del Concurso es igual a 5 más el BH del Personaje. ",
             "<b>Prohibiciones.</b> En los concursos está prohibido provocar daño, provocar pérdida de PV o provocar un Estado sobre una Criatura. Hacer cualquiera de estas cosas genera una descalificación. ",
             "<b>Temática.</b> Los concursos Pokémon pueden y suelen tener Temática. La Temática de un Concurso Pokémon indica que tipo de pruebas se van a proponer y pueden restringir el uso de Pokémon de ciertos Tipos Elementales o con ciertas Velocidades, restringir o penalizar el uso de ciertos Movimientos y beneficiar ciertas Tiradas de Habilidad. Por ejemplo, un concurso basado en la danza submarina podría permitir sólo Pokémon con Velocidad de Nado, penalizar los Movimientos con Etiqueta de Sonido y beneficiar los Movimientos con Etiqueta de Danza. "
         ]
@@ -2973,8 +2973,8 @@
         ],
         "descripciones": [
             "Un Coordinador gana Puntos de Exhibición una vez por turno si da una Orden a uno de sus Pokémon de usar un Movimiento el cual los jueces o el público deben poder ver y oír. Al usar el Movimiento, el jugador describe lo que hace el Pokémon y propone una Tirada de Habilidad que quiere que haga el Pokémon y, si el Coordinador participa en las acciones descritas, también elige una Tirada de Habilidad que hace este. Si el DJ está de acuerdo, se realizan las Tiradas y el Coordinador gana puntos de Exhibición. ",
-            "Si sólo actúa el Pokémon el Coordinador ganan Puntos de Exhibición iguales a la diferencia del resultado de la Tirada de Habilidad con la CD del Concurso (mínimo 0). ",
-            "Si actúan Coordinador y Pokémon, ambos calculan la diferencia entre el resultado de la Tirada de Habilidad con la CD del Concurso y se ganan Puntos de Exhibición iguales a la mayor de ambas diferencias (mínimo 0). Sin embargo, sí el Coordinador o su Pokémon obtienen un 1 en la Tirada Natural de su Tirada de Habilidad, la actuación sale fatal por estar muy descoordinada y el Coordinador no sólo no gana Puntos de Exhibición. sino que pierde 10 y, si era el Centro de Atención, deja de serlo."
+            "Si sólo actúa el Pokémon el Coordinador ganan Puntos de Exhibición iguales a la diferencia del resultado de la Tirada de Habilidad con la Dificultad del Concurso (mínimo 0). ",
+            "Si actúan Coordinador y Pokémon, ambos calculan la diferencia entre el resultado de la Tirada de Habilidad con la Dificultad del Concurso y se ganan Puntos de Exhibición iguales a la mayor de ambas diferencias (mínimo 0). Sin embargo, sí el Coordinador o su Pokémon obtienen un 1 en la Tirada Natural de su Tirada de Habilidad, la actuación sale fatal por estar muy descoordinada y el Coordinador no sólo no gana Puntos de Exhibición. sino que pierde 10 y, si era el Centro de Atención, deja de serlo."
         ]
     },
     {
@@ -3326,7 +3326,7 @@
             "Capítulo 10"
         ],
         "descripciones": [
-            " Cuando una criatura se esfuerza por demasiado rato o un combate es demasiado exigente, es normal que se canse y no pueda luchar más, incluso si sana mediante medicinas. Para representar esto existen los Niveles de Fatiga. Se pueden tener de 0 a 10 Niveles de Fatiga y, por cada Nivel de Fatiga, se tiene un -1 a todas las Tiradas de d20 y daño, a la CA, a la CD de los efectos que provocas a otras criaturas y a la cantidad de PP que tienes. Al llegar a 10 Niveles de Fatiga, caes a 0 PV y quedas Inconsciente y, si los superas, mueres. ",
+            " Cuando una criatura se esfuerza por demasiado rato o un combate es demasiado exigente, es normal que se canse y no pueda luchar más, incluso si sana mediante medicinas. Para representar esto existen los Niveles de Fatiga. Se pueden tener de 0 a 10 Niveles de Fatiga y, por cada Nivel de Fatiga, se tiene un -1 a todas las Tiradas de d20 y daño, a la Evasión, a la Dificultad de los efectos que provocas a otras criaturas y a la cantidad de PP que tienes. Al llegar a 10 Niveles de Fatiga, caes a 0 PV y quedas Inconsciente y, si los superas, mueres. ",
             "Recibes Niveles de Fatiga en las siguientes situaciones:",
             {
                 "tipo": "listaU",
@@ -3349,7 +3349,7 @@
         "descripciones": [
             "Una criatura puede cargar una cierta cantidad de peso en función de su Fuerza y de su Tamaño y, usualmente, la <b>Carga</b> que representa un objeto viene determinado por su Tamaño, aunque tu DJ puede establecer pesos específicos para objetos en concreto. En general, un objeto Enano o menor representa una Carga de 1. Un objeto pequeño representa una Carga de 10, uno mediano una Carga de 100 y los objetos de Tamaño Grande o mayor tienen cada uno una Carga específica ",
             "Una criatura tiene una <b>Capacidad de Carga Máxima igual</b> a 3 más su Fuerza multiplicado por un valor dependiente de su tamaño. Si la criatura es Enana, este valor es 1, si es Pequeña es 10, si es Mediana, 50, si es grande, 100, si es Enorme 500 y si es Colosal, 1000. Una criatura se considera Levemente Sobrecargada cuando la Carga Total, la suma de la Carga de todo lo que lleva encima, es superior a la mitad de su Capacidad de Carga Máxima, está Sobrecargada si su Carga Total supera las tres cuartas partes de su Capacidad de Carga Máxima. ",
-            "Una criatura que está Levemente Sobrecargada ve todas sus Velocidades reducidas a 0 y no puede usar su Velocidad de Vuelo o Levitado. Una criatura Sobrecargada además Tiene Desventaja en todas las Tiradas de d20 que involucren Fuerza y Agilidad y su CA se reduce en 2 y, por último, una criatura cuya Carga Total supera su Capacidad de Carga Máxima no puede moverse y falla todas las Tiradas de Salvación de Agilidad automáticamente. "
+            "Una criatura que está Levemente Sobrecargada ve todas sus Velocidades reducidas a 0 y no puede usar su Velocidad de Vuelo o Levitado. Una criatura Sobrecargada además Tiene Desventaja en todas las Tiradas de d20 que involucren Fuerza y Agilidad y su Evasión se reduce en 2 y, por último, una criatura cuya Carga Total supera su Capacidad de Carga Máxima no puede moverse y falla todas las Tiradas de Salvación de Agilidad automáticamente. "
         ]
     },
     {
@@ -3517,7 +3517,7 @@
         ],
         "descripciones": [
             "En algunas situaciones, un Pokémon no seguirá las órdenes de su entrenador por no respetarlo o incluso odiarlo. ",
-            "Si el Nivel de Amistad entre un Pokémon y su entrenador es de 0 o 1 o el Pokémon es de mayor Nivel que el de su entrenador y el Nivel de Amistad entre ambos es de 2 o inferior, cada vez que el entrenador le da una Órden, debe hacer una Tirada de Trato Pokémon con CD igual al Ratio de Captura del Pokémon más el BH del mismo. Si el entrenador falla, el Pokémon no hace caso, no haciendo nada o tomando otra Acción distinta (a discreción del DJ). "
+            "Si el Nivel de Amistad entre un Pokémon y su entrenador es de 0 o 1 o el Pokémon es de mayor Nivel que el de su entrenador y el Nivel de Amistad entre ambos es de 2 o inferior, cada vez que el entrenador le da una Órden, debe hacer una Tirada de Trato Pokémon con Dificultad igual al Ratio de Captura del Pokémon más el BH del mismo. Si el entrenador falla, el Pokémon no hace caso, no haciendo nada o tomando otra Acción distinta (a discreción del DJ). "
         ]
     },
     {
@@ -3527,8 +3527,8 @@
             "Capítulo 10"
         ],
         "descripciones": [
-            "Cuando un Personaje encuentra un Huevo Pokémon puede intentar reconocer su Especie. Para hacerlo debe realizar una Tirada de Conocimiento Pokémon con CD igual a 10 más el Ratio de Captura del Pokémon que sale del huevo.",
-            "Además, como Acción Extendida, un Personaje que conoce a qué Especie se corresponde el huevo puede realizar una Tirada de Conocimiento Pokémon CD 20. Si la pasa, sabe la cantidad de semanas que le quedan al huevo para eclosionar y, si la pasa por 5 o más, sabe la cantidad de días exactos. Un Personaje puede tomar esta Acción Extendida 1 vez cada Día para cada huevo. "
+            "Cuando un Personaje encuentra un Huevo Pokémon puede intentar reconocer su Especie. Para hacerlo debe realizar una Tirada de Conocimiento Pokémon con Dificultad igual a 10 más el Ratio de Captura del Pokémon que sale del huevo.",
+            "Además, como Acción Extendida, un Personaje que conoce a qué Especie se corresponde el huevo puede realizar una Tirada de Conocimiento Pokémon Dificultad 20. Si la pasa, sabe la cantidad de semanas que le quedan al huevo para eclosionar y, si la pasa por 5 o más, sabe la cantidad de días exactos. Un Personaje puede tomar esta Acción Extendida 1 vez cada Día para cada huevo. "
         ]
     },
     {
@@ -3547,8 +3547,8 @@
                     "La información es imposible de conocer, en cuyo caso el DJ se lo comunica al Jugador. "
                 ]
             },
-            "<b>Clase de Dificultad.</b> La CD de una de estas Tiradas de Conocimiento Pokémon es igual al Ratio de Captura del Pokémon más la mitad de su Nivel Mínimo (o de 25 a 35 si es un Pokémon Legendario o Mítico, a discreción del DJ). Además, la CD se reduce en 5 para saber los Tipos Elementales del Pokémon y también puede aumentar hasta en 5 si la información que se pide es particularmente específica (a discreción del DJ).",
-            "<b>Ejemplo</b>: Un Sunkern es fácilmente reconocible como Tipo Planta, así que simplemente le da esa información si la pide; no es obvio cuales son sus Habilidades, por lo tanto, el Personaje debe pasar Tirada de Conocimiento Pokémon CD 10 para decírselo; si el personaje no está familiarizado con esta región, es imposible que sepa con certeza si los Sunkern usualmente la habitan y así que le comunica que no podría saberlo. "
+            "<b>Dificultad.</b> La Dificultad de una de estas Tiradas de Conocimiento Pokémon es igual al Ratio de Captura del Pokémon más la mitad de su Nivel Mínimo (o de 25 a 35 si es un Pokémon Legendario o Mítico, a discreción del DJ). Además, la Dificultad se reduce en 5 para saber los Tipos Elementales del Pokémon y también puede aumentar hasta en 5 si la información que se pide es particularmente específica (a discreción del DJ).",
+            "<b>Ejemplo</b>: Un Sunkern es fácilmente reconocible como Tipo Planta, así que simplemente le da esa información si la pide; no es obvio cuales son sus Habilidades, por lo tanto, el Personaje debe pasar Tirada de Conocimiento Pokémon Dificultad 10 para decírselo; si el personaje no está familiarizado con esta región, es imposible que sepa con certeza si los Sunkern usualmente la habitan y así que le comunica que no podría saberlo. "
         ]
     },
     {
@@ -3623,10 +3623,10 @@
             "Capítulo 11"
         ],
         "descripciones": [
-            "Las arenas movedizas son Terreno Difícil y debe superarse una Tirada de Habilidad de Supervivencia o Percepción con CD 15 para detectarse antes de pisarlas. Una Criatura que termina su turno tocándolas, o que las pisa fuera de Iniciativa sin saber que están ahí, debe hacer una Tirada de Salvación de Fuerza con CD 14 (puedes cambiar esta Dificultad, la cual es la Dificultad de las Arenas) y, si la falla empieza a hundirse, ganando 1 Nivel de Enterrado en las Arenas Movedizas. Una criatura que tiene Niveles de Enterrado en las Arenas Movedizas está Apresada. ",
+            "Las arenas movedizas son Terreno Difícil y debe superarse una Tirada de Habilidad de Supervivencia o Percepción con Dificultad 15 para detectarse antes de pisarlas. Una Criatura que termina su turno tocándolas, o que las pisa fuera de Iniciativa sin saber que están ahí, debe hacer una Tirada de Salvación de Fuerza con Dificultad 14 (puedes cambiar esta Dificultad, la cual es la Dificultad de las Arenas) y, si la falla empieza a hundirse, ganando 1 Nivel de Enterrado en las Arenas Movedizas. Una criatura que tiene Niveles de Enterrado en las Arenas Movedizas está Apresada. ",
             "Para liberarse de las Arenas Movedizas deben reducirse estos Niveles de Enterrado en las Arenas Movedizas a 0. El máximo de Niveles que Enterrado que puede tener una criatura es de 4, a no ser que tu definas que es más alto. Una criatura con 3 Niveles de Enterrado o más está completamente cubierta y empieza a sofocarse, ganando 1 Nivel de Fatiga al final de cada uno de sus turnos. ",
             "Una criatura puede usar su Acción para intentar liberarse de las Arenas Movedizas, repitiendo la Tirada de Salvación. Si la pasa, reduce en 1 sus Niveles de Enterrado. ",
-            "Además, una criatura puede ayudar a reducir sus Niveles de Enterrado a otra. Para ello, usa su Acción y hace una Tirada de Salvación con CD la Dificultad de las Arenas. Si la pasa, reduce en 1 los Niveles de Enterrado de otra criatura y, si la falla por 10 o más, ella cae a las arenas y gana 1 Nivel de Enterrado. Además, si de alguna forma una criatura se teleporta fuera de las arenas, obviamente queda libre de cualquier Nivel de Enterrado que sufriera. "
+            "Además, una criatura puede ayudar a reducir sus Niveles de Enterrado a otra. Para ello, usa su Acción y hace una Tirada de Salvación con Dificultad la Dificultad de las Arenas. Si la pasa, reduce en 1 los Niveles de Enterrado de otra criatura y, si la falla por 10 o más, ella cae a las arenas y gana 1 Nivel de Enterrado. Además, si de alguna forma una criatura se teleporta fuera de las arenas, obviamente queda libre de cualquier Nivel de Enterrado que sufriera. "
         ]
     },
     {
@@ -3658,7 +3658,7 @@
         ],
         "descripciones": [
             "Algunas zonas estarán llenas de gas venenoso. Decides si este gas venenoso además cuenta como una zona de Niebla y, si decides que si, eliges el espesor de esta. ",
-            "Además, una criatura que no es Tipo Veneno ni Tipo Acero hace una Tirada de Salvación de Resistencia contra un CD que tu eliges, el CD del Gas Venenoso. Si la fallan, ganan 1 Nivel de Envenenado. ",
+            "Además, una criatura que no es Tipo Veneno ni Tipo Acero hace una Tirada de Salvación de Resistencia contra un Dificultad que tu eliges, el Dificultad del Gas Venenoso. Si la fallan, ganan 1 Nivel de Envenenado. ",
             "Por último, una criatura que termina su turno dentro del Gas Venenoso no reduce sus Niveles de Envenenado al final de su turno "
         ]
     },
@@ -3682,7 +3682,7 @@
             "Capítulo 11"
         ],
         "descripciones": [
-            "La región está bajo uno o varios de los efectos del Movimiento Espacio raro, con un CD a tu elección."
+            "La región está bajo uno o varios de los efectos del Movimiento Espacio raro, con un Dificultad a tu elección."
         ]
     },
     {
@@ -3715,7 +3715,7 @@
             "Capítulo 11"
         ],
         "descripciones": [
-            "Esta región está hecha de islotes, cada uno con su gravedad propia que sólo toma efecto cuando se está muy cerca de ellos. Saltar de un Islote a otro requiere de Tiradas de Acrobacias o Atletismo con CD dependiente de la distancia entre estas, el cual defines tu. Una criatura que falla estas tiradas cae al vacío infinito tiene que buscar acercarse a otro islote para que su gravedad lo atraiga. Es usual que esta región además esté afectada también por los efectos de una Región de Espacio raro. "
+            "Esta región está hecha de islotes, cada uno con su gravedad propia que sólo toma efecto cuando se está muy cerca de ellos. Saltar de un Islote a otro requiere de Tiradas de Acrobacias o Atletismo con Dificultad dependiente de la distancia entre estas, el cual defines tu. Una criatura que falla estas tiradas cae al vacío infinito tiene que buscar acercarse a otro islote para que su gravedad lo atraiga. Es usual que esta región además esté afectada también por los efectos de una Región de Espacio raro. "
         ]
     },
     {
@@ -3884,7 +3884,7 @@
                     "El Pokémon base gana un Sentido que tiene el Pokémon de la Librería y pierde un Sentido. Luego, pierde un Sentido, la vista, el oído o el olfato, a tu elección. Repite este proceso por cada Pokémon añadido. "
                 ]
             },
-            "Ten en cuenta que un Pokémon puede ser Quimerizado más de una vez pero este proceso no es reversible. Además, los Pokémon Quimera son estériles, salvo en contadas ocasiones. Además, la CD para capturar a estos Pokémon aumenta en 5. "
+            "Ten en cuenta que un Pokémon puede ser Quimerizado más de una vez pero este proceso no es reversible. Además, los Pokémon Quimera son estériles, salvo en contadas ocasiones. Además, la Dificultad para capturar a estos Pokémon aumenta en 5. "
         ]
     },
     {
@@ -3907,7 +3907,7 @@
                     "El daño de Tipo Eléctrico se vuelve súper efectivo contra el Pokémon. "
                 ]
             },
-            "El proceso de Robotización es irreversible. Además, la CD para capturar a estos Pokémon aumenta en 5. "
+            "El proceso de Robotización es irreversible. Además, la Dificultad para capturar a estos Pokémon aumenta en 5. "
         ]
     },
     {
@@ -3962,12 +3962,12 @@
             "Capítulo 11"
         ],
         "descripciones": [
-            "En ciertas ocasiones un jugador o uno de sus Pokémon querrá romper un objeto como una puerta o una pared. En general, puedes definir primero si esto es posible y, si lo es, cuánto se tardaría en hacerlo. Por el contrario, quizás quieras que los jugadores rompan el objeto haciéndole daño. En estos casos, puedes definir una Clase de Armadura para el objeto y unos Puntos de Vida para este, así como su Tipo Elemental, del que dependerán los dos primeros. Si un Movimiento fuerza a hacer una Tirada de Salvación, tu defines si tiene sentido que funcione (por ejemplo, probablemente Confusión no pueda funcionar sobre un objeto) y, si lo hace, se considera que el objeto falla la Tirada de Salvación. ",
-            "Principalmente, encontrarás los siguientes 4 tipos de objetos. Si surge otro caso, básate en estos para definir su CA, su Tipo y sus PV. ",
-            "Madera: Los objetos de madera se consideran de Tipo Planta, tienen una CA de 15 y tiene una cantidad de PV igual a su grosor en centímetros por 30. ",
-            "Piedra: Los objetos de piedra se consideran de Tipo Roca, tienen una CA de 18 y tiene una cantidad de PV igual a su grosor en centímetros por 50. ",
-            "Metal: Los objetos de piedra se consideran de Tipo Acero, tienen una CA de 20 a 30, según tu criterio y tiene una cantidad de PV igual a su grosor en centímetros por un valor igual a 10 veces su CA. ",
-            "Cristal: Los objetos de cristal se consideran de Tipo Roca, tienen una CA de 10 y tiene una cantidad de PV igual a su grosor en centímetros por 10. "
+            "En ciertas ocasiones un jugador o uno de sus Pokémon querrá romper un objeto como una puerta o una pared. En general, puedes definir primero si esto es posible y, si lo es, cuánto se tardaría en hacerlo. Por el contrario, quizás quieras que los jugadores rompan el objeto haciéndole daño. En estos casos, puedes definir una Evasión para el objeto y unos Puntos de Vida para este, así como su Tipo Elemental, del que dependerán los dos primeros. Si un Movimiento fuerza a hacer una Tirada de Salvación, tu defines si tiene sentido que funcione (por ejemplo, probablemente Confusión no pueda funcionar sobre un objeto) y, si lo hace, se considera que el objeto falla la Tirada de Salvación. ",
+            "Principalmente, encontrarás los siguientes 4 tipos de objetos. Si surge otro caso, básate en estos para definir su Evasión, su Tipo y sus PV. ",
+            "Madera: Los objetos de madera se consideran de Tipo Planta, tienen una Evasión de 15 y tiene una cantidad de PV igual a su grosor en centímetros por 30. ",
+            "Piedra: Los objetos de piedra se consideran de Tipo Roca, tienen una Evasión de 18 y tiene una cantidad de PV igual a su grosor en centímetros por 50. ",
+            "Metal: Los objetos de piedra se consideran de Tipo Acero, tienen una Evasión de 20 a 30, según tu criterio y tiene una cantidad de PV igual a su grosor en centímetros por un valor igual a 10 veces su Evasión. ",
+            "Cristal: Los objetos de cristal se consideran de Tipo Roca, tienen una Evasión de 10 y tiene una cantidad de PV igual a su grosor en centímetros por 10. "
         ]
     },
     {

@@ -506,7 +506,7 @@
             "nivel": 10,
             "descripcion": [
                 "A nivel 10, te has vuelto un experto en buscar Pokémon en cualquier entorno. Una vez por día y como Acción Extendida, puedes aprender qué especies Pokémon aparecen comúnmente en un radio en kilómetros a tu alrededor igual a tu Bono de Entrenador.",
-                "Además, una vez al día puedes buscar a un espécimen de una especie de Pokémon que sabes que habitan en el área. Haz una tirada de Trato Pokémon (Bono de Entrenador) CD 20. Si la pasas, encuentras pistas que te guían hasta su localización."
+                "Además, una vez al día puedes buscar a un espécimen de una especie de Pokémon que sabes que habitan en el área. Haz una tirada de Trato Pokémon (Bono de Entrenador) Dificultad 20. Si la pasas, encuentras pistas que te guían hasta su localización."
             ]
         },
         {

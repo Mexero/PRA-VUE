@@ -230,7 +230,7 @@
         "Etiquetas": null,
         "Rango": "Sobre ti",
         "Descripcion": [
-            "Cuando ves a una criatura hacer una Tirada de Ataque contra ti, te proteges. Tu CA aumenta  en 5 para este ataque."
+            "Cuando ves a una criatura hacer una Tirada de Ataque contra ti, te proteges. Tu Evasión aumenta  en 5 para este ataque."
         ],
         "StatsAsociados": [],
         "ArmasRecomendadas": "Armas grandes o escudos"
@@ -383,7 +383,7 @@
         "Etiquetas": null,
         "Rango": "Cuerpo a cuerpo",
         "Descripcion": [
-            "Golpeas para partir todas las defensas que recubren a una criatura. Haz una Tirada de Ataque contra una criatura, ignorando todos los efectos de Escudo que apliquen sobre esta. Si golpea, la criatura recibe daño y todos los efectos de Escudo que la afectan acaban prematuramente. Si la criatura calcula su CA con RES, reduce su CA en 2 hasta el final de tu próximo turno."
+            "Golpeas para partir todas las defensas que recubren a una criatura. Haz una Tirada de Ataque contra una criatura, ignorando todos los efectos de Escudo que apliquen sobre esta. Si golpea, la criatura recibe daño y todos los efectos de Escudo que la afectan acaban prematuramente. Si la criatura calcula su Evasión con RES, reduce su Evasión en 2 hasta el final de tu próximo turno."
         ],
         "StatsAsociados": [
             "FUE"
@@ -402,7 +402,7 @@
         "Etiquetas": null,
         "Rango": "Cuerpo a cuerpo",
         "Descripcion": [
-            "Cuando ves a una criatura hacer una Tirada de Ataque contra ti, te proteges. Tu CA aumenta  en 5 para este ataque y, si la Tirada de Ataque se hizo a 1 metro de distancia de ti, haces una Tirada de Ataque cuerpo a cuerpo contra la criatura que la hizo. Si golpea, la criatura recibe daño."
+            "Cuando ves a una criatura hacer una Tirada de Ataque contra ti, te proteges. Tu Evasión aumenta  en 5 para este ataque y, si la Tirada de Ataque se hizo a 1 metro de distancia de ti, haces una Tirada de Ataque cuerpo a cuerpo contra la criatura que la hizo. Si golpea, la criatura recibe daño."
         ],
         "StatsAsociados": [
             "AGI"

@@ -271,7 +271,7 @@
             "claseNombre": "Luchador",
             "nivel": 1,
             "descripcion": [
-                "Cuando alcanzas nivel 1, resaltas por encima de los demás a la hora de pelear. Tu vitalidad se vuelve 9 si no es superior, puedes calcular tu CA como 10 + RES + BH y tu Grado de Habilidad en Combate aumenta en 1 hasta un máximo de Experto.",
+                "Cuando alcanzas nivel 1, resaltas por encima de los demás a la hora de pelear. Tu vitalidad se vuelve 9 si no es superior, puedes calcular tu Evasión como 10 + RES + BH y tu Grado de Habilidad en Combate aumenta en 1 hasta un máximo de Experto.",
                 "Además, puedes volverte tipo Lucha. Si ya tienes 2 tipos, puedes sustituir uno de estos por el tipo Lucha.",
                 "Por último, tus PP máximos aumentan en 2."
             ]
