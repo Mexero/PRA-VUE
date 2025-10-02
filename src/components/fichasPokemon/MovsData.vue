@@ -140,7 +140,6 @@ const typeMap = {
 
 .movimiento {
     border-radius: 8px;
-    text-align: justify;
     padding: 10px;
 }
 

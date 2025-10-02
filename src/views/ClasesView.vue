@@ -499,7 +499,6 @@ td:nth-child(2) {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    text-align: justify;
     margin: 20px 0;
     color: var(--color-texto);
     border-radius: 5px;

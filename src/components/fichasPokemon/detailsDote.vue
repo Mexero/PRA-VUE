@@ -51,10 +51,7 @@ const props = defineProps(['dote'])
     color: var(--color-texto);
 }
 
-.descripcion p,
-.descripcion li {
-    text-align: justify;
-}
+
 
 li {
     margin: 10px 0 0 25px;

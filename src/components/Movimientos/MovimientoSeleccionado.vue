@@ -61,9 +61,7 @@ function mostrarLista(dato) {
     gap: 10px;
 }
 
-.descripcion {
-    text-align: justify;
-}
+
 
 @media screen and (max-width: 890px) {
     .seleccionado {

@@ -44,10 +44,6 @@ defineProps([
     padding: 1.5rem;
 }
 
-.descripcion p,
-.descripcion li {
-    text-align: justify;
-}
 
 li {
     margin: 10px 0 0 25px;

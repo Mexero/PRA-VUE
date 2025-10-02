@@ -804,10 +804,19 @@ const mostrarToolbar = ref(false)
                             </div>
                         </div>
                     </div>
+                    <div class="BH">
+                        <label>BH </label>
 
+                        <input type="number" v-model.number="ficha.derivados.bh" :readonly="!ficha.manual.bh" />
+                    </div>
+                    <div class="fatiga">
+                        <div class="fatiga-label">FATIGA</div>
+                        <input type="number" v-model.number="ficha.derivados.fatiga" />
+                    </div>
                     <div class="destacados-area">
                         <FichaDestacados :ficha="ficha" :grados="grados" />
                     </div>
+
                     <div class="checks-area">
                         <FichaChecks :ficha="ficha" :ChecksBase="ChecksBase" />
                     </div>
@@ -819,7 +828,7 @@ const mostrarToolbar = ref(false)
                         <FichaOtros :ficha="ficha" :naturalezas="naturalezas" />
                     </div>
                 </div>
-
+ <!-- 
                 <div class="HabsDotesMovs">
                     <div class="col-izq">
                         <div class="habs">
@@ -838,7 +847,7 @@ const mostrarToolbar = ref(false)
                         </div>
                     </div>
                 </div>
-
+-->
             </div>
         </div>
     </div>
@@ -847,6 +856,70 @@ const mostrarToolbar = ref(false)
 </template>
 
 <style scoped>
+.fatiga {
+    border: 1px solid rgba(150, 150, 150, 0.798);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: fit-content;
+    grid-area: fatiga;
+    padding-bottom: 8px;
+}
+
+input {
+    font-size: larger;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(150, 150, 150, 0.798);
+    color: var(--color-texto);
+    width: 40px;
+    text-align: center;
+    box-shadow: none;
+}
+
+.fatiga input {
+    height: 25px;
+}
+
+.fatiga-label {
+    text-align: center;
+    margin-bottom: 4px;
+}
+
+.BH {
+    border: 1px solid rgba(150, 150, 150, 0.798);
+    border-radius: 10px;
+    height: fit-content;
+    width: 119px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+    justify-content: space-between;
+}
+
+.BH input {
+    padding: 4px;
+    border: none;
+}
+
+input:focus {
+    outline: none;
+    cursor: none;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
 .center {
     display: flex;
     width: 100%;
@@ -873,13 +946,22 @@ const mostrarToolbar = ref(false)
     width: fit-content;
     display: grid;
     grid-template-areas:
-        "stats destacados destacados velocidades"
-        "stats saves checks velocidades"
-        "otros otros otros otros";
-    grid-template-columns: auto auto 1fr auto;
-    grid-template-rows: auto auto auto;
-    gap: 10px;
+        "stats saves BH destacados velocidades"
+        "stats  saves fatiga destacados velocidades"
+        "stats saves  fatiga destacados velocidades"
+        "stats checks checks destacados velocidades"
+        "otros otros otros otros otros";
+    grid-template-columns: auto auto auto auto auto;
+    grid-template-rows: 95px auto auto auto auto; 
+
+    gap: 15px;
 }
+
+.BH {
+    grid-area: BH;
+}
+
+
 
 .stats-area {
     grid-area: stats;
@@ -908,18 +990,18 @@ const mostrarToolbar = ref(false)
 
 .salvaciones-area {
     border: 1px solid rgba(150, 150, 150, 0.798);
-    border-radius: 5px;
-    padding: 5px;
+    border-radius: 10px;
+    padding: 0 10px;
     height: fit-content;
     display: flex;
     flex-direction: column;
     gap: 5px;
-    margin-bottom: 10px;
+    text-align: center;
+    width: fit-content;
+    margin-top: 40px;
 }
 
 .bonosSalvacion {
-    border-radius: 5px;
-    padding: 3px;
     align-items: center;
     justify-content: center;
     display: flex;

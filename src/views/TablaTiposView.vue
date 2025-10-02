@@ -272,7 +272,7 @@ function hideTooltip() {
 
 .scrollTabla {
 
-    margin: 80px;
+    margin: 40px 10px;
     overflow-x: auto;
     overflow-y: hidden;
 }

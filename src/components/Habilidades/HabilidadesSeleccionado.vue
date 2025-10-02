@@ -42,9 +42,6 @@ defineProps([
     overflow-y: scroll;
 }
 
-.descripcion {
-    text-align: justify;
-}
 
 @media screen and (max-width: 890px) {
     .seleccionado {

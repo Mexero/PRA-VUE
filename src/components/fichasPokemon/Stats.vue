@@ -1,34 +1,15 @@
-<template>
-    <section>
-        <div class="puntosDisponibles">
-            Puntos disponibles:
-            <strong>{{ ficha.derivados.cantidadMejorasEST - ficha.personaliz.mejorasEst.length }}</strong>
-        </div>
-        <div class="statsYSaves">
-            <div class="stats">
-                <h3>Estadisticas</h3>
-                <div class="item" v-for="stat in ['fue', 'agi', 'res', 'men', 'esp', 'pre']" :key="stat">
-                    {{ stat.toUpperCase() + " " }}
-                    <div class="statsContenido">
-                        <span class="bonoStat" v-if="ficha.derivados.stats[stat] > ficha.pokedex.statsBase[stat]">
-                            +{{ ficha.derivados.stats[stat] - ficha.pokedex.statsBase[stat] }}
-                        </span>
-                        <span class="numStat">{{ ficha.derivados.stats[stat] }}</span>
-                        <div class="botonMaxMenos">
-                            <button class="btn-mas" @click="cambiarMejoraEST(stat, 1)"></button>
-                            <button class="btn-menos" @click="cambiarMejoraEST(stat, -1)"></button>
-                        </div>
-                    </div>
-                    <span v-if="['fue', 'agi', 'res', 'esp'].includes(stat)"></span>
-                </div>
-            </div>
-        </div>
-    </section>
-</template>
-
 <script setup>
 const props = defineProps(['ficha'])
 const ficha = props.ficha
+
+const nombresStats = {
+    fue: 'FUERZA',
+    agi: 'AGILIDAD',
+    res: 'RESISTENCIA',
+    men: 'MENTE',
+    esp: 'ESPIRITU',
+    pre: 'PRESENCIA'
+}
 
 //cambiar Mejoras de EST
 function cambiarMejoraEST(stat, delta) {
@@ -52,21 +33,45 @@ function cambiarMejoraEST(stat, delta) {
 }
 </script>
 
+<template>
+    <section>
+        <div class="puntosDisponibles">
+            Mejoras:
+            <strong>{{ ficha.derivados.cantidadMejorasEST - ficha.personaliz.mejorasEst.length }}</strong>
+        </div>
+        <div class="statsYSaves">
+            <div class="stats">
+                <div class="item" v-for="stat in ['fue', 'agi', 'res', 'men', 'esp', 'pre']" :key="stat">
+                    {{ nombresStats[stat] + " " }}
+                    <div class="statsContenido">
+                        <span class="bonoStat" v-if="ficha.derivados.stats[stat] > ficha.pokedex.statsBase[stat]">
+                            +{{ ficha.derivados.stats[stat] - ficha.pokedex.statsBase[stat] }}
+                        </span>
+                        <span class="numStat">{{ ficha.derivados.stats[stat] }}</span>
+                        <div class="botonMaxMenos">
+                            <button class="btn-mas" @click="cambiarMejoraEST(stat, 1)"></button>
+                            <button class="btn-menos" @click="cambiarMejoraEST(stat, -1)"></button>
+                        </div>
+                    </div>
+                    <span v-if="['fue', 'agi', 'res', 'esp'].includes(stat)"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+</template>
+
 <style scoped>
-.stats {
-    margin: 10px 0;
-    padding: 5px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-    gap: 10px;
-    border: 1px solid rgba(150, 150, 150, 0.798);
-    border-radius: 5px;
+.statsYSaves{
+    width: fit-content;
 }
 
-.stats h3 {
-    grid-column: 1 / -1;
-    text-align: center;
+.stats {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid rgba(150, 150, 150, 0.798);
+    border-radius: 10px;
 }
 
 .item {
@@ -74,15 +79,16 @@ function cambiarMejoraEST(stat, delta) {
     align-items: center;
     flex-direction: column;
     border: 1px solid rgba(150, 150, 150, 0.798);
-    border-radius: 5px;
-    padding: 5px;
-    width: 100px;
+    padding: 10px 0;
+    width: 115px;
 }
 
-.bonoStat {
-    grid-column: 1;
+.stats div:first-child {
+    border-radius: 10px 10px 0  0 ;
 }
-
+.stats div:last-child {
+    border-radius: 0 0 10px 10px ;
+}
 .numStat {
     grid-column: 2;
     font-weight: bold;
@@ -166,10 +172,10 @@ function cambiarMejoraEST(stat, delta) {
 
     }
 
-  
 
-    
 
-    
+
+
+
 }
 </style>

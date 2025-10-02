@@ -960,7 +960,7 @@
                 <li>Los Pokémon de Tipo Hielo, los que se potencian cuando nieva o son inmunes a ser Helados ignoran los
                     efectos negativos de Nevada.</li>
             </ul>
-            <p>
+            
                 <strong>Tormenta de arena</strong>: La tormenta de arena es molesta y hace que volar sea incómodo.
             <ul>
                 <li>Moverse 1 metro volando o levitando cuesta 1 metro de Velocidad más de lo normal.</li>
@@ -970,7 +970,7 @@
                 <li>Los Pokémon Tierra, Roca y Acero o los que se potencian cuando están en una Tormenta de Arena
                     ignoran los efectos negativos de Tormenta de Arena.</li>
             </ul>
-            </p>
+            
         </div>
     </details>
 

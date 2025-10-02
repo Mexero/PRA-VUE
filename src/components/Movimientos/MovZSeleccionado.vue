@@ -73,9 +73,6 @@ const itemsGrid = computed(() => {
     padding: 1.5rem;
 }
 
-.descripcion p {
-    text-align: justify;
-}
 
 .descripcion,
 .notaFinal {

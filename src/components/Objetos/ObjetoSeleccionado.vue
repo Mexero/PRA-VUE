@@ -37,9 +37,7 @@ defineProps([
     padding: 1.5rem;
 }
 
-.descripcion {
-    text-align: justify;
-}
+
 
 @media screen and (max-width: 890px) {
     .seleccionado {

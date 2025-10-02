@@ -295,7 +295,6 @@ aside {
 }
 
 #capitulos p {
-    text-align: justify;
     color: var(--color-texto);
     letter-spacing: 1px;
     line-height: 22px;

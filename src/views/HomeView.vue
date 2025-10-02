@@ -122,9 +122,11 @@ import { RouterLink } from 'vue-router'
                     <a href="https://mega.nz/file/HvRG1KYK#lofRp_J6U4WBdM7Uv4M5eYF4fIbREcIb0IvV4tjte-U" target="_blank">
                         <div>PDF Pokédex</div>
                     </a>
+                    <!-- 
                     <RouterLink to="" target="_blank">
                         <div>PDF Entrenadex (WIP)</div>
                     </RouterLink>
+                    -->
                 </div>
             </article>
         </section>
@@ -213,6 +215,7 @@ main {
 
 h2 {
     font-size: 26px;
+    text-align: center;
 }
 
 /* ======================= SECTION DE BLOQUES DEL INDEX ======================= */
@@ -401,13 +404,11 @@ solo cambia el tamaños de los bloques y el margen con el header*/
     box-shadow: 2px 2px 5px rgba(32, 32, 32, 0.511);
 }
 
-#infoContacto h2 {
-    font-size: 30px;
+p{
+    font-size: 18px;
 }
-
 #infoContacto p {
     margin-top: 16px;
-    text-align: justify;
     line-height: 1.5;
 }
 
@@ -461,7 +462,6 @@ solo cambia el tamaños de los bloques y el margen con el header*/
     background-color: var(--color-principal1);
     border-radius: 8px;
     padding: 10px 0;
-    text-align: center;
     font-size: 20px;
     transition: all 0.15s;
     cursor: pointer;
@@ -479,10 +479,10 @@ solo cambia el tamaños de los bloques y el margen con el header*/
 }
 
 .textoInfo p {
+    
     line-height: 30px;
     padding: 15px;
     font-size: 18px;
-    text-align: justify;
 }
 
 /* Imagen info */
@@ -616,6 +616,7 @@ solo cambia el tamaños de los bloques y el margen con el header*/
 #FAQ h2 {
     padding: 10px 0;
     text-decoration: underline;
+    text-align: left;
 }
 
 #FAQ div {
@@ -627,6 +628,9 @@ solo cambia el tamaños de los bloques y el margen con el header*/
 
 #FAQ p {
     padding: 10px;
+}
+h3{
+    font-size: 22px;
 }
 
 @media (max-width: 690px) {

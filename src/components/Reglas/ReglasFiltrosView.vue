@@ -290,6 +290,7 @@ details>div {
     gap: 16px;
     flex-wrap: wrap;
     width: fit-content;
+    
 }
 
 /* ===== RESPONSIVE ===== */

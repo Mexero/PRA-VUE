@@ -1,4 +1,17 @@
 <script setup>
+const gradosInicial = ['N', 'B', 'E', 'M', 'L']
+const gradoModal = ref({ visible: false, nombre: '', index: null })
+
+function mostrarGradoModal(nombre, event, index) {
+    gradoModal.value = {
+        visible: true,
+        nombre,
+        index
+    }
+}
+function ocultarGradoModal() {
+    gradoModal.value.visible = false
+}
 import { ref, computed, watch } from 'vue'
 import draggable from 'vuedraggable'
 
@@ -10,6 +23,7 @@ const emit = defineEmits(['gradoChange'])
 const nuevoCheck = ref('')
 const mostrarPopup = ref(false)
 const selectedSuggestionIndex = ref(-1)
+const mostrarConfigChecks = ref(false)
 
 const filteredChecks = computed(() => {
     const input = nuevoCheck.value.toLowerCase()
@@ -20,7 +34,7 @@ const filteredChecks = computed(() => {
         .filter(c => !props.ficha.personaliz.checks.some(ch => ch.check === c))
 })
 
-const grados = ['no', 'bueno', 'experto', 'maestro', 'legendario']
+const grados = ['No', 'Bueno', 'Experto', 'Maestro', 'Legendario']
 
 function gradoMinimo(checkName) {
     const base = props.ficha.derivados.checksBase.find(c => c.check === checkName)
@@ -111,50 +125,86 @@ function cerrarPopup() {
 watch(mostrarPopup, (isOpen) => {
     document.body.style.overflow = isOpen ? 'hidden' : ''
 })
+
+function toggleCheck(checkName) {
+    const idx = props.ficha.personaliz.checks.findIndex(c => c.check === checkName)
+    if (idx === -1) {
+        // Añadir check
+        const base = props.ChecksBase.find(ch => ch.check === checkName)
+        props.ficha.personaliz.checks.push({
+            check: checkName,
+            stat: base ? base.stat : 'fue',
+            grado: 0,
+            total: 0,
+        })
+    } else {
+        // Quitar check
+        props.ficha.personaliz.checks.splice(idx, 1)
+        // Quitar mejoras asociadas
+        props.ficha.personaliz.mejorasHab = props.ficha.personaliz.mejorasHab.filter(m => m !== checkName)
+    }
+}
+function getCheckObj(checkName) {
+    return props.ficha.personaliz.checks.find(c => c.check === checkName) || { stat: 'fue' }
+}
+function getStat(checkName) {
+    const obj = getCheckObj(checkName)
+    return obj.stat || (props.ChecksBase.find(ch => ch.check === checkName)?.stat || 'fue')
+}
+function updateStat(checkName, newStat) {
+    const obj = getCheckObj(checkName)
+    if (obj) obj.stat = newStat
+}
 </script>
 
 <template>
     <section class="checks">
-        <div class="tituloYBoton">
-            <h3>
-                Tiradas de habilidad ({{ ficha.personaliz.mejorasHab.length }} /
-                <input type="number" v-model="props.ficha.derivados.cantidadMejorasHab"
-                    :readonly="!ficha.manual.cantidadMejorasHab" />)
-                <input type="checkbox" v-model="ficha.manual.cantidadMejorasHab" true-value="true"
-                    false-value="false" />
-            </h3>
-            <button @click="mostrarPopup = true">Añadir habilidad</button>
+        <div class="checks-header">
+            <span>
+                <h3>Habilidades</h3>
+            </span>
+            <button class="settings-btn" @click="mostrarConfigChecks = true" title="Configurar checks">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="3" />
+                    <path
+                        d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33h.09A1.65 1.65 0 0 0 9 3.09V3a2 2 0 0 1 4 0v.09c0 .66.39 1.25 1 1.51a1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82c.22.63.85 1.05 1.51 1.05H21a2 2 0 0 1 0 4h-.09c-.66 0-1.25.39-1.51 1z" />
+                </svg>
+            </button>
         </div>
-
         <div class="checks-list">
             <draggable v-model="props.ficha.personaliz.checks" item-key="check" animation="200"
                 ghost-class="drag-ghost">
                 <template #item="{ element, index }">
                     <div class="item" v-if="element.check !== 'Init'">
+
                         <div class="alinear">
-                            <p>{{ element.check }}</p>
-                            <select v-model="element.stat">
-                                <option v-for="stat in Object.keys(ficha.derivados.stats)" :key="stat" :value="stat">
-                                    {{ stat.toUpperCase() }}
-                                </option>
-                            </select>
-                            <div class="grado-control">
-                                <div class="botonMaxMenos">
-                                    <button class="btn-mas" @click="subirGrado(element.check)"></button>
-                                    <button class="btn-menos" @click="bajarGrado(element.check)"></button>
+
+                            <p>{{ element.check }} <span class="stat-check">({{ element.stat.toUpperCase() }})</span>
+                            </p>
+
+                            <div class="bonosChecks">
+                                <div>
+                                    <span class="grado-circulo" :title="grados[gradoActual(element.check)]"
+                                        @mouseenter="mostrarGradoModal(grados[gradoActual(element.check)], $event, index)"
+                                        @mouseleave="ocultarGradoModal"
+                                        @click="mostrarGradoModal(grados[gradoActual(element.check)], $event, index)">
+                                        {{ gradosInicial[gradoActual(element.check)] }}
+                                    </span>
+                                    <div v-if="gradoModal.visible && gradoModal.index === index" class="grado-modal">
+                                        {{ gradoModal.nombre }}
+                                    </div>
                                 </div>
-                                <span>{{ grados[gradoActual(element.check)] }}</span>
+                                <div>+<input type="number" v-model.number="element.total" /></div>
+
+                                <tiraDado :tirada='"1d20+" + (element.total)' :origin='"Tirada de " + element.check' />
                             </div>
-
-                            <label class="movilOff">Total:</label>
-                            <input type="number" v-model.number="element.total" />
-
-                            <tiraDado :tirada='"1d20+" + (element.total)' :origin='"Tirada de " + element.check' />
                         </div>
 
-                        <button class="borrar-btn"
+                        <!--    <button class="borrar-btn"
                             v-if="!ficha.derivados.checksBase.find(c => c.check === element.check)"
                             @click="removeCheck(index)">×</button>
+                            -->
                     </div>
                 </template>
             </draggable>
@@ -177,15 +227,46 @@ watch(mostrarPopup, (isOpen) => {
             <button @click="cerrarPopup">Cerrar</button>
         </div>
     </div>
+
+    <!-- Modal configuración de checks -->
+    <div v-if="mostrarConfigChecks" class="config-modal-overlay" @click.self="mostrarConfigChecks = false">
+        <div class="config-modal">
+            <h4>Configurar Checks</h4>
+            <div class="config-checks-list">
+                <label v-for="base in ChecksBase" :key="base.check" class="config-check-item">
+                    <input type="checkbox"
+                        :checked="ficha.personaliz.checks.some(c => c.check === base.check)"
+                        @change="toggleCheck(base.check)"
+                        :disabled="false"
+                    />
+                    {{ base.check }}
+                    <span class="stat-check">({{ getStat(base.check).toUpperCase() }})</span>
+                    <select v-if="ficha.personaliz.checks.some(c => c.check === base.check)"
+                        v-model="getCheckObj(base.check).stat"
+                        @change="updateStat(base.check, getCheckObj(base.check).stat)"
+                        class="stat-select">
+                        <option value="fue">Fuerza</option>
+                        <option value="agi">Agilidad</option>
+                        <option value="res">Resistencia</option>
+                        <option value="men">Mente</option>
+                        <option value="esp">Espiritu</option>
+                        <option value="pre">Presencia</option>
+                    </select>
+                </label>
+            </div>
+            <button @click="mostrarConfigChecks = false">Cerrar</button>
+        </div>
+    </div>
 </template>
 
 <style scoped>
 .checks {
     display: flex;
+    width: 100px;
     flex-direction: column;
     border: 1px solid rgba(150, 150, 150, 0.798);
-    border-radius: 5px;
-    padding: 5px;
+    border-radius: 10px;
+    padding: 2px;
     margin-bottom: 10px;
     justify-content: space-between;
 }
@@ -193,13 +274,10 @@ watch(mostrarPopup, (isOpen) => {
 .item {
     display: flex;
     align-items: center;
-    border: 1px solid rgba(150, 150, 150, 0.798);
     border-radius: 5px;
-    justify-content: space-between;
-    height: 40px;
-    padding-left: 10px;
 }
 
+/*
 .borrar-btn {
     background-color: transparent;
     border: none;
@@ -219,12 +297,29 @@ watch(mostrarPopup, (isOpen) => {
 .borrar-btn:hover {
     background-color: var(--color-principal2);
 }
+ */
+.bonosChecks {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    justify-content: end;
+}
 
 .alinear {
     display: flex;
     align-items: center;
-    gap: 10px;
     width: 100%;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.alinear input {
+    font-size: large;
+    background-color: transparent;
+    border: none;
+    color: var(--color-texto);
+    width: 25px;
+    text-align: center;
 }
 
 .tituloYBoton {
@@ -244,26 +339,12 @@ watch(mostrarPopup, (isOpen) => {
 }
 
 .checks-list {
-    padding: 10px;
-    width: 100%;
+    padding: 5px;
 }
 
 .checks-list>div {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    width: 100%;
-    gap: 10px;
-}
-
-input {
-    font-size: large;
-    background-color: transparent;
-    padding: 4px;
-    border: none;
-    border-bottom: 1px solid;
-    color: var(--color-texto);
-    width: 30px;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
 }
 
 .botonMaxMenos {
@@ -300,8 +381,28 @@ input[type="number"] {
     appearance: textfield;
 }
 
-.grado-control {
-    display: flex;
+.grado-circulo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: var(--color-principal1);
+    color: var(--color-texto);
+    cursor: pointer;
+}
+
+.grado-circulo:hover {
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.18);
+    background: var(--color-principal2);
+}
+
+.grado-nombre {
+    display: block;
+    text-align: center;
+    margin-top: 2px;
+    color: var(--color-texto);
 }
 
 .popup-overlay {
@@ -403,5 +504,94 @@ details {
         flex-direction: column;
 
     }
+}
+
+.grado-modal {
+    background: var(--color-fondoTexto);
+    color: var(--color-texto);
+    border: 1px solid var(--color-principal2);
+    border-radius: 8px;
+    padding: 3px 10px;
+    white-space: nowrap;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.18);
+    z-index: 10;
+    position: absolute;
+    left: auto;
+    transform: translateX(-30%);
+    top: auto;
+    margin-top: 5px;
+}
+
+.stat-check {
+    color: var(--color-principal2);
+    margin-left: 4px;
+}
+
+.checks-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 5px;
+
+}
+
+.settings-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 2px;
+    margin-right: 2px;
+    color: var(--color-principal2, #3a7);
+    transition: color 0.2s;
+}
+
+.settings-btn:hover {
+    color: var(--color-principal1, #2a5);
+}
+
+.config-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+}
+
+.config-modal {
+    background: var(--color-fondoTexto);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    min-width: 320px;
+}
+
+.config-checks-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.config-check-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1em;
+}
+
+.stat-select {
+    margin-left: 6px;
+    padding: 2px 6px;
+    border-radius: 5px;
+    border: 1px solid var(--color-principal2, #3a7);
+    background: var(--color-fondoTexto);
+    color: var(--color-texto);
+    font-size: 0.95em;
 }
 </style>
