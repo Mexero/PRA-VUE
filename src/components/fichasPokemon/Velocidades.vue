@@ -19,22 +19,20 @@ defineProps(['ficha'])
 <style scoped>
 .speeds {
     border: 1px solid rgba(150, 150, 150, 0.798);
-    border-radius: 5px;
-    padding: 5px;
+    border-radius: 10px;
+    padding: 10px;
 }
-
-
 
 h3 {
     text-align: center;
 }
 
 input {
-    font-size: large;
+    font-size: 18px;
     background-color: transparent;
     padding: 4px;
     border: none;
-    border-bottom: 1px solid;
+
     color: var(--color-texto);
     width: 30px;
     text-align: center;
@@ -53,10 +51,8 @@ input[type="number"] {
     appearance: textfield;
 }
 
-.item {
-    min-width: 130px;
-}
 
+/*
 @media screen and (max-width: 920px) {
     .speeds {
         width: 100%;
@@ -81,4 +77,5 @@ input[type="number"] {
     }
     
 }
+    */
 </style>

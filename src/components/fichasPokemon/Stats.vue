@@ -35,10 +35,7 @@ function cambiarMejoraEST(stat, delta) {
 
 <template>
     <section>
-        <div class="puntosDisponibles">
-            Mejoras:
-            <strong>{{ ficha.derivados.cantidadMejorasEST - ficha.personaliz.mejorasEst.length }}</strong>
-        </div>
+       
         <div class="statsYSaves">
             <div class="stats">
                 <div class="item" v-for="stat in ['fue', 'agi', 'res', 'men', 'esp', 'pre']" :key="stat">
@@ -57,6 +54,12 @@ function cambiarMejoraEST(stat, delta) {
                 </div>
             </div>
         </div>
+        <!-- 
+        <div class="puntosDisponibles">
+            Mejoras:
+            <strong>{{ ficha.derivados.cantidadMejorasEST - ficha.personaliz.mejorasEst.length }}</strong>
+        </div>
+        -->
     </section>
 </template>
 
@@ -66,7 +69,6 @@ function cambiarMejoraEST(stat, delta) {
 }
 
 .stats {
-    margin-top: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -78,9 +80,12 @@ function cambiarMejoraEST(stat, delta) {
     display: flex;
     align-items: center;
     flex-direction: column;
-    border: 1px solid rgba(150, 150, 150, 0.798);
+    border-bottom: 1px solid rgba(150, 150, 150, 0.798);
     padding: 10px 0;
     width: 115px;
+}
+.item:last-child {
+    border-bottom: none;
 }
 
 .stats div:first-child {
@@ -143,6 +148,7 @@ function cambiarMejoraEST(stat, delta) {
     margin-top: 10px;
 }
 
+/*
 @media screen and (max-width: 920px) {
     .stats {
         grid-template-columns: 1fr 1fr 1fr;
@@ -171,11 +177,6 @@ function cambiarMejoraEST(stat, delta) {
         gap: 10px;
 
     }
-
-
-
-
-
-
 }
+*/
 </style>

@@ -82,7 +82,7 @@ onBeforeUnmount(() => {
 <template>
     <section class="others">
         <h3>Otros</h3>
-        <div class="others-list">
+        <div>
             <!-- Otros campos readonly -->
             <div class="fila1">
                 <div class="item">Dieta: <input v-model="ficha.pokedex.otros.dieta" readonly /></div>
@@ -124,7 +124,7 @@ onBeforeUnmount(() => {
 <style scoped>
 .others {
     border: 1px solid rgba(150, 150, 150, 0.798);
-    border-radius: 5px;
+    border-radius: 10px;
     padding: 10px;
 }
 
@@ -183,15 +183,15 @@ input {
 
 .fila2 {
     display: flex;
-    flex-wrap: wrap;
     gap: 20px;
-    max-width: 1400px;
+    flex-direction: column;
+
 }
 
 .item-inline {
     display: flex;
     align-items: center;
-    flex: 1 1 300px;
+
     min-width: 250px;
 }
 

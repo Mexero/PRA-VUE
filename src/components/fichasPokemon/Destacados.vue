@@ -38,88 +38,26 @@ function bajarGrado(checkName) {
 </script>
 
 <template>
-    <div class="central">
-        <section class="destacados">
-            <div class="fila">
-                <div class="item">
-                    <label>BH: </label>
-                    <input type="number" v-model.number="ficha.derivados.bh" :readonly="!ficha.manual.bh" />
-                </div>
-
-                <div class="item CA">Evasión:
-                    <input v-model.number="ficha.derivados.ca" :readonly="!ficha.manual.ca" />
-                    <select v-if="ficha.pokedex.calculosEva.length > 1" v-model="ficha.derivados.caElegida">
-                        <option v-for="(calculo, i) in ficha.pokedex.calculosEva" :value="i">{{ calculo }}</option>
-                    </select>
-                    <p v-else>
-                        {{ ficha.pokedex.calculosEva[0] }}
-                    </p>
-                </div>
-            </div>
-            <div class="box pp-box">
-                <div class="pp-label">PP</div>
+        <section class="central">
+            <div class="pp-box">
+                <div>PP</div>
                 <div class="pp-inputs">
                     <input v-model.number="ficha.derivados.pp" /> /
                     <input v-model.number="ficha.derivados.ppMax" :readonly="!ficha.manual.ppMax" />
                 </div>
             </div>
-
-        </div>
-        <div class="col-der">
-            <div class="box pv-box">
-                <div class="pv-row">
-                    <span>MAX PV</span>
-                    <input v-model.number="ficha.derivados.pvMax" :readonly="!ficha.manual.pvMax" />
-                </div>
-                <div class="pv-row">
-                    <span>PV:</span>
-                    <input v-model.number="ficha.derivados.pv" />
-                </div>
-                <div class="pv-row vit">
-                    <span>Vitalidad</span>
-                    <input v-model.number="ficha.derivados.vit" :readonly="!ficha.manual.vit" />
-                </div>
-            </div>
-            <div class="box escudo-box">
-                <span>Escudo</span>
-                <input v-model.number="ficha.derivados.escudo" />
-            </div>
-        </div>
-    </div>
+        </section>
 </template>
 
 <style scoped>
 /* Layout principal */
 .central {
     border-radius: 5px;
-   
-    margin: 40px 0 0px 0;
     width: fit-content;
     display: flex;
-    gap: 15px;
-}
-
-.col-izq {
-    display: flex;
     flex-direction: column;
     gap: 15px;
-}
-
-.col-der {
-    display: flex;
-    flex-direction: column;
-}
-
-.box {
-    border: 1px solid rgba(150, 150, 150, 0.798);
-    border-radius: 10px;
-    padding: 10px;
-}
-
-.ca-box {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    width: 100%;
 }
 
 .ca-calc {
@@ -130,27 +68,27 @@ function bajarGrado(checkName) {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 7px 10px;
+    padding-bottom: 5px;
+    border: 1px solid rgba(150, 150, 150, 0.798);
+    border-radius: 10px;
+    font-weight: bold;
 }
 
-.pp-label {
-    text-align: center;
-    margin-bottom: 4px;
-}
-
-.pp-inputs {
+.pp-inputs{
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 5px;
 }
 
-.pv-box {
-    border-bottom: 1px solid rgba(150, 150, 150, 0.5);
-    border-radius: 8px 8px 0 0;
-    padding-bottom: 12px;
-    margin-bottom: 0;
-    gap: 10px;
+.pp-inputs input{
+    width: 40px;
+    border-bottom: 1px solid rgba(150, 150, 150, 0.798);
 }
+.pp-inputs input:last-child{
+    width: 40px;
+    border-bottom: none;
+}
+
 
 input {
     font-size: larger;
@@ -162,27 +100,6 @@ input {
     width: 50px;
     text-align: center;
 }
-
-.pv-row {
-    display: flex;
-    align-items: center;
-    margin-left: 10px;
-    margin-bottom: 4px;
-}
-
-.vit input {
-    border: none;
-    width: 30px;
-}
-
-.escudo-box {
-    border-radius: 0 0 8px 8px;
-    border-top: none;
-    margin-top: 0;
-    padding-top: 12px;
-    gap: 10px;
-}
-
 
 
 input[type="number"]::-webkit-inner-spin-button,
@@ -196,6 +113,7 @@ input[type="number"] {
     appearance: textfield;
 }
 
+/*
 @media screen and (max-width: 700px) {
     .central {
         flex-direction: column;
@@ -216,4 +134,5 @@ input[type="number"] {
         width: 100%;
     }
 }
+    */
 </style>

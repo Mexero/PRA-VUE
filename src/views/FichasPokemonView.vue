@@ -16,6 +16,7 @@ import tiraDado from '@/components/tiraDado.vue'
 
 import { crearFichaBase } from '@/utils/TemplateFicha.js'
 import { initDB, queryDB } from '@/services/dbWorkerService'
+import { updateSprite } from '@/utils/updateSprite.js'
 
 import { guardarFichaIndexedDB, borrarFichaIndexedDB, obtenerTodasLasFichas, obtenerFicha, guardarOrdenFichas, cargarOrdenFichas } from '@/utils/FichasDB.js'
 
@@ -40,6 +41,9 @@ const ordenFichas = ref([])
 const isReady = ref(false)
 const error = ref(null)
 const loading = ref(false)
+
+//Imagen del Pokémon
+const pokemonImage = ref(null)
 
 // <========= DATOS CHECKS =============>
 const ChecksBase = [
@@ -127,7 +131,8 @@ async function cambiarDatosEspecie(especie) {
         Nat_Habil_1, Nat_Habil_2,
         EVA1, EVA2, 
         Dieta, Tamano, Sexo, Sentidos, 
-        EvoEn, Nivel_Evo, Tipo_requisito, Requisitos_Evo, Evo_otros
+        EvoEn, Nivel_Evo, Tipo_requisito, Requisitos_Evo, Evo_otros,
+        Es_Alternativo, Numero_pokedex
       FROM pokedex
       WHERE Especie = ?
     `, [especie])
@@ -138,6 +143,8 @@ async function cambiarDatosEspecie(especie) {
         const id = row[0]
 
         ficha.pokedex.especie = row[1]
+        ficha.pokedex.numPokedex = row[35] // Numero_pokedex
+        ficha.pokedex.esAlternativo = row[34] // Es_Alternativo
         ficha.pokedex.tipos = [row[2], row[3] ?? ""]
         ficha.pokedex.statsBase = {
             fue: row[4], agi: row[5], res: row[6],
@@ -213,11 +220,32 @@ async function cambiarDatosEspecie(especie) {
 
         console.log(`Datos de ${especie} cargados:`, ficha.pokedex)
 
+        // Actualizar imagen del Pokémon
+        await actualizarImagenPokemon()
+
     } catch (err) {
         error.value = err.message || 'Error cargando la especie Pokémon ' + especie
         console.warn(error.value)
     } finally {
         loading.value = false
+    }
+}
+
+// Función para actualizar la imagen del Pokémon
+async function actualizarImagenPokemon() {
+    if (ficha.pokedex.especie) {
+        console.log('Actualizando imagen para:', ficha.pokedex.especie, ficha.pokedex.esAlternativo, ficha.pokedex.numPokedex)
+        try {
+            pokemonImage.value = await updateSprite(
+                ficha.pokedex.especie,
+                ficha.pokedex.esAlternativo || '0',
+                ficha.pokedex.numPokedex || '#0001'
+            )
+            console.log('Imagen actualizada:', pokemonImage.value)
+        } catch (err) {
+            console.warn('Error cargando imagen del Pokémon:', err)
+            pokemonImage.value = null
+        }
     }
 }
 
@@ -365,6 +393,13 @@ watch(ficha, () => {
         guardarFicha()
     }
 }, { deep: true })
+
+// Watcher para actualizar la imagen cuando cambie la especie
+watch(() => ficha.pokedex.especie, async (nuevaEspecie) => {
+    if (nuevaEspecie) {
+        await actualizarImagenPokemon()
+    }
+})
 
 function actualizar() {
     // Valores derivados automáticos si no están definidos manualmente
@@ -758,6 +793,23 @@ onMounted(async () => {
 
 
 const mostrarToolbar = ref(false)
+
+// Funciones para los botones del Pokémon
+function nuevaEscena() {
+    ficha.derivados.pp = ficha.derivados.ppMax
+}
+
+function descansar() {
+    ficha.derivados.pp = ficha.derivados.ppMax
+    ficha.derivados.pv = ficha.derivados.pvMax
+    
+    // Reducir fatiga: si es > 5, reduce en 1; si es ≤ 5, se vuelve 0
+    if (ficha.derivados.fatiga > 5) {
+        ficha.derivados.fatiga -= 1
+    } else {
+        ficha.derivados.fatiga = 0
+    }
+}
 </script>
 
 
@@ -782,6 +834,7 @@ const mostrarToolbar = ref(false)
                 </transition>
             </div>
             <div class="character-sheet">
+               
                 <FichaInfoBasica :ficha="ficha" :especiesPokes="especiesPokes"
                     :especiesPokesCargadas="especiesPokesCargadas" @cambiarNombre="cambiarNombreFicha"
                     @cambiarDatosEspecie="cambiarDatosEspecie" />
@@ -804,13 +857,28 @@ const mostrarToolbar = ref(false)
                             </div>
                         </div>
                     </div>
+                    <div class="pokemon-image-area">
+                        <h3>Pokémon</h3>
+                        <div class="pokemon-image-container">
+                            <img v-if="pokemonImage" :src="pokemonImage" :alt="ficha.pokedex.especie || 'Pokémon'"
+                                class="pokemon-image" />
+                            <div v-else class="pokemon-placeholder">
+                                <span>Sin imagen</span>
+                            </div>
+                        </div>
+                       
+                    </div>
+                    <div class="rest-buttons">
+                            <button @click="nuevaEscena" class="pokemon-btn">Nueva escena</button>
+                            <button @click="descansar" class="pokemon-btn">Descansar</button>
+                        </div>
                     <div class="BH">
                         <label>BH </label>
-
                         <input type="number" v-model.number="ficha.derivados.bh" :readonly="!ficha.manual.bh" />
                     </div>
+
                     <div class="fatiga">
-                        <div class="fatiga-label">FATIGA</div>
+                        <div>FATIGA</div>
                         <input type="number" v-model.number="ficha.derivados.fatiga" />
                     </div>
                     <div class="destacados-area">
@@ -827,8 +895,35 @@ const mostrarToolbar = ref(false)
 
                         <FichaOtros :ficha="ficha" :naturalezas="naturalezas" />
                     </div>
+                    <div>
+                        <div class="pv-box">
+                            <div class="pv-row">
+                                <span>PV:</span>
+                                <input v-model.number="ficha.derivados.pv" /> /
+                                <input class="pv-max" v-model.number="ficha.derivados.pvMax"
+                                    :readonly="!ficha.manual.pvMax" />
+                            </div>
+                            <div class="pv-row vit">
+                                <span>Vitalidad</span>
+                                <input v-model.number="ficha.derivados.vit" :readonly="!ficha.manual.vit" />
+                            </div>
+                        </div>
+                        <div class="escudo-box">
+                            <span>Escudo</span>
+                            <input v-model.number="ficha.derivados.escudo" />
+                        </div>
+                    </div>
+                    <div class="Evasion">Evasión
+                <input v-model.number="ficha.derivados.ca" :readonly="!ficha.manual.ca" />
+                <select v-if="ficha.pokedex.calculosEva.length > 1" v-model="ficha.derivados.caElegida">
+                    <option v-for="(calculo, i) in ficha.pokedex.calculosEva" :value="i">{{ calculo }}</option>
+                </select>
+                <p v-else>
+                    {{ ficha.pokedex.calculosEva[0] }}
+                </p>
+            </div>
                 </div>
- <!-- 
+                <!-- 
                 <div class="HabsDotesMovs">
                     <div class="col-izq">
                         <div class="habs">
@@ -856,6 +951,60 @@ const mostrarToolbar = ref(false)
 </template>
 
 <style scoped>
+.pv-box {
+    border: 1px solid rgba(150, 150, 150, 0.5);
+    border-radius: 8px 8px 0 0;
+    padding: 10px 10px 5px 10px;
+    grid-area: PV;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+.Evasion {
+    border: 1px solid rgba(150, 150, 150, 0.798);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    grid-area: Evasion;
+    padding-bottom: 5px;
+    height: fit-content;
+    font-weight: bold;
+}
+
+.Evasion select {
+    background-color: transparent;
+    color: var(--color-texto);
+    border: 1px solid rgba(150, 150, 150, 0.798);
+    border-radius: 6px;
+    padding: 2px 4px;
+    margin-top: 2px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.Evasion select:focus {
+    background-color: var(--color-fondoTexto);
+}
+
+.pv-row {
+    display: flex;
+    align-items: center;
+}
+
+.vit input,
+.pv-max, .Evasion input {
+    border: none;
+}
+
+.escudo-box {
+    border-radius: 0 0 8px 8px;
+    padding: 10px;
+    border: 1px solid rgba(150, 150, 150, 0.5);
+    border-top: none;
+}
+
 .fatiga {
     border: 1px solid rgba(150, 150, 150, 0.798);
     border-radius: 10px;
@@ -865,10 +1014,11 @@ const mostrarToolbar = ref(false)
     height: fit-content;
     grid-area: fatiga;
     padding-bottom: 8px;
+    font-weight: bold;
 }
 
 input {
-    font-size: larger;
+    font-size: 18px;
     background-color: transparent;
     border: none;
     border-bottom: 1px solid rgba(150, 150, 150, 0.798);
@@ -878,25 +1028,17 @@ input {
     box-shadow: none;
 }
 
-.fatiga input {
-    height: 25px;
-}
-
-.fatiga-label {
-    text-align: center;
-    margin-bottom: 4px;
-}
 
 .BH {
     border: 1px solid rgba(150, 150, 150, 0.798);
     border-radius: 10px;
     height: fit-content;
-    width: 119px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 40px;
     justify-content: space-between;
+    grid-area: BH;
+    font-weight: bold;
 }
 
 .BH input {
@@ -946,29 +1088,23 @@ input[type="number"] {
     width: fit-content;
     display: grid;
     grid-template-areas:
-        "stats saves BH destacados velocidades"
-        "stats  saves fatiga destacados velocidades"
-        "stats saves  fatiga destacados velocidades"
-        "stats checks checks destacados velocidades"
+        "stats saves pokemon BH checks"
+        "stats saves pokemon Evasion checks"
+        "stats velocidades rest PV checks"
+        "stats velocidades destacados PV checks"
+        "stats velocidades fatiga PV checks"
         "otros otros otros otros otros";
-    grid-template-columns: auto auto auto auto auto;
-    grid-template-rows: 95px auto auto auto auto; 
-
+    grid-template-columns: auto 140px auto auto auto;
+    grid-template-rows: 55px 75px 80px 60px auto auto;
     gap: 15px;
 }
-
-.BH {
-    grid-area: BH;
-}
-
-
 
 .stats-area {
     grid-area: stats;
 }
 
-.salvaciones-area {
-    grid-area: saves;
+.pokemon-image-area {
+    grid-area: pokemon;
 }
 
 .destacados-area {
@@ -981,7 +1117,6 @@ input[type="number"] {
 
 .velocidades-area {
     grid-area: velocidades;
-    margin-top: 40px;
 }
 
 .otros-area {
@@ -991,14 +1126,14 @@ input[type="number"] {
 .salvaciones-area {
     border: 1px solid rgba(150, 150, 150, 0.798);
     border-radius: 10px;
-    padding: 0 10px;
-    height: fit-content;
     display: flex;
     flex-direction: column;
     gap: 5px;
     text-align: center;
-    width: fit-content;
-    margin-top: 40px;
+    height: fit-content;
+    grid-area: saves;
+    padding: 0 10px;
+
 }
 
 .bonosSalvacion {
@@ -1006,6 +1141,66 @@ input[type="number"] {
     justify-content: center;
     display: flex;
     gap: 10px;
+}
+
+.pokemon-image-area {
+    border: 1px solid rgba(150, 150, 150, 0.798);
+    border-radius: 10px;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.pokemon-image-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 120px;
+    padding: 10px;
+}
+
+.pokemon-image {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.pokemon-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+    background-color: rgba(150, 150, 150, 0.2);
+    border: 2px dashed rgba(150, 150, 150, 0.5);
+    border-radius: 8px;
+    color: rgba(150, 150, 150, 0.8);
+    text-align: center;
+}
+
+.rest-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    
+    grid-area: rest;
+}
+
+.pokemon-btn {
+    background-color: var(--color-principal1);
+    color: var(--color-texto);
+    border: none;
+    border-radius: 6px;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s;
+}
+
+.pokemon-btn:hover {
+    background-color: var(--color-principal2, #555);
 }
 
 .HabsDotesMovs {
@@ -1063,7 +1258,6 @@ input[type="number"] {
     border-radius: 4px;
     padding: 6px 10px;
     cursor: pointer;
-    font-size: 20px;
     z-index: 10;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
@@ -1076,7 +1270,7 @@ input[type="number"] {
     border: 1px solid var(--color-principal1);
 }
 
-
+/*
 
 @media screen and (max-width: 1410px) {
     .info-principal {
@@ -1085,7 +1279,7 @@ input[type="number"] {
         grid-template-areas:
             "stats destacados destacados"
             "stats velocidades checks"
-            "saves velocidades checks"
+            "saves pokemon checks"
             "otros otros otros";
         grid-template-columns: auto 1fr auto;
         grid-template-rows: auto auto 1fr auto;
@@ -1144,6 +1338,7 @@ input[type="number"] {
             "destacados"
             "stats"
             "saves"
+            "pokemon"
             "velocidades"
             "checks"
             "otros ";
@@ -1166,6 +1361,11 @@ input[type="number"] {
     .bonosSalvacion {
         border: 1px solid rgba(150, 150, 150, 0.798);
         width: 100px;
+    }
+
+    .pokemon-image-area {
+        margin: 0 auto;
+        width: 100%;
     }
 
 }
@@ -1225,5 +1425,11 @@ input[type="number"] {
         border: 1px solid rgba(150, 150, 150, 0.798);
         width: auto;
     }
+
+    .pokemon-image-area {
+        margin: 0 auto;
+        width: 100%;
+    }
 }
+    */
 </style>

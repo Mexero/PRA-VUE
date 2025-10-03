@@ -157,8 +157,7 @@ const typeMap = {
     <section class="info-basica">
         <div class="nombre" style="position: relative;">
             <label for="Nombre">Nombre:</label>
-            <input name="Nombre" v-model="nombreFicha" @keydown.enter.prevent="emit('cambiarNombre', nombreFicha)" />
-            <button @click="emit('cambiarNombre', nombreFicha)">Cambiar</button>
+            <input name="Nombre" v-model="nombreFicha" @blur="emit('cambiarNombre', nombreFicha)" @keydown.enter.prevent="emit('cambiarNombre', nombreFicha)" />
         </div>
 
         <div class="especie" style="position: relative;" v-click-outside="ocultarLista">
@@ -376,7 +375,7 @@ input[type="number"] {
     width: 25px;
     height: 25px;
 }
-
+/*
 @media screen and (max-width: 1410px) {
     .info-basica {
         display: grid;
@@ -455,4 +454,5 @@ input[type="number"] {
         margin-left: 0;
     }
 }
+    */
 </style>

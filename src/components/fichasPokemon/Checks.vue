@@ -262,14 +262,16 @@ function updateStat(checkName, newStat) {
 <style scoped>
 .checks {
     display: flex;
-    width: 100px;
+    width: 290px;
     flex-direction: column;
     border: 1px solid rgba(150, 150, 150, 0.798);
     border-radius: 10px;
     padding: 2px;
-    margin-bottom: 10px;
+
     justify-content: space-between;
 }
+
+
 
 .item {
     display: flex;
@@ -477,10 +479,8 @@ details {
     border: 2px dashed #666;
 }
 
-.checks {
-    width: 100%;
-}
 
+/*
 @media (max-width: 1410px) {
     .checks-list>div {
         display: grid;
@@ -505,6 +505,7 @@ details {
 
     }
 }
+*/
 
 .grado-modal {
     background: var(--color-fondoTexto);
