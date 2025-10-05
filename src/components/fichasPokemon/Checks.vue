@@ -262,12 +262,11 @@ function updateStat(checkName, newStat) {
 <style scoped>
 .checks {
     display: flex;
-    width: 290px;
+    width: 340px;
     flex-direction: column;
     border: 1px solid rgba(150, 150, 150, 0.798);
     border-radius: 10px;
     padding: 2px;
-
     justify-content: space-between;
 }
 

@@ -802,7 +802,7 @@ function nuevaEscena() {
 function descansar() {
     ficha.derivados.pp = ficha.derivados.ppMax
     ficha.derivados.pv = ficha.derivados.pvMax
-    
+
     // Reducir fatiga: si es > 5, reduce en 1; si es ≤ 5, se vuelve 0
     if (ficha.derivados.fatiga > 5) {
         ficha.derivados.fatiga -= 1
@@ -834,7 +834,7 @@ function descansar() {
                 </transition>
             </div>
             <div class="character-sheet">
-               
+
                 <FichaInfoBasica :ficha="ficha" :especiesPokes="especiesPokes"
                     :especiesPokesCargadas="especiesPokesCargadas" @cambiarNombre="cambiarNombreFicha"
                     @cambiarDatosEspecie="cambiarDatosEspecie" />
@@ -858,7 +858,7 @@ function descansar() {
                         </div>
                     </div>
                     <div class="pokemon-image-area">
-                        <h3>Pokémon</h3>
+
                         <div class="pokemon-image-container">
                             <img v-if="pokemonImage" :src="pokemonImage" :alt="ficha.pokedex.especie || 'Pokémon'"
                                 class="pokemon-image" />
@@ -866,12 +866,12 @@ function descansar() {
                                 <span>Sin imagen</span>
                             </div>
                         </div>
-                       
+
                     </div>
                     <div class="rest-buttons">
-                            <button @click="nuevaEscena" class="pokemon-btn">Nueva escena</button>
-                            <button @click="descansar" class="pokemon-btn">Descansar</button>
-                        </div>
+                        <button @click="nuevaEscena" class="pokemon-btn">Nueva escena</button>
+                        <button @click="descansar" class="pokemon-btn">Descansar</button>
+                    </div>
                     <div class="BH">
                         <label>BH </label>
                         <input type="number" v-model.number="ficha.derivados.bh" :readonly="!ficha.manual.bh" />
@@ -914,14 +914,23 @@ function descansar() {
                         </div>
                     </div>
                     <div class="Evasion">Evasión
-                <input v-model.number="ficha.derivados.ca" :readonly="!ficha.manual.ca" />
-                <select v-if="ficha.pokedex.calculosEva.length > 1" v-model="ficha.derivados.caElegida">
-                    <option v-for="(calculo, i) in ficha.pokedex.calculosEva" :value="i">{{ calculo }}</option>
-                </select>
-                <p v-else>
-                    {{ ficha.pokedex.calculosEva[0] }}
-                </p>
-            </div>
+                        <input v-model.number="ficha.derivados.ca" :readonly="!ficha.manual.ca" />
+                        <select v-if="ficha.pokedex.calculosEva.length > 1" v-model="ficha.derivados.caElegida">
+                            <option v-for="(calculo, i) in ficha.pokedex.calculosEva" :value="i">{{ calculo }}</option>
+                        </select>
+                        <p v-else>
+                            {{ ficha.pokedex.calculosEva[0] }}
+                        </p>
+                    </div>
+                    <div class="Iniciativa">Iniciativa
+                        <input v-model.number="ficha.derivados.ca" :readonly="!ficha.manual.ca" />
+                        <select v-if="ficha.pokedex.calculosEva.length > 1" v-model="ficha.derivados.caElegida">
+                            <option v-for="(calculo, i) in ficha.pokedex.calculosEva" :value="i">{{ calculo }}</option>
+                        </select>
+                        <p v-else>
+                            {{ ficha.pokedex.calculosEva[0] }}
+                        </p>
+                    </div>
                 </div>
                 <!-- 
                 <div class="HabsDotesMovs">
@@ -961,7 +970,8 @@ function descansar() {
     align-items: center;
     gap: 10px;
 }
-.Evasion {
+
+.Evasion , .Iniciativa{
     border: 1px solid rgba(150, 150, 150, 0.798);
     border-radius: 10px;
     display: flex;
@@ -994,7 +1004,8 @@ function descansar() {
 }
 
 .vit input,
-.pv-max, .Evasion input {
+.pv-max,
+.Evasion input {
     border: none;
 }
 
@@ -1089,16 +1100,20 @@ input[type="number"] {
     display: grid;
     grid-template-areas:
         "stats saves pokemon BH checks"
-        "stats saves pokemon Evasion checks"
-        "stats velocidades rest PV checks"
-        "stats velocidades destacados PV checks"
-        "stats velocidades fatiga PV checks"
+        "stats saves pokemon Iniciativa checks"
+        "stats velocidades rest Evasion checks"
+        "stats velocidades PV destacados checks"
+        "stats velocidades PV fatiga checks"
         "otros otros otros otros otros";
-    grid-template-columns: auto 140px auto auto auto;
+    grid-template-columns: auto 140px auto 130px auto;
     grid-template-rows: 55px 75px 80px 60px auto auto;
     gap: 15px;
 }
 
+.Iniciativa{
+        grid-area: Iniciativa;
+
+}
 .stats-area {
     grid-area: stats;
 }
@@ -1156,13 +1171,13 @@ input[type="number"] {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 120px;
-    padding: 10px;
+    
+    
 }
 
 .pokemon-image {
-    width: 100px;
-    height: 100px;
+    width: 140px;
+    height: 140px;
     object-fit: contain;
     filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
 }
@@ -1184,7 +1199,7 @@ input[type="number"] {
     display: flex;
     flex-direction: column;
     gap: 8px;
-    
+
     grid-area: rest;
 }
 
