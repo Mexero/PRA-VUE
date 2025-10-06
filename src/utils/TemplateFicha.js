@@ -29,6 +29,7 @@ export function crearFichaBase(nombre = '') {
             dotesExtra: [],
             checks: [],
             mejorasHab: [],
+            checksBaseDesactivados: [],
             caDisponibles: [],
             bonosExtraEst: { fue: 0, agi: 0, res: 0, men: 0, esp: 0, pre: 0 },
             mejorasVelocidades: { Caminado: 0, Trepado: 0, Excavado: 0, Nado: 0, Vuelo: 0, Levitado: 0 },

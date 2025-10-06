@@ -18,7 +18,7 @@ import draggable from 'vuedraggable'
 import tiraDado from '../tiraDado.vue'
 
 const props = defineProps(['ficha', 'ChecksBase'])
-const emit = defineEmits(['gradoChange'])
+const emit = defineEmits(['gradoChange', 'checksBaseDesactivados'])
 
 const nuevoCheck = ref('')
 const mostrarPopup = ref(false)
@@ -37,6 +37,11 @@ const filteredChecks = computed(() => {
 const grados = ['No', 'Bueno', 'Experto', 'Maestro', 'Legendario']
 
 function gradoMinimo(checkName) {
+    // Si el check base está desactivado manualmente, el mínimo pasa a 0
+    if (Array.isArray(props.ficha.personaliz.checksBaseDesactivados) &&
+        props.ficha.personaliz.checksBaseDesactivados.includes(checkName)) {
+        return 0
+    }
     const base = props.ficha.derivados.checksBase.find(c => c.check === checkName)
     return base ? base.grado : 0
 }
@@ -48,6 +53,12 @@ function gradoActual(checkName) {
 }
 
 const mejorasUsadas = computed(() => props.ficha.personaliz.mejorasHab.length)
+
+const mejorasDisponibles = computed(() => {
+    const total = props.ficha.derivados.cantidadMejorasHab || 0
+    const usadas = props.ficha.personaliz.mejorasHab.length
+    return Math.max(0, total - usadas)
+})
 
 function subirGrado(checkName) {
     if (gradoActual(checkName) >= grados.length - 1) return
@@ -137,15 +148,40 @@ function toggleCheck(checkName) {
             grado: 0,
             total: 0,
         })
+        // Si era un check base desactivado, quitarlo de la lista
+        if (props.ficha.personaliz.checksBaseDesactivados) {
+            const desactivadoIdx = props.ficha.personaliz.checksBaseDesactivados.indexOf(checkName)
+            if (desactivadoIdx !== -1) {
+                props.ficha.personaliz.checksBaseDesactivados.splice(desactivadoIdx, 1)
+            }
+        }
     } else {
         // Quitar check
         props.ficha.personaliz.checks.splice(idx, 1)
         // Quitar mejoras asociadas
         props.ficha.personaliz.mejorasHab = props.ficha.personaliz.mejorasHab.filter(m => m !== checkName)
+        
+        // Si es un check base, añadirlo a la lista de desactivados
+        const esCheckBase = props.ficha.derivados.checksBase.some(c => c.check === checkName)
+        if (esCheckBase) {
+            if (!props.ficha.personaliz.checksBaseDesactivados) {
+                props.ficha.personaliz.checksBaseDesactivados = []
+            }
+            if (!props.ficha.personaliz.checksBaseDesactivados.includes(checkName)) {
+                props.ficha.personaliz.checksBaseDesactivados.push(checkName)
+            }
+        }
     }
 }
 function getCheckObj(checkName) {
-    return props.ficha.personaliz.checks.find(c => c.check === checkName) || { stat: 'fue' }
+    const checkExistente = props.ficha.personaliz.checks.find(c => c.check === checkName)
+    if (checkExistente) {
+        return checkExistente
+    }
+    
+    // Si no existe, devolver con la estadística por defecto de ChecksBase
+    const checkBase = props.ChecksBase.find(ch => ch.check === checkName)
+    return { stat: checkBase ? checkBase.stat : 'fue' }
 }
 function getStat(checkName) {
     const obj = getCheckObj(checkName)
@@ -155,6 +191,102 @@ function updateStat(checkName, newStat) {
     const obj = getCheckObj(checkName)
     if (obj) obj.stat = newStat
 }
+
+// Rango de habilidad (grados) en modal de configuración
+function getGradoMinimo(checkName) {
+    return gradoMinimo(checkName)
+}
+
+function getGradoActual(checkName) {
+    return gradoActual(checkName)
+}
+
+function isRangoOptionDisabled(checkName, optionIndex) {
+    const min = getGradoMinimo(checkName)
+    const actual = getGradoActual(checkName)
+    const max = grados.length - 1
+    // Siempre permitir seleccionar "No"
+    if (optionIndex === 0) return false
+    if (optionIndex < min) return true
+    if (optionIndex > max) return true
+    if (optionIndex <= actual) return false // siempre permitir bajar/igual
+    // subir: requiere (optionIndex - actual) puntos
+    const necesarios = optionIndex - actual
+    return necesarios > mejorasDisponibles.value
+}
+
+function onChangeRango(checkName, targetIndex) {
+    const min = getGradoMinimo(checkName)
+    const max = grados.length - 1
+    const actual = getGradoActual(checkName)
+    let objetivo = parseInt(targetIndex)
+    if (isNaN(objetivo)) return
+    // Permitir seleccionar 0 incluso si el mínimo fuera mayor, para desactivar el check base
+    if (objetivo === 0) {
+        // Quitar todas las mejoras de este check
+        let idx = props.ficha.personaliz.mejorasHab.lastIndexOf(checkName)
+        while (idx !== -1) {
+            props.ficha.personaliz.mejorasHab.splice(idx, 1)
+            idx = props.ficha.personaliz.mejorasHab.lastIndexOf(checkName)
+        }
+        // Marcar como desactivado si es un check base, para permitir mínimo 0
+        const esBase = props.ficha.derivados.checksBase.some(c => c.check === checkName)
+        if (esBase) {
+            if (!Array.isArray(props.ficha.personaliz.checksBaseDesactivados)) {
+                props.ficha.personaliz.checksBaseDesactivados = []
+            }
+            if (!props.ficha.personaliz.checksBaseDesactivados.includes(checkName)) {
+                props.ficha.personaliz.checksBaseDesactivados.push(checkName)
+            }
+        }
+        // Asegurar que el check permanezca seleccionado con grado 0
+        const itemIdx = props.ficha.personaliz.checks.findIndex(c => c.check === checkName)
+        if (itemIdx === -1) {
+            const base = props.ChecksBase.find(ch => ch.check === checkName)
+            props.ficha.personaliz.checks.push({
+                check: checkName,
+                stat: base ? base.stat : 'fue',
+                grado: 0,
+                total: 0,
+            })
+        } else {
+            props.ficha.personaliz.checks[itemIdx].grado = 0
+        }
+        return
+    }
+
+    objetivo = Math.max(min, Math.min(max, objetivo))
+
+    if (objetivo === actual) return
+
+    if (objetivo < actual) {
+        // Bajar: quitar mejoras necesarias
+        let quitar = actual - objetivo
+        while (quitar > 0) {
+            const idx = props.ficha.personaliz.mejorasHab.lastIndexOf(checkName)
+            if (idx === -1) break
+            props.ficha.personaliz.mejorasHab.splice(idx, 1)
+            quitar--
+        }
+        return
+    }
+
+    // Subir: comprobar puntos disponibles
+    let necesarios = objetivo - actual
+    if (necesarios > mejorasDisponibles.value) {
+        // si intentan más de lo disponible, subir solo lo permitido
+        necesarios = mejorasDisponibles.value
+    }
+    while (necesarios > 0) {
+        props.ficha.personaliz.mejorasHab.push(checkName)
+        necesarios--
+    }
+    // Si estaba desactivado y subimos por encima de 0, quitar de desactivados
+    if (Array.isArray(props.ficha.personaliz.checksBaseDesactivados)) {
+        const i = props.ficha.personaliz.checksBaseDesactivados.indexOf(checkName)
+        if (i !== -1) props.ficha.personaliz.checksBaseDesactivados.splice(i, 1)
+    }
+}
 </script>
 
 <template>
@@ -163,14 +295,23 @@ function updateStat(checkName, newStat) {
             <span>
                 <h3>Habilidades</h3>
             </span>
-            <button class="settings-btn" @click="mostrarConfigChecks = true" title="Configurar checks">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="12" cy="12" r="3" />
-                    <path
-                        d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33h.09A1.65 1.65 0 0 0 9 3.09V3a2 2 0 0 1 4 0v.09c0 .66.39 1.25 1 1.51a1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82c.22.63.85 1.05 1.51 1.05H21a2 2 0 0 1 0 4h-.09c-.66 0-1.25.39-1.51 1z" />
-                </svg>
-            </button>
+            <div class="header-buttons">
+                <div class="mejoras-disponibles" v-if="mejorasDisponibles > 0" :title="`Mejoras disponibles: ${mejorasDisponibles}`">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-principal1)" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 19V5M5 12l7-7 7 7"/>
+                    </svg>
+                    <span class="mejoras-numero">{{ mejorasDisponibles }}</span>
+                </div>
+                <button class="settings-btn" @click="mostrarConfigChecks = true" title="Configurar checks">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="3" />
+                        <path
+                            d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33h.09A1.65 1.65 0 0 0 9 3.09V3a2 2 0 0 1 4 0v.09c0 .66.39 1.25 1 1.51a1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82c.22.63.85 1.05 1.51 1.05H21a2 2 0 0 1 0 4h-.09c-.66 0-1.25.39-1.51 1z" />
+                    </svg>
+                </button>
+            </div>
         </div>
         <div class="checks-list">
             <draggable v-model="props.ficha.personaliz.checks" item-key="check" animation="200"
@@ -179,10 +320,8 @@ function updateStat(checkName, newStat) {
                     <div class="item" v-if="element.check !== 'Init'">
 
                         <div class="alinear">
-
                             <p>{{ element.check }} <span class="stat-check">({{ element.stat.toUpperCase() }})</span>
                             </p>
-
                             <div class="bonosChecks">
                                 <div>
                                     <span class="grado-circulo" :title="grados[gradoActual(element.check)]"
@@ -199,6 +338,9 @@ function updateStat(checkName, newStat) {
 
                                 <tiraDado :tirada='"1d20+" + (element.total)' :origin='"Tirada de " + element.check' />
                             </div>
+
+
+
                         </div>
 
                         <!--    <button class="borrar-btn"
@@ -231,20 +373,16 @@ function updateStat(checkName, newStat) {
     <!-- Modal configuración de checks -->
     <div v-if="mostrarConfigChecks" class="config-modal-overlay" @click.self="mostrarConfigChecks = false">
         <div class="config-modal">
-            <h4>Configurar Checks</h4>
+            <h4>Configurar Habilidades</h4>
+            <button class="close-btn" @click="mostrarConfigChecks = false" aria-label="Cerrar">×</button>
             <div class="config-checks-list">
                 <label v-for="base in ChecksBase" :key="base.check" class="config-check-item">
-                    <input type="checkbox"
-                        :checked="ficha.personaliz.checks.some(c => c.check === base.check)"
-                        @change="toggleCheck(base.check)"
-                        :disabled="false"
-                    />
+                    <input type="checkbox" :checked="ficha.personaliz.checks.some(c => c.check === base.check)"
+                        @change="toggleCheck(base.check)" :disabled="false" />
                     {{ base.check }}
-                    <span class="stat-check">({{ getStat(base.check).toUpperCase() }})</span>
-                    <select v-if="ficha.personaliz.checks.some(c => c.check === base.check)"
+                    <select
                         v-model="getCheckObj(base.check).stat"
-                        @change="updateStat(base.check, getCheckObj(base.check).stat)"
-                        class="stat-select">
+                        @change="updateStat(base.check, getCheckObj(base.check).stat)" class="stat-select">
                         <option value="fue">Fuerza</option>
                         <option value="agi">Agilidad</option>
                         <option value="res">Resistencia</option>
@@ -252,9 +390,17 @@ function updateStat(checkName, newStat) {
                         <option value="esp">Espiritu</option>
                         <option value="pre">Presencia</option>
                     </select>
+                    <select
+                        :value="getGradoActual(base.check)"
+                        @change="onChangeRango(base.check, $event.target.value)"
+                        class="rango-select"
+                        :title="`Rango de ${base.check}`">
+                        <option v-for="(g, i) in grados" :key="g" :value="i" :disabled="isRangoOptionDisabled(base.check, i)">
+                            {{ g }}
+                        </option>
+                    </select>
                 </label>
             </div>
-            <button @click="mostrarConfigChecks = false">Cerrar</button>
         </div>
     </div>
 </template>
@@ -262,15 +408,16 @@ function updateStat(checkName, newStat) {
 <style scoped>
 .checks {
     display: flex;
-    width: 340px;
+    width: fit-content;
+    min-width: 330px;
     flex-direction: column;
     border: 1px solid rgba(150, 150, 150, 0.798);
     border-radius: 10px;
-    padding: 2px;
-    justify-content: space-between;
+    padding: 0;
+    height: 100%;
+    max-height: 400px;
+    overflow: hidden;
 }
-
-
 
 .item {
     display: flex;
@@ -301,9 +448,8 @@ function updateStat(checkName, newStat) {
  */
 .bonosChecks {
     display: flex;
-    gap: 5px;
     align-items: center;
-    justify-content: end;
+    white-space: nowrap;
 }
 
 .alinear {
@@ -312,6 +458,7 @@ function updateStat(checkName, newStat) {
     width: 100%;
     justify-content: space-between;
     gap: 10px;
+    text-align: left;
 }
 
 .alinear input {
@@ -340,7 +487,9 @@ function updateStat(checkName, newStat) {
 }
 
 .checks-list {
-    padding: 5px;
+    padding: 0px 8px;
+    overflow-y: auto;
+    flex: 1;
 }
 
 .checks-list>div {
@@ -389,6 +538,7 @@ input[type="number"] {
     width: 22px;
     height: 22px;
     border-radius: 50%;
+    margin-right: 5px;
     background: var(--color-principal1);
     color: var(--color-texto);
     cursor: pointer;
@@ -532,8 +682,37 @@ details {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    padding: 0 5px;
+    padding: 8px;
+    background: var(--color-fondoTexto);
+    border-bottom: 1px solid rgba(150, 150, 150, 0.3);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    flex-shrink: 0;
+}
 
+.header-buttons {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.mejoras-disponibles {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 6px;
+    border: 1px solid var(--color-principal1);
+    border-radius: 6px;
+    cursor: default;
+}
+
+.mejoras-numero {
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--color-principal1);
+    min-width: 16px;
+    text-align: center;
 }
 
 .settings-btn {
@@ -565,10 +744,11 @@ details {
 
 .config-modal {
     background: var(--color-fondoTexto);
-    padding: 20px;
+    padding: 10px 20px;
     border-radius: 10px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
     min-width: 320px;
+    position: relative;
 }
 
 .config-checks-list {
@@ -590,6 +770,28 @@ details {
     padding: 2px 6px;
     border-radius: 5px;
     border: 1px solid var(--color-principal2, #3a7);
+    background: var(--color-fondoTexto);
+    color: var(--color-texto);
+    font-size: 0.95em;
+}
+
+.close-btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: none;
+    border: none;
+    color: var(--color-texto);
+    font-size: 20px;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.rango-select {
+    margin-left: 6px;
+    padding: 2px 6px;
+    border-radius: 5px;
+    border: 1px solid var(--color-principal1);
     background: var(--color-fondoTexto);
     color: var(--color-texto);
     font-size: 0.95em;

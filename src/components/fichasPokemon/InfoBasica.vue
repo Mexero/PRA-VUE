@@ -268,7 +268,9 @@ input:focus {
 }
 
 input[name="Nivel"] {
-    width: 40px;
+    width: 45px;
+    font-size: 16px;
+    padding: 2px;
 }
 
 .NombreTipos {

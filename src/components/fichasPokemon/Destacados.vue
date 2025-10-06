@@ -10,11 +10,6 @@ const mejorasUsadas = computed(() => props.ficha.personaliz.mejorasHab.length)
 function gradoActual(checkName) {
     const mejoras = props.ficha.personaliz.mejorasHab.filter(m => m === checkName).length
     const totalGrado = Math.min(1 + mejoras, props.grados.length - 1)
-
-    const check = props.ficha.personaliz.checks.find(ch => ch.check === checkName)
-    if (check) {
-        check.grado = props.grados[totalGrado]
-    }
     return totalGrado
 }
 
@@ -39,13 +34,8 @@ function bajarGrado(checkName) {
 
 <template>
         <section class="central">
-            <div class="pp-box">
-                <div>PP</div>
-                <div class="pp-inputs">
-                    <input v-model.number="ficha.derivados.pp" /> /
-                    <input v-model.number="ficha.derivados.ppMax" :readonly="!ficha.manual.ppMax" />
-                </div>
-            </div>
+            <!-- Este componente ahora está vacío ya que PP se movió a EstadisticasDerivadas -->
+            <!-- Se mantiene por compatibilidad pero puede ser eliminado si no se necesita -->
         </section>
 </template>
 

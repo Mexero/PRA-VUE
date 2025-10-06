@@ -151,12 +151,14 @@ onBeforeUnmount(() => {
 }
 
 input {
-    font-size: large;
+    font-size: 16px;
     background-color: transparent;
-    padding: 4px;
+    padding: 2px;
     border: none;
-    border-bottom: 1px solid;
+    border-bottom: 1px solid rgba(150, 150, 150, 0.798);
     color: var(--color-texto);
+    width: 45px;
+    text-align: center;
 }
 
 .suggestions {

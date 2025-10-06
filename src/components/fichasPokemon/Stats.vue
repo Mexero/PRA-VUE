@@ -74,6 +74,9 @@ function cambiarMejoraEST(stat, delta) {
     align-items: center;
     border: 1px solid rgba(150, 150, 150, 0.798);
     border-radius: 10px;
+    height: fit-content;
+    justify-content: space-between;
+    font-weight: bold;
 }
 
 .item {
@@ -96,17 +99,19 @@ function cambiarMejoraEST(stat, delta) {
 }
 .numStat {
     grid-column: 2;
-    font-weight: bold;
+    font-weight: normal;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .statsContenido {
+    font-weight: normal;
     display: grid;
     grid-template-rows: auto;
     grid-template-columns: 15px 20px 20px;
     gap: 5px;
+    height: 25px;
 }
 
 .botonMaxMenos {

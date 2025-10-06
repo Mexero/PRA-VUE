@@ -1,5 +1,5 @@
 <script setup>
-import { ref, reactive, onMounted, watch } from 'vue'
+import { ref, reactive, onMounted, watch, computed } from 'vue'
 
 import FichaToolbar from '@/components/fichasPokemon/Toolbar.vue'
 import FichaInfoBasica from '@/components/fichasPokemon/InfoBasica.vue'
@@ -297,13 +297,17 @@ function construirChecksBase() {
 function ActualizarChecks() {
     const checks = [];
 
-    // 1. Meter los base
+    // 1. Meter los base (solo los que no estén desactivados)
     ficha.derivados.checksBase.forEach(checkBase => {
-        checks.push({
-            check: checkBase.check,
-            stat: checkBase.stat || 'fue',
-            grado: checkBase.grado
-        });
+        const estaDesactivado = ficha.personaliz.checksBaseDesactivados && 
+                               ficha.personaliz.checksBaseDesactivados.includes(checkBase.check);
+        if (!estaDesactivado) {
+            checks.push({
+                check: checkBase.check,
+                stat: checkBase.stat || 'fue',
+                grado: checkBase.grado
+            });
+        }
     });
 
     // 2. Aplicar Mejoras de Habilidad
@@ -793,6 +797,7 @@ onMounted(async () => {
 
 
 const mostrarToolbar = ref(false)
+const mostrarConfigIniciativa = ref(false)
 
 // Funciones para los botones del Pokémon
 function nuevaEscena() {
@@ -809,6 +814,111 @@ function descansar() {
     } else {
         ficha.derivados.fatiga = 0
     }
+}
+
+// Función para obtener el grado actual de un check
+function gradoActual(checkName) {
+    const mejoras = ficha.personaliz.mejorasHab.filter(m => m === checkName).length
+    const totalGrado = Math.min(1 + mejoras, grados.length - 1)
+    return totalGrado
+}
+
+// Funciones para configuración de iniciativa
+function getIniciativaStat() {
+    const initCheck = ficha.personaliz.checks.find(c => c.check === 'Init')
+    return initCheck ? initCheck.stat : 'esp'
+}
+
+function updateIniciativaStat(newStat) {
+    const initCheck = ficha.personaliz.checks.find(c => c.check === 'Init')
+    if (initCheck) {
+        initCheck.stat = newStat
+    }
+}
+
+const iniciativaStat = computed({
+    get() {
+        return getIniciativaStat()
+    },
+    set(val) {
+        updateIniciativaStat(val)
+    }
+})
+
+function getIniciativaMejoras() {
+    return ficha.personaliz.mejorasHab.filter(m => m === 'Init').length
+}
+
+function maxIniciativaMejoras() {
+    const initCheck = ficha.derivados.checksBase.find(c => c.check === 'Init')
+    const base = initCheck ? initCheck.grado : 1
+    return Math.max(0, (grados.length - 1) - base)
+}
+
+// Computed para mejoras disponibles (igual que en Checks.vue)
+const mejorasDisponibles = computed(() => {
+    const total = ficha.derivados.cantidadMejorasHab || 0
+    const usadas = ficha.personaliz.mejorasHab.length
+    return Math.max(0, total - usadas)
+})
+
+function opcionesIniciativaMejoras() {
+    const actuales = getIniciativaMejoras()
+    const maxPorGrado = maxIniciativaMejoras()
+    const maxPermitido = Math.min(maxPorGrado, actuales + mejorasDisponibles.value)
+    return Array.from({ length: maxPermitido + 1 }, (_, i) => i)
+}
+
+function onChangeIniciativaMejoras(nuevoValor) {
+    const initCheck = ficha.derivados.checksBase.find(c => c.check === 'Init')
+    const gradoBase = initCheck ? initCheck.grado : 1
+    const actuales = getIniciativaMejoras()
+    const gradoActual = actuales + gradoBase
+    const maxPorGrado = maxIniciativaMejoras() + gradoBase
+    
+    let objetivo = parseInt(nuevoValor) || 0
+    if (objetivo === gradoActual) return
+    
+    if (objetivo < gradoBase) {
+        // No permitir bajar por debajo del grado base
+        objetivo = gradoBase
+    }
+    
+    if (objetivo < gradoActual) {
+        // Quitar mejoras necesarias
+        let quitar = gradoActual - objetivo
+        while (quitar > 0) {
+            const idx = ficha.personaliz.mejorasHab.lastIndexOf('Init')
+            if (idx === -1) break
+            ficha.personaliz.mejorasHab.splice(idx, 1)
+            quitar--
+        }
+    } else {
+        // Añadir mejoras necesarias
+        let necesarios = objetivo - gradoActual
+        if (necesarios > mejorasDisponibles.value) {
+            necesarios = mejorasDisponibles.value
+        }
+        while (necesarios > 0) {
+            ficha.personaliz.mejorasHab.push('Init')
+            necesarios--
+        }
+    }
+}
+
+function isIniciativaRangoDisabled(optionIndex) {
+    const initCheck = ficha.derivados.checksBase.find(c => c.check === 'Init')
+    const min = initCheck ? initCheck.grado : 1 // Grado base de Iniciativa
+    const actual = getIniciativaMejoras() + min // Mejoras + grado base
+    const max = grados.length - 1
+    
+    if (optionIndex < min) return true
+    if (optionIndex > max) return true
+    if (optionIndex <= actual) return false // siempre permitir bajar/igual
+    
+    // subir: requiere (optionIndex - actual) puntos
+    const necesarios = optionIndex - actual
+    return necesarios > mejorasDisponibles.value
 }
 </script>
 
@@ -857,8 +967,8 @@ function descansar() {
                             </div>
                         </div>
                     </div>
+                    
                     <div class="pokemon-image-area">
-
                         <div class="pokemon-image-container">
                             <img v-if="pokemonImage" :src="pokemonImage" :alt="ficha.pokedex.especie || 'Pokémon'"
                                 class="pokemon-image" />
@@ -866,21 +976,65 @@ function descansar() {
                                 <span>Sin imagen</span>
                             </div>
                         </div>
-
                     </div>
+                    
                     <div class="rest-buttons">
                         <button @click="nuevaEscena" class="pokemon-btn">Nueva escena</button>
                         <button @click="descansar" class="pokemon-btn">Descansar</button>
                     </div>
-                    <div class="BH">
-                        <label>BH </label>
-                        <input type="number" v-model.number="ficha.derivados.bh" :readonly="!ficha.manual.bh" />
+
+                    <div class="estadisticas-derivadas-area">
+                        <!-- BH -->
+                        <div class="BH">
+                            <label>BH </label>
+                            <input type="number" v-model.number="ficha.derivados.bh" :readonly="!ficha.manual.bh" />
+                        </div>
+
+                        <!-- Iniciativa -->
+                        <div class="Iniciativa">
+                            <div class="iniciativa-header">
+                                <span>Iniciativa</span>
+                                <button class="settings-btn" @click="mostrarConfigIniciativa = true" title="Configurar iniciativa">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <circle cx="12" cy="12" r="3" />
+                                        <path
+                                            d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33h.09A1.65 1.65 0 0 0 9 3.09V3a2 2 0 0 1 4 0v.09c0 .66.39 1.25 1 1.51a1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82c.22.63.85 1.05 1.51 1.05H21a2 2 0 0 1 0 4h-.09c-.66 0-1.25.39-1.51 1z" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <span class="grado">{{ grados[gradoActual('Init')] }}</span>
+                            <input v-model.number="ficha.derivados.init" :readonly="!ficha.manual.init" />
+                        </div>
+
+                        <!-- Evasión -->
+                        <div class="Evasion">
+                            <span>Evasión</span>
+                            <input v-model.number="ficha.derivados.ca" :readonly="!ficha.manual.ca" />
+                            <select v-if="ficha.pokedex.calculosEva.length > 1" v-model="ficha.derivados.caElegida">
+                                <option v-for="(calculo, i) in ficha.pokedex.calculosEva" :value="i">{{ calculo }}</option>
+                            </select>
+                            <p v-else>
+                                {{ ficha.pokedex.calculosEva[0] }}
+                            </p>
+                        </div>
+
+                        <!-- PP -->
+                        <div class="pp-box">
+                            <div>PP</div>
+                            <div class="pp-inputs">
+                                <input v-model.number="ficha.derivados.pp" /> /
+                                <input v-model.number="ficha.derivados.ppMax" :readonly="!ficha.manual.ppMax" />
+                            </div>
+                        </div>
+
+                        <!-- Fatiga -->
+                        <div class="fatiga">
+                            <div>Fatiga</div>
+                            <input type="number" v-model.number="ficha.derivados.fatiga" />
+                        </div>
                     </div>
 
-                    <div class="fatiga">
-                        <div>FATIGA</div>
-                        <input type="number" v-model.number="ficha.derivados.fatiga" />
-                    </div>
                     <div class="destacados-area">
                         <FichaDestacados :ficha="ficha" :grados="grados" />
                     </div>
@@ -888,14 +1042,16 @@ function descansar() {
                     <div class="checks-area">
                         <FichaChecks :ficha="ficha" :ChecksBase="ChecksBase" />
                     </div>
+                    
                     <div class="velocidades-area">
                         <FichaVelocidades :ficha="ficha" />
                     </div>
+                    
                     <div class="otros-area">
-
                         <FichaOtros :ficha="ficha" :naturalezas="naturalezas" />
                     </div>
-                    <div>
+                    
+                    <div class="pv-escudo-area">
                         <div class="pv-box">
                             <div class="pv-row">
                                 <span>PV:</span>
@@ -912,24 +1068,6 @@ function descansar() {
                             <span>Escudo</span>
                             <input v-model.number="ficha.derivados.escudo" />
                         </div>
-                    </div>
-                    <div class="Evasion">Evasión
-                        <input v-model.number="ficha.derivados.ca" :readonly="!ficha.manual.ca" />
-                        <select v-if="ficha.pokedex.calculosEva.length > 1" v-model="ficha.derivados.caElegida">
-                            <option v-for="(calculo, i) in ficha.pokedex.calculosEva" :value="i">{{ calculo }}</option>
-                        </select>
-                        <p v-else>
-                            {{ ficha.pokedex.calculosEva[0] }}
-                        </p>
-                    </div>
-                    <div class="Iniciativa">Iniciativa
-                        <input v-model.number="ficha.derivados.ca" :readonly="!ficha.manual.ca" />
-                        <select v-if="ficha.pokedex.calculosEva.length > 1" v-model="ficha.derivados.caElegida">
-                            <option v-for="(calculo, i) in ficha.pokedex.calculosEva" :value="i">{{ calculo }}</option>
-                        </select>
-                        <p v-else>
-                            {{ ficha.pokedex.calculosEva[0] }}
-                        </p>
                     </div>
                 </div>
                 <!-- 
@@ -957,31 +1095,193 @@ function descansar() {
     </div>
     <LanzadorDados />
 
+    <!-- Modal configuración de iniciativa -->
+    <div v-if="mostrarConfigIniciativa" class="config-modal-overlay" @click.self="mostrarConfigIniciativa = false">
+        <div class="config-modal">
+            <h4>Configurar Iniciativa</h4>
+            <button class="close-btn" @click="mostrarConfigIniciativa = false" aria-label="Cerrar">×</button>
+            <div class="config-checks-list">
+                <label class="config-check-item">
+                    <input type="checkbox" checked disabled />
+                    Iniciativa
+                    <select v-model="iniciativaStat" class="stat-select">
+                        <option value="fue">Fuerza</option>
+                        <option value="agi">Agilidad</option>
+                        <option value="res">Resistencia</option>
+                        <option value="men">Mente</option>
+                        <option value="esp">Espíritu</option>
+                        <option value="pre">Presencia</option>
+                    </select>
+                    <select v-if="opcionesIniciativaMejoras().length > 1"
+                        :value="getIniciativaMejoras()"
+                        @change="onChangeIniciativaMejoras($event.target.value)"
+                        class="rango-select"
+                        :title="`Rango de Iniciativa`">
+                        <option v-for="(g, i) in grados" :key="g" :value="i" :disabled="isIniciativaRangoDisabled(i)">
+                            {{ g }}
+                        </option>
+                    </select>
+                </label>
+            </div>
+        </div>
+    </div>
+
 </template>
 
 <style scoped>
 .pv-box {
-    border: 1px solid rgba(150, 150, 150, 0.5);
+    font-weight: bold;
+    border: 1px solid rgba(150, 150, 150, 0.798);
     border-radius: 8px 8px 0 0;
     padding: 10px 10px 5px 10px;
     grid-area: PV;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
+    gap: 15px;
 }
 
-.Evasion , .Iniciativa{
+.Iniciativa {
+    grid-area: Iniciativa;
     border: 1px solid rgba(150, 150, 150, 0.798);
     border-radius: 10px;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    height: fit-content;
+    padding: 8px;
+}
+
+.Iniciativa .grado {
+    font-size: 12px;
+    color: var(--color-principal1);
+}
+
+.iniciativa-header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    
+}
+
+.iniciativa-header > span {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    
+}
+
+.iniciativa-header .settings-btn {
+    margin-left: auto;
+}
+
+.config-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.486);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    color: var(--color-texto);
+}
+
+.config-modal {
+    background: var(--color-fondoTexto);
+    padding: 10px 20px;
+    border-radius: 10px;
+    min-width: 320px;
+    position: relative;
+}
+
+.config-checks-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.config-check-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.stat-select {
+    margin-left: 6px;
+    padding: 2px 6px;
+    border-radius: 5px;
+    border: 1px solid var(--color-principal2);
+    background: var(--color-fondoTexto);
+    color: var(--color-texto);
+    font-size: 0.95em;
+}
+
+.rango-select {
+    margin-left: 6px;
+    padding: 2px 6px;
+    border-radius: 5px;
+    border: 1px solid var(--color-principal1);
+    background: var(--color-fondoTexto);
+    color: var(--color-texto);
+    font-size: 0.95em;
+}
+
+.close-btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: none;
+    border: none;
+    color: var(--color-texto);
+    font-size: 20px;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.settings-btn{
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 2px;
+    color: var(--color-principal2);
+    
+}
+.Evasion {
+    border: 1px solid rgba(150, 150, 150, 0.798);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
     grid-area: Evasion;
-    padding-bottom: 5px;
-    height: fit-content;
+    font-weight: bold;
+    padding: 8px;
+}
+
+.init {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 5px;
+}
+
+.init label {
+    font-size: 14px;
     font-weight: bold;
 }
+
+.init span {
+    font-size: 12px;
+    color: var(--color-principal1);
+}
+
 
 .Evasion select {
     background-color: transparent;
@@ -989,7 +1289,7 @@ function descansar() {
     border: 1px solid rgba(150, 150, 150, 0.798);
     border-radius: 6px;
     padding: 2px 4px;
-    margin-top: 2px;
+    margin-bottom: 2px;
     font-size: 14px;
     cursor: pointer;
 }
@@ -1012,8 +1312,40 @@ function descansar() {
 .escudo-box {
     border-radius: 0 0 8px 8px;
     padding: 10px;
-    border: 1px solid rgba(150, 150, 150, 0.5);
+    border: 1px solid rgba(150, 150, 150, 0.798);
     border-top: none;
+    font-weight: bold;
+}
+
+.pp-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 8px;
+    border: 1px solid rgba(150, 150, 150, 0.798);
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.pp-inputs {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.pp-inputs input {
+    width: 40px;
+    border-bottom: 1px solid rgba(150, 150, 150, 0.798);
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(150, 150, 150, 0.798);
+    color: var(--color-texto);
+    text-align: center;
+    font-size: 18px;
+}
+
+.pp-inputs input:last-child {
+    border-bottom: none;
 }
 
 .fatiga {
@@ -1024,8 +1356,30 @@ function descansar() {
     align-items: center;
     height: fit-content;
     grid-area: fatiga;
-    padding-bottom: 8px;
+    padding: 5px;
     font-weight: bold;
+}
+
+.BH {
+    border: 1px solid rgba(150, 150, 150, 0.798);
+    border-radius: 10px;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    grid-area: BH;
+    font-weight: bold;
+    padding: 5px;
+}
+
+.BH input {
+    border: none;
+    width: 40px;
+    text-align: center;
+    background-color: transparent;
+    color: var(--color-texto);
+    font-size: 18px;
 }
 
 input {
@@ -1040,22 +1394,6 @@ input {
 }
 
 
-.BH {
-    border: 1px solid rgba(150, 150, 150, 0.798);
-    border-radius: 10px;
-    height: fit-content;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    grid-area: BH;
-    font-weight: bold;
-}
-
-.BH input {
-    padding: 4px;
-    border: none;
-}
 
 input:focus {
     outline: none;
@@ -1096,34 +1434,23 @@ input[type="number"] {
 }
 
 .info-principal {
+    margin-top: 20px;
     width: fit-content;
     display: grid;
     grid-template-areas:
-        "stats saves pokemon BH checks"
-        "stats saves pokemon Iniciativa checks"
-        "stats velocidades rest Evasion checks"
-        "stats velocidades PV destacados checks"
-        "stats velocidades PV fatiga checks"
+        "stats saves pokemon derivadas checks"
+        "stats velocidades rest derivadas checks"
+        "stats velocidades pv-escudo derivadas checks"
         "otros otros otros otros otros";
-    grid-template-columns: auto 140px auto 130px auto;
-    grid-template-rows: 55px 75px 80px 60px auto auto;
+    grid-template-columns: auto 140px auto 150px auto;
+    grid-template-rows:  155px 85px auto auto;
     gap: 15px;
 }
 
-.Iniciativa{
-        grid-area: Iniciativa;
 
-}
+
 .stats-area {
     grid-area: stats;
-}
-
-.pokemon-image-area {
-    grid-area: pokemon;
-}
-
-.destacados-area {
-    grid-area: destacados;
 }
 
 .checks-area {
@@ -1138,6 +1465,17 @@ input[type="number"] {
     grid-area: otros;
 }
 
+.estadisticas-derivadas-area {
+    grid-area: derivadas;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.pv-escudo-area {
+    grid-area: pv-escudo;
+}
+
 .salvaciones-area {
     border: 1px solid rgba(150, 150, 150, 0.798);
     border-radius: 10px;
@@ -1147,8 +1485,7 @@ input[type="number"] {
     text-align: center;
     height: fit-content;
     grid-area: saves;
-    padding: 0 10px;
-
+    padding: 5px;
 }
 
 .bonosSalvacion {
@@ -1165,19 +1502,18 @@ input[type="number"] {
     display: flex;
     flex-direction: column;
     text-align: center;
+    grid-area: pokemon;
 }
 
 .pokemon-image-container {
     display: flex;
     align-items: center;
     justify-content: center;
-    
-    
 }
 
 .pokemon-image {
-    width: 140px;
-    height: 140px;
+    width: 150px;
+    height: 150px;
     object-fit: contain;
     filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
 }
@@ -1198,8 +1534,7 @@ input[type="number"] {
 .rest-buttons {
     display: flex;
     flex-direction: column;
-    gap: 8px;
-
+    justify-content: space-between;
     grid-area: rest;
 }
 

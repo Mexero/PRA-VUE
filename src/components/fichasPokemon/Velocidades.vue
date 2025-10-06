@@ -20,7 +20,7 @@ defineProps(['ficha'])
 .speeds {
     border: 1px solid rgba(150, 150, 150, 0.798);
     border-radius: 10px;
-    padding: 10px;
+    padding: 8px;
 }
 
 h3 {
