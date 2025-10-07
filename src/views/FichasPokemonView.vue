@@ -58,6 +58,7 @@ const ChecksBase = [
     { check: 'Juego de Manos', stat: 'agi' },
     { check: 'Percepción', stat: 'esp' },
     { check: 'Persuasión', stat: 'pre' },
+    { check: 'Sigilo', stat: 'agi' },
     { check: 'Supervivencia', stat: 'esp' },
     { check: 'Trato Pokémon', stat: 'pre' },
 ]
@@ -217,6 +218,28 @@ async function cambiarDatosEspecie(especie) {
 
         // Reset
         ficha.personaliz.habilidadesOcultasDesbloqueadas = []
+        
+        // Limpiar checks especiales del Pokémon anterior
+        // Solo remover checks que ya no existen en ningún lado
+        ficha.personaliz.checks = ficha.personaliz.checks.filter(check => {
+            // Mantener checks que están en ChecksBase (checks genéricos)
+            if (ChecksBase.some(cb => cb.check === check.check)) return true
+            
+            // Mantener checks personalizados
+            if (ficha.personaliz.checksExtra && ficha.personaliz.checksExtra.includes(check.check)) return true
+            
+            // Mantener checks que están en los checks base del nuevo Pokémon
+            const checksBaseNombres = (ficha.derivados.checksBase || []).map(c => c.check)
+            return checksBaseNombres.includes(check.check)
+        })
+        
+        // También limpiar mejoras de habilidad de checks que ya no existen
+        ficha.personaliz.mejorasHab = ficha.personaliz.mejorasHab.filter(mejora => {
+            // Mantener mejoras de checks que siguen existiendo
+            return ficha.personaliz.checks.some(check => check.check === mejora) ||
+                   ChecksBase.some(cb => cb.check === mejora) ||
+                   (ficha.personaliz.checksExtra && ficha.personaliz.checksExtra.includes(mejora))
+        })
 
         console.log(`Datos de ${especie} cargados:`, ficha.pokedex)
 
@@ -283,65 +306,54 @@ function construirChecksBase() {
     if (ficha.personaliz.naturaleza.naturaleza) {
         const index = checksBaseNuevo.findIndex(c => c.check === ficha.personaliz.naturaleza.check)
         if (index !== -1) {
-            checksBaseNuevo[index].grado++
+            // Asegurar al menos "Bueno" (1) como rango base por Naturaleza
+            checksBaseNuevo[index].grado = Math.max(checksBaseNuevo[index].grado ?? 0, 1)
         } else {
+            // Si no existe, crearla con rango base "Bueno" (1)
             checksBaseNuevo.push({ check: ficha.personaliz.naturaleza.check, grado: 1, stat: 'fue' })
         }
     }
 
     if (!checksBaseIguales(ficha.derivados.checksBase, checksBaseNuevo)) {
         ficha.derivados.checksBase = checksBaseNuevo
+        
+        // Inicializar checks base en la visualización si no existen
+        checksBaseNuevo.forEach(checkBase => {
+            const yaExiste = ficha.personaliz.checks.some(c => c.check === checkBase.check)
+            if (!yaExiste) {
+                ficha.personaliz.checks.push({
+                    check: checkBase.check,
+                    stat: checkBase.stat || 'fue',
+                    grado: checkBase.grado,
+                    total: 0
+                })
+            }
+        })
     }
 }
 
 function ActualizarChecks() {
-    const checks = [];
-
-    // 1. Meter los base (solo los que no estén desactivados)
-    ficha.derivados.checksBase.forEach(checkBase => {
-        const estaDesactivado = ficha.personaliz.checksBaseDesactivados && 
-                               ficha.personaliz.checksBaseDesactivados.includes(checkBase.check);
-        if (!estaDesactivado) {
-            checks.push({
-                check: checkBase.check,
-                stat: checkBase.stat || 'fue',
-                grado: checkBase.grado
-            });
-        }
-    });
-
-    // 2. Aplicar Mejoras de Habilidad
-    ficha.personaliz.mejorasHab.forEach(checkMejorado => {
-        const index = checks.findIndex(c => c.check === checkMejorado);
-        if (index !== -1) {
-            checks[index].grado++;
+    // Solo actualizar los checks que ya están visibles, no agregar nuevos automáticamente
+    ficha.personaliz.checks.forEach(check => {
+        // Actualizar el grado basándose en la configuración guardada
+        const config = ficha.personaliz.configuracionHabilidades?.[check.check]
+        if (config) {
+            check.grado = config.grado
         } else {
-            checks.push({
-                check: checkMejorado,
-                stat: 'fue',
-                grado: 1
-            });
+            // Si no hay configuración, usar el grado base + mejoras
+            const gradoBase = check.check === 'Init' ? 1 : 
+                (ficha.derivados.checksBase.find(c => c.check === check.check)?.grado || 0)
+            const mejoras = ficha.personaliz.mejorasHab.filter(m => m === check.check).length
+            check.grado = Math.min(gradoBase + mejoras, 4) // máximo Legendario
+        }
+        
+        // Actualizar la estadística si hay configuración
+        if (config && config.stat) {
+            check.stat = config.stat
         }
     });
 
-    // 3. Aplicar cambios
-    checks.forEach(chk => {
-        const index = ficha.personaliz.checks.findIndex(c => c.check === chk.check);
-        if (index !== -1) {
-            // Si ya existe actualiza grado y stat
-            ficha.personaliz.checks[index].grado = chk.grado;
-        } else {
-            // Si no existe lo agrega
-            ficha.personaliz.checks.push({
-                check: chk.check,
-                stat: chk.stat,
-                grado: chk.grado,
-                total: 0
-            });
-        }
-    });
-
-    //4. Recalcular bonos
+    // Recalcular bonos para todos los checks visibles
     ficha.personaliz.checks.forEach(updateCheck)
 }
 
@@ -403,6 +415,41 @@ watch(() => ficha.pokedex.especie, async (nuevaEspecie) => {
     if (nuevaEspecie) {
         await actualizarImagenPokemon()
     }
+})
+
+// Ajustar rangos cuando cambia la Naturaleza
+function getGradoBaseDeCheck(nombreCheck) {
+    if (!nombreCheck) return 0
+    const base = ficha.derivados.checksBase.find(c => c.check === nombreCheck)
+    return base ? (typeof base.grado === 'number' ? base.grado : 0) : 0
+}
+
+function setConfigToBasePlusMejoras(nombreCheck) {
+    if (!nombreCheck) return
+    const base = getGradoBaseDeCheck(nombreCheck)
+    const mejoras = ficha.personaliz.mejorasHab.filter(m => m === nombreCheck).length
+    const objetivo = Math.min(base + mejoras, 4)
+    if (!ficha.personaliz.configuracionHabilidades) ficha.personaliz.configuracionHabilidades = {}
+    if (!ficha.personaliz.configuracionHabilidades[nombreCheck]) {
+        ficha.personaliz.configuracionHabilidades[nombreCheck] = { stat: 'fue', grado: objetivo }
+    } else {
+        ficha.personaliz.configuracionHabilidades[nombreCheck].grado = objetivo
+    }
+    // Si el check está visible, sincronizar su grado
+    const idx = ficha.personaliz.checks.findIndex(c => c.check === nombreCheck)
+    if (idx !== -1) {
+        ficha.personaliz.checks[idx].grado = objetivo
+    }
+}
+
+watch(() => ficha.personaliz.naturaleza?.check, (nuevaHab, antiguaHab) => {
+    // Recalcular bases
+    construirChecksBase()
+    // Reajustar la anterior y la nueva a base + mejoras
+    if (antiguaHab) setConfigToBasePlusMejoras(antiguaHab)
+    if (nuevaHab) setConfigToBasePlusMejoras(nuevaHab)
+    // Aplicar a visibles
+    ActualizarChecks()
 })
 
 function actualizar() {
@@ -823,13 +870,68 @@ function gradoActual(checkName) {
     return totalGrado
 }
 
-// Funciones para configuración de iniciativa
+// Funciones para configuración de iniciativa (usando la misma lógica que Checks.vue)
+function gradoMinimoIniciativa() {
+    // Si el check base está desactivado manualmente, el mínimo pasa a 0
+    if (Array.isArray(ficha.personaliz.checksBaseDesactivados) &&
+        ficha.personaliz.checksBaseDesactivados.includes('Init')) {
+        return 0
+    }
+    const base = ficha.derivados.checksBase.find(c => c.check === 'Init')
+    return base ? base.grado : 0
+}
+
+function gradoActualIniciativa() {
+    // Usar el nuevo sistema de configuración de habilidades
+    if (!ficha.personaliz.configuracionHabilidades) {
+        ficha.personaliz.configuracionHabilidades = {}
+    }
+    
+    if (!ficha.personaliz.configuracionHabilidades['Init']) {
+        // Iniciativa tiene grado base "Bueno" (1) por defecto
+        ficha.personaliz.configuracionHabilidades['Init'] = {
+            stat: 'esp',
+            grado: 1
+        }
+    }
+    
+    return ficha.personaliz.configuracionHabilidades['Init'].grado
+}
+
 function getIniciativaStat() {
-    const initCheck = ficha.personaliz.checks.find(c => c.check === 'Init')
-    return initCheck ? initCheck.stat : 'esp'
+    // Usar el nuevo sistema de configuración de habilidades
+    if (!ficha.personaliz.configuracionHabilidades) {
+        ficha.personaliz.configuracionHabilidades = {}
+    }
+    
+    if (!ficha.personaliz.configuracionHabilidades['Init']) {
+        // Iniciativa tiene grado base "Bueno" (1) por defecto
+        ficha.personaliz.configuracionHabilidades['Init'] = {
+            stat: 'esp',
+            grado: 1
+        }
+    }
+    
+    return ficha.personaliz.configuracionHabilidades['Init'].stat
 }
 
 function updateIniciativaStat(newStat) {
+    // Usar el nuevo sistema de configuración de habilidades
+    if (!ficha.personaliz.configuracionHabilidades) {
+        ficha.personaliz.configuracionHabilidades = {}
+    }
+    
+    if (!ficha.personaliz.configuracionHabilidades['Init']) {
+        // Iniciativa tiene grado base "Bueno" (1) por defecto
+        ficha.personaliz.configuracionHabilidades['Init'] = {
+            stat: 'esp',
+            grado: 1
+        }
+    }
+    
+    ficha.personaliz.configuracionHabilidades['Init'].stat = newStat
+    
+    // Si el check está visible, actualizar también su stat en la lista
     const initCheck = ficha.personaliz.checks.find(c => c.check === 'Init')
     if (initCheck) {
         initCheck.stat = newStat
@@ -845,16 +947,6 @@ const iniciativaStat = computed({
     }
 })
 
-function getIniciativaMejoras() {
-    return ficha.personaliz.mejorasHab.filter(m => m === 'Init').length
-}
-
-function maxIniciativaMejoras() {
-    const initCheck = ficha.derivados.checksBase.find(c => c.check === 'Init')
-    const base = initCheck ? initCheck.grado : 1
-    return Math.max(0, (grados.length - 1) - base)
-}
-
 // Computed para mejoras disponibles (igual que en Checks.vue)
 const mejorasDisponibles = computed(() => {
     const total = ficha.derivados.cantidadMejorasHab || 0
@@ -862,63 +954,134 @@ const mejorasDisponibles = computed(() => {
     return Math.max(0, total - usadas)
 })
 
-function opcionesIniciativaMejoras() {
-    const actuales = getIniciativaMejoras()
-    const maxPorGrado = maxIniciativaMejoras()
-    const maxPermitido = Math.min(maxPorGrado, actuales + mejorasDisponibles.value)
-    return Array.from({ length: maxPermitido + 1 }, (_, i) => i)
+function isIniciativaRangoDisabled(optionIndex) {
+    const min = gradoMinimoIniciativa()
+    const actual = gradoActualIniciativa()
+    const gradoBase = 1 // Iniciativa siempre tiene grado base "Bueno" (1)
+    const max = grados.length - 1
+    // Siempre permitir seleccionar "No"
+    if (optionIndex === 0) return false
+    if (optionIndex < min) return true
+    if (optionIndex > max) return true
+    if (optionIndex <= actual) return false // siempre permitir bajar/igual
+    
+    // subir: calcular puntos necesarios basándose en el rango base
+    const puntosNecesarios = Math.max(0, optionIndex - gradoBase)
+    const puntosActuales = ficha.personaliz.mejorasHab.filter(m => m === 'Init').length
+    const puntosFaltantes = Math.max(0, puntosNecesarios - puntosActuales)
+    
+    return puntosFaltantes > mejorasDisponibles.value
 }
 
-function onChangeIniciativaMejoras(nuevoValor) {
-    const initCheck = ficha.derivados.checksBase.find(c => c.check === 'Init')
-    const gradoBase = initCheck ? initCheck.grado : 1
-    const actuales = getIniciativaMejoras()
-    const gradoActual = actuales + gradoBase
-    const maxPorGrado = maxIniciativaMejoras() + gradoBase
+function onChangeIniciativaRango(targetIndex) {
+    const min = gradoMinimoIniciativa()
+    const max = grados.length - 1
+    const actual = gradoActualIniciativa()
+    const gradoBase = 1 // Iniciativa siempre tiene grado base "Bueno" (1)
+    let objetivo = parseInt(targetIndex)
+    if (isNaN(objetivo)) return
     
-    let objetivo = parseInt(nuevoValor) || 0
-    if (objetivo === gradoActual) return
-    
-    if (objetivo < gradoBase) {
-        // No permitir bajar por debajo del grado base
-        objetivo = gradoBase
+    // Asegurar que existe la configuración de Iniciativa
+    if (!ficha.personaliz.configuracionHabilidades) {
+        ficha.personaliz.configuracionHabilidades = {}
     }
     
-    if (objetivo < gradoActual) {
-        // Quitar mejoras necesarias
-        let quitar = gradoActual - objetivo
+    if (!ficha.personaliz.configuracionHabilidades['Init']) {
+        // Iniciativa tiene grado base "Bueno" (1) por defecto
+        ficha.personaliz.configuracionHabilidades['Init'] = {
+            stat: 'esp',
+            grado: 1
+        }
+    }
+    
+    const config = ficha.personaliz.configuracionHabilidades['Init']
+    
+    // Permitir seleccionar 0 incluso si el mínimo fuera mayor
+    if (objetivo === 0) {
+        // Quitar todas las mejoras de este check
+        let idx = ficha.personaliz.mejorasHab.lastIndexOf('Init')
+        while (idx !== -1) {
+            ficha.personaliz.mejorasHab.splice(idx, 1)
+            idx = ficha.personaliz.mejorasHab.lastIndexOf('Init')
+        }
+        // Establecer grado 0 en la configuración
+        config.grado = 0
+        
+        // Si el check está visible, actualizar también su grado en la lista
+        const itemIdx = ficha.personaliz.checks.findIndex(c => c.check === 'Init')
+        if (itemIdx !== -1) {
+            ficha.personaliz.checks[itemIdx].grado = 0
+        }
+        return
+    }
+
+    objetivo = Math.max(min, Math.min(max, objetivo))
+
+    if (objetivo === actual) return
+
+    if (objetivo < actual) {
+        // Bajar: quitar mejoras necesarias
+        // Solo quitar mejoras que están por encima del rango base
+        let quitar = Math.max(0, actual - Math.max(objetivo, gradoBase))
         while (quitar > 0) {
             const idx = ficha.personaliz.mejorasHab.lastIndexOf('Init')
             if (idx === -1) break
             ficha.personaliz.mejorasHab.splice(idx, 1)
             quitar--
         }
-    } else {
-        // Añadir mejoras necesarias
-        let necesarios = objetivo - gradoActual
-        if (necesarios > mejorasDisponibles.value) {
-            necesarios = mejorasDisponibles.value
+        // Actualizar el grado en la configuración
+        config.grado = objetivo
+        
+        // Si el check está visible, actualizar también su grado en la lista
+        const itemIdx = ficha.personaliz.checks.findIndex(c => c.check === 'Init')
+        if (itemIdx !== -1) {
+            ficha.personaliz.checks[itemIdx].grado = objetivo
         }
-        while (necesarios > 0) {
-            ficha.personaliz.mejorasHab.push('Init')
-            necesarios--
+        return
+    }
+
+    // Subir: comprobar puntos disponibles
+    // Calcular puntos necesarios basándose en el rango base
+    const puntosNecesarios = Math.max(0, objetivo - gradoBase)
+    const puntosActuales = ficha.personaliz.mejorasHab.filter(m => m === 'Init').length
+    
+    if (puntosNecesarios > puntosActuales) {
+        // Necesitamos más puntos
+        const puntosFaltantes = puntosNecesarios - puntosActuales
+        const puntosDisponibles = mejorasDisponibles.value
+        
+        if (puntosFaltantes > puntosDisponibles) {
+            // No hay suficientes puntos disponibles, subir solo lo posible
+            const puntosAplicar = puntosDisponibles
+            for (let i = 0; i < puntosAplicar; i++) {
+                ficha.personaliz.mejorasHab.push('Init')
+            }
+            objetivo = gradoBase + puntosActuales + puntosAplicar
+        } else {
+            // Aplicar todos los puntos necesarios
+            for (let i = 0; i < puntosFaltantes; i++) {
+                ficha.personaliz.mejorasHab.push('Init')
+            }
+        }
+    } else if (puntosNecesarios < puntosActuales) {
+        // Tenemos más puntos de los necesarios, quitar los extras
+        const puntosExtra = puntosActuales - puntosNecesarios
+        for (let i = 0; i < puntosExtra; i++) {
+            const idx = ficha.personaliz.mejorasHab.lastIndexOf('Init')
+            if (idx !== -1) {
+                ficha.personaliz.mejorasHab.splice(idx, 1)
+            }
         }
     }
-}
-
-function isIniciativaRangoDisabled(optionIndex) {
-    const initCheck = ficha.derivados.checksBase.find(c => c.check === 'Init')
-    const min = initCheck ? initCheck.grado : 1 // Grado base de Iniciativa
-    const actual = getIniciativaMejoras() + min // Mejoras + grado base
-    const max = grados.length - 1
     
-    if (optionIndex < min) return true
-    if (optionIndex > max) return true
-    if (optionIndex <= actual) return false // siempre permitir bajar/igual
+    // Actualizar el grado en la configuración
+    config.grado = objetivo
     
-    // subir: requiere (optionIndex - actual) puntos
-    const necesarios = optionIndex - actual
-    return necesarios > mejorasDisponibles.value
+    // Si el check está visible, actualizar también su grado en la lista
+    const itemIdx = ficha.personaliz.checks.findIndex(c => c.check === 'Init')
+    if (itemIdx !== -1) {
+        ficha.personaliz.checks[itemIdx].grado = objetivo
+    }
 }
 </script>
 
@@ -1003,7 +1166,7 @@ function isIniciativaRangoDisabled(optionIndex) {
                                     </svg>
                                 </button>
                             </div>
-                            <span class="grado">{{ grados[gradoActual('Init')] }}</span>
+                            <span class="grado">{{ grados[gradoActualIniciativa()] }}</span>
                             <input v-model.number="ficha.derivados.init" :readonly="!ficha.manual.init" />
                         </div>
 
@@ -1102,7 +1265,7 @@ function isIniciativaRangoDisabled(optionIndex) {
             <button class="close-btn" @click="mostrarConfigIniciativa = false" aria-label="Cerrar">×</button>
             <div class="config-checks-list">
                 <label class="config-check-item">
-                    <input type="checkbox" checked disabled />
+                    
                     Iniciativa
                     <select v-model="iniciativaStat" class="stat-select">
                         <option value="fue">Fuerza</option>
@@ -1112,9 +1275,9 @@ function isIniciativaRangoDisabled(optionIndex) {
                         <option value="esp">Espíritu</option>
                         <option value="pre">Presencia</option>
                     </select>
-                    <select v-if="opcionesIniciativaMejoras().length > 1"
-                        :value="getIniciativaMejoras()"
-                        @change="onChangeIniciativaMejoras($event.target.value)"
+                    <select
+                        :value="gradoActualIniciativa()"
+                        @change="onChangeIniciativaRango($event.target.value)"
                         class="rango-select"
                         :title="`Rango de Iniciativa`">
                         <option v-for="(g, i) in grados" :key="g" :value="i" :disabled="isIniciativaRangoDisabled(i)">
@@ -1194,7 +1357,7 @@ function isIniciativaRangoDisabled(optionIndex) {
 
 .config-modal {
     background: var(--color-fondoTexto);
-    padding: 10px 20px;
+    padding: 10px;
     border-radius: 10px;
     min-width: 320px;
     position: relative;
@@ -1204,13 +1367,14 @@ function isIniciativaRangoDisabled(optionIndex) {
     display: flex;
     flex-direction: column;
     gap: 8px;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 .config-check-item {
     display: flex;
     align-items: center;
     gap: 8px;
+    margin-top: 10px;
 }
 
 .stat-select {

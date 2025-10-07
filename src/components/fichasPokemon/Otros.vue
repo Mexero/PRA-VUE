@@ -81,7 +81,7 @@ onBeforeUnmount(() => {
 
 <template>
     <section class="others">
-        <h3>Otros</h3>
+  
         <div>
             <!-- Otros campos readonly -->
             <div class="fila1">

@@ -24,6 +24,7 @@ const nuevoCheck = ref('')
 const mostrarPopup = ref(false)
 const selectedSuggestionIndex = ref(-1)
 const mostrarConfigChecks = ref(false)
+const nuevaHabilidadPersonalizada = ref('')
 
 const filteredChecks = computed(() => {
     const input = nuevoCheck.value.toLowerCase()
@@ -36,20 +37,67 @@ const filteredChecks = computed(() => {
 
 const grados = ['No', 'Bueno', 'Experto', 'Maestro', 'Legendario']
 
-function gradoMinimo(checkName) {
-    // Si el check base está desactivado manualmente, el mínimo pasa a 0
-    if (Array.isArray(props.ficha.personaliz.checksBaseDesactivados) &&
-        props.ficha.personaliz.checksBaseDesactivados.includes(checkName)) {
-        return 0
+// Computed para obtener todos los checks disponibles
+const todosLosChecks = computed(() => {
+    const checks = []
+    
+    // 1. Checks base (ChecksBase)
+    props.ChecksBase.forEach(base => {
+        if (base.check !== 'Init') {
+            checks.push({
+                nombre: base.check,
+                tipo: 'base',
+                stat: base.stat
+            })
+        }
+    })
+    
+    // 2. Checks especiales del Pokémon (de ficha.derivados.checksBase)
+    if (props.ficha.derivados?.checksBase) {
+        props.ficha.derivados.checksBase.forEach(checkBase => {
+            // Solo incluir si no es Init y no está ya en ChecksBase
+            if (checkBase.check !== 'Init' && 
+                !props.ChecksBase.some(cb => cb.check === checkBase.check)) {
+                checks.push({
+                    nombre: checkBase.check,
+                    tipo: 'pokemon',
+                    stat: checkBase.stat || 'fue'
+                })
+            }
+        })
     }
+    
+    // 3. Checks personalizados
+    if (props.ficha.personaliz?.checksExtra) {
+        props.ficha.personaliz.checksExtra.forEach(check => {
+            checks.push({
+                nombre: check,
+                tipo: 'personalizado'
+            })
+        })
+    }
+    
+    return checks
+})
+
+
+// Función para obtener el grado base de una habilidad
+function getGradoBase(checkName) {
+    // Iniciativa siempre tiene grado base "Bueno" (1)
+    if (checkName === 'Init') {
+        return 1
+    }
+    
+    // Para otros checks, buscar en checksBase del Pokémon
     const base = props.ficha.derivados.checksBase.find(c => c.check === checkName)
     return base ? base.grado : 0
 }
 
-function gradoActual(checkName) {
-    const base = gradoMinimo(checkName)
+// Función para obtener el grado actual de una habilidad (base + mejoras)
+function getGradoActual(checkName) {
+    const gradoBase = getGradoBase(checkName)
     const mejoras = props.ficha.personaliz.mejorasHab.filter(m => m === checkName).length
-    return Math.min(base + mejoras, grados.length - 1)
+    return Math.min(gradoBase + mejoras, grados.length - 1)
 }
 
 const mejorasUsadas = computed(() => props.ficha.personaliz.mejorasHab.length)
@@ -61,7 +109,7 @@ const mejorasDisponibles = computed(() => {
 })
 
 function subirGrado(checkName) {
-    if (gradoActual(checkName) >= grados.length - 1) return
+    if (getGradoActual(checkName) >= grados.length - 1) return
     if (props.ficha.manual.cantidadMejorasHab === true || mejorasUsadas.value < props.ficha.derivados.cantidadMejorasHab) {
         props.ficha.personaliz.mejorasHab.push(checkName)
     }
@@ -137,91 +185,153 @@ watch(mostrarPopup, (isOpen) => {
     document.body.style.overflow = isOpen ? 'hidden' : ''
 })
 
+// Función para alternar la visualización de un check (SOLO visualización)
 function toggleCheck(checkName) {
     const idx = props.ficha.personaliz.checks.findIndex(c => c.check === checkName)
     if (idx === -1) {
-        // Añadir check
-        const base = props.ChecksBase.find(ch => ch.check === checkName)
+        // Añadir check a la visualización
+        const statActual = getStat(checkName)
+        const gradoActual = getGradoActual(checkName)
+        
         props.ficha.personaliz.checks.push({
             check: checkName,
-            stat: base ? base.stat : 'fue',
-            grado: 0,
+            stat: statActual,
+            grado: gradoActual,
             total: 0,
         })
-        // Si era un check base desactivado, quitarlo de la lista
-        if (props.ficha.personaliz.checksBaseDesactivados) {
-            const desactivadoIdx = props.ficha.personaliz.checksBaseDesactivados.indexOf(checkName)
-            if (desactivadoIdx !== -1) {
-                props.ficha.personaliz.checksBaseDesactivados.splice(desactivadoIdx, 1)
-            }
-        }
     } else {
-        // Quitar check
+        // Quitar check de la visualización - NO tocar configuración ni mejoras
         props.ficha.personaliz.checks.splice(idx, 1)
-        // Quitar mejoras asociadas
-        props.ficha.personaliz.mejorasHab = props.ficha.personaliz.mejorasHab.filter(m => m !== checkName)
-        
-        // Si es un check base, añadirlo a la lista de desactivados
-        const esCheckBase = props.ficha.derivados.checksBase.some(c => c.check === checkName)
-        if (esCheckBase) {
-            if (!props.ficha.personaliz.checksBaseDesactivados) {
-                props.ficha.personaliz.checksBaseDesactivados = []
-            }
-            if (!props.ficha.personaliz.checksBaseDesactivados.includes(checkName)) {
-                props.ficha.personaliz.checksBaseDesactivados.push(checkName)
-            }
-        }
     }
 }
+// Función para obtener la configuración guardada de una habilidad
+function getConfiguracionHabilidad(checkName) {
+    if (!props.ficha.personaliz.configuracionHabilidades) {
+        props.ficha.personaliz.configuracionHabilidades = {}
+    }
+    
+    if (!props.ficha.personaliz.configuracionHabilidades[checkName]) {
+        // Crear configuración por defecto
+        const checkBase = props.ChecksBase.find(ch => ch.check === checkName)
+        const gradoBase = getGradoBase(checkName)
+        
+        props.ficha.personaliz.configuracionHabilidades[checkName] = {
+            stat: checkBase ? checkBase.stat : 'fue',
+            grado: gradoBase
+        }
+    }
+    
+    return props.ficha.personaliz.configuracionHabilidades[checkName]
+}
+
 function getCheckObj(checkName) {
     const checkExistente = props.ficha.personaliz.checks.find(c => c.check === checkName)
     if (checkExistente) {
         return checkExistente
     }
     
-    // Si no existe, devolver con la estadística por defecto de ChecksBase
-    const checkBase = props.ChecksBase.find(ch => ch.check === checkName)
-    return { stat: checkBase ? checkBase.stat : 'fue' }
+    // Si no existe, devolver la configuración guardada
+    const config = getConfiguracionHabilidad(checkName)
+    return { stat: config.stat, grado: config.grado }
 }
 function getStat(checkName) {
     const obj = getCheckObj(checkName)
     return obj.stat || (props.ChecksBase.find(ch => ch.check === checkName)?.stat || 'fue')
 }
 function updateStat(checkName, newStat) {
-    const obj = getCheckObj(checkName)
-    if (obj) obj.stat = newStat
+    // Guardar en la configuración
+    const config = getConfiguracionHabilidad(checkName)
+    config.stat = newStat
+    
+    // Si el check está visible, actualizar también su stat en la lista
+    const itemIdx = props.ficha.personaliz.checks.findIndex(c => c.check === checkName)
+    if (itemIdx !== -1) {
+        props.ficha.personaliz.checks[itemIdx].stat = newStat
+    }
+}
+
+// Funciones para manejar checks personalizados
+function agregarCheckPersonalizado() {
+    const nombre = nuevaHabilidadPersonalizada.value.trim()
+    if (!nombre) return
+    
+    // Verificar que no exista ya
+    if (todosLosChecks.value.some(c => c.nombre === nombre)) {
+        alert('Este check ya existe')
+        return
+    }
+    
+    // Inicializar el array si no existe
+    if (!props.ficha.personaliz.checksExtra) {
+        props.ficha.personaliz.checksExtra = []
+    }
+    
+    // Agregar el check personalizado
+    props.ficha.personaliz.checksExtra.push(nombre)
+    
+    // Limpiar el input
+    nuevaHabilidadPersonalizada.value = ''
+}
+
+function eliminarCheckPersonalizado(nombre) {
+    const index = props.ficha.personaliz.checksExtra.indexOf(nombre)
+    if (index !== -1) {
+        props.ficha.personaliz.checksExtra.splice(index, 1)
+        
+        // También eliminar de checks si existe
+        const checkIndex = props.ficha.personaliz.checks.findIndex(c => c.check === nombre)
+        if (checkIndex !== -1) {
+            props.ficha.personaliz.checks.splice(checkIndex, 1)
+        }
+        
+        // Eliminar mejoras asociadas
+        props.ficha.personaliz.mejorasHab = props.ficha.personaliz.mejorasHab.filter(m => m !== nombre)
+    }
 }
 
 // Rango de habilidad (grados) en modal de configuración
 function getGradoMinimo(checkName) {
-    return gradoMinimo(checkName)
+    return getGradoBase(checkName)
 }
 
-function getGradoActual(checkName) {
-    return gradoActual(checkName)
+function getGradoActualConfig(checkName) {
+    // Usar la configuración guardada
+    const config = getConfiguracionHabilidad(checkName)
+    return config.grado
 }
 
 function isRangoOptionDisabled(checkName, optionIndex) {
     const min = getGradoMinimo(checkName)
-    const actual = getGradoActual(checkName)
+    const actual = getGradoActualConfig(checkName)
+    const gradoBase = getGradoBase(checkName)
     const max = grados.length - 1
+    
     // Siempre permitir seleccionar "No"
     if (optionIndex === 0) return false
     if (optionIndex < min) return true
     if (optionIndex > max) return true
     if (optionIndex <= actual) return false // siempre permitir bajar/igual
-    // subir: requiere (optionIndex - actual) puntos
-    const necesarios = optionIndex - actual
-    return necesarios > mejorasDisponibles.value
+    
+    // subir: calcular puntos necesarios basándose en el rango base
+    const puntosNecesarios = Math.max(0, optionIndex - gradoBase)
+    const puntosActuales = props.ficha.personaliz.mejorasHab.filter(m => m === checkName).length
+    const puntosFaltantes = Math.max(0, puntosNecesarios - puntosActuales)
+    
+    return puntosFaltantes > mejorasDisponibles.value
 }
 
 function onChangeRango(checkName, targetIndex) {
     const min = getGradoMinimo(checkName)
     const max = grados.length - 1
-    const actual = getGradoActual(checkName)
+    const actual = getGradoActualConfig(checkName)
+    const gradoBase = getGradoBase(checkName)
     let objetivo = parseInt(targetIndex)
     if (isNaN(objetivo)) return
-    // Permitir seleccionar 0 incluso si el mínimo fuera mayor, para desactivar el check base
+    
+    // Obtener la configuración de la habilidad
+    const config = getConfiguracionHabilidad(checkName)
+    
+    // Permitir seleccionar 0 incluso si el mínimo fuera mayor
     if (objetivo === 0) {
         // Quitar todas las mejoras de este check
         let idx = props.ficha.personaliz.mejorasHab.lastIndexOf(checkName)
@@ -229,27 +339,11 @@ function onChangeRango(checkName, targetIndex) {
             props.ficha.personaliz.mejorasHab.splice(idx, 1)
             idx = props.ficha.personaliz.mejorasHab.lastIndexOf(checkName)
         }
-        // Marcar como desactivado si es un check base, para permitir mínimo 0
-        const esBase = props.ficha.derivados.checksBase.some(c => c.check === checkName)
-        if (esBase) {
-            if (!Array.isArray(props.ficha.personaliz.checksBaseDesactivados)) {
-                props.ficha.personaliz.checksBaseDesactivados = []
-            }
-            if (!props.ficha.personaliz.checksBaseDesactivados.includes(checkName)) {
-                props.ficha.personaliz.checksBaseDesactivados.push(checkName)
-            }
-        }
-        // Asegurar que el check permanezca seleccionado con grado 0
+        // Establecer grado 0 en la configuración
+        config.grado = 0
+        // Si el check está visible, actualizar su grado
         const itemIdx = props.ficha.personaliz.checks.findIndex(c => c.check === checkName)
-        if (itemIdx === -1) {
-            const base = props.ChecksBase.find(ch => ch.check === checkName)
-            props.ficha.personaliz.checks.push({
-                check: checkName,
-                stat: base ? base.stat : 'fue',
-                grado: 0,
-                total: 0,
-            })
-        } else {
+        if (itemIdx !== -1) {
             props.ficha.personaliz.checks[itemIdx].grado = 0
         }
         return
@@ -261,30 +355,64 @@ function onChangeRango(checkName, targetIndex) {
 
     if (objetivo < actual) {
         // Bajar: quitar mejoras necesarias
-        let quitar = actual - objetivo
+        // Solo quitar mejoras que están por encima del rango base
+        let quitar = Math.max(0, actual - Math.max(objetivo, gradoBase))
         while (quitar > 0) {
             const idx = props.ficha.personaliz.mejorasHab.lastIndexOf(checkName)
             if (idx === -1) break
             props.ficha.personaliz.mejorasHab.splice(idx, 1)
             quitar--
         }
+        // Actualizar el grado en la configuración
+        config.grado = objetivo
+        // Si el check está visible, actualizar su grado
+        const itemIdx = props.ficha.personaliz.checks.findIndex(c => c.check === checkName)
+        if (itemIdx !== -1) {
+            props.ficha.personaliz.checks[itemIdx].grado = objetivo
+        }
         return
     }
 
     // Subir: comprobar puntos disponibles
-    let necesarios = objetivo - actual
-    if (necesarios > mejorasDisponibles.value) {
-        // si intentan más de lo disponible, subir solo lo permitido
-        necesarios = mejorasDisponibles.value
+    // Calcular puntos necesarios basándose en el rango base
+    const puntosNecesarios = Math.max(0, objetivo - gradoBase)
+    const puntosActuales = props.ficha.personaliz.mejorasHab.filter(m => m === checkName).length
+    
+    if (puntosNecesarios > puntosActuales) {
+        // Necesitamos más puntos
+        const puntosFaltantes = puntosNecesarios - puntosActuales
+        const puntosDisponibles = mejorasDisponibles.value
+        
+        if (puntosFaltantes > puntosDisponibles) {
+            // No hay suficientes puntos disponibles, subir solo lo posible
+            const puntosAplicar = puntosDisponibles
+            for (let i = 0; i < puntosAplicar; i++) {
+                props.ficha.personaliz.mejorasHab.push(checkName)
+            }
+            objetivo = gradoBase + puntosActuales + puntosAplicar
+        } else {
+            // Aplicar todos los puntos necesarios
+            for (let i = 0; i < puntosFaltantes; i++) {
+                props.ficha.personaliz.mejorasHab.push(checkName)
+            }
+        }
+    } else if (puntosNecesarios < puntosActuales) {
+        // Tenemos más puntos de los necesarios, quitar los extras
+        const puntosExtra = puntosActuales - puntosNecesarios
+        for (let i = 0; i < puntosExtra; i++) {
+            const idx = props.ficha.personaliz.mejorasHab.lastIndexOf(checkName)
+            if (idx !== -1) {
+                props.ficha.personaliz.mejorasHab.splice(idx, 1)
+            }
+        }
     }
-    while (necesarios > 0) {
-        props.ficha.personaliz.mejorasHab.push(checkName)
-        necesarios--
-    }
-    // Si estaba desactivado y subimos por encima de 0, quitar de desactivados
-    if (Array.isArray(props.ficha.personaliz.checksBaseDesactivados)) {
-        const i = props.ficha.personaliz.checksBaseDesactivados.indexOf(checkName)
-        if (i !== -1) props.ficha.personaliz.checksBaseDesactivados.splice(i, 1)
+    
+    // Actualizar el grado en la configuración
+    config.grado = objetivo
+    // Si el check está visible, actualizar su grado
+    const itemIdx = props.ficha.personaliz.checks.findIndex(c => c.check === checkName)
+    if (itemIdx !== -1) {
+        props.ficha.personaliz.checks[itemIdx].grado = objetivo
     }
 }
 </script>
@@ -324,11 +452,11 @@ function onChangeRango(checkName, targetIndex) {
                             </p>
                             <div class="bonosChecks">
                                 <div>
-                                    <span class="grado-circulo" :title="grados[gradoActual(element.check)]"
-                                        @mouseenter="mostrarGradoModal(grados[gradoActual(element.check)], $event, index)"
+                                    <span class="grado-circulo" :title="grados[getGradoActual(element.check)]"
+                                        @mouseenter="mostrarGradoModal(grados[getGradoActual(element.check)], $event, index)"
                                         @mouseleave="ocultarGradoModal"
-                                        @click="mostrarGradoModal(grados[gradoActual(element.check)], $event, index)">
-                                        {{ gradosInicial[gradoActual(element.check)] }}
+                                        @click="mostrarGradoModal(grados[getGradoActual(element.check)], $event, index)">
+                                        {{ gradosInicial[getGradoActual(element.check)] }}
                                     </span>
                                     <div v-if="gradoModal.visible && gradoModal.index === index" class="grado-modal">
                                         {{ gradoModal.nombre }}
@@ -373,33 +501,62 @@ function onChangeRango(checkName, targetIndex) {
     <!-- Modal configuración de checks -->
     <div v-if="mostrarConfigChecks" class="config-modal-overlay" @click.self="mostrarConfigChecks = false">
         <div class="config-modal">
-            <h4>Configurar Habilidades</h4>
-            <button class="close-btn" @click="mostrarConfigChecks = false" aria-label="Cerrar">×</button>
-            <div class="config-checks-list">
-                <label v-for="base in ChecksBase" :key="base.check" class="config-check-item">
-                    <input type="checkbox" :checked="ficha.personaliz.checks.some(c => c.check === base.check)"
-                        @change="toggleCheck(base.check)" :disabled="false" />
-                    {{ base.check }}
-                    <select
-                        v-model="getCheckObj(base.check).stat"
-                        @change="updateStat(base.check, getCheckObj(base.check).stat)" class="stat-select">
-                        <option value="fue">Fuerza</option>
-                        <option value="agi">Agilidad</option>
-                        <option value="res">Resistencia</option>
-                        <option value="men">Mente</option>
-                        <option value="esp">Espiritu</option>
-                        <option value="pre">Presencia</option>
-                    </select>
-                    <select
-                        :value="getGradoActual(base.check)"
-                        @change="onChangeRango(base.check, $event.target.value)"
-                        class="rango-select"
-                        :title="`Rango de ${base.check}`">
-                        <option v-for="(g, i) in grados" :key="g" :value="i" :disabled="isRangoOptionDisabled(base.check, i)">
-                            {{ g }}
-                        </option>
-                    </select>
-                </label>
+            <div class="config-modal-header">
+                <h4>Configurar Habilidades</h4>
+                <button class="close-btn" @click="mostrarConfigChecks = false" aria-label="Cerrar">×</button>
+            </div>
+            
+            <div class="config-modal-content">
+                <div class="config-checks-list">
+                <div v-for="check in todosLosChecks" :key="check.nombre" class="config-check-item">
+                    <div class="skill-info">
+                        <input type="checkbox" :checked="ficha.personaliz.checks.some(c => c.check === check.nombre)"
+                            @change="toggleCheck(check.nombre)" :disabled="false" />
+                        <span class="skill-name" :class="`skill-${check.tipo}`">
+                            {{ check.nombre }}
+                            
+                        </span>
+                        <button v-if="check.tipo === 'personalizado'" 
+                            @click="eliminarCheckPersonalizado(check.nombre)" 
+                            class="delete-btn" title="Eliminar check personalizado">×</button>
+                    </div>
+                    <div class="skill-controls">
+                        <select
+                            :value="getStat(check.nombre)"
+                            @change="updateStat(check.nombre, $event.target.value)" 
+                            class="stat-select">
+                            <option value="fue">Fuerza</option>
+                            <option value="agi">Agilidad</option>
+                            <option value="res">Resistencia</option>
+                            <option value="men">Mente</option>
+                            <option value="esp">Espíritu</option>
+                            <option value="pre">Presencia</option>
+                        </select>
+                        <select
+                            :value="getGradoActualConfig(check.nombre)"
+                            @change="onChangeRango(check.nombre, $event.target.value)"
+                            class="rango-select"
+                            :title="`Rango de ${check.nombre}`">
+                            <option v-for="(g, i) in grados" :key="g" :value="i" :disabled="isRangoOptionDisabled(check.nombre, i)">
+                                {{ g }}
+                            </option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+             <!-- Sección para añadir checks personalizados -->
+             <div class="add-custom-skill">
+                <h5>Añadir Habilidades</h5>
+                <div class="custom-skill-input">
+                    <input 
+                        type="text" 
+                        v-model="nuevaHabilidadPersonalizada" 
+                        placeholder="Nombre de la Habilidad..."
+                        @keydown.enter="agregarCheckPersonalizado"
+                    />
+                    <button @click="agregarCheckPersonalizado" class="add-btn">+</button>
+                </div>
+            </div>
             </div>
         </div>
     </div>
@@ -744,11 +901,35 @@ details {
 
 .config-modal {
     background: var(--color-fondoTexto);
-    padding: 10px 20px;
     border-radius: 10px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-    min-width: 320px;
+    min-width: 400px;
+    max-width: 500px;
+    max-height: 80vh;
     position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.config-modal-header {
+    padding: 15px 20px;
+    border-bottom: 1px solid rgba(150, 150, 150, 0.3);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+    position: relative;
+}
+
+.config-modal-header h4 {
+    margin: 0;
+    color: var(--color-texto);
+}
+
+.config-modal-content {
+    padding: 15px 20px;
+    overflow-y: auto;
+    flex: 1;
 }
 
 .config-checks-list {
@@ -758,11 +939,102 @@ details {
     margin-bottom: 15px;
 }
 
+.add-custom-skill {
+    margin-bottom: 15px;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    border: 1px solid var(--color-principal1);
+}
+
+.add-custom-skill h5 {
+    margin: 0 0 8px 0;
+    color: var(--color-principal1);
+    font-size: 14px;
+}
+
+.custom-skill-input {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.custom-skill-input input {
+    flex: 1;
+    padding: 6px 8px;
+    border: 1px solid var(--color-principal2);
+    border-radius: 4px;
+    background: var(--color-fondoTexto);
+    color: var(--color-texto);
+    font-size: 14px;
+}
+
+.add-btn {
+    background: var(--color-principal1);
+    color: var(--color-texto);
+    border: none;
+    border-radius: 4px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.add-btn:hover {
+    background: var(--color-principal2);
+}
+
+
 .config-check-item {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+   
+    gap: 8px;
+    padding: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
+    font-size: 1em;
+}
+
+.skill-info {
     display: flex;
     align-items: center;
     gap: 8px;
-    font-size: 1em;
+}
+
+.skill-name {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+
+.delete-btn {
+    background: #ff4757;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.delete-btn:hover {
+    background: #ff3742;
+}
+
+.skill-controls {
+    display: flex;
+    gap: 8px;
+    align-items: center;
 }
 
 .stat-select {
@@ -776,15 +1048,19 @@ details {
 }
 
 .close-btn {
-    position: absolute;
-    top: 8px;
-    right: 8px;
     background: none;
     border: none;
     color: var(--color-texto);
     font-size: 20px;
     cursor: pointer;
     line-height: 1;
+    padding: 4px;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+.close-btn:hover {
+    background-color: rgba(0, 0, 0, 0.1);
 }
 
 .rango-select {
