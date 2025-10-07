@@ -44,7 +44,7 @@ function cambiarMejoraEST(stat, delta) {
                         <span class="bonoStat" v-if="ficha.derivados.stats[stat] > ficha.pokedex.statsBase[stat]">
                             +{{ ficha.derivados.stats[stat] - ficha.pokedex.statsBase[stat] }}
                         </span>
-                        <span class="numStat">{{ ficha.derivados.stats[stat] }}</span>
+                        <h3 class="numStat">{{ ficha.derivados.stats[stat] }}</h3>
                         <div class="botonMaxMenos">
                             <button class="btn-mas" @click="cambiarMejoraEST(stat, 1)"></button>
                             <button class="btn-menos" @click="cambiarMejoraEST(stat, -1)"></button>

@@ -844,7 +844,6 @@ details {
     border-bottom: 1px solid rgba(150, 150, 150, 0.3);
     position: sticky;
     top: 0;
-    z-index: 10;
     flex-shrink: 0;
 }
 

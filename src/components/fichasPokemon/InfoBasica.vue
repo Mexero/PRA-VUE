@@ -182,7 +182,7 @@ const typeMap = {
         </div>
         <div class="tipos" @mouseenter="mostrarDebilidadesConjuntas(ficha.pokedex.tipos)"
             @click="mostrarDebilidadesConjuntas(ficha.pokedex.tipos)" @mouseleave="tooltipTipos = null">
-            <label for="Tipos">Tipos:</label>
+            
 
             <p class="NombreTipos" :class="'type-' + normalizeType(ficha.pokedex.tipos[0])"> {{ ficha.pokedex.tipos[0]
             }}

@@ -218,33 +218,39 @@ async function cambiarDatosEspecie(especie) {
 
         // Reset
         ficha.personaliz.habilidadesOcultasDesbloqueadas = []
-        
+
         // Limpiar checks especiales del Pokémon anterior
         // Solo remover checks que ya no existen en ningún lado
         ficha.personaliz.checks = ficha.personaliz.checks.filter(check => {
             // Mantener checks que están en ChecksBase (checks genéricos)
             if (ChecksBase.some(cb => cb.check === check.check)) return true
-            
+
             // Mantener checks personalizados
             if (ficha.personaliz.checksExtra && ficha.personaliz.checksExtra.includes(check.check)) return true
-            
+
             // Mantener checks que están en los checks base del nuevo Pokémon
             const checksBaseNombres = (ficha.derivados.checksBase || []).map(c => c.check)
             return checksBaseNombres.includes(check.check)
         })
-        
+
         // También limpiar mejoras de habilidad de checks que ya no existen
         ficha.personaliz.mejorasHab = ficha.personaliz.mejorasHab.filter(mejora => {
             // Mantener mejoras de checks que siguen existiendo
             return ficha.personaliz.checks.some(check => check.check === mejora) ||
-                   ChecksBase.some(cb => cb.check === mejora) ||
-                   (ficha.personaliz.checksExtra && ficha.personaliz.checksExtra.includes(mejora))
+                ChecksBase.some(cb => cb.check === mejora) ||
+                (ficha.personaliz.checksExtra && ficha.personaliz.checksExtra.includes(mejora))
         })
 
         console.log(`Datos de ${especie} cargados:`, ficha.pokedex)
 
         // Actualizar imagen del Pokémon
         await actualizarImagenPokemon()
+
+        // Asegurar que PV y PP se mantengan al máximo tras cambiar la especie
+        // Recalcular derivados y establecer valores actuales al máximo
+        actualizar()
+        ficha.derivados.pp = ficha.derivados.ppMax
+        ficha.derivados.pv = ficha.derivados.pvMax
 
     } catch (err) {
         error.value = err.message || 'Error cargando la especie Pokémon ' + especie
@@ -316,7 +322,7 @@ function construirChecksBase() {
 
     if (!checksBaseIguales(ficha.derivados.checksBase, checksBaseNuevo)) {
         ficha.derivados.checksBase = checksBaseNuevo
-        
+
         // Inicializar checks base en la visualización si no existen
         checksBaseNuevo.forEach(checkBase => {
             const yaExiste = ficha.personaliz.checks.some(c => c.check === checkBase.check)
@@ -341,12 +347,12 @@ function ActualizarChecks() {
             check.grado = config.grado
         } else {
             // Si no hay configuración, usar el grado base + mejoras
-            const gradoBase = check.check === 'Init' ? 1 : 
+            const gradoBase = check.check === 'Init' ? 1 :
                 (ficha.derivados.checksBase.find(c => c.check === check.check)?.grado || 0)
             const mejoras = ficha.personaliz.mejorasHab.filter(m => m === check.check).length
             check.grado = Math.min(gradoBase + mejoras, 4) // máximo Legendario
         }
-        
+
         // Actualizar la estadística si hay configuración
         if (config && config.stat) {
             check.stat = config.stat
@@ -450,6 +456,14 @@ watch(() => ficha.personaliz.naturaleza?.check, (nuevaHab, antiguaHab) => {
     if (nuevaHab) setConfigToBasePlusMejoras(nuevaHab)
     // Aplicar a visibles
     ActualizarChecks()
+})
+
+// Al cambiar la fatiga, actualizar PP actuales al nuevo máximo
+watch(() => ficha.derivados.fatiga, () => {
+    // Recalcular derivados para obtener el nuevo ppMax
+    actualizar()
+    // Sincronizar PP actual con el nuevo máximo
+    ficha.derivados.pp = ficha.derivados.ppMax
 })
 
 function actualizar() {
@@ -886,7 +900,7 @@ function gradoActualIniciativa() {
     if (!ficha.personaliz.configuracionHabilidades) {
         ficha.personaliz.configuracionHabilidades = {}
     }
-    
+
     if (!ficha.personaliz.configuracionHabilidades['Init']) {
         // Iniciativa tiene grado base "Bueno" (1) por defecto
         ficha.personaliz.configuracionHabilidades['Init'] = {
@@ -894,7 +908,7 @@ function gradoActualIniciativa() {
             grado: 1
         }
     }
-    
+
     return ficha.personaliz.configuracionHabilidades['Init'].grado
 }
 
@@ -903,7 +917,7 @@ function getIniciativaStat() {
     if (!ficha.personaliz.configuracionHabilidades) {
         ficha.personaliz.configuracionHabilidades = {}
     }
-    
+
     if (!ficha.personaliz.configuracionHabilidades['Init']) {
         // Iniciativa tiene grado base "Bueno" (1) por defecto
         ficha.personaliz.configuracionHabilidades['Init'] = {
@@ -911,7 +925,7 @@ function getIniciativaStat() {
             grado: 1
         }
     }
-    
+
     return ficha.personaliz.configuracionHabilidades['Init'].stat
 }
 
@@ -920,7 +934,7 @@ function updateIniciativaStat(newStat) {
     if (!ficha.personaliz.configuracionHabilidades) {
         ficha.personaliz.configuracionHabilidades = {}
     }
-    
+
     if (!ficha.personaliz.configuracionHabilidades['Init']) {
         // Iniciativa tiene grado base "Bueno" (1) por defecto
         ficha.personaliz.configuracionHabilidades['Init'] = {
@@ -928,9 +942,9 @@ function updateIniciativaStat(newStat) {
             grado: 1
         }
     }
-    
+
     ficha.personaliz.configuracionHabilidades['Init'].stat = newStat
-    
+
     // Si el check está visible, actualizar también su stat en la lista
     const initCheck = ficha.personaliz.checks.find(c => c.check === 'Init')
     if (initCheck) {
@@ -964,12 +978,12 @@ function isIniciativaRangoDisabled(optionIndex) {
     if (optionIndex < min) return true
     if (optionIndex > max) return true
     if (optionIndex <= actual) return false // siempre permitir bajar/igual
-    
+
     // subir: calcular puntos necesarios basándose en el rango base
     const puntosNecesarios = Math.max(0, optionIndex - gradoBase)
     const puntosActuales = ficha.personaliz.mejorasHab.filter(m => m === 'Init').length
     const puntosFaltantes = Math.max(0, puntosNecesarios - puntosActuales)
-    
+
     return puntosFaltantes > mejorasDisponibles.value
 }
 
@@ -980,12 +994,12 @@ function onChangeIniciativaRango(targetIndex) {
     const gradoBase = 1 // Iniciativa siempre tiene grado base "Bueno" (1)
     let objetivo = parseInt(targetIndex)
     if (isNaN(objetivo)) return
-    
+
     // Asegurar que existe la configuración de Iniciativa
     if (!ficha.personaliz.configuracionHabilidades) {
         ficha.personaliz.configuracionHabilidades = {}
     }
-    
+
     if (!ficha.personaliz.configuracionHabilidades['Init']) {
         // Iniciativa tiene grado base "Bueno" (1) por defecto
         ficha.personaliz.configuracionHabilidades['Init'] = {
@@ -993,9 +1007,9 @@ function onChangeIniciativaRango(targetIndex) {
             grado: 1
         }
     }
-    
+
     const config = ficha.personaliz.configuracionHabilidades['Init']
-    
+
     // Permitir seleccionar 0 incluso si el mínimo fuera mayor
     if (objetivo === 0) {
         // Quitar todas las mejoras de este check
@@ -1006,7 +1020,7 @@ function onChangeIniciativaRango(targetIndex) {
         }
         // Establecer grado 0 en la configuración
         config.grado = 0
-        
+
         // Si el check está visible, actualizar también su grado en la lista
         const itemIdx = ficha.personaliz.checks.findIndex(c => c.check === 'Init')
         if (itemIdx !== -1) {
@@ -1031,7 +1045,7 @@ function onChangeIniciativaRango(targetIndex) {
         }
         // Actualizar el grado en la configuración
         config.grado = objetivo
-        
+
         // Si el check está visible, actualizar también su grado en la lista
         const itemIdx = ficha.personaliz.checks.findIndex(c => c.check === 'Init')
         if (itemIdx !== -1) {
@@ -1044,12 +1058,12 @@ function onChangeIniciativaRango(targetIndex) {
     // Calcular puntos necesarios basándose en el rango base
     const puntosNecesarios = Math.max(0, objetivo - gradoBase)
     const puntosActuales = ficha.personaliz.mejorasHab.filter(m => m === 'Init').length
-    
+
     if (puntosNecesarios > puntosActuales) {
         // Necesitamos más puntos
         const puntosFaltantes = puntosNecesarios - puntosActuales
         const puntosDisponibles = mejorasDisponibles.value
-        
+
         if (puntosFaltantes > puntosDisponibles) {
             // No hay suficientes puntos disponibles, subir solo lo posible
             const puntosAplicar = puntosDisponibles
@@ -1073,10 +1087,10 @@ function onChangeIniciativaRango(targetIndex) {
             }
         }
     }
-    
+
     // Actualizar el grado en la configuración
     config.grado = objetivo
-    
+
     // Si el check está visible, actualizar también su grado en la lista
     const itemIdx = ficha.personaliz.checks.findIndex(c => c.check === 'Init')
     if (itemIdx !== -1) {
@@ -1130,7 +1144,7 @@ function onChangeIniciativaRango(targetIndex) {
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="pokemon-image-area">
                         <div class="pokemon-image-container">
                             <img v-if="pokemonImage" :src="pokemonImage" :alt="ficha.pokedex.especie || 'Pokémon'"
@@ -1140,7 +1154,7 @@ function onChangeIniciativaRango(targetIndex) {
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="rest-buttons">
                         <button @click="nuevaEscena" class="pokemon-btn">Nueva escena</button>
                         <button @click="descansar" class="pokemon-btn">Descansar</button>
@@ -1149,17 +1163,18 @@ function onChangeIniciativaRango(targetIndex) {
                     <div class="estadisticas-derivadas-area">
                         <!-- BH -->
                         <div class="BH">
-                            <label>BH </label>
+                            <h3>BH </h3>
                             <input type="number" v-model.number="ficha.derivados.bh" :readonly="!ficha.manual.bh" />
                         </div>
 
                         <!-- Iniciativa -->
                         <div class="Iniciativa">
                             <div class="iniciativa-header">
-                                <span>Iniciativa</span>
-                                <button class="settings-btn" @click="mostrarConfigIniciativa = true" title="Configurar iniciativa">
-                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                        stroke-linecap="round" stroke-linejoin="round">
+                                <h3>Iniciativa</h3>
+                                <button class="settings-btn" @click="mostrarConfigIniciativa = true"
+                                    title="Configurar iniciativa">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                         <circle cx="12" cy="12" r="3" />
                                         <path
                                             d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33h.09A1.65 1.65 0 0 0 9 3.09V3a2 2 0 0 1 4 0v.09c0 .66.39 1.25 1 1.51a1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82c.22.63.85 1.05 1.51 1.05H21a2 2 0 0 1 0 4h-.09c-.66 0-1.25.39-1.51 1z" />
@@ -1167,15 +1182,20 @@ function onChangeIniciativaRango(targetIndex) {
                                 </button>
                             </div>
                             <span class="grado">{{ grados[gradoActualIniciativa()] }}</span>
-                            <input v-model.number="ficha.derivados.init" :readonly="!ficha.manual.init" />
+                            <div class="iniciativa-input-container">
+                                <input v-model.number="ficha.derivados.init" :readonly="!ficha.manual.init" />
+                                <tiraDado :tirada='"1d20+" + (ficha.derivados.init || 0)'
+                                    :origin='"Iniciativa"' />
+                            </div>
                         </div>
 
                         <!-- Evasión -->
                         <div class="Evasion">
-                            <span>Evasión</span>
+                            <h3>Evasión</h3>
                             <input v-model.number="ficha.derivados.ca" :readonly="!ficha.manual.ca" />
                             <select v-if="ficha.pokedex.calculosEva.length > 1" v-model="ficha.derivados.caElegida">
-                                <option v-for="(calculo, i) in ficha.pokedex.calculosEva" :value="i">{{ calculo }}</option>
+                                <option v-for="(calculo, i) in ficha.pokedex.calculosEva" :value="i">{{ calculo }}
+                                </option>
                             </select>
                             <p v-else>
                                 {{ ficha.pokedex.calculosEva[0] }}
@@ -1184,7 +1204,7 @@ function onChangeIniciativaRango(targetIndex) {
 
                         <!-- PP -->
                         <div class="pp-box">
-                            <div>PP</div>
+                            <h3>PP</h3>
                             <div class="pp-inputs">
                                 <input v-model.number="ficha.derivados.pp" /> /
                                 <input v-model.number="ficha.derivados.ppMax" :readonly="!ficha.manual.ppMax" />
@@ -1193,7 +1213,7 @@ function onChangeIniciativaRango(targetIndex) {
 
                         <!-- Fatiga -->
                         <div class="fatiga">
-                            <div>Fatiga</div>
+                            <h3>Fatiga</h3>
                             <input type="number" v-model.number="ficha.derivados.fatiga" />
                         </div>
                     </div>
@@ -1205,30 +1225,30 @@ function onChangeIniciativaRango(targetIndex) {
                     <div class="checks-area">
                         <FichaChecks :ficha="ficha" :ChecksBase="ChecksBase" />
                     </div>
-                    
+
                     <div class="velocidades-area">
                         <FichaVelocidades :ficha="ficha" />
                     </div>
-                    
+
                     <div class="otros-area">
                         <FichaOtros :ficha="ficha" :naturalezas="naturalezas" />
                     </div>
-                    
+
                     <div class="pv-escudo-area">
                         <div class="pv-box">
                             <div class="pv-row">
-                                <span>PV:</span>
+                                <h3>PV:</h3>
                                 <input v-model.number="ficha.derivados.pv" /> /
                                 <input class="pv-max" v-model.number="ficha.derivados.pvMax"
                                     :readonly="!ficha.manual.pvMax" />
                             </div>
                             <div class="pv-row vit">
-                                <span>Vitalidad</span>
+                                <h3>Vitalidad</h3>
                                 <input v-model.number="ficha.derivados.vit" :readonly="!ficha.manual.vit" />
                             </div>
                         </div>
                         <div class="escudo-box">
-                            <span>Escudo</span>
+                            <h3>Escudo</h3>
                             <input v-model.number="ficha.derivados.escudo" />
                         </div>
                     </div>
@@ -1265,7 +1285,7 @@ function onChangeIniciativaRango(targetIndex) {
             <button class="close-btn" @click="mostrarConfigIniciativa = false" aria-label="Cerrar">×</button>
             <div class="config-checks-list">
                 <label class="config-check-item">
-                    
+
                     Iniciativa
                     <select v-model="iniciativaStat" class="stat-select">
                         <option value="fue">Fuerza</option>
@@ -1275,11 +1295,8 @@ function onChangeIniciativaRango(targetIndex) {
                         <option value="esp">Espíritu</option>
                         <option value="pre">Presencia</option>
                     </select>
-                    <select
-                        :value="gradoActualIniciativa()"
-                        @change="onChangeIniciativaRango($event.target.value)"
-                        class="rango-select"
-                        :title="`Rango de Iniciativa`">
+                    <select :value="gradoActualIniciativa()" @change="onChangeIniciativaRango($event.target.value)"
+                        class="rango-select" :title="`Rango de Iniciativa`">
                         <option v-for="(g, i) in grados" :key="g" :value="i" :disabled="isIniciativaRangoDisabled(i)">
                             {{ g }}
                         </option>
@@ -1314,12 +1331,23 @@ function onChangeIniciativaRango(targetIndex) {
     align-items: center;
     font-weight: bold;
     height: fit-content;
-    padding: 8px;
+    padding: 8px 8px 0 8px;
 }
 
 .Iniciativa .grado {
     font-size: 12px;
     color: var(--color-principal1);
+}
+.Iniciativa input {
+    border: none;
+    text-align: right;
+}
+
+.iniciativa-input-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
 }
 
 .iniciativa-header {
@@ -1327,14 +1355,13 @@ function onChangeIniciativaRango(targetIndex) {
     align-items: center;
     width: 100%;
     position: relative;
-    
 }
 
-.iniciativa-header > span {
+.iniciativa-header>h3 {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    
+
 }
 
 .iniciativa-header .settings-btn {
@@ -1409,14 +1436,15 @@ function onChangeIniciativaRango(targetIndex) {
     line-height: 1;
 }
 
-.settings-btn{
+.settings-btn {
     background: none;
     border: none;
     cursor: pointer;
     padding: 2px;
     color: var(--color-principal2);
-    
+
 }
+
 .Evasion {
     border: 1px solid rgba(150, 150, 150, 0.798);
     border-radius: 10px;
@@ -1474,8 +1502,11 @@ function onChangeIniciativaRango(targetIndex) {
 }
 
 .escudo-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     border-radius: 0 0 8px 8px;
-    padding: 10px;
+    padding: 8px;
     border: 1px solid rgba(150, 150, 150, 0.798);
     border-top: none;
     font-weight: bold;
@@ -1607,7 +1638,7 @@ input[type="number"] {
         "stats velocidades pv-escudo derivadas checks"
         "otros otros otros otros otros";
     grid-template-columns: auto 140px auto 150px auto;
-    grid-template-rows:  155px 85px auto auto;
+    grid-template-rows: 155px 82px auto auto;
     gap: 15px;
 }
 
@@ -1686,8 +1717,8 @@ input[type="number"] {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
     background-color: rgba(150, 150, 150, 0.2);
     border: 2px dashed rgba(150, 150, 150, 0.5);
     border-radius: 8px;
@@ -1698,7 +1729,7 @@ input[type="number"] {
 .rest-buttons {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
     grid-area: rest;
 }
 
