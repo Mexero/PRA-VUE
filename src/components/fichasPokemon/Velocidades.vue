@@ -33,7 +33,6 @@ input {
     background-color: transparent;
     padding: 4px;
     border: none;
-
     color: var(--color-texto);
     width: 30px;
     text-align: center;

@@ -1102,24 +1102,23 @@ function onChangeIniciativaRango(targetIndex) {
 
 <template>
     <div class="center">
+        <div class="sheet-managing">
+            <button class="toolbar-toggle" @click="mostrarToolbar = !mostrarToolbar"
+                :aria-expanded="mostrarToolbar.toString()">
+                ☰
+            </button>
+
+            <transition name="slide" mode="out-in">
+                <div v-if="mostrarToolbar" class="toolbar-container" key="toolbar">
+                    <FichaToolbar :fichaSeleccionada="fichaSeleccionada" :ordenFichas="ordenFichas"
+                        :fichasGuardadas="fichasGuardadas" @update:fichaSeleccionada="(v) => fichaSeleccionada = v"
+                        @crear="crearFicha" @borrar="borrarFicha" @exportar="exportarFicha" @importar="importarFicha"
+                        @update:ordenFichas="actualizarOrdenFichas" />
+                </div>
+            </transition>
+        </div>
+
         <div class="fichaPokemon">
-
-            <div class="sheet-managing">
-
-                <button class="toolbar-toggle" @click="mostrarToolbar = !mostrarToolbar"
-                    :aria-expanded="mostrarToolbar.toString()">
-                    ☰
-                </button>
-
-                <transition name="slide" mode="out-in">
-                    <div v-if="mostrarToolbar" class="toolbar-container" key="toolbar">
-                        <FichaToolbar :fichaSeleccionada="fichaSeleccionada" :ordenFichas="ordenFichas"
-                            :fichasGuardadas="fichasGuardadas" @update:fichaSeleccionada="(v) => fichaSeleccionada = v"
-                            @crear="crearFicha" @borrar="borrarFicha" @exportar="exportarFicha"
-                            @importar="importarFicha" @update:ordenFichas="actualizarOrdenFichas" />
-                    </div>
-                </transition>
-            </div>
             <div class="character-sheet">
 
                 <FichaInfoBasica :ficha="ficha" :especiesPokes="especiesPokes"
@@ -1363,9 +1362,11 @@ function onChangeIniciativaRango(targetIndex) {
     transform: translateX(-50%);
 
 }
- h3{
+
+h3 {
     letter-spacing: 1px;
- }
+}
+
 .iniciativa-header .settings-btn {
     margin-left: auto;
 }
@@ -1642,8 +1643,6 @@ input[type="number"] {
     gap: 15px;
 }
 
-
-
 .stats-area {
     grid-area: stats;
 }
@@ -1748,7 +1747,6 @@ input[type="number"] {
     background-color: var(--color-principal2, #555);
 }
 
-
 .HabsDotesMovs {
     padding-top: 25px;
     display: grid;
@@ -1789,8 +1787,8 @@ input[type="number"] {
     height: fit-content;
     display: flex;
     flex-direction: column;
-    align-items: end;
-    margin-top: 60px;
+    align-items: center;
+    margin: 20px 0;
     position: relative;
     left: 0;
 }
@@ -1816,9 +1814,50 @@ input[type="number"] {
     border: 1px solid var(--color-principal1);
 }
 
+@media screen and (max-width: 1040px) {
+    .fichaPokemon {
+        display: flex;
+        margin: 0 20px;
+        justify-content: center;
+        width: 370px;
+        color: var(--color-texto);
+    }
+
+    .info-principal {
+        margin-top: 20px;
+        width: fit-content;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .HabsDotesMovs {
+        padding-top: 25px;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .center {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .fichaPokemon {
+        display: flex;
+        margin: 0px;
+        justify-content: center;
+        width: 98%;
+        color: var(--color-texto);
+    }
+}
+
 /*
 
-@media screen and (max-width: 1410px) {
+@media screen and (max-width: 1040px) {
     .info-principal {
         width: fit-content;
         display: grid;

@@ -173,7 +173,8 @@ const typeMap = {
                     {{ especie }}
                 </li>
             </ul>
-            <button class="especie-icon-btn" v-if="especieCambiada" @click="CambiarEspecie(especieElegida)" aria-label="Confirmar cambio de especie">
+            <button class="especie-icon-btn" v-if="especieCambiada" @click="CambiarEspecie(especieElegida)"
+                aria-label="Confirmar cambio de especie">
                 <svg class="especie-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                     <path d="M9 16.2L5.5 12.7 4.1 14.1 9 19 20.3 7.7 18.9 6.3z" />
                 </svg>
@@ -197,7 +198,7 @@ const typeMap = {
 
 
             <p class="NombreTipos" :class="'type-' + normalizeType(ficha.pokedex.tipos[0])"> {{ ficha.pokedex.tipos[0]
-            }}
+                }}
             </p>
 
             <p v-if="ficha.pokedex.tipos[1]" class="NombreTipos"
@@ -421,6 +422,81 @@ input[type="number"] {
     border-radius: 50%;
     width: 25px;
     height: 25px;
+}
+
+@media screen and (max-width: 1040px) {
+    .info-basica {
+        border-bottom: 1px solid rgba(150, 150, 150, 0.798);
+        padding-bottom: 20px;
+        display: grid;
+        grid-template-areas:
+            "nombre nivel"
+            "especie especie"
+            "tipos tipos";
+        grid-template-columns: 1fr auto;
+        gap: 10px;
+        align-items: center;
+    }
+
+    .nombre {
+        grid-area: nombre;
+    }
+
+    .nivel {
+        grid-area: nivel;
+        justify-self: end;
+    }
+
+    .especie {
+        grid-area: especie;
+    }
+
+    .tipos {
+        grid-area: tipos;
+        justify-self: start;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .info-basica {
+        grid-template-areas:
+            "nombre nivel"
+            "especie especie"
+            "tipos tipos";
+        gap: 12px 15px;
+    }
+
+    .nombre input,
+    .especie input {
+        width: 120px;
+        font-size: 16px;
+    }
+
+    .nivel input {
+        width: 40px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .info-basica {
+        grid-template-areas:
+            "nombre"
+            "nivel"
+            "especie"
+            "tipos";
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .nivel {
+        justify-self: start;
+    }
+
+    .nombre input,
+    .especie input {
+        width: 100%;
+        max-width: 200px;
+    }
 }
 
 /*
