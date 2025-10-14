@@ -97,11 +97,7 @@ const typeMap = {
 <template>
     <div class="mov-content">
         <div class="mov-data">
-            <p class="tipo">
-                Tipo:
-                <img v-if="mov.tipo" :src="`/assets/icons/${typeMap[normalizeType(mov.tipo)]}.svg`" :alt="mov.tipo"
-                    class="tipo-icon" :class="'type-' + normalizeType(mov.tipo)" />
-            </p>
+            
             <p><strong>Acción: </strong>{{ mov.accion }}</p>
             <p><strong>Coste: </strong>{{ computarCoste(mov.coste) }}</p>
             <p><strong>Rango: </strong>{{ mov.rango }}</p>
@@ -170,5 +166,8 @@ p {
     align-items: center;
     gap: 5px;
     font-weight: 700;
+}
+strong{
+    letter-spacing: 1px;
 }
 </style>

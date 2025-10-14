@@ -90,6 +90,9 @@ watch(
 </template>
 
 <style scoped>
+h3{
+    letter-spacing: 1px;
+}
 .feats {
     border: 1px solid rgba(150, 150, 150, 0.798);
     border-radius: 5px;
@@ -116,4 +119,5 @@ watch(
 .feats-list {
     height: fit-content;
 }
+
 </style>

@@ -18,6 +18,121 @@ function getMovimientoCompleto(nombre) {
     return movimientosCompletos.value.find(mov => mov.nombre === nombre);
 }
 
+// Mapa de colores por tipo (coincide con src/css/typeColors.css)
+const typeColorMap = {
+    normal: '#A8A878',
+    fuego: '#F08030',
+    agua: '#6890F0',
+    planta: '#78C850',
+    electrico: '#F8D030',
+    hielo: '#98D8D8',
+    lucha: '#C03028',
+    veneno: '#A040A0',
+    tierra: '#E0C068',
+    volador: '#A890F0',
+    psiquico: '#F85888',
+    bicho: '#A8B820',
+    roca: '#B8A038',
+    fantasma: '#705898',
+    dragon: '#7038F8',
+    siniestro: '#705848',
+    acero: '#B8B8D0',
+    hada: '#EE99AC',
+    variable: '#ccdee9'
+}
+
+function normalizeTypeName(tipo) {
+    if (!tipo || typeof tipo !== 'string') return ''
+    // pasar a minúsculas y eliminar acentos
+    const sinAcentos = tipo.normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+    return sinAcentos.toLowerCase().trim()
+}
+
+function hexToRgb(hex) {
+    const h = hex.replace('#', '')
+    const bigint = parseInt(h, 16)
+    return {
+        r: (bigint >> 16) & 255,
+        g: (bigint >> 8) & 255,
+        b: bigint & 255
+    }
+}
+
+function getContrastTextColor(bgHex) {
+    // YIQ contrast
+    const { r, g, b } = hexToRgb(bgHex)
+    const yiq = (r * 299 + g * 587 + b * 114) / 1000
+    return yiq >= 140 ? '#000000' : '#FFFFFF'
+}
+
+function getMoveType(nombre) {
+    const mov = getMovimientoCompleto(nombre) || props.movimientos.find(m => m.nombre === nombre)
+    if (!mov || !mov.tipo) return null
+    return normalizeTypeName(mov.tipo)
+}
+
+function getMoveStyle(nombre) {
+    const tipo = getMoveType(nombre)
+    const color = tipo && typeColorMap[tipo] ? typeColorMap[tipo] : null
+    if (!color) return {}
+    const text = getContrastTextColor(color)
+    return { '--mov-color': color, '--mov-text': text }
+}
+
+// Iconos por tipo (en /public/assets/icons)
+const typeIconMap = {
+    normal: 'normal.svg',
+    fuego: 'fire.svg',
+    agua: 'water.svg',
+    planta: 'grass.svg',
+    electrico: 'electric.svg',
+    hielo: 'ice.svg',
+    lucha: 'fighting.svg',
+    veneno: 'poison.svg',
+    tierra: 'ground.svg',
+    volador: 'flying.svg',
+    psiquico: 'psychic.svg',
+    bicho: 'bug.svg',
+    roca: 'rock.svg',
+    fantasma: 'ghost.svg',
+    dragon: 'dragon.svg',
+    siniestro: 'dark.svg',
+    acero: 'steel.svg',
+    hada: 'fairy.svg'
+}
+
+function getTypeIcon(tipo) {
+    const norm = normalizeTypeName(tipo)
+    const file = typeIconMap[norm]
+    if (!file) return null
+    return `/assets/icons/${file}`
+}
+
+function capitalize(word) {
+    if (!word || typeof word !== 'string') return ''
+    return word.charAt(0).toUpperCase() + word.slice(1)
+}
+
+function getMoveTypeName(nombre) {
+    const mov = getMovimientoCompleto(nombre) || props.movimientos.find(m => m.nombre === nombre)
+    if (!mov || !mov.tipo) return ''
+    const norm = normalizeTypeName(mov.tipo)
+    // mantener estilo capitalizado sin acentos
+    return capitalize(norm)
+}
+
+function getTypeIconByMove(nombre) {
+    const mov = getMovimientoCompleto(nombre) || props.movimientos.find(m => m.nombre === nombre)
+    if (!mov || !mov.tipo) return null
+    return getTypeIcon(mov.tipo)
+}
+
+function getTypeIconStyleByMove(nombre) {
+    const url = getTypeIconByMove(nombre)
+    if (!url) return {}
+    return { '--type-icon-url': `url(${url})` }
+}
+
 watch(
     () => [
         props.movimientosCargados,
@@ -66,13 +181,20 @@ function eliminarMov(movimiento, lista) {
         </div>
         <div class="moves-list">
             <!-- Movimientos Aprendidos -->
-            <draggable v-model="ficha.personaliz.movimientosAprendidos" group="movimientos" item-key="nombre"
-                handle=".movimiento-summary" :animation="200">
+            <draggable v-model="ficha.personaliz.movimientosAprendidos" group="movimientos" item-key="nombre">
                 <template #item="{ element: mov, index: i }">
-                    <details class="movimiento">
+                    <details class="movimiento" :style="getMoveStyle(mov)">
                         <summary class="movimiento-summary">
-                            {{ mov }}
-                            <button @click="eliminarMov(mov, 'aprendidos')" class="borrar-btn">×</button>
+                            <span class="mov-left">
+                             
+                                {{ mov }}
+                            </span>
+                            <span class="mov-right">
+                                {{ getMoveTypeName(mov) }}
+                                <span v-if="getTypeIconByMove(mov)" class="type-icon-mask"
+                                    :style="getTypeIconStyleByMove(mov)"></span>
+                                <button @click="eliminarMov(mov, 'aprendidos')" class="borrar-btn">×</button>
+                            </span>
                         </summary>
                         <MovsData v-if="getMovimientoCompleto(mov)" :ficha="ficha" :mov="getMovimientoCompleto(mov)" />
                     </details>
@@ -83,10 +205,18 @@ function eliminarMov(movimiento, lista) {
             <draggable v-model="ficha.personaliz.movimientosExtra" group="movimientos" item-key="nombre"
                 handle=".movimiento-summary" :animation="200">
                 <template #item="{ element: mov, index: i }">
-                    <details class="movimiento">
+                    <details class="movimiento" :style="getMoveStyle(mov)">
                         <summary class="movimiento-summary">
-                            {{ mov }} (Extra)
-                            <button @click="eliminarMov(mov, 'extra')" class="borrar-btn">x</button>
+                            <span class="mov-left">
+                              
+                                {{ mov }} (Extra)
+                            </span>
+                            <span class="mov-right">
+                                {{ getMoveTypeName(mov) }}
+                                <span v-if="getTypeIconByMove(mov)" class="type-icon-mask"
+                                    :style="getTypeIconStyleByMove(mov)"></span>
+                                <button @click="eliminarMov(mov, 'extra')" class="borrar-btn">×</button>
+                            </span>
                         </summary>
                         <MovsData v-if="getMovimientoCompleto(mov)" :ficha="ficha" :mov="getMovimientoCompleto(mov)" />
                     </details>
@@ -97,6 +227,9 @@ function eliminarMov(movimiento, lista) {
 </template>
 
 <style scoped>
+h3{
+    letter-spacing: 1px;
+}
 .moves {
     border: 1px solid rgba(150, 150, 150, 0.798);
     border-radius: 5px;
@@ -116,59 +249,73 @@ function eliminarMov(movimiento, lista) {
 }
 
 .movimiento {
-    width: 639px;
-    border: 1px solid var(--color-principal2);
+    border: 1px solid var(--mov-color, var(--color-principal2));
     margin: 10px 0;
 }
 
 .movimiento summary {
-    background-color: var(--color-principal2);
+    background-color: var(--mov-color, var(--color-principal2));
     height: 30px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 0 0 10px;
     cursor: pointer;
+    color: var(--mov-text, var(--color-texto));
 }
 
 .movimiento-summary {
     cursor: grab;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
 }
 
 .borrar-btn {
     background-color: transparent;
     border: none;
-    color: var(--color-texto);
+    color: var(--mov-text, var(--color-texto));
     cursor: pointer;
     font-weight: bold;
     font-size: 30px;
     line-height: 25px;
-    border-left: 1px solid;
+    border-left: 1px solid var(--mov-text, currentColor);
     width: 40px;
     height: 30px;
     padding-bottom: 5px;
-    background-color: var(--color-principal1);
+    background-color: color-mix(in srgb, var(--mov-color, var(--color-principal1)) 85%, #0000);
 }
 
 .borrar-btn:hover {
-    background-color: var(--color-principal2);
+    background-color: var(--mov-color, var(--color-principal2));
 }
 
-@media screen and (max-width: 1410px) {
-    .movimiento {
-        width: 790px;
-    }
 
-    @media screen and (max-width: 920px) {
-        .movimiento {
-            width: 430px;
-        }
-    }
+.type-icon {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+    filter: drop-shadow(0 1px 1px rgba(0,0,0,0.15));
 }
 
-@media screen and (max-width: 545px) {
-    .movimiento {
-        width: 330px;
-    }
+.type-icon-mask {
+    width: 18px;
+    height: 18px;
+    display: inline-block;
+    background: var(--mov-text, currentColor);
+    -webkit-mask: var(--type-icon-url) no-repeat center / contain;
+    mask: var(--type-icon-url) no-repeat center / contain;
+}
+
+.mov-left,
+.mov-right {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.mov-right {
+    margin-left: auto;
 }
 </style>

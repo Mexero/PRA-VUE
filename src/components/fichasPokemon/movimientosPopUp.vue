@@ -387,6 +387,8 @@ ul {
 ul h3 {
     margin-top: 10px;
     border-bottom: 1px solid black;
+    letter-spacing: 1px;
+
 }
 
 li {
@@ -448,6 +450,7 @@ li:hover {
     flex-direction: column;
     justify-content: space-between;
     gap: 12px;
+    overflow-y: auto;
 }
 
 .preview button {

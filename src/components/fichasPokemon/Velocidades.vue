@@ -25,6 +25,7 @@ defineProps(['ficha'])
 
 h3 {
     text-align: center;
+    letter-spacing: 1px;
 }
 
 input {

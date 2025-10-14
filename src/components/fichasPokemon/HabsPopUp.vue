@@ -81,6 +81,10 @@ function añadirHab() {
 </template>
 
 <style scoped>
+h3, .tituloDesc{
+    letter-spacing: 1px;
+}
+
 .btn {
     padding: 5px;
     background-color: var(--color-principal1);

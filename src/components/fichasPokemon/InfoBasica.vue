@@ -16,6 +16,8 @@ const nombreFicha = ref(props.ficha.nombre)
 const mostrarLista = ref(false)
 
 const nivelTemp = ref(props.ficha.nivel)
+const nivelCambiado = computed(() => nivelTemp.value !== props.ficha.nivel)
+const especieCambiada = computed(() => especieElegida.value !== props.ficha.pokedex.especie)
 
 const especiesFiltradas = computed(() =>
     props.especiesPokes.filter(d =>
@@ -157,7 +159,8 @@ const typeMap = {
     <section class="info-basica">
         <div class="nombre" style="position: relative;">
             <label for="Nombre">Nombre:</label>
-            <input name="Nombre" v-model="nombreFicha" @blur="emit('cambiarNombre', nombreFicha)" @keydown.enter.prevent="emit('cambiarNombre', nombreFicha)" />
+            <input name="Nombre" v-model="nombreFicha" @blur="emit('cambiarNombre', nombreFicha)"
+                @keydown.enter.prevent="emit('cambiarNombre', nombreFicha)" />
         </div>
 
         <div class="especie" style="position: relative;" v-click-outside="ocultarLista">
@@ -170,7 +173,11 @@ const typeMap = {
                     {{ especie }}
                 </li>
             </ul>
-            <button @click="CambiarEspecie(especieElegida)">Cambiar</button>
+            <button class="especie-icon-btn" v-if="especieCambiada" @click="CambiarEspecie(especieElegida)" aria-label="Confirmar cambio de especie">
+                <svg class="especie-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M9 16.2L5.5 12.7 4.1 14.1 9 19 20.3 7.7 18.9 6.3z" />
+                </svg>
+            </button>
 
         </div>
         <div class="nivel">
@@ -178,11 +185,16 @@ const typeMap = {
                 <label for="Nivel">Nivel:</label>
                 <input type="number" name="Nivel" v-model.number="nivelTemp" min="0" />
             </div>
-            <button @click="cambiarNivel">Cambiar</button>
+            <button class="nivel-icon-btn" v-if="nivelCambiado" @click="cambiarNivel"
+                aria-label="Confirmar cambios de nivel">
+                <svg class="nivel-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M9 16.2L5.5 12.7 4.1 14.1 9 19 20.3 7.7 18.9 6.3z" />
+                </svg>
+            </button>
         </div>
         <div class="tipos" @mouseenter="mostrarDebilidadesConjuntas(ficha.pokedex.tipos)"
             @click="mostrarDebilidadesConjuntas(ficha.pokedex.tipos)" @mouseleave="tooltipTipos = null">
-            
+
 
             <p class="NombreTipos" :class="'type-' + normalizeType(ficha.pokedex.tipos[0])"> {{ ficha.pokedex.tipos[0]
             }}
@@ -221,6 +233,39 @@ const typeMap = {
 
 <style scoped>
 @import url(../../css/typeColors.css);
+
+.nivel-icon {
+    width: 27px;
+    height: 27px;
+
+}
+
+.nivel-icon-btn {
+    background-color: var(--color-principal1);
+    border: none;
+    cursor: pointer;
+    padding: 0px 3px;
+}
+
+.nivel-icon-btn:hover {
+    background-color: var(--color-principal2);
+}
+
+.especie-icon {
+    width: 27px;
+    height: 27px;
+}
+
+.especie-icon-btn {
+    background-color: var(--color-principal1);
+    border: none;
+    cursor: pointer;
+    padding: 0px 3px;
+}
+
+.especie-icon-btn:hover {
+    background-color: var(--color-principal2);
+}
 
 .info-basica {
     border-bottom: 1px solid rgba(150, 150, 150, 0.798);
@@ -377,6 +422,7 @@ input[type="number"] {
     width: 25px;
     height: 25px;
 }
+
 /*
 @media screen and (max-width: 1410px) {
     .info-basica {

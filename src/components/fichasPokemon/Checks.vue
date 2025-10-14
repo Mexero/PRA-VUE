@@ -421,7 +421,7 @@ function onChangeRango(checkName, targetIndex) {
     <section class="checks">
         <div class="checks-header">
             <span>
-                <h3>Habilidades</h3>
+                <h3>Tiradas de Habilidad</h3>
             </span>
             <div class="header-buttons">
                 <div class="mejoras-disponibles" v-if="mejorasDisponibles > 0" :title="`Mejoras disponibles: ${mejorasDisponibles}`">
@@ -563,6 +563,9 @@ function onChangeRango(checkName, targetIndex) {
 </template>
 
 <style scoped>
+h3{
+    letter-spacing: 1px;
+}
 .checks {
     display: flex;
     width: fit-content;

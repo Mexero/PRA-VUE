@@ -1184,8 +1184,7 @@ function onChangeIniciativaRango(targetIndex) {
                             <span class="grado">{{ grados[gradoActualIniciativa()] }}</span>
                             <div class="iniciativa-input-container">
                                 <input v-model.number="ficha.derivados.init" :readonly="!ficha.manual.init" />
-                                <tiraDado :tirada='"1d20+" + (ficha.derivados.init || 0)'
-                                    :origin='"Iniciativa"' />
+                                <tiraDado :tirada='"1d20+" + (ficha.derivados.init || 0)' :origin='"Iniciativa"' />
                             </div>
                         </div>
 
@@ -1253,7 +1252,7 @@ function onChangeIniciativaRango(targetIndex) {
                         </div>
                     </div>
                 </div>
-                <!-- 
+
                 <div class="HabsDotesMovs">
                     <div class="col-izq">
                         <div class="habs">
@@ -1272,7 +1271,7 @@ function onChangeIniciativaRango(targetIndex) {
                         </div>
                     </div>
                 </div>
--->
+
             </div>
         </div>
     </div>
@@ -1338,6 +1337,7 @@ function onChangeIniciativaRango(targetIndex) {
     font-size: 12px;
     color: var(--color-principal1);
 }
+
 .Iniciativa input {
     border: none;
     text-align: right;
@@ -1363,7 +1363,9 @@ function onChangeIniciativaRango(targetIndex) {
     transform: translateX(-50%);
 
 }
-
+ h3{
+    letter-spacing: 1px;
+ }
 .iniciativa-header .settings-btn {
     margin-left: auto;
 }
@@ -1588,8 +1590,6 @@ input {
     box-shadow: none;
 }
 
-
-
 input:focus {
     outline: none;
     cursor: none;
@@ -1616,7 +1616,7 @@ input[type="number"] {
     display: flex;
     margin: 0 20px;
     justify-content: center;
-    width: fit-content;
+    width: 0px;
     color: var(--color-texto);
 }
 
@@ -1747,6 +1747,7 @@ input[type="number"] {
 .pokemon-btn:hover {
     background-color: var(--color-principal2, #555);
 }
+
 
 .HabsDotesMovs {
     padding-top: 25px;

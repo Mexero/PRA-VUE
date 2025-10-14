@@ -1,4 +1,6 @@
 <script setup>
+import { computed } from 'vue'
+
 const props = defineProps(['ficha'])
 const ficha = props.ficha
 
@@ -10,6 +12,13 @@ const nombresStats = {
     esp: 'ESPIRITU',
     pre: 'PRESENCIA'
 }
+
+// Computed para calcular mejoras de estadísticas disponibles
+const mejorasEstDisponibles = computed(() => {
+    const total = ficha.derivados.cantidadMejorasEST || 0
+    const usadas = ficha.personaliz.mejorasEst.length
+    return Math.max(0, total - usadas)
+})
 
 //cambiar Mejoras de EST
 function cambiarMejoraEST(stat, delta) {
@@ -34,8 +43,16 @@ function cambiarMejoraEST(stat, delta) {
 </script>
 
 <template>
-    <section>
-       
+    <section class="stats-section">
+        <div class="stats-header" v-if="mejorasEstDisponibles > 0">
+            <div class="mejoras-disponibles" :title="`Mejoras de estadísticas disponibles: ${mejorasEstDisponibles}`">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-principal1)" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 19V5M5 12l7-7 7 7"/>
+                </svg>
+                <span class="mejoras-numero">{{ mejorasEstDisponibles }}</span>
+            </div>
+        </div>
         <div class="statsYSaves">
             <div class="stats">
                 <div class="item" v-for="stat in ['fue', 'agi', 'res', 'men', 'esp', 'pre']" :key="stat">
@@ -54,16 +71,41 @@ function cambiarMejoraEST(stat, delta) {
                 </div>
             </div>
         </div>
-        <!-- 
-        <div class="puntosDisponibles">
-            Mejoras:
-            <strong>{{ ficha.derivados.cantidadMejorasEST - ficha.personaliz.mejorasEst.length }}</strong>
-        </div>
-        -->
     </section>
 </template>
 
 <style scoped>
+.stats-section {
+    position: relative;
+    width: fit-content;
+}
+
+.stats-header {
+    position: absolute;
+    top: -14px;
+    left: 80px;
+    z-index: 3;
+}
+
+.mejoras-disponibles {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 2px;
+    border: 1px solid var(--color-principal1);
+    border-radius: 5px;
+    background: var(--color-fondoTexto);
+    cursor: default;
+}
+
+.mejoras-numero {
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--color-principal1);
+    min-width: 16px;
+    text-align: center;
+}
+
 .statsYSaves{
     width: fit-content;
 }
@@ -85,7 +127,8 @@ function cambiarMejoraEST(stat, delta) {
     flex-direction: column;
     border-bottom: 1px solid rgba(150, 150, 150, 0.798);
     padding: 10px 0;
-    width: 115px;
+    width: 120px;
+    letter-spacing: 1px;
 }
 .item:last-child {
     border-bottom: none;

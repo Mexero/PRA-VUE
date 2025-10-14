@@ -31,13 +31,13 @@ const props = defineProps(['dote'])
 </script>
 
 <style scoped>
+
 .dote {
     margin: 10px 0;
     border: 1px solid var(--color-principal2);
 }
 
 .titulo {
-    font-weight: bold;
     background-color: var(--color-principal2);
     padding: 0 0 0 5px;
     display: flex;
@@ -77,25 +77,10 @@ li {
 }
 
 .contenidoDote {
-    width: 630px;
     padding: 10px;
 }
-
-@media screen and (max-width: 1410px) {
-    .contenidoDote {
-        width: 790px;
-    }
+strong {
+    letter-spacing: 1px;
 }
-
-@media screen and (max-width: 920px) {
-    .contenidoDote {
-        width: 430px;
-    }
-}
-
-@media screen and (max-width: 545px) {
-    .contenidoDote {
-        width: 330px;
-    }
-}
+   
 </style>
