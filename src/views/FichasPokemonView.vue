@@ -1258,15 +1258,15 @@ function onChangeIniciativaRango(targetIndex) {
                             <FichaHabilidades :ficha="ficha" :habilidades="habilidades"
                                 :habilidadesCargadas="habilidadesCargadas" />
                         </div>
-                        <div class="dotes">
-                            <FichaDotes :ficha="ficha" :dotes="dotes" :dotesCargadas="dotesCargadas" />
-                        </div>
                     </div>
 
                     <div class="col-der">
                         <div class="movs">
                             <FichaMovimientos :ficha="ficha" :movimientos="movimientos"
                                 :movimientosCargados="movimientosCargados" />
+                        </div>
+                        <div class="dotes">
+                            <FichaDotes :ficha="ficha" :dotes="dotes" :dotesCargadas="dotesCargadas" />
                         </div>
                     </div>
                 </div>
@@ -1334,7 +1334,7 @@ function onChangeIniciativaRango(targetIndex) {
 
 .Iniciativa .grado {
     font-size: 12px;
-    color: var(--color-principal1);
+    color: var(--color-secundario);
 }
 
 .Iniciativa input {
@@ -1369,6 +1369,7 @@ h3 {
 
 .iniciativa-header .settings-btn {
     margin-left: auto;
+    color: var(--color-secundario);
 }
 
 .config-modal-overlay {
@@ -1377,7 +1378,7 @@ h3 {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: rgba(0, 0, 0, 0.486);
+    background: rgba(0, 0, 0, 0.5);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1611,6 +1612,8 @@ input[type="number"] {
     display: flex;
     width: 100%;
     justify-content: center;
+    align-self: center;
+    position: relative;
 }
 
 .fichaPokemon {
@@ -1786,11 +1789,12 @@ input[type="number"] {
 .sheet-managing {
     height: fit-content;
     display: flex;
-    flex-direction: column;
+
     align-items: center;
     margin: 20px 0;
-    position: relative;
-    left: 0;
+
+
+    z-index: 10;
 }
 
 .toolbar-toggle {
@@ -1808,13 +1812,13 @@ input[type="number"] {
 
 .toolbar-container {
     position: absolute;
-    top: auto;
-    left: 38px;
+   
     z-index: 4;
     border: 1px solid var(--color-principal1);
 }
 
 @media screen and (max-width: 1040px) {
+
     .fichaPokemon {
         display: flex;
         margin: 0 20px;
@@ -1826,8 +1830,14 @@ input[type="number"] {
     .info-principal {
         margin-top: 20px;
         width: fit-content;
-        display: flex;
-        flex-direction: column;
+        display: grid;
+        grid-template-areas:
+            "stats saves pokemon derivadas"
+            "stats velocidades rest derivadas"
+            "stats velocidades pv-escudo derivadas"
+            "checks checks otros otros";
+        grid-template-columns: 130px auto auto auto;
+        grid-template-rows: auto auto auto auto;
         gap: 15px;
     }
 
@@ -1838,12 +1848,35 @@ input[type="number"] {
         gap: 20px;
     }
 
+    /* Reordenar las secciones en móvil: Habilidades, Movimientos, Dotes */
+    .HabsDotesMovs .col-izq {
+        order: 1;
+    }
+
+    .HabsDotesMovs .col-der {
+        order: 2;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .HabsDotesMovs .habs {
+        order: 1;
+    }
+
+    .HabsDotesMovs .movs {
+        order: 2;
+    }
+
+    .HabsDotesMovs .dotes {
+        order: 3;
+    }
+
     .center {
         display: flex;
         flex-direction: column;
         width: 100%;
         justify-content: center;
-        align-items: center;
     }
 
     .fichaPokemon {
@@ -1853,7 +1886,25 @@ input[type="number"] {
         width: 98%;
         color: var(--color-texto);
     }
+
+    .character-sheet {
+        margin: 50px auto;
+        background-color: var(--color-fondoTexto);
+        border-radius: 10px;
+        padding: 20px;
+        max-width: 750px;
+        box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2), -3px 0px 5px rgba(0, 0, 0, 0.2);
+    }
 }
+
+
+@media screen and (max-width: 750px) {
+
+    .fichaPokemon {
+        display: none;
+    }
+}
+
 
 /*
 

@@ -21,17 +21,18 @@ function aplicarModo() {
   root.style.setProperty('--color-oscuro1', oscuro ? '#1B1B26' : '#F8F8F8')
   root.style.setProperty('--color-hoverBloque', oscuro ? '#293141' : '#EEF5FF')
   root.style.setProperty('--color-sombraTexto', oscuro ? '#ff0051' : '#F8F8F8')
-  root.style.setProperty('--color-principal1', oscuro ? '#8d0530' : '#94c4ff')
-  root.style.setProperty('--color-principal2', oscuro ? '#dd576d' : '#b2d7ff')
-  root.style.setProperty('--color-secundario', oscuro ? '#ff8f8f' : '#529CE6')
+  root.style.setProperty('--color-principal1', oscuro ? '#aa0036' : '#94c4ff')
+  root.style.setProperty('--color-principal2', oscuro ? '#ce0041' : '#b2d7ff')
+  root.style.setProperty('--color-secundario', oscuro ? '#ff0051' : '#529CE6')
   root.style.setProperty('--color-secundario2', oscuro ? '#ffffff' : '#e3f1fc')
-  root.style.setProperty('--color-tituloTabla', oscuro ? 'rgb(176, 28, 60)' : 'rgb(0, 174, 255)')
-  root.style.setProperty('--color-tabla1', oscuro ? '#7d2929' : '#a3cdff')
-  root.style.setProperty('--color-tabla2', oscuro ? '#a03434' : '#bae2ff')
+  root.style.setProperty('--color-tituloTabla', oscuro ? '#aa0036' : 'rgb(0, 174, 255)')
+  root.style.setProperty('--color-tabla1', oscuro ? '#8d2020' : '#a3cdff')
+  root.style.setProperty('--color-tabla2', oscuro ? '#aa2727' : '#bae2ff')
   root.style.setProperty('--color-fondoTexto', oscuro ? '#293141' : '#EEF5FF')
   root.style.setProperty('--color-BloqueDescargas', oscuro ? '#ff0051' : '#A1E3F9')
   root.style.setProperty('--color-hoverBloqueDescargas', oscuro ? '#293141' : '#EEF5FF')
   root.style.setProperty('--color-fondoTarjeta', oscuro ? '#b0b6bd' : '#ffffff')
+  root.style.setProperty('--filtro-fondo', oscuro ? 'invert(1) hue-rotate(180deg)' : 'none')
 
 }
 
@@ -65,6 +66,6 @@ onBeforeUnmount(() => {
 </template>
 <style scoped>
   h1{
-    color: #a03434;
+    color: #f6faffa4;
   }
   </style>

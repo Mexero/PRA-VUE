@@ -32,8 +32,8 @@ const loading = ref(false)
 // ======================== DATOS ========================
 
 //Datos para la tabla
-const columnas = ['Nombre', 'Descripción', 'Legen.', 'Transf.']
-const clavesColumnas = ['nombre', 'descripcion', 'legendaria', 'transformacion']
+const columnas = ['Nombre', 'Legendaria', 'Transformación']
+const clavesColumnas = ['nombre', 'legendaria', 'transformacion']
 
 //Datos principales
 const datos = ref([]);

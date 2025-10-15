@@ -63,14 +63,13 @@ const itemsGrid = computed(() => {
     width: 40%;
     height: fit-content;
     background-color: white;
-    border: 1px solid #e5e7eb;
-    border-radius: 0.75rem;
+    border-radius: 12px;
     box-shadow:
         -2px 2px 10px rgba(0, 0, 0, 0.1),
         2px -2px 10px rgba(0, 0, 0, 0.1),
         2px 2px 10px rgba(0, 0, 0, 0.1),
         -2px -2px 10px rgba(0, 0, 0, 0.1);
-    padding: 1.5rem;
+    padding: 10px;
 }
 
 
@@ -89,7 +88,7 @@ const itemsGrid = computed(() => {
     grid-column: span 2;
 }
 
-@media screen and (max-width: 890px) {
+@media screen and (max-width: 1040px) {
     .seleccionado {
         font-size: 15px;
         padding: 10px;

@@ -81,7 +81,7 @@ onBeforeUnmount(() => {
 
 <template>
     <section class="others">
-  
+
         <div>
             <!-- Otros campos readonly -->
             <div class="fila1">
@@ -202,8 +202,35 @@ input {
     border-bottom: 1px solid;
     color: var(--color-texto);
 }
+.others>div{
+        display: flex;
+     flex-direction: column;
+        gap: 10px;
+    }
+@media screen and (max-width: 1040px) {
 
+    .fila1 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr auto auto;
+        gap: 10px;
+       
+       
+    }
+    .others>div{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+  
+    .fila2 .item{
+        flex-direction: column;
+        align-items: start;
+       
+    }
+}
 
+/*
 @media screen and (max-width: 1500px) {
     .others {
         display: flex;
@@ -248,7 +275,6 @@ input {
         flex-wrap: wrap;
         margin-bottom: 20px;
     }
-
-
 }
+*/
 </style>

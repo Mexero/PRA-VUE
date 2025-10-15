@@ -430,14 +430,18 @@ input[type="number"] {
         padding-bottom: 20px;
         display: grid;
         grid-template-areas:
-            "nombre nivel"
-            "especie especie"
-            "tipos tipos";
-        grid-template-columns: 1fr auto;
+            "nombre especie nivel tipos";
+        grid-template-columns: auto auto auto;
         gap: 10px;
         align-items: center;
     }
-
+    .tipos {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap ;
+    gap: 4px;
+    max-width: 155px;
+}
     .nombre {
         grid-area: nombre;
     }
@@ -453,10 +457,10 @@ input[type="number"] {
 
     .tipos {
         grid-area: tipos;
-        justify-self: start;
+        justify-self: end;
     }
 }
-
+/*
 @media screen and (max-width: 768px) {
     .info-basica {
         grid-template-areas:

@@ -67,18 +67,51 @@ thead {
     position: sticky;
     top: 0;
     cursor: pointer;
-    z-index: 1;
+    z-index: 10;
     font-size: 18px;
+    border-bottom: 1px solid #e5e7eb;
+    box-shadow: 0 1px 0 var(--color-texto);
 }
 
 .div-tabla {
     width: 100%;
     height: fit-content;
-    max-height: 70vh;
+    max-height: 65vh;
     overflow-y: auto;
     box-shadow:
         -2px 3px 6px rgb(0, 0, 0, 0.3),
         2px 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Personalizar la barra de scroll */
+.div-tabla {
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-principal1) #f1f1f1; /* thumb track */
+}
+
+.div-tabla::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+
+.div-tabla::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+}
+
+.div-tabla::-webkit-scrollbar-thumb {
+    background: var(--color-principal1);
+    border-radius: 6px;
+    border: 1px solid #f1f1f1;
+}
+
+.div-tabla::-webkit-scrollbar-thumb:hover {
+    background: var(--color-principal1);
+}
+
+.div-tabla::-webkit-scrollbar-corner {
+    background: #f1f1f1;
 }
 
 .tabla {
@@ -93,7 +126,6 @@ thead {
 .tabla td {
     padding: 6px 10px;
     text-align: left;
-    border-bottom: 1px solid #e5e7eb;
     font-size: 14px;
     overflow: hidden;
     white-space: nowrap;
@@ -102,27 +134,18 @@ thead {
 
 .tabla th {
     font-weight: bold;
+
 }
 
-.tabla th:nth-child(1),
-.tabla td:nth-child(1) {
-    width: 20%;
-}
+.tabla th:nth-child(n+2), td:nth-child(n+2) {
+    font-weight: bold;
+        text-align: center;
 
-.tabla th:nth-child(2),
-.tabla td:nth-child(2) {
-    width: 58%;
 }
+td:nth-child(2){
 
-.tabla th:nth-child(3),
-.tabla td:nth-child(3),
-.tabla th:nth-child(4),
-.tabla td:nth-child(4) {
-    width: 11%;
     text-align: center;
 }
-
-
 th img {
     transform: translateY(2px);
     width: 15px;

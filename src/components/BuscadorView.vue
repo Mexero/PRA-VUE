@@ -183,11 +183,12 @@ const resetSearch = () => {
 .resultBusqueda ul {
     background-color: var(--color-tabla2);
     padding: 5px 10px 0 10px;
+
 }
 
 .resultBusqueda span {
     font-size: 14px;
-    color: black;
+    
 }
 
 .resultBusqueda li {
@@ -206,7 +207,7 @@ const resetSearch = () => {
 
 .resultBusqueda ul li:hover {
     text-decoration: underline;
-    color: black;
+    
 }
 
 .resultBusqueda ul li:nth-child(even) {

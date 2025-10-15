@@ -424,7 +424,8 @@ html {
 
 .subclas-active,
 .subclas-inactive {
-    background-color: var(--color-tabla2);
+    background-color: var(--color-secundario);
+    
 }
 
 .subclas-active {

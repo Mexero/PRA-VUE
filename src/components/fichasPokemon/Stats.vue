@@ -46,7 +46,7 @@ function cambiarMejoraEST(stat, delta) {
     <section class="stats-section">
         <div class="stats-header" v-if="mejorasEstDisponibles > 0">
             <div class="mejoras-disponibles" :title="`Mejoras de estadísticas disponibles: ${mejorasEstDisponibles}`">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-principal1)" stroke-width="2"
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-secundario)" stroke-width="2"
                     stroke-linecap="round" stroke-linejoin="round">
                     <path d="M12 19V5M5 12l7-7 7 7"/>
                 </svg>
@@ -92,7 +92,7 @@ function cambiarMejoraEST(stat, delta) {
     align-items: center;
     gap: 4px;
     padding: 2px;
-    border: 1px solid var(--color-principal1);
+    border: 1px solid var(--color-secundario);
     border-radius: 5px;
     background: var(--color-fondoTexto);
     cursor: default;
@@ -101,7 +101,7 @@ function cambiarMejoraEST(stat, delta) {
 .mejoras-numero {
     font-size: 14px;
     font-weight: bold;
-    color: var(--color-principal1);
+    color: var(--color-secundario);
     min-width: 16px;
     text-align: center;
 }

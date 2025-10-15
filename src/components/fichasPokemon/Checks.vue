@@ -40,7 +40,7 @@ const grados = ['No', 'Bueno', 'Experto', 'Maestro', 'Legendario']
 // Computed para obtener todos los checks disponibles
 const todosLosChecks = computed(() => {
     const checks = []
-    
+
     // 1. Checks base (ChecksBase)
     props.ChecksBase.forEach(base => {
         if (base.check !== 'Init') {
@@ -51,12 +51,12 @@ const todosLosChecks = computed(() => {
             })
         }
     })
-    
+
     // 2. Checks especiales del Pokémon (de ficha.derivados.checksBase)
     if (props.ficha.derivados?.checksBase) {
         props.ficha.derivados.checksBase.forEach(checkBase => {
             // Solo incluir si no es Init y no está ya en ChecksBase
-            if (checkBase.check !== 'Init' && 
+            if (checkBase.check !== 'Init' &&
                 !props.ChecksBase.some(cb => cb.check === checkBase.check)) {
                 checks.push({
                     nombre: checkBase.check,
@@ -66,7 +66,7 @@ const todosLosChecks = computed(() => {
             }
         })
     }
-    
+
     // 3. Checks personalizados
     if (props.ficha.personaliz?.checksExtra) {
         props.ficha.personaliz.checksExtra.forEach(check => {
@@ -76,7 +76,7 @@ const todosLosChecks = computed(() => {
             })
         })
     }
-    
+
     return checks
 })
 
@@ -87,7 +87,7 @@ function getGradoBase(checkName) {
     if (checkName === 'Init') {
         return 1
     }
-    
+
     // Para otros checks, buscar en checksBase del Pokémon
     const base = props.ficha.derivados.checksBase.find(c => c.check === checkName)
     return base ? base.grado : 0
@@ -192,7 +192,7 @@ function toggleCheck(checkName) {
         // Añadir check a la visualización
         const statActual = getStat(checkName)
         const gradoActual = getGradoActual(checkName)
-        
+
         props.ficha.personaliz.checks.push({
             check: checkName,
             stat: statActual,
@@ -209,18 +209,18 @@ function getConfiguracionHabilidad(checkName) {
     if (!props.ficha.personaliz.configuracionHabilidades) {
         props.ficha.personaliz.configuracionHabilidades = {}
     }
-    
+
     if (!props.ficha.personaliz.configuracionHabilidades[checkName]) {
         // Crear configuración por defecto
         const checkBase = props.ChecksBase.find(ch => ch.check === checkName)
         const gradoBase = getGradoBase(checkName)
-        
+
         props.ficha.personaliz.configuracionHabilidades[checkName] = {
             stat: checkBase ? checkBase.stat : 'fue',
             grado: gradoBase
         }
     }
-    
+
     return props.ficha.personaliz.configuracionHabilidades[checkName]
 }
 
@@ -229,7 +229,7 @@ function getCheckObj(checkName) {
     if (checkExistente) {
         return checkExistente
     }
-    
+
     // Si no existe, devolver la configuración guardada
     const config = getConfiguracionHabilidad(checkName)
     return { stat: config.stat, grado: config.grado }
@@ -242,7 +242,7 @@ function updateStat(checkName, newStat) {
     // Guardar en la configuración
     const config = getConfiguracionHabilidad(checkName)
     config.stat = newStat
-    
+
     // Si el check está visible, actualizar también su stat en la lista
     const itemIdx = props.ficha.personaliz.checks.findIndex(c => c.check === checkName)
     if (itemIdx !== -1) {
@@ -254,21 +254,21 @@ function updateStat(checkName, newStat) {
 function agregarCheckPersonalizado() {
     const nombre = nuevaHabilidadPersonalizada.value.trim()
     if (!nombre) return
-    
+
     // Verificar que no exista ya
     if (todosLosChecks.value.some(c => c.nombre === nombre)) {
         alert('Este check ya existe')
         return
     }
-    
+
     // Inicializar el array si no existe
     if (!props.ficha.personaliz.checksExtra) {
         props.ficha.personaliz.checksExtra = []
     }
-    
+
     // Agregar el check personalizado
     props.ficha.personaliz.checksExtra.push(nombre)
-    
+
     // Limpiar el input
     nuevaHabilidadPersonalizada.value = ''
 }
@@ -277,13 +277,13 @@ function eliminarCheckPersonalizado(nombre) {
     const index = props.ficha.personaliz.checksExtra.indexOf(nombre)
     if (index !== -1) {
         props.ficha.personaliz.checksExtra.splice(index, 1)
-        
+
         // También eliminar de checks si existe
         const checkIndex = props.ficha.personaliz.checks.findIndex(c => c.check === nombre)
         if (checkIndex !== -1) {
             props.ficha.personaliz.checks.splice(checkIndex, 1)
         }
-        
+
         // Eliminar mejoras asociadas
         props.ficha.personaliz.mejorasHab = props.ficha.personaliz.mejorasHab.filter(m => m !== nombre)
     }
@@ -305,18 +305,18 @@ function isRangoOptionDisabled(checkName, optionIndex) {
     const actual = getGradoActualConfig(checkName)
     const gradoBase = getGradoBase(checkName)
     const max = grados.length - 1
-    
+
     // Siempre permitir seleccionar "No"
     if (optionIndex === 0) return false
     if (optionIndex < min) return true
     if (optionIndex > max) return true
     if (optionIndex <= actual) return false // siempre permitir bajar/igual
-    
+
     // subir: calcular puntos necesarios basándose en el rango base
     const puntosNecesarios = Math.max(0, optionIndex - gradoBase)
     const puntosActuales = props.ficha.personaliz.mejorasHab.filter(m => m === checkName).length
     const puntosFaltantes = Math.max(0, puntosNecesarios - puntosActuales)
-    
+
     return puntosFaltantes > mejorasDisponibles.value
 }
 
@@ -327,10 +327,10 @@ function onChangeRango(checkName, targetIndex) {
     const gradoBase = getGradoBase(checkName)
     let objetivo = parseInt(targetIndex)
     if (isNaN(objetivo)) return
-    
+
     // Obtener la configuración de la habilidad
     const config = getConfiguracionHabilidad(checkName)
-    
+
     // Permitir seleccionar 0 incluso si el mínimo fuera mayor
     if (objetivo === 0) {
         // Quitar todas las mejoras de este check
@@ -377,12 +377,12 @@ function onChangeRango(checkName, targetIndex) {
     // Calcular puntos necesarios basándose en el rango base
     const puntosNecesarios = Math.max(0, objetivo - gradoBase)
     const puntosActuales = props.ficha.personaliz.mejorasHab.filter(m => m === checkName).length
-    
+
     if (puntosNecesarios > puntosActuales) {
         // Necesitamos más puntos
         const puntosFaltantes = puntosNecesarios - puntosActuales
         const puntosDisponibles = mejorasDisponibles.value
-        
+
         if (puntosFaltantes > puntosDisponibles) {
             // No hay suficientes puntos disponibles, subir solo lo posible
             const puntosAplicar = puntosDisponibles
@@ -406,7 +406,7 @@ function onChangeRango(checkName, targetIndex) {
             }
         }
     }
-    
+
     // Actualizar el grado en la configuración
     config.grado = objetivo
     // Si el check está visible, actualizar su grado
@@ -424,16 +424,17 @@ function onChangeRango(checkName, targetIndex) {
                 <h3>Tiradas de Habilidad</h3>
             </span>
             <div class="header-buttons">
-                <div class="mejoras-disponibles" v-if="mejorasDisponibles > 0" :title="`Mejoras disponibles: ${mejorasDisponibles}`">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-principal1)" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M12 19V5M5 12l7-7 7 7"/>
+                <div class="mejoras-disponibles" v-if="mejorasDisponibles > 0"
+                    :title="`Mejoras disponibles: ${mejorasDisponibles}`">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-secundario)"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 19V5M5 12l7-7 7 7" />
                     </svg>
                     <span class="mejoras-numero">{{ mejorasDisponibles }}</span>
                 </div>
                 <button class="settings-btn" @click="mostrarConfigChecks = true" title="Configurar checks">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--color-secundario)"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <circle cx="12" cy="12" r="3" />
                         <path
                             d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33h.09A1.65 1.65 0 0 0 9 3.09V3a2 2 0 0 1 4 0v.09c0 .66.39 1.25 1 1.51a1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82c.22.63.85 1.05 1.51 1.05H21a2 2 0 0 1 0 4h-.09c-.66 0-1.25.39-1.51 1z" />
@@ -505,67 +506,62 @@ function onChangeRango(checkName, targetIndex) {
                 <h4>Configurar Habilidades</h4>
                 <button class="close-btn" @click="mostrarConfigChecks = false" aria-label="Cerrar">×</button>
             </div>
-            
+
             <div class="config-modal-content">
                 <div class="config-checks-list">
-                <div v-for="check in todosLosChecks" :key="check.nombre" class="config-check-item">
-                    <div class="skill-info">
-                        <input type="checkbox" :checked="ficha.personaliz.checks.some(c => c.check === check.nombre)"
-                            @change="toggleCheck(check.nombre)" :disabled="false" />
-                        <span class="skill-name" :class="`skill-${check.tipo}`">
-                            {{ check.nombre }}
-                            
-                        </span>
-                        <button v-if="check.tipo === 'personalizado'" 
-                            @click="eliminarCheckPersonalizado(check.nombre)" 
-                            class="delete-btn" title="Eliminar check personalizado">×</button>
-                    </div>
-                    <div class="skill-controls">
-                        <select
-                            :value="getStat(check.nombre)"
-                            @change="updateStat(check.nombre, $event.target.value)" 
-                            class="stat-select">
-                            <option value="fue">Fuerza</option>
-                            <option value="agi">Agilidad</option>
-                            <option value="res">Resistencia</option>
-                            <option value="men">Mente</option>
-                            <option value="esp">Espíritu</option>
-                            <option value="pre">Presencia</option>
-                        </select>
-                        <select
-                            :value="getGradoActualConfig(check.nombre)"
-                            @change="onChangeRango(check.nombre, $event.target.value)"
-                            class="rango-select"
-                            :title="`Rango de ${check.nombre}`">
-                            <option v-for="(g, i) in grados" :key="g" :value="i" :disabled="isRangoOptionDisabled(check.nombre, i)">
-                                {{ g }}
-                            </option>
-                        </select>
+                    <div v-for="check in todosLosChecks" :key="check.nombre" class="config-check-item">
+                        <div class="skill-info">
+                            <input type="checkbox"
+                                :checked="ficha.personaliz.checks.some(c => c.check === check.nombre)"
+                                @change="toggleCheck(check.nombre)" :disabled="false" />
+                            <span class="skill-name" :class="`skill-${check.tipo}`">
+                                {{ check.nombre }}
+
+                            </span>
+                            <button v-if="check.tipo === 'personalizado'"
+                                @click="eliminarCheckPersonalizado(check.nombre)" class="delete-btn"
+                                title="Eliminar check personalizado">×</button>
+                        </div>
+                        <div class="skill-controls">
+                            <select :value="getStat(check.nombre)"
+                                @change="updateStat(check.nombre, $event.target.value)" class="stat-select">
+                                <option value="fue">Fuerza</option>
+                                <option value="agi">Agilidad</option>
+                                <option value="res">Resistencia</option>
+                                <option value="men">Mente</option>
+                                <option value="esp">Espíritu</option>
+                                <option value="pre">Presencia</option>
+                            </select>
+                            <select :value="getGradoActualConfig(check.nombre)"
+                                @change="onChangeRango(check.nombre, $event.target.value)" class="rango-select"
+                                :title="`Rango de ${check.nombre}`">
+                                <option v-for="(g, i) in grados" :key="g" :value="i"
+                                    :disabled="isRangoOptionDisabled(check.nombre, i)">
+                                    {{ g }}
+                                </option>
+                            </select>
+                        </div>
                     </div>
                 </div>
-            </div>
-             <!-- Sección para añadir checks personalizados -->
-             <div class="add-custom-skill">
-                <h5>Añadir Habilidades</h5>
-                <div class="custom-skill-input">
-                    <input 
-                        type="text" 
-                        v-model="nuevaHabilidadPersonalizada" 
-                        placeholder="Nombre de la Habilidad..."
-                        @keydown.enter="agregarCheckPersonalizado"
-                    />
-                    <button @click="agregarCheckPersonalizado" class="add-btn">+</button>
+                <!-- Sección para añadir checks personalizados -->
+                <div class="add-custom-skill">
+                    <h5>Añadir Habilidades</h5>
+                    <div class="custom-skill-input">
+                        <input type="text" v-model="nuevaHabilidadPersonalizada" placeholder="Nombre de la Habilidad..."
+                            @keydown.enter="agregarCheckPersonalizado" />
+                        <button @click="agregarCheckPersonalizado" class="add-btn">+</button>
+                    </div>
                 </div>
-            </div>
             </div>
         </div>
     </div>
 </template>
 
 <style scoped>
-h3{
+h3 {
     letter-spacing: 1px;
 }
+
 .checks {
     display: flex;
     width: fit-content;
@@ -585,27 +581,6 @@ h3{
     border-radius: 5px;
 }
 
-/*
-.borrar-btn {
-    background-color: transparent;
-    border: none;
-    color: var(--color-texto);
-    cursor: pointer;
-    font-weight: bold;
-    font-size: 30px;
-    line-height: 0px;
-    height: 40px;
-    width: 40px;
-    padding-bottom: 5px;
-    background-color: var(--color-principal1);
-    border-radius: 0 5px 5px 0;
-    padding-top: 5px;
-}
-
-.borrar-btn:hover {
-    background-color: var(--color-principal2);
-}
- */
 .bonosChecks {
     display: flex;
     align-items: center;
@@ -788,6 +763,20 @@ details {
     border: 2px dashed #666;
 }
 
+@media screen and (max-width: 1040px) {
+    .checks {
+        display: flex;
+        width: fit-content;
+        min-width: 330px;
+        flex-direction: column;
+        border: 1px solid rgba(150, 150, 150, 0.798);
+        border-radius: 10px;
+        padding: 0;
+        height: 100%;
+        max-height: none;
+        overflow: hidden;
+    }
+}
 
 /*
 @media (max-width: 1410px) {
@@ -861,7 +850,7 @@ details {
     align-items: center;
     gap: 4px;
     padding: 4px 6px;
-    border: 1px solid var(--color-principal1);
+    border: 1px solid var(--color-secundario);
     border-radius: 6px;
     cursor: default;
 }
@@ -869,7 +858,7 @@ details {
 .mejoras-numero {
     font-size: 14px;
     font-weight: bold;
-    color: var(--color-principal1);
+    color: var(--color-secundario);
     min-width: 16px;
     text-align: center;
 }
@@ -880,12 +869,11 @@ details {
     cursor: pointer;
     padding: 2px;
     margin-right: 2px;
-    color: var(--color-principal2, #3a7);
-    transition: color 0.2s;
+    color: var(--color-principal2);
 }
 
 .settings-btn:hover {
-    color: var(--color-principal1, #2a5);
+    color: var(--color-principal2);
 }
 
 .config-modal-overlay {
@@ -894,7 +882,7 @@ details {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, 0.5);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -904,7 +892,7 @@ details {
 .config-modal {
     background: var(--color-fondoTexto);
     border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 10px lch(0% 0 0 / 0.301);
     min-width: 400px;
     max-width: 500px;
     max-height: 80vh;
@@ -944,14 +932,13 @@ details {
 .add-custom-skill {
     margin-bottom: 15px;
     padding: 10px;
-    background: rgba(0, 0, 0, 0.05);
     border-radius: 8px;
     border: 1px solid var(--color-principal1);
 }
 
 .add-custom-skill h5 {
     margin: 0 0 8px 0;
-    color: var(--color-principal1);
+    color: var(--color-texto);
     font-size: 14px;
 }
 
@@ -993,10 +980,9 @@ details {
 .config-check-item {
     display: grid;
     grid-template-columns: 1fr 1fr;
-   
     gap: 8px;
     padding: 8px;
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.3);
     border-radius: 6px;
     font-size: 1em;
 }

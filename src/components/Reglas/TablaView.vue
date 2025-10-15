@@ -67,6 +67,8 @@ thead {
     cursor: pointer;
     z-index: 1;
     font-size: 18px;
+    box-shadow: 0 1px 0 var(--color-texto);
+
 }
 
 .div-tabla {
@@ -77,6 +79,37 @@ thead {
     box-shadow:
         -2px 3px 6px rgb(0, 0, 0, 0.3),
         2px 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Personalizar la barra de scroll */
+.div-tabla {
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-principal1) #f1f1f1; /* thumb track */
+}
+
+.div-tabla::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+
+.div-tabla::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+}
+
+.div-tabla::-webkit-scrollbar-thumb {
+    background: var(--color-principal1);
+    border-radius: 6px;
+    border: 1px solid #f1f1f1;
+}
+
+.div-tabla::-webkit-scrollbar-thumb:hover {
+    background: var(--color-principal1);
+}
+
+.div-tabla::-webkit-scrollbar-corner {
+    background: #f1f1f1;
 }
 
 .tabla {
@@ -91,7 +124,6 @@ thead {
 .tabla td {
     padding: 6px 10px;
     text-align: left;
-    border-bottom: 1px solid #e5e7eb;
     font-size: 14px;
     overflow: hidden;
     white-space: nowrap;
@@ -100,26 +132,20 @@ thead {
 
 .tabla th {
     font-weight: bold;
+
 }
 
-.tabla th:nth-child(1),
-.tabla td:nth-child(1) {
-    width: 25%;
+.tabla th:nth-child(2) {
+    font-weight: bold;
+        text-align: center;
+
 }
+td:nth-child(2){
 
-.tabla th:nth-child(2),
-.tabla td:nth-child(2) {
-    width: 15%;
+    text-align: center;
 }
-
-.tabla th:nth-child(3),
-.tabla td:nth-child(3) {
-    width: 50%;
-}
-
-
 th img {
-    transform: translateY(2px);
+    transform: translateY(4px);
     width: 15px;
 }
 
@@ -134,6 +160,7 @@ th img {
 
 .tabla tbody tr:nth-child(odd) {
     background-color: var(--color-tabla2);
+    text-align: center;
 }
 
 .tabla tr.activo {
@@ -149,13 +176,12 @@ th img {
 @media screen and (max-width: 890px) {
 
     .div-tabla {
-        height: 60vh;
+        height: 70vh;
         margin: 0 auto;
         margin-bottom: 80px;
         overflow-x: auto;
         height: fit-content;
         max-height: 70vh;
-
     }
 
     .tabla th {
@@ -166,7 +192,7 @@ th img {
     .tabla th,
     .tabla td {
         font-size: 13px;
-        padding: 5px 0px 5px 8px;
+        padding: 7px 0px 7px 8px;
     }
 
     .tabla th {

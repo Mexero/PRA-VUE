@@ -135,7 +135,7 @@ aside {
     padding: 10px 5px;
     display: flex;
     cursor: pointer;
-    border-bottom: 1px solid var(--color-secundario);
+    border-bottom: 1px solid var(--color-texto);
 }
 
 .abrirMenuCap:last-child a {

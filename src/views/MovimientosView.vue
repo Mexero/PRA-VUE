@@ -35,8 +35,8 @@ const loading = ref(false)
 // ======================== DATOS ========================
 
 //Datos para la tabla
-const columnas = ['Nombre', 'Tipo', 'Acción', 'Coste', 'Daño', 'Rango', 'Etiquetas']
-const clavesColumnas = ['nombre', 'tipo', 'accion', 'coste', 'danno', 'rango', 'etiquetas']
+const columnas = ['Nombre', 'Tipo', 'Coste', 'Acción', 'Rango', 'Etiquetas']
+const clavesColumnas = ['nombre', 'tipo', 'coste', 'accion', 'rango', 'etiquetas']
 
 const tipos = ["Acero", "Agua", "Bicho", "Dragón", "Eléctrico", "Fantasma", "Fuego", "Hada", "Hielo", "Lucha", "Normal", "Planta", "Psíquico", "Roca", "Siniestro", "Tierra", "Veneno", "Volador"]
 const etiquetas = ["Escudo", "Por Tierra", "Potenciación", "Sonido", "Restauración", "Terreno", "Polvo", "Puño", "Mordisco", "Patada", "Explosión", "Retroceso", "Bala", "Campo", "Clima", "Danza", "Golpea varias veces", "Golpea 2 veces", "Golpea 3 veces"]
@@ -337,7 +337,7 @@ const filtrados = computed(() => {
     margin-right: 30px;
 }
 
-@media screen and (max-width: 890px) {
+@media screen and (max-width: 1040px) {
     .cuerpo {
         display: flex;
         flex-direction: column-reverse;

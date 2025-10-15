@@ -65,18 +65,50 @@ thead {
     position: sticky;
     top: 0;
     cursor: pointer;
-    z-index: 1;
+    z-index: 10;
     font-size: 18px;
+    box-shadow: 0 1px 0 var(--color-texto);
 }
 
 .div-tabla {
     width: 100%;
     height: fit-content;
-    max-height: 70vh;
+    max-height: 65vh;
     overflow-y: auto;
     box-shadow:
         -2px 3px 6px rgb(0, 0, 0, 0.3),
         2px 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Personalizar la barra de scroll */
+.div-tabla {
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-principal1) #f1f1f1; /* thumb track */
+}
+
+.div-tabla::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+
+.div-tabla::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+}
+
+.div-tabla::-webkit-scrollbar-thumb {
+    background: var(--color-principal1);
+    border-radius: 6px;
+    border: 1px solid #f1f1f1;
+}
+
+.div-tabla::-webkit-scrollbar-thumb:hover {
+    background: var(--color-principal1);
+}
+
+.div-tabla::-webkit-scrollbar-corner {
+    background: #f1f1f1;
 }
 
 .tabla {
@@ -91,7 +123,6 @@ thead {
     font-size: 18px;
     padding: 6px 0px 6px 10px;
     text-align: left;
-    border-bottom: 1px solid #e5e7eb;
 }
 
 .tabla th {
@@ -99,14 +130,8 @@ thead {
     padding: 10px 5px;
 }
 
-.tabla th:nth-child(1),
-.tabla th:nth-child(2) {
-    width: 30%;
-}
-
-.tabla th:nth-child(3),
-.tabla th:nth-child(4) {
-    width: 25%;
+th:nth-child(n+2), td:nth-child(n+2) {
+    text-align: center;
 }
 
 th img {
@@ -138,35 +163,27 @@ th img {
 }
 
 @media screen and (max-width: 890px) {
-
-    .div-tabla {
-        height: 60vh;
-        margin: 0 auto;
-        margin-bottom: 80px;
-        overflow-x: auto;
-        height: fit-content;
-        max-height: 70vh;
-
-    }
-
     .tabla th {
         min-width: 20px;
-        width: 30%;
     }
 
     .tabla th,
     .tabla td {
-        font-size: 13px;
-        padding: 5px 0px 5px 8px;
+        padding: 7px 0;
+        font-size: 11px;
     }
 
-    .tabla th {
-        min-width: 90px;
-        padding: 8px;
+    .tabla td {
+        padding: 5px 2px;
+        word-wrap: break-word;
     }
 
-    .textoCentrado div {
-        font-size: 20px;
+    /* Permitir salto de línea en la columna de nombre */
+    .tabla td:first-child {
+
+        word-wrap: break-word;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
     }
 }
 </style>

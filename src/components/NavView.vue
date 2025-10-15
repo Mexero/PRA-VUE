@@ -146,7 +146,7 @@ nav div {
 /* ====== Menu principal ====== */
 .abrirMenu {
     flex: 1;
-    border-left: 1px solid var(--color-secundario2);
+    border-left: 1px solid var(--color-texto);
 }
 
 .abrirMenu:first-child {
@@ -173,7 +173,7 @@ nav div {
 }
 
 .subMenu li a {
-    border-bottom: 1px solid var(--color-secundario2);
+    border-bottom: 1px solid var(--color-texto);
     background-color: var(--color-principal2);
     height: 40px;
     display: flex;
@@ -256,7 +256,7 @@ nav div {
         width: 210px;
         justify-content: flex-start;
         padding-left: 10px;
-        border-top: 1px solid var(--color-secundario2);
+        border-top: 1px solid var(--color-texto);
         box-sizing: content-box;
     }
 

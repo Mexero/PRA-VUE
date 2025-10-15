@@ -26,8 +26,8 @@ const router = useRouter();
 // ======================== DATOS ========================
 
 //Datos para la tabla
-const columnas = ['Nombre', 'Tipos', 'Descripción']
-const clavesColumnas = ['nombre', 'tipos', 'descripciones']
+const columnas = ['Nombre', 'Tipos']
+const clavesColumnas = ['nombre', 'tipos']
 
 //Datos principales
 const datos = ref([]);

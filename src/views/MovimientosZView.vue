@@ -225,7 +225,7 @@ const filtrados = computed(() => {
     margin-right: 30px;
 }
 
-@media screen and (max-width: 890px) {
+@media screen and (max-width: 1040px) {
     .cuerpo {
         display: flex;
         flex-direction: column-reverse;
