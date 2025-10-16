@@ -46,9 +46,9 @@ function cambiarMejoraEST(stat, delta) {
     <section class="stats-section">
         <div class="stats-header" v-if="mejorasEstDisponibles > 0">
             <div class="mejoras-disponibles" :title="`Mejoras de estadísticas disponibles: ${mejorasEstDisponibles}`">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-secundario)" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M12 19V5M5 12l7-7 7 7"/>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-secundario)"
+                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 19V5M5 12l7-7 7 7" />
                 </svg>
                 <span class="mejoras-numero">{{ mejorasEstDisponibles }}</span>
             </div>
@@ -106,7 +106,7 @@ function cambiarMejoraEST(stat, delta) {
     text-align: center;
 }
 
-.statsYSaves{
+.statsYSaves {
     width: fit-content;
 }
 
@@ -130,16 +130,19 @@ function cambiarMejoraEST(stat, delta) {
     width: 120px;
     letter-spacing: 1px;
 }
+
 .item:last-child {
     border-bottom: none;
 }
 
 .stats div:first-child {
-    border-radius: 10px 10px 0  0 ;
+    border-radius: 10px 10px 0 0;
 }
+
 .stats div:last-child {
-    border-radius: 0 0 10px 10px ;
+    border-radius: 0 0 10px 10px;
 }
+
 .numStat {
     grid-column: 2;
     font-weight: normal;
@@ -196,25 +199,50 @@ function cambiarMejoraEST(stat, delta) {
     margin-top: 10px;
 }
 
-/*
-@media screen and (max-width: 920px) {
-    .stats {
-        grid-template-columns: 1fr 1fr 1fr;
-        gap: 10px 0;
+
+@media screen and (max-width: 750px) {
+    .stats-section {
+        position: relative;
+        width: 100%;
     }
 
-    .item {
-        margin: 0 auto;
+    .stats {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0;
+    }
+
+    .statsYSaves {
+        width: 100%;
     }
 
     section {
         width: 100%;
         display: flex;
         flex-direction: column;
-
     }
+
+    .item {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        border-bottom: none;
+        border: 1px solid rgba(150, 150, 150, 0.798);
+        width: 100%;
+    }
+
+    .stats div:first-child {
+        border-radius:  0;
+    }
+
+    .stats div:last-child {
+        border-radius: 0 ;
+    }
+
 }
 
+/*
 @media screen and (max-width: 545px) {
     .stats {
         margin: 10px 0;

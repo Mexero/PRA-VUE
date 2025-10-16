@@ -52,8 +52,8 @@ input[type="number"] {
 }
 
 
-/*
-@media screen and (max-width: 920px) {
+
+@media screen and (max-width: 750px) {
     .speeds {
         width: 100%;
         display: flex;
@@ -63,19 +63,10 @@ input[type="number"] {
 
     .speeds-list {
         display: grid;
-        grid-template-columns: auto auto auto;
+        grid-template-columns: auto auto;
         gap: 0 20px;
     }
 }
-@media screen and (max-width: 545px) {
-   
-    .speeds-list {
-        display: flex;
-        flex-wrap: wrap;
-       
-        justify-content: center;
-    }
-    
-}
-    */
+
+  
 </style>

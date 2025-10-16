@@ -72,4 +72,10 @@ img {
     animation: spin 0.6s linear;
     -webkit-animation: spin 0.6s linear;
 }
+@media screen and (max-width: 750px) {
+    .numero img {
+        width: 25px;
+        height: 25px;
+    }
+}
 </style>

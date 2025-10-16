@@ -1812,7 +1812,7 @@ input[type="number"] {
 
 .toolbar-container {
     position: absolute;
-   
+
     z-index: 4;
     border: 1px solid var(--color-principal1);
 }
@@ -1899,9 +1899,97 @@ input[type="number"] {
 
 
 @media screen and (max-width: 750px) {
+    .center {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+
+    .character-sheet {
+        justify-self: center;
+        min-width: 375px;
+        max-width: 425px;
+    }
 
     .fichaPokemon {
-        display: none;
+        display: flex;
+        margin: 0;
+        width: 100%;
+    }
+
+    .info-principal {
+        margin-top: 20px;
+        width: fit-content;
+        display: grid;
+        grid-template-areas: "stats" "saves" "pokemon" "rest" "derivadas" "pv-escudo" "velocidades" "checks" "otros";
+        grid-template-columns: auto;
+        grid-template-rows: auto auto auto auto auto auto auto auto auto;
+        gap: 15px;
+    }
+
+    .estadisticas-derivadas-area {
+        display: grid;
+        grid-template-areas:
+            "BH BH"
+            "Evasion  Iniciativa "
+            "Fatiga PP";
+        grid-template-columns: 1fr 1fr;
+        grid-auto-rows: auto;
+        gap: 10px;
+        grid-area: derivadas;
+    }
+
+    .BH {
+        grid-area: BH;
+        height: auto;
+
+    }
+
+    .Iniciativa {
+        grid-area: Iniciativa;
+        height: auto;
+    }
+
+    .Evasion {
+        grid-area: Evasion;
+        height: auto;
+    }
+
+    .pp-box {
+        grid-area: PP;
+        height: auto;
+    }
+
+    .fatiga {
+        grid-area: Fatiga;
+        height: auto;
+    }
+
+    .rest-buttons {
+        display: flex;
+        gap: 10px;
+    }
+
+    .velocidades-area {
+        
+    }
+
+    .estatSave {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        font-size: 24px;
+    }
+    .numero{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
     }
 }
 

@@ -198,7 +198,7 @@ const typeMap = {
 
 
             <p class="NombreTipos" :class="'type-' + normalizeType(ficha.pokedex.tipos[0])"> {{ ficha.pokedex.tipos[0]
-                }}
+            }}
             </p>
 
             <p v-if="ficha.pokedex.tipos[1]" class="NombreTipos"
@@ -435,13 +435,15 @@ input[type="number"] {
         gap: 10px;
         align-items: center;
     }
+
     .tipos {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap ;
-    gap: 4px;
-    max-width: 155px;
-}
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        gap: 4px;
+        max-width: 155px;
+    }
+
     .nombre {
         grid-area: nombre;
     }
@@ -460,6 +462,16 @@ input[type="number"] {
         justify-self: end;
     }
 }
+
+@media screen and (max-width: 750px) {
+    .info-basica {
+        grid-template-areas: "nombre  nivel" "especie tipos";
+        grid-template-columns: auto auto auto;
+        gap: 10px;
+        align-items: center;
+    }
+}
+
 /*
 @media screen and (max-width: 768px) {
     .info-basica {
