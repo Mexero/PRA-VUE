@@ -66,7 +66,14 @@ input[type="number"] {
         grid-template-columns: auto auto;
         gap: 0 20px;
     }
-}
 
-  
+    h3 {
+        font-size: 24px;
+    }
+
+    input {
+        font-size: 24px;
+
+    }
+}
 </style>

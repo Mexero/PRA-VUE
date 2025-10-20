@@ -763,20 +763,7 @@ details {
     border: 2px dashed #666;
 }
 
-@media screen and (max-width: 1040px) {
-    .checks {
-        display: flex;
-        width: fit-content;
-        min-width: 330px;
-        flex-direction: column;
-        border: 1px solid rgba(150, 150, 150, 0.798);
-        border-radius: 10px;
-        padding: 0;
-        height: 100%;
-        max-height: none;
-        overflow: hidden;
-    }
-}
+
 
 /*
 @media (max-width: 1410px) {
@@ -1059,5 +1046,58 @@ details {
     background: var(--color-fondoTexto);
     color: var(--color-texto);
     font-size: 0.95em;
+}
+
+@media screen and (max-width: 1040px) {
+    .checks {
+        display: flex;
+        width: fit-content;
+        min-width: 330px;
+        flex-direction: column;
+        border: 1px solid rgba(150, 150, 150, 0.798);
+        border-radius: 10px;
+        padding: 0;
+        height: 100%;
+        max-height: none;
+        overflow: hidden;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .checks {
+        display: flex;
+        width: fit-content;
+        min-width: 100%;
+        flex-direction: column;
+        border: 1px solid rgba(150, 150, 150, 0.798);
+        border-radius: 10px;
+        padding: 0;
+        height: 100%;
+        max-height: none;
+        overflow: hidden;
+    }
+
+    .alinear {
+        font-size: 24px;
+        padding: 5px 0;
+    }
+
+    .alinear input {
+        font-size: 24px;
+    }
+
+    .grado-circulo {
+        width: 30px;
+        height: 30px;
+    }
+
+    button {
+        width: 40px;
+        height: 40px;
+    }
+
+    .checks-header {
+        font-size: 16px;
+    }
 }
 </style>

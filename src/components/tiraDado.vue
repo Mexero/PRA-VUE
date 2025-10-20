@@ -1,6 +1,6 @@
 <template>
     <button type="button" @click="handleClick" aria-label="Lanzar d20">
-        <img src="/assets/icons/d20.svg" alt="d20" :class="{ spinning: isSpinning }" width="15" height="15" />
+        <img src="/assets/icons/d20.svg" alt="d20" :class="{ spinning: isSpinning }"  />
     </button>
 </template>
 
@@ -42,14 +42,14 @@ button {
     border: none;
     background: none;
     cursor: pointer;
-    width: 28px;
-    height: 28px;
+    width: 36px;
+    height: 36px;
     border-radius: 6px;
 }
 
 img {
-    width: 15px;
-    height: 15px;
+    width: 20px;
+    height: 20px;
     display: inline-block;
     transform-origin: center center;
     will-change: transform;
@@ -72,6 +72,7 @@ img {
     animation: spin 0.6s linear;
     -webkit-animation: spin 0.6s linear;
 }
+
 @media screen and (max-width: 750px) {
     .numero img {
         width: 25px;

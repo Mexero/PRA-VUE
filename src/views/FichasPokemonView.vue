@@ -1578,7 +1578,6 @@ h3 {
     text-align: center;
     background-color: transparent;
     color: var(--color-texto);
-    font-size: 18px;
 }
 
 input {
@@ -1642,7 +1641,7 @@ input[type="number"] {
         "stats velocidades pv-escudo derivadas checks"
         "otros otros otros otros otros";
     grid-template-columns: auto 140px auto 150px auto;
-    grid-template-rows: 155px 82px auto auto;
+    grid-template-rows: auto 82px auto auto;
     gap: 15px;
 }
 
@@ -1789,11 +1788,8 @@ input[type="number"] {
 .sheet-managing {
     height: fit-content;
     display: flex;
-
     align-items: center;
     margin: 20px 0;
-
-
     z-index: 10;
 }
 
@@ -1812,7 +1808,6 @@ input[type="number"] {
 
 .toolbar-container {
     position: absolute;
-
     z-index: 4;
     border: 1px solid var(--color-principal1);
 }
@@ -1975,9 +1970,6 @@ input[type="number"] {
         gap: 10px;
     }
 
-    .velocidades-area {
-        
-    }
 
     .estatSave {
         display: grid;
@@ -1985,12 +1977,31 @@ input[type="number"] {
         gap: 10px;
         font-size: 24px;
     }
-    .numero{
+
+    .numero {
         display: flex;
         align-items: center;
         justify-content: center;
         gap: 10px;
     }
+
+    h3,
+    .velocidades-area {
+        font-size: 24px;
+    }
+
+    input {
+        font-size: 24px;
+    }
+
+    .pokemon-btn {
+        font-size: 24px;
+    }
+
+    .Iniciativa .grado {
+        font-size: 18px;
+    }
+    
 }
 
 

@@ -56,16 +56,21 @@ function cambiarMejoraEST(stat, delta) {
         <div class="statsYSaves">
             <div class="stats">
                 <div class="item" v-for="stat in ['fue', 'agi', 'res', 'men', 'esp', 'pre']" :key="stat">
-                    {{ nombresStats[stat] + " " }}
+                    <span class="stat-title">{{ nombresStats[stat] }}</span>
                     <div class="statsContenido">
                         <span class="bonoStat" v-if="ficha.derivados.stats[stat] > ficha.pokedex.statsBase[stat]">
                             +{{ ficha.derivados.stats[stat] - ficha.pokedex.statsBase[stat] }}
                         </span>
                         <h3 class="numStat">{{ ficha.derivados.stats[stat] }}</h3>
-                        <div class="botonMaxMenos">
-                            <button class="btn-mas" @click="cambiarMejoraEST(stat, 1)"></button>
-                            <button class="btn-menos" @click="cambiarMejoraEST(stat, -1)"></button>
+                        <div class="botonMaxMenos botones-desktop">
+                            <button class="btn-mas" @click="cambiarMejoraEST(stat, 1)">+</button>
+                            <button class="btn-menos" @click="cambiarMejoraEST(stat, -1)">-</button>
                         </div>
+
+                    </div>
+                    <div class="botonMaxMenos botones-mobile">
+                        <button class="btn-mas" @click="cambiarMejoraEST(stat, 1)">+</button>
+                        <button class="btn-menos" @click="cambiarMejoraEST(stat, -1)">-</button>
                     </div>
                     <span v-if="['fue', 'agi', 'res', 'esp'].includes(stat)"></span>
                 </div>
@@ -169,25 +174,43 @@ function cambiarMejoraEST(stat, delta) {
 }
 
 .botonMaxMenos button {
-    width: 10px;
-    height: 10px;
+    width: 20px;
+    height: 20px;
     background: var(--color-principal1);
-    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
     border: none;
+    border-radius: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--color-texto);
+}
+
+/* Control de visibilidad de botones */
+.botones-desktop {
+    display: block;
+}
+
+.botones-mobile {
+    display: none;
 }
 
 .btn-menos {
     grid-row: 2;
     grid-column: 2;
     cursor: pointer;
-    transform: rotate(180deg);
 }
+
 
 .btn-mas {
     grid-row: 1;
     grid-column: 2;
     cursor: pointer;
 }
+
+
 
 
 .mejoras {
@@ -211,6 +234,8 @@ function cambiarMejoraEST(stat, delta) {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 0;
+        border: none;
+        overflow: hidden;
     }
 
     .statsYSaves {
@@ -223,23 +248,183 @@ function cambiarMejoraEST(stat, delta) {
         flex-direction: column;
     }
 
-    .item {
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        border-bottom: none;
-        border: 1px solid rgba(150, 150, 150, 0.798);
-        width: 100%;
-    }
 
     .stats div:first-child {
-        border-radius:  0;
+        border-radius: 0;
     }
 
     .stats div:last-child {
-        border-radius: 0 ;
+        border-radius: 0;
     }
 
+    .stats .item:first-child {
+        border: 1px solid rgba(150, 150, 150, 0.798);
+        border-radius: 10px 0 0 0;
+    }
+
+    .stats .item:nth-child(2) {
+        border: 1px solid rgba(150, 150, 150, 0.798);
+        border-radius: 0 10px 0 0;
+    }
+
+    .stats .item:nth-child(3) {
+        border-left: 1px solid rgba(150, 150, 150, 0.798);
+        border-right: 1px solid rgba(150, 150, 150, 0.798);
+    }
+
+    .stats .item:nth-child(4) {
+        border-left: 1px solid rgba(150, 150, 150, 0.798);
+        border-right: 1px solid rgba(150, 150, 150, 0.798);
+    }
+
+    .stats .item:nth-child(5) {
+        border: 1px solid rgba(150, 150, 150, 0.798);
+        border-radius: 0 0 0 10px;
+    }
+
+    .stats .item:last-child {
+        border: 1px solid rgba(150, 150, 150, 0.798);
+        border-radius: 0 0 10px 0;
+    }
+
+
+    .botonMaxMenos {
+        grid-column: 3;
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+        height: f;
+
+    }
+
+    .botonMaxMenos button {
+        width: 30px;
+        height: 30px;
+        background: var(--color-principal1);
+        border: none;
+        border-radius: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: bold;
+        color: var(--color-texto);
+    }
+
+    .btn-menos {
+        grid-row: 2;
+        grid-column: 2;
+        cursor: pointer;
+    }
+
+
+
+    .btn-mas {
+        grid-row: 1;
+        grid-column: 2;
+        cursor: pointer;
+    }
+
+    /* Control de visibilidad de botones duplicados en móvil */
+    .botones-desktop {
+        display: none;
+    }
+
+    .botones-mobile {
+        display: block;
+    }
+
+    .botones-mobile button {
+        width: 40px;
+        height: 40px;
+        background: var(--color-principal1);
+        border: none;
+        border-radius: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        font-size: 22px;
+        font-weight: bold;
+        color: var(--color-texto);
+
+    }
+
+    .statsContenido {
+        font-weight: normal;
+        display: grid;
+        grid-template-rows: auto;
+        grid-template-columns: auto;
+        gap: 10px;
+        height: fit-content;
+        font-size: 24px;
+    }
+
+    .item {
+        display: grid;
+        grid-template-columns: 1fr 40px;
+        grid-template-rows: auto auto;
+        grid-template-areas:
+            "title buttons"
+            "value buttons";
+        font-size: 20px;
+        padding: 0px;
+        border: 1px solid rgba(150, 150, 150, 0.25);
+        width: 100%;
+        position: relative;
+        align-items: center;
+
+
+    }
+
+    .stat-title {
+        grid-area: title;
+        text-align: center;
+        font-size: 18px;
+
+    }
+
+    .bonoStat {
+        text-align: right;
+
+    }
+
+    .statsContenido {
+        grid-area: value;
+        display: grid;
+        grid-template-columns: 60px 20px;
+        grid-template-rows: auto;
+        align-items: center;
+        font-size: 22px;
+    }
+
+    .botonMaxMenos.botones-mobile {
+        grid-area: buttons;
+        justify-self: end;
+    }
+
+
+    .botones-mobile .btn-mas {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+        border-left: 1px solid rgba(255, 255, 255, 0.5);
+    }
+
+    .botones-mobile .btn-menos {
+        border-left: 1px solid rgba(255, 255, 255, 0.5);
+    }
+
+    .botones-mobile {
+        overflow: hidden;
+    }
+
+    .stats-header {
+    position: absolute;
+    top: -16px;
+    left: -15px;
+  
+    z-index: 3;
+}
 }
 
 /*
