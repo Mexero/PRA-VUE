@@ -197,24 +197,20 @@ h3{
     padding-bottom: 4px;
     background-color: var(--color-principal1);
     border-radius: 4px;
-    transition: all 0.2s ease;
 }
 
 .borrar-btn:hover {
     background-color: var(--color-principal2);
-    transform: scale(1.05);
 }
 
 details {
     border: 1px solid var(--color-principal2);
     border-radius: 6px;
     overflow: hidden;
-    transition: all 0.2s ease;
 }
 
 details:hover {
     border-color: var(--color-principal1);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 summary {
@@ -225,7 +221,6 @@ summary {
     align-items: center;
     padding-left: 12px;
     cursor: pointer;
-    transition: background-color 0.2s ease;
 }
 
 summary:hover {
@@ -245,7 +240,6 @@ summary:hover {
     background: var(--color-fondoTexto);
     color: var(--color-texto);
     font-size: 0.9em;
-    transition: all 0.2s ease;
 }
 
 .opcional-select:hover {

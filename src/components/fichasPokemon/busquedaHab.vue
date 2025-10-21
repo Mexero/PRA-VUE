@@ -52,20 +52,16 @@ function emitirSeleccion(nombre) {
 }
 
 .buscador input {
- 
     padding: 8px 12px;
     border: 1px solid var(--color-principal2);
-  
     background-color: var(--color-fondoTexto);
     color: var(--color-texto);
     font-size: 16px;
-    transition: all 0.2s ease;
 }
 
 .buscador input:focus {
     outline: none;
     border-color: var(--color-principal1);
-    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
 }
 
 .sugerencias {
@@ -83,11 +79,8 @@ function emitirSeleccion(nombre) {
 
 .sugerencias td {
     cursor: pointer;
-    transition: all 0.2s ease;
     border-bottom: 1px solid var(--color-principal2);
     border-left: 1px solid var(--color-principal2);
-
-
 }
 
 .sugerencias tr:hover {

@@ -1819,7 +1819,7 @@ input[type="number"] {
 }
 
 .dotes2 {
-    display: none;
+    display: none !important;
 }
 
 /* transición (name="slide") */
@@ -1844,11 +1844,11 @@ input[type="number"] {
 
 @media screen and (max-width: 1040px) {
     .dotes1 {
-        display: none;
+        display: block;
     }
 
     .dotes2 {
-        display: block;
+        display: none;
     }
 
     .fichaPokemon {

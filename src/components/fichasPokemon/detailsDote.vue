@@ -31,27 +31,36 @@ const props = defineProps(['dote'])
 </script>
 
 <style scoped>
-
 .dote {
-    margin: 10px 0;
+    margin: 8px 0;
     border: 1px solid var(--color-principal2);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.dote:hover {
+    border-color: var(--color-principal1);
 }
 
 .titulo {
     background-color: var(--color-principal2);
-    padding: 0 0 0 5px;
+    height: 32px;
+    padding: 0 0 0 12px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     cursor: pointer;
 }
 
-.descripcion {
-    padding: 10px;
-    color: var(--color-texto);
+.titulo:hover {
+    background-color: var(--color-principal1);
 }
 
-
+.descripcion {
+    padding: 12px;
+    color: var(--color-texto);
+    line-height: 1.5;
+}
 
 li {
     margin: 10px 0 0 25px;
@@ -63,13 +72,14 @@ li {
     color: var(--color-texto);
     cursor: pointer;
     font-weight: bold;
-    font-size: 30px;
-    line-height: 25px;
+    font-size: 24px;
+    line-height: 20px;
     border-left: 1px solid;
-    width: 40px;
-    height: 30px;
-    padding-bottom: 5px;
+    width: 28px;
+    height: 28px;
+    padding-bottom: 4px;
     background-color: var(--color-principal1);
+    border-radius: 4px;
 }
 
 .borrar-btn:hover {
@@ -77,10 +87,33 @@ li {
 }
 
 .contenidoDote {
-    padding: 10px;
+    padding: 12px;
+    background: var(--color-fondoTexto);
 }
+
+.contenidoDote p {
+    margin: 0 0 8px 0;
+    font-size: 0.9em;
+}
+
+.contenidoDote p:last-child {
+    margin-bottom: 0;
+}
+
 strong {
     letter-spacing: 1px;
 }
-   
+
+/* Responsive mejoras */
+@media screen and (max-width: 768px) {
+    .item {
+        margin: 6px 0;
+    }
+    
+    .borrar-btn {
+        font-size: 20px;
+        width: 24px;
+        height: 24px;
+    }
+}
 </style>

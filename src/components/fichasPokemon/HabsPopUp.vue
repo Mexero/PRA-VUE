@@ -100,12 +100,10 @@ function añadirHab() {
     border: none;
     border-radius: 6px;
     cursor: pointer;
-    transition: all 0.2s ease;
 }
 
 .btn:hover {
     background-color: var(--color-principal2);
- 
 }
 
 .modal-overlay {
@@ -115,17 +113,10 @@ function añadirHab() {
     width: 100vw;
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.6);
-    backdrop-filter: blur(2px);
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 9999;
-    animation: fadeIn 0.3s ease;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
 }
 
 .modal-content {
@@ -138,18 +129,6 @@ function añadirHab() {
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    animation: slideUp 0.3s ease;
-}
-
-@keyframes slideUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
 }
 
 .modal-header {
@@ -182,12 +161,10 @@ function añadirHab() {
     cursor: pointer;
     font-size: 16px;
     font-weight: bold;
-    transition: all 0.2s ease;
 }
 
 .close-header-btn:hover {
     background: rgba(255, 255, 255, 0.2);
-    transform: scale(1.1);
 }
 
 .modal-body {
@@ -287,18 +264,15 @@ function añadirHab() {
     cursor: pointer;
     font-size: 16px;
     font-weight: 600;
-    transition: all 0.2s ease;
 }
 
 .add-btn:hover:not(:disabled) {
     background-color: #3e9442;
-    transform: translateY(-1px);
 }
 
 .add-btn:disabled {
     background-color: #9e9e9e !important;
     cursor: not-allowed;
-    transform: none;
 }
 
 .cancel-btn {
@@ -310,53 +284,17 @@ function añadirHab() {
     cursor: pointer;
     font-size: 14px;
     font-weight: 500;
-    transition: all 0.2s ease;
 }
 
 .cancel-btn:hover {
     background-color: var(--color-principal2);
-    transform: translateY(-1px);
 }
 
 
 
-@media screen and (max-width: 920px) {
- 
-}
 
-@media screen and (max-width: 545px) {
-    .modal-content {
-        width: 95vw;
-        height: 85vh;
-    }
-    
-    .modal-body {
-        flex-direction: column;
-        flex: 1;
-        overflow: hidden;
-    }
-    
-    .search-panel {
-        flex: 0 0 200px;
-        border-right: none;
-        border-bottom: 2px solid var(--color-principal2);
-    }
-    
-    .info-panel {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        overflow: hidden;
-        min-height: 300px;
-    }
-    
-    .habilidad-header {
-        padding: 16px 16px 0 16px;
-    }
-    
-    .habilidad-descripcion-container {
-        padding: 16px;
-    }
+
+@media screen and (max-width: 600px) {
     .modal-content {
         width: 100vw;
         height: 100vh;
@@ -368,19 +306,22 @@ function añadirHab() {
     }
     
     .modal-title {
-        font-size: 22px;
+        font-size: 18px;
+    }
+    
+    .modal-body {
+        flex-direction: column;
     }
     
     .search-panel {
         flex: 0 0 180px;
         min-height: 180px;
+        border-right: none;
+        border-bottom: 2px solid var(--color-principal2);
     }
     
     .info-panel {
         flex: 1;
-        display: flex;
-        flex-direction: column;
-        overflow: hidden;
         min-height: 250px;
     }
     
@@ -398,7 +339,6 @@ function añadirHab() {
     .modal-footer {
         padding: 10px;
         flex-direction: column;
-        flex-shrink: 0;
     }
     
     .add-btn, .cancel-btn {

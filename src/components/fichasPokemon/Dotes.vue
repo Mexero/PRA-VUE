@@ -93,21 +93,25 @@ watch(
 h3{
     letter-spacing: 1px;
 }
+
 .feats {
     border: 1px solid rgba(150, 150, 150, 0.798);
-    border-radius: 5px;
-    padding: 5px;
+    border-radius: 8px;
+    padding: 8px;
     width: 100%;
     height: fit-content;
     display: flex;
     flex-direction: column;
-
+    background: var(--color-fondoTexto);
 }
 
 .tituloYAñadir {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 8px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--color-principal2);
 }
 
 .botones-dotes {
@@ -115,14 +119,24 @@ h3{
     gap: 10px;
 }
 
-
 .feats-list {
     height: fit-content;
 }
 
+.item {
+    margin: 8px 0;
+}
+
+
+
 @media screen and (max-width: 750px) {
+   
+    
+    .item {
+        margin: 6px 0;
+    }
     .feats {
-        font-size: 16;
+        font-size: 16px;
     }
 
     .feats-list {
