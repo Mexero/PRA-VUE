@@ -156,12 +156,13 @@ h3{
 
 .habilidades {
     border: 1px solid rgba(150, 150, 150, 0.798);
-    border-radius: 5px;
-    padding: 5px;
+    border-radius: 8px;
+    padding: 8px;
     width: 100%;
     height: fit-content;
     display: flex;
     flex-direction: column;
+    background: var(--color-fondoTexto);
 }
 
 .habilidades-list {
@@ -172,10 +173,14 @@ h3{
 .tituloYAñadir {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--color-principal2);
 }
 
 .item {
-    margin: 10px 0;
+    margin: 8px 0;
 }
 
 .borrar-btn {
@@ -184,41 +189,67 @@ h3{
     color: var(--color-texto);
     cursor: pointer;
     font-weight: bold;
-    font-size: 30px;
-    line-height: 25px;
+    font-size: 24px;
+    line-height: 20px;
     border-left: 1px solid;
-    width: 30px;
-    height: 30px;
-    padding-bottom: 5px;
+    width: 28px;
+    height: 28px;
+    padding-bottom: 4px;
     background-color: var(--color-principal1);
+    border-radius: 4px;
+    transition: all 0.2s ease;
 }
 
 .borrar-btn:hover {
     background-color: var(--color-principal2);
+    transform: scale(1.05);
 }
 
 details {
     border: 1px solid var(--color-principal2);
+    border-radius: 6px;
+    overflow: hidden;
+    transition: all 0.2s ease;
+}
+
+details:hover {
+    border-color: var(--color-principal1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 summary {
     background-color: var(--color-principal2);
-    height: 30px;
+    height: 32px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-left: 10px;
+    padding-left: 12px;
     cursor: pointer;
+    transition: background-color 0.2s ease;
 }
-.tituloHab { flex: 1; }
+
+summary:hover {
+    background-color: var(--color-principal1);
+}
+
+.tituloHab { 
+    flex: 1; 
+    font-weight: 500;
+}
+
 .opcional-select {
     margin: 0 8px 0 12px;
-    padding: 2px 6px;
-    border-radius: 5px;
+    padding: 4px 8px;
+    border-radius: 4px;
     border: 1px solid var(--color-principal2);
     background: var(--color-fondoTexto);
     color: var(--color-texto);
-    font-size: 0.95em;
+    font-size: 0.9em;
+    transition: all 0.2s ease;
+}
+
+.opcional-select:hover {
+    border-color: var(--color-principal1);
 }
 
 /* Toggle estilizado para habilidades ocultas */
@@ -226,61 +257,54 @@ summary {
     cursor: pointer;
     display: inline-flex;
     align-items: center;
-    gap: 8px;
+    gap: 6px;
     margin-right: 8px;
     user-select: none;
 }
+
 .ocultaToggle input {
     position: absolute;
     opacity: 0;
     width: 0;
     height: 0;
 }
+
 .ocultaToggle .toggle {
-    width: 50px; /* ancho del switch */
-    height: 24px; /* alto del switch */
-    background: #e53935; /* rojo desactivado */
-    border-radius: 999px;
+    width: 44px;
+    height: 22px;
+    background: #e53935;
+    border-radius: 11px;
     position: relative;
-    transition: background .2s ease, border-color .2s ease;
-    border: 1px solid #b71c1c; /* borde rojo oscuro */
+    transition: all 0.3s ease;
+    border: 1px solid #b71c1c;
 }
+
 .ocultaToggle .toggle::after {
     content: "";
     position: absolute;
-    width: 22px;
-    height: 22px;
-    background: #ffffff; /* pomo blanco para buen contraste */
+    width: 18px;
+    height: 18px;
+    background: #ffffff;
     border-radius: 50%;
-    transition: transform .2s ease;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    top: 1px;
+    left: 1px;
+    transition: transform 0.3s ease;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
-.ocultaToggle .toggle::before {
-    content: "No";
-    position: absolute;
-    top: 50%;
-    right: 8px; 
-    transform: translateY(-50%);
-    font-size: 12px;
-    color: #fff; /* texto blanco sobre rojo desactivado */
-    pointer-events: none;
-}
+
 .ocultaToggle input:checked + .toggle {
-    background: #2e7d32; /* verde activado */
-    border-color: #1b5e20; /* borde verde oscuro */
+    background: #2e7d32;
+    border-color: #1b5e20;
 }
+
 .ocultaToggle input:checked + .toggle::after {
-    transform: translateX(26px); /* acorde al nuevo ancho */
+    transform: translateX(22px);
 }
-.ocultaToggle input:checked + .toggle::before {
-    content: "Sí";
-    left: 8px; /* alineado a la izquierda cuando está encendido */
-    right: auto;
-    color: #fff; /* blanco sobre fondo verde */
-}
+
 .ocultaToggle .label {
-    font-size: 12px;
-    opacity: .85;
+    font-size: 11px;
+    opacity: 0.9;
+    font-weight: 500;
 }
 
 /* Accesibilidad: foco visible */
@@ -290,11 +314,37 @@ summary {
 }
 
 .descripcion {
-    padding: 10px;
+    padding: 12px;
+    line-height: 1.5;
+    background: var(--color-fondoTexto);
+}
+
+.descripcion p {
+    margin: 0 0 8px 0;
+    font-size: 0.9em;
+}
+
+.descripcion p:last-child {
+    margin-bottom: 0;
 }
 
 .habOpcional {
     font-style: italic;
+}
+
+/* Responsive mejoras */
+@media screen and (max-width: 768px) {
+   
+    
+    .item {
+        margin: 6px 0;
+    }
+    
+    .borrar-btn {
+        font-size: 20px;
+        width: 24px;
+        height: 24px;
+    }
 }
 
 

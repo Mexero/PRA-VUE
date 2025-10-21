@@ -21,17 +21,23 @@ defineProps(['ficha'])
     border: 1px solid rgba(150, 150, 150, 0.798);
     border-radius: 10px;
     padding: 8px;
+
 }
 
 h3 {
+    font-size: 18px;
     text-align: center;
     letter-spacing: 1px;
+}
+
+.item {
+    font-size: 16px;
 }
 
 input {
     font-size: 18px;
     background-color: transparent;
-    padding: 4px;
+    padding: 5px 0 4px 0;
     border: none;
     color: var(--color-texto);
     width: 30px;
@@ -68,12 +74,21 @@ input[type="number"] {
     }
 
     h3 {
-        font-size: 24px;
+        font-size: 20px;
     }
 
-    input {
-        font-size: 24px;
+    .item {
+    font-size: 20px;
+}
 
-    }
+input {
+    font-size: 20px;
+    background-color: transparent;
+    padding: 5px 0 4px 0;
+    border: none;
+    color: var(--color-texto);
+    width: 30px;
+    text-align: center;
+}
 }
 </style>

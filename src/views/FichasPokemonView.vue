@@ -1102,24 +1102,25 @@ function onChangeIniciativaRango(targetIndex) {
 
 <template>
     <div class="center">
-        <div class="sheet-managing">
-            <button class="toolbar-toggle" @click="mostrarToolbar = !mostrarToolbar"
-                :aria-expanded="mostrarToolbar.toString()">
-                ☰
-            </button>
-
-            <transition name="slide" mode="out-in">
-                <div v-if="mostrarToolbar" class="toolbar-container" key="toolbar">
-                    <FichaToolbar :fichaSeleccionada="fichaSeleccionada" :ordenFichas="ordenFichas"
-                        :fichasGuardadas="fichasGuardadas" @update:fichaSeleccionada="(v) => fichaSeleccionada = v"
-                        @crear="crearFicha" @borrar="borrarFicha" @exportar="exportarFicha" @importar="importarFicha"
-                        @update:ordenFichas="actualizarOrdenFichas" />
-                </div>
-            </transition>
-        </div>
-
         <div class="fichaPokemon">
             <div class="character-sheet">
+                <!-- Botón de toolbar posicionado en la esquina superior izquierda -->
+                <div class="sheet-managing">
+                    <button class="toolbar-toggle" @click="mostrarToolbar = !mostrarToolbar"
+                        :aria-expanded="mostrarToolbar.toString()">
+                        ☰
+                    </button>
+
+                    <transition name="slide" mode="out-in">
+                        <div v-if="mostrarToolbar" class="toolbar-container" key="toolbar">
+                            <FichaToolbar :fichaSeleccionada="fichaSeleccionada" :ordenFichas="ordenFichas"
+                                :fichasGuardadas="fichasGuardadas"
+                                @update:fichaSeleccionada="(v) => fichaSeleccionada = v" @crear="crearFicha"
+                                @borrar="borrarFicha" @exportar="exportarFicha" @importar="importarFicha"
+                                @update:ordenFichas="actualizarOrdenFichas" />
+                        </div>
+                    </transition>
+                </div>
 
                 <FichaInfoBasica :ficha="ficha" :especiesPokes="especiesPokes"
                     :especiesPokesCargadas="especiesPokesCargadas" @cambiarNombre="cambiarNombreFicha"
@@ -1258,6 +1259,9 @@ function onChangeIniciativaRango(targetIndex) {
                             <FichaHabilidades :ficha="ficha" :habilidades="habilidades"
                                 :habilidadesCargadas="habilidadesCargadas" />
                         </div>
+                        <div class="dotes1">
+                            <FichaDotes :ficha="ficha" :dotes="dotes" :dotesCargadas="dotesCargadas" />
+                        </div>
                     </div>
 
                     <div class="col-der">
@@ -1265,9 +1269,10 @@ function onChangeIniciativaRango(targetIndex) {
                             <FichaMovimientos :ficha="ficha" :movimientos="movimientos"
                                 :movimientosCargados="movimientosCargados" />
                         </div>
-                        <div class="dotes">
+                        <div class="dotes2">
                             <FichaDotes :ficha="ficha" :dotes="dotes" :dotesCargadas="dotesCargadas" />
                         </div>
+
                     </div>
                 </div>
 
@@ -1307,6 +1312,77 @@ function onChangeIniciativaRango(targetIndex) {
 </template>
 
 <style scoped>
+.sheet-managing {
+    position: absolute;
+    top: -20px;
+    left: 10px;
+    z-index: 10;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+}
+
+.toolbar-toggle {
+    width: fit-content;
+    height: fit-content;
+    background-color: var(--color-principal1);
+    color: var(--color-texto);
+    border: none;
+    border-radius: 4px;
+    padding: 6px 10px;
+    cursor: pointer;
+    z-index: 10;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.toolbar-container {
+    position: absolute;
+    top: 0px;
+    left: 32px;
+    z-index: 4;
+    border: 1px solid var(--color-principal1);
+}
+
+.center {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-self: center;
+    position: relative;
+}
+
+.fichaPokemon {
+    display: flex;
+    margin: 0 20px;
+    justify-content: center;
+    width: 0px;
+    color: var(--color-texto);
+}
+
+.character-sheet {
+    position: relative;
+    margin: 50px auto;
+    background-color: var(--color-fondoTexto);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2), -3px 0px 5px rgba(0, 0, 0, 0.2);
+}
+
+.info-principal {
+    margin-top: 20px;
+    width: fit-content;
+    display: grid;
+    grid-template-areas:
+        "stats saves pokemon derivadas checks"
+        "stats velocidades rest derivadas checks"
+        "stats velocidades pv-escudo derivadas checks"
+        "otros otros otros otros otros";
+    grid-template-columns: auto 140px auto 150px auto;
+    grid-template-rows: 150px 80px auto auto;
+    gap: 15px;
+}
+
+
 .pv-box {
     font-weight: bold;
     border: 1px solid rgba(150, 150, 150, 0.798);
@@ -1346,7 +1422,7 @@ function onChangeIniciativaRango(targetIndex) {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 5px;
+    gap: 10px;
 }
 
 .iniciativa-header {
@@ -1360,7 +1436,6 @@ function onChangeIniciativaRango(targetIndex) {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-
 }
 
 h3 {
@@ -1607,43 +1682,6 @@ input[type="number"] {
     appearance: textfield;
 }
 
-.center {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    align-self: center;
-    position: relative;
-}
-
-.fichaPokemon {
-    display: flex;
-    margin: 0 20px;
-    justify-content: center;
-    width: 0px;
-    color: var(--color-texto);
-}
-
-.character-sheet {
-    margin: 50px auto;
-    background-color: var(--color-fondoTexto);
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2), -3px 0px 5px rgba(0, 0, 0, 0.2);
-}
-
-.info-principal {
-    margin-top: 20px;
-    width: fit-content;
-    display: grid;
-    grid-template-areas:
-        "stats saves pokemon derivadas checks"
-        "stats velocidades rest derivadas checks"
-        "stats velocidades pv-escudo derivadas checks"
-        "otros otros otros otros otros";
-    grid-template-columns: auto 140px auto 150px auto;
-    grid-template-rows: auto 82px auto auto;
-    gap: 15px;
-}
 
 .stats-area {
     grid-area: stats;
@@ -1689,6 +1727,14 @@ input[type="number"] {
     justify-content: center;
     display: flex;
     gap: 10px;
+    padding: 4px 0;
+}
+
+.numero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
 }
 
 .pokemon-image-area {
@@ -1730,7 +1776,7 @@ input[type="number"] {
 .rest-buttons {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
     grid-area: rest;
 }
 
@@ -1765,6 +1811,15 @@ input[type="number"] {
 .col-der {
     display: flex;
     flex-direction: column;
+    gap: 20px;
+}
+
+.dotes1 {
+    display: block;
+}
+
+.dotes2 {
+    display: none;
 }
 
 /* transición (name="slide") */
@@ -1785,34 +1840,16 @@ input[type="number"] {
     width: 200px;
 }
 
-.sheet-managing {
-    height: fit-content;
-    display: flex;
-    align-items: center;
-    margin: 20px 0;
-    z-index: 10;
-}
 
-.toolbar-toggle {
-    width: fit-content;
-    height: fit-content;
-    background-color: var(--color-principal1);
-    color: var(--color-texto);
-    border: none;
-    border-radius: 4px;
-    padding: 6px 10px;
-    cursor: pointer;
-    z-index: 10;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-}
-
-.toolbar-container {
-    position: absolute;
-    z-index: 4;
-    border: 1px solid var(--color-principal1);
-}
 
 @media screen and (max-width: 1040px) {
+    .dotes1 {
+        display: none;
+    }
+
+    .dotes2 {
+        display: block;
+    }
 
     .fichaPokemon {
         display: flex;
@@ -1831,7 +1868,7 @@ input[type="number"] {
             "stats velocidades rest derivadas"
             "stats velocidades pv-escudo derivadas"
             "checks checks otros otros";
-        grid-template-columns: 130px auto auto auto;
+        grid-template-columns: 140px auto auto auto;
         grid-template-rows: auto auto auto auto;
         gap: 15px;
     }
@@ -1843,29 +1880,16 @@ input[type="number"] {
         gap: 20px;
     }
 
-    /* Reordenar las secciones en móvil: Habilidades, Movimientos, Dotes */
-    .HabsDotesMovs .col-izq {
-        order: 1;
-    }
+
 
     .HabsDotesMovs .col-der {
-        order: 2;
+
         display: flex;
         flex-direction: column;
         gap: 20px;
     }
 
-    .HabsDotesMovs .habs {
-        order: 1;
-    }
 
-    .HabsDotesMovs .movs {
-        order: 2;
-    }
-
-    .HabsDotesMovs .dotes {
-        order: 3;
-    }
 
     .center {
         display: flex;
@@ -1883,6 +1907,7 @@ input[type="number"] {
     }
 
     .character-sheet {
+        position: relative;
         margin: 50px auto;
         background-color: var(--color-fondoTexto);
         border-radius: 10px;
@@ -1906,9 +1931,9 @@ input[type="number"] {
     }
 
     .character-sheet {
+        position: relative;
         justify-self: center;
-        min-width: 375px;
-        max-width: 425px;
+        max-width: 370px;
     }
 
     .fichaPokemon {
@@ -1918,13 +1943,25 @@ input[type="number"] {
     }
 
     .info-principal {
-        margin-top: 20px;
+        margin-top: 40px;
         width: fit-content;
         display: grid;
-        grid-template-areas: "stats" "saves" "pokemon" "rest" "derivadas" "pv-escudo" "velocidades" "checks" "otros";
-        grid-template-columns: auto;
-        grid-template-rows: auto auto auto auto auto auto auto auto auto;
-        gap: 15px;
+        grid-template-areas:
+            "stats"
+            "saves"
+            "pokemon"
+            "rest"
+            "derivadas"
+            "pv-escudo"
+            "velocidades"
+            "checks"
+            "otros";
+        grid-template-columns: 1fr;
+        grid-template-rows: none;
+     
+        width: 100%;
+        gap: 20px;
+        
     }
 
     .estadisticas-derivadas-area {
@@ -1975,7 +2012,7 @@ input[type="number"] {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 10px;
-        font-size: 24px;
+        font-size: 20px;
     }
 
     .numero {
@@ -1987,184 +2024,20 @@ input[type="number"] {
 
     h3,
     .velocidades-area {
-        font-size: 24px;
+        font-size: 20px;
     }
 
     input {
-        font-size: 24px;
+        font-size: 20px;
     }
 
     .pokemon-btn {
-        font-size: 24px;
+        font-size: 20px;
     }
 
     .Iniciativa .grado {
         font-size: 18px;
     }
-    
-}
-
-
-/*
-
-@media screen and (max-width: 1040px) {
-    .info-principal {
-        width: fit-content;
-        display: grid;
-        grid-template-areas:
-            "stats destacados destacados"
-            "stats velocidades checks"
-            "saves pokemon checks"
-            "otros otros otros";
-        grid-template-columns: auto 1fr auto;
-        grid-template-rows: auto auto 1fr auto;
-    }
-
-    .velocidades-area {
-        grid-area: velocidades;
-        margin-top: 0px;
-    }
-
-    .salvaciones-area {
-        text-align: center;
-    }
-
-    .salvaciones-area div {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        align-items: normal;
-        justify-content: normal;
-        gap: 10px;
-    }
-
-    .HabsDotesMovs {
-        padding-top: 25px;
-        display: grid;
-        grid-template-columns: fit-content;
-        gap: 20px;
-        grid-template-areas:
-            "habs "
-            "dotes"
-            "movs";
-    }
-
-    .HabsDotesMovs {
-        padding-top: 25px;
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-
-    .col-izq {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .col-der {
-        display: flex;
-        flex-direction: column;
-    }
-}
-
-@media screen and (max-width: 920px) {
-    .info-principal {
-        grid-template-areas:
-            "destacados"
-            "stats"
-            "saves"
-            "pokemon"
-            "velocidades"
-            "checks"
-            "otros ";
-        grid-template-columns: min-content;
-        grid-template-rows: auto;
-        gap: 15px 0;
-    }
-
-    .info-principal div {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .salvaciones-area {
-        margin: 0 auto;
-        width: 100%;
-    }
-
-    .bonosSalvacion {
-        border: 1px solid rgba(150, 150, 150, 0.798);
-        width: 100px;
-    }
-
-    .pokemon-image-area {
-        margin: 0 auto;
-        width: 100%;
-    }
 
 }
-
-@media screen and (max-width: 545px) {
-    .center {
-        margin: 0 auto;
-    }
-
-    .fichaPokemon {
-        display: flex;
-        flex-direction: column;
-        margin: 40px 10px;
-    }
-
-    .character-sheet {
-        margin: 0;
-        padding: 10px;
-    }
-
-    .info-principal {
-        width: 340px;
-    }
-
-    .slide-enter-active,
-    .slide-leave-active {
-        transition: all 0.3s ease;
-        overflow: hidden;
-    }
-
-    .slide-enter-from,
-    .slide-leave-to {
-        height: 0;
-    }
-
-    .slide-enter-to,
-    .slide-leave-from {
-        height: 200px;
-    }
-
-    .sheet-managing {
-        margin: 0;
-        align-items: start;
-    }
-
-    .toolbar-container {
-        left: 0;
-        top: 40px;
-    }
-
-    .salvaciones-area {
-        margin: 0 auto;
-        width: 100%;
-    }
-
-    .bonosSalvacion {
-        border: 1px solid rgba(150, 150, 150, 0.798);
-        width: auto;
-    }
-
-    .pokemon-image-area {
-        margin: 0 auto;
-        width: 100%;
-    }
-}
-    */
 </style>

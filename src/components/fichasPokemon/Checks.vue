@@ -12,7 +12,7 @@ function mostrarGradoModal(nombre, event, index) {
 function ocultarGradoModal() {
     gradoModal.value.visible = false
 }
-import { ref, computed, watch } from 'vue'
+import { ref, computed, watch, onMounted, onUnmounted } from 'vue'
 import draggable from 'vuedraggable'
 
 import tiraDado from '../tiraDado.vue'
@@ -106,6 +106,23 @@ const mejorasDisponibles = computed(() => {
     const total = props.ficha.derivados.cantidadMejorasHab || 0
     const usadas = props.ficha.personaliz.mejorasHab.length
     return Math.max(0, total - usadas)
+})
+
+// Detectar si es dispositivo móvil
+const windowWidth = ref(window.innerWidth)
+const isMobile = computed(() => windowWidth.value <= 750)
+
+// Escuchar cambios en el tamaño de ventana
+const updateWindowWidth = () => {
+    windowWidth.value = window.innerWidth
+}
+
+onMounted(() => {
+    window.addEventListener('resize', updateWindowWidth)
+})
+
+onUnmounted(() => {
+    window.removeEventListener('resize', updateWindowWidth)
 })
 
 function subirGrado(checkName) {
@@ -444,7 +461,7 @@ function onChangeRango(checkName, targetIndex) {
         </div>
         <div class="checks-list">
             <draggable v-model="props.ficha.personaliz.checks" item-key="check" animation="200"
-                ghost-class="drag-ghost">
+                ghost-class="drag-ghost" :disabled="isMobile">
                 <template #item="{ element, index }">
                     <div class="item" v-if="element.check !== 'Init'">
 
@@ -594,6 +611,8 @@ h3 {
     justify-content: space-between;
     gap: 10px;
     text-align: left;
+    padding: 5px 0 4px 0;
+    font-size: 16px;
 }
 
 .alinear input {
@@ -1078,12 +1097,12 @@ details {
     }
 
     .alinear {
-        font-size: 24px;
+        font-size: 20px;
         padding: 5px 0;
     }
 
     .alinear input {
-        font-size: 24px;
+        font-size: 20px;
     }
 
     .grado-circulo {

@@ -120,4 +120,13 @@ h3{
     height: fit-content;
 }
 
+@media screen and (max-width: 750px) {
+    .feats {
+        font-size: 16;
+    }
+
+    .feats-list {
+        font-size: 18px;
+    }
+}
 </style>

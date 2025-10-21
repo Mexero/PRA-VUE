@@ -232,19 +232,20 @@ input {
 
 @media screen and (max-width: 750px) {
     .others {
-        font-size: 24px;
+        font-size: 20px;
     }
 
-    
-    .fila1 input {
-        font-size: 24px;
 
-    width: 130px;
-    text-align: center;
-}
+    .fila1 input {
+        font-size: 20px;
+
+        width: 130px;
+        text-align: center;
+    }
+
     .fila1 {
         display: grid;
-        grid-template-columns: 1fr ;
+        grid-template-columns: 1fr;
         grid-template-rows: 1fr auto auto;
         gap: 10px;
     }

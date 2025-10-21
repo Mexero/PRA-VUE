@@ -318,4 +318,13 @@ h3{
 .mov-right {
     margin-left: auto;
 }
+@media screen and (max-width: 750px) {
+    .moves {
+        font-size: 16px;
+    }
+
+    .moves-list {
+        font-size: 18px;
+    }
+}
 </style>

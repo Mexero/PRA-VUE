@@ -42,8 +42,8 @@ button {
     border: none;
     background: none;
     cursor: pointer;
-    width: 36px;
-    height: 36px;
+    width: 20px;
+    height: 20px;
     border-radius: 6px;
 }
 
@@ -74,9 +74,26 @@ img {
 }
 
 @media screen and (max-width: 750px) {
-    .numero img {
-        width: 25px;
-        height: 25px;
-    }
+    button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+    border-radius: 6px;
+}
+
+img {
+    width: 25px;
+    height: 25px;
+    display: inline-block;
+    transform-origin: center center;
+    will-change: transform;
+    filter: var(--color-icon);
+}
 }
 </style>

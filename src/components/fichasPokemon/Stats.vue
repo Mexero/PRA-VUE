@@ -63,8 +63,8 @@ function cambiarMejoraEST(stat, delta) {
                         </span>
                         <h3 class="numStat">{{ ficha.derivados.stats[stat] }}</h3>
                         <div class="botonMaxMenos botones-desktop">
-                            <button class="btn-mas" @click="cambiarMejoraEST(stat, 1)">+</button>
-                            <button class="btn-menos" @click="cambiarMejoraEST(stat, -1)">-</button>
+                            <button class="btn-mas" @click="cambiarMejoraEST(stat, 1)"></button>
+                            <button class="btn-menos" @click="cambiarMejoraEST(stat, -1)"></button>
                         </div>
 
                     </div>
@@ -131,8 +131,8 @@ function cambiarMejoraEST(stat, delta) {
     align-items: center;
     flex-direction: column;
     border-bottom: 1px solid rgba(150, 150, 150, 0.798);
-    padding: 10px 0;
-    width: 120px;
+    padding: 5px 0 12px 0;
+    width: 140px;
     letter-spacing: 1px;
 }
 
@@ -169,13 +169,11 @@ function cambiarMejoraEST(stat, delta) {
     grid-column: 3;
     display: flex;
     flex-direction: column;
-    gap: 3px;
+    gap: 10px;
 
 }
 
 .botonMaxMenos button {
-    width: 20px;
-    height: 20px;
     background: var(--color-principal1);
     border: none;
     border-radius: 0;
@@ -186,6 +184,23 @@ function cambiarMejoraEST(stat, delta) {
     font-size: 14px;
     font-weight: bold;
     color: var(--color-texto);
+
+}
+
+/* Botones desktop con forma de triángulo */
+.botones-desktop button {
+
+    width: 15px;
+    height: 15px;
+    background: var(--color-principal1);
+    border: none;
+    cursor: pointer;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+.botones-desktop .btn-menos {
+    margin-top: 5px;
+    clip-path: polygon(0% 0%, 50% 100%, 100% 0%);
 }
 
 /* Control de visibilidad de botones */
@@ -210,9 +225,6 @@ function cambiarMejoraEST(stat, delta) {
     cursor: pointer;
 }
 
-
-
-
 .mejoras {
     display: flex;
     align-items: center;
@@ -222,6 +234,11 @@ function cambiarMejoraEST(stat, delta) {
     margin-top: 10px;
 }
 
+.stat-title {
+    grid-area: title;
+    text-align: center;
+    font-size: 18px;
+}
 
 @media screen and (max-width: 750px) {
     .stats-section {
@@ -247,7 +264,6 @@ function cambiarMejoraEST(stat, delta) {
         display: flex;
         flex-direction: column;
     }
-
 
     .stats div:first-child {
         border-radius: 0;
@@ -287,14 +303,12 @@ function cambiarMejoraEST(stat, delta) {
         border-radius: 0 0 10px 0;
     }
 
-
     .botonMaxMenos {
         grid-column: 3;
         display: flex;
         flex-direction: column;
         gap: 3px;
         height: f;
-
     }
 
     .botonMaxMenos button {
@@ -317,8 +331,6 @@ function cambiarMejoraEST(stat, delta) {
         grid-column: 2;
         cursor: pointer;
     }
-
-
 
     .btn-mas {
         grid-row: 1;
@@ -345,10 +357,9 @@ function cambiarMejoraEST(stat, delta) {
         align-items: center;
         justify-content: center;
         cursor: pointer;
-        font-size: 22px;
+        font-size: 20px;
         font-weight: bold;
         color: var(--color-texto);
-
     }
 
     .statsContenido {
@@ -358,7 +369,7 @@ function cambiarMejoraEST(stat, delta) {
         grid-template-columns: auto;
         gap: 10px;
         height: fit-content;
-        font-size: 24px;
+        font-size: 20px;
     }
 
     .item {
@@ -374,36 +385,30 @@ function cambiarMejoraEST(stat, delta) {
         width: 100%;
         position: relative;
         align-items: center;
-
-
     }
 
     .stat-title {
-        grid-area: title;
-        text-align: center;
-        font-size: 18px;
 
+        font-size: 16px;
     }
 
     .bonoStat {
         text-align: right;
-
     }
 
     .statsContenido {
         grid-area: value;
         display: grid;
-        grid-template-columns: 60px 20px;
+        grid-template-columns: 50px 10px;
         grid-template-rows: auto;
         align-items: center;
-        font-size: 22px;
+        font-size: 20px;
     }
 
     .botonMaxMenos.botones-mobile {
         grid-area: buttons;
         justify-self: end;
     }
-
 
     .botones-mobile .btn-mas {
         border-bottom: 1px solid rgba(255, 255, 255, 0.5);
@@ -419,12 +424,11 @@ function cambiarMejoraEST(stat, delta) {
     }
 
     .stats-header {
-    position: absolute;
-    top: -16px;
-    left: -15px;
-  
-    z-index: 3;
-}
+        position: absolute;
+        top: -16px;
+        left: -15px;
+        z-index: 3;
+    }
 }
 
 /*
