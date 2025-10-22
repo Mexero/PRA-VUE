@@ -466,7 +466,7 @@ function checkDisabled() {
                                             movimientoSeleccionado.danno }}</p>
                                         <p v-if="movimientoSeleccionado.etiquetas"><strong>Etiquetas: </strong>{{
                                             movimientoSeleccionado.etiquetas }}</p>
-                                        <div v-if="movimientoSeleccionado.statsAso">
+                                        <div v-if="movimientoSeleccionado.statsAso.length">
                                             <strong>Estadísticas asociadas: </strong> {{
                                                 formatearStats(movimientoSeleccionado.statsAso) }}.
                                         </div>
@@ -485,15 +485,16 @@ function checkDisabled() {
                             </template>
                         </div>
                     </div>
+
+                    <div class="modal-footer">
+                        <button @click="closePopup" class="cancel-btn">Cerrar</button>
+                        <button @click="añadirMovimiento" class="add-btn" :disabled="checkDisabled()">
+                            Añadir Movimiento
+                        </button>
+                    </div>
                 </div>
 
-                <div class="modal-footer">
-                   
-                    <button @click="closePopup" class="cancel-btn">Cerrar</button>
-                    <button @click="añadirMovimiento" class="add-btn" :disabled="checkDisabled()">
-                        Añadir Movimiento
-                    </button>
-                </div>
+
             </div>
         </div>
     </div>
@@ -583,8 +584,8 @@ function checkDisabled() {
 .modal-body {
     display: flex;
     flex-direction: column;
-    flex: 1;
     overflow: hidden;
+    flex: 1;
 }
 
 .filters-section {
@@ -938,7 +939,7 @@ function checkDisabled() {
 }
 
 .info-panel {
-  
+
     display: flex;
     flex-direction: column;
     background: var(--color-fondoTexto);
@@ -1055,6 +1056,8 @@ function checkDisabled() {
 }
 
 @media screen and (max-width: 768px) {
+
+
     .modal-content {
         width: 100vw;
         height: 95vh;
@@ -1109,10 +1112,14 @@ function checkDisabled() {
     }
 
     .search-panel {
-        flex: 0 0 150px;
-        min-height: 150px;
+        height: 40vh;
+
         border-right: none;
         border-bottom: 2px solid var(--color-principal2);
+    }
+
+    .movimiento-info-container {
+       flex: 1;
     }
 
     .info-panel {
@@ -1130,7 +1137,7 @@ function checkDisabled() {
 
     .modal-footer {
         padding: 8px 16px;
-       
+
     }
 
     .add-btn,
@@ -1140,23 +1147,16 @@ function checkDisabled() {
     }
 }
 
+
 @media screen and (max-width: 480px) {
     .modal-content {
         width: 100vw;
-        height: 100vh;
+        height: 95vh;
         border-radius: 0;
     }
 
     .filters-row {
         gap: 8px;
-    }
-
-    .search-panel {
-        min-height: 150px;
-    }
-
-    .info-panel {
-        min-height: 150px;
     }
 }
 </style>
