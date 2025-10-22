@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, watch } from 'vue'
 import busquedaHab from './busquedaHab.vue'
 
 const props = defineProps([
@@ -19,6 +19,15 @@ function closePopup() {
     isOpen.value = false
     habilidadSeleccionada.value = null
 }
+
+// Prevenir scroll del body cuando el modal está abierto
+watch(isOpen, (newValue) => {
+    if (newValue) {
+        document.body.style.overflow = 'hidden'
+    } else {
+        document.body.style.overflow = ''
+    }
+})
 
 function mostrarHab(habilidad) {
     habilidadSeleccionada.value = props.habilidades.find(h => h.nombre === habilidad)
@@ -77,6 +86,8 @@ function añadirHab() {
                 </div>
 
                 <div class="modal-footer">
+                    
+                    <button @click="closePopup" class="cancel-btn">Cerrar</button>
                     <button @click="añadirHab" 
                         class="add-btn"
                         :disabled="!habilidadSeleccionada || 
@@ -85,7 +96,6 @@ function añadirHab() {
                             ficha.personaliz.habilidadesExtra.find(hab => hab === habilidadSeleccionada?.nombre)">
                         Añadir Habilidad
                     </button>
-                    <button @click="closePopup" class="cancel-btn">Cerrar</button>
                 </div>
             </div>
         </div>
@@ -302,7 +312,7 @@ function añadirHab() {
     }
     
     .modal-header {
-        padding: 16px 20px;
+        padding: 5px 10px;
     }
     
     .modal-title {
@@ -338,7 +348,7 @@ function añadirHab() {
     
     .modal-footer {
         padding: 10px;
-        flex-direction: column;
+       
     }
     
     .add-btn, .cancel-btn {

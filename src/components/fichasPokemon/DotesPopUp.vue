@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, watch } from 'vue'
 import busquedaDote from './busquedaDote.vue'
 import BloqueTextoComplejo from '../BloqueTextoComplejo.vue';
 
@@ -22,6 +22,15 @@ function closePopup() {
     isOpen.value = false
     doteSeleccionada.value = null
 }
+
+// Prevenir scroll del body cuando el modal está abierto
+watch(isOpen, (newValue) => {
+    if (newValue) {
+        document.body.style.overflow = 'hidden'
+    } else {
+        document.body.style.overflow = ''
+    }
+})
 
 function mostrarDote(dote) {
     doteSeleccionada.value = props.dotes.find(d => d.Nombre === dote)
@@ -79,12 +88,11 @@ function añadirDote() {
                 </div>
 
                 <div class="modal-footer">
-                    <button @click="añadirDote" 
-                        class="add-btn"
-                        :disabled="!doteSeleccionada">
+                  
+                    <button @click="closePopup" class="cancel-btn">Cerrar</button>
+                    <button @click="añadirDote" class="add-btn" :disabled="!doteSeleccionada">
                         Añadir Dote
                     </button>
-                    <button @click="closePopup" class="cancel-btn">Cerrar</button>
                 </div>
             </div>
         </div>
@@ -244,7 +252,7 @@ function añadirDote() {
 
 .add-btn {
     background-color: #4caf50;
-    color: white;
+    color: var(--color-texto);
     border: none;
     padding: 12px 24px;
     border-radius: 6px;
@@ -285,48 +293,49 @@ function añadirDote() {
         height: 100vh;
         border-radius: 0;
     }
-    
+
     .modal-header {
-        padding: 16px 20px;
+        padding: 5px 10px;
     }
-    
+
     .modal-title {
         font-size: 1.2rem;
     }
-    
+
     .modal-body {
         flex-direction: column;
     }
-    
+
     .search-panel {
-        flex: 0 0 180px;
-        min-height: 180px;
+
+        min-height: 220px;
         border-right: none;
         border-bottom: 2px solid var(--color-principal2);
     }
-    
+
     .info-panel {
         flex: 1;
-        min-height: 250px;
+        min-height: 200px;
     }
-    
+
     .dote-header {
         padding: 16px 16px 0 16px;
     }
-    
+
     .dote-descripcion-container {
         padding: 16px;
         flex: 1;
         overflow-y: auto;
         min-height: 0;
     }
-    
+
     .modal-footer {
         padding: 10px;
-        flex-direction: column;
+        
     }
-    
-    .add-btn, .cancel-btn {
+
+    .add-btn,
+    .cancel-btn {
         width: 100%;
         padding: 10px 20px;
     }

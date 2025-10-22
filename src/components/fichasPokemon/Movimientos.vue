@@ -6,16 +6,17 @@ const props = defineProps([
     'ficha',
     'movimientos',
     'movimientosCargados',
+    'movimientosCompletos'
 ])
 
 import movimientosPopUp from './movimientosPopUp.vue';
 import MovsData from './MovsData.vue';
 
-const movimientosCompletos = ref([]);
+const emit = defineEmits(['update:movimientosCompletos']);
 const modificandoMovimientosCompletos = ref(false)
 
 function getMovimientoCompleto(nombre) {
-    return movimientosCompletos.value.find(mov => mov.nombre === nombre);
+    return props.movimientosCompletos.find(mov => mov.nombre === nombre);
 }
 
 // Mapa de colores por tipo (coincide con src/css/typeColors.css)
@@ -146,9 +147,10 @@ watch(
                 ...props.ficha.personaliz.movimientosAprendidos,
                 ...props.ficha.personaliz.movimientosExtra
             ])];
-            movimientosCompletos.value = movimientosCompletos.value.filter(
+            const movimientosFiltrados = props.movimientosCompletos.filter(
                 mov => movimientos.includes(mov.nombre)
-            )
+            );
+            emit('update:movimientosCompletos', movimientosFiltrados);
             modificandoMovimientosCompletos.value = false;
         }
     },
@@ -176,8 +178,9 @@ function eliminarMov(movimiento, lista) {
         <div class="moves-header">
             <h3>Movimientos ( {{ ficha.personaliz.movimientosAprendidos.length }} / {{ ficha.derivados.cantidadMovs }})
             </h3>
-            <movimientosPopUp :movimientos="movimientos" :ficha="ficha" :movimientosCompletos="movimientosCompletos"
-                :movimientosCargados="movimientosCargados" />
+            <movimientosPopUp :movimientos="movimientos" :ficha="ficha" :movimientosCompletos="props.movimientosCompletos"
+                :movimientosCargados="movimientosCargados" 
+                @update:movimientosCompletos="emit('update:movimientosCompletos', $event)" />
         </div>
         <div class="moves-list">
             <!-- Movimientos Aprendidos -->
@@ -246,11 +249,14 @@ h3{
     align-items: center;
     width: 100%;
     margin-bottom: 5px;
+    font-size: 14px;
 }
 
 .movimiento {
     border: 1px solid var(--mov-color, var(--color-principal2));
     margin: 10px 0;
+    border-radius: 5px;
+
 }
 
 .movimiento summary {
@@ -270,27 +276,25 @@ h3{
     align-items: center;
     justify-content: space-between;
     gap: 8px;
+    border-radius: 3px;
 }
+
+
 
 .borrar-btn {
     background-color: transparent;
     border: none;
-    color: var(--mov-text, var(--color-texto));
+    color: var(--color-texto);
     cursor: pointer;
     font-weight: bold;
-    font-size: 30px;
-    line-height: 25px;
-    border-left: 1px solid var(--mov-text, currentColor);
+    font-size: 24px;
+    border-left: 1px solid;
     width: 40px;
     height: 30px;
-    padding-bottom: 5px;
-    background-color: color-mix(in srgb, var(--mov-color, var(--color-principal1)) 85%, #0000);
-}
 
+}
 .borrar-btn:hover {
-    background-color: var(--mov-color, var(--color-principal2));
 }
-
 
 .type-icon {
     width: 18px;
@@ -324,7 +328,7 @@ h3{
     }
 
     .moves-list {
-        font-size: 18px;
+        font-size: 13px;
     }
 }
 </style>

@@ -183,6 +183,7 @@ h3{
     margin: 8px 0;
 }
 
+
 .borrar-btn {
     background-color: transparent;
     border: none;
@@ -190,21 +191,17 @@ h3{
     cursor: pointer;
     font-weight: bold;
     font-size: 24px;
-    line-height: 20px;
     border-left: 1px solid;
-    width: 28px;
-    height: 28px;
-    padding-bottom: 4px;
+    width: 40px;
+    height: 32px;
     background-color: var(--color-principal1);
-    border-radius: 4px;
 }
-
 .borrar-btn:hover {
     background-color: var(--color-principal2);
 }
 
 details {
-    border: 1px solid var(--color-principal2);
+    border: 1px solid var(--color-principal1);
     border-radius: 6px;
     overflow: hidden;
 }
@@ -214,7 +211,7 @@ details:hover {
 }
 
 summary {
-    background-color: var(--color-principal2);
+    background-color: var(--color-principal1);
     height: 32px;
     display: flex;
     justify-content: space-between;
@@ -224,7 +221,7 @@ summary {
 }
 
 summary:hover {
-    background-color: var(--color-principal1);
+    background-color: var(--color-principal2);
 }
 
 .tituloHab { 
@@ -334,11 +331,7 @@ summary:hover {
         margin: 6px 0;
     }
     
-    .borrar-btn {
-        font-size: 20px;
-        width: 24px;
-        height: 24px;
-    }
+
 }
 
 

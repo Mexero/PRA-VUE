@@ -29,6 +29,7 @@ const habilidades = ref([]);
 const habilidadesCargadas = ref(false);
 const movimientos = ref([]);
 const movimientosCargados = ref(false);
+const movimientosCompletos = ref([]);
 
 //Ficha
 const ficha = reactive(crearFichaBase());
@@ -1267,7 +1268,8 @@ function onChangeIniciativaRango(targetIndex) {
                     <div class="col-der">
                         <div class="movs">
                             <FichaMovimientos :ficha="ficha" :movimientos="movimientos"
-                                :movimientosCargados="movimientosCargados" />
+                                :movimientosCargados="movimientosCargados" :movimientosCompletos="movimientosCompletos"
+                                @update:movimientosCompletos="movimientosCompletos = $event" />
                         </div>
                         <div class="dotes2">
                             <FichaDotes :ficha="ficha" :dotes="dotes" :dotesCargadas="dotesCargadas" />
@@ -1421,8 +1423,9 @@ function onChangeIniciativaRango(targetIndex) {
 .iniciativa-input-container {
     display: flex;
     justify-content: center;
-    align-items: center;
-    gap: 10px;
+    margin-left: 20px;
+    gap: 20px;
+    margin-bottom: 5px;
 }
 
 .iniciativa-header {
@@ -1958,10 +1961,10 @@ input[type="number"] {
             "otros";
         grid-template-columns: 1fr;
         grid-template-rows: none;
-     
+
         width: 100%;
         gap: 20px;
-        
+
     }
 
     .estadisticas-derivadas-area {

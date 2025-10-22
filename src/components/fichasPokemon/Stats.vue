@@ -88,7 +88,7 @@ function cambiarMejoraEST(stat, delta) {
 .stats-header {
     position: absolute;
     top: -14px;
-    left: 80px;
+    left: -10px;
     z-index: 3;
 }
 

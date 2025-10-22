@@ -198,7 +198,7 @@ const typeMap = {
 
 
             <p class="NombreTipos" :class="'type-' + normalizeType(ficha.pokedex.tipos[0])"> {{ ficha.pokedex.tipos[0]
-            }}
+                }}
             </p>
 
             <p v-if="ficha.pokedex.tipos[1]" class="NombreTipos"
@@ -246,6 +246,11 @@ const typeMap = {
     border: none;
     cursor: pointer;
     padding: 0px 3px;
+    position: absolute;
+    right: -35px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 5;
 }
 
 .nivel-icon-btn:hover {
@@ -262,6 +267,11 @@ const typeMap = {
     border: none;
     cursor: pointer;
     padding: 0px 3px;
+    position: absolute;
+    right: -35px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 5;
 }
 
 .especie-icon-btn:hover {
@@ -288,6 +298,16 @@ const typeMap = {
     gap: 8px;
 }
 
+.especie {
+    position: relative;
+   
+}
+
+.nivel {
+    position: relative;
+   
+}
+
 .tipos {
     flex-wrap: nowrap;
     border-radius: 5px;
@@ -296,7 +316,7 @@ const typeMap = {
 input {
     font-size: large;
     background-color: transparent;
-    padding: 4px 6px;
+    padding: 4px;
     border: none;
     border-bottom: 1px solid;
     color: var(--color-texto);
@@ -465,8 +485,10 @@ input[type="number"] {
 
 @media screen and (max-width: 750px) {
     .info-basica {
-        grid-template-areas: "nombre  nivel" "especie tipos";
-        grid-template-columns: auto auto auto;
+        grid-template-areas:
+            "nombre  nivel"
+            "especie tipos";
+        grid-template-columns: auto auto;
         gap: 10px;
         align-items: center;
     }

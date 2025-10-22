@@ -10,10 +10,16 @@ const props = defineProps([
     'movimientosCargados'
 ])
 
+const emit = defineEmits(['update:movimientosCompletos'])
+
 const isOpen = ref(false)
 const añadirExtra = ref(false)
 const movimientoSeleccionado = ref(null)
 const tipoLista = ref('Nivel')
+const filtrosAbiertos = ref(false)
+const tipoDropdownAbierto = ref(false)
+const etiquetaDropdownAbierto = ref(false)
+const costeDropdownAbierto = ref(false)
 
 //flags DB
 const isReady = ref(false)
@@ -30,6 +36,15 @@ onMounted(async () => {
         error.value = err.message || 'Error inicializando DB'
         console.warn(error.value)
     }
+
+    // Cerrar dropdowns al hacer click fuera
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('.custom-dropdown')) {
+            tipoDropdownAbierto.value = false
+            etiquetaDropdownAbierto.value = false
+            costeDropdownAbierto.value = false
+        }
+    })
 })
 
 //Abrir y cerrar pop up
@@ -41,6 +56,15 @@ function closePopup() {
     isOpen.value = false
     movimientoSeleccionado.value = null
 }
+
+// Prevenir scroll del body cuando el modal está abierto
+watch(isOpen, (newValue) => {
+    if (newValue) {
+        document.body.style.overflow = 'hidden'
+    } else {
+        document.body.style.overflow = ''
+    }
+})
 
 
 const formatearStats = (stats) => {
@@ -113,7 +137,8 @@ async function cargarMovimiento(movimiento, directo) {
                 movimientoSeleccionado.value = data;
             }
             else if (directo && !props.movimientosCompletos.find(mov => mov.nombre === data.nombre)) {
-                props.movimientosCompletos.push(data);
+                const nuevosMovimientos = [...props.movimientosCompletos, data];
+                emit('update:movimientosCompletos', nuevosMovimientos);
             }
         }
     } catch (err) {
@@ -129,7 +154,8 @@ function añadirMovimiento() {
     if (!final || !props.movimientosCargados) return
 
     if (!props.movimientosCompletos.find(mov => mov.nombre === final.nombre)) {
-        props.movimientosCompletos.push(final)
+        const nuevosMovimientos = [...props.movimientosCompletos, final];
+        emit('update:movimientosCompletos', nuevosMovimientos);
     }
 
     if (!añadirExtra.value && !props.ficha.personaliz.movimientosAprendidos.includes(final.nombre)) {
@@ -199,6 +225,42 @@ function limpiarFiltros() {
     filtroCoste.value = '';
 }
 
+// Funciones para dropdowns personalizados
+function toggleTipoDropdown() {
+    tipoDropdownAbierto.value = !tipoDropdownAbierto.value
+    etiquetaDropdownAbierto.value = false
+    costeDropdownAbierto.value = false
+}
+
+function toggleEtiquetaDropdown() {
+    etiquetaDropdownAbierto.value = !etiquetaDropdownAbierto.value
+    tipoDropdownAbierto.value = false
+    costeDropdownAbierto.value = false
+}
+
+function toggleCosteDropdown() {
+    costeDropdownAbierto.value = !costeDropdownAbierto.value
+    tipoDropdownAbierto.value = false
+    etiquetaDropdownAbierto.value = false
+}
+
+// Posicionamiento CSS: los menús se anclan al contenedor con position:absolute
+
+function seleccionarTipo(tipo) {
+    filtroTipo.value = tipo
+    tipoDropdownAbierto.value = false
+}
+
+function seleccionarEtiqueta(etiqueta) {
+    filtroEtiqueta.value = etiqueta
+    etiquetaDropdownAbierto.value = false
+}
+
+function seleccionarCoste(coste) {
+    filtroCoste.value = coste
+    costeDropdownAbierto.value = false
+}
+
 //Apoyo lista por nivel
 const nivelesConMovs = computed(() => {
     const encontrados = props.ficha.pokedex.movimientosNivel.filter(mov =>
@@ -233,7 +295,7 @@ function comprobar(mov) {
 
 function checkDisabled() {
     return (!añadirExtra.value && props.ficha.derivados.cantidadMovs <= props.ficha.personaliz.movimientosAprendidos.length) ||
-        (tipoLista.value === 'Nivel' && (buscarNivel(movimientoSeleccionado.value.nombre) === -1 || buscarNivel(movimientoSeleccionado.value.nombre) > props.ficha.nivel))
+        (tipoLista.value === 'Nivel' && movimientoSeleccionado.value && (buscarNivel(movimientoSeleccionado.value.nombre) === -1 || buscarNivel(movimientoSeleccionado.value.nombre) > props.ficha.nivel))
 
 }
 
@@ -247,157 +309,215 @@ function checkDisabled() {
 
         <div v-if="isOpen" class="modal-overlay" @click="closePopup">
             <div class="modal-content" @click.stop>
-                <label>
-                    ¿Extra? <input type="checkbox" v-model="añadirExtra" />
-                </label>
-                <div class="filtro1">
-                    <input v-model="filtroNombre" placeholder="Buscar movimiento..."
-                        @keydown.enter.prevent="cargarMovimiento(filtrados[0].nombre)" />
-                    <label>
-                        <strong>Tipo: </strong>
-                        <select v-model="filtroTipo">
-                            <option value="">Todos los Tipos</option>
-                            <option v-for="tipo of tipos" :value="tipo">{{ tipo }}</option>
-                        </select>
-                    </label>
-                    <label>
-                        <strong>Etiqueta: </strong>
-                        <select v-model="filtroEtiqueta">
-                            <option value="">Todas las Etiquetas</option>
-                            <option v-for="et of etiquetas" :value="et">{{ et }}</option>
-                        </select>
-                    </label>
-                    <label>
-                        <strong>Coste: </strong>
-                        <select v-model="filtroCoste">
-                            <option value="">Cualquier coste</option>
-                            <option value="A voluntad">A voluntad</option>
-                            <option value="1">1 PP</option>
-                            <option value="2">2 PP</option>
-                            <option value="3">3 PP</option>
-                            <option value="4">4 PP</option>
-                            <option value="6">6 PP</option>
-                        </select>
-                    </label>
-
-                    <button class="resetFiltros" @click="limpiarFiltros"> Limpiar filtros</button>
-                </div>
-                <div class="filtro2">
-
-                    <label>
-                        <strong>Por nivel</strong> <input type="radio" v-model="tipoLista" name="lista" value="Nivel">
-                    </label>
-                    <label> <strong>Enseñables</strong> <input type="radio" v-model="tipoLista" name="lista"
-                            value="Ensennables"></label>
-                    <label> <strong>Todos</strong> <input type="radio" v-model="tipoLista" name="lista"
-                            value="Todos"></label>
-
+                <div class="modal-header">
+                    <h2 class="modal-title">Añadir Movimiento {{ añadirExtra ? 'Extra' : '' }}</h2>
+                    <button @click="closePopup" class="close-btn">×</button>
                 </div>
 
-                <div class="ventana">
-                    <div class="cuerpo">
-                        <template v-if="tipoLista === 'Nivel'">
-                            <div class="movsList">
+                <div class="modal-body">
+                    <div class="filters-section">
+                        <div class="filters-header">
+                            <div class="filters-row-1">
+                                <div class="search-bar">
+                                    <input v-model="filtroNombre" placeholder="Buscar movimiento..."
+                                        @keydown.enter.prevent="filtrados.length && cargarMovimiento(filtrados[0].nombre)"
+                                        class="search-input" />
+                                </div>
 
-                                <template v-for="nivel of nivelesConMovs">
-                                    <ul :class="nivel > ficha.nivel ? 'demasiado' : ''">
-                                        <h3>Nivel {{ nivel }}</h3>
-                                        <ul>
-                                            <template v-for="mov of filtradosNivel(nivel)">
-                                                <li v-if="comprobar(mov.nombre)" @click="cargarMovimiento(mov.nombre)">
-                                                    {{ mov.nombre.trim() }}</li>
-                                            </template>
-                                        </ul>
-                                    </ul>
-                                </template>
-
+                                <button class="filters-toggle-btn" @click="filtrosAbiertos = !filtrosAbiertos">
+                                    <span>Filtros</span>
+                                    <span class="toggle-icon" :class="{ 'open': filtrosAbiertos }">▼</span>
+                                </button>
                             </div>
-                        </template>
-                        <busquedaMov v-else :movimientos="filtrados" :seleccionado="movimientoSeleccionado?.nombre"
-                            @seleccion="cargarMovimiento" />
 
-                        <div class="preview">
-                            <template v-if="movimientoSeleccionado">
-                                <div class="tarjetaMov">
-                                    <p><strong>{{ movimientoSeleccionado.nombre }}</strong></p>
-                                    <p><strong>Tipo: </strong>{{ movimientoSeleccionado.tipo }}</p>
-                                    <p><strong>Acción: </strong>{{ movimientoSeleccionado.accion }}</p>
-                                    <p><strong>Coste: </strong>{{ movimientoSeleccionado.coste }}</p>
-                                    <p><strong>Rango: </strong>{{ movimientoSeleccionado.rango }}</p>
-                                    <p v-if="movimientoSeleccionado.danno"><strong>Daño: </strong>{{
-                                        movimientoSeleccionado.danno }}</p>
-                                    <p v-if="movimientoSeleccionado.etiquetas"><strong>Etiquetas: </strong>{{
-                                        movimientoSeleccionado.etiquetas }}</p>
-                                    <div class="descripcion">
-                                        <p class="tituloDesc"><strong>Descripción:</strong></p>
-                                        <p v-for="parrafo in movimientoSeleccionado.descripcion" v-html="parrafo"></p>
+                            <div class="filters-row-2">
+                                <div class="extra-toggle">
+                                    <button class="extra-toggle-btn" :class="{ 'active': añadirExtra }"
+                                        @click="añadirExtra = !añadirExtra">
+                                        Extra
+                                    </button>
+                                </div>
+
+                                <div class="list-type-selector">
+                                    <div class="tab-option" :class="{ 'active': tipoLista === 'Nivel' }"
+                                        @click="tipoLista = 'Nivel'">
+                                        Nivel
                                     </div>
-                                    <div v-if="movimientoSeleccionado.statsAso"><strong>Estadísticas asociadas:
-                                        </strong> {{ formatearStats(movimientoSeleccionado.statsAso) }}.
+                                    <div class="tab-option" :class="{ 'active': tipoLista === 'Ensennables' }"
+                                        @click="tipoLista = 'Ensennables'">
+                                        Enseñables
+                                    </div>
+                                    <div class="tab-option" :class="{ 'active': tipoLista === 'Todos' }"
+                                        @click="tipoLista = 'Todos'">
+                                        Todos
                                     </div>
                                 </div>
-                                <button @click="añadirMovimiento" :disabled="checkDisabled()">
-                                    Añadir</button>
+                            </div>
+                        </div>
+
+                        <div class="filters-dropdown" :class="{ 'open': filtrosAbiertos }">
+                            <div class="filters-grid">
+                                <div class="filter-group">
+                                    <label class="filter-label">Tipo:</label>
+                                    <div class="custom-dropdown">
+                                        <button class="dropdown-button" @click="toggleTipoDropdown">
+                                            <span>{{ filtroTipo || 'Todos los Tipos' }}</span>
+                                            <span class="dropdown-arrow"
+                                                :class="{ 'open': tipoDropdownAbierto }">▼</span>
+                                        </button>
+                                        <div class="dropdown-menu" :class="{ 'open': tipoDropdownAbierto }">
+                                            <div class="dropdown-item" @click="seleccionarTipo('')">Todos los Tipos
+                                            </div>
+                                            <div class="dropdown-item" v-for="tipo of tipos" :key="tipo"
+                                                @click="seleccionarTipo(tipo)">
+                                                {{ tipo }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="filter-group">
+                                    <label class="filter-label">Etiqueta:</label>
+                                    <div class="custom-dropdown">
+                                        <button class="dropdown-button" @click="toggleEtiquetaDropdown">
+                                            <span>{{ filtroEtiqueta || 'Todas las Etiquetas' }}</span>
+                                            <span class="dropdown-arrow"
+                                                :class="{ 'open': etiquetaDropdownAbierto }">▼</span>
+                                        </button>
+                                        <div class="dropdown-menu" :class="{ 'open': etiquetaDropdownAbierto }">
+                                            <div class="dropdown-item" @click="seleccionarEtiqueta('')">Todas las
+                                                Etiquetas</div>
+                                            <div class="dropdown-item" v-for="et of etiquetas" :key="et"
+                                                @click="seleccionarEtiqueta(et)">
+                                                {{ et }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="filter-group">
+                                    <label class="filter-label">Coste:</label>
+                                    <div class="custom-dropdown">
+                                        <button class="dropdown-button" @click="toggleCosteDropdown">
+                                            <span>{{ filtroCoste || 'Cualquier coste' }}</span>
+                                            <span class="dropdown-arrow"
+                                                :class="{ 'open': costeDropdownAbierto }">▼</span>
+                                        </button>
+                                        <div class="dropdown-menu" :class="{ 'open': costeDropdownAbierto }">
+                                            <div class="dropdown-item" @click="seleccionarCoste('')">Cualquier coste
+                                            </div>
+                                            <div class="dropdown-item" @click="seleccionarCoste('A voluntad')">A
+                                                voluntad</div>
+                                            <div class="dropdown-item" @click="seleccionarCoste('1')">1 PP</div>
+                                            <div class="dropdown-item" @click="seleccionarCoste('2')">2 PP</div>
+                                            <div class="dropdown-item" @click="seleccionarCoste('3')">3 PP</div>
+                                            <div class="dropdown-item" @click="seleccionarCoste('4')">4 PP</div>
+                                            <div class="dropdown-item" @click="seleccionarCoste('6')">6 PP</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="filter-actions">
+                                    <button class="reset-filters-btn" @click="limpiarFiltros">Limpiar filtros</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content-section">
+                        <div class="search-panel">
+                            <template v-if="tipoLista === 'Nivel'">
+                                <div class="movs-list">
+                                    <template v-for="nivel of nivelesConMovs" :key="nivel">
+                                        <div class="nivel-group" :class="nivel > ficha.nivel ? 'demasiado' : ''">
+                                            <h3 class="nivel-title">Nivel {{ nivel }}</h3>
+                                            <div class="movs-grid">
+                                                <template v-for="mov of filtradosNivel(nivel)" :key="mov.nombre">
+                                                    <div v-if="comprobar(mov.nombre)"
+                                                        @click="cargarMovimiento(mov.nombre)" class="mov-item">
+                                                        {{ mov.nombre.trim() }}
+                                                    </div>
+                                                </template>
+                                            </div>
+                                        </div>
+                                    </template>
+                                </div>
+                            </template>
+                            <busquedaMov v-else :movimientos="filtrados" :seleccionado="movimientoSeleccionado?.nombre"
+                                @seleccion="cargarMovimiento" />
+                        </div>
+
+                        <div class="info-panel">
+                            <template v-if="movimientoSeleccionado">
+                                <div class="movimiento-header">
+                                    <h3 class="movimiento-nombre">{{ movimientoSeleccionado.nombre }}</h3>
+                                </div>
+                                <div class="movimiento-info-container">
+                                    <div class="movimiento-info">
+                                        <div class="info-grid">
+                                            <p><strong>Tipo: </strong>{{ movimientoSeleccionado.tipo }}</p>
+                                            <p><strong>Coste: </strong>{{ movimientoSeleccionado.coste }}</p>
+                                        </div>
+                                        <div class="info-grid">
+                                            <p><strong>Acción: </strong>{{ movimientoSeleccionado.accion }}</p>
+                                            <p><strong>Rango: </strong>{{ movimientoSeleccionado.rango }}</p>
+                                        </div>
+                                        <p v-if="movimientoSeleccionado.danno"><strong>Daño: </strong>{{
+                                            movimientoSeleccionado.danno }}</p>
+                                        <p v-if="movimientoSeleccionado.etiquetas"><strong>Etiquetas: </strong>{{
+                                            movimientoSeleccionado.etiquetas }}</p>
+                                        <div v-if="movimientoSeleccionado.statsAso">
+                                            <strong>Estadísticas asociadas: </strong> {{
+                                                formatearStats(movimientoSeleccionado.statsAso) }}.
+                                        </div>
+                                        <div class="descripcion">
+                                            <p class="tituloDesc"><strong>Descripción:</strong></p>
+                                            <p v-for="(parrafo, index) in movimientoSeleccionado.descripcion"
+                                                :key="index" v-html="parrafo"></p>
+                                        </div>
+                                    </div>
+                                </div>
                             </template>
                             <template v-else>
-                                <span>Selecciona un movimiento</span>
+                                <div class="empty-state">
+                                    <p>Selecciona un movimiento para ver su información</p>
+                                </div>
                             </template>
                         </div>
                     </div>
                 </div>
 
-                <button @click="closePopup" class="close-btn">Cerrar</button>
+                <div class="modal-footer">
+                   
+                    <button @click="closePopup" class="cancel-btn">Cerrar</button>
+                    <button @click="añadirMovimiento" class="add-btn" :disabled="checkDisabled()">
+                        Añadir Movimiento
+                    </button>
+                </div>
             </div>
         </div>
     </div>
 </template>
 
 <style scoped>
-.filtro1 {
-    display: flex;
-    gap: 30px;
+.info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
 }
 
-.filtro2 {
-    display: flex;
-    gap: 30px;
-}
-
-.btn,
-.filtro1 button {
-    padding: 5px;
+.btn {
+    margin: 5px 0;
+    padding: 8px 10px;
     background-color: var(--color-principal1);
     color: var(--color-texto);
     border: none;
     border-radius: 6px;
     cursor: pointer;
-
 }
 
-.movsList {
-    width: 30%;
-    overflow: auto;
-}
-
-ul {
-    list-style: none;
-
-}
-
-ul h3 {
-    margin-top: 10px;
-    border-bottom: 1px solid black;
-    letter-spacing: 1px;
-
-}
-
-li {
-    padding: 5px;
-}
-
-li:hover {
+.btn:hover {
     background-color: var(--color-principal2);
-    cursor: pointer;
 }
 
 .modal-overlay {
@@ -414,131 +534,629 @@ li:hover {
 }
 
 .modal-content {
-    background: var(--color-fondoTexto);
-    width: 85vw;
-    height: 75vh;
-    border-radius: 12px;
-    padding: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-}
-
-.ventana {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    background: var(--color-fondoTexto);
-    border: 1px solid #ccc;
+    background-color: var(--color-fondoTexto);
+    width: 90vw;
+    max-width: 1000px;
+    height: 80vh;
     border-radius: 8px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
     overflow: hidden;
 }
 
-.cuerpo {
+.modal-header {
     display: flex;
-    height: 100%;
-}
-
-.preview {
-    width: 80%;
-    background: var(--color-fondoTexto);
-    border: 1px solid #bbb;
-    border-radius: 5px;
-    padding: 12px;
-    display: flex;
-    flex-direction: column;
     justify-content: space-between;
-    gap: 12px;
-    overflow-y: auto;
+    align-items: center;
+    padding: 20px;
+    background: linear-gradient(135deg, var(--color-principal2), var(--color-principal1));
+    border-bottom: 2px solid var(--color-principal1);
 }
 
-.preview button {
-    background-color: #4caf50;
+.modal-title {
+    margin: 0;
+    font-size: 1.4rem;
     color: var(--color-texto);
-    border: none;
-    padding: 8px 12px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 14px;
-    align-self: flex-end;
-}
-
-.preview button:hover {
-    background-color: #3e9442;
-}
-
-.preview button[disabled] {
-    background-color: red !important;
+    letter-spacing: 0.5px;
 }
 
 .close-btn {
-    margin-top: 20px;
-    padding: 8px 12px;
+    background: rgba(255, 255, 255, 0.1);
     color: var(--color-texto);
+    border: none;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.close-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.modal-body {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    overflow: hidden;
+}
+
+.filters-section {
+    flex-shrink: 0;
+    background: var(--color-fondoTexto);
+    border-bottom: 2px solid var(--color-principal2);
+    position: relative;
+    z-index: 1000;
+}
+
+.filters-header {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 12px 20px;
+}
+
+.filters-row-1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+}
+
+.filters-row-2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+}
+
+.search-bar {
+    flex: 1;
+    min-width: 200px;
+}
+
+.filters-toggle-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
     background-color: var(--color-principal1);
+    color: var(--color-texto);
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+    flex-shrink: 0;
 }
 
-input {
-    background-color: transparent;
-    padding: 4px;
-    border: none;
-    border-bottom: 1px solid;
+.filters-toggle-btn:hover {
+    background-color: var(--color-principal2);
+}
+
+.toggle-icon {
+    transition: transform 0.2s ease;
+    font-size: 12px;
+}
+
+.toggle-icon.open {
+    transform: rotate(180deg);
+}
+
+.extra-toggle {
+    flex-shrink: 0;
+}
+
+.extra-toggle-btn {
+    padding: 8px 10px;
+    background-color: var(--color-fondoTexto);
+    color: var(--color-texto);
+    border: 2px solid var(--color-principal2);
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.extra-toggle-btn:hover {
+    background-color: var(--color-principal2);
+    border-color: var(--color-principal1);
+}
+
+.extra-toggle-btn.active {
+    background-color: var(--color-principal1);
+    color: var(--color-texto);
+    border-color: var(--color-principal1);
+}
+
+.extra-toggle-btn.active:hover {
+    background-color: var(--color-principal2);
+}
+
+.list-type-selector {
+    display: flex;
+    gap: 0;
+    align-items: center;
+}
+
+.tab-option {
+    padding: 8px 16px;
+    cursor: pointer;
+
+    color: var(--color-texto);
+    font-size: 14px;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.tab-option:hover {
+    background-color: var(--color-principal2);
     color: var(--color-texto);
 }
 
-
-@media screen and (max-width: 920px) {
-    .cuerpo {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .movsList,
-    .buscador {
-        width: 100%;
-        height: 200px;
-    }
-
-    .preview {
-        width: 100%;
-        height: 200px;
-        overflow-y: scroll;
-    }
-
-    .filtro1 {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-    }
+.tab-option.active {
+    color: var(--color-secundario);
+    border-bottom-color: var(--color-principal1);
+    background-color: rgba(var(--color-principal1-rgb, 0, 0, 0), 0.1);
 }
 
-@media screen and (max-width: 545px) {
+.search-input {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid var(--color-principal2);
+    background-color: var(--color-fondoTexto);
+    color: var(--color-texto);
+    font-size: 14px;
+    border-radius: 4px;
+}
 
-    .filtro1 {
-        display: flex;
-        gap: 5px;
-    }
+.search-input:focus {
+    outline: none;
+    border-color: var(--color-principal1);
+}
 
+.filters-dropdown {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    right: 0;
+    background: var(--color-fondoTexto);
+    border: 1px solid var(--color-principal2);
+    border-radius: 0 0 4px 4px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 1001;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+}
+
+.filters-dropdown.open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.filters-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr auto;
+    gap: 16px;
+    padding: 20px;
+    align-items: end;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.filter-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--color-texto);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.custom-dropdown {
+    position: relative;
+    width: 100%;
+}
+
+.dropdown-button {
+    width: 100%;
+    padding: 6px 8px;
+    border: 1px solid var(--color-principal2);
+    background-color: var(--color-fondoTexto);
+    color: var(--color-texto);
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+}
+
+.dropdown-button:hover {
+    border-color: var(--color-principal1);
+}
+
+.dropdown-arrow {
+    transition: transform 0.2s ease;
+    font-size: 12px;
+}
+
+.dropdown-arrow.open {
+    transform: rotate(180deg);
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: var(--color-fondoTexto);
+    border: 1px solid var(--color-principal2);
+    border-radius: 4px;
+    max-height: 150px;
+    overflow-y: auto;
+    z-index: 10000;
+    display: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.dropdown-menu.open {
+    display: block;
+}
+
+.dropdown-item {
+    padding: 8px 12px;
+    cursor: pointer;
+    color: var(--color-texto);
+    font-size: 14px;
+    border-bottom: 1px solid var(--color-principal2);
+}
+
+.dropdown-item:last-child {
+    border-bottom: none;
+}
+
+.dropdown-item:hover {
+    background-color: var(--color-principal2);
+}
+
+.dropdown-menu::-webkit-scrollbar {
+    width: 6px;
+}
+
+.dropdown-menu::-webkit-scrollbar-track {
+    background: var(--color-principal2);
+    border-radius: 3px;
+}
+
+.dropdown-menu::-webkit-scrollbar-thumb {
+    background: var(--color-principal1);
+    border-radius: 3px;
+}
+
+.dropdown-menu::-webkit-scrollbar-thumb:hover {
+    background: var(--color-principal2);
+}
+
+.filter-actions {
+    display: flex;
+    align-items: end;
+    justify-content: flex-end;
+}
+
+.reset-filters-btn {
+    padding: 6px 12px;
+    background-color: var(--color-principal1);
+    color: var(--color-texto);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.reset-filters-btn:hover {
+    background-color: var(--color-principal2);
+}
+
+.content-section {
+    display: flex;
+
+    overflow: hidden;
+}
+
+.search-panel {
+    flex: 0 0 45%;
+    display: flex;
+    flex-direction: column;
+    border-right: 2px solid var(--color-principal2);
+    overflow: hidden;
+}
+
+.movs-list {
+    flex: 1;
+    overflow-y: auto;
+    padding: 12px;
+}
+
+.nivel-group {
+    margin-bottom: 16px;
+}
+
+.nivel-group.demasiado {
+    opacity: 0.6;
+}
+
+.nivel-title {
+    margin: 0 0 8px 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--color-texto);
+    border-bottom: 2px solid var(--color-principal2);
+    padding-bottom: 4px;
+}
+
+.movs-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 4px;
+}
+
+.mov-item {
+    padding: 8px 12px;
+    background-color: var(--color-fondoTexto);
+    border: 1px solid var(--color-principal2);
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    color: var(--color-texto);
+    transition: all 0.2s ease;
+}
+
+.mov-item:hover {
+    background-color: var(--color-principal2);
+    border-color: var(--color-principal1);
+}
+
+.info-panel {
+  
+    display: flex;
+    flex-direction: column;
+    background: var(--color-fondoTexto);
+}
+
+.movimiento-header {
+    flex-shrink: 0;
+    padding: 8px 12px 0 12px;
+    border-bottom: 2px solid var(--color-principal2);
+    background: var(--color-fondoTexto);
+}
+
+.movimiento-nombre {
+    margin-bottom: 10px;
+    font-size: 20px;
+    color: var(--color-texto);
+    letter-spacing: 0.5px;
+}
+
+.movimiento-info-container {
+    overflow-y: auto;
+    min-height: 0;
+    padding: 10px;
+}
+
+.movimiento-info {
+    line-height: 1.6;
+    color: var(--color-texto);
+}
+
+.movimiento-info p {
+    margin: 0 0 8px 0;
+    font-size: 14px;
+}
+
+.movimiento-info p:last-child {
+    margin-bottom: 0;
+}
+
+.descripcion {
+    margin-top: 16px;
+}
+
+.tituloDesc {
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--color-texto);
+}
+
+.descripcion p {
+    margin: 0 0 8px 0;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.empty-state {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    text-align: center;
+    color: var(--color-texto);
+    opacity: 0.7;
+    padding: 20px;
+}
+
+.empty-state p {
+    margin: 0;
+    font-size: 16px;
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    padding: 16px 20px;
+    background: var(--color-fondoTexto);
+    border-top: 2px solid var(--color-principal2);
+}
+
+.add-btn {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.add-btn:hover:not(:disabled) {
+    background-color: #3e9442;
+}
+
+.add-btn:disabled {
+    background-color: #9e9e9e !important;
+    cursor: not-allowed;
+}
+
+.cancel-btn {
+    background-color: var(--color-principal1);
+    color: var(--color-texto);
+    border: none;
+    padding: 12px 24px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.cancel-btn:hover {
+    background-color: var(--color-principal2);
+}
+
+@media screen and (max-width: 768px) {
     .modal-content {
-        width: 95vw;
+        width: 100vw;
         height: 95vh;
     }
 
-    .movsList,
-    .buscador {
-        width: 100%;
-        height: 300px;
+    .modal-header {
+        padding: 5px 10px;
     }
 
-    .preview {
+    .modal-title {
+        font-size: 16px;
+    }
+
+    .filters-header {
+        padding: 12px 10px;
+    }
+
+    .filters-row-1 {
+        align-items: stretch;
+        gap: 10px;
+    }
+
+    .filters-row-2 {
+        align-items: stretch;
+        gap: 8px;
+    }
+
+    .list-type-selector {
+        justify-content: center;
+        gap: 0;
+        flex-wrap: wrap;
+    }
+
+    .tab-option {
+        flex: 1;
+        text-align: center;
+        min-width: fit-content;
+    }
+
+    .filters-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        padding: 16px;
+    }
+
+    .filter-select {
+        max-height: 100px;
+    }
+
+    .content-section {
+        flex-direction: column;
+    }
+
+    .search-panel {
+        flex: 0 0 150px;
+        min-height: 150px;
+        border-right: none;
+        border-bottom: 2px solid var(--color-principal2);
+    }
+
+    .info-panel {
+        flex: 1;
+        min-height: 150px;
+    }
+
+    .movimiento-header {
+        padding: 10px 10px 0 10px;
+    }
+
+    .movimiento-info-container {
+        padding: 10px;
+    }
+
+    .modal-footer {
+        padding: 8px 16px;
+       
+    }
+
+    .add-btn,
+    .cancel-btn {
         width: 100%;
-        height: 300px;
-        overflow-y: scroll;
+        padding: 10px 20px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .modal-content {
+        width: 100vw;
+        height: 100vh;
+        border-radius: 0;
+    }
+
+    .filters-row {
+        gap: 8px;
+    }
+
+    .search-panel {
+        min-height: 150px;
+    }
+
+    .info-panel {
+        min-height: 150px;
     }
 }
 </style>

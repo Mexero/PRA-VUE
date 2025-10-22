@@ -94,7 +94,7 @@ function emitirSeleccion(nombre) {
 @media screen and (max-width: 545px) {
     .buscador {
         width: 100%;
-        height: 180px;
+        height: 220px;
         display: flex;
         flex-direction: column;
     }

@@ -17,7 +17,9 @@
                         :class="{ seleccionado: m.nombre === seleccionado }"
                     >
                         <td>{{ m.nombre }}</td>
-                        <td>{{ m.tipo }}</td>
+                        <td>
+                            <span class="type-icon" :style="getTypeIconStyle(m.tipo)" :title="m.tipo"></span>
+                        </td>
                         <td>{{ m.coste }}</td>
                         <td>{{ m.etiquetas ?? '—' }}</td>
                     </tr>
@@ -36,6 +38,42 @@ const emit = defineEmits(['seleccion'])
 
 const valor = ref('')
 
+// Mapeo de iconos por tipo (en /public/assets/icons)
+const typeIconMap = {
+    normal: 'normal.svg',
+    fuego: 'fire.svg',
+    agua: 'water.svg',
+    planta: 'grass.svg',
+    electrico: 'electric.svg',
+    hielo: 'ice.svg',
+    lucha: 'fighting.svg',
+    veneno: 'poison.svg',
+    tierra: 'ground.svg',
+    volador: 'flying.svg',
+    psiquico: 'psychic.svg',
+    bicho: 'bug.svg',
+    roca: 'rock.svg',
+    fantasma: 'ghost.svg',
+    dragon: 'dragon.svg',
+    siniestro: 'dark.svg',
+    acero: 'steel.svg',
+    hada: 'fairy.svg'
+}
+
+function normalizeTypeName(tipo) {
+    if (!tipo || typeof tipo !== 'string') return ''
+    // pasar a minúsculas y eliminar acentos
+    const sinAcentos = tipo.normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+    return sinAcentos.toLowerCase().trim()
+}
+
+function getTypeIconStyle(tipo) {
+    const norm = normalizeTypeName(tipo)
+    const file = typeIconMap[norm]
+    if (!file) return {}
+    return { '--type-icon-url': `url(/assets/icons/${file})` }
+}
+
 function emitirSeleccion(nombre) {
     emit('seleccion', nombre)
     valor.value = ''
@@ -44,7 +82,7 @@ function emitirSeleccion(nombre) {
 
 <style scoped>
 .buscador{
-    width: 60%;
+    width: 100%;
     overflow: auto;
 }
 .sugerencias{
@@ -54,6 +92,10 @@ function emitirSeleccion(nombre) {
 }
 td{
     padding: 5px ;
+    text-align: center;
+}
+td:first-child{
+    text-align: left;
 }
 tr:hover{
     background-color: var(--color-principal2);
@@ -75,5 +117,19 @@ tr:hover{
     background-color: var(--color-principal2) !important;
 }
 
+.type-icon {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    background: var(--color-texto);
+    -webkit-mask: var(--type-icon-url) no-repeat center / contain;
+    mask: var(--type-icon-url) no-repeat center / contain;
+    filter: drop-shadow(0 1px 1px rgba(0,0,0,0.15));
+}
 
+@media screen and (max-width: 768px) {
+     th,td {
+       font-size: 14px;
+    }
+}
 </style>

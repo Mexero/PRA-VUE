@@ -97,7 +97,7 @@ const typeMap = {
 <template>
     <div class="mov-content">
         <div class="mov-data">
-            
+
             <p><strong>Acción: </strong>{{ mov.accion }}</p>
             <p><strong>Coste: </strong>{{ computarCoste(mov.coste) }}</p>
             <p><strong>Rango: </strong>{{ mov.rango }}</p>
@@ -142,14 +142,24 @@ const typeMap = {
 .mov-data {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    gap: 4px;
+    padding-bottom: 8px;
 }
 
 .tituloDesc {
     padding: 0;
 }
 
+.mov-data div,
+.mov-data p {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+}
+
 p {
-    padding-bottom: 10px;
+    padding-bottom: 5px;
+
 }
 
 .tipo-icon {
@@ -165,9 +175,10 @@ p {
     display: flex;
     align-items: center;
     gap: 5px;
-    font-weight: 700;
+  
 }
-strong{
+
+strong {
     letter-spacing: 1px;
 }
 </style>
