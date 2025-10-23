@@ -466,7 +466,7 @@ function checkDisabled() {
                                             movimientoSeleccionado.danno }}</p>
                                         <p v-if="movimientoSeleccionado.etiquetas"><strong>Etiquetas: </strong>{{
                                             movimientoSeleccionado.etiquetas }}</p>
-                                        <div v-if="movimientoSeleccionado.statsAso.length">
+                                        <div v-if="movimientoSeleccionado.statsAso">
                                             <strong>Estadísticas asociadas: </strong> {{
                                                 formatearStats(movimientoSeleccionado.statsAso) }}.
                                         </div>
@@ -485,16 +485,15 @@ function checkDisabled() {
                             </template>
                         </div>
                     </div>
-
-                    <div class="modal-footer">
-                        <button @click="closePopup" class="cancel-btn">Cerrar</button>
-                        <button @click="añadirMovimiento" class="add-btn" :disabled="checkDisabled()">
-                            Añadir Movimiento
-                        </button>
-                    </div>
                 </div>
 
-
+                <div class="modal-footer">
+                   
+                    <button @click="closePopup" class="cancel-btn">Cerrar</button>
+                    <button @click="añadirMovimiento" class="add-btn" :disabled="checkDisabled()">
+                        Añadir Movimiento
+                    </button>
+                </div>
             </div>
         </div>
     </div>
@@ -581,20 +580,21 @@ function checkDisabled() {
     background: rgba(255, 255, 255, 0.2);
 }
 
-.modal-body {
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    flex: 1;
-}
+    .modal-body {
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        flex: 1;
+        min-height: 0;
+    }
 
-.filters-section {
-    flex-shrink: 0;
-    background: var(--color-fondoTexto);
-    border-bottom: 2px solid var(--color-principal2);
-    position: relative;
-    z-index: 1000;
-}
+    .filters-section {
+        flex-shrink: 0;
+        background: var(--color-fondoTexto);
+        border-bottom: 2px solid var(--color-principal2);
+        position: relative;
+        z-index: 1000;
+    }
 
 .filters-header {
     display: flex;
@@ -618,7 +618,7 @@ function checkDisabled() {
 }
 
 .search-bar {
-    flex: 1;
+    
     min-width: 200px;
 }
 
@@ -881,7 +881,6 @@ function checkDisabled() {
 
 .content-section {
     display: flex;
-
     overflow: hidden;
 }
 
@@ -893,11 +892,12 @@ function checkDisabled() {
     overflow: hidden;
 }
 
-.movs-list {
-    flex: 1;
-    overflow-y: auto;
-    padding: 12px;
-}
+    .movs-list {
+        overflow-y: auto;
+        padding: 6px;
+        flex: 1;
+        min-height: 0;
+    }
 
 .nivel-group {
     margin-bottom: 16px;
@@ -910,7 +910,6 @@ function checkDisabled() {
 .nivel-title {
     margin: 0 0 8px 0;
     font-size: 16px;
-    font-weight: 600;
     color: var(--color-texto);
     border-bottom: 2px solid var(--color-principal2);
     padding-bottom: 4px;
@@ -939,7 +938,7 @@ function checkDisabled() {
 }
 
 .info-panel {
-
+  
     display: flex;
     flex-direction: column;
     background: var(--color-fondoTexto);
@@ -999,7 +998,7 @@ function checkDisabled() {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex: 1;
+    
     text-align: center;
     color: var(--color-texto);
     opacity: 0.7;
@@ -1056,11 +1055,24 @@ function checkDisabled() {
 }
 
 @media screen and (max-width: 768px) {
-
+    .modal-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100dvh;
+        background-color: rgba(0, 0, 0, 0.6);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 
     .modal-content {
         width: 100vw;
-        height: 95vh;
+        height: 100dvh;
+        border-radius: 0;
+        display: flex;
+        flex-direction: column;
     }
 
     .modal-header {
@@ -1092,7 +1104,6 @@ function checkDisabled() {
     }
 
     .tab-option {
-        flex: 1;
         text-align: center;
         min-width: fit-content;
     }
@@ -1109,22 +1120,24 @@ function checkDisabled() {
 
     .content-section {
         flex-direction: column;
+        gap: 4px;
     }
 
     .search-panel {
-        height: 40vh;
-
-        border-right: none;
-        border-bottom: 2px solid var(--color-principal2);
-    }
-
-    .movimiento-info-container {
        flex: 1;
+        border-right: none;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
     }
 
     .info-panel {
-        flex: 1;
-        min-height: 150px;
+        height: 300px;
+        order: -1;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        border-bottom: 2px solid var(--color-principal2);
     }
 
     .movimiento-header {
@@ -1133,26 +1146,52 @@ function checkDisabled() {
 
     .movimiento-info-container {
         padding: 10px;
+        flex: 1;
+        overflow-y: auto;
+        min-height: 0;
     }
 
     .modal-footer {
         padding: 8px 16px;
-
+        flex-shrink: 0;
+        background: var(--color-fondoTexto);
+        border-top: 2px solid var(--color-principal2);
     }
 
     .add-btn,
     .cancel-btn {
         width: 100%;
-        padding: 10px 20px;
+        padding: 8px 16px;
+        font-size: 14px;
     }
 }
 
-
 @media screen and (max-width: 480px) {
+    .modal-overlay {
+        height: 100dvh;
+    }
+
     .modal-content {
         width: 100vw;
-        height: 95vh;
+        height: 100dvh;
         border-radius: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .modal-body {
+        flex: 1;
+        overflow: hidden;
+    }
+
+    .search-panel {
+        height: 25vh;
+        min-height: 120px;
+    }
+
+    .info-panel {
+        height: 25vh;
+        min-height: 120px;
     }
 
     .filters-row {

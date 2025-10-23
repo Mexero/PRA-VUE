@@ -86,14 +86,12 @@ function añadirHab() {
                 </div>
 
                 <div class="modal-footer">
-                    
+
                     <button @click="closePopup" class="cancel-btn">Cerrar</button>
-                    <button @click="añadirHab" 
-                        class="add-btn"
-                        :disabled="!habilidadSeleccionada || 
-                            ficha.pokedex.habilidades.find(hab => hab === habilidadSeleccionada?.nombre) ||
-                            ficha.pokedex.habilidadesOcultas.find(hab => hab === habilidadSeleccionada?.nombre) ||
-                            ficha.personaliz.habilidadesExtra.find(hab => hab === habilidadSeleccionada?.nombre)">
+                    <button @click="añadirHab" class="add-btn" :disabled="!habilidadSeleccionada ||
+                        ficha.pokedex.habilidades.find(hab => hab === habilidadSeleccionada?.nombre) ||
+                        ficha.pokedex.habilidadesOcultas.find(hab => hab === habilidadSeleccionada?.nombre) ||
+                        ficha.personaliz.habilidadesExtra.find(hab => hab === habilidadSeleccionada?.nombre)">
                         Añadir Habilidad
                     </button>
                 </div>
@@ -126,7 +124,7 @@ function añadirHab() {
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 9999;
+    z-index: 100;
 }
 
 .modal-content {
@@ -153,13 +151,12 @@ function añadirHab() {
 .modal-title {
     margin: 0;
     font-size: 18px;
-    font-weight: 600;
     color: var(--color-texto);
     letter-spacing: 0.5px;
 }
 
 .close-header-btn {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.219);
     color: var(--color-texto);
     border: none;
     border-radius: 50%;
@@ -174,53 +171,45 @@ function añadirHab() {
 }
 
 .close-header-btn:hover {
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.5);
 }
 
 .modal-body {
     display: flex;
-    flex: 1;
     overflow: hidden;
+
 }
 
 .search-panel {
-    flex: 0 0 40%;
+    width: 40%;
     display: flex;
     flex-direction: column;
     border-right: 2px solid var(--color-principal2);
 }
 
 .info-panel {
-    flex: 1;
     display: flex;
     flex-direction: column;
     background: var(--color-fondoTexto);
+    width: 60%;
 }
 
-.info-panel {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    background: var(--color-fondoTexto);
-}
 
 .habilidad-header {
-    flex-shrink: 0;
     padding: 8px 12px 0 12px;
     border-bottom: 2px solid var(--color-principal2);
     background: var(--color-fondoTexto);
 }
 
 .habilidad-nombre {
- margin-bottom: 10px;
+    margin-bottom: 10px;
     font-size: 20px;
     color: var(--color-texto);
     letter-spacing: 0.5px;
-    
+
 }
 
 .habilidad-descripcion-container {
-    flex: 1;
     overflow-y: auto;
     min-height: 0;
     padding: 20px;
@@ -232,7 +221,7 @@ function añadirHab() {
 }
 
 .habilidad-descripcion p {
-    margin: 0 0 12px 0;
+    margin-bottom: 12px;
     font-size: 16px;
 }
 
@@ -244,7 +233,6 @@ function añadirHab() {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex: 1;
     text-align: center;
     color: var(--color-texto);
     opacity: 0.7;
@@ -273,7 +261,6 @@ function añadirHab() {
     border-radius: 6px;
     cursor: pointer;
     font-size: 16px;
-    font-weight: 600;
 }
 
 .add-btn:hover:not(:disabled) {
@@ -293,7 +280,6 @@ function añadirHab() {
     border-radius: 6px;
     cursor: pointer;
     font-size: 14px;
-    font-weight: 500;
 }
 
 .cancel-btn:hover {
@@ -305,53 +291,78 @@ function añadirHab() {
 
 
 @media screen and (max-width: 600px) {
+    .modal-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100dvh;
+        background-color: rgba(0, 0, 0, 0.6);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
     .modal-content {
         width: 100vw;
-        height: 100vh;
+        height: 100dvh;
         border-radius: 0;
+        display: flex;
+        flex-direction: column;
     }
-    
+
     .modal-header {
         padding: 5px 10px;
     }
-    
+
     .modal-title {
         font-size: 18px;
     }
-    
+
     .modal-body {
-        flex-direction: column;
-    }
-    
-    .search-panel {
-        flex: 0 0 180px;
-        min-height: 180px;
-        border-right: none;
-        border-bottom: 2px solid var(--color-principal2);
-    }
-    
-    .info-panel {
+        flex-direction: column-reverse;
         flex: 1;
-        min-height: 250px;
+        overflow: hidden;
     }
-    
+
+    .search-panel {
+        width: 100%;
+        height: 50%;
+        border-right: none;
+        border-bottom: 1px solid var(--color-principal2);
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+    }
+
+    .info-panel {
+        width: 100%;
+        height: 50%;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+    }
+
     .habilidad-header {
         padding: 16px 16px 0 16px;
     }
-    
+
     .habilidad-descripcion-container {
         padding: 16px;
         flex: 1;
         overflow-y: auto;
         min-height: 0;
     }
-    
+
     .modal-footer {
         padding: 10px;
-       
+        flex-shrink: 0;
+        background: var(--color-fondoTexto);
+        border-top: 2px solid var(--color-principal2);
     }
-    
-    .add-btn, .cancel-btn {
+
+    .add-btn,
+    .cancel-btn {
         width: 100%;
         padding: 10px 20px;
     }

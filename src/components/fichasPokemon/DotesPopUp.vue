@@ -181,19 +181,17 @@ function añadirDote() {
 
 .modal-body {
     display: flex;
-    flex: 1;
     overflow: hidden;
 }
 
 .search-panel {
-    flex: 0 0 40%;
     display: flex;
     flex-direction: column;
     border-right: 2px solid var(--color-principal2);
 }
 
 .info-panel {
-    flex: 1;
+
     display: flex;
     flex-direction: column;
     background: var(--color-fondoTexto);
@@ -214,7 +212,7 @@ function añadirDote() {
 }
 
 .dote-descripcion-container {
-    flex: 1;
+
     overflow-y: auto;
     min-height: 0;
     padding: 20px;
@@ -258,7 +256,7 @@ function añadirDote() {
     border-radius: 6px;
     cursor: pointer;
     font-size: 14px;
-    font-weight: 600;
+ 
 }
 
 .add-btn:hover:not(:disabled) {
@@ -278,7 +276,6 @@ function añadirDote() {
     border-radius: 6px;
     cursor: pointer;
     font-size: 14px;
-    font-weight: 500;
 }
 
 .cancel-btn:hover {
@@ -288,10 +285,24 @@ function añadirDote() {
 
 
 @media screen and (max-width: 600px) {
+    .modal-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100dvh;
+        background-color: rgba(0, 0, 0, 0.6);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
     .modal-content {
         width: 100vw;
-        height: 100vh;
+        height: 100dvh;
         border-radius: 0;
+        display: flex;
+        flex-direction: column;
     }
 
     .modal-header {
@@ -303,19 +314,27 @@ function añadirDote() {
     }
 
     .modal-body {
-        flex-direction: column;
+        flex-direction: column-reverse;
+        flex: 1;
+        overflow: hidden;
     }
 
     .search-panel {
-
-        min-height: 220px;
+        width: 100%;
+        height: 50%;
         border-right: none;
-        border-bottom: 2px solid var(--color-principal2);
+        border-bottom: 1px solid var(--color-principal2);
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
     }
 
     .info-panel {
-        flex: 1;
-        min-height: 200px;
+        width: 100%;
+        height: 50%;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
     }
 
     .dote-header {
@@ -331,7 +350,9 @@ function añadirDote() {
 
     .modal-footer {
         padding: 10px;
-        
+        flex-shrink: 0;
+        background: var(--color-fondoTexto);
+        border-top: 2px solid var(--color-principal2);
     }
 
     .add-btn,

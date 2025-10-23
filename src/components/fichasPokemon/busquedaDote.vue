@@ -94,23 +94,24 @@ function emitirSeleccion(nombre) {
 @media screen and (max-width: 545px) {
     .buscador {
         width: 100%;
-        height: 220px;
+        height: 100%;
         display: flex;
         flex-direction: column;
+        overflow: hidden;
     }
-    
+
     .buscador input {
         padding: 6px 10px;
         font-size: 16px;
         flex-shrink: 0;
     }
-    
+
     .sugerencias-wrapper {
-        flex: 1;
         overflow-y: auto;
+        flex: 1;
         min-height: 0;
     }
-    
+
     .sugerencias th,
     .sugerencias td {
         padding: 8px 10px;
