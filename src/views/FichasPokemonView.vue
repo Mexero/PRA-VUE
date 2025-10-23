@@ -1193,12 +1193,13 @@ function onChangeIniciativaRango(targetIndex) {
                         <div class="Evasion">
                             <h3>Evasión</h3>
                             <input v-model.number="ficha.derivados.ca" :readonly="!ficha.manual.ca" />
-                            <select v-if="ficha.pokedex.calculosEva.length > 1" v-model="ficha.derivados.caElegida">
+                            <select v-if="ficha.pokedex.calculosEva && ficha.pokedex.calculosEva.length > 1"
+                                v-model="ficha.derivados.caElegida">
                                 <option v-for="(calculo, i) in ficha.pokedex.calculosEva" :value="i">{{ calculo }}
                                 </option>
                             </select>
                             <p v-else>
-                                {{ ficha.pokedex.calculosEva[0] }}
+                                {{ ficha.pokedex.calculosEva ? ficha.pokedex.calculosEva[0] || 0 : 0 }}
                             </p>
                         </div>
 
