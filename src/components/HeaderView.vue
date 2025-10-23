@@ -117,7 +117,7 @@ function ignoreUpdate() {
                 <img src="/assets/icons/CargarTodoIcon.svg" alt="" @click="cacheAll">
             </div>
 
-            <div class="icono icono-discord"> <a href="https://discord.gg/yT6CtNxP" target="_blank">
+            <div class="icono icono-discord"> <a href="https://discord.gg/SJshbG3e5f" target="_blank">
                     <img src="/assets/icons/DiscordIcon.svg" alt="">
                 </a>
             </div>

@@ -82,7 +82,7 @@ import { RouterLink } from 'vue-router'
             <article id="infoContacto">
                 <div>
                     <h2>¡Únete a nuestra comunidad!</h2>
-                    <a href="https://discord.gg/yT6CtNxP" target="_blank"><img src="/assets/icons/discord.webp"
+                    <a href="https://discord.gg/SJshbG3e5f" target="_blank"><img src="/assets/icons/discord.webp"
                             alt="Icono Discord"></a>
                 </div>
                 <div>
@@ -404,9 +404,10 @@ solo cambia el tamaños de los bloques y el margen con el header*/
     box-shadow: 2px 2px 5px rgba(32, 32, 32, 0.511);
 }
 
-p{
+p {
     font-size: 18px;
 }
+
 #infoContacto p {
     margin-top: 16px;
     line-height: 1.5;
@@ -479,7 +480,7 @@ p{
 }
 
 .textoInfo p {
-    
+
     line-height: 30px;
     padding: 15px;
     font-size: 18px;
@@ -629,7 +630,8 @@ p{
 #FAQ p {
     padding: 10px;
 }
-h3{
+
+h3 {
     font-size: 22px;
 }
 
