@@ -2010,7 +2010,6 @@ input[type="number"] {
         gap: 10px;
     }
 
-
     .estatSave {
         display: grid;
         grid-template-columns: 1fr 1fr;

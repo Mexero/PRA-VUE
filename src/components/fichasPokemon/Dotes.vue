@@ -46,10 +46,15 @@ watch(
     { deep: true }
 );
 
+// Computed para determinar si hay dotes o dotes para añadir
+const tieneDotesOEspacios = computed(() => {
+    return dotesUsados.value > 0 || ficha.personaliz.dotesExtra.length > 0 || slotsDote.value.some(slot => !slot);
+});
+
 </script>
 <template>
     <section class="feats">
-        <div class="tituloYAñadir">
+        <div class="tituloYAñadir" :class="{ 'con-borde': tieneDotesOEspacios }">
             <h3>
                 Dotes ({{ dotesUsados }} / {{ ficha.derivados.cantidadDotes }})
             </h3>
@@ -109,9 +114,14 @@ h3{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 8px;
-    padding-bottom: 8px;
+   
+    
+}
+
+.tituloYAñadir.con-borde {
     border-bottom: 1px solid var(--color-principal2);
+    padding-bottom: 8px;
+    margin-bottom: 8px;
 }
 
 .botones-dotes {

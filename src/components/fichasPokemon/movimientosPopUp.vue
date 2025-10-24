@@ -549,7 +549,7 @@ function checkDisabled() {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
+    padding: 5px 15px;
     background: linear-gradient(135deg, var(--color-principal2), var(--color-principal1));
     border-bottom: 2px solid var(--color-principal1);
 }
@@ -938,7 +938,7 @@ function checkDisabled() {
 }
 
 .info-panel {
-  
+    flex: 1;
     display: flex;
     flex-direction: column;
     background: var(--color-fondoTexto);

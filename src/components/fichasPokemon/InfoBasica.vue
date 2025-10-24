@@ -198,7 +198,7 @@ const typeMap = {
 
 
             <p class="NombreTipos" :class="'type-' + normalizeType(ficha.pokedex.tipos[0])"> {{ ficha.pokedex.tipos[0]
-                }}
+            }}
             </p>
 
             <p v-if="ficha.pokedex.tipos[1]" class="NombreTipos"
@@ -238,7 +238,6 @@ const typeMap = {
 .nivel-icon {
     width: 27px;
     height: 27px;
-
 }
 
 .nivel-icon-btn {
@@ -300,12 +299,12 @@ const typeMap = {
 
 .especie {
     position: relative;
-   
+
 }
 
 .nivel {
     position: relative;
-   
+
 }
 
 .tipos {
@@ -494,127 +493,4 @@ input[type="number"] {
     }
 }
 
-/*
-@media screen and (max-width: 768px) {
-    .info-basica {
-        grid-template-areas:
-            "nombre nivel"
-            "especie especie"
-            "tipos tipos";
-        gap: 12px 15px;
-    }
-
-    .nombre input,
-    .especie input {
-        width: 120px;
-        font-size: 16px;
-    }
-
-    .nivel input {
-        width: 40px;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .info-basica {
-        grid-template-areas:
-            "nombre"
-            "nivel"
-            "especie"
-            "tipos";
-        grid-template-columns: 1fr;
-        gap: 10px;
-    }
-
-    .nivel {
-        justify-self: start;
-    }
-
-    .nombre input,
-    .especie input {
-        width: 100%;
-        max-width: 200px;
-    }
-}
-
-/*
-@media screen and (max-width: 1410px) {
-    .info-basica {
-        display: grid;
-        grid-template-areas:
-            "nombre nivel"
-            "especie tipos ";
-        grid-template-columns: 1fr 1fr;
-        gap: 20px 0;
-    }
-
-    .nombre {
-        grid-area: nombre;
-        width: 200px;
-    }
-
-    .especie {
-        grid-area: especie;
-    }
-
-    .nivel {
-        grid-area: nivel;
-        margin-left: auto;
-    }
-
-    .tipos {
-        grid-area: tipos;
-        margin-left: auto;
-    }
-
-
-
-}
-
-@media screen and (max-width: 920px) {
-    .info-basica {
-        display: grid;
-        grid-template-areas:
-            "nombre nivel"
-            "especie especie"
-            "tipos tipos";
-        grid-template-columns: auto;
-        grid-template-rows: 30px;
-
-    }
-
-    .tipos {
-        margin-left: 0;
-    }
-
-    .nivel {
-        flex-direction: column;
-    }
-
-}
-
-@media screen and (max-width: 545px) {
-    .info-basica {
-        display: grid;
-        grid-template-areas:
-            "nombre"
-            "especie"
-            "nivel"
-            "tipos";
-        grid-template-columns: 100%;
-        grid-template-rows: 30px;
-
-    }
-
-    .nivel-input {
-        display: flex;
-        align-items: center;
-    }
-
-    .nivel {
-        flex-direction: row;
-        margin-left: 0;
-    }
-}
-    */
 </style>

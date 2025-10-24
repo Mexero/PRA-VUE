@@ -72,9 +72,13 @@ function añadirDote() {
                         <template v-if="doteSeleccionada">
                             <div class="dote-header">
                                 <h3 class="dote-nombre">{{ doteSeleccionada.Nombre }}</h3>
+                                
                             </div>
                             <div class="dote-descripcion-container">
                                 <div class="dote-descripcion">
+                                    <div v-if="doteSeleccionada.Prerrequisitos" class="dote-prerequisitos">
+                                    <strong>Prerequisitos:</strong> {{ doteSeleccionada.Prerrequisitos }}
+                                </div>
                                     <BloqueTextoComplejo :dato="doteSeleccionada.Descripcion" />
                                 </div>
                             </div>
@@ -147,7 +151,7 @@ function añadirDote() {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 24px;
+    padding: 5px 15px;
     background: linear-gradient(135deg, var(--color-principal2), var(--color-principal1));
     border-bottom: 2px solid var(--color-principal1);
 }
@@ -180,6 +184,7 @@ function añadirDote() {
 }
 
 .modal-body {
+    flex: 1;
     display: flex;
     overflow: hidden;
 }
@@ -211,8 +216,12 @@ function añadirDote() {
     letter-spacing: 0.5px;
 }
 
-.dote-descripcion-container {
+.dote-prerequisitos {
+    margin-bottom: 10px;
+    font-size: 14px;
+}
 
+.dote-descripcion-container {
     overflow-y: auto;
     min-height: 0;
     padding: 20px;

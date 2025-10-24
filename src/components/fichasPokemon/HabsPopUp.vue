@@ -143,7 +143,7 @@ function añadirHab() {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 24px;
+    padding: 5px 15px;
     background: linear-gradient(135deg, var(--color-principal2), var(--color-principal1));
     border-bottom: 2px solid var(--color-principal1);
 }
@@ -175,6 +175,7 @@ function añadirHab() {
 }
 
 .modal-body {
+    flex: 1;
     display: flex;
     overflow: hidden;
 
