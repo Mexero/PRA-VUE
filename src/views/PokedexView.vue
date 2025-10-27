@@ -1,5 +1,7 @@
 <template>
   <div class="app">
+    <h1 class="mainTitulo" id="top">Pokédex</h1>
+
     <div v-if="verFiltros" class="modal-overlay">
       <div class="modal-content">
         <button class="cerrar-filtros" @click="verFiltros = false">✖</button>
@@ -13,7 +15,10 @@
     <main class="main-content">
       <!-- Pokédex View -->
       <div class="pokedex-wrapper">
-        <button class="verFiltros" @click="verFiltros = true">Filtros</button>
+        <div class="controls-container">
+          <button class="verFiltros" @click="verFiltros = true">Filtros</button>
+          <FiltroBusqueda v-model="searchTerm" />
+        </div>
         <div class="pokedex-section">
           <PokemonGrid @show-details="handlePokemonSelect" :pokedex="pokedexFiltrada" :pokedexCargada="pokedexCargada"
             :selectedPokemon="selectedPokemon" />
@@ -30,7 +35,8 @@
 <script setup>
 import PokemonGrid from '@/components/Pokedex/PokemonGrid.vue'
 import PokemonDetails from '@/components/Pokedex/PokemonDetails.vue'
-import PokedexFilters from '@/components/Pokedex/PokedexFilters.vue';
+import PokedexFilters from '@/components/Pokedex/PokedexFilters.vue'
+import FiltroBusqueda from '@/components/Pokedex/FiltroBusqueda.vue';
 
 import { ref, watch, onMounted } from 'vue';
 import { useRoute, useRouter } from "vue-router";
@@ -511,6 +517,14 @@ function generarEvoluciones(evoEn, nivelEvo, tipoRequisito, requisitosEvo, evoOt
 </script>
 
 <style scoped>
+.controls-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+gap: 20px;
+}
+
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -554,7 +568,6 @@ function generarEvoluciones(evoEn, nivelEvo, tipoRequisito, requisitosEvo, evoOt
   color: var(--color-texto);
   font-weight: bold;
   padding: 10px 20px;
-  margin: 10px;
   border: none;
   border-radius: 8px;
   cursor: pointer;
@@ -575,17 +588,15 @@ function generarEvoluciones(evoEn, nivelEvo, tipoRequisito, requisitosEvo, evoOt
 /* === main === */
 .main-content {
   margin: 20px;
-  background-color: var(--color-fondoTexto);
   border-radius: 10px;
   display: grid;
   grid-template-columns: 55fr 45fr;
   gap: 20px;
-  min-height: 75vh;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  min-height: 100vh;
 }
 
 .pokedex-wrapper {
-  max-height: 75vh;
+  max-height: 80vh;
   display: flex;
   flex-direction: column;
 }
@@ -597,18 +608,17 @@ function generarEvoluciones(evoEn, nivelEvo, tipoRequisito, requisitosEvo, evoOt
   border: 1px solid #999;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  background-color: var(--color-fondoTexto);
 }
 
 .details-section {
-  max-height: 75vh;
+  max-height: 100vh;
   overflow-y: auto;
-  padding: 25px;
+  padding: 10px;
   background-color: var(--color-hoverBloque);
-  border: 2px solid #999;
-  border-top: 5px solid var(--color-principal1);
+  border: 1px solid #999;
   font-size: 14px;
-  border-radius: 16px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
 }
 
 @media (max-width: 950px) {

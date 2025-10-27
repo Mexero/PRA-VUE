@@ -19,14 +19,14 @@ defineEmits(['update:modelValue'])
 
 <style scoped>
 .search-container {
-  display: flex;
+    width: 100%; 
   justify-content: center;
 }
 
 .search-input {
   width: 100%;
-  max-width: 400px;
-  padding: 12px 20px;
+ display: flex;
+  padding: 10px 20px;
   border: 2px solid #ddd;
   border-radius: 25px;
   font-size: 1em;

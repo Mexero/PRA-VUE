@@ -1,6 +1,5 @@
 <template>
     <div class="filters-container" ref="container">
-        <FiltroBusqueda v-model="busqueda" />
         <FiltroTipos :selected-types="tiposFiltrados" @cambiar-tipos="cambiarTipos" />
         <div class="grid">
             <filtroHabilidad :dbCargada="dbCargada" :habilidad="habilidad" @cambiarHabilidad="cambiarHabilidad" />
@@ -20,7 +19,6 @@
 </template>
 
 <script setup>
-import FiltroBusqueda from '@/components/Pokedex/FiltroBusqueda.vue';
 import FiltroTipos from '@/components/Pokedex/FiltroTipos.vue';
 import FiltroHabilidad from './FiltroHabilidad.vue';
 import FiltroTamano from './FiltroTamano.vue';
@@ -35,7 +33,6 @@ import { watch, ref, onMounted, onBeforeUnmount } from 'vue';
 
 const props = defineProps({
     dbCargada: Boolean,
-    searchTerm: String,
     selectedTypes: Array,
     filtroHabilidad: String,
     filtroTamano: String,
@@ -51,7 +48,6 @@ const container = ref(null)
 
 const emit = defineEmits(['manejar-filtros', 'cerrar-filtros'])
 
-const busqueda = ref(props.searchTerm)
 const tiposFiltrados = ref([...props.selectedTypes])
 const habilidad = ref(props.filtroHabilidad)
 const tamano = ref(props.filtroTamano)
@@ -66,7 +62,6 @@ const movs = ref([...props.filtroMovimientos])
 
 //Actualizar filtros hacia abajo
 watch(() => [
-    props.searchTerm,
     props.selectedTypes,
     props.filtroHabilidad,
     props.filtroTamano,
@@ -78,7 +73,6 @@ watch(() => [
     props.filtroMovimientos
 ],
     () => {
-        busqueda.value = props.searchTerm
         tiposFiltrados.value = [...props.selectedTypes]
         habilidad.value = props.filtroHabilidad
         tamano.value = props.filtroTamano

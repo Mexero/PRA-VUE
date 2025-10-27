@@ -259,7 +259,6 @@ const resetSearch = () => {
 .resultBusqueda div button:disabled {
     opacity: 0.6;
     cursor: not-allowed;
-    background: var(--color-secundario2);
     color: #888;
 }
 

@@ -1,3 +1,5 @@
+
+
 <script setup>
 import { RouterLink } from 'vue-router'
 import { ref, onMounted } from 'vue'
@@ -35,12 +37,12 @@ function toggleModo() {
     root.style.setProperty('--color-hoverBloque', oscuro.value ? '#293141' : '#EEF5FF')
     root.style.setProperty('--color-sombraTexto', oscuro.value ? '#ff0051' : '#F8F8F8')
     root.style.setProperty('--color-principal1', oscuro.value ? '#aa0036' : '#94c4ff')
-    root.style.setProperty('--color-principal2', oscuro.value ? '#ce0041' : '#b2d7ff')
+    root.style.setProperty('--color-principal2', oscuro.value ? '#bd003c' : '#b2d7ff')
     root.style.setProperty('--color-secundario', oscuro.value ? '#ff0051' : '#529CE6')
     root.style.setProperty('--color-secundario2', oscuro.value ? '#ffffff' : '#badfff')
     root.style.setProperty('--color-tituloTabla', oscuro.value ? '#aa0036' : 'rgb(0, 174, 255)')
-    root.style.setProperty('--color-tabla1', oscuro.value ? '#8d2020' : '#a3cdff')
-    root.style.setProperty('--color-tabla2', oscuro.value ? '#aa2727' : '#bae2ff')
+    root.style.setProperty('--color-tabla1', oscuro.value ? '#612222' : '#a3cdff')
+    root.style.setProperty('--color-tabla2', oscuro.value ? '#4d1b1b' : '#bae2ff')
     root.style.setProperty('--color-fondoTexto', oscuro.value ? '#293141' : '#EEF5FF')
     root.style.setProperty('--color-BloqueDescargas', oscuro.value ? '#ff0051' : '#A1E3F9')
     root.style.setProperty('--color-hoverBloqueDescargas', oscuro.value ? '#293141' : '#EEF5FF')

@@ -71,7 +71,7 @@ const itemsGrid = computed(() => {
         2px -2px 10px rgba(0, 0, 0, 0.1),
         2px 2px 10px rgba(0, 0, 0, 0.1),
         -2px -2px 10px rgba(0, 0, 0, 0.1);
-    padding: 1.5rem;
+        padding: 10px;
 }
 
 
@@ -94,7 +94,6 @@ const itemsGrid = computed(() => {
 @media screen and (max-width: 890px) {
     .seleccionado {
         font-size: 15px;
-        padding: 10px;
         margin: 30px 0 20px 0;
         width: 100%;
         box-sizing: border-box;

@@ -32,7 +32,7 @@ const handleImageError = () => {
 
 <style scoped>
 .pokemon-container {
-  padding: 20px;
+  padding: 0px;
 }
 
 /* Mensajes genéricos */
@@ -60,7 +60,7 @@ const handleImageError = () => {
 .pokemon-grid {
   display: grid;
   gap: 20px;
-  padding: 15px;
+  padding: 10px;
   grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
 }
 </style>

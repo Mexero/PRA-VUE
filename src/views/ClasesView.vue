@@ -387,7 +387,7 @@ html {
 }
 
 .class-active {
-    background-color: var(--color-tituloTabla);
+    background-color: var(--color-secundario);
 }
 
 .class-active .claseTitulo {
@@ -407,7 +407,7 @@ html {
 .subclasses {
     display: flex;
     flex-wrap: wrap;
-    background-color: var(--color-principal2);
+    background-color: var(--color-tabla2);
     gap: 10px;
     padding: 10px 5px;
 }
@@ -424,12 +424,12 @@ html {
 
 .subclas-active,
 .subclas-inactive {
-    background-color: var(--color-secundario);
+    background-color: var(--color-principal2);
     
 }
 
 .subclas-active {
-    background-color: var(--color-tituloTabla);
+    background-color: var(--color-secundario);
     text-shadow: 0px 0px 1px var(--color-texto);
 }
 
@@ -439,7 +439,6 @@ html {
 
 .subclasses>div:hover {
     border: 1px solid black;
-
 }
 
 /* ========= TABLA PRINCIPAL ========== */
@@ -602,7 +601,7 @@ td:nth-child(2) {
 .mostrarEntrenador-enter-active,
 .mostrarEntrenador-leave-active {
     overflow: hidden;
-    transition: all 0.3s ease;
+    transition: all 0.2s ease;
 }
 
 .mostrarEntrenador-enter-from,
@@ -618,7 +617,7 @@ td:nth-child(2) {
 .mostrarSubclases-enter-active,
 .mostrarSubclases-leave-active {
     overflow: hidden;
-    transition: all 0.3s ease;
+    transition: all 0.2s ease;
 }
 
 .mostrarSubclases-enter-from,
@@ -690,7 +689,5 @@ td:nth-child(2) {
         font-size: 14px;
     }
 
-    /*
-*/
 }
 </style>

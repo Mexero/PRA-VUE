@@ -43,7 +43,6 @@ defineProps([
 @media screen and (max-width: 890px) {
     .seleccionado {
         font-size: 15px;
-        padding: 10px;
         margin: 30px 0 20px 0;
         width: 100%;
         box-sizing: border-box;
