@@ -1,5 +1,5 @@
 <script setup>
-import { ref, watch } from 'vue'
+import { ref, watch, onBeforeUnmount } from 'vue'
 import busquedaDote from './busquedaDote.vue'
 import BloqueTextoComplejo from '../BloqueTextoComplejo.vue';
 
@@ -28,6 +28,13 @@ watch(isOpen, (newValue) => {
     if (newValue) {
         document.body.style.overflow = 'hidden'
     } else {
+        document.body.style.overflow = ''
+    }
+})
+
+// Asegurar que el scroll se restaure cuando el componente se destruye
+onBeforeUnmount(() => {
+    if (isOpen.value) {
         document.body.style.overflow = ''
     }
 })

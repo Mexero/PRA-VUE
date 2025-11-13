@@ -55,17 +55,17 @@ watch(() => props.pokemon, async () => {
 
 .pokemon-card {
   background-color: var(--color-fondoTarjeta);
-  border-radius: 14px;
+  border-radius: 10px;
   padding: 10px;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
   position: relative;
   cursor: pointer;
   text-align: center;
 }
 
 .pokemon-card:hover {
-  transform: translateY(-5px) scale(1.03);
+  transform: translateY(-2px) scale(1.01);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
@@ -94,11 +94,11 @@ watch(() => props.pokemon, async () => {
   display: block;
   margin: 6px auto;
   image-rendering: pixelated;
-  transition: transform 0.3s ease;
+  transition: transform 0.1s ease;
 }
 
 .pokemon-card:hover .pokemon-image {
-  transform: scale(1.08);
+  transform: scale(1.3);
 }
 
 .pokemon-info {

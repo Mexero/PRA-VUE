@@ -70,7 +70,7 @@
       </div>
 
       <!-- Tooltip del movimiento -->
-      <MoveTooltip v-if="hoveredMove && hoveredMoveDetails && hoveredMove === hoveredMoveDetails.nombre"
+      <MoveTooltip v-if="hoveredMove && hoveredMoveDetails"
         :move-name="hoveredMove" :move-details="hoveredMoveDetails" :position="tooltipPosition" />
 
       <div v-if="levelMoves.length === 0 && teachableMoves.length === 0" class="no-moves">
@@ -212,11 +212,6 @@ async function handleMouseEnter(event, moveName) {
     hoveredMove.value = moveName
     await cargarMovimiento(moveName)
   }
-  else {
-    console.error('Movimiento no encontrado: ', moveName)
-    hoveredMoveDetails.value = null
-    hoveredMove.value = null
-  }
 }
 
 async function cargarMovimiento(movimiento) {
@@ -238,17 +233,20 @@ async function cargarMovimiento(movimiento) {
       hoveredMoveDetails.value = {
         nombre: row[0],
         tipo: row[1],
-        accion: row[2],
-        coste: row[3],
-        danno: row[4] !== "" ? row[4] : null,
+        tiempo_de_uso: row[2] !== "" ? row[2] : null,
+        coste: row[3] !== "" ? row[3] : null,
+        dano: row[4] !== "" ? row[4] : null,
         rango: row[5] !== "" ? row[5] : null,
         etiquetas: row[6] !== "" ? row[6] : null,
-        descripcion: row[7].split('\n'),
+        descripcion: row[7] ? row[7].split('\n') : [],
         statsAso: [row[8], row[9], row[10], row[11]].filter(stat => stat !== ""),
         ataque: (!row[12] || row[12] === 'False') ? false : true,
-        salvacion: row[13],
-        Dificultad: row[14]
+        salvacion: row[13] !== "" ? row[13] : null,
+        Dificultad: row[14] !== "" ? row[14] : null
       }
+    } else {
+      hoveredMoveDetails.value = null
+      hoveredMove.value = null
     }
   } catch (err) {
     hoveredMoveDetails.value = null

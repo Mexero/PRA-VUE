@@ -587,16 +587,18 @@ gap: 20px;
 
 /* === main === */
 .main-content {
-  margin: 20px;
+  margin: 20px auto;
+  padding: 0 40px;
   border-radius: 10px;
   display: grid;
   grid-template-columns: 55fr 45fr;
   gap: 20px;
   min-height: 100vh;
+  max-width: 1700px;
 }
 
 .pokedex-wrapper {
-  max-height: 80vh;
+  max-height: 100vh;
   display: flex;
   flex-direction: column;
 }
@@ -624,12 +626,12 @@ gap: 20px;
 @media (max-width: 950px) {
   .main-content {
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     gap: 20px;
   }
 
   .pokedex-wrapper {
-    max-height: 50vh;
+    max-height: 70vh;
   }
 
   .details-section {

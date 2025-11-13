@@ -1,5 +1,5 @@
 <script setup>
-import { ref, watch, computed, onMounted } from 'vue'
+import { ref, watch, computed, onMounted, onBeforeUnmount } from 'vue'
 import busquedaMov from './busquedaMov.vue'
 import { initDB, queryDB } from '@/services/dbWorkerService'
 
@@ -27,6 +27,15 @@ const error = ref(null)
 const loading = ref(false)
 
 
+// Función para cerrar dropdowns al hacer click fuera
+function handleClickOutside(e) {
+    if (!e.target.closest('.custom-dropdown')) {
+        tipoDropdownAbierto.value = false
+        etiquetaDropdownAbierto.value = false
+        costeDropdownAbierto.value = false
+    }
+}
+
 //check DB abierta al entrar
 onMounted(async () => {
     try {
@@ -38,13 +47,15 @@ onMounted(async () => {
     }
 
     // Cerrar dropdowns al hacer click fuera
-    document.addEventListener('click', (e) => {
-        if (!e.target.closest('.custom-dropdown')) {
-            tipoDropdownAbierto.value = false
-            etiquetaDropdownAbierto.value = false
-            costeDropdownAbierto.value = false
-        }
-    })
+    document.addEventListener('click', handleClickOutside)
+})
+
+// Limpiar event listener al destruir el componente
+onBeforeUnmount(() => {
+    document.removeEventListener('click', handleClickOutside)
+    if (isOpen.value) {
+        document.body.style.overflow = ''
+    }
 })
 
 //Abrir y cerrar pop up
@@ -65,6 +76,7 @@ watch(isOpen, (newValue) => {
         document.body.style.overflow = ''
     }
 })
+
 
 
 const formatearStats = (stats) => {

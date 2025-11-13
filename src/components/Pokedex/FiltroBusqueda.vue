@@ -27,8 +27,8 @@ defineEmits(['update:modelValue'])
   width: 100%;
  display: flex;
   padding: 10px 20px;
-  border: 2px solid #ddd;
-  border-radius: 25px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
   font-size: 1em;
   transition: all 0.3s ease;
   outline: none;
