@@ -526,18 +526,12 @@ function actualizar() {
         ficha.personaliz.mejorasHab.pop()
     }
 
-    // Actualizar estadísticas con mejoras de estadísticas
-    const mejoraToValor = (mejoras) => {
-        if (mejoras < 0) return 0
-        if (mejoras <= 3) return mejoras
-        if (mejoras === 4) return 3
-        if (mejoras > 4) return 4
-    }
-
+    // Actualizar estadísticas con mejoras y bonos extra
     for (const stat in ficha.derivados.stats) {
         const baseStat = ficha.pokedex.statsBase[stat] || 0
         const mejorasAplicadas = ficha.personaliz.mejorasEst.filter(s => s === stat).length
-        ficha.derivados.stats[stat] = baseStat + mejoraToValor(mejorasAplicadas)
+        const extra = ficha.personaliz.bonosExtraEst?.[stat] || 0
+        ficha.derivados.stats[stat] = baseStat + mejoraToValor(mejorasAplicadas) + extra
     }
 
     // Actualizar salvaciones con bonificaciones personalizadas
@@ -859,7 +853,128 @@ onMounted(async () => {
 
 
 const mostrarToolbar = ref(false)
+const mostrarMenuConfiguracion = ref(false)
 const mostrarConfigIniciativa = ref(false)
+const snapshotConfiguracion = ref(null)
+const configuracionDerivados = ref(null)
+
+const statLabels = {
+    fue: 'Fuerza',
+    agi: 'Agilidad',
+    res: 'Resistencia',
+    men: 'Mente',
+    esp: 'Espíritu',
+    pre: 'Presencia'
+}
+
+const velocidadKeys = computed(() => Object.keys(ficha.derivados.velocidades || {}))
+
+function mejoraToValor(mejoras) {
+    if (mejoras < 0) return 0
+    if (mejoras <= 3) return mejoras
+    if (mejoras === 4) return 3
+    if (mejoras > 4) return 4
+    return 0
+}
+
+function valorBaseStat(stat) {
+    const baseStat = ficha.pokedex.statsBase?.[stat] || 0
+    const mejorasAplicadas = ficha.personaliz.mejorasEst?.filter(s => s === stat).length || 0
+    return baseStat + mejoraToValor(mejorasAplicadas)
+}
+
+function abrirMenuConfiguracion() {
+    if (mostrarMenuConfiguracion.value) return
+    const copia = JSON.parse(JSON.stringify(ficha.derivados))
+    snapshotConfiguracion.value = copia
+    configuracionDerivados.value = JSON.parse(JSON.stringify(copia))
+    mostrarMenuConfiguracion.value = true
+}
+
+function cerrarMenuConfiguracion() {
+    mostrarMenuConfiguracion.value = false
+    snapshotConfiguracion.value = null
+    configuracionDerivados.value = null
+}
+
+function reiniciarCambiosConfiguracion() {
+    if (!snapshotConfiguracion.value) return
+    const original = JSON.parse(JSON.stringify(snapshotConfiguracion.value))
+    configuracionDerivados.value = JSON.parse(JSON.stringify(original))
+
+    // Restaurar totalmente los derivados y mejoras relacionadas
+    Object.assign(ficha.derivados, JSON.parse(JSON.stringify(original)))
+
+    if (ficha.personaliz?.mejorasVelocidades && snapshotConfiguracion.value?.velocidades) {
+        const baseVel = ficha.pokedex.velocidades || {}
+        const mejorasVel = {}
+        Object.keys(snapshotConfiguracion.value.velocidades).forEach(vel => {
+            const total = snapshotConfiguracion.value.velocidades[vel] ?? 0
+            const base = baseVel[vel] ?? 0
+            mejorasVel[vel] = total - base
+        })
+        ficha.personaliz.mejorasVelocidades = mejorasVel
+    }
+
+    if (snapshotConfiguracion.value?.stats) {
+        const extras = { ...(ficha.personaliz?.bonosExtraEst || {}) }
+        Object.keys(snapshotConfiguracion.value.stats).forEach(stat => {
+            const total = snapshotConfiguracion.value.stats[stat] ?? valorBaseStat(stat)
+            const base = valorBaseStat(stat)
+            extras[stat] = total - base
+        })
+        ficha.personaliz.bonosExtraEst = extras
+    }
+
+    cerrarMenuConfiguracion()
+}
+
+function guardarCambiosConfiguracion() {
+    if (!configuracionDerivados.value) return
+    const nuevos = JSON.parse(JSON.stringify(configuracionDerivados.value))
+    if (snapshotConfiguracion.value) {
+        const camposManual = [
+            'bh',
+            'ppMax',
+            'pvMax',
+            'vit',
+            'init',
+            'ca'
+        ]
+        camposManual.forEach(campo => {
+            if (nuevos[campo] !== snapshotConfiguracion.value[campo]) {
+                if (Object.prototype.hasOwnProperty.call(ficha.manual, campo)) {
+                    ficha.manual[campo] = true
+                }
+            }
+        })
+    }
+    if (nuevos.velocidades && ficha.pokedex.velocidades) {
+        const origenVel = ficha.pokedex.velocidades || {}
+        const mejorasVel = ficha.personaliz.mejorasVelocidades || {}
+        Object.keys(nuevos.velocidades).forEach(vel => {
+            const base = origenVel?.[vel] ?? 0
+            const total = nuevos.velocidades?.[vel] ?? 0
+            mejorasVel[vel] = total - base
+        })
+        ficha.personaliz.mejorasVelocidades = { ...mejorasVel }
+    }
+
+    if (nuevos.stats && ficha.pokedex.statsBase) {
+        const extras = { ...(ficha.personaliz.bonosExtraEst || {}) }
+        Object.keys(nuevos.stats).forEach(stat => {
+            const base = valorBaseStat(stat)
+            const total = nuevos.stats[stat] ?? base
+            extras[stat] = total - base
+        })
+        ficha.personaliz.bonosExtraEst = extras
+    }
+
+    Object.assign(ficha.derivados, nuevos)
+    actualizar()
+    guardarFicha()
+    cerrarMenuConfiguracion()
+}
 
 // Funciones para los botones del Pokémon
 function nuevaEscena() {
@@ -1107,10 +1222,21 @@ function onChangeIniciativaRango(targetIndex) {
             <div class="character-sheet">
                 <!-- Botón de toolbar posicionado en la esquina superior izquierda -->
                 <div class="sheet-managing">
-                    <button class="toolbar-toggle" @click="mostrarToolbar = !mostrarToolbar"
-                        :aria-expanded="mostrarToolbar.toString()">
-                        ☰
-                    </button>
+                    <div class="toolbar-buttons">
+                        <button class="toolbar-toggle" @click="mostrarToolbar = !mostrarToolbar"
+                            :aria-expanded="mostrarToolbar.toString()" title="Mostrar opciones de fichas">
+                            ☰
+                        </button>
+                        <button class="toolbar-settings" @click="abrirMenuConfiguracion" title="Editar datos rápidos">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                aria-hidden="true" focusable="false">
+                                <circle cx="12" cy="12" r="3" />
+                                <path
+                                    d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33h.09A1.65 1.65 0 0 0 9 3.09V3a2 2 0 0 1 4 0v.09c0 .66.39 1.25 1 1.51a1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82c.22.63.85 1.05 1.51 1.05H21a2 2 0 0 1 0 4h-.09c-.66 0-1.25.39-1.51 1z" />
+                            </svg>
+                        </button>
+                    </div>
 
                     <transition name="slide" mode="out-in">
                         <div v-if="mostrarToolbar" class="toolbar-container" key="toolbar">
@@ -1284,6 +1410,101 @@ function onChangeIniciativaRango(targetIndex) {
     </div>
     <LanzadorDados />
 
+    <transition name="fade">
+        <div v-if="mostrarMenuConfiguracion && configuracionDerivados" class="config-panel-overlay"
+            @click.self="cerrarMenuConfiguracion">
+            <div class="config-panel">
+                <div class="config-panel-header">
+                    <h3>Configuración del Pokémon</h3>
+                    <button class="close-btn" @click="cerrarMenuConfiguracion" aria-label="Cerrar">×</button>
+                </div>
+
+                <div class="config-panel-body">
+                    <section class="config-section">
+                        <h4>Vitalidad y Recursos</h4>
+                        <div class="config-grid">
+                            <label class="config-field">
+                                <span>PV</span>
+                                <div class="dual-input">
+                                    <input type="number" v-model.number="configuracionDerivados.pv">
+                                    <span>/</span>
+                                    <input type="number" v-model.number="configuracionDerivados.pvMax">
+                                </div>
+                            </label>
+                            <label class="config-field">
+                                <span>PP</span>
+                                <div class="dual-input">
+                                    <input type="number" v-model.number="configuracionDerivados.pp">
+                                    <span>/</span>
+                                    <input type="number" v-model.number="configuracionDerivados.ppMax">
+                                </div>
+                            </label>
+                            <label class="config-field">
+                                <span>Vitalidad</span>
+                                <input type="number" v-model.number="configuracionDerivados.vit">
+                            </label>
+                            <label class="config-field">
+                                <span>BH</span>
+                                <input type="number" v-model.number="configuracionDerivados.bh">
+                            </label>
+                            <label class="config-field">
+                                <span>Escudo</span>
+                                <input type="number" v-model.number="configuracionDerivados.escudo">
+                            </label>
+                            <label class="config-field">
+                                <span>Fatiga</span>
+                                <input type="number" v-model.number="configuracionDerivados.fatiga">
+                            </label>
+                        </div>
+                    </section>
+
+                    <section class="config-section">
+                        <h4>Cálculo de Evasión</h4>
+                        <div class="config-grid">
+                            <label class="config-field">
+                                <span>CA actual</span>
+                                <input type="number" v-model.number="configuracionDerivados.ca">
+                            </label>
+                            <label class="config-field" v-if="ficha.pokedex.calculosEva?.length">
+                                <span>Fórmula base</span>
+                                <select v-model.number="configuracionDerivados.caElegida">
+                                    <option v-for="(calculo, i) in ficha.pokedex.calculosEva" :key="calculo"
+                                        :value="i">
+                                        {{ calculo }}
+                                    </option>
+                                </select>
+                            </label>
+                        </div>
+                    </section>
+
+                    <section class="config-section">
+                        <h4>Stats Derivados</h4>
+                        <div class="stats-grid">
+                            <label v-for="(label, key) in statLabels" :key="key" class="config-field">
+                                <span>{{ label }}</span>
+                                <input type="number" v-model.number="configuracionDerivados.stats[key]">
+                            </label>
+                        </div>
+                    </section>
+
+                    <section class="config-section">
+                        <h4>Velocidades</h4>
+                        <div class="config-grid">
+                            <label v-for="vel in velocidadKeys" :key="vel" class="config-field">
+                                <span>{{ vel }}</span>
+                                <input type="number" v-model.number="configuracionDerivados.velocidades[vel]">
+                            </label>
+                        </div>
+                    </section>
+                </div>
+                <div class="config-panel-actions">
+                    <button class="btn-reset" @click="reiniciarCambiosConfiguracion">Reiniciar</button>
+                    <button class="btn-save" @click="guardarCambiosConfiguracion">Guardar cambios</button>
+                </div>
+            </div>
+        </div>
+    </transition>
+
     <!-- Modal configuración de iniciativa -->
     <div v-if="mostrarConfigIniciativa" class="config-modal-overlay" @click.self="mostrarConfigIniciativa = false">
         <div class="config-modal">
@@ -1323,6 +1544,12 @@ function onChangeIniciativaRango(targetIndex) {
     height: fit-content;
     display: flex;
     align-items: center;
+    gap: 8px;
+}
+
+.toolbar-buttons {
+    display: flex;
+    gap: 6px;
 }
 
 .toolbar-toggle {
@@ -1338,12 +1565,156 @@ function onChangeIniciativaRango(targetIndex) {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
+.toolbar-settings {
+    width: fit-content;
+    height: fit-content;
+    background-color: var(--color-principal2);
+    color: var(--color-texto);
+    border: none;
+    border-radius: 4px;
+    padding: 6px 8px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.toolbar-settings svg {
+    pointer-events: none;
+}
+
 .toolbar-container {
     position: absolute;
     top: 0px;
     left: 32px;
     z-index: 4;
     border: 1px solid var(--color-principal1);
+}
+
+.config-panel-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.65);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 900;
+    padding: 20px;
+}
+
+.config-panel {
+    width: min(900px, 95vw);
+    max-height: 90vh;
+    background: var(--color-fondoTexto);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    overflow: hidden;
+}
+
+.config-panel-header {
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 10px;
+    background: var(--color-fondoTexto);
+    z-index: 1;
+}
+
+.config-panel-body {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    overflow-y: auto;
+    padding-right: 8px;
+}
+
+.config-section h4 {
+    margin: 0 0 10px 0;
+    color: var(--color-principal1);
+}
+
+.config-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 12px;
+}
+
+.config-field {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 13px;
+}
+
+.config-field input,
+.config-field select,
+.config-field textarea {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(0, 0, 0, 0.15);
+    color: var(--color-texto);
+    border-radius: 6px;
+    padding: 6px 8px;
+    font-size: 14px;
+}
+
+.config-field textarea {
+    min-height: 60px;
+    resize: vertical;
+}
+
+.dual-input {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.dual-input span {
+    font-weight: bold;
+    color: var(--color-principal1);
+}
+
+.config-panel-actions {
+    position: sticky;
+    bottom: 0;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    padding-top: 10px;
+    background: linear-gradient(180deg, transparent 0%, var(--color-fondoTexto) 40%);
+}
+
+.btn-reset,
+.btn-save {
+    border: none;
+    border-radius: 6px;
+    padding: 8px 14px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.btn-reset {
+    background: rgba(255, 255, 255, 0.12);
+    color: var(--color-texto);
+}
+
+.btn-save {
+    background: var(--color-principal1);
+    color: var(--color-texto);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
 }
 
 .center {

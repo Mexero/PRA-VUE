@@ -88,19 +88,16 @@ watch(
 <template>
     <div class="filtros">
         <div class="botones">
-            <div>
-                <button @click="mostrarFiltros = !mostrarFiltros">
-                    {{ mostrarFiltros ? "Ocultar filtros" : "Mostrar filtros" }}
-                </button>
-            </div>
+            <button @click="mostrarFiltros = !mostrarFiltros">
+                {{ mostrarFiltros ? "Ocultar filtros" : "Mostrar filtros" }}
+            </button>
+            <input type="text" class="filtrosInput" placeholder="Buscar por nombre" v-model="nombre"
+                @input="actualizarFiltros('nombre', nombre)" />
         </div>
 
         <transition name="slideFiltros">
             <div v-if="mostrarFiltros" id="mostrarFiltros">
                 <div class="paddingBloque">
-                    <input type="text" placeholder="Buscar por nombre" v-model="nombre"
-                        @input="actualizarFiltros('nombre', nombre)" />
-
                     <button @click="limpiarFiltros">Limpiar filtros</button>
 
                     <div id="filtroAccion">
@@ -155,19 +152,22 @@ watch(
     margin: 10px 0;
 }
 
-input[type="text"] {
-    padding: 7px;
-    font-size: 17px;
+.filtrosInput {
+    padding: 8px 10px;
+    border-radius: 6px;
+    font-size: 15px;
     outline: none;
-    margin-right: 20px;
-    border: 1px solid var(--color-principal1);
+    border: 1px solid #ccc;
     background-color: var(--color-fondoTexto);
     color: var(--color-texto);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    flex: 1;
+    min-width: 0;
 }
 
-input[type="text"]:focus {
-    border-color: var(--color-secundario);
-    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.2);
+.filtrosInput:focus {
+    border-color: var(--color-principal1);
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.15);
 }
 
 /* ===== Botones ===== */
@@ -188,7 +188,9 @@ input[type="text"]:focus {
 /* Contenedor de los botones */
 .botones {
     display: flex;
-    gap: 5px;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
 }
 
 /* ===== Caja de filtros visible ===== */

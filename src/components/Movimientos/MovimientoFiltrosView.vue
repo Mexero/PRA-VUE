@@ -99,18 +99,19 @@ watch(
 <template>
     <div class="filtros">
         <div class="botones">
-            <div>
-                <button @click="mostrarFiltros = !mostrarFiltros">
-                    {{ mostrarFiltros ? "Ocultar filtros" : "Mostrar filtros" }}
-                </button>
-            </div>
+            <button @click="mostrarFiltros = !mostrarFiltros">
+                {{ mostrarFiltros ? "Ocultar filtros" : "Mostrar filtros" }}
+            </button>
+            <input type="text" class="filtrosInput" placeholder="Buscar por nombre" v-model="nombre"
+                @input="actualizarFiltros('nombre', nombre)" />
         </div>
 
         <transition name="slideFiltros">
+            
             <div v-if="mostrarFiltros" id="mostrarFiltros">
+                
                 <div class="paddingBloque">
-                    <input type="text" placeholder="Buscar por nombre" v-model="nombre"
-                        @input="actualizarFiltros('nombre', nombre)" />
+                   
 
                     <button @click="limpiarFiltros">Limpiar filtros</button>
                     <div id="filtroAccion">
@@ -156,6 +157,7 @@ watch(
 </template>
 
 <style scoped>
+
 /* ===== TITULOS ===== */
 h3 {
     width: fit-content;
@@ -200,23 +202,26 @@ h3 {
 
 .botones {
     display: flex;
+    align-items: center;
     gap: 8px;
+    width: 100%;
 }
 
 /* ===== INPUTS ===== */
-input[type="text"] {
+.filtrosInput {
     padding: 8px 10px;
     border-radius: 6px;
     font-size: 15px;
     outline: none;
-    margin-right: 10px;
     border: 1px solid #ccc;
     background-color: var(--color-fondoTexto);
     color: var(--color-texto);
     transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    flex: 1;
+    min-width: 0;
 }
 
-input[type="text"]:focus {
+.filtrosInput:focus {
     border-color: var(--color-principal1);
     box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.15);
 }

@@ -69,11 +69,12 @@
                 está una explicación de cómo se debe leer la misma.
             </p>
 
+            <!-- TEMPORAL
             <div class="consejoCapitulo">
                 <p>Temporal: Añadir final una vez tengamos la pokedex</p>
                 <img src="/assets/img/temporal.jpg" alt="Imagen Temporal" width="200px" />
             </div>
-
+ -->
             <p>
                 <strong>Estadísticas Base</strong>: Se da una lista de las Estadísticas
                 Base del Pokémon, es decir, las que tiene sin que le afecte ningún

@@ -15,6 +15,11 @@ import MovsData from './MovsData.vue';
 const emit = defineEmits(['update:movimientosCompletos']);
 const modificandoMovimientosCompletos = ref(false)
 
+function movimientoKey(value) {
+    if (typeof value === 'string') return value
+    return value?.nombre ?? ''
+}
+
 function getMovimientoCompleto(nombre) {
     return props.movimientosCompletos.find(mov => mov.nombre === nombre);
 }
@@ -184,7 +189,8 @@ function eliminarMov(movimiento, lista) {
         </div>
         <div class="moves-list">
             <!-- Movimientos Aprendidos -->
-            <draggable v-model="ficha.personaliz.movimientosAprendidos" group="movimientos" item-key="nombre">
+            <draggable v-model="ficha.personaliz.movimientosAprendidos" :group="{ name: 'movimientos' }"
+                :item-key="movimientoKey">
                 <template #item="{ element: mov, index: i }">
                     <details class="movimiento" :style="getMoveStyle(mov)">
                         <summary class="movimiento-summary">
@@ -205,7 +211,8 @@ function eliminarMov(movimiento, lista) {
             </draggable>
 
             <!-- Movimientos Extra -->
-            <draggable v-model="ficha.personaliz.movimientosExtra" group="movimientos" item-key="nombre"
+            <draggable v-model="ficha.personaliz.movimientosExtra"
+                :group="{ name: 'movimientos', pull: false, put: false }" :item-key="movimientoKey"
                 handle=".movimiento-summary" :animation="200">
                 <template #item="{ element: mov, index: i }">
                     <details class="movimiento" :style="getMoveStyle(mov)">
