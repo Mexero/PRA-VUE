@@ -857,6 +857,7 @@ const mostrarMenuConfiguracion = ref(false)
 const mostrarConfigIniciativa = ref(false)
 const snapshotConfiguracion = ref(null)
 const configuracionDerivados = ref(null)
+const ajustesConfiguracion = ref({})
 
 const statLabels = {
     fue: 'Fuerza',
@@ -888,6 +889,41 @@ function abrirMenuConfiguracion() {
     const copia = JSON.parse(JSON.stringify(ficha.derivados))
     snapshotConfiguracion.value = copia
     configuracionDerivados.value = JSON.parse(JSON.stringify(copia))
+    // Inicializar ajustes con los valores actuales de los modificadores
+    // Para valores calculados, calcular la diferencia entre el valor actual y el base
+    const baseBH = Math.ceil(ficha.nivel / 2)
+    const basePP = ficha.derivados.stats.esp + ficha.nivel - Math.max(ficha.derivados.fatiga, 0)
+    const basePV = 10 + ficha.nivel * (ficha.derivados.vit + ficha.derivados.stats.res)
+    
+    // Calcular CA base
+    calcularEVA()
+    const idx = ficha.derivados.caElegida ?? 0
+    const baseCA = (ficha.derivados.cas?.[idx]?.valor || 0) + ficha.derivados.bh - Math.max(ficha.derivados.fatiga, 0)
+    
+    ajustesConfiguracion.value = {
+        vit: ficha.personaliz.bonoVit || 0,
+        bh: ficha.manual.bh ? (ficha.derivados.bh - baseBH) : 0,
+        ppMax: ficha.manual.ppMax ? (ficha.derivados.ppMax - basePP) : 0,
+        pvMax: ficha.manual.pvMax ? (ficha.derivados.pvMax - basePV) : 0,
+        escudo: ficha.derivados.escudo || 0,
+        fatiga: ficha.derivados.fatiga || 0,
+        ca: ficha.manual.ca ? (ficha.derivados.ca - baseCA) : 0,
+        stats: {
+            fue: ficha.personaliz.bonosExtraEst?.fue || 0,
+            agi: ficha.personaliz.bonosExtraEst?.agi || 0,
+            res: ficha.personaliz.bonosExtraEst?.res || 0,
+            men: ficha.personaliz.bonosExtraEst?.men || 0,
+            esp: ficha.personaliz.bonosExtraEst?.esp || 0,
+            pre: ficha.personaliz.bonosExtraEst?.pre || 0
+        },
+        velocidades: {}
+    }
+    // Inicializar velocidades con los valores actuales
+    if (ficha.derivados.velocidades) {
+        Object.keys(ficha.derivados.velocidades).forEach(vel => {
+            ajustesConfiguracion.value.velocidades[vel] = ficha.personaliz.mejorasVelocidades?.[vel] || 0
+        })
+    }
     mostrarMenuConfiguracion.value = true
 }
 
@@ -895,6 +931,7 @@ function cerrarMenuConfiguracion() {
     mostrarMenuConfiguracion.value = false
     snapshotConfiguracion.value = null
     configuracionDerivados.value = null
+    ajustesConfiguracion.value = {}
 }
 
 function reiniciarCambiosConfiguracion() {
@@ -926,51 +963,233 @@ function reiniciarCambiosConfiguracion() {
         ficha.personaliz.bonosExtraEst = extras
     }
 
-    cerrarMenuConfiguracion()
+    // Reiniciar ajustes
+    ajustesConfiguracion.value = {
+        vit: null,
+        bh: null,
+        ppMax: null,
+        pvMax: null,
+        escudo: null,
+        fatiga: null,
+        ca: null,
+        stats: { fue: null, agi: null, res: null, men: null, esp: null, pre: null },
+        velocidades: {}
+    }
+    // Reiniciar velocidades
+    if (ficha.derivados.velocidades) {
+        Object.keys(ficha.derivados.velocidades).forEach(vel => {
+            ajustesConfiguracion.value.velocidades[vel] = null
+        })
+    }
+}
+
+function aplicarAjusteVitalidad(ajuste) {
+    if (ajuste === null || ajuste === undefined || ajuste === '') {
+        ajustesConfiguracion.value.vit = 0
+        ficha.personaliz.bonoVit = 0
+    } else {
+        const valor = parseFloat(ajuste)
+        if (!isNaN(valor)) {
+            ficha.personaliz.bonoVit = valor
+        }
+    }
+    
+    // Recalcular PV cuando cambia vitalidad
+    actualizar()
+    if (configuracionDerivados.value) {
+        configuracionDerivados.value.vit = ficha.derivados.vit
+        configuracionDerivados.value.pvMax = ficha.derivados.pvMax
+    }
+}
+
+function aplicarAjusteStat(stat, ajuste) {
+    if (!ficha.personaliz.bonosExtraEst) {
+        ficha.personaliz.bonosExtraEst = { fue: 0, agi: 0, res: 0, men: 0, esp: 0, pre: 0 }
+    }
+    
+    if (ajuste === null || ajuste === undefined || ajuste === '') {
+        ajustesConfiguracion.value.stats[stat] = 0
+        ficha.personaliz.bonosExtraEst[stat] = 0
+    } else {
+        const valor = parseFloat(ajuste)
+        if (!isNaN(valor)) {
+            ficha.personaliz.bonosExtraEst[stat] = valor
+        }
+    }
+    
+    // Recalcular valores dependientes
+    actualizar()
+    if (configuracionDerivados.value) {
+        configuracionDerivados.value.stats[stat] = ficha.derivados.stats[stat]
+        // Si cambió resistencia, recalcular PV
+        if (stat === 'res') {
+            configuracionDerivados.value.pvMax = ficha.derivados.pvMax
+        }
+    }
+}
+
+function aplicarAjusteVelocidad(vel, ajuste) {
+    if (!ficha.personaliz.mejorasVelocidades) {
+        ficha.personaliz.mejorasVelocidades = {}
+    }
+    
+    if (ajuste === null || ajuste === undefined || ajuste === '') {
+        ajustesConfiguracion.value.velocidades[vel] = 0
+        ficha.personaliz.mejorasVelocidades[vel] = 0
+    } else {
+        const valor = parseFloat(ajuste)
+        if (!isNaN(valor)) {
+            ficha.personaliz.mejorasVelocidades[vel] = valor
+        }
+    }
+    
+    actualizar()
+    if (configuracionDerivados.value) {
+        configuracionDerivados.value.velocidades[vel] = ficha.derivados.velocidades[vel]
+    }
+}
+
+function aplicarAjusteBH(ajuste) {
+    if (ajuste === null || ajuste === undefined || ajuste === '') {
+        ajustesConfiguracion.value.bh = 0
+        ficha.manual.bh = false
+    } else {
+        const valor = parseFloat(ajuste)
+        if (!isNaN(valor)) {
+            // Calcular el valor base actual
+            const baseBH = Math.ceil(ficha.nivel / 2)
+            ficha.derivados.bh = baseBH + valor
+            ficha.manual.bh = true
+        }
+    }
+    
+    actualizar()
+    if (configuracionDerivados.value) {
+        configuracionDerivados.value.bh = ficha.derivados.bh
+    }
+}
+
+function aplicarAjustePPMax(ajuste) {
+    if (ajuste === null || ajuste === undefined || ajuste === '') {
+        ajustesConfiguracion.value.ppMax = 0
+        ficha.manual.ppMax = false
+    } else {
+        const valor = parseFloat(ajuste)
+        if (!isNaN(valor)) {
+            // Calcular el valor base actual
+            const basePP = ficha.derivados.stats.esp + ficha.nivel - Math.max(ficha.derivados.fatiga, 0)
+            ficha.derivados.ppMax = basePP + valor
+            ficha.manual.ppMax = true
+        }
+    }
+    
+    actualizar()
+    if (configuracionDerivados.value) {
+        configuracionDerivados.value.ppMax = ficha.derivados.ppMax
+    }
+}
+
+function aplicarAjustePVMax(ajuste) {
+    if (ajuste === null || ajuste === undefined || ajuste === '') {
+        ajustesConfiguracion.value.pvMax = 0
+        ficha.manual.pvMax = false
+    } else {
+        const valor = parseFloat(ajuste)
+        if (!isNaN(valor)) {
+            // Calcular el valor base actual
+            const basePV = 10 + ficha.nivel * (ficha.derivados.vit + ficha.derivados.stats.res)
+            ficha.derivados.pvMax = basePV + valor
+            ficha.manual.pvMax = true
+        }
+    }
+    
+    actualizar()
+    if (configuracionDerivados.value) {
+        configuracionDerivados.value.pvMax = ficha.derivados.pvMax
+    }
+}
+
+function aplicarAjusteCA(ajuste) {
+    if (ajuste === null || ajuste === undefined || ajuste === '') {
+        ajustesConfiguracion.value.ca = 0
+        ficha.manual.ca = false
+    } else {
+        const valor = parseFloat(ajuste)
+        if (!isNaN(valor)) {
+            // Calcular el valor base actual de CA
+            calcularEVA()
+            const idx = ficha.derivados.caElegida ?? 0
+            const baseCA = (ficha.derivados.cas?.[idx]?.valor ?? 0) + ficha.derivados.bh - Math.max(ficha.derivados.fatiga, 0)
+            ficha.derivados.ca = baseCA + valor
+            ficha.manual.ca = true
+        }
+    }
+    
+    actualizar()
+    if (configuracionDerivados.value) {
+        configuracionDerivados.value.ca = ficha.derivados.ca
+    }
+}
+
+function aplicarAjusteEscudo(ajuste) {
+    if (ajuste === null || ajuste === undefined || ajuste === '') {
+        ajustesConfiguracion.value.escudo = 0
+        ficha.derivados.escudo = 0
+    } else {
+        const valor = parseFloat(ajuste)
+        if (!isNaN(valor)) {
+            ficha.derivados.escudo = valor
+        }
+    }
+    
+    if (configuracionDerivados.value) {
+        configuracionDerivados.value.escudo = ficha.derivados.escudo
+    }
+}
+
+function aplicarAjusteFatiga(ajuste) {
+    if (ajuste === null || ajuste === undefined || ajuste === '') {
+        ajustesConfiguracion.value.fatiga = 0
+        ficha.derivados.fatiga = 0
+    } else {
+        const valor = parseFloat(ajuste)
+        if (!isNaN(valor)) {
+            ficha.derivados.fatiga = valor
+        }
+    }
+    
+    actualizar()
+    if (configuracionDerivados.value) {
+        configuracionDerivados.value.fatiga = ficha.derivados.fatiga
+    }
 }
 
 function guardarCambiosConfiguracion() {
-    if (!configuracionDerivados.value) return
-    const nuevos = JSON.parse(JSON.stringify(configuracionDerivados.value))
-    if (snapshotConfiguracion.value) {
-        const camposManual = [
-            'bh',
-            'ppMax',
-            'pvMax',
-            'vit',
-            'init',
-            'ca'
-        ]
-        camposManual.forEach(campo => {
-            if (nuevos[campo] !== snapshotConfiguracion.value[campo]) {
-                if (Object.prototype.hasOwnProperty.call(ficha.manual, campo)) {
-                    ficha.manual[campo] = true
-                }
+    // Aplicar todos los ajustes pendientes antes de guardar
+    if (ajustesConfiguracion.value.vit !== null) aplicarAjusteVitalidad(ajustesConfiguracion.value.vit)
+    if (ajustesConfiguracion.value.bh !== null) aplicarAjusteBH(ajustesConfiguracion.value.bh)
+    if (ajustesConfiguracion.value.ppMax !== null) aplicarAjustePPMax(ajustesConfiguracion.value.ppMax)
+    if (ajustesConfiguracion.value.pvMax !== null) aplicarAjustePVMax(ajustesConfiguracion.value.pvMax)
+    if (ajustesConfiguracion.value.escudo !== null) aplicarAjusteEscudo(ajustesConfiguracion.value.escudo)
+    if (ajustesConfiguracion.value.fatiga !== null) aplicarAjusteFatiga(ajustesConfiguracion.value.fatiga)
+    if (ajustesConfiguracion.value.ca !== null) aplicarAjusteCA(ajustesConfiguracion.value.ca)
+    
+    if (ajustesConfiguracion.value.stats) {
+        Object.keys(ajustesConfiguracion.value.stats).forEach(stat => {
+            if (ajustesConfiguracion.value.stats[stat] !== null) {
+                aplicarAjusteStat(stat, ajustesConfiguracion.value.stats[stat])
             }
         })
     }
-    if (nuevos.velocidades && ficha.pokedex.velocidades) {
-        const origenVel = ficha.pokedex.velocidades || {}
-        const mejorasVel = ficha.personaliz.mejorasVelocidades || {}
-        Object.keys(nuevos.velocidades).forEach(vel => {
-            const base = origenVel?.[vel] ?? 0
-            const total = nuevos.velocidades?.[vel] ?? 0
-            mejorasVel[vel] = total - base
+    
+    if (ajustesConfiguracion.value.velocidades) {
+        Object.keys(ajustesConfiguracion.value.velocidades).forEach(vel => {
+            if (ajustesConfiguracion.value.velocidades[vel] !== null) {
+                aplicarAjusteVelocidad(vel, ajustesConfiguracion.value.velocidades[vel])
+            }
         })
-        ficha.personaliz.mejorasVelocidades = { ...mejorasVel }
     }
-
-    if (nuevos.stats && ficha.pokedex.statsBase) {
-        const extras = { ...(ficha.personaliz.bonosExtraEst || {}) }
-        Object.keys(nuevos.stats).forEach(stat => {
-            const base = valorBaseStat(stat)
-            const total = nuevos.stats[stat] ?? base
-            extras[stat] = total - base
-        })
-        ficha.personaliz.bonosExtraEst = extras
-    }
-
-    Object.assign(ficha.derivados, nuevos)
+    
     actualizar()
     guardarFicha()
     cerrarMenuConfiguracion()
@@ -1422,50 +1641,54 @@ function onChangeIniciativaRango(targetIndex) {
                 <div class="config-panel-body">
                     <section class="config-section">
                         <h4>Vitalidad y Recursos</h4>
-                        <div class="config-grid">
-                            <label class="config-field">
-                                <span>PV</span>
-                                <div class="dual-input">
-                                    <input type="number" v-model.number="configuracionDerivados.pv">
-                                    <span>/</span>
-                                    <input type="number" v-model.number="configuracionDerivados.pvMax">
-                                </div>
+                        <div class="config-list">
+                            <label class="config-field-list">
+                                <span>PV Max</span>
+                                <span class="valor-actual">{{ configuracionDerivados.pvMax }}</span>
+                                <input type="number" 
+                                    v-model.number="ajustesConfiguracion.pvMax"
+                                    @input="aplicarAjustePVMax(ajustesConfiguracion.pvMax)"
+                                    placeholder="0">
                             </label>
-                            <label class="config-field">
-                                <span>PP</span>
-                                <div class="dual-input">
-                                    <input type="number" v-model.number="configuracionDerivados.pp">
-                                    <span>/</span>
-                                    <input type="number" v-model.number="configuracionDerivados.ppMax">
-                                </div>
+                            <label class="config-field-list">
+                                <span>PP Max</span>
+                                <span class="valor-actual">{{ configuracionDerivados.ppMax }}</span>
+                                <input type="number" 
+                                    v-model.number="ajustesConfiguracion.ppMax"
+                                    @input="aplicarAjustePPMax(ajustesConfiguracion.ppMax)"
+                                    placeholder="0">
                             </label>
-                            <label class="config-field">
+                            <label class="config-field-list">
                                 <span>Vitalidad</span>
-                                <input type="number" v-model.number="configuracionDerivados.vit">
+                                <span class="valor-actual">{{ configuracionDerivados.vit }}</span>
+                                <input type="number" 
+                                    v-model.number="ajustesConfiguracion.vit"
+                                    @input="aplicarAjusteVitalidad(ajustesConfiguracion.vit)"
+                                    placeholder="0">
                             </label>
-                            <label class="config-field">
+                            <label class="config-field-list">
                                 <span>BH</span>
-                                <input type="number" v-model.number="configuracionDerivados.bh">
-                            </label>
-                            <label class="config-field">
-                                <span>Escudo</span>
-                                <input type="number" v-model.number="configuracionDerivados.escudo">
-                            </label>
-                            <label class="config-field">
-                                <span>Fatiga</span>
-                                <input type="number" v-model.number="configuracionDerivados.fatiga">
+                                <span class="valor-actual">{{ configuracionDerivados.bh }}</span>
+                                <input type="number" 
+                                    v-model.number="ajustesConfiguracion.bh"
+                                    @input="aplicarAjusteBH(ajustesConfiguracion.bh)"
+                                    placeholder="0">
                             </label>
                         </div>
                     </section>
 
                     <section class="config-section">
                         <h4>Cálculo de Evasión</h4>
-                        <div class="config-grid">
-                            <label class="config-field">
-                                <span>CA actual</span>
-                                <input type="number" v-model.number="configuracionDerivados.ca">
+                        <div class="config-list">
+                            <label class="config-field-list">
+                                <span>CA</span>
+                                <span class="valor-actual">{{ configuracionDerivados.ca }}</span>
+                                <input type="number" 
+                                    v-model.number="ajustesConfiguracion.ca"
+                                    @input="aplicarAjusteCA(ajustesConfiguracion.ca)"
+                                    placeholder="0">
                             </label>
-                            <label class="config-field" v-if="ficha.pokedex.calculosEva?.length">
+                            <label class="config-field-list" v-if="ficha.pokedex.calculosEva?.length">
                                 <span>Fórmula base</span>
                                 <select v-model.number="configuracionDerivados.caElegida">
                                     <option v-for="(calculo, i) in ficha.pokedex.calculosEva" :key="calculo"
@@ -1479,20 +1702,28 @@ function onChangeIniciativaRango(targetIndex) {
 
                     <section class="config-section">
                         <h4>Stats Derivados</h4>
-                        <div class="stats-grid">
-                            <label v-for="(label, key) in statLabels" :key="key" class="config-field">
+                        <div class="config-list">
+                            <label v-for="(label, key) in statLabels" :key="key" class="config-field-list">
                                 <span>{{ label }}</span>
-                                <input type="number" v-model.number="configuracionDerivados.stats[key]">
+                                <span class="valor-actual">{{ configuracionDerivados.stats[key] }}</span>
+                                <input type="number" 
+                                    v-model.number="ajustesConfiguracion.stats[key]"
+                                    @input="aplicarAjusteStat(key, ajustesConfiguracion.stats[key])"
+                                    placeholder="0">
                             </label>
                         </div>
                     </section>
 
                     <section class="config-section">
                         <h4>Velocidades</h4>
-                        <div class="config-grid">
-                            <label v-for="vel in velocidadKeys" :key="vel" class="config-field">
+                        <div class="config-list">
+                            <label v-for="vel in velocidadKeys" :key="vel" class="config-field-list">
                                 <span>{{ vel }}</span>
-                                <input type="number" v-model.number="configuracionDerivados.velocidades[vel]">
+                                <span class="valor-actual">{{ configuracionDerivados.velocidades[vel] }}</span>
+                                <input type="number" 
+                                    v-model.number="ajustesConfiguracion.velocidades[vel]"
+                                    @input="aplicarAjusteVelocidad(vel, ajustesConfiguracion.velocidades[vel])"
+                                    placeholder="0">
                             </label>
                         </div>
                     </section>
@@ -1601,6 +1832,7 @@ function onChangeIniciativaRango(targetIndex) {
     justify-content: center;
     z-index: 900;
     padding: 20px;
+    color: var(--color-texto);
 }
 
 .config-panel {
@@ -1626,6 +1858,7 @@ function onChangeIniciativaRango(targetIndex) {
     padding-bottom: 10px;
     background: var(--color-fondoTexto);
     z-index: 1;
+    color: var(--color-texto);
 }
 
 .config-panel-body {
@@ -1653,6 +1886,12 @@ function onChangeIniciativaRango(targetIndex) {
     gap: 12px;
 }
 
+.config-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+}
+
 .config-field {
     display: flex;
     flex-direction: column;
@@ -1674,6 +1913,50 @@ function onChangeIniciativaRango(targetIndex) {
 .config-field textarea {
     min-height: 60px;
     resize: vertical;
+}
+
+.config-field-list {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    padding: 6px 8px;
+    border-radius: 6px;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.config-field-list > span:first-child {
+    min-width: 100px;
+    font-weight: 500;
+}
+
+.config-field-list .valor-actual {
+    min-width: 50px;
+    text-align: center;
+    font-size: 12px;
+    color: var(--color-secundario);
+    font-weight: 500;
+}
+
+.config-field-list input {
+    width: 60px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(0, 0, 0, 0.15);
+    color: var(--color-texto);
+    border-radius: 4px;
+    padding: 4px 6px;
+    font-size: 13px;
+    text-align: center;
+}
+
+.config-field-list select {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(0, 0, 0, 0.15);
+    color: var(--color-texto);
+    border-radius: 4px;
+    padding: 4px 6px;
+    font-size: 13px;
+   
 }
 
 .dual-input {
