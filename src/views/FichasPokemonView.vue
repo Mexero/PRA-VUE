@@ -894,12 +894,12 @@ function abrirMenuConfiguracion() {
     const baseBH = Math.ceil(ficha.nivel / 2)
     const basePP = ficha.derivados.stats.esp + ficha.nivel - Math.max(ficha.derivados.fatiga, 0)
     const basePV = 10 + ficha.nivel * (ficha.derivados.vit + ficha.derivados.stats.res)
-    
+
     // Calcular CA base
     calcularEVA()
     const idx = ficha.derivados.caElegida ?? 0
     const baseCA = (ficha.derivados.cas?.[idx]?.valor || 0) + ficha.derivados.bh - Math.max(ficha.derivados.fatiga, 0)
-    
+
     ajustesConfiguracion.value = {
         vit: ficha.personaliz.bonoVit || 0,
         bh: ficha.manual.bh ? (ficha.derivados.bh - baseBH) : 0,
@@ -993,7 +993,7 @@ function aplicarAjusteVitalidad(ajuste) {
             ficha.personaliz.bonoVit = valor
         }
     }
-    
+
     // Recalcular PV cuando cambia vitalidad
     actualizar()
     if (configuracionDerivados.value) {
@@ -1006,7 +1006,7 @@ function aplicarAjusteStat(stat, ajuste) {
     if (!ficha.personaliz.bonosExtraEst) {
         ficha.personaliz.bonosExtraEst = { fue: 0, agi: 0, res: 0, men: 0, esp: 0, pre: 0 }
     }
-    
+
     if (ajuste === null || ajuste === undefined || ajuste === '') {
         ajustesConfiguracion.value.stats[stat] = 0
         ficha.personaliz.bonosExtraEst[stat] = 0
@@ -1016,7 +1016,7 @@ function aplicarAjusteStat(stat, ajuste) {
             ficha.personaliz.bonosExtraEst[stat] = valor
         }
     }
-    
+
     // Recalcular valores dependientes
     actualizar()
     if (configuracionDerivados.value) {
@@ -1032,7 +1032,7 @@ function aplicarAjusteVelocidad(vel, ajuste) {
     if (!ficha.personaliz.mejorasVelocidades) {
         ficha.personaliz.mejorasVelocidades = {}
     }
-    
+
     if (ajuste === null || ajuste === undefined || ajuste === '') {
         ajustesConfiguracion.value.velocidades[vel] = 0
         ficha.personaliz.mejorasVelocidades[vel] = 0
@@ -1042,7 +1042,7 @@ function aplicarAjusteVelocidad(vel, ajuste) {
             ficha.personaliz.mejorasVelocidades[vel] = valor
         }
     }
-    
+
     actualizar()
     if (configuracionDerivados.value) {
         configuracionDerivados.value.velocidades[vel] = ficha.derivados.velocidades[vel]
@@ -1062,7 +1062,7 @@ function aplicarAjusteBH(ajuste) {
             ficha.manual.bh = true
         }
     }
-    
+
     actualizar()
     if (configuracionDerivados.value) {
         configuracionDerivados.value.bh = ficha.derivados.bh
@@ -1082,7 +1082,7 @@ function aplicarAjustePPMax(ajuste) {
             ficha.manual.ppMax = true
         }
     }
-    
+
     actualizar()
     if (configuracionDerivados.value) {
         configuracionDerivados.value.ppMax = ficha.derivados.ppMax
@@ -1102,7 +1102,7 @@ function aplicarAjustePVMax(ajuste) {
             ficha.manual.pvMax = true
         }
     }
-    
+
     actualizar()
     if (configuracionDerivados.value) {
         configuracionDerivados.value.pvMax = ficha.derivados.pvMax
@@ -1124,7 +1124,7 @@ function aplicarAjusteCA(ajuste) {
             ficha.manual.ca = true
         }
     }
-    
+
     actualizar()
     if (configuracionDerivados.value) {
         configuracionDerivados.value.ca = ficha.derivados.ca
@@ -1141,7 +1141,7 @@ function aplicarAjusteEscudo(ajuste) {
             ficha.derivados.escudo = valor
         }
     }
-    
+
     if (configuracionDerivados.value) {
         configuracionDerivados.value.escudo = ficha.derivados.escudo
     }
@@ -1157,7 +1157,7 @@ function aplicarAjusteFatiga(ajuste) {
             ficha.derivados.fatiga = valor
         }
     }
-    
+
     actualizar()
     if (configuracionDerivados.value) {
         configuracionDerivados.value.fatiga = ficha.derivados.fatiga
@@ -1173,7 +1173,7 @@ function guardarCambiosConfiguracion() {
     if (ajustesConfiguracion.value.escudo !== null) aplicarAjusteEscudo(ajustesConfiguracion.value.escudo)
     if (ajustesConfiguracion.value.fatiga !== null) aplicarAjusteFatiga(ajustesConfiguracion.value.fatiga)
     if (ajustesConfiguracion.value.ca !== null) aplicarAjusteCA(ajustesConfiguracion.value.ca)
-    
+
     if (ajustesConfiguracion.value.stats) {
         Object.keys(ajustesConfiguracion.value.stats).forEach(stat => {
             if (ajustesConfiguracion.value.stats[stat] !== null) {
@@ -1181,7 +1181,7 @@ function guardarCambiosConfiguracion() {
             }
         })
     }
-    
+
     if (ajustesConfiguracion.value.velocidades) {
         Object.keys(ajustesConfiguracion.value.velocidades).forEach(vel => {
             if (ajustesConfiguracion.value.velocidades[vel] !== null) {
@@ -1189,7 +1189,7 @@ function guardarCambiosConfiguracion() {
             }
         })
     }
-    
+
     actualizar()
     guardarFicha()
     cerrarMenuConfiguracion()
@@ -1448,8 +1448,8 @@ function onChangeIniciativaRango(targetIndex) {
                         </button>
                         <button class="toolbar-settings" @click="abrirMenuConfiguracion" title="Editar datos rápidos">
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                                aria-hidden="true" focusable="false">
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"
+                                focusable="false">
                                 <circle cx="12" cy="12" r="3" />
                                 <path
                                     d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33h.09A1.65 1.65 0 0 0 9 3.09V3a2 2 0 0 1 4 0v.09c0 .66.39 1.25 1 1.51a1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82c.22.63.85 1.05 1.51 1.05H21a2 2 0 0 1 0 4h-.09c-.66 0-1.25.39-1.51 1z" />
@@ -1645,34 +1645,26 @@ function onChangeIniciativaRango(targetIndex) {
                             <label class="config-field-list">
                                 <span>PV Max</span>
                                 <span class="valor-actual">{{ configuracionDerivados.pvMax }}</span>
-                                <input type="number" 
-                                    v-model.number="ajustesConfiguracion.pvMax"
-                                    @input="aplicarAjustePVMax(ajustesConfiguracion.pvMax)"
-                                    placeholder="0">
+                                <input type="number" v-model.number="ajustesConfiguracion.pvMax"
+                                    @input="aplicarAjustePVMax(ajustesConfiguracion.pvMax)" placeholder="0">
                             </label>
                             <label class="config-field-list">
                                 <span>PP Max</span>
                                 <span class="valor-actual">{{ configuracionDerivados.ppMax }}</span>
-                                <input type="number" 
-                                    v-model.number="ajustesConfiguracion.ppMax"
-                                    @input="aplicarAjustePPMax(ajustesConfiguracion.ppMax)"
-                                    placeholder="0">
+                                <input type="number" v-model.number="ajustesConfiguracion.ppMax"
+                                    @input="aplicarAjustePPMax(ajustesConfiguracion.ppMax)" placeholder="0">
                             </label>
                             <label class="config-field-list">
                                 <span>Vitalidad</span>
                                 <span class="valor-actual">{{ configuracionDerivados.vit }}</span>
-                                <input type="number" 
-                                    v-model.number="ajustesConfiguracion.vit"
-                                    @input="aplicarAjusteVitalidad(ajustesConfiguracion.vit)"
-                                    placeholder="0">
+                                <input type="number" v-model.number="ajustesConfiguracion.vit"
+                                    @input="aplicarAjusteVitalidad(ajustesConfiguracion.vit)" placeholder="0">
                             </label>
                             <label class="config-field-list">
                                 <span>BH</span>
                                 <span class="valor-actual">{{ configuracionDerivados.bh }}</span>
-                                <input type="number" 
-                                    v-model.number="ajustesConfiguracion.bh"
-                                    @input="aplicarAjusteBH(ajustesConfiguracion.bh)"
-                                    placeholder="0">
+                                <input type="number" v-model.number="ajustesConfiguracion.bh"
+                                    @input="aplicarAjusteBH(ajustesConfiguracion.bh)" placeholder="0">
                             </label>
                         </div>
                     </section>
@@ -1683,16 +1675,13 @@ function onChangeIniciativaRango(targetIndex) {
                             <label class="config-field-list">
                                 <span>CA</span>
                                 <span class="valor-actual">{{ configuracionDerivados.ca }}</span>
-                                <input type="number" 
-                                    v-model.number="ajustesConfiguracion.ca"
-                                    @input="aplicarAjusteCA(ajustesConfiguracion.ca)"
-                                    placeholder="0">
+                                <input type="number" v-model.number="ajustesConfiguracion.ca"
+                                    @input="aplicarAjusteCA(ajustesConfiguracion.ca)" placeholder="0">
                             </label>
                             <label class="config-field-list" v-if="ficha.pokedex.calculosEva?.length">
                                 <span>Fórmula base</span>
                                 <select v-model.number="configuracionDerivados.caElegida">
-                                    <option v-for="(calculo, i) in ficha.pokedex.calculosEva" :key="calculo"
-                                        :value="i">
+                                    <option v-for="(calculo, i) in ficha.pokedex.calculosEva" :key="calculo" :value="i">
                                         {{ calculo }}
                                     </option>
                                 </select>
@@ -1706,10 +1695,8 @@ function onChangeIniciativaRango(targetIndex) {
                             <label v-for="(label, key) in statLabels" :key="key" class="config-field-list">
                                 <span>{{ label }}</span>
                                 <span class="valor-actual">{{ configuracionDerivados.stats[key] }}</span>
-                                <input type="number" 
-                                    v-model.number="ajustesConfiguracion.stats[key]"
-                                    @input="aplicarAjusteStat(key, ajustesConfiguracion.stats[key])"
-                                    placeholder="0">
+                                <input type="number" v-model.number="ajustesConfiguracion.stats[key]"
+                                    @input="aplicarAjusteStat(key, ajustesConfiguracion.stats[key])" placeholder="0">
                             </label>
                         </div>
                     </section>
@@ -1720,8 +1707,7 @@ function onChangeIniciativaRango(targetIndex) {
                             <label v-for="vel in velocidadKeys" :key="vel" class="config-field-list">
                                 <span>{{ vel }}</span>
                                 <span class="valor-actual">{{ configuracionDerivados.velocidades[vel] }}</span>
-                                <input type="number" 
-                                    v-model.number="ajustesConfiguracion.velocidades[vel]"
+                                <input type="number" v-model.number="ajustesConfiguracion.velocidades[vel]"
                                     @input="aplicarAjusteVelocidad(vel, ajustesConfiguracion.velocidades[vel])"
                                     placeholder="0">
                             </label>
@@ -1888,7 +1874,7 @@ function onChangeIniciativaRango(targetIndex) {
 
 .config-list {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: auto auto;
     gap: 8px;
 }
 
@@ -1925,7 +1911,7 @@ function onChangeIniciativaRango(targetIndex) {
     background: rgba(0, 0, 0, 0.1);
 }
 
-.config-field-list > span:first-child {
+.config-field-list>span:first-child {
     min-width: 100px;
     font-weight: 500;
 }
@@ -1956,7 +1942,7 @@ function onChangeIniciativaRango(targetIndex) {
     border-radius: 4px;
     padding: 4px 6px;
     font-size: 13px;
-   
+
 }
 
 .dual-input {
