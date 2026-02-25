@@ -49,7 +49,6 @@ export function crearFichaBase(nombre = '') {
             cantidadMejorasHab: 0,
             cantidadDotes: 0,
             cantidadMovs: 0,
-            init: 0,
             caElegida: 0,
             cas: [0],
             ca: 0,
@@ -65,9 +64,7 @@ export function crearFichaBase(nombre = '') {
         },
         checks: {
             checksBase: [{ check: 'Percepción', grado: 1 }, { check: 'Init', grado: 1 }],
-            cheksMejoras: [],
-            checksData: {},
-            checksActivos: [],
+            checksData: [],
             checksExtra: [],
         }
     }

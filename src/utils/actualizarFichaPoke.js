@@ -71,58 +71,90 @@ function calcularSalvaciones(ficha) {
 function actualizarChecks(ficha) {
     construirChecksBase(ficha)
     construirChecksData(ficha)
-    construirChecksActivos(ficha)
 }
 
 function construirChecksBase(ficha) {
     const base = [
-        { check: 'Percepción', grado: 1 },
-        { check: 'Init', grado: 1 }
+        { check: 'Percepción', grado: 1, stat: 'esp' },
+        { check: 'Init', grado: 1, stat: 'agi' }
     ]
 
     // Añadir los checks de "naturalmente habil"
-    ficha.pokedex.natHabil.forEach(nombre => {
-        const existing = base.find(c => c.check === nombre)
-        if (existing) existing.grado++
-        else base.push({ check: nombre, grado: 1 })
+    ficha.pokedex.natHabil.forEach(buscado => {
+        const existe = base.find(c => c.check === buscado.check)
+        if (existe) existe.grado++
+        else base.push({ check: buscado.check, grado: 1, stat: buscado.stat })
     })
 
     // Añadir el check de la naturaleza
-    const natCheck = ficha.personaliz.naturaleza?.check
-    if (natCheck) {
-        const existing = base.find(c => c.check === natCheck)
-        if (existing) existing.grado = Math.max(existing.grado, 1)
-        else base.push({ check: natCheck, grado: 1 })
+    const naturaleza = ficha.personaliz.naturaleza
+    if (naturaleza.check) {
+        const existe = base.find(c => c.check === naturaleza.check)
+        if (existe) existe.grado++
+        else base.push({ check: naturaleza.check, grado: 1, stat:naturaleza.stat })
     }
 
     ficha.checks.checksBase = base
 }
 
-function construirChecksData(ficha) {
-    const data = ficha.checks.checksData || {}
 
+function construirChecksData(ficha) {
+    let data = ficha.checks.checksData || []
     const bh = ficha.derivados.bh || 0
     const fatiga = Math.max(ficha.derivados.fatiga || 0, 0)
-    const stats = ficha.derivados.stats
+    const stats = ficha.derivados.stats || {}
+    const checksBase = ficha.checks.checksBase || []
+    const mejoras = ficha.personaliz?.mejorasHab || []
 
-    // Crear o actualizar los checks base
-    ficha.checks.checksBase.forEach(c => {
-        if (!data[c.check]) data[c.check] = {}
-        data[c.check].grado = Math.max(data[c.check].grado || 0, c.grado)
-        if (!data[c.check].stat) data[c.check].stat = 'fue'
-        const statVal = stats[data[c.check].stat] || 0
-        const bonoGrado = data[c.check].grado > 0 ? bh + Math.min(Math.max(0, (data[c.check].grado - 1) * 2), 6) : 0
-        data[c.check].bono = statVal + bonoGrado - fatiga
+    //limpiamos grados
+    data.forEach(d => {d.grado=0 });
+
+    const checksMap = new Map()
+    data.forEach(d => checksMap.set(d.check, d))
+
+
+    //Metemos los base
+    checksBase.forEach(c => {
+        let checkData = checksMap.get(c.check)
+        if (!checkData) {
+            checkData = { check: c.check, stat: c.stat, grado: c.grado, bono: 0, visible: true }
+            checksMap.set(c.check, checkData)
+        }
+        else checkData.grado = c.grado
     })
 
-    ficha.checks.checksData = data
+    // Aplicar mejorasHab
+    mejoras.forEach(nombreCheck => {
+        let checkData = checksMap.get(nombreCheck)
+        if (!checkData) {
+            const base = checksBase.find(c => c.check === nombreCheck)
+            checkData = {
+                check: nombreCheck,
+                grado: 0,
+                bono: 0,
+                stat: base?.stat || 'fue',
+                visible: true
+            }
+            checksMap.set(nombreCheck, checkData)
+        }
+        checkData.grado = (checkData.grado || 0) + 1
+    })
+
+    // Calcular bono para todos los checks
+    checksMap.forEach(checkData => {
+        const statVal = stats[checkData.stat] || 0
+        const bonoGrado = checkData.grado > 0
+            ? bh + Math.min(Math.max(0, (checkData.grado - 1) * 2), 6)
+            : 0
+        checkData.bono = statVal + bonoGrado - fatiga
+    })
+
+    // Guardar de nuevo como array
+    ficha.checks.checksData = Array.from(checksMap.values())
+    console.log(ficha.checks.checksData)
 }
 
 
-function construirChecksActivos(ficha) {
-    // Activos = solo los checks base
-    ficha.checks.checksActivos = ficha.checks.checksBase.map(c => c.check)
-}
 
 /* ===================== OTROS DERIVADOS ===================== */
 

@@ -1,40 +1,77 @@
 <script setup>
-import { ref, computed, onMounted, onUnmounted, watch } from 'vue'
+import { ref, computed, watch, onMounted, onUnmounted } from 'vue'
 import draggable from 'vuedraggable'
-
 import tiraDado from '../tiraDado.vue'
 
-const props = defineProps(['ficha', 'checksBase', 'grados'])
+const props = defineProps(['ficha', 'ChecksBase'])
+const emit = defineEmits(['gradoChange'])
 
 const gradosInicial = ['N', 'B', 'E', 'M', 'L']
 const gradoModal = ref({ visible: false, nombre: '', index: null })
 
-//Flags
-const mostrarConfigChecks = ref(false)
-
-
-//Ver grado en hover
 function mostrarGradoModal(nombre, index) {
     gradoModal.value = { visible: true, nombre, index }
 }
-function ocultarGradoModal() {
-    gradoModal.value.visible = false
+function ocultarGradoModal() { gradoModal.value.visible = false }
+
+const nuevoCheck = ref('')
+const mostrarPopup = ref(false)
+const selectedSuggestionIndex = ref(-1)
+const mostrarConfigChecks = ref(false)
+const nuevaHabilidadPersonalizada = ref('')
+
+const grados = ['No', 'Bueno', 'Experto', 'Maestro', 'Legendario']
+
+// ---------- FILTRAR CHECKS DISPONIBLES PARA AGREGAR ----------
+const filteredChecks = computed(() => {
+    const input = nuevoCheck.value.toLowerCase()
+    const usados = props.ficha.checks.checksActivos.map(c => c)
+    return props.ChecksBase.map(c => c.check)
+        .filter(c => !usados.includes(c))
+        .filter(c => !input || c.toLowerCase().includes(input))
+})
+
+// ---------- TODOS LOS CHECKS PARA CONFIGURACIÓN ----------
+const todosLosChecks = computed(() => {
+    const checks = []
+    // Base visibles
+    props.ficha.checks.checksBase.forEach(c => {
+        if (c.check !== 'Init') {
+            checks.push({
+                nombre: c.check,
+                tipo: 'base',
+                stat: getStat(c.check)
+            })
+        }
+    })
+    // Activos (otros que no sean Init)
+    props.ficha.checks.checksActivos.forEach(c => {
+        if (c !== 'Init' && !checks.some(x => x.nombre === c)) {
+            checks.push({ nombre: c, tipo: 'activo', stat: getStat(c) })
+        }
+    })
+    return checks
+})
+
+// ---------- FUNCIONES GRADO ----------
+function getGradoBase(checkName) {
+    if (checkName === 'Init') return 1
+    const base = props.ficha.checks.checksBase.find(c => c.check === checkName)
+    return base ? base.grado : 0
 }
 
+function getGradoActual(checkName) {
+    const gradoBase = getGradoBase(checkName)
+    const mejoras = props.ficha.personaliz.mejorasHab.filter(m => m === checkName).length
+    return Math.min(gradoBase + mejoras, grados.length - 1)
+}
 
-
-//Datos Checks
-const checksData = computed({
-    get: () => props.ficha.checks.checksData || [],
-    set: val => props.ficha.checks.checksData = val
-})
-
+// ---------- MEJORAS ----------
+const mejorasUsadas = computed(() => props.ficha.personaliz.mejorasHab.length)
 const mejorasDisponibles = computed(() => {
-    return (props.ficha.derivados.cantidadMejorasHab || 0)
-        - (props.ficha.personaliz.mejorasHab?.length || 0)
+    const total = props.ficha.derivados.cantidadMejorasHab || 0
+    return Math.max(0, total - mejorasUsadas.value)
 })
-
-
 
 // ---------- DETECTAR DISPOSITIVO MÓVIL ----------
 const windowWidth = ref(window.innerWidth)
@@ -43,11 +80,130 @@ const updateWindowWidth = () => { windowWidth.value = window.innerWidth }
 onMounted(() => window.addEventListener('resize', updateWindowWidth))
 onUnmounted(() => window.removeEventListener('resize', updateWindowWidth))
 
+// ---------- AGREGAR CHECK ----------
+function addCheck(nombre) {
+    const name = nombre?.trim() || nuevoCheck.value.trim()
+    if (!name) return
+    if (props.ficha.checks.checksActivos.includes(name)) return
+    props.ficha.checks.checksActivos.push(name)
+    nuevoCheck.value = ''
+    mostrarPopup.value = false
+}
+
+function selectSuggestion(op) { addCheck(op) }
+function onArrowDown() { if (selectedSuggestionIndex.value < filteredChecks.value.length - 1) selectedSuggestionIndex.value++ }
+function onArrowUp() { if (selectedSuggestionIndex.value > 0) selectedSuggestionIndex.value-- }
+function onEnter() { if (selectedSuggestionIndex.value >= 0) selectSuggestion(filteredChecks.value[selectedSuggestionIndex.value]); else addCheck() }
+function cerrarPopupExterior() { mostrarPopup.value = false }
+function cerrarPopup() { mostrarPopup.value = false }
+
+watch(mostrarPopup, isOpen => { document.body.style.overflow = isOpen ? 'hidden' : '' })
+
+// ---------- TOGGLE CHECK VISUAL ----------
+function toggleCheck(checkName) {
+    const idx = props.ficha.checks.checksActivos.indexOf(checkName)
+    if (idx === -1) props.ficha.checks.checksActivos.push(checkName)
+    else props.ficha.checks.checksActivos.splice(idx, 1)
+}
+
+// ---------- CONFIGURACIÓN HABILIDAD ----------
+function getConfiguracionHabilidad(checkName) {
+    if (!props.ficha.personaliz.configuracionHabilidades) props.ficha.personaliz.configuracionHabilidades = {}
+    if (!props.ficha.personaliz.configuracionHabilidades[checkName]) {
+        props.ficha.personaliz.configuracionHabilidades[checkName] = {
+            stat: props.ChecksBase.find(ch => ch.check === checkName)?.stat || 'fue',
+            grado: getGradoBase(checkName)
+        }
+    }
+    return props.ficha.personaliz.configuracionHabilidades[checkName]
+}
+
+function getCheckObj(checkName) {
+    const activo = props.ficha.checks.checksActivos.includes(checkName)
+    return activo ? { stat: getStat(checkName), grado: getGradoActual(checkName) } : getConfiguracionHabilidad(checkName)
+}
+
+function getStat(checkName) {
+    return getCheckObj(checkName).stat || 'fue'
+}
+
+function updateStat(checkName, newStat) {
+    const config = getConfiguracionHabilidad(checkName)
+    config.stat = newStat
+}
+
+// ---------- CHECKS PERSONALIZADOS ----------
+function agregarCheckPersonalizado() {
+    const nombre = nuevaHabilidadPersonalizada.value.trim()
+    if (!nombre || props.ficha.checks.checksActivos.includes(nombre)) return
+    props.ficha.checks.checksActivos.push(nombre)
+    nuevaHabilidadPersonalizada.value = ''
+}
+
+function eliminarCheckPersonalizado(nombre) {
+    const idx = props.ficha.checks.checksActivos.indexOf(nombre)
+    if (idx !== -1) props.ficha.checks.checksActivos.splice(idx, 1)
+    props.ficha.personaliz.mejorasHab = props.ficha.personaliz.mejorasHab.filter(m => m !== nombre)
+}
+
+// ---------- GRADOS EN CONFIG ----------
+function getGradoMinimo(checkName) { return getGradoBase(checkName) }
+function getGradoActualConfig(checkName) { return getConfiguracionHabilidad(checkName).grado }
+
+function isRangoOptionDisabled(checkName, optionIndex) {
+    const min = getGradoMinimo(checkName)
+    const actual = getGradoActualConfig(checkName)
+    const gradoBase = getGradoBase(checkName)
+    const max = grados.length - 1
+    if (optionIndex === 0) return false
+    if (optionIndex < min) return true
+    if (optionIndex > max) return true
+    if (optionIndex <= actual) return false
+    const puntosNecesarios = Math.max(0, optionIndex - gradoBase)
+    const puntosActuales = props.ficha.personaliz.mejorasHab.filter(m => m === checkName).length
+    return Math.max(0, puntosNecesarios - puntosActuales) > mejorasDisponibles.value
+}
+
+function onChangeRango(checkName, targetIndex) {
+    let objetivo = parseInt(targetIndex)
+    if (isNaN(objetivo)) return
+
+    const min = getGradoMinimo(checkName)
+    const max = grados.length - 1
+    const actual = getGradoActualConfig(checkName)
+    const gradoBase = getGradoBase(checkName)
+    const config = getConfiguracionHabilidad(checkName)
+
+    // Permitir 0
+    if (objetivo === 0) {
+        props.ficha.personaliz.mejorasHab = props.ficha.personaliz.mejorasHab.filter(m => m !== checkName)
+        config.grado = 0
+        return
+    }
+
+    objetivo = Math.max(min, Math.min(max, objetivo))
+    if (objetivo === actual) return
+
+    const puntosNecesarios = Math.max(0, objetivo - gradoBase)
+    let puntosActuales = props.ficha.personaliz.mejorasHab.filter(m => m === checkName).length
+
+    // Ajustar mejoras
+    if (puntosNecesarios > puntosActuales) {
+        const aPoner = Math.min(puntosNecesarios - puntosActuales, mejorasDisponibles.value)
+        for (let i = 0; i < aPoner; i++) props.ficha.personaliz.mejorasHab.push(checkName)
+    } else if (puntosNecesarios < puntosActuales) {
+        let aQuitar = puntosActuales - puntosNecesarios
+        while (aQuitar > 0) {
+            const idx = props.ficha.personaliz.mejorasHab.lastIndexOf(checkName)
+            if (idx === -1) break
+            props.ficha.personaliz.mejorasHab.splice(idx, 1)
+            aQuitar--
+        }
+    }
+
+    config.grado = gradoBase + props.ficha.personaliz.mejorasHab.filter(m => m === checkName).length
+}
 </script>
-
-
-
-
 
 <template>
     <section class="checks">
@@ -75,7 +231,7 @@ onUnmounted(() => window.removeEventListener('resize', updateWindowWidth))
             </div>
         </div>
         <div class="checks-list">
-            <draggable v-model="checksData" item-key="check" animation="200" ghost-class="drag-ghost"
+            <draggable v-model="props.ficha.personaliz.checks" item-key="check" animation="200" ghost-class="drag-ghost"
                 :disabled="isMobile">
                 <template #item="{ element, index }">
                     <div class="item" v-if="element.check !== 'Init'">
@@ -85,31 +241,109 @@ onUnmounted(() => window.removeEventListener('resize', updateWindowWidth))
                             </p>
                             <div class="bonosChecks">
                                 <div>
-                                    <span class="grado-circulo"
-                                        @mouseenter="mostrarGradoModal(grados[Math.min(4, element.grado)], index)"
+                                    <span class="grado-circulo" :title="grados[getGradoActual(element.check)]"
+                                        @mouseenter="mostrarGradoModal(grados[getGradoActual(element.check)], $event, index)"
                                         @mouseleave="ocultarGradoModal"
-                                        @click="mostrarGradoModal(grados[Math.min(4, element.grado)], index)">
-                                        {{ gradosInicial[Math.min(4, element.grado)] }}
+                                        @click="mostrarGradoModal(grados[getGradoActual(element.check)], $event, index)">
+                                        {{ gradosInicial[getGradoActual(element.check)] }}
                                     </span>
                                     <div v-if="gradoModal.visible && gradoModal.index === index" class="grado-modal">
                                         {{ gradoModal.nombre }}
                                     </div>
                                 </div>
-                                <div>+<input type="number" v-model.number="element.bono" /></div>
+                                <div>+<input type="number" v-model.number="element.total" /></div>
 
-                                <tiraDado :tirada='"1d20+" + (element.bono)' :origin='"Tirada de " + element.check' />
+                                <tiraDado :tirada='"1d20+" + (element.total)' :origin='"Tirada de " + element.check' />
                             </div>
+
+
+
                         </div>
+
+                        <!--    <button class="borrar-btn"
+                            v-if="!ficha.derivados.checksBase.find(c => c.check === element.check)"
+                            @click="removeCheck(index)">×</button>
+                            -->
                     </div>
                 </template>
             </draggable>
         </div>
     </section>
 
+    <!-- Popup para añadir habilidades -->
+    <div v-if="mostrarPopup" class="popup-overlay" @click="cerrarPopupExterior">
+        <div class="popup-content" @click.stop>
+            <h4>Añadir habilidad</h4>
+            <input type="text" v-model="nuevoCheck" @input="filterChecks" @keydown.down.prevent="onArrowDown"
+                @keydown.up.prevent="onArrowUp" @keydown.enter.prevent="onEnter" placeholder="Buscar check..." />
+            <ul v-if="filteredChecks.length">
+                <li v-for="(suggestion, idx) in filteredChecks" :key="suggestion"
+                    :class="{ selected: idx === selectedSuggestionIndex }"
+                    @mousedown.prevent="selectSuggestion(suggestion)">
+                    {{ suggestion }}
+                </li>
+            </ul>
+            <button @click="cerrarPopup">Cerrar</button>
+        </div>
+    </div>
 
+    <!-- Modal configuración de checks -->
+    <div v-if="mostrarConfigChecks" class="config-modal-overlay" @click.self="mostrarConfigChecks = false">
+        <div class="config-modal">
+            <div class="config-modal-header">
+                <h4>Configurar Habilidades</h4>
+                <button class="close-btn" @click="mostrarConfigChecks = false" aria-label="Cerrar">×</button>
+            </div>
+
+            <div class="config-modal-content">
+                <div class="config-checks-list">
+                    <div v-for="check in todosLosChecks" :key="check.nombre" class="config-check-item">
+                        <div class="skill-info">
+                            <input type="checkbox"
+                                :checked="ficha.personaliz.checks.some(c => c.check === check.nombre)"
+                                @change="toggleCheck(check.nombre)" :disabled="false" />
+                            <span class="skill-name" :class="`skill-${check.tipo}`">
+                                {{ check.nombre }}
+
+                            </span>
+                            <button v-if="check.tipo === 'personalizado'"
+                                @click="eliminarCheckPersonalizado(check.nombre)" class="delete-btn"
+                                title="Eliminar check personalizado">×</button>
+                        </div>
+                        <div class="skill-controls">
+                            <select :value="getStat(check.nombre)"
+                                @change="updateStat(check.nombre, $event.target.value)" class="stat-select">
+                                <option value="fue">Fuerza</option>
+                                <option value="agi">Agilidad</option>
+                                <option value="res">Resistencia</option>
+                                <option value="men">Mente</option>
+                                <option value="esp">Espíritu</option>
+                                <option value="pre">Presencia</option>
+                            </select>
+                            <select :value="getGradoActualConfig(check.nombre)"
+                                @change="onChangeRango(check.nombre, $event.target.value)" class="rango-select"
+                                :title="`Rango de ${check.nombre}`">
+                                <option v-for="(g, i) in grados" :key="g" :value="i"
+                                    :disabled="isRangoOptionDisabled(check.nombre, i)">
+                                    {{ g }}
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <!-- Sección para añadir checks personalizados -->
+                <div class="add-custom-skill">
+                    <h5>Añadir Habilidades</h5>
+                    <div class="custom-skill-input">
+                        <input type="text" v-model="nuevaHabilidadPersonalizada" placeholder="Nombre de la Habilidad..."
+                            @keydown.enter="agregarCheckPersonalizado" />
+                        <button @click="agregarCheckPersonalizado" class="add-btn">+</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </template>
-
-
 
 <style scoped>
 h3 {

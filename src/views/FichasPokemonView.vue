@@ -55,7 +55,12 @@ let actualizando = false
 const pokemonImage = ref(null)
 
 // <========= GRADOS HABS =============>
-const grados = ['no', 'bueno', 'experto', 'maestro', 'legendario']
+const grados = ['No', 'Bueno', 'Experto', 'Maestro', 'Legendario']
+
+
+//Init
+const initBonus = computed(() => ficha?.checks?.checksData?.find(c => c.check == 'Init')?.bono || 0);
+
 
 // <========= DATOS CHECKS =============>
 
@@ -68,7 +73,7 @@ const ChecksBase = [
     { check: 'Engaño', stat: 'pre' },
     { check: 'Intimidación', stat: 'pre' },
     { check: 'Investigación', stat: 'men' },
-    { check: 'Juego de Manos', stat: 'agi' },
+    { check: 'Juego de manos', stat: 'agi' },
     { check: 'Percepción', stat: 'esp' },
     { check: 'Persuasión', stat: 'pre' },
     { check: 'Sigilo', stat: 'agi' },
@@ -81,7 +86,7 @@ const naturalezas = [
     { naturaleza: "Fuerte", check: "Combate" },
     { naturaleza: "Agitada", check: "Acrobacias" },
     { naturaleza: "Tímida", check: "Sigilo" },
-    { naturaleza: "Pícara", check: "J. de manos" },
+    { naturaleza: "Pícara", check: "Juego de manos" },
     { naturaleza: "Cauta", check: "Investigación" },
     { naturaleza: "Amable", check: "Empatía" },
     { naturaleza: "Serena", check: "Percepción" },
@@ -158,8 +163,8 @@ async function cambiarDatosEspecie(especie) {
         const id = row[0]
 
         ficha.pokedex.especie = row[1]
-        ficha.pokedex.numPokedex = row[35] // Numero_pokedex
-        ficha.pokedex.esAlternativo = row[34] // Es_Alternativo
+        ficha.pokedex.numPokedex = row[35]
+        ficha.pokedex.esAlternativo = row[34]
         ficha.pokedex.tipos = [row[2], row[3] ?? ""]
         ficha.pokedex.statsBase = {
             fue: row[4], agi: row[5], res: row[6],
@@ -176,8 +181,15 @@ async function cambiarDatosEspecie(especie) {
         }
 
         ficha.pokedex.natHabil = []
-        if (row[21]) ficha.pokedex.natHabil.push(row[21])
-        if (row[22]) ficha.pokedex.natHabil.push(row[22])
+        if (row[21]) {
+            const stat1 = (ChecksBase.find(check => check.check === row[21]) || {}).stat || 'fue';
+            ficha.pokedex.natHabil.push({ check: row[21], stat: stat1 });
+        }
+
+        if (row[22]) {
+            const stat2 = (ChecksBase.find(check => check.check === row[22]) || {}).stat || 'fue';
+            ficha.pokedex.natHabil.push({ check: row[22], stat: stat2 });
+        }
 
         // Habilidades (relacional)
         const habilidadesRes = await queryDB(`
@@ -234,9 +246,12 @@ async function cambiarDatosEspecie(especie) {
         ficha.personaliz.habilidadesOcultasDesbloqueadas = []
 
         // Limpiar checks especiales del Pokémon anterior
-        ficha.personaliz.checks = ficha.personaliz.checks.filter(check => {
+
+
+        /* TO DO
+        ficha.checks.checksData = ficha.checks.checksData.filter(check => {
             if (ChecksBase.some(cb => cb.check === check.check)) return true
-            if (ficha.personaliz.checksExtra && ficha.personaliz.checksExtra.includes(check.check)) return true
+            if (ficha.checks.checksExtra && ficha.checks.checksExtra.includes(check.check)) return true
 
             const checksBaseNombres = (ficha.derivados.checksBase || []).map(c => c.check)
             return checksBaseNombres.includes(check.check)
@@ -246,7 +261,7 @@ async function cambiarDatosEspecie(especie) {
             return ficha.personaliz.checks.some(check => check.check === mejora) ||
                 ChecksBase.some(cb => cb.check === mejora) ||
                 (ficha.personaliz.checksExtra && ficha.personaliz.checksExtra.includes(mejora))
-        })
+        })*/
 
         console.log(`Datos de ${especie} cargados:`, ficha.pokedex)
 
@@ -721,10 +736,11 @@ function descansar() {
                                 </button>
                             </div>
                             <!-- SIN HACER -->
-                            <span class="grado">{{ "AAAAAAAAAAA" }}</span>
+                            <span class="grado">{{grados[ficha?.checks?.checksData?.find(c => c.check == 'Init')?.grado
+                                || 0]}}</span>
                             <div class="iniciativa-input-container">
-                                <input v-model.number="ficha.derivados.init" readonly />
-                                <tiraDado :tirada='"1d20+" + (ficha.derivados.init || 0)' :origin='"Iniciativa"' />
+                                <p> {{ initBonus }}</p>
+                                <tiraDado :tirada='"1d20+" + initBonus' :origin='"Iniciativa"' />
                             </div>
                         </div>
 
@@ -763,7 +779,7 @@ function descansar() {
                     </div>
 
                     <div class="checks-area">
-                        <FichaChecks :ficha="ficha" :ChecksBase="ChecksBase" />
+                        <FichaChecks :ficha="ficha" :checksBase="ChecksBase" :grados="grados" />
                     </div>
 
                     <div class="velocidades-area">
@@ -771,7 +787,7 @@ function descansar() {
                     </div>
 
                     <div class="otros-area">
-                        <FichaOtros :ficha="ficha" :naturalezas="naturalezas" />
+                        <FichaOtros :ficha="ficha" :naturalezas="naturalezas" :checksBase="ChecksBase" />
                     </div>
 
                     <div class="pv-escudo-area">

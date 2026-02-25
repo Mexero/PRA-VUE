@@ -1,7 +1,7 @@
 <script setup>
 import { ref, watch, onMounted, onBeforeUnmount } from 'vue'
 
-const { ficha, naturalezas } = defineProps(['ficha', 'naturalezas'])
+const { ficha, naturalezas, checksBase } = defineProps(['ficha', 'naturalezas', 'checksBase'])
 
 const inputNaturaleza = ref('')
 const mostrarSugerencias = ref(false)
@@ -50,7 +50,8 @@ function confirmarNaturaleza() {
 function seleccionarNaturaleza(item) {
     ficha.personaliz.naturaleza = {
         naturaleza: item.naturaleza,
-        check: item.check
+        check: item.check,
+        stat: (checksBase.find(check => check.check === item.check) || {}).stat || 'fue'
     }
     inputNaturaleza.value = item.naturaleza
     resultados.value = []
