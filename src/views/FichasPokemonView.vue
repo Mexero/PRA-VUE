@@ -1,5 +1,5 @@
 <script setup>
-import { ref, reactive, onMounted, watch, computed } from 'vue'
+import { ref, reactive, onMounted, watch, computed, nextTick } from 'vue'
 
 import FichaToolbar from '@/components/fichasPokemon/Toolbar.vue'
 import FichaInfoBasica from '@/components/fichasPokemon/InfoBasica.vue'
@@ -19,6 +19,8 @@ import { initDB, queryDB } from '@/services/dbWorkerService'
 import { updateSprite } from '@/utils/updateSprite.js'
 
 import { guardarFichaIndexedDB, borrarFichaIndexedDB, obtenerTodasLasFichas, obtenerFicha, guardarOrdenFichas, cargarOrdenFichas } from '@/utils/FichasDB.js'
+
+import { actualizar } from "@/utils/actualizarFichaPoke.js"
 
 //Datos
 const dotes = ref([])
@@ -43,10 +45,20 @@ const isReady = ref(false)
 const error = ref(null)
 const loading = ref(false)
 
+const mostrarToolbar = ref(false)
+const mostrarConfigIniciativa = ref(false)
+
+//Flags
+let actualizando = false
+
 //Imagen del Pokémon
 const pokemonImage = ref(null)
 
+// <========= GRADOS HABS =============>
+const grados = ['no', 'bueno', 'experto', 'maestro', 'legendario']
+
 // <========= DATOS CHECKS =============>
+
 const ChecksBase = [
     { check: 'Acrobacias', stat: 'agi' },
     { check: 'Actuación', stat: 'pre' },
@@ -82,6 +94,7 @@ const naturalezas = [
 
 
 // <========= CAMBIAR DATOS ESPECIE =============>
+
 function generarEvoluciones(evoEn, nivelEvo, tipoRequisito, requisitosEvo, evoOtros) {
     if (evoEn === '' || evoEn === null) {
         if (evoOtros === '' || evoOtros === null) return null
@@ -221,22 +234,15 @@ async function cambiarDatosEspecie(especie) {
         ficha.personaliz.habilidadesOcultasDesbloqueadas = []
 
         // Limpiar checks especiales del Pokémon anterior
-        // Solo remover checks que ya no existen en ningún lado
         ficha.personaliz.checks = ficha.personaliz.checks.filter(check => {
-            // Mantener checks que están en ChecksBase (checks genéricos)
             if (ChecksBase.some(cb => cb.check === check.check)) return true
-
-            // Mantener checks personalizados
             if (ficha.personaliz.checksExtra && ficha.personaliz.checksExtra.includes(check.check)) return true
 
-            // Mantener checks que están en los checks base del nuevo Pokémon
             const checksBaseNombres = (ficha.derivados.checksBase || []).map(c => c.check)
             return checksBaseNombres.includes(check.check)
         })
 
-        // También limpiar mejoras de habilidad de checks que ya no existen
         ficha.personaliz.mejorasHab = ficha.personaliz.mejorasHab.filter(mejora => {
-            // Mantener mejoras de checks que siguen existiendo
             return ficha.personaliz.checks.some(check => check.check === mejora) ||
                 ChecksBase.some(cb => cb.check === mejora) ||
                 (ficha.personaliz.checksExtra && ficha.personaliz.checksExtra.includes(mejora))
@@ -248,10 +254,13 @@ async function cambiarDatosEspecie(especie) {
         await actualizarImagenPokemon()
 
         // Asegurar que PV y PP se mantengan al máximo tras cambiar la especie
-        // Recalcular derivados y establecer valores actuales al máximo
-        actualizar()
+
+        /*
+        ELIMINAR?
+        actualizar(ficha)
         ficha.derivados.pp = ficha.derivados.ppMax
         ficha.derivados.pv = ficha.derivados.pvMax
+*/
 
     } catch (err) {
         error.value = err.message || 'Error cargando la especie Pokémon ' + especie
@@ -277,288 +286,32 @@ async function actualizarImagenPokemon() {
             pokemonImage.value = null
         }
     }
+    else pokemonImage.value = null
 }
 
-//<========= ACTUALIZAR DATOS =============>
+//<========= ACTUALIZAR FICHA =============>
 
-const grados = ['no', 'bueno', 'experto', 'maestro', 'legendario']
+watch(
+    ficha,
+    async () => {
+        if (actualizando) return
+        if (ficha.nombre !== fichaSeleccionada.value) return
 
-function calcularBonoGrado(grado) {
-    return grado > 0 ? ficha.derivados.bh + Math.min(Math.max(0, (grado - 1) * 2), 6) : 0
-}
+        actualizando = true
 
-function updateCheck(check) {
-    const statVal = ficha.derivados.stats[check.stat] || 0
-    const nuevoTotal = statVal + calcularBonoGrado(check.grado) - Math.max(ficha.derivados.fatiga, 0)
-    check.total = nuevoTotal
-    check.modificado = false
-}
-
-function checksBaseIguales(a, b) {
-    if (a.length !== b.length) return false
-    return a.every((item, i) => item.check === b[i].check && item.grado === b[i].grado)
-}
-
-function construirChecksBase() {
-    const checksBaseNuevo = [{ check: 'Percepción', grado: 1, stat: 'esp' }, { check: 'Init', grado: 1, stat: 'esp' }]
-
-    ficha.pokedex.natHabil.forEach(natCheck => {
-        const index = checksBaseNuevo.findIndex(c => c.check === natCheck)
-        if (index !== -1) {
-            checksBaseNuevo[index].grado++
-        } else {
-            checksBaseNuevo.push({ check: natCheck, grado: 1 })
-        }
-    })
-    if (ficha.personaliz.naturaleza.naturaleza) {
-        const index = checksBaseNuevo.findIndex(c => c.check === ficha.personaliz.naturaleza.check)
-        if (index !== -1) {
-            // Asegurar al menos "Bueno" (1) como rango base por Naturaleza
-            checksBaseNuevo[index].grado = Math.max(checksBaseNuevo[index].grado ?? 0, 1)
-        } else {
-            // Si no existe, crearla con rango base "Bueno" (1)
-            checksBaseNuevo.push({ check: ficha.personaliz.naturaleza.check, grado: 1, stat: 'fue' })
-        }
-    }
-
-    if (!checksBaseIguales(ficha.derivados.checksBase, checksBaseNuevo)) {
-        ficha.derivados.checksBase = checksBaseNuevo
-
-        // Inicializar checks base en la visualización si no existen
-        checksBaseNuevo.forEach(checkBase => {
-            const yaExiste = ficha.personaliz.checks.some(c => c.check === checkBase.check)
-            if (!yaExiste) {
-                ficha.personaliz.checks.push({
-                    check: checkBase.check,
-                    stat: checkBase.stat || 'fue',
-                    grado: checkBase.grado,
-                    total: 0
-                })
-            }
-        })
-    }
-}
-
-function ActualizarChecks() {
-    // Solo actualizar los checks que ya están visibles, no agregar nuevos automáticamente
-    ficha.personaliz.checks.forEach(check => {
-        // Actualizar el grado basándose en la configuración guardada
-        const config = ficha.personaliz.configuracionHabilidades?.[check.check]
-        if (config) {
-            check.grado = config.grado
-        } else {
-            // Si no hay configuración, usar el grado base + mejoras
-            const gradoBase = check.check === 'Init' ? 1 :
-                (ficha.derivados.checksBase.find(c => c.check === check.check)?.grado || 0)
-            const mejoras = ficha.personaliz.mejorasHab.filter(m => m === check.check).length
-            check.grado = Math.min(gradoBase + mejoras, 4) // máximo Legendario
-        }
-
-        // Actualizar la estadística si hay configuración
-        if (config && config.stat) {
-            check.stat = config.stat
-        }
-    });
-
-    // Recalcular bonos para todos los checks visibles
-    ficha.personaliz.checks.forEach(updateCheck)
-}
-
-function calcularSentidos() {
-
-    if (ficha.pokedex.otros.sentidos && ficha.pokedex.otros.sentidos !== '') {
-        return ficha.pokedex.otros.sentidos + (ficha.personaliz.sentidos !== "" ? (", " + ficha.personaliz.sentidos) : "")
-    }
-    else return ficha.personaliz.sentidos
-}
-
-function calcularEVA() {
-    const calculos = ficha.pokedex.calculosEva
-    const stats = ficha.derivados.stats
-
-    if (!Array.isArray(calculos) || calculos.length === 0) return;
-
-    if (ficha.derivados.caElegida >= ficha.pokedex.calculosEva.length) {
-        ficha.derivados.caElegida = 0
-    }
-
-    const calcularValor = (formula) => {
-        return formula.split('+').reduce((acc, partRaw) => {
-            const part = partRaw.trim()
-            if (!isNaN(part)) return acc + parseInt(part)
-            const statKey = part.toLowerCase()
-            const statValor = stats[statKey] ?? 0
-            return acc + statValor
-        }, 0)
-    }
-
-    const resultados = calculos.map((formula) => ({
-        formula,
-        valor: calcularValor(formula)
-    }));
-
-    const casIguales = JSON.stringify(ficha.derivados.cas) === JSON.stringify(resultados)
-    if (!casIguales) {
-        ficha.derivados.cas = resultados
-    }
-
-    const idx = ficha.derivados.caElegida ?? 0
-    const result = (resultados[idx]?.valor ?? 0) + ficha.derivados.bh - Math.max(ficha.derivados.fatiga, 0)
-
-    if (ficha.derivados.ca !== result) {
-        ficha.derivados.ca = result
-    }
-}
-
-watch(ficha, () => {
-    if (ficha.nombre === fichaSeleccionada.value) {
-        actualizar()
+        actualizar(ficha)
         guardarFicha()
-    }
-}, { deep: true })
 
+        await nextTick()
+
+        actualizando = false
+    },
+    { deep: true }
+)
 // Watcher para actualizar la imagen cuando cambie la especie
-watch(() => ficha.pokedex.especie, async (nuevaEspecie) => {
-    if (nuevaEspecie) {
-        await actualizarImagenPokemon()
-    }
+watch(() => ficha.pokedex.especie, async () => {
+    await actualizarImagenPokemon()
 })
-
-// Ajustar rangos cuando cambia la Naturaleza
-function getGradoBaseDeCheck(nombreCheck) {
-    if (!nombreCheck) return 0
-    const base = ficha.derivados.checksBase.find(c => c.check === nombreCheck)
-    return base ? (typeof base.grado === 'number' ? base.grado : 0) : 0
-}
-
-function setConfigToBasePlusMejoras(nombreCheck) {
-    if (!nombreCheck) return
-    const base = getGradoBaseDeCheck(nombreCheck)
-    const mejoras = ficha.personaliz.mejorasHab.filter(m => m === nombreCheck).length
-    const objetivo = Math.min(base + mejoras, 4)
-    if (!ficha.personaliz.configuracionHabilidades) ficha.personaliz.configuracionHabilidades = {}
-    if (!ficha.personaliz.configuracionHabilidades[nombreCheck]) {
-        ficha.personaliz.configuracionHabilidades[nombreCheck] = { stat: 'fue', grado: objetivo }
-    } else {
-        ficha.personaliz.configuracionHabilidades[nombreCheck].grado = objetivo
-    }
-    // Si el check está visible, sincronizar su grado
-    const idx = ficha.personaliz.checks.findIndex(c => c.check === nombreCheck)
-    if (idx !== -1) {
-        ficha.personaliz.checks[idx].grado = objetivo
-    }
-}
-
-watch(() => ficha.personaliz.naturaleza?.check, (nuevaHab, antiguaHab) => {
-    // Recalcular bases
-    construirChecksBase()
-    // Reajustar la anterior y la nueva a base + mejoras
-    if (antiguaHab) setConfigToBasePlusMejoras(antiguaHab)
-    if (nuevaHab) setConfigToBasePlusMejoras(nuevaHab)
-    // Aplicar a visibles
-    ActualizarChecks()
-})
-
-// Al cambiar la fatiga, actualizar PP actuales al nuevo máximo
-watch(() => ficha.derivados.fatiga, () => {
-    // Recalcular derivados para obtener el nuevo ppMax
-    actualizar()
-    // Sincronizar PP actual con el nuevo máximo
-    ficha.derivados.pp = ficha.derivados.ppMax
-})
-
-function actualizar() {
-    // Valores derivados automáticos si no están definidos manualmente
-    if (!ficha.manual.bh) {
-        ficha.derivados.bh = Math.ceil(ficha.nivel / 2)
-    }
-
-    if (!ficha.manual.ppMax) {
-        ficha.derivados.ppMax = ficha.derivados.stats.esp + ficha.nivel - Math.max(ficha.derivados.fatiga, 0)
-    }
-
-    if (!ficha.manual.cantidadMejorasEST) {
-        ficha.derivados.cantidadMejorasEST = 1 + Math.floor((ficha.nivel - 2) / 3)
-    }
-
-    if (!ficha.manual.vit) {
-        ficha.derivados.vit = ficha.pokedex.vit + ficha.personaliz.bonoVit
-    }
-
-    if (!ficha.manual.pvMax) {
-        ficha.derivados.pvMax = 10 + ficha.nivel * (ficha.derivados.vit + ficha.derivados.stats.res)
-    }
-
-    if (!ficha.manual.cantidadDotes) {
-        ficha.derivados.cantidadDotes = Math.floor((ficha.nivel + 1) / 4)
-    }
-
-    if (!ficha.manual.cantidadMejorasHab)
-        ficha.derivados.cantidadMejorasHab = Math.max(Math.floor(ficha.nivel / 6), 0)
-
-    //Iniciativa
-    if (!ficha.manual.init) {
-        const initCheck = ficha.personaliz.checks.find(ch => ch.check === "Init")
-        ficha.derivados.init = (initCheck ? initCheck.total : 0)
-    }
-
-    //Sentidos
-    ficha.derivados.sentidos = calcularSentidos()
-
-    //checks Base
-    construirChecksBase()
-
-    //actualizar checks
-    ActualizarChecks()
-
-    // Chequear mejoras de estadísticas no se pasan. Si lo hacen, quitar las últimas aplicadas
-    while (ficha.nivel > 0 && ficha.derivados.cantidadMejorasEST < ficha.personaliz.mejorasEst.length) {
-        ficha.personaliz.mejorasEst.pop()
-    }
-
-    // Chequear cantidad dotes
-    while (ficha.nivel > 0 && ficha.derivados.cantidadDotes < ficha.personaliz.dotes.length) {
-        ficha.personaliz.dotes.pop()
-    }
-
-    // Chequear mejoras de habilidades
-    while (ficha.nivel > 0 && ficha.derivados.cantidadMejorasHab < ficha.personaliz.mejorasHab.length) {
-        ficha.personaliz.mejorasHab.pop()
-    }
-
-    // Actualizar estadísticas con mejoras y bonos extra
-    for (const stat in ficha.derivados.stats) {
-        const baseStat = ficha.pokedex.statsBase[stat] || 0
-        const mejorasAplicadas = ficha.personaliz.mejorasEst.filter(s => s === stat).length
-        const extra = ficha.personaliz.bonosExtraEst?.[stat] || 0
-        ficha.derivados.stats[stat] = baseStat + mejoraToValor(mejorasAplicadas) + extra
-    }
-
-    // Actualizar salvaciones con bonificaciones personalizadas
-    for (const stat in ficha.derivados.salvaciones) {
-        const statTotal = ficha.derivados.stats[stat] || 0
-        ficha.derivados.salvaciones[stat] = statTotal + ficha.derivados.bh
-            + ficha.pokedex.salvaciones[stat] + ficha.personaliz.salvaciones[stat]
-            - Math.max(ficha.derivados.fatiga, 0)
-    }
-
-    //Actualizar cantidad de Movimientos aprendidos
-    ficha.derivados.cantidadMovs = Math.min(2 + ficha.derivados.bh, 8) + Math.max(Math.floor(ficha.derivados.stats.men / 4), 0)
-    while (ficha.derivados.bh > 0 && ficha.derivados.cantidadMovs < ficha.personaliz.movimientosAprendidos.length) {
-        ficha.personaliz.movimientosAprendidos.pop()
-    }
-
-    // Actualizar velocidades
-    for (const vel in ficha.derivados.velocidades) {
-        ficha.derivados.velocidades[vel] = ficha.pokedex.velocidades[vel] + ficha.personaliz.mejorasVelocidades[vel]
-    }
-
-    //Actualizar EVA
-    if (!ficha.manual.ca) {
-        calcularEVA()
-    }
-}
-
 
 // <============== MANIPULAR FICHAS ===============>
 
@@ -852,348 +605,7 @@ onMounted(async () => {
 })
 
 
-const mostrarToolbar = ref(false)
-const mostrarMenuConfiguracion = ref(false)
-const mostrarConfigIniciativa = ref(false)
-const snapshotConfiguracion = ref(null)
-const configuracionDerivados = ref(null)
-const ajustesConfiguracion = ref({})
 
-const statLabels = {
-    fue: 'Fuerza',
-    agi: 'Agilidad',
-    res: 'Resistencia',
-    men: 'Mente',
-    esp: 'Espíritu',
-    pre: 'Presencia'
-}
-
-const velocidadKeys = computed(() => Object.keys(ficha.derivados.velocidades || {}))
-
-function mejoraToValor(mejoras) {
-    if (mejoras < 0) return 0
-    if (mejoras <= 3) return mejoras
-    if (mejoras === 4) return 3
-    if (mejoras > 4) return 4
-    return 0
-}
-
-function valorBaseStat(stat) {
-    const baseStat = ficha.pokedex.statsBase?.[stat] || 0
-    const mejorasAplicadas = ficha.personaliz.mejorasEst?.filter(s => s === stat).length || 0
-    return baseStat + mejoraToValor(mejorasAplicadas)
-}
-
-function abrirMenuConfiguracion() {
-    if (mostrarMenuConfiguracion.value) return
-    const copia = JSON.parse(JSON.stringify(ficha.derivados))
-    snapshotConfiguracion.value = copia
-    configuracionDerivados.value = JSON.parse(JSON.stringify(copia))
-    // Inicializar ajustes con los valores actuales de los modificadores
-    // Para valores calculados, calcular la diferencia entre el valor actual y el base
-    const baseBH = Math.ceil(ficha.nivel / 2)
-    const basePP = ficha.derivados.stats.esp + ficha.nivel - Math.max(ficha.derivados.fatiga, 0)
-    const basePV = 10 + ficha.nivel * (ficha.derivados.vit + ficha.derivados.stats.res)
-
-    // Calcular CA base
-    calcularEVA()
-    const idx = ficha.derivados.caElegida ?? 0
-    const baseCA = (ficha.derivados.cas?.[idx]?.valor || 0) + ficha.derivados.bh - Math.max(ficha.derivados.fatiga, 0)
-
-    ajustesConfiguracion.value = {
-        vit: ficha.personaliz.bonoVit || 0,
-        bh: ficha.manual.bh ? (ficha.derivados.bh - baseBH) : 0,
-        ppMax: ficha.manual.ppMax ? (ficha.derivados.ppMax - basePP) : 0,
-        pvMax: ficha.manual.pvMax ? (ficha.derivados.pvMax - basePV) : 0,
-        escudo: ficha.derivados.escudo || 0,
-        fatiga: ficha.derivados.fatiga || 0,
-        ca: ficha.manual.ca ? (ficha.derivados.ca - baseCA) : 0,
-        stats: {
-            fue: ficha.personaliz.bonosExtraEst?.fue || 0,
-            agi: ficha.personaliz.bonosExtraEst?.agi || 0,
-            res: ficha.personaliz.bonosExtraEst?.res || 0,
-            men: ficha.personaliz.bonosExtraEst?.men || 0,
-            esp: ficha.personaliz.bonosExtraEst?.esp || 0,
-            pre: ficha.personaliz.bonosExtraEst?.pre || 0
-        },
-        velocidades: {}
-    }
-    // Inicializar velocidades con los valores actuales
-    if (ficha.derivados.velocidades) {
-        Object.keys(ficha.derivados.velocidades).forEach(vel => {
-            ajustesConfiguracion.value.velocidades[vel] = ficha.personaliz.mejorasVelocidades?.[vel] || 0
-        })
-    }
-    mostrarMenuConfiguracion.value = true
-}
-
-function cerrarMenuConfiguracion() {
-    mostrarMenuConfiguracion.value = false
-    snapshotConfiguracion.value = null
-    configuracionDerivados.value = null
-    ajustesConfiguracion.value = {}
-}
-
-function reiniciarCambiosConfiguracion() {
-    if (!snapshotConfiguracion.value) return
-    const original = JSON.parse(JSON.stringify(snapshotConfiguracion.value))
-    configuracionDerivados.value = JSON.parse(JSON.stringify(original))
-
-    // Restaurar totalmente los derivados y mejoras relacionadas
-    Object.assign(ficha.derivados, JSON.parse(JSON.stringify(original)))
-
-    if (ficha.personaliz?.mejorasVelocidades && snapshotConfiguracion.value?.velocidades) {
-        const baseVel = ficha.pokedex.velocidades || {}
-        const mejorasVel = {}
-        Object.keys(snapshotConfiguracion.value.velocidades).forEach(vel => {
-            const total = snapshotConfiguracion.value.velocidades[vel] ?? 0
-            const base = baseVel[vel] ?? 0
-            mejorasVel[vel] = total - base
-        })
-        ficha.personaliz.mejorasVelocidades = mejorasVel
-    }
-
-    if (snapshotConfiguracion.value?.stats) {
-        const extras = { ...(ficha.personaliz?.bonosExtraEst || {}) }
-        Object.keys(snapshotConfiguracion.value.stats).forEach(stat => {
-            const total = snapshotConfiguracion.value.stats[stat] ?? valorBaseStat(stat)
-            const base = valorBaseStat(stat)
-            extras[stat] = total - base
-        })
-        ficha.personaliz.bonosExtraEst = extras
-    }
-
-    // Reiniciar ajustes
-    ajustesConfiguracion.value = {
-        vit: null,
-        bh: null,
-        ppMax: null,
-        pvMax: null,
-        escudo: null,
-        fatiga: null,
-        ca: null,
-        stats: { fue: null, agi: null, res: null, men: null, esp: null, pre: null },
-        velocidades: {}
-    }
-    // Reiniciar velocidades
-    if (ficha.derivados.velocidades) {
-        Object.keys(ficha.derivados.velocidades).forEach(vel => {
-            ajustesConfiguracion.value.velocidades[vel] = null
-        })
-    }
-}
-
-function aplicarAjusteVitalidad(ajuste) {
-    if (ajuste === null || ajuste === undefined || ajuste === '') {
-        ajustesConfiguracion.value.vit = 0
-        ficha.personaliz.bonoVit = 0
-    } else {
-        const valor = parseFloat(ajuste)
-        if (!isNaN(valor)) {
-            ficha.personaliz.bonoVit = valor
-        }
-    }
-
-    // Recalcular PV cuando cambia vitalidad
-    actualizar()
-    if (configuracionDerivados.value) {
-        configuracionDerivados.value.vit = ficha.derivados.vit
-        configuracionDerivados.value.pvMax = ficha.derivados.pvMax
-    }
-}
-
-function aplicarAjusteStat(stat, ajuste) {
-    if (!ficha.personaliz.bonosExtraEst) {
-        ficha.personaliz.bonosExtraEst = { fue: 0, agi: 0, res: 0, men: 0, esp: 0, pre: 0 }
-    }
-
-    if (ajuste === null || ajuste === undefined || ajuste === '') {
-        ajustesConfiguracion.value.stats[stat] = 0
-        ficha.personaliz.bonosExtraEst[stat] = 0
-    } else {
-        const valor = parseFloat(ajuste)
-        if (!isNaN(valor)) {
-            ficha.personaliz.bonosExtraEst[stat] = valor
-        }
-    }
-
-    // Recalcular valores dependientes
-    actualizar()
-    if (configuracionDerivados.value) {
-        configuracionDerivados.value.stats[stat] = ficha.derivados.stats[stat]
-        // Si cambió resistencia, recalcular PV
-        if (stat === 'res') {
-            configuracionDerivados.value.pvMax = ficha.derivados.pvMax
-        }
-    }
-}
-
-function aplicarAjusteVelocidad(vel, ajuste) {
-    if (!ficha.personaliz.mejorasVelocidades) {
-        ficha.personaliz.mejorasVelocidades = {}
-    }
-
-    if (ajuste === null || ajuste === undefined || ajuste === '') {
-        ajustesConfiguracion.value.velocidades[vel] = 0
-        ficha.personaliz.mejorasVelocidades[vel] = 0
-    } else {
-        const valor = parseFloat(ajuste)
-        if (!isNaN(valor)) {
-            ficha.personaliz.mejorasVelocidades[vel] = valor
-        }
-    }
-
-    actualizar()
-    if (configuracionDerivados.value) {
-        configuracionDerivados.value.velocidades[vel] = ficha.derivados.velocidades[vel]
-    }
-}
-
-function aplicarAjusteBH(ajuste) {
-    if (ajuste === null || ajuste === undefined || ajuste === '') {
-        ajustesConfiguracion.value.bh = 0
-        ficha.manual.bh = false
-    } else {
-        const valor = parseFloat(ajuste)
-        if (!isNaN(valor)) {
-            // Calcular el valor base actual
-            const baseBH = Math.ceil(ficha.nivel / 2)
-            ficha.derivados.bh = baseBH + valor
-            ficha.manual.bh = true
-        }
-    }
-
-    actualizar()
-    if (configuracionDerivados.value) {
-        configuracionDerivados.value.bh = ficha.derivados.bh
-    }
-}
-
-function aplicarAjustePPMax(ajuste) {
-    if (ajuste === null || ajuste === undefined || ajuste === '') {
-        ajustesConfiguracion.value.ppMax = 0
-        ficha.manual.ppMax = false
-    } else {
-        const valor = parseFloat(ajuste)
-        if (!isNaN(valor)) {
-            // Calcular el valor base actual
-            const basePP = ficha.derivados.stats.esp + ficha.nivel - Math.max(ficha.derivados.fatiga, 0)
-            ficha.derivados.ppMax = basePP + valor
-            ficha.manual.ppMax = true
-        }
-    }
-
-    actualizar()
-    if (configuracionDerivados.value) {
-        configuracionDerivados.value.ppMax = ficha.derivados.ppMax
-    }
-}
-
-function aplicarAjustePVMax(ajuste) {
-    if (ajuste === null || ajuste === undefined || ajuste === '') {
-        ajustesConfiguracion.value.pvMax = 0
-        ficha.manual.pvMax = false
-    } else {
-        const valor = parseFloat(ajuste)
-        if (!isNaN(valor)) {
-            // Calcular el valor base actual
-            const basePV = 10 + ficha.nivel * (ficha.derivados.vit + ficha.derivados.stats.res)
-            ficha.derivados.pvMax = basePV + valor
-            ficha.manual.pvMax = true
-        }
-    }
-
-    actualizar()
-    if (configuracionDerivados.value) {
-        configuracionDerivados.value.pvMax = ficha.derivados.pvMax
-    }
-}
-
-function aplicarAjusteCA(ajuste) {
-    if (ajuste === null || ajuste === undefined || ajuste === '') {
-        ajustesConfiguracion.value.ca = 0
-        ficha.manual.ca = false
-    } else {
-        const valor = parseFloat(ajuste)
-        if (!isNaN(valor)) {
-            // Calcular el valor base actual de CA
-            calcularEVA()
-            const idx = ficha.derivados.caElegida ?? 0
-            const baseCA = (ficha.derivados.cas?.[idx]?.valor ?? 0) + ficha.derivados.bh - Math.max(ficha.derivados.fatiga, 0)
-            ficha.derivados.ca = baseCA + valor
-            ficha.manual.ca = true
-        }
-    }
-
-    actualizar()
-    if (configuracionDerivados.value) {
-        configuracionDerivados.value.ca = ficha.derivados.ca
-    }
-}
-
-function aplicarAjusteEscudo(ajuste) {
-    if (ajuste === null || ajuste === undefined || ajuste === '') {
-        ajustesConfiguracion.value.escudo = 0
-        ficha.derivados.escudo = 0
-    } else {
-        const valor = parseFloat(ajuste)
-        if (!isNaN(valor)) {
-            ficha.derivados.escudo = valor
-        }
-    }
-
-    if (configuracionDerivados.value) {
-        configuracionDerivados.value.escudo = ficha.derivados.escudo
-    }
-}
-
-function aplicarAjusteFatiga(ajuste) {
-    if (ajuste === null || ajuste === undefined || ajuste === '') {
-        ajustesConfiguracion.value.fatiga = 0
-        ficha.derivados.fatiga = 0
-    } else {
-        const valor = parseFloat(ajuste)
-        if (!isNaN(valor)) {
-            ficha.derivados.fatiga = valor
-        }
-    }
-
-    actualizar()
-    if (configuracionDerivados.value) {
-        configuracionDerivados.value.fatiga = ficha.derivados.fatiga
-    }
-}
-
-function guardarCambiosConfiguracion() {
-    // Aplicar todos los ajustes pendientes antes de guardar
-    if (ajustesConfiguracion.value.vit !== null) aplicarAjusteVitalidad(ajustesConfiguracion.value.vit)
-    if (ajustesConfiguracion.value.bh !== null) aplicarAjusteBH(ajustesConfiguracion.value.bh)
-    if (ajustesConfiguracion.value.ppMax !== null) aplicarAjustePPMax(ajustesConfiguracion.value.ppMax)
-    if (ajustesConfiguracion.value.pvMax !== null) aplicarAjustePVMax(ajustesConfiguracion.value.pvMax)
-    if (ajustesConfiguracion.value.escudo !== null) aplicarAjusteEscudo(ajustesConfiguracion.value.escudo)
-    if (ajustesConfiguracion.value.fatiga !== null) aplicarAjusteFatiga(ajustesConfiguracion.value.fatiga)
-    if (ajustesConfiguracion.value.ca !== null) aplicarAjusteCA(ajustesConfiguracion.value.ca)
-
-    if (ajustesConfiguracion.value.stats) {
-        Object.keys(ajustesConfiguracion.value.stats).forEach(stat => {
-            if (ajustesConfiguracion.value.stats[stat] !== null) {
-                aplicarAjusteStat(stat, ajustesConfiguracion.value.stats[stat])
-            }
-        })
-    }
-
-    if (ajustesConfiguracion.value.velocidades) {
-        Object.keys(ajustesConfiguracion.value.velocidades).forEach(vel => {
-            if (ajustesConfiguracion.value.velocidades[vel] !== null) {
-                aplicarAjusteVelocidad(vel, ajustesConfiguracion.value.velocidades[vel])
-            }
-        })
-    }
-
-    actualizar()
-    guardarFicha()
-    cerrarMenuConfiguracion()
-}
 
 // Funciones para los botones del Pokémon
 function nuevaEscena() {
@@ -1210,228 +622,9 @@ function descansar() {
     } else {
         ficha.derivados.fatiga = 0
     }
+    nuevaEscena()
 }
 
-// Función para obtener el grado actual de un check
-function gradoActual(checkName) {
-    const mejoras = ficha.personaliz.mejorasHab.filter(m => m === checkName).length
-    const totalGrado = Math.min(1 + mejoras, grados.length - 1)
-    return totalGrado
-}
-
-// Funciones para configuración de iniciativa (usando la misma lógica que Checks.vue)
-function gradoMinimoIniciativa() {
-    // Si el check base está desactivado manualmente, el mínimo pasa a 0
-    if (Array.isArray(ficha.personaliz.checksBaseDesactivados) &&
-        ficha.personaliz.checksBaseDesactivados.includes('Init')) {
-        return 0
-    }
-    const base = ficha.derivados.checksBase.find(c => c.check === 'Init')
-    return base ? base.grado : 0
-}
-
-function gradoActualIniciativa() {
-    // Usar el nuevo sistema de configuración de habilidades
-    if (!ficha.personaliz.configuracionHabilidades) {
-        ficha.personaliz.configuracionHabilidades = {}
-    }
-
-    if (!ficha.personaliz.configuracionHabilidades['Init']) {
-        // Iniciativa tiene grado base "Bueno" (1) por defecto
-        ficha.personaliz.configuracionHabilidades['Init'] = {
-            stat: 'esp',
-            grado: 1
-        }
-    }
-
-    return ficha.personaliz.configuracionHabilidades['Init'].grado
-}
-
-function getIniciativaStat() {
-    // Usar el nuevo sistema de configuración de habilidades
-    if (!ficha.personaliz.configuracionHabilidades) {
-        ficha.personaliz.configuracionHabilidades = {}
-    }
-
-    if (!ficha.personaliz.configuracionHabilidades['Init']) {
-        // Iniciativa tiene grado base "Bueno" (1) por defecto
-        ficha.personaliz.configuracionHabilidades['Init'] = {
-            stat: 'esp',
-            grado: 1
-        }
-    }
-
-    return ficha.personaliz.configuracionHabilidades['Init'].stat
-}
-
-function updateIniciativaStat(newStat) {
-    // Usar el nuevo sistema de configuración de habilidades
-    if (!ficha.personaliz.configuracionHabilidades) {
-        ficha.personaliz.configuracionHabilidades = {}
-    }
-
-    if (!ficha.personaliz.configuracionHabilidades['Init']) {
-        // Iniciativa tiene grado base "Bueno" (1) por defecto
-        ficha.personaliz.configuracionHabilidades['Init'] = {
-            stat: 'esp',
-            grado: 1
-        }
-    }
-
-    ficha.personaliz.configuracionHabilidades['Init'].stat = newStat
-
-    // Si el check está visible, actualizar también su stat en la lista
-    const initCheck = ficha.personaliz.checks.find(c => c.check === 'Init')
-    if (initCheck) {
-        initCheck.stat = newStat
-    }
-}
-
-const iniciativaStat = computed({
-    get() {
-        return getIniciativaStat()
-    },
-    set(val) {
-        updateIniciativaStat(val)
-    }
-})
-
-// Computed para mejoras disponibles (igual que en Checks.vue)
-const mejorasDisponibles = computed(() => {
-    const total = ficha.derivados.cantidadMejorasHab || 0
-    const usadas = ficha.personaliz.mejorasHab.length
-    return Math.max(0, total - usadas)
-})
-
-function isIniciativaRangoDisabled(optionIndex) {
-    const min = gradoMinimoIniciativa()
-    const actual = gradoActualIniciativa()
-    const gradoBase = 1 // Iniciativa siempre tiene grado base "Bueno" (1)
-    const max = grados.length - 1
-    // Siempre permitir seleccionar "No"
-    if (optionIndex === 0) return false
-    if (optionIndex < min) return true
-    if (optionIndex > max) return true
-    if (optionIndex <= actual) return false // siempre permitir bajar/igual
-
-    // subir: calcular puntos necesarios basándose en el rango base
-    const puntosNecesarios = Math.max(0, optionIndex - gradoBase)
-    const puntosActuales = ficha.personaliz.mejorasHab.filter(m => m === 'Init').length
-    const puntosFaltantes = Math.max(0, puntosNecesarios - puntosActuales)
-
-    return puntosFaltantes > mejorasDisponibles.value
-}
-
-function onChangeIniciativaRango(targetIndex) {
-    const min = gradoMinimoIniciativa()
-    const max = grados.length - 1
-    const actual = gradoActualIniciativa()
-    const gradoBase = 1 // Iniciativa siempre tiene grado base "Bueno" (1)
-    let objetivo = parseInt(targetIndex)
-    if (isNaN(objetivo)) return
-
-    // Asegurar que existe la configuración de Iniciativa
-    if (!ficha.personaliz.configuracionHabilidades) {
-        ficha.personaliz.configuracionHabilidades = {}
-    }
-
-    if (!ficha.personaliz.configuracionHabilidades['Init']) {
-        // Iniciativa tiene grado base "Bueno" (1) por defecto
-        ficha.personaliz.configuracionHabilidades['Init'] = {
-            stat: 'esp',
-            grado: 1
-        }
-    }
-
-    const config = ficha.personaliz.configuracionHabilidades['Init']
-
-    // Permitir seleccionar 0 incluso si el mínimo fuera mayor
-    if (objetivo === 0) {
-        // Quitar todas las mejoras de este check
-        let idx = ficha.personaliz.mejorasHab.lastIndexOf('Init')
-        while (idx !== -1) {
-            ficha.personaliz.mejorasHab.splice(idx, 1)
-            idx = ficha.personaliz.mejorasHab.lastIndexOf('Init')
-        }
-        // Establecer grado 0 en la configuración
-        config.grado = 0
-
-        // Si el check está visible, actualizar también su grado en la lista
-        const itemIdx = ficha.personaliz.checks.findIndex(c => c.check === 'Init')
-        if (itemIdx !== -1) {
-            ficha.personaliz.checks[itemIdx].grado = 0
-        }
-        return
-    }
-
-    objetivo = Math.max(min, Math.min(max, objetivo))
-
-    if (objetivo === actual) return
-
-    if (objetivo < actual) {
-        // Bajar: quitar mejoras necesarias
-        // Solo quitar mejoras que están por encima del rango base
-        let quitar = Math.max(0, actual - Math.max(objetivo, gradoBase))
-        while (quitar > 0) {
-            const idx = ficha.personaliz.mejorasHab.lastIndexOf('Init')
-            if (idx === -1) break
-            ficha.personaliz.mejorasHab.splice(idx, 1)
-            quitar--
-        }
-        // Actualizar el grado en la configuración
-        config.grado = objetivo
-
-        // Si el check está visible, actualizar también su grado en la lista
-        const itemIdx = ficha.personaliz.checks.findIndex(c => c.check === 'Init')
-        if (itemIdx !== -1) {
-            ficha.personaliz.checks[itemIdx].grado = objetivo
-        }
-        return
-    }
-
-    // Subir: comprobar puntos disponibles
-    // Calcular puntos necesarios basándose en el rango base
-    const puntosNecesarios = Math.max(0, objetivo - gradoBase)
-    const puntosActuales = ficha.personaliz.mejorasHab.filter(m => m === 'Init').length
-
-    if (puntosNecesarios > puntosActuales) {
-        // Necesitamos más puntos
-        const puntosFaltantes = puntosNecesarios - puntosActuales
-        const puntosDisponibles = mejorasDisponibles.value
-
-        if (puntosFaltantes > puntosDisponibles) {
-            // No hay suficientes puntos disponibles, subir solo lo posible
-            const puntosAplicar = puntosDisponibles
-            for (let i = 0; i < puntosAplicar; i++) {
-                ficha.personaliz.mejorasHab.push('Init')
-            }
-            objetivo = gradoBase + puntosActuales + puntosAplicar
-        } else {
-            // Aplicar todos los puntos necesarios
-            for (let i = 0; i < puntosFaltantes; i++) {
-                ficha.personaliz.mejorasHab.push('Init')
-            }
-        }
-    } else if (puntosNecesarios < puntosActuales) {
-        // Tenemos más puntos de los necesarios, quitar los extras
-        const puntosExtra = puntosActuales - puntosNecesarios
-        for (let i = 0; i < puntosExtra; i++) {
-            const idx = ficha.personaliz.mejorasHab.lastIndexOf('Init')
-            if (idx !== -1) {
-                ficha.personaliz.mejorasHab.splice(idx, 1)
-            }
-        }
-    }
-
-    // Actualizar el grado en la configuración
-    config.grado = objetivo
-
-    // Si el check está visible, actualizar también su grado en la lista
-    const itemIdx = ficha.personaliz.checks.findIndex(c => c.check === 'Init')
-    if (itemIdx !== -1) {
-        ficha.personaliz.checks[itemIdx].grado = objetivo
-    }
-}
 </script>
 
 
@@ -1510,7 +703,7 @@ function onChangeIniciativaRango(targetIndex) {
                         <!-- BH -->
                         <div class="BH">
                             <h3>BH </h3>
-                            <input type="number" v-model.number="ficha.derivados.bh" :readonly="!ficha.manual.bh" />
+                            <input type="number" v-model.number="ficha.derivados.bh" readonly />
                         </div>
 
                         <!-- Iniciativa -->
@@ -1527,9 +720,10 @@ function onChangeIniciativaRango(targetIndex) {
                                     </svg>
                                 </button>
                             </div>
-                            <span class="grado">{{ grados[gradoActualIniciativa()] }}</span>
+                            <!-- SIN HACER -->
+                            <span class="grado">{{ "AAAAAAAAAAA" }}</span>
                             <div class="iniciativa-input-container">
-                                <input v-model.number="ficha.derivados.init" :readonly="!ficha.manual.init" />
+                                <input v-model.number="ficha.derivados.init" readonly />
                                 <tiraDado :tirada='"1d20+" + (ficha.derivados.init || 0)' :origin='"Iniciativa"' />
                             </div>
                         </div>
@@ -1537,7 +731,7 @@ function onChangeIniciativaRango(targetIndex) {
                         <!-- Evasión -->
                         <div class="Evasion">
                             <h3>Evasión</h3>
-                            <input v-model.number="ficha.derivados.ca" :readonly="!ficha.manual.ca" />
+                            <input v-model.number="ficha.derivados.ca" readonly />
                             <select v-if="ficha.pokedex.calculosEva && ficha.pokedex.calculosEva.length > 1"
                                 v-model="ficha.derivados.caElegida">
                                 <option v-for="(calculo, i) in ficha.pokedex.calculosEva" :value="i">{{ calculo }}
@@ -1553,7 +747,7 @@ function onChangeIniciativaRango(targetIndex) {
                             <h3>PP</h3>
                             <div class="pp-inputs">
                                 <input v-model.number="ficha.derivados.pp" /> /
-                                <input v-model.number="ficha.derivados.ppMax" :readonly="!ficha.manual.ppMax" />
+                                <input v-model.number="ficha.derivados.ppMax" readonly />
                             </div>
                         </div>
 
@@ -1585,12 +779,11 @@ function onChangeIniciativaRango(targetIndex) {
                             <div class="pv-row">
                                 <h3>PV:</h3>
                                 <input v-model.number="ficha.derivados.pv" /> /
-                                <input class="pv-max" v-model.number="ficha.derivados.pvMax"
-                                    :readonly="!ficha.manual.pvMax" />
+                                <input class="pv-max" v-model.number="ficha.derivados.pvMax" readonly />
                             </div>
                             <div class="pv-row vit">
                                 <h3>Vitalidad</h3>
-                                <input v-model.number="ficha.derivados.vit" :readonly="!ficha.manual.vit" />
+                                <input v-model.number="ficha.derivados.vit" readonly />
                             </div>
                         </div>
                         <div class="escudo-box">
@@ -1739,9 +932,9 @@ function onChangeIniciativaRango(targetIndex) {
                         <option value="esp">Espíritu</option>
                         <option value="pre">Presencia</option>
                     </select>
-                    <select :value="gradoActualIniciativa()" @change="onChangeIniciativaRango($event.target.value)"
-                        class="rango-select" :title="`Rango de Iniciativa`">
-                        <option v-for="(g, i) in grados" :key="g" :value="i" :disabled="isIniciativaRangoDisabled(i)">
+                    <!-- Sin hacer -->
+                    <select :value="ficha.personaliz.checks" class="rango-select" :title="`Rango de Iniciativa`">
+                        <option v-for="(g, i) in grados" :key="g" :value="i" :disabled="true">
                             {{ g }}
                         </option>
                     </select>

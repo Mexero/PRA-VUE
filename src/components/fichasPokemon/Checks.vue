@@ -1,24 +1,18 @@
 <script setup>
-const gradosInicial = ['N', 'B', 'E', 'M', 'L']
-const gradoModal = ref({ visible: false, nombre: '', index: null })
-
-function mostrarGradoModal(nombre, event, index) {
-    gradoModal.value = {
-        visible: true,
-        nombre,
-        index
-    }
-}
-function ocultarGradoModal() {
-    gradoModal.value.visible = false
-}
 import { ref, computed, watch, onMounted, onUnmounted } from 'vue'
 import draggable from 'vuedraggable'
-
 import tiraDado from '../tiraDado.vue'
 
 const props = defineProps(['ficha', 'ChecksBase'])
-const emit = defineEmits(['gradoChange', 'checksBaseDesactivados'])
+const emit = defineEmits(['gradoChange'])
+
+const gradosInicial = ['N', 'B', 'E', 'M', 'L']
+const gradoModal = ref({ visible: false, nombre: '', index: null })
+
+function mostrarGradoModal(nombre, index) {
+    gradoModal.value = { visible: true, nombre, index }
+}
+function ocultarGradoModal() { gradoModal.value.visible = false }
 
 const nuevoCheck = ref('')
 const mostrarPopup = ref(false)
@@ -26,411 +20,188 @@ const selectedSuggestionIndex = ref(-1)
 const mostrarConfigChecks = ref(false)
 const nuevaHabilidadPersonalizada = ref('')
 
-const filteredChecks = computed(() => {
-    const input = nuevoCheck.value.toLowerCase()
-    if (!input) return props.ChecksBase.map(ch => ch.check)
-    return props.ChecksBase
-        .map(ch => ch.check)
-        .filter(c => c.toLowerCase().includes(input))
-        .filter(c => !props.ficha.personaliz.checks.some(ch => ch.check === c))
-})
-
 const grados = ['No', 'Bueno', 'Experto', 'Maestro', 'Legendario']
 
-// Computed para obtener todos los checks disponibles
+// ---------- FILTRAR CHECKS DISPONIBLES PARA AGREGAR ----------
+const filteredChecks = computed(() => {
+    const input = nuevoCheck.value.toLowerCase()
+    const usados = props.ficha.checks.checksActivos.map(c => c)
+    return props.ChecksBase.map(c => c.check)
+        .filter(c => !usados.includes(c))
+        .filter(c => !input || c.toLowerCase().includes(input))
+})
+
+// ---------- TODOS LOS CHECKS PARA CONFIGURACIÓN ----------
 const todosLosChecks = computed(() => {
     const checks = []
-
-    // 1. Checks base (ChecksBase)
-    props.ChecksBase.forEach(base => {
-        if (base.check !== 'Init') {
+    // Base visibles
+    props.ficha.checks.checksBase.forEach(c => {
+        if (c.check !== 'Init') {
             checks.push({
-                nombre: base.check,
+                nombre: c.check,
                 tipo: 'base',
-                stat: base.stat
+                stat: getStat(c.check)
             })
         }
     })
-
-    // 2. Checks especiales del Pokémon (de ficha.derivados.checksBase)
-    if (props.ficha.derivados?.checksBase) {
-        props.ficha.derivados.checksBase.forEach(checkBase => {
-            // Solo incluir si no es Init y no está ya en ChecksBase
-            if (checkBase.check !== 'Init' &&
-                !props.ChecksBase.some(cb => cb.check === checkBase.check)) {
-                checks.push({
-                    nombre: checkBase.check,
-                    tipo: 'pokemon',
-                    stat: checkBase.stat || 'fue'
-                })
-            }
-        })
-    }
-
-    // 3. Checks personalizados
-    if (props.ficha.personaliz?.checksExtra) {
-        props.ficha.personaliz.checksExtra.forEach(check => {
-            checks.push({
-                nombre: check,
-                tipo: 'personalizado'
-            })
-        })
-    }
-
+    // Activos (otros que no sean Init)
+    props.ficha.checks.checksActivos.forEach(c => {
+        if (c !== 'Init' && !checks.some(x => x.nombre === c)) {
+            checks.push({ nombre: c, tipo: 'activo', stat: getStat(c) })
+        }
+    })
     return checks
 })
 
-
-// Función para obtener el grado base de una habilidad
+// ---------- FUNCIONES GRADO ----------
 function getGradoBase(checkName) {
-    // Iniciativa siempre tiene grado base "Bueno" (1)
-    if (checkName === 'Init') {
-        return 1
-    }
-
-    // Para otros checks, buscar en checksBase del Pokémon
-    const base = props.ficha.derivados.checksBase.find(c => c.check === checkName)
+    if (checkName === 'Init') return 1
+    const base = props.ficha.checks.checksBase.find(c => c.check === checkName)
     return base ? base.grado : 0
 }
 
-// Función para obtener el grado actual de una habilidad (base + mejoras)
 function getGradoActual(checkName) {
     const gradoBase = getGradoBase(checkName)
     const mejoras = props.ficha.personaliz.mejorasHab.filter(m => m === checkName).length
     return Math.min(gradoBase + mejoras, grados.length - 1)
 }
 
+// ---------- MEJORAS ----------
 const mejorasUsadas = computed(() => props.ficha.personaliz.mejorasHab.length)
-
 const mejorasDisponibles = computed(() => {
     const total = props.ficha.derivados.cantidadMejorasHab || 0
-    const usadas = props.ficha.personaliz.mejorasHab.length
-    return Math.max(0, total - usadas)
+    return Math.max(0, total - mejorasUsadas.value)
 })
 
-// Detectar si es dispositivo móvil
+// ---------- DETECTAR DISPOSITIVO MÓVIL ----------
 const windowWidth = ref(window.innerWidth)
 const isMobile = computed(() => windowWidth.value <= 750)
+const updateWindowWidth = () => { windowWidth.value = window.innerWidth }
+onMounted(() => window.addEventListener('resize', updateWindowWidth))
+onUnmounted(() => window.removeEventListener('resize', updateWindowWidth))
 
-// Escuchar cambios en el tamaño de ventana
-const updateWindowWidth = () => {
-    windowWidth.value = window.innerWidth
-}
-
-onMounted(() => {
-    window.addEventListener('resize', updateWindowWidth)
-})
-
-onUnmounted(() => {
-    window.removeEventListener('resize', updateWindowWidth)
-})
-
-function subirGrado(checkName) {
-    if (getGradoActual(checkName) >= grados.length - 1) return
-    if (props.ficha.manual.cantidadMejorasHab === true || mejorasUsadas.value < props.ficha.derivados.cantidadMejorasHab) {
-        props.ficha.personaliz.mejorasHab.push(checkName)
-    }
-}
-
-function bajarGrado(checkName) {
-    const idx = props.ficha.personaliz.mejorasHab.lastIndexOf(checkName)
-    if (idx !== -1) props.ficha.personaliz.mejorasHab.splice(idx, 1)
-}
-
-function addCheck() {
-    const nombre = nuevoCheck.value.trim()
-    if (!nombre) return
-    if (props.ficha.personaliz.checks.some(c => c.check === nombre)) {
-        nuevoCheck.value = ''
-        mostrarPopup.value = false
-        return
-    }
-    const esBase = props.ChecksBase.find(ch => ch.check === nombre)
-    props.ficha.personaliz.checks.push({
-        check: nombre,
-        stat: esBase ? esBase.stat : 'fue',
-        grado: 0,
-        total: 0,
-    })
+// ---------- AGREGAR CHECK ----------
+function addCheck(nombre) {
+    const name = nombre?.trim() || nuevoCheck.value.trim()
+    if (!name) return
+    if (props.ficha.checks.checksActivos.includes(name)) return
+    props.ficha.checks.checksActivos.push(name)
     nuevoCheck.value = ''
     mostrarPopup.value = false
-    document.activeElement?.blur()
 }
 
-function removeCheck(index) {
-    const check = props.ficha.personaliz.checks[index]
-    props.ficha.personaliz.mejorasHab = props.ficha.personaliz.mejorasHab.filter(m => m !== check.check)
-    props.ficha.personaliz.checks.splice(index, 1)
-}
+function selectSuggestion(op) { addCheck(op) }
+function onArrowDown() { if (selectedSuggestionIndex.value < filteredChecks.value.length - 1) selectedSuggestionIndex.value++ }
+function onArrowUp() { if (selectedSuggestionIndex.value > 0) selectedSuggestionIndex.value-- }
+function onEnter() { if (selectedSuggestionIndex.value >= 0) selectSuggestion(filteredChecks.value[selectedSuggestionIndex.value]); else addCheck() }
+function cerrarPopupExterior() { mostrarPopup.value = false }
+function cerrarPopup() { mostrarPopup.value = false }
 
-function selectSuggestion(op) {
-    nuevoCheck.value = op
-    addCheck()
-}
+watch(mostrarPopup, isOpen => { document.body.style.overflow = isOpen ? 'hidden' : '' })
 
-function onArrowDown() {
-    if (!mostrarPopup.value || filteredChecks.value.length === 0) return
-    if (selectedSuggestionIndex.value < filteredChecks.value.length - 1) {
-        selectedSuggestionIndex.value++
-    }
-}
-
-function onArrowUp() {
-    if (!mostrarPopup.value || filteredChecks.value.length === 0) return
-    if (selectedSuggestionIndex.value > 0) {
-        selectedSuggestionIndex.value--
-    }
-}
-
-function onEnter() {
-    if (mostrarPopup.value && selectedSuggestionIndex.value >= 0) {
-        selectSuggestion(filteredChecks.value[selectedSuggestionIndex.value])
-    } else {
-        addCheck()
-    }
-}
-
-function cerrarPopupExterior() {
-    mostrarPopup.value = false
-}
-
-function cerrarPopup() {
-    mostrarPopup.value = false
-}
-
-watch(mostrarPopup, (isOpen) => {
-    document.body.style.overflow = isOpen ? 'hidden' : ''
-})
-
-// Función para alternar la visualización de un check (SOLO visualización)
+// ---------- TOGGLE CHECK VISUAL ----------
 function toggleCheck(checkName) {
-    const idx = props.ficha.personaliz.checks.findIndex(c => c.check === checkName)
-    if (idx === -1) {
-        // Añadir check a la visualización
-        const statActual = getStat(checkName)
-        const gradoActual = getGradoActual(checkName)
-
-        props.ficha.personaliz.checks.push({
-            check: checkName,
-            stat: statActual,
-            grado: gradoActual,
-            total: 0,
-        })
-    } else {
-        // Quitar check de la visualización - NO tocar configuración ni mejoras
-        props.ficha.personaliz.checks.splice(idx, 1)
-    }
+    const idx = props.ficha.checks.checksActivos.indexOf(checkName)
+    if (idx === -1) props.ficha.checks.checksActivos.push(checkName)
+    else props.ficha.checks.checksActivos.splice(idx, 1)
 }
-// Función para obtener la configuración guardada de una habilidad
+
+// ---------- CONFIGURACIÓN HABILIDAD ----------
 function getConfiguracionHabilidad(checkName) {
-    if (!props.ficha.personaliz.configuracionHabilidades) {
-        props.ficha.personaliz.configuracionHabilidades = {}
-    }
-
+    if (!props.ficha.personaliz.configuracionHabilidades) props.ficha.personaliz.configuracionHabilidades = {}
     if (!props.ficha.personaliz.configuracionHabilidades[checkName]) {
-        // Crear configuración por defecto
-        const checkBase = props.ChecksBase.find(ch => ch.check === checkName)
-        const gradoBase = getGradoBase(checkName)
-
         props.ficha.personaliz.configuracionHabilidades[checkName] = {
-            stat: checkBase ? checkBase.stat : 'fue',
-            grado: gradoBase
+            stat: props.ChecksBase.find(ch => ch.check === checkName)?.stat || 'fue',
+            grado: getGradoBase(checkName)
         }
     }
-
     return props.ficha.personaliz.configuracionHabilidades[checkName]
 }
 
 function getCheckObj(checkName) {
-    const checkExistente = props.ficha.personaliz.checks.find(c => c.check === checkName)
-    if (checkExistente) {
-        return checkExistente
-    }
+    const activo = props.ficha.checks.checksActivos.includes(checkName)
+    return activo ? { stat: getStat(checkName), grado: getGradoActual(checkName) } : getConfiguracionHabilidad(checkName)
+}
 
-    // Si no existe, devolver la configuración guardada
-    const config = getConfiguracionHabilidad(checkName)
-    return { stat: config.stat, grado: config.grado }
-}
 function getStat(checkName) {
-    const obj = getCheckObj(checkName)
-    return obj.stat || (props.ChecksBase.find(ch => ch.check === checkName)?.stat || 'fue')
+    return getCheckObj(checkName).stat || 'fue'
 }
+
 function updateStat(checkName, newStat) {
-    // Guardar en la configuración
     const config = getConfiguracionHabilidad(checkName)
     config.stat = newStat
-
-    // Si el check está visible, actualizar también su stat en la lista
-    const itemIdx = props.ficha.personaliz.checks.findIndex(c => c.check === checkName)
-    if (itemIdx !== -1) {
-        props.ficha.personaliz.checks[itemIdx].stat = newStat
-    }
 }
 
-// Funciones para manejar checks personalizados
+// ---------- CHECKS PERSONALIZADOS ----------
 function agregarCheckPersonalizado() {
     const nombre = nuevaHabilidadPersonalizada.value.trim()
-    if (!nombre) return
-
-    // Verificar que no exista ya
-    if (todosLosChecks.value.some(c => c.nombre === nombre)) {
-        alert('Este check ya existe')
-        return
-    }
-
-    // Inicializar el array si no existe
-    if (!props.ficha.personaliz.checksExtra) {
-        props.ficha.personaliz.checksExtra = []
-    }
-
-    // Agregar el check personalizado
-    props.ficha.personaliz.checksExtra.push(nombre)
-
-    // Limpiar el input
+    if (!nombre || props.ficha.checks.checksActivos.includes(nombre)) return
+    props.ficha.checks.checksActivos.push(nombre)
     nuevaHabilidadPersonalizada.value = ''
 }
 
 function eliminarCheckPersonalizado(nombre) {
-    const index = props.ficha.personaliz.checksExtra.indexOf(nombre)
-    if (index !== -1) {
-        props.ficha.personaliz.checksExtra.splice(index, 1)
-
-        // También eliminar de checks si existe
-        const checkIndex = props.ficha.personaliz.checks.findIndex(c => c.check === nombre)
-        if (checkIndex !== -1) {
-            props.ficha.personaliz.checks.splice(checkIndex, 1)
-        }
-
-        // Eliminar mejoras asociadas
-        props.ficha.personaliz.mejorasHab = props.ficha.personaliz.mejorasHab.filter(m => m !== nombre)
-    }
+    const idx = props.ficha.checks.checksActivos.indexOf(nombre)
+    if (idx !== -1) props.ficha.checks.checksActivos.splice(idx, 1)
+    props.ficha.personaliz.mejorasHab = props.ficha.personaliz.mejorasHab.filter(m => m !== nombre)
 }
 
-// Rango de habilidad (grados) en modal de configuración
-function getGradoMinimo(checkName) {
-    return getGradoBase(checkName)
-}
-
-function getGradoActualConfig(checkName) {
-    // Usar la configuración guardada
-    const config = getConfiguracionHabilidad(checkName)
-    return config.grado
-}
+// ---------- GRADOS EN CONFIG ----------
+function getGradoMinimo(checkName) { return getGradoBase(checkName) }
+function getGradoActualConfig(checkName) { return getConfiguracionHabilidad(checkName).grado }
 
 function isRangoOptionDisabled(checkName, optionIndex) {
     const min = getGradoMinimo(checkName)
     const actual = getGradoActualConfig(checkName)
     const gradoBase = getGradoBase(checkName)
     const max = grados.length - 1
-
-    // Siempre permitir seleccionar "No"
     if (optionIndex === 0) return false
     if (optionIndex < min) return true
     if (optionIndex > max) return true
-    if (optionIndex <= actual) return false // siempre permitir bajar/igual
-
-    // subir: calcular puntos necesarios basándose en el rango base
+    if (optionIndex <= actual) return false
     const puntosNecesarios = Math.max(0, optionIndex - gradoBase)
     const puntosActuales = props.ficha.personaliz.mejorasHab.filter(m => m === checkName).length
-    const puntosFaltantes = Math.max(0, puntosNecesarios - puntosActuales)
-
-    return puntosFaltantes > mejorasDisponibles.value
+    return Math.max(0, puntosNecesarios - puntosActuales) > mejorasDisponibles.value
 }
 
 function onChangeRango(checkName, targetIndex) {
+    let objetivo = parseInt(targetIndex)
+    if (isNaN(objetivo)) return
+
     const min = getGradoMinimo(checkName)
     const max = grados.length - 1
     const actual = getGradoActualConfig(checkName)
     const gradoBase = getGradoBase(checkName)
-    let objetivo = parseInt(targetIndex)
-    if (isNaN(objetivo)) return
-
-    // Obtener la configuración de la habilidad
     const config = getConfiguracionHabilidad(checkName)
 
-    // Permitir seleccionar 0 incluso si el mínimo fuera mayor
+    // Permitir 0
     if (objetivo === 0) {
-        // Quitar todas las mejoras de este check
-        let idx = props.ficha.personaliz.mejorasHab.lastIndexOf(checkName)
-        while (idx !== -1) {
-            props.ficha.personaliz.mejorasHab.splice(idx, 1)
-            idx = props.ficha.personaliz.mejorasHab.lastIndexOf(checkName)
-        }
-        // Establecer grado 0 en la configuración
+        props.ficha.personaliz.mejorasHab = props.ficha.personaliz.mejorasHab.filter(m => m !== checkName)
         config.grado = 0
-        // Si el check está visible, actualizar su grado
-        const itemIdx = props.ficha.personaliz.checks.findIndex(c => c.check === checkName)
-        if (itemIdx !== -1) {
-            props.ficha.personaliz.checks[itemIdx].grado = 0
-        }
         return
     }
 
     objetivo = Math.max(min, Math.min(max, objetivo))
-
     if (objetivo === actual) return
 
-    if (objetivo < actual) {
-        // Bajar: quitar mejoras necesarias
-        // Solo quitar mejoras que están por encima del rango base
-        let quitar = Math.max(0, actual - Math.max(objetivo, gradoBase))
-        while (quitar > 0) {
+    const puntosNecesarios = Math.max(0, objetivo - gradoBase)
+    let puntosActuales = props.ficha.personaliz.mejorasHab.filter(m => m === checkName).length
+
+    // Ajustar mejoras
+    if (puntosNecesarios > puntosActuales) {
+        const aPoner = Math.min(puntosNecesarios - puntosActuales, mejorasDisponibles.value)
+        for (let i = 0; i < aPoner; i++) props.ficha.personaliz.mejorasHab.push(checkName)
+    } else if (puntosNecesarios < puntosActuales) {
+        let aQuitar = puntosActuales - puntosNecesarios
+        while (aQuitar > 0) {
             const idx = props.ficha.personaliz.mejorasHab.lastIndexOf(checkName)
             if (idx === -1) break
             props.ficha.personaliz.mejorasHab.splice(idx, 1)
-            quitar--
-        }
-        // Actualizar el grado en la configuración
-        config.grado = objetivo
-        // Si el check está visible, actualizar su grado
-        const itemIdx = props.ficha.personaliz.checks.findIndex(c => c.check === checkName)
-        if (itemIdx !== -1) {
-            props.ficha.personaliz.checks[itemIdx].grado = objetivo
-        }
-        return
-    }
-
-    // Subir: comprobar puntos disponibles
-    // Calcular puntos necesarios basándose en el rango base
-    const puntosNecesarios = Math.max(0, objetivo - gradoBase)
-    const puntosActuales = props.ficha.personaliz.mejorasHab.filter(m => m === checkName).length
-
-    if (puntosNecesarios > puntosActuales) {
-        // Necesitamos más puntos
-        const puntosFaltantes = puntosNecesarios - puntosActuales
-        const puntosDisponibles = mejorasDisponibles.value
-
-        if (puntosFaltantes > puntosDisponibles) {
-            // No hay suficientes puntos disponibles, subir solo lo posible
-            const puntosAplicar = puntosDisponibles
-            for (let i = 0; i < puntosAplicar; i++) {
-                props.ficha.personaliz.mejorasHab.push(checkName)
-            }
-            objetivo = gradoBase + puntosActuales + puntosAplicar
-        } else {
-            // Aplicar todos los puntos necesarios
-            for (let i = 0; i < puntosFaltantes; i++) {
-                props.ficha.personaliz.mejorasHab.push(checkName)
-            }
-        }
-    } else if (puntosNecesarios < puntosActuales) {
-        // Tenemos más puntos de los necesarios, quitar los extras
-        const puntosExtra = puntosActuales - puntosNecesarios
-        for (let i = 0; i < puntosExtra; i++) {
-            const idx = props.ficha.personaliz.mejorasHab.lastIndexOf(checkName)
-            if (idx !== -1) {
-                props.ficha.personaliz.mejorasHab.splice(idx, 1)
-            }
+            aQuitar--
         }
     }
 
-    // Actualizar el grado en la configuración
-    config.grado = objetivo
-    // Si el check está visible, actualizar su grado
-    const itemIdx = props.ficha.personaliz.checks.findIndex(c => c.check === checkName)
-    if (itemIdx !== -1) {
-        props.ficha.personaliz.checks[itemIdx].grado = objetivo
-    }
+    config.grado = gradoBase + props.ficha.personaliz.mejorasHab.filter(m => m === checkName).length
 }
 </script>
 
@@ -460,8 +231,8 @@ function onChangeRango(checkName, targetIndex) {
             </div>
         </div>
         <div class="checks-list">
-            <draggable v-model="props.ficha.personaliz.checks" item-key="check" animation="200"
-                ghost-class="drag-ghost" :disabled="isMobile">
+            <draggable v-model="props.ficha.personaliz.checks" item-key="check" animation="200" ghost-class="drag-ghost"
+                :disabled="isMobile">
                 <template #item="{ element, index }">
                     <div class="item" v-if="element.check !== 'Init'">
 
