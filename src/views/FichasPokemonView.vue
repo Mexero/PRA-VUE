@@ -13,6 +13,7 @@ import FichaDotes from '@/components/fichasPokemon/Dotes.vue'
 import FichaOtros from '@/components/fichasPokemon/Otros.vue'
 import LanzadorDados from '@/components/LanzadorDados.vue'
 import tiraDado from '@/components/tiraDado.vue'
+import ModalModificadores from '@/components/fichasPokemon/modalModificadores.vue'
 
 import { crearFichaBase } from '@/utils/TemplateFicha.js'
 import { initDB, queryDB } from '@/services/dbWorkerService'
@@ -47,6 +48,7 @@ const loading = ref(false)
 
 const mostrarToolbar = ref(false)
 const mostrarConfigIniciativa = ref(false)
+const mostrarMenuConfiguracion = ref(false)
 
 //Flags
 let actualizando = false
@@ -703,7 +705,8 @@ function desactivarOpcionGrado(nombre, optionIndex) {
                             :aria-expanded="mostrarToolbar.toString()" title="Mostrar opciones de fichas">
                             ☰
                         </button>
-                        <button class="toolbar-settings" @click="abrirMenuConfiguracion" title="Editar datos rápidos">
+                        <button class="toolbar-settings" @click="mostrarMenuConfiguracion = true"
+                            title="Editar datos rápidos">
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"
                                 focusable="false">
@@ -795,9 +798,9 @@ function desactivarOpcionGrado(nombre, optionIndex) {
                         <!-- Evasión -->
                         <div class="Evasion">
                             <h3>Evasión</h3>
-                            <input v-model.number="ficha.derivados.ca" readonly />
+                            <input v-model.number="ficha.derivados.evasion" readonly />
                             <select v-if="ficha.pokedex.calculosEva && ficha.pokedex.calculosEva.length > 1"
-                                v-model="ficha.derivados.caElegida">
+                                v-model="ficha.derivados.evaElegida">
                                 <option v-for="(calculo, i) in ficha.pokedex.calculosEva" :value="i">{{ calculo }}
                                 </option>
                             </select>
@@ -886,98 +889,7 @@ function desactivarOpcionGrado(nombre, optionIndex) {
     </div>
     <LanzadorDados />
 
-    <transition name="fade">
-        <div v-if="mostrarMenuConfiguracion && configuracionDerivados" class="config-panel-overlay"
-            @click.self="cerrarMenuConfiguracion">
-            <div class="config-panel">
-                <div class="config-panel-header">
-                    <h3>Configuración del Pokémon</h3>
-                    <button class="close-btn" @click="cerrarMenuConfiguracion" aria-label="Cerrar">×</button>
-                </div>
-
-                <div class="config-panel-body">
-                    <section class="config-section">
-                        <h4>Vitalidad y Recursos</h4>
-                        <div class="config-list">
-                            <label class="config-field-list">
-                                <span>PV Max</span>
-                                <span class="valor-actual">{{ configuracionDerivados.pvMax }}</span>
-                                <input type="number" v-model.number="ajustesConfiguracion.pvMax"
-                                    @input="aplicarAjustePVMax(ajustesConfiguracion.pvMax)" placeholder="0">
-                            </label>
-                            <label class="config-field-list">
-                                <span>PP Max</span>
-                                <span class="valor-actual">{{ configuracionDerivados.ppMax }}</span>
-                                <input type="number" v-model.number="ajustesConfiguracion.ppMax"
-                                    @input="aplicarAjustePPMax(ajustesConfiguracion.ppMax)" placeholder="0">
-                            </label>
-                            <label class="config-field-list">
-                                <span>Vitalidad</span>
-                                <span class="valor-actual">{{ configuracionDerivados.vit }}</span>
-                                <input type="number" v-model.number="ajustesConfiguracion.vit"
-                                    @input="aplicarAjusteVitalidad(ajustesConfiguracion.vit)" placeholder="0">
-                            </label>
-                            <label class="config-field-list">
-                                <span>BH</span>
-                                <span class="valor-actual">{{ configuracionDerivados.bh }}</span>
-                                <input type="number" v-model.number="ajustesConfiguracion.bh"
-                                    @input="aplicarAjusteBH(ajustesConfiguracion.bh)" placeholder="0">
-                            </label>
-                        </div>
-                    </section>
-
-                    <section class="config-section">
-                        <h4>Cálculo de Evasión</h4>
-                        <div class="config-list">
-                            <label class="config-field-list">
-                                <span>CA</span>
-                                <span class="valor-actual">{{ configuracionDerivados.ca }}</span>
-                                <input type="number" v-model.number="ajustesConfiguracion.ca"
-                                    @input="aplicarAjusteCA(ajustesConfiguracion.ca)" placeholder="0">
-                            </label>
-                            <label class="config-field-list" v-if="ficha.pokedex.calculosEva?.length">
-                                <span>Fórmula base</span>
-                                <select v-model.number="configuracionDerivados.caElegida">
-                                    <option v-for="(calculo, i) in ficha.pokedex.calculosEva" :key="calculo" :value="i">
-                                        {{ calculo }}
-                                    </option>
-                                </select>
-                            </label>
-                        </div>
-                    </section>
-
-                    <section class="config-section">
-                        <h4>Stats Derivados</h4>
-                        <div class="config-list">
-                            <label v-for="(label, key) in statLabels" :key="key" class="config-field-list">
-                                <span>{{ label }}</span>
-                                <span class="valor-actual">{{ configuracionDerivados.stats[key] }}</span>
-                                <input type="number" v-model.number="ajustesConfiguracion.stats[key]"
-                                    @input="aplicarAjusteStat(key, ajustesConfiguracion.stats[key])" placeholder="0">
-                            </label>
-                        </div>
-                    </section>
-
-                    <section class="config-section">
-                        <h4>Velocidades</h4>
-                        <div class="config-list">
-                            <label v-for="vel in velocidadKeys" :key="vel" class="config-field-list">
-                                <span>{{ vel }}</span>
-                                <span class="valor-actual">{{ configuracionDerivados.velocidades[vel] }}</span>
-                                <input type="number" v-model.number="ajustesConfiguracion.velocidades[vel]"
-                                    @input="aplicarAjusteVelocidad(vel, ajustesConfiguracion.velocidades[vel])"
-                                    placeholder="0">
-                            </label>
-                        </div>
-                    </section>
-                </div>
-                <div class="config-panel-actions">
-                    <button class="btn-reset" @click="reiniciarCambiosConfiguracion">Reiniciar</button>
-                    <button class="btn-save" @click="guardarCambiosConfiguracion">Guardar cambios</button>
-                </div>
-            </div>
-        </div>
-    </transition>
+    <ModalModificadores :ficha="ficha" v-model:mostrarMenuConfiguracion="mostrarMenuConfiguracion" />
 
     <!-- Modal configuración de iniciativa -->
     <div v-if="mostrarConfigIniciativa" class="config-modal-overlay" @click.self="mostrarConfigIniciativa = false">
@@ -1066,183 +978,6 @@ function desactivarOpcionGrado(nombre, optionIndex) {
     left: 32px;
     z-index: 4;
     border: 1px solid var(--color-principal1);
-}
-
-.config-panel-overlay {
-    position: fixed;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.65);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 900;
-    padding: 20px;
-    color: var(--color-texto);
-}
-
-.config-panel {
-    width: min(900px, 95vw);
-    max-height: 90vh;
-    background: var(--color-fondoTexto);
-    border-radius: 12px;
-    padding: 20px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    overflow: hidden;
-}
-
-.config-panel-header {
-    position: sticky;
-    top: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    padding-bottom: 10px;
-    background: var(--color-fondoTexto);
-    z-index: 1;
-    color: var(--color-texto);
-}
-
-.config-panel-body {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    overflow-y: auto;
-    padding-right: 8px;
-}
-
-.config-section h4 {
-    margin: 0 0 10px 0;
-    color: var(--color-principal1);
-}
-
-.config-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 12px;
-}
-
-.stats-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 12px;
-}
-
-.config-list {
-    display: grid;
-    grid-template-columns: auto auto;
-    gap: 8px;
-}
-
-.config-field {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    font-size: 13px;
-}
-
-.config-field input,
-.config-field select,
-.config-field textarea {
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    background: rgba(0, 0, 0, 0.15);
-    color: var(--color-texto);
-    border-radius: 6px;
-    padding: 6px 8px;
-    font-size: 14px;
-}
-
-.config-field textarea {
-    min-height: 60px;
-    resize: vertical;
-}
-
-.config-field-list {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 13px;
-    padding: 6px 8px;
-    border-radius: 6px;
-    background: rgba(0, 0, 0, 0.1);
-}
-
-.config-field-list>span:first-child {
-    min-width: 100px;
-    font-weight: 500;
-}
-
-.config-field-list .valor-actual {
-    min-width: 50px;
-    text-align: center;
-    font-size: 12px;
-    color: var(--color-secundario);
-    font-weight: 500;
-}
-
-.config-field-list input {
-    width: 60px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    background: rgba(0, 0, 0, 0.15);
-    color: var(--color-texto);
-    border-radius: 4px;
-    padding: 4px 6px;
-    font-size: 13px;
-    text-align: center;
-}
-
-.config-field-list select {
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    background: rgba(0, 0, 0, 0.15);
-    color: var(--color-texto);
-    border-radius: 4px;
-    padding: 4px 6px;
-    font-size: 13px;
-
-}
-
-.dual-input {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-}
-
-.dual-input span {
-    font-weight: bold;
-    color: var(--color-principal1);
-}
-
-.config-panel-actions {
-    position: sticky;
-    bottom: 0;
-    display: flex;
-    justify-content: flex-end;
-    gap: 10px;
-    padding-top: 10px;
-    background: linear-gradient(180deg, transparent 0%, var(--color-fondoTexto) 40%);
-}
-
-.btn-reset,
-.btn-save {
-    border: none;
-    border-radius: 6px;
-    padding: 8px 14px;
-    cursor: pointer;
-    font-weight: 600;
-}
-
-.btn-reset {
-    background: rgba(255, 255, 255, 0.12);
-    color: var(--color-texto);
-}
-
-.btn-save {
-    background: var(--color-principal1);
-    color: var(--color-texto);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
 }
 
 .center {
@@ -1348,42 +1083,6 @@ h3 {
 .iniciativa-header .settings-btn {
     margin-left: auto;
     color: var(--color-secundario);
-}
-
-.config-modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.5);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 2000;
-    color: var(--color-texto);
-}
-
-.config-modal {
-    background: var(--color-fondoTexto);
-    padding: 10px;
-    border-radius: 10px;
-    min-width: 320px;
-    position: relative;
-}
-
-.config-checks-list {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    margin-bottom: 10px;
-}
-
-.config-check-item {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-top: 10px;
 }
 
 .stat-select {
@@ -1743,6 +1442,41 @@ input[type="number"] {
     width: 200px;
 }
 
+.config-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    color: var(--color-texto);
+}
+
+.config-modal {
+    background: var(--color-fondoTexto);
+    padding: 10px;
+    border-radius: 10px;
+    min-width: 320px;
+    position: relative;
+}
+
+.config-checks-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+.config-check-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 10px;
+}
 
 
 @media screen and (max-width: 1040px) {

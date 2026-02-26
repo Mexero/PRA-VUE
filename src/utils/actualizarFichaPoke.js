@@ -1,35 +1,40 @@
 export function actualizar(ficha) {
     calcularDerivadosBasicos(ficha)
-    aplicarLimitadores(ficha)
+
+    //Stats
+    ficha.derivados.cantidadMejorasEST = 1 + Math.floor((ficha.nivel - 2) / 3)
+    recortarArray(ficha.personaliz.mejorasEst, ficha.derivados.cantidadMejorasEST)
     calcularStats(ficha)
+
+    //Combate
+    calcularPVyPP(ficha)
     calcularSalvaciones(ficha)
-    actualizarChecks(ficha)
-    calcularOtrosDerivados(ficha)
     calcularEVA(ficha)
+
+    //Recalcular y aplicar limitador de mejoras de habilidad
+    ficha.derivados.cantidadMejorasHab = Math.max(Math.floor(ficha.nivel / 6), 0) + ficha.modificadores.mejorasHab
+    recortarArray(ficha.personaliz.mejorasHab, ficha.derivados.cantidadMejorasHab)
+    actualizarChecks(ficha)
+
+    //limitar dotes
+    recortarArray(ficha.personaliz.dotes, ficha.derivados.cantidadDotes)
+
+    //Otros
+    calcularOtrosDerivados(ficha)
+    aplicarOtrosMods(ficha)
 }
 
 /* ===================== DERIVADOS BÁSICOS ===================== */
 
 function calcularDerivadosBasicos(ficha) {
     const d = ficha.derivados
-    const stats = d.stats
 
-    d.bh = Math.ceil(ficha.nivel / 2)
-    d.ppMax = stats.esp + ficha.nivel - Math.max(d.fatiga, 0)
-    d.cantidadMejorasEST = 1 + Math.floor((ficha.nivel - 2) / 3)
-    d.vit = ficha.pokedex.vit + ficha.personaliz.bonoVit
-    d.pvMax = 10 + ficha.nivel * (d.vit + stats.res)
+    d.bh = Math.ceil(ficha.nivel / 2) + ficha.modificadores.bh
+    d.vit = ficha.pokedex.vit + ficha.modificadores.vit
     d.cantidadDotes = Math.floor((ficha.nivel + 1) / 4)
-    d.cantidadMejorasHab = Math.max(Math.floor(ficha.nivel / 6), 0)
 }
 
 /* ===================== LIMITADORES ===================== */
-
-function aplicarLimitadores(ficha) {
-    recortarArray(ficha.personaliz.mejorasEst, ficha.derivados.cantidadMejorasEST)
-    recortarArray(ficha.personaliz.dotes, ficha.derivados.cantidadDotes)
-    recortarArray(ficha.personaliz.mejorasHab, ficha.derivados.cantidadMejorasHab)
-}
 
 function recortarArray(arr, max) {
     while (arr.length > max) arr.pop()
@@ -43,6 +48,12 @@ function calcularStats(ficha) {
         const mejoras = ficha.personaliz.mejorasEst.filter(s => s === stat).length
         ficha.derivados.stats[stat] = base + mejoraToValor(mejoras)
     }
+
+    // --- Mods extra ---
+    for (const stat in ficha.derivados.stats) {
+        const mod = ficha.modificadores.stats[stat] || 0
+        ficha.derivados.stats[stat] += mod
+    }
 }
 
 function mejoraToValor(m) {
@@ -50,6 +61,13 @@ function mejoraToValor(m) {
     if (m <= 3) return m
     if (m === 4) return 3
     return 4
+}
+
+function calcularPVyPP(ficha) {
+    const d = ficha.derivados
+    const stats = d.stats
+    d.pvMax = 10 + ficha.nivel * (d.vit + stats.res) + ficha.modificadores.pvMax
+    d.ppMax = stats.esp + ficha.nivel - Math.max(d.fatiga, 0) + ficha.modificadores.ppMax
 }
 
 /* ===================== SALVACIONES ===================== */
@@ -174,9 +192,7 @@ function calcularOtrosDerivados(ficha) {
 
     d.sentidos = calcularSentidos(ficha)
 
-    d.cantidadMovs =
-        Math.min(2 + d.bh, 8) +
-        Math.max(Math.floor(d.stats.men / 4), 0)
+    d.cantidadMovs = Math.min(2 + d.bh, 6)
 
     recortarArray(
         ficha.personaliz.movimientosAprendidos,
@@ -185,8 +201,7 @@ function calcularOtrosDerivados(ficha) {
 
     for (const vel in d.velocidades)
         d.velocidades[vel] =
-            ficha.pokedex.velocidades[vel] +
-            ficha.personaliz.mejorasVelocidades[vel]
+            ficha.pokedex.velocidades[vel]
 }
 
 function calcularSentidos(ficha) {
@@ -202,8 +217,8 @@ function calcularEVA(ficha) {
     const stats = ficha.derivados.stats
     if (!Array.isArray(calculos) || !calculos.length) return
 
-    if (ficha.derivados.caElegida >= calculos.length)
-        ficha.derivados.caElegida = 0
+    if (ficha.derivados.evaElegida >= calculos.length)
+        ficha.derivados.evaElegida = 0
 
     const calcularValor = formula =>
         formula.split('+').reduce((acc, partRaw) => {
@@ -217,11 +232,28 @@ function calcularEVA(ficha) {
         valor: calcularValor(f)
     }))
 
-    ficha.derivados.cas = resultados
+    ficha.derivados.evasiones = resultados
 
-    const idx = ficha.derivados.caElegida ?? 0
-    ficha.derivados.ca =
+    const idx = ficha.derivados.evaElegida ?? 0
+    ficha.derivados.evasion =
         (resultados[idx]?.valor ?? 0) +
         ficha.derivados.bh -
-        Math.max(ficha.derivados.fatiga, 0)
+        Math.max(ficha.derivados.fatiga, 0) +
+        (ficha.modificadores.evasion || 0)
+}
+
+
+/* ===================== EVA ===================== */
+
+function aplicarOtrosMods(ficha) {
+    const mods = ficha.modificadores
+    const velocidadesMods = mods.velocidades
+
+
+
+    // --- Velocidades ---
+    for (const vel in ficha.derivados.velocidades) {
+        const mod = velocidadesMods[vel] || 0
+        ficha.derivados.velocidades[vel] += mod
+    }
 }

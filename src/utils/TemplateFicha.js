@@ -28,13 +28,8 @@ export function crearFichaBase(nombre = '') {
             dotes: [],
             dotesExtra: [],
             mejorasHab: [],
-            caDisponibles: [],
-            bonosExtraEst: { fue: 0, agi: 0, res: 0, men: 0, esp: 0, pre: 0 },
-            mejorasVelocidades: { Caminado: 0, Trepado: 0, Excavado: 0, Nado: 0, Vuelo: 0, Levitado: 0 },
+            evaDisponibles: [],
             salvaciones: { fue: 0, agi: 0, res: 0, esp: 0 },
-            bonoVit: 0,
-            bonoPP: 0,
-            bonoCa: 0,
             teratipo: '',
             sentidos: '',
             naturaleza: { naturaleza: '', check: '' },
@@ -49,9 +44,9 @@ export function crearFichaBase(nombre = '') {
             cantidadMejorasHab: 0,
             cantidadDotes: 0,
             cantidadMovs: 0,
-            caElegida: 0,
-            cas: [0],
-            ca: 0,
+            evaElegida: 0,
+            evasiones: [0],
+            evasion: 0,
             pp: 0,
             ppMax: 0,
             pv: 0,
@@ -64,11 +59,17 @@ export function crearFichaBase(nombre = '') {
         },
         checks: {
             checksBase: [{ check: 'Percepción', grado: 1 }, { check: 'Init', grado: 1 }],
-            checksData: [],
-            checksExtra: [],
+            checksData: []
         },
-        mods: {
-
+        modificadores: {
+            pvMax: 0,
+            ppMax: 0,
+            vit: 0,
+            bh: 0,
+            evasion: 0,
+            mejorasHab: 0,
+            stats: { fue: 0, agi: 0, res: 0, men: 0, esp: 0, pre: 0 },
+            velocidades: { Caminado: 0, Trepado: 0, Excavado: 0, Nado: 0, Vuelo: 0, Levitado: 0 }
         }
     }
 }
