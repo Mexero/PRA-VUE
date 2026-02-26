@@ -33,40 +33,54 @@ function mayorStat(stats) {
 }
 
 function computarDanno(cadena, stat, tipo) {
-    let final = cadena.replace(/EST/g, stat);
+    let formula = cadena.replace(/×/g, "*");
 
-    const stab = props.ficha.pokedex.tipos.includes(tipo) ? props.ficha.derivados.bh : 0;
-    if (stab) final += " + " + stab;
-    if (props.ficha.nivel >= 12) final += " + " + stat;
-    if (props.ficha.derivados.fatiga) final += " - " + props.ficha.derivados.fatiga;
 
-    // normalizar multiplicaciones
-    const computado = final.replace(/×/g, "*");
+    formula = formula.replace(/EST/g, stat);
 
-    const dados = computado.match(/\d+d\d+/gi) || [];
-    const resto = computado.replace(/\d+d\d+/gi, "");
+    let modificadores = 0;
+    if (props.ficha.pokedex.tipos.includes(tipo)) modificadores += props.ficha.derivados.bh || 0;
+    if (props.ficha.nivel >= 12) modificadores += stat;
+    if (props.ficha.nivel >= 18) modificadores += stat;
+    if (props.ficha.derivados.fatiga) modificadores -= props.ficha.derivados.fatiga;
 
-    let total = 0;
-    if (resto.trim()) {
+    let dados = formula.match(/\d+d\d+/gi) || [];
+
+    //Incrementar dados si nivel > 16. Actualmente no es así la regla
+    /*
+        if (props.ficha.nivel >= 16) {
+            dados = dados.map(d => {
+                const match = d.match(/(\d+)d(\d+)/i);
+                if (match) {
+                    let cantidad = parseInt(match[1], 10) + 1;
+                    let tipoDado = match[2];
+                    return `${cantidad}d${tipoDado}`;
+                }
+                return d;
+            });
+        }
+    */
+
+    let resto = formula.replace(/\d+d\d+/gi, "").trim();
+
+    let totalResto = 0;
+    if (resto) {
         try {
-            total = Parser.evaluate(resto);
+            totalResto = Parser.evaluate(resto);
         } catch {
-            total = 0;
+            totalResto = 0;
         }
     }
+    totalResto += modificadores;
 
-    const dadosStr = dados.join(" + ");
 
-    let resultadoFinal = "";
-    if (!dadosStr) resultadoFinal = `${total}`;
-    else if (total === 0) resultadoFinal = `${dadosStr}`;
-    else if (total > 0) resultadoFinal = `${dadosStr} + ${total}`;
-    else resultadoFinal = `${dadosStr} - ${Math.abs(total)}`;
+    let formulaFinal = dados.join(" + ");
+    if (totalResto > 0) formulaFinal += (formulaFinal ? " + " : "") + totalResto;
+    else if (totalResto < 0) formulaFinal += " - " + Math.abs(totalResto);
 
-    // devolver siempre objeto con formula y resultado
     return {
-        formula: final,
-        resultado: resultadoFinal
+        formula: formulaFinal,
+        resultado: formulaFinal
     };
 }
 
@@ -140,11 +154,6 @@ const typeMap = {
                 <tiraDanno
                     :tirada='computarDanno(mov.danno, mayorStat(mov.statsAso), mov.tipo).resultado.split(" ").join("")'
                     :origin='"Daño de " + mov.nombre' :critico="20" />
-                <!--
-                <tiraDado
-                    :tirada='computarDanno(mov.danno, mayorStat(mov.statsAso), mov.tipo).resultado.split(" ").join("")'
-                    :origin='"Daño de " + mov.nombre' />
-                    -->
             </p>
             <p v-if="mov.etiquetas"><strong>Etiquetas: </strong>{{ mov.etiquetas }}</p>
             <div v-if="mov.ataque">
