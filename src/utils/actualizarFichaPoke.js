@@ -69,8 +69,16 @@ function calcularSalvaciones(ficha) {
 
 /* ===================== CHECKS ===================== */
 function actualizarChecks(ficha) {
+    quitarMejorasInutiles(ficha)
     construirChecksBase(ficha)
     construirChecksData(ficha)
+}
+
+function quitarMejorasInutiles(ficha) {
+    ficha.personaliz.mejorasHab = ficha.personaliz.mejorasHab.filter(m => {
+        const check = ficha.checks.checksData.find(c => c.check === m)
+        return check && check.visible === true
+    })
 }
 
 function construirChecksBase(ficha) {
@@ -91,7 +99,7 @@ function construirChecksBase(ficha) {
     if (naturaleza.check) {
         const existe = base.find(c => c.check === naturaleza.check)
         if (existe) existe.grado++
-        else base.push({ check: naturaleza.check, grado: 1, stat:naturaleza.stat })
+        else base.push({ check: naturaleza.check, grado: 1, stat: naturaleza.stat })
     }
 
     ficha.checks.checksBase = base
@@ -107,7 +115,7 @@ function construirChecksData(ficha) {
     const mejoras = ficha.personaliz?.mejorasHab || []
 
     //limpiamos grados
-    data.forEach(d => {d.grado=0 });
+    data.forEach(d => { d.grado = 0 });
 
     const checksMap = new Map()
     data.forEach(d => checksMap.set(d.check, d))
@@ -120,7 +128,10 @@ function construirChecksData(ficha) {
             checkData = { check: c.check, stat: c.stat, grado: c.grado, bono: 0, visible: true }
             checksMap.set(c.check, checkData)
         }
-        else checkData.grado = c.grado
+        else {
+            checkData.grado = c.grado
+            checkData.visible = true
+        }
     })
 
     // Aplicar mejorasHab
@@ -149,9 +160,9 @@ function construirChecksData(ficha) {
         checkData.bono = statVal + bonoGrado - fatiga
     })
 
+
     // Guardar de nuevo como array
     ficha.checks.checksData = Array.from(checksMap.values())
-    console.log(ficha.checks.checksData)
 }
 
 

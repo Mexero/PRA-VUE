@@ -245,37 +245,16 @@ async function cambiarDatosEspecie(especie) {
         // Reset
         ficha.personaliz.habilidadesOcultasDesbloqueadas = []
 
-        // Limpiar checks especiales del Pokémon anterior
 
-
-        /* TO DO
-        ficha.checks.checksData = ficha.checks.checksData.filter(check => {
-            if (ChecksBase.some(cb => cb.check === check.check)) return true
-            if (ficha.checks.checksExtra && ficha.checks.checksExtra.includes(check.check)) return true
-
-            const checksBaseNombres = (ficha.derivados.checksBase || []).map(c => c.check)
-            return checksBaseNombres.includes(check.check)
-        })
-
-        ficha.personaliz.mejorasHab = ficha.personaliz.mejorasHab.filter(mejora => {
-            return ficha.personaliz.checks.some(check => check.check === mejora) ||
-                ChecksBase.some(cb => cb.check === mejora) ||
-                (ficha.personaliz.checksExtra && ficha.personaliz.checksExtra.includes(mejora))
-        })*/
 
         console.log(`Datos de ${especie} cargados:`, ficha.pokedex)
 
         // Actualizar imagen del Pokémon
         await actualizarImagenPokemon()
 
-        // Asegurar que PV y PP se mantengan al máximo tras cambiar la especie
-
-        /*
-        ELIMINAR?
         actualizar(ficha)
         ficha.derivados.pp = ficha.derivados.ppMax
         ficha.derivados.pv = ficha.derivados.pvMax
-*/
 
     } catch (err) {
         error.value = err.message || 'Error cargando la especie Pokémon ' + especie
@@ -640,6 +619,76 @@ function descansar() {
     nuevaEscena()
 }
 
+
+
+// COSAS DE INICIATIVA
+const iniciativaCheck = computed(() =>
+    ficha.checks.checksData.find(c => c.check === 'Init')
+)
+
+const iniciativaStat = computed({
+    get() {
+        return iniciativaCheck.value?.stat ?? 'agi'
+    },
+    set(v) {
+        if (iniciativaCheck.value) iniciativaCheck.value.stat = v
+    }
+})
+
+const iniciativaGrado = computed({
+    get() {
+        return iniciativaCheck.value?.grado ?? 0
+    },
+    set(v) {
+        if (iniciativaCheck.value) iniciativaCheck.value.grado = Number(v)
+    }
+})
+
+function cambiarGrado(nombre, gradoNuevo) {
+    // Si no está en checksData, hay que meterlo
+    let check = ficha.checks.checksData.find(c => c.check === nombre)
+    if (!check) {
+        const base = todosLosChecks.value.find(c => c.nombre === nombre)
+        check = {
+            check: nombre,
+            stat: base?.stat ?? 'fue',
+            grado: base?.grado ?? 0,
+            bono: 0,
+            visible: true
+        }
+        ficha.checks.checksData.push(check)
+    }
+
+    //Ajustar las mejoras de habilidad
+    const mejoras = ficha.personaliz.mejorasHab
+    const gradosBase = ficha.checks.checksBase.find(c => c.check == nombre)?.grado || 0
+    const mejorasNecesarias = gradoNuevo - gradosBase
+
+    const mejorasActuales = mejoras.filter(x => x === nombre).length
+    const diferencia = mejorasNecesarias - mejorasActuales
+    if (diferencia > 0) { for (let i = 0; i < diferencia; i++) { mejoras.push(nombre) } }
+
+    if (diferencia < 0) {
+        let porQuitar = Math.abs(diferencia)
+
+        for (let i = mejoras.length - 1; i >= 0 && porQuitar > 0; i--) {
+            if (mejoras[i] == nombre) {
+                mejoras.splice(i, 1)
+                porQuitar--
+            }
+        }
+    }
+    check.grado = gradoNuevo
+}
+
+function desactivarOpcionGrado(nombre, optionIndex) {
+    const min = ficha.checks.checksBase.find(c => c.check == nombre)?.grado || 0
+    const actual = ficha.checks.checksData.find(c => c.check == nombre)?.grado || 0
+    const max = (ficha.derivados.cantidadMejorasHab - ficha.personaliz.mejorasHab.length) + actual
+    if (optionIndex < min) return true
+    if (optionIndex > max) return true
+}
+
 </script>
 
 
@@ -735,7 +784,6 @@ function descansar() {
                                     </svg>
                                 </button>
                             </div>
-                            <!-- SIN HACER -->
                             <span class="grado">{{grados[ficha?.checks?.checksData?.find(c => c.check == 'Init')?.grado
                                 || 0]}}</span>
                             <div class="iniciativa-input-container">
@@ -938,8 +986,8 @@ function descansar() {
             <button class="close-btn" @click="mostrarConfigIniciativa = false" aria-label="Cerrar">×</button>
             <div class="config-checks-list">
                 <label class="config-check-item">
-
                     Iniciativa
+
                     <select v-model="iniciativaStat" class="stat-select">
                         <option value="fue">Fuerza</option>
                         <option value="agi">Agilidad</option>
@@ -948,9 +996,11 @@ function descansar() {
                         <option value="esp">Espíritu</option>
                         <option value="pre">Presencia</option>
                     </select>
-                    <!-- Sin hacer -->
-                    <select :value="ficha.personaliz.checks" class="rango-select" :title="`Rango de Iniciativa`">
-                        <option v-for="(g, i) in grados" :key="g" :value="i" :disabled="true">
+
+                    <select :value="iniciativaGrado" class="rango-select" title="Rango de Iniciativa"
+                        @change="cambiarGrado('Init', $event.target.value)">
+                        <option v-for="(g, i) in grados" :key="g" :value="i"
+                            :disabled="desactivarOpcionGrado('Init', i)">
                             {{ g }}
                         </option>
                     </select>

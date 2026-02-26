@@ -66,6 +66,9 @@ export function crearFichaBase(nombre = '') {
             checksBase: [{ check: 'Percepción', grado: 1 }, { check: 'Init', grado: 1 }],
             checksData: [],
             checksExtra: [],
+        },
+        mods: {
+
         }
     }
 }
