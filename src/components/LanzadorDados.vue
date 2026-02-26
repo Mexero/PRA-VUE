@@ -1,51 +1,51 @@
 <template>
     <div class="lanzador-widget" :class="{ abierto }">
-        <div class="abrir-cerrar" @click="abierto = !abierto" role="button" aria-label="Abrir/Cerrar lanzador">
+        <div class="abrir-cerrar" @click="abierto = !abierto">
             <img src="/assets/icons/d20.svg" alt="d20" width="15" height="15">
         </div>
+
         <div class="panel">
             <h3>Lanzador de Dados</h3>
+
             <!-- Tirador manual -->
             <div class="tirador">
                 Lanzar:
-                <input type="number" v-model.number="numDados" min="0" max="100" />
+                <input type="number" v-model.number="numDados" min="1" />
 
                 <select v-model="tipoDado">
                     <option v-for="d in tiposDados" :key="d" :value="d">{{ d }}</option>
                 </select>
+
                 +
                 <input type="number" v-model.number="modificador" />
+
                 <button
-                    @click="tirarManual(`${numDados}${tipoDado}${modificador >= 0 ? '+' : ''}${modificador}`, 'Manual', $event, true)"
-                    type="button" aria-label="Lanzar manual">
+                    @click="tirarManual(`${numDados}${tipoDado}${modificador >= 0 ? '+' : ''}${modificador}`, 'Manual', $event, true)">
                     <img src="/assets/icons/d20.svg" alt="d20">
                 </button>
             </div>
 
-            <!-- Historial de tiradas -->
+            <!-- Historial -->
             <div class="historial-tiradas" ref="historialRef">
                 <ul>
-                    <li v-for="(tirada, index) in historialTiradas" :key="index">
-                        <template v-if="tirada.origin === 'Manual'">
-                            <strong>{{ tirada.origin }}</strong>
-                            <span>{{ tirada.notation }} →
-                                <span :title="tirada.results.join(' + ')">{{ tirada.total }} </span>
-                            </span>
-                            <button @click="tirarManual(tirada.notation, tirada.origin, $event)" type="button"
-                                aria-label="Repetir tirada">
-                                <img src="/assets/icons/d20.svg" alt="d20">
-                            </button>
-                        </template>
-                        <div v-else>
-                            <div><strong>{{ tirada.origin }}</strong></div>
-                            <span>{{ tirada.notation }} →
-                                <span :title="tirada.results.join(' + ')">{{ tirada.total }} </span>
-                                <button @click="tirarManual(tirada.notation, tirada.origin, $event)" type="button"
-                                    aria-label="Repetir tirada">
-                                    <img src="/assets/icons/d20.svg" alt="d20">
-                                </button>
-                            </span>
-                        </div>
+                    <li v-for="(tirada, index) in historialTiradas" :key="index" :class="[
+                        tirada.tipo,
+                        { critico: tirada.roll?.critico },
+                        { super: tirada.roll?.efectividad === 'Súper efectivo' },
+                        { extremo: tirada.roll?.efectividad === 'Extremadamente efectivo' }
+                    ]">
+                        <strong>
+                            {{ tirada.origin }}
+                        </strong>
+
+                        <span :title="tirada.title">
+                            {{ tirada.notation }} →
+                            <strong>{{ tirada.total }}</strong>
+                        </span>
+
+                        <button @click="repetirTirada(tirada, $event)">
+                            <img src="/assets/icons/d20.svg" alt="d20">
+                        </button>
                     </li>
                 </ul>
             </div>
@@ -58,66 +58,100 @@ import { ref, onMounted, onUnmounted, nextTick } from 'vue'
 
 const historialTiradas = ref([])
 
-// Tirador manual
 const numDados = ref(1)
-const tiposDados = ['d4', 'd6', 'd10', 'd12', 'd20']
+const tiposDados = ['d4', 'd6', 'd8', 'd10', 'd12', 'd20']
 const tipoDado = ref('d6')
 const modificador = ref(0)
 
-// Estado de abrir/cerrar panel
 const abierto = ref(false)
-
 const historialRef = ref(null)
 
+/* ================================   UTILIDADES   ================================ */
 
 function interpretarTirada(notation) {
     const regex = /^(\d+)d(\d+)(.*)$/i
     const match = notation.match(regex)
-    if (!match) throw new Error("Notación de dados inválida")
+    if (!match) throw new Error('Notación inválida')
 
     const numDados = parseInt(match[1], 10)
     const carasDados = parseInt(match[2], 10)
-    let resto = match[3] || ""
+    let resto = match[3] || ''
 
-    const termRegex = /([+-]+)\s*(\d+)(?:\s*[xX×*]\s*(\d+))?/gi
+    const termRegex = /([+-]+)\s*(\d+)/gi
     let totalMod = 0
 
-    resto.replace(termRegex, (_, signos, num, mult) => {
-        const signoNegativo = ((signos.match(/-/g) || []).length % 2) === 1
-        const signo = signoNegativo ? -1 : 1
-        const valor = parseInt(num, 10)
-        const multiplicador = mult ? parseInt(mult, 10) : 1
-        totalMod += signo * valor * multiplicador
-        return ""
+    resto.replace(termRegex, (_, signos, num) => {
+        const negativo = ((signos.match(/-/g) || []).length % 2) === 1
+        totalMod += (negativo ? -1 : 1) * parseInt(num, 10)
     })
 
-    const notacionFinal =
-        totalMod === 0
-            ? `${numDados}d${carasDados}`
-            : `${numDados}d${carasDados}${totalMod >= 0 ? "+" : ""}${totalMod}`
-
-    return { numDados, carasDados, modificador: totalMod, notacionFinal }
+    return { numDados, carasDados, modificador: totalMod }
 }
+
+/* ================================   TIRADA NORMAL   ================================ */
+
 function lanzarDados(notation) {
-    const { numDados, carasDados, modificador, notacionFinal } = interpretarTirada(notation)
+    const { numDados, carasDados, modificador } = interpretarTirada(notation)
+
     const resultados = []
     let total = 0
 
     for (let i = 0; i < numDados; i++) {
-        const tirada = Math.floor(Math.random() * carasDados) + 1
-        resultados.push(tirada)
-        total += tirada
+        const r = Math.floor(Math.random() * carasDados) + 1
+        resultados.push(r)
+        total += r
     }
 
     total += modificador
     if (modificador) resultados.push(modificador)
 
-    return { resultados, total, notation: notacionFinal }
+    return {
+        resultados,
+        total,
+        title: `${resultados.join(' + ')} = ${total}`
+    }
 }
+
+/* ================================   TIRADA DE DAÑO   ================================ */
+
+function lanzarDadosDanio({ tirada, critico, efectividad }) {
+    const { numDados, carasDados, modificador } = interpretarTirada(tirada)
+
+    let dadosFinales = critico ? numDados * 2 : numDados
+    let multDados = 1
+    let multFinal = 1
+
+    switch (efectividad) {
+        case 'Muy poco efectivo': multFinal = 0.5; break
+        case 'Poco efectivo': multDados = 0.5; break
+        case 'Súper efectivo': multDados = 2; break
+        case 'Extremadamente efectivo': multFinal = 2; break
+    }
+
+    const resultados = []
+    let suma = 0
+
+    for (let i = 0; i < dadosFinales; i++) {
+        const r = Math.floor(Math.random() * carasDados) + 1
+        resultados.push(r)
+        suma += r
+    }
+
+    const total = Math.floor((suma * multDados + modificador) * multFinal)
+
+    let formula = `(${resultados.join(' + ')})`
+    if (multDados !== 1) formula = `(${formula} × ${multDados})`
+    if (modificador) formula += ` ${modificador >= 0 ? '+' : '-'} ${Math.abs(modificador)}`
+    if (multFinal !== 1) formula = `(${formula}) × ${multFinal}`
+    formula += ` = ${total}`
+
+    return { resultados, total, formula }
+}
+
+/* ================================   HISTORIAL================================ */
 
 function agregarTirada(tirada) {
     historialTiradas.value.push(tirada)
-
     nextTick(() => {
         if (historialRef.value) {
             historialRef.value.scrollTop = historialRef.value.scrollHeight
@@ -125,59 +159,140 @@ function agregarTirada(tirada) {
     })
 }
 
+/* ================================   REPETIR================================ */
 
-function tirarManual(notation, origen = null, event = null, deLanzador = false) {
-    if (event && event.currentTarget && deLanzador) {
-        const img = event.currentTarget.querySelector('img')
-        spinImage(img, 600)
+function repetirTirada(tirada, event) {
+    const img = event?.currentTarget?.querySelector('img')
+    if (img) spinImage(img, 600)
+
+    const roll = tirada.roll
+
+    if (roll.kind === 'danio') {
+        const r = lanzarDadosDanio(roll)
+
+        agregarTirada({
+            tipo: 'danio',
+            origin: tirada.origin,
+            notation: roll.tirada,
+            total: r.total,
+            title: r.formula,
+            roll
+        })
+    } else {
+        const r = lanzarDados(roll.notation)
+
+        agregarTirada({
+            tipo: 'normal',
+            origin: tirada.origin,
+            notation: roll.notation,
+            total: r.total,
+            title: r.title,
+            roll
+        })
     }
-
-    const { resultados, total, notation: notacionFinal } = lanzarDados(notation)
-    agregarTirada({
-        origin: origen || 'Manual',
-        notation: notacionFinal,
-        results: resultados,
-        total
-    })
 }
 
-function spinImage(img, duration = 600) {
-    if (!img) return
-    img.classList.remove('spinning')
-    void img.offsetWidth
-    img.classList.add('spinning')
-    setTimeout(() => {
-        img.classList.remove('spinning')
-    }, duration)
-}
+/* ================================   MENSAJES EXTERNOS   ================================ */
 
 function manejarMensaje(evento) {
-    const mensaje = evento.data
-    if (!mensaje || mensaje.type !== "lanzarDados") return
+    const m = evento.data
+    if (!m || m.type !== 'lanzarDados') return
 
     if (!abierto.value) abierto.value = true
-    const { origin, dice } = mensaje
-    try {
-        const { resultados, total, notation: notacionFinal } = lanzarDados(dice)
-        agregarTirada({
-            origin,
-            notation: notacionFinal,
-            results: resultados,
-            total
+
+    if (m.tirada && m.efectividad !== undefined) {
+        const r = lanzarDadosDanio({
+            tirada: m.tirada,
+            critico: m.critico,
+            efectividad: m.efectividad
         })
-    } catch (error) {
-        console.error("Error al lanzar los dados:", error.message)
+
+        agregarTirada({
+            tipo: 'danio',
+            origin: m.origin,
+            notation: m.tirada,
+            total: r.total,
+            title: r.formula,
+            roll: {
+                kind: 'danio',
+                tirada: m.tirada,
+                critico: m.critico,
+                efectividad: m.efectividad
+            }
+        })
+    }
+
+    else if (m.dice) {
+        const r = lanzarDados(m.dice)
+
+        agregarTirada({
+            tipo: 'normal',
+            origin: m.origin,
+            notation: m.dice,
+            total: r.total,
+            title: r.title,
+            roll: {
+                kind: 'normal',
+                notation: m.dice
+            }
+        })
     }
 }
 
-// Montar y desmontar oyente de eventos
-onMounted(() => {
-    window.addEventListener('message', manejarMensaje)
-})
+/* ================================   MANUAL================================ */
 
-onUnmounted(() => {
-    window.removeEventListener('message', manejarMensaje)
-})
+function tirarManual(
+    notation,
+    origin = 'Manual',
+    event = null,
+    deLanzador = false,
+    critico = false,
+    efectividad = null
+) {
+    if (event && deLanzador) {
+        spinImage(event.currentTarget.querySelector('img'), 600)
+    }
+
+    if (efectividad !== null) {
+        const r = lanzarDadosDanio({ tirada: notation, critico, efectividad })
+
+        agregarTirada({
+            tipo: 'danio',
+            origin,
+            notation,
+            total: r.total,
+            title: r.formula,
+            roll: {
+                kind: 'danio',
+                tirada: notation,
+                critico,
+                efectividad
+            }
+        })
+    } else {
+        const r = lanzarDados(notation)
+
+        agregarTirada({
+            tipo: 'normal',
+            origin,
+            notation,
+            total: r.total,
+            title: r.title,
+            roll: {
+                kind: 'normal',
+                notation
+            }
+        })
+    }
+}
+
+function spinImage(img, duration) {
+    img.classList.add('spinning')
+    setTimeout(() => img.classList.remove('spinning'), duration)
+}
+
+onMounted(() => window.addEventListener('message', manejarMensaje))
+onUnmounted(() => window.removeEventListener('message', manejarMensaje))
 </script>
 
 <style scoped>
@@ -362,5 +477,55 @@ button img {
 .spinning {
     animation: spin 0.6s linear;
     -webkit-animation: spin 0.6s linear;
+}
+
+/* Animación crítica */
+@keyframes critFlash {
+    0% {
+        background: #ff000033;
+    }
+
+    100% {
+        background: transparent;
+    }
+}
+
+@keyframes superGlow {
+    0% {
+        box-shadow: 0 0 5px gold;
+    }
+
+    100% {
+        box-shadow: 0 0 20px gold;
+    }
+}
+
+li.critico {
+    animation: critFlash 0.6s ease-in-out;
+}
+
+li.super {
+    animation: superGlow 0.6s ease-in-out;
+}
+
+li.extremo {
+    animation: superGlow 0.6s ease-in-out;
+    background: #ff990022;
+}
+
+/* Spin */
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.spinning {
+    animation: spin 0.6s linear;
+}
+
+.historial-tiradas {
+    max-height: 200px;
+    overflow-y: auto;
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
     <button type="button" @click="handleClick" aria-label="Lanzar d20">
-        <img src="/assets/icons/d20.svg" alt="d20" :class="{ spinning: isSpinning }"  />
+        <img src="/assets/icons/d20.svg" alt="d20" :class="{ spinning: isSpinning }" />
     </button>
 </template>
 
@@ -9,7 +9,8 @@ import { ref } from 'vue'
 
 const props = defineProps({
     tirada: { type: String, required: true },
-    origin: { type: String, default: 'Botón' }
+    origin: { type: String, default: 'Botón' },
+    critico: { type: Number, default: 20 }
 })
 
 const isSpinning = ref(false)
@@ -18,7 +19,8 @@ function enviarTirada() {
     const mensaje = {
         type: 'lanzarDados',
         origin: props.origin,
-        dice: props.tirada
+        dice: props.tirada,
+        critico: props.critico
     }
     window.postMessage(mensaje, '*')
     console.log('Mensaje enviado:', mensaje)
@@ -75,25 +77,25 @@ img {
 
 @media screen and (max-width: 750px) {
     button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0;
-    border: none;
-    background: none;
-    cursor: pointer;
-    width: 25px;
-    height: 25px;
-    border-radius: 6px;
-}
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        border: none;
+        background: none;
+        cursor: pointer;
+        width: 25px;
+        height: 25px;
+        border-radius: 6px;
+    }
 
-img {
-    width: 25px;
-    height: 25px;
-    display: inline-block;
-    transform-origin: center center;
-    will-change: transform;
-    filter: var(--color-icon);
-}
+    img {
+        width: 25px;
+        height: 25px;
+        display: inline-block;
+        transform-origin: center center;
+        will-change: transform;
+        filter: var(--color-icon);
+    }
 }
 </style>

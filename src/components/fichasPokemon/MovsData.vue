@@ -1,6 +1,8 @@
 <script setup>
+import { Parser } from "expr-eval";
 
 import tiraDado from '../tiraDado.vue';
+import tiraDanno from "./tiraDanno.vue";
 
 const props = defineProps([
     'ficha',
@@ -30,11 +32,42 @@ function mayorStat(stats) {
     return maxValor;
 }
 
-function computarDanno(cadena, stat) {
-    let final = cadena.replace(/EST/g, stat)
-    if (props.ficha.derivados.fatiga)
-        final += " - " + props.ficha.derivados.fatiga
-    return final;
+function computarDanno(cadena, stat, tipo) {
+    let final = cadena.replace(/EST/g, stat);
+
+    const stab = props.ficha.pokedex.tipos.includes(tipo) ? props.ficha.derivados.bh : 0;
+    if (stab) final += " + " + stab;
+    if (props.ficha.nivel >= 12) final += " + " + stat;
+    if (props.ficha.derivados.fatiga) final += " - " + props.ficha.derivados.fatiga;
+
+    // normalizar multiplicaciones
+    const computado = final.replace(/×/g, "*");
+
+    const dados = computado.match(/\d+d\d+/gi) || [];
+    const resto = computado.replace(/\d+d\d+/gi, "");
+
+    let total = 0;
+    if (resto.trim()) {
+        try {
+            total = Parser.evaluate(resto);
+        } catch {
+            total = 0;
+        }
+    }
+
+    const dadosStr = dados.join(" + ");
+
+    let resultadoFinal = "";
+    if (!dadosStr) resultadoFinal = `${total}`;
+    else if (total === 0) resultadoFinal = `${dadosStr}`;
+    else if (total > 0) resultadoFinal = `${dadosStr} + ${total}`;
+    else resultadoFinal = `${dadosStr} - ${Math.abs(total)}`;
+
+    // devolver siempre objeto con formula y resultado
+    return {
+        formula: final,
+        resultado: resultadoFinal
+    };
 }
 
 function computarCoste(cadena) {
@@ -101,11 +134,17 @@ const typeMap = {
             <p><strong>Acción: </strong>{{ mov.accion }}</p>
             <p><strong>Coste: </strong>{{ computarCoste(mov.coste) }}</p>
             <p><strong>Rango: </strong>{{ mov.rango }}</p>
-            <p v-if="mov.danno">
+            <p v-if="mov.danno" :title='computarDanno(mov.danno, mayorStat(mov.statsAso), mov.tipo).formula'>
                 <strong>Daño: </strong>
-                {{ computarDanno(mov.danno, mayorStat(mov.statsAso)) }}
-                <tiraDado :tirada='computarDanno(mov.danno, mayorStat(mov.statsAso)).split(" ").join("")'
+                {{ computarDanno(mov.danno, mayorStat(mov.statsAso), mov.tipo).resultado.split(" ").join("") }}
+                <tiraDanno
+                    :tirada='computarDanno(mov.danno, mayorStat(mov.statsAso), mov.tipo).resultado.split(" ").join("")'
+                    :origin='"Daño de " + mov.nombre' :critico="20" />
+                <!--
+                <tiraDado
+                    :tirada='computarDanno(mov.danno, mayorStat(mov.statsAso), mov.tipo).resultado.split(" ").join("")'
                     :origin='"Daño de " + mov.nombre' />
+                    -->
             </p>
             <p v-if="mov.etiquetas"><strong>Etiquetas: </strong>{{ mov.etiquetas }}</p>
             <div v-if="mov.ataque">
@@ -175,7 +214,7 @@ p {
     display: flex;
     align-items: center;
     gap: 5px;
-  
+
 }
 
 strong {
